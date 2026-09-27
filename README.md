@@ -19,6 +19,11 @@ d:\SvartulfrVerse\
 ├── docs/                       # Guide Ufficiali e Manualistica di Riferimento
 │   ├── Guide_World.md          # Manuale WyvernChat World Creator Guide
 │   ├── Svartulfr_World_Doc.md  # Documento Master compilato in prosa del World Svartúlfr
+│   ├── claude_project_docs/    # 196 Documenti estratti dalla Project Knowledge di Claude
+│   │   └── INDEX.md            # Indice navigabile di tutti i file di knowledge base
+│   ├── claude_conversations/   # Trascrizioni delle 12 sessioni di design chiave di Claude
+│   │   └── INDEX.md            # Indice cronologico delle conversazioni
+│   ├── claude_memories/        # Memorie di progetto, calendari sacri e pipeline grafiche PixAI
 │   └── legacy/                 # Storico Claude, istruzioni superate e memorie
 │       ├── Istruzioni_Progetto_v2.md
 │       ├── Istruzioni_Workflow_Wyvern_Aggiornate_2026-09-14.md

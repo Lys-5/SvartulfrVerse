@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Claude Data Export — Svartúlfr Verse</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --card-bg: #1a1d27;
+      --border: #2a2e3d;
+      --primary: #8b5cf6;
+      --primary-hover: #7c3aed;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #10b981;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      max-width: 680px;
+      width: 100%;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-top: 0;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    .alert {
+      background: rgba(139, 92, 246, 0.1);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 24px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .alert strong {
+      color: #c4b5fd;
+    }
+    .cards-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .file-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: border-color 0.2s;
+    }
+    .file-card:hover {
+      border-color: #3f4458;
+    }
+    .file-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .file-title {
+      font-weight: 600;
+      font-size: 16px;
+      color: #fff;
+    }
+    .file-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .btn {
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 6px;
+      white-space: nowrap;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+    .btn-featured {
+      background: var(--accent);
+    }
+    .btn-featured:hover {
+      background: #059669;
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 13px;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📥 Download Export Dati Claude</h1>
+    <p class="subtitle">
+      Anthropic invia un file di indice (<code>manifest.json</code>). I tuoi file effettivi (progetti, documenti e conversazioni) vanno scaricati dai link sottostanti nel browser in cui sei loggato su Claude.
+    </p>
+
+    <div class="alert">
+      <strong>⚠️ Nota di Anthropic:</strong> Ogni link può essere utilizzato <strong>una sola volta</strong>. Ti basta cliccare sul pulsante verde <strong>"Scarica Projects"</strong> per recuperare tutta la Project Knowledge e le istruzioni del tuo progetto.
+    </div>
+
+    <div class="cards-grid">
+      <!-- 1. Projects (Priorità Massima) -->
+      <div class="file-card" style="border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.05);">
+        <div class="file-info">
+          <div class="file-title">📁 1. Projects (Priorità)</div>
+          <div class="file-desc">File: <code>projects-000.zip</code> — Include Project Knowledge, documenti caricati e istruzioni di sistema.</div>
+        </div>
+        <a class="btn btn-featured" href="https://claude.ai/export/15936eea-809a-46bd-9061-823e063f2c5f/download/b7272f326c061336cc27902b8dd3b169" target="_blank">Scarica Projects</a>
+      </div>
+
+      <!-- 2. Conversations -->
+      <div class="file-card">
+        <div class="file-info">
+          <div class="file-title">💬 2. Conversations</div>
+          <div class="file-desc">File: <code>conversations-000.zip</code> — Cronologia completa di tutte le sessioni di chat.</div>
+        </div>
+        <a class="btn" href="https://claude.ai/export/15936eea-809a-46bd-9061-823e063f2c5f/download/d37cf64c72bd3c6b1222c27d030cb326" target="_blank">Scarica Chat</a>
+      </div>
+
+      <!-- 3. Memories -->
+      <div class="file-card">
+        <div class="file-info">
+          <div class="file-title">🧠 3. Memories</div>
+          <div class="file-desc">File: <code>memories-000.zip</code> — Memorie globali e personalizzazioni dell'account.</div>
+        </div>
+        <a class="btn" href="https://claude.ai/export/15936eea-809a-46bd-9061-823e063f2c5f/download/be472d1c03b9b3800c8dd9fafd87a20c" target="_blank">Scarica Memories</a>
+      </div>
+
+      <!-- 4. Light Metadata -->
+      <div class="file-card">
+        <div class="file-info">
+          <div class="file-title">📋 4. Metadata</div>
+          <div class="file-desc">File: <code>light_metadata-000.zip</code> — Metadati leggeri dell'account e delle sessioni.</div>
+        </div>
+        <a class="btn" href="https://claude.ai/export/15936eea-809a-46bd-9061-823e063f2c5f/download/95060e98ed4f570101306233e0ade802" target="_blank">Scarica Metadata</a>
+      </div>
+
+      <!-- 5. Frames -->
+      <div class="file-card">
+        <div class="file-info">
+          <div class="file-title">🖼️ 5. Frames</div>
+          <div class="file-desc">File: <code>frames-000.zip</code> — Contenuti e asset visuali generati.</div>
+        </div>
+        <a class="btn" href="https://claude.ai/export/15936eea-809a-46bd-9061-823e063f2c5f/download/8e39ddc4df0bccc84da45e0219d69ebe" target="_blank">Scarica Frames</a>
+      </div>
+
+      <!-- 6. Feedback -->
+      <div class="file-card">
+        <div class="file-info">
+          <div class="file-title">⭐ 6. Feedback</div>
+          <div class="file-desc">File: <code>feedback-000.zip</code> — Feedback inviati e preferenze.</div>
+        </div>
+        <a class="btn" href="https://claude.ai/export/15936eea-809a-46bd-9061-823e063f2c5f/download/d94ae7099baf257db2bdda4d9f7b7314" target="_blank">Scarica Feedback</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      Dopo il download, salva i file <code>.zip</code> direttamente nella cartella:<br>
+      <code>d:\SvartulfrVerse\drive\claude_export\</code><br>
+      L'assistente eseguirà l'estrazione e il riallineamento immediato dei contenuti.
+    </div>
+  </div>
+</body>
+</html>
