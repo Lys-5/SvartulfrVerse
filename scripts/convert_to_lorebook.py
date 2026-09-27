@@ -20,7 +20,10 @@ def parse_json_field(val, default=None):
     return default if default is not None else []
 
 def convert_svartulfr():
-    src_path = r'd:\SvartulfrVerse\Svartulfr_Export.json'
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    src_path = os.path.join(base_dir, 'exports', 'Svartulfr_Export.json')
+    if not os.path.exists(src_path):
+        src_path = os.path.join(base_dir, 'Svartulfr_Export.json')
     if not os.path.exists(src_path):
         src_path = r'c:\Users\mande\AppData\Local\com.wyvern.wyldfire\Svartulfr_Export.json'
 
@@ -430,13 +433,16 @@ def convert_svartulfr():
         }
     }
 
-    out_json_path_complete = r'd:\SvartulfrVerse\Svartulfr_Lorebook_Complete.json'
+    lorebooks_dir = os.path.join(base_dir, 'exports', 'lorebooks')
+    os.makedirs(lorebooks_dir, exist_ok=True)
+
+    out_json_path_complete = os.path.join(lorebooks_dir, 'Svartulfr_Lorebook_Complete.json')
     with open(out_json_path_complete, 'w', encoding='utf-8') as f:
         json.dump(wyvern_lorebook_complete, f, indent=2, ensure_ascii=False)
     print(f"Saved Unified Complete JSON Lorebook to: {out_json_path_complete} ({len(converted_entries)} entries)")
 
     # Also save Svartulfr_Lorebook.json as Complete master copy
-    out_json_path_master = r'd:\SvartulfrVerse\Svartulfr_Lorebook.json'
+    out_json_path_master = os.path.join(lorebooks_dir, 'Svartulfr_Lorebook.json')
     with open(out_json_path_master, 'w', encoding='utf-8') as f:
         json.dump(wyvern_lorebook_complete, f, indent=2, ensure_ascii=False)
 
@@ -469,14 +475,16 @@ def convert_svartulfr():
                     "total_parts": num_parts
                 }
             }
-            part_path = rf'd:\SvartulfrVerse\Svartulfr_Lorebook_Part{part_num}.json'
+            part_path = os.path.join(lorebooks_dir, f'Svartulfr_Lorebook_Part{part_num}.json')
             with open(part_path, 'w', encoding='utf-8') as f:
                 json.dump(part_lorebook, f, indent=2, ensure_ascii=False)
             print(f"Saved Unified Lorebook Part {part_num}: {part_path} ({len(sub_entries)} entries)")
 
     # Generate Clean Modular Exports (Fully Valid Individual Lorebooks)
-    exports_dir = r'd:\SvartulfrVerse\exports'
+    exports_dir = os.path.join(base_dir, 'exports')
     os.makedirs(exports_dir, exist_ok=True)
+    entities_dir = os.path.join(exports_dir, 'entities')
+    os.makedirs(entities_dir, exist_ok=True)
     raw_dumps_dir = os.path.join(exports_dir, 'raw_db_dumps')
     os.makedirs(raw_dumps_dir, exist_ok=True)
 
@@ -555,7 +563,7 @@ def convert_svartulfr():
             "entries": reindex_entries(entries_list),
             "extensions": ext
         }
-        filepath = os.path.join(exports_dir, filename)
+        filepath = os.path.join(entities_dir, filename)
         with open(filepath, 'w', encoding='utf-8') as f:
             json.dump(lb, f, indent=2, ensure_ascii=False)
         print(f"Exported valid Lorebook: {filepath} ({len(entries_list)} entries)")
