@@ -42,26 +42,33 @@ d:\SvartulfrVerse\
 │   └── log_chat/               # Log e trascrizioni di sessioni di chat
 │
 ├── exports/                    # Dati Esportati, Lorebook e Dump Database
-│   ├── Svartulfr_Export.json   # Export master raw del World completo
+│   ├── Svartulfr_Export.json   # Export master raw del World completo (Web API Sync)
 │   ├── entities/               # Esportazioni suddivise per entità Wyvern (JSON)
 │   │   ├── Svartulfr_Characters_Complete.json (+ Part1, Part2)
 │   │   ├── Svartulfr_Lexicon.json (+ Part1, Part2)
 │   │   ├── Svartulfr_Locations.json
 │   │   ├── Svartulfr_Environments.json
-│   │   └── Svartulfr_Scenarios.json
+│   │   ├── Svartulfr_Scenarios.json
+│   │   ├── Svartulfr_Maps.json
+│   │   └── Svartulfr_Eras.json
 │   ├── lorebooks/              # Lorebook partizionati generati per SillyTavern/Wyvern
 │   │   ├── Svartulfr_Lorebook.json
 │   │   ├── Svartulfr_Lorebook_Complete.json
-│   │   └── Svartulfr_Lorebook_Part1..3.json
-│   └── raw_db_dumps/           # Dump SQLite estratti da Wyldfire (JSON)
+│   │   └── Svartulfr_Lorebook_Part1..4.json
+│   └── raw_db_dumps/           # Dump estratti dal World (JSON)
 │       ├── raw_characters.json
 │       ├── raw_environments.json
+│       ├── raw_eras.json
 │       ├── raw_lexicon.json
 │       ├── raw_locations.json
-│       └── raw_scenarios.json
+│       ├── raw_maps.json
+│       ├── raw_scenarios.json
+│       └── raw_world.json
 │
 ├── scripts/                    # Script e Automazioni di Progetto
-│   └── convert_to_lorebook.py  # Script Python per generare e partizionare i Lorebook
+│   ├── convert_to_lorebook.py  # Script Python per generare e partizionare i Lorebook
+│   ├── sync_from_wyvern_web.py # Sincronizzazione in tempo reale con le API Web di Wyvern
+│   └── sync_characters_cards.py# Sincronizzazione schede card e world del Main Cast
 │
 ├── asset/                      # Media e Risorse Visive Organizzate
 │   ├── portraits/              # Ritratti dei singoli personaggi (Erik, Logan, Jasper, ecc.)
@@ -108,17 +115,44 @@ Tutti gli agenti AI e i collaboratori che operano in questo workspace devono seg
 
 ---
 
-## 3. Gestione e Generazione dei Lorebook
+## 3. Gestione, Sincronizzazione e Generazione dei Lorebook
 
-Lo script [scripts/convert_to_lorebook.py](file:///d:/SvartulfrVerse/scripts/convert_to_lorebook.py) consente di processare l'export master [exports/Svartulfr_Export.json](file:///d:/SvartulfrVerse/exports/Svartulfr_Export.json) e generare:
-- **Lorebook Unificati e Partizionati** in [exports/lorebooks/](file:///d:/SvartulfrVerse/exports/lorebooks/) (massimo 250 voci per parte per garantire compatibilità con l'import Wyvern).
-- **Esportazioni Modulari per Entità** in [exports/entities/](file:///d:/SvartulfrVerse/exports/entities/) (Characters, Lexicon, Locations, Environments, Scenarios).
-- **Dump Grezzi del Database** in [exports/raw_db_dumps/](file:///d:/SvartulfrVerse/exports/raw_db_dumps/).
+Il workflow di allineamento e generazione dati si avvale di tre script principali in [scripts/](file:///d:/SvartulfrVerse/scripts/):
 
-Per eseguire la rigenerazione:
-```powershell
-python scripts/convert_to_lorebook.py
-```
+1. **Sincronizzazione Web API Wyvern** ([scripts/sync_from_wyvern_web.py](file:///d:/SvartulfrVerse/scripts/sync_from_wyvern_web.py)):
+   Estrae i token di sessione autenticati e scarica in tempo reale lo stato completo e autorevole del World (`_CgYT8fHXpDC4crjmegQF7`) in [exports/Svartulfr_Export.json](file:///d:/SvartulfrVerse/exports/Svartulfr_Export.json):
+   ```powershell
+   python scripts/sync_from_wyvern_web.py
+   ```
+
+2. **Generazione e Partizionamento Lorebook** ([scripts/convert_to_lorebook.py](file:///d:/SvartulfrVerse/scripts/convert_to_lorebook.py)):
+   Processa l'export master e produce:
+   - **Lorebook Unificati e Partizionati** in [exports/lorebooks/](file:///d:/SvartulfrVerse/exports/lorebooks/) (774 voci totali suddivise in 4 parti $\le 250$ voci per compatibilità con l'import di Wyvern).
+   - **Esportazioni Modulari per Entità** in [exports/entities/](file:///d:/SvartulfrVerse/exports/entities/) (Characters, Lexicon, Locations, Environments, Scenarios, Maps, Eras).
+   - **Dump JSON di Tutte le Tabelle** in [exports/raw_db_dumps/](file:///d:/SvartulfrVerse/exports/raw_db_dumps/).
+   ```powershell
+   python scripts/convert_to_lorebook.py
+   ```
+
+3. **Sincronizzazione Schede Main Cast** ([scripts/sync_characters_cards.py](file:///d:/SvartulfrVerse/scripts/sync_characters_cards.py)):
+   Allinea le schede dei 9 personaggi principali in [Wyvern/characters/](file:///d:/SvartulfrVerse/Wyvern/characters/) (Edric, Erik, Jasper, Logan, Malachia, Noah, Ut, Wulfnic, Zefir), garantendo:
+   - Formato standard **JED+** e PList;
+   - Epurazione totale della macro `{{user}}` (0 occorrenze);
+   - Inclusione degli outfit nativi, speech examples e attitudes reali;
+   - Piena conformità con le specifiche Tavern V2 (`*_card.json`) e Wyvern World (`*_world.json`).
+   ```powershell
+   python scripts/sync_characters_cards.py
+   ```
+
+### Statistiche Attuali del World (Sincronizzazione Web Autorevole)
+- **Personaggi:** 365
+- **Voci Lexicon:** 254
+- **Locations:** 135
+- **Environments:** 2
+- **Scenarios:** 9
+- **Maps:** 2
+- **Eras Cronologiche:** 7
+- **World Age Corrente:** `10486470` (5 aprile 2024, ore 06:00 UTC)
 
 ---
 

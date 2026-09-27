@@ -1,0 +1,401 @@
+{
+  "name": "Svartúlfr - Eras",
+  "description": "Ere storiche e suddivisione cronologica del World Clock di Svartúlfr",
+  "scan_depth": 5,
+  "token_budget": 2048,
+  "recursive_scanning": true,
+  "visibility": "private",
+  "rating": "explicit",
+  "status": "approved",
+  "tags": [
+    "SvartulfrVerse",
+    "Eras"
+  ],
+  "counts": {
+    "total": 7
+  },
+  "entries": [
+    {
+      "entry_id": "_bzrEn11WYcrbfGzWBh4L2",
+      "id": "_bzrEn11WYcrbfGzWBh4L2",
+      "uid": 0,
+      "name": "Age of Myth",
+      "comment": "Timeline Era: Age of Myth",
+      "keys": [
+        "Age of Myth",
+        "Age of Myth Era",
+        "Timeline Era"
+      ],
+      "key": [
+        "Age of Myth",
+        "Age of Myth Era",
+        "Timeline Era"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "[AGE OF MYTH]\nTimeline Hours Range: -245184 to -8484\n\nDescription: Before recorded history. Fenris walks the earth, coeval with the Æsir, andchooses nine mortal Úlfheðnar warriors to remake with his own divine blood.No verifiable record survives from this age. Everything known about it isReligious Canon, carried by oral tradition and contested by scholars. WhetherFenris physically existed, whether the Nine were divinely created ortransformed by some unknown natural mechanism, remains unknowable.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "concept",
+      "source_category": "eras",
+      "extensions": {
+        "start_position": -245184,
+        "end_position": -8484,
+        "color": "#8739ef",
+        "display_order": 0,
+        "tags": [],
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "concept"
+        }
+      }
+    },
+    {
+      "entry_id": "_R6p2hJKYTkcT8yNK1TaJh",
+      "id": "_R6p2hJKYTkcT8yNK1TaJh",
+      "uid": 1,
+      "name": "Age of the Firstborn",
+      "comment": "Timeline Era: Age of the Firstborn",
+      "keys": [
+        "Age of the Firstborn",
+        "Age of the Firstborn Era",
+        "Timeline Era"
+      ],
+      "key": [
+        "Age of the Firstborn",
+        "Age of the Firstborn Era",
+        "Timeline Era"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "[AGE OF THE FIRSTBORN]\nTimeline Hours Range: -8484 to 1507816\n\nDescription: 827 AD. The Nine Firstborn appear during the Viking Age, nine extraordinaryindividuals possessing biological immortality, extreme regeneration, perfectShift stability, supreme pheromonal presence, and absolute Command. WulfnicBloodmoon is born. The Nine disperse across the Norse world, each founding apack that will become a Founding Bloodline. The first Pack Authoritystructures, territorial boundaries, and the oral traditions that become theFaith of Fenris are established here.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "concept",
+      "source_category": "eras",
+      "extensions": {
+        "start_position": -8484,
+        "end_position": 1507816,
+        "color": "#d20f39",
+        "display_order": 0,
+        "tags": [],
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "concept"
+        }
+      }
+    },
+    {
+      "entry_id": "_JE68U1jxzRc8zx3M3PgQ6",
+      "id": "_JE68U1jxzRc8zx3M3PgQ6",
+      "uid": 2,
+      "name": "Age of Expansion",
+      "comment": "Timeline Era: Age of Expansion",
+      "keys": [
+        "Age of Expansion",
+        "Age of Expansion Era",
+        "Timeline Era"
+      ],
+      "key": [
+        "Age of Expansion",
+        "Age of Expansion Era",
+        "Timeline Era"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "[AGE OF EXPANSION]\nTimeline Hours Range: 1507816 to 4137816\n\nDescription: The Firstborn's descendants multiply and spread beyond Scandinavia: acrossNorthern Europe, into the British Isles, Iceland and Greenland, through theSlavic lands, southward into the Mediterranean, and westward to the New World.Wulfnic's expedition reaches North America around 1025 AD and founds HouseBloodmoon in the Pacific Northwest, the first permanent werewolf domain in theNew World. Each expansion creates new cultural branches while bloodlineconnections to the Founding Houses hold.\n\nContext: North America, around 1025 AD. Wulfnic Bloodmoon has crossed the ocean with\nhis people and claimed the valley that will one day be called Blackwood. There\nis nothing here but old forest, cold water, and the tribes who were here first.\nNo colony. No Douglas. No name on any map.\n\nThe pack lives in the open, because there is no one to hide from yet. The Great\nHiding is six centuries away. Faith is practiced aloud, hunts run without\napology, and the strength of a wolf is the only currency that settles an\nargument. Wulfnic is not an ancestor watching from a distance. He is here,\nyoung by his own reckoning at two hundred years, building the first permanent\nwerewolf domain in the New World with his own hands.\n\n[ERA INSTRUCTIONS: No technology of any kind. No colony, no Blackwood City, no Douglas family, no\nDCC, no English language. Nobody references anything after 1025 AD.\nConcealment from humans is not yet species law. Wolves live openly.\nWulfnic Bloodmoon is a present, physical character in the scene, not a distant\nnarrating presence.]",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "concept",
+      "source_category": "eras",
+      "extensions": {
+        "start_position": 1507816,
+        "end_position": 4137816,
+        "color": "#fe640b",
+        "display_order": 0,
+        "tags": [],
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "concept"
+        }
+      }
+    },
+    {
+      "entry_id": "_wEVdhNDgC8cKzfx7xT2Va",
+      "id": "_wEVdhNDgC8cKzfx7xT2Va",
+      "uid": 3,
+      "name": "Age of Houses",
+      "comment": "Timeline Era: Age of Houses",
+      "keys": [
+        "Age of Houses",
+        "Age of Houses Era",
+        "Timeline Era"
+      ],
+      "key": [
+        "Age of Houses",
+        "Age of Houses Era",
+        "Timeline Era"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "[AGE OF HOUSES]\nTimeline Hours Range: 4137816 to 5452816\n\nDescription: Bloodlines diversify and political structures formalize. Founding Bloodlinesconsolidate into Noble Houses with formal governance. House Councils emerge tomanage territories spanning multiple packs. Inter-House diplomacy begins,producing the first treaties, alliances, and marriage agreements. Thedistinction between Bloodline (genetics), House (politics), and Pack (socialunit) becomes codified species-wide.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "concept",
+      "source_category": "eras",
+      "extensions": {
+        "start_position": 4137816,
+        "end_position": 5452816,
+        "color": "#df8e1d",
+        "display_order": 0,
+        "tags": [],
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "concept"
+        }
+      }
+    },
+    {
+      "entry_id": "_8CMW1hYPdjhY1bKGMCfVg",
+      "id": "_8CMW1hYPdjhY1bKGMCfVg",
+      "uid": 4,
+      "name": "Age of Kingdoms",
+      "comment": "Timeline Era: Age of Kingdoms",
+      "keys": [
+        "Age of Kingdoms",
+        "Age of Kingdoms Era",
+        "Timeline Era"
+      ],
+      "key": [
+        "Age of Kingdoms",
+        "Age of Kingdoms Era",
+        "Timeline Era"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "[AGE OF KINGDOMS]\nTimeline Hours Range: 5452816 to 7345816\n\nDescription: The peak of open werewolf civilization. Great Houses govern vast territoriescomparable to human kingdoms. Werewolf culture, architecture, and craftsmanshipreach their zenith. The Continental Council forms to arbitrate inter-Housedisputes. Werewolves and humans coexist in varying degrees of awareness andtension, before concealment becomes necessary.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "concept",
+      "source_category": "eras",
+      "extensions": {
+        "start_position": 5452816,
+        "end_position": 7345816,
+        "color": "#40a02b",
+        "display_order": 0,
+        "tags": [],
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "concept"
+        }
+      }
+    },
+    {
+      "entry_id": "_3Mq3Q86CVAaxyGAeHGeeR",
+      "id": "_3Mq3Q86CVAaxyGAeHGeeR",
+      "uid": 5,
+      "name": "Age of Secrecy",
+      "comment": "Timeline Era: Age of Secrecy",
+      "keys": [
+        "Age of Secrecy",
+        "Age of Secrecy Era",
+        "Timeline Era"
+      ],
+      "key": [
+        "Age of Secrecy",
+        "Age of Secrecy Era",
+        "Timeline Era"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "[AGE OF SECRECY]\nTimeline Hours Range: 7345816 to 9467316\n\nDescription: 1666 AD. Human civilization grows, industrializes, and develops technologiesthat threaten supernatural secrecy. The Continental Council mandates the GreatHiding, a species-wide policy of concealment. Werewolf civilization retreatsinto hidden territories, corporate fronts, and underground networks. Open packstructures give way to covert operations disguised as human institutions. Thefaith becomes private, practiced within closed communities.Lord Cornelius Douglas, an English colonial aristocrat and Pureblood, foundsHouse Douglas in Blackwood Valley and becomes Governor of the Blackwood Colony.Merchant House Douglas is established, and the shadow of piracy that funded itis buried.\n\nContext: Colonial North America, 1666. Blackwood is a coastal colony of timber, tide,\nand cobblestone, governed by Lord Cornelius Douglas from a colonial seat that\nwill still be standing four centuries from now. There is no electricity, no\nsurveillance, no corporate empire. Merchant House Douglas moves goods across an\nocean and does not ask too loudly where the founding capital came from.\n\nWerewolves live under the Great Hiding. The Continental Council has mandated\nconcealment species-wide, and open pack structures have given way to covert\noperations disguised as human institutions. Packs hold the forest and keep\ntheir faith behind closed doors. Wulfnic Bloodmoon has already held this\nterritory for six hundred years and watches the newcomers with the patience of\nsomething that has outlived every colony before this one.\n\n[ERA INSTRUCTIONS: No modern technology exists. No phones, no vehicles, no electricity, no\nsurveillance, no DCC, no photography. Nobody references anything after 1666.\nConcealment from humans is absolute species law. Exposure is not a scandal, it\nis an execution.\nSpeech register is period-appropriate. No contemporary slang, no Gen-Z\nphrasing, no internet speak.]",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "concept",
+      "source_category": "eras",
+      "extensions": {
+        "start_position": 7345816,
+        "end_position": 9467316,
+        "color": "#6c6f85",
+        "display_order": 0,
+        "tags": [],
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "concept"
+        }
+      }
+    },
+    {
+      "entry_id": "_dRrCQUjzWC4EVrwTPHXJ9",
+      "id": "_dRrCQUjzWC4EVrwTPHXJ9",
+      "uid": 6,
+      "name": "Modern Era",
+      "comment": "Timeline Era: Modern Era",
+      "keys": [
+        "Modern Era",
+        "Modern Era Era",
+        "Timeline Era"
+      ],
+      "key": [
+        "Modern Era",
+        "Modern Era Era",
+        "Timeline Era"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "[MODERN ERA]\nTimeline Hours Range: 9467316 to Current World Age\n\nDescription: 1908. The Supernatural University of Central California is founded, andcontemporary supernatural society takes its current shape. Noble Housesmaintain power through corporate empires. Packs adapt to urban, suburban, andrural environments while keeping their core ecological structures. Technologyis adopted and bent to species-specific needs. The tension between traditionalpack values and modern individualism becomes the defining cultural conflict ofthe age. The Faith of Fenris persists as a living tradition, with the LastThree Firstborn serving as both historical anchors and religious figures.Around 1994, Erik Douglas and Nixara Bloodmoon are bonded at La Grande Caccia,the last Caccia-confirmed White Moon bond. They marry in 1996, fusing Purebloodpolitical infrastructure with Founding Bloodline genetic supremacy into theDouglas-Bloodmoon dynasty. Nixara dies in 2005 giving birth to twins. Erik'sgrief reshapes the family into what it is now.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "concept",
+      "source_category": "eras",
+      "extensions": {
+        "start_position": 9467316,
+        "end_position": null,
+        "color": "#1e66f5",
+        "display_order": 0,
+        "tags": [],
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "concept"
+        }
+      }
+    }
+  ],
+  "extensions": {
+    "creator": "Wyvern Web API Sync",
+    "source_world_id": "_CgYT8fHXpDC4crjmegQF7"
+  }
+}

@@ -1,6 +1,6 @@
 {
-  "name": "Svartúlfr - Environments",
-  "description": "Macro-ambienti di Svartúlfr",
+  "name": "Svartúlfr - Maps",
+  "description": "Mappe cartografiche e collegamenti geografici di Svartúlfr",
   "scan_depth": 5,
   "token_budget": 2048,
   "recursive_scanning": true,
@@ -9,30 +9,34 @@
   "status": "approved",
   "tags": [
     "SvartulfrVerse",
-    "Environments"
+    "Maps"
   ],
   "counts": {
     "total": 2
   },
   "entries": [
     {
-      "entry_id": "_gNmX2qncQ6m9E4fG223ge",
-      "id": "_gNmX2qncQ6m9E4fG223ge",
+      "entry_id": "_tUtyKpzKzzeVCGyxQBkQD",
+      "id": "_tUtyKpzKzzeVCGyxQBkQD",
       "uid": 0,
-      "name": "Voidspace",
-      "comment": "Environment: Voidspace",
+      "name": "Blackwood",
+      "comment": "Map: Blackwood",
       "keys": [
-        "Voidspace"
+        "Blackwood",
+        "Map of Blackwood",
+        "Mappa di Blackwood"
       ],
       "key": [
-        "Voidspace"
+        "Blackwood",
+        "Map of Blackwood",
+        "Mappa di Blackwood"
       ],
       "secondary_keys": [],
       "keysecondary": [],
       "key_logic": "AND_ANY",
       "selectiveLogic": 0,
       "selective": false,
-      "content": "Voidspace is the gap between realities, the empty space between universes. DDM Inc., the interdimensional organization dedicated to the preservation of the multiverse, built its headquarters here: an endless office building suspended in nothing, with no true floor, sky, or horizon.\n\nThe structure is non-euclidean. Its corridors, stairwells, and departments fold and stretch in ways that defy ordinary geometry, and a hallway that seems short can take an entire shift to walk. Despite its impossible shape, the building functions as a real workplace, and living quarters, for its countless mortal staff, who come from a vast range of universes. The Council, the godlike entities who run DDM Inc., reside somewhere beyond it, in a dimension only the seven immortal Contractors have ever seen.\n\nOutside the building's walls there is nothing at all, only the dark of the space between realities. Stepping out without protection or authorization means being lost to the void.",
+      "content": "Cartographic map of Blackwood.\nMap Asset: https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/1f60c535-df68-4355-5c35-cccecc39a800/public",
       "enabled": true,
       "disable": false,
       "constant": false,
@@ -50,10 +54,13 @@
       "sticky": 0,
       "cooldown": 0,
       "type": "location",
-      "source_category": "environments",
+      "source_category": "maps",
       "extensions": {
+        "map_type": "city",
+        "image_url": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/1f60c535-df68-4355-5c35-cccecc39a800/public",
+        "pins": [],
+        "connections": [],
         "tags": [],
-        "included_lexicon_entries": [],
         "wyvern": {
           "priority": 10,
           "position": "before_char",
@@ -63,23 +70,27 @@
       }
     },
     {
-      "entry_id": "_jUzC2EQyPTHte1hTYqPt8",
-      "id": "_jUzC2EQyPTHte1hTYqPt8",
+      "entry_id": "_RXLz9h2xtnzD8VgR9qUCz",
+      "id": "_RXLz9h2xtnzD8VgR9qUCz",
       "uid": 1,
       "name": "California Coast",
-      "comment": "Environment: California Coast",
+      "comment": "Map: California Coast",
       "keys": [
-        "California Coast"
+        "California Coast",
+        "Map of California Coast",
+        "Mappa di California Coast"
       ],
       "key": [
-        "California Coast"
+        "California Coast",
+        "Map of California Coast",
+        "Mappa di California Coast"
       ],
       "secondary_keys": [],
       "keysecondary": [],
       "key_logic": "AND_ANY",
       "selectiveLogic": 0,
       "selective": false,
-      "content": "",
+      "content": "Cartographic map of California Coast.\nMap Asset: https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/16b0b2a5-33e2-47c4-05a5-932872836e00/public",
       "enabled": true,
       "disable": false,
       "constant": false,
@@ -97,10 +108,13 @@
       "sticky": 0,
       "cooldown": 0,
       "type": "location",
-      "source_category": "environments",
+      "source_category": "maps",
       "extensions": {
+        "map_type": "region",
+        "image_url": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/16b0b2a5-33e2-47c4-05a5-932872836e00/public",
+        "pins": [],
+        "connections": [],
         "tags": [],
-        "included_lexicon_entries": [],
         "wyvern": {
           "priority": 10,
           "position": "before_char",

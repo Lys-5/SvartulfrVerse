@@ -13,7 +13,6 @@ def parse_json_field(val, default=None):
         try:
             return json.loads(val)
         except Exception:
-            # Fallback if comma-separated
             if default is not None and isinstance(default, list):
                 return [x.strip() for x in val.split(',') if x.strip()]
             return val
@@ -24,8 +23,6 @@ def convert_svartulfr():
     src_path = os.path.join(base_dir, 'exports', 'Svartulfr_Export.json')
     if not os.path.exists(src_path):
         src_path = os.path.join(base_dir, 'Svartulfr_Export.json')
-    if not os.path.exists(src_path):
-        src_path = r'c:\Users\mande\AppData\Local\com.wyvern.wyldfire\Svartulfr_Export.json'
 
     with open(src_path, 'r', encoding='utf-8') as f:
         raw_data = json.load(f)
@@ -36,9 +33,11 @@ def convert_svartulfr():
     raw_locations = raw_data.get('world_locations', [])
     raw_environments = raw_data.get('world_environments', [])
     raw_scenarios = raw_data.get('world_scenarios', [])
+    raw_maps = raw_data.get('world_maps', [])
+    raw_eras = raw_data.get('world_eras', [])
 
     lorebook_name = world.get('name') or "SvartülfrVerse"
-    description = world.get('context_description') or world.get('base_instructions') or ""
+    description = world.get('context_description') or world.get('base_instructions') or "Svartúlfr World Lorebook"
     scan_depth = world.get('scan_depth') or 5
     rating = world.get('rating') or "explicit"
     visibility = "private"
@@ -51,8 +50,12 @@ def convert_svartulfr():
     locations_converted = []
     environments_converted = []
     scenarios_converted = []
+    maps_converted = []
+    eras_converted = []
 
-    # 1. Process Lexicon Entries (250)
+    logic_map = {"AND_ANY": 0, "AND_ALL": 1, "NOT_ANY": 2, "NOT_ALL": 3}
+
+    # 1. Process Lexicon Entries
     for item in raw_lexicon:
         keys = parse_json_field(item.get('keys'), [])
         sec_keys = parse_json_field(item.get('secondary_keys'), [])
@@ -78,10 +81,9 @@ def convert_svartulfr():
         cooldown = item.get('cooldown')
         entry_type = item.get('type') or "concept"
 
-        logic_map = {"AND_ANY": 0, "AND_ALL": 1, "NOT_ANY": 2, "NOT_ALL": 3}
         selective_logic = logic_map.get(key_logic, 0)
 
-        converted_entries.append({
+        entry_obj = {
             "entry_id": entry_id,
             "id": entry_id,
             "uid": uid_counter,
@@ -115,6 +117,8 @@ def convert_svartulfr():
             "source_category": "lexicon",
             "extensions": {
                 **extensions,
+                "attached_world_character_id": item.get('attached_world_character_id'),
+                "party_conditions": parse_json_field(item.get('party_conditions'), []),
                 "wyvern": {
                     "priority": priority,
                     "position": position,
@@ -122,12 +126,12 @@ def convert_svartulfr():
                     "type": entry_type
                 }
             }
-        })
-
-        lexicon_converted.append(converted_entries[-1])
+        }
+        converted_entries.append(entry_obj)
+        lexicon_converted.append(entry_obj)
         uid_counter += 1
 
-    # 2. Process Characters (360)
+    # 2. Process Characters
     for char in raw_characters:
         name = char.get('display_name') or f"{char.get('first_name', '')} {char.get('last_name', '')}".strip() or char.get('id')
         keys = parse_json_field(char.get('keys'), [])
@@ -139,9 +143,9 @@ def convert_svartulfr():
 
         sec_keys = parse_json_field(char.get('secondary_keys'), [])
         key_logic = char.get('key_logic') or "AND_ANY"
-        logic_map = {"AND_ANY": 0, "AND_ALL": 1, "NOT_ANY": 2, "NOT_ALL": 3}
         selective_logic = logic_map.get(key_logic, 0)
 
+        # Prioritize long_summary (rich JED+)
         content = char.get('long_summary') or char.get('summary') or ""
         final_inst = char.get('final_instructions')
         if final_inst and final_inst.strip() and final_inst.strip() not in content:
@@ -149,7 +153,12 @@ def convert_svartulfr():
 
         entry_id = char.get('id') or f"char_{uid_counter}"
 
-        converted_entries.append({
+        outfits = parse_json_field(char.get('outfits'), [])
+        speech_examples = parse_json_field(char.get('speech_examples'), [])
+        attitudes = parse_json_field(char.get('attitudes'), [])
+        rpg_stats = parse_json_field(char.get('rpg_stats'), {})
+
+        entry_obj = {
             "entry_id": entry_id,
             "id": entry_id,
             "uid": uid_counter,
@@ -191,9 +200,14 @@ def convert_svartulfr():
                     "species_id": char.get('species_id'),
                     "occupation_id": char.get('occupation_id'),
                     "is_global": bool(char.get('is_global', 1)),
-                    "outfits": parse_json_field(char.get('outfits'), []),
-                    "speech_examples": parse_json_field(char.get('speech_examples'), []),
-                    "rpg_stats": parse_json_field(char.get('rpg_stats'), {}),
+                    "birthdate": char.get('birthdate'),
+                    "start_timeline_position": char.get('start_timeline_position'),
+                    "summary": char.get('summary'),
+                    "display_description": char.get('display_description'),
+                    "outfits": outfits,
+                    "speech_examples": speech_examples,
+                    "attitudes": attitudes,
+                    "rpg_stats": rpg_stats,
                     "tags": parse_json_field(char.get('tags'), [])
                 },
                 "wyvern": {
@@ -203,12 +217,12 @@ def convert_svartulfr():
                     "type": "npc"
                 }
             }
-        })
-
-        characters_converted.append(converted_entries[-1])
+        }
+        converted_entries.append(entry_obj)
+        characters_converted.append(entry_obj)
         uid_counter += 1
 
-    # 3. Process Locations (119)
+    # 3. Process Locations
     for loc in raw_locations:
         name = loc.get('name') or loc.get('id')
         keys = [name]
@@ -224,7 +238,7 @@ def convert_svartulfr():
 
         entry_id = loc.get('id') or f"loc_{uid_counter}"
 
-        converted_entries.append({
+        entry_obj = {
             "entry_id": entry_id,
             "id": entry_id,
             "uid": uid_counter,
@@ -260,6 +274,8 @@ def convert_svartulfr():
                 "parent_location_id": loc.get('parent_location_id'),
                 "environment_id": loc.get('environment_id'),
                 "tags": tags,
+                "included_lexicon_entries": parse_json_field(loc.get('included_lexicon_entries'), []),
+                "excluded_lexicon_entries": parse_json_field(loc.get('excluded_lexicon_entries'), []),
                 "wyvern": {
                     "priority": 10,
                     "position": "before_char",
@@ -267,12 +283,12 @@ def convert_svartulfr():
                     "type": "location"
                 }
             }
-        })
-
-        locations_converted.append(converted_entries[-1])
+        }
+        converted_entries.append(entry_obj)
+        locations_converted.append(entry_obj)
         uid_counter += 1
 
-    # 4. Process Environments (13)
+    # 4. Process Environments
     for env in raw_environments:
         name = env.get('name') or env.get('id')
         keys = [name]
@@ -288,7 +304,7 @@ def convert_svartulfr():
 
         entry_id = env.get('id') or f"env_{uid_counter}"
 
-        converted_entries.append({
+        entry_obj = {
             "entry_id": entry_id,
             "id": entry_id,
             "uid": uid_counter,
@@ -322,6 +338,7 @@ def convert_svartulfr():
             "source_category": "environments",
             "extensions": {
                 "tags": tags,
+                "included_lexicon_entries": parse_json_field(env.get('included_lexicon_entries'), []),
                 "wyvern": {
                     "priority": 10,
                     "position": "before_char",
@@ -329,12 +346,12 @@ def convert_svartulfr():
                     "type": "location"
                 }
             }
-        })
-
-        environments_converted.append(converted_entries[-1])
+        }
+        converted_entries.append(entry_obj)
+        environments_converted.append(entry_obj)
         uid_counter += 1
 
-    # 5. Process Scenarios (3)
+    # 5. Process Scenarios
     for scen in raw_scenarios:
         name = scen.get('name') or scen.get('id')
         keys = [name]
@@ -350,7 +367,7 @@ def convert_svartulfr():
 
         entry_id = scen.get('id') or f"scen_{uid_counter}"
 
-        converted_entries.append({
+        entry_obj = {
             "entry_id": entry_id,
             "id": entry_id,
             "uid": uid_counter,
@@ -385,6 +402,7 @@ def convert_svartulfr():
             "extensions": {
                 "environment_id": scen.get('environment_id'),
                 "location_id": scen.get('location_id'),
+                "premade_scenes": parse_json_field(scen.get('premade_scenes'), []),
                 "tags": tags,
                 "wyvern": {
                     "priority": 10,
@@ -393,9 +411,145 @@ def convert_svartulfr():
                     "type": "event"
                 }
             }
-        })
+        }
+        converted_entries.append(entry_obj)
+        scenarios_converted.append(entry_obj)
+        uid_counter += 1
 
-        scenarios_converted.append(converted_entries[-1])
+    # 6. Process Maps
+    for m in raw_maps:
+        name = m.get('name') or m.get('id')
+        keys = [name, f"Map of {name}", f"Mappa di {name}"]
+        tags = parse_json_field(m.get('tags'), [])
+        for t in tags:
+            if isinstance(t, str) and t.strip() and t.strip() not in keys:
+                keys.append(t.strip())
+
+        content = m.get('description') or f"Cartographic map of {name}."
+        if m.get('image_url'):
+            content += f"\nMap Asset: {m.get('image_url')}"
+
+        entry_id = m.get('id') or f"map_{uid_counter}"
+
+        entry_obj = {
+            "entry_id": entry_id,
+            "id": entry_id,
+            "uid": uid_counter,
+            "name": name,
+            "comment": f"Map: {name}",
+            "keys": keys,
+            "key": keys,
+            "secondary_keys": [],
+            "keysecondary": [],
+            "key_logic": "AND_ANY",
+            "selectiveLogic": 0,
+            "selective": False,
+            "content": content,
+            "enabled": True,
+            "disable": False,
+            "constant": False,
+            "position": "before_char",
+            "priority": 10,
+            "insertion_order": 100,
+            "order": 100,
+            "case_sensitive": False,
+            "caseSensitive": False,
+            "whole_words_only": True,
+            "matchWholeWords": True,
+            "scan_persona": False,
+            "matchPersonaDescription": False,
+            "delay": 0,
+            "sticky": 0,
+            "cooldown": 0,
+            "type": "location",
+            "source_category": "maps",
+            "extensions": {
+                "map_type": m.get('map_type'),
+                "image_url": m.get('image_url'),
+                "pins": parse_json_field(m.get('pins'), []),
+                "connections": parse_json_field(m.get('connections'), []),
+                "tags": tags,
+                "wyvern": {
+                    "priority": 10,
+                    "position": "before_char",
+                    "insertion_order": 100,
+                    "type": "location"
+                }
+            }
+        }
+        converted_entries.append(entry_obj)
+        maps_converted.append(entry_obj)
+        uid_counter += 1
+
+    # 7. Process Eras
+    for era in raw_eras:
+        name = era.get('name') or era.get('id')
+        keys = [name, f"{name} Era", "Timeline Era"]
+        tags = parse_json_field(era.get('tags'), [])
+        for t in tags:
+            if isinstance(t, str) and t.strip() and t.strip() not in keys:
+                keys.append(t.strip())
+
+        content = f"[{name.upper()}]\n"
+        if era.get('start_position') is not None:
+            content += f"Timeline Hours Range: {era.get('start_position')} to {era.get('end_position') if era.get('end_position') is not None else 'Current World Age'}\n"
+        if era.get('description'):
+            content += f"\nDescription: {era.get('description')}\n"
+        if era.get('context_description'):
+            content += f"\nContext: {era.get('context_description')}\n"
+        if era.get('final_instructions'):
+            content += f"\n[ERA INSTRUCTIONS: {era.get('final_instructions')}]\n"
+
+        entry_id = era.get('id') or f"era_{uid_counter}"
+
+        entry_obj = {
+            "entry_id": entry_id,
+            "id": entry_id,
+            "uid": uid_counter,
+            "name": name,
+            "comment": f"Timeline Era: {name}",
+            "keys": keys,
+            "key": keys,
+            "secondary_keys": [],
+            "keysecondary": [],
+            "key_logic": "AND_ANY",
+            "selectiveLogic": 0,
+            "selective": False,
+            "content": content.strip(),
+            "enabled": True,
+            "disable": False,
+            "constant": False,
+            "position": "before_char",
+            "priority": 10,
+            "insertion_order": 100,
+            "order": 100,
+            "case_sensitive": False,
+            "caseSensitive": False,
+            "whole_words_only": True,
+            "matchWholeWords": True,
+            "scan_persona": False,
+            "matchPersonaDescription": False,
+            "delay": 0,
+            "sticky": 0,
+            "cooldown": 0,
+            "type": "concept",
+            "source_category": "eras",
+            "extensions": {
+                "start_position": era.get('start_position'),
+                "end_position": era.get('end_position'),
+                "color": era.get('color'),
+                "display_order": era.get('display_order'),
+                "tags": tags,
+                "wyvern": {
+                    "priority": 10,
+                    "position": "before_char",
+                    "insertion_order": 100,
+                    "type": "concept"
+                }
+            }
+        }
+        converted_entries.append(entry_obj)
+        eras_converted.append(entry_obj)
         uid_counter += 1
 
     # Helper to reindex entries per file
@@ -424,11 +578,13 @@ def convert_svartulfr():
             "lexicon": len(raw_lexicon),
             "locations": len(raw_locations),
             "environments": len(raw_environments),
-            "scenarios": len(raw_scenarios)
+            "scenarios": len(raw_scenarios),
+            "maps": len(raw_maps),
+            "eras": len(raw_eras)
         },
         "entries": reindex_entries(converted_entries),
         "extensions": {
-            "creator": "Wyldfire",
+            "creator": "Wyvern Web API Sync",
             "source_world_id": world.get('id', '')
         }
     }
@@ -469,7 +625,7 @@ def convert_svartulfr():
                 "counts": {"total": len(sub_entries)},
                 "entries": reindex_entries(sub_entries),
                 "extensions": {
-                    "creator": "Wyldfire",
+                    "creator": "Wyvern Web API Sync",
                     "source_world_id": world.get('id', ''),
                     "part": part_num,
                     "total_parts": num_parts
@@ -480,19 +636,20 @@ def convert_svartulfr():
                 json.dump(part_lorebook, f, indent=2, ensure_ascii=False)
             print(f"Saved Unified Lorebook Part {part_num}: {part_path} ({len(sub_entries)} entries)")
 
-    # Generate Clean Modular Exports (Fully Valid Individual Lorebooks)
+    # Save Raw Database Dumps in exports/raw_db_dumps/
     exports_dir = os.path.join(base_dir, 'exports')
-    os.makedirs(exports_dir, exist_ok=True)
-    entities_dir = os.path.join(exports_dir, 'entities')
-    os.makedirs(entities_dir, exist_ok=True)
     raw_dumps_dir = os.path.join(exports_dir, 'raw_db_dumps')
+    entities_dir = os.path.join(exports_dir, 'entities')
     os.makedirs(raw_dumps_dir, exist_ok=True)
+    os.makedirs(entities_dir, exist_ok=True)
 
-    # Save raw database dumps in raw_db_dumps/
+    with open(os.path.join(raw_dumps_dir, 'raw_world.json'), 'w', encoding='utf-8') as f:
+        json.dump(world, f, indent=2, ensure_ascii=False)
+
     clean_chars = []
     for c in raw_characters:
         item = dict(c)
-        for field in ['keys', 'secondary_keys', 'nicknames', 'titles', 'outfits', 'speech_examples', 'rpg_stats', 'tags', 'default_inventory', 'default_creatures', 'battle_rewards']:
+        for field in ['keys', 'secondary_keys', 'nicknames', 'titles', 'outfits', 'speech_examples', 'attitudes', 'rpg_stats', 'tags', 'community_tags', 'default_inventory', 'default_creatures', 'gallery_images', 'character_traits']:
             if field in item:
                 item[field] = parse_json_field(item[field], {} if 'stats' in field else [])
         clean_chars.append(item)
@@ -532,17 +689,37 @@ def convert_svartulfr():
     clean_lex = []
     for lx in raw_lexicon:
         item = dict(lx)
-        for field in ['keys', 'secondary_keys', 'extensions']:
+        for field in ['keys', 'secondary_keys', 'extensions', 'party_conditions']:
             if field in item:
                 item[field] = parse_json_field(item[field], {} if field == 'extensions' else [])
         clean_lex.append(item)
     with open(os.path.join(raw_dumps_dir, 'raw_lexicon.json'), 'w', encoding='utf-8') as f:
         json.dump(clean_lex, f, indent=2, ensure_ascii=False)
 
+    clean_maps = []
+    for m in raw_maps:
+        item = dict(m)
+        for field in ['tags', 'pins', 'connections']:
+            if field in item:
+                item[field] = parse_json_field(item[field], [])
+        clean_maps.append(item)
+    with open(os.path.join(raw_dumps_dir, 'raw_maps.json'), 'w', encoding='utf-8') as f:
+        json.dump(clean_maps, f, indent=2, ensure_ascii=False)
+
+    clean_eras = []
+    for er in raw_eras:
+        item = dict(er)
+        for field in ['tags', 'type_effectiveness']:
+            if field in item:
+                item[field] = parse_json_field(item[field], [])
+        clean_eras.append(item)
+    with open(os.path.join(raw_dumps_dir, 'raw_eras.json'), 'w', encoding='utf-8') as f:
+        json.dump(clean_eras, f, indent=2, ensure_ascii=False)
+
     # Modular Lorebook Helper
     def export_lorebook_file(filename, name, desc, tag, entries_list, extra_ext=None):
         ext = {
-            "creator": "Wyldfire",
+            "creator": "Wyvern Web API Sync",
             "source_world_id": world.get('id', '')
         }
         if extra_ext:
@@ -568,8 +745,8 @@ def convert_svartulfr():
             json.dump(lb, f, indent=2, ensure_ascii=False)
         print(f"Exported valid Lorebook: {filepath} ({len(entries_list)} entries)")
 
-    # 1. Characters (360 entries -> Split into 2 parts of 180 entries each, plus complete backup)
-    char_mid = len(characters_converted) // 2
+    # 1. Characters (365 entries -> Split into 2 parts: 183 and 182, plus complete archive)
+    char_mid = (len(characters_converted) + 1) // 2
     chars_p1 = characters_converted[:char_mid]
     chars_p2 = characters_converted[char_mid:]
 
@@ -594,21 +771,21 @@ def convert_svartulfr():
     export_lorebook_file(
         "Svartulfr_Characters_Complete.json",
         "Svartúlfr - Characters (Complete Archive)",
-        "Personaggi e NPC del mondo Svartúlfr - Raccolta completa non splittata (360 personaggi)",
+        f"Personaggi e NPC del mondo Svartúlfr - Raccolta completa non splittata ({len(characters_converted)} personaggi)",
         "Characters",
         characters_converted
     )
 
-    # 2. Lexicon (250 entries -> Unified file + 2 parts of 125 entries each)
+    # 2. Lexicon (254 entries -> Unified file + 2 parts of 127 entries each)
     export_lorebook_file(
         "Svartulfr_Lexicon.json",
         "Svartúlfr - Lexicon",
-        "Voci di lore, magia, fazioni e storia di Svartúlfr (Completo, 250 voci)",
+        f"Voci di lore, magia, fazioni e storia di Svartúlfr (Completo, {len(lexicon_converted)} voci)",
         "Lexicon",
         lexicon_converted
     )
 
-    lex_mid = len(lexicon_converted) // 2
+    lex_mid = (len(lexicon_converted) + 1) // 2
     lex_p1 = lexicon_converted[:lex_mid]
     lex_p2 = lexicon_converted[lex_mid:]
 
@@ -630,7 +807,7 @@ def convert_svartulfr():
         {"part": 2, "total_parts": 2}
     )
 
-    # 3. Locations (119 entries <= 250)
+    # 3. Locations (135 entries <= 250)
     export_lorebook_file(
         "Svartulfr_Locations.json",
         "Svartúlfr - Locations",
@@ -639,7 +816,7 @@ def convert_svartulfr():
         locations_converted
     )
 
-    # 4. Environments (13 entries <= 250)
+    # 4. Environments (2 entries <= 250)
     export_lorebook_file(
         "Svartulfr_Environments.json",
         "Svartúlfr - Environments",
@@ -648,7 +825,7 @@ def convert_svartulfr():
         environments_converted
     )
 
-    # 5. Scenarios (3 entries <= 250)
+    # 5. Scenarios (9 entries <= 250)
     export_lorebook_file(
         "Svartulfr_Scenarios.json",
         "Svartúlfr - Scenarios",
@@ -657,13 +834,33 @@ def convert_svartulfr():
         scenarios_converted
     )
 
+    # 6. Maps (2 entries <= 250)
+    export_lorebook_file(
+        "Svartulfr_Maps.json",
+        "Svartúlfr - Maps",
+        "Mappe cartografiche e collegamenti geografici di Svartúlfr",
+        "Maps",
+        maps_converted
+    )
+
+    # 7. Eras (7 entries <= 250)
+    export_lorebook_file(
+        "Svartulfr_Eras.json",
+        "Svartúlfr - Eras",
+        "Ere storiche e suddivisione cronologica del World Clock di Svartúlfr",
+        "Eras",
+        eras_converted
+    )
+
     print("\n=== CONVERSION SUMMARY ===")
     print(f"Total processed: {uid_counter} items")
-    print(f"  - Characters:   {len(characters_converted)} (Exported as Part1: {len(chars_p1)}, Part2: {len(chars_p2)}, Complete: {len(characters_converted)})")
-    print(f"  - Lexicon:      {len(lexicon_converted)} (Exported as Full: {len(lexicon_converted)}, Part1: {len(lex_p1)}, Part2: {len(lex_p2)})")
+    print(f"  - Characters:   {len(characters_converted)} (Part1: {len(chars_p1)}, Part2: {len(chars_p2)}, Complete: {len(characters_converted)})")
+    print(f"  - Lexicon:      {len(lexicon_converted)} (Part1: {len(lex_p1)}, Part2: {len(lex_p2)}, Complete: {len(lexicon_converted)})")
     print(f"  - Locations:    {len(locations_converted)}")
     print(f"  - Environments: {len(environments_converted)}")
     print(f"  - Scenarios:    {len(scenarios_converted)}")
+    print(f"  - Maps:         {len(maps_converted)}")
+    print(f"  - Eras:         {len(eras_converted)}")
 
 if __name__ == '__main__':
     convert_svartulfr()
