@@ -1,0 +1,1197 @@
+<p><strong>User</strong> : Ottima domanda. Vediamo cosa abbiamo già progettato cosa manca.
+toolName: file_search
+status: success
+file_pattern: engine/<strong>/*.js
+toolName: file_search
+status: success
+file_pattern: engine/</strong>/<em>.ts
+toolName: file_search
+status: success
+file_pattern: engine/**/</em>.mjs
+toolName: file_search
+status: success
+file_pattern: exports/<strong>/*.js
+toolName: file_search
+status: success
+file_pattern: scripts/</strong>/*
+toolName: file_search
+status: success
+file_pattern: src/<strong>/*
+Zero file JS/TS. Ora vediamo cosa contiene attualmente la cartella engine/:
+toolName: view_folder
+status: success
+d:\SvartulfrVerse\engine
+toolName: file_search
+status: success
+file_pattern: exports/</strong>/*
+La risposta è chiara:
+<strong>Non esiste ancora nessun architettura JS.</strong>  La Fase 17 ha prodotto solo 5 documenti markdown di specifica (E_Runtime_architecture, E_Retrieval_Architecture, E_Context_Compilation_Pipeline, E_Character_Loading_Policy, E_Runtime_Authority_Resolution). Sono blueprint di design — non codice eseguibile.</p>
+<h4>Stato Attuale</h4>
+<pre><code>Phase 17 (Engine Design)     → ✅ COMPLETE (5 spec markdown)
+Phase 18 (Bot Exporter)      → 🟡 SOLO test export statico (2 file in exports/)
+Runtime JS/TS                 → ❌ ZERO file
+JS Engine Architecture        → ❌ NON PROGETTATA
+
+</code></pre>
+<h4>Cosa Manca Per Il Runtime</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Componente</th><th>Stato</th></tr></thead><tbody><tr><td>5 Engine specs (E_17.0–17.4)</td><td>✅ Documentati</td></tr><tr><td>Export mapping matrix</td><td>✅ Definito in markdown</td></tr><tr><td>Export minimale (test Scenario 1)</td><td>✅ Markdown statico</td></tr><tr><td><strong>JS Engine Architecture</strong></td><td>❌ DA PROGETTARE</td></tr><tr><td><strong>Runtime state manager</strong>  (session JSON, Ex tracking, beat progression)</td><td>❌</td></tr><tr><td><strong>Retrieval pipeline</strong>  (Entry Mode Detection → Context → Compilation)</td><td>❌</td></tr><tr><td><strong>Bot JSON schema</strong>  (output strutturato per JanitorAI/SillyTavern)</td><td>❌</td></tr><tr><td><strong>Exporter adapter</strong>  (repository data → platform card)</td><td>❌</td></tr><tr><td><strong>State persistence</strong>  (lorebook key management, trigger rules)</td><td>❌</td></tr></tbody></table>
+<h4>Due Opzioni</h4>
+<ol>
+<li><strong>Progettare l&#39;architettura JS prima</strong>  — Creare un documento E_18.0_JS_Engine_Architecture.md che definisce moduli, API, state machine, quindi implementare. Più strutturato, ma blocca l&#39;export finché il design non è completo.</li>
+<li><strong>Reverse-engineer dall&#39;export</strong>  — Partire dal test export che hai appena creato, verificarlo funzionante su JanitorAI, e da lì derivare il runtime necessario. Più iterativo, ma valida ogni layer in produzione prima di costruire il successivo.
+Vuoi progettare l&#39;architettura JS engine completa prima, o preferisci iterare per export → test → runtime man mano?
+<strong>Gemini</strong> : Io sceglierei una terza strada:  <strong>non progettare una JS engine astratta e non partire dall&#39;export. Progettare il runtime target JanitorAI e derivare tutto il resto da lì.</strong>
+Dai documenti che hai raccolto e dai vincoli del runtime JanitorAI, emerge un fatto importante:</li>
+</ol>
+<ul>
+<li>JanitorAI non è un ambiente applicativo.</li>
+<li>Non hai un vero runtime persistente.</li>
+<li>Non hai moduli JS condivisi.</li>
+<li>Non hai state manager centralizzato.</li>
+<li>Hai prompt, lorebook, memoria, trigger e script sandbox ES5 molto limitati.</li>
+<li>I prompt vengono inviati in un ordine preciso (Personality → Memory → Scenario → Advanced Prompt → Recent Messages).
+Quindi il rischio della strada &quot;E_18.0_JS_Engine_Architecture&quot; è costruire un&#39;architettura pensata come se SvartúlfrVerse fosse un&#39;applicazione NodeJS, quando il target reale è un LLM orchestrato da prompt e retrieval.
+Io farei:</li>
+</ul>
+<h5>Fase 18A — Runtime Model</h5>
+<p>Documento:</p>
+<pre><code class="language-text">E_18.0_Runtime_Model.md
+
+</code></pre>
+<p>Definisce:</p>
+<pre><code class="language-text">Input Repository
+      ↓
+Character Loader
+      ↓
+Context Compiler
+      ↓
+Retrieval Engine
+      ↓
+Export Adapter
+      ↓
+JanitorAI Artifact
+
+</code></pre>
+<p>Nessun JS ancora.
+Solo flusso logico.</p>
+<hr>
+<h5>Fase 18B — Canonical Data Schema</h5>
+<p>Definire il JSON canonico interno.
+Esempio:</p>
+<pre><code class="language-json">{
+  &quot;character&quot;: {},
+  &quot;relationships&quot;: [],
+  &quot;beats&quot;: [],
+  &quot;locations&quot;: [],
+  &quot;entries&quot;: [],
+  &quot;visuals&quot;: []
+}
+
+</code></pre>
+<p>Questo diventa la vera sorgente di verità.
+Non JanitorAI.
+Non il markdown.
+Non il lorebook.</p>
+<hr>
+<h5>Fase 18C — Compiler</h5>
+<p>Solo a questo punto:</p>
+<pre><code class="language-text">compiler/
+
+</code></pre>
+<p>con moduli:</p>
+<pre><code class="language-text">loadCharacter()
+resolveRelationships()
+buildContext()
+compileLorebook()
+exportJanitor()
+
+</code></pre>
+<p>Qui nasce il primo codice.</p>
+<hr>
+<h5>Perché</h5>
+<p>Attualmente avete:</p>
+<pre><code class="language-text">Repository Architecture     ✅
+Retrieval Architecture      ✅
+Context Compilation         ✅
+Authority Resolution        ✅
+Export Mapping              ✅
+
+</code></pre>
+<p>Manca soltanto:</p>
+<pre><code class="language-text">Canonical Runtime Model
+
+</code></pre>
+<p>Se salti direttamente al JS, finirai inevitabilmente per ridefinire:</p>
+<ul>
+<li>Authority Matrix</li>
+<li>Retrieval Pipeline</li>
+<li>Context Compilation
+una seconda volta dentro il codice.
+Se invece definisci prima il Runtime Model, il codice diventa quasi meccanico da scrivere.
+In altre parole:</li>
+</ul>
+<pre><code class="language-text">NON
+
+Spec → JS
+
+MA
+
+Spec → Runtime Model → Data Schema → JS
+
+</code></pre>
+<p>Per un progetto grande come SvartúlfrVerse, questa sequenza riduce enormemente il rischio di dover rifattorizzare metà engine quando inizieranno i test reali su JanitorAI.
+<strong>User</strong> : Perfetto. Approccio rigoroso — Spec → Runtime Model → Data Schema → JS. Nessuna ridefinizione, ogni layer consuma il precedente. Parto con Fase 18A.
+Prima, consolido tutti i vincoli JanitorAI che emergono dalle spec e dall&#39;EXPORT_MAPPING_MATRIX:
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\engine\E_Runtime_Architecture.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\engine\E_Runtime_Authority_Resolution.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\knowledge\Lore_Worldbuilding\EXPORT_MAPPING_MATRIX.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\engine\E_Runtime_Architecture.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\engine\E_Context_Compilation_Pipeline.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\engine\E_Retrieval_Architecture.md
+Ho tutti i dati necessari. Ora scrivo E_18.0 — il documento Runtime Model che collega le spec esistenti al target JanitorAI senza duplicare nulla:
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\engine\E_Runtime_Architecture.md
+toolName: todo_write
+status: failed
+Todos updated: 0 items
+toolName: todo_write
+status: success
+Todos updated: 2 items
+toolName: Write
+status: success
+filePath: d:\SvartulfrVerse\engine\E_18.0_Runtime_Model.md
+changes: undefined
+toolName: todo_write
+status: success
+Todos updated: 2 items
+toolName: run_command
+status: success
+command: cd d:\SvartulfrVerse; git add engine/E_18.0_Runtime_Model.md; git status undefined
+toolName: run_command
+status: success
+command: cd d:\SvartulfrVerse; git add exports/test_phase18_s1/; git commit -m &quot;feat: add E_18.0 Runtime Model + Phase 18 test export
+E_18.0_Runtime_Model.md:</p>
+<ul>
+<li>Pipeline: Input Repository → Character Loader → Context Compiler → Retrieval Engine → Export Adapter → JanitorAI Artifact</li>
+<li>JanitorAI runtime constraints (no persistent state, no shared JS, prompt-only)</li>
+<li>Session state model (JSON) with transitions: SCENARIO_START, BEAT_COMPLETE, SCENARIO_END, LOCATION_CHANGE</li>
+<li>Anti-redundancy rules: E_18.0 consumes E_17.0-17.4, does NOT duplicate</li>
+<li>Prompt slot mapping: System/Personality/Memory/Scenario/Lorebook/Post-History/ES5
+exports/test_phase18_s1/:</li>
+<li>DJFREQUENCY_S1_FanSpill.md: minimal bot export for Scenario 1 test</li>
+<li>TEST_INSTRUCTIONS.md: 7-test checklist for Phase 18 validation&quot; undefined
+toolName: run_command
+status: success
+command: cd d:\SvartulfrVerse; git push origin main undefined
+toolName: todo_write
+status: success
+Todos updated: 2 items
+Creato <a href="about:invalid#zCSafez">E_18.0_Runtime_Model.md</a> — Fase 18A completata.</li>
+</ul>
+<h4>Riepilogo Pipeline</h4>
+<pre><code>Input Repository (database/)
+       ↓
+Character Loader (E_17.3 + ADR-008 entry mode)
+       ↓
+Context Compiler (E_17.2 tiers + E_17.4 authority resolution)
+       ↓
+Retrieval Engine (lorebook trigger + context matching)
+       ↓
+Export Adapter (JanitorAI prompt slots + provenance)
+       ↓
+JanitorAI Artifact (Character Card + Lorebook JSON)
+
+</code></pre>
+<h4>Decisioni Chiave</h4>
+<p><strong>Cosa E_18.0 NON duplica</strong>  (consuma dalle spec esistenti):</p>
+<ul>
+<li>Authority Matrix → E_17.4</li>
+<li>Retrieval Pipeline → E_17.1</li>
+<li>Token Budget → E_17.2</li>
+<li>Loading Packages → E_17.3</li>
+<li>Export Field Mapping → EXPORT_MAPPING_MATRIX
+<strong>Cosa E_18.0 aggiunge</strong>  (solo nuovo):</li>
+<li>4-fase pipeline orchestration</li>
+<li>JanitorAI prompt slot mapping (System → Personality → Memory → Scenario → Lorebook → Post-History → ES5)</li>
+<li>Session state JSON con 4 transizioni</li>
+<li>Anti-redundancy rules esplicite</li>
+</ul>
+<h4>Prossimo Passo</h4>
+<p>Fase 18B —  <strong>Canonical Data Schema</strong>  (il JSON canonico interno che il compiler consuma). Dovremo definire lo schema completo per character, relationships, beats, locations, entries, visuals.
+Vuoi procedere con 18B?
+<strong>Gemini</strong> : Sì, e qui conviene essere molto disciplinati perché  <strong>18B è probabilmente il documento più importante dell&#39;intera fase runtime</strong> .
+La tentazione naturale è modellare il repository esistente:</p>
+<pre><code class="language-text">character
+relationships
+beats
+locations
+entries
+visuals
+
+</code></pre>
+<p>Ma quello descrive l&#39;archivio, non necessariamente il runtime.
+Io partirei da una domanda diversa:
+Qual è il minimo insieme di oggetti necessari affinché Character Loader, Context Compiler, Retrieval Engine ed Export Adapter possano operare senza conoscere il repository?
+Se guardo E_17.0–17.4, il runtime sembra ruotare attorno a sei domini:</p>
+<pre><code class="language-json">{
+  &quot;entity&quot;: {},
+  &quot;relationship&quot;: {},
+  &quot;context&quot;: {},
+  &quot;beat&quot;: {},
+  &quot;knowledge&quot;: {},
+  &quot;asset&quot;: {}
+}
+
+</code></pre>
+<p>Dove:</p>
+<ul>
+<li>entity = personaggi, NPC, fazioni, creature, location</li>
+<li>relationship = collegamenti tra entity</li>
+<li>context = stato runtime attuale</li>
+<li>beat = progressione narrativa</li>
+<li>knowledge = retrieval units</li>
+<li>asset = immagini, visual, export resources
+Questo evita un problema futuro:</li>
+</ul>
+<pre><code class="language-text">oggi:
+character
+location
+
+domani:
+faction
+organization
+species
+vehicle
+
+</code></pre>
+<p>Con uno schema centrato su entity non devi rifattorizzare il compiler.</p>
+<hr>
+<p>Io strutturerei E_18.0B in tre livelli.</p>
+<h5>Layer 1 — Repository Objects</h5>
+<p>Oggetti persistenti.</p>
+<pre><code class="language-json">{
+  &quot;entity&quot;: {},
+  &quot;relationship&quot;: {},
+  &quot;knowledge&quot;: {},
+  &quot;asset&quot;: {},
+  &quot;beat_template&quot;: {}
+}
+
+</code></pre>
+<hr>
+<h5>Layer 2 — Runtime Objects</h5>
+<p>Generati dal loader.</p>
+<pre><code class="language-json">{
+  &quot;session&quot;: {},
+  &quot;active_context&quot;: {},
+  &quot;active_beats&quot;: [],
+  &quot;retrieved_knowledge&quot;: []
+}
+
+</code></pre>
+<hr>
+<h5>Layer 3 — Export Objects</h5>
+<p>Consumati dall&#39;adapter.</p>
+<pre><code class="language-json">{
+  &quot;personality_block&quot;: &quot;&quot;,
+  &quot;scenario_block&quot;: &quot;&quot;,
+  &quot;lorebook_entries&quot;: [],
+  &quot;advanced_prompt&quot;: &quot;&quot;,
+  &quot;metadata&quot;: {}
+}
+
+</code></pre>
+<hr>
+<p>Una decisione che prenderei subito:
+<strong>non mettere mai testo compilato dentro gli oggetti repository.</strong>
+Esempio:
+❌</p>
+<pre><code class="language-json">{
+  &quot;character&quot;: {
+    &quot;personality_block&quot;: &quot;...&quot;
+  }
+}
+
+</code></pre>
+<p>✅</p>
+<pre><code class="language-json">{
+  &quot;entity&quot;: {
+    &quot;traits&quot;: [],
+    &quot;speech_profile&quot;: {},
+    &quot;relationships&quot;: []
+  }
+}
+
+</code></pre>
+<p>e il Personality Block viene generato dal compiler.
+Questo mantiene valida la catena:</p>
+<pre><code class="language-text">Repository
+    ↓
+Runtime Model
+    ↓
+Compiler
+    ↓
+Export
+
+</code></pre>
+<p>senza contaminare i livelli.
+Se E_18.0 è l&#39;orchestrazione, E_18.1 (Canonical Data Schema) dovrebbe diventare il  <strong>contratto formale</strong>  che tutti i moduli futuri dovranno rispettare. Dopo quel documento, l&#39;implementazione JS può iniziare quasi senza decisioni architetturali aggiuntive.
+<strong>User</strong> : per aiutare code, direi di dargli uno schema di come agisce janitor e di cosa ci aspettiamo di otrtenere alla fine, ovvero .md con i dati da inserire nel profilo del bot (metadati, personality, scenario, initial messase, example dialog e bio html) e poi i lorebook js per l&#39;infrastuttura dire un core, un world, un lorebook sulla famiglia, il lorebook di jasper e uno specifico dello experience in corso
+<strong>Gemini</strong> : Sì. In realtà credo che per aiutare Codex/Code non basti spiegare il Runtime Model: bisogna definire esplicitamente il  <strong>Runtime Target Contract</strong> .
+Al momento state descrivendo come funziona SvartúlfrVerse.
+Manca ancora la descrizione formale di:</p>
+<pre><code class="language-text">Cosa riceve JanitorAI
+Cosa può fare JanitorAI
+Cosa deve produrre l&#39;exporter
+
+</code></pre>
+<p>Dai materiali JanitorAI e dalle guide emerge che il runtime effettivo è composto da pochi blocchi fondamentali: Personality, Scenario, Initial Message, Example Dialogues, Chat Memory, Lorebooks e Script ES5. Inoltre l&#39;ordine di invio influenza il peso delle istruzioni.
+Io aggiungerei prima di E_18.1 un documento nuovo:</p>
+<pre><code class="language-text">E_18.0A_Runtime_Target_Contract.md
+
+</code></pre>
+<p>con qualcosa del genere.</p>
+<pre><code class="language-text">Repository
+    ↓
+Compiler
+    ↓
+JanitorAI Export Package
+
+</code></pre>
+<p>Output obbligatorio:</p>
+<pre><code class="language-text">Bot/
+ ├─ metadata.md
+ ├─ personality.md
+ ├─ scenario.md
+ ├─ initial_message.md
+ ├─ example_dialogue.md
+ └─ bio.html
+
+Lorebooks/
+ ├─ LB_Core.json
+ ├─ LB_World.json
+ ├─ LB_Family.json
+ ├─ LB_Character_Jasper.json
+ └─ LB_Experience_&lt;id&gt;.json
+
+Scripts/
+ └─ optional ES5 runtime
+
+</code></pre>
+<p>Poi definire il ruolo di ogni componente.
+| Output | Scopo |
+| ------ | ------ |
+| metadata | nome, tag, immagine, classificazione |
+| personality | identità permanente |
+| scenario | situazione attuale |
+| initial_message | hook iniziale |
+| example_dialogue | voice training |
+| bio.html | presentazione utente |
+| LB_Core | regole SvartúlfrVerse |
+| LB_World | worldbuilding globale |
+| LB_Family | famiglia rilevante |
+| LB_Character | personaggio principale |
+| LB_Experience | contenuto specifico dello scenario |</p>
+<p>Questa separazione è coerente con le best practice JanitorAI:</p>
+<ul>
+<li>Personality = identità.</li>
+<li>Scenario = contesto.</li>
+<li>Example Dialogue = voce.</li>
+<li>Lorebook = conoscenza recuperabile tramite trigger.
+A quel punto E_18.1 non definisce più genericamente:</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;character&quot;: {},
+  &quot;relationships&quot;: {},
+  &quot;beats&quot;: {}
+}
+
+</code></pre>
+<p>ma può dichiarare esplicitamente:</p>
+<pre><code class="language-text">Questo schema deve essere sufficiente a generare:
+- personality.md
+- scenario.md
+- initial_message.md
+- example_dialogue.md
+- bio.html
+- LB_Core.json
+- LB_World.json
+- LB_Family.json
+- LB_Character.json
+- LB_Experience.json
+
+</code></pre>
+<p>Questa è la parte che renderà il lavoro di Code molto più semplice, perché il compiler non dovrà &quot;indovinare&quot; il target finale: il contratto di esportazione sarà definito prima ancora dello schema dati. In pratica:</p>
+<pre><code class="language-text">Runtime Model
+      ↓
+Runtime Target Contract
+      ↓
+Canonical Data Schema
+      ↓
+Compiler
+      ↓
+JanitorAI Package
+
+</code></pre>
+<p>Così ogni campo dello schema potrà essere tracciato fino a una destinazione concreta nell&#39;export finale.
+<strong>User</strong> : ok, controlla online e nelle fonti il metodo migliore per agire, e le convenzioni utilizzate dalla community di janitor e poi crea un prompt
+<strong>Gemini</strong> : Dopo aver confrontato le guide JanitorAI, il tutorial ufficiale della community e varie discussioni tra creator, emerge un consenso abbastanza forte:</p>
+<ol>
+<li><strong>Non progettare partendo dal repository.</strong></li>
+<li><strong>Non progettare partendo dal lorebook.</strong></li>
+<li><strong>Progettare partendo da ciò che JanitorAI effettivamente riceve nel prompt.</strong></li>
+<li><strong>Usare i lorebook per conoscenza recuperabile, non per identità del personaggio.</strong></li>
+<li><strong>Usare Example Dialogue come principale strumento di voice training.</strong></li>
+<li><strong>Mantenere Personality e Scenario relativamente compatti e comportamentali, non enciclopedici.</strong>
+Per SvartúlfrVerse, prima di E_18.1 io farei generare a Code un documento intermedio che definisca il target reale dell&#39;engine.
+Puoi usare questo prompt.</li>
+</ol>
+<h3>TASK: Create E_18.0A_Runtime_Target_Contract.md</h3>
+<p>You are working on the SvartúlfrVerse Runtime Architecture.
+IMPORTANT:
+Do NOT design new systems.
+Do NOT redesign existing engine specifications.
+Do NOT modify E_17.0–17.4.
+Your task is ONLY to define the Runtime Target Contract that connects the existing engine architecture to the final JanitorAI export package.</p>
+<hr>
+<h4>Context</h4>
+<p>Existing architecture already defines:</p>
+<ul>
+<li>Runtime Architecture</li>
+<li>Retrieval Architecture</li>
+<li>Context Compilation Pipeline</li>
+<li>Character Loading Policy</li>
+<li>Runtime Authority Resolution</li>
+<li>Export Mapping Matrix
+These documents remain authoritative.
+This document must consume them.
+It must not duplicate them.</li>
+</ul>
+<hr>
+<h4>Objective</h4>
+<p>Define exactly:</p>
+<ol>
+<li>What JanitorAI receives</li>
+<li>What JanitorAI can actually use</li>
+<li>What the SvartúlfrVerse compiler must generate</li>
+<li>How repository data maps into final runtime artifacts
+The goal is to establish a stable contract before defining the Canonical Data Schema.</li>
+</ol>
+<hr>
+<h4>Runtime Reality</h4>
+<p>Assume JanitorAI operates through:</p>
+<ul>
+<li>Personality</li>
+<li>Scenario</li>
+<li>Initial Message</li>
+<li>Example Dialogue</li>
+<li>Chat Memory</li>
+<li>Lorebooks</li>
+<li>Optional ES5 Scripts
+Assume:</li>
+<li>No shared JS runtime</li>
+<li>No persistent application state</li>
+<li>No database access</li>
+<li>No server-side execution</li>
+<li>Lorebooks are retrieval mechanisms</li>
+<li>Example Dialogue is voice-training</li>
+<li>Personality defines identity</li>
+<li>Scenario defines current context</li>
+</ul>
+<hr>
+<h4>Required Output Package</h4>
+<p>Define the canonical export package:
+Bot/</p>
+<ul>
+<li>metadata.md</li>
+<li>personality.md</li>
+<li>scenario.md</li>
+<li>initial_message.md</li>
+<li>example_dialogue.md</li>
+<li>bio.html
+Lorebooks/</li>
+<li>LB_Core.json</li>
+<li>LB_World.json</li>
+<li>LB_Family.json</li>
+<li>LB_Character_</li>
+<li>LB_Experience_</li>
+<li>optional ES5 runtime scripts</li>
+</ul>
+<hr>
+<h4>For each artifact define</h4>
+<h5>Purpose</h5>
+<p>What role it serves in runtime.</p>
+<h5>Authority Level</h5>
+<p>What information may appear there.</p>
+<h5>Source Data</h5>
+<p>Which repository domains feed it.</p>
+<h5>Compilation Rules</h5>
+<p>How compiler generates it.</p>
+<h5>Runtime Importance</h5>
+<p>Critical / High / Medium / Low</p>
+<hr>
+<h4>Required Section</h4>
+<p>Create a complete mapping table:
+Repository Domain → Runtime Object → Export Artifact → JanitorAI Slot
+Example:
+Entity → Character Runtime Object → personality.md → Personality Field
+Relationship → Relationship Runtime Object → LB_Family.json → Lorebook
+Beat → Active Context → scenario.md → Scenario Field</p>
+<hr>
+<h4>Required Principles</h4>
+<p>Document these explicitly:</p>
+<h5>Identity Lives In Personality</h5>
+<p>Personality owns:</p>
+<ul>
+<li>character identity</li>
+<li>motivations</li>
+<li>behavioral rules</li>
+<li>speech profile
+Never place identity into lorebooks.</li>
+</ul>
+<h5>Voice Lives In Example Dialogue</h5>
+<p>Example dialogue is the primary speech-training mechanism.
+Never rely on lorebooks to teach voice.</p>
+<h5>Context Lives In Scenario</h5>
+<p>Scenario contains:</p>
+<ul>
+<li>current situation</li>
+<li>active experience</li>
+<li>current relationship baseline</li>
+<li>current narrative state</li>
+</ul>
+<h5>Knowledge Lives In Lorebooks</h5>
+<p>Lorebooks contain:</p>
+<ul>
+<li>world knowledge</li>
+<li>family knowledge</li>
+<li>location knowledge</li>
+<li>event knowledge</li>
+<li>experience-specific knowledge
+Lorebooks must not replace Personality or Scenario.</li>
+</ul>
+<h5>Bio Is Presentation Only</h5>
+<p>bio.html has zero runtime authority.
+Used only for user-facing presentation.</p>
+<hr>
+<h4>Deliverable</h4>
+<p>Produce:
+E_18.0A_Runtime_Target_Contract.md
+This document becomes the authoritative bridge between:
+Runtime Model → Canonical Data Schema → Compiler → JanitorAI Export Package
+No implementation. No JSON schema. No code.
+Architecture contract only.
+Questo passaggio è probabilmente più importante di E_18.1 stesso, perché blocca definitivamente il target finale che il compiler dovrà produrre. Tutto il resto (schema dati, compiler, adapter, exporter) diventa una conseguenza meccanica del contratto.
+<strong>User</strong> : alcuni link sono inventati usa le fonti corrette
+<strong>Gemini</strong> : Sì, hai fatto bene a contestare la versione precedente. Alcuni link erano stati dedotti e non verificati.
+Dopo aver controllato le fonti effettivamente reperibili, farei alcune correzioni al prompt.
+Le evidenze più solide che emergono oggi sono:</p>
+<ul>
+<li>La guida di Icehellionx considera Personality e Scenario i due blocchi principali e tratta Example Dialogue come il meccanismo principale per insegnare stile, ritmo e voce.</li>
+<li>La community Janitor tende a considerare Example Dialogue come dimostrazione pratica del comportamento, non come documentazione del personaggio.</li>
+<li>La guida jaitutorial mostra chiaramente che Personality, Scenario, Example Dialogue, Memory e First Message vengono inviati come parti separate del prompt runtime.</li>
+<li>La stessa guida sottolinea che il Character Bio non influenza il comportamento runtime del bot.</li>
+<li>Le convenzioni community convergono sull&#39;idea che identità e tratti permanenti vadano nel Personality, mentre informazioni situazionali o recuperabili vadano in Lorebook/strumenti di retrieval.</li>
+<li>Le discussioni community insistono che Example Dialogue debba mostrare la voce del personaggio e non limitarsi a descriverla.
+Di conseguenza modificherei il blocco &quot;Required Research Sources&quot;.
+Rimuoverei completamente:</li>
+</ul>
+<pre><code class="language-text">https://help.janitorai.com/en/articles/character-creation
+https://help.janitorai.com/en/articles/lorebooks
+https://help.janitorai.com/en/articles/memory
+
+</code></pre>
+<p>perché non sono URL che sono riuscito a verificare direttamente.
+Terrei invece:</p>
+<pre><code class="language-text">Official JanitorAI
+
+https://help.janitorai.com/
+
+Community References
+
+https://jaitutorial.uwu.ai/
+
+https://www.reddit.com/r/JanitorAI_Official/
+
+https://github.com/search?q=janitorai
+https://github.com/topics/janitorai
+
+</code></pre>
+<p>e aggiungerei:</p>
+<pre><code class="language-text">Primary Community Reference
+
+Icehellionx JanitorAI Creation Guide
+(Internal project source)
+
+Secondary Community Reference
+
+Bot Creation Tutorial
+https://jaitutorial.uwu.ai/
+
+Community Validation Sources
+
+https://www.reddit.com/r/JanitorAI_Official/
+
+</code></pre>
+<p>Inoltre aggiungerei una sezione che oggi manca e che è probabilmente la più importante per E_18:</p>
+<pre><code class="language-text">## Mandatory Research Conclusions
+
+The document must explicitly evaluate and classify:
+
+1. Personality
+   - Identity authority
+   - Behavioral authority
+   - Speech authority
+
+2. Scenario
+   - Active-context authority
+   - Relationship-state authority
+   - Narrative-state authority
+
+3. Example Dialogue
+   - Voice-training authority
+   - Formatting-training authority
+   - Interaction-pattern authority
+
+4. Lorebooks
+   - Knowledge authority only
+   - Retrieval-only role
+   - Non-identity role
+
+5. Character Bio
+   - Presentation-only
+   - Zero runtime authority
+
+For each item classify:
+
+- Runtime Critical
+- Runtime Influential
+- Runtime Supportive
+- Runtime Cosmetic
+
+</code></pre>
+<p>Questa aggiunta è coerente sia con la letteratura community che con ciò che stai cercando di ottenere in E_18: definire il contratto runtime reale prima dello schema dati. La vera domanda non è &quot;quali file esportiamo?&quot;, ma &quot;quali slot influenzano realmente il comportamento del modello?&quot;. Le fonti convergono proprio su questo punto.
+<strong>User</strong> : ok ,riscivi il prompt per code tenendo conto di tutto questo.
+<strong>Gemini</strong> :</p>
+<pre><code class="language-markdown"># TASK: Create E_18.0A_Runtime_Target_Contract.md
+
+You are working on the SvartúlfrVerse Runtime Architecture.
+
+IMPORTANT:
+
+- Do NOT design new systems.
+- Do NOT redesign existing engine specifications.
+- Do NOT modify E_17.0–17.4.
+- Do NOT introduce new runtime capabilities.
+- Do NOT assume unsupported JanitorAI features.
+
+Your task is ONLY to define the Runtime Target Contract that connects the existing engine architecture to the final JanitorAI export package.
+
+---
+
+# Context
+
+Existing architecture already defines:
+
+- Runtime Architecture
+- Retrieval Architecture
+- Context Compilation Pipeline
+- Character Loading Policy
+- Runtime Authority Resolution
+- Export Mapping Matrix
+
+These documents remain authoritative.
+
+This document must consume them.
+
+It must not duplicate them.
+
+It must establish the authoritative bridge between:
+
+Repository Canon
+→ Runtime Objects
+→ Compiler Output
+→ JanitorAI Runtime Slots
+
+---
+
+# Objective
+
+Define exactly:
+
+1. What JanitorAI receives
+2. What JanitorAI can actually use
+3. What the SvartúlfrVerse compiler must generate
+4. How repository data maps into final runtime artifacts
+5. Which runtime artifacts actually influence model behavior
+6. Which runtime artifacts are informational only
+
+The goal is to establish a stable runtime contract before defining the Canonical Data Schema.
+
+---
+
+# Runtime Reality
+
+Assume JanitorAI operates through:
+
+- Personality
+- Scenario
+- Initial Message
+- Example Dialogue
+- Chat Memory
+- Lorebooks
+- Optional ES5 Scripts
+
+Assume:
+
+- No shared JS runtime
+- No persistent application state
+- No database access
+- No server-side execution
+- No repository access
+- No cross-script memory
+- No guaranteed script-to-script communication
+- Lorebooks are retrieval mechanisms
+- Example Dialogue is voice training
+- Personality defines identity
+- Scenario defines active context
+
+Runtime behavior must reflect documented JanitorAI behavior and widely accepted community practices.
+
+Do not invent capabilities.
+
+---
+
+# Required Research
+
+Before writing the document, review and align with:
+
+## Official Sources
+
+- https://help.janitorai.com/
+
+## Community References
+
+- https://jaitutorial.uwu.ai/
+- https://www.reddit.com/r/JanitorAI_Official/
+- https://github.com/search?q=janitorai
+- https://github.com/topics/janitorai
+
+## Internal Project Sources
+
+Priority Reference:
+
+- JanitorAI Chatbot Creation Guide (Icehellionx)
+
+Use it as a primary best-practices source where it aligns with observable JanitorAI behavior.
+
+---
+
+# Research Requirements
+
+The document must clearly distinguish:
+
+## Official Platform Behavior
+
+Documented JanitorAI behavior.
+
+## Community Best Practice
+
+Common creator conventions and observed usage patterns.
+
+## SvartúlfrVerse Architectural Decisions
+
+Project-specific decisions built on top of runtime reality.
+
+Never present a project decision as a JanitorAI capability.
+
+Never present a community convention as an official platform feature.
+
+---
+
+# Required Runtime Conclusions
+
+The document must explicitly classify the runtime role of every major JanitorAI slot.
+
+For each slot determine:
+
+- Purpose
+- Runtime Authority
+- Behavioral Influence
+- Compiler Responsibility
+
+Use the following classification system:
+
+- Runtime Critical
+- Runtime Influential
+- Runtime Supportive
+- Runtime Cosmetic
+
+---
+
+# Required Output Package
+
+Define the canonical export package:
+
+Bot/
+
+- metadata.md
+- personality.md
+- scenario.md
+- initial_message.md
+- example_dialogue.md
+- bio.html
+
+Lorebooks/
+
+- LB_Core.json
+- LB_World.json
+- LB_Family.json
+- LB_Character_*.json
+- LB_Experience_*.json
+
+Scripts/
+
+- Optional ES5 runtime scripts
+
+---
+
+# Required Artifact Specification
+
+For EVERY artifact define:
+
+## Purpose
+
+What role it serves during runtime.
+
+## Authority Level
+
+What information is allowed to appear there.
+
+## Source Data
+
+Which repository domains feed it.
+
+## Compilation Rules
+
+How the compiler generates it.
+
+## Runtime Importance
+
+Critical / High / Medium / Low
+
+## Behavioral Influence
+
+Does it directly influence model behavior?
+
+If yes, explain how.
+
+If no, explain why.
+
+---
+
+# Required Runtime Principles
+
+Document these principles as explicit architectural rules.
+
+---
+
+## Identity Lives In Personality
+
+Personality owns:
+
+- character identity
+- motivations
+- personality traits
+- behavioral rules
+- speech profile
+- core interaction patterns
+
+Identity must not be stored in lorebooks.
+
+Identity must not depend on retrieval.
+
+Identity must be available from turn zero.
+
+---
+
+## Voice Lives In Example Dialogue
+
+Example Dialogue is the primary voice-training mechanism.
+
+It teaches:
+
+- speech cadence
+- vocabulary
+- formatting habits
+- interaction style
+- conversational rhythm
+
+Do not rely on lorebooks to teach voice.
+
+Do not rely on scenario to teach voice.
+
+Voice training belongs primarily in Example Dialogue.
+
+---
+
+## Context Lives In Scenario
+
+Scenario contains:
+
+- current situation
+- active experience
+- active relationship baseline
+- active narrative state
+- immediate contextual framing
+
+Scenario defines what is happening now.
+
+Scenario does not redefine identity.
+
+---
+
+## Knowledge Lives In Lorebooks
+
+Lorebooks contain:
+
+- world knowledge
+- location knowledge
+- family knowledge
+- event knowledge
+- experience knowledge
+
+Lorebooks are retrieval systems.
+
+Lorebooks are not identity systems.
+
+Lorebooks are not voice systems.
+
+Lorebooks are not scenario systems.
+
+---
+
+## Initial Message Starts The Experience
+
+Initial Message exists to:
+
+- establish tone
+- establish framing
+- establish first interaction
+- reinforce scenario assumptions
+
+It is onboarding content.
+
+It is not the primary identity authority.
+
+---
+
+## Chat Memory Preserves Long-Term Context
+
+Chat Memory exists to:
+
+- preserve important facts
+- maintain continuity
+- reinforce ongoing state
+
+It supplements runtime memory.
+
+It does not replace Personality.
+
+It does not replace Scenario.
+
+---
+
+## Bio Is Presentation Only
+
+bio.html has zero runtime authority.
+
+It exists solely for:
+
+- presentation
+- discoverability
+- user information
+
+It does not influence model behavior.
+
+---
+
+# Required Runtime Authority Matrix
+
+Create a complete matrix:
+
+| Runtime Slot | Primary Authority | Behavioral Influence | Runtime Importance |
+|--------------|-------------------|-----------------------|--------------------|
+
+Must include:
+
+- Personality
+- Scenario
+- Example Dialogue
+- Initial Message
+- Chat Memory
+- Lorebooks
+- Scripts
+- Bio
+
+---
+
+# Required Repository Mapping Table
+
+Create a complete mapping table:
+
+| Repository Domain | Runtime Object | Export Artifact | JanitorAI Slot |
+
+Examples:
+
+Entity
+→ Character Runtime Object
+→ personality.md
+→ Personality
+
+Relationship
+→ Relationship Runtime Object
+→ LB_Family.json
+→ Lorebook
+
+Beat
+→ Active Context
+→ scenario.md
+→ Scenario
+
+The table must cover all repository domains consumed by export.
+
+---
+
+# Required Compiler Contract
+
+Define:
+
+## Compiler Inputs
+
+What repository layers are consumed.
+
+## Compiler Outputs
+
+What runtime artifacts are generated.
+
+## Compiler Responsibilities
+
+What transformations are allowed.
+
+## Compiler Restrictions
+
+What transformations are prohibited.
+
+The compiler may transform representation.
+
+The compiler may not alter canon.
+
+---
+
+# Required Runtime Reality Section
+
+Create a dedicated section:
+
+## Observed JanitorAI Runtime Behavior
+
+Summarize evidence-supported observations:
+
+- Personality anchors identity
+- Scenario influences active context
+- Example Dialogue strongly influences voice
+- Lorebooks function as retrieval mechanisms
+- Chat Memory reinforces continuity
+- Bio does not meaningfully influence runtime behavior
+
+Clearly identify:
+
+- Officially documented behavior
+- Community-observed behavior
+- SvartúlfrVerse interpretation
+
+---
+
+# Deliverable
+
+Produce:
+
+E_18.0A_Runtime_Target_Contract.md
+
+This document becomes the authoritative bridge between:
+
+Repository Canon
+→ Runtime Model
+→ Compiler
+→ JanitorAI Export Package
+
+No implementation.
+
+No JSON schema.
+
+No code.
+
+No new systems.
+
+Architecture contract only.
+
+</code></pre>
+<p>Le conclusioni principali richieste dal prompt sono supportate sia dalle guide community su come JanitorAI costruisce il prompt runtime e ordina Personality, Scenario, Example Dialogue e Memory, sia dalle best practice consolidate sulla separazione tra identità, contesto, voce e conoscenza.</p>

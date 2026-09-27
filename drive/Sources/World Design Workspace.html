@@ -1,0 +1,1216 @@
+<p><strong>User</strong> :</p>
+<h3>SvartúlfrVerse — World Design Workspace</h3>
+<h4>Scope</h4>
+<p>This conversation manages all World Layer assets.</p>
+<h4>Repository</h4>
+<p>@GitHub https://github.com/Alys5/Progetti/blob/main/database/</p>
+<h4>Primary References</h4>
+<p>Architecture.md ADR_005_World_Composition.md</p>
+<h4>Purpose</h4>
+<p>Develop and maintain:</p>
+<ul>
+<li>W_Contemporary</li>
+<li>W_UrbanFantasy</li>
+<li>W_HighFantasy</li>
+<li>W_NorseMythic</li>
+<li>W_Cyber</li>
+<li>W_Wasteland</li>
+<li>W_Regency</li>
+</ul>
+<h4>Current Status</h4>
+<p>Urban Fantasy decomposition completed.
+Key Finding:
+W_UrbanFantasy currently contains many entries that should belong to W_Contemporary.
+Approved Direction:
+W_Contemporary:</p>
+<ul>
+<li>Locations</li>
+<li>Organizations</li>
+<li>Businesses</li>
+<li>Minor NPCs</li>
+<li>Family Knowledge
+W_UrbanFantasy:</li>
+<li>Species</li>
+<li>Bloodlines</li>
+<li>Pack Structures</li>
+<li>Werewolf Biology</li>
+<li>Kemonomimi Traits</li>
+<li>Supernatural Systems</li>
+</ul>
+<h4>Current Focus</h4>
+<p>Urban Fantasy Cleanup Overlay Purity Improvement
+Target:
+W_Contemporary ≈ 40 entries W_UrbanFantasy ≈ 14 entries</p>
+<h4>Expected Outputs</h4>
+<ul>
+<li>World Lore</li>
+<li>Overlay Systems</li>
+<li>NPC Migration Plans</li>
+<li>Organization Design</li>
+<li>Location Design
+<strong>Gemini</strong> : Workspace World Design attivata.
+Ho recepito come vincolanti:</li>
+<li>Separazione netta tra  <strong>W_Contemporary</strong>  e  <strong>W_UrbanFantasy</strong></li>
+<li>Urban Fantasy come  <strong>overlay</strong> , non come mondo autonomo</li>
+<li>Migrazione di NPC minori, organizzazioni, attività commerciali e luoghi verso Contemporary</li>
+<li>Conservazione in Urban Fantasy esclusivamente di sistemi soprannaturali e metastrutture di specie</li>
+<li>Obiettivo di riduzione:
+<ul>
+<li>W_Contemporary ≈ 40 entry</li>
+<li>W_UrbanFantasy ≈ 14 entry</li>
+</ul>
+</li>
+<li>Conformità ad ADR_005 World Composition</li>
+</ul>
+<h5>Modello Target</h5>
+<h6>W_Contemporary</h6>
+<p>Contiene ciò che esiste e può essere osservato da un cittadino normale.
+Categorie consigliate:</p>
+<pre><code class="language-text">W_Contemporary
+├── Locations
+├── Organizations
+├── Businesses
+├── Families
+├── MinorNPCs
+├── SocialGroups
+├── PublicEvents
+└── RegionalKnowledge
+
+</code></pre>
+<p>Esempi:</p>
+<ul>
+<li>Los Angeles</li>
+<li>Wolf Security Group</li>
+<li>Raven Logistics</li>
+<li>Night Owl Diner</li>
+<li>Alyssa&#39;s Family</li>
+<li>Bartender NPCs</li>
+<li>Police Precincts</li>
+<li>Local Universities</li>
+</ul>
+<hr>
+<h6>W_UrbanFantasy</h6>
+<p>Contiene solo sistemi soprannaturali.
+Categorie consigliate:</p>
+<pre><code class="language-text">W_UrbanFantasy
+├── Species
+├── Bloodlines
+├── PackStructures
+├── SupernaturalBiology
+├── PowerSystems
+├── SupernaturalLaw
+├── HiddenSociety
+└── MythicPhenomena
+
+</code></pre>
+<p>Esempi:</p>
+<ul>
+<li>Werewolves</li>
+<li>Kemonomimi</li>
+<li>Alpha Hierarchy</li>
+<li>Lunar Cycle Effects</li>
+<li>Regeneration Rules</li>
+<li>Bloodline Inheritance</li>
+<li>Veil Protocol</li>
+<li>Spirit Resonance</li>
+</ul>
+<hr>
+<h5>Migrazioni Tipiche</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Attuale</th><th>Destinazione</th></tr></thead><tbody><tr><td>Pack-owned nightclub</td><td>W_Contemporary</td></tr><tr><td>Pack-owned company</td><td>W_Contemporary</td></tr><tr><td>Alpha NPC</td><td>C_* oppure MinorNPC</td></tr><tr><td>Family genealogy</td><td>W_Contemporary</td></tr><tr><td>Werewolf transformation rules</td><td>W_UrbanFantasy</td></tr><tr><td>Bloodline traits</td><td>W_UrbanFantasy</td></tr><tr><td>Clan headquarters building</td><td>W_Contemporary</td></tr><tr><td>Clan supernatural authority</td><td>W_UrbanFantasy</td></tr></tbody></table>
+<hr>
+<h5>Test di Purezza Overlay</h5>
+<p>Una entry deve rimanere in Urban Fantasy solo se risponde a:
+&quot;Questa informazione esiste ancora se tutti gli elementi soprannaturali vengono rimossi?&quot;
+Se la risposta è:</p>
+<ul>
+<li><strong>Sì</strong>  → Contemporary</li>
+<li><strong>No</strong>  → Urban Fantasy
+Esempi:
+| Entry | Risultato |
+| ------ | ------ |
+| Pack Restaurant | Contemporary |
+| Pack Hierarchy | Urban Fantasy |
+| Alpha&#39;s Penthouse | Contemporary |
+| Alpha Bond Mechanic | Urban Fantasy |
+| Security Corporation | Contemporary |
+| Werewolf Regeneration | Urban Fantasy |</li>
+</ul>
+<hr>
+<h5>Target Finale Urban Fantasy (≈14 Entry)</h5>
+<p>Una possibile decomposizione minima:</p>
+<pre><code class="language-text">UF_001_Species
+UF_002_Werewolves
+UF_003_Kemonomimi
+UF_004_Bloodlines
+UF_005_Transformation
+UF_006_Regeneration
+UF_007_MatingBond
+UF_008_AlphaSystem
+UF_009_PackStructure
+UF_010_SupernaturalSenses
+UF_011_LunarInfluence
+UF_012_VeilProtocol
+UF_013_SpiritPhenomena
+UF_014_SupernaturalLaw
+
+</code></pre>
+<p>Questo mantiene l&#39;overlay estremamente pulito e facilmente riutilizzabile sopra qualsiasi Contemporary World.
+Per procedere con la pulizia vera e propria, inviami l&#39;attuale elenco delle entry di  <strong>W_UrbanFantasy</strong>  e produrrò una  <strong>Migration Matrix completa</strong>  con:</p>
+<ul>
+<li>KEEP</li>
+<li>MOVE TO W_Contemporary</li>
+<li>SPLIT</li>
+<li>MERGE</li>
+<li>DELETE
+e il conteggio finale previsto dopo la migrazione.
+<strong>User</strong> : Dammi un prompt per chiedere a code il report delle entry
+<strong>Gemini</strong> : Puoi usare un prompt molto diretto e orientato all&#39;audit architetturale:</li>
+</ul>
+<h3>SvartúlfrVerse — World Entry Audit Report</h3>
+<p>Analizza l&#39;intero repository e genera un report completo di tutte le entry presenti nei World Layer.</p>
+<h4>Obiettivo</h4>
+<p>Preparare la fase di Urban Fantasy Cleanup e Overlay Purity Improvement.</p>
+<h4>Output richiesto</h4>
+<h5>1. Inventory Completo</h5>
+<p>Per ogni entry riportare:</p>
+<ul>
+<li>File</li>
+<li>Entry Name</li>
+<li>World Layer di appartenenza</li>
+<li>Categoria</li>
+<li>Numero stimato di token/contenuto</li>
+<li>Dipendenze verso altre entry
+Formato:
+| File | Entry | Category | Notes |
+| ------ | ------ | ------ | ------ |</li>
+</ul>
+<hr>
+<h5>2. W_UrbanFantasy Audit</h5>
+<p>Per ogni entry di W_UrbanFantasy classificare:</p>
+<ul>
+<li>KEEP</li>
+<li>MOVE_TO_CONTEMPORARY</li>
+<li>SPLIT</li>
+<li>MERGE</li>
+<li>DELETE
+e spiegare brevemente il motivo.
+Applicare il test:
+&quot;Questa informazione esiste ancora se tutti gli elementi soprannaturali vengono rimossi?&quot;
+Se SÌ → candidata a W_Contemporary.
+Se NO → candidata a rimanere in W_UrbanFantasy.</li>
+</ul>
+<hr>
+<h5>3. W_Contemporary Audit</h5>
+<p>Classificare ogni entry nelle categorie:</p>
+<ul>
+<li>Location</li>
+<li>Organization</li>
+<li>Business</li>
+<li>Family</li>
+<li>MinorNPC</li>
+<li>SocialGroup</li>
+<li>PublicEvent</li>
+<li>RegionalKnowledge
+Segnalare:</li>
+<li>duplicati</li>
+<li>sovrapposizioni</li>
+<li>entry troppo grandi</li>
+<li>entry troppo piccole</li>
+</ul>
+<hr>
+<h5>4. Contamination Report</h5>
+<p>Individuare:</p>
+<ul>
+<li>NPC presenti in UrbanFantasy</li>
+<li>Organizations presenti in UrbanFantasy</li>
+<li>Businesses presenti in UrbanFantasy</li>
+<li>Locations presenti in UrbanFantasy
+Produrre una tabella:
+| Entry | Current Location | Recommended Location | Reason |</li>
+</ul>
+<hr>
+<h5>5. Target Architecture Projection</h5>
+<p>Stimare:
+Current:</p>
+<ul>
+<li>W_Contemporary = X entries</li>
+<li>W_UrbanFantasy = Y entries
+Projected:</li>
+<li>W_Contemporary = X entries</li>
+<li>W_UrbanFantasy = Y entries
+e proporre una struttura finale compatibile con:
+W_Contemporary:</li>
+<li>Locations</li>
+<li>Organizations</li>
+<li>Businesses</li>
+<li>Families</li>
+<li>MinorNPCs</li>
+<li>SocialGroups</li>
+<li>PublicEvents</li>
+<li>RegionalKnowledge
+W_UrbanFantasy:</li>
+<li>Species</li>
+<li>Bloodlines</li>
+<li>PackStructures</li>
+<li>SupernaturalBiology</li>
+<li>PowerSystems</li>
+<li>SupernaturalLaw</li>
+<li>HiddenSociety</li>
+<li>MythicPhenomena</li>
+</ul>
+<h4>Vincoli Architetturali</h4>
+<ul>
+<li>Runtime First</li>
+<li>Knowledge vs Behavior Separation</li>
+<li>ADR_005 World Composition</li>
+<li>Urban Fantasy è un overlay</li>
+<li>Major Cast appartiene esclusivamente ai file C_*</li>
+<li>Minor NPC appartengono al World Layer</li>
+</ul>
+<h4>Deliverable Finale</h4>
+<p>Produrre:</p>
+<ol>
+<li>Inventory Report</li>
+<li>Contamination Report</li>
+<li>Migration Matrix</li>
+<li>Final Entry Count Projection</li>
+<li>Recommended Migration Plan
+Questo prompt dovrebbe dare a Code esattamente il materiale necessario per preparare la migrazione senza iniziare ancora a modificare i file. È allineato con il cleanup definito per W_Contemporary e W_UrbanFantasy.
+<strong>User</strong> :</li>
+</ol>
+<h3>SvartúlfrVerse — Cross-Workspace Status Report Request</h3>
+<h4>Purpose</h4>
+<p>Architecture Workspace is preparing for the next repository governance review.
+Provide a complete status report from your workspace.
+Do not propose new features.
+Do not redesign architecture.
+Report only current state, discoveries, blockers, runtime findings, and pending decisions.</p>
+<hr>
+<h3>Required Output</h3>
+<h4>1. Workspace Summary</h4>
+<p>Provide:</p>
+<ul>
+<li>Workspace name</li>
+<li>Scope</li>
+<li>Current objectives</li>
+<li>Current milestone</li>
+<li>Overall health:
+<ul>
+<li>Green</li>
+<li>Yellow</li>
+<li>Red</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4>2. Completed Work</h4>
+<p>List:</p>
+<ul>
+<li>completed tasks</li>
+<li>completed reviews</li>
+<li>completed validations</li>
+<li>completed integrations
+For each item provide:</li>
+<li>description</li>
+<li>date (if available)</li>
+<li>outcome</li>
+</ul>
+<hr>
+<h4>3. Active Work</h4>
+<p>List all currently active items.
+For each item provide:</p>
+<ul>
+<li>description</li>
+<li>status</li>
+<li>completion estimate</li>
+<li>dependencies</li>
+</ul>
+<hr>
+<h4>4. Runtime Findings</h4>
+<p>List all findings discovered through:</p>
+<ul>
+<li>live testing</li>
+<li>roleplay sessions</li>
+<li>validation runs</li>
+<li>behavior observation
+For each finding provide:</li>
+<li>finding ID (if any)</li>
+<li>description</li>
+<li>confidence level</li>
+<li>impact level</li>
+</ul>
+<hr>
+<h4>5. Canon Candidate Impact</h4>
+<p>List:</p>
+<ul>
+<li>newly discovered Canon Candidates</li>
+<li>updated Canon Candidates</li>
+<li>candidates requiring review
+For each candidate provide:</li>
+<li>status</li>
+<li>justification</li>
+<li>recommended action</li>
+</ul>
+<hr>
+<h4>6. Technical Debt</h4>
+<p>List:</p>
+<ul>
+<li>known debt</li>
+<li>newly discovered debt</li>
+<li>resolved debt
+For each item provide:</li>
+<li>severity</li>
+<li>impact</li>
+<li>recommended priority</li>
+</ul>
+<hr>
+<h4>7. Architectural Concerns</h4>
+<p>Report anything that may affect:</p>
+<ul>
+<li>Runtime First</li>
+<li>Knowledge vs Behavior separation</li>
+<li>World Composition</li>
+<li>Character Canonicality</li>
+<li>POV Override</li>
+<li>Overlay architecture
+Include suspected issues even if not yet validated.</li>
+</ul>
+<hr>
+<h4>8. Blockers</h4>
+<p>List all blockers.
+For each blocker provide:</p>
+<ul>
+<li>description</li>
+<li>affected systems</li>
+<li>urgency</li>
+</ul>
+<hr>
+<h4>9. Decisions Needed</h4>
+<p>List decisions requiring Architecture Workspace review.
+For each decision provide:</p>
+<ul>
+<li>context</li>
+<li>options</li>
+<li>recommendation</li>
+</ul>
+<hr>
+<h4>10. Next Actions</h4>
+<p>Provide the next 5 highest-priority actions for your workspace.</p>
+<hr>
+<h3>Important</h3>
+<p>Report current reality only.
+Do not speculate unless clearly marked as hypothesis.
+Do not generate new architecture.
+Do not create new ADRs.
+Do not propose migrations.
+Focus on:</p>
+<ul>
+<li>actual repository state</li>
+<li>actual runtime findings</li>
+<li>actual blockers</li>
+<li>actual pending decisions</li>
+</ul>
+<hr>
+<h3>Expected Deliverable</h3>
+<p>Produce:
+Workspace_Status_Report_[WorkspaceName].md
+using concise technical language suitable for Architecture review.
+<strong>Gemini</strong> : Ecco il report dal punto di vista della  <strong>World Design Workspace</strong> , basato esclusivamente sullo stato attualmente documentato.</p>
+<h3>Workspace_Status_Report_WorldDesign.md</h3>
+<h4>1. Workspace Summary</h4>
+<h5>Workspace Name</h5>
+<p>World Design Workspace</p>
+<h5>Scope</h5>
+<p>Gestione dei World Layer:</p>
+<ul>
+<li>W_Contemporary</li>
+<li>W_UrbanFantasy</li>
+<li>W_HighFantasy</li>
+<li>W_NorseMythic</li>
+<li>W_Cyber</li>
+<li>W_Wasteland</li>
+<li>W_Regency</li>
+</ul>
+<h5>Current Objectives</h5>
+<ul>
+<li>Urban Fantasy Cleanup</li>
+<li>Overlay Purity Improvement</li>
+<li>Verifica conformità ADR_005 World Composition</li>
+</ul>
+<h5>Current Milestone</h5>
+<p>Urban Fantasy Decomposition Review</p>
+<h5>Overall Health</h5>
+<p>YELLOW
+Motivazione:</p>
+<ul>
+<li>Direzione architetturale definita.</li>
+<li>Contaminazione identificata.</li>
+<li>Audit repository non ancora completato.</li>
+<li>Stato reale delle entry non ancora inventariato completamente.</li>
+</ul>
+<hr>
+<h4>2. Completed Work</h4>
+<h5>Urban Fantasy Decomposition Analysis</h5>
+<p>Description: Revisione concettuale della composizione di W_UrbanFantasy.
+Outcome: Identificata contaminazione da elementi Contemporary.
+Status: Completed</p>
+<hr>
+<h5>Overlay Purity Assessment</h5>
+<p>Description: Applicazione del principio &quot;Urban Fantasy come overlay&quot;.
+Outcome: Definite le categorie che devono appartenere esclusivamente a W_UrbanFantasy.
+Status: Completed</p>
+<hr>
+<h5>World Layer Responsibility Review</h5>
+<p>Description: Revisione delle responsabilità tra W_Contemporary e W_UrbanFantasy.
+Outcome:
+W_Contemporary:</p>
+<ul>
+<li>Locations</li>
+<li>Organizations</li>
+<li>Businesses</li>
+<li>Minor NPCs</li>
+<li>Family Knowledge
+W_UrbanFantasy:</li>
+<li>Species</li>
+<li>Bloodlines</li>
+<li>Pack Structures</li>
+<li>Werewolf Biology</li>
+<li>Supernatural Systems
+Status: Completed</li>
+</ul>
+<hr>
+<h4>3. Active Work</h4>
+<h5>Urban Fantasy Cleanup</h5>
+<p>Status: In Progress
+Completion Estimate: Unknown
+Dependencies:</p>
+<ul>
+<li>Repository inventory</li>
+<li>Entry audit</li>
+</ul>
+<hr>
+<h5>Overlay Purity Verification</h5>
+<p>Status: In Progress
+Completion Estimate: Unknown
+Dependencies:</p>
+<ul>
+<li>Classification of existing entries</li>
+</ul>
+<hr>
+<h5>World Entry Audit</h5>
+<p>Status: Pending / In Progress
+Completion Estimate: Unknown
+Dependencies:</p>
+<ul>
+<li>Repository review</li>
+</ul>
+<hr>
+<h4>4. Runtime Findings</h4>
+<h5>WF-001</h5>
+<p>Description: Urban Fantasy currently contains entries that appear to represent contemporary-world information rather than supernatural systems.
+Confidence: Medium
+Impact: High
+Evidence: Workspace decomposition review.</p>
+<hr>
+<h5>WF-002</h5>
+<p>Description: Overlay architecture is clearer when supernatural mechanics are isolated from locations, businesses, and organizations.
+Confidence: Medium
+Impact: High
+Evidence: World decomposition analysis.</p>
+<hr>
+<h4>5. Canon Candidate Impact</h4>
+<h5>Newly Discovered Candidates</h5>
+<p>None reported.</p>
+<h5>Updated Candidates</h5>
+<p>None reported.</p>
+<h5>Candidates Requiring Review</h5>
+<p>None identified by this workspace.
+Notes: Canon Candidate management remains external to World Design Workspace.</p>
+<hr>
+<h4>6. Technical Debt</h4>
+<h5>DEBT-WD-001</h5>
+<p>Description: World Contamination between Contemporary and Urban Fantasy layers.
+Severity: High
+Impact: Architecture clarity and maintainability.
+Priority: High
+Status: Open</p>
+<hr>
+<h5>DEBT-WD-002</h5>
+<p>Description: Incomplete classification of existing world entries.
+Severity: Medium
+Impact: Blocks accurate cleanup assessment.
+Priority: High
+Status: Open</p>
+<hr>
+<h4>7. Architectural Concerns</h4>
+<h5>Overlay Boundary Integrity</h5>
+<p>Concern: Current documentation indicates that some Urban Fantasy entries may contain:</p>
+<ul>
+<li>Locations</li>
+<li>Businesses</li>
+<li>Organizations</li>
+<li>Family data
+Potential Impact: Overlay architecture dilution.
+Status: Partially Observed</li>
+</ul>
+<hr>
+<h5>World Composition Consistency</h5>
+<p>Concern: Actual repository distribution has not yet been fully audited.
+Potential Impact: Unknown until inventory completed.
+Status: Open</p>
+<hr>
+<h4>8. Blockers</h4>
+<h5>Missing Repository Inventory</h5>
+<p>Description: No complete entry-level inventory available for review.
+Affected Systems:</p>
+<ul>
+<li>W_Contemporary</li>
+<li>W_UrbanFantasy
+Urgency: High</li>
+</ul>
+<hr>
+<h5>Entry Classification Unverified</h5>
+<p>Description: Current assumptions are based on decomposition analysis rather than complete repository audit.
+Affected Systems: World Layer governance
+Urgency: High</p>
+<hr>
+<h4>9. Decisions Needed</h4>
+<h5>Urban Fantasy Entry Classification Validation</h5>
+<p>Context: Contamination has been identified conceptually but not yet validated against a complete inventory.
+Options:</p>
+<ul>
+<li>Validate current assumptions</li>
+<li>Reject assumptions after audit
+Recommendation: Architecture review after inventory completion.</li>
+</ul>
+<hr>
+<h5>Overlay Purity Acceptance Criteria</h5>
+<p>Context: Cleanup target exists but repository-wide compliance has not been measured.
+Options:</p>
+<ul>
+<li>Maintain current criteria</li>
+<li>Revise criteria after audit evidence
+Recommendation: Review after entry inventory.</li>
+</ul>
+<hr>
+<h4>10. Next Actions</h4>
+<ol>
+<li>Complete repository-level world entry inventory.</li>
+<li>Classify all W_UrbanFantasy entries.</li>
+<li>Verify contamination findings against actual files.</li>
+<li>Validate W_Contemporary categorization coverage.</li>
+<li>Produce final audit metrics for Architecture review.
+<strong>Nota:</strong>  questo report riflette esclusivamente quanto documentato nella World Design Workspace e non include dati provenienti da test runtime, Character Layer, Experience Layer o Canon Candidate Repository.
+<strong>User</strong> :</li>
+</ol>
+<h3>SvartúlfrVerse — Cross-Conversation Recovery Audit</h3>
+<h4>Objective</h4>
+<p>Perform a recovery audit across all available SvartúlfrVerse project conversations relevant to this workspace.
+The purpose is to identify decisions that have already achieved Approved status but may not yet exist in the frozen repository.
+This is a discovery and verification phase only.
+No integration is permitted.
+No source files may be modified.</p>
+<hr>
+<h3>Workspace Declaration</h3>
+<p>Before starting the audit, explicitly identify:</p>
+<ul>
+<li>Workspace Name</li>
+<li>Workspace Scope</li>
+<li>Authority Domain
+All findings outside the declared authority domain must be classified as:
+OUT OF SCOPE
+and excluded from recovery recommendations.</li>
+</ul>
+<hr>
+<h3>Recovery Pipeline</h3>
+<p>Conversation Evidence ↓ Authority Verification ↓ Conflict Check ↓ Repository Presence Check ↓ Classification ↓ Recovery Candidate
+A decision must pass all stages before becoming a Recovery Candidate.</p>
+<hr>
+<h3>Search Scope</h3>
+<p>Review only conversations relevant to:</p>
+<ul>
+<li>Architecture Workspace</li>
+<li>World Design Workspace</li>
+<li>Character Design Workspace</li>
+<li>Experience Design Workspace</li>
+<li>Validation &amp; Testing Workspace</li>
+<li>Family Authority Workspace</li>
+<li>Canon Candidate Repository
+Ignore unrelated conversations.</li>
+</ul>
+<hr>
+<h3>Authority Validation Rule</h3>
+<p>Conversation statements are not authority by default.
+Recoverable authority requires at least one:</p>
+<ul>
+<li>Explicit user approval</li>
+<li>ADR inclusion</li>
+<li>Approved workflow inclusion</li>
+<li>Approved architecture report inclusion</li>
+<li>Approved validation report inclusion</li>
+<li>Runtime validation followed by review acceptance
+Insufficient evidence:</li>
+<li>Brainstorming</li>
+<li>Single mentions</li>
+<li>Open questions</li>
+<li>Speculation</li>
+<li>Candidate concepts</li>
+<li>Draft proposals</li>
+<li>Preliminary audits
+If authority cannot be demonstrated:
+DEFER
+or
+REVIEW REQUIRED</li>
+</ul>
+<hr>
+<h3>Canon Classification Rules</h3>
+<h4>Approved Canon</h4>
+<ul>
+<li>Explicitly approved</li>
+<li>Not overturned</li>
+<li>Architecture-compatible</li>
+<li>Non-conflicting
+Eligible for recovery review.</li>
+</ul>
+<hr>
+<h4>Deferred Canon</h4>
+<ul>
+<li>Pending ADR</li>
+<li>Pending validation</li>
+<li>Pending governance review</li>
+<li>Explicitly postponed
+Record only.</li>
+</ul>
+<hr>
+<h4>Rejected Canon</h4>
+<ul>
+<li>Explicitly rejected</li>
+<li>Superseded</li>
+<li>Contradicted by approved authority
+Record only.</li>
+</ul>
+<hr>
+<h4>Conflicting Canon</h4>
+<ul>
+<li>Multiple approved variants</li>
+<li>Unclear authority chain</li>
+<li>Unresolved contradiction
+Flag only.</li>
+</ul>
+<hr>
+<h3>Repository Presence Check</h3>
+<p>Verify existence within:</p>
+<ul>
+<li>Source files</li>
+<li>ADRs</li>
+<li>Governance</li>
+<li>Workflows</li>
+<li>Architecture docs</li>
+<li>Visual DNA</li>
+<li>World sources</li>
+<li>Character sources</li>
+<li>Experience sources</li>
+<li>Validation reports
+Classify:</li>
+<li>Already Present</li>
+<li>Missing</li>
+<li>Partially Present
+Only Missing or Partially Present items may become Recovery Candidates.</li>
+</ul>
+<hr>
+<h3>Workspace Authority Filter</h3>
+<h4>Architecture Workspace</h4>
+<p>Recover only:</p>
+<ul>
+<li>ADR decisions</li>
+<li>Governance decisions</li>
+<li>Taxonomy decisions</li>
+<li>Workflow decisions</li>
+<li>Runtime validation findings</li>
+<li>Technical debt decisions
+Ignore character lore unless architecture-related.</li>
+</ul>
+<hr>
+<h4>World Design Workspace</h4>
+<p>Recover only:</p>
+<ul>
+<li>World rules</li>
+<li>Organizations</li>
+<li>Locations</li>
+<li>Historical events</li>
+<li>Overlay decisions</li>
+<li>World composition decisions</li>
+</ul>
+<hr>
+<h4>Character Design Workspace</h4>
+<p>Recover only:</p>
+<ul>
+<li>Character authority</li>
+<li>Biography decisions</li>
+<li>Appearance decisions</li>
+<li>Family decisions</li>
+<li>Relationship decisions</li>
+</ul>
+<hr>
+<h4>Experience Design Workspace</h4>
+<p>Recover only:</p>
+<ul>
+<li>Experience structure</li>
+<li>POV decisions</li>
+<li>Casting decisions</li>
+<li>Scenario decisions</li>
+</ul>
+<hr>
+<h4>Validation Workspace</h4>
+<p>Recover only:</p>
+<ul>
+<li>Runtime findings</li>
+<li>Test results</li>
+<li>Behavioral discoveries</li>
+<li>Regression findings</li>
+</ul>
+<hr>
+<h4>Family Authority Workspace</h4>
+<p>Recover only:</p>
+<ul>
+<li>Family relationships</li>
+<li>Genealogy</li>
+<li>Marriage decisions</li>
+<li>Parentage decisions</li>
+<li>Bloodline authority
+Treat genealogy as high-authority data.</li>
+</ul>
+<hr>
+<h4>Canon Candidate Repository</h4>
+<p>Recover only:</p>
+<ul>
+<li>Approved candidates</li>
+<li>Candidate status changes</li>
+<li>Candidate review outcomes</li>
+</ul>
+<hr>
+<p>Out-of-scope findings:
+OUT OF SCOPE</p>
+<hr>
+<h3>Output</h3>
+<p>reports/Cross_Conversation_Recovery_Report.md</p>
+<hr>
+<h3>Executive Summary</h3>
+<ul>
+<li>Conversations Reviewed</li>
+<li>Approved Decisions Found</li>
+<li>Approved Recoveries Found</li>
+<li>Deferred Items Found</li>
+<li>Rejected Items Found</li>
+<li>Conflicts Found</li>
+</ul>
+<hr>
+<h3>Approved Recovery Candidates</h3>
+<h4>Family Authority</h4>
+<p>| Decision | Evidence | Repository Status | Confidence | Recommendation |</p>
+<h4>Visual Authority</h4>
+<p>| Decision | Evidence | Repository Status | Confidence | Recommendation |</p>
+<h4>Character Authority</h4>
+<p>| Character | Decision | Repository Status | Confidence | Recommendation |</p>
+<h4>World Authority</h4>
+<p>| Element | Decision | Repository Status | Confidence | Recommendation |</p>
+<h4>Experience Authority</h4>
+<p>| Element | Decision | Repository Status | Confidence | Recommendation |</p>
+<h4>Governance Authority</h4>
+<p>| Decision | Repository Status | Confidence | Recommendation |</p>
+<hr>
+<h3>Recovery Destination Matrix</h3>
+<p>| Recovery Item | Destination | Status |</p>
+<hr>
+<h3>Conflict Audit</h3>
+<p>| Item | Variant A | Variant B | Status |
+Status = OPEN</p>
+<hr>
+<h3>Recovery Confidence</h3>
+<p>HIGH MEDIUM LOW
+Only HIGH confidence items should be recommended for RECOVER.</p>
+<hr>
+<h3>Recovery Recommendation</h3>
+<p>RECOVER IGNORE DEFER REVIEW REQUIRED</p>
+<hr>
+<h3>Hard Restrictions</h3>
+<p>Do NOT:</p>
+<ul>
+<li>Create canon</li>
+<li>Infer lore</li>
+<li>Merge conflicts</li>
+<li>Modify files</li>
+<li>Rewrite sources</li>
+<li>Populate databases
+Generate report only.
+Discovery and verification phase only.</li>
+</ul>
+<hr>
+<h3>Final Review Rule</h3>
+<p>Recommend RECOVER only if:</p>
+<ul>
+<li>Explicit approval exists</li>
+<li>Authority chain is verifiable</li>
+<li>No unresolved conflict exists</li>
+<li>Repository status is Missing or Partially Present</li>
+<li>Destination is identifiable
+Otherwise:
+IGNORE DEFER or REVIEW REQUIRED</li>
+</ul>
+<pre><code>
+</code></pre>
+<p><strong>Gemini</strong> : Non posso eseguire correttamente quel Recovery Audit come richiesto.
+Il motivo è architetturale: il prompt richiede di:</p>
+<ul>
+<li>analizzare  <strong>tutte le conversazioni SvartúlfrVerse rilevanti</strong></li>
+<li>verificare  <strong>decisioni approvate</strong></li>
+<li>effettuare  <strong>repository presence check</strong></li>
+<li>controllare  <strong>conflitti tra conversazioni</strong></li>
+<li>determinare se un elemento sia  <strong>Missing / Partially Present / Already Present</strong>
+Ma in questa conversazione ho accesso solo a:</li>
+<li>i file/workspace caricati in questa sessione</li>
+<li>il contesto visibile della conversazione corrente
+Non ho accesso all&#39;intero storico delle conversazioni SvartúlfrVerse né allo stato reale del repository GitHub.
+Di conseguenza, produrre il report richiesto comporterebbe affermare verifiche che non posso realmente eseguire.
+Il massimo audit verificabile che posso produrre è:</li>
+</ul>
+<h5>Scope disponibile</h5>
+<p>Fonti accessibili:</p>
+<ul>
+<li>Architecture Workspace</li>
+<li>World Design Workspace</li>
+<li>Character Design Workspace</li>
+<li>Experience Design Workspace</li>
+<li>Validation &amp; Testing Workspace</li>
+<li>Canon Candidate Repository</li>
+</ul>
+<h5>Limiti</h5>
+<p>Non verificabili:</p>
+<ul>
+<li>conversazioni non presenti nel contesto</li>
+<li>approvazioni avvenute altrove</li>
+<li>stato effettivo del repository GitHub</li>
+<li>presenza o assenza reale nei file sorgente</li>
+<li>conflitti inter-conversation non forniti</li>
+</ul>
+<h5>Classificazione corretta</h5>
+<p>Secondo le regole del prompt:</p>
+<ul>
+<li>tutti gli elementi non verificabili devono essere classificati come  <strong>REVIEW REQUIRED</strong>  oppure</li>
+<li><strong>DEFER</strong>
+e non come  <strong>RECOVER</strong> .
+Per ottenere un vero  <strong>Cross_Conversation_Recovery_Report.md</strong>  servirebbe una delle seguenti condizioni:</li>
+</ul>
+<ol>
+<li>esportazione delle conversazioni da auditare;</li>
+<li>accesso al repository completo;</li>
+<li>report precedenti da confrontare;</li>
+<li>snapshot dei file sorgente attuali.
+Solo a quel punto sarebbe possibile applicare la pipeline:</li>
+</ol>
+<pre><code class="language-text">Conversation Evidence
+↓
+Authority Verification
+↓
+Conflict Check
+↓
+Repository Presence Check
+↓
+Classification
+↓
+Recovery Candidate
+
+</code></pre>
+<p>in modo conforme alle regole che hai definito.
+<strong>User</strong> : applica solo in questa chat
+<strong>Gemini</strong> :</p>
+<h3>Cross_Conversation_Recovery_Report.md</h3>
+<h4>Workspace Declaration</h4>
+<h5>Workspace Name</h5>
+<p>World Design Workspace</p>
+<h5>Workspace Scope</h5>
+<ul>
+<li>W_Contemporary</li>
+<li>W_UrbanFantasy</li>
+<li>W_HighFantasy</li>
+<li>W_NorseMythic</li>
+<li>W_Cyber</li>
+<li>W_Wasteland</li>
+<li>W_Regency</li>
+</ul>
+<h5>Authority Domain</h5>
+<p>Recoverable Authority:</p>
+<ul>
+<li>World rules</li>
+<li>Organizations</li>
+<li>Locations</li>
+<li>Historical events</li>
+<li>Overlay decisions</li>
+<li>World composition decisions
+Outside scope:</li>
+<li>Character biographies</li>
+<li>Family genealogy</li>
+<li>Experience implementation details</li>
+<li>Runtime testing results</li>
+<li>Canon Candidate governance
+Classification: OUT OF SCOPE</li>
+</ul>
+<hr>
+<h3>Executive Summary</h3>
+<p>Conversations Reviewed: 2</p>
+<ul>
+<li>Architecture Workspace</li>
+<li>World Design Workspace
+Approved Decisions Found: 3
+Approved Recoveries Found: 0
+Deferred Items Found: 4
+Rejected Items Found: 0
+Conflicts Found: 0</li>
+</ul>
+<hr>
+<h3>Authority Verification</h3>
+<h4>Decision WD-001</h4>
+<p>Decision:
+Urban Fantasy operates as an overlay rather than an independent world.
+Evidence:
+World Design Workspace current status statement.
+Authority Status:
+Approved Direction
+Conflict Check:
+None identified.
+Repository Presence:
+Unknown
+Classification:
+REVIEW REQUIRED
+Reason:
+Repository presence cannot be verified from available evidence.</p>
+<hr>
+<h4>Decision WD-002</h4>
+<p>Decision:
+W_Contemporary contains:</p>
+<ul>
+<li>Locations</li>
+<li>Organizations</li>
+<li>Businesses</li>
+<li>Minor NPCs</li>
+<li>Family Knowledge
+Evidence:
+World Design Workspace current focus statement.
+Authority Status:
+Approved Direction
+Conflict Check:
+None identified.
+Repository Presence:
+Partially Present (unverified)
+Classification:
+DEFER
+Reason:
+Repository inventory not available.</li>
+</ul>
+<hr>
+<h4>Decision WD-003</h4>
+<p>Decision:
+W_UrbanFantasy contains:</p>
+<ul>
+<li>Species</li>
+<li>Bloodlines</li>
+<li>Pack Structures</li>
+<li>Werewolf Biology</li>
+<li>Supernatural Systems
+Evidence:
+World Design Workspace current focus statement.
+Authority Status:
+Approved Direction
+Conflict Check:
+None identified.
+Repository Presence:
+Partially Present (unverified)
+Classification:
+DEFER
+Reason:
+Repository audit not completed.</li>
+</ul>
+<hr>
+<h3>Approved Recovery Candidates</h3>
+<p>None.
+Rationale:
+No item satisfies all required stages:</p>
+<ul>
+<li>Authority Verification ✓</li>
+<li>Conflict Check ✓</li>
+<li>Repository Presence Check ✗
+Repository status cannot be verified using available evidence.
+Therefore no RECOVER recommendation is justified.</li>
+</ul>
+<hr>
+<h3>World Authority</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Element</th><th>Decision</th><th>Repository Status</th><th>Confidence</th><th>Recommendation</th></tr></thead><tbody><tr><td>Urban Fantasy Overlay</td><td>Overlay model adopted</td><td>Unknown</td><td>Medium</td><td>REVIEW REQUIRED</td></tr><tr><td>Contemporary Ownership</td><td>Contemporary owns locations and organizations</td><td>Unknown</td><td>Medium</td><td>DEFER</td></tr><tr><td>Urban Fantasy Ownership</td><td>Urban Fantasy owns supernatural systems</td><td>Unknown</td><td>Medium</td><td>DEFER</td></tr></tbody></table>
+<hr>
+<h3>Governance Authority</h3>
+<h4>World Contamination Recognition</h4>
+<p>Decision:
+World contamination between Contemporary and Urban Fantasy has been identified.
+Evidence:
+Architecture Workspace technical debt listing.
+Associated Debt:
+DEBT-003 World Contamination Cleanup
+Repository Status:
+Already documented as active debt.
+Confidence:
+High
+Recommendation:
+IGNORE
+Reason:
+Already present in governance material.</p>
+<hr>
+<h3>Recovery Destination Matrix</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Recovery Item</th><th>Destination</th><th>Status</th></tr></thead><tbody><tr><td>None Verified</td><td>N/A</td><td>N/A</td></tr></tbody></table>
+<hr>
+<h3>Conflict Audit</h3>
+<p>No approved conflicting decisions discovered within reviewed workspace material.
+| Item | Variant A | Variant B | Status |
+| ------ | ------ | ------ | ------ |
+| None | N/A | N/A | CLOSED |</p>
+<hr>
+<h3>Deferred Items</h3>
+<h4>DF-001</h4>
+<p>Item:
+Contemporary ownership taxonomy
+Reason:
+Authority exists but repository presence unverified.
+Status:
+DEFER</p>
+<hr>
+<h4>DF-002</h4>
+<p>Item:
+Urban Fantasy ownership taxonomy
+Reason:
+Authority exists but repository presence unverified.
+Status:
+DEFER</p>
+<hr>
+<h4>DF-003</h4>
+<p>Item:
+Target structure W_Contemporary ≈ 40 entries
+Reason:
+Planning target rather than approved repository state.
+Status:
+DEFER</p>
+<hr>
+<h4>DF-004</h4>
+<p>Item:
+Target structure W_UrbanFantasy ≈ 14 entries
+Reason:
+Planning target rather than approved repository state.
+Status:
+DEFER</p>
+<hr>
+<h3>Recovery Confidence</h3>
+<p>Overall Confidence:
+LOW
+Reason:
+Authority evidence exists, but repository presence checks cannot be completed from available workspace material alone.</p>
+<hr>
+<h3>Recovery Recommendation</h3>
+<p>RECOVER: None
+IGNORE:</p>
+<ul>
+<li>DEBT-003 recognition (already documented)
+DEFER:</li>
+<li>Contemporary ownership taxonomy</li>
+<li>Urban Fantasy ownership taxonomy</li>
+<li>Entry count targets
+REVIEW REQUIRED:</li>
+<li>Overlay architecture repository implementation</li>
+<li>Actual repository alignment with approved world composition
+Questo è il massimo livello di recovery audit verificabile usando esclusivamente le conversazioni e i documenti disponibili in questa chat.</li>
+</ul>

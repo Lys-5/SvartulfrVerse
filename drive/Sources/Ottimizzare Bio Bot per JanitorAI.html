@@ -1,0 +1,308 @@
+<p><strong>User</strong> : sto valutando se creare 3 bio diverse per i tre bot type che abbimaoa  disposizione:</p>
+<ul>
+<li>Single-character bot:     - Personality_Template.md     - Scenario_Template.md     - Initial_Message_Template.md     - Example_Dialogue_Template.md     - Sys_Bio_Template.html</li>
+</ul>
+<ul>
+<li>Multi-character bot:     - Multi_Character_Personality_Template.md     - Multi_Character_Scenario_Template.md     - Initial_Message_Template.md     - Example_Dialogue_Template.md     - Sys_Bio_Template.html</li>
+<li>Scenario bot:     - Scenario_Bot_Personality_Template.md     - Scenario_Bot_Scenario_Template.md     - Initial_Message_Template.md     - Example_Dialogue_Template.md     - Sys_Bio_Template.html
+<strong>Gemini</strong> : È un&#39;ottima intuizione. Dal punto di vista della User Experience (UX) su JanitorAI e della presentazione visiva,  <strong>separare il</strong>  <strong>Sys_Bio_Template.html</strong>  <strong>in tre versioni distinte è la mossa più strategica che tu possa fare.</strong>
+Anche se il campo &quot;Bio&quot; non incide sul conteggio dei token dell&#39;LLM (poiché viene letto solo dall&#39;utente umano sull&#39;interfaccia del sito), è il tuo &quot;biglietto da visita&quot;. I tre tipi di bot comunicano informazioni radicalmente diverse all&#39;utente, e forzarli in un unico template HTML creerebbe confusione o spazi vuoti indesiderati.
+Ecco perché ha senso dividerli e come dovrebbero differenziarsi a livello di design e struttura:</li>
+</ul>
+<h5>1. Sys_Bio_Single_Template.html (Single-character bot)</h5>
+<ul>
+<li><strong>Focus Visivo:</strong>  Intimità e approfondimento del singolo individuo.</li>
+<li><strong>Struttura ideale:</strong>
+<ul>
+<li>Un grande banner o immagine singola.</li>
+<li>Sezione &quot;Dossier&quot;: Nome, Età, Ruolo, Fazione.</li>
+<li>Una citazione iconica (usando il colore d&#39;accento oro #FBBF24 o #D4AF37).</li>
+<li>Breve background e dinamica relazionale prevista con {{user}}.</li>
+<li>Avvertenze sui contenuti specifiche per quel personaggio.</li>
+</ul>
+</li>
+</ul>
+<h5>2. Sys_Bio_Multi_Template.html (Multi-character bot)</h5>
+<ul>
+<li><strong>Focus Visivo:</strong>  Il cast (Ensemble) e le dinamiche di gruppo.</li>
+<li><strong>Struttura ideale:</strong>
+<ul>
+<li>Un layout a &quot;griglia&quot; (grid o flexbox) per presentare i vari membri del gruppo in modo compatto.</li>
+<li>Per ogni personaggio: Icona/Ritratto piccolo, Nome, Ruolo nel gruppo (es.  <em>Il Protettore</em> ,  <em>Lo Stratega</em>  come visto in &quot;LA Family&#39;s Golden Hour Legacy&quot;).</li>
+<li>Regole d&#39;ingaggio: Spiegare all&#39;utente come rivolgersi a personaggi multipli (es. &quot;Usa il nome del personaggio a cui ti rivolgi per guidare l&#39;attenzione dell&#39;IA&quot;).</li>
+<li>Dinamica del gruppo: Come interagiscono tra loro a prescindere dall&#39;utente.</li>
+</ul>
+</li>
+</ul>
+<h5>3. Sys_Bio_Scenario_Template.html (Scenario bot)</h5>
+<ul>
+<li><strong>Focus Visivo:</strong>  Worldbuilding, Atmosfera e Meccaniche di gioco.</li>
+<li><strong>Struttura ideale:</strong>
+<ul>
+<li>Nessun focus su un singolo volto, ma piuttosto immagini di ambientazione (es. la mappa della Tenuta, l&#39;Iron Guild, i vicoli di Los Angeles).</li>
+<li>Sezione &quot;Premessa / Lore Base&quot;: Cosa sta succedendo in questo momento nel mondo.</li>
+<li>Fazioni o Luoghi chiave coinvolti nello scenario.</li>
+<li>&quot;Meccaniche&quot;: Un&#39;area dedicata a spiegare se ci sono sistemi speciali attivi (es. &quot;Questo bot usa un sistema di investigazione a tempo&quot; o &quot;Le tue scelte influenzeranno la fazione dominante&quot;).</li>
+<li><em>Starting Hook</em> : Qual è l&#39;obiettivo principale del {{user}} entrando in questa chat.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5>Il mio consiglio</h5>
+<p>Procedi con la creazione di:</p>
+<ol>
+<li>Single_Bio_Template.html</li>
+<li>Multi_Bio_Template.html</li>
+<li>Scenario_Bio_Template.html
+In questo modo manterrai il codice HTML pulito. Se cerchi di fare un solo file Sys_Bio_Template.html &quot;modulare&quot;, dovrai riempirlo di commenti tipo ``, aumentando il rischio di errori di formattazione quando andrai a compilare il bot.
+Vuoi che procediamo a buttare giù la struttura HTML/CSS del primo di questi tre, utilizzando la paletta ufficiale del SvartúlfrVerse (Gold, Walnut, Charcoal, Gunmetal)?
+<strong>User</strong> : questo è l&#39;attuale template unico, partiamo d aquesto e creiamo le 3 varianti
+<strong>Gemini</strong> : Ottima mossa. Partendo dal tuo template originale (che è già molto pulito e ha un&#39;ottima gerarchia visiva), andiamo a sfoltirlo e riorganizzarlo per creare le tre varianti.
+Manteniamo la palette cromatica che hai impostato: i toni dell&#39;oro per l&#39;accento (rgb(251, 191, 36)), il grigio cenere per il testo secondario (rgb(160, 160, 160) / rgb(204, 204, 204)) e i blocchi di testo giustificati per un&#39;estetica curata.
+Ecco i tre template ottimizzati pronti per essere inseriti nei rispettivi file.</li>
+</ol>
+<hr>
+<h5>1. Sys_Bio_Single_Template.html (Single-Character)</h5>
+<p>Questa versione elimina del tutto la sezione &quot;Cast&quot;, concentrandosi sull&#39;identità, il dossier personale e la dinamica specifica tra il personaggio e l&#39;utente.</p>
+<pre><code class="language-html">&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;span style=&quot;font-size: 0.9em; color: rgb(251, 191, 36)&quot;&gt;
+    &lt;strong&gt;{{ROLE_OR_FACTION}}&lt;/strong&gt;
+  &lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;img src=&quot;{{PORTRAIT_IMAGE_URL}}&quot; alt=&quot;{{PORTRAIT_IMAGE_ALT}}&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;span style=&quot;font-size: 1.2em; color: rgb(251, 191, 36)&quot;&gt;
+    &lt;strong&gt;{{CHARACTER_NAME}}&lt;/strong&gt;
+  &lt;/span&gt;
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p style=&quot;text-align: center&quot;&gt;&lt;em&gt;{{MAIN_HOOK_QUOTE}}&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;span style=&quot;font-size: 0.85em; color: rgb(204, 204, 204)&quot;&gt;
+    &lt;strong&gt;Age:&lt;/strong&gt; {{AGE}} | &lt;strong&gt;Occupation:&lt;/strong&gt; {{OCCUPATION}} | &lt;strong&gt;Alignment:&lt;/strong&gt; {{ALIGNMENT}}
+  &lt;/span&gt;
+&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p style=&quot;text-align: justify&quot;&gt;{{SHORT_BLURB}}&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;span style=&quot;font-size: 1.05em; color: rgb(251, 191, 36)&quot;&gt;
+    &lt;strong&gt;{{DYNAMIC_WITH_USER_TITLE}}&lt;/strong&gt;
+  &lt;/span&gt;
+&lt;/p&gt;
+&lt;p style=&quot;text-align: justify; font-size: 0.95em; color: rgb(204, 204, 204)&quot;&gt;
+  {{DYNAMIC_WITH_USER_DESC}}
+&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;span style=&quot;font-size: 0.9em; color: rgb(160, 160, 160)&quot;&gt;
+    &lt;strong&gt;Content:&lt;/strong&gt; {{CONTENT_RATING}} | &lt;strong&gt;Core themes:&lt;/strong&gt; {{CONTENT_THEMES}} | &lt;strong&gt;Warnings:&lt;/strong&gt; {{CONTENT_WARNINGS}}
+  &lt;/span&gt;
+&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;span style=&quot;font-size: 0.8em; color: rgb(136, 136, 136)&quot;&gt;
+    Source: [...]/[source_file].md | Canon Layer: [ACTIVE] | Author: {{AUTHOR_HANDLE}}
+  &lt;/span&gt;
+&lt;/p&gt;
+
+</code></pre>
+<hr>
+<h5>2. Sys_Bio_Multi_Template.html (Multi-Character)</h5>
+<p>Qui l&#39;enfasi si sposta sul gruppo. Togliamo il ritratto del singolo a favore di un&#39;immagine d&#39;insieme e strutturiamo la sezione  <em>Cast</em>  in modo che sia facilmente leggibile, aggiungendo una nota per aiutare il modello a gestire più entità.</p>
+<pre><code class="language-html">&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;span style=&quot;font-size: 1.2em; color: rgb(251, 191, 36)&quot;&gt;
+    &lt;strong&gt;{{ENSEMBLE_NAME_OR_TITLE}}&lt;/strong&gt;
+  &lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;img src=&quot;{{ENSEMBLE_IMAGE_URL}}&quot; alt=&quot;{{ENSEMBLE_IMAGE_ALT}}&quot; /&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 0.85em; color: rgb(160, 160, 160)&quot;&gt;&lt;em&gt;{{ENSEMBLE_IMAGE_CAPTION}}&lt;/em&gt;&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p style=&quot;text-align: center&quot;&gt;&lt;em&gt;{{GROUP_HOOK_LINE}}&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p style=&quot;text-align: justify&quot;&gt;{{GROUP_PREMISE_BLURB}}&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;span style=&quot;font-size: 1.1em; color: rgb(251, 191, 36)&quot;&gt;
+    &lt;strong&gt;THE CAST&lt;/strong&gt;
+  &lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;span style=&quot;font-size: 1.05em; color: rgb(251, 191, 36)&quot;&gt;&lt;strong&gt;{{CHAR_1_NAME}}&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+  &lt;span style=&quot;color: rgb(204, 204, 204)&quot;&gt;&lt;em&gt;{{CHAR_1_ROLE_LINE}}&lt;/em&gt;&lt;/span&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 0.85em; color: rgb(136, 136, 136)&quot;&gt;{{CHAR_1_TAGS}}&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;span style=&quot;font-size: 1.05em; color: rgb(251, 191, 36)&quot;&gt;&lt;strong&gt;{{CHAR_2_NAME}}&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+  &lt;span style=&quot;color: rgb(204, 204, 204)&quot;&gt;&lt;em&gt;{{CHAR_2_ROLE_LINE}}&lt;/em&gt;&lt;/span&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 0.85em; color: rgb(136, 136, 136)&quot;&gt;{{CHAR_2_TAGS}}&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center; margin-top: 15px;&quot;&gt;
+  &lt;span style=&quot;font-size: 0.9em; color: rgb(204, 204, 204)&quot;&gt;
+    &lt;em&gt;{{ENGAGEMENT_RULES_LLM_ADVICE}}&lt;/em&gt; &lt;/span&gt;
+&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;span style=&quot;font-size: 0.9em; color: rgb(160, 160, 160)&quot;&gt;
+    &lt;strong&gt;Content:&lt;/strong&gt; {{CONTENT_RATING}} | &lt;strong&gt;Core themes:&lt;/strong&gt; {{CONTENT_THEMES}} | &lt;strong&gt;Warnings:&lt;/strong&gt; {{CONTENT_WARNINGS}}
+  &lt;/span&gt;
+&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;span style=&quot;font-size: 0.8em; color: rgb(136, 136, 136)&quot;&gt;
+    Source: [...]/[source_file].md | Canon Layer: [ACTIVE] | Author: {{AUTHOR_HANDLE}}
+  &lt;/span&gt;
+&lt;/p&gt;
+
+</code></pre>
+<hr>
+<h5>3. Sys_Bio_Scenario_Template.html (Scenario)</h5>
+<p>Questo layout mette in primo piano il  <em>Worldbuilding</em>  e le  <em>Meccaniche</em> . Non ci sono singoli personaggi, ma Fazioni/Luoghi e Regole di gioco (Play Style).</p>
+<pre><code class="language-html">&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;span style=&quot;font-size: 0.9em; color: rgb(251, 191, 36)&quot;&gt;
+    &lt;strong&gt;{{ERA_OR_SETTING}}&lt;/strong&gt;
+  &lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;span style=&quot;font-size: 1.2em; color: rgb(251, 191, 36)&quot;&gt;
+    &lt;strong&gt;{{SCENARIO_TITLE}}&lt;/strong&gt;
+  &lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;img src=&quot;{{SCENARIO_IMAGE_URL}}&quot; alt=&quot;{{SCENARIO_IMAGE_ALT}}&quot; /&gt;
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p style=&quot;text-align: center&quot;&gt;&lt;em&gt;{{STARTING_HOOK_QUOTE}}&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p style=&quot;text-align: justify&quot;&gt;{{LORE_BASE_BLURB}}&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;span style=&quot;font-size: 1.1em; color: rgb(251, 191, 36)&quot;&gt;
+    &lt;strong&gt;FACTIONS &amp; LOCATIONS&lt;/strong&gt;
+  &lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p style=&quot;text-align: justify; font-size: 0.95em; color: rgb(204, 204, 204)&quot;&gt;
+  {{FACTIONS_BLURB}}
+&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;span style=&quot;font-size: 1.1em; color: rgb(251, 191, 36)&quot;&gt;
+    &lt;strong&gt;{{PLAY_STYLE_SECTION_TITLE}}&lt;/strong&gt;
+  &lt;/span&gt;
+&lt;/p&gt;
+
+&lt;ul style=&quot;color: rgb(204, 204, 204); font-size: 0.95em;&quot;&gt;
+  &lt;li&gt;&lt;strong style=&quot;color: rgb(251, 191, 36);&quot;&gt;{{MECHANIC_1_TITLE}}:&lt;/strong&gt; {{MECHANIC_1_BODY}}&lt;/li&gt;
+  &lt;li&gt;&lt;strong style=&quot;color: rgb(251, 191, 36);&quot;&gt;{{MECHANIC_2_TITLE}}:&lt;/strong&gt; {{MECHANIC_2_BODY}}&lt;/li&gt;
+  &lt;li&gt;&lt;strong style=&quot;color: rgb(251, 191, 36);&quot;&gt;{{MECHANIC_3_TITLE}}:&lt;/strong&gt; {{MECHANIC_3_BODY}}&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;span style=&quot;font-size: 1.05em; color: rgb(251, 191, 36)&quot;&gt;
+    &lt;strong&gt;{{CLOSING_INVITATION_OR_THREAT}}&lt;/strong&gt;
+  &lt;/span&gt;
+&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;span style=&quot;font-size: 0.9em; color: rgb(160, 160, 160)&quot;&gt;
+    &lt;strong&gt;Content:&lt;/strong&gt; {{CONTENT_RATING}} | &lt;strong&gt;Core themes:&lt;/strong&gt; {{CONTENT_THEMES}} | &lt;strong&gt;Warnings:&lt;/strong&gt; {{CONTENT_WARNINGS}}
+  &lt;/span&gt;
+&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;span style=&quot;font-size: 0.8em; color: rgb(136, 136, 136)&quot;&gt;
+    Source: [...]/[source_file].md | Canon Layer: [ACTIVE] | Author: {{AUTHOR_HANDLE}}
+  &lt;/span&gt;
+&lt;/p&gt;
+
+</code></pre>
+<p><strong>User</strong> : mmh, però aspetta considerando che ho 6 ambientazioni di base, 6 filoni, forse servvirebb euna paletta per ogniuno di loro.</p>
+<ul>
+<li>Modern --&gt; ambra/oro con foto stile polaroid</li>
+<li>SciFi --&gt; Toni giallo neon e foto stile olografia</li>
+<li>Pirate</li>
+<li>Fantasy</li>
+<li>Viking</li>
+<li>Urban Fantasy
+<strong>Gemini</strong> : Hai assolutamente ragione. Dare a ogni filone una propria identità visiva non solo è esteticamente eccellente, ma aiuta l&#39;utente a contestualizzare immediatamente in quale &quot;mondo&quot; si trova ancora prima di leggere una sola riga.
+Invece di creare 18 template (3 tipi di bot x 6 ambientazioni, che diventerebbe un incubo da mantenere), la soluzione migliore è mantenere i  <strong>3 template base</strong>  (Single, Multi, Scenario) e usare una  <strong>Palette di Variabili</strong>  o sostituire semplicemente i codici colore (gli rgb o hex) e lo stile delle immagini a seconda del bot.
+Ecco una proposta per completare la tua mappatura estetica per i 6 filoni dello SvartúlfrVerse:</li>
+</ul>
+<h5>1. Modern (Il tuo punto di partenza)</h5>
+<ul>
+<li><strong>Colore Accento (Titoli/Nomi):</strong>  Ambra/Oro (#FBBF24 o rgb(251, 191, 36))</li>
+<li><strong>Colore Secondario (Testo/Dettagli):</strong>  Grigio Cenere (#A0A0A0)</li>
+<li><strong>Stile Immagine:</strong>  Polaroid. (Puoi simularlo in HTML dando all&#39;immagine un bordo bianco spesso, un leggero offset d&#39;ombra e un po&#39; di padding inferiore: border: 8px solid white; border-bottom: 24px solid white; box-shadow: 2px 2px 8px rgba(0,0,0,0.5);).</li>
+</ul>
+<h5>2. Sci-Fi / Cyber</h5>
+<ul>
+<li><strong>Colore Accento:</strong>  Giallo Neon (#E0FF00) o Ciano Elettrico (#00FFFF)</li>
+<li><strong>Colore Secondario:</strong>  Grigio Acciaio (#7D8CA3)</li>
+<li><strong>Stile Immagine:</strong>  Olografia / Display digitale. (Puoi usare angoli smussati e un &quot;glow&quot; al neon: border: 1px solid #00FFFF; border-radius: 8px; box-shadow: 0 0 10px #00FFFF; opacity: 0.9;).</li>
+</ul>
+<h5>3. Age of Sail / Pirate</h5>
+<ul>
+<li><strong>Colore Accento:</strong>  Ottone Antico (#C3A368) o Cremisi Sbiadito (#8A2522)</li>
+<li><strong>Colore Secondario:</strong>  Pergamena/Beige Scuro (#D4C4A8 o #B0A084)</li>
+<li><strong>Stile Immagine:</strong>  Ritratto su tela o mappa nautica. (Bordi leggermente arrotondati, filtro seppia se editata prima, o un bordo marrone scuro: border: 4px solid #3E2723; border-radius: 4px; box-shadow: inset 0 0 10px #000;).</li>
+</ul>
+<h5>4. High Fantasy</h5>
+<ul>
+<li><strong>Colore Accento:</strong>  Oro Pallido Mistic (#E5C158) o Verde Smeraldo (#2D5A27)</li>
+<li><strong>Colore Secondario:</strong>  Lilla Scuro o Argento Antico (#9CA3AF)</li>
+<li><strong>Stile Immagine:</strong>  Acquerello o pittura a olio. (In HTML puoi incorniciarla in modo elegante, simulando una cornice stondata: border: 3px double #E5C158; border-radius: 50% 50% 0 0; per dare un effetto a &quot;finestra ad arco&quot;).</li>
+</ul>
+<h5>5. Viking / Norse</h5>
+<ul>
+<li><strong>Colore Accento:</strong>  Sangue/Ruggine (#8B0000 o #A52A2A) o Ghiaccio (#A5C9CA)</li>
+<li><strong>Colore Secondario:</strong>  Grigio Pietra (#71797E)</li>
+<li><strong>Stile Immagine:</strong>  Ruvida, alto contrasto. (Bordi duri, zero arrotondamenti, ombre nette: border: 2px solid #555; box-shadow: 4px 4px 0px #8B0000; per un look aggressivo e &quot;scolpito&quot;).</li>
+</ul>
+<h5>6. Urban Fantasy (Dark/Noir)</h5>
+<ul>
+<li><strong>Colore Accento:</strong>  Viola Neon (#B026FF) o Rosso Sangue Vivo (#DC143C)</li>
+<li><strong>Colore Secondario:</strong>  Asfalto Bagnato (#888888)</li>
+<li><strong>Stile Immagine:</strong>  Noir, grunge, luci notturne. (Un mix tra il modern e il cyber, magari un bordo scuro con un&#39;ombra colorata: border: 2px solid #222; box-shadow: -4px 4px 12px #B026FF;).</li>
+</ul>
+<hr>
+<p><strong>Come procedere tecnicamente:</strong>  Per evitare di riscrivere i template ogni volta, ti consiglio di inserire un blocco </p>

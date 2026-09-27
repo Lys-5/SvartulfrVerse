@@ -1,0 +1,18 @@
+<p><strong>User</strong> : Concurrency limit exceeded. Your account details:  <strong>Current Usage:</strong>  - Active concurrent requests: 4 units - This request requires: 4 units - Total needed: 8 units - Your plan limit: 4 units - Over limit by: 4 units  <strong>Model Details:</strong>  - Model: zai-org/GLM-5.2 - Model class: glm52-753b - Model concurrency cost: 4 units per request  <strong>Account Details:</strong>  - Organization: org_mJJgfVQEDgJtcU7BQEDNx - Plan: feather_pro_plus - Plan concurrency limit: 4 - Subscription quantity: 1 - Effective limit: 4 units Please upgrade your plan to increase your concurrency limit or wait for current requests to complete.
+<strong>Gemini</strong> : This is an API rate-limit error indicating that your current subscription plan doesn&#39;t have the bandwidth to process the parallel workload you&#39;re routing to the GLM-5.2 model.</p>
+<h5>The Math Behind the Error</h5>
+<p>The provider&#39;s concurrency system is treating your requests like a budget, and you&#39;ve maxed it out:</p>
+<ul>
+<li><strong>Your Budget:</strong>  Your feather_pro_plus plan gives you a maximum concurrency allowance of  <strong>4 units</strong> .</li>
+<li><strong>The Cost:</strong>  GLM-5.2 is a massive model, so the provider charges  <strong>4 units for a single request</strong> .</li>
+<li><strong>The Conflict:</strong>  You currently have 4 units active. This means either one GLM-5.2 generation is already in progress, or multiple smaller model requests are running. Your new request asks for 4  <em>more</em>  units, pushing the total to 8, which triggers the rejection.</li>
+</ul>
+<h5>How to Fix It</h5>
+<p>If you are running custom API scripts or routing this through a frontend interface, here are the best ways to resolve the bottleneck:</p>
+<ul>
+<li><strong>Enforce sequential queuing:</strong>  Because GLM-5.2 eats your entire concurrency budget in a single call, you cannot run parallel generations. Ensure your frontend or script waits for the previous generation to fully complete before firing the next prompt.</li>
+<li><strong>Kill hanging connections:</strong>  If you know for a fact you aren&#39;t currently waiting on a response, a previous API call may have stalled or dropped without closing the connection. This keeps your 4 units &quot;locked.&quot; Double-check that your fetch requests or proxy routers have strict timeouts configured to release the lock if a model hangs.</li>
+<li><strong>Route to a lighter fallback:</strong>  If you are rapidly testing system prompts, lorebook triggers, or formatting, route your development requests to a lighter model that costs fewer concurrency units. Reserve GLM-5.2 for final validation.</li>
+<li><strong>Increase your subscription quantity:</strong>  If your architecture strictly requires simultaneous generations, you will need to upgrade your plan with the provider to raise that 4-unit ceiling.
+http://googleusercontent.com/lmdx_content/SefTFHdpamHLSYTnqKlHrLIFrUelkpGWdnXMXbhVwctNDhwsXPmXSMNaTwdQBqFCeREMlrUWUaeoPKOgesrkNeGGDmuvQsRrKnVVUDyaFeJSjVMreEVrVklIzABisjBkTsPzFCrG4481</li>
+</ul>

@@ -1,0 +1,131 @@
+<p><strong>User</strong> :</p>
+<h3>Aggiunta del Template per la Bio di Janitor AI al Flusso di Esportazione</h3>
+<p>Questo piano descrive come integrare la generazione automatica di una pagina Bio HTML per Janitor AI all&#39;interno della pipeline di World-Forge, partendo dall&#39;esempio fornito per il  <em>SvartulfrVerse</em>  e seguendo le linee guida del &quot;Storefront Window&quot;.</p>
+<h4>Obiettivo</h4>
+<p>Generare automaticamente un file HTML (es. [NomeBot]_JanitorAI_Bio.html) nella cartella Export/ che funga da &quot;Vetrina&quot; (Storefront) per il bot su Janitor AI. La pagina dovrà catturare l&#39;attenzione con immagini e testi d&#39;impatto, includendo il roster, le avvertenze e una struttura di marketing ben definita.</p>
+<h4>Open Questions</h4>
+<p>[!WARNING]  <strong>Scelta dell&#39;Approccio di Generazione</strong>  Poiché il nuovo formato richiede copywriting creativo (Hook, Impact Line, Teaser), l&#39; <strong>Opzione 1 (Generazione tramite LLM in Fase 2)</strong>  sembra la più adatta. Sei d&#39;accordo?    <strong>Opzione 1: Generazione tramite LLM (Consigliata)</strong>  Creiamo un templates/Janitor_Bio_Template.html e istruiamo l&#39;Architect a compilarlo usando le tue regole di copywriting.    <strong>Opzione 2: Mista</strong>  L&#39;Architect genera solo il testo (Blurb, Title, Subtitle) e uno script Python lo inietta nel file HTML in Fase 4. Questo garantisce HTML perfetto e testo creativo.
+[!IMPORTANT]  <strong>Gestione delle Immagini</strong>  La struttura richiede Main Image (1:1), Supporting Images (4:3, 5:3, Banner). Durante la generazione, il sistema non avrà accesso ai link finali. Il template genererà dei tag immagine &quot;segnaposto&quot; come <img alt="Main Image 1:1" src="../images/Placeholder.png"> che tu andrai a sostituire prima della pubblicazione?</p>
+<h4>Proposed Changes</h4>
+<h5>1. Creazione del Template (La Vetrina)</h5>
+<p>Creeremo il file templates/Janitor_Bio_Template.html basato sulle tue regole &quot;Storefront Window&quot;.</p>
+<h6>[NEW] templates/Janitor_Bio_Template.html</h6>
+<p>La struttura del file seguirà esattamente le tue specifiche:</p>
+<ol>
+<li><strong>Impact Title:</strong>  Breve, d&#39;impatto (~20 caratteri). (es.  <em>Your Chaotic Roommate</em> ).</li>
+<li><strong>Subtitle:</strong>  Nome del personaggio + descrittore d&#39;identità.</li>
+<li><strong>Immagini:</strong>  Spazi predefiniti per  <em>Main Portrait (1:1)</em>  e  <em>Supporting Images</em> .</li>
+<li><strong>Il Blurb (Testo):</strong>      -  <em>Hook (Lead Line)</em>     -  <em>Personality + Conflict in motion</em>     -  <em>Impact line</em>  (Grassetto, per chi legge di fretta)    -  <em>World/Scenario teaser</em>     -  <em>Closing line</em>  (Invito o minaccia)</li>
+<li><strong>Il Clan / Roster (Sezione Custom):</strong>  Elenco degli altri personaggi (come in SvartulfrVerse).</li>
+<li><strong>Technical &amp; Warnings (Rules/LLM Advice):</strong>  Avvertenze NSFW, Dead Dove e un&#39;eventuale istruzione semplice per l&#39;LLM alla fine.</li>
+</ol>
+<h5>2. Aggiornamento delle Istruzioni per gli Agenti</h5>
+<h6>[MODIFY] agent_roles/02_The_Architect.md</h6>
+<p>Aggiungeremo un&#39;istruzione in modo che l&#39;Architect diventi un &quot;Marketer&quot; per la stesura della Bio. Gli forniremo le regole di  <em>Copywriting</em>  (Hook, Impact Line, niente lore dumps, focus sull&#39;azione e sul conflitto). L&#39;Architect leggerà il Master_Design.md e scriverà Drafts/[CharName]_JanitorAI_Bio.html.</p>
+<h6>[MODIFY] workflows/world-forge.md</h6>
+<p>Documenteremo la nuova fase di generazione &quot;Storefront&quot; e il nuovo output richiesto.</p>
+<h5>3. Aggiornamento del Compiler</h5>
+<h6>[MODIFY] tools/build_janitor.py (o nuovo script compile_bios.py)</h6>
+<p>Garantiremo che i file HTML generati dall&#39;Architect in Drafts/ vengano copiati correttamente in Export/ e inclusi nel pacchetto finale.</p>
+<h4>Verification Plan</h4>
+<h5>Manual Verification</h5>
+<ol>
+<li>Generare una Bio per un bot fittizio usando il nuovo prompt dell&#39;Architect.</li>
+<li>Controllare che l&#39;HTML rispetti il &quot;Flow Checklist&quot;: Title → Subtitle → Portrait → Supporting Images → Blurb flow → Closing hook.</li>
+<li>Verificare che l&#39;HTML sia pulito e pronto per essere copiato nell&#39;interfaccia di Janitor AI.</li>
+</ol>
+<hr>
+<p>Edited implementation_plan.md
+Ho aggiornato il <a href="about:invalid#zCSafez">Piano di Implementazione</a> includendo le eccellenti linee guida che mi hai fornito per la &quot;Storefront Window&quot;.
+Ho strutturato il template per seguire esattamente il flow che hai indicato (Title → Subtitle → Portrait → Supporting Images → Blurb flow → Closing hook) ed evidenziato che le biografie verranno scritte usando un approccio di marketing (Hook, Impact line) evitando lore dumps.
+Nel piano ho anche inserito due domande aperte (sotto  <strong>Open Questions</strong> ):</p>
+<ol>
+<li><strong>L&#39;Opzione Mista</strong>  (Generazione tramite LLM + Assemblaggio via Script Python) sembra la più sicura per avere un HTML sempre perfetto. Sei d&#39;accordo con questa scelta o preferisci che l&#39;LLM generi l&#39;HTML intero?</li>
+<li>Per le  <strong>Immagini</strong> , useremo dei segnaposto nel template (es. <img alt="Main Image 1:1" src="../images/Placeholder.png"> oppure un URL generico di immagine placeholder in un tag <img>) che andrai a sostituire tu prima della pubblicazione su Janitor?
+Cosa ne pensi del piano aggiornato? Posso procedere all&#39;esecuzione o c&#39;è qualcos&#39;altro da limare?
+<strong>Gemini</strong> : Il piano è eccellente. La struttura &quot;Storefront&quot; è esattamente ciò che serve per catturare l&#39;attenzione su Janitor AI e districarsi tra le centinaia di bot presenti.
+Riguardo alle due questioni aperte, ecco il mio consiglio su come procedere:</li>
+</ol>
+<h4>1. Scelta dell&#39;Approccio: Voto per l&#39;Opzione 2 (Mista)</h4>
+<p>L&#39;approccio ibrido (LLM per il testo + Script Python per l&#39;HTML) è oggettivamente la strada migliore per una pipeline di sviluppo solida.</p>
+<ul>
+<li><strong>Separazione tra Contenuto e Presentazione:</strong>  Lasciando all&#39;Architect il solo compito di generare un output strutturato (es. un JSON con chiavi come hook, impact_line, blurb), gli permetti di concentrarsi interamente sul copywriting creativo. Potrà focalizzarsi sul trasmettere l&#39;atmosfera del tuo mondo — ad esempio, creare un &quot;teaser&quot; accattivante sul delicato equilibrio di una società composta al 35% da umani, dove lupi mannari e vampiri sono le fazioni soprannaturali dominanti — senza disperdere &quot;ragionamento&quot; sulla formattazione.</li>
+<li><strong>Zero rotture del codice:</strong>  Gli LLM tendono a dimenticare di chiudere i tag <div> o a sbagliare l&#39;annidamento delle classi CSS quando scrivono lunghi blocchi HTML. Uno script Python (magari usando Jinja2 o un semplice .replace()) che inietta il testo in un Janitor_Bio_Template.html fisso ti garantisce che la Vetrina esca sempre sintatticamente perfetta.</div></li>
+<li><strong>Scalabilità:</strong>  Se domani decidi di cambiare il design della Vetrina (magari per adattarla anche a Lorebary o ad altre piattaforme), ti basterà modificare un file HTML senza dover fare  <em>prompt engineering</em>  da capo.</li>
+</ul>
+<h4>2. Gestione delle Immagini: Segnaposto (Placeholders)</h4>
+<p>Sì, l&#39;uso dei segnaposto è la scelta più intelligente e pratica.
+Visto l&#39;alto livello di dettaglio visivo che ricerchi per i tuoi personaggi (come i test iterativi per ottenere il corretto posizionamento di code e orecchie  <em>kemonomimi</em>  nello stile da lupo), la generazione visiva ha i suoi tempi e non deve bloccare la generazione del testo.
+Ti consiglio di strutturare il template HTML in questo modo:</p>
+<pre><code class="language-html">&lt;!-- Nel tuo templates/Janitor_Bio_Template.html --&gt;
+&lt;img src=&quot;{{MAIN_IMAGE_1_1}}&quot; alt=&quot;Main Portrait&quot; class=&quot;storefront-main-img&quot;&gt;
+
+</code></pre>
+<p>Durante la Fase 4, lo script Python sostituirà i tag temporanei con URL visivi temporanei ma espliciti (es. <a href="https://placehold.co/500x500/1a1a1a/e0e0e0?text=Main+Portrait">https://placehold.co/500x500/1a1a1a/e0e0e0?text=Main+Portrait</a>). In questo modo, quando aprirai il file HTML generato per fare la tua  <strong>Verification Manuale</strong> , vedrai visivamente gli spazi vuoti pronti. Ti basterà poi incollare i link definitivi (da Imgur o Discord) prima di copiare il tutto su Janitor AI.</p>
+<h4>Prossimi Passi</h4>
+<p>Il piano è maturo e pronto per essere implementato. Ti suggerisco di procedere in quest&#39;ordine:</p>
+<ol>
+<li><strong>Creare il template HTML vuoto</strong>  (templates/Janitor_Bio_Template.html) con le variabili al posto giusto.</li>
+<li><strong>Aggiornare il prompt dell&#39;Architect</strong>  per fargli sputare fuori solo un JSON ben formattato con i testi di marketing.</li>
+<li><strong>Adattare lo script Python</strong>  per fondere i due elementi.
+Vuoi che buttiamo giù insieme la struttura del JSON di output che l&#39;Architect dovrà generare, o preferisci partire dalla scrittura del codice Python per l&#39;iniezione?
+<strong>User</strong> : che ne dici se nei placeholder delle immagini gli facciamo inserire anche un prompt per la generazione della specifica immagine?
+<strong>Gemini</strong> : È un&#39;idea brillante. In questo modo trasformi il file HTML generato da una semplice &quot;vetrina vuota&quot; a un vero e proprio  <strong>foglio di lavoro (worksheet)</strong>  per la pubblicazione.
+L&#39;Architect, conoscendo intimamente l&#39;aspetto del personaggio, la sua fazione e il &quot;vibe&quot; della scena, è nella posizione perfetta per scriverti dei prompt su misura, facendoti risparmiare un sacco di tempo nella fase di generazione visiva.
+Ecco come possiamo implementarlo in modo pulito senza sporcare la Vetrina finale.</li>
+</ol>
+<h5>1. Modifica al JSON dell&#39;Architect</h5>
+<p>Istruiremo l&#39;Architect a generare non solo il testo, ma un blocco dedicato alle immagini, includendo i prompt. Ad esempio:</p>
+<pre><code class="language-json">{
+  &quot;storefront_text&quot;: {
+    &quot;title&quot;: &quot;Your Chaotic Roommate&quot;,
+    &quot;hook&quot;: &quot;...&quot;
+  },
+  &quot;visuals&quot;: {
+    &quot;main_portrait_1x1&quot;: {
+      &quot;placeholder_url&quot;: &quot;https://placehold.co/500x500/1a1a1a/e0e0e0?text=Main+Portrait&quot;,
+      &quot;generation_prompt&quot;: &quot;Cinematic portrait, modern fantasy, college student, kemonomimi, highly detailed wolf ears correctly positioned blending with hair, sharp amber eyes, soft studio lighting, 1:1 aspect ratio --v 6.0&quot;
+    },
+    &quot;supporting_image_banner&quot;: {
+      &quot;placeholder_url&quot;: &quot;https://placehold.co/800x400/1a1a1a/e0e0e0?text=Banner+Image&quot;,
+      &quot;generation_prompt&quot;: &quot;Wide shot, messy California university dorm room, grunge aesthetic, supernatural elements hidden in modern setting, 16:9&quot;
+    }
+  }
+}
+
+</code></pre>
+<h5>2. Inserimento nel Template HTML</h5>
+<p>Nello script Python e nel file Janitor_Bio_Template.html, possiamo iniettare questi prompt usando i  <strong>commenti HTML</strong> .
+I commenti HTML non sono visibili quando guardi la pagina formattata e vengono ignorati dalle piattaforme come Janitor AI, ma tu potrai leggerli e copiarli semplicemente aprendo il file generato in qualsiasi editor di testo (o guardando il codice sorgente).</p>
+<pre><code class="language-html">&lt;!-- ========================================== --&gt;
+&lt;!-- 🎨 PROMPT GENERAZIONE MAIN PORTRAIT (1:1): --&gt;
+&lt;!-- {{MAIN_PORTRAIT_PROMPT}}                   --&gt;
+&lt;!-- ========================================== --&gt;
+&lt;img src=&quot;{{MAIN_PORTRAIT_URL}}&quot; alt=&quot;Main Portrait&quot; class=&quot;storefront-main-img&quot;&gt;
+
+&lt;!-- ========================================== --&gt;
+&lt;!-- 🎨 PROMPT GENERAZIONE BANNER (16:9):       --&gt;
+&lt;!-- {{BANNER_PROMPT}}                          --&gt;
+&lt;!-- ========================================== --&gt;
+&lt;img src=&quot;{{BANNER_URL}}&quot; alt=&quot;Supporting Banner&quot; class=&quot;storefront-banner&quot;&gt;
+
+</code></pre>
+<h5>I Vantaggi di questo approccio:</h5>
+<ol>
+<li><strong>Flusso ininterrotto:</strong>  Apri il file generato, leggi il commento HTML, copi il prompt, generi l&#39;immagine, prendi il link finale e sostituisci il placeholder {{MAIN_PORTRAIT_URL}}.</li>
+<li><strong>Coerenza visiva:</strong>  L&#39;Architect può variare il prompt in base al personaggio (es. specificando dettagli per i vampiri e dettagli diversi per i licantropi, garantendo che le caratteristiche anatomiche siano rispettate).</li>
+<li><strong>Nessun impatto sull&#39;utente finale:</strong>  Chi legge la bio su Janitor AI non vedrà mai questi prompt, nemmeno per sbaglio.
+Sei d&#39;accordo con questa struttura per inserire i prompt visivi? Se sì, vogliamo procedere prima con la stesura delle istruzioni precise (il system prompt) da dare all&#39;Architect per la generazione di questo JSON, oppure preferisci impostare prima il codice Python del compiler?
+<strong>User</strong> : che ne pensi  di questo template?
+<strong>Gemini</strong> : È un template eccellente. Riflette esattamente la logica della &quot;Vetrina&quot; e l&#39;integrazione dei prompt nei commenti HTML è chirurgica e pulitissima.
+Ecco cosa funziona particolarmente bene e un piccolo accorgimento tecnico per blindarlo su Janitor AI:</li>
+</ol>
+<h5>Cosa è perfetto:</h5>
+<ol>
+<li><strong>La Gerarchia Visiva:</strong>  L&#39;uso intelligente del tag <blockquote> per l&#39;Hook e le variazioni di dimensione del font (1.2em per i titoli, 0.9em per il testo denso) guidano l&#39;occhio del lettore esattamente dove vuoi tu.</blockquote></li>
+<li><strong>Palette Colori:</strong>  I toni pastello (oro rgb(249, 226, 175), pesca rgb(250, 179, 135) e grigio-azzurro rgb(166, 173, 200)) non solo sono esteticamente molto eleganti[cite: 1], ma sono perfetti per le interfacce in &quot;dark mode&quot; che la quasi totalità dell&#39;utenza RP utilizza[cite: 1].</li>
+<li><strong>Il posizionamento del Teaser:</strong>  Il blocco del {{WORLD_TEASER}} incorniciato dal banner[cite: 1] sarà lo spazio ideale per introdurre l&#39;ecosistema del campus universitario. Lì potrai far brillare le dinamiche di potere del tuo setting, magari accennando a come la popolazione umana (ormai al 35%) riesca a sopravvivere in un ambiente dominato dalle due fazioni sovrannaturali più numerose, i licantropi e i vampiri.</li>
+</ol>
+<h5>L&#39;unico suggerimento tecnico (Stili Inline per le Immagini):</h5>
+<p>Nel template hai usato delle classi per le immagini: class=&quot;storefront-main-img&quot; e class=&quot;storefront-banner&quot;[cite: 1].
+Janitor AI (e molte piattaforme simili) utilizza un parser Markdown/HTML molto restrittivo che spesso ignora le classi CSS, a meno che non ci sia un tag </p>

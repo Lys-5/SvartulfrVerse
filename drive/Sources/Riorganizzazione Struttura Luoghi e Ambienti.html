@@ -1,0 +1,780 @@
+<p><strong>User</strong> : aiutami a sistemare;
+ENVIRONMENTS (esistenti, fungono da &quot;zona atmosferica&quot;):   - Blackwood, Solarton, Los Angeles, SUCC, Blackwood Forest
+LOCATIONS (gerarchia spaziale NUOVA):   🏙️ Blackwood City (top-level, env=Blackwood)   │   ├── 📌 Seven Hills (quartiere lusso, branco)   │   │   ├── Villa Douglas   │   │   ├── Logan&#39;s Garage   │   │   └── DCC Tower   │   ├── 📌 Uptown (grattacieli, vampiri)   │   ├── 📌 Paradise (moda, lusso)   │   │   └── Eidolon Creative   │   ├── 📌 Bluemoon (vita notturna)   │   │   └── The Verve   │   ├── 📌 Oldtown (coloniale 1600s)   │   ├── 📌 Dockside (porto)   │   ├── 📌 Ironworks (industriale)   │   🏙️ Hex Valley (zona neutrale, top level, env= hex valley)   │   ├── CUMS   🏙️ Solarton (top-level, env=Solarton)   │   ├── 📌 SUCC Campus   │   │   ├── Lunar Quad, Basilisk Library, Aula Magna...   │   │   ├── TIT House, KSA House, Wyrm Dorms...   │   │   └── Dragon&#39;s Shortcut, Fine Arts, Student Center...   │   └── 📌 Coastal Residential   │       └── Casey&#39;s Apartment   │   🏙️ Los Angeles (top-level, env=Los Angeles)   │   🏙️ Bakersfield (top-level, nuovo)   │   🌲 Blackwood Forest (top-level, env=Blackwood Forest)       └── The Dead Zone           └── Bloodmoon Longhouse
+<strong>Gemini</strong> : Ecco la struttura riorganizzata e pulita, mantenendo la coerenza tra la gerarchia geografica (Top-Level  $\rightarrow$  Quartieri/Macro-zone  $\rightarrow$  Sub-location) e le zone atmosferiche ( <strong>ENVIRONMENTS</strong> ).</p>
+<hr>
+<h5><strong>1. ENVIRONMENTS (Atmosfere / Macro-ambienti)</strong></h5>
+<p>Gli ambienti pricipali a cui agganciare le singole location:</p>
+<ul>
+<li>Blackwood</li>
+<li>Blackwood Forest</li>
+<li>Solarton</li>
+<li>Hex Valley  <em>(aggiunto per coprire la macro-zona)</em></li>
+<li>Los Angeles</li>
+<li>Bakersfield  <em>(aggiunto per coprire la nuova zona)</em></li>
+<li>SUCC</li>
+</ul>
+<hr>
+<h5><strong>2. LOCATIONS (Gerarchia Spaziale Riorganizzata)</strong></h5>
+<pre><code class="language-text">🏙️ Blackwood City (Top-Level | env=Blackwood)
+│
+├── 📌 Seven Hills (Quartiere lusso / Branco)
+│   ├── Villa Douglas
+│   ├── Logan&#39;s Garage
+│   └── DCC Tower
+│
+├── 📌 Uptown (Distretto finanziario / Vampiri)
+│
+├── 📌 Paradise (Distretto della moda e intrattenimento)
+│   └── Eidolon Creative
+│
+├── 📌 Bluemoon (Distretto della vita notturna)
+│   └── The Verve
+│
+├── 📌 Oldtown (Centro storico / Architettura coloniale 1600s)
+│
+├── 📌 Dockside (Zona portuale e moli)
+│
+└── 📌 Ironworks (Distretto industriale e magazzini)
+
+
+🏙️ Hex Valley (Top-Level | Zona Neutrale | env=Hex Valley)
+│
+└── 📌 CUMS (Campus / Centro Universitario)
+
+
+🏙️ Solarton (Top-Level | env=Solarton)
+│
+├── 📌 SUCC Campus (env=SUCC)
+│   ├── 🏢 Strutture Accademiche e Servizi
+│   │   ├── Lunar Quad
+│   │   ├── Basilisk Library
+│   │   ├── Aula Magna
+│   │   ├── Fine Arts Building
+│   │   └── Student Center
+│   │
+│   ├── 🏠 Alloggi e Confraternite
+│   │   ├── TIT House
+│   │   ├── KSA House
+│   │   └── Wyrm Dorms
+│   │
+│   └── 🌲 Passaggi e Aree Esterne
+│       └── Dragon&#39;s Shortcut
+│
+└── 📌 Coastal Residential
+    └── Casey&#39;s Apartment
+
+
+🌲 Blackwood Forest (Top-Level | Area Naturale | env=Blackwood Forest)
+│
+└── 📌 The Dead Zone
+    └── Bloodmoon Longhouse
+
+
+🏙️ Los Angeles (Top-Level | env=Los Angeles)
+│   └── (Da espandere)
+
+
+🏙️ Bakersfield (Top-Level | env=Bakersfield)
+    └── (Da espandere)
+
+</code></pre>
+<hr>
+<h5><strong>Note sulle correzioni applicate:</strong></h5>
+<ol>
+<li><strong>PULIZIA SUCC CAMPUS:</strong>  I sotto-luoghi del campus erano uniti in un unico blocco. Sono stati suddivisi in sottocategorie funzionali ( <em>Accademici</em> ,  <em>Alloggi</em> ,  <em>Passaggi</em> ) per facilitare la navigazione nel database o nei prompt di gioco.</li>
+<li><strong>ALLINEAMENTO ENVIRONMENTS:</strong>  Aggiunti Hex Valley e Bakersfield alla lista degli ambienti principali in modo che ogni Top-Level Location abbia una corrispondente &quot;zona atmosferica&quot;.</li>
+<li><strong>COERENZA GRAFICA:</strong>  Standardizzata l&#39;iconografia (🏙️ per le città/macro-regioni, 📌 per i quartieri/distretti principali, e rientro semplice per i sotto-luoghi specifici).
+<strong>User</strong> : ok ma blackwood city è dentor blackwood forest
+<strong>Gemini</strong> : Se  <strong>Blackwood City</strong>  si trova all&#39;interno di  <strong>Blackwood Forest</strong> , la gerarchia geografica varia in base a cosa vuoi considerare come &quot;Top-Level&quot; (l&#39;entità amministrativa/urbana o la regione geografica/naturale).
+Ecco le  <strong>due opzioni</strong>  per strutturarla in modo pulito:</li>
+</ol>
+<hr>
+<h5><strong>Opzione A: Foresta come Macro-Regione (Gerarchia Geografica Pura)</strong></h5>
+<p>In questa opzione,  <strong>Blackwood Forest</strong>  è il contenitore principale. Al suo interno ospita sia l&#39;area urbana (Blackwood City) sia le zone selvaggio/pericolose (The Dead Zone).</p>
+<pre><code class="language-text">🌲 Blackwood Forest (Top-Level | Macro-Regione | env=Blackwood Forest)
+│
+├── 🏙️ Blackwood City (Area Urbana | env=Blackwood)
+│   ├── 📌 Seven Hills (Quartiere lusso / Branco)
+│   │   ├── Villa Douglas
+│   │   ├── Logan&#39;s Garage
+│   │   └── DCC Tower
+│   ├── 📌 Uptown (Distretto finanziario / Vampiri)
+│   ├── 📌 Paradise (Moda e lusso)
+│   │   └── Eidolon Creative
+│   ├── 📌 Bluemoon (Vita notturna)
+│   │   └── The Verve
+│   ├── 📌 Oldtown (Coloniale 1600s)
+│   ├── 📌 Dockside (Porto)
+│   └── 📌 Ironworks (Industriale)
+│
+└── 📌 The Dead Zone (Area Selvaggia / Pericolosa)
+    └── Bloodmoon Longhouse
+
+</code></pre>
+<hr>
+<h5><strong>Opzione B: Citadino vs Selvaggio (Gerarchia Amministrativa/Sviluppo)</strong></h5>
+<p>Se preferisci mantenere  <strong>Blackwood City</strong>  come entità Top-Level a sé stante per motivi di sviluppo o di motore di gioco, la foresta esterna/selvaggia diventa semplicemente una &quot;zona liminare&quot; o confinante, mantenendo env=Blackwood Forest per contrassegnare il cambio di atmosfera.</p>
+<pre><code class="language-text">🏙️ Blackwood City (Top-Level | env=Blackwood)
+│   ├── 📌 Seven Hills
+│   │   ├── Villa Douglas
+│   │   ├── Logan&#39;s Garage
+│   │   └── DCC Tower
+│   ├── 📌 Uptown
+│   ├── 📌 Paradise
+│   │   └── Eidolon Creative
+│   ├── 📌 Bluemoon
+│   │   └── The Verve
+│   ├── 📌 Oldtown
+│   ├── 📌 Dockside
+│   └── 📌 Ironworks
+│
+🌲 Blackwood Forest - Outskirts (Top-Level | Area Naturale | env=Blackwood Forest)
+└── 📌 The Dead Zone
+    └── Bloodmoon Longhouse
+
+</code></pre>
+<hr>
+<p><strong>Quale impostazione si adatta meglio alla logica del tuo sistema?</strong></p>
+<ul>
+<li>L&#39; <strong>Opzione A</strong>  è ideale se l&#39;esplorazione mappa parte dal mondo naturale verso il centro abitato.</li>
+<li>L&#39; <strong>Opzione B</strong>  è più comoda se la città è la hub principale di gioco e la foresta ne è l&#39;esterno.
+<strong>User</strong> : aggiorna questa: 🏙️ Blackwood City (Top-Level | env=Blackwood) │ ├── 📌 Seven Hills (Quartiere lusso / Branco) │   ├── Villa Douglas │   ├── Logan&#39;s Garage │   └── DCC Tower │ ├── 📌 Uptown (Distretto finanziario / Vampiri) │ ├── 📌 Paradise (Distretto della moda e intrattenimento) │   └── Eidolon Creative │ ├── 📌 Bluemoon (Distretto della vita notturna) │   └── The Verve │ ├── 📌 Oldtown (Centro storico / Architettura coloniale 1600s) │ ├── 📌 Dockside (Zona portuale e moli) │ └── 📌 Ironworks (Distretto industriale e magazzini)
+🏙️ Hex Valley (Top-Level | Zona Neutrale | env=Hex Valley) │ └── 📌 CUMS (Campus / Centro Universitario)
+🏙️ Solarton (Top-Level | env=Solarton) │ ├── 📌 SUCC Campus (env=SUCC) │   ├── 🏢 Strutture Accademiche e Servizi │   │   ├── Lunar Quad │   │   ├── Basilisk Library │   │   ├── Aula Magna │   │   ├── Fine Arts Building │   │   └── Student Center │   │ │   ├── 🏠 Alloggi e Confraternite │   │   ├── TIT House │   │   ├── KSA House │   │   └── Wyrm Dorms │   │ │   └── 🌲 Passaggi e Aree Esterne │       └── Dragon&#39;s Shortcut │ └── 📌 Coastal Residential     └── Casey&#39;s Apartment
+🌲 Blackwood Forest (Top-Level | Area Naturale | env=Blackwood Forest) │ └── 📌 The Dead Zone     └── Bloodmoon Longhouse
+🏙️ Los Angeles (Top-Level | env=Los Angeles) │   └── (Da espandere)
+🏙️ Bakersfield (Top-Level | env=Bakersfield)     └── (Da espandere)</li>
+</ul>
+<hr>
+<p>con questa: 🏙️ Blackwood City (Top-Level | env=Blackwood) │ ├── 📌 Seven Hills (Quartiere lusso / Branco) │   ├── Villa Douglas │   ├── Logan&#39;s Garage │   └── DCC Tower │ ├── 📌 Uptown (Distretto finanziario / Vampiri) │ ├── 📌 Paradise (Distretto della moda e intrattenimento) │   └── Eidolon Creative │ ├── 📌 Bluemoon (Distretto della vita notturna) │   └── The Verve │ ├── 📌 Oldtown (Centro storico / Architettura coloniale 1600s) │ ├── 📌 Dockside (Zona portuale e moli) │ └── 📌 Ironworks (Distretto industriale e magazzini)
+🏙️ Hex Valley (Top-Level | Zona Neutrale | env=Hex Valley) │ └── 📌 CUMS (Campus / Centro Universitario)
+🏙️ Solarton (Top-Level | env=Solarton) │ ├── 📌 SUCC Campus (env=SUCC) │   ├── 🏢 Strutture Accademiche e Servizi │   │   ├── Lunar Quad │   │   ├── Basilisk Library │   │   ├── Aula Magna │   │   ├── Fine Arts Building │   │   └── Student Center │   │ │   ├── 🏠 Alloggi e Confraternite │   │   ├── TIT House │   │   ├── KSA House │   │   └── Wyrm Dorms │   │ │   └── 🌲 Passaggi e Aree Esterne │       └── Dragon&#39;s Shortcut │ └── 📌 Coastal Residential     └── Casey&#39;s Apartment
+🌲 Blackwood Forest (Top-Level | Area Naturale | env=Blackwood Forest) │ └── 📌 Bloodmoon Pack Territory (The Dead Zone = no tecnologia per magia troppo densa)     └── Bloodmoon Longhouse
+🏙️ Los Angeles (Top-Level | env=Los Angeles) │   └── (Da espandere)
+🏙️ Bakersfield (Top-Level | env=Bakersfield)     └── (Da espandere)
+<strong>Gemini</strong> : Ecco la gerarchia aggiornata, che integra sia la tua nuova descrizione per il territorio del branco, sia la correzione precedente per cui  <strong>Blackwood City</strong>  si trova fisicamente all&#39;interno di  <strong>Blackwood Forest</strong> :</p>
+<pre><code class="language-text">🌲 Blackwood Forest (Top-Level | Macro-Regione | env=Blackwood Forest)
+│
+├── 🏙️ Blackwood City (Area Urbana | env=Blackwood)
+│   ├── 📌 Seven Hills (Quartiere lusso / Branco)
+│   │   ├── Villa Douglas
+│   │   ├── Logan&#39;s Garage
+│   │   └── DCC Tower
+│   │
+│   ├── 📌 Uptown (Distretto finanziario / Vampiri)
+│   │
+│   ├── 📌 Paradise (Distretto della moda e intrattenimento)
+│   │   └── Eidolon Creative
+│   │
+│   ├── 📌 Bluemoon (Distretto della vita notturna)
+│   │   └── The Verve
+│   │
+│   ├── 📌 Oldtown (Centro storico / Architettura coloniale 1600s)
+│   │
+│   ├── 📌 Dockside (Zona portuale e moli)
+│   │
+│   └── 📌 Ironworks (Distretto industriale e magazzini)
+│
+└── 📌 Bloodmoon Pack Territory (The Dead Zone = no tecnologia per magia troppo densa)
+    └── Bloodmoon Longhouse
+
+
+🏙️ Hex Valley (Top-Level | Zona Neutrale | env=Hex Valley)
+│
+└── 📌 CUMS (Campus / Centro Universitario)
+
+
+🏙️ Solarton (Top-Level | env=Solarton)
+│
+├── 📌 SUCC Campus (env=SUCC)
+│   ├── 🏢 Strutture Accademiche e Servizi
+│   │   ├── Lunar Quad
+│   │   ├── Basilisk Library
+│   │   ├── Aula Magna
+│   │   ├── Fine Arts Building
+│   │   └── Student Center
+│   │
+│   ├── 🏠 Alloggi e Confraternite
+│   │   ├── TIT House
+│   │   ├── KSA House
+│   │   └── Wyrm Dorms
+│   │
+│   └── 🌲 Passaggi e Aree Esterne
+│       └── Dragon&#39;s Shortcut
+│
+└── 📌 Coastal Residential
+    └── Casey&#39;s Apartment
+
+
+🏙️ Los Angeles (Top-Level | env=Los Angeles)
+│   └── (Da espandere)
+
+
+🏙️ Bakersfield (Top-Level | env=Bakersfield)
+    └── (Da espandere)
+
+</code></pre>
+<p><strong>User</strong> : SOLARTON College Town &amp; Inclusive Community S.U.C.C.&#39;s hometown of Solarton is an eclectic community where humans live alongside a high density of supernatural creatures, especially werewolves and wolf hybrids. Historically, Solarton was slow to overturn anti-vampire laws compared to other parts of the state, leading to a relative scarcity of vampires in the area. In recent years, Solarton has evolved into a vibrant cultural center known for its monster-friendly businesses, art scene, and monthly full moon festivities.  LOCATIONS   Solarton High School   Many of S.U.C.C&#39;s current students are alumni of this school, which has a reknowned sports scholarship program &amp; has recently undergone renovations to make its campus more accessible to non-humanoid students.
+Sidewinders Bar &amp; Nightclub   Though waning in popularity with the college crowd, Sidewinders remains an icon of Solarton nightlife, and was the first establishment in the town to open its doors to vampiric customers.
+Bricklane Mall   This quaint outdoor shopping area, close to the city&#39;s center, hosts a variety of boutiques and services. Medusa&#39;s is the trendiest place to get a trim (whichever part of your hair may grow from), and the nearby Yeti Shack has sweet frozen treats to help you beat the summer heat!                                                                      Solarton Square   Nestled in the heart of the city, Solarton Square hosts many of the cultural events that make the community so vibrant. From the Full Moon Market (popular with the town&#39;s many weres!) to the yearly Solar Festival (a weekend of magic, music and family fun) - there&#39;s always something going on at the square!
+<strong>Gemini</strong> : Ecco la gerarchia aggiornata con le nuove location e i dettagli integrati all&#39;interno di  <strong>Solarton</strong> . Ho organizzato le nuove aggiunte come punti di interesse principali (📌) sotto la macro-regione della città, specificando anche i sotto-luoghi (come per il Bricklane Mall) e aggiungendo brevi note di contesto per mantenere traccia del lore.</p>
+<pre><code class="language-text">🌲 Blackwood Forest (Top-Level | Macro-Regione | env=Blackwood Forest)
+│
+├── 🏙️ Blackwood City (Area Urbana | env=Blackwood)
+│   ├── 📌 Seven Hills (Quartiere lusso / Branco)
+│   │   ├── Villa Douglas
+│   │   ├── Logan&#39;s Garage
+│   │   └── DCC Tower
+│   │
+│   ├── 📌 Uptown (Distretto finanziario / Vampiri)
+│   │
+│   ├── 📌 Paradise (Distretto della moda e intrattenimento)
+│   │   └── Eidolon Creative
+│   │
+│   ├── 📌 Bluemoon (Distretto della vita notturna)
+│   │   └── The Verve
+│   │
+│   ├── 📌 Oldtown (Centro storico / Architettura coloniale 1600s)
+│   │
+│   ├── 📌 Dockside (Zona portuale e moli)
+│   │
+│   └── 📌 Ironworks (Distretto industriale e magazzini)
+│
+└── 📌 Bloodmoon Pack Territory (The Dead Zone = no tecnologia per magia troppo densa)
+    └── Bloodmoon Longhouse
+
+
+🏙️ Hex Valley (Top-Level | Zona Neutrale | env=Hex Valley)
+│
+└── 📌 CUMS (Campus / Centro Universitario)
+
+
+🏙️ Solarton (Top-Level | Città Universitaria Inclusiva | env=Solarton)
+│
+├── 📌 SUCC Campus (env=SUCC)
+│   ├── 🏢 Strutture Accademiche e Servizi
+│   │   ├── Lunar Quad
+│   │   ├── Basilisk Library
+│   │   ├── Aula Magna
+│   │   ├── Fine Arts Building
+│   │   └── Student Center
+│   │
+│   ├── 🏠 Alloggi e Confraternite
+│   │   ├── TIT House
+│   │   ├── KSA House
+│   │   └── Wyrm Dorms
+│   │
+│   └── 🌲 Passaggi e Aree Esterne
+│       └── Dragon&#39;s Shortcut
+│
+├── 📌 Coastal Residential
+│   └── Casey&#39;s Apartment
+│
+├── 📌 Solarton Square (Centro città / Cuore culturale ed eventi)
+│   └── (Eventi: Full Moon Market, Solar Festival)
+│
+├── 📌 Bricklane Mall (Area commerciale all&#39;aperto)
+│   ├── Medusa&#39;s (Parrucchiere per ogni tipo di creatura)
+│   └── Yeti Shack (Gelateria/Dolci freddi)
+│
+├── 📌 Sidewinders Bar &amp; Nightclub (Storico locale notturno, pioniere dell&#39;inclusione vampirica)
+│
+└── 📌 Solarton High School (Campus accessibile per non-umanoidi, noto programma sportivo)
+
+
+🏙️ Los Angeles (Top-Level | env=Los Angeles)
+│   └── (Da espandere)
+
+
+🏙️ Bakersfield (Top-Level | env=Bakersfield)
+    └── (Da espandere)
+
+</code></pre>
+<p>Tutto si incastra perfettamente nell&#39;architettura che stiamo costruendo. Dimmi pure se vuoi espandere ulteriormente le altre città o se ci sono ulteriori ritocchi da fare!
+<strong>User</strong> : questà è la mappa del succ campus estrapola i location
+<strong>Gemini</strong> : Basandomi sull&#39;immagine fornita (image_6e5170.jpg), ho estratto tutti i luoghi, gli edifici e i punti di interesse presenti all&#39;interno del  <strong>S.U.C.C. Main Campus (129 Hocus Way, Solarton, CA)</strong> .
+Nota: Alcuni nomi differiscono leggermente da quelli usati in precedenza (es. &quot;Basilisk Library&quot; sulla mappa è segnata come &quot;Basilica Library&quot;, e &quot;Fine Arts Building&quot; è &quot;Arts Building&quot;). Ho organizzato tutto in categorie logiche per aggiornare la tua gerarchia.</p>
+<hr>
+<h5><strong>Luoghi estratti dalla mappa (image_6e5170.jpg)</strong></h5>
+<p><strong>🏢 Strutture Accademiche e Aule</strong></p>
+<ul>
+<li><strong>Archer Wolfwood Hall:</strong>  Aula magna principale, aule, struttura a prova di magia.</li>
+<li><strong>Basilica Library:</strong>  Sale studio, sezioni magiche e non magiche, sala dei trofei.</li>
+<li><strong>Griffin Clocktower:</strong>  Aule di legge e ingegneria, uffici del personale, seminterrato usato come spazio per club notturni.</li>
+<li><strong>Med/Bioengineering Labs:</strong>  Aule, laboratori e spazi per esami.</li>
+<li><strong>Science Quarter:</strong>  Contenimento campioni magici e non magici.</li>
+<li><strong>Arts Building:</strong>  Belle arti e arti dello spettacolo, auditorium, spazi per le prove.</li>
+<li><strong>Unicorn Hall:</strong>  Edificio accessibile per studenti quadrupedi e alati, serra.</li>
+<li><strong>Nocturnal Hall:</strong>  Classi notturne, usato come spazio per club durante il giorno.</li>
+<li><strong>Building A:</strong>  Aule generali, perlopiù classi umane.</li>
+<li><strong>Building B:</strong>  Piccole aule, area studio.</li>
+<li><strong>Building C</strong>
+<strong>🏠 Alloggi e Confraternite</strong></li>
+<li><strong>Wyrm Dormitories:</strong>  Diviso in Ali (Nord: Umani, Ovest/Est: Miste, Sud: Sovrannaturali). Include palestra per soli studenti, parcheggio nord, strutture speciali (stanze sole/luna, banca del sangue).</li>
+<li><strong>Fraternity &amp; Sorority Row</strong></li>
+<li><strong>Additional Student Housing</strong>   <em>(Direzione Nord/Nord-Ovest)</em>
+<strong>🏥 Servizi e Amministrazione</strong></li>
+<li><strong>Administration</strong></li>
+<li><strong>Student Association Building:</strong>  Supporto per umani e sovrannaturali, primo soccorso.</li>
+<li><strong>Supernatural Support Center (SSC)</strong></li>
+<li><strong>Storage &amp; Supplies</strong>
+<strong>🏟️ Sport, Eventi e Ricreazione</strong></li>
+<li><strong>St. Neptune Stadium:</strong>  Edificio a temperatura controllata, pista di pattinaggio, piscina coperta e sauna.</li>
+<li><strong>Bulls Stadium</strong>   <em>(Direzione Sud/Sud-Est)</em></li>
+<li><strong>Main Pool:</strong>  Acqua dolce, ritrovo sociale popolare per studenti acquatici.</li>
+<li><strong>Gym &amp; Changing Facilities</strong></li>
+<li><strong>Sports Fields</strong>   <em>(Direzione Sud/Sud-Est)</em></li>
+<li><strong>Helsing Chapel:</strong>  Multiconfessionale, usata per piccole esibizioni ed eventi.</li>
+<li><strong>Gallery</strong>
+<strong>🌲 Aree Esterne e Parcheggi</strong></li>
+<li><strong>Lunar Quad</strong></li>
+<li><strong>Main Parking Lot</strong>   <em>(Direzione Nord/Nord-Ovest)</em></li>
+<li><strong>Parking Lot B</strong>   <em>(Direzione Sud/Sud-Est)</em></li>
+</ul>
+<hr>
+<h5><strong>L&#39;Aggiornamento per la Gerarchia (Sezione SUCC Campus)</strong></h5>
+<p>Ecco come si integra perfettamente nel tuo schema ad albero. Ho mantenuto i luoghi che avevi già stabilito (TIT House, KSA House, Dragon&#39;s Shortcut) unendoli alle nuove estrazioni per creare il polo universitario definitivo:</p>
+<pre><code class="language-text">├── 📌 SUCC Campus (129 Hocus Way | env=SUCC)
+│   ├── 🏢 Strutture Accademiche
+│   │   ├── Archer Wolfwood Hall (Magic-Proofed)
+│   │   ├── Basilica Library
+│   │   ├── Griffin Clocktower
+│   │   ├── Med/Bioengineering Labs
+│   │   ├── Science Quarter
+│   │   ├── Arts Building
+│   │   ├── Unicorn Hall (Accessibile per quadrupedi/alati)
+│   │   ├── Nocturnal Hall
+│   │   ├── Building A (Aule umane)
+│   │   ├── Building B
+│   │   └── Building C
+│   │
+│   ├── 🏠 Alloggi e Confraternite
+│   │   ├── Wyrm Dormitories (Ali divise, stanze sole/luna, banca del sangue)
+│   │   ├── Fraternity &amp; Sorority Row
+│   │   ├── TIT House
+│   │   ├── KSA House
+│   │   └── Additional Student Housing
+│   │
+│   ├── 🏥 Amministrazione e Servizi
+│   │   ├── Administration
+│   │   ├── Student Association Building
+│   │   ├── Supernatural Support Center (SSC)
+│   │   └── Storage &amp; Supplies
+│   │
+│   ├── 🏟️ Sport e Ricreazione
+│   │   ├── St. Neptune Stadium (Ghiaccio, piscina coperta, sauna)
+│   │   ├── Bulls Stadium
+│   │   ├── Main Pool (Acqua dolce, per acquatici)
+│   │   ├── Gym &amp; Changing Facilities
+│   │   ├── Sports Fields
+│   │   ├── Helsing Chapel (Eventi/Multiconfessionale)
+│   │   └── Gallery
+│   │
+│   └── 🌲 Aree Esterne, Passaggi e Parcheggi
+│       ├── Lunar Quad
+│       ├── Dragon&#39;s Shortcut
+│       ├── Main Parking Lot
+│       └── Parking Lot B
+
+</code></pre>
+<p><strong>User</strong> : a backerville c&#39;è il mercato contadino preferito di noah, scrivilo in inglese
+per los angeles metti i posti più famosi e spostaci anche la DCC tower
+<strong>Gemini</strong> : Ecco la mappa aggiornata. Ho rimosso la  <strong>DCC Tower</strong>  da Seven Hills (Blackwood City) per spostarla sotto  <strong>Los Angeles</strong> , dove ho anche aggiunto alcuni dei distretti e punti di interesse iconici della città. Infine, ho inserito il mercato agricolo di Noah a  <strong>Bakersfield</strong>  in inglese, come richiesto.</p>
+<pre><code class="language-text">🌲 Blackwood Forest (Top-Level | Macro-Regione | env=Blackwood Forest)
+│
+├── 🏙️ Blackwood City (Area Urbana | env=Blackwood)
+│   ├── 📌 Seven Hills (Quartiere lusso / Branco)
+│   │   ├── Villa Douglas
+│   │   └── Logan&#39;s Garage
+│   │
+│   ├── 📌 Uptown (Distretto finanziario / Vampiri)
+│   │
+│   ├── 📌 Paradise (Distretto della moda e intrattenimento)
+│   │   └── Eidolon Creative
+│   │
+│   ├── 📌 Bluemoon (Distretto della vita notturna)
+│   │   └── The Verve
+│   │
+│   ├── 📌 Oldtown (Centro storico / Architettura coloniale 1600s)
+│   │
+│   ├── 📌 Dockside (Zona portuale e moli)
+│   │
+│   └── 📌 Ironworks (Distretto industriale e magazzini)
+│
+└── 📌 Bloodmoon Pack Territory (The Dead Zone = no tecnologia per magia troppo densa)
+    └── Bloodmoon Longhouse
+
+
+🏙️ Hex Valley (Top-Level | Zona Neutrale | env=Hex Valley)
+│
+└── 📌 CUMS (Campus / Centro Universitario)
+
+
+🏙️ Solarton (Top-Level | Città Universitaria Inclusiva | env=Solarton)
+│
+├── 📌 SUCC Campus (129 Hocus Way | env=SUCC)
+│   ├── 🏢 Strutture Accademiche
+│   │   ├── Archer Wolfwood Hall (Magic-Proofed)
+│   │   ├── Basilica Library
+│   │   ├── Griffin Clocktower
+│   │   ├── Med/Bioengineering Labs
+│   │   ├── Science Quarter
+│   │   ├── Arts Building
+│   │   ├── Unicorn Hall (Accessibile per quadrupedi/alati)
+│   │   ├── Nocturnal Hall
+│   │   ├── Building A (Aule umane)
+│   │   ├── Building B
+│   │   └── Building C
+│   │
+│   ├── 🏠 Alloggi e Confraternite
+│   │   ├── Wyrm Dormitories (Ali divise, stanze sole/luna, banca del sangue)
+│   │   ├── Fraternity &amp; Sorority Row
+│   │   ├── TIT House
+│   │   ├── KSA House
+│   │   └── Additional Student Housing
+│   │
+│   ├── 🏥 Amministrazione e Servizi
+│   │   ├── Administration
+│   │   ├── Student Association Building
+│   │   ├── Supernatural Support Center (SSC)
+│   │   └── Storage &amp; Supplies
+│   │
+│   ├── 🏟️ Sport e Ricreazione
+│   │   ├── St. Neptune Stadium (Ghiaccio, piscina coperta, sauna)
+│   │   ├── Bulls Stadium
+│   │   ├── Main Pool (Acqua dolce, per acquatici)
+│   │   ├── Gym &amp; Changing Facilities
+│   │   ├── Sports Fields
+│   │   ├── Helsing Chapel (Eventi/Multiconfessionale)
+│   │   └── Gallery
+│   │
+│   └── 🌲 Aree Esterne, Passaggi e Parcheggi
+│       ├── Lunar Quad
+│       ├── Dragon&#39;s Shortcut
+│       ├── Main Parking Lot
+│       └── Parking Lot B
+│
+├── 📌 Coastal Residential
+│   └── Casey&#39;s Apartment
+│
+├── 📌 Solarton Square (Centro città / Cuore culturale ed eventi)
+│   └── (Eventi: Full Moon Market, Solar Festival)
+│
+├── 📌 Bricklane Mall (Area commerciale all&#39;aperto)
+│   ├── Medusa&#39;s (Parrucchiere per ogni tipo di creatura)
+│   └── Yeti Shack (Gelateria/Dolci freddi)
+│
+├── 📌 Sidewinders Bar &amp; Nightclub (Storico locale notturno, pioniere dell&#39;inclusione vampirica)
+│
+└── 📌 Solarton High School (Campus accessibile per non-umanoidi, noto programma sportivo)
+
+
+🏙️ Los Angeles (Top-Level | env=Los Angeles)
+│
+├── 📌 DCC Tower (Sede centrale spostata da Blackwood)
+│
+├── 📌 Hollywood Boulevard (Distretto turistico e intrattenimento)
+│   └── Walk of Fame
+│
+├── 📌 Griffith Park (Area naturale collinare)
+│   └── Griffith Observatory
+│
+├── 📌 Beverly Hills (Quartiere lusso e residenze VIP)
+│   └── Rodeo Drive
+│
+└── 📌 Santa Monica (Area costiera)
+    └── Santa Monica Pier
+
+
+🏙️ Bakersfield (Top-Level | env=Bakersfield)
+│
+└── 📌 Noah&#39;s Favorite Farmers Market
+
+</code></pre>
+<p><strong>User</strong> : inseriamo anche qeuest elocation in succ:
+Anime Club
+Location: Library Basement Meeting Room 005 Schedule: Fridays at 6 PM An informal group where both human and supernatural otakus gather to watch anime and discuss anime &amp; manga series.
+by maniamantus
+by tvbles
+by mysterycrewton
+by mysterycrewton
+by mysterycrewton
+by mysterycrewton
+by iri.rain
+by gunko
+by tvbles
+by gunko
+by gunko
+by hyena
+by tvbles
+by tvbles
+by tvbles
+by tvbles
+by tvbles
+by gunko
+by tvbles
+The Pack Location: Nocturnal Hall or the Lunar Quad (seasonal) Schedule: Tuesdays 7-9pm S.U.C.C&#39;s official were and canid/lupine demi society, The Pack acts as a support system for those struggling, be it academic or related to their nature. BigFeet Hiking Club Location: Unicorn Hall Schedule: Varies Popular with &#39;cryptid&#39; and less-common species, the Bigfeet Hiking Club is very welcoming to new members and organises a r ange of hikes and camping trips over the academic year. Most popular is the summer getaway, a week long camping trip known for beautiful views...and lots of drinking.
+Vampire &amp; Undead Association Location: Helsing Chapel Schedule: Sunday-Monday, 11pm Created to help support S.U.C.C&#39;s small population of vampiric and undead students &amp; staff, VUA has unfortunately developed a reputation for elitism. This exclusive club is known to have an extensive application process - and those who are part human are often turned down Supernatural &amp; Human Alliance
+Location: Student Association Building Schedule: Meets monthly One of the largest and most active clubs on campus, the S.H.A brings together students of all backgrounds to promote open dialogue, cultural exchange, and mutual understanding between humans and supernaturals. The group hosts educational events, facilitates interspecies mentorship programs, and advocates for policies supporting the needs of SUCC&#39;s diverse student body.
+GREEK LIFE If you have a fan-oc in one of these or any other greek organisation, please DM me with a link to their bot so I can add them! - io ♂ FRATERNITIES Alpha Rho Omega
+Alpha Sigma Sigma
+Beta Rho Omega
+SORORITIES ♀ Mu Omega Omega
+Theta Iota Theta
+<strong>Gemini</strong> : Ecco la mappa aggiornata. Ho inserito i nuovi club e le organizzazioni studentesche all&#39;interno delle rispettive location fisiche del  <strong>SUCC Campus</strong> , specificando dove si riuniscono. Ho anche dettagliato le confraternite e sorellanze sotto la Fraternity &amp; Sorority Row, integrando la TIT House (Theta Iota Theta).</p>
+<pre><code class="language-text">🌲 Blackwood Forest (Top-Level | Macro-Regione | env=Blackwood Forest)
+│
+├── 🏙️ Blackwood City (Area Urbana | env=Blackwood)
+│   ├── 📌 Seven Hills (Quartiere lusso / Branco)
+│   │   ├── Villa Douglas
+│   │   └── Logan&#39;s Garage
+│   │
+│   ├── 📌 Uptown (Distretto finanziario / Vampiri)
+│   │
+│   ├── 📌 Paradise (Distretto della moda e intrattenimento)
+│   │   └── Eidolon Creative
+│   │
+│   ├── 📌 Bluemoon (Distretto della vita notturna)
+│   │   └── The Verve
+│   │
+│   ├── 📌 Oldtown (Centro storico / Architettura coloniale 1600s)
+│   │
+│   ├── 📌 Dockside (Zona portuale e moli)
+│   │
+│   └── 📌 Ironworks (Distretto industriale e magazzini)
+│
+└── 📌 Bloodmoon Pack Territory (The Dead Zone = no tecnologia per magia troppo densa)
+    └── Bloodmoon Longhouse
+
+
+🏙️ Hex Valley (Top-Level | Zona Neutrale | env=Hex Valley)
+│
+└── 📌 CUMS (Campus / Centro Universitario)
+
+
+🏙️ Solarton (Top-Level | Città Universitaria Inclusiva | env=Solarton)
+│
+├── 📌 SUCC Campus (129 Hocus Way | env=SUCC)
+│   ├── 🏢 Strutture Accademiche
+│   │   ├── Archer Wolfwood Hall (Magic-Proofed)
+│   │   ├── Basilica Library
+│   │   │   └── Basement Meeting Room 005 (Anime Club)
+│   │   ├── Griffin Clocktower
+│   │   ├── Med/Bioengineering Labs
+│   │   ├── Science Quarter
+│   │   ├── Arts Building
+│   │   ├── Unicorn Hall (Accessibile per quadrupedi/alati)
+│   │   │   └── BigFeet Hiking Club
+│   │   ├── Nocturnal Hall
+│   │   │   └── The Pack (Sede invernale / Meeting)
+│   │   ├── Building A (Aule umane)
+│   │   ├── Building B
+│   │   └── Building C
+│   │
+│   ├── 🏠 Alloggi e Confraternite
+│   │   ├── Wyrm Dormitories (Ali divise, stanze sole/luna, banca del sangue)
+│   │   ├── Fraternity &amp; Sorority Row (Greek Life)
+│   │   │   ├── ♂ Fraternities: Alpha Rho Omega, Alpha Sigma Sigma, Beta Rho Omega
+│   │   │   └── ♀ Sororities: Mu Omega Omega, Theta Iota Theta (TIT House)
+│   │   ├── KSA House
+│   │   └── Additional Student Housing
+│   │
+│   ├── 🏥 Amministrazione e Servizi
+│   │   ├── Administration
+│   │   ├── Student Association Building
+│   │   │   └── Supernatural &amp; Human Alliance (S.H.A.)
+│   │   ├── Supernatural Support Center (SSC)
+│   │   └── Storage &amp; Supplies
+│   │
+│   ├── 🏟️ Sport e Ricreazione
+│   │   ├── St. Neptune Stadium (Ghiaccio, piscina coperta, sauna)
+│   │   ├── Bulls Stadium
+│   │   ├── Main Pool (Acqua dolce, per acquatici)
+│   │   ├── Gym &amp; Changing Facilities
+│   │   ├── Sports Fields
+│   │   ├── Helsing Chapel (Eventi/Multiconfessionale)
+│   │   │   └── Vampire &amp; Undead Association (VUA)
+│   │   └── Gallery
+│   │
+│   └── 🌲 Aree Esterne, Passaggi e Parcheggi
+│       ├── Lunar Quad
+│       │   └── The Pack (Sede stagionale / Estiva)
+│       ├── Dragon&#39;s Shortcut
+│       ├── Main Parking Lot
+│       └── Parking Lot B
+│
+├── 📌 Coastal Residential
+│   └── Casey&#39;s Apartment
+│
+├── 📌 Solarton Square (Centro città / Cuore culturale ed eventi)
+│   └── (Eventi: Full Moon Market, Solar Festival)
+│
+├── 📌 Bricklane Mall (Area commerciale all&#39;aperto)
+│   ├── Medusa&#39;s (Parrucchiere per ogni tipo di creatura)
+│   └── Yeti Shack (Gelateria/Dolci freddi)
+│
+├── 📌 Sidewinders Bar &amp; Nightclub (Storico locale notturno, pioniere dell&#39;inclusione vampirica)
+│
+└── 📌 Solarton High School (Campus accessibile per non-umanoidi, noto programma sportivo)
+
+
+🏙️ Los Angeles (Top-Level | env=Los Angeles)
+│
+├── 📌 DCC Tower (Sede centrale)
+│
+├── 📌 Hollywood Boulevard (Distretto turistico e intrattenimento)
+│   └── Walk of Fame
+│
+├── 📌 Griffith Park (Area naturale collinare)
+│   └── Griffith Observatory
+│
+├── 📌 Beverly Hills (Quartiere lusso e residenze VIP)
+│   └── Rodeo Drive
+│
+└── 📌 Santa Monica (Area costiera)
+    └── Santa Monica Pier
+
+
+🏙️ Bakersfield (Top-Level | env=Bakersfield)
+│
+└── 📌 Noah&#39;s Favorite Farmers Market
+
+</code></pre>
+<p><strong>User</strong> : il ksa è la confraternita maschile Kappa Sigma Alpha
+<strong>Gemini</strong> : Ecco la mappa aggiornata con  <strong>Kappa Sigma Alpha (KSA House)</strong>  spostata e correttamente inserita tra le confraternite maschili della  <em>Greek Life</em> .</p>
+<pre><code class="language-text">🌲 Blackwood Forest (Top-Level | Macro-Regione | env=Blackwood Forest)
+│
+├── 🏙️ Blackwood City (Area Urbana | env=Blackwood)
+│   ├── 📌 Seven Hills (Quartiere lusso / Branco)
+│   │   ├── Villa Douglas
+│   │   └── Logan&#39;s Garage
+│   │
+│   ├── 📌 Uptown (Distretto finanziario / Vampiri)
+│   │
+│   ├── 📌 Paradise (Distretto della moda e intrattenimento)
+│   │   └── Eidolon Creative
+│   │
+│   ├── 📌 Bluemoon (Distretto della vita notturna)
+│   │   └── The Verve
+│   │
+│   ├── 📌 Oldtown (Centro storico / Architettura coloniale 1600s)
+│   │
+│   ├── 📌 Dockside (Zona portuale e moli)
+│   │
+│   └── 📌 Ironworks (Distretto industriale e magazzini)
+│
+└── 📌 Bloodmoon Pack Territory (The Dead Zone = no tecnologia per magia troppo densa)
+    └── Bloodmoon Longhouse
+
+
+🏙️ Hex Valley (Top-Level | Zona Neutrale | env=Hex Valley)
+│
+└── 📌 CUMS (Campus / Centro Universitario)
+
+
+🏙️ Solarton (Top-Level | Città Universitaria Inclusiva | env=Solarton)
+│
+├── 📌 SUCC Campus (129 Hocus Way | env=SUCC)
+│   ├── 🏢 Strutture Accademiche
+│   │   ├── Archer Wolfwood Hall (Magic-Proofed)
+│   │   ├── Basilica Library
+│   │   │   └── Basement Meeting Room 005 (Anime Club)
+│   │   ├── Griffin Clocktower
+│   │   ├── Med/Bioengineering Labs
+│   │   ├── Science Quarter
+│   │   ├── Arts Building
+│   │   ├── Unicorn Hall (Accessibile per quadrupedi/alati)
+│   │   │   └── BigFeet Hiking Club
+│   │   ├── Nocturnal Hall
+│   │   │   └── The Pack (Sede invernale / Meeting)
+│   │   ├── Building A (Aule umane)
+│   │   ├── Building B
+│   │   └── Building C
+│   │
+│   ├── 🏠 Alloggi e Confraternite
+│   │   ├── Wyrm Dormitories (Ali divise, stanze sole/luna, banca del sangue)
+│   │   ├── Fraternity &amp; Sorority Row (Greek Life)
+│   │   │   ├── ♂ Fraternities: Alpha Rho Omega, Alpha Sigma Sigma, Beta Rho Omega, Kappa Sigma Alpha (KSA House)
+│   │   │   └── ♀ Sororities: Mu Omega Omega, Theta Iota Theta (TIT House)
+│   │   └── Additional Student Housing
+│   │
+│   ├── 🏥 Amministrazione e Servizi
+│   │   ├── Administration
+│   │   ├── Student Association Building
+│   │   │   └── Supernatural &amp; Human Alliance (S.H.A.)
+│   │   ├── Supernatural Support Center (SSC)
+│   │   └── Storage &amp; Supplies
+│   │
+│   ├── 🏟️ Sport e Ricreazione
+│   │   ├── St. Neptune Stadium (Ghiaccio, piscina coperta, sauna)
+│   │   ├── Bulls Stadium
+│   │   ├── Main Pool (Acqua dolce, per acquatici)
+│   │   ├── Gym &amp; Changing Facilities
+│   │   ├── Sports Fields
+│   │   ├── Helsing Chapel (Eventi/Multiconfessionale)
+│   │   │   └── Vampire &amp; Undead Association (VUA)
+│   │   └── Gallery
+│   │
+│   └── 🌲 Aree Esterne, Passaggi e Parcheggi
+│       ├── Lunar Quad
+│       │   └── The Pack (Sede stagionale / Estiva)
+│       ├── Dragon&#39;s Shortcut
+│       ├── Main Parking Lot
+│       └── Parking Lot B
+│
+├── 📌 Coastal Residential
+│   └── Casey&#39;s Apartment
+│
+├── 📌 Solarton Square (Centro città / Cuore culturale ed eventi)
+│   └── (Eventi: Full Moon Market, Solar Festival)
+│
+├── 📌 Bricklane Mall (Area commerciale all&#39;aperto)
+│   ├── Medusa&#39;s (Parrucchiere per ogni tipo di creatura)
+│   └── Yeti Shack (Gelateria/Dolci freddi)
+│
+├── 📌 Sidewinders Bar &amp; Nightclub (Storico locale notturno, pioniere dell&#39;inclusione vampirica)
+│
+└── 📌 Solarton High School (Campus accessibile per non-umanoidi, noto programma sportivo)
+
+
+🏙️ Los Angeles (Top-Level | env=Los Angeles)
+│
+├── 📌 DCC Tower (Sede centrale)
+│
+├── 📌 Hollywood Boulevard (Distretto turistico e intrattenimento)
+│   └── Walk of Fame
+│
+├── 📌 Griffith Park (Area naturale collinare)
+│   └── Griffith Observatory
+│
+├── 📌 Beverly Hills (Quartiere lusso e residenze VIP)
+│   └── Rodeo Drive
+│
+└── 📌 Santa Monica (Area costiera)
+    └── Santa Monica Pier
+
+
+🏙️ Bakersfield (Top-Level | env=Bakersfield)
+│
+└── 📌 Noah&#39;s Favorite Farmers Market
+
+</code></pre>
+<p><strong>User</strong> : ok ora dami solo l&#39;elenco degli environment
+<strong>Gemini</strong> : Ecco l&#39;elenco esatto degli  <em>environments</em>  (le &quot;zone atmosferiche&quot;) definiti nel sistema:</p>
+<ul>
+<li><strong>Blackwood</strong></li>
+<li><strong>Blackwood Forest</strong></li>
+<li><strong>Bakersfield</strong></li>
+<li><strong>Hex Valley</strong></li>
+<li><strong>Los Angeles</strong></li>
+<li><strong>Solarton</strong></li>
+<li><strong>SUCC</strong>
+<strong>User</strong> : modifica la mappa per includere tutti i luoghi
+🌲 Blackwood Forest (Top-Level | Macro-Regione | env=Blackwood Forest) │ ├── 🏙️ Blackwood City (Area Urbana | env=Blackwood) │   ├── 📌 Seven Hills (Quartiere lusso / Branco) │   │   ├── Villa Douglas │   │   └── Logan&#39;s Garage │   │ │   ├── 📌 Uptown (Distretto finanziario / Vampiri) │   │ │   ├── 📌 Paradise (Distretto della moda e intrattenimento) │   │   └── Eidolon Creative │   │ │   ├── 📌 Bluemoon (Distretto della vita notturna) │   │   └── The Verve │   │ │   ├── 📌 Oldtown (Centro storico / Architettura coloniale 1600s) │   │ │   ├── 📌 Dockside (Zona portuale e moli) │   │ │   └── 📌 Ironworks (Distretto industriale e magazzini) │ └── 📌 Bloodmoon Pack Territory (The Dead Zone = no tecnologia per magia troppo densa)     └── Bloodmoon Longhouse
+🏙️ Hex Valley (Top-Level | Zona Neutrale | env=Hex Valley) │ └── 📌 CUMS (Campus / Centro Universitario)
+🏙️ Solarton (Top-Level | Città Universitaria Inclusiva | env=Solarton) │ ├── 📌 SUCC Campus (129 Hocus Way | env=SUCC) │ ├── 📌 Coastal Residential │   └── Casey&#39;s Apartment │ ├── 📌 Solarton Square (Centro città / Cuore culturale ed eventi) │   └── (Eventi: Full Moon Market, Solar Festival) │ ├── 📌 Bricklane Mall (Area commerciale all&#39;aperto) │   ├── Medusa&#39;s (Parrucchiere per ogni tipo di creatura) │   └── Yeti Shack (Gelateria/Dolci freddi) │ ├── 📌 Sidewinders Bar &amp; Nightclub (Storico locale notturno, pioniere dell&#39;inclusione vampirica) │ └── 📌 Solarton High School (Campus accessibile per non-umanoidi, noto programma sportivo)
+🏙️ Los Angeles (Top-Level | env=Los Angeles) │ ├── 📌 Downtown LA │   └── DCC Tower (Sede centrale) │ ├── 📌 Hollywood Boulevard (Distretto turistico e intrattenimento) │   └── Walk of Fame │ ├── 📌 Griffith Park (Area naturale collinare) │   └── Griffith Observatory │ ├── 📌 Beverly Hills (Quartiere lusso e residenze VIP) │   └── Rodeo Drive │ └── 📌 Santa Monica (Area costiera)     └── Santa Monica Pier
+🏙️ Bakersfield (Top-Level | env=Bakersfield) │ └── 📌 Noah&#39;s Favorite Farmers Market
+<strong>Gemini</strong> : http://googleusercontent.com/image_generation_content/472</li>
+</ul>

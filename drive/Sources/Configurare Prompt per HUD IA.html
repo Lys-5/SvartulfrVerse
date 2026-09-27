@@ -1,0 +1,32 @@
+<p><strong>User</strong> : daammi una mano a sdecidere le istruzioni da dargli per questi parametri settati:
+Configure a HUD sidebar that displays live scene state extracted from AI responses. Keys are what the AI tracks. Each has a Key name (what the AI writes, e.g. hp) and a Label (what players see, e.g. &quot;Health&quot;). Categories are collapsible section headers to organize keys visually — the AI doesn&#39;t know about them. AI output format: &lt;info_board&gt; hp: 85 location: Moonlit Tavern mood: curious, uneasy &lt;/info_board&gt; Display types: Text (plain), Progress (numeric bar), Chips (tags), Monospace (fixed-width). Categories Load Template Save as Template Category
+Text
+Text
+Text
+Add Key
+Chips
+Text
+Text
+Add Key Custom prompt override Replace the auto-generated instructions with your own By default, instructions are auto-generated from your categories and keys. Enable this to write your own prompt instead — useful for complex formats or when you want more control over how the AI structures its output.
+<strong>Gemini</strong> : Certo! Ti do una mano volentieri. Impostare un  <strong>Custom prompt override</strong>  è un&#39;ottima idea per assicurarti che l&#39;IA non sbagli mai la formattazione e aggiorni correttamente i valori del tuo HUD.
+Basandomi sui parametri che hai condiviso (in particolare l&#39;esempio con hp, location e mood), ecco una bozza di istruzioni chiare e dirette che puoi incollare nel campo del custom prompt.</p>
+<h5>Il Prompt da Copiare e Incollare</h5>
+<p>Puoi usare questo testo, modificando le parentesi quadre con le chiavi esatte che hai deciso di usare:
+Alla fine di ogni tua risposta, devi sempre includere un riepilogo dello stato attuale della scena e del personaggio. È fondamentale che tu utilizzi ESATTAMENTE il seguente formato, racchiuso tra i tag &lt;info_board&gt; e &lt;/info_board&gt;. Non usare blocchi di codice markdown (```) intorno all&#39;output.
+&lt;info_board&gt; hp: [Scrivi solo il numero attuale della salute, es. 85] location: [Scrivi il nome del luogo in cui si trova il personaggio] mood: [Scrivi 2-3 parole chiave che descrivono l&#39;umore del personaggio, separate da virgola] &lt;/info_board&gt;
+<strong>Regole per la compilazione:</strong></p>
+<ul>
+<li><strong>hp</strong> : Deve essere un valore numerico, poiché verrà mostrato come barra di progresso (Progress). Non aggiungere testo.</li>
+<li><strong>location</strong> : Usa frasi brevi e descrittive per il testo semplice (Text).</li>
+<li><strong>mood</strong> : Fornisci solo parole chiave separate da virgole (es.  <em>curioso, teso</em> ), poiché verranno mostrate come etichette/tag (Chips).</li>
+<li>Mantieni sempre i nomi delle chiavi esattamente come scritti sopra (hp, location, mood) in minuscolo.</li>
+</ul>
+<hr>
+<h5>Perché questa struttura funziona:</h5>
+<ul>
+<li><strong>Posizionamento:</strong>  Dice all&#39;IA di metterlo &quot;alla fine di ogni risposta&quot;, così non interrompe la narrazione principale.</li>
+<li><strong>Zero Formattazione Extra:</strong>  Previene il problema comune in cui l&#39;IA aggiunge backticks (xml ... ) che a volte rompono i parser delle UI.</li>
+<li><strong>Regole specifiche per &quot;Display Types&quot;:</strong>  Spiega all&#39;IA  <em>come</em>  scrivere i dati in base al tipo di visualizzazione che hai scelto nell&#39;interfaccia. Ad esempio, dicendole di separare il mood con le virgole, il sistema creerà i &quot;Chips&quot; perfettamente, e imponendo solo numeri per gli hp, la barra &quot;Progress&quot; non andrà in errore.</li>
+</ul>
+<hr>
+<p>Quali sono esattamente le statistiche o i dettagli (le tue &quot;Keys&quot; specifiche) che vuoi tracciare nel tuo scenario, oltre a quelle dell&#39;esempio?</p>

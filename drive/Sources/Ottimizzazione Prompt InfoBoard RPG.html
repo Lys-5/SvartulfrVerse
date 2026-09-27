@@ -1,0 +1,521 @@
+<p><strong>User</strong> : Remixa queste infoboard:
+[SYSTEM INSTRUCTION: DYNAMIC INFO_BOARD TRACKING] At the absolute end of every response, strictly after all narration and dialogue, you MUST append a status block enclosed in &lt;info_board&gt; tags. This block acts as a dynamic RPG tracker for Jasper&#39;s inventory, the guild noticeboard, and the party&#39;s tactical status.
+RULES:</p>
+<ol>
+<li>You must analyze the events, dialogue, actions, and transactions of the current turn and update the values logically. If Jasper uses an EMP, hacks a server, or Alyssa is threatened, reflect this immediately.</li>
+<li>Output ONLY the exactly requested Key: Value pairs inside the tags.</li>
+<li>Do not add conversational text, notes, or apologies before, inside, or after the &lt;info_board&gt; block.</li>
+<li>Output values must be in ENGLISH.</li>
+<li>Formatting guidelines:    - For items, use short comma-separated lists or numbers.    - For money and percentages, use exact numerical values.    - For text fields (quests, rumors), use concise, punchy summaries.
+REQUIRED FORMAT: &lt;info_board&gt; lockpick_integrity: [Track state of lockpicks/bypass tools as a percentage, e.g., 100] drives_and_stims: [Track current quantity and type, e.g., 3x Decryption Drives, 2x Stimpacks] tactical_gadgets: [Track remaining tactical gear, e.g., 2x EMP Grenades, 1x C4] equipment: [List main gear, e.g., Techwear Hoodie, Twin Karambits, Hacking Laptop] unique_items: [List special items, e.g., Silver Coin, Neural Implant] money: [Exact numerical amount, e.g., $5548] available_quests: [List 1-2 brief available missions currently on the board, or &quot;--&quot;] rumors: [Summarize 1 brief current rumor, or &quot;--&quot;] current_quest: [State the active objective or dungeon details, matching the party&#39;s quest] neural_load: [Track Jasper&#39;s mental strain from netrunning/hacking from 0 to 100] armor_status: [Status of Rev&#39;s armor: Inactive, Summoned, Damaged] alyssa_safety: [Jasper&#39;s assessment of Alyssa: Safe, Stressed, Freeze-Response, Danger] party_health: [Overall party health percentage, e.g., 100] alert_level: [Current environmental awareness: 0 for safe, up to 5 for maximum combat] tactical_formation: [Current party formation, e.g., Stealth Vanguard, Infiltration, Cover] &lt;/info_board&gt;</li>
+</ol>
+<hr>
+<p>Customize what the AI tracks for this chat. Add your own categories and keys, or override the character creator&#39;s setup. The AI will be told to output an &lt;info_board&gt; block with key: value pairs at the end of each response. Changes only affect this chat.
+Configure a HUD sidebar that tracks structured scene state (HP, location, mood, etc.) extracted from the AI&#39;s responses in chats with this character. Configure a HUD sidebar that displays live scene state extracted from AI responses. Keys are what the AI tracks. Each has a Key name (what the AI writes, e.g. hp) and a Label (what players see, e.g. &quot;Health&quot;). Categories are collapsible section headers to organize keys visually — the AI doesn&#39;t know about them. AI output format: &lt;info_board&gt; hp: 85 location: Moonlit Tavern mood: curious, uneasy &lt;/info_board&gt; Display types: Text (plain), Progress (numeric bar), Chips (tags), Monospace (fixed-width). Categories</p>
+<hr>
+<p>verifica gfli scireenshot ed elaboriamo un sistema integrato + completo
+<strong>Gemini</strong> : Ho analizzato tutti i parametri dagli screenshot. Abbiamo un setup decisamente esteso che gestisce un intero party in stile gioco di ruolo (Radek, Goran, Kian, Jasper, Alyssa), integrato con un sistema di gilda, un inventario di gruppo e variabili tattiche ambientali.
+Per far funzionare un engine di queste dimensioni senza sovraccaricare il modello linguistico e senza &quot;rompere&quot; il parsing della UI, il prompt deve dettare regole ferree sui formati di output (distinguendo chiaramente tra interi per le  <em>Progress Bar</em> , liste separate da virgole per le  <em>Chips</em>  e stringhe per il testo libero) e gestire le risorse con la precisione di un Game Master.
+Ecco il system prompt riprogettato e ottimizzato per unificare tutte le chiavi:</p>
+<pre><code class="language-text">[SYSTEM INSTRUCTION: DYNAMIC INFO_BOARD TRACKING]
+At the absolute end of every response, strictly after all narration and dialogue, you MUST append a status block enclosed in &lt;info_board&gt; tags. This block acts as a dynamic RPG state tracker managing the entire party, their shared inventory, guild status, and the tactical environment.
+
+RULES:
+1. Analyze the current turn&#39;s events, dialogue, actions, and combat/social encounters. Update all values logically. Act as a strict Game Master: if a potion is used, remove it; if damage is taken, reduce HP; if money is spent, deduct it.
+2. Output ONLY the exactly requested Key: Value pairs inside the tags. Do not output category headers or comments.
+3. Output values must be in ENGLISH.
+4. Formatting guidelines strictly based on UI display types:
+   - [Progress]: Output ONLY an integer. For HP/Stamina/Mana/Load use 0 to 100. For alert_level use 0 to 5. Do not add the % symbol.
+   - [Chips]: Output a concise, comma-separated list of items (e.g., Longsword, 2x Frag Grenades). Use &quot;--&quot; if empty.
+   - [Text/Monospace]: Output concise, punchy strings, numbers, or summaries.
+
+REQUIRED FORMAT:
+&lt;info_board&gt;
+radek_hp: [Progress]
+radek_stamina: [Progress]
+radek_weapons: [Chips]
+radek_gear: [Chips]
+radek_supplies: [Chips]
+radek_unique: [Chips]
+radek_rank: [Monospace - Guild Rank]
+goran_hp: [Progress]
+goran_stamina: [Progress - Fury/Stamina]
+goran_weapons: [Chips]
+goran_gear: [Chips]
+goran_supplies: [Chips]
+goran_unique: [Chips]
+goran_rank: [Monospace - Guild Rank]
+kian_hp: [Progress]
+kian_stamina: [Progress - Focus/Stamina]
+kian_weapons: [Chips]
+kian_gear: [Chips]
+kian_supplies: [Chips]
+kian_unique: [Chips]
+kian_rank: [Monospace - Guild Rank]
+jasper_hp: [Progress]
+jasper_stamina: [Progress - Cyber-Deck Battery]
+jasper_weapons: [Chips]
+jasper_gear: [Chips]
+jasper_supplies: [Chips]
+jasper_unique: [Chips]
+jasper_rank: [Monospace - Guild Rank]
+lockpick_integrity: [Progress - Tool state 0-100]
+drives_and_stims: [Chips]
+tactical_gadgets: [Chips]
+neural_load: [Progress - Netrunning mental strain 0-100]
+alyssa_hp: [Progress]
+alyssa_mana: [Progress - Mana/Spirit Reserve]
+alyssa_weapons: [Chips]
+alyssa_gear: [Chips]
+alyssa_potions: [Chips]
+alyssa_spells: [Chips - Enchanted Cylinders]
+alyssa_supplies: [Chips - Medical]
+alyssa_unique: [Chips]
+alyssa_rank: [Monospace - Guild Rank]
+user_safety: [Text - e.g., Safe, Pinned, In Danger]
+team_stash: [Chips - Shared Inventory]
+team_money: [Monospace - Exact numerical amount, e.g., $5548]
+team_loot: [Chips - Recovered Treasures]
+active_mission: [Text - Current quest objective]
+party_health: [Progress - Overall party health average 0-100]
+guild_missions: [Text - Available Noticeboard Quests]
+guild_rumors: [Text - Current voices/rumors]
+squad_rank: [Monospace]
+armor_status: [Chips - Abyssal Armor status]
+alert_level: [Progress - Environmental awareness 0 to 5]
+tactical_formation: [Text - e.g., Vanguard, Stealth, Defensive]
+&lt;/info_board&gt;
+
+</code></pre>
+<hr>
+<p>Un payload di queste dimensioni, generato alla fine di ogni singolo messaggio, rischia di pesare in modo significativo sulla context window generale. Preferisci mantenere l&#39;aggiornamento costante ad ogni turno, oppure strutturiamo un sistema a &quot;trigger&quot; nel prompt dove l&#39;AI aggiorna specifiche sezioni (come l&#39;inventario o la gilda) solo durante determinati eventi narrativi, come i combattimenti o i riposi in taverna?
+<strong>User</strong> : vorrei valutare un sistema più dinamico... ad esempio essendo hp stamina gear ecc uguali per tutti si potrebbe adottare un sistema che vada a pescare *_hp o una cosa così?
+<strong>Gemini</strong> : L&#39;idea di usare un sistema a variabili jolly (come *_hp o [nome]_hp) è un&#39;ottima intuizione per alleggerire il prompt e ridurre il carico cognitivo (e di token) sul modello linguistico.
+Tuttavia, c&#39;è un dettaglio tecnico fondamentale lato UI: l&#39;interfaccia che hai configurato negli screenshot si aspetta di leggere stringhe esatte come radek_hp o goran_stamina per mappare i valori sui rispettivi componenti visivi. L&#39;AI non può stampare letteralmente *_hp: 80, ma deve generare la chiave corretta.
+La soluzione più elegante è istruire l&#39;AI fornendole lo  <strong>schema logico</strong>  delle variabili e imponendole di generare  <strong>solo gli aggiornamenti necessari</strong>  (Delta Updates). In questo modo, il modello sa come costruire le chiavi (es: nome_parametro) ma stamperà nell&#39; &lt;info_board&gt; solo i dati di chi sta agendo o ciò che è effettivamente cambiato nel turno, mantenendo l&#39;output compatto.
+Ecco come possiamo riscrivere il prompt usando uno schema dinamico:</p>
+<pre><code class="language-text">[SYSTEM INSTRUCTION: DYNAMIC INFO_BOARD TRACKING]
+At the absolute end of every response, strictly after all narration and dialogue, you MUST append a status block enclosed in &lt;info_board&gt; tags. 
+
+To optimize performance, you will use a &quot;Delta Update&quot; system: ONLY output the specific keys that have changed during this turn, or the stats of characters actively participating in the current scene.
+
+CHARACTER SCHEMA:
+For any active character (radek, goran, kian, jasper, alyssa), dynamically construct their keys using their lowercase name.
+[name]_hp: [Progress 0-100]
+[name]_stamina: [Progress 0-100] (Note: For Jasper this represents Cyber-Deck Battery; for Alyssa, Mana/Spirit).
+[name]_weapons: [Chips - Comma-separated list]
+[name]_gear: [Chips]
+[name]_supplies: [Chips] (Note: For Alyssa, track Potions/Medical here).
+[name]_unique: [Chips] (Note: For Alyssa, track Enchanted Cylinders here).
+[name]_rank: [Monospace - Guild Rank]
+
+GLOBAL &amp; TACTICAL SCHEMA (Output only if relevant/changed):
+lockpick_integrity: [Progress 0-100]
+drives_and_stims: [Chips]
+tactical_gadgets: [Chips]
+neural_load: [Progress 0-100]
+user_safety: [Text - e.g., Safe, Pinned, In Danger]
+team_stash: [Chips - Shared Inventory]
+team_money: [Monospace - Exact amount, e.g., $5548]
+team_loot: [Chips]
+active_mission: [Text]
+party_health: [Progress 0-100]
+guild_missions: [Text]
+guild_rumors: [Text]
+squad_rank: [Monospace]
+armor_status: [Chips]
+alert_level: [Progress 0-5]
+tactical_formation: [Text]
+
+RULES:
+1. Act as a strict Game Master. Deduct items when used, lower HP when damage is taken.
+2. Replace [name] with the exact lowercase character name (e.g., radek_hp: 85, alyssa_stamina: 40).
+3. Do not add category headers, comments, or output the literal string &quot;[name]&quot;.
+4. Output exact &quot;Key: Value&quot; pairs in ENGLISH.
+&lt;/info_board&gt;
+
+</code></pre>
+<h5>Vantaggi di questo approccio</h5>
+<ul>
+<li><strong>Scalabilità:</strong>  Se in futuro aggiungi un nuovo personaggio (es. marcus), l&#39;AI saprà già come gestirlo senza dover aggiornare l&#39;intero blocco di istruzioni.</li>
+<li><strong>Risparmio Token:</strong>  Invece di generare ~50 righe di status a ogni singolo messaggio (che inquina la context window nel lungo periodo), l&#39;AI ne genererà solo 5 o 6 relative all&#39;azione appena compiuta.
+Il parser della tua UI gestisce la persistenza dei dati (cioè mantiene visivamente a schermo l&#39;HP di Radek a 100 anche se l&#39;AI non lo ristampa nel messaggio successivo), oppure ha bisogno di ricevere l&#39;intera lista ad ogni turno per non svuotare i campi?
+<strong>User</strong> : uhm... e come miglioreresti lo schema e la divisione delle category &gt; parameter? Secondo te come lo renderemmo più ottimizzato?
+<strong>Gemini</strong> : Per ottimizzare l&#39;architettura dell&#39;informazione e alleggerire il &quot;carico cognitivo&quot; del modello linguistico, conviene ragionare quasi come se stessimo strutturando lo store di stato (come un Pinia o un Redux) per un&#39;interfaccia complessa o organizzando la scheda di gruppo per una sessione cartacea al tavolo: bisogna separare rigorosamente lo stato globale dai componenti individuali, riducendo al minimo la ridondanza.
+Quando i modelli linguistici gestiscono JSON o formati chiave-valore rigidi, tendono a &quot;hallucinare&quot; se devono incasellare gli oggetti in troppe categorie specifiche. Chiedere all&#39;AI di decidere a ogni turno se una granata a frammentazione va in weapons, gear, o tactical_gadgets porta inevitabilmente a incongruenze.
+Ecco come potremmo ristrutturare le  <em>Category</em>  e le  <em>Key</em>  per renderle più pulite, performanti e immuni agli errori logici dell&#39;AI:</li>
+</ul>
+<h5>1. Accorpare gli Inventari (Meno chiavi, più coerenza)</h5>
+<p>Invece di costringere l&#39;AI a splittare l&#39;inventario in 4 campi diversi per ogni personaggio (Armi, Equipaggiamento, Scorte, Oggetti Unici), usa un singolo campo  <strong>Loadout</strong> . I modelli sono bravissimi a generare liste miste separate da virgole (es:  <em>Spada lunga, 3x Pozioni, Frammento Antico</em> ), ma pessimi a categorizzarle rigidamente.</p>
+<ul>
+<li><strong>Via:</strong>  [name]_weapons, [name]_gear, [name]_supplies, [name]_unique</li>
+<li><strong>Dentro:</strong>  [name]_loadout (Chips)</li>
+</ul>
+<h5>2. Aggiungere il tracciamento dei &quot;Condizionamenti&quot; (Status)</h5>
+<p>In un sistema tattico di ruolo, sapere quanti HP ha un personaggio è importante, ma sapere se è  <em>Accerchiato</em> ,  <em>Avvelenato</em>  o in  <em>Stealth</em>  è fondamentale per la narrazione. Aggiungere una chiave per i malus/bonus dinamici sblocca un potenziale enorme per il sistema.</p>
+<ul>
+<li><strong>Dentro:</strong>  [name]_status (Chips - es:  <em>Stealth, Ferito al braccio, Concentrazione</em> )</li>
+</ul>
+<h5>3. Centralizzare i Dati Statici (Stop alla Ridondanza)</h5>
+<p>A meno che Radek e Goran non abbiano rank di gilda profondamente asimmetrici che influenzano l&#39;interazione, ripetere [name]_rank per ogni membro del party spreca token e spazio visivo.</p>
+<ul>
+<li><strong>Via:</strong>  Il Rank dai singoli personaggi.</li>
+<li><strong>Dentro:</strong>  Unico squad_rank sotto la categoria Team Info.</li>
+</ul>
+<h5>4. Normalizzare le risorse condivise e i rimasugli del setup in solitaria</h5>
+<p>Chiavi come lockpick_integrity, drives_and_stims o tactical_gadgets sembrano retaggi del tracker focalizzato solo su Jasper. Ora che c&#39;è un party completo, le scorte di Jasper andrebbero semplicemente nel suo jasper_loadout, mentre i lockpick possono essere un suo item o uno status di hacking temporaneo.</p>
+<hr>
+<h5>La Nuova Architettura Proposta (Schema Logico)</h5>
+<p>Se dovessimo mappare la nuova struttura sulla UI, la dividerei così:
+<strong>Categoria 1: Party Roster (Dinamico, si aggiorna spesso)</strong>  Costruita con il sistema dinamico [name]_ per Jasper, Radek, Goran, Kian, Alyssa.</p>
+<ul>
+<li>[name]_hp (Progress)</li>
+<li>[name]_resource (Progress - Unifica Stamina/Mana/Batteria sotto un&#39;unica logica di interfaccia).</li>
+<li>[name]_status (Chips - Condizioni fisiche/mentali o tattiche attuali).</li>
+<li>[name]_loadout (Chips - Tutto l&#39;equipaggiamento rilevante del personaggio).
+<strong>Categoria 2: Team &amp; Resources (Condiviso)</strong></li>
+<li>team_stash (Chips - Oggetti comuni o sul veicolo/base).</li>
+<li>team_money (Monospace - Cassa comune).</li>
+<li>squad_rank (Monospace - Livello reputazione della squadra).
+<strong>Categoria 3: Tactical &amp; Environment (Contesto della scena)</strong></li>
+<li>alert_level (Progress 0-5).</li>
+<li>environment_status (Chips - Sostituisce la formazione e include pericoli ambientali es:  <em>Copertura scarsa, Pioggia battente</em> ).
+<strong>Categoria 4: Quest Log (Narrativo)</strong></li>
+<li>active_quest (Text - Obiettivo immediato).</li>
+<li>world_rumors (Text - Voci captate o missioni secondarie).</li>
+</ul>
+<h5>Il Prompt Aggiornato</h5>
+<pre><code class="language-text">[SYSTEM INSTRUCTION: DYNAMIC INFO_BOARD TRACKING]
+At the end of every response, append a status block enclosed in &lt;info_board&gt; tags. 
+
+Use a &quot;Delta Update&quot; system: ONLY output the specific keys that have changed this turn, or the stats of characters actively participating in the scene.
+
+CHARACTER SCHEMA:
+Construct keys using the active character&#39;s lowercase name (radek, goran, kian, jasper, alyssa).
+[name]_hp: [Progress 0-100]
+[name]_resource: [Progress 0-100] (Represents Stamina, Mana, or Cyber-Battery respectively).
+[name]_status: [Chips - Comma-separated conditions, e.g., Bleeding, Stealth, Shielded]
+[name]_loadout: [Chips - Combined weapons, gear, and important items on their person]
+
+TEAM &amp; WORLD SCHEMA (Output only if changed):
+team_stash: [Chips - Shared inventory/loot]
+team_money: [Monospace - Exact amount, e.g., $5548]
+squad_rank: [Monospace]
+alert_level: [Progress 0-5]
+environment_status: [Chips - Current tactical situation, e.g., Flanked, Heavy Rain]
+active_quest: [Text - Current immediate objective]
+world_rumors: [Text - Brief rumor or noticeboard snippet]
+
+RULES:
+1. Act as a strict GM. Deduct resources, update statuses dynamically.
+2. Replace [name] with the exact character name.
+3. Output exact &quot;Key: Value&quot; pairs in ENGLISH. No category headers.
+&lt;/info_board&gt;
+
+</code></pre>
+<p>Con questa struttura riduci il numero di componenti visivi da configurare, abbatti drasticamente il rischio che il LLM commetta errori di categorizzazione dell&#39;inventario, e mantieni il focus dell&#39;aggiornamento solo su ciò che rende viva la scena, come le condizioni di stato e l&#39;ambiente tattico. Che ne pensi di questo livello di astrazione?
+<strong>User</strong> : magari il rank dei ringoli possiamo metterlo come () del rank squad per mattare gli upgrade del singolo rispetto alal squadra
+<strong>Gemini</strong> : È un&#39;ottima pensata. Accorpare le informazioni correlate in un unico blocco visivo è un&#39;eccellente best practice per evitare il sovraffollamento dell&#39;interfaccia, mantenendo il layout pulito, scalabile e funzionale.
+Lato gameplay, tracciare le divergenze tra la reputazione del gruppo e quella dei singoli personaggi è perfetto per creare attriti narrativi o ganci per le quest, dinamiche utilissime per gestire campagne complesse e dare il giusto peso narrativo all&#39;evoluzione dei vari membri del party.
+Visto che squad_rank usa il componente  <strong>Monospace</strong>  (perfetto per stringhe di testo a larghezza fissa e tabellari), possiamo istruire l&#39;AI a formattare il valore in modo che mostri il grado globale, seguito dai gradi individuali tra parentesi.
+Ecco come aggiornare e ottimizzare quella specifica riga nel System Prompt:</p>
+<pre><code class="language-text">TEAM &amp; WORLD SCHEMA (Output only if changed):
+team_stash: [Chips - Shared inventory/loot]
+team_money: [Monospace - Exact amount, e.g., $5548]
+squad_rank: [Monospace - Overall squad rank, followed by individual ranks in parentheses. E.g., &quot;Silver (Radek: Gold, Jasper: Bronze)&quot;]
+alert_level: [Progress 0-5]
+environment_status: [Chips - Current tactical situation, e.g., Flanked, Heavy Rain]
+
+</code></pre>
+<h5>Il risultato in azione</h5>
+<p>Quando l&#39;AI processerà un avanzamento di gilda o un&#39;azione che modifica la reputazione, andrà a generare nell&#39;output una stringa compatta come questa:</p>
+<pre><code class="language-xml">&lt;info_board&gt;
+squad_rank: Rank B (Radek: Rank A, Alyssa: Novice)
+&lt;/info_board&gt;
+
+</code></pre>
+<p>Sulla tua sidebar, questo si tradurrà in un&#39;unica riga elegante ed esaustiva, eliminando la necessità di avere cinque chiavi &quot;Rank&quot; separate sotto ogni singolo personaggio.
+Hai già in mente una nomenclatura o un sistema di ranking specifico (es. Lettere S-A-B-C, gradi militari, o reputazione legata a fazioni specifiche del tuo mondo) che vorresti &quot;ingabbiare&quot; nel prompt per evitare che l&#39;AI inventi gradi casuali?
+<strong>User</strong> : ok dammi il prompt e lo schema della inforboard
+<strong>Gemini</strong> : Ecco il system prompt definitivo e la mappa completa per configurare le chiavi nella tua interfaccia.
+Questo approccio basato sui  <em>delta update</em>  è l&#39;ideale per ottimizzare le finestre di contesto quando si architettano prompt engine complessi per il roleplay: abbatte il consumo di token e mantiene il modello concentrato sulla narrazione, gestendo le dinamiche del party e le variabili ambientali con l&#39;efficienza e la flessibilità necessarie per arbitrare una sessione fluida e reattiva.</p>
+<h5>1. Il System Prompt Definitivo</h5>
+<p>Copia e incolla questo blocco nelle tue istruzioni di sistema o nel field dedicato alle dinamiche globali.</p>
+<pre><code class="language-text">[SYSTEM INSTRUCTION: DYNAMIC INFO_BOARD TRACKING]
+At the end of every response, strictly after all narration and dialogue, you MUST append a status block enclosed in &lt;info_board&gt; tags. 
+
+To optimize performance, use a &quot;Delta Update&quot; system: ONLY output the specific keys that have changed during this turn, or the stats of characters actively participating in the current scene. Do not output the entire board unless requested.
+
+CHARACTER SCHEMA:
+Construct keys dynamically using the active character&#39;s lowercase name (e.g., radek, goran, kian, jasper, alyssa).
+[name]_hp: [Progress 0-100]
+[name]_resource: [Progress 0-100] (Represents Stamina, Mana, or Cyber-Battery respectively depending on the character).
+[name]_status: [Chips - Comma-separated active conditions, e.g., Bleeding, Stealth, Shielded. Use &quot;--&quot; if none]
+[name]_loadout: [Chips - Comma-separated list of their currently carried weapons, gear, and important unique items]
+
+TEAM &amp; WORLD SCHEMA (Output only if relevant or changed this turn):
+team_stash: [Chips - Shared inventory, vehicle storage, or general loot]
+team_money: [Monospace - Exact numerical amount, e.g., $5548]
+squad_rank: [Monospace - Overall squad rank, optionally followed by individual ranks in parentheses. E.g., Rank B (Radek: A, Alyssa: Novice)]
+alert_level: [Progress 0-5 - Current environmental awareness/danger]
+environment_status: [Chips - Current tactical or weather situation, e.g., Flanked, Heavy Rain, Pitch Black]
+active_quest: [Text - Brief summary of the current immediate objective]
+world_rumors: [Text - One brief rumor, noticeboard snippet, or background event]
+
+RULES:
+1. Act as a strict Game Master. Deduct consumed resources/items immediately, update statuses dynamically based on the narrative, and alter health based on damage taken or healed.
+2. Replace [name] with the exact lowercase character name (e.g., radek_hp: 85, jasper_loadout: EMP Grenade, Deck).
+3. Output exact &quot;Key: Value&quot; pairs in ENGLISH.
+4. Do NOT output category headers, comments, or the literal string &quot;[name]&quot;.
+&lt;/info_board&gt;
+
+</code></pre>
+<hr>
+<h5>2. Configurazione della UI (Schema Chiavi)</h5>
+<p>Per fare in modo che la tua interfaccia intercetti correttamente i dati generati dall&#39;AI, dovrai creare queste esatte chiavi nel pannello di configurazione.
+<strong>Per ogni personaggio (Radek, Goran, Kian, Jasper, Alyssa):</strong>   <em>(Crea una categoria per ogni nome e inserisci queste 4 chiavi)</em></p>
+<ul>
+<li><strong>Label:</strong>  HP -&gt;  <strong>Key:</strong>  [nome]_hp -&gt;  <strong>Type:</strong>  Progress (0 to 100)</li>
+<li><strong>Label:</strong>  Risorsa Principale (Stamina/Mana/Batteria) -&gt;  <strong>Key:</strong>  [nome]_resource -&gt;  <strong>Type:</strong>  Progress (0 to 100)</li>
+<li><strong>Label:</strong>  Status &amp; Condizioni -&gt;  <strong>Key:</strong>  [nome]_status -&gt;  <strong>Type:</strong>  Chips</li>
+<li><strong>Label:</strong>  Equipaggiamento (Loadout) -&gt;  <strong>Key:</strong>  [nome]_loadout -&gt;  <strong>Type:</strong>  Chips
+<strong>Categoria: Team Info &amp; Stash</strong></li>
+<li><strong>Label:</strong>  Inventario Comune -&gt;  <strong>Key:</strong>  team_stash -&gt;  <strong>Type:</strong>  Chips</li>
+<li><strong>Label:</strong>  Denaro del Gruppo -&gt;  <strong>Key:</strong>  team_money -&gt;  <strong>Type:</strong>  Monospace</li>
+<li><strong>Label:</strong>  Rank Squadra -&gt;  <strong>Key:</strong>  squad_rank -&gt;  <strong>Type:</strong>  Monospace
+<strong>Categoria: Tactical &amp; Environment</strong></li>
+<li><strong>Label:</strong>  Livello di Allerta -&gt;  <strong>Key:</strong>  alert_level -&gt;  <strong>Type:</strong>  Progress (0 to 5)</li>
+<li><strong>Label:</strong>  Condizioni Ambientali -&gt;  <strong>Key:</strong>  environment_status -&gt;  <strong>Type:</strong>  Chips
+<strong>Categoria: Quest Log &amp; Rumors</strong></li>
+<li><strong>Label:</strong>  Missione in Corso -&gt;  <strong>Key:</strong>  active_quest -&gt;  <strong>Type:</strong>  Text</li>
+<li><strong>Label:</strong>  Voci e Rumors -&gt;  <strong>Key:</strong>  world_rumors -&gt;  <strong>Type:</strong>  Text
+<strong>User</strong> : dammelo in codeblock usando questo schema di esempio:
+{&quot;categories&quot;:[{&quot;id&quot;:&quot;691dc514&quot;,&quot;title&quot;:&quot;Inventory&quot;,&quot;order&quot;:0,&quot;keys&quot;:[{&quot;id&quot;:&quot;b74d9456&quot;,&quot;label&quot;:&quot;Lockpick Integrity&quot;,&quot;key&quot;:&quot;lockpick_integrity&quot;,&quot;display_type&quot;:&quot;progress&quot;},{&quot;id&quot;:&quot;be971bc7&quot;,&quot;label&quot;:&quot;Tech Consumables &amp; Stims&quot;,&quot;key&quot;:&quot;drives_and_stims&quot;,&quot;display_type&quot;:&quot;chips&quot;},{&quot;id&quot;:&quot;76f0b003&quot;,&quot;label&quot;:&quot;Gadgets &amp; Detonators&quot;,&quot;key&quot;:&quot;tactical_gadgets&quot;,&quot;display_type&quot;:&quot;chips&quot;},{&quot;id&quot;:&quot;e9da6710&quot;,&quot;label&quot;:&quot;Equipment&quot;,&quot;key&quot;:&quot;equipment&quot;,&quot;display_type&quot;:&quot;chips&quot;},{&quot;id&quot;:&quot;49f72ceb&quot;,&quot;label&quot;:&quot;Unique Items&quot;,&quot;key&quot;:&quot;unique_items&quot;,&quot;display_type&quot;:&quot;chips&quot;},{&quot;id&quot;:&quot;b3b5724d&quot;,&quot;label&quot;:&quot;Money&quot;,&quot;key&quot;:&quot;money&quot;,&quot;display_type&quot;:&quot;monospace&quot;}]},{&quot;id&quot;:&quot;aa5b540f&quot;,&quot;title&quot;:&quot;Guild Noticeboard&quot;,&quot;order&quot;:1,&quot;keys&quot;:[{&quot;id&quot;:&quot;ff929243&quot;,&quot;label&quot;:&quot;Available Quests&quot;,&quot;key&quot;:&quot;available_quests&quot;,&quot;display_type&quot;:&quot;text&quot;},{&quot;id&quot;:&quot;640ef46e&quot;,&quot;label&quot;:&quot;Voices &amp; Rumors&quot;,&quot;key&quot;:&quot;rumors&quot;,&quot;display_type&quot;:&quot;text&quot;},{&quot;id&quot;:&quot;d2c15bd2&quot;,&quot;label&quot;:&quot;Current Quest&quot;,&quot;key&quot;:&quot;current_quest&quot;,&quot;display_type&quot;:&quot;text&quot;}]},{&quot;id&quot;:&quot;e54bda1e&quot;,&quot;title&quot;:&quot;Party Status&quot;,&quot;order&quot;:2,&quot;keys&quot;:[{&quot;id&quot;:&quot;a53a3da2&quot;,&quot;label&quot;:&quot;Neural Load (Netrunning)&quot;,&quot;key&quot;:&quot;neural_load&quot;,&quot;display_type&quot;:&quot;progress&quot;},{&quot;id&quot;:&quot;d7649757&quot;,&quot;label&quot;:&quot;Abyssal Armor Status&quot;,&quot;key&quot;:&quot;armor_status&quot;,&quot;display_type&quot;:&quot;chips&quot;},{&quot;id&quot;:&quot;2ef53121&quot;,&quot;label&quot;:&quot;{{user}}&#39;s Safety Level&quot;,&quot;key&quot;:&quot;user_safety&quot;,&quot;display_type&quot;:&quot;chips&quot;},{&quot;id&quot;:&quot;0a4dcb48&quot;,&quot;label&quot;:&quot;Party Health&quot;,&quot;key&quot;:&quot;party_health&quot;,&quot;display_type&quot;:&quot;progress&quot;}]},{&quot;id&quot;:&quot;fedc6d98&quot;,&quot;title&quot;:&quot;Tactical Overview&quot;,&quot;order&quot;:3,&quot;keys&quot;:[{&quot;id&quot;:&quot;787e26b0&quot;,&quot;label&quot;:&quot;Alert Level&quot;,&quot;key&quot;:&quot;alert_level&quot;,&quot;display_type&quot;:&quot;progress&quot;,&quot;max_value&quot;:5},{&quot;id&quot;:&quot;9eef8dba&quot;,&quot;label&quot;:&quot;Tactical Formation&quot;,&quot;key&quot;:&quot;tactical_formation&quot;,&quot;display_type&quot;:&quot;text&quot;}]}],&quot;custom_prompt&quot;:&quot;[SYSTEM INSTRUCTION: DYNAMIC INFO_BOARD TRACKING]\nAt the absolute end of every response, strictly after all narration and dialogue, you MUST append a status block enclosed in &lt;info_board&gt; tags. This block acts as a dynamic RPG tracker for Jasper&#39;s inventory, the guild noticeboard, and the party&#39;s tactical status.\n\nRULES:\n1. You must analyze the events, dialogue, actions, and transactions of the current turn and update the values logically. If Jasper uses an EMP, hacks a server, or Alyssa is threatened, reflect this immediately.\n2. Output ONLY the exactly requested Key: Value pairs inside the tags. \n3. Do not add conversational text, notes, or apologies before, inside, or after the &lt;info_board&gt; block.\n4. Output values must be in ENGLISH.\n5. Formatting guidelines:\n   - For items, use short comma-separated lists or numbers.\n   - For money and percentages, use exact numerical values.\n   - For text fields (quests, rumors), use concise, punchy summaries.\n\nREQUIRED FORMAT:\n&lt;info_board&gt;\nlockpick_integrity: [Track state of lockpicks/bypass tools as a percentage, e.g., 100]\ndrives_and_stims: [Track current quantity and type, e.g., 3x Decryption Drives, 2x Stimpacks]\ntactical_gadgets: [Track remaining tactical gear, e.g., 2x EMP Grenades, 1x C4]\nequipment: [List main gear, e.g., Techwear Hoodie, Twin Karambits, Hacking Laptop]\nunique_items: [List special items, e.g., Silver Coin, Neural Implant]\nmoney: [Exact numerical amount, e.g., $5548]\navailable_quests: [List 1-2 brief available missions currently on the board, or &quot;--&quot;]\nrumors: [Summarize 1 brief current rumor, or &quot;--&quot;]\ncurrent_quest: [State the active objective or dungeon details, matching the party&#39;s quest]\nneural_load: [Track Jasper&#39;s mental strain from netrunning/hacking from 0 to 100]\narmor_status: [Status of Rev&#39;s armor: Inactive, Summoned, Damaged]\nalyssa_safety: [Jasper&#39;s assessment of Alyssa: Safe, Stressed, Freeze-Response, Danger]\nparty_health: [Overall party health percentage, e.g., 100]\nalert_level: [Current environmental awareness: 0 for safe, up to 5 for maximum combat]\ntactical_formation: [Current party formation, e.g., Stealth Vanguard, Infiltration, Cover]\n&lt;/info_board&gt;&quot;}
+<strong>Gemini</strong> : Ecco il JSON pronto da copiare e incollare direttamente nella tua interfaccia. Ho strutturato tutte le categorie, chiavi e tipi di visualizzazione per farle combaciare perfettamente con il nuovo prompt ottimizzato a &quot;delta update&quot;.</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;categories&quot;: [
+    {
+      &quot;id&quot;: &quot;c1a2b3c4&quot;,
+      &quot;title&quot;: &quot;Radek&quot;,
+      &quot;order&quot;: 0,
+      &quot;keys&quot;: [
+        {
+          &quot;id&quot;: &quot;k11a22b3&quot;,
+          &quot;label&quot;: &quot;HP&quot;,
+          &quot;key&quot;: &quot;radek_hp&quot;,
+          &quot;display_type&quot;: &quot;progress&quot;
+        },
+        {
+          &quot;id&quot;: &quot;k12b33c4&quot;,
+          &quot;label&quot;: &quot;Stamina&quot;,
+          &quot;key&quot;: &quot;radek_resource&quot;,
+          &quot;display_type&quot;: &quot;progress&quot;
+        },
+        {
+          &quot;id&quot;: &quot;k13c44d5&quot;,
+          &quot;label&quot;: &quot;Status &amp; Condizioni&quot;,
+          &quot;key&quot;: &quot;radek_status&quot;,
+          &quot;display_type&quot;: &quot;chips&quot;
+        },
+        {
+          &quot;id&quot;: &quot;k14d55e6&quot;,
+          &quot;label&quot;: &quot;Loadout&quot;,
+          &quot;key&quot;: &quot;radek_loadout&quot;,
+          &quot;display_type&quot;: &quot;chips&quot;
+        }
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;c2b3c4d5&quot;,
+      &quot;title&quot;: &quot;Goran&quot;,
+      &quot;order&quot;: 1,
+      &quot;keys&quot;: [
+        {
+          &quot;id&quot;: &quot;k21e66f7&quot;,
+          &quot;label&quot;: &quot;HP&quot;,
+          &quot;key&quot;: &quot;goran_hp&quot;,
+          &quot;display_type&quot;: &quot;progress&quot;
+        },
+        {
+          &quot;id&quot;: &quot;k22f77a8&quot;,
+          &quot;label&quot;: &quot;Furia / Stamina&quot;,
+          &quot;key&quot;: &quot;goran_resource&quot;,
+          &quot;display_type&quot;: &quot;progress&quot;
+        },
+        {
+          &quot;id&quot;: &quot;k23a88b9&quot;,
+          &quot;label&quot;: &quot;Status &amp; Condizioni&quot;,
+          &quot;key&quot;: &quot;goran_status&quot;,
+          &quot;display_type&quot;: &quot;chips&quot;
+        },
+        {
+          &quot;id&quot;: &quot;k24b99c0&quot;,
+          &quot;label&quot;: &quot;Loadout&quot;,
+          &quot;key&quot;: &quot;goran_loadout&quot;,
+          &quot;display_type&quot;: &quot;chips&quot;
+        }
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;c3c4d5e6&quot;,
+      &quot;title&quot;: &quot;Kian&quot;,
+      &quot;order&quot;: 2,
+      &quot;keys&quot;: [
+        {
+          &quot;id&quot;: &quot;k31c00d1&quot;,
+          &quot;label&quot;: &quot;HP&quot;,
+          &quot;key&quot;: &quot;kian_hp&quot;,
+          &quot;display_type&quot;: &quot;progress&quot;
+        },
+        {
+          &quot;id&quot;: &quot;k32d11e2&quot;,
+          &quot;label&quot;: &quot;Focus / Stamina&quot;,
+          &quot;key&quot;: &quot;kian_resource&quot;,
+          &quot;display_type&quot;: &quot;progress&quot;
+        },
+        {
+          &quot;id&quot;: &quot;k33e22f3&quot;,
+          &quot;label&quot;: &quot;Status &amp; Condizioni&quot;,
+          &quot;key&quot;: &quot;kian_status&quot;,
+          &quot;display_type&quot;: &quot;chips&quot;
+        },
+        {
+          &quot;id&quot;: &quot;k34f33a4&quot;,
+          &quot;label&quot;: &quot;Loadout&quot;,
+          &quot;key&quot;: &quot;kian_loadout&quot;,
+          &quot;display_type&quot;: &quot;chips&quot;
+        }
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;c4d5e6f7&quot;,
+      &quot;title&quot;: &quot;Jasper&quot;,
+      &quot;order&quot;: 3,
+      &quot;keys&quot;: [
+        {
+          &quot;id&quot;: &quot;k41a44b5&quot;,
+          &quot;label&quot;: &quot;HP&quot;,
+          &quot;key&quot;: &quot;jasper_hp&quot;,
+          &quot;display_type&quot;: &quot;progress&quot;
+        },
+        {
+          &quot;id&quot;: &quot;k42b55c6&quot;,
+          &quot;label&quot;: &quot;Batteria Cyber-Deck&quot;,
+          &quot;key&quot;: &quot;jasper_resource&quot;,
+          &quot;display_type&quot;: &quot;progress&quot;
+        },
+        {
+          &quot;id&quot;: &quot;k43c66d7&quot;,
+          &quot;label&quot;: &quot;Status &amp; Condizioni&quot;,
+          &quot;key&quot;: &quot;jasper_status&quot;,
+          &quot;display_type&quot;: &quot;chips&quot;
+        },
+        {
+          &quot;id&quot;: &quot;k44d77e8&quot;,
+          &quot;label&quot;: &quot;Loadout&quot;,
+          &quot;key&quot;: &quot;jasper_loadout&quot;,
+          &quot;display_type&quot;: &quot;chips&quot;
+        }
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;c5e6f7a8&quot;,
+      &quot;title&quot;: &quot;Alyssa&quot;,
+      &quot;order&quot;: 4,
+      &quot;keys&quot;: [
+        {
+          &quot;id&quot;: &quot;k51e88f9&quot;,
+          &quot;label&quot;: &quot;HP&quot;,
+          &quot;key&quot;: &quot;alyssa_hp&quot;,
+          &quot;display_type&quot;: &quot;progress&quot;
+        },
+        {
+          &quot;id&quot;: &quot;k52f99a0&quot;,
+          &quot;label&quot;: &quot;Riserva Mana&quot;,
+          &quot;key&quot;: &quot;alyssa_resource&quot;,
+          &quot;display_type&quot;: &quot;progress&quot;
+        },
+        {
+          &quot;id&quot;: &quot;k53a00b1&quot;,
+          &quot;label&quot;: &quot;Status &amp; Condizioni&quot;,
+          &quot;key&quot;: &quot;alyssa_status&quot;,
+          &quot;display_type&quot;: &quot;chips&quot;
+        },
+        {
+          &quot;id&quot;: &quot;k54b11c2&quot;,
+          &quot;label&quot;: &quot;Loadout&quot;,
+          &quot;key&quot;: &quot;alyssa_loadout&quot;,
+          &quot;display_type&quot;: &quot;chips&quot;
+        }
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;c6f7a8b9&quot;,
+      &quot;title&quot;: &quot;Team Info &amp; Stash&quot;,
+      &quot;order&quot;: 5,
+      &quot;keys&quot;: [
+        {
+          &quot;id&quot;: &quot;k61c22d3&quot;,
+          &quot;label&quot;: &quot;Inventario Comune&quot;,
+          &quot;key&quot;: &quot;team_stash&quot;,
+          &quot;display_type&quot;: &quot;chips&quot;
+        },
+        {
+          &quot;id&quot;: &quot;k62d33e4&quot;,
+          &quot;label&quot;: &quot;Denaro del Gruppo&quot;,
+          &quot;key&quot;: &quot;team_money&quot;,
+          &quot;display_type&quot;: &quot;monospace&quot;
+        },
+        {
+          &quot;id&quot;: &quot;k63e44f5&quot;,
+          &quot;label&quot;: &quot;Rank Squadra&quot;,
+          &quot;key&quot;: &quot;squad_rank&quot;,
+          &quot;display_type&quot;: &quot;monospace&quot;
+        }
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;c7a8b9c0&quot;,
+      &quot;title&quot;: &quot;Tactical &amp; Environment&quot;,
+      &quot;order&quot;: 6,
+      &quot;keys&quot;: [
+        {
+          &quot;id&quot;: &quot;k71f55a6&quot;,
+          &quot;label&quot;: &quot;Livello di Allerta&quot;,
+          &quot;key&quot;: &quot;alert_level&quot;,
+          &quot;display_type&quot;: &quot;progress&quot;,
+          &quot;max_value&quot;: 5
+        },
+        {
+          &quot;id&quot;: &quot;k72a66b7&quot;,
+          &quot;label&quot;: &quot;Condizioni Ambientali&quot;,
+          &quot;key&quot;: &quot;environment_status&quot;,
+          &quot;display_type&quot;: &quot;chips&quot;
+        }
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;c8b9c0d1&quot;,
+      &quot;title&quot;: &quot;Quest Log &amp; Rumors&quot;,
+      &quot;order&quot;: 7,
+      &quot;keys&quot;: [
+        {
+          &quot;id&quot;: &quot;k81b77c8&quot;,
+          &quot;label&quot;: &quot;Missione in Corso&quot;,
+          &quot;key&quot;: &quot;active_quest&quot;,
+          &quot;display_type&quot;: &quot;text&quot;
+        },
+        {
+          &quot;id&quot;: &quot;k82c88d9&quot;,
+          &quot;label&quot;: &quot;Voci e Rumors&quot;,
+          &quot;key&quot;: &quot;world_rumors&quot;,
+          &quot;display_type&quot;: &quot;text&quot;
+        }
+      ]
+    }
+  ],
+  &quot;custom_prompt&quot;: &quot;[SYSTEM INSTRUCTION: DYNAMIC INFO_BOARD TRACKING]\nAt the end of every response, strictly after all narration and dialogue, you MUST append a status block enclosed in &lt;info_board&gt; tags. \n\nTo optimize performance, use a \&quot;Delta Update\&quot; system: ONLY output the specific keys that have changed during this turn, or the stats of characters actively participating in the current scene. Do not output the entire board unless requested.\n\nCHARACTER SCHEMA:\nConstruct keys dynamically using the active character&#39;s lowercase name (e.g., radek, goran, kian, jasper, alyssa).\n[name]_hp: [Progress 0-100]\n[name]_resource: [Progress 0-100] (Represents Stamina, Mana, or Cyber-Battery respectively depending on the character).\n[name]_status: [Chips - Comma-separated active conditions, e.g., Bleeding, Stealth, Shielded. Use \&quot;--\&quot; if none]\n[name]_loadout: [Chips - Comma-separated list of their currently carried weapons, gear, and important unique items]\n\nTEAM &amp; WORLD SCHEMA (Output only if relevant or changed this turn):\nteam_stash: [Chips - Shared inventory, vehicle storage, or general loot]\nteam_money: [Monospace - Exact numerical amount, e.g., $5548]\nsquad_rank: [Monospace - Overall squad rank, optionally followed by individual ranks in parentheses. E.g., Rank B (Radek: A, Alyssa: Novice)]\nalert_level: [Progress 0-5 - Current environmental awareness/danger]\nenvironment_status: [Chips - Current tactical or weather situation, e.g., Flanked, Heavy Rain, Pitch Black]\nactive_quest: [Text - Brief summary of the current immediate objective]\nworld_rumors: [Text - One brief rumor, noticeboard snippet, or background event]\n\nRULES:\n1. Act as a strict Game Master. Deduct consumed resources/items immediately, update statuses dynamically based on the narrative, and alter health based on damage taken or healed.\n2. Replace [name] with the exact lowercase character name (e.g., radek_hp: 85, jasper_loadout: EMP Grenade, Deck).\n3. Output exact \&quot;Key: Value\&quot; pairs in ENGLISH.\n4. Do NOT output category headers, comments, or the literal string \&quot;[name]\&quot;.\n&lt;/info_board&gt;&quot;
+}
+
+</code></pre>

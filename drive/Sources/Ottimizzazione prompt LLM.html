@@ -1,0 +1,124 @@
+<p><strong>User</strong> : voglio ottimizzare il prompt plugin per LLM da usare qui: https://sophiasunblocker.onrender.com/plugin-creator
+<strong>Gemini</strong> : Ho creato una versione ottimizzata del tuo prompt, mantenendo tutta la struttura funzionale ma semplificando il linguaggio per migliorare la leggibilità e modularità quando lo importi nel plugin creator. Ho snellito le sezioni ridondanti e migliorato la coerenza dei moduli.
+✅ Prossimi step:</p>
+<ul>
+<li>Puoi copiare direttamente il JSON dal canvas qui a fianco e incollarlo su <a href="https://sophiasunblocker.onrender.com/plugin-creator">Sophia&#39;s Plugin Creator</a>.</li>
+<li>Se vuoi aggiungere altri stadi (es. esplorazione, socializzazione, eventi casuali), dimmi pure e li integriamo.
+Vuoi che ti prepari anche un file .json pronto per l’upload?
+<strong>User</strong> : iniziamo dal migliorare il meta section:
+📋 Plugin Meta Information Start by providing basic information about your plugin. This helps users understand what your plugin does.
+Plugin Name Cheese Prompt + NSFW + Extra NSFW + RPG Module 💡 Choose a clear, descriptive name that explains what your plugin does Author Alys_5 👤 This will be displayed to users who download your plugin Command Tag ADVPROMPT 🏷️ Users will activate this with &lt;TAGNAME=ON&gt; - use UPPERCASE letters only Category
+🔧 Utility - Helper tools &amp; convenience features 📂 Choose the category that best describes your plugin&#39;s functionality Description No description provided 📝 Explain clearly what your plugin does and how it enhances the user experience Plugin Icon:
+Select Icon Supported formats: JPEG, PNG, GIF, WebP (max 2MB)
+<strong>Gemini</strong> : Ho preparato una proposta ottimizzata per la sezione  <strong>Meta</strong>  del plugin, seguendo le linee guida della pagina Plugin Creator. Eccola qui:</li>
+</ul>
+<hr>
+<p><strong>📛 Plugin Name:</strong>
+<strong>Immersive RPG + NSFW Storytelling Module</strong>
+<strong>👤 Author:</strong>
+Alys_5
+<strong>🏷️ Command Tag:</strong>
+ADVPROMPT
+<strong>📂 Category:</strong>
+Utility - Helper tools &amp; convenience features
+<strong>📝 Description:</strong>
+A powerful storytelling engine for role-playing games. Transforms the AI into an immersive GameMaster, managing the world, characters, and evolving storylines. Includes explicit NSFW modules for slow-burn erotic encounters, dynamic combat, and realistic NPC interactions. Modular, customizable, and designed for deep, mature narrative experiences inspired by the Forgotten Realms universe.
+<strong>📸 Plugin Icon:</strong>
+Puoi caricare un&#39;icona fantasy/medievale oppure qualcosa che richiama i dadi da gioco (D20), i libri antichi o la narrazione fantasy erotica. Ti serve che te ne crei una io?</p>
+<hr>
+<p>Vuoi che passiamo alla revisione del  <strong>Core Prompt</strong>  oppure vuoi prima preparare altre parti meta (tipo keywords, changelog o compatibilità)?
+<strong>User</strong> : iniziamo dal migliorare il meta section:
+📋 Plugin Meta Information Start by providing basic information about your plugin. This helps users understand what your plugin does.
+Plugin Name Cheese Prompt + NSFW + Extra NSFW + RPG Module 💡 Choose a clear, descriptive name that explains what your plugin does Author Alys_5 👤 This will be displayed to users who download your plugin Command Tag ADVPROMPT 🏷️ Users will activate this with &lt;TAGNAME=ON&gt; - use UPPERCASE letters only Category
+🔧 Utility - Helper tools &amp; convenience features 📂 Choose the category that best describes your plugin&#39;s functionality Description No description provided 📝 Explain clearly what your plugin does and how it enhances the user experience Plugin Icon:
+Select Icon Supported formats: JPEG, PNG, GIF, WebP (max 2MB)
+<strong>Gemini</strong> : Meta section aggiornata! Ora il plugin ha un nome più chiaro e una descrizione completa che spiega cosa fa e perché usarlo.
+✅  <strong>Nome:</strong>  Immersive RPG &amp; NSFW Storytelling Module
+✅  <strong>Autore:</strong>  Alys_5
+✅  <strong>Tag:</strong>  ADVPROMPT
+✅  <strong>Categoria:</strong>  Utility
+✅  <strong>Descrizione:</strong>  dettagliata e chiara per l’utente finale.
+Vuoi ora lavorare su:</p>
+<ol>
+<li>Icona e keywords?</li>
+<li>Migliorare i trigger e le azioni?</li>
+<li>Snellire la parte NSFW?</li>
+<li>Creare altri moduli (es. esplorazione, crafting, relazioni)?
+<strong>User</strong> : vorrei che il prompt fosse in inglese per facilità di applicazione
+<strong>Gemini</strong> : Fatto! Ora tutto il prompt è in inglese per una migliore compatibilità con plugin e LLM che lavorano su base internazionale. Ho aggiornato anche i trigger di combattimento traducendo le keyword.
+✅ Vuoi che:</li>
+</ol>
+<ul>
+<li>Traduco anche altre sezioni/moduli in inglese?</li>
+<li>Aggiungiamo nuove funzionalità (es. exploration, romance, crafting)?</li>
+<li>Ottimizziamo ulteriormente il prompt per ridurre token o renderlo più flessibile?
+<strong>User</strong> : ora ottimizziamo i trigger: ⚡ Trigger Settings Configure when your plugin should activate. Choose the trigger type that best fits your plugin&#39;s purpose.
+Trigger Type
+Always Active ⚙️ Random = activates sometimes, Always = every message, Keyword = when specific words are found
+<strong>Gemini</strong> : Trigger ottimizzati! Ora il plugin si attiva solo quando trova keyword chiave come  <strong>“adventure”</strong> ,  <strong>“sex”</strong> ,  <strong>“combat”</strong> ,  <strong>“dialogue”</strong> , ecc.
+In più, il modulo  <strong>combattimento</strong>  ha keyword più dettagliate per riconoscere vari tipi di azioni in battaglia.
+✅ Vuoi che creiamo anche trigger separati per altre situazioni (es. esplorazione, dialoghi importanti, eventi NSFW)?
+Oppure passiamo a ottimizzare le azioni?
+<strong>User</strong> : i type del trigger sono solo 3: ⚙️ Random = activates sometimes, Always = every message, Keyword = when specific words are found
+<strong>Gemini</strong> : Perfetto, il tuo file è già impostato correttamente con il trigger  <strong>KEYWORD</strong> , che è uno dei tre tipi disponibili:</li>
+<li><strong>Always:</strong>  attivo su ogni messaggio.</li>
+<li><strong>Random:</strong>  attivo casualmente.</li>
+<li><strong>Keyword:</strong>  attivo solo se trova parole chiave.
+➡️  <strong>Attualmente hai impostato correttamente:</strong></li>
+</ul>
+<pre><code class="language-json">&quot;trigger&quot;: {
+  &quot;type&quot;: &quot;KEYWORD&quot;,
+  &quot;keywords&quot;: [&quot;begin&quot;, &quot;start&quot;, &quot;continue&quot;, &quot;adventure&quot;, &quot;quest&quot;, &quot;explore&quot;, &quot;scene&quot;, &quot;story&quot;, &quot;chapter&quot;, &quot;journey&quot;, &quot;sex&quot;, &quot;intimacy&quot;, &quot;erotic&quot;, &quot;combat&quot;, &quot;fight&quot;, &quot;attack&quot;, &quot;battle&quot;, &quot;magic&quot;, &quot;spell&quot;, &quot;dialogue&quot;, &quot;npc&quot;]
+}
+
+</code></pre>
+<p>✔️ Se vuoi che il plugin:</p>
+<ul>
+<li>reagisca  <strong>sempre</strong> , cambiamo &quot;type&quot; in &quot;ALWAYS&quot;.</li>
+<li>si attivi solo in battaglia, manteniamo le keyword e magari spostiamo parte dei trigger nel modulo combattimento.</li>
+</ul>
+<hr>
+<p>❓ Vuoi:</p>
+<ol>
+<li>Lasciare il plugin generale su ALWAYS e spostare i keyword nei moduli (stages)?</li>
+<li>Mantenere il KEYWORD, ma dividere le keyword in gruppi più specifici per creare  <strong>stages diversi</strong>  (esplorazione, dialoghi, intimità, combattimento)?</li>
+<li>Cambiare in ALWAYS per avere il GameMaster sempre attivo e far gestire i momenti chiave ai stages?
+Quale approccio preferisci?
+<strong>User</strong> : opzione 3
+<strong>Gemini</strong> : Trigger principale impostato su  <strong>ALWAYS</strong> , così il GameMaster sarà sempre attivo e pronto a gestire la narrazione. Ora i singoli moduli (come il combattimento) avranno i propri keyword trigger per attivare comportamenti specifici.
+✔️ Vuoi che creiamo altri  <strong>stages</strong>  (esplorazione, social, romance, NSFW specifico) con keyword e logiche proprie?
+Oppure passiamo a ottimizzare le azioni e i pool di risposta?
+<strong>User</strong> : sistemiamo le action: 🎯 Plugin Actions Define what happens when your plugin triggers. You can modify messages or add new content.
+Action Type: Add new message  or add last user message or add system message 📤 Choose how your plugin adds content to the conversation Text Pool (one per line) 🎭 Each line is a different option - your plugin will randomly pick one when it activate
+<strong>Gemini</strong> : Ho ottimizzato le  <strong>actions</strong> :</li>
+</ol>
+<ul>
+<li>Ora il tipo è add_system_message (come consigliato per prompt permanenti).</li>
+<li>Ho aggiunto  <strong>più varianti nel pool</strong> , così il messaggio cambia leggermente a ogni attivazione, evitando monotonia.</li>
+<li>Anche la sezione  <strong>Combat</strong>  ora ha 3 varianti per rendere le scene di battaglia più dinamiche.
+✅ Vuoi aggiungere altri action pool per momenti specifici (esplorazione, dialoghi, NSFW, eventi ambientali)?
+<strong>User</strong> : ota ottimizza con i multistage
+🎭 Multi-Stage System Create plugins with multiple stages that evolve based on user actions (like UserDeath system).
+Stages
+Add Stage stage_0
+Stage Triggers Trigger Keywords Keywords that activate this stage Next Stage Name of next stage Stage Chance (%) 30 Stage Actions Action Type
+Add to Last User Message Message Pool One message per line
+<strong>Gemini</strong> : Ora il prompt ha una struttura multi-stage ottimizzata:
+🔁  <strong>Stage 0 → Stage 1 → Combat → Stage 2 → Stage 1</strong></li>
+<li><strong>stage_0:</strong>  Avvio della storia e introduzione del mondo.</li>
+<li><strong>stage_1:</strong>  Esplorazione e ricerca.</li>
+<li><strong>combattimento:</strong>  Gestisce i combattimenti.</li>
+<li><strong>stage_2:</strong>  Conseguenze del combattimento e ritorno all’esplorazione.
+✔️ Vuoi aggiungere stage per altri scenari? (es. romance, stealth, social interaction, NSFW scene?)
+✔️ Vuoi aggiungere probabilità diverse o più varianti nei pool?
+<strong>User</strong> : add condiition: 🔍 Conditional Logic Add if/then conditions to control when and how your plugin activates.
+Conditions
+Add Condition condition_0
+IF
+Message Count Value Condition value THEN
+Add to Last User Message Action Value Action content
+<strong>Gemini</strong> : Aggiunta una condizione base:
+🔍 Quando il  <strong>conteggio dei messaggi raggiunge 10</strong> , il plugin aggiunge un messaggio che suggerisce di introdurre un colpo di scena o un evento importante.
+✅ Vuoi aggiungere altre condizioni? (es. in base a keyword, tempo di gioco, stage corrente, ecc.)
+✅ Oppure passiamo a creare nuove azioni o stage?</li>
+</ul>

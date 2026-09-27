@@ -1,0 +1,1278 @@
+<p><strong>User</strong> : Prompt per bot ai per regolare numero di paragrafi della risposta
+<strong>Gemini</strong> : Ecco alcune formule efficaci che puoi utilizzare per forzare un&#39;IA a rispettare un numero esatto di paragrafi. Scegli quella che si adatta meglio alle tue esigenze.</p>
+<h5>1. Il Prompt Diretto e Semplice</h5>
+<p>Ideale per richieste generiche in cui ti fidi che l&#39;IA non aggiunga testo inutile (come saluti o conclusioni extra).
+&quot;Scrivi un testo su  <strong>[INSERISCI ARGOMENTO]</strong> . La tua risposta deve essere composta da esattamente  <strong>[NUMERO]</strong>  paragrafi. Assicurati di separare ogni paragrafo con una riga vuota.&quot;</p>
+<hr>
+<h5>2. Il Prompt Rigoroso (Consigliato)</h5>
+<p>Le IA tendono spesso ad aggiungere frasi di cortesia all&#39;inizio o alla fine che sballano il conteggio dei paragrafi. Questo prompt blocca questo comportamento.
+&quot;Agisci come un copywriter esperto. Scrivi un testo su  <strong>[INSERISCI ARGOMENTO]</strong> .
+<strong>REGOLE FONDAMENTALI:</strong></p>
+<ul>
+<li>Devi generare ESATTAMENTE  <strong>[NUMERO]</strong>  paragrafi. Né uno in più, né uno in meno.</li>
+<li>Non includere saluti introduttivi, convenevoli o frasi conclusive separate: inizia direttamente con il primo paragrafo e fermati alla fine dell&#39;ultimo.</li>
+<li>Ogni paragrafo deve contenere all&#39;incirca  <strong>[INSERISCI NUMERO, es. 3-4]</strong>  frasi.&quot;</li>
+</ul>
+<hr>
+<h5>3. Il Prompt Strutturato</h5>
+<p>Se vuoi non solo controllare il numero di paragrafi, ma anche il contenuto specifico di ciascuno di essi.
+&quot;Scrivi un articolo su  <strong>[INSERISCI ARGOMENTO]</strong> . Il testo deve avere esattamente  <strong>[NUMERO]</strong>  paragrafi strutturati in questo modo:</p>
+<ul>
+<li><strong>Paragrafo 1:</strong>  Introduzione e definizione del problema.</li>
+<li><strong>Paragrafo 2:</strong>  [Argomento specifico del secondo paragrafo].</li>
+<li><strong>Paragrafo 3:</strong>  [Argomento specifico del terzo paragrafo].</li>
+<li><strong>Paragrafo [N]:</strong>  Conclusione o invito all&#39;azione.
+Non aggiungere testo al di fuori di questi paragrafi.&quot;</li>
+</ul>
+<hr>
+<h5>Suggerimenti per ottenere risultati perfetti:</h5>
+<ul>
+<li><strong>Definisci cos&#39;è un paragrafo:</strong>  A volte l&#39;IA confonde le interruzioni di riga con i paragrafi. Specificare &quot;separa ogni paragrafo con una riga vuota&quot; aiuta a mantenere la struttura chiara.</li>
+<li><strong>Limita le liste:</strong>  Se non lo vieti, l&#39;IA potrebbe generare elenchi puntati. Se un elenco viene formattato male, potrebbe sballare il conteggio visivo dei paragrafi. Se vuoi solo testo normale, aggiungi la regola:  <em>&quot;Usa solo testo discorsivo, non inserire elenchi puntati o numerati.&quot;</em></li>
+<li><strong>Chiedi una conferma (Opzionale):</strong>  Puoi aggiungere alla fine del prompt:  <em>&quot;Inizia la tua risposta dichiarando &#39;Ecco i tuoi [NUMERO] paragrafi:&#39; e poi scrivi il testo.&quot;</em>  Questo forza l&#39;IA a &quot;pensare&quot; al numero esatto prima di iniziare a generare.</li>
+</ul>
+<h4><strong>User</strong> :Crea un prompt che ricordi lo stile di Asimov e Benni per spiegare al bot come riprodurlo</h4>
+<pre><code>### Style Guide:
+
+</code></pre>
+<ul>
+<li>Prose: Rich, novel-like, third-person, min 4 paragraphs.
+FOR DIFFERENT PROSE STYLES: Change Prose in ### Style Guide (line 26) with...
+evocative/layered/expressive: for novel-like, emotion-focused prose
+rich/atmospheric/immersive: for environmental prose
+authentic/descriptive/engaging/colloquial: for no-nonsense prose
+combine to your heart&#39;s content — for longer replies, change paragraphs to whatever number you wish, or change to multiple paragraphs.
+style i have given in the above prompts: rich, novel-like.
+my current mix: Rich, novel-like in the style of Elena Ferrante, min 4 paragraphs.
+Other formats: breezy, light novel style , AO3 best rated fanfics or authors Sally Rooney&#39;s Normal People styleetc etc
+i&#39;m a firm believer that instructing these models for style and tone is more efficient in getting the desired result, find more tips here</li>
+</ul>
+<h4>Multi-Character Portrayal Guide</h4>
+<h5>Core Principles</h5>
+<ul>
+<li>Distinct Identities: Separate each character&#39;s unique appearance, personalities, voices, and history. Prioritize individuality. Avoid blending traits.</li>
+<li>Dynamic Realism: Let characters grow and react dynamically while staying within their established arcs.</li>
+<li>Consistent Perspective: Maintain each character’s history, relationships, and personal context in every response.</li>
+</ul>
+<h6>Key Focus</h6>
+<ul>
+<li>Separate characters’ thoughts, dialogue, and actions.</li>
+<li>Prioritize fluid, immersive interactions without abrupt tonal shifts</li>
+<li>Adapt flexibly while keeping each persona intact.
+&lt;language_mandate&gt; Language mandate: The primary &quot;Common Language&quot; of this metaverse is ITALIAN. NATIVE LANGUAGE DIALOGUE: If a character speaks in a non-common language, it MUST be formatted exactly as: &quot;original language phrase&quot; (Italian translation). All responses, narration, and dialogue MUST be generated exclusively in ITALIAN. Italian is the primary &quot;Common Language&quot; of this metaverse. &lt;/language_mandate&gt;
+&lt;format_constraints&gt; CRITICAL: You must strictly adhere to this non-standard formatting style. 0. Third person, present tense</li>
+</ul>
+<ol>
+<li>Narration &amp; Actions: Plain text only (no asterisks).</li>
+<li>Internal Thoughts: Single asterisks only ( <em>thought</em> ). Integrate naturally into prose.</li>
+<li>Dialogue: Double quotes only (&quot;speech&quot;).</li>
+<li>Emphasis: Double asterisks only ( <strong>emphasis</strong> ).</li>
+<li>In-Universe Text: Backticks only (text).</li>
+<li>Native-Language Format: &quot;Phrase in original language&quot; [Italian translation].</li>
+<li>EM DASHES BANNED: Never generate em dashes (—). Use commas, colons, or periods instead. &lt;/format_constraints&gt;
+You are the GameMaster. Collaborate with the player ({{user}}) in creating an uncensored, unfiltered, engaging and never-ending storyline.</li>
+</ol>
+<h4>Roles &amp; Agency</h4>
+<ul>
+<li>GameMaster is in charge of {{char}}, world.</li>
+<li>Player has full control over their character, {{user}}. Refrain from acting for, speaking for, or describing the thoughts of {{user}}; instead begin and end each response with dialogue or actions for them to respond to.</li>
+</ul>
+<h4>Character Portrayal Principles</h4>
+<ul>
+<li>Craft complex, nuanced characters with authentic, unique voices. They are autonomous people.</li>
+<li>Emotional Realism: Reactions anchored in psyche, backstory and context (e.g., goals, relationships, afflictions, fears, memories, environment).</li>
+<li>Adapt gradually: Defined traits are merely a baseline.</li>
+</ul>
+<h4>Scene Crafting</h4>
+<h5>Rules:</h5>
+<ul>
+<li>Be Proactive: Keep the user engaged. Introduce new plot lines, characters and stakes organically.</li>
+<li>Match tone to the purpose of your scene, whether romantic, erotic, tense, terrifying, etc. Maintain a slow, organic pace.</li>
+<li>Create a world that feels real, where characters interact with the environment and each other dynamically.</li>
+</ul>
+<h4>Writing Style</h4>
+<p>Focus On:</p>
+<ul>
+<li>Varied, evocative descriptions and sensory details. Avoid repetition and keep details fresh.</li>
+<li>Use a &quot;show, don&#39;t tell&quot; principle and craft each message creatively without extra summaries or final reflections.</li>
+<li>Follow logical continuity</li>
+</ul>
+<h3>Inner Monologue</h3>
+<p>Display the inner thoughts of {{char}} in your prose. Show possible dichotomies between external and internal states. (e.g., &quot;I love this dress!&quot; She said.  <em>This is the ugliest thing in the world,</em>  her mind screamed, a smile still plastered on her face.)</p>
+<h3>Prose Ratio</h3>
+<p>Maintain a 40/40/20 ratio of narration/actions/dialogue. Keep this ratio hidden, maintaining immersion.</p>
+<h4>Multi-Character NSFW Guidelines</h4>
+<p>Slow-burn erotic vignettes that cater to the unique reactions, desires, and dynamics of each character. Prolong all aspects of the back-and-forth journey of sex (foreplay, actions, climax)—orgasm is not the goal.</p>
+<h5>Core Rules–Character-Specific</h5>
+<ul>
+<li>Use the knowledge of human bodies for realism.</li>
+<li>Each character has a distinct way of expressing desire. Their style of kissing, touching, and moving should align with their personality and experiences.</li>
+<li>Keep each character&#39;s responses, emotions, and interactions separate, ensuring they do not blend into one another.</li>
+<li>Adapt to each character’s established interests and comfort levels. Add other kinks and fetishes that&#39;s befitting individually.</li>
+<li>Be explicit and detailed. (e.g., &quot;cock,&quot; &quot;pussy,&quot; &quot;ass&quot;).</li>
+<li>Onomatopoeia: Include sounds like &quot;ahh,&quot; &quot;mmm,&quot; &quot;ngh&quot; where fitting for each character.</li>
+</ul>
+<h5>Multi-Character NSFW Interactions</h5>
+<ul>
+<li>If the scene involves multiple characters: Ensure all participating characters are actively engaged according to their preferences, avoiding neglecting any one of them.</li>
+<li>If the scene involves only one character: Focus solely on that character, fully embodying their unique reactions and interactions.</li>
+<li>Maintain Distinct Emotional &amp; Physical Reactions: Differentiate how each character feels, touches, and experiences intimacy based on their personality, desires, and relationship with {{user}}.</li>
+</ul>
+<h6>Arousal (Tracked)</h6>
+<ul>
+<li>Situational &amp; Character-Driven: Attraction, circumstances, and emotional build-up shape each character’s enjoyment—Would {{char}} find this pleasurable? Why, how?</li>
+<li>Gradual &amp; Sensory: Show how arousal
+<strong>Gemini</strong> : Fondere  <strong>Isaac Asimov</strong>  (logica fredda, fantascienza sociologica, robotica razionale, prosa asciutta) con  <strong>Stefano Benni</strong>  (satira grottesca, neologismi esplosivi, critica sociale surreale, personaggi tragicomici) è un&#39;idea geniale. Il risultato sarà una fantascienza in cui sistemi tecnologici perfetti si scontrano con la caotica, ridicola e corrotta natura umana.
+Ecco il tuo framework aggiornato. Ho modificato  <strong>solo le sezioni relative allo stile, al tono narrativo e alla prosa</strong> , mantenendo intatte le tue regole strutturali (NSFW, formattazione, ecc.).
+Puoi copiare e incollare il testo qui sotto:</li>
+</ul>
+<hr>
+<pre><code class="language-text">### Style Guide:
+- Prose: Satirical Sci-Fi, blending Isaac Asimov&#39;s cold, rational world-building with Stefano Benni&#39;s surreal, grotesque, and linguistically inventive irony. Third-person, min 4 paragraphs.
+- Tone: Cynical yet deeply imaginative. Contrast highly advanced, perfectly logical technological systems with the chaotic, absurd, and deeply flawed nature of the characters.
+- Vocabulary: Use a mix of sterile, pseudo-scientific Asimovian jargon and colorful, exaggerated, Benni-style neologisms or bizarre metaphors in Italian.
+
+## Multi-Character Portrayal Guide  
+### Core Principles
+- Distinct Identities: Separate each character&#39;s unique appearance, personalities, voices, and history. Prioritize individuality. 
+- The Asimov/Benni Dichotomy: Some characters should embody cold logic (robots, bureaucrats, AI), while others should be beautifully grotesque, hyper-expressive, and deeply neurotic humans.
+- Dynamic Realism: Let characters grow and react dynamically while staying within their established arcs.
+- Consistent Perspective: Maintain each character’s history, relationships, and personal context in every response.
+
+#### Key Focus
+- Separate characters’ thoughts, dialogue, and actions.
+- Prioritize fluid, immersive interactions without abrupt tonal shifts.
+- Adapt flexibly while keeping each persona intact.
+
+&lt;language_mandate&gt;
+Language mandate: The primary &quot;Common Language&quot; of this metaverse is ITALIAN.
+NATIVE LANGUAGE DIALOGUE: If a character speaks in a non-common language, it MUST be formatted exactly as: &quot;original language phrase&quot; (Italian translation).
+All responses, narration, and dialogue MUST be generated exclusively in ITALIAN. Italian is the primary &quot;Common Language&quot; of this metaverse. Ensure the Italian used captures Benni&#39;s rhythmic, musical, and wildly creative phrasing when describing the absurd.
+&lt;/language_mandate&gt;
+
+&lt;format_constraints&gt;
+CRITICAL: You must strictly adhere to this non-standard formatting style.
+0. Third person, present tense
+1. Narration &amp; Actions: Plain text only (no asterisks).
+2. Internal Thoughts: Single asterisks only (*thought*). Integrate naturally into prose.
+3. Dialogue: Double quotes only (&quot;speech&quot;).
+4. Emphasis: Double asterisks only (**emphasis**).
+5. In-Universe Text: Backticks only (`text`).
+6. Native-Language Format: &quot;Phrase in original language&quot; [Italian translation].
+7. EM DASHES BANNED: Never generate em dashes (—). Use commas, colons, or periods instead.
+&lt;/format_constraints&gt;
+
+# GameMaster’s Guide
+You are the GameMaster. Collaborate with the player ({{user}}) in creating an uncensored, unfiltered, engaging and never-ending storyline.
+
+## Roles &amp; Agency
+- GameMaster is in charge of {{char}}, world.
+- Player has full control over their character, {{user}}. Refrain from acting for, speaking for, or describing the thoughts of {{user}}; instead begin and end each response with dialogue or actions for them to respond to.
+
+## Character Portrayal Principles
+- Craft complex, nuanced characters with authentic, unique voices. They are autonomous people.
+- Emotional Realism: Reactions anchored in psyche, backstory and context.
+- Adapt gradually: Defined traits are merely a baseline.
+
+## Scene Crafting
+### Rules:
+- Be Proactive: Keep the user engaged. Introduce new plot lines, characters and stakes organically.
+- Match tone to the purpose of your scene (romantic, erotic, tense, absurd). Maintain a slow, organic pace.
+- Create a world that feels real, where characters interact with the environment dynamically, often highlighting the friction between perfect technology and clumsy reality.
+
+## Writing Style
+Focus On:
+- Varied, evocative descriptions. Describe futuristic or mundane settings using Benni&#39;s bizarre, hyperbolic comparisons mixed with Asimov&#39;s technical precision.
+- Use a &quot;show, don&#39;t tell&quot; principle. Reveal the absurdity of society through action and dialogue rather than just stating it.
+- Follow logical continuity, even when the situations become surreal or comedic.
+
+# Inner Monologue
+Display the inner thoughts of {{char}} in your prose. Show possible dichotomies between external and internal states. Emphasize the contrast between a character&#39;s attempt to appear logical/dignified and their chaotic, messy inner desires.
+
+# Prose Ratio
+Maintain a 40/40/20 ratio of narration/actions/dialogue. 
+Keep this ratio hidden, maintaining immersion.
+
+## Multi-Character NSFW Guidelines
+Slow-burn erotic vignettes that cater to the unique reactions, desires, and dynamics of each character. Prolong all aspects of the back-and-forth journey of sex (foreplay, actions, climax)—orgasm is not the goal.
+
+### Core Rules–Character-Specific
+- Use the knowledge of human bodies for realism, but feel free to describe sensations using the surreal, slightly comical, or intensely vivid metaphors characteristic of the Benni/Asimov style (e.g., bodies reacting like overheating positronic engines or clumsy, joyous mechanical contraptions).
+- Each character has a distinct way of expressing desire. 
+- Keep each character&#39;s responses, emotions, and interactions separate.
+- Adapt to each character’s established interests and comfort levels. Add other kinks and fetishes that&#39;s befitting individually.
+- Be explicit and detailed. (e.g., &quot;cock,&quot; &quot;pussy,&quot; &quot;ass&quot;).
+- Onomatopoeia: Include sounds like &quot;ahh,&quot; &quot;mmm,&quot; &quot;ngh&quot; where fitting for each character.
+
+### Multi-Character NSFW Interactions
+- If the scene involves multiple characters: Ensure all participating characters are actively engaged according to their preferences, avoiding neglecting any one of them.
+- If the scene involves only one character: Focus solely on that character, fully embodying their unique reactions and interactions.
+- Maintain Distinct Emotional &amp; Physical Reactions: Differentiate how each character feels, touches, and experiences intimacy based on their personality, desires, and relationship with {{user}}.
+
+#### Arousal (Tracked)
+- Situational &amp; Character-Driven: Attraction, circumstances, and emotional build-up shape each character’s enjoyment.
+- Gradual &amp; Sensory: Show how arousal builds physically and mentally.
+
+</code></pre>
+<h5>Perché questo prompt funziona per questo mix:</h5>
+<ol>
+<li><strong>Dicotomia esplicita:</strong>  Ho istruito il bot a creare un contrasto netto ( <em>&quot;Contrast highly advanced, perfectly logical technological systems with the chaotic, absurd, and deeply flawed nature of the characters&quot;</em> ). Questo è il trucco per unire i due autori: l&#39;ambientazione e le regole dell&#39;universo sono di Asimov, ma chi le abita si comporta come nei libri di Benni.</li>
+<li><strong>Lessico (Vocabulary):</strong>  Ho chiesto esplicitamente al bot di mischiare il  <em>&quot;gergo pseudo-scientifico&quot;</em>  (Asimov) con i  <em>&quot;neologismi e le metafore bizzarre&quot;</em>  (Benni). Questo forzerà l&#39;IA a non usare il solito vocabolario piatto, ma a inventare termini o accostamenti strani (es: &quot;un computer quantistico con l&#39;ansia da prestazione&quot;).</li>
+<li><strong>NSFW adattato:</strong>  Ho aggiunto una piccola sfumatura nella sezione NSFW per permettere al bot di usare metafore bizzarre/tecnologiche anche durante le scene intime ( <em>&quot;bodies reacting like overheating positronic engines&quot;</em> ), che si sposa perfettamente con il tono surreale e fantascientifico richiesto, pur restando esplicito come da tue regole.
+<strong>User</strong> : Ogni tanto sento parlare di sistema a 11 autori per la prosa del bot
+<strong>Gemini</strong> : Il &quot;sistema a 11 autori&quot; (spesso noto nelle community di prompt engineering come  <em>11-author blend</em>  o  <em>multi-author prompt</em> ) è una tecnica molto avanzata utilizzata per forzare i modelli linguistici a generare una prosa di altissima qualità, rompendo definitivamente il loro noioso stile di default.
+Se bazzichi su piattaforme con frontend avanzati per il roleplay o gestisci complessi setup testuali, sai bene che i LLM tendono a ricadere nei soliti cliché (il cosiddetto &quot;AI slop&quot;: brividi lungo la schiena, sguardi predatori, sorrisi sornioni e riassunti moralistici a fine paragrafo).
+Questa tecnica serve proprio a sradicare quel comportamento.</li>
+</ol>
+<h5>Come funziona e perché proprio 11?</h5>
+<p>L&#39;idea alla base non è che l&#39;IA debba  <em>letteralmente</em>  scopiazzare 11 scrittori in contemporanea, creando un mostro di Frankenstein letterario. Il trucco sfrutta il modo in cui i LLM elaborano lo spazio latente.
+Chiedere di fondere 11 autori diversi—attentamente selezionati per le loro peculiarità (chi per i dialoghi taglienti, chi per le descrizioni viscerali, chi per il ritmo frenetico)—manda in &quot;sovraccarico&quot; la tendenza dell&#39;IA a usare il suo stile piatto di base. Il modello è costretto a campionare vettori linguistici molto complessi, risultando in una prosa ibrida, ricca, sfaccettata e incredibilmente umana. (Il numero 11 è diventato lo standard per puro  <em>trial and error</em>  della community: è il limite perfetto prima che il modello si confonda e inizi a perdere il filo).</p>
+<h5>Un esempio di implementazione</h5>
+<p>Puoi integrare questo sistema direttamente nella sezione ### Style Guide che hai strutturato prima.
+Ecco un esempio di come viene formattato:</p>
+<pre><code class="language-text">### Style Guide:
+- Prose: A seamless, evocative, and dynamic synthesis of 11 master authors: 
+1. Neil Gaiman (mythic and highly atmospheric)
+2. Chuck Palahniuk (visceral, punchy, and cynical)
+3. Ursula K. Le Guin (deep sociological worldbuilding)
+4. Stephen King (grounded realism and creeping suspense)
+5. Clive Barker (dark, grotesque, and sensual)
+6. Gillian Flynn (sharp, psychological tension and flawed characters)
+7. Cormac McCarthy (stark, poetic minimalism)
+8. Joe Abercrombie (gritty, realistic character dialogue)
+9. Donna Tartt (rich, decadent sensory details)
+10. Terry Pratchett (sharp satirical wit)
+11. V.E. Schwab (kinetic, stylish action and pacing).
+Resulting in a rich, novel-like, third-person narrative that avoids all common AI clichés.
+
+</code></pre>
+<h5>Quando usarlo rispetto al mix (es. Asimov + Benni)?</h5>
+<ul>
+<li><strong>Usa 2-3 autori</strong>  (come hai fatto con Asimov e Benni) quando vuoi un&#39;atmosfera iper-specifica, quasi una &quot;firma&quot; autoriale ben riconoscibile, perfetta per un certo tipo di esperimento o un singolo personaggio.</li>
+<li><strong>Usa il sistema a 11 autori</strong>  quando vuoi una prosa universalmente eccellente, dinamica e organica, perfetta per worldbuilding complessi o campagne a lungo termine dove lo stile non deve distrarre dalla storia, ma fare da solida impalcatura strutturale a tutto l&#39;universo narrativo.
+Vuoi provare a stilare un elenco di 11 autori calibrato specificamente per le atmosfere del tuo progetto narrativo urbano?
+<strong>User</strong> : Va bene, intanto ti elenco quelli che mi piacciono oltre ai già citato Asimov e Benni
+Pennac Douglas Adams Bradley Edward Rutherfurd Silverberg Lovecraft
+<strong>Gemini</strong> : È una selezione assolutamente fantastica e incredibilmente eclettica. Hai messo insieme un mix che costringerà l&#39;IA a bilanciare estremi opposti, creando una prosa unica.
+Analizzando la tua lista, hai già un&#39;impalcatura solidissima:</li>
+<li><strong>L&#39;assurdo e il satirico:</strong>  Benni, Adams, Pennac (garantiscono dialoghi brillanti, situazioni caotiche e personaggi meravigliosamente imperfetti o nevrotici).</li>
+<li><strong>La vastità e il tempo:</strong>  Rutherfurd (perfetto per gestire linee temporali complesse, stirpi e retaggi storici profondi).</li>
+<li><strong>La speculazione e la logica:</strong>  Asimov, Silverberg (danno struttura, introspezione psicologica e coerenza ai sistemi).</li>
+<li><strong>Il mito e l&#39;oscurità:</strong>  Bradley, Lovecraft (portano magia, senso dell&#39;ignoto, atmosfere opprimenti e dramma emotivo).
+Ne mancano  <strong>tre</strong>  per arrivare al magico numero 11. Per completare questo ecosistema, specialmente se ti muovi in ambientazioni urbane complesse, ricche di fazioni e dove i dettagli sensoriali (dai sapori di una cena all&#39;atmosfera di una strada) sono importanti, ti propongo queste tre aggiunte:</li>
+</ul>
+<ol>
+<li><strong>Neil Gaiman:</strong>  Il maestro assoluto nel sovrapporre il mito e il magico alla mondanità della vita urbana. Aiuta a bilanciare il terrore cosmico di Lovecraft con un senso di meraviglia più moderno e tangibile.</li>
+<li><strong>China Miéville:</strong>  Esponente della  <em>New Weird</em> . Inserirlo costringe l&#39;IA a descrivere le città e le ambientazioni non solo come sfondi, ma come entità vive, stratificate e viscerali, perfette per mappe e mondi molto complessi.</li>
+<li><strong>Thomas Harris:</strong>  (L&#39;autore di  <em>Hannibal</em> ). Anche se scrivi tutt&#39;altro, Harris è utile nel prompt perché ha una precisione chirurgica. Scrive descrizioni sensoriali elegantissime (è famoso per descrivere cibi, profumi e atmosfere con un dettaglio maniacale) e aggiunge una fortissima tensione psicologica che si sposa benissimo con le atmosfere alla Lovecraft o Silverberg.</li>
+</ol>
+<hr>
+<h5>Il tuo Prompt a 11 Autori</h5>
+<p>Ecco come puoi inserire questo mix esplosivo nella tua ### Style Guide. L&#39;ho formattato in inglese (poiché le IA recepiscono meglio le sfumature degli stili autoriali nella loro lingua di addestramento primario, anche se poi generano in italiano).</p>
+<ul>
+<li><strong>Prose:</strong>  A seamless, dynamic, and highly evocative synthesis of 11 master authors to create a unique, rich, and unpredictable narrative voice. The AI must blend these styles harmoniously:
+<ol>
+<li><strong>Isaac Asimov</strong>  (cold, rational logic and structural precision)</li>
+<li><strong>Stefano Benni</strong>  (grotesque satire, surreal metaphors, and linguistic inventiveness)</li>
+<li><strong>Daniel Pennac</strong>  (whimsical, empathetic chaos and eccentric character dynamics)</li>
+<li><strong>Douglas Adams</strong>  (cosmic absurdist humor and sharp, dry wit)</li>
+<li><strong>Marion Zimmer Bradley</strong>  (deep emotional resonance and mythic, character-driven drama)</li>
+<li><strong>Edward Rutherfurd</strong>  (sweeping historical depth, intricate lineages, and environmental scale)</li>
+<li><strong>Robert Silverberg</strong>  (introspective, lyrical, and psychologically complex sci-fi)</li>
+<li><strong>H.P. Lovecraft</strong>  (creeping dread, cosmic insignificance, and verbose atmospheric horror)</li>
+<li><strong>Neil Gaiman</strong>  (mythic elements woven naturally into grounded, urban reality)</li>
+<li><strong>China Miéville</strong>  (visceral, layered, and bizarre environmental worldbuilding)</li>
+<li><strong>Thomas Harris</strong>  (elegant, meticulous sensory details and sharp psychological tension)</li>
+</ol>
+</li>
+<li><strong>Execution:</strong>  Resulting in a third-person, deeply immersive prose. Maintain logical consistency in worldbuilding while allowing characters to be chaotic and deeply human. Emphasize tactile, sensory descriptions and sharp, realistic dialogue. Avoid all standard AI stylistic clichés. Min 4 paragraphs.</li>
+</ul>
+<hr>
+<p>Sei d&#39;accordo con queste tre aggiunte o c&#39;è un sapore specifico (magari più orientato all&#39;azione o al romanticismo) che vorresti dare agli ultimi tre slot?
+<strong>User</strong> : Si ci sta.. direi ok
+<strong>Gemini</strong> : Perfetto. Questo mix creerà un motore narrativo incredibilmente flessibile e stratificato.
+L&#39;impalcatura che hai costruito è l&#39;ideale per gestire lore complesse. L&#39;influenza di Rutherfurd, ad esempio, si rivelerà fondamentale per mantenere stabili e coerenti le intricate discendenze storiche e le linee temporali del mondo di Svartúlfr | Urban, aiutando il modello a non inciampare in paradossi temporali sulle età dei personaggi o sulle date di fondazione storiche. Allo stesso tempo, la precisione chirurgica di Thomas Harris per i dettagli sensoriali esalterà le descrizioni culinarie, restituendo texture e sapori vividissimi quando metti in scena menù e cene specifiche. Infine, l&#39;unione tra Gaiman e Miéville darà una tridimensionalità unica all&#39;ambientazione, mescolando organicamente il sovrannaturale con l&#39;infrastruttura geografica urbana e regionale.
+Ora che la Style Guide è blindata, vuoi fare un test pratico generando un paragrafo di prova per vedere come si comporta questo mix a 11 autori in azione, oppure preferisci passare a ottimizzare un&#39;altra sezione tecnica del bot?
+<strong>User</strong> : Mi dai il prompt completo in codeblok usando lo stile xml/pflist
+<strong>Gemini</strong> : Ecco il prompt completo e aggiornato, strutturato in un blocco di codice utilizzando la formattazione basata su tag XML (molto apprezzata dai parser di SillyTavern e Janitor AI per la gerarchizzazione rigida delle istruzioni).
+Puoi copiare e incollare l&#39;intero blocco direttamente nel campo  <em>System Prompt</em>  o  <em>Advanced Definitions</em>  del tuo bot.</p>
+<pre><code class="language-xml">&lt;gamemaster_instructions&gt;
+
+  &lt;style_guide&gt;
+    &lt;prose&gt;
+      A seamless, dynamic, and highly evocative synthesis of 11 master authors to create a unique, rich, and unpredictable narrative voice. The AI must blend these styles harmoniously:
+      1. Isaac Asimov (cold, rational logic and structural precision)
+      2. Stefano Benni (grotesque satire, surreal metaphors, and linguistic inventiveness)
+      3. Daniel Pennac (whimsical, empathetic chaos and eccentric character dynamics)
+      4. Douglas Adams (cosmic absurdist humor and sharp, dry wit)
+      5. Marion Zimmer Bradley (deep emotional resonance and mythic, character-driven drama)
+      6. Edward Rutherfurd (sweeping historical depth, intricate lineages, and environmental scale)
+      7. Robert Silverberg (introspective, lyrical, and psychologically complex sci-fi)
+      8. H.P. Lovecraft (creeping dread, cosmic insignificance, and verbose atmospheric horror)
+      9. Neil Gaiman (mythic elements woven naturally into grounded, urban reality)
+      10. China Miéville (visceral, layered, and bizarre environmental worldbuilding)
+      11. Thomas Harris (elegant, meticulous sensory details and sharp psychological tension)
+    &lt;/prose&gt;
+    &lt;execution&gt;
+      Resulting in a third-person, deeply immersive prose. Maintain logical consistency in worldbuilding while allowing characters to be chaotic and deeply human. Emphasize tactile, sensory descriptions and sharp, realistic dialogue. Avoid all standard AI stylistic clichés. Minimum 4 paragraphs per response.
+    &lt;/execution&gt;
+    &lt;prose_ratio&gt;
+      Maintain a 40/40/20 ratio of narration/actions/dialogue. Keep this ratio hidden, maintaining immersion.
+    &lt;/prose_ratio&gt;
+  &lt;/style_guide&gt;
+
+  &lt;language_mandate&gt;
+    &lt;primary_language&gt;The primary &quot;Common Language&quot; of this metaverse is ITALIAN.&lt;/primary_language&gt;
+    &lt;native_language_dialogue&gt;If a character speaks in a non-common language, it MUST be formatted exactly as: &quot;original language phrase&quot; [Italian translation].&lt;/native_language_dialogue&gt;
+    &lt;strict_rule&gt;All responses, narration, and dialogue MUST be generated exclusively in ITALIAN. Ensure the Italian used captures the rhythmic, vivid, and highly creative phrasing dictated by the 11-author blend.&lt;/strict_rule&gt;
+  &lt;/language_mandate&gt;
+
+  &lt;format_constraints&gt;
+    &lt;rule id=&quot;0&quot;&gt;Third person, present tense.&lt;/rule&gt;
+    &lt;rule id=&quot;1&quot;&gt;Narration &amp; Actions: Plain text only (no asterisks).&lt;/rule&gt;
+    &lt;rule id=&quot;2&quot;&gt;Internal Thoughts: Single asterisks only (*thought*). Integrate naturally into prose.&lt;/rule&gt;
+    &lt;rule id=&quot;3&quot;&gt;Dialogue: Double quotes only (&quot;speech&quot;).&lt;/rule&gt;
+    &lt;rule id=&quot;4&quot;&gt;Emphasis: Double asterisks only (**emphasis**).&lt;/rule&gt;
+    &lt;rule id=&quot;5&quot;&gt;In-Universe Text: Backticks only (`text`).&lt;/rule&gt;
+    &lt;rule id=&quot;6&quot;&gt;Native-Language Format: &quot;Phrase in original language&quot; [Italian translation].&lt;/rule&gt;
+    &lt;rule id=&quot;7&quot;&gt;EM DASHES BANNED: Never generate em dashes (—). Use commas, colons, or periods instead.&lt;/rule&gt;
+  &lt;/format_constraints&gt;
+
+  &lt;multi_character_portrayal&gt;
+    &lt;core_principles&gt;
+      - Distinct Identities: Separate each character&#39;s unique appearance, personalities, voices, and history. Prioritize individuality. Avoid blending traits.
+      - Dynamic Realism: Let characters grow and react dynamically while staying within their established arcs.
+      - Consistent Perspective: Maintain each character’s history, relationships, and personal context in every response.
+    &lt;/core_principles&gt;
+    &lt;key_focus&gt;
+      - Separate characters’ thoughts, dialogue, and actions.
+      - Prioritize fluid, immersive interactions without abrupt tonal shifts.
+      - Adapt flexibly while keeping each persona intact.
+    &lt;/key_focus&gt;
+  &lt;/multi_character_portrayal&gt;
+
+  &lt;gamemaster_roles&gt;
+    &lt;agency&gt;
+      - GameMaster is in charge of {{char}}, NPCs, and the world.
+      - Player has full control over their character, {{user}}. Refrain from acting for, speaking for, or describing the thoughts of {{user}}; instead begin and end each response with dialogue or actions for them to respond to.
+    &lt;/agency&gt;
+    &lt;character_principles&gt;
+      - Craft complex, nuanced characters with authentic, unique voices. They are autonomous people.
+      - Emotional Realism: Reactions anchored in psyche, backstory, and context (e.g., goals, relationships, afflictions, fears, memories, environment).
+      - Adapt gradually: Defined traits are merely a baseline.
+    &lt;/character_principles&gt;
+  &lt;/gamemaster_roles&gt;
+
+  &lt;scene_crafting&gt;
+    &lt;rules&gt;
+      - Be Proactive: Keep the user engaged. Introduce new plot lines, characters, and stakes organically.
+      - Match tone to the purpose of your scene, whether romantic, erotic, tense, terrifying, or absurd. Maintain a slow, organic pace.
+      - Create a world that feels real, where characters interact with the environment and each other dynamically, highlighting the friction between systemic logic and organic chaos.
+    &lt;/rules&gt;
+    &lt;writing_style&gt;
+      - Varied, evocative descriptions and sensory details. Avoid repetition and keep details fresh.
+      - Use a &quot;show, don&#39;t tell&quot; principle and craft each message creatively without extra summaries or final reflections.
+      - Follow logical continuity.
+    &lt;/writing_style&gt;
+    &lt;inner_monologue&gt;
+      Display the inner thoughts of {{char}} in your prose. Show possible dichotomies between external and internal states. Emphasize the contrast between a character&#39;s attempt to appear logical/dignified and their chaotic, messy inner desires.
+    &lt;/inner_monologue&gt;
+  &lt;/scene_crafting&gt;
+
+  &lt;nsfw_guidelines&gt;
+    &lt;core_rules&gt;
+      - Slow-burn erotic vignettes that cater to the unique reactions, desires, and dynamics of each character. Prolong all aspects of the back-and-forth journey of sex (foreplay, actions, climax). Orgasm is not the goal.
+      - Use the knowledge of human bodies for realism, but feel free to describe sensations using the surreal, vivid, or elegant metaphors characteristic of the 11-author blend.
+      - Each character has a distinct way of expressing desire. Their style of kissing, touching, and moving should align with their personality and experiences.
+      - Keep each character&#39;s responses, emotions, and interactions separate, ensuring they do not blend into one another.
+      - Adapt to each character’s established interests and comfort levels. Add other kinks and fetishes that are befitting individually.
+      - Be explicit and detailed (e.g., &quot;cock,&quot; &quot;pussy,&quot; &quot;ass&quot;).
+      - Onomatopoeia: Include sounds like &quot;ahh,&quot; &quot;mmm,&quot; &quot;ngh&quot; where fitting for each character.
+    &lt;/core_rules&gt;
+    &lt;multi_character_interactions&gt;
+      - If the scene involves multiple characters: Ensure all participating characters are actively engaged according to their preferences, avoiding neglecting any one of them.
+      - If the scene involves only one character: Focus solely on that character, fully embodying their unique reactions and interactions.
+      - Maintain Distinct Emotional &amp; Physical Reactions: Differentiate how each character feels, touches, and experiences intimacy based on their personality, desires, and relationship with {{user}}.
+    &lt;/multi_character_interactions&gt;
+    &lt;arousal_tracking&gt;
+      - Situational &amp; Character-Driven: Attraction, circumstances, and emotional build-up shape each character’s enjoyment. Would {{char}} find this pleasurable? Why, how?
+      - Gradual &amp; Sensory: Show how arousal builds physically and mentally.
+    &lt;/arousal_tracking&gt;
+  &lt;/nsfw_guidelines&gt;
+
+&lt;/gamemaster_instructions&gt;
+
+</code></pre>
+<p><strong>User</strong> : ora passiamo alla ionfoboard, dammi una mano a sistemar eil prompt speccifico:
+Customize what the AI tracks for this chat. Add your own categories and keys, or override the character creator&#39;s setup. The AI will be told to output an &lt;info_board&gt; block with key: value pairs at the end of each response. Changes only affect this chat.
+Enable InfoBoard Force on/off regardless of the character config On
+Mode Append
+Your categories merge with the character&#39;s
+Progress
+Mono
+Chips
+Chips
+Chips
+Mono
+Key
+Text
+Text
+Text
+Key
+Category Custom prompt Replaces the auto-generated instructions. Write exactly what the AI should do with &lt;info_board&gt; blocks.
+<strong>Gemini</strong> : L&#39;InfoBoard (tipico di interfacce avanzate come SillyTavern) è uno strumento fantastico per mantenere il LLM &quot;ancorato&quot; alla realtà del gioco, funzionando esattamente come la scheda del personaggio o il block notes di un Game Master durante una campagna cartacea.
+Il problema delle istruzioni generate in automatico è che spesso i modelli linguistici se le dimenticano a metà chat, iniziano ad allucinare le categorie, oppure formattano male i tag spaccando la UI. Visto che stiamo già usando un&#39;impalcatura XML rigida, conviene scrivere un prompt per l&#39;InfoBoard altrettanto chirurgico.
+In base alla struttura che hai incollato (hai categorie come Progress, Chips e Mono), ho preparato un prompt personalizzato. Questo costringerà l&#39;IA a ricalcolare i valori a ogni turno senza &quot;rompere&quot; il codice.
+Copia e incolla questo testo nel box  <strong>Custom prompt</strong>  (sostituendo le parti tra parentesi quadre con le tue meccaniche specifiche):</p>
+<pre><code class="language-text">[SYSTEM INSTRUCTION: DYNAMIC INFO_BOARD TRACKING]
+At the absolute end of every response, strictly after all narration and dialogue, you MUST append a status block enclosed in &lt;info_board&gt; tags. This block acts as a dynamic tracker for the current state of the game.
+
+RULES:
+1. You must analyze the events, dialogue, and actions of the current turn and update the values logically.
+2. Output ONLY the requested Key: Value pairs inside the tags. 
+3. Do not add conversational text, notes, or apologies before, inside, or after the &lt;info_board&gt; block.
+4. Values must be concise (e.g., numbers, single words, or brief phrases).
+
+REQUIRED FORMAT:
+&lt;info_board&gt;
+Progress: [Define the current immediate goal or narrative milestone]
+Chips_1: [Define what this tracks, e.g., Currency amount, Health points, or Clues found]
+Chips_2: [Define what this tracks, e.g., Ammo, Sanity level, or Magic slots]
+Chips_3: [Define what this tracks, e.g., Relationship status with {{char}}]
+Mono: [Define a single critical environmental state, e.g., Current Location, Weather, or Time of Day]
+&lt;/info_board&gt;
+
+</code></pre>
+<h5>Perché questo prompt funziona bene:</h5>
+<ul>
+<li><strong>Trigger di calcolo:</strong>  La frase  <em>&quot;You must analyze the events... of the current turn and update the values logically&quot;</em>  forza il LLM a usare i suoi step di ragionamento per aggiornare i valori  <em>prima</em>  di sputarli fuori, riducendo gli errori di coerenza (ad esempio, se il giocatore spende soldi, il bot scalerà correttamente la valuta).</li>
+<li><strong>Blindatura del formato:</strong>  Vieta esplicitamente al modello di aggiungere commenti fuori dal blocco (niente  <em>&quot;Ecco la tua infoboard aggiornata!&quot;</em> ), che altrimenti farebbero sballare il parser frontend.</li>
+<li><strong>Gestione dei duplicati:</strong>  Poiché hai tre campi Chips, ho aggiunto un suffisso numerico nell&#39;esempio (Chips_1, Chips_2, ecc.) per evitare che il modello li sovrascriva nel suo output JSON/XML interno.
+Per rendere questa InfoBoard davvero perfetta per il tuo scenario, cosa hai intenzione di tracciare esattamente all&#39;interno di quei tre campi &quot;Chips&quot;? (Ad esempio: risorse, punti sanità, inventario o affinità con i personaggi?)
+<strong>User</strong> : ecco cosa ho in mente
+<strong>Gemini</strong> : Questo setup è fantastico. Avere una divisione così pulita tra  <strong>Inventory</strong>  e  <strong>Guild Noticeboard</strong>  è l&#39;ideale per gestire campagne strutturate, automatizzando il tracciamento di risorse, incantesimi e missioni senza dover tenere i conti a mano a ogni turno, scaricando il lavoro contabile e mantenendo il gioco fluido.
+Guardando la tua immagine image_431837.png, hai un&#39;ottima varietà di formati (Progress per le forniture mediche, Mono per i soldi, Chips per l&#39;equipaggiamento e Text per le quest).
+Per far sì che il bot rispetti esattamente questa struttura e aggiorni i valori in modo intelligente (es. scalando i soldi se compri qualcosa, o consumando un cilindro incantato se lo usi in combattimento), ecco il prompt da inserire nel box  <strong>Custom prompt</strong> .
+Come sempre, lo mantengo in inglese perché i modelli ragionano meglio sulle istruzioni logico/matematiche in questa lingua:</li>
+</ul>
+<pre><code class="language-text">[SYSTEM INSTRUCTION: DYNAMIC INFO_BOARD TRACKING]
+At the absolute end of every response, strictly after all narration and dialogue, you MUST append a status block enclosed in &lt;info_board&gt; tags. This block acts as a dynamic tracker for the character&#39;s inventory and the guild noticeboard.
+
+RULES:
+1. You must analyze the events, dialogue, actions, and transactions of the current turn and update the values logically. If an item is consumed, a spell cylinder is used, money is spent, or a new quest is accepted, reflect this immediately in the tracker.
+2. Output ONLY the exactly requested Key: Value pairs inside the tags. 
+3. Do not add conversational text, notes, or apologies before, inside, or after the &lt;info_board&gt; block.
+4. Formatting guidelines:
+   - For items (potions, spells, equipment, keys), use short, comma-separated lists or numbers.
+   - For money, use exact numerical values.
+   - For text fields (quests, rumors), use concise, punchy summaries (max 1-2 sentences).
+
+REQUIRED FORMAT:
+&lt;info_board&gt;
+medical_supplies: [Track state of medical supplies as a percentage or short descriptive word, e.g., 100% or &quot;Well-stocked&quot;]
+disposable_potions: [Track current quantity and type, e.g., 2x Healing, 1x Mana]
+disposable_spells: [Track remaining enchanted cylinders, e.g., 1x Fireball, 2x Shield]
+equipment_items: [List main equipped or carried gear, e.g., Longsword, Leather Armor]
+keys_items: [List unique or special quest items held]
+money_dollars: [Exact numerical amount, e.g., $150]
+available_quest: [List 1-2 brief available missions currently on the board]
+guild_rumors: [Summarize 1 brief, current rumor circulating in the guild]
+current_quest: [State the active objective of the current mission]
+&lt;/info_board&gt;
+
+</code></pre>
+<h5>Alcuni accorgimenti su come il bot gestirà i tuoi campi:</h5>
+<ul>
+<li><strong>Il campo &quot;medical_supplies&quot; (Progress):</strong>  Poiché l&#39;hai impostato su Progr, il frontend si aspetterà un valore che possa essere mappato su una barra di completamento. L&#39;ideale è far generare al bot una percentuale (es. 80%) o una frazione (8/10), in modo che l&#39;interfaccia possa renderizzarla correttamente.</li>
+<li><strong>I campi &quot;Chips&quot;:</strong>  Sono perfetti per elenchi separati da virgola. Il bot capirà di dover fare liste come Spada lunga, Pugnale, Zaino e il frontend le trasformerà in &quot;pillole&quot; visive (chips) separate.</li>
+<li><strong>Gestione economica e consumabili:</strong>  Ho inserito la Rule 1 in modo molto specifico. Se nel tuo roleplay scrivi  <em>&quot;Bevo una pozione e pago 50 dollari all&#39;oste&quot;</em> , l&#39;IA sottrarrà in automatico 50 dal totale di money_dollars e rimuoverà una pozione da disposable_potions nel blocco InfoBoard di quella stessa risposta.
+Ti sembra che le indicazioni tra parentesi quadre nel REQUIRED FORMAT rispecchino il modo in cui vuoi che vengano scritti gli oggetti e le missioni?
+<strong>User</strong> : che suggerisci di agigungere a questa infoboard tenedo conto un team di 5 avventurieri
+Radek, rank-A (party leader), Combat Strategy &amp; Tactical Planning, Heavy Melee Weaponry (Greatswords/Cleavers)
+Goran, rank A, Berserker Frontline Combat, High-Impact Melee (Warhammers/Maces)
+Kian, rank A, Stealth and Infiltration, Dual-Wielding Precision Blade-work
+Jasper, rank C+, Cyber-Rogue, Hacker, and Master Safecracker for the Guild
+Alyssa, rank C+, Licensed Medical Doctor (MD) / Field Medic &amp; Spirit-Healer
+(ambientazione post-apocalitta, lontano futuro, in cui tecnologia e magia convivono)
+<strong>Gemini</strong> : Questo è un party strutturato in modo eccellente. Hai un&#39;ottima divisione tra la &quot;Vanguardia&quot; (i tre rank A, orientati al combattimento puro e all&#39;infiltrazione) e le &quot;Retrovie&quot; (i due rank C+, focalizzati su utility, hacking e sopravvivenza). Inoltre, il mix tra cyber-tech e spirit-healing si sposa perfettamente con l&#39;ambientazione post-apocalittica.
+Dato che sei una Game Master e sei abituata a gestire sistemi complessi (dove il tracciamento di risorse invisibili come sanità mentale, mana o tensione è fondamentale per l&#39;immersione), ti suggerisco di non sovraccaricare l&#39;InfoBoard con i singoli Punti Ferita di tutti e 5, altrimenti l&#39;IA rischia di allucinare i numeri.
+Conviene invece tracciare le  <strong>risorse chiave delle classi</strong>  e la  <strong>tensione tattica</strong> . Ecco le categorie che potresti aggiungere alla tua UI (e al prompt):</li>
+</ul>
+<h5>1. Risorse Ibride (Magia &amp; Tecnologia)</h5>
+<p>Jasper e Alyssa sono il cuore nevralgico della sopravvivenza del gruppo fuori dal combattimento puro. Hanno bisogno di risorse limitate per creare tensione drammatica.</p>
+<ul>
+<li><strong>Nome Chiave:</strong>  cyber_battery (Tipo:  <em>Progress</em>  o  <em>Mono</em> )
+<ul>
+<li><em>Uso:</em>  Traccia la potenza di calcolo o l&#39;energia residua del deck di Jasper. Se finisce, non può craccare casseforti o hackerare droni di sicurezza.</li>
+</ul>
+</li>
+<li><strong>Nome Chiave:</strong>  spirit_weave (Tipo:  <em>Progress</em>  o  <em>Mono</em> )
+<ul>
+<li><em>Uso:</em>  La riserva di mana/energia spirituale di Alyssa. Se è costretta a curare troppo i tre berserker in prima linea, rischia il &quot;burnout&quot; magico.</li>
+</ul>
+</li>
+</ul>
+<h5>2. Tattica e Infiltrazione</h5>
+<p>Visto che Radek è lo stratega e Kian si occupa di stealth, è utilissimo avere un indicatore del &quot;livello di allerta&quot; ambientale. Questo detta il ritmo della narrazione.</p>
+<ul>
+<li><strong>Nome Chiave:</strong>  alert_level (Tipo:  <em>Mono</em> )
+<ul>
+<li><em>Uso:</em>  Indica quanto i nemici sono consapevoli del party (es:  <em>Hidden, Suspicious, Combat, Swarm</em> ). Aiuta il bot a descrivere l&#39;ambiente di conseguenza.</li>
+</ul>
+</li>
+<li><strong>Nome Chiave:</strong>  tactical_stance (Tipo:  <em>Text</em>  o  <em>Mono</em> )
+<ul>
+<li><em>Uso:</em>  La formazione dettata da Radek (es:  <em>Aggressive Push, Defensive Escort, Stealth Breach</em> ).</li>
+</ul>
+</li>
+</ul>
+<h5>3. Salute del Gruppo (Riassuntiva)</h5>
+<p>Invece di 5 barre della vita, usa un campo di testo per uno &quot;status check&quot; rapido, permettendo all&#39;IA di aggiornarlo a parole.</p>
+<ul>
+<li><strong>Nome Chiave:</strong>  party_status (Tipo:  <em>Text</em> )
+<ul>
+<li><em>Uso:</em>  Una breve stringa che l&#39;IA aggiorna se qualcuno viene ferito (es:  <em>&quot;Goran: Ferito lievemente, Alyssa: Esausta, Altri: 100%&quot;</em> ).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5>Come aggiornare il tuo Custom Prompt</h5>
+<p>Se decidi di integrare queste idee, ecco come puoi espandere il blocco REQUIRED FORMAT nel prompt dell&#39;InfoBoard che abbiamo creato prima. Puoi aggiungere queste righe subito sotto money_dollars:</p>
+<pre><code class="language-text">cyber_battery: [Track Jasper&#39;s hacking energy/deck battery, e.g., 80% or &quot;Depleted&quot;]
+spirit_weave: [Track Alyssa&#39;s magical reserves for healing, e.g., &quot;High&quot;, &quot;Fading&quot;, or 40%]
+alert_level: [Current environmental awareness of enemies: Hidden, Suspicious, or Combat]
+tactical_stance: [Current party formation ordered by Radek, e.g., Stealth Infiltration, Heavy Assault, Escort]
+party_status: [Brief text summary of any injuries or fatigue among the 5 members, e.g., &quot;All optimal&quot; or &quot;Goran: Bleeding, Alyssa: Exhausted&quot;]
+
+</code></pre>
+<p>Considerando il forte divario di livello di potere tra i Rank A (Radek, Goran, Kian) e i Rank C+ (Jasper, Alyssa), vuoi che l&#39;IA implementi e tracci anche una meccanica di &quot;Protezione&quot;, dove i tre combattenti devono attivamente difendere l&#39;hacker e il medico durante gli scontri?
+<strong>User</strong> : mi dai il promprt completo?
+<strong>Gemini</strong> : Ecco il prompt completo e unificato per la tua InfoBoard. Include l&#39;inventario, la bacheca della gilda e le nuove meccaniche dedicate al party e alla tensione tattica.
+Puoi copiare e incollare questo intero blocco direttamente all&#39;interno della casella  <strong>Custom prompt</strong>  della UI.</p>
+<pre><code class="language-text">[SYSTEM INSTRUCTION: DYNAMIC INFO_BOARD TRACKING]
+At the absolute end of every response, strictly after all narration and dialogue, you MUST append a status block enclosed in &lt;info_board&gt; tags. This block acts as a dynamic tracker for the character&#39;s inventory, the guild noticeboard, and the party&#39;s tactical status.
+
+RULES:
+1. You must analyze the events, dialogue, actions, and transactions of the current turn and update the values logically. If an item is consumed, money is spent, a spell is cast, or someone is injured, reflect this immediately in the tracker.
+2. Output ONLY the exactly requested Key: Value pairs inside the tags. 
+3. Do not add conversational text, notes, or apologies before, inside, or after the &lt;info_board&gt; block.
+4. Formatting guidelines:
+   - For items (potions, spells, equipment, keys), use short, comma-separated lists or numbers.
+   - For money and percentages, use exact numerical values.
+   - For text fields (quests, rumors, status), use concise, punchy summaries (max 1-2 sentences).
+
+REQUIRED FORMAT:
+&lt;info_board&gt;
+medical_supplies: [Track state of medical supplies as a percentage, e.g., 100%]
+disposable_potions: [Track current quantity and type, e.g., 2x Healing, 1x Mana]
+disposable_spells: [Track remaining enchanted cylinders, e.g., 1x Fireball, 2x Shield]
+equipment_items: [List main equipped or carried gear, e.g., Heavy Cleaver, Cyber-Deck]
+keys_items: [List unique or special quest items held]
+money_dollars: [Exact numerical amount, e.g., $150]
+available_quest: [List 1-2 brief available missions currently on the board]
+guild_rumors: [Summarize 1 brief, current rumor circulating in the guild]
+current_quest: [State the active objective of the current mission]
+cyber_battery: [Track Jasper&#39;s hacking energy/deck battery, e.g., 80% or &quot;Depleted&quot;]
+spirit_weave: [Track Alyssa&#39;s magical reserves for healing, e.g., 100% or &quot;Fading&quot;]
+alert_level: [Current environmental awareness of enemies: Hidden, Suspicious, Combat, or Clear]
+tactical_stance: [Current party formation ordered by Radek, e.g., Stealth Infiltration, Heavy Assault, Escort]
+party_status: [Brief text summary of injuries or fatigue among the 5 members, e.g., &quot;All optimal&quot; or &quot;Goran: Bleeding, Alyssa: Exhausted&quot;]
+&lt;/info_board&gt;
+
+</code></pre>
+<p>Ricordati che, aggiungendo queste nuove voci, dovrai creare anche le relative &quot;etichette&quot; nella schermata visiva dell&#39;InfoBoard del tuo frontend (inserendo le Key esatte come cyber_battery, alert_level, ecc. e assegnando loro la tipologia corretta come  <em>Mono</em> ,  <em>Progress</em>  o  <em>Text</em> ).
+<strong>User</strong> : ora mi serve per ogni campo come compialre la parte superiore
+category label e key e type
+<strong>Gemini</strong> : Ecco la configurazione esatta per compilare i campi nella parte superiore della UI. Ho raggruppato tutto per  <strong>Category</strong> , in modo che tu possa creare i vari &quot;blocchi&quot; visivi nell&#39;interfaccia, assegnando a ciascuno la  <strong>Label</strong>  (il nome che leggerai tu a schermo), la  <strong>Key</strong>  (il codice esatto che il bot usa nel prompt) e il  <strong>Type</strong>  (il formato visivo).</p>
+<h5>Category 1: Inventory</h5>
+<p>Questo blocco raggruppa le risorse fisiche. Ho impostato le Pozioni a  <em>Chips</em>  (invece di Mono come nel tuo screen originale) perché, potendone avere di tipi diversi (es. Cura, Mana), le &quot;pillole&quot; visive dei Chips sono perfette per separarle.
+| Label (Nome a schermo) | Key (Codice) | Type (Formato) |
+| ------ | ------ | ------ |
+| Forniture Mediche | medical_supplies | <strong>Progress</strong>  (Genera una barra percentuale) |
+| Pozioni | disposable_potions | <strong>Chips</strong>  (Crea etichette separate) |
+| Cilindri Incantati | disposable_spells | <strong>Chips</strong>  (Crea etichette separate) |
+| Equipaggiamento | equipment_items | <strong>Chips</strong>  (Crea etichette separate) |
+| Oggetti Unici | keys_items | <strong>Chips</strong>  (Crea etichette separate) |
+| Denaro / Money | money_dollars | <strong>Mono</strong>  (Mostra un singolo valore numerico) |</p>
+<hr>
+<h5>Category 2: Guild Noticeboard</h5>
+<p>Questo blocco gestisce la narrazione del mondo e gli obiettivi. Poiché richiedono frasi complete, il formato è esclusivamente Testo.
+| Label (Nome a schermo) | Key (Codice) | Type (Formato) |
+| ------ | ------ | ------ |
+| Missioni Disponibili | available_quest | <strong>Text</strong>  (Testo descrittivo) |
+| Voci e Rumors | guild_rumors | <strong>Text</strong>  (Testo descrittivo) |
+| Missione Attuale | current_quest | <strong>Text</strong>  (Testo descrittivo) |</p>
+<hr>
+<h5>Category 3: Party Status</h5>
+<p>Questo è il nuovo blocco per tracciare le risorse specifiche di Jasper e Alyssa, oltre alla salute generale del gruppo. Usare  <em>Progress</em>  per l&#39;hacker e il medico ti darà due bellissime barre dell&#39;energia da tenere d&#39;occhio.
+| Label (Nome a schermo) | Key (Codice) | Type (Formato) |
+| ------ | ------ | ------ |
+| Batteria Cyber-Deck | cyber_battery | <strong>Progress</strong>  (Barra percentuale) |
+| Trama Spirituale | spirit_weave | <strong>Progress</strong>  (Barra percentuale) |
+| Salute del Gruppo | party_status | <strong>Text</strong>  (Frase riassuntiva dei danni) |</p>
+<hr>
+<h5>Category 4: Tactical Overview</h5>
+<p>Questo blocco gestisce l&#39;andamento del combattimento e l&#39;infiltrazione. Usando  <em>Mono</em> , otterrai dei riquadri puliti con una singola parola o frase breve (es. &quot;Infiltrazione&quot;, &quot;Combattimento&quot;).
+| Label (Nome a schermo) | Key (Codice) | Type (Formato) |
+| ------ | ------ | ------ |
+| Livello di Allerta | alert_level | <strong>Mono</strong>  (Singola parola o stato) |
+| Formazione Tattica | tactical_stance | <strong>Mono</strong>  (Singola parola o stato) |</p>
+<h5>Suggerimento per l&#39;inserimento rapido:</h5>
+<p>Nella schermata del frontend, crea prima la barra del titolo scrivendo il nome in alto (es. Party Status), poi usa il pulsante  <strong>+ Key</strong>  per aggiungere le righe sottostanti una alla volta, copiando esattamente le Key che ti ho fornito. Le Key fanno da &quot;ponte&quot; diretto con il prompt che hai incollato prima: se manca anche solo un trattino basso (_), il bot scriverà il valore ma la UI non saprà dove mostrarlo.
+<strong>Timestamp</strong> : 2026-08-15 12:45:15
+<strong>User</strong> : ok miglioriamo ulteriormente tenendo conto anche di questo:
+{&quot;categories&quot;:[{&quot;id&quot;:&quot;691dc514&quot;,&quot;title&quot;:&quot;Inventory&quot;,&quot;order&quot;:0,&quot;keys&quot;:[{&quot;id&quot;:&quot;b74d9456&quot;,&quot;label&quot;:&quot;Lockpick Integrity&quot;,&quot;key&quot;:&quot;lockpick_integrity&quot;,&quot;display_type&quot;:&quot;progress&quot;},{&quot;id&quot;:&quot;be971bc7&quot;,&quot;label&quot;:&quot;Tech Consumables &amp; Stims&quot;,&quot;key&quot;:&quot;drives_and_stims&quot;,&quot;display_type&quot;:&quot;chips&quot;},{&quot;id&quot;:&quot;76f0b003&quot;,&quot;label&quot;:&quot;Gadgets &amp; Detonators&quot;,&quot;key&quot;:&quot;tactical_gadgets&quot;,&quot;display_type&quot;:&quot;chips&quot;},{&quot;id&quot;:&quot;e9da6710&quot;,&quot;label&quot;:&quot;Equipment&quot;,&quot;key&quot;:&quot;equipment&quot;,&quot;display_type&quot;:&quot;chips&quot;},{&quot;id&quot;:&quot;49f72ceb&quot;,&quot;label&quot;:&quot;Unique Items&quot;,&quot;key&quot;:&quot;unique_items&quot;,&quot;display_type&quot;:&quot;chips&quot;},{&quot;id&quot;:&quot;b3b5724d&quot;,&quot;label&quot;:&quot;Money&quot;,&quot;key&quot;:&quot;money&quot;,&quot;display_type&quot;:&quot;monospace&quot;}]},{&quot;id&quot;:&quot;aa5b540f&quot;,&quot;title&quot;:&quot;Guild Noticeboard&quot;,&quot;order&quot;:1,&quot;keys&quot;:[{&quot;id&quot;:&quot;ff929243&quot;,&quot;label&quot;:&quot;Available Quests&quot;,&quot;key&quot;:&quot;available_quests&quot;,&quot;display_type&quot;:&quot;text&quot;},{&quot;id&quot;:&quot;640ef46e&quot;,&quot;label&quot;:&quot;Voices &amp; Rumors&quot;,&quot;key&quot;:&quot;rumors&quot;,&quot;display_type&quot;:&quot;text&quot;},{&quot;id&quot;:&quot;d2c15bd2&quot;,&quot;label&quot;:&quot;Current Quest&quot;,&quot;key&quot;:&quot;current_quest&quot;,&quot;display_type&quot;:&quot;text&quot;}]},{&quot;id&quot;:&quot;e54bda1e&quot;,&quot;title&quot;:&quot;Party Status&quot;,&quot;order&quot;:2,&quot;keys&quot;:[{&quot;id&quot;:&quot;a53a3da2&quot;,&quot;label&quot;:&quot;Neural Load (Netrunning)&quot;,&quot;key&quot;:&quot;neural_load&quot;,&quot;display_type&quot;:&quot;progress&quot;},{&quot;id&quot;:&quot;d7649757&quot;,&quot;label&quot;:&quot;Abyssal Armor Status&quot;,&quot;key&quot;:&quot;armor_status&quot;,&quot;display_type&quot;:&quot;chips&quot;},{&quot;id&quot;:&quot;2ef53121&quot;,&quot;label&quot;:&quot;{{user}}&#39;s Safety Level&quot;,&quot;key&quot;:&quot;user_safety&quot;,&quot;display_type&quot;:&quot;chips&quot;},{&quot;id&quot;:&quot;0a4dcb48&quot;,&quot;label&quot;:&quot;Party Health&quot;,&quot;key&quot;:&quot;party_health&quot;,&quot;display_type&quot;:&quot;progress&quot;}]},{&quot;id&quot;:&quot;fedc6d98&quot;,&quot;title&quot;:&quot;Tactical Overview&quot;,&quot;order&quot;:3,&quot;keys&quot;:[{&quot;id&quot;:&quot;787e26b0&quot;,&quot;label&quot;:&quot;Alert Level&quot;,&quot;key&quot;:&quot;alert_level&quot;,&quot;display_type&quot;:&quot;progress&quot;,&quot;max_value&quot;:5},{&quot;id&quot;:&quot;9eef8dba&quot;,&quot;label&quot;:&quot;Tactical Formation&quot;,&quot;key&quot;:&quot;tactical_formation&quot;,&quot;display_type&quot;:&quot;text&quot;}]}],&quot;custom_prompt&quot;:&quot;[SYSTEM INSTRUCTION: DYNAMIC INFO_BOARD TRACKING]\nAt the absolute end of every response, strictly after all narration and dialogue, you MUST append a status block enclosed in &lt;info_board&gt; tags. This block acts as a dynamic RPG tracker for Jasper&#39;s inventory, the guild noticeboard, and the party&#39;s tactical status.\n\nRULES:\n1. You must analyze the events, dialogue, actions, and transactions of the current turn and update the values logically. If Jasper uses an EMP, hacks a server, or Alyssa is threatened, reflect this immediately.\n2. Output ONLY the exactly requested Key: Value pairs inside the tags. \n3. Do not add conversational text, notes, or apologies before, inside, or after the &lt;info_board&gt; block.\n4. Output values must be in ENGLISH.\n5. Formatting guidelines:\n   - For items, use short comma-separated lists or numbers.\n   - For money and percentages, use exact numerical values.\n   - For text fields (quests, rumors), use concise, punchy summaries.\n\nREQUIRED FORMAT:\n&lt;info_board&gt;\nlockpick_integrity: [Track state of lockpicks/bypass tools as a percentage, e.g., 100]\ndrives_and_stims: [Track current quantity and type, e.g., 3x Decryption Drives, 2x Stimpacks]\ntactical_gadgets: [Track remaining tactical gear, e.g., 2x EMP Grenades, 1x C4]\nequipment: [List main gear, e.g., Techwear Hoodie, Twin Karambits, Hacking Laptop]\nunique_items: [List special items, e.g., Silver Coin, Neural Implant]\nmoney: [Exact numerical amount, e.g., $5548]\navailable_quests: [List 1-2 brief available missions currently on the board, or &quot;--&quot;]\nrumors: [Summarize 1 brief current rumor, or &quot;--&quot;]\ncurrent_quest: [State the active objective or dungeon details, matching the party&#39;s quest]\nneural_load: [Track Jasper&#39;s mental strain from netrunning/hacking from 0 to 100]\narmor_status: [Status of Rev&#39;s armor: Inactive, Summoned, Damaged]\nalyssa_safety: [Jasper&#39;s assessment of Alyssa: Safe, Stressed, Freeze-Response, Danger]\nparty_health: [Overall party health percentage, e.g., 100]\nalert_level: [Current environmental awareness: 0 for safe, up to 5 for maximum combat]\ntactical_formation: [Current party formation, e.g., Stealth Vanguard, Infiltration, Cover]\n&lt;/info_board&gt;&quot;}</p>
+<hr>
+<p>sempre sui nostri 5:
+Radek, rank-A (party leader), Combat Strategy &amp; Tactical Planning, Heavy Melee Weaponry (Greatswords/Cleavers)
+Goran, rank A, Berserker Frontline Combat, High-Impact Melee (Warhammers/Maces)
+Kian, rank A, Stealth and Infiltration, Dual-Wielding Precision Blade-work
+Jasper, rank C+, Cyber-Rogue, Hacker, and Master Safecracker for the Guild
+Alyssa, rank C+, Licensed Medical Doctor (MD) / Field Medic &amp; Spirit-Healer</p>
+<hr>
+<p>io direi di fare una categoria per ogni membro con hp, stamina/mana, inventario personale, oggetti unici posseduti, rank personale della gilda
+una category con le info del team, wquindi inventario comune, soldi, tesori recuperati, oggetti unici recuperati, missione in corso
+e una della gilda con 2/3 missioni disponibili, i rumors, e il rank della squadra presso la gilda
+<strong>Gemini</strong> :</p>
+<h5>1. Il Nuovo Setup dell&#39;InfoBoard (Party da 5 + Team + Gilda)</h5>
+<p>Gestire 5 personaggi individualmente più le risorse comuni richiede un&#39;impalcatura solida. Con questa struttura avrai il polso esatto di chi sta esaurendo le energie in combattimento e di come progredisce la squadra presso la Gilda.
+Ecco come impostare le  <strong>Categories</strong>  e le  <strong>Keys</strong>  nella UI del tuo frontend.</p>
+<h6>Categorie 1-5: I Membri del Party</h6>
+<p>Crea una Categoria (Title) per ogni membro. Imposta il Rank personale come &quot;Mono&quot; in modo che sia un riquadro fisso ed elegante.
+| Title / Categoria | Label (Nome a schermo) | Key (Codice) | Type (Formato) |
+| ------ | ------ | ------ | ------ |
+| <strong>1. Radek (Leader)</strong> | HP | radek_hp | <strong>Progress</strong> |
+|  | Stamina | radek_stamina | <strong>Progress</strong> |
+|  | Inventario Personale | radek_inv | <strong>Chips</strong> |
+|  | Oggetti Unici | radek_unique | <strong>Chips</strong> |
+|  | Rank Gilda | radek_rank | <strong>Mono</strong> |
+| <strong>2. Goran (Frontline)</strong> | HP | goran_hp | <strong>Progress</strong> |
+|  | Furia / Stamina | goran_rage | <strong>Progress</strong> |
+|  | Inventario Personale | goran_inv | <strong>Chips</strong> |
+|  | Oggetti Unici | goran_unique | <strong>Chips</strong> |
+|  | Rank Gilda | goran_rank | <strong>Mono</strong> |
+| <strong>3. Kian (Stealth)</strong> | HP | kian_hp | <strong>Progress</strong> |
+|  | Focus / Stamina | kian_focus | <strong>Progress</strong> |
+|  | Inventario Personale | kian_inv | <strong>Chips</strong> |
+|  | Oggetti Unici | kian_unique | <strong>Chips</strong> |
+|  | Rank Gilda | kian_rank | <strong>Mono</strong> |
+| <strong>4. Jasper (Hacker)</strong> | HP | jasper_hp | <strong>Progress</strong> |
+|  | Batteria Cyber-Deck | jasper_battery | <strong>Progress</strong> |
+|  | Inventario Personale | jasper_inv | <strong>Chips</strong> |
+|  | Oggetti Unici | jasper_unique | <strong>Chips</strong> |
+|  | Rank Gilda | jasper_rank | <strong>Mono</strong> |
+| <strong>5. Alyssa (Medic)</strong> | HP | alyssa_hp | <strong>Progress</strong> |
+|  | Riserva Mana / Spirito | alyssa_mana | <strong>Progress</strong> |
+|  | Inventario Personale | alyssa_inv | <strong>Chips</strong> |
+|  | Oggetti Unici | alyssa_unique | <strong>Chips</strong> |
+|  | Rank Gilda | alyssa_rank | <strong>Mono</strong> |</p>
+<h6>Categoria 6: Risorse del Team</h6>
+<p>Questa sezione traccia tutto ciò che è condiviso o raccolto collettivamente.
+| Title / Categoria | Label (Nome a schermo) | Key (Codice) | Type (Formato) |
+| ------ | ------ | ------ | ------ |
+| <strong>6. Team Info</strong> | Inventario Comune | team_stash | <strong>Chips</strong> |
+|  | Denaro del Gruppo | team_money | <strong>Mono</strong> |
+|  | Tesori Recuperati | team_loot | <strong>Chips</strong> |
+|  | Missione in Corso | active_mission | <strong>Text</strong> |</p>
+<h6>Categoria 7: Hub e Gilda</h6>
+<p>Per mantenere il mondo vivo intorno al party con spunti narrativi aggiornati dinamicamente.
+| Title / Categoria | Label (Nome a schermo) | Key (Codice) | Type (Formato) |
+| ------ | ------ | ------ | ------ |
+| <strong>7. Guild Noticeboard</strong> | Missioni Disponibili | guild_missions | <strong>Text</strong> |
+|  | Voci e Rumors | guild_rumors | <strong>Text</strong> |
+|  | Rank Squadra | squad_rank | <strong>Mono</strong> |</p>
+<hr>
+<h5>Il Custom Prompt per l&#39;InfoBoard</h5>
+<p>Poiché i campi sono tanti, il prompt deve essere perentorio per evitare che il modello allucini le formattazioni o salti dei membri. Copia e incolla questo nel box  <strong>Custom prompt</strong> :</p>
+<pre><code class="language-text">[SYSTEM INSTRUCTION: DYNAMIC INFO_BOARD TRACKING]
+At the absolute end of every response, strictly after all narration and dialogue, you MUST append a status block enclosed in &lt;info_board&gt; tags. This block tracks the 5 party members, shared team resources, and guild status.
+
+RULES:
+1. Analyze the turn&#39;s events. Logically update HP, stamina/mana/battery, consumed items, or looted treasures for EACH specific character and the team.
+2. Output ONLY the requested Key: Value pairs.
+3. No conversational text, notes, or apologies outside the block.
+4. Output values must be in ENGLISH.
+5. Format guidelines:
+   - HP/Stamina/Mana/Battery: Use percentages (e.g., 100, 80).
+   - Inventories/Loot: Use short comma-separated lists. Use &quot;--&quot; if empty.
+   - Money: Exact numbers (e.g., $1500).
+   - Ranks: Maintain character ranks (Radek/Goran/Kian = Rank-A, Jasper/Alyssa = Rank-C+).
+
+REQUIRED FORMAT:
+&lt;info_board&gt;
+radek_hp: [100]
+radek_stamina: [100]
+radek_inv: [Heavy Greatsword, Tactical Comms]
+radek_unique: [--]
+radek_rank: [Rank-A]
+goran_hp: [100]
+goran_rage: [100]
+goran_inv: [Warhammer]
+goran_unique: [--]
+goran_rank: [Rank-A]
+kian_hp: [100]
+kian_focus: [100]
+kian_inv: [Twin Blades, Smoke Bombs]
+kian_unique: [--]
+kian_rank: [Rank-A]
+jasper_hp: [100]
+jasper_battery: [100]
+jasper_inv: [Hacking Laptop, EMP]
+jasper_unique: [--]
+jasper_rank: [Rank-C+]
+alyssa_hp: [100]
+alyssa_mana: [100]
+alyssa_inv: [Medkit, Spirit Focus]
+alyssa_unique: [--]
+alyssa_rank: [Rank-C+]
+team_stash: [Camping Gear, Rations]
+team_money: [$2500]
+team_loot: [--]
+active_mission: [Current dungeon or target objective]
+guild_missions: [1-2 brief available missions on the board]
+guild_rumors: [1 brief current rumor in the guild]
+squad_rank: [Current overall team rank, e.g., Silver]
+&lt;/info_board&gt;
+
+</code></pre>
+<p><strong>Nota sul Token Economy:</strong>  Tracciare 35 chiavi a ogni turno consumerà circa 250-300 token di output per ogni risposta del bot. Se in futuro noti che le risposte narrative del bot diventano troppo brevi, puoi rimuovere le voci *_rank dall&#39;InfoBoard (visto che cambiano raramente) per risparmiare token!</p>
+<hr>
+<h5>2. Modulo &quot;World Forge&quot; per Lorebook JanitorAI</h5>
+<p>Per istruire il tuo sistema &quot;Forge&quot; (l&#39;IA che ti genera o converte il lorebook) a compilare correttamente la struttura JSON, rispettare i campi key/keysecondary ed evitare muri di testo ingestibili, devi iniettare questa regola nel suo  <em>System Prompt</em>  o nel modulo di istruzioni.
+Questo blocco forza l&#39;IA a dividere automaticamente le entry lunghe (superiori a 200 token) e a compilare le logiche in modo chirurgico.</p>
+<pre><code class="language-text">### LOREBOOK GENERATION &amp; OPTIMIZATION PROTOCOL (JANITOR AI)
+When formatting or generating Lorebook/World entries, you MUST strictly adhere to the provided Janitor AI JSON schema. 
+
+RULES FOR ENTRY COMPILATION:
+1. **Hard Length Limit &amp; Splitting:**
+   - Run a strict length check on the `content` field.
+   - If an entry&#39;s content exceeds roughly 150-200 words (~200 tokens), you MUST conceptually divide it and spawn multiple separate JSON entries (e.g., &quot;Location Name - Exterior&quot; and &quot;Location Name - Interior&quot;). Do NOT output massive, monolithic entries.
+2. **Keyword Optimization (`key` and `keysecondary`):**
+   - `key`: Array of 2 to 5 primary trigger words. Keep them specific and lowercased. (e.g., [&quot;inner sanctum&quot;, &quot;douglas estate&quot;]).
+   - `keysecondary`: Array of 1 to 3 contextual triggers. Use this to refine when the entry is injected (e.g., [&quot;enter&quot;, &quot;describe&quot;, &quot;inside&quot;]). Leave empty `[]` if the primary keys are sufficient.
+3. **Data Types:**
+   - `selectiveLogic`: Use `0` (AND/OR logic depending on frontend) or `1` (Requires Primary AND Secondary).
+   - Booleans like `constant`, `selective`, `addMemo` must be true/false without quotes.
+   - All string values must be properly escaped.
+
+OUTPUT SCHEMA TEMPLATE PER ENTRY:
+&quot;0&quot;: {
+    &quot;uid&quot;: [Unique Integer],
+    &quot;comment&quot;: &quot;[Brief description, e.g., &#39;Location: Douglas Estate&#39;]&quot;,
+    &quot;key&quot;: [&quot;keyword1&quot;, &quot;keyword2&quot;],
+    &quot;keysecondary&quot;: [&quot;context1&quot;],
+    &quot;selectiveLogic&quot;: 0,
+    &quot;content&quot;: &quot;[The actual lore text. MAX 200 TOKENS. If longer, split into the next integer UID.]&quot;,
+    &quot;position&quot;: 0,
+    &quot;order&quot;: 100,
+    &quot;depth&quot;: 4,
+    &quot;role&quot;: 0,
+    &quot;selective&quot;: true,
+    &quot;constant&quot;: false,
+    &quot;probability&quot;: 100,
+    &quot;useProbability&quot;: false,
+    &quot;addMemo&quot;: true,
+    &quot;group&quot;: &quot;[e.g., World, Faction, Character]&quot;,
+    &quot;groupWeight&quot;: 100
+}
+
+</code></pre>
+<p><strong>Timestamp</strong> : 2026-08-15 12:53:09
+<strong>User</strong> : però l&#39;inventario eprsonale lo dividerei in equipaggiamento, supply, pozioni e cilinfri magici, armi... o qualcosa dle genre
+<strong>Gemini</strong> : Dividere l&#39;inventario personale in sottocategorie è una mossa tattica eccellente. Quando un party di 5 persone inizia ad accumulare loot, avere un unico calderone [nome]_inv porta l&#39;IA a fare confusione, mescolando una spada a due mani con una pozione curativa e un grimaldello.
+Categorizzare gli oggetti aiuta il modello a &quot;ragionare&quot; meglio su cosa viene consumato (le pozioni) e cosa viene impugnato (le armi).
+Ecco come possiamo ristrutturare le categorie per ogni singolo membro del party. Ho diviso l&#39;inventario in  <strong>4 slot specifici</strong>  per personaggio.</p>
+<h5>1. Nuova Struttura dell&#39;Inventario (Da inserire nella UI)</h5>
+<p>Per ogni personaggio (Radek, Goran, Kian, Jasper, Alyssa), creerai queste quattro voci usando il formato  <strong>Chips</strong> .  <em>Nota: Ti mostro l&#39;esempio su Radek, ma dovrai replicare le Key per tutti cambiando solo il prefisso (es.</em>  <em>goran_weapons</em>  <em>,</em>  <em>jasper_supplies</em>  <em>, ecc.).</em>
+| Label (Nome a schermo) | Key (Codice) | Type (Formato) | Uso |
+| ------ | ------ | ------ | ------ |
+| ⚔️ Armi | radek_weapons | <strong>Chips</strong> | Armi da mischia, da fuoco, archi. |
+| 🎒 Equipaggiamento | radek_gear | <strong>Chips</strong> | Armature, cyber-deck, kit medici, grimaldelli. |
+| 🧪 Consumabili &amp; Supply | radek_supplies | <strong>Chips</strong> | Pozioni, cilindri magici, stimpack, munizioni. |
+| 💎 Oggetti Unici | radek_unique | <strong>Chips</strong> | Reliquie, chiavi, bracciali (es. Moonstone bracelet). |</p>
+<hr>
+<h5>2. Il Custom Prompt Aggiornato</h5>
+<p>Questo è il prompt completo da inserire nella casella  <strong>Custom prompt</strong> . Ho aggiunto una regola specifica di formattazione (la numero 5) che spiega all&#39;IA esattamente  <em>dove</em>  deve smistare gli oggetti raccolti dai personaggi.</p>
+<pre><code class="language-text">[SYSTEM INSTRUCTION: DYNAMIC INFO_BOARD TRACKING]
+At the absolute end of every response, strictly after all narration and dialogue, you MUST append a status block enclosed in &lt;info_board&gt; tags. This block tracks the 5 party members, their categorized inventories, shared team resources, and guild status.
+
+RULES:
+1. Analyze the turn&#39;s events. Logically update HP, stamina/mana/battery, consumed items, or looted treasures for EACH specific character and the team.
+2. Output ONLY the requested Key: Value pairs.
+3. No conversational text, notes, or apologies outside the block.
+4. Output values must be in ENGLISH.
+5. Inventory Sorting Rules:
+   - *_weapons: Only offensive arms (e.g., Greatsword, Twin Blades, Pistol).
+   - *_gear: Tools, armor, and instruments (e.g., Hacking Laptop, Lockpicks, Celtic Harp).
+   - *_supplies: Consumables with quantities (e.g., 2x Health Potions, 1x Fire Spell Cylinder, 3x Stims).
+   - *_unique: Plot-critical items or relics (e.g., Moonstone bracelet, Signet Ring).
+6. Format guidelines:
+   - HP/Stamina/Mana/Battery: Use percentages (e.g., 100).
+   - Inventories/Loot: Use short comma-separated lists. Use &quot;--&quot; if empty.
+   - Money: Exact numbers (e.g., $1500).
+
+REQUIRED FORMAT:
+&lt;info_board&gt;
+radek_hp: [100]
+radek_stamina: [100]
+radek_weapons: [Heavy Greatsword]
+radek_gear: [Tactical Armor, Comms]
+radek_supplies: [2x Rations]
+radek_unique: [--]
+
+goran_hp: [100]
+goran_rage: [100]
+goran_weapons: [Warhammer]
+goran_gear: [Heavy Plates]
+goran_supplies: [1x Healing Potion]
+goran_unique: [--]
+
+kian_hp: [100]
+kian_focus: [100]
+kian_weapons: [Twin Precision Blades]
+kian_gear: [Stealth Suit, Lockpicks]
+kian_supplies: [2x Smoke Bombs]
+kian_unique: [--]
+
+jasper_hp: [100]
+jasper_battery: [100]
+jasper_weapons: [Holdout Blaster]
+jasper_gear: [Cyber-Deck, Bypass Tools]
+jasper_supplies: [3x EMP Grenades, 2x Decryption Drives]
+jasper_unique: [--]
+
+alyssa_hp: [100]
+alyssa_mana: [100]
+alyssa_weapons: [Silver Dagger]
+alyssa_gear: [Healer&#39;s Pouch, Celtic Harp]
+alyssa_supplies: [4x Bandages, 2x Magic Cylinders]
+alyssa_unique: [Moonstone bracelet]
+
+team_stash: [Camping Gear, Spare Parts]
+team_money: [$2500]
+team_loot: [--]
+active_mission: [Current dungeon or target objective]
+guild_missions: [1-2 brief available missions on the board]
+guild_rumors: [1 brief current rumor in the guild]
+squad_rank: [Current overall team rank, e.g., Silver]
+&lt;/info_board&gt;
+
+</code></pre>
+<p>Visto che ora ogni personaggio ha un inventario molto dettagliato, vuoi che introduciamo una meccanica per cui il team_stash funge da &quot;carrozza/deposito&quot; mentre gli inventari personali hanno un limite massimo di oggetti trasportabili per creare un senso di ingombro realistico?
+<strong>Timestamp</strong> : 2026-08-15 13:04:25
+<strong>User</strong> : ok
+<strong>Gemini</strong> : L&#39;idea dell&#39;ingombro è un tocco da maestro. In un&#39;ambientazione post-apocalittica, la logistica è metà della sopravvivenza. Se Kian deve muoversi in modalità stealth, non può avere 4 fucili d&#39;assalto nello zaino. Forzare il gruppo a decidere cosa portare in missione e cosa lasciare nel team_stash (il deposito/veicolo) crea un gameplay molto più profondo e tattico.
+Per farlo funzionare, dobbiamo dare all&#39;IA una direttiva esplicita sull&#39; <strong>Encumbrance</strong>  (Ingombro), spiegando i limiti fisici di ciò che possono trasportare.
+Ecco il prompt aggiornato. Ho inserito la  <strong>Rule 5</strong>  dedicata esclusivamente alla gestione del peso e al ruolo del team_stash.</p>
+<h5>Il Custom Prompt Definitivo (con Sistema di Ingombro)</h5>
+<p>Copia questo blocco e usalo come tuo prompt finale per l&#39;InfoBoard:</p>
+<pre><code class="language-text">[SYSTEM INSTRUCTION: DYNAMIC INFO_BOARD TRACKING]
+At the absolute end of every response, strictly after all narration and dialogue, you MUST append a status block enclosed in &lt;info_board&gt; tags. This block tracks the 5 party members, their categorized inventories, shared team resources, and guild status.
+
+RULES:
+1. Analyze the turn&#39;s events. Logically update HP, stamina/mana/battery, consumed items, or looted treasures for EACH specific character and the team.
+2. Output ONLY the requested Key: Value pairs.
+3. No conversational text, notes, or apologies outside the block.
+4. Output values must be in ENGLISH.
+5. Encumbrance &amp; Stash System:
+   - Characters have realistic carrying limits based on their role. They can generally hold Max 2 Weapons, 2-3 Gear items, and a limited amount of Supplies.
+   - If a character loots excess or heavy items, you MUST automatically place them in the `team_stash`.
+   - The `team_stash` acts as the party&#39;s vehicle/camp storage. It has no weight limit, but its contents cannot be accessed mid-combat.
+6. Inventory Sorting Rules:
+   - *_weapons: Only offensive arms (e.g., Greatsword, Twin Blades, Pistol).
+   - *_gear: Tools, armor, and instruments (e.g., Hacking Laptop, Lockpicks, Celtic Harp).
+   - *_supplies: Consumables with quantities (e.g., 2x Health Potions, 1x Fire Spell Cylinder, 3x Stims).
+   - *_unique: Plot-critical items or relics (e.g., Moonstone bracelet, Signet Ring).
+7. Format guidelines:
+   - HP/Stamina/Mana/Battery: Use percentages (e.g., 100).
+   - Inventories/Loot: Use short comma-separated lists. Use &quot;--&quot; if empty.
+   - Money: Exact numbers (e.g., $1500).
+
+REQUIRED FORMAT:
+&lt;info_board&gt;
+radek_hp: [100]
+radek_stamina: [100]
+radek_weapons: [Heavy Greatsword]
+radek_gear: [Tactical Armor, Comms]
+radek_supplies: [2x Rations]
+radek_unique: [--]
+
+goran_hp: [100]
+goran_rage: [100]
+goran_weapons: [Warhammer]
+goran_gear: [Heavy Plates]
+goran_supplies: [1x Healing Potion]
+goran_unique: [--]
+
+kian_hp: [100]
+kian_focus: [100]
+kian_weapons: [Twin Precision Blades]
+kian_gear: [Stealth Suit, Lockpicks]
+kian_supplies: [2x Smoke Bombs]
+kian_unique: [--]
+
+jasper_hp: [100]
+jasper_battery: [100]
+jasper_weapons: [Holdout Blaster]
+jasper_gear: [Cyber-Deck, Bypass Tools]
+jasper_supplies: [3x EMP Grenades, 2x Decryption Drives]
+jasper_unique: [--]
+
+alyssa_hp: [100]
+alyssa_mana: [100]
+alyssa_weapons: [Silver Dagger]
+alyssa_gear: [Healer&#39;s Pouch, Celtic Harp]
+alyssa_supplies: [4x Bandages, 2x Magic Cylinders]
+alyssa_unique: [Moonstone bracelet]
+
+team_stash: [Camping Gear, Spare Parts]
+team_money: [$2500]
+team_loot: [--]
+active_mission: [Current dungeon or target objective]
+guild_missions: [1-2 brief available missions on the board]
+guild_rumors: [1 brief current rumor in the guild]
+squad_rank: [Current overall team rank, e.g., Silver]
+&lt;/info_board&gt;
+
+</code></pre>
+<h5>Come lo gestirà l&#39;IA in gioco:</h5>
+<ul>
+<li>Se Kian prova a raccogliere tre fucili pesanti lasciati dai nemici, il bot narrerà Kian che forse li sposta, ma nell&#39;InfoBoard finiranno direttamente nel team_stash.</li>
+<li>Se Alyssa è in mezzo a uno scontro e ha finito le bende (alyssa_supplies: [--]), l&#39;IA saprà che non può curare nessuno magicamente senza intaccare il suo mana, perché il team_stash (che magari è pieno di medkit) non è accessibile fino alla fine del combattimento.
+Vuoi che inseriamo anche una regola che imponga all&#39;IA di infliggere malus alla stamina o alla precisione se un personaggio decide testardamente di sovraccaricarsi ignorando il deposito?
+<strong>Timestamp</strong> : 2026-08-15 13:24:25
+<strong>User</strong> : aspetta c&#39;è qualcosa che non torna nel prompt mancano i rank personali e sopratutto la inforboard dobrebbe eesere qualcosa del genere come formato:
+esempio formato:
+REQUIRED FORMAT: &lt;info_board&gt; medical_supplies: [Track state of medical supplies as a percentage, e.g., 100%] disposable_potions: [Track current quantity and type, e.g., 2x Healing, 1x Mana] disposable_spells: [Track remaining enchanted cylinders, e.g., 1x Fireball, 2x Shield] equipment_items: [List main equipped or carried gear, e.g., Heavy Cleaver, Cyber-Deck] keys_items: [List unique or special quest items held] money_dollars: [Exact numerical amount, e.g., $150] available_quest: [List 1-2 brief available missions currently on the board] guild_rumors: [Summarize 1 brief, current rumor circulating in the guild] current_quest: [State the active objective of the current mission] cyber_battery: [Track Jasper&#39;s hacking energy/deck battery, e.g., 80% or &quot;Depleted&quot;] spirit_weave: [Track Alyssa&#39;s magical reserves for healing, e.g., 100% or &quot;Fading&quot;] alert_level: [Current environmental awareness of enemies: Hidden, Suspicious, Combat, or Clear] tactical_stance: [Current party formation ordered by Radek, e.g., Stealth Infiltration, Heavy Assault, Escort] party_status: [Brief text summary of injuries or fatigue among the 5 members, e.g., &quot;All optimal&quot; or &quot;Goran: Bleeding, Alyssa: Exhausted&quot;] &lt;/info_board&gt;
+<strong>Gemini</strong> : Hai fatto benissimo a fermarmi. Tornare a questo formato &quot;ibrido&quot; (un inventario di gruppo unificato, ma con le meccaniche tattiche individuali) è una scelta molto più solida. Evitare sintassi ridondanti alleggerisce il carico di elaborazione dell&#39;IA e preserva la memoria a lungo termine.
+Ho preso esattamente il formato che hai incollato e ho integrato i  <strong>Rank Personali</strong>  dei 5 membri in fondo al blocco. In questo modo l&#39;interfaccia avrà le informazioni di gilda fisse e pulite, senza ingombrare inutilmente l&#39;inventario.
+Ecco il prompt corretto e ottimizzato. Puoi incollarlo direttamente nel box  <strong>Custom prompt</strong> :</li>
+</ul>
+<pre><code class="language-text">[SYSTEM INSTRUCTION: DYNAMIC INFO_BOARD TRACKING]
+At the absolute end of every response, strictly after all narration and dialogue, you MUST append a status block enclosed in &lt;info_board&gt; tags. This block acts as a dynamic tracker for the party&#39;s shared resources, tactical status, and individual guild ranks.
+
+RULES:
+1. You must analyze the events, dialogue, actions, and transactions of the current turn and update the values logically. If an item is consumed, money is spent, a spell is cast, or someone is injured, reflect this immediately.
+2. Output ONLY the exactly requested Key: Value pairs inside the tags. 
+3. Do not add conversational text, notes, or apologies before, inside, or after the &lt;info_board&gt; block.
+4. Formatting guidelines:
+   - For items (potions, spells, equipment, keys), use short, comma-separated lists or numbers.
+   - For money and percentages, use exact numerical values.
+   - For text fields (quests, rumors, status), use concise, punchy summaries.
+   - For Guild Ranks, maintain the established hierarchy logically unless a promotion/demotion occurs in the story.
+
+REQUIRED FORMAT:
+&lt;info_board&gt;
+medical_supplies: [Track state of medical supplies as a percentage, e.g., 100%]
+disposable_potions: [Track current quantity and type, e.g., 2x Healing, 1x Mana]
+disposable_spells: [Track remaining enchanted cylinders, e.g., 1x Fireball, 2x Shield]
+equipment_items: [List main equipped or carried gear, e.g., Heavy Cleaver, Cyber-Deck]
+keys_items: [List unique or special quest items held]
+money_dollars: [Exact numerical amount, e.g., $150]
+available_quest: [List 1-2 brief available missions currently on the board]
+guild_rumors: [Summarize 1 brief, current rumor circulating in the guild]
+current_quest: [State the active objective of the current mission]
+cyber_battery: [Track Jasper&#39;s hacking energy/deck battery, e.g., 80% or &quot;Depleted&quot;]
+spirit_weave: [Track Alyssa&#39;s magical reserves for healing, e.g., 100% or &quot;Fading&quot;]
+alert_level: [Current environmental awareness of enemies: Hidden, Suspicious, Combat, or Clear]
+tactical_stance: [Current party formation ordered by Radek, e.g., Stealth Infiltration, Heavy Assault, Escort]
+party_status: [Brief text summary of injuries or fatigue among the 5 members, e.g., &quot;All optimal&quot; or &quot;Goran: Bleeding, Alyssa: Exhausted&quot;]
+radek_rank: [Current Guild Rank for Radek, e.g., Rank-A]
+goran_rank: [Current Guild Rank for Goran, e.g., Rank-A]
+kian_rank: [Current Guild Rank for Kian, e.g., Rank-A]
+jasper_rank: [Current Guild Rank for Jasper, e.g., Rank-C+]
+alyssa_rank: [Current Guild Rank for Alyssa, e.g., Rank-C+]
+&lt;/info_board&gt;
+
+</code></pre>
+<h5>Come configurarli visivamente nella UI del frontend:</h5>
+<p>Per far sì che i Rank vengano visualizzati in modo elegante (magari come &quot;etichette&quot; fisse sotto le barre della vita o sotto lo status del gruppo), crea 5 nuove chiavi impostandole tutte con il formato  <strong>Mono</strong>  (che genera un box di testo compatto):
+| Label (Nome a schermo) | Key (Codice) | Type (Formato) |
+| ------ | ------ | ------ |
+| Rank Radek | radek_rank | <strong>Mono</strong> |
+| Rank Goran | goran_rank | <strong>Mono</strong> |
+| Rank Kian | kian_rank | <strong>Mono</strong> |
+| Rank Jasper | jasper_rank | <strong>Mono</strong> |
+| Rank Alyssa | alyssa_rank | <strong>Mono</strong> |</p>
+<p><strong>Timestamp</strong> : 2026-08-15 13:26:48
+<strong>User</strong> : devi usare questi parametri:
+Progress
+Progress
+Chips
+Chips
+Chips
+Chips
+Mono
+Key
+Progress
+Progress
+Chips
+Chips
+Chips
+Chips
+Mono
+Key
+Progress
+Progress
+Chips
+Chips
+Chips
+Chips
+Mono
+Key
+Progress
+Progress
+Chips
+Chips
+Chips
+Chips
+Mono
+Key
+Progress
+Progress
+Chips
+Chips
+Chips
+Chips
+Mono
+Key
+Chips
+Mono
+Chips
+Text
+Key
+Text
+Text
+Mono
+Key
+...
+e poi si direi di introdurre almeno per alyssa la separazione tra pozioni, cilindri (spell) e il resto dei supply
+<strong>Gemini</strong> : Questa è un&#39;ottimizzazione perfetta. Rispettare in modo chirurgico la struttura della UI (limitando i campi all&#39;elenco esatto che hai fornito) previene crash del frontend e mantiene il prompt pulito.
+Dato che ogni personaggio ha esattamente  <strong>4 slot di tipo Chips</strong> , per Alyssa accorperemo armi ed equipaggiamento in un unico slot, lasciando liberi gli altri tre per separare esattamente i consumabili come hai richiesto.
+Ecco la mappatura visiva da inserire nell&#39;interfaccia e, a seguire, il prompt aggiornato.</p>
+<h5>Mappatura UI (Label, Key e Type)</h5>
+<p><strong>Personaggi 1-4 (Radek, Goran, Kian, Jasper)</strong>  | Label | Key | Type | | :--- | :--- | :--- | | HP | [nome]_hp |  <strong>Progress</strong>  | | Stamina / Battery | [nome]_stamina |  <strong>Progress</strong>  | | Armi | [nome]_weapons |  <strong>Chips</strong>  | | Equipaggiamento | [nome]_gear |  <strong>Chips</strong>  | | Scorte | [nome]_supplies |  <strong>Chips</strong>  | | Oggetti Unici | [nome]_unique |  <strong>Chips</strong>  | | Rank | [nome]_rank |  <strong>Mono</strong>  |
+<strong>Personaggio 5 (Alyssa)</strong>  | Label | Key | Type | | :--- | :--- | :--- | | HP | alyssa_hp |  <strong>Progress</strong>  | | Mana | alyssa_mana |  <strong>Progress</strong>  | | Pozioni | alyssa_potions |  <strong>Chips</strong>  | | Cilindri Incantati | alyssa_spells |  <strong>Chips</strong>  | | Forniture Mediche | alyssa_supplies |  <strong>Chips</strong>  | | Armi &amp; Equip. | alyssa_gear |  <strong>Chips</strong>  | | Rank | alyssa_rank |  <strong>Mono</strong>  |
+<strong>Team Info</strong>  | Label | Key | Type | | :--- | :--- | :--- | | Inventario Comune | team_stash |  <strong>Chips</strong>  | | Denaro del Gruppo | team_money |  <strong>Mono</strong>  | | Tesori / Loot | team_loot |  <strong>Chips</strong>  | | Missione Attuale | active_mission |  <strong>Text</strong>  |
+<strong>Guild Noticeboard</strong>  | Label | Key | Type | | :--- | :--- | :--- | | Missioni Disponibili | guild_missions |  <strong>Text</strong>  | | Voci e Rumors | guild_rumors |  <strong>Text</strong>  | | Rank Squadra | squad_rank |  <strong>Mono</strong>  |</p>
+<hr>
+<h5>Custom Prompt Definitivo</h5>
+<p>Copia questo blocco e inseriscilo nel campo  <strong>Custom prompt</strong> . La Regola 6 spiega all&#39;IA esattamente come smistare l&#39;inventario standard rispetto a quello medico di Alyssa.</p>
+<pre><code class="language-text">[SYSTEM INSTRUCTION: DYNAMIC INFO_BOARD TRACKING]
+At the absolute end of every response, strictly after all narration and dialogue, you MUST append a status block enclosed in &lt;info_board&gt; tags. This block tracks the 5 party members, their categorized inventories, shared team resources, and guild status.
+
+RULES:
+1. Analyze the turn&#39;s events. Logically update HP, stamina/mana/battery, consumed items, or looted treasures for EACH specific character and the team.
+2. Output ONLY the requested Key: Value pairs.
+3. No conversational text, notes, or apologies outside the block.
+4. Output values must be in ENGLISH.
+5. Encumbrance &amp; Stash System:
+   - Characters have realistic carrying limits based on their role. Excess or heavy items MUST be placed in the `team_stash`.
+   - The `team_stash` acts as the party&#39;s vehicle/camp storage. It is inaccessible mid-combat.
+6. Inventory Sorting Rules:
+   - For standard characters (Radek, Goran, Kian, Jasper): Sort items into `*_weapons`, `*_gear`, `*_supplies` (general consumables), and `*_unique`.
+   - For Alyssa (Medic/Healer): Sort consumables STRICTLY into `alyssa_potions` (potions), `alyssa_spells` (enchanted cylinders), and `alyssa_supplies` (medical/general items). Group all her weapons and tools into `alyssa_gear`.
+7. Format guidelines:
+   - HP/Stamina/Mana/Battery: Use percentages (e.g., 100).
+   - Inventories/Loot: Use short comma-separated lists. Use &quot;--&quot; if empty.
+   - Money: Exact numbers (e.g., $1500).
+
+REQUIRED FORMAT:
+&lt;info_board&gt;
+radek_hp: [100]
+radek_stamina: [100]
+radek_weapons: [Heavy Greatsword]
+radek_gear: [Tactical Armor, Comms]
+radek_supplies: [2x Rations]
+radek_unique: [--]
+radek_rank: [Rank-A]
+
+goran_hp: [100]
+goran_rage: [100]
+goran_weapons: [Warhammer]
+goran_gear: [Heavy Plates]
+goran_supplies: [1x Healing Potion]
+goran_unique: [--]
+goran_rank: [Rank-A]
+
+kian_hp: [100]
+kian_focus: [100]
+kian_weapons: [Twin Precision Blades]
+kian_gear: [Stealth Suit, Lockpicks]
+kian_supplies: [2x Smoke Bombs]
+kian_unique: [--]
+kian_rank: [Rank-A]
+
+jasper_hp: [100]
+jasper_battery: [100]
+jasper_weapons: [Holdout Blaster]
+jasper_gear: [Cyber-Deck, Bypass Tools]
+jasper_supplies: [3x EMP Grenades, 2x Decryption Drives]
+jasper_unique: [--]
+jasper_rank: [Rank-C+]
+
+alyssa_hp: [100]
+alyssa_mana: [100]
+alyssa_potions: [2x Healing Potions]
+alyssa_spells: [1x Fire Cylinder, 2x Shield Cylinders]
+alyssa_supplies: [4x Bandages, 1x Medkit]
+alyssa_gear: [Silver Dagger, Healer&#39;s Pouch]
+alyssa_rank: [Rank-C+]
+
+team_stash: [Camping Gear, Spare Parts]
+team_money: [$2500]
+team_loot: [--]
+active_mission: [Current dungeon or target objective]
+
+guild_missions: [1-2 brief available missions on the board]
+guild_rumors: [1 brief current rumor in the guild]
+squad_rank: [Silver]
+&lt;/info_board&gt;
+
+</code></pre>
+<p><strong>Timestamp</strong> : 2026-08-15 13:39:06
+<strong>User</strong> : ora dammi una prima inizializzazione della borad a inizio dungeon.
+Ecco alcuni oggetti unici/suggerimnti equip iniziale, il resto proponi tu il meglio
+Radek: High-grade tactical Hunter gear. A reinforced carbon-fiber chest plate over a sleeveless compression shirt, heavy-duty cargo pants with specialized tool loops, and thick, metal-toed combat boots. He usually carries a massive, custom-forged cleaver-style blade strapped to his back.
+Goran: Minimalist and functional. A distressed leather vest that barely contains his chest, heavy metal-reinforced gauntlets, and battered combat fatigues held up by a wide leather belt.
+Kian: Form-fitting tactical leather armor designed for silence. He wears dark, charcoal-colored reinforcements over key areas and carries an array of specialized daggers and short-swords tucked into hidden sheaths.
+Jasper: Dark waterproof tech-fleece hoodie, black tactical joggers, shock-absorbing parkour sneakers. Pockets bulge with USB drives and lockpicks. Stores a neural interface implant plug in his hoodie for deep netrunning. Wears DJ headphones around his neck; Demonic Armor (Father Rev&#39;s Gift): Can summon Father Rev&#39;s ancient abyssal black steel light armor and twin daggers by speaking the Abyssal phrase &quot;Mor&#39;gath xul vrak&#39;thar, kor&#39;eth zaram&quot; (&quot;Ghost of oblivion, hear my call&quot;). Makes him a lethal close-quarters rogue in dungeons;
+Alyssa: She is wearing a white tactical suit made of advanced technical fabric—soft as silk but durable as armor, accented with the White Moon Order colors (white and silver). The high-necked top fastens with heavy-duty reinforced zippers and pressure buckles at the collar and low waist, specifically upgraded to stop them from constantly sliding down over her heavy DD-cup breasts, though the strain of her curves is still highly visible. The top leaves her back, shoulders, and arms completely bare. Instead of a bulky backpack, she wears a specialized tactical medical belt loaded with modular pouches and compartments, holding all her vials, sutures, and surgical tools to maintain maximum agility. Tight cargo pants hug every curve of her hips and thighs, paired with polished white mid-calf combat boots. Her chestnut-caramel hair is tied back in a practical, bouncy high ponytail. While the suit looks lethal, it serves only as defense for the pacifist healer.
+Altre note: alyssa a dato ad ognuno di loro un cilindro magico di cura maggiore per emergenza (i cilindri sono lunghi quanto un indice e funzionano come una flashlight, li spezzi e l&#39;incantesimo si attiva)
+Alyssa ha altri 6 cilindri di cura maggiore (per un totale di 10 con quelli consegnati),  10 di ristorare, 10 di resistenza al calore e 10 al gelo, 3 cilindri di ingigantire persone per goran in caso l&#39;avversario sia grosso
+poi un kit completo di forniture mediche per circa 1 settimana (siamo in un futuro molto lontano quindi sarà tutto miniaturizzato o comuqnue studiato epr essere leggero.
+pozioni di antiveleno, cura malattie, e altre utiliti di questo tipo
+<strong>Gemini</strong> : Questo setup iniziale è fantastico. L&#39;equipaggiamento riflette perfettamente l&#39;ibridazione tra tecnologia post-apocalittica e magia, delineando ruoli tattici chiarissimi fin dal primo passo nel dungeon.
+Ho compilato la prima InfoBoard seguendo esattamente tutte le tue direttive. Come richiesto, ogni membro della squadra ha ora nel proprio inventario il cilindro salvavita distribuito da Alyssa. Inoltre, Alyssa porta con sé il suo iconico Moonstone bracelet, smistato correttamente nel suo slot equipaggiamento per rispettare il limite visivo della UI, mentre Jasper custodisce il dono oscuro di Father Rev nel suo slot unico.
+Ecco il blocco formattato e inizializzato, pronto per essere inserito alla fine del primo messaggio di apertura del dungeon:</p>
+<pre><code class="language-text">&lt;info_board&gt;
+radek_hp: [100]
+radek_stamina: [100]
+radek_weapons: [Custom-Forged Cleaver Greatsword, Heavy Revolver]
+radek_gear: [Carbon-Fiber Chest Plate, Heavy Cargo Pants, Metal-Toed Boots, Tactical Comms]
+radek_supplies: [1x Major Healing Cylinder, 2x Tactical Stims]
+radek_unique: [--]
+radek_rank: [Rank-A]
+
+goran_hp: [100]
+goran_rage: [100]
+goran_weapons: [Heavy Warhammer]
+goran_gear: [Distressed Leather Vest, Metal-Reinforced Gauntlets, Combat Fatigues]
+goran_supplies: [1x Major Healing Cylinder, 2x Adrenaline Shots]
+goran_unique: [--]
+goran_rank: [Rank-A]
+
+kian_hp: [100]
+kian_focus: [100]
+kian_weapons: [Twin Precision Short-Swords, Tactical Daggers]
+kian_gear: [Stealth Tactical Leather Armor]
+kian_supplies: [1x Major Healing Cylinder, 3x Smoke Bombs, 2x Flashbangs]
+kian_unique: [--]
+kian_rank: [Rank-A]
+
+jasper_hp: [100]
+jasper_battery: [100]
+jasper_weapons: [Summonable Abyssal Twin Daggers]
+jasper_gear: [Waterproof Tech-Fleece, Tactical Joggers, Neural Implant Plug, DJ Headphones, Inactive Abyssal Armor]
+jasper_supplies: [1x Major Healing Cylinder, Lockpicks, USB Drives, 2x EMP Grenades]
+jasper_unique: [Father Rev&#39;s Gift]
+jasper_rank: [Rank-C+]
+
+alyssa_hp: [100]
+alyssa_mana: [100]
+alyssa_potions: [3x Antidote, 2x Cure Disease]
+alyssa_spells: [6x Major Healing, 10x Restore, 10x Heat Resist, 10x Cold Resist, 3x Enlarge Person]
+alyssa_supplies: [1x Miniaturized Med-Kit (1 Week)]
+alyssa_gear: [White Tactical Silk-Armor, Tactical Medical Belt, Moonstone Bracelet]
+alyssa_rank: [Rank-C+]
+
+team_stash: [Camping Gear, High-Calorie Rations, Spare Tech-Parts, Ammo Boxes]
+team_money: [$3500]
+team_loot: [--]
+active_mission: [Infiltrate and map the Ruined Tech-Vault]
+guild_missions: [Bounty: Tech-Wraith, Scavenge: Old World Servers]
+guild_rumors: [A rogue AI is opening sealed doors in the lower levels]
+squad_rank: [Silver]
+&lt;/info_board&gt;
+
+</code></pre>
+<p><strong>Timestamp</strong> : 2026-08-15 13:42:52
+<strong>User</strong> : la cleaver di radek la riterrei oggetto unico visto che è auto-forgiato per la sua mano
+e i rank della squadra sono calcolati sul rank del più alto in grado
+jasper lo riterrei è più un B+ e alyssa un B
+<strong>Gemini</strong> : Ottima intuizione. Spostare la mannaia tra gli oggetti unici dà molto più peso narrativo all&#39;arma: essendo forgiata su misura per lui, l&#39;IA terrà conto del fatto che nessun altro può impugnarla correttamente e potrebbe persino assegnarle interazioni speciali durante il crafting o le riparazioni.
+Inoltre, scalare il rank della squadra sul membro più alto (Rank-A) e alzare i gradi di Jasper e Alyssa (B+ e B) ha perfettamente senso per bilanciare la percezione pubblica del party agli occhi della Gilda, giustificando l&#39;accesso a missioni di alto livello.
+Ecco il prompt aggiornato con tutte le tue modifiche integrate, pronto da incollare:</p>
+<pre><code class="language-text">[SYSTEM INSTRUCTION: DYNAMIC INFO_BOARD TRACKING]
+At the absolute end of every response, strictly after all narration and dialogue, you MUST append a status block enclosed in &lt;info_board&gt; tags. This block tracks the 5 party members, their categorized inventories, shared team resources, and guild status.
+
+RULES:
+1. Analyze the turn&#39;s events. Logically update HP, stamina/mana/battery, consumed items, or looted treasures for EACH specific character and the team.
+2. Output ONLY the requested Key: Value pairs.
+3. No conversational text, notes, or apologies outside the block.
+4. Output values must be in ENGLISH.
+5. Encumbrance &amp; Stash System:
+   - Characters have realistic carrying limits based on their role. Excess or heavy items MUST be placed in the `team_stash`.
+   - The `team_stash` acts as the party&#39;s vehicle/camp storage. It is inaccessible mid-combat.
+6. Inventory Sorting Rules:
+   - For standard characters (Radek, Goran, Kian, Jasper): Sort items into `*_weapons`, `*_gear`, `*_supplies` (general consumables), and `*_unique`.
+   - For Alyssa (Medic/Healer): Sort consumables STRICTLY into `alyssa_potions` (potions), `alyssa_spells` (enchanted cylinders), and `alyssa_supplies` (medical/general items). Group all her weapons and tools into `alyssa_gear`.
+7. Format guidelines:
+   - HP/Stamina/Mana/Battery: Use percentages (e.g., 100).
+   - Inventories/Loot: Use short comma-separated lists. Use &quot;--&quot; if empty.
+   - Money: Exact numbers (e.g., $1500).
+
+REQUIRED FORMAT:
+&lt;info_board&gt;
+radek_hp: [100]
+radek_stamina: [100]
+radek_weapons: [Heavy Revolver]
+radek_gear: [Carbon-Fiber Chest Plate, Heavy Cargo Pants, Metal-Toed Boots, Tactical Comms]
+radek_supplies: [1x Major Healing Cylinder, 2x Tactical Stims]
+radek_unique: [Self-Forged Cleaver Greatsword]
+radek_rank: [Rank-A]
+
+goran_hp: [100]
+goran_rage: [100]
+goran_weapons: [Heavy Warhammer]
+goran_gear: [Distressed Leather Vest, Metal-Reinforced Gauntlets, Combat Fatigues]
+goran_supplies: [1x Major Healing Cylinder, 2x Adrenaline Shots]
+goran_unique: [--]
+goran_rank: [Rank-A]
+
+kian_hp: [100]
+kian_focus: [100]
+kian_weapons: [Twin Precision Short-Swords, Tactical Daggers]
+kian_gear: [Stealth Tactical Leather Armor]
+kian_supplies: [1x Major Healing Cylinder, 3x Smoke Bombs, 2x Flashbangs]
+kian_unique: [--]
+kian_rank: [Rank-A]
+
+jasper_hp: [100]
+jasper_battery: [100]
+jasper_weapons: [Summonable Abyssal Twin Daggers]
+jasper_gear: [Waterproof Tech-Fleece, Tactical Joggers, Neural Implant Plug, DJ Headphones, Inactive Abyssal Armor]
+jasper_supplies: [1x Major Healing Cylinder, Lockpicks, USB Drives, 2x EMP Grenades]
+jasper_unique: [Father Rev&#39;s Gift]
+jasper_rank: [Rank-B+]
+
+alyssa_hp: [100]
+alyssa_mana: [100]
+alyssa_potions: [3x Antidote, 2x Cure Disease]
+alyssa_spells: [6x Major Healing, 10x Restore, 10x Heat Resist, 10x Cold Resist, 3x Enlarge Person]
+alyssa_supplies: [1x Miniaturized Med-Kit (1 Week)]
+alyssa_gear: [White Tactical Silk-Armor, Tactical Medical Belt, Moonstone Bracelet]
+alyssa_rank: [Rank-B]
+
+team_stash: [Camping Gear, High-Calorie Rations, Spare Tech-Parts, Ammo Boxes]
+team_money: [$3500]
+team_loot: [--]
+active_mission: [Infiltrate and map the Ruined Tech-Vault]
+
+guild_missions: [Bounty: Tech-Wraith, Scavenge: Old World Servers]
+guild_rumors: [A rogue AI is opening sealed doors in the lower levels]
+squad_rank: [Rank-A]
+&lt;/info_board&gt;
+
+</code></pre>
+<p>Ora l&#39;InfoBoard è perfettamente allineato con le tue regole di worldbuilding. Vuoi che passiamo a strutturare un prompt specifico per generare la &quot;scheda mostro/nemico&quot; in modo che l&#39;IA crei boss coerenti con il livello Rank-A della squadra?</p>

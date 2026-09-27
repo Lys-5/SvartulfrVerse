@@ -1,0 +1,417 @@
+<p><strong>User</strong> : Vorrei importare in lorebary i miei lorebook di janitorai ma quando carico il json dei lorebook di janitor ai lorebary restituissce &quot;lorebary unrecognized lore book format&quot;
+<strong>Gemini</strong> : Ciao! Capisco perfettamente la frustrazione. È un problema molto comune quando si cerca di far comunicare piattaforme e tool diversi nell&#39;ecosistema del roleplay AI.
+Il motivo per cui ricevi l&#39;errore  <strong>&quot;unrecognized lore book format&quot;</strong>  è che  <strong>JanitorAI e Lorebary utilizzano due strutture JSON completamente diverse</strong>  (hanno schemi, chiavi e organizzazione degli array differenti). Lorebary (l&#39;estensione proxy non ufficiale creata da Sophia) non è in grado di leggere nativamente i file esportati da JanitorAI, perché si aspetta i dati scritti e formattati a modo suo.
+Ecco le soluzioni più pratiche per risolvere il problema e importare il tuo lorebook:</p>
+<h5>1. Inserimento Manuale (Il metodo più sicuro)</h5>
+<p>Poiché Lorebary ha un suo portale specifico per la creazione dei lorebook, il modo più affidabile per importarli è copiarli manualmente:</p>
+<ol>
+<li>Apri il tuo file JSON di JanitorAI usando un semplice editor di testo (come Blocco Note su Windows o TextEdit su Mac).</li>
+<li>Individua le parti testuali (le descrizioni dei personaggi, dei luoghi, ecc.).</li>
+<li>Vai sul sito web del portale di Lorebary.</li>
+<li>Crea le tue entry manualmente copiando e incollando i testi.
+<strong>Nota:</strong>  La documentazione di Lorebary consiglia spesso di racchiudere le entry in tag simili all&#39;XML per aiutare l&#39;AI a comprenderle meglio (ad esempio: &lt;nome_luogo&gt;inserisci le informazioni qui&lt;/nome_luogo&gt;).</li>
+</ol>
+<h5>2. Conversione con l&#39;aiuto dell&#39;AI (Metodo rapido)</h5>
+<p>Se il tuo lorebook di JanitorAI è lunghissimo e non vuoi fare tutto a mano, puoi far tradurre il codice a un LLM (come me).</p>
+<ul>
+<li>Puoi incollare qui una parte del tuo JSON di JanitorAI e, se hai a disposizione un esempio di un file JSON esportato da Lorebary che funziona, incollare anche quello. In questo modo, posso riscrivere i tuoi dati di JanitorAI adattandoli allo scheletro di Lorebary.</li>
+</ul>
+<h5>3. Ripulitura del JSON</h5>
+<p>A volte il problema è causato da metadati aggiuntivi che JanitorAI inserisce nel file. Se vuoi smanettare un po&#39;:</p>
+<ol>
+<li>Crea un lorebook &quot;vuoto&quot; di prova direttamente su Lorebary (con solo una voce di test) ed esportalo.</li>
+<li>Apri sia il JSON di Lorebary che quello di JanitorAI.</li>
+<li>Confronta le voci. Probabilmente noterai che i nomi delle variabili cambiano (es. entries contro world_info, o keyword contro keys). Dovrai rinominare i campi del tuo file JanitorAI per farli combaciare con quelli di Lorebary.
+Se hai bisogno di una mano a convertire il testo o a sistemare la formattazione, incolla pure qui una porzione del tuo file JSON! C&#39;è una parte specifica del lorebook con cui stai avendo più difficoltà?
+<strong>User</strong> : questo è il lorebook di test è copiato direttamente da janitor ai, convertilo in un formato compatibile con lorebary
+<strong>Gemini</strong> : Certo! Il problema del &quot;lorebary unrecognized lore book format&quot; si verifica perché JanitorAI esporta il lorebook come un semplice elenco (array) di oggetti, mentre Lorebary si aspetta una struttura &quot;World Info&quot; più complessa, tipica di ecosistemi come SillyTavern, in cui le voci sono racchiuse all&#39;interno di un oggetto principale che definisce anche il nome e le impostazioni generali del lorebook.
+Ho preso i tuoi dati originali, come ad esempio le configurazioni per &quot;WRD: World Runtime&quot; e &quot;Example Location 0x01&quot;, e li ho inseriti nello scheletro corretto. Tutte le tue parole chiave, i contenuti e gli stati di attivazione (enabled: true o false) sono stati mantenuti intatti.
+Ecco il codice JSON pronto. Copialo per intero, salvalo in un file con estensione .json (es: lorebook_lorebary.json) e importalo:</li>
+</ol>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;SvartulfrVerse - Converted Lorebook&quot;,
+  &quot;description&quot;: &quot;Lorebook importato da JanitorAI a Lorebary&quot;,
+  &quot;scan_depth&quot;: 50,
+  &quot;token_budget&quot;: 2048,
+  &quot;recursive_scanning&quot;: false,
+  &quot;entries&quot;: [
+    {
+      &quot;uid&quot;: 1,
+      &quot;key&quot;: [
+        &quot;world runtime&quot;,
+        &quot;complex lorebook&quot;,
+        &quot;macrocosmo&quot;,
+        &quot;lore activation&quot;
+      ],
+      &quot;keysecondary&quot;: [],
+      &quot;comment&quot;: &quot;WRD: World Runtime - Complex Lorebook&quot;,
+      &quot;content&quot;: &quot;[ACTIVE] WRD Source: 1_template/SvartulfrVerse_World_Template.js. Complex lorebook runtime scans recent messages, selects lore entries by direct keyword match, priority, importance and mention count, then appends full, summary or bullet content to personality and scenario.&quot;,
+      &quot;constant&quot;: false,
+      &quot;selective&quot;: true,
+      &quot;insertion_order&quot;: 100,
+      &quot;enabled&quot;: true,
+      &quot;position&quot;: 1,
+      &quot;useProbability&quot;: true,
+      &quot;probability&quot;: 100,
+      &quot;macro&quot;: false,
+      &quot;matchWholeWords&quot;: true,
+      &quot;caseSensitive&quot;: false,
+      &quot;extensions&quot;: {}
+    },
+    {
+      &quot;uid&quot;: 2,
+      &quot;key&quot;: [
+        &quot;world runtime&quot;,
+        &quot;adaptive lorebook&quot;,
+        &quot;token budget&quot;,
+        &quot;macrocosmo&quot;
+      ],
+      &quot;keysecondary&quot;: [],
+      &quot;comment&quot;: &quot;WRD: World Runtime - Adaptive Lorebook&quot;,
+      &quot;content&quot;: &quot;[ACTIVE] WRD Source: 1_template/SvartulfrVerse_World_Template.js. Adaptive lorebook runtime activates additional mentioned entries within the World budget and degrades detail from full to bullet when token pressure requires it.&quot;,
+      &quot;constant&quot;: false,
+      &quot;selective&quot;: true,
+      &quot;insertion_order&quot;: 200,
+      &quot;enabled&quot;: true,
+      &quot;position&quot;: 1,
+      &quot;useProbability&quot;: true,
+      &quot;probability&quot;: 100,
+      &quot;macro&quot;: false,
+      &quot;matchWholeWords&quot;: true,
+      &quot;caseSensitive&quot;: false,
+      &quot;extensions&quot;: {}
+    },
+    {
+      &quot;uid&quot;: 3,
+      &quot;key&quot;: [
+        &quot;world runtime&quot;,
+        &quot;timeline&quot;,
+        &quot;stat reactions&quot;,
+        &quot;cascade activation&quot;
+      ],
+      &quot;keysecondary&quot;: [],
+      &quot;comment&quot;: &quot;WRD: World Runtime - Timeline, Stats and Cascade&quot;,
+      &quot;content&quot;: &quot;[ACTIVE] WRD Source: 1_template/SvartulfrVerse_World_Template.js. World runtime applies timeline events from **Timeline:** or **Timeline Index:**, stat reactions from named stat values, and cascade activation for child lore entries.&quot;,
+      &quot;constant&quot;: false,
+      &quot;selective&quot;: true,
+      &quot;insertion_order&quot;: 300,
+      &quot;enabled&quot;: true,
+      &quot;position&quot;: 1,
+      &quot;useProbability&quot;: true,
+      &quot;probability&quot;: 100,
+      &quot;macro&quot;: false,
+      &quot;matchWholeWords&quot;: true,
+      &quot;caseSensitive&quot;: false,
+      &quot;extensions&quot;: {}
+    },
+    {
+      &quot;uid&quot;: 4,
+      &quot;key&quot;: [
+        &quot;example location 0x01&quot;,
+        &quot;example keyword&quot;,
+        &quot;alternate keyword&quot;,
+        &quot;location schema&quot;
+      ],
+      &quot;keysecondary&quot;: [],
+      &quot;comment&quot;: &quot;LOC: Example Location 0x01&quot;,
+      &quot;content&quot;: &quot;[ACTIVE] LOC Source: world/example_location_0x01.md. Example Location 0x01 is the placeholder location schema from the original World Template. Replace with concrete location facts while preserving source and Canon Layer.&quot;,
+      &quot;constant&quot;: false,
+      &quot;selective&quot;: true,
+      &quot;insertion_order&quot;: 400,
+      &quot;enabled&quot;: false,
+      &quot;position&quot;: 1,
+      &quot;useProbability&quot;: true,
+      &quot;probability&quot;: 100,
+      &quot;macro&quot;: false,
+      &quot;matchWholeWords&quot;: true,
+      &quot;caseSensitive&quot;: false,
+      &quot;extensions&quot;: {}
+    },
+    {
+      &quot;uid&quot;: 5,
+      &quot;key&quot;: [
+        &quot;scenario npc core&quot;,
+        &quot;npc core&quot;,
+        &quot;microcosmo&quot;,
+        &quot;active npcs&quot;
+      ],
+      &quot;keysecondary&quot;: [],
+      &quot;comment&quot;: &quot;NPC: Runtime - Scenario NPC Core&quot;,
+      &quot;content&quot;: &quot;[ACTIVE] NPC Source: 1_template/SvartulfrVerse_Scenario_Template.js. Scenario NPC Core instructs the model to activate only mentioned or strongly implied NPCs, drop inactive NPCs, scale detail by mention count/importance/budget, and preserve scene focus.&quot;,
+      &quot;constant&quot;: false,
+      &quot;selective&quot;: true,
+      &quot;insertion_order&quot;: 500,
+      &quot;enabled&quot;: true,
+      &quot;position&quot;: 1,
+      &quot;useProbability&quot;: true,
+      &quot;probability&quot;: 100,
+      &quot;macro&quot;: false,
+      &quot;matchWholeWords&quot;: true,
+      &quot;caseSensitive&quot;: false,
+      &quot;extensions&quot;: {}
+    },
+    {
+      &quot;uid&quot;: 6,
+      &quot;key&quot;: [
+        &quot;relationship runtime&quot;,
+        &quot;relationship database&quot;,
+        &quot;relationship core&quot;,
+        &quot;microcosmo&quot;
+      ],
+      &quot;keysecondary&quot;: [],
+      &quot;comment&quot;: &quot;REL: Runtime - Relationship Database&quot;,
+      &quot;content&quot;: &quot;[ACTIVE] REL Source: 1_template/SvartulfrVerse_Scenario_Template.js. Relationship runtime activates relationship entries when NPC names, NPC keywords or relationship keywords are mentioned, then applies full, summary or bullet text within budget.&quot;,
+      &quot;constant&quot;: false,
+      &quot;selective&quot;: true,
+      &quot;insertion_order&quot;: 600,
+      &quot;enabled&quot;: true,
+      &quot;position&quot;: 1,
+      &quot;useProbability&quot;: true,
+      &quot;probability&quot;: 100,
+      &quot;macro&quot;: false,
+      &quot;matchWholeWords&quot;: true,
+      &quot;caseSensitive&quot;: false,
+      &quot;extensions&quot;: {}
+    },
+    {
+      &quot;uid&quot;: 7,
+      &quot;key&quot;: [
+        &quot;anti omniscience&quot;,
+        &quot;scenario gates&quot;,
+        &quot;visible flags&quot;,
+        &quot;locked clues&quot;
+      ],
+      &quot;keysecondary&quot;: [],
+      &quot;comment&quot;: &quot;SEC: Runtime - Anti-Omniscience Gates&quot;,
+      &quot;content&quot;: &quot;[ACTIVE] SEC Source: 1_template/SvartulfrVerse_Scenario_Template.js. Anti-omniscience runtime gates Scenario content behind visible flag states, message windows, hour/canon thresholds and keyword conditions, preventing locked clues or future revelations from leaking early.&quot;,
+      &quot;constant&quot;: false,
+      &quot;selective&quot;: true,
+      &quot;insertion_order&quot;: 700,
+      &quot;enabled&quot;: true,
+      &quot;position&quot;: 1,
+      &quot;useProbability&quot;: true,
+      &quot;probability&quot;: 100,
+      &quot;macro&quot;: false,
+      &quot;matchWholeWords&quot;: true,
+      &quot;caseSensitive&quot;: false,
+      &quot;extensions&quot;: {}
+    },
+    {
+      &quot;uid&quot;: 8,
+      &quot;key&quot;: [
+        &quot;timedelay&quot;,
+        &quot;time delay&quot;,
+        &quot;canon count&quot;,
+        &quot;investigation pacing&quot;
+      ],
+      &quot;keysecondary&quot;: [],
+      &quot;comment&quot;: &quot;CAN: Runtime - TimeDelay Investigation&quot;,
+      &quot;content&quot;: &quot;[ACTIVE] CAN Source: 1_template/SvartulfrVerse_Scenario_Template.js. TimeDelay runtime reveals canon, entities and conditional events only when hour, canon count, message threshold and keyword conditions are satisfied, and asks the model to output **Hour:** N and **Canon Count:** N when pacing is active.&quot;,
+      &quot;constant&quot;: false,
+      &quot;selective&quot;: true,
+      &quot;insertion_order&quot;: 800,
+      &quot;enabled&quot;: true,
+      &quot;position&quot;: 1,
+      &quot;useProbability&quot;: true,
+      &quot;probability&quot;: 100,
+      &quot;macro&quot;: false,
+      &quot;matchWholeWords&quot;: true,
+      &quot;caseSensitive&quot;: false,
+      &quot;extensions&quot;: {}
+    },
+    {
+      &quot;uid&quot;: 9,
+      &quot;key&quot;: [
+        &quot;example npc&quot;,
+        &quot;npc_example_0x01&quot;,
+        &quot;example&quot;,
+        &quot;npc schema&quot;
+      ],
+      &quot;keysecondary&quot;: [],
+      &quot;comment&quot;: &quot;NPC: Example NPC 0x01&quot;,
+      &quot;content&quot;: &quot;[ACTIVE] NPC Source: scenario/npc_example_0x01.md. Example NPC is the placeholder advanced NPC schema from the original Scenario Template. Replace with concrete NPC facts while preserving source and Canon Layer.&quot;,
+      &quot;constant&quot;: false,
+      &quot;selective&quot;: true,
+      &quot;insertion_order&quot;: 900,
+      &quot;enabled&quot;: false,
+      &quot;position&quot;: 1,
+      &quot;useProbability&quot;: true,
+      &quot;probability&quot;: 100,
+      &quot;macro&quot;: false,
+      &quot;matchWholeWords&quot;: true,
+      &quot;caseSensitive&quot;: false,
+      &quot;extensions&quot;: {}
+    },
+    {
+      &quot;uid&quot;: 10,
+      &quot;key&quot;: [
+        &quot;simple_npc_example&quot;,
+        &quot;example simple npc&quot;,
+        &quot;drop-in npc&quot;,
+        &quot;simple npc schema&quot;
+      ],
+      &quot;keysecondary&quot;: [],
+      &quot;comment&quot;: &quot;NPC: Example Simple Drop-In NPC&quot;,
+      &quot;content&quot;: &quot;[ACTIVE] NPC Source: scenario/simple_npc_example.md. Example Simple NPC is the placeholder drop-in/drop-out NPC schema from the original Scenario Template.&quot;,
+      &quot;constant&quot;: false,
+      &quot;selective&quot;: true,
+      &quot;insertion_order&quot;: 1000,
+      &quot;enabled&quot;: false,
+      &quot;position&quot;: 1,
+      &quot;useProbability&quot;: true,
+      &quot;probability&quot;: 100,
+      &quot;macro&quot;: false,
+      &quot;matchWholeWords&quot;: true,
+      &quot;caseSensitive&quot;: false,
+      &quot;extensions&quot;: {}
+    },
+    {
+      &quot;uid&quot;: 11,
+      &quot;key&quot;: [
+        &quot;relationship keyword&quot;,
+        &quot;relationship_example_0x01&quot;,
+        &quot;example relationship&quot;,
+        &quot;relationship schema&quot;
+      ],
+      &quot;keysecondary&quot;: [],
+      &quot;comment&quot;: &quot;REL: Example Relationship 0x01&quot;,
+      &quot;content&quot;: &quot;[ACTIVE] REL Source: scenario/relationship_example_0x01.md. Example Relationship is the placeholder relationship schema from the original Scenario Template. Replace with concrete relationship facts while preserving source and Canon Layer.&quot;,
+      &quot;constant&quot;: false,
+      &quot;selective&quot;: true,
+      &quot;insertion_order&quot;: 1100,
+      &quot;enabled&quot;: false,
+      &quot;position&quot;: 1,
+      &quot;useProbability&quot;: true,
+      &quot;probability&quot;: 100,
+      &quot;macro&quot;: false,
+      &quot;matchWholeWords&quot;: true,
+      &quot;caseSensitive&quot;: false,
+      &quot;extensions&quot;: {}
+    },
+    {
+      &quot;uid&quot;: 12,
+      &quot;key&quot;: [
+        &quot;content keyword&quot;,
+        &quot;content_example_0x01&quot;,
+        &quot;example scenario content&quot;,
+        &quot;locked clue&quot;
+      ],
+      &quot;keysecondary&quot;: [],
+      &quot;comment&quot;: &quot;SEC: Example Scenario Content Node 0x01&quot;,
+      &quot;content&quot;: &quot;[ACTIVE] SEC Source: scenario/content_example_0x01.md. Example Scenario Content Node is the placeholder anti-omniscience content node from the original Scenario Template. It unlocks only when required visible flag state 0:0A is active and no forbidden flag state blocks it.&quot;,
+      &quot;constant&quot;: false,
+      &quot;selective&quot;: true,
+      &quot;insertion_order&quot;: 1200,
+      &quot;enabled&quot;: false,
+      &quot;position&quot;: 1,
+      &quot;useProbability&quot;: true,
+      &quot;probability&quot;: 100,
+      &quot;macro&quot;: false,
+      &quot;matchWholeWords&quot;: true,
+      &quot;caseSensitive&quot;: false,
+      &quot;extensions&quot;: {}
+    },
+    {
+      &quot;uid&quot;: 13,
+      &quot;key&quot;: [
+        &quot;canon keyword&quot;,
+        &quot;canon_example_0x01&quot;,
+        &quot;example canon&quot;,
+        &quot;timedelay canon&quot;
+      ],
+      &quot;keysecondary&quot;: [],
+      &quot;comment&quot;: &quot;CAN: Example TimeDelay Canon 0x01&quot;,
+      &quot;content&quot;: &quot;[CANON] CAN Source: scenario/canon_example_0x01.md. Example TimeDelay Canon is the placeholder canon entry from the original Scenario Template. Replace with concrete canon facts while preserving hiddenCondition and hiddenContent behavior if used.&quot;,
+      &quot;constant&quot;: false,
+      &quot;selective&quot;: true,
+      &quot;insertion_order&quot;: 1300,
+      &quot;enabled&quot;: false,
+      &quot;position&quot;: 1,
+      &quot;useProbability&quot;: true,
+      &quot;probability&quot;: 100,
+      &quot;macro&quot;: false,
+      &quot;matchWholeWords&quot;: true,
+      &quot;caseSensitive&quot;: false,
+      &quot;extensions&quot;: {}
+    },
+    {
+      &quot;uid&quot;: 14,
+      &quot;key&quot;: [
+        &quot;npc keyword&quot;,
+        &quot;entity_example_0x01&quot;,
+        &quot;example timedelay entity&quot;,
+        &quot;timedelay entity&quot;
+      ],
+      &quot;keysecondary&quot;: [],
+      &quot;comment&quot;: &quot;NPC: Example TimeDelay Entity 0x01&quot;,
+      &quot;content&quot;: &quot;[ACTIVE] NPC Source: scenario/entity_example_0x01.md. Example TimeDelay Entity is the placeholder entity schema from the original Scenario Template. It can provide canon text, personality, scenario and example dialogs when its TimeDelay window and keywords match.&quot;,
+      &quot;constant&quot;: false,
+      &quot;selective&quot;: true,
+      &quot;insertion_order&quot;: 1400,
+      &quot;enabled&quot;: false,
+      &quot;position&quot;: 1,
+      &quot;useProbability&quot;: true,
+      &quot;probability&quot;: 100,
+      &quot;macro&quot;: false,
+      &quot;matchWholeWords&quot;: true,
+      &quot;caseSensitive&quot;: false,
+      &quot;extensions&quot;: {}
+    },
+    {
+      &quot;uid&quot;: 15,
+      &quot;key&quot;: [
+        &quot;npc keyword&quot;,
+        &quot;location keyword&quot;,
+        &quot;event_example_0x01&quot;,
+        &quot;conditional event&quot;
+      ],
+      &quot;keysecondary&quot;: [],
+      &quot;comment&quot;: &quot;CAN: Example TimeDelay Conditional Event 0x01&quot;,
+      &quot;content&quot;: &quot;[CANON] CAN Source: scenario/event_example_0x01.md. Example TimeDelay Conditional Event is the placeholder conditional event schema from the original Scenario Template. It requires any NPC/location keyword, all requiresAll keywords, and no notWith keyword before revealing scenario content.&quot;,
+      &quot;constant&quot;: false,
+      &quot;selective&quot;: true,
+      &quot;insertion_order&quot;: 1500,
+      &quot;enabled&quot;: false,
+      &quot;position&quot;: 1,
+      &quot;useProbability&quot;: true,
+      &quot;probability&quot;: 100,
+      &quot;macro&quot;: false,
+      &quot;matchWholeWords&quot;: true,
+      &quot;caseSensitive&quot;: false,
+      &quot;extensions&quot;: {}
+    }
+  ]
+}
+
+</code></pre>
+<p><strong>User</strong> : ok, mi dai un prompt da passare a code per creare una copia &quot;lorebary compatibile&quot; dei miei lorebook in automatico?
+<strong>Gemini</strong> : Ottima idea! Automatizzare il processo con uno script è decisamente la scelta più intelligente, specialmente se hai molti lorebook o se li aggiorni spesso.
+Puoi copiare e incollare il prompt qui sotto al tuo assistente di programmazione (come Cursor, GitHub Copilot, ChatGPT o Claude). L&#39;ho scritto in inglese perché i modelli di programmazione tendono a seguire meglio le istruzioni strutturali in questa lingua, ma capiranno perfettamente il tuo obiettivo.</p>
+<hr>
+<h5>Prompt da copiare:</h5>
+<p>Write a Python script (or JavaScript/Node.js, whichever is easier to run for me) that converts a JanitorAI Lorebook JSON file into a Lorebary/SillyTavern World Info compatible JSON file.
+<strong>Input Structure:</strong>  The input file contains a single JSON array of objects (JanitorAI format).
+<strong>Output Structure:</strong>  The output file must be a single JSON object with the following root metadata:
+<strong>Mapping Rules for</strong>  <strong>entries</strong>  <strong>array:</strong>  Iterate through the input array. For each object, create a new object inside the output entries array with the following strict mapping:</p>
+<ul>
+<li>uid: an auto-incrementing integer starting from 1.</li>
+<li>key: take the key array from the input. If it doesn&#39;t exist, split the keysRaw string by comma and trim whitespace to create an array of strings.</li>
+<li>keysecondary: [] (empty array)</li>
+<li>comment: take the value from the input&#39;s name field.</li>
+<li>content: take the value from the input&#39;s content field.</li>
+<li>constant: false</li>
+<li>selective: true</li>
+<li>insertion_order: take from the input&#39;s insertion_order (default to 100 if missing).</li>
+<li>enabled: take from the input&#39;s enabled boolean.</li>
+<li>position: 1</li>
+<li>useProbability: true</li>
+<li>probability: 100</li>
+<li>macro: false</li>
+<li>matchWholeWords: true</li>
+<li>caseSensitive: false</li>
+<li>extensions: {} (empty object)
+<strong>Requirements:</strong>  The script should use standard libraries only. It should allow me to specify an input file (e.g., janitor_lore.json) and save the result to a new file (e.g., lorebary_lore.json) with proper indentation.</li>
+</ul>
+<hr>
+<h5>Come usarlo:</h5>
+<p>L&#39;IA ti restituirà un piccolo script. Se scegli  <strong>Python</strong> , ti basterà salvare il codice in un file (es. convertitore.py), mettere il tuo JSON di JanitorAI nella stessa cartella e avviare lo script dal terminale. Questo genererà istantaneamente un file pronto da caricare su Lorebary, con le chiavi e i dati associati esattamente come abbiamo fatto a mano nel messaggio precedente.</p>

@@ -1,0 +1,89 @@
+<p><strong>User</strong> : Mo spieghi l&#39;errore?
+PROXY ERROR 400: {&quot;error&quot;:{&quot;code&quot;:500,&quot;message&quot;:&quot;你请求的模型 &quot;claude-3-opus&quot; 暂不支持。可用模型：claude-opus-4-7 / claude-haiku-4-5-20251001 / claude-sonnet-4-6 / claude-sonnet-5&quot;,&quot;type&quot;:&quot;invalid_request_error&quot;}}
+<strong>Gemini</strong> : Questo errore nasce da una  <strong>richiesta non valida</strong>  inviata al provider/proxy che stai utilizzando, causata dall&#39;uso di un modello non supportato o obsoleto.
+Ecco il breakdown di cosa sta succedendo:</p>
+<h5>1. Il problema principale</h5>
+<p>Stai cercando di invocare il modello  <strong>claude-3-opus</strong> , ma il proxy che stai usando per inoltrare le chiamate API non lo supporta più o non lo riconosce.</p>
+<h5>2. Il messaggio in cinese</h5>
+<p>Tradotto dal cinese, il messaggio dice:
+<em>&quot;Il modello</em>  <em>claude-3-opus</em>  <em>da te richiesto al momento non è supportato. Modelli disponibili:</em>  <em>claude-opus-4-7</em>  <em>/</em>  <em>claude-haiku-4-5-20251001</em>  <em>/</em>  <em>claude-sonnet-4-6</em>  <em>/</em>  <em>claude-sonnet-5</em>  <em>&quot;</em></p>
+<hr>
+<h5>Come risolverlo</h5>
+<p>Per far funzionare di nuovo la chiamata API o la tua applicazione, devi modificare il parametro model nella tua configurazione o nel codice.</p>
+<ol>
+<li><strong>Sostituisci il nome del modello</strong>  con uno di quelli supportati dal tuo provider proxy:
+<ul>
+<li><strong>Se vuoi le prestazioni migliori (equivalente/superiore ad Opus):</strong>  Usa claude-opus-4-7 o claude-sonnet-5</li>
+<li><strong>Se vuoi un modello bilanciato e veloce:</strong>  Usa claude-sonnet-4-6</li>
+<li><strong>Se cerchi massima velocità ed economia:</strong>  Usa claude-haiku-4-5-20251001</li>
+</ul>
+</li>
+<li><strong>Dove modificarlo:</strong>
+<ul>
+<li><strong>In uno script/codice:</strong>  Cambia il valore della chiave &quot;model&quot;: &quot;claude-3-opus&quot; con una delle stringhe valide sopra elencate.</li>
+<li><strong>In un&#39;interfaccia client (es. Chatbox, NextChat, SillyTavern):</strong>  Vai nelle impostazioni API/Modello della stanza o del provider e seleziona uno dei modelli supportati dall&#39;elenco a tendina o scrivilo manualmente.
+<strong>User</strong> : Ok quale di Quelli disponibili potrebbe avere meno traffico?
+<strong>Gemini</strong> : Tra i modelli disponibili nel tuo proxy,  <strong>claude-haiku-4-5-20251001</strong>  è quello che garantisce quasi certamente  <strong>il minor traffico, la latenza più bassa e la massima stabilità</strong> .
+Ecco la gerarchia del traffico/intasamento sui server e proxy terzi:</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h5>1. claude-haiku-4-5-20251001  <em>(Il più veloce e libero)</em>  🚀</h5>
+<ul>
+<li><strong>Livello di traffico:</strong>   <strong>Bassissimo / Quasi nullo.</strong></li>
+<li><strong>Perché:</strong>  I modelli Haiku sono estremamente leggeri, occupano una frazione delle risorse dei server (fino a 4-5x più veloci) e hanno limiti di rate (RPM/TPM) molto più generosi.</li>
+<li><strong>Ideale per:</strong>  Risposte istantanee, compiti brevi, chat veloci, formattazione dati e routine quotidiane.</li>
+</ul>
+<h5>2. claude-sonnet-4-6  <em>(Il compromesso ideale)</em>  ⚡</h5>
+<ul>
+<li><strong>Livello di traffico:</strong>   <strong>Medio-Basso.</strong></li>
+<li><strong>Perché:</strong>  Essendo la versione precedente rispetto a Sonnet 5, riceve meno carico rispetto ai modelli &quot;top di gamma&quot; di punta, pur mantenendo capacità di ragionamento eccellenti.</li>
+</ul>
+<h5>3. claude-sonnet-5  <em>(Molto richiesto)</em>  ⚖️</h5>
+<ul>
+<li><strong>Livello di traffico:</strong>   <strong>Medio-Alto.</strong></li>
+<li><strong>Perché:</strong>  È il modello &quot;workhorse&quot; principale scelto dalla maggior parte degli utenti per programmazione e scrittura complessa, di conseguenza attira gran parte delle chiamate API.</li>
+</ul>
+<h5>4. claude-opus-4-7  <em>(Il più congestionato)</em>  🐢</h5>
+<ul>
+<li><strong>Livello di traffico:</strong>   <strong>Alto.</strong></li>
+<li><strong>Perché:</strong>  Essendo il modello di punta per ragionamento profondo, richiede molta più potenza di calcolo e ha token/secondo generati più lenti di natura. Inoltre, su proxy terzi subisce spesso code (queuing).</li>
+</ul>
+<hr>
+<h5>Consiglio pratico</h5>
+<ul>
+<li>Per un uso fluido e risposte immediate senza errori di timeout: impostalo su  <strong>claude-haiku-4-5-20251001</strong> .</li>
+<li>Se noti che Haiku è troppo &quot;semplice&quot; per quello che devi fare, passa a  <strong>claude-sonnet-4-6</strong> .
+<strong>User</strong> : Mentre per questo endpoint che model sono disponibili?
+https://api.freemodel.dev/v1/chat/completions
+<strong>Gemini</strong> : L&#39;endpoint <a href="https://api.freemodel.dev/v1/chat/completions">https://api.freemodel.dev/v1/chat/completions</a> è lo snodo in formato  <strong>OpenAI-compatibile</strong>  di  <strong>FreeModel.dev</strong> .
+I modelli solitamente supportati su questo endpoint specifico includono:</li>
+</ul>
+<h5>1. Modelli Claude (Anthropic)</h5>
+<p><em>(Richiamabili su endpoint OpenAI o tramite prefisso</em>  <em>freemodel/</em>  <em>a seconda del client)</em></p>
+<ul>
+<li><strong>claude-haiku-4-5-20251001</strong>   <em>(Consigliato per velocità e basso carico)</em></li>
+<li><strong>claude-sonnet-4-6</strong></li>
+<li><strong>claude-sonnet-5</strong></li>
+<li><strong>claude-opus-4-7</strong></li>
+<li><strong>claude-opus-4-8</strong></li>
+<li><strong>claude-fable-5</strong></li>
+</ul>
+<h5>2. Modelli GPT (OpenAI)</h5>
+<ul>
+<li><strong>gpt-5.5</strong></li>
+<li><strong>gpt-5.4</strong></li>
+<li><strong>gpt-5.4-mini</strong></li>
+<li><strong>gpt-5.3-codex</strong></li>
+</ul>
+<hr>
+<h5>💡 Come verificare l&#39;elenco aggiornato in tempo reale</h5>
+<p>I proxy aggiornano o ruotano periodicamente l&#39;elenco dei modelli. Puoi interrogare direttamente le API di FreeModel con una richiesta GET al loro endpoint delle definizioni per ottenere la lista esatta e aggiornata associata alla tua API Key:</p>
+<h6>Via Terminale / cURL:</h6>
+<pre><code class="language-bash">curl https://api.freemodel.dev/v1/models \
+  -H &quot;Authorization: Bearer TUA_API_KEY&quot;
+
+</code></pre>
+<h6>Se usi un client (es. SillyTavern / Chatbox / NextChat / OmniRoute):</h6>
+<p>Nella schermata di configurazione API/Provider, premi il tasto  <strong>&quot;Fetch Models&quot;</strong>  /  <strong>&quot;Sync Models&quot;</strong>  o la lente di ingrandimento per aggiornare automaticamente il menu a tendina.</p>

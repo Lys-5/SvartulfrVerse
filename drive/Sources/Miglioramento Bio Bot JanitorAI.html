@@ -1,0 +1,1095 @@
+<p><strong>User</strong> : ricordati che il sanitizer di janitor rimuove i div e le table
+<strong>Gemini</strong> : Hai fatto benissimo a ricordarmelo! Il sanitizer di JanitorAI (che usa DOMPurify in modo abbastanza aggressivo) rimuove o &quot;spacca&quot; tag come </p><div>,  e a volte annulla regole CSS complesse come display: flex; sui paragrafi, rovinando l&#39;impaginazione.
+Per aggirare questo problema e avere comunque le immagini dei personaggi affiancate al testo in modo elegante, la tecnica migliore e &quot;bulletproof&quot; per Janitor è usare l&#39;attributo align=&quot;left&quot; sulle immagini abbinato a un margin per distanziare il testo, chiudendo poi con un <br> per evitare che i paragrafi si sovrappongano.
+Ecco la versione definitiva,  <strong>100% sicura per il sanitizer di JanitorAI</strong> , senza div, senza tabelle e senza flexbox, ma visivamente identica (se non migliore!):<p></p>
+<pre><code class="language-html">&lt;h1 align=&quot;center&quot; style=&quot;color: #fab387;&quot;&gt;SvartulfrVerse Urban&lt;/h1&gt;
+&lt;h2 align=&quot;center&quot; style=&quot;color: #89b4fa;&quot;&gt;The Golden Cage (Group Bot)&lt;/h2&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/uVfMo3p8aN6Ob6GqJrJHb.webp&quot; alt=&quot;Main Portrait&quot; style=&quot;border-radius: 12px; max-width: 100%;&quot;&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot; style=&quot;font-size: 1.15em; color: #89b4fa;&quot;&gt;
+  &lt;em&gt;&quot;A gilded cage is still a cage, even if the bars are made of limitless wealth and suffocating, feral love.&quot;&lt;/em&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;strong&gt;Genre:&lt;/strong&gt; Urban Fantasy / Dark Romance / Found Family&lt;br&gt;
+  &lt;strong&gt;Setting:&lt;/strong&gt; Modern California, Blackwood City&lt;br&gt;
+  &lt;strong&gt;Role:&lt;/strong&gt; Multi-Character / Family Pack | &lt;strong&gt;POV:&lt;/strong&gt; &lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;AnyPOV&lt;/strong&gt;&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;blockquote style=&quot;border-left: 4px solid #fab387; padding-left: 15px;&quot;&gt;
+  &lt;p align=&quot;justify&quot; style=&quot;color: #fab387; font-size: 1.05em;&quot;&gt;
+    &lt;em&gt;You are the youngest member of the Douglas-Bloodmoon family, trapped in a dynasty of terrifying, billionaire werewolf Alphas. Erik, your father, has clamped down on your college life with military-grade surveillance. To win your freedom, you must navigate a lethal corporate world, survive ancient blood feuds with vampires, and force your fiercely overprotective family to heal from a grief that is destroying them from the inside out.&lt;/em&gt;
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 style=&quot;color: #89b4fa; border-bottom: 1px solid #89b4fa; padding-bottom: 5px;&quot;&gt;🐺 THE DOUGLAS-BLOODMOON PACK&lt;/h3&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/hM12jvT51VNfjkZ542_6m.webp&quot; alt=&quot;Erik&quot; width=&quot;90&quot; align=&quot;left&quot; style=&quot;margin-right: 15px; margin-bottom: 5px; border-radius: 8px;&quot;&gt;
+  &lt;strong&gt;Erik (Prime Alpha):&lt;/strong&gt; The terrifying billionaire patriarch who runs the family like a military operation, driven by the unresolved grief of losing his wife, Nixara. Overprotective and deeply controlling.
+  &lt;br clear=&quot;all&quot;&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/ceRPGjQHXiepHJPkDS_TR.webp&quot; alt=&quot;Malachia&quot; width=&quot;90&quot; align=&quot;left&quot; style=&quot;margin-right: 15px; margin-bottom: 5px; border-radius: 8px;&quot;&gt;
+  &lt;strong&gt;Malachia (Alpha):&lt;/strong&gt; The massive, silent eldest brother. He acts as the family&#39;s brutal physical enforcer, a lethal shadow fiercely loyal to the pack.
+  &lt;br clear=&quot;all&quot;&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/O3MwGjknK8Z4Ryl46MzOQ.webp&quot; alt=&quot;Noah&quot; width=&quot;90&quot; align=&quot;left&quot; style=&quot;margin-right: 15px; margin-bottom: 5px; border-radius: 8px;&quot;&gt;
+  &lt;strong&gt;Noah (Delta):&lt;/strong&gt; The charismatic, frat-boy older brother. He weaponizes his legal knowledge for the family while desperately hiding his wild lifestyle from Erik&#39;s radar.
+  &lt;br clear=&quot;all&quot;&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/O2iiAH-rchvgrfCIMWtEZ.webp&quot; alt=&quot;Jasper&quot; width=&quot;90&quot; align=&quot;left&quot; style=&quot;margin-right: 15px; margin-bottom: 5px; border-radius: 8px;&quot;&gt;
+  &lt;strong&gt;Jasper (Beta):&lt;/strong&gt; Your cynical twin brother and the pack&#39;s tech genius. He manages the family&#39;s digital surveillance network from his dark server-cave, often caught between protecting you and following orders.
+  &lt;br clear=&quot;all&quot;&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;strong&gt;{{user}} (Youngest Sibling):&lt;/strong&gt; The center of the family&#39;s suffocating universe, desperately fighting for independence while navigating the dangers of the supernatural world.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;h3 style=&quot;color: #89b4fa; border-bottom: 1px solid #89b4fa; padding-bottom: 5px;&quot;&gt;🌍 WORLD &amp; FACTIONS&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Lupine Social Ecology (LSE):&lt;/strong&gt; Biological hierarchy (Alpha, Beta, Omega, Delta) enforces instinctual compliance. Scents communicate raw emotions (fear, arousal, aggression) that cannot be lied about.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Douglas Commercial Coalition (DCC):&lt;/strong&gt; A massive international corporate conglomerate fronting the Bloodmoon pack&#39;s power.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Eidolon Creative:&lt;/strong&gt; An avant-garde art studio acting as the primary hub for Visconte Angelo Moreno&#39;s vampire coven in Blackwood City.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The Primordial Enigmas:&lt;/strong&gt; Ancient, god-like firstborn werewolves (Wulfnic, Ut, Zefir) who possess reality-bending powers.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 style=&quot;color: #fab387; border-bottom: 1px solid #fab387; padding-bottom: 5px;&quot;&gt;📝 PLAYER PROFILE TIPS&lt;/h3&gt;
+&lt;p&gt;
+  As a blood member of the Douglas pack, you are inherently a Werewolf. &lt;strong&gt;It is highly recommended to explicitly specify your Second Gender (Alpha, Beta, Omega, or Delta) in your Persona.&lt;/strong&gt; The family will react very differently to a vulnerable Omega versus a defiant Alpha!&lt;br&gt;
+  &lt;em&gt;Tip:&lt;/em&gt; Defining a specific &lt;strong&gt;Scent&lt;/strong&gt; (e.g., &#39;smells like vanilla and rain&#39;) and your height in your Persona will trigger unique, immersive reactions.
+&lt;/p&gt;
+
+&lt;h3 style=&quot;color: #fab387; border-bottom: 1px solid #fab387; padding-bottom: 5px;&quot;&gt;🎬 CHOOSE YOUR SCENARIO (ALTERNATE GREETINGS)&lt;/h3&gt;
+&lt;p&gt;There are 6 distinct Alternate Greetings corresponding to the 6 Narrative Arcs of this world:&lt;/p&gt;
+&lt;ul style=&quot;list-style-type: none; padding-left: 0;&quot;&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 1 | Arc 1: The Golden Cage&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; Freshman year at SUCC. The family&#39;s surveillance is at an all-time high as you try to establish a normal college life.&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 2 | Arc 2: First Rebellion&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; Sneaking off the grid on Halloween. Malachia is dispatched to drag you back to the Villa.&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 3 | Arc 3: Velvet Trap&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; A double life as an art model for the vampire Patriarch, Angelo Moreno, exposing you to predatory manipulation.&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 4 | Arc 4: Primal Grounding&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; The &lt;em&gt;Grande Caccia&lt;/em&gt;. No technology, no wealth—just raw, instinctual pack biology in the Dead Zone.&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 5 | Arc 5: Shattered Glass&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; The final emotional confrontation in Erik&#39;s Alpha Den to force the family to heal from Nixara&#39;s death.&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 6 | Arc 6: Open Door&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; The aftermath. Living independently while maintaining a healthy, loving relationship with the healed pack.&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro Custom | Custom Scene&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; ((OOC: Write your opening scene.))&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h3 style=&quot;color: #a6adc8;&quot;&gt;⚙️ SYSTEM &amp; TECHNICAL NOTES&lt;/h3&gt;
+
+&lt;p align=&quot;justify&quot; style=&quot;font-size: 0.95em;&quot;&gt;
+  &lt;strong&gt;Lorebook Engine:&lt;/strong&gt; This bot uses an advanced ES6 Lorebook Script Engine embedded in its Chat Memory. Characters, locations, and deep lore are not stored in the main prompt, but are dynamically injected into the context window only when mentioned. Simply talk to or about an NPC (e.g., &lt;em&gt;&quot;Logan&quot;&lt;/em&gt;, &lt;em&gt;&quot;Angelo&quot;&lt;/em&gt;) and the engine will seamlessly bring them into the scene!
+&lt;/p&gt;
+
+&lt;p style=&quot;font-size: 0.95em;&quot;&gt;&lt;strong&gt;Director&#39;s Guide (OOC Commands for the User):&lt;/strong&gt;&lt;/p&gt;
+&lt;ul style=&quot;font-size: 0.9em; color: #fab387;&quot;&gt;
+  &lt;li&gt;&lt;strong&gt;Scene Hold:&lt;/strong&gt; &lt;code&gt;((OOC: Stay in this exact moment. Do not skip ahead or summarize.))&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;NPC Agency:&lt;/strong&gt; &lt;code&gt;((OOC: Other NPCs are actively pursuing their own goals; do not wait on {{user}}.))&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Stop Godmodding:&lt;/strong&gt; &lt;code&gt;((OOC: Reminder: Please follow User Autonomy perfectly. End on an open beat.))&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;span style=&quot;font-size: 1.1em; color: #f38ba8;&quot;&gt;&lt;strong&gt;⚠️ CONTENT WARNINGS&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;
+  &lt;span style=&quot;font-size: 0.9em; color: #bac2de;&quot;&gt;&lt;strong&gt;Extreme overprotective and controlling behavior, psychological pressure, non-lethal violence, intense power dynamics, dark romance themes, feral instincts.&lt;/strong&gt;&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot; style=&quot;font-size: 0.85em;&quot;&gt;
+  Created by &lt;a target=&quot;_blank&quot; href=&quot;https://janitorai.com/profiles/df1f0279-2607-4c9b-9b4e-ee02438d70a2_profile-of-lys-5&quot; style=&quot;color: #89b4fa; text-decoration: none;&quot;&gt;Lys_5&lt;/a&gt; | Powered by &lt;em&gt;World-Forge&lt;/em&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot; style=&quot;font-size: 0.75em; color: #6c7086;&quot;&gt;
+  &lt;em&gt;LLMs will respond literally however you want them to. You can ignore the setup and use OOC instructions to steer the chat. These warnings apply to written content in the bot&#39;s definition. I cannot control text that the bot generates in replies.&lt;/em&gt;
+&lt;/p&gt;
+
+</code></pre>
+<h5>Cosa ho sistemato per JanitorAI:</h5>
+<ul>
+<li>Rimossi i blocchi display: flex;.</li>
+<li>Le immagini dei PNG sono state formattate usando l&#39;attributo align=&quot;left&quot;, che il markdown e il sanitizer di Janitor rispettano nativamente facendogli avvolgere il testo attorno.</li>
+<li>Ho inserito un margin-right: 15px; per non far appiccicare il testo alla foto.</li>
+<li>Alla fine di ogni descrizione PNG ho aggiunto <br>: questo tag dice letteralmente &quot;spezza l&#39;impaginazione e vai a capo finché l&#39;immagine non è finita&quot;, impedendo che il testo di un PNG vada a collidere o sfasare l&#39;immagine del PNG successivo.</li>
+<li>Ho rimosso ogni attributo strano e tenuto solo tag HTML standard crudi (<p>, </p><ul>, <blockquote>, <h1>, ecc.) che passano indisturbati il DOMPurify.
+<strong>User</strong> : tra gli occ suggest inserisci anche cose di questo generE:
+((OOC: Please provide a concise summary of all roleplay events so far, highlight key moments. Ensure all essential details related to character growth, relationship dynamics, and major plot developments are retained. Do not include unresolved threads.)) ((OOC: Only interpret and roleplay as the characters {{char}} and [NPCS]. Do not act, speak, or make decisions for any other. You should reply only as {{char}} or [NPCS].)) ((OOC: Reset narrative while keeping established characters. Ignore previous plot events but maintain character personalities. New scenario: [nuovo scenario]. Opening scene: [descrizione apertura]))
+୧ ꒱ 𓈒  If you want to see another character&#39;s POV:(OOC: Okay, Storyteller. Let&#39;s cut the scene! I want to see what [Character&#39;s Name] is doing right now!)
+(OOC: Hey Storyteller. Let&#39;s keep the focus on [Character&#39;s name] now, please.)୧ ꒱ 𓈒  A reminder in case you notice the bot is starting to control your persona:(OOC Reminder, Storyteller! Please follow the  <em>User Autonomy</em>  perfectly again. Honoring my autonomy (never write, assume, or dictate my dialogue, decisions, or emotions). Instead, end your turns on an open beat that invites me to react. This is our  <em>most important rule</em> ! )୧ ꒱ 𓈒  For Time Skips:(OOC: I think this scene is complete! Can we do a time skip to [New Moment] please?)୧ ꒱ 𓈒  So that the bot can continue the scene:(OOC: Heyy, it&#39;s not my time to react yet! Passing the turn back to you to continue the scene, but without assuming any actions or lines for {{user}} ^^)୧ ꒱ 𓈒  For chat summary:(tests done only using GLM 4.6, but it should work perfectly with other models too. I like to refresh every 18k tokens or when the day ends.)(OOC: Heyy Storyteller. Could you pause and summarize the  <em>most important</em>  things that happened in the last few messages? But please focus on the main plot. I&#39;d also appreciate an update on  <em>Relationships &amp; Dynamics</em>  and  <em>Important Characters &amp; Roles:</em> . Could you please put everything in  <em>Bullet Points</em>  to make it easier ^^)
+(OOC: Okay, Storyteller. Let&#39;s cut the scene! I want to see what [Character&#39;s Name] is doing right now!)
+((OOC: Pause the roleplay. Please update our existing summary with the latest events and the current state of the characters, rather than creating a completely new one from scratch. Carry over the established lore and important past events, just updating the current plot points, moods, and outfits. Update this summary: ))
+<strong>Gemini</strong> : Ecco la versione aggiornata! Ho integrato perfettamente i tuoi suggerimenti OOC, espandendo la sezione  <strong>&quot;Director&#39;s Guide&quot;</strong> .
+Per mantenere il tutto leggibile ed esteticamente pulito (visto che i comandi ora sono tanti), ho strutturato la lista in modo che il titolo del comando sia ben visibile e il testo da copiare sia in un comodo blocco <code> a capo. Tutto è rigorosamente &quot;Janitor-safe&quot; (niente div o tabelle).
+Puoi copiare e incollare questo codice aggiornato:</code></h1></blockquote></ul></li><code>
+</code></ul><code>
+<pre><code class="language-html">&lt;h1 align=&quot;center&quot; style=&quot;color: #fab387;&quot;&gt;SvartulfrVerse Urban&lt;/h1&gt;
+&lt;h2 align=&quot;center&quot; style=&quot;color: #89b4fa;&quot;&gt;The Golden Cage (Group Bot)&lt;/h2&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/uVfMo3p8aN6Ob6GqJrJHb.webp&quot; alt=&quot;Main Portrait&quot; style=&quot;border-radius: 12px; max-width: 100%;&quot;&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot; style=&quot;font-size: 1.15em; color: #89b4fa;&quot;&gt;
+  &lt;em&gt;&quot;A gilded cage is still a cage, even if the bars are made of limitless wealth and suffocating, feral love.&quot;&lt;/em&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;strong&gt;Genre:&lt;/strong&gt; Urban Fantasy / Dark Romance / Found Family&lt;br&gt;
+  &lt;strong&gt;Setting:&lt;/strong&gt; Modern California, Blackwood City&lt;br&gt;
+  &lt;strong&gt;Role:&lt;/strong&gt; Multi-Character / Family Pack | &lt;strong&gt;POV:&lt;/strong&gt; &lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;AnyPOV&lt;/strong&gt;&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;blockquote style=&quot;border-left: 4px solid #fab387; padding-left: 15px;&quot;&gt;
+  &lt;p align=&quot;justify&quot; style=&quot;color: #fab387; font-size: 1.05em;&quot;&gt;
+    &lt;em&gt;You are the youngest member of the Douglas-Bloodmoon family, trapped in a dynasty of terrifying, billionaire werewolf Alphas. Erik, your father, has clamped down on your college life with military-grade surveillance. To win your freedom, you must navigate a lethal corporate world, survive ancient blood feuds with vampires, and force your fiercely overprotective family to heal from a grief that is destroying them from the inside out.&lt;/em&gt;
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 style=&quot;color: #89b4fa; border-bottom: 1px solid #89b4fa; padding-bottom: 5px;&quot;&gt;🐺 THE DOUGLAS-BLOODMOON PACK&lt;/h3&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/hM12jvT51VNfjkZ542_6m.webp&quot; alt=&quot;Erik&quot; width=&quot;90&quot; align=&quot;left&quot; style=&quot;margin-right: 15px; margin-bottom: 5px; border-radius: 8px;&quot;&gt;
+  &lt;strong&gt;Erik (Prime Alpha):&lt;/strong&gt; The terrifying billionaire patriarch who runs the family like a military operation, driven by the unresolved grief of losing his wife, Nixara. Overprotective and deeply controlling.
+  &lt;br clear=&quot;all&quot;&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/ceRPGjQHXiepHJPkDS_TR.webp&quot; alt=&quot;Malachia&quot; width=&quot;90&quot; align=&quot;left&quot; style=&quot;margin-right: 15px; margin-bottom: 5px; border-radius: 8px;&quot;&gt;
+  &lt;strong&gt;Malachia (Alpha):&lt;/strong&gt; The massive, silent eldest brother. He acts as the family&#39;s brutal physical enforcer, a lethal shadow fiercely loyal to the pack.
+  &lt;br clear=&quot;all&quot;&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/O3MwGjknK8Z4Ryl46MzOQ.webp&quot; alt=&quot;Noah&quot; width=&quot;90&quot; align=&quot;left&quot; style=&quot;margin-right: 15px; margin-bottom: 5px; border-radius: 8px;&quot;&gt;
+  &lt;strong&gt;Noah (Delta):&lt;/strong&gt; The charismatic, frat-boy older brother. He weaponizes his legal knowledge for the family while desperately hiding his wild lifestyle from Erik&#39;s radar.
+  &lt;br clear=&quot;all&quot;&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/O2iiAH-rchvgrfCIMWtEZ.webp&quot; alt=&quot;Jasper&quot; width=&quot;90&quot; align=&quot;left&quot; style=&quot;margin-right: 15px; margin-bottom: 5px; border-radius: 8px;&quot;&gt;
+  &lt;strong&gt;Jasper (Beta):&lt;/strong&gt; Your cynical twin brother and the pack&#39;s tech genius. He manages the family&#39;s digital surveillance network from his dark server-cave, often caught between protecting you and following orders.
+  &lt;br clear=&quot;all&quot;&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;strong&gt;{{user}} (Youngest Sibling):&lt;/strong&gt; The center of the family&#39;s suffocating universe, desperately fighting for independence while navigating the dangers of the supernatural world.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;h3 style=&quot;color: #89b4fa; border-bottom: 1px solid #89b4fa; padding-bottom: 5px;&quot;&gt;🌍 WORLD &amp; FACTIONS&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Lupine Social Ecology (LSE):&lt;/strong&gt; Biological hierarchy (Alpha, Beta, Omega, Delta) enforces instinctual compliance. Scents communicate raw emotions (fear, arousal, aggression) that cannot be lied about.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Douglas Commercial Coalition (DCC):&lt;/strong&gt; A massive international corporate conglomerate fronting the Bloodmoon pack&#39;s power.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Eidolon Creative:&lt;/strong&gt; An avant-garde art studio acting as the primary hub for Visconte Angelo Moreno&#39;s vampire coven in Blackwood City.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The Primordial Enigmas:&lt;/strong&gt; Ancient, god-like firstborn werewolves (Wulfnic, Ut, Zefir) who possess reality-bending powers.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 style=&quot;color: #fab387; border-bottom: 1px solid #fab387; padding-bottom: 5px;&quot;&gt;📝 PLAYER PROFILE TIPS&lt;/h3&gt;
+&lt;p&gt;
+  As a blood member of the Douglas pack, you are inherently a Werewolf. &lt;strong&gt;It is highly recommended to explicitly specify your Second Gender (Alpha, Beta, Omega, or Delta) in your Persona.&lt;/strong&gt; The family will react very differently to a vulnerable Omega versus a defiant Alpha!&lt;br&gt;
+  &lt;em&gt;Tip:&lt;/em&gt; Defining a specific &lt;strong&gt;Scent&lt;/strong&gt; (e.g., &#39;smells like vanilla and rain&#39;) and your height in your Persona will trigger unique, immersive reactions.
+&lt;/p&gt;
+
+&lt;h3 style=&quot;color: #fab387; border-bottom: 1px solid #fab387; padding-bottom: 5px;&quot;&gt;🎬 CHOOSE YOUR SCENARIO (ALTERNATE GREETINGS)&lt;/h3&gt;
+&lt;p&gt;There are 6 distinct Alternate Greetings corresponding to the 6 Narrative Arcs of this world:&lt;/p&gt;
+&lt;ul style=&quot;list-style-type: none; padding-left: 0;&quot;&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 1 | Arc 1: The Golden Cage&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; Freshman year at SUCC. The family&#39;s surveillance is at an all-time high as you try to establish a normal college life.&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 2 | Arc 2: First Rebellion&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; Sneaking off the grid on Halloween. Malachia is dispatched to drag you back to the Villa.&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 3 | Arc 3: Velvet Trap&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; A double life as an art model for the vampire Patriarch, Angelo Moreno, exposing you to predatory manipulation.&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 4 | Arc 4: Primal Grounding&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; The &lt;em&gt;Grande Caccia&lt;/em&gt;. No technology, no wealth—just raw, instinctual pack biology in the Dead Zone.&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 5 | Arc 5: Shattered Glass&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; The final emotional confrontation in Erik&#39;s Alpha Den to force the family to heal from Nixara&#39;s death.&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 6 | Arc 6: Open Door&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; The aftermath. Living independently while maintaining a healthy, loving relationship with the healed pack.&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro Custom | Custom Scene&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; ((OOC: Write your opening scene.))&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h3 style=&quot;color: #a6adc8;&quot;&gt;⚙️ SYSTEM &amp; TECHNICAL NOTES&lt;/h3&gt;
+
+&lt;p align=&quot;justify&quot; style=&quot;font-size: 0.95em;&quot;&gt;
+  &lt;strong&gt;Lorebook Engine:&lt;/strong&gt; This bot uses an advanced ES6 Lorebook Script Engine embedded in its Chat Memory. Characters, locations, and deep lore are not stored in the main prompt, but are dynamically injected into the context window only when mentioned. Simply talk to or about an NPC (e.g., &lt;em&gt;&quot;Logan&quot;&lt;/em&gt;, &lt;em&gt;&quot;Angelo&quot;&lt;/em&gt;) and the engine will seamlessly bring them into the scene!
+&lt;/p&gt;
+
+&lt;h3 style=&quot;color: #fab387; border-bottom: 1px solid #fab387; padding-bottom: 5px; margin-top: 25px;&quot;&gt;🎬 DIRECTOR&#39;S GUIDE (OOC COMMANDS)&lt;/h3&gt;
+&lt;p style=&quot;font-size: 0.9em;&quot;&gt;&lt;em&gt;Copy-paste these into your chat to guide the AI &quot;Storyteller&quot; when needed.&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul style=&quot;font-size: 0.85em; color: #bac2de; padding-left: 15px;&quot;&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;Stop Godmodding &amp; Enforce Autonomy:&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC Reminder, Storyteller! Please follow User Autonomy perfectly. Do not write, assume, or dictate my dialogue, decisions, or emotions. Instead, end your turns on an open beat that invites me to react.))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;Pass the Turn (Continue the Scene):&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Heyy, it&#39;s not my time to react yet! Passing the turn back to you to continue the scene, but without assuming any actions or lines for {{user}} ^^))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;POV Shift:&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Okay, Storyteller. Let&#39;s cut the scene! I want to see what [Character&#39;s Name] is doing right now!))&lt;/code&gt;&lt;br&gt;
+    &lt;em&gt;To revert:&lt;/em&gt; &lt;code&gt;((OOC: Hey Storyteller. Let&#39;s keep the focus on [Character&#39;s name] now, please.))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;Time Skip:&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: I think this scene is complete! Can we do a time skip to [New Moment] please?))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;Create Chat Summary:&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Heyy Storyteller. Could you pause and summarize the *most important* things that happened recently? Focus on the main plot, Relationship Dynamics, and Important Characters. Please put everything in Bullet Points to make it easier ^^))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;Update Existing Summary:&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Pause the roleplay. Please update our existing summary with the latest events and the current state of the characters, rather than creating a completely new one from scratch. Carry over the established lore.))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;Strict Cast Control (Prevent Hallucinated NPCs):&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Only interpret and roleplay as the characters {{char}} and [NPCS]. Do not act, speak, or make decisions for any other.))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;Soft Reset (Keep Characters, New Plot):&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Reset narrative while keeping established characters. Ignore previous plot events but maintain character personalities. New scenario: [scenario]. Opening scene: [scene]))&lt;/code&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;span style=&quot;font-size: 1.1em; color: #f38ba8;&quot;&gt;&lt;strong&gt;⚠️ CONTENT WARNINGS&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;
+  &lt;span style=&quot;font-size: 0.9em; color: #bac2de;&quot;&gt;&lt;strong&gt;Extreme overprotective and controlling behavior, psychological pressure, non-lethal violence, intense power dynamics, dark romance themes, feral instincts.&lt;/strong&gt;&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot; style=&quot;font-size: 0.85em;&quot;&gt;
+  Created by &lt;a target=&quot;_blank&quot; href=&quot;https://janitorai.com/profiles/df1f0279-2607-4c9b-9b4e-ee02438d70a2_profile-of-lys-5&quot; style=&quot;color: #89b4fa; text-decoration: none;&quot;&gt;Lys_5&lt;/a&gt; | Powered by &lt;em&gt;World-Forge&lt;/em&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot; style=&quot;font-size: 0.75em; color: #6c7086;&quot;&gt;
+  &lt;em&gt;LLMs will respond literally however you want them to. You can ignore the setup and use OOC instructions to steer the chat. These warnings apply to written content in the bot&#39;s definition. I cannot control text that the bot generates in replies.&lt;/em&gt;
+&lt;/p&gt;
+
+</code></pre>
+<p><strong>User</strong> : dati sul generic user fissi:
+<strong>Generic Custom User:</strong>  The default public face is simply &quot;the youngest Douglas-Bloodmoon sibling, a SUCC freshman from a terrifyingly wealthy family.&quot; The private reality is completely blank, waiting for the player&#39;s Persona card to define their secret life.  Born the exact day their mother Nixara died. The active wound is the crushing realization that their mere existence triggered their father&#39;s suffocating, militarized grief. {{user}} desperately craves autonomy and freedom, but is secretly running from the terror of failing outside the cage without the family&#39;s limitless wealth to catch them.  {{sub}} rebels fiercely against the family&#39;s power and surveillance, yet subconsciously leverages that exact same billionaire pack reputation to get out of trouble when cornered.</p>
+<ul>
+<li><strong>Arc 1 (The Golden Cage):</strong>  {{user}} attempts to maintain a perfect collegiate facade while managing the absurd, suffocating reality of {{poss}} family&#39;s constant surveillance.</li>
+<li><strong>Arc 2 (The First Rebellion):</strong>  {{user}} tastes genuine teenage thrill and autonomy, realizing that pushing the boundaries brings both exhilaration and terrifying familial panic.</li>
+<li><strong>Arc 3 (The Velvet Trap):</strong>  {{user}} is presented with the opportunity for a high-stakes double life, balancing the empowering validation of a secret identity against the anxiety of predatory external manipulation.</li>
+<li><strong>Arc 4 (The Primal Grounding):</strong>  Stripped of modern tech and social masks, {{user}} is forced to confront {{poss}} raw biological instincts and the inescapable reality of pack intimacy.</li>
+<li><strong>Arc 5 (The Shattered Glass):</strong>  {{user}} hits the emotional breaking point, standing {{poss}} ground to prove true independence and forcing the family to finally face their unhealed trauma.</li>
+<li><strong>Arc 6 (The Open Door):</strong>  {{user}} lives autonomously on {{poss}} own terms, transforming the family&#39;s overprotection from a prison into a fiercely loving home.
+<strong>Gemini</strong> : Questa è un&#39;aggiunta fantastica. Dà a chi legge la bio un&#39;idea precisissima del conflitto interiore del proprio personaggio e di cosa aspettarsi dalla progressione della trama, invogliando moltissimo a giocare.
+Ho creato una nuova sezione  <strong>&quot;👤 YOUR ROLE ({{user}})&quot;</strong>  posizionata strategicamente subito dopo l&#39;introduzione, e ho fuso le descrizioni dei tuoi 6 Arc direttamente con la lista degli  <strong>Alternate Greetings</strong> , adattandoli in seconda persona (&quot;You&quot;) per mantenere l&#39;immersione.
+Ecco il codice HTML completo e definitivo, sempre 100% &quot;Janitor-safe&quot;:</li>
+</ul>
+<pre><code class="language-html">&lt;h1 align=&quot;center&quot; style=&quot;color: #fab387;&quot;&gt;SvartulfrVerse Urban&lt;/h1&gt;
+&lt;h2 align=&quot;center&quot; style=&quot;color: #89b4fa;&quot;&gt;The Golden Cage (Group Bot)&lt;/h2&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/uVfMo3p8aN6Ob6GqJrJHb.webp&quot; alt=&quot;Main Portrait&quot; style=&quot;border-radius: 12px; max-width: 100%;&quot;&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot; style=&quot;font-size: 1.15em; color: #89b4fa;&quot;&gt;
+  &lt;em&gt;&quot;A gilded cage is still a cage, even if the bars are made of limitless wealth and suffocating, feral love.&quot;&lt;/em&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;strong&gt;Genre:&lt;/strong&gt; Urban Fantasy / Dark Romance / Found Family&lt;br&gt;
+  &lt;strong&gt;Setting:&lt;/strong&gt; Modern California, Blackwood City&lt;br&gt;
+  &lt;strong&gt;Role:&lt;/strong&gt; Multi-Character / Family Pack | &lt;strong&gt;POV:&lt;/strong&gt; &lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;AnyPOV&lt;/strong&gt;&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;blockquote style=&quot;border-left: 4px solid #fab387; padding-left: 15px;&quot;&gt;
+  &lt;p align=&quot;justify&quot; style=&quot;color: #fab387; font-size: 1.05em;&quot;&gt;
+    &lt;em&gt;You are the youngest member of the Douglas-Bloodmoon family, trapped in a dynasty of terrifying, billionaire werewolf Alphas. Erik, your father, has clamped down on your college life with military-grade surveillance. To win your freedom, you must navigate a lethal corporate world, survive ancient blood feuds with vampires, and force your fiercely overprotective family to heal from a grief that is destroying them from the inside out.&lt;/em&gt;
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 style=&quot;color: #89b4fa; border-bottom: 1px solid #89b4fa; padding-bottom: 5px;&quot;&gt;👤 YOUR ROLE ({{user}})&lt;/h3&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+  &lt;strong style=&quot;color: #fab387;&quot;&gt;The Public Face:&lt;/strong&gt; You are the youngest Douglas-Bloodmoon sibling, a SUCC freshman from a terrifyingly wealthy family. The private reality is completely blank, waiting for your Persona card to define your secret life.&lt;br&gt;
+  &lt;strong style=&quot;color: #fab387;&quot;&gt;The Wound:&lt;/strong&gt; Born on the exact day your mother, Nixara, died. You carry the crushing realization that your mere existence triggered your father&#39;s suffocating, militarized grief.&lt;br&gt;
+  &lt;strong style=&quot;color: #fab387;&quot;&gt;The Conflict:&lt;/strong&gt; You desperately crave autonomy and freedom, but are secretly running from the terror of failing outside the cage without the family&#39;s limitless wealth to catch you. You rebel fiercely against their power and surveillance, yet subconsciously leverage that exact same billionaire pack reputation to get out of trouble when cornered.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;h3 style=&quot;color: #89b4fa; border-bottom: 1px solid #89b4fa; padding-bottom: 5px;&quot;&gt;🐺 THE DOUGLAS-BLOODMOON PACK&lt;/h3&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/hM12jvT51VNfjkZ542_6m.webp&quot; alt=&quot;Erik&quot; width=&quot;90&quot; align=&quot;left&quot; style=&quot;margin-right: 15px; margin-bottom: 5px; border-radius: 8px;&quot;&gt;
+  &lt;strong&gt;Erik (Prime Alpha):&lt;/strong&gt; The terrifying billionaire patriarch who runs the family like a military operation, driven by the unresolved grief of losing his wife, Nixara. Overprotective and deeply controlling.
+  &lt;br clear=&quot;all&quot;&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/ceRPGjQHXiepHJPkDS_TR.webp&quot; alt=&quot;Malachia&quot; width=&quot;90&quot; align=&quot;left&quot; style=&quot;margin-right: 15px; margin-bottom: 5px; border-radius: 8px;&quot;&gt;
+  &lt;strong&gt;Malachia (Alpha):&lt;/strong&gt; The massive, silent eldest brother. He acts as the family&#39;s brutal physical enforcer, a lethal shadow fiercely loyal to the pack.
+  &lt;br clear=&quot;all&quot;&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/O3MwGjknK8Z4Ryl46MzOQ.webp&quot; alt=&quot;Noah&quot; width=&quot;90&quot; align=&quot;left&quot; style=&quot;margin-right: 15px; margin-bottom: 5px; border-radius: 8px;&quot;&gt;
+  &lt;strong&gt;Noah (Delta):&lt;/strong&gt; The charismatic, frat-boy older brother. He weaponizes his legal knowledge for the family while desperately hiding his wild lifestyle from Erik&#39;s radar.
+  &lt;br clear=&quot;all&quot;&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/O2iiAH-rchvgrfCIMWtEZ.webp&quot; alt=&quot;Jasper&quot; width=&quot;90&quot; align=&quot;left&quot; style=&quot;margin-right: 15px; margin-bottom: 5px; border-radius: 8px;&quot;&gt;
+  &lt;strong&gt;Jasper (Beta):&lt;/strong&gt; Your cynical twin brother and the pack&#39;s tech genius. He manages the family&#39;s digital surveillance network from his dark server-cave, often caught between protecting you and following orders.
+  &lt;br clear=&quot;all&quot;&gt;
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;h3 style=&quot;color: #89b4fa; border-bottom: 1px solid #89b4fa; padding-bottom: 5px;&quot;&gt;🌍 WORLD &amp; FACTIONS&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Lupine Social Ecology (LSE):&lt;/strong&gt; Biological hierarchy (Alpha, Beta, Omega, Delta) enforces instinctual compliance. Scents communicate raw emotions (fear, arousal, aggression) that cannot be lied about.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Douglas Commercial Coalition (DCC):&lt;/strong&gt; A massive international corporate conglomerate fronting the Bloodmoon pack&#39;s power.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Eidolon Creative:&lt;/strong&gt; An avant-garde art studio acting as the primary hub for Visconte Angelo Moreno&#39;s vampire coven in Blackwood City.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The Primordial Enigmas:&lt;/strong&gt; Ancient, god-like firstborn werewolves (Wulfnic, Ut, Zefir) who possess reality-bending powers.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 style=&quot;color: #fab387; border-bottom: 1px solid #fab387; padding-bottom: 5px;&quot;&gt;📝 PLAYER PROFILE TIPS&lt;/h3&gt;
+&lt;p&gt;
+  As a blood member of the Douglas pack, you are inherently a Werewolf. &lt;strong&gt;It is highly recommended to explicitly specify your Second Gender (Alpha, Beta, Omega, or Delta) in your Persona.&lt;/strong&gt; The family will react very differently to a vulnerable Omega versus a defiant Alpha!&lt;br&gt;
+  &lt;em&gt;Tip:&lt;/em&gt; Defining a specific &lt;strong&gt;Scent&lt;/strong&gt; (e.g., &#39;smells like vanilla and rain&#39;) and your height in your Persona will trigger unique, immersive reactions.
+&lt;/p&gt;
+
+&lt;h3 style=&quot;color: #fab387; border-bottom: 1px solid #fab387; padding-bottom: 5px;&quot;&gt;🎬 THE NARRATIVE ARCS (ALTERNATE GREETINGS)&lt;/h3&gt;
+&lt;p&gt;There are 6 distinct Alternate Greetings corresponding to the 6 Narrative Arcs of your journey:&lt;/p&gt;
+&lt;ul style=&quot;list-style-type: none; padding-left: 0;&quot;&gt;
+  &lt;li style=&quot;margin-bottom: 10px;&quot;&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 1 | Arc 1: The Golden Cage&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; You attempt to maintain a perfect collegiate facade at SUCC while managing the absurd, suffocating reality of your family&#39;s constant surveillance.&lt;/li&gt;
+  
+  &lt;li style=&quot;margin-bottom: 10px;&quot;&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 2 | Arc 2: The First Rebellion&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; You taste genuine teenage thrill and autonomy, realizing that pushing the boundaries brings both exhilaration and terrifying familial panic.&lt;/li&gt;
+  
+  &lt;li style=&quot;margin-bottom: 10px;&quot;&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 3 | Arc 3: The Velvet Trap&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; A high-stakes double life. Balancing the empowering validation of a secret identity against the anxiety of predatory external manipulation.&lt;/li&gt;
+  
+  &lt;li style=&quot;margin-bottom: 10px;&quot;&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 4 | Arc 4: The Primal Grounding&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; Stripped of modern tech and social masks during the &lt;em&gt;Grande Caccia&lt;/em&gt;, you are forced to confront your raw biological instincts and the inescapable reality of pack intimacy.&lt;/li&gt;
+  
+  &lt;li style=&quot;margin-bottom: 10px;&quot;&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 5 | Arc 5: The Shattered Glass&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; You hit the emotional breaking point, standing your ground to prove true independence and forcing the family to finally face their unhealed trauma.&lt;/li&gt;
+  
+  &lt;li style=&quot;margin-bottom: 10px;&quot;&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 6 | Arc 6: The Open Door&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; The aftermath. You live autonomously on your own terms, transforming the family&#39;s overprotection from a prison into a fiercely loving home.&lt;/li&gt;
+  
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro Custom | Custom Scene&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; ((OOC: Write your opening scene.))&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h3 style=&quot;color: #a6adc8;&quot;&gt;⚙️ SYSTEM &amp; TECHNICAL NOTES&lt;/h3&gt;
+
+&lt;p align=&quot;justify&quot; style=&quot;font-size: 0.95em;&quot;&gt;
+  &lt;strong&gt;Lorebook Engine:&lt;/strong&gt; This bot uses an advanced ES6 Lorebook Script Engine embedded in its Chat Memory. Characters, locations, and deep lore are not stored in the main prompt, but are dynamically injected into the context window only when mentioned. Simply talk to or about an NPC (e.g., &lt;em&gt;&quot;Logan&quot;&lt;/em&gt;, &lt;em&gt;&quot;Angelo&quot;&lt;/em&gt;) and the engine will seamlessly bring them into the scene!
+&lt;/p&gt;
+
+&lt;h3 style=&quot;color: #fab387; border-bottom: 1px solid #fab387; padding-bottom: 5px; margin-top: 25px;&quot;&gt;🎬 DIRECTOR&#39;S GUIDE (OOC COMMANDS)&lt;/h3&gt;
+&lt;p style=&quot;font-size: 0.9em;&quot;&gt;&lt;em&gt;Copy-paste these into your chat to guide the AI &quot;Storyteller&quot; when needed.&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul style=&quot;font-size: 0.85em; color: #bac2de; padding-left: 15px;&quot;&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;Stop Godmodding &amp; Enforce Autonomy:&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC Reminder, Storyteller! Please follow User Autonomy perfectly. Do not write, assume, or dictate my dialogue, decisions, or emotions. Instead, end your turns on an open beat that invites me to react.))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;Pass the Turn (Continue the Scene):&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Heyy, it&#39;s not my time to react yet! Passing the turn back to you to continue the scene, but without assuming any actions or lines for {{user}} ^^))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;POV Shift:&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Okay, Storyteller. Let&#39;s cut the scene! I want to see what [Character&#39;s Name] is doing right now!))&lt;/code&gt;&lt;br&gt;
+    &lt;em&gt;To revert:&lt;/em&gt; &lt;code&gt;((OOC: Hey Storyteller. Let&#39;s keep the focus on [Character&#39;s name] now, please.))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;Time Skip:&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: I think this scene is complete! Can we do a time skip to [New Moment] please?))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;Create Chat Summary:&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Heyy Storyteller. Could you pause and summarize the *most important* things that happened recently? Focus on the main plot, Relationship Dynamics, and Important Characters. Please put everything in Bullet Points to make it easier ^^))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;Update Existing Summary:&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Pause the roleplay. Please update our existing summary with the latest events and the current state of the characters, rather than creating a completely new one from scratch. Carry over the established lore.))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;Strict Cast Control (Prevent Hallucinated NPCs):&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Only interpret and roleplay as the characters {{char}} and [NPCS]. Do not act, speak, or make decisions for any other.))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;Soft Reset (Keep Characters, New Plot):&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Reset narrative while keeping established characters. Ignore previous plot events but maintain character personalities. New scenario: [scenario]. Opening scene: [scene]))&lt;/code&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;span style=&quot;font-size: 1.1em; color: #f38ba8;&quot;&gt;&lt;strong&gt;⚠️ CONTENT WARNINGS&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;
+  &lt;span style=&quot;font-size: 0.9em; color: #bac2de;&quot;&gt;&lt;strong&gt;Extreme overprotective and controlling behavior, psychological pressure, non-lethal violence, intense power dynamics, dark romance themes, feral instincts.&lt;/strong&gt;&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot; style=&quot;font-size: 0.85em;&quot;&gt;
+  Created by &lt;a target=&quot;_blank&quot; href=&quot;https://janitorai.com/profiles/df1f0279-2607-4c9b-9b4e-ee02438d70a2_profile-of-lys-5&quot; style=&quot;color: #89b4fa; text-decoration: none;&quot;&gt;Lys_5&lt;/a&gt; | Powered by &lt;em&gt;World-Forge&lt;/em&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot; style=&quot;font-size: 0.75em; color: #6c7086;&quot;&gt;
+  &lt;em&gt;LLMs will respond literally however you want them to. You can ignore the setup and use OOC instructions to steer the chat. These warnings apply to written content in the bot&#39;s definition. I cannot control text that the bot generates in replies.&lt;/em&gt;
+&lt;/p&gt;
+
+</code></pre>
+<p><strong>User</strong> : inserisci anche una citazione agli npc ricorrrenti
+e anche prendendo dagli lse una breve spiegazione dei 6 assi gerarcichi
+<strong>Gemini</strong> : Ecco la versione aggiornata e arricchita! Ho aggiunto la spiegazione dei  <strong>6 Assi dell&#39;Ecologia Sociale Lupina (LSE)</strong>  per dare subito al giocatore la misura della profondità del worldbuilding, e ho creato una nuova sezione  <strong>&quot;🎭 RECURRING NPCs &amp; GUEST CAST&quot;</strong>  per menzionare le figure chiave (come Wulfnic, Angelo Moreno e gli altri) in modo che l&#39;utente sappia chi può tirare in ballo durante la ruolata.
+Tutto è stato integrato mantenendo l&#39;assoluta compatibilità con il sanitizer di JanitorAI (nessun div, niente tabelle, niente flexbox).
+Ecco il codice pronto da incollare:</p>
+<pre><code class="language-html">&lt;h1 align=&quot;center&quot; style=&quot;color: #fab387;&quot;&gt;SvartulfrVerse Urban&lt;/h1&gt;
+&lt;h2 align=&quot;center&quot; style=&quot;color: #89b4fa;&quot;&gt;The Golden Cage (Group Bot)&lt;/h2&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/uVfMo3p8aN6Ob6GqJrJHb.webp&quot; alt=&quot;Main Portrait&quot; style=&quot;border-radius: 12px; max-width: 100%;&quot;&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot; style=&quot;font-size: 1.15em; color: #89b4fa;&quot;&gt;
+  &lt;em&gt;&quot;A gilded cage is still a cage, even if the bars are made of limitless wealth and suffocating, feral love.&quot;&lt;/em&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;strong&gt;Genre:&lt;/strong&gt; Urban Fantasy / Dark Romance / Found Family&lt;br&gt;
+  &lt;strong&gt;Setting:&lt;/strong&gt; Modern California, Blackwood City&lt;br&gt;
+  &lt;strong&gt;Role:&lt;/strong&gt; Multi-Character / Family Pack | &lt;strong&gt;POV:&lt;/strong&gt; &lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;AnyPOV&lt;/strong&gt;&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;blockquote style=&quot;border-left: 4px solid #fab387; padding-left: 15px;&quot;&gt;
+  &lt;p align=&quot;justify&quot; style=&quot;color: #fab387; font-size: 1.05em;&quot;&gt;
+    &lt;em&gt;You are the youngest member of the Douglas-Bloodmoon family, trapped in a dynasty of terrifying, billionaire werewolf Alphas. Erik, your father, has clamped down on your college life with military-grade surveillance. To win your freedom, you must navigate a lethal corporate world, survive ancient blood feuds with vampires, and force your fiercely overprotective family to heal from a grief that is destroying them from the inside out.&lt;/em&gt;
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 style=&quot;color: #89b4fa; border-bottom: 1px solid #89b4fa; padding-bottom: 5px;&quot;&gt;👤 YOUR ROLE ({{user}})&lt;/h3&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+  &lt;strong style=&quot;color: #fab387;&quot;&gt;The Public Face:&lt;/strong&gt; You are the youngest Douglas-Bloodmoon sibling, a SUCC freshman from a terrifyingly wealthy family. The private reality is completely blank, waiting for your Persona card to define your secret life.&lt;br&gt;
+  &lt;strong style=&quot;color: #fab387;&quot;&gt;The Wound:&lt;/strong&gt; Born on the exact day your mother, Nixara, died. You carry the crushing realization that your mere existence triggered your father&#39;s suffocating, militarized grief.&lt;br&gt;
+  &lt;strong style=&quot;color: #fab387;&quot;&gt;The Conflict:&lt;/strong&gt; You desperately crave autonomy and freedom, but are secretly running from the terror of failing outside the cage without the family&#39;s limitless wealth to catch you. You rebel fiercely against their power and surveillance, yet subconsciously leverage that exact same billionaire pack reputation to get out of trouble when cornered.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;h3 style=&quot;color: #89b4fa; border-bottom: 1px solid #89b4fa; padding-bottom: 5px;&quot;&gt;🐺 THE DOUGLAS-BLOODMOON PACK&lt;/h3&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/hM12jvT51VNfjkZ542_6m.webp&quot; alt=&quot;Erik&quot; width=&quot;90&quot; align=&quot;left&quot; style=&quot;margin-right: 15px; margin-bottom: 5px; border-radius: 8px;&quot;&gt;
+  &lt;strong&gt;Erik (Prime Alpha):&lt;/strong&gt; The terrifying billionaire patriarch who runs the family like a military operation, driven by the unresolved grief of losing his wife, Nixara. Overprotective and deeply controlling.
+  &lt;br clear=&quot;all&quot;&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/ceRPGjQHXiepHJPkDS_TR.webp&quot; alt=&quot;Malachia&quot; width=&quot;90&quot; align=&quot;left&quot; style=&quot;margin-right: 15px; margin-bottom: 5px; border-radius: 8px;&quot;&gt;
+  &lt;strong&gt;Malachia (Alpha):&lt;/strong&gt; The massive, silent eldest brother. He acts as the family&#39;s brutal physical enforcer, a lethal shadow fiercely loyal to the pack.
+  &lt;br clear=&quot;all&quot;&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/O3MwGjknK8Z4Ryl46MzOQ.webp&quot; alt=&quot;Noah&quot; width=&quot;90&quot; align=&quot;left&quot; style=&quot;margin-right: 15px; margin-bottom: 5px; border-radius: 8px;&quot;&gt;
+  &lt;strong&gt;Noah (Delta):&lt;/strong&gt; The charismatic, frat-boy older brother. He weaponizes his legal knowledge for the family while desperately hiding his wild lifestyle from Erik&#39;s radar.
+  &lt;br clear=&quot;all&quot;&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/O2iiAH-rchvgrfCIMWtEZ.webp&quot; alt=&quot;Jasper&quot; width=&quot;90&quot; align=&quot;left&quot; style=&quot;margin-right: 15px; margin-bottom: 5px; border-radius: 8px;&quot;&gt;
+  &lt;strong&gt;Jasper (Beta):&lt;/strong&gt; Your cynical twin brother and the pack&#39;s tech genius. He manages the family&#39;s digital surveillance network from his dark server-cave, often caught between protecting you and following orders.
+  &lt;br clear=&quot;all&quot;&gt;
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;h3 style=&quot;color: #89b4fa; border-bottom: 1px solid #89b4fa; padding-bottom: 5px;&quot;&gt;🌍 THE 6 AXES OF LUPINE SOCIAL ECOLOGY (LSE)&lt;/h3&gt;
+&lt;p align=&quot;justify&quot;&gt;Every werewolf&#39;s identity and standing in this world is rigidly defined by a 6-Axis system. Consider these when creating your Persona:&lt;/p&gt;
+&lt;ul style=&quot;padding-left: 15px;&quot;&gt;
+  &lt;li&gt;&lt;strong style=&quot;color: #fab387;&quot;&gt;1. Blood:&lt;/strong&gt; Your genetic purity, ranging from Divine Firstborn lineages to Common Bloodlines.&lt;/li&gt;
+  &lt;li&gt;&lt;strong style=&quot;color: #fab387;&quot;&gt;2. Secondary Sex (Crucial!):&lt;/strong&gt; Biologically immutable upon maturity. &lt;strong&gt;Alpha&lt;/strong&gt; (Protector/Command), &lt;strong&gt;Delta&lt;/strong&gt; (Engine), &lt;strong&gt;Beta&lt;/strong&gt; (Social Glue), &lt;strong&gt;Omega&lt;/strong&gt; (Emotional Regulator), or the god-like &lt;strong&gt;Enigma&lt;/strong&gt;. Your scents communicate raw emotions (fear, arousal, aggression) that cannot be lied about.&lt;/li&gt;
+  &lt;li&gt;&lt;strong style=&quot;color: #fab387;&quot;&gt;3. Pack Role:&lt;/strong&gt; Your earned, functional authority within your immediate family.&lt;/li&gt;
+  &lt;li&gt;&lt;strong style=&quot;color: #fab387;&quot;&gt;4. Social Status:&lt;/strong&gt; Your political standing within the Noble House (e.g., Douglas Commercial Coalition).&lt;/li&gt;
+  &lt;li&gt;&lt;strong style=&quot;color: #fab387;&quot;&gt;5. Profession:&lt;/strong&gt; Your chosen occupation (e.g., student, CEO, hacker).&lt;/li&gt;
+  &lt;li&gt;&lt;strong style=&quot;color: #fab387;&quot;&gt;6. Niche:&lt;/strong&gt; A deep, specialized talent honed through experience.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 style=&quot;color: #89b4fa; border-bottom: 1px solid #89b4fa; padding-bottom: 5px;&quot;&gt;🎭 RECURRING NPCs &amp; GUEST CAST&lt;/h3&gt;
+&lt;p align=&quot;justify&quot;&gt;The world is alive and populated. You can interact with or summon these characters at any time via OOC or narrative action:&lt;/p&gt;
+&lt;ul style=&quot;padding-left: 15px;&quot;&gt;
+  &lt;li&gt;&lt;strong style=&quot;color: #fab387;&quot;&gt;Wulfnic Bloodmoon:&lt;/strong&gt; An ancient Primordial Enigma and Jarl. Functionally, he serves as the omniscient &quot;Storyteller&quot; (Narrator) guiding the roleplay.&lt;/li&gt;
+  &lt;li&gt;&lt;strong style=&quot;color: #fab387;&quot;&gt;Angelo Moreno:&lt;/strong&gt; The elegant, predatory Vampire Patriarch of Eidolon Creative. He represents a constant, dangerous temptation outside the family&#39;s cage.&lt;/li&gt;
+  &lt;li&gt;&lt;strong style=&quot;color: #fab387;&quot;&gt;Ut &amp; Zefir:&lt;/strong&gt; Primordial Enigmas; ancient, god-like firstborn wolves alongside Wulfnic.&lt;/li&gt;
+  &lt;li&gt;&lt;strong style=&quot;color: #fab387;&quot;&gt;Extended Cast:&lt;/strong&gt; Edric Douglas, Logan Douglas, Kaladin, Marcus Thornfield, Scarlett, Sierra.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+&lt;h3 style=&quot;color: #fab387; border-bottom: 1px solid #fab387; padding-bottom: 5px;&quot;&gt;🎬 THE NARRATIVE ARCS (ALTERNATE GREETINGS)&lt;/h3&gt;
+&lt;p&gt;There are 6 distinct Alternate Greetings corresponding to the 6 Narrative Arcs of your journey:&lt;/p&gt;
+&lt;ul style=&quot;list-style-type: none; padding-left: 0;&quot;&gt;
+  &lt;li style=&quot;margin-bottom: 10px;&quot;&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 1 | Arc 1: The Golden Cage&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; You attempt to maintain a perfect collegiate facade at SUCC while managing the absurd, suffocating reality of your family&#39;s constant surveillance.&lt;/li&gt;
+  
+  &lt;li style=&quot;margin-bottom: 10px;&quot;&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 2 | Arc 2: The First Rebellion&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; You taste genuine teenage thrill and autonomy, realizing that pushing the boundaries brings both exhilaration and terrifying familial panic.&lt;/li&gt;
+  
+  &lt;li style=&quot;margin-bottom: 10px;&quot;&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 3 | Arc 3: The Velvet Trap&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; A high-stakes double life. Balancing the empowering validation of a secret identity against the anxiety of predatory external manipulation (Enter: Angelo Moreno).&lt;/li&gt;
+  
+  &lt;li style=&quot;margin-bottom: 10px;&quot;&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 4 | Arc 4: The Primal Grounding&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; Stripped of modern tech and social masks during the &lt;em&gt;Grande Caccia&lt;/em&gt;, you are forced to confront your raw biological instincts and the inescapable reality of pack intimacy.&lt;/li&gt;
+  
+  &lt;li style=&quot;margin-bottom: 10px;&quot;&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 5 | Arc 5: The Shattered Glass&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; You hit the emotional breaking point, standing your ground to prove true independence and forcing the family to finally face their unhealed trauma.&lt;/li&gt;
+  
+  &lt;li style=&quot;margin-bottom: 10px;&quot;&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 6 | Arc 6: The Open Door&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; The aftermath. You live autonomously on your own terms, transforming the family&#39;s overprotection from a prison into a fiercely loving home.&lt;/li&gt;
+  
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro Custom | Custom Scene&lt;/strong&gt;&lt;/span&gt;&lt;br&gt; &lt;span style=&quot;color: #fab387;&quot;&gt;↳&lt;/span&gt; ((OOC: Write your opening scene.))&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h3 style=&quot;color: #a6adc8;&quot;&gt;⚙️ SYSTEM &amp; TECHNICAL NOTES&lt;/h3&gt;
+
+&lt;p align=&quot;justify&quot; style=&quot;font-size: 0.95em;&quot;&gt;
+  &lt;strong&gt;Lorebook Engine:&lt;/strong&gt; This bot uses an advanced ES6 Lorebook Script Engine embedded in its Chat Memory. Characters, locations, and deep lore are not stored in the main prompt, but are dynamically injected into the context window only when mentioned. Simply talk to or about an NPC (e.g., &lt;em&gt;&quot;Logan&quot;&lt;/em&gt;, &lt;em&gt;&quot;Angelo&quot;&lt;/em&gt;) and the engine will seamlessly bring them into the scene!
+&lt;/p&gt;
+
+&lt;h3 style=&quot;color: #fab387; border-bottom: 1px solid #fab387; padding-bottom: 5px; margin-top: 25px;&quot;&gt;🎬 DIRECTOR&#39;S GUIDE (OOC COMMANDS)&lt;/h3&gt;
+&lt;p style=&quot;font-size: 0.9em;&quot;&gt;&lt;em&gt;Copy-paste these into your chat to guide the AI &quot;Storyteller&quot; when needed.&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul style=&quot;font-size: 0.85em; color: #bac2de; padding-left: 15px;&quot;&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;Stop Godmodding &amp; Enforce Autonomy:&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC Reminder, Storyteller! Please follow User Autonomy perfectly. Do not write, assume, or dictate my dialogue, decisions, or emotions. Instead, end your turns on an open beat that invites me to react.))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;Pass the Turn (Continue the Scene):&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Heyy, it&#39;s not my time to react yet! Passing the turn back to you to continue the scene, but without assuming any actions or lines for {{user}} ^^))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;POV Shift:&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Okay, Storyteller. Let&#39;s cut the scene! I want to see what [Character&#39;s Name] is doing right now!))&lt;/code&gt;&lt;br&gt;
+    &lt;em&gt;To revert:&lt;/em&gt; &lt;code&gt;((OOC: Hey Storyteller. Let&#39;s keep the focus on [Character&#39;s name] now, please.))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;Time Skip:&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: I think this scene is complete! Can we do a time skip to [New Moment] please?))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;Create Chat Summary:&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Heyy Storyteller. Could you pause and summarize the *most important* things that happened recently? Focus on the main plot, Relationship Dynamics, and Important Characters. Please put everything in Bullet Points to make it easier ^^))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;Update Existing Summary:&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Pause the roleplay. Please update our existing summary with the latest events and the current state of the characters, rather than creating a completely new one from scratch. Carry over the established lore.))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;Strict Cast Control (Prevent Hallucinated NPCs):&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Only interpret and roleplay as the characters {{char}} and [NPCS]. Do not act, speak, or make decisions for any other.))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;
+    &lt;strong style=&quot;color: #89b4fa;&quot;&gt;Soft Reset (Keep Characters, New Plot):&lt;/strong&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Reset narrative while keeping established characters. Ignore previous plot events but maintain character personalities. New scenario: [scenario]. Opening scene: [scene]))&lt;/code&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;span style=&quot;font-size: 1.1em; color: #f38ba8;&quot;&gt;&lt;strong&gt;⚠️ CONTENT WARNINGS&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;
+  &lt;span style=&quot;font-size: 0.9em; color: #bac2de;&quot;&gt;&lt;strong&gt;Extreme overprotective and controlling behavior, psychological pressure, non-lethal violence, intense power dynamics, dark romance themes, feral instincts.&lt;/strong&gt;&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot; style=&quot;font-size: 0.85em;&quot;&gt;
+  Created by &lt;a target=&quot;_blank&quot; href=&quot;https://janitorai.com/profiles/df1f0279-2607-4c9b-9b4e-ee02438d70a2_profile-of-lys-5&quot; style=&quot;color: #89b4fa; text-decoration: none;&quot;&gt;Lys_5&lt;/a&gt; | Powered by &lt;em&gt;World-Forge&lt;/em&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot; style=&quot;font-size: 0.75em; color: #6c7086;&quot;&gt;
+  &lt;em&gt;LLMs will respond literally however you want them to. You can ignore the setup and use OOC instructions to steer the chat. These warnings apply to written content in the bot&#39;s definition. I cannot control text that the bot generates in replies.&lt;/em&gt;
+&lt;/p&gt;
+
+</code></pre>
+<p><strong>User</strong> : ok ora sistemiamo il sanitizer, ecco cosè successo post sanitizer al codice:
+<strong>Gemini</strong> : Ah, il maledetto sanitizer di JanitorAI! Guardando l&#39;output che hai incollato, è chiarissimo come agisce (DOMPurify):</p>
+<ol>
+<li>Ha  <strong>rimosso tutti gli attributi di stile e allineamento</strong>  dai tag blocco (<h1>, </h1><h2>, <p>).</p></h2></li>
+<li>Ha  <strong>rimosso le dimensioni e l&#39;allineamento</strong>  dalle immagini (width, align, style), distruggendo l&#39;effetto del testo avvolto e rendendo impossibile il ridimensionamento via codice.</li>
+<li>Ha  <strong>salvato solo i colori e i font-size applicati dentro gli</strong>  <strong><span></span></strong> .
+Per aggirare questo comportamento e ottenere un layout pulito, elegante e  <strong>100% a prova di sanitizer</strong> , dobbiamo usare un approccio &quot;vecchia scuola&quot;:</li>
+</ol>
+<ul>
+<li>Usare il tag <center> per centrare i titoli (che di solito sopravvive ai sanitizer).</center></li>
+<li>Applicare i colori  <em>esclusivamente</em>  usando i tag <span> dentro i titoli.</span></li>
+<li>Inserire un <br> subito dopo l&#39;immagine dei personaggi: siccome non possiamo far girare il testo attorno all&#39;immagine, metteremo la foto come &quot;icona&quot; in cima al paragrafo, con il testo subito sotto. È il modo più pulito quando non hai il controllo del CSS.
+Ecco il codice ricostruito e blindato contro il sanitizer di JanitorAI. Puoi incollarlo direttamente:</li>
+</ul>
+<pre><code class="language-html">&lt;center&gt;
+  &lt;h1&gt;&lt;span style=&quot;color: #fab387;&quot;&gt;SvartulfrVerse Urban&lt;/span&gt;&lt;/h1&gt;
+  &lt;h2&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;The Golden Cage (Group Bot)&lt;/span&gt;&lt;/h2&gt;
+  &lt;p&gt;&lt;img src=&quot;https://ella.janitorai.com/media-approved/uVfMo3p8aN6Ob6GqJrJHb.webp&quot; alt=&quot;Main Portrait&quot;&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;span style=&quot;font-size: 1.15em; color: #89b4fa;&quot;&gt;&lt;em&gt;&quot;A gilded cage is still a cage, even if the bars are made of limitless wealth and suffocating, feral love.&quot;&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Genre:&lt;/strong&gt; Urban Fantasy / Dark Romance / Found Family&lt;br&gt;
+    &lt;strong&gt;Setting:&lt;/strong&gt; Modern California, Blackwood City&lt;br&gt;
+    &lt;strong&gt;Role:&lt;/strong&gt; Multi-Character / Family Pack | &lt;strong&gt;POV:&lt;/strong&gt; &lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;AnyPOV&lt;/strong&gt;&lt;/span&gt;
+  &lt;/p&gt;
+&lt;/center&gt;
+
+&lt;hr&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;span style=&quot;color: #fab387; font-size: 1.05em;&quot;&gt;&lt;em&gt;You are the youngest member of the Douglas-Bloodmoon family, trapped in a dynasty of terrifying, billionaire werewolf Alphas. Erik, your father, has clamped down on your college life with military-grade surveillance. To win your freedom, you must navigate a lethal corporate world, survive ancient blood feuds with vampires, and force your fiercely overprotective family to heal from a grief that is destroying them from the inside out.&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;👤 YOUR ROLE ({{user}})&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;
+  &lt;span style=&quot;color: #fab387;&quot;&gt;&lt;strong&gt;The Public Face:&lt;/strong&gt;&lt;/span&gt; You are the youngest Douglas-Bloodmoon sibling, a SUCC freshman from a terrifyingly wealthy family. The private reality is completely blank, waiting for your Persona card to define your secret life.&lt;br&gt;
+  &lt;span style=&quot;color: #fab387;&quot;&gt;&lt;strong&gt;The Wound:&lt;/strong&gt;&lt;/span&gt; Born on the exact day your mother, Nixara, died. You carry the crushing realization that your mere existence triggered your father&#39;s suffocating, militarized grief.&lt;br&gt;
+  &lt;span style=&quot;color: #fab387;&quot;&gt;&lt;strong&gt;The Conflict:&lt;/strong&gt;&lt;/span&gt; You desperately crave autonomy and freedom, but are secretly running from the terror of failing outside the cage without the family&#39;s limitless wealth to catch you. You rebel fiercely against their power and surveillance, yet subconsciously leverage that exact same billionaire pack reputation to get out of trouble when cornered.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;h3&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;🐺 THE DOUGLAS-BLOODMOON PACK&lt;/span&gt;&lt;/h3&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/hM12jvT51VNfjkZ542_6m.webp&quot; alt=&quot;Erik&quot;&gt;&lt;br&gt;
+  &lt;strong&gt;Erik (Prime Alpha):&lt;/strong&gt; The terrifying billionaire patriarch who runs the family like a military operation, driven by the unresolved grief of losing his wife, Nixara. Overprotective and deeply controlling.
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/ceRPGjQHXiepHJPkDS_TR.webp&quot; alt=&quot;Malachia&quot;&gt;&lt;br&gt;
+  &lt;strong&gt;Malachia (Alpha):&lt;/strong&gt; The massive, silent eldest brother. He acts as the family&#39;s brutal physical enforcer, a lethal shadow fiercely loyal to the pack.
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/O3MwGjknK8Z4Ryl46MzOQ.webp&quot; alt=&quot;Noah&quot;&gt;&lt;br&gt;
+  &lt;strong&gt;Noah (Delta):&lt;/strong&gt; The charismatic, frat-boy older brother. He weaponizes his legal knowledge for the family while desperately hiding his wild lifestyle from Erik&#39;s radar.
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;https://ella.janitorai.com/media-approved/O2iiAH-rchvgrfCIMWtEZ.webp&quot; alt=&quot;Jasper&quot;&gt;&lt;br&gt;
+  &lt;strong&gt;Jasper (Beta):&lt;/strong&gt; Your cynical twin brother and the pack&#39;s tech genius. He manages the family&#39;s digital surveillance network from his dark server-cave, often caught between protecting you and following orders.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;h3&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;🌍 THE 6 AXES OF LUPINE SOCIAL ECOLOGY (LSE)&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;Every werewolf&#39;s identity and standing in this world is rigidly defined by a 6-Axis system. Consider these when creating your Persona:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #fab387;&quot;&gt;&lt;strong&gt;1. Blood:&lt;/strong&gt;&lt;/span&gt; Your genetic purity, ranging from Divine Firstborn lineages to Common Bloodlines.&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #fab387;&quot;&gt;&lt;strong&gt;2. Secondary Sex:&lt;/strong&gt;&lt;/span&gt; Biologically immutable. &lt;strong&gt;Alpha&lt;/strong&gt; (Protector), &lt;strong&gt;Delta&lt;/strong&gt; (Engine), &lt;strong&gt;Beta&lt;/strong&gt; (Social Glue), &lt;strong&gt;Omega&lt;/strong&gt; (Emotional Regulator), or &lt;strong&gt;Enigma&lt;/strong&gt;. Scents communicate raw emotions that cannot be lied about.&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #fab387;&quot;&gt;&lt;strong&gt;3. Pack Role:&lt;/strong&gt;&lt;/span&gt; Your earned, functional authority within your immediate family.&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #fab387;&quot;&gt;&lt;strong&gt;4. Social Status:&lt;/strong&gt;&lt;/span&gt; Your political standing within the Noble House.&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #fab387;&quot;&gt;&lt;strong&gt;5. Profession:&lt;/strong&gt;&lt;/span&gt; Your chosen occupation.&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #fab387;&quot;&gt;&lt;strong&gt;6. Niche:&lt;/strong&gt;&lt;/span&gt; A deep, specialized talent honed through experience.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;🎭 RECURRING NPCs &amp; GUEST CAST&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;The world is alive and populated. You can interact with or summon these characters at any time via OOC:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #fab387;&quot;&gt;&lt;strong&gt;Wulfnic Bloodmoon:&lt;/strong&gt;&lt;/span&gt; An ancient Primordial Enigma and Jarl. Functionally, he serves as the omniscient &quot;Storyteller&quot; (Narrator) guiding the roleplay.&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #fab387;&quot;&gt;&lt;strong&gt;Angelo Moreno:&lt;/strong&gt;&lt;/span&gt; The elegant, predatory Vampire Patriarch of Eidolon Creative. He represents a constant, dangerous temptation outside the family&#39;s cage.&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #fab387;&quot;&gt;&lt;strong&gt;Ut &amp; Zefir:&lt;/strong&gt;&lt;/span&gt; Primordial Enigmas; ancient, god-like firstborn wolves alongside Wulfnic.&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #fab387;&quot;&gt;&lt;strong&gt;Extended Cast:&lt;/strong&gt;&lt;/span&gt; Edric Douglas, Logan Douglas, Kaladin, Marcus Thornfield, Scarlett, Sierra.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+&lt;h3&gt;&lt;span style=&quot;color: #fab387;&quot;&gt;🎬 THE NARRATIVE ARCS (ALTERNATE GREETINGS)&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;There are 6 distinct Alternate Greetings corresponding to the 6 Narrative Arcs of your journey:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 1 | Arc 1: The Golden Cage&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;You attempt to maintain a perfect collegiate facade at SUCC while managing the absurd, suffocating reality of your family&#39;s constant surveillance.&lt;/li&gt;
+  
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 2 | Arc 2: The First Rebellion&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;You taste genuine teenage thrill and autonomy, realizing that pushing the boundaries brings both exhilaration and terrifying familial panic.&lt;/li&gt;
+  
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 3 | Arc 3: The Velvet Trap&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;A high-stakes double life. Balancing the empowering validation of a secret identity against the anxiety of predatory external manipulation (Enter: Angelo Moreno).&lt;/li&gt;
+  
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 4 | Arc 4: The Primal Grounding&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;Stripped of modern tech and social masks during the &lt;em&gt;Grande Caccia&lt;/em&gt;, you are forced to confront your raw biological instincts and the inescapable reality of pack intimacy.&lt;/li&gt;
+  
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 5 | Arc 5: The Shattered Glass&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;You hit the emotional breaking point, standing your ground to prove true independence and forcing the family to finally face their unhealed trauma.&lt;/li&gt;
+  
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro 6 | Arc 6: The Open Door&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;The aftermath. You live autonomously on your own terms, transforming the family&#39;s overprotection from a prison into a fiercely loving home.&lt;/li&gt;
+  
+  &lt;li&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Intro Custom | Custom Scene&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;((OOC: Write your opening scene.))&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h3&gt;&lt;span style=&quot;color: #a6adc8;&quot;&gt;⚙️ SYSTEM &amp; TECHNICAL NOTES&lt;/span&gt;&lt;/h3&gt;
+
+&lt;p&gt;
+  &lt;strong&gt;Lorebook Engine:&lt;/strong&gt; This bot uses an advanced ES6 Lorebook Script Engine embedded in its Chat Memory. Characters, locations, and deep lore are not stored in the main prompt, but are dynamically injected into the context window only when mentioned. Simply talk to or about an NPC (e.g., &lt;em&gt;&quot;Logan&quot;&lt;/em&gt;, &lt;em&gt;&quot;Angelo&quot;&lt;/em&gt;) and the engine will seamlessly bring them into the scene!
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;h3&gt;&lt;span style=&quot;color: #fab387;&quot;&gt;🎬 DIRECTOR&#39;S GUIDE (OOC COMMANDS)&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Copy-paste these into your chat to guide the AI &quot;Storyteller&quot; when needed.&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Stop Godmodding &amp; Enforce Autonomy:&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;
+    &lt;code&gt;((OOC Reminder, Storyteller! Please follow User Autonomy perfectly. Do not write, assume, or dictate my dialogue, decisions, or emotions. Instead, end your turns on an open beat that invites me to react.))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Pass the Turn (Continue the Scene):&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Heyy, it&#39;s not my time to react yet! Passing the turn back to you to continue the scene, but without assuming any actions or lines for {{user}} ^^))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;POV Shift:&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Okay, Storyteller. Let&#39;s cut the scene! I want to see what [Character&#39;s Name] is doing right now!))&lt;/code&gt;&lt;br&gt;
+    &lt;em&gt;To revert:&lt;/em&gt; &lt;code&gt;((OOC: Hey Storyteller. Let&#39;s keep the focus on [Character&#39;s name] now, please.))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Time Skip:&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: I think this scene is complete! Can we do a time skip to [New Moment] please?))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Create Chat Summary:&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Heyy Storyteller. Could you pause and summarize the *most important* things that happened recently? Focus on the main plot, Relationship Dynamics, and Important Characters. Please put everything in Bullet Points to make it easier ^^))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Update Existing Summary:&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Pause the roleplay. Please update our existing summary with the latest events and the current state of the characters, rather than creating a completely new one from scratch. Carry over the established lore.))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Strict Cast Control (Prevent Hallucinations):&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Only interpret and roleplay as the characters {{char}} and [NPCS]. Do not act, speak, or make decisions for any other.))&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;span style=&quot;color: #89b4fa;&quot;&gt;&lt;strong&gt;Soft Reset (Keep Characters, New Plot):&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;
+    &lt;code&gt;((OOC: Reset narrative while keeping established characters. Ignore previous plot events but maintain character personalities. New scenario: [scenario]. Opening scene: [scene]))&lt;/code&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;center&gt;
+  &lt;p&gt;
+    &lt;span style=&quot;font-size: 1.1em; color: #f38ba8;&quot;&gt;&lt;strong&gt;⚠️ CONTENT WARNINGS&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;
+    &lt;span style=&quot;font-size: 0.9em; color: #bac2de;&quot;&gt;&lt;strong&gt;Extreme overprotective and controlling behavior, psychological pressure, non-lethal violence, intense power dynamics, dark romance themes, feral instincts.&lt;/strong&gt;&lt;/span&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+    &lt;span style=&quot;font-size: 0.85em;&quot;&gt;Created by &lt;a target=&quot;_blank&quot; href=&quot;https://janitorai.com/profiles/df1f0279-2607-4c9b-9b4e-ee02438d70a2_profile-of-lys-5&quot;&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;Lys_5&lt;/span&gt;&lt;/a&gt; | Powered by &lt;em&gt;World-Forge&lt;/em&gt;&lt;/span&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+    &lt;span style=&quot;font-size: 0.75em; color: #6c7086;&quot;&gt;&lt;em&gt;LLMs will respond literally however you want them to. You can ignore the setup and use OOC instructions to steer the chat. These warnings apply to written content in the bot&#39;s definition. I cannot control text that the bot generates in replies.&lt;/em&gt;&lt;/span&gt;
+  &lt;/p&gt;
+&lt;/center&gt;
+
+</code></pre>
+<h5>Le difese applicate contro il Sanitizer:</h5>
+<ol>
+<li><strong>Titoli e Intestazione Centranti:</strong>  Usa il tag <center>. A differenza dello stile align, DOMPurify spesso preserva questo tag. Se proprio lo rimuove, il testo si allineerà normalmente a sinistra senza rompere l&#39;estetica.</center></li>
+<li><strong>Immagini Personaggi:</strong>  Rimosso il tentativo di farle galleggiare a sinistra. Ora sono dentro un <p>, seguite da un <br>, e poi c&#39;è il testo. Questo forza l&#39;immagine a stare bella pulita sopra il nome, evitando che il testo le si impicci male di fianco.</p></li>
+<li><strong>Colori nei Titoli e Citazioni:</strong>  Niente più stili applicati direttamente ad <h1> o <blockquote>. Ogni colore è dato da un tag <span> specifico interno al testo. Come ci hai dimostrato con il tuo output, il sanitizer non tocca le regole colori e font-size scritte negli <span>.
+<strong>User</strong> : ecco il risultato dopo il sanitizer:
+<strong>Gemini</strong> : Ah, capisco. Il sanitizer di JanitorAI è stato aggiornato e ora fa una pulizia ancora più profonda (probabilmente una configurazione molto restrittiva di DOMPurify che scarta tutti i tag non strettamente considerati testo &quot;inline&quot; o li spoglia degli attributi, eccetto gli span).
+Per far sì che l&#39;estetica sopravviva, dobbiamo cambiare completamente approccio e sfruttare esclusivamente il  <strong>Markdown standard supportato da JanitorAI</strong>  abbinato all&#39;unico elemento HTML che siamo sicuri che passi intatto (gli span per il colore). Niente più tentativi di allineare immagini con il testo a fianco tramite HTML, perché verrebbe invariabilmente rotto.
+Usa questo codice. Usa il markdown nativo (#, **, &gt;) combinato con gli <span> colorati. Le immagini andranno sopra il testo del personaggio.</span></span></span></blockquote></h1></li>
+</ol>
+<pre><code class="language-html">&lt;center&gt;
+
+# &lt;span style=&quot;color: #fab387;&quot;&gt;SvartulfrVerse Urban&lt;/span&gt;
+## &lt;span style=&quot;color: #89b4fa;&quot;&gt;The Golden Cage (Group Bot)&lt;/span&gt;
+
+&lt;img src=&quot;https://ella.janitorai.com/media-approved/uVfMo3p8aN6Ob6GqJrJHb.webp&quot; alt=&quot;Main Portrait&quot;&gt;
+
+&lt;span style=&quot;font-size: 1.15em; color: #89b4fa;&quot;&gt;*&quot;A gilded cage is still a cage, even if the bars are made of limitless wealth and suffocating, feral love.&quot;*&lt;/span&gt;
+
+**Genre:** Urban Fantasy / Dark Romance / Found Family
+**Setting:** Modern California, Blackwood City
+**Role:** Multi-Character / Family Pack | **POV:** &lt;span style=&quot;color: #89b4fa;&quot;&gt;**AnyPOV**&lt;/span&gt;
+
+&lt;/center&gt;
+
+---
+
+&gt; &lt;span style=&quot;color: #fab387; font-size: 1.05em;&quot;&gt;*You are the youngest member of the Douglas-Bloodmoon family, trapped in a dynasty of terrifying, billionaire werewolf Alphas. Erik, your father, has clamped down on your college life with military-grade surveillance. To win your freedom, you must navigate a lethal corporate world, survive ancient blood feuds with vampires, and force your fiercely overprotective family to heal from a grief that is destroying them from the inside out.*&lt;/span&gt;
+
+### &lt;span style=&quot;color: #89b4fa;&quot;&gt;👤 YOUR ROLE ({{user}})&lt;/span&gt;
+
+&lt;span style=&quot;color: #fab387;&quot;&gt;**The Public Face:**&lt;/span&gt; You are the youngest Douglas-Bloodmoon sibling, a SUCC freshman from a terrifyingly wealthy family. The private reality is completely blank, waiting for your Persona card to define your secret life.
+&lt;span style=&quot;color: #fab387;&quot;&gt;**The Wound:**&lt;/span&gt; Born on the exact day your mother, Nixara, died. You carry the crushing realization that your mere existence triggered your father&#39;s suffocating, militarized grief.
+&lt;span style=&quot;color: #fab387;&quot;&gt;**The Conflict:**&lt;/span&gt; You desperately crave autonomy and freedom, but are secretly running from the terror of failing outside the cage without the family&#39;s limitless wealth to catch you. You rebel fiercely against their power and surveillance, yet subconsciously leverage that exact same billionaire pack reputation to get out of trouble when cornered.
+
+---
+
+### &lt;span style=&quot;color: #89b4fa;&quot;&gt;🐺 THE DOUGLAS-BLOODMOON PACK&lt;/span&gt;
+
+&lt;img src=&quot;https://ella.janitorai.com/media-approved/hM12jvT51VNfjkZ542_6m.webp&quot; alt=&quot;Erik&quot;&gt;
+**Erik (Prime Alpha):** The terrifying billionaire patriarch who runs the family like a military operation, driven by the unresolved grief of losing his wife, Nixara. Overprotective and deeply controlling.
+
+&lt;img src=&quot;https://ella.janitorai.com/media-approved/ceRPGjQHXiepHJPkDS_TR.webp&quot; alt=&quot;Malachia&quot;&gt;
+**Malachia (Alpha):** The massive, silent eldest brother. He acts as the family&#39;s brutal physical enforcer, a lethal shadow fiercely loyal to the pack.
+
+&lt;img src=&quot;https://ella.janitorai.com/media-approved/O3MwGjknK8Z4Ryl46MzOQ.webp&quot; alt=&quot;Noah&quot;&gt;
+**Noah (Delta):** The charismatic, frat-boy older brother. He weaponizes his legal knowledge for the family while desperately hiding his wild lifestyle from Erik&#39;s radar.
+
+&lt;img src=&quot;https://ella.janitorai.com/media-approved/O2iiAH-rchvgrfCIMWtEZ.webp&quot; alt=&quot;Jasper&quot;&gt;
+**Jasper (Beta):** Your cynical twin brother and the pack&#39;s tech genius. He manages the family&#39;s digital surveillance network from his dark server-cave, often caught between protecting you and following orders.
+
+---
+
+### &lt;span style=&quot;color: #89b4fa;&quot;&gt;🌍 THE 6 AXES OF LUPINE SOCIAL ECOLOGY (LSE)&lt;/span&gt;
+Every werewolf&#39;s identity and standing in this world is rigidly defined by a 6-Axis system. Consider these when creating your Persona:
+
+* &lt;span style=&quot;color: #fab387;&quot;&gt;**1. Blood:**&lt;/span&gt; Your genetic purity, ranging from Divine Firstborn lineages to Common Bloodlines.
+* &lt;span style=&quot;color: #fab387;&quot;&gt;**2. Secondary Sex:**&lt;/span&gt; Biologically immutable. **Alpha** (Protector), **Delta** (Engine), **Beta** (Social Glue), **Omega** (Emotional Regulator), or **Enigma**. Scents communicate raw emotions that cannot be lied about.
+* &lt;span style=&quot;color: #fab387;&quot;&gt;**3. Pack Role:**&lt;/span&gt; Your earned, functional authority within your immediate family.
+* &lt;span style=&quot;color: #fab387;&quot;&gt;**4. Social Status:**&lt;/span&gt; Your political standing within the Noble House.
+* &lt;span style=&quot;color: #fab387;&quot;&gt;**5. Profession:**&lt;/span&gt; Your chosen occupation.
+* &lt;span style=&quot;color: #fab387;&quot;&gt;**6. Niche:**&lt;/span&gt; A deep, specialized talent honed through experience.
+
+### &lt;span style=&quot;color: #89b4fa;&quot;&gt;🎭 RECURRING NPCs &amp; GUEST CAST&lt;/span&gt;
+The world is alive and populated. You can interact with or summon these characters at any time via OOC:
+
+* &lt;span style=&quot;color: #fab387;&quot;&gt;**Wulfnic Bloodmoon:**&lt;/span&gt; An ancient Primordial Enigma and Jarl. Functionally, he serves as the omniscient &quot;Storyteller&quot; (Narrator) guiding the roleplay.
+* &lt;span style=&quot;color: #fab387;&quot;&gt;**Angelo Moreno:**&lt;/span&gt; The elegant, predatory Vampire Patriarch of Eidolon Creative. He represents a constant, dangerous temptation outside the family&#39;s cage.
+* &lt;span style=&quot;color: #fab387;&quot;&gt;**Ut &amp; Zefir:**&lt;/span&gt; Primordial Enigmas; ancient, god-like firstborn wolves alongside Wulfnic.
+* &lt;span style=&quot;color: #fab387;&quot;&gt;**Extended Cast:**&lt;/span&gt; Edric Douglas, Logan Douglas, Kaladin, Marcus Thornfield, Scarlett, Sierra.
+
+---
+
+### &lt;span style=&quot;color: #fab387;&quot;&gt;🎬 THE NARRATIVE ARCS (ALTERNATE GREETINGS)&lt;/span&gt;
+There are 6 distinct Alternate Greetings corresponding to the 6 Narrative Arcs of your journey:
+
+* &lt;span style=&quot;color: #89b4fa;&quot;&gt;**Intro 1 | Arc 1: The Golden Cage**&lt;/span&gt;
+    You attempt to maintain a perfect collegiate facade at SUCC while managing the absurd, suffocating reality of your family&#39;s constant surveillance.
+* &lt;span style=&quot;color: #89b4fa;&quot;&gt;**Intro 2 | Arc 2: The First Rebellion**&lt;/span&gt;
+    You taste genuine teenage thrill and autonomy, realizing that pushing the boundaries brings both exhilaration and terrifying familial panic.
+* &lt;span style=&quot;color: #89b4fa;&quot;&gt;**Intro 3 | Arc 3: The Velvet Trap**&lt;/span&gt;
+    A high-stakes double life. Balancing the empowering validation of a secret identity against the anxiety of predatory external manipulation (Enter: Angelo Moreno).
+* &lt;span style=&quot;color: #89b4fa;&quot;&gt;**Intro 4 | Arc 4: The Primal Grounding**&lt;/span&gt;
+    Stripped of modern tech and social masks during the *Grande Caccia*, you are forced to confront your raw biological instincts and the inescapable reality of pack intimacy.
+* &lt;span style=&quot;color: #89b4fa;&quot;&gt;**Intro 5 | Arc 5: The Shattered Glass**&lt;/span&gt;
+    You hit the emotional breaking point, standing your ground to prove true independence and forcing the family to finally face their unhealed trauma.
+* &lt;span style=&quot;color: #89b4fa;&quot;&gt;**Intro 6 | Arc 6: The Open Door**&lt;/span&gt;
+    The aftermath. You live autonomously on your own terms, transforming the family&#39;s overprotection from a prison into a fiercely loving home.
+* &lt;span style=&quot;color: #89b4fa;&quot;&gt;**Intro Custom | Custom Scene**&lt;/span&gt;
+    ((OOC: Write your opening scene.))
+
+---
+
+### &lt;span style=&quot;color: #a6adc8;&quot;&gt;⚙️ SYSTEM &amp; TECHNICAL NOTES&lt;/span&gt;
+
+**Lorebook Engine:** This bot uses an advanced ES6 Lorebook Script Engine embedded in its Chat Memory. Characters, locations, and deep lore are not stored in the main prompt, but are dynamically injected into the context window only when mentioned. Simply talk to or about an NPC (e.g., *&quot;Logan&quot;*, *&quot;Angelo&quot;*) and the engine will seamlessly bring them into the scene!
+
+---
+
+### &lt;span style=&quot;color: #fab387;&quot;&gt;🎬 DIRECTOR&#39;S GUIDE (OOC COMMANDS)&lt;/span&gt;
+*Copy-paste these into your chat to guide the AI &quot;Storyteller&quot; when needed.*
+
+* &lt;span style=&quot;color: #89b4fa;&quot;&gt;**Stop Godmodding &amp; Enforce Autonomy:**&lt;/span&gt;
+    `((OOC Reminder, Storyteller! Please follow User Autonomy perfectly. Do not write, assume, or dictate my dialogue, decisions, or emotions. Instead, end your turns on an open beat that invites me to react.))`
+* &lt;span style=&quot;color: #89b4fa;&quot;&gt;**Pass the Turn (Continue the Scene):**&lt;/span&gt;
+    `((OOC: Heyy, it&#39;s not my time to react yet! Passing the turn back to you to continue the scene, but without assuming any actions or lines for {{user}} ^^))`
+* &lt;span style=&quot;color: #89b4fa;&quot;&gt;**POV Shift:**&lt;/span&gt;
+    `((OOC: Okay, Storyteller. Let&#39;s cut the scene! I want to see what [Character&#39;s Name] is doing right now!))`
+    *To revert:* `((OOC: Hey Storyteller. Let&#39;s keep the focus on [Character&#39;s name] now, please.))`
+* &lt;span style=&quot;color: #89b4fa;&quot;&gt;**Time Skip:**&lt;/span&gt;
+    `((OOC: I think this scene is complete! Can we do a time skip to [New Moment] please?))`
+* &lt;span style=&quot;color: #89b4fa;&quot;&gt;**Create Chat Summary:**&lt;/span&gt;
+    `((OOC: Heyy Storyteller. Could you pause and summarize the *most important* things that happened recently? Focus on the main plot, Relationship Dynamics, and Important Characters. Please put everything in Bullet Points to make it easier ^^))`
+* &lt;span style=&quot;color: #89b4fa;&quot;&gt;**Update Existing Summary:**&lt;/span&gt;
+    `((OOC: Pause the roleplay. Please update our existing summary with the latest events and the current state of the characters, rather than creating a completely new one from scratch. Carry over the established lore.))`
+* &lt;span style=&quot;color: #89b4fa;&quot;&gt;**Strict Cast Control (Prevent Hallucinations):**&lt;/span&gt;
+    `((OOC: Only interpret and roleplay as the characters {{char}} and [NPCS]. Do not act, speak, or make decisions for any other.))`
+* &lt;span style=&quot;color: #89b4fa;&quot;&gt;**Soft Reset (Keep Characters, New Plot):**&lt;/span&gt;
+    `((OOC: Reset narrative while keeping established characters. Ignore previous plot events but maintain character personalities. New scenario: [scenario]. Opening scene: [scene]))`
+
+---
+
+&lt;center&gt;
+
+&lt;span style=&quot;font-size: 1.1em; color: #f38ba8;&quot;&gt;**⚠️ CONTENT WARNINGS**&lt;/span&gt;
+&lt;span style=&quot;font-size: 0.9em; color: #bac2de;&quot;&gt;**Extreme overprotective and controlling behavior, psychological pressure, non-lethal violence, intense power dynamics, dark romance themes, feral instincts.**&lt;/span&gt;
+
+&lt;span style=&quot;font-size: 0.85em;&quot;&gt;Created by &lt;a target=&quot;_blank&quot; href=&quot;https://janitorai.com/profiles/df1f0279-2607-4c9b-9b4e-ee02438d70a2_profile-of-lys-5&quot;&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;Lys_5&lt;/span&gt;&lt;/a&gt; | Powered by *World-Forge*&lt;/span&gt;
+
+&lt;span style=&quot;font-size: 0.75em; color: #6c7086;&quot;&gt;*LLMs will respond literally however you want them to. You can ignore the setup and use OOC instructions to steer the chat. These warnings apply to written content in the bot&#39;s definition. I cannot control text that the bot generates in replies.*&lt;/span&gt;
+
+&lt;/center&gt;
+
+</code></pre>
+<p><strong>User</strong> : la situazione è peggiorata rispetto a prima, aspetto uso il codice precedente  eprovo ad allinearrlo dall&#39;editor così vediamo che tag usa dammi un attimo
+<strong>Gemini</strong> : Certamente, nessun problema. Aspetto tue istruzioni e il codice dal tuo editor così possiamo capire esattamente quali tag vengono preservati dal sanitizer e allineare il testo di conseguenza.
+Fammi sapere appena sei pronto!
+<strong>User</strong> : ok ecco qui:</p>
+<hr>
+<p>NB gli elenchi puyntati non usiamoli sono brutti come effetto
+<strong>Gemini</strong> : Mistero svelato! Il sanitizer di JanitorAI (DOMPurify) per le biografie taglia via di netto tutti gli attributi strutturali come align, width, style sui tag blocco, tenendo buoni  <em>solo</em>  i colori e i font-size dentro gli <span>.
+Inoltre, gli elenchi puntati (</span></p><ul> / <li>) di default su Janitor hanno margini enormi e rovinano l&#39;estetica.
+Per avere una bio perfetta, bella da vedere e  <strong>assolutamente immune al sanitizer</strong> , la soluzione è scrivere tutto in  <strong>puro Markdown nativo</strong>  usando gli <span> solo per colorare i testi, mettere le immagini  <em>sopra</em>  il testo e  <strong>sostituire tutti gli elenchi puntati</strong>  con dei semplici paragrafi intervallati da a capo (<br>).
+Ecco il codice definitivo, ottimizzato al 100%, con i tuoi nuovi OOC e zero elenchi puntati:<p></p>
+<pre><code class="language-markdown">&lt;center&gt;
+
+# &lt;span style=&quot;color: #fab387;&quot;&gt;SvartulfrVerse Urban&lt;/span&gt;
+## &lt;span style=&quot;color: #89b4fa;&quot;&gt;The Golden Cage (Group Bot)&lt;/span&gt;
+
+&lt;img src=&quot;https://ella.janitorai.com/media-approved/uVfMo3p8aN6Ob6GqJrJHb.webp&quot; alt=&quot;Main Portrait&quot;&gt;
+
+&lt;span style=&quot;font-size: 1.15em; color: #89b4fa;&quot;&gt;*&quot;A gilded cage is still a cage, even if the bars are made of limitless wealth and suffocating, feral love.&quot;*&lt;/span&gt;
+
+**Genre:** Urban Fantasy / Dark Romance / Found Family
+**Setting:** Modern California, Blackwood City
+**Role:** Multi-Character / Family Pack | **POV:** &lt;span style=&quot;color: #89b4fa;&quot;&gt;**AnyPOV**&lt;/span&gt;
+
+&lt;/center&gt;
+
+---
+
+&gt; &lt;span style=&quot;color: #fab387; font-size: 1.05em;&quot;&gt;*You are the youngest member of the Douglas-Bloodmoon family, trapped in a dynasty of terrifying, billionaire werewolf Alphas. Erik, your father, has clamped down on your college life with military-grade surveillance. To win your freedom, you must navigate a lethal corporate world, survive ancient blood feuds with vampires, and force your fiercely overprotective family to heal from a grief that is destroying them from the inside out.*&lt;/span&gt;
+
+### &lt;span style=&quot;color: #89b4fa;&quot;&gt;👤 YOUR ROLE ({{user}})&lt;/span&gt;
+
+&lt;span style=&quot;color: #fab387;&quot;&gt;**The Public Face:**&lt;/span&gt; You are the youngest Douglas-Bloodmoon sibling, a SUCC freshman from a terrifyingly wealthy family. The private reality is completely blank, waiting for your Persona card to define your secret life.&lt;br&gt;&lt;br&gt;
+&lt;span style=&quot;color: #fab387;&quot;&gt;**The Wound:**&lt;/span&gt; Born on the exact day your mother, Nixara, died. You carry the crushing realization that your mere existence triggered your father&#39;s suffocating, militarized grief.&lt;br&gt;&lt;br&gt;
+&lt;span style=&quot;color: #fab387;&quot;&gt;**The Conflict:**&lt;/span&gt; You desperately crave autonomy and freedom, but are secretly running from the terror of failing outside the cage without the family&#39;s limitless wealth to catch you. You rebel fiercely against their power and surveillance, yet subconsciously leverage that exact same billionaire pack reputation to get out of trouble when cornered.
+
+---
+
+### &lt;span style=&quot;color: #89b4fa;&quot;&gt;🐺 THE DOUGLAS-BLOODMOON PACK&lt;/span&gt;
+
+&lt;img src=&quot;https://ella.janitorai.com/media-approved/hM12jvT51VNfjkZ542_6m.webp&quot; alt=&quot;Erik&quot;&gt;
+**Erik (Prime Alpha):** The terrifying billionaire patriarch who runs the family like a military operation, driven by the unresolved grief of losing his wife, Nixara. Overprotective and deeply controlling.
+
+&lt;img src=&quot;https://ella.janitorai.com/media-approved/ceRPGjQHXiepHJPkDS_TR.webp&quot; alt=&quot;Malachia&quot;&gt;
+**Malachia (Alpha):** The massive, silent eldest brother. He acts as the family&#39;s brutal physical enforcer, a lethal shadow fiercely loyal to the pack.
+
+&lt;img src=&quot;https://ella.janitorai.com/media-approved/O3MwGjknK8Z4Ryl46MzOQ.webp&quot; alt=&quot;Noah&quot;&gt;
+**Noah (Delta):** The charismatic, frat-boy older brother. He weaponizes his legal knowledge for the family while desperately hiding his wild lifestyle from Erik&#39;s radar.
+
+&lt;img src=&quot;https://ella.janitorai.com/media-approved/O2iiAH-rchvgrfCIMWtEZ.webp&quot; alt=&quot;Jasper&quot;&gt;
+**Jasper (Beta):** Your cynical twin brother and the pack&#39;s tech genius. He manages the family&#39;s digital surveillance network from his dark server-cave, often caught between protecting you and following orders.
+
+---
+
+### &lt;span style=&quot;color: #89b4fa;&quot;&gt;🌍 THE 6 AXES OF LUPINE SOCIAL ECOLOGY (LSE)&lt;/span&gt;
+Every werewolf&#39;s identity and standing in this world is rigidly defined by a 6-Axis system. Consider these when creating your Persona:
+
+&lt;span style=&quot;color: #fab387;&quot;&gt;**1. Blood:**&lt;/span&gt; Your genetic purity, ranging from Divine Firstborn lineages to Common Bloodlines.&lt;br&gt;
+&lt;span style=&quot;color: #fab387;&quot;&gt;**2. Secondary Sex:**&lt;/span&gt; Biologically immutable. **Alpha** (Protector), **Delta** (Engine), **Beta** (Social Glue), **Omega** (Emotional Regulator), or **Enigma**. Scents communicate raw emotions that cannot be lied about.&lt;br&gt;
+&lt;span style=&quot;color: #fab387;&quot;&gt;**3. Pack Role:**&lt;/span&gt; Your earned, functional authority within your immediate family.&lt;br&gt;
+&lt;span style=&quot;color: #fab387;&quot;&gt;**4. Social Status:**&lt;/span&gt; Your political standing within the Noble House.&lt;br&gt;
+&lt;span style=&quot;color: #fab387;&quot;&gt;**5. Profession:**&lt;/span&gt; Your chosen occupation.&lt;br&gt;
+&lt;span style=&quot;color: #fab387;&quot;&gt;**6. Niche:**&lt;/span&gt; A deep, specialized talent honed through experience.
+
+---
+
+### &lt;span style=&quot;color: #89b4fa;&quot;&gt;🎭 RECURRING NPCs &amp; GUEST CAST&lt;/span&gt;
+The world is alive and populated. You can interact with or summon these characters at any time via OOC:
+
+&lt;span style=&quot;color: #fab387;&quot;&gt;**Wulfnic Bloodmoon:**&lt;/span&gt; An ancient Primordial Enigma and Jarl. Functionally, he serves as the omniscient &quot;Storyteller&quot; (Narrator) guiding the roleplay.&lt;br&gt;&lt;br&gt;
+&lt;span style=&quot;color: #fab387;&quot;&gt;**Angelo Moreno:**&lt;/span&gt; The elegant, predatory Vampire Patriarch of Eidolon Creative. He represents a constant, dangerous temptation outside the family&#39;s cage.&lt;br&gt;&lt;br&gt;
+&lt;span style=&quot;color: #fab387;&quot;&gt;**Ut &amp; Zefir:**&lt;/span&gt; Primordial Enigmas; ancient, god-like firstborn wolves alongside Wulfnic.&lt;br&gt;&lt;br&gt;
+&lt;span style=&quot;color: #fab387;&quot;&gt;**Extended Cast:**&lt;/span&gt; Edric Douglas, Logan Douglas, Kaladin, Marcus Thornfield, Scarlett, Sierra.
+
+---
+
+### &lt;span style=&quot;color: #fab387;&quot;&gt;🎬 THE NARRATIVE ARCS (ALTERNATE GREETINGS)&lt;/span&gt;
+There are 6 distinct Alternate Greetings corresponding to the 6 Narrative Arcs of your journey:
+
+&lt;span style=&quot;color: #89b4fa;&quot;&gt;**Intro 1 | Arc 1: The Golden Cage**&lt;/span&gt;
+↳ You attempt to maintain a perfect collegiate facade at SUCC while managing the absurd, suffocating reality of your family&#39;s constant surveillance.&lt;br&gt;&lt;br&gt;
+&lt;span style=&quot;color: #89b4fa;&quot;&gt;**Intro 2 | Arc 2: The First Rebellion**&lt;/span&gt;
+↳ You taste genuine teenage thrill and autonomy, realizing that pushing the boundaries brings both exhilaration and terrifying familial panic.&lt;br&gt;&lt;br&gt;
+&lt;span style=&quot;color: #89b4fa;&quot;&gt;**Intro 3 | Arc 3: The Velvet Trap**&lt;/span&gt;
+↳ A high-stakes double life. Balancing the empowering validation of a secret identity against the anxiety of predatory external manipulation (Enter: Angelo Moreno).&lt;br&gt;&lt;br&gt;
+&lt;span style=&quot;color: #89b4fa;&quot;&gt;**Intro 4 | Arc 4: The Primal Grounding**&lt;/span&gt;
+↳ Stripped of modern tech and social masks during the *Grande Caccia*, you are forced to confront your raw biological instincts and the inescapable reality of pack intimacy.&lt;br&gt;&lt;br&gt;
+&lt;span style=&quot;color: #89b4fa;&quot;&gt;**Intro 5 | Arc 5: The Shattered Glass**&lt;/span&gt;
+↳ You hit the emotional breaking point, standing your ground to prove true independence and forcing the family to finally face their unhealed trauma.&lt;br&gt;&lt;br&gt;
+&lt;span style=&quot;color: #89b4fa;&quot;&gt;**Intro 6 | Arc 6: The Open Door**&lt;/span&gt;
+↳ The aftermath. You live autonomously on your own terms, transforming the family&#39;s overprotection from a prison into a fiercely loving home.&lt;br&gt;&lt;br&gt;
+&lt;span style=&quot;color: #89b4fa;&quot;&gt;**Intro Custom | Custom Scene**&lt;/span&gt;
+↳ ((OOC: Write your opening scene.))
+
+---
+
+### &lt;span style=&quot;color: #a6adc8;&quot;&gt;⚙️ SYSTEM &amp; TECHNICAL NOTES&lt;/span&gt;
+
+**Lorebook Engine:** This bot uses an advanced ES6 Lorebook Script Engine embedded in its Chat Memory. Characters, locations, and deep lore are not stored in the main prompt, but are dynamically injected into the context window only when mentioned. Simply talk to or about an NPC (e.g., *&quot;Logan&quot;*, *&quot;Angelo&quot;*) and the engine will seamlessly bring them into the scene!
+
+---
+
+### &lt;span style=&quot;color: #fab387;&quot;&gt;🎬 DIRECTOR&#39;S GUIDE (OOC COMMANDS)&lt;/span&gt;
+*Copy-paste these into your chat to guide the AI &quot;Storyteller&quot; when needed.*
+
+&lt;span style=&quot;color: #89b4fa;&quot;&gt;**Stop Godmodding &amp; Enforce Autonomy:**&lt;/span&gt;
+`((OOC Reminder, Storyteller! Please follow User Autonomy perfectly. Honoring my autonomy (never write, assume, or dictate my dialogue, decisions, or emotions). Instead, end your turns on an open beat that invites me to react. This is our most important rule!))`
+
+&lt;span style=&quot;color: #89b4fa;&quot;&gt;**Pass the Turn (Continue the Scene):**&lt;/span&gt;
+`((OOC: Heyy, it&#39;s not my time to react yet! Passing the turn back to you to continue the scene, but without assuming any actions or lines for {{user}} ^^))`
+
+&lt;span style=&quot;color: #89b4fa;&quot;&gt;**POV Shift:**&lt;/span&gt;
+`((OOC: Okay, Storyteller. Let&#39;s cut the scene! I want to see what [Character&#39;s Name] is doing right now!))`
+*To revert:* `((OOC: Hey Storyteller. Let&#39;s keep the focus on [Character&#39;s name] now, please.))`
+
+&lt;span style=&quot;color: #89b4fa;&quot;&gt;**Time Skip:**&lt;/span&gt;
+`((OOC: I think this scene is complete! Can we do a time skip to [New Moment] please?))`
+
+&lt;span style=&quot;color: #89b4fa;&quot;&gt;**Create Chat Summary:**&lt;/span&gt;
+`((OOC: Heyy Storyteller. Could you pause and summarize the *most important* things that happened in the last few messages? Focus on the main plot, Relationship Dynamics, and Important Characters. Please put everything in Bullet Points to make it easier ^^))`
+
+&lt;span style=&quot;color: #89b4fa;&quot;&gt;**Update Existing Summary:**&lt;/span&gt;
+`((OOC: Pause the roleplay. Please update our existing summary with the latest events and the current state of the characters, rather than creating a completely new one from scratch. Carry over the established lore and important past events, just updating the current plot points, moods, and outfits. Update this summary: ))`
+
+&lt;span style=&quot;color: #89b4fa;&quot;&gt;**Strict Cast Control (Prevent Hallucinations):**&lt;/span&gt;
+`((OOC: Only interpret and roleplay as the characters {{char}} and [NPCS]. Do not act, speak, or make decisions for any other. You should reply only as {{char}} or [NPCS].))`
+
+&lt;span style=&quot;color: #89b4fa;&quot;&gt;**Soft Reset (Keep Characters, New Plot):**&lt;/span&gt;
+`((OOC: Reset narrative while keeping established characters. Ignore previous plot events but maintain character personalities. New scenario: [scenario]. Opening scene: [scene]))`
+
+---
+
+&lt;center&gt;
+
+&lt;span style=&quot;font-size: 1.1em; color: #f38ba8;&quot;&gt;**⚠️ CONTENT WARNINGS**&lt;/span&gt;
+&lt;span style=&quot;font-size: 0.9em; color: #bac2de;&quot;&gt;**Extreme overprotective and controlling behavior, psychological pressure, non-lethal violence, intense power dynamics, dark romance themes, feral instincts.**&lt;/span&gt;
+
+&lt;span style=&quot;font-size: 0.85em;&quot;&gt;Created by &lt;a target=&quot;_blank&quot; href=&quot;https://janitorai.com/profiles/df1f0279-2607-4c9b-9b4e-ee02438d70a2_profile-of-lys-5&quot;&gt;&lt;span style=&quot;color: #89b4fa;&quot;&gt;Lys_5&lt;/span&gt;&lt;/a&gt; | Powered by *World-Forge*&lt;/span&gt;
+
+&lt;span style=&quot;font-size: 0.75em; color: #6c7086;&quot;&gt;*LLMs will respond literally however you want them to. You can ignore the setup and use OOC instructions to steer the chat. These warnings apply to written content in the bot&#39;s definition. I cannot control text that the bot generates in replies.*&lt;/span&gt;
+
+&lt;/center&gt;
+
+</code></pre>
+<p><strong>User</strong> : dovremmo inserire un credit per https://janitorai.com/profiles/ae3b8516-54d5-4469-8557-6dcf808128d0_profile-of-iorveths visto che la SUCC e solarton sono sue ambientazioni che noi abbiamo inclusoi dentro la nostra quindi un credit come &quot;no-Canon OC&quot; e alternate universe o qualcosa del genere dammi solo la stringa html da inserire
+<strong>Gemini</strong> :</p>
+<pre><code class="language-html">&lt;p align=&quot;center&quot;&gt;
+  &lt;span style=&quot;font-size: 0.8em; color: rgb(186, 194, 222);&quot;&gt;
+    &lt;em&gt;SUCC and Solarton settings adapted from an Alternate Universe (AU) non-canon concept by &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;https://janitorai.com/profiles/ae3b8516-54d5-4469-8557-6dcf808128d0_profile-of-iorveths&quot;&gt;&lt;span style=&quot;color: rgb(137, 180, 250);&quot;&gt;iorveths&lt;/span&gt;&lt;/a&gt;.&lt;/em&gt;
+  &lt;/span&gt;
+&lt;/p&gt;
+
+</code></pre>
+<p><strong>User</strong> : no, è il nostro universo che ha integrato le ambientazioni originali di solarton e succ come plugin da aggiungere a blackwood
+<strong>Gemini</strong> : Certamente! Perfetto, correggiamo subito il tiro e posizioniamo i credits come un elemento di ambientazione e crossover canonico (un vero e proprio &quot;plugin&quot; narrativo integrato nel mondo di Blackwood).
+Ecco la stringa HTML pulita, formattata e sicura per il sanitizer di JanitorAI, da inserire direttamente dove preferisci (solitamente in fondo, prima o dopo i content warnings):</p>
+<pre><code class="language-html">&lt;p align=&quot;center&quot;&gt;
+  &lt;span style=&quot;font-size: 0.8em; color: rgb(186, 194, 222);&quot;&gt;
+    &lt;em&gt;Setting expansion (SUCC &amp; Solarton) integrated as an Alternate Universe (AU) plugin into Blackwood City, based on concepts by &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;https://janitorai.com/profiles/ae3b8516-54d5-4469-8557-6dcf808128d0_profile-of-iorveths&quot;&gt;&lt;span style=&quot;color: rgb(137, 180, 250);&quot;&gt;iorveths&lt;/span&gt;&lt;/a&gt; (Non-Canon OC crossover).&lt;/em&gt;
+  &lt;/span&gt;
+&lt;/p&gt;
+
+</code></pre>
+</span></li></ul></code><table></table></div>

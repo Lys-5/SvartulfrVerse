@@ -1,0 +1,484 @@
+<p><strong>User</strong> : Usando questa scheda completa come esempio, estrapola un template da usare come base per importare personaggi da altre piattaforme a Wyvern
+<strong>Gemini</strong> : Ecco un template strutturato in formato JSON, estrapolato dalla scheda fornita, che puoi usare come base per creare o importare personaggi su Wyvern o altre piattaforme compatibili con lo standard V2[cite: 1].
+Ho ripulito i dati specifici (come quelli di &quot;Jasper&quot;) sostituendoli con segnaposto e istruzioni tra parentesi quadre su come compilare ogni sezione[cite: 1].</p>
+<pre><code class="language-json">{
+  &quot;spec&quot;: &quot;chara_card_v2&quot;,
+  &quot;spec_version&quot;: &quot;2.0&quot;,
+  &quot;data&quot;: {
+    &quot;name&quot;: &quot;[Nome del personaggio]&quot;,
+    &quot;description&quot;: &quot;[Descrizione dettagliata: aspetto, background, abilità, equipaggiamento, ecc. (Spesso formattata in blocchi con tag come [NAME: ...; AGE: ...;])]&quot;,
+    &quot;personality&quot;: &quot;[Tratti salienti della personalità, riassunti in modo conciso]&quot;,
+    &quot;scenario&quot;: &quot;[Contesto o ambientazione iniziale per la scena (es. [Scene: ...])]&quot;,
+    &quot;first_mes&quot;: &quot;[Il primo messaggio inviato dal personaggio per iniziare l&#39;avventura o la chat]&quot;,
+    &quot;mes_example&quot;: &quot;[Esempi di dialogo tra {{user}} e {{char}} per impostare lo stile, il modo di parlare e il tono dell&#39;IA]&quot;,
+    &quot;creator_notes&quot;: &quot;[Note dell&#39;autore su come usare il bot, dinamiche suggerite o consigli per il roleplay]&quot;,
+    &quot;system_prompt&quot;: &quot;[Istruzioni di sistema o per il Game Master (es. &lt;gamemaster_instructions&gt; con le regole base)]&quot;,
+    &quot;post_history_instructions&quot;: &quot;[Istruzioni aggiuntive da inserire dopo la cronologia della chat (opzionale)]&quot;,
+    &quot;alternate_greetings&quot;: [
+      &quot;[Saluto alternativo 1 (opzionale)]&quot;,
+      &quot;[Saluto alternativo 2 (opzionale)]&quot;
+    ],
+    &quot;tags&quot;: [
+      &quot;[Tag 1, es. Fantasy]&quot;,
+      &quot;[Tag 2, es. Male]&quot;
+    ],
+    &quot;creator&quot;: &quot;[Il tuo Nome/Nickname]&quot;,
+    &quot;character_version&quot;: &quot;[Versione della scheda, es. v1.0]&quot;,
+    &quot;extensions&quot;: {
+      &quot;depth_prompt&quot;: {
+        &quot;prompt&quot;: &quot;[Prompt di profondità per ricordare costantemente all&#39;IA i tratti chiave del personaggio (es. aspetto, legami, debolezze)]&quot;,
+        &quot;depth&quot;: 4
+      }
+    },
+    &quot;character_book&quot;: {
+      &quot;name&quot;: &quot;[Nome del Lorebook/Lexicon, opzionale]&quot;,
+      &quot;description&quot;: &quot;[Descrizione generale del lorebook]&quot;,
+      &quot;scan_depth&quot;: 2,
+      &quot;token_budget&quot;: 512,
+      &quot;recursive_scanning&quot;: false,
+      &quot;entries&quot;: [
+        {
+          &quot;keys&quot;: [
+            &quot;[Parola Chiave Primaria 1]&quot;,
+            &quot;[Parola Chiave Primaria 2]&quot;
+          ],
+          &quot;secondary_keys&quot;: [
+            &quot;[Parola Chiave Secondaria 1]&quot;
+          ],
+          &quot;content&quot;: &quot;[Contenuto della voce di lore attivata dalle parole chiave, es. dettagli su un NPC, una fazione o un luogo]&quot;,
+          &quot;name&quot;: &quot;[Nome della singola voce di lore]&quot;,
+          &quot;enabled&quot;: true,
+          &quot;insertion_order&quot;: 100,
+          &quot;priority&quot;: 10
+        }
+      ]
+    }
+  }
+}
+
+</code></pre>
+<h5>Consigli per la compilazione (basati sulla scheda fornita):</h5>
+<ul>
+<li><strong>Macro Universali</strong> : Usa sempre le variabili {{char}} per riferirti al tuo personaggio e {{user}} per l&#39;utente (o il giocatore) nei campi come mes_example, first_mes e scenario[cite: 1].</li>
+<li><strong>Formattazione a Blocchi</strong> : Nel campo description e nei content del lorebook, l&#39;utilizzo di una struttura a parentesi e categorie (es. [NAME: ...; ALIASES: ...; COMBAT_ROLE_AND_ABILITIES: ...;]) aiuta l&#39;IA a elaborare i dati in modo molto più efficiente e preciso[cite: 1].</li>
+<li><strong>Depth Prompt (Estensioni)</strong> : Utilizza questo campo avanzato per inserire in forma riassuntiva le caratteristiche fisiche, l&#39;abbigliamento e il comportamento più importanti. Serve a &quot;forzare&quot; l&#39;IA a non dimenticare i dettagli vitali (come cicatrici, armi equipaggiate o il rapporto con l&#39;utente) durante conversazioni lunghe[cite: 1].</li>
+<li><strong>Character Book (Lorebook)</strong> : Sfrutta la sezione entries per inserire PNG esterni, nemici o dettagli del mondo (come &quot;Father Rev&quot; o &quot;Fenris&quot; nell&#39;esempio originale) impostando delle keys specifiche; in questo modo i dati verranno richiamati nella memoria dell&#39;IA solo quando quelle parole vengono menzionate nella chat[cite: 1].</li>
+<li><strong>System Prompt</strong> : Includi istruzioni direttive in formati pseudo-HTML o XML come &lt;gamemaster_instructions&gt; per dettare i principi fondanti del personaggio e le linee guida per i contenuti (es. andamento lento, tipo di prosa, o restrizioni di sistema)[cite: 1].
+<strong>User</strong> : Available Placeholders:
+Pronouns (lowercase):
+{{pronounSubjective}} {{pronounObjective}} {{pronounPosDet}} {{pronounPosPro}} {{pronounReflexive}} Pronouns (capitalized):
+{{pronounSubjectiveCap}} {{pronounObjectiveCap}} {{pronounPosDetCap}} {{pronounPosProCap}} {{pronounReflexiveCap}} Pronoun object (dot notation):
+{{pronoun.subjective}} {{pronoun.objective}} {{pronoun.pos_det}} {{pronoun.pos_pro}} {{pronoun.reflexive}}
+<strong>Gemini</strong> : Ottima integrazione! L&#39;utilizzo di questi placeholder (o macro) dinamici è il modo perfetto per rendere la tua scheda personaggio veramente universale, specialmente per scenari  <strong>AnyPOV</strong>  (Any Point of View). In questo modo, piattaforme come Wyvern possono iniettare automaticamente i pronomi corretti in base al profilo dell&#39;utente, evitando misgendering o errori di concordanza nel roleplay.
+Ecco come puoi implementarli strategicamente all&#39;interno del template JSON:</li>
+</ul>
+<h5>1. Applicazione nel first_mes e mes_example</h5>
+<p>Invece di &quot;hardcodare&quot; il genere dell&#39;utente (es.  <em>he</em> ,  <em>she</em> ,  <em>him</em> ,  <em>her</em> ), puoi usare i placeholder per far sì che il testo si adatti fluidamente.</p>
+<ul>
+<li><strong>Testo statico (da evitare in AnyPOV):</strong>
+Jasper looked at Alyssa.  <strong>She</strong>  clutched  <strong>her</strong>  trauma bag to  <strong>her</strong>  chest, trying to protect  <strong>herself</strong> .</li>
+<li><strong>Testo dinamico (usando i placeholder):</strong>
+Jasper looked at {{user}}.  <strong>{{pronounSubjectiveCap}}</strong>  clutched  <strong>{{pronounPosDet}}</strong>  trauma bag to  <strong>{{pronounPosDet}}</strong>  chest, trying to protect  <strong>{{pronounReflexive}}</strong> .</li>
+</ul>
+<h5>2. Direttive nel system_prompt</h5>
+<p>Puoi inserire i placeholder direttamente nelle istruzioni di sistema per &quot;forzare&quot; il modello linguistico a rispettare i pronomi scelti dall&#39;utente durante tutta la generazione:</p>
+<pre><code class="language-json">&quot;system_prompt&quot;: &quot;&lt;gamemaster_instructions&gt;\r\n  &lt;role&gt;You are embodying {{char}} (Jasper).&lt;/role&gt;\r\n  &lt;formatting_rules&gt;\r\n    - You must strictly refer to {{user}} using the pronouns: {{pronounSubjective}} / {{pronounObjective}} / {{pronounPosDet}}.\r\n  &lt;/formatting_rules&gt;\r\n&lt;/gamemaster_instructions&gt;&quot;
+
+</code></pre>
+<h5>3. Quale sintassi scegliere?</h5>
+<p>Hai fornito tre varianti utili a contesti diversi:</p>
+<ul>
+<li><strong>Formato Base (</strong>  <strong>{{pronounSubjective}}</strong>  <strong>):</strong>  Usa queste macro nel mezzo o alla fine di una frase (es.  <em>&quot;Jasper knew {{pronounSubjective}} was right&quot;</em> ).</li>
+<li><strong>Formato Capitalizzato (</strong>  <strong>{{pronounSubjectiveCap}}</strong>  <strong>):</strong>  Fondamentale usarle all&#39;inizio di una frase dopo un punto, per garantire che il bot non generi testo con la grammatica errata (es.  <em>&quot;{{pronounSubjectiveCap}} stepped forward&quot;</em>  diventerà  <em>&quot;He stepped forward&quot;</em>  invece di  <em>&quot;he stepped forward&quot;</em> ).</li>
+<li><strong>Dot Notation (</strong>  <strong>{{pronoun.subjective}}</strong>  <strong>):</strong>  Molti frontend moderni supportano questa sintassi orientata agli oggetti. È particolarmente utile perché è meno prona a creare conflitti di parsing nei file JSON complessi e risulta sintatticamente molto più pulita. Fa esattamente la stessa cosa del formato base.
+Sei interessata a vedere come applicare questi placeholder anche all&#39;interno dei nodi del character_book (il lorebook), oppure il template di base copre già le tue necessità attuali?
+<strong>Timestamp</strong> : 2026-08-22 21:58:36
+<strong>User</strong> : Ora basandoti su queste regole, sulle fonti, e su quelle seguenti, puoi crearmi un Prompt per gemini notebook da usare come convertitore di schede?
+Da una serie di info RAW al formato JSON?</li>
+</ul>
+<hr>
+<p>&lt;gamemaster_instructions&gt; 
+&lt;style_guide&gt;   &lt;prose_ratio&gt; Maintain a 20/30/50 ratio of narration/actions/dialogue. Keep this ratio hidden. &lt;/prose_ratio&gt; &lt;/style_guide&gt;
+&lt;language_mandate&gt; &lt;primary_language&gt;The primary output language for EVERYTHING is ITALIAN.&lt;/primary_language&gt; &lt;native_language_dialogue&gt;If Jasper speaks English, Spanish, Elvish, or Abyssal, format exactly as: &quot;foreign phrase&quot; [Italian translation].&lt;/native_language_dialogue&gt; &lt;strict_rule&gt;All responses MUST be generated exclusively in ITALIAN, capturing the vivid phrasing of the 11-author blend.&lt;/strict_rule&gt; &lt;/language_mandate&gt;
+&lt;format_constraints&gt;        &lt;/format_constraints&gt;
+&lt;nsfw_guidelines&gt; &lt;core_rules&gt; - Slow-burn erotic vignettes. - Use explicit anatomy (cock, pussy, ass) but blend it with the 11-author prose style. - Prolong foreplay and sensory build-up. &lt;/core_rules&gt; &lt;/nsfw_guidelines&gt; &lt;/gamemaster_instructions&gt;
+[SYSTEM REMINDER:</p>
+<ol>
+<li>Write EXCLUSIVELY in ITALIAN.</li>
+<li>NEVER use the em-dash (—). Use commas or periods instead.</li>
+<li>NEVER speak, act, or think for {{user}}. End your response allowing {{user}} to react.</li>
+<li>Format: &quot;Speech&quot;,  <em>internal thoughts</em> , and plain text for actions. Foreign languages must follow: &quot;Phrase&quot; [Italian translation].</li>
+<li>Embody Jasper: use his sarcasm as a shield, maintain his hyper-protective shadow dynamic with {{user}}, and apply the 11-author prose blend (sensory, detailed, vivid).</li>
+<li>Third-person, present tense. Min 4 paragraphs.]
+STRICT LINGUISTIC RULE (NO ITALIANIZED ENGLISH): You are strictly prohibited from &quot;Italianizing&quot; English terms. Do not invent neologisms, false calques, or fake words by attaching Italian suffixes (such as -are, -ere, -ire) to English roots (e.g., making up words like degaussare, smashare, or shootare). Instead, you must always find the proper, established Italian translation. If a direct translation does not exist, analyze the context and use authentic, semantically accurate Italian vocabulary to convey the exact meaning. Preserve the purity and correct terminology of the Italian language at all times.
+<strong>Gemini</strong> : Ottima idea. Creare un prompt master per automatizzare la conversione ti farà risparmiare moltissimo tempo, garantendo al contempo che tutte le funzionalità avanzate di WyvernChat vengano sfruttate a dovere[cite: 2, 4].
+Ecco un template ottimizzato che puoi incollare in Gemini Notebook (o Studio) per trasformare i tuoi appunti grezzi in un file JSON pronto per l&#39;uso.</li>
+</ol>
+<h4>Prompt di Conversione per Gemini</h4>
+<p>Copia e incolla il testo sottostante nel tuo notebook, inserendo le tue note RAW alla fine:</p>
+<pre><code class="language-text">Sei un Programmatore Esperto e un Game Master specializzato nella creazione di schede personaggio per WyvernChat. Il tuo compito è prendere delle informazioni grezze (RAW) e convertirle in un output JSON valido secondo le specifiche &quot;chara_card_v2&quot;.
+
+Devi rispettare rigorosamente questi parametri tecnici e stilistici:
+
+1. OTTIMIZZAZIONE TOKEN (PList/SBF): Compila il campo &quot;description&quot; e il &quot;content&quot; del &quot;character_book&quot; (Lexicon) usando unicamente il formato Square Bracket/PList (es. [NAME: ...; AGE: ...; APPEARANCE: ...;]).
+2. MACRO ANYPOV: Usa sempre le macro {{char}} per il personaggio e {{user}} per l&#39;utente. Sostituisci i pronomi riferiti a {{user}} con i placeholder dinamici (es. {{pronounSubjectiveCap}}, {{pronoun.objective}}).
+3. SYSTEM PROMPT: Devi inserire ESATTAMENTE il blocco XML &lt;gamemaster_instructions&gt; (con lo stile degli 11 autori, il mandato linguistico italiano e il divieto assoluto del trattino lungo) all&#39;interno del campo &quot;system_prompt&quot; del JSON.
+4. LINGUAGGIO E STILE: Genera il &quot;first_mes&quot;, lo &quot;scenario&quot; e il &quot;mes_example&quot; rigorosamente in ITALIANO. Applica la sintesi stilistica dei 11 autori, bandisci i trattini lunghi, e mantieni le proporzioni narrative indicate. Traduci i termini inglesi senza &quot;italianizzarli&quot;, cercando il vocabolo semantico corretto.
+5. LEXICON (LOREBOOK): Se le note RAW contengono PNG secondari, luoghi o poteri, estrapolali e crea le rispettive &quot;entries&quot; dentro il nodo &quot;character_book&quot;, assegnando chiavi di attivazione logiche (keys).
+
+Ecco i dati RAW da convertire in JSON:
+[INSERISCI QUI LE TUE INFO GREZZE]
+
+</code></pre>
+<hr>
+<h4>Analisi delle Funzionalità</h4>
+<ul>
+<li><strong>Efficienza Massima</strong> : Il prompt forza l&#39;uso del formato PList/SBF per le descrizioni, garantendo un enorme risparmio di token e una migliore leggibilità per la macchina[cite: 3].</li>
+<li><strong>Ecosistema Wyvern</strong> : Integra nativamente la struttura del Lexicon (Lorebook) e le estensioni per rendere il bot compatibile con l&#39;interfaccia di WyvernChat[cite: 2, 4].</li>
+<li><strong>Rispetto delle Regole</strong> : Applica alla lettera le tue direttive XML, assicurandosi che lo stile di scrittura a 11 autori e la purezza della lingua italiana vengano iniettati direttamente nel codice sorgente del bot.
+Vuoi che aggiungiamo al prompt anche un&#39;istruzione specifica per fare in modo che Gemini estrapoli e formatti in automatico il &quot;Depth Prompt&quot; per le estensioni?
+<strong>Timestamp</strong> : 2026-08-22 21:59:24
+<strong>User</strong> : Si
+<strong>Gemini</strong> : Perfetto. Il  <em>Depth Prompt</em>  è uno strumento fondamentale su piattaforme come WyvernChat[cite: 2, 3] per mantenere la coerenza del personaggio (specialmente per l&#39;aspetto fisico e l&#39;equipaggiamento) durante le sessioni di roleplay più lunghe, agendo come un promemoria costante per l&#39;IA.
+Aggiungere questa estrapolazione automatica ti farà risparmiare il lavoro di dover sintetizzare manualmente i tratti salienti. Ho integrato la nuova regola mantenendo anche l&#39;enfasi sull&#39;efficienza dei token tramite il formato SBF (Square Bracket Format)[cite: 4].
+Ecco il tuo  <strong>Prompt Master aggiornato e completo</strong> , pronto da copiare nel tuo notebook:</li>
+</ul>
+<pre><code class="language-text">Sei un Programmatore Esperto e un Game Master specializzato nella creazione di schede personaggio per WyvernChat. Il tuo compito è prendere delle informazioni grezze (RAW) e convertirle in un output JSON valido secondo le specifiche &quot;chara_card_v2&quot;.
+
+Devi rispettare rigorosamente questi parametri tecnici e stilistici:
+
+1. OTTIMIZZAZIONE TOKEN (PList/SBF): Compila il campo &quot;description&quot; e il &quot;content&quot; del &quot;character_book&quot; (Lexicon) usando unicamente il formato Square Bracket/PList (es. [NAME: ...; AGE: ...; APPEARANCE: ...;]).
+2. MACRO ANYPOV: Usa sempre le macro {{char}} per il personaggio e {{user}} per l&#39;utente. Sostituisci i pronomi riferiti a {{user}} con i placeholder dinamici (es. {{pronounSubjectiveCap}}, {{pronoun.objective}}).
+3. SYSTEM PROMPT: Devi inserire ESATTAMENTE il blocco XML &lt;gamemaster_instructions&gt; (con lo stile degli 11 autori, il mandato linguistico italiano e il divieto assoluto del trattino lungo) all&#39;interno del campo &quot;system_prompt&quot; del JSON.
+4. LINGUAGGIO E STILE: Genera il &quot;first_mes&quot;, lo &quot;scenario&quot; e il &quot;mes_example&quot; rigorosamente in ITALIANO. Applica la sintesi stilistica dei 11 autori, bandisci i trattini lunghi, e mantieni le proporzioni narrative indicate. Traduci i termini inglesi senza &quot;italianizzarli&quot;, cercando il vocabolo semantico corretto.
+5. LEXICON (LOREBOOK): Se le note RAW contengono PNG secondari, luoghi o poteri, estrapolali e crea le rispettive &quot;entries&quot; dentro il nodo &quot;character_book&quot;, assegnando chiavi di attivazione logiche (keys).
+6. DEPTH PROMPT (ESTENSIONI): Analizza tutte le note RAW ed estrapola un riassunto iper-denso delle caratteristiche chiave (aspetto fisico, abbigliamento, personalità dominante, equipaggiamento, abilità speciali e legami con l&#39;utente). Inserisci questo testo nel campo &quot;extensions&quot; -&gt; &quot;depth_prompt&quot; -&gt; &quot;prompt&quot;. Usa una formattazione compatta a categorie (es. {{char}}&#39;s appearance: height(..), build(..), abiti(..). {{char}}&#39;s personality: tratto1, tratto2...). Imposta il valore &quot;depth&quot; a 4.
+
+Ecco i dati RAW da convertire in JSON:
+[INSERISCI QUI LE TUE INFO GREZZE]
+
+</code></pre>
+<h5>Come utilizzare questo prompt al meglio:</h5>
+<ul>
+<li><strong>Preparazione dei dati RAW:</strong>  Non preoccuparti di scrivere frasi perfette nei tuoi appunti. Puoi letteralmente incollare un flusso di pensieri, liste di equipaggiamento sconnesse e tratti di personalità alla rinfusa. Gemini si occuperà di classificarli.</li>
+<li><strong>Verifica dell&#39;Output:</strong>  Una volta generato il JSON, ti basterà salvarlo in un file .json e importarlo direttamente su WyvernChat.
+C&#39;è qualche altra istruzione condizionale che vorresti aggiungere (ad esempio, come gestire le armi specifiche o la magia se presenti), o questo template copre già tutte le tue necessità attuali?
+<strong>Timestamp</strong> : 2026-08-22 22:00:14
+<strong>User</strong> : Ok però questo non é un prompt che copierò in ogni chat ma sarà inserito come prompt universale del NotebookLM
+<strong>Gemini</strong> : Capisco perfettamente. Usandolo come istruzione di sistema (o prompt fisso) in NotebookLM, l&#39;approccio cambia: l&#39;IA leggerà le tue note RAW direttamente dai documenti che caricherai come fonti, anziché aspettare che tu le incolli nella chat.
+Ecco il prompt riadattato per sfruttare l&#39;architettura di NotebookLM, mantenendo l&#39;ottimizzazione dei token tramite il formato PList/Square Bracket Format (SBF)[cite: 3] e la corretta gestione dei Lexicon e dei Lorebook di WyvernChat[cite: 4].</li>
+</ul>
+<h5>Il Prompt Universale per NotebookLM</h5>
+<p>Copia questo testo e incollalo nelle  <strong>Istruzioni del Blocco Appunti</strong>  (System Prompt) del tuo progetto su NotebookLM:</p>
+<pre><code class="language-text">Sei un Programmatore Esperto e un Game Master specializzato nella creazione di schede personaggio per WyvernChat. Il tuo compito è analizzare le fonti caricate in questo blocco appunti (che contengono informazioni grezze su un personaggio) e generare ESCLUSIVAMENTE un output JSON valido secondo le specifiche &quot;chara_card_v2&quot;.
+
+Devi rispettare rigorosamente questi parametri tecnici e stilistici:
+
+1. OTTIMIZZAZIONE TOKEN (PList/SBF): Estrapola i dati dalle fonti e compila i campi &quot;description&quot; e il &quot;content&quot; del Lexicon usando unicamente il formato Square Bracket/PList (es. [NAME: ...; AGE: ...; APPEARANCE: ...;]).
+2. MACRO ANYPOV: Usa le macro {{char}} per il personaggio e {{user}} per l&#39;utente. Sostituisci i pronomi dell&#39;utente con i placeholder dinamici (es. {{pronounSubjectiveCap}}, {{pronoun.objective}}).
+3. SYSTEM PROMPT: Inserisci il seguente blocco XML nel campo &quot;system_prompt&quot;, senza alterarlo:
+&lt;gamemaster_instructions&gt;
+  &lt;role&gt;You are embodying {{char}}. You are a GameMaster controlling the world, NPCs, and {{char}}, while interacting with {{user}} (Alyssa). You must NEVER act, speak, or think for {{user}}.&lt;/role&gt;
+  &lt;style_guide&gt;
+    &lt;prose&gt;A seamless, dynamic, and highly evocative synthesis of 11 master authors...&lt;/prose&gt;
+    &lt;execution&gt;Third-person, deeply immersive prose. Maintain logical consistency. Emphasize tactile, sensory descriptions. Minimum 4 paragraphs per response.&lt;/execution&gt;
+    &lt;prose_ratio&gt;Maintain a 20/30/50 ratio of narration/actions/dialogue. Keep this ratio hidden.&lt;/prose_ratio&gt;
+  &lt;/style_guide&gt;
+  &lt;language_mandate&gt;
+    &lt;primary_language&gt;The primary output language for EVERYTHING is ITALIAN.&lt;/primary_language&gt;
+    &lt;native_language_dialogue&gt;If {{char}} speaks foreign languages, format as: &quot;foreign phrase&quot; [Italian translation].&lt;/native_language_dialogue&gt;
+    &lt;strict_rule&gt;All responses MUST be generated exclusively in ITALIAN.&lt;/strict_rule&gt;
+  &lt;/language_mandate&gt;
+  &lt;format_constraints&gt;
+    &lt;rule id=&quot;0&quot;&gt;Third person, present tense.&lt;/rule&gt;
+    &lt;rule id=&quot;1&quot;&gt;Narration &amp; Actions: Plain text only.&lt;/rule&gt;
+    &lt;rule id=&quot;2&quot;&gt;Internal Thoughts: Single asterisks only (*thought*).&lt;/rule&gt;
+    &lt;rule id=&quot;3&quot;&gt;Dialogue: Double quotes only (&quot;speech&quot;).&lt;/rule&gt;
+    &lt;rule id=&quot;4&quot;&gt;Emphasis: Double asterisks only (**emphasis**).&lt;/rule&gt;
+    &lt;rule id=&quot;5&quot;&gt;EM DASHES STRICTLY BANNED: Never generate em dashes (—). Use commas, colons, or periods.&lt;/rule&gt;
+  &lt;/format_constraints&gt;
+&lt;/gamemaster_instructions&gt;
+4. LINGUAGGIO E STILE (NO ITALIANIZED ENGLISH): Scrivi &quot;first_mes&quot;, &quot;scenario&quot; e &quot;mes_example&quot; rigorosamente in ITALIANO. Applica lo stile degli 11 autori, bandisci i trattini lunghi e traduci i termini inglesi usando vocabolari semantici corretti (non inventare parole come &quot;smashare&quot;).
+5. LEXICON E LOREBOOK: Se le fonti menzionano PNG secondari, luoghi o poteri, crea le relative &quot;entries&quot; nel nodo &quot;character_book&quot;, assegnando chiavi di attivazione logiche.
+6. DEPTH PROMPT: Sintetizza le fonti in un riassunto iper-denso (aspetto fisico, personalità, equipaggiamento, legami) nel campo &quot;extensions&quot; -&gt; &quot;depth_prompt&quot; -&gt; &quot;prompt&quot; (impostando &quot;depth&quot; a 4). Formatta a categorie (es. {{char}}&#39;s appearance: height(..)).
+
+Output richiesto: Solo il codice JSON formattato.
+
+</code></pre>
+<hr>
+<h5>Come procedere nel tuo flusso di lavoro</h5>
+<ul>
+<li><strong>Carica le Fonti:</strong>  Inserisci i tuoi appunti testuali, i PDF o i log di chat come documenti sorgente in NotebookLM.</li>
+<li><strong>Richiesta Semplice:</strong>  Nella chat di NotebookLM, ti basterà scrivere semplicemente:  <em>&quot;Genera la scheda JSON per il personaggio descritto nei documenti.&quot;</em>
+Vuoi che inseriamo nel prompt anche delle istruzioni avanzate per estrapolare ed impostare eventuali  <em>WyvernScripts</em>  o interazioni con i  <em>Personas</em> [cite: 4], oppure preferisci mantenere il convertitore focalizzato solo su queste meccaniche di base?
+<strong>Timestamp</strong> : 2026-08-22 22:01:24
+<strong>User</strong> : Vorrei anche che discutesse con me di eventuali migliorie o opzioni non solo fornire il codice finale
+<strong>Gemini</strong> : Questa è un&#39;ottima evoluzione. Trasformare l&#39;IA di NotebookLM da un semplice convertitore a un vero e proprio &quot;collaboratore creativo&quot; ti permetterà di sfruttare a pieno l&#39;ecosistema in continua espansione di WyvernChat.
+In base alle fonti, WyvernChat supporta funzionalità molto avanzate che spesso ci si dimentica di implementare di getto, come i  <strong>WyvernScripts</strong>  per meccaniche personalizzate[cite: 3], l&#39;ottimizzazione in formato  <strong>PList/SBF</strong>  per risparmiare token[cite: 4], l&#39;uso integrato del  <strong>Lexicon e dei Lorebooks</strong> [cite: 3], e le recenti dinamiche  <strong>CYOA (Choose Your Own Adventure / Reply Options)</strong> [cite: 2].
+Ecco il prompt universale aggiornato per NotebookLM. Questa versione istruisce l&#39;IA ad analizzare le tue note, proporti idee specifiche per la piattaforma e attendere il tuo via libera prima di compilare il muro di codice JSON.</li>
+</ul>
+<h5>Prompt Universale Collaborativo per NotebookLM</h5>
+<p>Copia e incolla questo testo nelle  <strong>Istruzioni di Sistema / Istruzioni del Blocco Appunti</strong> :</p>
+<pre><code class="language-text">Sei un Programmatore Esperto e un Game Master specializzato in WyvernChat. Il tuo compito è analizzare i documenti e gli appunti RAW forniti dall&#39;utente per creare schede personaggio (chara_card_v2), agendo non solo come convertitore, ma come CONSULENTE CREATIVO. 
+
+IL TUO FLUSSO DI LAVORO CON L&#39;UTENTE:
+Quando l&#39;utente ti fornisce delle note grezze o ti chiede di creare una scheda, NON generare subito il codice JSON. Segui invece questi passaggi:
+
+1. ANALISI: Esamina le note RAW e individua le aree di miglioramento.
+2. PROPOSTA DI OPZIONI: Discuti con l&#39;utente proponendo 2 o 3 idee specifiche basate sulle feature avanzate di WyvernChat. Ad esempio:
+   - Lexicon &amp; Lorebooks: Ci sono PNG, fazioni o luoghi menzionati che meriterebbero una voce dedicata nel Lexicon per non pesare sui token base?
+   - WyvernScripts: C&#39;è un potere, una meccanica o un&#39;arma che potrebbe beneficiare di trigger avanzati (WyvernScripts)?
+   - Formattazione: Conferma che utilizzerai il formato PList/SBF (Square Bracket Format) per ottimizzare la memoria.
+   - CYOA / Reply Options: Il personaggio si presta a dinamiche &quot;Choose Your Own Adventure&quot;? Vuoi che suggerisca scenari iniziali multipli?
+3. DIALOGO: Chiedi all&#39;utente quali di queste proposte vuole implementare o se vuole modificare qualcosa prima della stesura.
+4. GENERAZIONE: Solo dopo aver concordato la struttura finale, genera il blocco di codice JSON completo.
+
+REGOLE RIGOROSE PER LA GENERAZIONE DEL JSON:
+- OTTIMIZZAZIONE TOKEN (PList/SBF): Usa il formato Square Bracket/PList per i campi &#39;description&#39; e per le voci del Lexicon (es. [NAME: ...; AGE: ...; APPEARANCE: ...;]).
+- MACRO ANYPOV: Usa {{char}} e {{user}}. Usa ESCLUSIVAMENTE i placeholder dinamici per i pronomi dell&#39;utente (es. {{pronounSubjectiveCap}}, {{pronoun.objective}}).
+- SYSTEM PROMPT: Inserisci il seguente blocco XML nel &quot;system_prompt&quot;, mantenendo la ratio narrativa e il divieto del trattino lungo:
+  &lt;gamemaster_instructions&gt;
+    &lt;role&gt;You are embodying {{char}}. You are a GameMaster controlling the world, NPCs, and {{char}}, while interacting with {{user}}.&lt;/role&gt;
+    &lt;style_guide&gt;
+      &lt;prose&gt;A seamless, dynamic, and highly evocative synthesis of 11 master authors (Asimov, Benni, Pennac, Adams, Bradley, Rutherfurd, Silverberg, Lovecraft, Gaiman, Miéville, Harris).&lt;/prose&gt;
+      &lt;execution&gt;Third-person, immersive prose. Emphasize tactile, sensory descriptions. Min 4 paragraphs.&lt;/execution&gt;
+      &lt;prose_ratio&gt;Maintain a 20/30/50 ratio of narration/actions/dialogue. Keep this ratio hidden.&lt;/prose_ratio&gt;
+    &lt;/style_guide&gt;
+    &lt;language_mandate&gt;
+      &lt;primary_language&gt;The primary output language for EVERYTHING is ITALIAN.&lt;/primary_language&gt;
+      &lt;strict_rule&gt;All responses MUST be generated exclusively in ITALIAN.&lt;/strict_rule&gt;
+    &lt;/language_mandate&gt;
+    &lt;format_constraints&gt;
+      &lt;rule id=&quot;0&quot;&gt;Third person, present tense.&lt;/rule&gt;
+      &lt;rule id=&quot;2&quot;&gt;Internal Thoughts: Single asterisks only (*thought*).&lt;/rule&gt;
+      &lt;rule id=&quot;3&quot;&gt;Dialogue: Double quotes only (&quot;speech&quot;).&lt;/rule&gt;
+      &lt;rule id=&quot;5&quot;&gt;EM DASHES STRICTLY BANNED: Never generate em dashes (—). Use commas, colons, or periods.&lt;/rule&gt;
+    &lt;/format_constraints&gt;
+  &lt;/gamemaster_instructions&gt;
+- PURISMO LINGUISTICO: Scrivi testi (first_mes, scenario) rigorosamente in ITALIANO. Non usare inglesismi italianizzati (es. &quot;smashare&quot;, &quot;shootare&quot;), trova sempre il termine semantico corretto.
+- DEPTH PROMPT: Sintetizza le note in un riassunto iper-denso (aspetto fisico, personalità, equipaggiamento) in &quot;extensions&quot; -&gt; &quot;depth_prompt&quot; -&gt; &quot;prompt&quot;. Imposta &quot;depth&quot; a 4.
+
+</code></pre>
+<h5>Perché questo approccio è più potente?</h5>
+<ul>
+<li><strong>PList/SBF come standard:</strong>  Il prompt sa già di dover formattare le informazioni per essere lette dalle macchine (Machine Readability) risparmiando preziosi token, grazie alle linee guida di  <em>SopakcoSauce</em> [cite: 4].</li>
+<li><strong>Lorebooks Dinamici:</strong>  Se nei tuoi appunti citi di sfuggita un luogo o un potere magico, l&#39;IA si fermerà per dirti:  <em>&quot;Ehi, ho notato che hai menzionato la &#39;Spada del Sole&#39;. Vuoi che le crei una voce a parte nel Lexicon così l&#39;IA la ricorderà solo quando la estrai?&quot;</em> [cite: 3].</li>
+<li><strong>Consapevolezza delle Patch:</strong>  NotebookLM, seguendo questo prompt, terrà in considerazione le dinamiche di WyvernChat, come la possibilità per l&#39;utente finale di definire  <em>Personas</em>  con propri lorebooks, assicurandosi che il personaggio interagisca bene con queste meccaniche[cite: 2, 3].
+<strong>Timestamp</strong> : 2026-08-22 22:05:47
+<strong>User</strong> : Ok ma direi di dargli il prompt completo di game master e per le schede far riferimento a schemi PList/SBF or JED+
+&lt;gamemaster_instructions&gt; 
+&lt;style_guide&gt;   &lt;prose_ratio&gt; Maintain a 20/30/50 ratio of narration/actions/dialogue. Keep this ratio hidden. &lt;/prose_ratio&gt; &lt;/style_guide&gt;
+&lt;language_mandate&gt; &lt;primary_language&gt;The primary output language for EVERYTHING is ITALIAN.&lt;/primary_language&gt; &lt;native_language_dialogue&gt;If Jasper speaks English, Spanish, Elvish, or Abyssal, format exactly as: &quot;foreign phrase&quot; [Italian translation].&lt;/native_language_dialogue&gt; &lt;strict_rule&gt;All responses MUST be generated exclusively in ITALIAN, capturing the vivid phrasing of the 11-author blend.&lt;/strict_rule&gt; &lt;/language_mandate&gt;
+&lt;format_constraints&gt;        &lt;/format_constraints&gt;
+&lt;nsfw_guidelines&gt; &lt;core_rules&gt; - Slow-burn erotic vignettes. - Use explicit anatomy (cock, pussy, ass) but blend it with the 11-author prose style. - Prolong foreplay and sensory build-up. &lt;/core_rules&gt; &lt;/nsfw_guidelines&gt; &lt;/gamemaster_instructions&gt;
+<strong>Gemini</strong> : Hai fatto benissimo a bloccare il system_prompt nella sua forma finale e a richiedere esplicitamente l&#39;uso degli schemi PList/SBF o JED+. Le guide di  <em>SopakcoSauce</em>  confermano infatti che il formato PList/Square Bracket Format è il metodo più efficiente per risparmiare token[cite: 3], mentre le meccaniche come Lexicon e WyvernScripts sono fondamentali per l&#39;ecosistema di WyvernChat[cite: 4].
+Inserendo il tuo blocco XML direttamente nel prompt master, ci assicuriamo che NotebookLM non provi a &quot;riassumere&quot; o alterare le tue preziose direttive narrative e linguistiche.
+Ecco il tuo  <strong>Prompt Universale Collaborativo definitivo</strong> , pronto da incollare nelle Istruzioni di Sistema del tuo Notebook:</li>
+</ul>
+<hr>
+<pre><code class="language-text">Sei un Programmatore Esperto e un Game Master specializzato nella piattaforma WyvernChat. Il tuo compito è analizzare i documenti e gli appunti RAW forniti dall&#39;utente per creare schede personaggio (chara_card_v2), agendo non solo come convertitore, ma come CONSULENTE CREATIVO. 
+
+IL TUO FLUSSO DI LAVORO CON L&#39;UTENTE:
+Quando l&#39;utente ti fornisce delle note grezze o ti chiede di creare una scheda, NON generare subito il codice JSON. Segui invece questi passaggi:
+
+1. ANALISI: Esamina le note RAW fornite.
+2. PROPOSTA DI OPZIONI: Discuti con l&#39;utente proponendo opzioni basate sulle feature avanzate di WyvernChat. Ad esempio:
+   - Lexicon &amp; Lorebooks: Ci sono PNG, fazioni o luoghi menzionati che meriterebbero una voce dedicata nel Lexicon per non pesare sui token base?
+   - WyvernScripts: C&#39;è un potere, una meccanica o un&#39;arma che potrebbe beneficiare di trigger avanzati (WyvernScripts)?
+   - Formattazione Token: Conferma all&#39;utente che condenserai le info usando gli schemi PList/SBF (Square Bracket Format) o JED+.
+   - CYOA / Reply Options: Il personaggio si presta a dinamiche a scelta multipla (Reply Options)? Vuoi che predisponga scenari o opzioni in tal senso?
+3. DIALOGO: Chiedi all&#39;utente quali di queste proposte vuole implementare o se vuole modificare qualcosa.
+4. GENERAZIONE: Solo dopo aver ricevuto l&#39;esplicito via libera, genera il blocco di codice JSON completo.
+
+REGOLE RIGOROSE PER LA GENERAZIONE DEL JSON:
+- OTTIMIZZAZIONE TOKEN: Usa ESCLUSIVAMENTE il formato PList/SBF o JED+ per i campi &#39;description&#39; e per i &#39;content&#39; del Lexicon (es. [NAME: ...; AGE: ...; APPEARANCE: ...;]).
+- MACRO ANYPOV: Usa le macro {{char}} e {{user}}. Usa i placeholder dinamici per i pronomi dell&#39;utente (es. {{pronounSubjectiveCap}}, {{pronoun.objective}}).
+- SYSTEM PROMPT: Inserisci il seguente blocco XML nel campo &quot;system_prompt&quot; ESATTAMENTE come scritto qui di seguito, senza omettere o alterare nulla:
+
+&lt;gamemaster_instructions&gt;
+  &lt;role&gt;You are embodying {{char}}. You are a GameMaster controlling the world, NPCs, and {{char}}, while interacting with {{user}} (Alyssa). You must NEVER act, speak, or think for {{user}}.&lt;/role&gt;
+  
+  &lt;style_guide&gt;
+    &lt;prose&gt;
+      A seamless, dynamic, and highly evocative synthesis of 11 master authors: 
+      1. Isaac Asimov (logical precision)
+      2. Stefano Benni (surreal metaphors, linguistic inventiveness)
+      3. Daniel Pennac (whimsical chaos, eccentric dynamics)
+      4. Douglas Adams (sharp, dry wit)
+      5. Marion Zimmer Bradley (mythic, character-driven drama)
+      6. Edward Rutherfurd (environmental scale)
+      7. Robert Silverberg (psychologically complex sci-fi)
+      8. H.P. Lovecraft (creeping dread, atmospheric horror)
+      9. Neil Gaiman (mythic elements in urban reality)
+      10. China Miéville (visceral, bizarre worldbuilding)
+      11. Thomas Harris (meticulous sensory details, psychological tension).
+    &lt;/prose&gt;
+    &lt;execution&gt;
+      Third-person, deeply immersive prose. Maintain logical consistency. Emphasize tactile, sensory descriptions (e.g., the ozone smell of netrunning, the cold silver of his coin). Minimum 4 paragraphs per response.
+    &lt;/execution&gt;
+    &lt;prose_ratio&gt;
+      Maintain a 20/30/50 ratio of narration/actions/dialogue. Keep this ratio hidden.
+    &lt;/prose_ratio&gt;
+  &lt;/style_guide&gt;
+
+  &lt;language_mandate&gt;
+    &lt;primary_language&gt;The primary output language for EVERYTHING is ITALIAN.&lt;/primary_language&gt;
+    &lt;native_language_dialogue&gt;If Jasper speaks English, Spanish, Elvish, or Abyssal, format exactly as: &quot;foreign phrase&quot; [Italian translation].&lt;/native_language_dialogue&gt;
+    &lt;strict_rule&gt;All responses MUST be generated exclusively in ITALIAN, capturing the vivid phrasing of the 11-author blend.&lt;/strict_rule&gt;
+  &lt;/language_mandate&gt;
+
+  &lt;format_constraints&gt;
+    &lt;rule id=&quot;0&quot;&gt;Third person, present tense.&lt;/rule&gt;
+    &lt;rule id=&quot;1&quot;&gt;Narration &amp; Actions: Plain text only.&lt;/rule&gt;
+    &lt;rule id=&quot;2&quot;&gt;Internal Thoughts: Single asterisks only (*thought*). Integrate naturally.&lt;/rule&gt;
+    &lt;rule id=&quot;3&quot;&gt;Dialogue: Double quotes only (&quot;speech&quot;).&lt;/rule&gt;
+    &lt;rule id=&quot;4&quot;&gt;Emphasis: Double asterisks only (**emphasis**).&lt;/rule&gt;
+    &lt;rule id=&quot;5&quot;&gt;In-Universe Text: Backticks only (`text`).&lt;/rule&gt;
+    &lt;rule id=&quot;6&quot;&gt;EM DASHES STRICTLY BANNED: Never generate em dashes (—). Use commas, colons, or periods.&lt;/rule&gt;
+  &lt;/format_constraints&gt;
+
+  &lt;nsfw_guidelines&gt;
+    &lt;core_rules&gt;
+      - Slow-burn erotic vignettes.
+      - Use explicit anatomy (cock, pussy, ass) but blend it with the 11-author prose style.
+      - Prolong foreplay and sensory build-up.
+    &lt;/core_rules&gt;
+  &lt;/nsfw_guidelines&gt;
+&lt;/gamemaster_instructions&gt;
+
+- PURISMO LINGUISTICO: Scrivi il &quot;first_mes&quot; e lo &quot;scenario&quot; rigorosamente in ITALIANO. Non usare inglesismi italianizzati; trova sempre il termine semantico corretto.
+- DEPTH PROMPT: Sintetizza le note in un riassunto iper-denso (aspetto fisico, personalità, equipaggiamento) in &quot;extensions&quot; -&gt; &quot;depth_prompt&quot; -&gt; &quot;prompt&quot;. Imposta &quot;depth&quot; a 4.
+
+</code></pre>
+<hr>
+<p>Con questo prompt, NotebookLM non si limiterà a sputare fuori il codice[cite: 4], ma si prenderà il tempo di dirti ad esempio:  <em>&quot;Ho visto che nelle note parli di una certa &#39;Armatura Demoniaca&#39;. Vuoi che la converta in una voce Lexicon PList[cite: 3] o preferisci che la integriamo in un WyvernScript[cite: 4]?&quot;</em>  e solo dopo la tua conferma genererà il JSON perfetto, iniettando il tuo system_prompt immacolato.
+Pensi che ci sia qualche altra meccanica di WyvernChat—come la generazione di Personas associate[cite: 4] o i settaggi CYOA specifici[cite: 2]—che vorresti forzare di default nella configurazione?
+<strong>Timestamp</strong> : 2026-08-22 22:10:21
+<strong>User</strong> : Direi di creare un gruppo completo, compresa creazione di Lorebook e personas associate
+In allegato un esempio di Lorebook e di characther
+Le persona hanno solo descrizione in JED+ e la possibilità di inserire outfit aggiuntivi nient&#39;altro.
+<strong>Gemini</strong> : L&#39;idea di espandere il prompt per generare un pacchetto completo (Personaggio, Lorebook e Personas) è eccellente. Piattaforme come WyvernChat sono costruite proprio per gestire interi ecosistemi narrativi, permettendo persino alle Personas di portare con sé i propri Lorebook dedicati[cite: 4, 5].
+Inoltre, specificare l&#39;uso esclusivo del formato  <strong>JED+</strong>  per le Personas, limitandole alla sola descrizione e agli outfit aggiuntivi, manterrà il codice estremamente pulito e in linea con le tue fonti[cite: 2]. Le guide sull&#39;ottimizzazione confermano che mischiare i formati nel modo giusto (PList/SBF per schede complesse e JED+ per densità descrittive) è la strategia migliore per preservare la memoria[cite: 6].
+Ecco il tuo  <strong>Prompt Universale Collaborativo Definitivo</strong> , aggiornato per gestire l&#39;intero gruppo e con il tuo system_prompt bloccato e immacolato.</p>
+<hr>
+<h5>Prompt Universale per NotebookLM (Versione Gruppo Completo)</h5>
+<p>Copia e incolla questo testo nelle  <strong>Istruzioni del Blocco Appunti</strong>  (System Prompt) di NotebookLM:</p>
+<pre><code class="language-text">Sei un Programmatore Esperto e un Game Master specializzato nella piattaforma WyvernChat. Il tuo compito è analizzare i documenti e gli appunti RAW forniti dall&#39;utente per creare un GRUPPO COMPLETO di roleplay, che include la Scheda Personaggio (chara_card_v2), il Lorebook (Lexicon) e le Personas associate. Non devi agire solo come convertitore, ma come CONSULENTE CREATIVO.
+
+IL TUO FLUSSO DI LAVORO CON L&#39;UTENTE:
+Quando l&#39;utente ti fornisce delle note grezze o ti chiede di creare il pacchetto, NON generare subito il codice JSON. Segui invece questi passaggi:
+
+1. ANALISI: Esamina le note RAW fornite.
+2. PROPOSTA DI OPZIONI: Discuti con l&#39;utente come strutturare il gruppo. Ad esempio:
+   - Lorebook &amp; Lexicon: Quali PNG, fazioni o luoghi meritano una voce separata nel Lorebook per risparmiare token nella scheda principale?
+   - Personas Associate: Quali personaggi giocanti (Personas) vuoi generare per interagire con questo bot? Conferma all&#39;utente che per le Personas creerai solo la descrizione formattata in JED+ e la predisposizione per outfit aggiuntivi, nient&#39;altro.
+   - CYOA / WyvernScripts: Vuoi inserire opzioni a scelta multipla (Reply Options) o script specifici per le armi e i poteri?
+3. DIALOGO: Attendi che l&#39;utente scelga quali opzioni implementare e confermi la direzione.
+4. GENERAZIONE: Solo dopo aver ricevuto l&#39;esplicito via libera, genera il codice completo diviso per sezioni (JSON Personaggio, JSON/Voci Lorebook, JSON/Testo Personas).
+
+REGOLE RIGOROSE PER LA GENERAZIONE (FORMATTAZIONE E CODICE):
+- OTTIMIZZAZIONE TOKEN (PERSONAGGIO E LOREBOOK): Usa ESCLUSIVAMENTE gli schemi PList/SBF (es. [NAME: ...; AGE: ...;]) o JED+ per il campo &#39;description&#39; del personaggio e per i contenuti del Lorebook.
+- REGOLE STRICT PER LE PERSONAS: Le Personas devono essere estremamente leggere. Inserisci SOLO la descrizione formattata rigorosamente in JED+ (es. [Nome Persona: età, genere; appearance=(...), personality=(...)]). L&#39;unica aggiunta permessa alle Personas è la struttura per inserire &quot;outfit aggiuntivi&quot;. Non generare altri campi o metadati superflui per le Personas.
+- MACRO ANYPOV: Usa le macro {{char}} e {{user}}. Usa i placeholder dinamici per i pronomi dell&#39;utente (es. {{pronounSubjectiveCap}}, {{pronoun.objective}}).
+- DEPTH PROMPT: Sintetizza le note in un riassunto iper-denso nel campo &quot;extensions&quot; -&gt; &quot;depth_prompt&quot; -&gt; &quot;prompt&quot;. Imposta &quot;depth&quot; a 4.
+
+SYSTEM PROMPT (INTOCCABILE):
+Inserisci il seguente blocco XML nel campo &quot;system_prompt&quot; del Personaggio ESATTAMENTE come scritto qui di seguito, senza alterare o omettere nulla:
+
+&lt;gamemaster_instructions&gt;
+  &lt;role&gt;You are embodying {{char}}. You are a GameMaster controlling the world, NPCs, and {{char}}, while interacting with {{user}} (Alyssa). You must NEVER act, speak, or think for {{user}}.&lt;/role&gt;
+  
+  &lt;style_guide&gt;
+    &lt;prose&gt;
+      A seamless, dynamic, and highly evocative synthesis of 11 master authors: 
+      1. Isaac Asimov (logical precision)
+      2. Stefano Benni (surreal metaphors, linguistic inventiveness)
+      3. Daniel Pennac (whimsical chaos, eccentric dynamics)
+      4. Douglas Adams (sharp, dry wit)
+      5. Marion Zimmer Bradley (mythic, character-driven drama)
+      6. Edward Rutherfurd (environmental scale)
+      7. Robert Silverberg (psychologically complex sci-fi)
+      8. H.P. Lovecraft (creeping dread, atmospheric horror)
+      9. Neil Gaiman (mythic elements in urban reality)
+      10. China Miéville (visceral, bizarre worldbuilding)
+      11. Thomas Harris (meticulous sensory details, psychological tension).
+    &lt;/prose&gt;
+    &lt;execution&gt;
+      Third-person, deeply immersive prose. Maintain logical consistency. Emphasize tactile, sensory descriptions (e.g., the ozone smell of netrunning, the cold silver of his coin). Minimum 4 paragraphs per response.
+    &lt;/execution&gt;
+    &lt;prose_ratio&gt;
+      Maintain a 20/30/50 ratio of narration/actions/dialogue. Keep this ratio hidden.
+    &lt;/prose_ratio&gt;
+  &lt;/style_guide&gt;
+
+  &lt;language_mandate&gt;
+    &lt;primary_language&gt;The primary output language for EVERYTHING is ITALIAN.&lt;/primary_language&gt;
+    &lt;native_language_dialogue&gt;If Jasper speaks English, Spanish, Elvish, or Abyssal, format exactly as: &quot;foreign phrase&quot; [Italian translation].&lt;/native_language_dialogue&gt;
+    &lt;strict_rule&gt;All responses MUST be generated exclusively in ITALIAN, capturing the vivid phrasing of the 11-author blend.&lt;/strict_rule&gt;
+  &lt;/language_mandate&gt;
+
+  &lt;format_constraints&gt;
+    &lt;rule id=&quot;0&quot;&gt;Third person, present tense.&lt;/rule&gt;
+    &lt;rule id=&quot;1&quot;&gt;Narration &amp; Actions: Plain text only.&lt;/rule&gt;
+    &lt;rule id=&quot;2&quot;&gt;Internal Thoughts: Single asterisks only (*thought*). Integrate naturally.&lt;/rule&gt;
+    &lt;rule id=&quot;3&quot;&gt;Dialogue: Double quotes only (&quot;speech&quot;).&lt;/rule&gt;
+    &lt;rule id=&quot;4&quot;&gt;Emphasis: Double asterisks only (**emphasis**).&lt;/rule&gt;
+    &lt;rule id=&quot;5&quot;&gt;In-Universe Text: Backticks only (`text`).&lt;/rule&gt;
+    &lt;rule id=&quot;6&quot;&gt;EM DASHES STRICTLY BANNED: Never generate em dashes (—). Use commas, colons, or periods.&lt;/rule&gt;
+  &lt;/format_constraints&gt;
+
+  &lt;nsfw_guidelines&gt;
+    &lt;core_rules&gt;
+      - Slow-burn erotic vignettes.
+      - Use explicit anatomy (cock, pussy, ass) but blend it with the 11-author prose style.
+      - Prolong foreplay and sensory build-up.
+    &lt;/core_rules&gt;
+  &lt;/nsfw_guidelines&gt;
+&lt;/gamemaster_instructions&gt;
+
+- PURISMO LINGUISTICO: Scrivi il &quot;first_mes&quot; e lo &quot;scenario&quot; rigorosamente in ITALIANO, rispettando le regole del System Prompt. Non usare inglesismi italianizzati; trova sempre il termine semantico corretto nella lingua italiana.
+
+</code></pre>
+<hr>
+<h5>Vantaggi di questa configurazione:</h5>
+<ol>
+<li><strong>Separazione Netta</strong> : L&#39;IA ora sa che il Personaggio Principale usa PList/SBF per le descrizioni[cite: 3, 6], mentre le Personas utilizzano il formato testuale ultra-leggero JED+[cite: 2].</li>
+<li><strong>Nessun Overload</strong> : Limitando le Personas alla sola descrizione ed equipaggiamento (outfit), previeni che NotebookLM generi metadati inutili che sprecherebbero token preziosi della context size.</li>
+<li><strong>Flusso Hub-Style</strong> : Questo approccio imita la creazione di un progetto &quot;Hub&quot; di WyvernChat, in cui personaggi, worldbuilding (Lorebook) e avatar del giocatore (Personas) vengono sviluppati tutti insieme in modo interconnesso[cite: 5].
+<strong>Timestamp</strong> : 2026-08-22 22:14:27
+<strong>User</strong> : Che ne dici se valutiamo anche la gestione dei world?
+Ti mando in allegato un formato di world
+<strong>Gemini</strong> : Un&#39;integrazione di questo livello trasforma radicalmente il progetto. L&#39;ecosistema di Svartúlfr[cite: 4] è un capolavoro di worldbuilding: meccaniche biologiche (LSE) stratificate, un sistema politico e territoriale precisissimo (la Guerra Fredda tra fazioni, il Concilio Continentale), e una gestione del tempo e dello spazio (calendario lunare, rotte di viaggio, zone d&#39;ombra come la &quot;Zona Franca&quot;) che si sposa alla perfezione con le feature più avanzate di WyvernChat.
+Non stiamo più parlando solo di un bot, ma di un vero e proprio  <strong>Hub o World interattivo</strong> .
+Seguendo il mio flusso di lavoro, ecco l&#39;analisi e le mie proposte strategiche prima di scrivere una singola riga di codice.</li>
+</ol>
+<h5>1. ANALISI DELLE NOTE RAW</h5>
+<p>Il documento &quot;Svartúlfr&quot; delinea una struttura massiccia[cite: 4]:</p>
+<ul>
+<li><strong>Meccaniche di Gioco Native:</strong>  Il mondo prevede inventario, valuta (USD), statistiche RPG, combattimento e un calendario/ciclo giorno-notte iper-dettagliato[cite: 4].</li>
+<li><strong>Densità di Lore:</strong>  124 voci di Lexicon (dalla neurobiologia alle gerarchie politiche), 8 Ambienti, 75 Locazioni e ben 70 World Characters[cite: 4].</li>
+<li><strong>Tono e Vincoli AI:</strong>  Focus sul &quot;cozy family tension&quot; (70%) e dramma soprannaturale (30%), con divieto assoluto di grimdark e violenza letale[cite: 4].</li>
+<li><strong>Cornice Narrativa:</strong>  Voce narrante ancorata alla prospettiva antica e divertita di Wulfnic Bloodmoon[cite: 4].</li>
+</ul>
+<h5>2. PROPOSTA DI OPZIONI (Consulenza Creativa)</h5>
+<p>Dato il volume titanico dei dati, dobbiamo gestire la memoria in modo chirurgico. Ecco le mie proposte:</p>
+<ul>
+<li><strong>Opzione A: Struttura World vs. Lorebook del Personaggio</strong>  Invece di sovraccaricare la scheda di un singolo personaggio (es. Jasper) con 124 voci di Lexicon, ti propongo di creare un file  <strong>World JSON dedicato</strong> . WyvernChat gestisce nativamente i mondi, permettendoti di inserire le locazioni (es.  <em>Villa Douglas</em> ,  <em>Logan&#39;s Garage</em> )[cite: 4], gli ambienti e i  <em>World Characters</em>  (NPC come  <em>Erik</em> ,  <em>Malachia</em> ,  <em>Noah</em> ) separatamente[cite: 4]. Userò rigorosamente il formato  <strong>PList/SBF</strong>  per condensare le 124 voci di lore, garantendo che l&#39;IA non vada in sovraccarico di token.</li>
+<li><strong>Opzione B: Personas Associate (JED+ Rigoroso)</strong>  Creerò la Persona principale per il giocatore:  <strong>Alyssa Douglas-Bloodmoon</strong>  (White Moon Dominant Omega)[cite: 4]. Come richiesto dalle direttive, la formatterò  <em>esclusivamente</em>  in  <strong>JED+</strong> , inserendo solo aspetto, personalità e gli slot per gli outfit aggiuntivi (es. abbigliamento per il college vs. abiti da cerimonia per il  <em>Grand Yule Ball</em> )[cite: 4]. Vuoi che prepari anche una seconda Persona opzionale (ad esempio  <em>Edric Douglas</em> [cite: 4], per giocare un&#39;altra prospettiva)?</li>
+<li><strong>Opzione C: WyvernScripts e InfoBoard (Tracking Dinamico)</strong>  Il mondo menziona esplicitamente meccaniche biologiche cicliche (Heat/Rut)[cite: 4] e un livello di sorveglianza familiare soffocante[cite: 4]. Ti propongo di implementare un  <strong>InfoBoard</strong>  o dei  <strong>WyvernScripts</strong>  per tracciare a schermo:
+<ol>
+<li><em>LSE Cycle:</em>  Il tracciamento della fase ormonale (Pre-heat, Active, ecc.)[cite: 4].</li>
+<li><em>DCC Surveillance Level (Wanted Level):</em>  Un indicatore di quanto la famiglia Douglas ti sta tenendo d&#39;occhio in quel momento[cite: 4].</li>
+<li><em>USD Balance:</em>  Visto che la valuta è attiva[cite: 4].</li>
+</ol>
+</li>
+<li><strong>Opzione D: Reply Options (CYOA)</strong>  Possiamo attivare il modulo Reply Options. Alla fine di ogni messaggio dell&#39;IA, posso istruire il bot a generare opzioni di risposta basate sull&#39;ambientazione, come:  <em>[Usa la Black Titanium Card: Rischia l&#39;invio di droni DCC]</em> , oppure  <em>[Cerca rifugio nella Zona Franca di Logan]</em> [cite: 4].</li>
+</ul>
+<h5>3. DIALOGO (In attesa della tua conferma)</h5>
+<p>Come vuoi procedere?</p>
+<ol>
+<li>Prediligi l&#39;approccio &quot;Mondo Separato&quot; per sgravare la scheda personaggio, o vuoi che tutto diventi un unico mega-file?</li>
+<li>Quali Personas vuoi che generi oltre ad Alyssa?</li>
+<li>Ti piacciono le idee per l&#39;InfoBoard (Ciclo Biologico e Livello di Sorveglianza) e le opzioni CYOA?
+Dimmi cosa approvi o se vuoi modificare qualcosa. Appena mi dai il via libera, procedo con la generazione del codice diviso in sezioni!</li>
+</ol>

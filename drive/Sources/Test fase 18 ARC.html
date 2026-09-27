@@ -1,0 +1,194 @@
+<p><strong>User</strong> : Allora direi a code di andare a fare un test della fase 18 con solo arc di jasper
+<strong>Gemini</strong> : Sì.
+Per la Fase 18 il test più pulito possibile è proprio:
+<strong>Configurazione</strong></p>
+<ul>
+<li>Attivare solo ARC_Jasper.</li>
+<li>Disattivare tutti gli altri ARC.</li>
+<li>Nessun evento.</li>
+<li>Nessun sistema sociale.</li>
+<li>Nessun runtime specialistico.</li>
+<li>Nessun override manuale.
+<strong>Obiettivi del test</strong></li>
+</ul>
+<ol>
+<li>Verificare che l&#39;ARC venga caricato correttamente.</li>
+<li>Verificare che i trigger di ingresso funzionino.</li>
+<li>Verificare che i beat vengano erogati nell&#39;ordine previsto.</li>
+<li>Verificare che il tracking dello stato ARC persista tra messaggi.</li>
+<li>Verificare che il completamento dell&#39;ARC venga registrato.</li>
+<li>Verificare che non si verifichino duplicazioni di beat.</li>
+<li>Verificare che non vengano richiamati ARC non attivi.
+<strong>Prompt di test consigliati</strong></li>
+</ol>
+<ul>
+<li>Avvio chat normale.</li>
+<li>Interazione con Jasper.</li>
+<li>Avanzamento naturale per 20-30 messaggi.</li>
+<li>Forzare eventuali trigger previsti dall&#39;ARC.</li>
+<li>Verificare transizioni tra i vari stage.
+<strong>Criteri di successo</strong></li>
+<li>Jasper segue il percorso previsto dall&#39;ARC.</li>
+<li>Ogni beat compare una sola volta.</li>
+<li>Nessun beat viene saltato.</li>
+<li>Nessun contenuto di altri ARC appare nel contesto.</li>
+<li>Lo stato rimane coerente dopo rigenerazioni e dopo diversi turni.
+Se il test con  <strong>un solo ARC</strong>  passa, allora il passo successivo dovrebbe essere:</li>
+</ul>
+<ol>
+<li>Jasper solo.</li>
+<li>Jasper + 1 ARC secondario.</li>
+<li>Tutti gli ARC principali.</li>
+<li>ARC + Event System.</li>
+<li>ARC + Event + Social Runtime.
+In questo modo, se qualcosa si rompe, sapete esattamente quale layer ha introdotto il problema invece di dover fare debugging dell&#39;intero engine contemporaneamente.
+<strong>User</strong> : Perfetto. Test mirato su Ex_DJFrequency.md — Scenario 1 (Fan &amp; Spill Meet-Cute al rooftop set). Parto dall&#39;analisi dell&#39;Ex per costruire il test configuration e il bot-export minimale necessario.
+Prima, leggo il record Jasper per dati completi e verifico la struttura Export Mapping Matrix per Sapere quali campi servono:
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\database\characters\C_Jasper_Douglas_Bloodmoon.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\knowledge\Lore_Worldbuilding\EXPORT_MAPPING_MATRIX.md
+Ora ho Jasper completo e l&#39;Export Mapping Matrix. Leggo anche i location records necessari per il Scenario 1:
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\database\locations\L_VerveLounge.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\database\experiences\Ex_DJFrequency.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\engine\E_Context_Compilation_Pipeline.md
+Ora ho tutto il contesto necessario. L&#39;utente chiede un test-phase per la Fase 18 usando solo Ex_DJFrequency.md. Devo creare un file di test configuration che:</li>
+<li>Carichi Jasper come character + Ex_DJFrequency come scenario attivo</li>
+<li>Definisca il prompt di Scenario 1 (Fan &amp; Spill Meet-Cute al rooftop set)</li>
+<li>Sia un test minimale, isolato, senza dependenze runtime
+Creo il file di test nella cartella tests/ (non creata) oppure come file standalone che può essere usato come character card JanitorAI per il test. Data la natura del progetto, il formato più utile è un  <strong>Bot Export minimale</strong>  — un file pronto da incollare/caricare su JanitorAI per testare lo scenario.
+toolName: Write
+status: success
+filePath: d:\SvartulfrVerse\exports\test_phase18_s1\DJFREQUENCY_S1_FanSpill.md
+changes: undefined
+toolName: Write
+status: success
+filePath: d:\SvartulfrVerse\exports\test_phase18_s1\TEST_INSTRUCTIONS.md
+changes: undefined
+toolName: todo_write
+status: success
+Todos updated: 10 items</li>
+</ol>
+<h4>Test Creato</h4>
+<p>Files generati in <a href="about:invalid#zCSafez">exports/test_phase18_s1/</a>:
+| File | Scopo |
+| ------ | ------ |
+| <a href="about:invalid#zCSafez">DJFREQUENCY_S1_FanSpill.md</a> | Bot export minimale — pronto per character card |
+| <a href="about:invalid#zCSafez">TEST_INSTRUCTIONS.md</a> | Checklist 7 test + risultati attesi |</p>
+<h4>Come Usarlo</h4>
+<ol>
+<li>Setup nuovo bot JanitorAI</li>
+<li>Incolla DJFREQUENCY_S1_FanSpill.md come System Prompt</li>
+<li>Avvia chat → l&#39;utente si presenta come estraneo al rooftop</li>
+<li>Il bot dovrebbe: rispondere come DJ Frequency, non rivelare Jasper, gestire lo spill naturalmente</li>
+</ol>
+<h4>Checklist 7 Test</h4>
+<ol>
+<li><strong>Caricamento Ex</strong>  — {{char}} risponde come DJ Frequency, non Jasper</li>
+<li><strong>Trigger Ingresso</strong>  — spill/gestione collisione funziona senza rompere immersione</li>
+<li><strong>Erogazione Beat</strong>  — chiacchierata post-set, Echo presence sottile, invito implicito Chapter I→II</li>
+<li><strong>Tracking Ex</strong>  — ricorda il meeting iniziale nei messaggi successivi</li>
+<li><strong>Completamento</strong>  — ready per il next chapter quando capitolo naturally closes</li>
+<li><strong>No duplicazioni</strong>  — stesso beat non ripetuto</li>
+<li><strong>No Ex non attivi</strong>  — zero riferimenti a Wedding/Proposal/Family Lunch
+Fammi sapere il risultato del test e itero dal layer che ha introdotto il bug.</li>
+</ol>
+<hr>
+<p>qui manca qualcosa per il test dobbiamo prima creare gli script di engine in js da caricare nella libreria dei lorebook, altrimenti non funziona
+<strong>Gemini</strong> : Esatto. Quello che Code ha costruito è sostanzialmente un  <strong>test content pack</strong> , non un test della Fase 18.
+Se la Fase 18 è l&#39;implementazione dell&#39;engine ARC, allora il test deve verificare l&#39;engine, non solo il contenuto di Ex_DJFrequency.
+In questo momento manca tutto il layer runtime.
+Ordine corretto:</p>
+<h5>1. Engine Scripts</h5>
+<p>Prima bisogna avere almeno gli script JS che simulano:</p>
+<ul>
+<li>ARC Loader</li>
+<li>ARC State Tracker</li>
+<li>ARC Beat Selector</li>
+<li>ARC Progression Manager</li>
+<li>ARC Completion Detector
+Anche in versione minimale.
+Qualcosa tipo:</li>
+</ul>
+<pre><code class="language-text">Lorebook:
+E_ArcRuntime
+
+Script:
+- load active arc
+- read current stage
+- select valid beat
+- inject beat context
+
+</code></pre>
+<pre><code class="language-text">Lorebook:
+E_ArcProgression
+
+Script:
+- monitor triggers
+- advance stage
+- prevent duplicate beats
+
+</code></pre>
+<pre><code class="language-text">Lorebook:
+E_ArcState
+
+Script:
+- persistent arc flags
+- completed beats
+- current chapter
+
+</code></pre>
+<hr>
+<h5>2. Test Harness</h5>
+<p>Serve poi un lorebook dedicato:</p>
+<pre><code class="language-text">T_Phase18_Jasper_DJFrequency
+
+</code></pre>
+<p>con:</p>
+<pre><code class="language-yaml">active_arc:
+  Ex_DJFrequency
+
+active_character:
+  Jasper
+
+entry_point:
+  Scenario_1_FanAndSpill
+
+</code></pre>
+<p>In modo che il runtime sappia cosa caricare.</p>
+<hr>
+<h5>3. Solo dopo il Bot Export</h5>
+<p>Il bot export dovrebbe essere quasi vuoto:</p>
+<pre><code class="language-text">Character:
+Jasper
+
+Scenario:
+Phase18 Test Harness
+
+Lorebooks:
+- E_ArcRuntime
+- E_ArcProgression
+- E_ArcState
+- Ex_DJFrequency
+
+</code></pre>
+<p>e basta.
+Se invece il bot export contiene già tutto lo scenario compilato, non stai testando l&#39;engine ARC:</p>
+<pre><code class="language-text">ARC Engine OFF
+↓
+stesso risultato
+
+</code></pre>
+<p>quindi il test non dimostra nulla.</p>
+<hr>
+<p>La domanda che farei a questo punto è:
+<strong>La Fase 18 prevede già un&#39;architettura JS definita (nomi dei runtime, stato persistente, chiavi lorebook, ecc.) oppure dobbiamo ancora progettare l&#39;engine runtime prima di scrivere gli script?</strong>
+Perché se l&#39;ADR della Fase 18 è già stato approvato, il passo successivo non è creare altri export di test ma implementare i tre lorebook engine (E_ArcRuntime, E_ArcProgression, E_ArcState) e solo dopo costruire l&#39;harness di Jasper.</p>

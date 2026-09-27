@@ -1,0 +1,371 @@
+<p><strong>User</strong> : migliora la richesta per il forge e aggiungi di compilare correttamente key e keysecondary e gli altri campi della entry per ottimizzare per janitor ai:
+<a href="about:invalid#zCSafez">Svart%C3%BAlfr_Urban_Lorebook_Appendix.json</a> fai una verifica sulle entries
+IF (entry token &gt; 200) &gt; divide entry in + entries
+schema entry:       &quot;0&quot;: {             &quot;uid&quot;: 0,             &quot;comment&quot;: &quot;Tier 1 World Rule / Faction / Species Entry&quot;,             &quot;key&quot;: [                 &quot;Keyword1&quot;,                 &quot;Keyword2&quot;             ],             &quot;keysecondary&quot;: [],             &quot;selectiveLogic&quot;: 0,             &quot;content&quot;: &quot;[Tier 1 World Rule / Faction Entry: The actual lore text injected into context before character definitions.]&quot;,             &quot;position&quot;: 0,             &quot;order&quot;: 100,             &quot;depth&quot;: 4,             &quot;role&quot;: 0,             &quot;selective&quot;: true,             &quot;constant&quot;: false,             &quot;probability&quot;: 100,             &quot;useProbability&quot;: false,             &quot;addMemo&quot;: true,             &quot;disable&quot;: false,             &quot;ignoreBudget&quot;: false,             &quot;vectorized&quot;: false,             &quot;group&quot;: &quot;World&quot;,             &quot;groupOverride&quot;: false,             &quot;groupWeight&quot;: 100,             &quot;scanDepth&quot;: null,             &quot;caseSensitive&quot;: null,             &quot;matchWholeWords&quot;: null,             &quot;useGroupScoring&quot;: null,             &quot;excludeRecursion&quot;: false,             &quot;preventRecursion&quot;: false,             &quot;delayUntilRecursion&quot;: false,             &quot;matchPersonaDescription&quot;: false,             &quot;matchCharacterDescription&quot;: false,             &quot;matchCharacterPersonality&quot;: false,             &quot;matchCharacterDepthPrompt&quot;: false,             &quot;matchScenario&quot;: false,             &quot;matchCreatorNotes&quot;: false,             &quot;sticky&quot;: 0,             &quot;cooldown&quot;: 0,             &quot;delay&quot;: 0,             &quot;displayIndex&quot;: 0,             &quot;outletName&quot;: &quot;&quot;,             &quot;automationId&quot;: &quot;&quot;,             &quot;triggers&quot;: []         },
+<strong>Gemini</strong> : Ecco un prompt ottimizzato e avanzato da inserire nel forge. Questa formulazione è strutturata non solo per eseguire lo split automatico basato sui token, ma per impostare regole di triggering altamente specifiche per l&#39;architettura di Janitor AI (minimizzando i falsi positivi e risparmiando prezioso  <em>context size</em> ).
+Copia e usa questo prompt:</p>
+<hr>
+<p><strong>PROMPT PER IL FORGE:</strong>
+Analizza il file Svartúlfr_Urban_Lorebook_Appendix.json e ottimizza le entry per massimizzare la precisione di iniezione nel contesto su Janitor AI. Applica rigorosamente le seguenti logiche su ogni entry, basandoti sullo schema JSON fornito:
+<strong>1. CONTROLLO E SPLIT DEL &quot;CONTENT&quot; (Limite 200 Token)</strong></p>
+<ul>
+<li>Calcola la stima dei token per il campo &quot;content&quot;.</li>
+<li><strong>SE</strong>  <strong>&quot;content&quot; &gt; 200 token</strong> , suddividi l&#39;informazione in più entry distinte (es. Entry 1, Entry 2).</li>
+<li>Lo split non deve mai interrompere una frase. Dividi il testo seguendo confini semantici logici (es. separa &quot;Storia e Origini&quot; da &quot;Caratteristiche Fisiche&quot; o &quot;Regole di Fazione&quot;). Mantieni la formattazione densa del testo.
+<strong>2. COMPILAZIONE OTTIMIZZATA DEI CAMPI &quot;KEY&quot; E &quot;KEYSECONDARY&quot;</strong>  Per evitare di intasare la memoria del bot con attivazioni accidentali (false positives), compila i trigger in questo modo:</li>
+<li>&quot;key&quot; (Trigger Primari): Inserisci da 1 a massimo 3 keyword  <em>altamente specifiche</em>  (nomi propri, luoghi unici, concetti cardine di Svartúlfr | Urban). Devono essere parole che indicano un&#39;intenzione esplicita nella chat. Evita termini generici.</li>
+<li>&quot;keysecondary&quot; (Trigger di Rinforzo): Se l&#39;argomento è complesso, inserisci qui termini correlati o sinonimi (es. nomi di membri di una fazione, abbreviazioni).</li>
+<li>&quot;selectiveLogic&quot;: Assicurati che sia impostato correttamente (solitamente 0 per logica OR, o 1/2 a seconda dell&#39;implementazione di AND per richiedere che sia presente una key + una keysecondary prima di attivare l&#39;entry).
+<strong>3. GESTIONE DEGLI ALTRI CAMPI STRUTTURALI (Janitor AI Best Practices)</strong></li>
+<li>&quot;comment&quot;: Aggiorna il commento affinché rifletta il contenuto specifico della nuova entry splittata (es.  <em>&quot;Tier 1 Faction - [Nome Fazione] - Parte 1: Lore&quot;</em>  e  <em>&quot;Parte 2: Gerarchia&quot;</em> ).</li>
+<li>&quot;selective&quot;: Deve essere sempre true. (Usa &quot;constant&quot;: true e &quot;selective&quot;: false SOLO per World Rules fondamentali che non devono mai uscire dal contesto, da usare con estrema parsimonia).</li>
+<li>&quot;group&quot;: Assicurati che le entry splittate mantengano lo stesso gruppo (es. &quot;World&quot;, &quot;Factions&quot;, &quot;Species&quot;) per coerenza di punteggio (groupWeight).</li>
+<li>&quot;depth&quot; e &quot;order&quot;: Mantieni i valori originali (depth: 4, order: 100) in modo che l&#39;iniezione nel prompt avvenga prima della definizione del personaggio, come da standard per i world info.
+Rispetta fedelmente lo schema JSON originale in ogni sua virgola. Restituisci l&#39;array JSON aggiornato e validato, pronto per l&#39;importazione.</li>
+</ul>
+<hr>
+<h5>💡 Perché questa struttura ottimizza per Janitor AI:</h5>
+<ol>
+<li><strong>Zero Context Bloat:</strong>  Fissare il limite a 200 token ed esigere lo split per argomenti (es. &quot;Storia&quot; vs &quot;Gerarchia&quot;) fa in modo che Janitor inietti nel prompt  <em>solo</em>  la porzione di lore effettivamente utile in quel momento della roleplay, risparmiando token preziosi.</li>
+<li><strong>Gerarchia dei Trigger:</strong>  I modelli LLM tendono a confondersi se ci sono troppe key primarie generiche (&quot;magia&quot;, &quot;città&quot;). Obbligando il forge a isolare le parole uniche nei trigger primari e spostare il resto nei keysecondary, il Lorebook interverrà solo quando strettamente necessario.</li>
+<li><strong>Mantenimento dei Pesi:</strong>  Mantenendo invariati i group e la depth sulle entry splittate, eviti che i frammenti divisi vengano caricati dall&#39;AI in un ordine sbagliato o asincrono durante la generazione della risposta.
+<strong>User</strong> : aggiungi al prompt di mettere almeno 5 key e 5 secondary key per ogni voce
+<strong>Gemini</strong> : Ecco il prompt aggiornato, con la direttiva specifica per imporre la generazione di almeno 5 chiavi primarie e 5 secondarie per ogni voce.
+Questa modifica obbligherà il forge a estrarre una rete di trigger molto più fitta, ideale per assicurarsi che i vari elementi di Svartúlfr | Urban vengano richiamati in una gamma più ampia di situazioni durante la roleplay.</li>
+</ol>
+<hr>
+<p><strong>PROMPT PER IL FORGE (AGGIORNATO):</strong>
+Analizza il file Svartúlfr_Urban_Lorebook_Appendix.json e ottimizza le entry per massimizzare la precisione di iniezione nel contesto su Janitor AI. Applica rigorosamente le seguenti logiche su ogni entry, basandoti sullo schema JSON fornito:
+<strong>1. CONTROLLO E SPLIT DEL &quot;CONTENT&quot; (Limite 200 Token)</strong></p>
+<ul>
+<li>Calcola la stima dei token per il campo &quot;content&quot;.</li>
+<li><strong>SE</strong>  <strong>&quot;content&quot; &gt; 200 token</strong> , suddividi l&#39;informazione in più entry distinte (es. Entry 1, Entry 2).</li>
+<li>Lo split non deve mai interrompere una frase. Dividi il testo seguendo confini semantici logici (es. separa &quot;Storia e Origini&quot; da &quot;Caratteristiche Fisiche&quot; o &quot;Regole di Fazione&quot;). Mantieni la formattazione densa del testo.
+<strong>2. COMPILAZIONE OBBLIGATORIA DEI CAMPI &quot;KEY&quot; E &quot;KEYSECONDARY&quot; (Minimo 5 + 5)</strong>  Per garantire un&#39;attivazione profonda e ramificata all&#39;interno del Lorebook, devi compilare i trigger rispettando questa regola tassativa:</li>
+<li>&quot;key&quot; (Trigger Primari): Inserisci  <strong>almeno 5 keyword</strong>  specifiche per ogni entry. Devono includere nomi propri, luoghi, concetti cardine, oggetti o eventi fondamentali trattati nel &quot;content&quot;.</li>
+<li>&quot;keysecondary&quot; (Trigger di Rinforzo): Inserisci  <strong>almeno 5 keyword secondarie</strong>  per ogni entry. Usa questo spazio per sinonimi, abbreviazioni, termini correlati, slang della fazione, o concetti descrittivi associati ai trigger primari.</li>
+<li>&quot;selectiveLogic&quot;: Assicurati che sia impostato correttamente (es. 0 per logica OR, o il valore appropriato per la logica AND se intendi forzare la combinazione tra chiavi primarie e secondarie).
+<strong>3. GESTIONE DEGLI ALTRI CAMPI STRUTTURALI (Janitor AI Best Practices)</strong></li>
+<li>&quot;comment&quot;: Aggiorna il commento affinché rifletta il contenuto specifico della nuova entry splittata (es.  <em>&quot;Tier 1 Faction - [Nome Fazione] - Parte 1: Lore&quot;</em>  e  <em>&quot;Parte 2: Gerarchia&quot;</em> ).</li>
+<li>&quot;selective&quot;: Deve essere sempre true. (Usa &quot;constant&quot;: true e &quot;selective&quot;: false SOLO per World Rules fondamentali che non devono mai uscire dal contesto, da usare con estrema parsimonia).</li>
+<li>&quot;group&quot;: Assicurati che le entry splittate mantengano lo stesso gruppo (es. &quot;World&quot;, &quot;Factions&quot;, &quot;Species&quot;) per coerenza di punteggio (groupWeight).</li>
+<li>&quot;depth&quot; e &quot;order&quot;: Mantieni i valori originali (depth: 4, order: 100) in modo che l&#39;iniezione nel prompt avvenga prima della definizione del personaggio, come da standard per i world info.
+Rispetta fedelmente lo schema JSON originale in ogni sua virgola. Restituisci l&#39;array JSON aggiornato e validato, pronto per l&#39;importazione.
+<strong>User</strong> : aggiungiamo al prompt anche di rivedere il content per ottimizzarlo per la comprensione del bot:
+Analizza il file <a href="about:invalid#zCSafez">Svart%C3%BAlfr_Urban_Lorebook_Appendix.json</a>  e ottimizza le entry per massimizzare la precisione di iniezione nel contesto su Janitor AI. Applica rigorosamente le seguenti logiche su ogni entry, basandoti sullo schema JSON fornito:
+<strong>1. CONTROLLO E SPLIT DEL &quot;CONTENT&quot; (Limite 200 Token)</strong></li>
+<li>Calcola la stima dei token per il campo &quot;content&quot;.</li>
+<li><strong>SE &quot;content&quot; &gt; 200 token</strong>, suddividi l&#39;informazione in più entry distinte (es. Entry 1, Entry 2).</li>
+<li>Lo split non deve mai interrompere una frase. Dividi il testo seguendo confini semantici logici (es. separa &quot;Storia e Origini&quot; da &quot;Caratteristiche Fisiche&quot; o &quot;Regole di Fazione&quot;). Mantieni la formattazione densa del testo.
+<strong>2. COMPILAZIONE OBBLIGATORIA DEI CAMPI &quot;KEY&quot; E &quot;KEYSECONDARY&quot; (Minimo 5 + 5)</strong>  Per garantire un&#39;attivazione profonda e ramificata all&#39;interno del Lorebook, devi compilare i trigger rispettando questa regola tassativa:</li>
+<li>&quot;key&quot; (Trigger Primari): Inserisci  <strong>almeno 5 keyword</strong>  specifiche per ogni entry. Devono includere nomi propri, luoghi, concetti cardine, oggetti o eventi fondamentali trattati nel &quot;content&quot;.</li>
+<li>&quot;keysecondary&quot; (Trigger di Rinforzo): Inserisci  <strong>almeno 5 keyword secondarie</strong>  per ogni entry. Usa questo spazio per sinonimi, abbreviazioni, termini correlati, slang della fazione, o concetti descrittivi associati ai trigger primari.</li>
+<li>&quot;selectiveLogic&quot;: Assicurati che sia impostato correttamente (es. 0 per logica OR, o il valore appropriato per la logica AND se intendi forzare la combinazione tra chiavi primarie e secondarie).
+<strong>3. GESTIONE DEGLI ALTRI CAMPI STRUTTURALI (Janitor AI Best Practices)</strong></li>
+<li>&quot;comment&quot;: Aggiorna il commento affinché rifletta il contenuto specifico della nuova entry splittata (es.  <em>&quot;Tier 1 Faction - [Nome Fazione] - Parte 1: Lore&quot;</em>  e  <em>&quot;Parte 2: Gerarchia&quot;</em> ).</li>
+<li>&quot;selective&quot;: Deve essere sempre true. (Usa &quot;constant&quot;: true e &quot;selective&quot;: false SOLO per World Rules fondamentali che non devono mai uscire dal contesto, da usare con estrema parsimonia).</li>
+<li>&quot;group&quot;: Assicurati che le entry splittate mantengano lo stesso gruppo (es. &quot;World&quot;, &quot;Factions&quot;, &quot;Species&quot;) per coerenza di punteggio (groupWeight).</li>
+<li>&quot;depth&quot; e &quot;order&quot;: Mantieni i valori originali (depth: 4, order: 100) in modo che l&#39;iniezione nel prompt avvenga prima della definizione del personaggio, come da standard per i world info.
+Rispetta fedelmente lo schema JSON originale (<a href="about:invalid#zCSafez">Lorebook_Template.json</a> ) in ogni sua virgola. Restituisci l&#39;array JSON aggiornato e validato, pronto per l&#39;importazione.
+<strong>Gemini</strong> : Ecco il prompt completo e aggiornato. Ho aggiunto una sezione specifica (il nuovo Punto 2) dedicata esclusivamente all&#39;ottimizzazione sintattica e semantica del testo, assicurandomi che il bot riduca il &quot;fluff&quot; narrativo a favore di direttive chiare, dense e assolute, ideali per la comprensione di un LLM.
+Copia e usa questo testo:</li>
+</ul>
+<hr>
+<p>Analizza il file Svartúlfr_Urban_Lorebook_Appendix.json e ottimizza le entry per massimizzare la precisione di iniezione e la comprensione nel contesto su Janitor AI. Applica rigorosamente le seguenti logiche su ogni entry, basandoti sullo schema JSON fornito:
+<strong>1. CONTROLLO E SPLIT DEL &quot;CONTENT&quot; (Limite 200 Token)</strong></p>
+<ul>
+<li>Calcola la stima dei token per il campo &quot;content&quot;.</li>
+<li><strong>SE</strong>  <strong>&quot;content&quot; &gt; 200 token</strong> , suddividi l&#39;informazione in più entry distinte (es. Entry 1, Entry 2).</li>
+<li>Lo split non deve mai interrompere una frase. Dividi il testo seguendo confini semantici logici (es. separa &quot;Storia e Origini&quot; da &quot;Caratteristiche Fisiche&quot; o &quot;Regole di Fazione&quot;). Mantieni la formattazione densa del testo.
+<strong>2. OTTIMIZZAZIONE DEL &quot;CONTENT&quot; (Comprensione Bot &amp; Densità)</strong></li>
+<li><strong>Riscrivi e condensa:</strong>  Riformula il testo originale per massimizzare la &quot;information density&quot;. Rimuovi frasi riempitive, descrizioni eccessivamente poetiche o linguaggio ambiguo.</li>
+<li><strong>Stile dichiarativo:</strong>  Usa frasi brevi, dirette e assolute (es. &quot;I Vampiri temono il fuoco&quot;, non &quot;Si dice che i vampiri possano essere spaventati dal fuoco&quot;).</li>
+<li><strong>Soggetti espliciti:</strong>  Evita l&#39;uso di pronomi ambigui (come &quot;loro&quot;, &quot;questi&quot;, &quot;esso&quot;). Ripeti i nomi propri di fazioni, personaggi, specie o luoghi all&#39;interno della stessa entry per evitare che il bot perda il riferimento semantico.</li>
+<li><strong>Formattazione strutturata:</strong>  Se l&#39;entry elenca molte caratteristiche, raggruppale in modo logico e conciso per far risparmiare token e facilitare il parsing logico dell&#39;LLM durante la roleplay.
+<strong>3. COMPILAZIONE OBBLIGATORIA DEI CAMPI &quot;KEY&quot; E &quot;KEYSECONDARY&quot; (Minimo 5 + 5)</strong>  Per garantire un&#39;attivazione profonda e ramificata all&#39;interno del Lorebook, devi compilare i trigger rispettando questa regola tassativa:</li>
+<li>&quot;key&quot; (Trigger Primari): Inserisci  <strong>almeno 5 keyword</strong>  specifiche per ogni entry. Devono includere nomi propri, luoghi, concetti cardine, oggetti o eventi fondamentali trattati nel &quot;content&quot;.</li>
+<li>&quot;keysecondary&quot; (Trigger di Rinforzo): Inserisci  <strong>almeno 5 keyword secondarie</strong>  per ogni entry. Usa questo spazio per sinonimi, abbreviazioni, termini correlati, slang della fazione, o concetti descrittivi associati ai trigger primari.</li>
+<li>&quot;selectiveLogic&quot;: Assicurati che sia impostato correttamente (es. 0 per logica OR, o il valore appropriato per la logica AND se intendi forzare la combinazione tra chiavi primarie e secondarie).
+<strong>4. GESTIONE DEGLI ALTRI CAMPI STRUTTURALI (Janitor AI Best Practices)</strong></li>
+<li>&quot;comment&quot;: Aggiorna il commento affinché rifletta il contenuto specifico della nuova entry splittata (es.  <em>&quot;Tier 1 Faction - [Nome Fazione] - Parte 1: Lore&quot;</em>  e  <em>&quot;Parte 2: Gerarchia&quot;</em> ).</li>
+<li>&quot;selective&quot;: Deve essere sempre true. (Usa &quot;constant&quot;: true e &quot;selective&quot;: false SOLO per World Rules fondamentali che non devono mai uscire dal contesto, da usare con estrema parsimonia).</li>
+<li>&quot;group&quot;: Assicurati che le entry splittate mantengano lo stesso gruppo (es. &quot;World&quot;, &quot;Factions&quot;, &quot;Species&quot;) per coerenza di punteggio (groupWeight).</li>
+<li>&quot;depth&quot; e &quot;order&quot;: Mantieni i valori originali (depth: 4, order: 100) in modo che l&#39;iniezione nel prompt avvenga prima della definizione del personaggio, come da standard per i world info.
+Rispetta fedelmente lo schema JSON originale in ogni sua virgola. Restituisci l&#39;array JSON aggiornato e validato, pronto per l&#39;importazione.
+<strong>User</strong> : aggiungiamo anche il controllo dei dati ovvero di verificare se i dati presenti nel file corrispondano a quelli del sorgente che verrà fornito (es. file.md)</li>
+</ul>
+<hr>
+<p>Analizza il file <a href="about:invalid#zCSafez">Svart%C3%BAlfr_Urban_Lorebook_Family.json</a>  e ottimizza le entry per massimizzare la precisione di iniezione e la comprensione nel contesto su Janitor AI. Applica rigorosamente le seguenti logiche su ogni entry, basandoti sullo schema JSON fornito:
+<strong>1. CONTROLLO E SPLIT DEL &quot;CONTENT&quot; (Limite 200 Token)</strong></p>
+<ul>
+<li>Calcola la stima dei token per il campo &quot;content&quot;.</li>
+<li><strong>SE &quot;content&quot; &gt; 200 token</strong>, suddividi l&#39;informazione in più entry distinte (es. Entry 1, Entry 2).</li>
+<li>Lo split non deve mai interrompere una frase. Dividi il testo seguendo confini semantici logici (es. separa &quot;Storia e Origini&quot; da &quot;Caratteristiche Fisiche&quot; o &quot;Regole di Fazione&quot;). Mantieni la formattazione densa del testo.
+<strong>2. OTTIMIZZAZIONE DEL &quot;CONTENT&quot; (Comprensione Bot &amp; Densità)</strong></li>
+<li><strong>Riscrivi e condensa:</strong>  Riformula il testo originale per massimizzare la &quot;information density&quot;. Rimuovi frasi riempitive, descrizioni eccessivamente poetiche o linguaggio ambiguo.</li>
+<li><strong>Stile dichiarativo:</strong>  Usa frasi brevi, dirette e assolute (es. &quot;I Vampiri temono il fuoco&quot;, non &quot;Si dice che i vampiri possano essere spaventati dal fuoco&quot;).</li>
+<li><strong>Soggetti espliciti:</strong>  Evita l&#39;uso di pronomi ambigui (come &quot;loro&quot;, &quot;questi&quot;, &quot;esso&quot;). Ripeti i nomi propri di fazioni, personaggi, specie o luoghi all&#39;interno della stessa entry per evitare che il bot perda il riferimento semantico.</li>
+<li><strong>Formattazione strutturata:</strong>  Se l&#39;entry elenca molte caratteristiche, raggruppale in modo logico e conciso per far risparmiare token e facilitare il parsing logico dell&#39;LLM durante la roleplay.
+<strong>3. COMPILAZIONE OBBLIGATORIA DEI CAMPI &quot;KEY&quot; E &quot;KEYSECONDARY&quot; (Minimo 5 + 5)</strong>  Per garantire un&#39;attivazione profonda e ramificata all&#39;interno del Lorebook, devi compilare i trigger rispettando questa regola tassativa:</li>
+<li>&quot;key&quot; (Trigger Primari): Inserisci  <strong>almeno 5 keyword</strong>  specifiche per ogni entry. Devono includere nomi propri, luoghi, concetti cardine, oggetti o eventi fondamentali trattati nel &quot;content&quot;.</li>
+<li>&quot;keysecondary&quot; (Trigger di Rinforzo): Inserisci  <strong>almeno 5 keyword secondarie</strong>  per ogni entry. Usa questo spazio per sinonimi, abbreviazioni, termini correlati, slang della fazione, o concetti descrittivi associati ai trigger primari.</li>
+<li>&quot;selectiveLogic&quot;: Assicurati che sia impostato correttamente (es. 0 per logica OR, o il valore appropriato per la logica AND se intendi forzare la combinazione tra chiavi primarie e secondarie).
+<strong>4. GESTIONE DEGLI ALTRI CAMPI STRUTTURALI (Janitor AI Best Practices)</strong></li>
+<li>&quot;comment&quot;: Aggiorna il commento affinché rifletta il contenuto specifico della nuova entry splittata (es.  <em>&quot;Tier 1 Faction - [Nome Fazione] - Parte 1: Lore&quot;</em>  e  <em>&quot;Parte 2: Gerarchia&quot;</em> ).</li>
+<li>&quot;selective&quot;: Deve essere sempre true. (Usa &quot;constant&quot;: true e &quot;selective&quot;: false SOLO per World Rules fondamentali che non devono mai uscire dal contesto, da usare con estrema parsimonia).</li>
+<li>&quot;group&quot;: Assicurati che le entry splittate mantengano lo stesso gruppo (es. &quot;World&quot;, &quot;Factions&quot;, &quot;Species&quot;) per coerenza di punteggio (groupWeight).</li>
+<li>&quot;depth&quot; e &quot;order&quot;: Mantieni i valori originali (depth: 4, order: 100) in modo che l&#39;iniezione nel prompt avvenga prima della definizione del personaggio, come da standard per i world info.
+Rispetta fedelmente lo schema <a href="about:invalid#zCSafez">Lorebook_Template.json</a> in ogni sua virgola. Restituisci l&#39;array JSON aggiornato e validato, pronto per l&#39;importazione.
+<strong>Gemini</strong> : Ecco il prompt aggiornato. Ho inserito un nuovo step iniziale dedicato alla verifica e all&#39;allineamento dei dati con il file sorgente. Inoltre, ho utilizzato un esempio specifico per spiegare al bot l&#39;importanza dell&#39;accuratezza dei nomi e delle nomenclature per la coerenza del progetto.
+Copia e usa questo prompt:</li>
+</ul>
+<hr>
+<p>Analizza il file Svartúlfr_Urban_Lorebook_Family.json e ottimizza le entry per massimizzare la precisione di iniezione e la comprensione nel contesto su Janitor AI. Applica rigorosamente le seguenti logiche su ogni entry, basandoti sullo schema JSON fornito:
+<strong>1. VERIFICA E ALLINEAMENTO DATI (Cross-Reference con File Sorgente)</strong></p>
+<ul>
+<li><strong>Confronto:</strong>  Prima di procedere a qualsiasi modifica, confronta il contenuto (e i metadati) di ogni entry nel file JSON con il file sorgente di riferimento che ti verrà fornito (es. .md, .txt).</li>
+<li><strong>Allineamento Fattuale:</strong>  Assicurati che tutti i dati presenti nel JSON corrispondano esattamente a quelli del sorgente. Elimina eventuali allucinazioni del modello.</li>
+<li><strong>Precisione Nomenclatura:</strong>  Fai particolare attenzione all&#39;accuratezza dei nomi completi, dei titoli e dei legami di sangue/fazione. Ad esempio, se il file sorgente specifica un nome completo e ufficiale (come  <em>Alyssa Douglas - Bloodmoon</em> ) assicurati che nel content non sia riportato solo in forma incompleta o omessa, per garantire che il bot abbia sempre il riferimento corretto. Se ci sono discrepanze, il file sorgente ha la precedenza assoluta.
+<strong>2. CONTROLLO E SPLIT DEL &quot;CONTENT&quot; (Limite 200 Token)</strong></li>
+<li>Calcola la stima dei token per il campo &quot;content&quot;.</li>
+<li><strong>SE</strong>  <strong>&quot;content&quot; &gt; 200 token</strong> , suddividi l&#39;informazione in più entry distinte (es. Entry 1, Entry 2).</li>
+<li>Lo split non deve mai interrompere una frase. Dividi il testo seguendo confini semantici logici (es. separa &quot;Storia della Famiglia&quot; da &quot;Membri Principali&quot; o &quot;Alleanze&quot;). Mantieni la formattazione densa del testo.
+<strong>3. OTTIMIZZAZIONE DEL &quot;CONTENT&quot; (Comprensione Bot &amp; Densità)</strong></li>
+<li><strong>Riscrivi e condensa:</strong>  Riformula il testo originale per massimizzare la &quot;information density&quot;. Rimuovi frasi riempitive, descrizioni eccessivamente poetiche o linguaggio ambiguo.</li>
+<li><strong>Stile dichiarativo:</strong>  Usa frasi brevi, dirette e assolute (es. &quot;I Vampiri temono il fuoco&quot;, non &quot;Si dice che i vampiri possano essere spaventati dal fuoco&quot;).</li>
+<li><strong>Soggetti espliciti:</strong>  Evita l&#39;uso di pronomi ambigui (come &quot;loro&quot;, &quot;questi&quot;, &quot;esso&quot;). Ripeti i nomi propri di fazioni, personaggi, specie o luoghi all&#39;interno della stessa entry per evitare che il bot perda il riferimento semantico.</li>
+<li><strong>Formattazione strutturata:</strong>  Se l&#39;entry elenca molte caratteristiche, raggruppale in modo logico e conciso per far risparmiare token e facilitare il parsing logico dell&#39;LLM durante la roleplay.
+<strong>4. COMPILAZIONE OBBLIGATORIA DEI CAMPI &quot;KEY&quot; E &quot;KEYSECONDARY&quot; (Minimo 5 + 5)</strong>  Per garantire un&#39;attivazione profonda e ramificata all&#39;interno del Lorebook, devi compilare i trigger rispettando questa regola tassativa:</li>
+<li>&quot;key&quot; (Trigger Primari): Inserisci  <strong>almeno 5 keyword</strong>  specifiche per ogni entry. Devono includere nomi propri, luoghi, concetti cardine, oggetti o eventi fondamentali trattati nel &quot;content&quot;.</li>
+<li>&quot;keysecondary&quot; (Trigger di Rinforzo): Inserisci  <strong>almeno 5 keyword secondarie</strong>  per ogni entry. Usa questo spazio per sinonimi, abbreviazioni, termini correlati, slang della fazione, o concetti descrittivi associati ai trigger primari.</li>
+<li>&quot;selectiveLogic&quot;: Assicurati che sia impostato correttamente (es. 0 per logica OR, o il valore appropriato per la logica AND se intendi forzare la combinazione tra chiavi primarie e secondarie).
+<strong>5. GESTIONE DEGLI ALTRI CAMPI STRUTTURALI (Janitor AI Best Practices)</strong></li>
+<li>&quot;comment&quot;: Aggiorna il commento affinché rifletta il contenuto specifico della nuova entry splittata (es.  <em>&quot;Tier 1 Faction - [Nome Fazione] - Parte 1: Lore&quot;</em>  e  <em>&quot;Parte 2: Gerarchia&quot;</em> ).</li>
+<li>&quot;selective&quot;: Deve essere sempre true. (Usa &quot;constant&quot;: true e &quot;selective&quot;: false SOLO per World Rules fondamentali che non devono mai uscire dal contesto, da usare con estrema parsimonia).</li>
+<li>&quot;group&quot;: Assicurati che le entry splittate mantengano lo stesso gruppo (es. &quot;World&quot;, &quot;Factions&quot;, &quot;Species&quot;, &quot;Family&quot;) per coerenza di punteggio (groupWeight).</li>
+<li>&quot;depth&quot; e &quot;order&quot;: Mantieni i valori originali (depth: 4, order: 100) in modo che l&#39;iniezione nel prompt avvenga prima della definizione del personaggio, come da standard per i world info.
+Rispetta fedelmente lo schema JSON originale Lorebook_Template.json in ogni sua virgola. Restituisci l&#39;array JSON aggiornato e validato, pronto per l&#39;importazione.
+<strong>User</strong> : fai un promprt specifico per ognuno di questi file... e dammeli tutti in codeblock separati:
+<a href="about:invalid#zCSafez">Svart%C3%BAlfr_Urban_Lorebook_Appendix.json</a> contiene <a href="about:invalid#zCSafez">Intro.html</a><a href="about:invalid#zCSafez">LSE_00_Foundations.md</a><a href="about:invalid#zCSafez">LSE_01_Species.md</a><a href="about:invalid#zCSafez">LSE_02_Behavioral_Ecology.md</a><a href="about:invalid#zCSafez">LSE_03_Civilization.md</a><a href="about:invalid#zCSafez">LSE_04_Governance.md</a><a href="about:invalid#zCSafez">LSE_05_Religion.md</a><a href="about:invalid#zCSafez">LSE_06_History.md</a><a href="about:invalid#zCSafez">LSE_07_Foundational_Figures.md</a><a href="about:invalid#zCSafez">LSE_08_Technology.md</a><a href="about:invalid#zCSafez">LSE_Appendices.md</a><a href="about:invalid#zCSafez">LSE_Guide.md</a> <a href="about:invalid#zCSafez">Tier4_Global_Appendix_Entries.md</a>
+<a href="about:invalid#zCSafez">Svart%C3%BAlfr_Urban_Lorebook_Family.json</a> contiene <a href="about:invalid#zCSafez">Card_Logan.md</a><a href="about:invalid#zCSafez">Card_Ut.md</a><a href="about:invalid#zCSafez">Card_Zefir.md</a><a href="about:invalid#zCSafez">Instructions_Zefir.md</a><a href="about:invalid#zCSafez">Instructions_Ut.md</a><a href="about:invalid#zCSafez">Instructions_Logan.md</a> <a href="about:invalid#zCSafez">Tier2_Malachia_Entries.md</a><a href="about:invalid#zCSafez">Tier2_Logan_Entries.md</a><a href="about:invalid#zCSafez">Tier2_Jasper_Entries.md</a><a href="about:invalid#zCSafez">Tier2_Erik_Entries.md</a><a href="about:invalid#zCSafez">Tier2_Noah_Entries.md</a><a href="about:invalid#zCSafez">Tier2_Ut_Entries.md</a><a href="about:invalid#zCSafez">Tier2_Wulfnic_Entries.md</a><a href="about:invalid#zCSafez">Tier2_Zefir_Entries.md</a> <a href="about:invalid#zCSafez">Card_Wulfnic.md</a> <a href="about:invalid#zCSafez">Instructions_Erik.md</a> <a href="about:invalid#zCSafez">Instructions_Jasper.md</a> <a href="about:invalid#zCSafez">Instructions_Logan.md</a> <a href="about:invalid#zCSafez">Instructions_Malachia.md</a> <a href="about:invalid#zCSafez">Instructions_Noah.md</a> <a href="about:invalid#zCSafez">Instructions_Ut.md</a><a href="about:invalid#zCSafez">Instructions_Zefir.md</a><a href="about:invalid#zCSafez">Instructions_Wulfnic.md</a> <a href="about:invalid#zCSafez">Erik_Card.json</a><a href="about:invalid#zCSafez">Jasper_Card.json</a><a href="about:invalid#zCSafez">Malachia_Card.json</a><a href="about:invalid#zCSafez">Noah_Card.json</a><a href="about:invalid#zCSafez">Wulfnic_Card.json</a>
+<a href="about:invalid#zCSafez">Svart%C3%BAlfr_Urban_Lorebook_NPC.json</a> contiene <a href="about:invalid#zCSafez">Instructions_Sierra.md</a><a href="about:invalid#zCSafez">Instructions_Scarlett.md</a><a href="about:invalid#zCSafez">Instructions_Marcus.md</a><a href="about:invalid#zCSafez">Instructions_Kaladin.md</a><a href="about:invalid#zCSafez">Instructions_Angelo.md</a><a href="about:invalid#zCSafez">Card_Sierra.md</a><a href="about:invalid#zCSafez">Card_Scarlett.md</a><a href="about:invalid#zCSafez">Card_Marcus.md</a><a href="about:invalid#zCSafez">Card_Kaladin.md</a><a href="about:invalid#zCSafez">Card_Angelo.md</a> <a href="about:invalid#zCSafez">Tier2_Angelo_Entries.md</a><a href="about:invalid#zCSafez">Tier2_Kaladin_Entries.md</a><a href="about:invalid#zCSafez">Tier2_Marcus_Entries.md</a><a href="about:invalid#zCSafez">Tier2_NPC_Entries.md</a><a href="about:invalid#zCSafez">Tier2_Scarlett_Entries.md</a><a href="about:invalid#zCSafez">Tier2_Sierra_Entries.md</a> <a href="about:invalid#zCSafez">Instructions_Kaladin.md</a> <a href="about:invalid#zCSafez">Instructions_Scarlett.md</a> <a href="about:invalid#zCSafez">Instructions_Sierra.md</a>
+<a href="about:invalid#zCSafez">Svart%C3%BAlfr_Urban_Lorebook_NSFW.json</a> contiene <a href="about:invalid#zCSafez">Tier2_Angelo_Intimacy_Profile.md</a> <a href="about:invalid#zCSafez">Tier2_Erik_Intimacy_Profile.md</a> <a href="about:invalid#zCSafez">Tier2_Jasper_Intimacy_Profile.md</a> <a href="about:invalid#zCSafez">Tier2_Kaladin_Intimacy_Profile.md</a> <a href="about:invalid#zCSafez">Tier2_Logan_Intimacy_Profile.md</a> <a href="about:invalid#zCSafez">Tier2_Malachia_Intimacy_Profile.md</a> <a href="about:invalid#zCSafez">Tier2_Marcus_Intimacy_Profile.md</a> <a href="about:invalid#zCSafez">Tier2_Noah_Intimacy_Profile.md</a> <a href="about:invalid#zCSafez">Tier2_NPC_Intimacy_Roster.md</a> <a href="about:invalid#zCSafez">Tier2_Scarlett_Intimacy_Profile.md</a> <a href="about:invalid#zCSafez">Tier2_Sierra_Intimacy_Profile.md</a> <a href="about:invalid#zCSafez">Tier2_Ut_Intimacy_Profile.md</a> <a href="about:invalid#zCSafez">Tier2_Wulfnic_Intimacy_Profile.md</a> <a href="about:invalid#zCSafez">Tier2_Zefir_Intimacy_Profile.md</a>
+<a href="about:invalid#zCSafez">Svart%C3%BAlfr_Urban_Lorebook_World.json</a> contiene <a href="about:invalid#zCSafez">Tier1_World_Entries.md</a> <a href="about:invalid#zCSafez">Tier3_Arc1_Golden_Cage_Entries.md</a><a href="about:invalid#zCSafez">Tier3_Arc1_Intimacy_Register.md</a><a href="about:invalid#zCSafez">Tier3_Arc2_First_Rebellion_Entries.md</a><a href="about:invalid#zCSafez">Tier3_Arc2_Intimacy_Register.md</a><a href="about:invalid#zCSafez">Tier3_Arc3_Intimacy_Register.md</a><a href="about:invalid#zCSafez">Tier3_Arc3_Velvet_Trap_Entries.md</a><a href="about:invalid#zCSafez">Tier3_Arc4_Intimacy_Register.md</a><a href="about:invalid#zCSafez">Tier3_Arc4_Primal_Grounding_Entries.md</a><a href="about:invalid#zCSafez">Tier3_Arc5_Intimacy_Register.md</a><a href="about:invalid#zCSafez">Tier3_Arc5_Shattered_Glass_Entries.md</a><a href="about:invalid#zCSafez">Tier3_Arc6_Intimacy_Register.md</a><a href="about:invalid#zCSafez">Tier3_Arc6_Open_Door_Entries.md</a>
+<a href="about:invalid#zCSafez">Svart%C3%BAlfr_Urban_JanitorAI.md</a> contiene <a href="about:invalid#zCSafez">Card_Erik.md</a> <a href="about:invalid#zCSafez">Card_Jasper.md</a> <a href="about:invalid#zCSafez">Card_Malachia.md</a> <a href="about:invalid#zCSafez">Card_Noah.md</a>
+<a href="about:invalid#zCSafez">Svart%C3%BAlfr_Urban_Global_Engine.js</a> contiene <a href="about:invalid#zCSafez">JanitorAI_Script_GlobalEngine.js</a> <a href="about:invalid#zCSafez">Global_Engine_Directives.xml</a> <a href="about:invalid#zCSafez">Svart%C3%BAlfr_Urban_ChatPreset.json</a>
+<a href="about:invalid#zCSafez">Svart%C3%BAlfr_Urban_Janitor_Bio.html</a> contiene <a href="about:invalid#zCSafez">JanitorAI_Bio_Group.json</a>
+<a href="about:invalid#zCSafez">User.md</a>  contiene <a href="about:invalid#zCSafez">Tier2_User_Entries.md</a> <a href="about:invalid#zCSafez">Tier2_User_Intimacy_Profile.md</a> <a href="about:invalid#zCSafez">User.md</a>
+<strong>Gemini</strong> : Ecco i prompt specifici per ogni file o gruppo di file. Ho adattato le istruzioni affinché il forge sappia esattamente quali file sorgente incrociare. Inoltre, per i file non-Lorebook (come le schede .md o gli script .js), ho adattato le direttive per ottimizzare la specifica struttura richiesta da Janitor AI (come le definizioni dei personaggi o il prompt engineering globale).</li>
+</ul>
+<pre><code class="language-text">Analizza il file `Svartúlfr_Urban_Lorebook_Appendix.json` e ottimizza le entry per massimizzare la precisione di iniezione e la comprensione nel contesto su Janitor AI. Per farlo, incrocia e verifica i dati con i seguenti file sorgente in esso contenuti: Intro.html, LSE_00_Foundations.md, LSE_01_Species.md, LSE_02_Behavioral_Ecology.md, LSE_03_Civilization.md, LSE_04_Governance.md, LSE_05_Religion.md, LSE_06_History.md, LSE_07_Foundational_Figures.md, LSE_08_Technology.md, LSE_Appendices.md, LSE_Guide.md, Tier4_Global_Appendix_Entries.md.
+
+**1. VERIFICA E ALLINEAMENTO DATI (Cross-Reference)**
+- Assicurati che tutti i dati presenti nel JSON corrispondano esattamente a quelli dei file sorgente. Elimina eventuali allucinazioni.
+- Precisione Nomenclatura: Fai particolare attenzione all&#39;accuratezza di nomi completi e fazioni. Ad esempio, assicurati che il nome completo &quot;Alyssa Douglas - Bloodmoon&quot; non venga troncato omettendo la prima parte, garantendo che il bot abbia sempre il riferimento corretto. Il file sorgente ha la precedenza assoluta.
+
+**2. CONTROLLO E SPLIT DEL &quot;CONTENT&quot; (Limite 200 Token)**
+- Calcola la stima dei token per il campo `&quot;content&quot;`. Se &gt; 200 token, suddividi in più entry distinte senza interrompere le frasi (es. separa &quot;Religione&quot; da &quot;Storia&quot;).
+
+**3. OTTIMIZZAZIONE DEL &quot;CONTENT&quot; (Comprensione Bot &amp; Densità)**
+- Riscrivi per massimizzare la &quot;information density&quot;. Usa frasi brevi, dirette e assolute (stile dichiarativo). Evita pronomi ambigui e ripeti i nomi propri per mantenere il riferimento semantico.
+
+**4. COMPILAZIONE CAMPI &quot;KEY&quot; E &quot;KEYSECONDARY&quot; (Minimo 5 + 5)**
+- `&quot;key&quot;`: Inserisci almeno 5 keyword specifiche (nomi propri, concetti cardine).
+- `&quot;keysecondary&quot;`: Inserisci almeno 5 keyword secondarie (sinonimi, abbreviazioni, concetti descrittivi).
+- Imposta `&quot;selectiveLogic&quot;` correttamente.
+
+**5. GESTIONE CAMPI STRUTTURALI**
+- Aggiorna il `&quot;comment&quot;` per riflettere lo split. `&quot;selective&quot;: true`. Gruppo coerente (es. &quot;Appendix&quot;, &quot;Species&quot;). Mantieni `&quot;depth&quot;: 4`, `&quot;order&quot;: 100`.
+
+</code></pre>
+<pre><code class="language-text">Analizza il file `Svartúlfr_Urban_Lorebook_Family.json` e ottimizza le entry per massimizzare la precisione di iniezione su Janitor AI. Incrocia e verifica i dati con i file sorgente: Card_Logan.md, Card_Ut.md, Card_Zefir.md, Card_Wulfnic.md, Instructions_*.md (tutti i membri), Tier2_*.md (tutti i membri) e i vari *_Card.json.
+
+**1. VERIFICA E ALLINEAMENTO DATI (Cross-Reference)**
+- Verifica i legami di sangue, le dinamiche familiari e le istruzioni specifiche dei personaggi.
+- Precisione Nomenclatura: Mantieni i nomi completi esatti (es. &quot;Alyssa Douglas - Bloodmoon&quot; senza omettere la prima parte) per evitare confusione nel bot tra i vari membri della famiglia.
+
+**2. CONTROLLO E SPLIT DEL &quot;CONTENT&quot; (Limite 200 Token)**
+- Se il `&quot;content&quot;` supera i 200 token, suddividi l&#39;informazione (es. separa &quot;Background Familiare&quot; da &quot;Relazioni Attuali&quot;).
+
+**3. OTTIMIZZAZIONE DEL testO**
+- Condensa il testo. Usa frasi brevi e assolute. Esplicita sempre il soggetto (es. usa il nome del membro della famiglia invece di &quot;lui/lei&quot;).
+
+**4. COMPILAZIONE CAMPI &quot;KEY&quot; E &quot;KEYSECONDARY&quot; (Minimo 5 + 5)**
+- `&quot;key&quot;`: Almeno 5 trigger primari (nomi completi, soprannomi, ruoli nella famiglia).
+- `&quot;keysecondary&quot;`: Almeno 5 trigger secondari (luoghi associati, oggetti iconici, dinamiche).
+
+**5. GESTIONE CAMPI STRUTTURALI**
+- Aggiorna `&quot;comment&quot;`. `&quot;selective&quot;: true`. Usa un `&quot;group&quot;` coerente (es. &quot;Family_Malachia&quot;). Mantieni `&quot;depth&quot;: 4`, `&quot;order&quot;: 100`.
+
+</code></pre>
+<pre><code class="language-text">Analizza il file `Svartúlfr_Urban_Lorebook_NPC.json` e ottimizza le entry. Incrocia i dati con i sorgenti: Instructions_Sierra.md, Instructions_Scarlett.md, Instructions_Marcus.md, Instructions_Kaladin.md, Instructions_Angelo.md, le relative Card_*.md e i Tier2_*_Entries.md.
+
+**1. VERIFICA E ALLINEAMENTO DATI**
+- Assicurati che i dettagli degli NPC (aspetto, ruolo, fazione) siano fedeli ai file sorgente.
+- Precisione Nomenclatura: Rispetta i nomi completi ufficiali degli NPC (come fatto ad esempio con &quot;Alyssa Douglas - Bloodmoon&quot; senza tagliare la prima parte) per evitare sovrapposizioni.
+
+**2. CONTROLLO E SPLIT DEL &quot;CONTENT&quot; (Limite 200 Token)**
+- Se un NPC ha una lore troppo lunga (&gt; 200 token), dividi in &quot;Entry 1: Aspetto/Ruolo&quot; ed &quot;Entry 2: Relazioni/Obiettivi&quot;.
+
+**3. OTTIMIZZAZIONE DEL TESTO**
+- Scrivi in modo dichiarativo e compatto. Rimuovi descrizioni riempitive e scrivi le direttive comportamentali in modo chiaro per l&#39;LLM.
+
+**4. COMPILAZIONE TRIGGER (Minimo 5 + 5)**
+- `&quot;key&quot;`: Almeno 5 (Nome NPC, luoghi in cui si trova, fazione).
+- `&quot;keysecondary&quot;`: Almeno 5 (Dettagli visivi, soprannomi, legami).
+
+**5. GESTIONE CAMPI STRUTTURALI**
+- `&quot;group&quot;`: Usa &quot;NPC&quot;. Aggiorna `&quot;comment&quot;`. `&quot;selective&quot;: true`. Mantieni `&quot;depth&quot;: 4`, `&quot;order&quot;: 100`.
+
+</code></pre>
+<pre><code class="language-text">Analizza il file `Svartúlfr_Urban_Lorebook_NSFW.json`. Incrocia i dati con i file Tier2_*_Intimacy_Profile.md di tutti i personaggi (Angelo, Erik, Jasper, Kaladin, Logan, Malachia, Marcus, Noah, NPC_Roster, Scarlett, Sierra, Ut, Wulfnic, Zefir).
+
+**1. VERIFICA E ALLINEAMENTO DATI**
+- Assicurati che le preferenze, i kink, i limiti e le dinamiche di intimità corrispondano esattamente ai profili sorgente.
+- Usa i nomi completi in modo esatto (es. &quot;Alyssa Douglas - Bloodmoon&quot;) per assicurarti che il bot applichi le dinamiche NSFW alla persona giusta.
+
+**2. CONTROLLO E SPLIT DEL &quot;CONTENT&quot; (Limite 200 Token)**
+- Le dinamiche NSFW complesse (&gt;200 token) vanno divise (es. &quot;Entry 1: Preferenze e Kink&quot;, &quot;Entry 2: Comportamento post-care&quot;).
+
+**3. OTTIMIZZAZIONE DEL TESTO**
+- Il linguaggio deve essere esplicito, clinico e non ambiguo. Il bot necessita di direttive dirette e assolute (es. &quot;[Personaggio] è dominante e sadico&quot;, non &quot;a volte gli piace dominare&quot;).
+
+**4. COMPILAZIONE TRIGGER (Minimo 5 + 5)**
+- `&quot;key&quot;`: Almeno 5 (Nomi, tag NSFW specifici, trigger anatomici).
+- `&quot;keysecondary&quot;`: Almeno 5 (Sinonimi, verbi di azione legati all&#39;intimità).
+
+**5. GESTIONE CAMPI STRUTTURALI**
+- `&quot;group&quot;`: &quot;NSFW_Profiles&quot;. Aggiorna i commenti. `&quot;selective&quot;: true`. Mantieni `&quot;depth&quot;: 4`, `&quot;order&quot;: 100`.
+
+</code></pre>
+<pre><code class="language-text">Analizza il file `Svartúlfr_Urban_Lorebook_World.json` e ottimizza le entry incrociando i dati con: Tier1_World_Entries.md, Tier3_Arc1 a Arc6 (Entries e Intimacy_Register).
+
+**1. VERIFICA E ALLINEAMENTO DATI**
+- Verifica la cronologia degli Archi Narrativi (Arc 1-6) e la coerenza del mondo. 
+- La nomenclatura di eventi e personaggi (es. &quot;Alyssa Douglas - Bloodmoon&quot;) deve essere identica ai file sorgente in tutte le ere temporali.
+
+**2. CONTROLLO E SPLIT DEL &quot;CONTENT&quot; (Limite 200 Token)**
+- Dividi le lore storiche troppo lunghe per Archi narrativi o per eventi specifici (&lt; 200 token per entry).
+
+**3. OTTIMIZZAZIONE DEL TESTO**
+- Scrivi come un manuale di regole assolute. Condensa gli eventi di trama.
+
+**4. COMPILAZIONE TRIGGER (Minimo 5 + 5)**
+- `&quot;key&quot;`: Almeno 5 (Nomi di Archi Narrativi, eventi storici, luoghi chiave).
+- `&quot;keysecondary&quot;`: Almeno 5 (Personaggi coinvolti nell&#39;arco, anni, concetti chiave dell&#39;era).
+
+**5. GESTIONE CAMPI STRUTTURALI**
+- Usa i gruppi in base all&#39;arco (es. &quot;Arc_1_Golden_Cage&quot;, &quot;World_Rules&quot;). `&quot;selective&quot;: true`.
+
+</code></pre>
+<pre><code class="language-text">Analizza il file `Svartúlfr_Urban_JanitorAI.md` (Contenente le Card di Erik, Jasper, Malachia, Noah). 
+
+**OTTIMIZZAZIONE PER JANITOR AI (Character Definitions)**
+Poiché queste sono schede bot (Personality, Scenario, First Message) e non file JSON del lorebook, applica queste logiche:
+1. **Cross-Reference:** Verifica che i tratti della personalità e il background corrispondano ai sorgenti. Usa la nomenclatura esatta per i nomi (es. mai troncare &quot;Alyssa Douglas - Bloodmoon&quot;).
+2. **Densità del Prompt (Personality):** Converti il testo in formattazione W++. Usa blocchi logici (es. `[Mind(...)]`, `[Appearance(...)]`). Rimuovi frasi riempitive. Non superare i 1000-1200 token totali per scheda per lasciare spazio al contesto.
+3. **Stile Dichiarativo:** Scrivi le direttive in modo assoluto. Esplicita sempre il soggetto e i pronomi.
+4. **Scenario:** Condensa l&#39;ambientazione e la situazione iniziale in massimo 2 paragrafi chiari e diretti.
+Restituisci le schede formattate in Markdown.
+
+</code></pre>
+<pre><code class="language-text">Analizza il file `Svartúlfr_Urban_Global_Engine.js` (Contenente JanitorAI_Script_GlobalEngine.js, Global_Engine_Directives.xml, Svartúlfr_Urban_ChatPreset.json).
+
+**OTTIMIZZAZIONE SCRIPT E DIRETTIVE DI SISTEMA**
+1. **Verifica Sintassi:** Assicurati che lo script globale e l&#39;XML delle direttive siano sintatticamente perfetti. I nomi dei trigger e delle variabili globali devono corrispondere ai nomi ufficiali (es. &quot;Alyssa Douglas - Bloodmoon&quot;).
+2. **Efficienza Token:** Nei file XML o nel ChatPreset JSON, riduci le istruzioni di sistema (&quot;System Prompts&quot;) all&#39;osso. Usa imperativi (es. &quot;Write in third person&quot;, &quot;Never speak for {{user}}&quot;).
+3. **Condensazione:** Rimuovi le spiegazioni discorsive dentro le direttive. L&#39;LLM ha bisogno solo di comandi grezzi e formattati (usa parentesi quadre o tag XML per racchiudere le regole di sistema).
+
+</code></pre>
+<pre><code class="language-text">Analizza i file `Svartúlfr_Urban_Janitor_Bio.html` e `JanitorAI_Bio_Group.json`.
+
+**OTTIMIZZAZIONE PROFILO E BIO**
+1. **Allineamento Dati:** Verifica che la biografia di gruppo e il markup HTML rispecchino il lore ufficiale senza discrepanze. Rispetta la formattazione dei nomi completi (come &quot;Alyssa Douglas - Bloodmoon&quot;).
+2. **Pulizia Codice:** Ottimizza l&#39;HTML/JSON per la visualizzazione sulla piattaforma Janitor AI, rimuovendo tag inutili o nidificazioni pesanti che potrebbero rompere il layout della pagina.
+3. **Stile:** Mantieni un tono accattivante per gli utenti finali (lettori), ma compatto.
+
+</code></pre>
+<pre><code class="language-text">Analizza il file `User.md` (contenente Tier2_User_Entries.md, Tier2_User_Intimacy_Profile.md, User.md).
+
+**OTTIMIZZAZIONE PERSONA DELL&#39;UTENTE**
+1. **Verifica Dati:** Consolida le informazioni dell&#39;utente in un unico profilo coerente. Fai attenzione a mantenere esatti i nomi completi dei legami e dei personaggi di riferimento (es. &quot;Alyssa Douglas - Bloodmoon&quot;).
+2. **Formattazione (Janitor Persona):** Ottimizza il testo per essere inserito nella casella &quot;User Persona&quot; di Janitor AI. 
+3. **Condensazione (Max Efficienza):** Riduci le descrizioni a elenchi puntati o tag essenziali (es. `Appearance: [tall, dark hair, athletic]`, `Personality: [cynical, loyal, quiet]`). Rimuovi ogni parola superflua per risparmiare token permanenti nel contesto.
+4. **Intimacy Profile:** Integra le preferenze NSFW dell&#39;utente in modo clinico e diretto, affinché l&#39;LLM le processi come regole inviolabili di interazione con i bot.
+
+</code></pre>
+<p><strong>User</strong> : per questo: Analizza il file Svartúlfr_Urban_JanitorAI.md (Contenente le Card di Erik, Jasper, Malachia, Noah).
+<strong>OTTIMIZZAZIONE PER JANITOR AI (Character Definitions)</strong>  Poiché queste sono schede bot (Personality, Scenario, First Message) e non file JSON del lorebook, applica queste logiche:</p>
+<ol>
+<li><strong>Cross-Reference:</strong>  Verifica che i tratti della personalità e il background corrispondano ai sorgenti. Usa la nomenclatura esatta per i nomi (es. mai troncare &quot;Alyssa Douglas - Bloodmoon&quot;).</li>
+<li><strong>Densità del Prompt (Personality):</strong>  Converti il testo in formattazione W++. Usa blocchi logici (es. [Mind(...)], [Appearance(...)]). Rimuovi frasi riempitive. Non superare i 1000-1200 token totali per scheda per lasciare spazio al contesto.</li>
+<li><strong>Stile Dichiarativo:</strong>  Scrivi le direttive in modo assoluto. Esplicita sempre il soggetto e i pronomi.</li>
+<li><strong>Scenario:</strong>  Condensa l&#39;ambientazione e la situazione iniziale in massimo 2 paragrafi chiari e diretti. Restituisci le schede formattate in Markdown.</li>
+</ol>
+<hr>
+<p>il tempalte è in: templates\Janitor_Bot_Template.md
+<strong>Gemini</strong> : Ecco il prompt aggiornato per le schede dei personaggi. Ho inserito una direttiva specifica (il nuovo Punto 1) che obbliga il forge a utilizzare esclusivamente l&#39;architettura definita nel tuo template, allineando la formattazione a quello standard.</p>
+<pre><code class="language-text">Analizza il file `Svartúlfr_Urban_JanitorAI.md` (Contenente le Card di Erik, Jasper, Malachia, Noah). 
+
+**OTTIMIZZAZIONE PER JANITOR AI (Character Definitions)**
+Poiché queste sono schede bot (Personality, Scenario, First Message) e non file JSON del lorebook, applica queste logiche:
+
+1. **Aderenza al Template:** Applica rigorosamente la struttura, le sezioni e l&#39;impaginazione definite nel file `templates\Janitor_Bot_Template.md`. Tutte le informazioni devono essere iniettate seguendo esattamente i campi previsti da questo template, senza inventare nuovi formati o alterare l&#39;ordine delle sezioni.
+2. **Cross-Reference:** Verifica che i tratti della personalità e il background corrispondano ai sorgenti. Usa la nomenclatura esatta per i nomi (es. mai troncare &quot;Alyssa Douglas - Bloodmoon&quot;).
+3. **Densità del Prompt (Personality):** Converti il testo testuale in formattazione W++ (o nel formato compatto specificato nel template). Usa blocchi logici (es. `[Mind(...)]`, `[Appearance(...)]`). Rimuovi frasi riempitive. Non superare i 1000-1200 token totali per scheda per lasciare spazio al contesto.
+4. **Stile Dichiarativo:** Scrivi le direttive in modo assoluto. Esplicita sempre il soggetto e i pronomi.
+5. **Scenario:** Condensa l&#39;ambientazione e la situazione iniziale in massimo 2 paragrafi chiari e diretti.
+
+Restituisci le schede formattate in Markdown, rispettando fedelmente il template fornito.
+
+</code></pre>
+<p><strong>User</strong> : il template D:\World-Forge\templates\User_Persona_template.md è per questo:
+Analizza il file User.md (contenente Tier2_User_Entries.md, Tier2_User_Intimacy_Profile.md, User.md).
+<strong>OTTIMIZZAZIONE PERSONA DELL&#39;UTENTE</strong></p>
+<ol>
+<li><strong>Verifica Dati:</strong>  Consolida le informazioni dell&#39;utente in un unico profilo coerente. Fai attenzione a mantenere esatti i nomi completi dei legami e dei personaggi di riferimento (es. &quot;Alyssa Douglas - Bloodmoon&quot;).</li>
+<li><strong>Formattazione (Janitor Persona):</strong>  Ottimizza il testo per essere inserito nella casella &quot;User Persona&quot; di Janitor AI.</li>
+<li><strong>Condensazione (Max Efficienza):</strong>  Riduci le descrizioni a elenchi puntati o tag essenziali (es. Appearance: [tall, dark hair, athletic], Personality: [cynical, loyal, quiet]). Rimuovi ogni parola superflua per risparmiare token permanenti nel contesto.</li>
+<li><strong>Intimacy Profile:</strong>  Integra le preferenze NSFW dell&#39;utente in modo clinico e diretto, affinché l&#39;LLM le processi come regole inviolabili di interazione con i bot.
+<strong>Gemini</strong> : Ecco il prompt aggiornato per la Persona dell&#39;Utente, con l&#39;integrazione esplicita del template richiesto. Ho aggiunto un punto dedicato all&#39;inizio per forzare il forge a usare quella specifica struttura.</li>
+</ol>
+<pre><code class="language-text">Analizza il file `User.md` (contenente Tier2_User_Entries.md, Tier2_User_Intimacy_Profile.md, User.md).
+
+**OTTIMIZZAZIONE PERSONA DELL&#39;UTENTE**
+1. **Aderenza al Template:** Applica rigorosamente la struttura e l&#39;impaginazione definite nel file `templates\User_Persona_template.md`. Tutte le informazioni consolidate devono essere iniettate seguendo esattamente i campi e i tag previsti da questo template, senza inventare nuovi formati.
+2. **Verifica Dati:** Consolida le informazioni dell&#39;utente in un unico profilo coerente. Fai attenzione a mantenere esatti i nomi completi dei legami e dei personaggi di riferimento (es. &quot;Alyssa Douglas - Bloodmoon&quot;).
+3. **Condensazione (Max Efficienza):** Riduci le descrizioni a elenchi puntati o tag essenziali (es. `Appearance: [tall, dark hair, athletic]`, `Personality: [cynical, loyal, quiet]`). Rimuovi ogni parola superflua per risparmiare token permanenti nel contesto, ottimizzando il testo per la casella &quot;User Persona&quot; di Janitor AI.
+4. **Intimacy Profile:** Integra le preferenze NSFW dell&#39;utente in modo clinico e diretto, inserendole nelle sezioni appropriate del template, affinché l&#39;LLM le processi come regole inviolabili di interazione con i bot.
+
+</code></pre>
+<p><strong>User</strong> : questo template: templates\Janitor_Bio_Template.html
+per questo: Analizza i file Svartúlfr_Urban_Janitor_Bio.html
+source: JanitorAI_Bio_Group.json.
+<strong>OTTIMIZZAZIONE PROFILO E BIO</strong></p>
+<ol>
+<li><strong>Allineamento Dati:</strong>  Verifica che la biografia di gruppo e il markup HTML rispecchino il lore ufficiale senza discrepanze. Rispetta la formattazione dei nomi completi (come &quot;Alyssa Douglas-Bloodmoon&quot;).</li>
+<li><strong>Pulizia Codice:</strong>  Ottimizza l&#39;HTML/JSON per la visualizzazione sulla piattaforma Janitor AI, rimuovendo tag inutili o nidificazioni pesanti che potrebbero rompere il layout della pagina.</li>
+<li><strong>Stile:</strong>  Mantieni un tono accattivante per gli utenti finali (lettori), ma compatto.
+<strong>Gemini</strong> : Ecco il prompt aggiornato per la biografia del profilo, con l&#39;integrazione del template HTML. Ho impostato le istruzioni in modo che il forge prenda i dati dal JSON e li inserisca nell&#39;HTML usando esclusivamente la struttura del tuo template.</li>
+</ol>
+<pre><code class="language-text">Analizza il file sorgente `JanitorAI_Bio_Group.json` per generare e ottimizzare `Svartúlfr_Urban_Janitor_Bio.html`.
+
+**OTTIMIZZAZIONE PROFILO E BIO**
+1. **Aderenza al Template:** Applica rigorosamente la struttura, le classi e i tag definiti nel file `templates\Janitor_Bio_Template.html`. Usa le informazioni del file JSON sorgente per popolare l&#39;HTML, rispettando l&#39;impaginazione prevista dal template senza inventare nuovi formati o alterare l&#39;architettura visiva.
+2. **Allineamento Dati:** Verifica che la biografia di gruppo rispecchi il lore ufficiale senza discrepanze. Rispetta scrupolosamente la formattazione e la spaziatura dei nomi completi (es. &quot;Alyssa Douglas - Bloodmoon&quot;).
+3. **Pulizia Codice:** Ottimizza l&#39;HTML per la corretta visualizzazione sulla piattaforma Janitor AI. Rimuovi tag inutili, stili inline ridondanti o nidificazioni pesanti che potrebbero rompere il layout della pagina del profilo.
+4. **Stile:** Mantieni un tono accattivante e immersivo per gli utenti finali (lettori), garantendo al tempo stesso che il testo sia compatto e facilmente leggibile su dispositivi diversi.
+
+</code></pre>
+<p><strong>User</strong> : disci anche di usare il capitolo 8 della guuida D:\World-Forge\wiki\guide_bot.md
+<strong>Gemini</strong> : Ecco il prompt aggiornato. Ho inserito la direttiva per far leggere e applicare le regole del Capitolo 8 della tua guida ufficiale come primissimo passo per l&#39;ottimizzazione del profilo.</p>
+<pre><code class="language-text">Analizza il file sorgente `JanitorAI_Bio_Group.json` per generare e ottimizzare `Svartúlfr_Urban_Janitor_Bio.html`.
+
+**OTTIMIZZAZIONE PROFILO E BIO**
+1. **Linee Guida Ufficiali:** Fai riferimento specifico al **Capitolo 8** del file `D:\World-Forge\wiki\guide_bot.md`. Applica rigorosamente tutte le direttive editoriali e stilistiche contenute in quel capitolo prima di procedere.
+2. **Aderenza al Template:** Applica la struttura, le classi e i tag definiti nel file `templates\Janitor_Bio_Template.html`. Usa le informazioni del file JSON sorgente per popolare l&#39;HTML, rispettando l&#39;impaginazione prevista dal template senza inventare nuovi formati o alterare l&#39;architettura visiva.
+3. **Allineamento Dati:** Verifica che la biografia di gruppo rispecchi il lore ufficiale senza discrepanze. Rispetta scrupolosamente la formattazione e la spaziatura dei nomi completi (es. &quot;Alyssa Douglas - Bloodmoon&quot;).
+4. **Pulizia Codice:** Ottimizza l&#39;HTML per la corretta visualizzazione sulla piattaforma Janitor AI. Rimuovi tag inutili, stili inline ridondanti o nidificazioni pesanti che potrebbero rompere il layout della pagina del profilo.
+5. **Stile:** Mantieni un tono accattivante e immersivo per gli utenti finali (lettori), garantendo al tempo stesso che il testo sia compatto e facilmente leggibile su dispositivi diversi.
+
+</code></pre>

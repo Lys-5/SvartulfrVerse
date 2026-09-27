@@ -1,0 +1,405 @@
+<p><strong>User</strong> : per essere più compliante direi di riscrivere le istruzioni di notebookLM per dirgli che è un archivio
+<strong>Gemini</strong> : Sì. Dal punto di vista architetturale è più corretto definire NotebookLM come un archivio di ricerca, non come un&#39;autorità.
+Attualmente molte istruzioni danno l&#39;impressione che NotebookLM sia il primo passo decisionale, mentre i documenti di governance già stabiliscono che è una fonte di evidenza e non una fonte canonica.
+Proporrei qualcosa di questo tipo:</p>
+<pre><code class="language-text">Primary Sources
+
+1. SvartulfrVerse repository (Active Canon — Single Source of Truth)
+
+Research Archives
+
+2. NotebookLM (Primary Research Archive)
+3. Svartulfr_LA repository (Research Archive)
+4. Progetti repository (Historical Archive)
+
+Authority Hierarchy
+
+ADRs
+→ Authority Records
+→ Active Canon Repository
+→ Research Archives
+
+Research archives are evidence sources only.
+
+Information recovered from NotebookLM, Svartulfr_LA, or Progetti is not canon automatically.
+
+All recovered information must follow:
+
+Research
+→ Evidence Collection
+→ Audit
+→ Architecture Review
+→ Authority Decision
+→ Integration
+
+Never treat archive material as canonical authority.
+
+Evidence informs decisions.
+Authority records create canon.
+
+</code></pre>
+<p>E riscriverei anche questa parte:</p>
+<pre><code class="language-text">NotebookLM
+→ Archive Verification
+→ Audit
+→ Architecture Review
+→ Decision
+→ Integration
+
+</code></pre>
+<p>in:</p>
+<pre><code class="language-text">Archive Research
+→ Evidence Collection
+→ Audit
+→ Architecture Review
+→ Authority Decision
+→ Integration
+
+</code></pre>
+<p>Perché oggi non hai più un singolo archivio. Hai:</p>
+<ul>
+<li>NotebookLM = archivio di ricerca</li>
+<li>Svartulfr_LA = archivio di ricerca primario</li>
+<li>Progetti = archivio storico secondario
+e la governance prevede già che tutti e tre siano semplicemente sorgenti di evidenza.
+Questa formulazione è più allineata con ADR-000, Repository Governance e Repository Configuration, e riduce il rischio che un agente interpreti NotebookLM come un&#39;autorità canonica anziché come un archivio.
+<strong>User</strong> : allora dammi 2 code block
+1 - le istruzioni per notebooklm 2 - il prompt per code per sistemare le regole
+<strong>Gemini</strong> :</li>
+</ul>
+<h5>1 — Istruzioni per NotebookLM</h5>
+<pre><code class="language-text"># NotebookLM Role
+
+You are the Research Archive for SvartúlfrVerse.
+
+You are not a canon authority.
+
+You are not a decision authority.
+
+You are not an architecture authority.
+
+You are an evidence retrieval and historical documentation system.
+
+Your purpose is to recover, summarize, and compare historical information contained within the research archives.
+
+---
+
+## Repository Hierarchy
+
+Active Canon:
+- SvartulfrVerse
+
+Research Archives:
+- NotebookLM
+- Svartulfr_LA
+
+Historical Archive:
+- Progetti
+
+---
+
+## Authority Hierarchy
+
+ADRs
+→ Authority Records
+→ Active Canon Repository
+→ Research Archives
+
+Research archives are evidence sources only.
+
+Archive material does not become canon automatically.
+
+Archive material may conflict with accepted canon.
+
+When conflicts exist:
+
+Accepted ADRs override archive evidence.
+
+Authority Records override archive evidence.
+
+Active Canon overrides archive evidence.
+
+---
+
+## Responsibilities
+
+When queried:
+
+1. Recover evidence
+2. Identify variants
+3. Identify contradictions
+4. Identify source provenance
+5. Summarize findings
+
+Do not:
+
+- Declare canon
+- Resolve canon conflicts
+- Make authority decisions
+- Propose repository modifications as facts
+- Override ADR decisions
+
+---
+
+## Output Format
+
+Always separate findings into:
+
+### Stable Evidence
+Information consistently supported by available sources.
+
+### Variant Evidence
+Alternative versions found in archive material.
+
+### Conflicting Evidence
+Direct contradictions between sources.
+
+### Source Summary
+Origin and location of recovered evidence.
+
+### Notes
+Potential architectural implications requiring review.
+
+---
+
+## Canon Workflow
+
+Recovered evidence must follow:
+
+Research
+→ Evidence Collection
+→ Audit
+→ Architecture Review
+→ Authority Decision
+→ Integration
+
+Evidence informs decisions.
+
+Authority creates canon.
+
+Never treat archive material as canonical authority.
+
+</code></pre>
+<hr>
+<h5>2 — Prompt per Code per sistemare le regole</h5>
+<pre><code class="language-text">Perform a governance alignment review.
+
+Objective:
+
+Update all repository instructions, agent instructions, governance documents, prompts, and workflow descriptions so that NotebookLM is treated as a research archive and evidence source rather than a canon authority.
+
+Required architectural alignment:
+
+Authority Hierarchy:
+
+ADRs
+→ Authority Records
+→ Active Canon Repository
+→ Research Archives
+
+Research Archives:
+
+- NotebookLM
+- Svartulfr_LA
+- Progetti
+
+NotebookLM must be classified as:
+
+&quot;Primary Research Archive&quot;
+
+and NOT as:
+
+- Canon Authority
+- Decision Authority
+- Architecture Authority
+- Source of Truth
+
+Required workflow:
+
+Research
+→ Evidence Collection
+→ Audit
+→ Architecture Review
+→ Authority Decision
+→ Integration
+
+Replace workflows that imply:
+
+NotebookLM
+→ Decision
+
+or
+
+NotebookLM
+→ Canon
+
+with the governance-compliant workflow above.
+
+Tasks:
+
+1. Scan the entire repository.
+2. Locate every occurrence of:
+   - NotebookLM as authority
+   - NotebookLM as canon source
+   - NotebookLM as source of truth
+   - NotebookLM-first decision chains
+3. Produce a report containing:
+   - File path
+   - Current wording
+   - Recommended wording
+   - Governance justification
+4. Do not modify files yet.
+5. Produce a Governance Alignment Report.
+6. Classify findings as:
+   - Compliant
+   - Partially Compliant
+   - Non-Compliant
+7. Verify alignment against:
+   - ADR-000
+   - Repository Governance
+   - Repository Configuration
+   - Rebuild Principles
+   - Roadmap Execution Charter
+
+Output:
+
+Governance_Alignment_Report.md
+
+No repository modifications.
+
+Audit and recommendations only.
+
+</code></pre>
+<p><strong>User</strong> : Understood — NotebookLM is not connected to the repository. If audits are needed from it, I must ask you and you&#39;ll provide them manually. I&#39;ll incorporate this into the report.
+Now let me also check the .trae/rules files for NotebookLM references.
+toolName: search_by_regex
+status: success
+query: NotebookLM
+Now I have all the data I need. Let me compile the governance alignment report.
+toolName: todo_write
+status: success
+Todos updated: 5 items
+toolName: Write
+status: success
+filePath: d:\SvartulfrVerse\Governance_Alignment_Report.md
+changes: undefined
+toolName: todo_write
+status: success
+Todos updated: 5 items
+Report completato: Governance_Alignment_Report.md</p>
+<h4>Risultati dell&#39;audit</h4>
+<p><strong>16 findings</strong>  identificati su 18 istanze di file (incluse copie core/database):
+| Classificazione | Count | % |
+| ------ | ------ | ------ |
+| <strong>COMPLIANT</strong> | 5 | 31.3% |
+| <strong>PARTIALLY COMPLIANT</strong> | 4 | 25.0% |
+| <strong>NON-COMPLIANT</strong> | 7 | 43.8% |</p>
+<h5>3 problemi sistematici critici</h5>
+<ol>
+<li><strong>Inversione di precedenza</strong>  — Character_Audit_Protocol.md (core + database) posiziona NotebookLM al #2 nella catena di autorità (ADR &gt; NotebookLM &gt; Archive &gt; Runtime), facendo superare le evidenze NotebookLM sugli archivi storici.</li>
+<li><strong>Classificazione &quot;Priority 1&quot;</strong>  — Repository_Governance.md (core + database) e Deferred_Canon_Policy.md listano NotebookLM come &quot;Priority 1 / Primary research&quot; nelle tabelle delle fonti di autorità.</li>
+<li><strong>Catene NotebookLM-first</strong>  — README.md, ADR-000 (core + database), ADR-001 (core), Rebuild_Principles.md (core), R-000_Runtime_Rules.md e Recovery_Baseline_Source.md (frozen) iniziano i workflow con &quot;NotebookLM Research&quot; o &quot;Query NotebookLM first&quot;, creando un pattern sistematico di NotebookLM → Decision.</li>
+</ol>
+<h5>Pattern corretti (da preservare)</h5>
+<p>Il  <strong>Missing Evidence Rule</strong>  è correttamente implementato in 5 documenti (Migration_Readiness_Report, Repository_Governance database, Character_Audit_Protocol database, Rebuild_Principles database, Roadmap_Execution_Charter) — NotebookLM è trattato come archivio di ricerca per recupero evidenze, con STOP CONDITION obbligatoria.
+<strong>Nessuna modifica è stata fatto al repository.</strong>  Il report contiene solo audit findings e raccomandazioni.
+<strong>Gemini</strong> : Ottimo. Il report conferma una cosa importante: il problema non è NotebookLM in sé, ma il fatto che alcuni documenti storici continuano a trattarlo come un&#39;autorità anziché come un archivio di ricerca. Il pattern corretto è già presente in parte della governance e va semplicemente uniformato.
+Le priorità architetturali che emergono dall&#39;audit sono:</p>
+<ol>
+<li>Correggere Character_Audit_Protocol.md
+<ul>
+<li>È il documento più pericoloso perché definisce la catena di autorità usata negli audit.</li>
+<li>Deve passare da:</li>
+<li>a:</li>
+</ul>
+</li>
+<li>Correggere Repository_Governance.md
+<ul>
+<li>NotebookLM non deve apparire come &quot;Priority 1 Authority Source&quot;.</li>
+<li>Deve apparire come:</li>
+</ul>
+</li>
+<li>Eliminare tutte le catene:</li>
+<li>sostituendole con:</li>
+<li>Conservare il Missing Evidence Rule
+<ul>
+<li>L&#39;audit conferma che è già stato integrato correttamente nei documenti chiave.
+A questo punto manderei a Code una seconda fase più aggressiva:
+Phase 2 — Governance Normalization
+Objective:
+Apply the recommendations from Governance_Alignment_Report.md and normalize governance terminology across the repository.
+Required changes:</li>
+</ul>
+</li>
+<li>NotebookLM Classification
+Replace every governance reference that implies:</li>
+</ol>
+<ul>
+<li>NotebookLM authority</li>
+<li>NotebookLM canon ownership</li>
+<li>NotebookLM source of truth</li>
+<li>NotebookLM-first decision chains
+with:
+Primary Research Archive</li>
+</ul>
+<ol start=2>
+<li>Authority Hierarchy
+Standardize everywhere as:
+ADRs → Authority Records → Active Canon Repository → Research Archives
+Research Archives:</li>
+</ol>
+<ul>
+<li>NotebookLM</li>
+<li>Svartulfr_LA</li>
+<li>Progetti</li>
+</ul>
+<ol start=3>
+<li>Canon Workflow
+Standardize everywhere as:
+Research → Evidence Collection → Audit → Architecture Review → Authority Decision → Integration</li>
+<li>Character_Audit_Protocol
+Replace authority precedence with:
+ADR Decisions → Authority Records → Active Canon → Research Evidence → Runtime Findings
+Research evidence includes:</li>
+</ol>
+<ul>
+<li>NotebookLM</li>
+<li>Svartulfr_LA</li>
+<li>Progetti</li>
+</ul>
+<ol start=5>
+<li>Repository_Governance
+Replace any wording that treats NotebookLM as a priority authority source.
+NotebookLM must be described as:
+Primary Research Archive</li>
+<li>Terminology Normalization
+Preferred terms:</li>
+</ol>
+<ul>
+<li>Research Archive</li>
+<li>Evidence Source</li>
+<li>Research Evidence</li>
+<li>Archive Material
+Avoid:</li>
+<li>NotebookLM Authority</li>
+<li>Canon Source</li>
+<li>Source of Truth</li>
+<li>Priority Authority</li>
+</ul>
+<ol start=7>
+<li>Output
+Generate:
+Governance_Normalization_Report.md
+Include:</li>
+</ol>
+<ul>
+<li>Modified files</li>
+<li>Exact changes</li>
+<li>Remaining exceptions</li>
+<li>Compliance status
+Apply changes automatically.
+Do not modify ADR decisions.
+Do not modify accepted canon.
+Only normalize governance language and authority terminology.
+Questa fase dovrebbe chiudere definitivamente il problema e allineare repository, governance e istruzioni operative.</li>
+</ul>

@@ -1,0 +1,82 @@
+<p><strong>User</strong> : GlM free use provider
+<strong>Gemini</strong> : If you&#39;re looking to integrate Z.ai&#39;s General Language Models (GLM) into custom bot architectures, roleplay engines, or frontend applications, you have several reliable free options.
+Since the latest models (like the 754B-parameter GLM-5.2) support massive context windows of up to 1M tokens, they are incredibly well-suited for handling complex ES6 sandbox logic, heavy system instructions, and modular lorebooks.</p>
+<h4>Top Free API Providers</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Provider</th><th>Best For</th><th>Free Models Available</th><th>Integration</th></tr></thead><tbody><tr><td><strong>ZenMux</strong></td><td>Heavy context &amp; custom scripts</td><td>GLM-5.2, GLM-4.7-Flash</td><td>OpenAI-compatible endpoint</td></tr><tr><td><strong>OpenRouter</strong></td><td>Lightweight agents</td><td>GLM-4.5-Air</td><td>OpenAI-compatible endpoint</td></tr><tr><td><strong>Puter.js</strong></td><td>Serverless frontend tools</td><td>Full GLM-5 Suite</td><td>Native JS SDK</td></tr></tbody></table>
+<hr>
+<h5>1. ZenMux</h5>
+<p>ZenMux is an AI routing gateway that currently offers completely free API access to Z.ai&#39;s flagship models, with reasonable rate limits.</p>
+<ul>
+<li><strong>The Setup:</strong>  You generate an API key on their platform and point your base URL to <a href="https://zenmux.ai/api/v1">https://zenmux.ai/api/v1</a>.</li>
+<li><strong>The Catch:</strong>  You must specifically request the z-ai/glm-5.2-free or z-ai/glm-4.7-flash-free model strings to avoid hitting a paywall. Because it uses the OpenAI standard, it&#39;s a seamless drop-in for Node environments or standard proxy setups.</li>
+</ul>
+<h5>2. Puter.js</h5>
+<p>If you are building client-side web apps and want to bypass backend server architecture entirely, Puter offers free, unlimited access to the entire GLM-5 family.</p>
+<ul>
+<li><strong>The Setup:</strong>  You include the Puter.js script in your frontend. It operates on a &quot;User-Pays&quot; model, meaning the end-user authenticates to cover their own usage (which falls under the free tier for GLM).</li>
+<li><strong>The Catch:</strong>  It requires users to have a Puter account to interact with the AI features in your app.</li>
+</ul>
+<h5>3. OpenRouter</h5>
+<p>OpenRouter maintains a permanent free tier for Z.ai&#39;s highly optimized, lightweight models.</p>
+<ul>
+<li><strong>The Setup:</strong>  Point your API client to OpenRouter and request z-ai/glm-4.5-air:free.</li>
+<li><strong>The Catch:</strong>  While it doesn&#39;t have the 1M token context of GLM-5.2, it still supports a 131K window — more than enough for standard character state tracking and prompt processing.
+<strong>Need a web UI instead?</strong>  If you just want to test your prompts and format data before hardcoding them, Z.ai provides a direct chat interface for their latest models at  <strong>chat.z.ai</strong>  (requires a free account).
+http://googleusercontent.com/lmdx_content/gNzsKrbsKwwTHwxnOCXtwgvowJeBiYxOqzhGyzdjASmYMckIWbhFhdgLvKSFZpnNhVunzyXuYIAPQrWEBGccqTxjqquJkwuBLlZolqWqvHcwjXsdrlmAcRvFOMxbe20900
+<strong>User</strong> : Come funziona puter.js?
+<strong>Gemini</strong> : Puter.js è essenzialmente un SDK che ti permette di creare applicazioni full-stack scrivendo  <em>esclusivamente</em>  codice frontend. Per chi sviluppa interfacce (in Vue, React o vanilla TypeScript), elimina completamente la necessità di configurare un server backend Node.js o Python per gestire database, autenticazione o chiamate alle API dell&#39;intelligenza artificiale.
+Funziona esponendo un oggetto globale puter direttamente nel browser, che funge da ponte verso l&#39;infrastruttura cloud di Puter.
+Ecco come gestisce i componenti principali sotto il cofano:</li>
+</ul>
+<h4>1. L&#39;Architettura &quot;User-Centric&quot;</h4>
+<p>Normalmente, se chiami un&#39;API AI (come GLM o OpenAI) dal frontend, esponi la tua chiave API segreta, creando un enorme rischio di sicurezza. Puter risolve questo problema spostando l&#39;onere sull&#39;utente finale.
+Quando un utente interagisce con la tua app, si autentica tramite Puter. Qualsiasi operazione computazionalmente pesante (come generare testo con l&#39;AI o salvare file) utilizza i limiti e le risorse gratuite dell&#39;utente stesso, non le tue. Tu scrivi solo l&#39;interfaccia; l&#39;infrastruttura si scala da sola senza farti pagare il conto.</p>
+<h4>2. Come si usa nel codice</h4>
+<p>Una volta incluso lo script (), hai accesso immediato a vari micro-servizi integrati che gestiscono logiche complesse con una singola riga di codice ES6:
+<strong>Chiamate AI:</strong>  Invece di configurare endpoint proxy e fetch request complesse, chiami direttamente il metodo AI.</p>
+<pre><code class="language-javascript">// Genera una risposta usando il modello di default (o specificando GLM/OpenAI)
+const response = await puter.ai.chat(&quot;Spiega cos&#39;è un paradosso temporale&quot;);
+console.log(response.message.content);
+
+</code></pre>
+<p><strong>Storage (Key-Value e File System):</strong>  Puoi salvare lo stato dell&#39;applicazione, come i salvataggi di una sessione di roleplay o le impostazioni utente, direttamente nel cloud di Puter.</p>
+<pre><code class="language-javascript">// Salva un dato strutturato
+await puter.kv.set(&quot;user_preferences&quot;, { theme: &quot;dark&quot;, autoreply: true });
+
+// Recupera il dato
+const prefs = await puter.kv.get(&quot;user_preferences&quot;);
+
+</code></pre>
+<p><strong>Hosting istantaneo:</strong>  Puter offre anche un ambiente per hostare l&#39;app. Puoi creare un file HTML/JS e usare puter.hosting.create() per metterlo online e ottenere un URL pubblico in pochi secondi, il che è perfetto per prototipare rapidamente componenti UI o logiche sandbox e testarle live.</p>
+<hr>
+<p><strong>Il vantaggio chiave:</strong>  Ti permette di concentrarti al 100% sull&#39;esperienza utente, il design dell&#39;interfaccia e la logica di stato nel frontend (come con Redux o Pinia), delegando tutto il lavoro sporco di infrastruttura, database e routing al cloud di Puter.
+http://googleusercontent.com/lmdx_content/bkgdOMgOCOBUzNUivsdSdvvLOfPRPFygnqjMZXTsAJvADJUwzmNRFwYmlGQIJxwXGSTvPoGjOCzaHBQZTunMyvYmVHFDszsIfBLniNcYmQXNZgKVhEiLWeuszhozWKaTFdeKjWtEcCwxyklNCbSycxuxMzXTXlqWDIztiGPAQdXHoXlBVCSeIhS20899</p>

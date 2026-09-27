@@ -1,0 +1,57 @@
+<p><strong>User</strong> : quali modelli gemini sono free per uso trami te API con abbonamento pro di one drive?
+<strong>Gemini</strong> : C&#39;è una piccola confusione alla base della tua domanda:  <strong>un abbonamento a OneDrive Pro (che è un servizio Microsoft) non ha alcun legame o influenza sulle API di Gemini (che sono un servizio Google).</strong>
+Tuttavia, la buona notizia è che puoi utilizzare le API di Gemini gratuitamente a prescindere dai tuoi abbonamenti, sfruttando il livello base offerto da Google.</p>
+<h4>Modelli Gemini con accesso gratuito</h4>
+<p>Google offre un livello gratuito (&quot;Free tier&quot;) per gli sviluppatori tramite  <strong>Google AI Studio</strong> . Attualmente, i modelli che supportano le chiamate API senza richiedere fatturazione includono:</p>
+<ul>
+<li><strong>Gemini 3.6 Flash:</strong>  Il modello principale per prestazioni veloci e ragionamento generale, paragonabile a modelli più grandi ma ottimizzato per i costi.</li>
+<li><strong>Gemini 3.5 Flash-Lite:</strong>  Un modello ultra-veloce, progettato specificamente per alto volume e bassa latenza.</li>
+<li><strong>Modelli della serie Gemini 2.5:</strong>  Inclusi Gemini 2.5 Flash e Gemini 2.5 Pro, che mantengono un accesso gratuito per test e sviluppo.</li>
+<li><strong>Gemini Live API (Audio nativo):</strong>  Basato su Gemini 2.5 Flash, consente interazioni vocali e video bidirezionali in tempo reale senza costi di fatturazione iniziali.
+<em>Nota: I modelli specializzati nella generazione di immagini (come la serie Nano Banana) o i modelli Pro di ultimissima generazione (come Gemini 3.1 Pro) richiedono generalmente l&#39;attivazione della fatturazione.</em></li>
+</ul>
+<h4>Come funziona il piano gratuito</h4>
+<p>Per utilizzare questi modelli a costo zero, non ti serve un abbonamento. Ti basta accedere a Google AI Studio con un normale account Google e generare una chiave API. Tieni a mente due regole fondamentali del piano gratuito:</p>
+<ol>
+<li><strong>Limiti di frequenza (Rate Limits):</strong>  Hai a disposizione un numero limitato di richieste al minuto (RPM) e di token massimi giornalieri (RPD). Se superi questi limiti, riceverai un errore finché non scatta il ciclo successivo.</li>
+<li><strong>Privacy dei dati:</strong>  Quando utilizzi il livello gratuito, i dati e i prompt che invii tramite API possono essere esaminati dai revisori di Google e utilizzati per addestrare e migliorare i modelli futuri. Non è quindi adatto all&#39;elaborazione di dati aziendali riservati o informazioni sensibili.
+<strong>User</strong> : scusa intendevo il piano di google one : Piano attuale Google AI Pro
+<strong>Gemini</strong> : Oggi la struttura degli abbonamenti di Google One e delle API di Gemini è leggermente diversa rispetto al passato.
+Se disponi dell&#39;abbonamento  <strong>Google AI Pro</strong>  (il piano Google One da 5 TB a 21,99 € al mese che include i servizi Gemini premium),  <strong>l&#39;accesso fatturato alle API di Gemini non è incluso in questo canone</strong> .
+Tuttavia, ecco come si integrano i due sistemi:</li>
+</ol>
+<ul>
+<li><strong>L&#39;abbonamento Google AI Pro copre l&#39;uso delle app:</strong>  Copre l&#39;accesso a Gemini 3.1 Pro tramite l&#39;interfaccia web, l&#39;app mobile, l&#39;integrazione in Gmail/Documenti e strumenti come Google Flow e Antigravity, garantendoti limiti di utilizzo 4 volte superiori rispetto al piano gratuito.</li>
+<li><strong>Crediti Cloud per le API (La novità del 2026):</strong>  A partire da quest&#39;anno, per semplificare la vita agli sviluppatori, Google ha iniziato a includere dei crediti Google Cloud nei piani AI superiori. Il piano  <strong>Google AI Pro include 10 $ al mese in crediti Google Cloud</strong> , che puoi spendere liberamente per effettuare chiamate alle API di Gemini tramite Google Cloud/Google AI Studio.</li>
+<li><strong>Il livello gratuito dell&#39;API rimane:</strong>  Anche senza usare quei 10 $, puoi continuare a utilizzare il livello gratuito delle API su Google AI Studio per modelli come Gemini 3.6 Flash e 2.5 Flash, rispettando i limiti di richieste al minuto (RPM).</li>
+</ul>
+<h5>In sintesi per il tuo piano</h5>
+<p>Con Google AI Pro, hai un bonus mensile di 10 $ di crediti Cloud da usare per le chiamate API a pagamento (utili se vuoi usare i modelli più potenti o evitare che i tuoi dati vengano usati per l&#39;addestramento). Una volta esauriti i 10 $, le successive chiamate API ti verranno fatturate normalmente a consumo secondo il listino prezzi di Google Cloud.
+<em>(Per completezza, il piano superiore Google AI Ultra da 30 TB include invece 100 $ al mese in crediti Cloud).</em>
+<strong>User</strong> : ok, qual&#39;è il modello free che funziona meglio per il roleplay su sillytavern?
+<strong>Gemini</strong> : Attualmente, all&#39;interno della community di SillyTavern, ci sono due modelli gratuiti tramite Google AI Studio che si stanno contendendo il podio per il roleplay, offrendo stili di scrittura molto diversi.
+Quando si costruiscono framework narrativi complessi, syntax customizzate e lorebook stratificati — specialmente per mantenere coerenti le architetture di progetti estesi come  <em>Svartúlfr | Urban</em>  — serve un LLM in grado di agganciarsi saldamente alle World Info e ai prompt di sistema senza sbavature o allucinazioni.
+Ecco i due modelli gratuiti che stanno dando i risultati migliori:</p>
+<h5>1. Gemini 3.6 Flash (Il più completo)</h5>
+<p>È attualmente considerato l&#39;opzione gratuita più solida ed espressiva per il RP.</p>
+<ul>
+<li><strong>Prosa e Creatività:</strong>  Offre un linguaggio vivido, ottime metafore e una profondità descrittiva che si avvicina tantissimo alle prestazioni dei modelli Pro a pagamento.</li>
+<li><strong>Aderenza al Prompt:</strong>  È eccellente nel seguire le istruzioni del jailbreak e mantenere le peculiarità dei personaggi, interpretando correttamente le strutture sintattiche complesse che passi nel system prompt.</li>
+<li><strong>Setup consigliato:</strong>  Su SillyTavern, lavora benissimo con una  <em>Temperature</em>  intorno a 1.0 e si sposa perfettamente con preset di sistema orientati alla narrativa/regia (come i famosi  <em>Director Preset</em>  o il  <em>Marinara</em> ).</li>
+</ul>
+<h5>2. Gemini 3.5 Flash-Lite (La sorpresa &quot;cruda&quot;)</h5>
+<p>Non farti ingannare dal suffisso &quot;Lite&quot;. Nell&#39;ultimo periodo è diventato una sorta di gemma nascosta per i roleplayer che cercano dinamiche specifiche.</p>
+<ul>
+<li><strong>Realismo e Conflitto:</strong>  A differenza di molti modelli che tendono a far fare pace a tutti i personaggi dopo un paio di scambi (il classico &quot;bias della positività&quot; dell&#39;AI), il 3.5 Lite mantiene magnificamente le dinamiche di conflitto, la logica e i toni più crudi o d&#39;azione. Se un personaggio deve essere ostile, lo rimarrà.</li>
+<li><strong>Velocità:</strong>  È fulmineo nella generazione dei token, ideale per sessioni fatte di botta e risposta rapidi.</li>
+</ul>
+<h5>Come configurarli su SillyTavern</h5>
+<ol>
+<li>Vai su  <strong>Google AI Studio</strong>  e genera la tua chiave API gratuita.</li>
+<li>In SillyTavern, apri il pannello  <strong>API Connections</strong>  (l&#39;icona a forma di spina).</li>
+<li>Come  <em>API Type</em>  seleziona  <strong>Chat Completion</strong>  e dal menu a tendina scegli  <strong>Google AI Studio</strong> .</li>
+<li>Incolla la tua chiave API e clicca su Connect.</li>
+<li>Scegli gemini-3.6-flash (o il 3.5 Lite) dall&#39;elenco dei modelli disponibili.
+<strong>Nota sui limiti gratuiti:</strong>  Il livello base di AI Studio ha un limite di richieste al minuto (RPM). Per i ritmi normali di lettura e scrittura di una sessione di roleplay in solitaria è quasi impossibile saturarlo, ma potresti incappare in un breve blocco temporaneo se fai tantissimi &quot;swipe&quot; (rigenerazioni del messaggio) consecutivi in pochi secondi.
+http://googleusercontent.com/lmdx_content/WTdNxpZfLGaEYvDRwUYLlGgHneVuYOqxLBAgwFoQSfpYbpFMcuEoUnHkomxAfhkswMqONgMFlqbnSflYsMlrWbvxBeouObaOHPvfyflCLLcKVkGMOFElPUyKNbJsSwHTSEkUXmLtjqFTaffLDpKzZVyTmO46906</li>
+</ol>

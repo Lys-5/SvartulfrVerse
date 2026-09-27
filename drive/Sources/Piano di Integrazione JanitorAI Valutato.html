@@ -1,0 +1,102 @@
+<p><strong>User</strong> : valuta questo piano:</p>
+<h3>Goal</h3>
+<p>Integrate complete JanitorAI support into the World-Forge pipeline. This involves taking the data produced during the pipeline&#39;s drafting phases and mapping it into the highly structured JanitorAI character profile template (template.md) and compiling the Tier 1/2/3 lorebook entries into a robust ES6 sandbox script (&quot;Everything Lorebook&quot; logic from guide_script.md).</p>
+<h4>User Review Required</h4>
+<p>[!IMPORTANT] To support JanitorAI&#39;s detailed template.md without polluting the SillyTavern V3 character cards, I propose the  <strong>Architect</strong>  (Phase 2) drafts a dedicated Drafts/JanitorAI_Profile_[CharName].md file alongside the standard Card_[CharName].md.  Does this approach work for you, or would you prefer the  <strong>Compiler</strong>  (Phase 4) to try and automatically parse the standard Card_[CharName].md into the JanitorAI template on the fly? (Drafting it in Phase 2 gives the Editor a chance to review it, which is safer).</p>
+<h4>Open Questions</h4>
+<ol>
+<li><strong>JanitorAI Script Generation</strong> : The guide_script.md details advanced modular lorebooks using context.character.personality and context.character.scenario. Should the script generated in Phase 4 include all Tier 1, Tier 2, and Tier 3 lorebook entries, or should Tier 1 (World Rules) and Tier 2 (NPCs) be placed in the main [SETTING] / [LORE] blocks of the character profile to save script execution time?</li>
+<li><strong>Template Replacement</strong> : Can I completely overwrite templates/Janitor_Bot_Template.md in your repository with the contents of d:\SvartulfrVerse\template.md?</li>
+</ol>
+<h4>Proposed Changes</h4>
+<h5>1. templates/ Updates</h5>
+<h6>[MODIFY] templates/Janitor_Bot_Template.md</h6>
+<ul>
+<li>Replace the current template with the detailed structure from d:\SvartulfrVerse\template.md ([SETTING], [APPEARANCE], [BASIC_INFO], [PERSONALITY_AND_TRAITS], [SEXUALITY], etc.).</li>
+</ul>
+<h6>[NEW] templates/Janitor_Lorebook_Script.js</h6>
+<ul>
+<li>Create a baseline ES6 modular script template based on guide_script.md&#39;s &quot;Everything Lorebook&quot; (Chapter 24). It will include empty arrays for definitionalLore, relationalLore, and eventLore, and the core context.chat.last_message.toLowerCase().includes() loop logic.</li>
+</ul>
+<h5>2. agent_roles/02_The_Architect.md</h5>
+<h6>[MODIFY] agent_roles/02_The_Architect.md</h6>
+<ul>
+<li>Add a new drafting step (Step 5B) to explicitly generate Drafts/JanitorAI_Profile_[CharName].md.</li>
+<li>Instruct the Architect to subdivide the Master_Design.md and character details into the specific blocks required by the JanitorAI template.</li>
+</ul>
+<h5>3. agent_roles/03_The_Editor.md</h5>
+<h6>[MODIFY] agent_roles/03_The_Editor.md</h6>
+<ul>
+<li>Add a validation step to ensure Drafts/JanitorAI_Profile_[CharName].md adheres strictly to the JanitorAI template headers and doesn&#39;t contain breaking formatting.</li>
+</ul>
+<h5>4. agent_roles/04_The_Compiler.md</h5>
+<h6>[MODIFY] agent_roles/04_The_Compiler.md</h6>
+<ul>
+<li><strong>Step 4B</strong> : Update instructions to pass the Editor-approved Drafts/JanitorAI_Profile_[CharName].md byte-for-byte to Export/[CharName]_JanitorAI.txt.</li>
+<li><strong>Step 7.8</strong> : Overhaul the JanitorAI Script generation. Instruct the Compiler to map:   -  <strong>Tier 1 (World Entries)</strong>  -&gt; definitionalLore (Keyword matching, adds to context.character.scenario).   -  <strong>Tier 2 (Character/NPC Entries)</strong>  -&gt; relationalLore (Keyword matching, adds to context.character.scenario or personality).   -  <strong>Tier 3 (Arc/Sandbox State &amp; WORLD_PULSE)</strong>  -&gt; eventLore and  <em>Message Count Progression</em>  logic.</li>
+</ul>
+<h5>5. Documentation</h5>
+<h6>[MODIFY] workflows/world-forge.md</h6>
+<ul>
+<li>Mention Drafts/JanitorAI_Profile_[CharName].md in the expected inputs/outputs for Phase 2, 3, and 4.</li>
+</ul>
+<h6>[MODIFY] Notes_Quick_Reference.md</h6>
+<ul>
+<li>Add a brief section summarizing the JanitorAI mapping targets and the JS sandbox rules (e.g., modifying context.character.personality).</li>
+</ul>
+<h4>Verification Plan</h4>
+<h5>Automated Tests</h5>
+<ul>
+<li>I will run any available validate_export.py scripts if they exist and cover these templates.</li>
+</ul>
+<h5>Manual Verification</h5>
+<ul>
+<li>We will do a dry run on a test character to ensure that the generated [CharName]_JanitorAI.txt correctly contains all the [SETTING], [APPEARANCE], etc. blocks filled out properly.</li>
+<li>We will visually inspect [WorldName]_JanitorAI_Script.js to ensure it uses safe ES6 methods (like .includes()) and modifies context.character.personality safely as per guide_script.md.
+<strong>Gemini</strong> : Il piano è eccellente e molto ben strutturato. Dimostra una profonda comprensione delle differenze architettoniche tra SillyTavern e JanitorAI, in particolare per quanto riguarda la gestione del contesto e l&#39;uso degli script ES6.
+Ecco una valutazione dettagliata del tuo piano e le risposte ai tuoi dubbi, seguite da alcuni suggerimenti per ottimizzare ulteriormente la pipeline.</li>
+</ul>
+<h4>Risposte alle &quot;Open Questions&quot; e &quot;User Review&quot;</h4>
+<h5>La decisione sul &quot;User Review Required&quot; (Fase 2 vs Fase 4)</h5>
+<p><strong>Il tuo approccio (Fase 2) è assolutamente corretto.</strong>  Cercare di far fare un parsing automatico e &quot;al volo&quot; al Compiler (Fase 4) da un formato SillyTavern a un formato JanitorAI è rischioso e spesso genera errori di formattazione. Creare un Drafts/JanitorAI_Profile_[CharName].md dedicato tramite l&#39;Architect permette una stesura nativa per quel template e dà all&#39;Editor la possibilità di controllare i token e la struttura.</p>
+<h5>Open Question 1: Script ES6 vs Blocchi Principali</h5>
+<p>Non dovresti inserire  <em>tutto</em>  nello script JS. Inserire troppi dati riduce le prestazioni e rischia di superare i limiti di tempo di esecuzione della sandbox di JanitorAI.</p>
+<ul>
+<li><strong>Cosa mettere nel profilo principale (</strong>  <strong>[SETTING]</strong>  <strong>,</strong>  <strong>[LORE]</strong>  <strong>):</strong>  Il Tier 1 (Regole fondamentali del mondo) e i personaggi/elementi del Tier 2 che sono  <em>sempre</em>  presenti o costantemente rilevanti. Questo garantisce che l&#39;IA abbia sempre queste direttive nel suo contesto base senza dover fare affidamento sui trigger.</li>
+<li><strong>Cosa mettere nello Script ES6 (</strong>  <strong>definitionalLore</strong>  <strong>,</strong>  <strong>relationalLore</strong>  <strong>,</strong>  <strong>eventLore</strong>  <strong>):</strong>  Usa lo script esclusivamente per gli elementi situazionali. Luoghi specifici, PNG secondari che compaiono solo a determinate condizioni, e il Tier 3 (Arc/Sandbox State, progressione degli eventi e WORLD_PULSE). Questo mantiene il file JS leggero, efficiente e altamente reattivo.</li>
+</ul>
+<h5>Open Question 2: Sovrascrivere il Template</h5>
+<p>Sì, puoi sovrascrivere completamente templates/Janitor_Bot_Template.md. Tuttavia, come best practice, ti consiglio di rinominare il vecchio file in Janitor_Bot_Template_OLD.md o di assicurarti che sia tracciato nel tuo sistema di controllo versione (es. Git) prima di iniettare il contenuto da d:\SvartulfrVerse\template.md.</p>
+<hr>
+<h4>Valutazione delle Modifiche Proposte</h4>
+<ul>
+<li><strong>1.</strong>  <strong>templates/</strong>  <strong>:</strong>  L&#39;aggiunta di Janitor_Lorebook_Script.js come template di base è un&#39;ottima mossa. Standardizzerà la generazione e ridurrà gli errori di sintassi.</li>
+<li><strong>2. Architect &amp; 3. Editor:</strong>  L&#39;aggiunta dello Step 5B è logica. Assicurati di dare all&#39;Editor (Fase 3) un&#39;istruzione esplicita per  <strong>controllare il peso dei token</strong> . Il template di JanitorAI tende a gonfiarsi facilmente se l&#39;Architect diventa troppo descrittivo nei blocchi [PERSONALITY_AND_TRAITS].</li>
+<li><strong>4. Compiler:</strong>  L&#39;idea di mappare specifici Tier in array distinti (definitionalLore, ecc.) è elegante e rende lo script ES6 molto facile da scalare o debuggare in caso di malfunzionamenti.</li>
+<li><strong>5. Documentazione:</strong>  Aggiornare il Quick Reference è fondamentale, specialmente per ricordare quali variabili di stato possono essere toccate dallo script.</li>
+</ul>
+<hr>
+<h4>Consigli per la Stabilità (Da aggiungere al piano)</h4>
+<ol>
+<li><strong>Protezione dello Script ES6 (Fase 4):</strong>  JanitorAI può essere imprevedibile con i custom script. Istruisci il Compiler ad avvolgere sempre il ciclo principale di context.chat.last_message in un blocco try...catch. Se uno script fallisce silenziosamente, il bot potrebbe rompersi senza dare feedback visibili.</li>
+<li><strong>Gestione del limite di contesto (</strong>  <strong>WORLD_PULSE</strong>  <strong>):</strong>  Se inietti molti dati in context.character.scenario tramite il Tier 3, istruisci il Compiler a inserire una logica che &quot;pulisca&quot; o sovrascriva i vecchi eventi, altrimenti il token count della chat esploderà man mano che la storia avanza.
+http://googleusercontent.com/lmdx_content/oEhGtnqVkhGQGfWepIkSTHzJpVQnmUZJlIQqXmrzeZtLvRdftEYbIYGWXdVVuKocxXUrVdvuBicRnaIUuOTxFKpCIilnAJpinIfLklCqnJSPQoLVvvEMqWsUTNrMXXCYCkehHRPMThyjbNCMAsvUGxWbDwVENsGAUWZPNjqdCOtKjpSvfzcaCMRfsJcqtbylwbzSzNaSrTfFMLXFoBoJ57647
+<strong>User</strong> : dopo il piano vorrei che pulisse il progetto sistemamndo la documentazione e agigornando readme ecc... che comando posso dare ad antigravity?
+<strong>Gemini</strong> : Ecco un comando completo e strutturato che puoi passare ad Antigravity. Poiché il tuo progetto e i nomi dei file sono in inglese, il prompt è redatto in inglese per massimizzare la precisione dell&#39;agente nel riconoscere i percorsi e il contesto.
+Copia e incolla questo comando:</li>
+</ol>
+<pre><code class="language-text">Please perform a final project cleanup and synchronize the documentation to reflect the new JanitorAI integration pipeline. Execute the following tasks:
+
+1. **Update `README.md`**: Add a new section or update existing features to announce full JanitorAI support. Mention the automated generation of the highly structured `template.md` profile and the compiled ES6 sandbox scripts for dynamic lorebooks.
+2. **Synchronize `workflows/world-forge.md`**: Review the entire workflow document. Ensure that the inputs and outputs for Phase 2 (The Architect), Phase 3 (The Editor), and Phase 4 (The Compiler) explicitly mention the handling of `Drafts/JanitorAI_Profile_[CharName].md` and the final `Export/[CharName]_JanitorAI.txt` / `[WorldName]_JanitorAI_Script.js`.
+3. **Update `Notes_Quick_Reference.md`**: Add a dedicated quick-reference section for JanitorAI. Include a summary of the supported ES6 sandbox state variables (like `context.character.personality` and `context.character.scenario`) and the Tier 1/2/3 mapping rules.
+4. **Markdown Formatting &amp; Cleanup**: Scan all updated files in `agent_roles/` and `templates/`. Fix any inconsistent Markdown formatting, ensure all file paths mentioned are correct, and remove any leftover comments or deprecated instructions related to older JanitorAI workarounds.
+5. **Changelog**: Generate a brief summary of all changes made during this JanitorAI integration phase and append it to the project&#39;s changelog (or create a `CHANGELOG.md` if it doesn&#39;t exist).
+
+</code></pre>
+<h5>Perché questo comando funziona bene</h5>
+<ul>
+<li><strong>Modularità:</strong>  Divide il lavoro in punti numerati chiari, impedendo ad Antigravity di &quot;dimenticare&quot; passaggi intermedi.</li>
+<li><strong>Precisione dei File:</strong>  Richiama i file esatti di cui abbiamo discusso (README.md, workflows/world-forge.md, Notes_Quick_Reference.md), riducendo il rischio che l&#39;agente modifichi file sbagliati.</li>
+<li><strong>Contesto Tecnico:</strong>  Usa la terminologia corretta (ES6 sandbox, variabili di contesto, mapping dei Tier) in modo che la documentazione generata sia tecnicamente accurata fin dal primo tentativo.</li>
+</ul>

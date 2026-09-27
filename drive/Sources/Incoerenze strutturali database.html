@@ -1,0 +1,141 @@
+<p><strong>User</strong> : d:\SvartulfrVerse\database\characters  c&#39;è una piccola incoerenza d:\SvartulfrVerse\database\characters\C_Wulfnic  ha i file separati, mentre tutti gli altri sono a file unico, allinealo agli altri char
+Perché gli ADR sono sia in d:\SvartulfrVerse\core  che in d:\SvartulfrVerse\database\governance  è una duplicaizone
+<strong>Gemini</strong> : Dal punto di vista architetturale direi che hai individuato due anomalie reali.</p>
+<h5>1. C_Wulfnic con file separati</h5>
+<p>Se il repository ha ormai adottato il modello:</p>
+<pre><code>database/
+└── characters/
+    ├── C_Angel_Moreno.md
+    ├── C_Alyssa_Svartulfr.md
+    ├── C_Marcus_Thornfield.md
+    └── ...
+
+</code></pre>
+<p>e C_Wulfnic è l&#39;unico rimasto come:</p>
+<pre><code>C_Wulfnic/
+├── identity.md
+├── appearance.md
+├── history.md
+└── ...
+
+</code></pre>
+<p>allora è una deviazione dallo standard.
+Secondo ADR-003 (Character Authority) e le regole di governance, la struttura dovrebbe essere uniforme salvo motivazione esplicita.
+Raccomandazione:</p>
+<ul>
+<li>Consolidare tutto in un singolo:</li>
+<li>Mantenere le stesse sezioni interne.</li>
+<li>Eliminare la directory dopo verifica.</li>
+<li>Aggiornare eventuali link interni.
+Questa è una normalizzazione strutturale, non un cambiamento canonico.</li>
+</ul>
+<hr>
+<h5>2. ADR duplicati in core e database/governance</h5>
+<p>Qui bisogna capire l&#39;intento.
+Attualmente hai:</p>
+<pre><code>core/
+├── ADR-000...
+├── ADR-001...
+├── ADR-002...
+└── ...
+
+</code></pre>
+<p>e contemporaneamente:</p>
+<pre><code>database/governance/
+├── ADR-000...
+├── ADR-001...
+├── ADR-002...
+└── ...
+
+</code></pre>
+<p>Se i file sono identici, allora hai una duplicazione di autorità.
+In una repository governata questo è rischioso perché:</p>
+<ul>
+<li>due copie possono divergere;</li>
+<li>non è chiaro quale sia la fonte autorevole;</li>
+<li>ogni ADR dovrebbe avere una sola location canonica.</li>
+</ul>
+<hr>
+<h5>Possibili interpretazioni</h5>
+<h6>Opzione A — core = autorità, database/governance = copia</h6>
+<p>In questo caso:</p>
+<pre><code>core = source of truth
+database/governance = ridondante
+
+</code></pre>
+<p>e la cartella database/governance dovrebbe essere rimossa.</p>
+<hr>
+<h6>Opzione B — database/governance = autorità, core = documentazione</h6>
+<p>In questo caso:</p>
+<pre><code>database/governance = source of truth
+core = duplicazione
+
+</code></pre>
+<p>e i file in core dovrebbero essere eliminati o trasformati in semplici riferimenti.</p>
+<hr>
+<h5>Baseline che consiglierei</h5>
+<p>Per come è organizzato il repository oggi:</p>
+<pre><code>core/
+
+</code></pre>
+<p>ha chiaramente il ruolo di layer architetturale.
+Quindi proporrei:</p>
+<pre><code>core/
+├── ADR-000...
+├── ADR-001...
+├── ADR-002...
+├── Architecture.md
+├── Repository_Governance.md
+└── ...
+
+</code></pre>
+<p>come unica fonte.
+Mentre:</p>
+<pre><code>database/governance/
+
+</code></pre>
+<p>andrebbe eliminata completamente oppure sostituita da un README che rimanda a core/.
+In altre parole:
+<strong>Character data →</strong>  <strong>database/</strong>
+<strong>Governance / ADR / Architecture →</strong>  <strong>core/</strong>
+Questa separazione è più coerente con il modello repository che stai costruendo e riduce il rischio di drift documentale.
+Prompt per Code:</p>
+<pre><code class="language-text">Repository consistency review:
+
+1. Character normalization
+- Audit `database/characters/C_Wulfnic`.
+- If it is the only character stored as a multi-file directory, consolidate it into the same single-file format used by all other character records.
+- Preserve all content and section hierarchy.
+- Update any internal references.
+- Remove the obsolete folder structure after validation.
+
+2. Governance duplication audit
+- Compare all files in:
+  - core/
+  - database/governance/
+
+- Verify whether they are byte-identical or logically identical.
+
+Goal:
+- Establish a single source of truth for governance documents.
+- Preferred architecture:
+
+  core/
+    ADR-*
+    Architecture.md
+    Repository_Governance.md
+    Repository_Configuration.md
+    Repository_Scope.md
+    Character_Audit_Protocol.md
+    Deferred_Canon_Policy.md
+    Rebuild_Principles.md
+    Roadmap_Execution_Charter.md
+
+- Character, family, experience, and canon data remain in database/.
+
+If database/governance only duplicates core, prepare a migration plan to remove the duplicate governance layer and replace it with references or README pointers.
+
+Do not modify canon content.
+This is a structural normalization and authority cleanup task.
+
+</code></pre>

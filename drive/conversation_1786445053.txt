@@ -1,0 +1,49 @@
+{
+ "conversation_turns": [
+  {
+   "user_turn": {
+    "prompt": "qual'è il contraltto di lavoro? e a quale ccnl corrisponde?",
+    "turn_index": 0,
+    "turn_last_modified": "2026-08-11T10:44:13.567663+00:00"
+   }
+  },
+  {
+   "system_turn": {
+    "citations": [
+     {
+      "display_text": "mod.7.1-A-1 rev.00 27.11.2018 inserimento nuove risorse-compresso.pdf",
+      "url": "https://drive.google.com/file/d/1brQpbcN7ib1zeMmPP68ga1Jca0JDdnH7/view?usp=drive_web"
+     }
+    ],
+    "text": [
+     {
+      "data": "Il contratto di assunzione indicato nel documento è a **tempo indeterminato**. La qualifica professionale inserita è quella di **Facchino Merci (op.2lv)** e la mansione principale fa riferimento all'ambito **Logistica**.  \n  \nTuttavia, all'interno del documento non viene specificato esplicitamente a quale tipo di CCNL (Contratto Collettivo Nazionale di Lavoro) corrisponda questa assunzione.  \n  \nDesidera che io analizzi ulteriori dettagli del documento o che effettui una ricerca per identificare le mansioni tipiche associate a questa specifica qualifica?"
+     }
+    ],
+    "turn_index": 1,
+    "turn_last_modified": "2026-08-11T10:44:13.567663+00:00"
+   }
+  },
+  {
+   "user_turn": {
+    "prompt": "davide mi ha chiesto di ritrovar eil suo contratto di lavoro chenon ricorda dove è salvato, su drive c'è il backup di tutti i documenti del pc mi serv eunamano per trovarlo",
+    "turn_index": 2,
+    "turn_last_modified": "2026-08-11T10:46:38.532671+00:00"
+   }
+  },
+  {
+   "system_turn": {
+    "text": [
+     {
+      "data": "Per consentirmi di cercare in tutto il tuo Drive, dovrai aggiornare le tue impostazioni.  \nVai al pannello Fonti e abilita la ricerca in Drive. Poi prova a chiedere di nuovo."
+     }
+    ],
+    "turn_index": 3,
+    "turn_last_modified": "2026-08-11T10:46:38.532671+00:00"
+   }
+  }
+ ],
+ "creation_time": "2026-08-11T10:44:13.567663+00:00",
+ "last_modification_time": "2026-08-11T10:46:38.532671+00:00",
+ "title": "qual'è il contraltto di lavoro? e a quale ccnl corrisponde?"
+}

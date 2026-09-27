@@ -1,0 +1,68 @@
+<p><strong>User</strong> : 5 mesi quanti giorni sono?
+<strong>Gemini</strong> : Il numero di giorni in 5 mesi dipende da quali mesi stai contando, perché alcuni hanno 30 giorni, altri 31, e febbraio può averne 28 o 29.
+Se vuoi una  <strong>media approssimativa</strong> :</p>
+<ul>
+<li>Un mese medio ≈ 30,44 giorni (365 giorni / 12 mesi)</li>
+<li>5 mesi ≈ 30,44 × 5 =  <strong>152,2 giorni</strong>  (quindi circa 152 giorni).
+Se invece vuoi il numero  <strong>preciso</strong> , dovrei sapere  <strong>da che mese a che mese</strong>  stai contando.
+Da che mese partiamo?
+<strong>User</strong> : modifica il prompt (mantieni il prompt in inglese) per la info board perché generi come timezone qualcosa sulla falsariga di questo:
+<em><strong>Giorno 152, Ore 09:23</strong></em>   <em><strong>WORLD, REGION/DISTIRCT/LOCATION, ROOM/PLACE</strong></em></li>
+</ul>
+<hr>
+<p>MESSAGGIO/SCENA/DIALOGO</p>
+<hr>
+<p>OTHER_INFO_BOARD</p>
+<pre><code>Write an info board, reviewing and following the given format in order to describe the current state of the world in this simulation and update the categories to reflect any changes since the last post:
+
+__Info board :p__
+
+Timezone: [in-world time at the beginning of this post in 12-hour clock format with AM/PM] -&gt; [in-world time in at the end of post] [current day in the simulation in Weekday Month Day, Year format] [the current season]
+Location: [in-world location]
+Affinity: [# {{char}}’s aff value] (Word or phrase reflecting {{char}}’s feeling for {{user}})
+Mood: [{{char}}’s mood]
+Kaomoji: [kaomoji or emoji that depict {{char}}&#39;s current state]
+Thought: [“{{char}}’s current internal thought”]
+Arousal: [% {{char}}’s arousal based on mood and stimulation {{char}} receives] (Brief description of how turned on {{char}} is)
+Goal: [briefly describe {{char}}&#39;s current goal]
+
+__Info board :p__
+
+Put this at the start of the response before your continue the story.
+
+</code></pre>
+<p><strong>Gemini</strong> : Here’s your modified prompt in English, keeping your format but replacing the  <em>Timezone</em>  part with the style you want (“Day 152, Hour 09:23” and location line).</p>
+<pre><code class="language-markdown">Write an info board, reviewing and following the given format in order to describe the current state of the world in this simulation and update the categories to reflect any changes since the last post:
+
+__Info board :p__
+
+Timezone: ***`Day [number of current day in simulation], Hour [HH:MM in 24-hour format]`***
+Location: ***`WORLD, REGION/DISTRICT/LOCATION, ROOM/PLACE`***
+***
+Message: [short message/scene/dialogue describing what is happening right now]
+***
+Affinity: [# {{char}}’s aff value] (Word or phrase reflecting {{char}}’s feeling for {{user}})
+Mood: [{{char}}’s mood]
+Kaomoji: [kaomoji or emoji that depict {{char}}’s current state]
+Thought: [“{{char}}’s current internal thought”]
+Arousal: [% {{char}}’s arousal based on mood and stimulation {{char}} receives] (Brief description of how turned on {{char}} is)
+Goal: [briefly describe {{char}}’s current goal]
+
+__Info board :p__
+
+Put this at the start of the response before you continue the story.
+
+</code></pre>
+<p>Do you also want me to make it so the  <strong>Day number automatically increments</strong>  from the last post? That way the info board would “track” time between updates.
+<strong>User</strong> : EDIT THIS PROMPT FOR USE 24 HOUR CLOCK AND USE NUMBER DAI (Day 153 OR Day 1, ecc)
+Timezone: [in-world time at the beginning of this post in 12-hour clock format with AM/PM] -&gt; [in-world time in at the end of post] [current day in the simulation in Weekday Month Day, Year format] [the current season]
+<strong>Gemini</strong> : Here’s the edited version with  <strong>24-hour clock</strong>  and  <strong>numbered days</strong> :</p>
+<pre><code class="language-markdown">Timezone: ***`Day [number of current day in simulation], Hour [HH:MM at the beginning of this post] -&gt; [HH:MM at the end of this post]`*** [current season]
+
+</code></pre>
+<p>If you want the location line right after it (as in your example), you can use:</p>
+<pre><code class="language-markdown">Timezone: ***`Day [number of current day in simulation], Hour [HH:MM at the beginning of this post] -&gt; [HH:MM at the end of this post]`*** [current season]  
+Location: ***`WORLD, REGION/DISTRICT/LOCATION, ROOM/PLACE`***
+
+</code></pre>
+<p>Do you want me to now  <strong>integrate this directly into the full Info Board prompt</strong>  you posted earlier so it’s all ready to use?</p>

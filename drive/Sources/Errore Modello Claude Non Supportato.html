@@ -1,0 +1,16 @@
+<p><strong>User</strong> : Mo spieghi l&#39;errore?
+PROXY ERROR 400: {&quot;error&quot;:{&quot;code&quot;:500,&quot;message&quot;:&quot;你请求的模型 &quot;claude-3-opus&quot; 暂不支持。可用模型：claude-opus-4-7 / claude-haiku-4-5-20251001 / claude-sonnet-4-6 / claude-sonnet-5&quot;,&quot;type&quot;:&quot;invalid_request_error&quot;}}
+<strong>Gemini</strong> : Certo! L&#39;errore è dovuto a un  <strong>nome del modello errato o non supportato</strong>  dal servizio (o proxy) a cui ti stai collegando.
+Il messaggio d&#39;errore contiene una frase in cinese (&quot;你请求的模型 &quot;claude-3-opus&quot; 暂不支持。可用模型...&quot;), che tradotta letteralmente significa:
+&quot;Il modello che hai richiesto (claude-3-opus) non è al momento supportato. Modelli disponibili:&quot;
+Il server sta rifiutando la tua richiesta (restituendo un errore HTTP 400 &quot;Invalid Request&quot;) perché stai chiedendo di usare Claude 3 Opus, ma quel server specifico ti permette di usare solo le versioni più recenti.
+Ecco i  <strong>modelli che il tuo proxy accetta</strong>  al momento:</p>
+<ul>
+<li>claude-opus-4-7</li>
+<li>claude-haiku-4-5-20251001</li>
+<li>claude-sonnet-4-6</li>
+<li>claude-sonnet-5</li>
+</ul>
+<h5>Come risolvere il problema</h5>
+<p>Per far funzionare di nuovo tutto, devi andare nelle impostazioni dell&#39;applicazione, del client o nel codice che stai usando e  <strong>sostituire</strong>  la stringa claude-3-opus con uno dei modelli supportati nell&#39;elenco.
+Se vuoi mantenere il livello di intelligenza equivalente (Opus), ti basta cambiare il nome in claude-opus-4-7.</p>

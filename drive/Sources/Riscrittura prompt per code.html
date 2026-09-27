@@ -1,0 +1,296 @@
+<p><strong>User</strong> : Puoi riscrivere in maniera più coerente questo prompt per code?</p>
+<pre><code class="language-text">Qui dentro trovi ciò che manualmente viene fatto per la creazione di un bot su janitor ai in pratica è il formato corretto di esportazione e ciò che mi aspetto di ottenere alla fine.
+
+L&#39;unica eccezzione è  che per esigenze di test accorpa tutto insieme quello che per noi sarà Engine+lorebook+scripts
+
+ora vorrei che aggiornassi il in modo che i dati all&#39;interno siano compatibili con il nuovo canon che abbiamo stabilito.
+
+
+</code></pre>
+<p><strong>Gemini</strong> :</p>
+<h4>Task Classification</h4>
+<p>Mode: Planning
+Layer: Ex_
+Authority: Export
+Risk Level: Low</p>
+<hr>
+<p>Ti suggerisco una versione più precisa, orientata all&#39;architettura e meno ambigua per Code:</p>
+<pre><code class="language-text">In questa directory trovi un esempio di esportazione manuale di un chatbot JanitorAI.
+
+Considera questo materiale come il riferimento funzionale del risultato finale atteso: rappresenta il formato di esportazione corretto, la struttura dei contenuti e il livello qualitativo che il sistema deve produrre.
+
+Per questa attività NON devi limitarti a copiare o convertire il contenuto esistente.
+
+Obiettivo:
+aggiornare l&#39;intera esportazione affinché sia pienamente allineata al Canon corrente del progetto SvartúlfrVerse, alle decisioni architetturali più recenti e alle regole definite negli ADR e nella documentazione di governance.
+
+Regole operative:
+
+1. Tratta il file fornito come esempio di output finale, non come fonte autoritativa.
+2. Utilizza come fonte di verità esclusivamente il Canon attuale e la documentazione ufficiale del repository.
+3. Identifica eventuali elementi obsoleti, incoerenti o non conformi al nuovo Canon.
+4. Aggiorna terminologia, struttura, comportamento, istruzioni runtime e contenuti lore secondo le decisioni più recenti.
+5. Mantieni la compatibilità con il formato di esportazione JanitorAI.
+
+Eccezione temporanea per i test:
+
+Per questa fase di validazione unifica in un unico output tutti i contenuti che, nell&#39;architettura definitiva, saranno separati in:
+
+- Engine Runtime
+- Lorebook
+- Script System
+
+L&#39;accorpamento è esclusivamente una misura temporanea di test e non deve modificare la separazione concettuale dei tre sistemi.
+
+Output richiesto:
+
+- Versione aggiornata dell&#39;esportazione.
+- Piena conformità al Canon corrente.
+- Piena compatibilità JanitorAI.
+- Evidenza delle modifiche effettuate rispetto alla versione originale.
+- Segnalazione esplicita di eventuali conflitti o informazioni non più compatibili con il Canon.
+
+</code></pre>
+<h4>Development Orders</h4>
+<ol>
+<li>Definire il file di esportazione come riferimento di formato, non come fonte autoritativa.</li>
+<li>Vincolare l&#39;aggiornamento alle fonti canoniche correnti del repository.</li>
+<li>Richiedere report delle modifiche e dei conflitti rilevati durante la conversione.
+<strong>User</strong> : uh, metti anche che dentro ci sono 2 persone di test che rappresentano jasper e alyssa e che vanno agigornati con lo stato attuale di quei due characther ma trattati come user_persona
+and aggiungi di separare il lorebook unico presente in 2 lorebook, uno standar in json con solo le entries e uno in js avanzato con solo le meccaniche da testare
+<strong>Gemini</strong> :</li>
+</ol>
+<h4>Task Classification</h4>
+<p>Mode: Planning
+Layer: Ex_
+Authority: Export
+Risk Level: Low</p>
+<hr>
+<pre><code class="language-text">In questa directory trovi un esempio di esportazione manuale di un chatbot JanitorAI.
+
+Considera questo materiale come il riferimento funzionale del risultato finale atteso: rappresenta il formato di esportazione corretto, la struttura dei contenuti e il livello qualitativo che il sistema deve produrre.
+
+Il materiale fornito NON è una fonte canonica. Deve essere trattato esclusivamente come esempio di output finale.
+
+Obiettivo:
+
+Aggiornare l&#39;intera esportazione affinché sia pienamente allineata al Canon corrente del progetto SvartúlfrVerse, alle decisioni architetturali più recenti, agli ADR approvati e alle regole di governance del repository.
+
+Non limitarti a convertire il contenuto esistente. Esegui una revisione completa della struttura, dei dati e delle istruzioni runtime per garantire la conformità all&#39;architettura attuale.
+
+Regole operative:
+
+1. Tratta il file fornito come esempio di esportazione finale, non come fonte autoritativa.
+
+2. Utilizza come fonte di verità esclusivamente:
+   - Canon Freeze
+   - ADR approvati
+   - Decision Registry
+   - Documentazione ufficiale del repository
+   - Specifiche Runtime ed Export attuali
+
+3. Identifica e correggi qualsiasi elemento:
+   - obsoleto
+   - incoerente
+   - deprecato
+   - incompatibile con il Canon attuale
+
+4. Aggiorna terminologia, istruzioni, logiche runtime, lore, relazioni e comportamenti secondo l&#39;architettura più recente.
+
+5. Mantieni la piena compatibilità con il formato di esportazione JanitorAI.
+
+Personaggi di test:
+
+All&#39;interno dell&#39;esportazione sono presenti due personaggi di test che rappresentano Jasper e Alyssa.
+
+Questi personaggi NON devono essere trattati come personaggi del bot.
+
+Devono essere convertiti e mantenuti come User Persona di test utilizzate per la validazione del sistema.
+
+Aggiorna entrambe le User Persona affinché riflettano lo stato canonico più recente di Jasper e Alyssa, incluse:
+
+- identità attuale
+- relazioni attuali
+- dinamiche rilevanti
+- stato narrativo corrente
+- eventuali cambiamenti introdotti dagli ADR o dal Canon successivo alla creazione dell&#39;esempio
+
+Separazione Lorebook:
+
+L&#39;esportazione attuale contiene un unico lorebook aggregato.
+
+Questo lorebook deve essere separato in due componenti distinte:
+
+A. Standard Lorebook (JSON)
+
+Scopo:
+contenere esclusivamente dati lore.
+
+Requisiti:
+
+- formato JSON compatibile JanitorAI
+- solo entries
+- nessuna logica runtime
+- nessuna meccanica
+- nessuno script
+- nessuna istruzione procedurale
+
+Deve rappresentare esclusivamente conoscenza e contenuto canonico.
+
+B. Advanced Mechanics Lorebook (JavaScript)
+
+Scopo:
+contenere esclusivamente le meccaniche avanzate da validare.
+
+Requisiti:
+
+- solo sistemi runtime
+- solo logiche dinamiche
+- solo meccaniche sperimentali
+- solo comportamenti da testare
+
+Non deve contenere lore canonica.
+
+Separazione Engine:
+
+Anche se nell&#39;architettura definitiva i sistemi saranno separati, per questa fase di test il contenuto può rimanere esportato nello stesso pacchetto.
+
+Tuttavia deve essere mantenuta una chiara distinzione concettuale tra:
+
+- Engine Runtime
+- Standard Lorebook
+- Advanced Mechanics Lorebook
+- User Personas
+
+La struttura prodotta deve poter essere separata successivamente senza refactoring sostanziali.
+
+Output richiesto:
+
+- Esportazione aggiornata.
+- Compatibilità JanitorAI.
+- Allineamento completo al Canon corrente.
+- Standard Lorebook JSON separato.
+- Advanced Mechanics Lorebook JS separato.
+- User Personas aggiornate per Jasper e Alyssa.
+- Report delle modifiche effettuate.
+- Elenco delle incompatibilità risolte.
+- Segnalazione esplicita di eventuali conflitti con il Canon o con gli ADR correnti.
+
+</code></pre>
+<h4>Development Orders</h4>
+<ol>
+<li>Aggiornare Jasper e Alyssa come User Persona allineate allo stato canonico corrente.</li>
+<li>Separare il lorebook aggregato in Lorebook JSON e Mechanics Lorebook JS.</li>
+<li>Produrre report di conformità tra esportazione originale e Canon attuale.
+<strong>User</strong> : qui dentro vanno aggiunte anche tutte le meccaniche nuove da testare, dalle traduzioni, agli engine relashionship
+<strong>Gemini</strong> :</li>
+</ol>
+<h4>Task Classification</h4>
+<p>Mode: Planning
+Layer: Ex_
+Authority: Export
+Risk Level: Medium</p>
+<hr>
+<p>Sì, aggiungerei una sezione esplicita perché altrimenti Code tenderà a limitarsi a separare il lorebook esistente invece di usarlo come banco di prova per la Fase 18.
+Io inserirei qualcosa del genere subito sotto  <strong>Advanced Mechanics Lorebook (JavaScript)</strong> :</p>
+<pre><code class="language-text">Advanced Mechanics Scope
+
+L&#39;Advanced Mechanics Lorebook non deve limitarsi a contenere le meccaniche già presenti nell&#39;esportazione originale.
+
+Deve essere utilizzato come ambiente di validazione per tutte le nuove meccaniche runtime introdotte dall&#39;architettura corrente del progetto.
+
+Obiettivo:
+
+Verificare il comportamento delle meccaniche prima della loro integrazione definitiva nell&#39;ecosistema SvartúlfrVerse.
+
+Le meccaniche devono essere organizzate come moduli indipendenti e facilmente attivabili/disattivabili.
+
+Le seguenti categorie devono essere incluse ove applicabili:
+
+Language Runtime Systems
+- User Language Detection
+- Runtime Language Switching
+- Translation Overlay
+- Parenthetical Translation System
+- Dual-Language Output Validation
+- Language Persistence Logic
+
+Relationship Systems
+- Relationship Engine
+- Affinity Tracking
+- Trust Progression
+- Emotional State Tracking
+- Relationship Stage Progression
+- Dynamic Character Reactions
+
+Memory &amp; Continuity Systems
+- Session Continuity Rules
+- Soft Memory Logic
+- Interaction History Tracking
+- Context Reinforcement Rules
+- Continuity Validation
+
+Character Runtime Systems
+- Dynamic Personality Adjustments
+- Mood State Layers
+- Character Awareness Rules
+- User Familiarity Progression
+- Behavioral Escalation and De-escalation
+
+Scenario Runtime Systems
+- State Machines
+- Event Triggers
+- Conditional Scenario Layers
+- Context-Sensitive Reactions
+- Runtime Scene Progression
+
+Interaction Systems
+- Greeting Logic
+- User Recognition Logic
+- Long-Term Interaction Tracking
+- Response Adaptation Rules
+- Engagement Progression
+
+Experimental Systems
+- Any mechanics introduced after the original export was created.
+- Any runtime engine currently under validation.
+- Any prototype system planned for future integration.
+
+Requirements
+
+The Advanced Mechanics Lorebook must contain:
+- mechanics
+- runtime rules
+- state logic
+- trigger logic
+- validation modules
+
+The Advanced Mechanics Lorebook must NOT contain:
+- canonical lore
+- character biographies
+- worldbuilding data
+- encyclopedia content
+- static reference information
+
+All canonical information must remain inside the Standard Lorebook JSON.
+
+</code></pre>
+<p>Questo chiarisce a Code che non stai chiedendo una semplice conversione del lorebook, ma la costruzione di un vero  <strong>testbed della Fase 18</strong> , dove confluiscono:</p>
+<ul>
+<li>Language Runtime Engine</li>
+<li>Translation Engine</li>
+<li>Parenthetical Translation Engine</li>
+<li>Relationship Engine</li>
+<li>Affinity System</li>
+<li>Emotional State Engine</li>
+<li>Continuity Engine</li>
+<li>Scenario State Engine</li>
+<li>qualsiasi altro runtime module introdotto dagli ADR più recenti</li>
+</ul>
+<hr>
+<h4>Development Orders</h4>
+<ol>
+<li>Definire l&#39;Advanced Mechanics Lorebook come ambiente di validazione delle nuove meccaniche runtime.</li>
+<li>Includere esplicitamente Language Runtime, Translation e Relationship Engine tra i sistemi obbligatori.</li>
+<li>Separare rigorosamente dati canonici (JSON Lorebook) e logiche runtime (JS Mechanics Lorebook).</li>
+</ol>

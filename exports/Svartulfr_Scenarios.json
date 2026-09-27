@@ -1,0 +1,177 @@
+{
+  "name": "Svartúlfr - Scenarios",
+  "description": "Scenari iniziali e aperture narrative di Svartúlfr",
+  "scan_depth": 5,
+  "token_budget": 2048,
+  "recursive_scanning": true,
+  "visibility": "private",
+  "rating": "explicit",
+  "status": "approved",
+  "tags": [
+    "SvartulfrVerse",
+    "Scenarios"
+  ],
+  "counts": {
+    "total": 3
+  },
+  "entries": [
+    {
+      "entry_id": "yEHx2mpRM09qevoJ_hW1N",
+      "id": "yEHx2mpRM09qevoJ_hW1N",
+      "uid": 0,
+      "name": "Ciao, Sono Logan",
+      "comment": "Scenario: Ciao, Sono Logan",
+      "keys": [
+        "Ciao, Sono Logan"
+      ],
+      "key": [
+        "Ciao, Sono Logan"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "Venerdì 20 settembre 2024, quarta settimana di college. Alyssa divide la stanza con Scarlett da agosto, e le tre escono per la prima volta davvero: i Grave Mistake suonano al Sidewinders. Erik ha dato il permesso soltanto perché Logan si è offerto come accompagnatore, dato che a un concerto indie punk uno come lui dà molto meno nell'occhio di Kaladin o di Malachia. Mac Sanchez-Rogers, tastierista e convinto di essere stato la star della serata, individua una ragazza rimasta sola al bancone e va a fare la sua scena. Non ha notato l'uomo a otto sgabelli di distanza.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "event",
+      "source_category": "scenarios",
+      "extensions": {
+        "environment_id": "7J303_80fAUAQACcYo-W2",
+        "location_id": "q5DkMQiomGUHoZN7qsA0s",
+        "tags": [],
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "event"
+        }
+      }
+    },
+    {
+      "entry_id": "RBoItQLlm9hXawplFHG0Z",
+      "id": "RBoItQLlm9hXawplFHG0Z",
+      "uid": 1,
+      "name": "First College Day",
+      "comment": "Scenario: First College Day",
+      "keys": [
+        "First College Day"
+      ],
+      "key": [
+        "First College Day"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "Il primo giorno di college di Alyssa e Jasper a Villa Douglas, prima di partire per il campus SUCC a Solarton.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "event",
+      "source_category": "scenarios",
+      "extensions": {
+        "environment_id": "XI457xkcRzaQLSxs-U0sZ",
+        "location_id": "e3eegJNG-_Q7M99Kh5N3F",
+        "tags": [],
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "event"
+        }
+      }
+    },
+    {
+      "entry_id": "LC6ffB5oJWPguVvGvHyr1",
+      "id": "LC6ffB5oJWPguVvGvHyr1",
+      "uid": 2,
+      "name": "What Do You Want To Do",
+      "comment": "Scenario: What Do You Want To Do",
+      "keys": [
+        "What Do You Want To Do",
+        "famiglia",
+        "slice of life",
+        "decisione"
+      ],
+      "key": [
+        "What Do You Want To Do",
+        "famiglia",
+        "slice of life",
+        "decisione"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "Venerdì 5 aprile 2024. Le lettere di ammissione sono nell'atrio da tre settimane, il primo maggio è il giorno della risposta, e l'anno sabbatico dei gemelli sta finendo. Erik fa una domanda invece di dare un ordine, che per lui è la cosa più difficile della serata.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "event",
+      "source_category": "scenarios",
+      "extensions": {
+        "environment_id": "XI457xkcRzaQLSxs-U0sZ",
+        "location_id": "e3eegJNG-_Q7M99Kh5N3F",
+        "tags": [
+          "famiglia",
+          "slice of life",
+          "decisione"
+        ],
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "event"
+        }
+      }
+    }
+  ],
+  "extensions": {
+    "creator": "Wyldfire",
+    "source_world_id": "bV6lEfcI8B7U2Ol5yaHzt"
+  }
+}

@@ -1,0 +1,72 @@
+<p><strong>User</strong> : Come far girare in locale I modelli Nvidia nim
+<strong>Gemini</strong> : Far girare in locale i modelli  <strong>NVIDIA NIM</strong>  (NVIDIA Inference Microservices) è un&#39;ottima soluzione per sfruttare l&#39;accelerazione hardware ottimizzata (come TensorRT e Triton) tramite un&#39;infrastruttura containerizzata pronta all&#39;uso.
+Ecco la procedura completa per configurare e avviare un modello NIM sulla tua macchina.</p>
+<h5>1. Prerequisiti</h5>
+<p><strong>Hardware:</strong></p>
+<ul>
+<li>Una GPU NVIDIA recente (architettura Ampere, Ada Lovelace o Hopper, es. serie RTX 3000/4000 o schede data center).</li>
+<li>VRAM sufficiente per il modello scelto (es. almeno 8-12 GB per modelli base da 7B/8B parametri).
+<strong>Software:</strong></li>
+<li>Sistema operativo Linux (Ubuntu raccomandato) o Windows con WSL2.</li>
+<li>Driver NVIDIA aggiornati.</li>
+<li><a href="https://docs.docker.com/get-docker/">Docker</a> installato.</li>
+<li><a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html">NVIDIA Container Toolkit</a> configurato (è fondamentale per permettere a Docker di accedere alla GPU).</li>
+</ul>
+<hr>
+<h5>2. Configurazione dell&#39;account e delle chiavi</h5>
+<p>I container NIM sono distribuiti tramite il registro NGC (NVIDIA GPU Cloud) e richiedono autenticazione.</p>
+<ol>
+<li>Vai su <a href="https://build.nvidia.com/">build.nvidia.com</a> o sul portale NGC e crea un account gratuito.</li>
+<li>Genera una  <strong>NGC API Key</strong>  dalle impostazioni del tuo profilo.</li>
+<li>Esporta la chiave come variabile d&#39;ambiente nel tuo terminale per comodità:</li>
+</ol>
+<pre><code class="language-bash">export NGC_API_KEY=&quot;inserisci_qui_la_tua_api_key&quot;
+
+</code></pre>
+<hr>
+<h5>3. Autenticazione e avvio del Container</h5>
+<p>Una volta configurato l&#39;ambiente, devi effettuare il login al registro Docker di NVIDIA e scaricare il container del modello che ti interessa.
+<strong>Passo 1: Autenticazione in Docker</strong></p>
+<pre><code class="language-bash">echo &quot;$NGC_API_KEY&quot; | docker login nvcr.io --username &#39;$oauthtoken&#39; --password-stdin
+
+</code></pre>
+<p><em>&gt; Nota: lo username da inserire è letteralmente la stringa</em>  <em>$oauthtoken</em>  <em>, non il nome del tuo account.</em>
+<strong>Passo 2: Avvio del modello (Esempio con Meta Llama-3-8B-Instruct)</strong>  Al primo avvio, Docker scaricherà l&#39;immagine del container (alcuni GB) e, successivamente, il sistema scaricherà i pesi del modello.</p>
+<pre><code class="language-bash">docker run -it --rm --name=nim-llama3 \
+  --gpus all \
+  --shm-size=16GB \
+  -e NGC_API_KEY=$NGC_API_KEY \
+  -v &quot;$HOME/.cache/nim:/opt/nim/cache&quot; \
+  -p 8000:8000 \
+  nvcr.io/nim/meta/llama3-8b-instruct:latest
+
+</code></pre>
+<p><strong>Analisi dei flag utilizzati:</strong></p>
+<ul>
+<li>--gpus all: Assegna tutte le GPU disponibili al container.</li>
+<li>--shm-size=16GB: Alloca memoria condivisa sufficiente, cruciale per le performance di inferenza.</li>
+<li>-v &quot;$HOME/.cache/nim:/opt/nim/cache&quot;: Mappa un volume locale per la cache. Questo evita di dover riscaricare i pesi del modello a ogni riavvio del container.</li>
+<li>-p 8000:8000: Mappa la porta API esposta dal container sulla porta 8000 del tuo host locale.</li>
+</ul>
+<hr>
+<h5>4. Testare le API</h5>
+<p>I container NVIDIA NIM espongono nativamente un&#39;interfaccia  <strong>compatibile con le API di OpenAI</strong> . Questo li rende estremamente facili da integrare in frontend web, script Python o software preesistenti semplicemente cambiando l&#39;URL di base.
+Attendi che il terminale confermi che il server Uvicorn è in ascolto (solitamente su 0.0.0.0:8000), poi esegui una richiesta di test da un&#39;altra finestra del terminale:</p>
+<pre><code class="language-bash">curl -X &#39;POST&#39; \
+  &#39;http://localhost:8000/v1/chat/completions&#39; \
+  -H &#39;accept: application/json&#39; \
+  -H &#39;Content-Type: application/json&#39; \
+  -d &#39;{
+  &quot;model&quot;: &quot;meta/llama3-8b-instruct&quot;,
+  &quot;messages&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Ciao, puoi spiegarmi brevemente cos è una API?&quot;
+    }
+  ],
+  &quot;max_tokens&quot;: 150,
+  &quot;temperature&quot;: 0.7
+}&#39;
+
+</code></pre>
+<p>Se ricevi un JSON formattato con la risposta generata dal modello, il tuo ambiente NIM è configurato e operativo in locale.</p>

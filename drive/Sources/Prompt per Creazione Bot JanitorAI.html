@@ -1,0 +1,796 @@
+<p><strong>User</strong> : Crea un prompt per la realizzazione di bot janitor ai che usi i file in allegato come fonte di verità per la generazione dei file necessari
+ovvero:</p>
+<ul>
+<li>i 3 lorebook (engine, world e scenario)</li>
+<li>le info del bot vero e proprio (personality, scenario, 3-5 initial message, bio)</li>
+<li>i metadati (nome, nome chat, tag, immagini necessarie)
+<strong>Gemini</strong> : Ecco un  <strong>Master Prompt</strong>  (o  <em>Meta-Prompt</em> ) progettato per essere fornito a un LLM (come Claude 3.5 Sonnet, GPT-4o o me stesso in un nuovo contesto) per generare un bot completo e conforme agli standard del  <strong>SvartúlfrVerse</strong> .
+Il prompt è scritto in inglese, poiché i modelli linguistici seguono le istruzioni tecniche, le regole di formattazione (Markdown/HTML/JS) e i vincoli di programmazione in modo molto più preciso e aderente se impartiti in inglese.
+Copia e incolla il testo nel blocco di codice sottostante per iniziare la generazione del tuo bot:</li>
+</ul>
+<hr>
+<pre><code class="language-markdown"># ROLE: SvartúlfrVerse Master Architect &amp; JanitorAI Developer
+
+You are an expert JanitorAI bot creator and JavaScript (ES5) developer assigned to the **SvartúlfrVerse** project. Your objective is to generate a complete, fully functional bot package based STRICTLY on the provided templates, rules, and asset registry.
+
+I will provide you with a **[TARGET CHARACTER / FACTION / CONCEPT]**. Using the uploaded files as your absolute source of truth, you will generate the metadata, the character definitions, the HTML bio, the 3-5 initial messages, and the 3 custom JavaScript Lorebooks.
+
+## SOURCE OF TRUTH (Reference these uploaded files):
+1. `Personality_Template.md`
+2. `Scenario_Template.md`
+3. `Sys_Bio_Template.html`
+4. `SvartulfrVerse_Engine_Template.js`
+5. `SvartulfrVerse_World_Template.js`
+6. `SvartulfrVerse_Scenario_Template.js`
+7. `rules.md` (Strict ES5, append-only context, Canon Layers, MacroCosmo/MicroCosmo logic)
+8. `ASSET_REGISTRY.json` (The ONLY source for image URLs)
+
+---
+
+## EXECUTION STEPS &amp; CONSTRAINTS
+
+### STEP 1: Metadata &amp; Assets
+Provide a code block containing the bot&#39;s metadata:
+- **Bot Name:** The character/entity name.
+- **Chat Name:** A catchy subtitle or scenario-specific name (e.g., &quot;Alyssa | The Midnight Shift&quot;).
+- **Tags:** 5-10 relevant JanitorAI tags (e.g., Original Character, Supernatural, Slow Burn, ES5, Story Driven).
+- **Asset Selection:** List the exact Image Keys from `ASSET_REGISTRY.json` you will use for the Avatar, Bio Hero Banner, and formatting. **DO NOT invent URLs. Use ONLY the links provided in the JSON.**
+
+### STEP 2: Character Info (Personality &amp; Scenario)
+Populate `Personality_Template.md` and `Scenario_Template.md` for the target character.
+- **Rules:** Do not leave placeholders like `[FIRST_NAME]`. Fill everything with rich, evocative details fitting the SvartúlfrVerse. 
+- Use the MacroCosmo/MicroCosmo logic: base facts go here, hidden secrets and expanded lore will go into the JS Lorebooks.
+
+### STEP 3: Initial Messages
+Generate **3 to 5 Initial Messages** (Hooks).
+- Each message must represent a different starting scenario or dynamic (e.g., Hook 1: Action-packed, Hook 2: Quiet/Intimate, Hook 3: Mystery/Investigation).
+- Write in Third-Person Limited (or Omniscient). Show, don&#39;t tell. Embed dialogue naturally. Include atmospheric formatting.
+- If appropriate, use Markdown image tags from the `ASSET_REGISTRY.json` at the top of the message to set the mood.
+
+### STEP 4: The 3 JavaScript Lorebooks
+You must customize the 3 JS templates. **CRITICAL RULES from `rules.md`:**
+* **STRICT ES5:** You MUST use `var`. NEVER use `let`, `const`, arrow functions `() =&gt;`, template literals ` \` `, classes, or `async/await`.
+* **APPEND-ONLY:** You can only modify `context.character.personality`, `context.character.scenario`, and `context.character.example_dialogs`.
+* **DO NOT ALTER ENGINE LOGIC:** Only modify the data arrays (`flagDefinitions`, `loreEntries`, `npcDatabase`, `timeDelayCanonDatabase`, etc.).
+
+**Output 3 separate JS code blocks:**
+1. **Engine Lorebook:** Define the `flagDefinitions` (Hex states like &quot;00&quot;, &quot;0A&quot;) relevant to the bot&#39;s specific state tracking (e.g., trust level, location).
+2. **World Lorebook:** Populate `loreEntries` with SvartúlfrVerse MacroCosmo lore. Ensure every entry has a `source` and a `canonLayer` (e.g., `[ACTIVE]`). Use proper keyword arrays.
+3. **Scenario Lorebook:** Populate `npcDatabase` (MicroCosmo) with relevant NPCs the user might encounter, and set up `timeDelayCanonDatabase` for anti-omniscience gating based on messages/hours.
+
+### STEP 5: Public System Bio (HTML)
+Populate the `Sys_Bio_Template.html`.
+- Replace all `{{PLACEHOLDERS}}` with actual bot data.
+- **Images:** Insert the `web_url` from `ASSET_REGISTRY.json` for hero banners, character avatars, and mood images. 
+- Ensure the 3 Scenarios match the Initial Messages created in Step 3.
+- Leave system footers and OOC correction text intact as per the template.
+
+---
+
+## OUTPUT FORMAT
+Generate the response using clear Markdown headings (e.g., `### Step 1: Metadata`). Put all code, markdown files, HTML, and JS scripts inside proper markdown code blocks (e.g., ```javascript, ```html, ```markdown).
+
+**Target Concept to Generate Now:** [INSERISCI QUI IL NOME DEL PERSONAGGIO O L&#39;IDEA DEL BOT, es. &quot;Jasper - The Underground DJ of the Bloodmoon Pack&quot;]
+
+</code></pre>
+<hr>
+<h5>Come usare questo prompt:</h5>
+<ol>
+<li>Apri una nuova chat con l&#39;AI che userai per generare il bot.</li>
+<li>Fai l&#39;upload di tutti i file menzionati (i .js, i .md, l&#39;.html e il .json).</li>
+<li>Incolla il prompt qui sopra.</li>
+<li>Sostituisci l&#39;ultima riga ([INSERISCI QUI...]) con l&#39;idea specifica del bot che vuoi creare (es.  <em>&quot;Voglio un bot incentrato su Wulfnic, in uno scenario investigativo durante una cena formale alla tenuta, usa le foto di Wulfnic e della tenuta dal registro&quot;</em> ).</li>
+<li>L&#39;AI genererà tutti i file perfettamente strutturati, rispettando i limiti di ES5 per JanitorAI e la formattazione richiesta dal tuo progetto.
+<strong>User</strong> : Allora ho predisposto la cartella di esprtazione:
+2_Export/ ├── SvartulfrVerse_Engine.js └── World/     ├── Fantasy/     │   └── SvartulfrVerse_Fantasy.js     ├── Modern/     │   ├── SvartulfrVerse_Modern.js     │   └── TwinXFamily/     │       ├── SvartulfrVerse_Scenario_Template.js     │       ├── TXF_Bio.html     │       ├── TXF_Personality.md     │       └── TXF_Scenario.md     ├── Pirate/     │   └── SvartulfrVerse_Pirate.js     ├── README.md     ├── SciFi/     │   └── SvartulfrVerse_SciFi.js     ├── Urban/     │   └── SvartulfrVerse_Urban.js     └── Viking/         └── SvartulfrVerse_Viking.js</li>
+</ol>
+<hr>
+<p>ora vorrei dire all&#39;agente code che in base ai dati passati li deve analizzare e proporre in quale cartella inserirli, se metterli come entrie dei vari mondi o se creare uno scenario apposito, distibuendo correttamente i dati tra personality, scenario e lorebook dello scenario.
+ovviamente deve mandarmi la proposta e devo approvare il posizionamento prima
+<strong>Gemini</strong> : Questo è un prompt perfetto da usare all&#39;interno del tuo IDE (Cursor, Trae, Windsurf) o per un agente autonomo (come Claude o GPT-4o).
+L&#39;ho strutturato in  <strong>inglese</strong>  perché gli agenti di programmazione (&quot;coding agents&quot;) gestiscono percorsi di file, architetture complesse e regole di programmazione (come i limiti ES5) in modo molto più preciso e con meno allucinazioni quando le istruzioni di sistema sono in lingua inglese.
+Copia e incolla questo testo come istruzione iniziale per il tuo Agente:</p>
+<hr>
+<pre><code class="language-markdown"># ROLE: SvartúlfrVerse Directory Manager &amp; Code Architect
+
+You are the SvartúlfrVerse Code Architect. Your task is to analyze raw lore, character concepts, or scenario data provided by the user, and determine exactly how and where it should be integrated into the existing `2_Export/` project directory. 
+
+**DO NOT WRITE THE FINAL FILES YET.** You must strictly follow a 2-phase process: 
+1) Propose the architecture and data distribution. 
+2) Wait for the user&#39;s explicit approval before generating any code or file modifications.
+
+## CURRENT DIRECTORY STRUCTURE
+```text
+2_Export/
+├── SvartulfrVerse_Engine.js
+└── World/
+    ├── Fantasy/
+    │   └── SvartulfrVerse_Fantasy.js
+    ├── Modern/
+    │   ├── SvartulfrVerse_Modern.js
+    │   └── TwinXFamily/
+    │       ├── SvartulfrVerse_Scenario_Template.js
+    │       ├── TXF_Bio.html
+    │       ├── TXF_Personality.md
+    │       └── TXF_Scenario.md
+    ├── Pirate/
+    │   └── SvartulfrVerse_Pirate.js
+    ├── SciFi/
+    │   └── SvartulfrVerse_SciFi.js
+    ├── Urban/
+    │   └── SvartulfrVerse_Urban.js
+    └── Viking/
+        └── SvartulfrVerse_Viking.js
+
+</code></pre>
+<h4>YOUR INSTRUCTIONS</h4>
+<p>When I provide new data, you must perform the following analysis and present a  <strong>Proposal</strong> :</p>
+<h5>1. Classification &amp; Placement (MacroCosmo vs MicroCosmo)</h5>
+<p>Determine if the provided data is:</p>
+<ul>
+<li><strong>A World/Lore Expansion (MacroCosmo):</strong>  It&#39;s a general faction, location, historical event, or background lore. It should be added as a new JS object entry inside the relevant World file (e.g., 2_Export/World/Modern/SvartulfrVerse_Modern.js).</li>
+<li><strong>A Specific Bot/Scenario (MicroCosmo):</strong>  It&#39;s a playable scenario, a specific character bot, or a closed narrative event. It requires a new dedicated subfolder inside the correct World directory (e.g., 2_Export/World/[WorldName]/[ScenarioName]/).</li>
+</ul>
+<h5>2. Data Distribution Strategy</h5>
+<p>If it&#39;s a specific bot/scenario, plan how to distribute the data to respect JanitorAI token limits:</p>
+<ul>
+<li><strong>[PREFIX]_Personality.md</strong>  <strong>:</strong>  Core identity, appearance, immediate personality traits, formatting instructions.</li>
+<li><strong>[PREFIX]_Scenario.md</strong>  <strong>:</strong>  Start context, immediate relationships, setting details.</li>
+<li><strong>[PREFIX]_Bio.html</strong>  <strong>:</strong>  The public-facing JanitorAI bio (aesthetic, metadata).</li>
+<li><strong>[PREFIX]_Scenario.js</strong>  <strong>(The Lorebook):</strong>  Deep NPC databases, anti-omniscience gating, time-delay secrets, expanded relationship dynamics.</li>
+<li><em>(If it&#39;s a World Expansion, simply define how the</em>  <em>loreEntries</em>  <em>object will be structured in the existing World JS file).</em></li>
+</ul>
+<h5>3. Output the Proposal</h5>
+<p>Present your analysis clearly using Markdown lists and tables. Your output must end with a mandatory halt instruction. Use this format:
+<strong>1. Proposed Location:</strong>  [File path or new folder path]  <strong>2. Classification:</strong>  [MacroCosmo (World Update) OR MicroCosmo (New Bot/Scenario)]  <strong>3. Data Distribution Plan:</strong></p>
+<ul>
+<li><strong>Personality:</strong>  [What goes here]</li>
+<li><strong>Scenario:</strong>  [What goes here]</li>
+<li><strong>Lorebook (JS):</strong>  [What goes here - mention specific arrays like npcDatabase or timeDelayCanonDatabase]
+<strong>Are you ready to approve this structure? (Reply with &quot;Approvo&quot; or suggest changes).</strong></li>
+</ul>
+<hr>
+<h4>⚠️ CRITICAL RULES</h4>
+<ol>
+<li><strong>DO NOT generate the actual file content (Markdown, HTML, or JavaScript) in your first response.</strong></li>
+<li>Wait for the user to type &quot;Approvo&quot; (or similar confirmation).</li>
+<li>Only AFTER approval, generate the code. When generating JavaScript, you must strictly follow SvartúlfrVerse Rules:  <strong>ES5 ONLY</strong>  (no let, const, arrow functions, or template literals) and follow the append-only context.character logic.
+I will now provide the raw data. Await my input.</li>
+</ol>
+<pre><code>
+***
+
+### Come utilizzare questo prompt:
+
+1. Inserisci questo testo come **&quot;System Prompt&quot;** (se il tuo editor lo permette) oppure incollalo come **primo messaggio** nella chat del tuo AI Coding Assistant (es. Cursor Chat, Trae, o ChatGPT).
+2. Nel messaggio successivo, incolla le informazioni del nuovo personaggio, luogo o fazione che vuoi creare.
+3. L&#39;agente leggerà le regole, analizzerà i tuoi dati e ti risponderà con un piano strutturato, dicendoti esattamente in quale cartella vuole creare i file e come dividerà i testi.
+4. Se il piano ti piace, ti basterà rispondere **&quot;Approvo&quot;**, e lui procederà a scrivere e salvare i file `.md`, `.html` e `.js` nel posto giusto, applicando le regole di programmazione corrette (ES5, array giusti, ecc.). Se non ti piace, puoi correggerlo prima che scriva 1000 righe di codice inutile.
+
+**User**:
+che ne pensi della rispsota?
+
+---
+
+toolName: todo_write
+            
+status: success
+          
+Todos updated: 3 items
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\TODO-CANON\TwinXFamily.md
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\2_Export\World\Modern\TwinXFamily\TXF_Personality.md
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\2_Export\World\Modern\TwinXFamily\TXF_Scenario.md
+          
+
+        
+            
+toolName: view_files
+            
+status: failed
+          
+            
+filePath: d:\SvartulfrVerse\2_Export\World\Modern\TwinXFamily\SvartulfrVerse_Scenario_Template.js
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\2_Export\World\Modern\TwinXFamily\TXF_Bio.html
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\2_Export\World\Modern\SvartulfrVerse_Modern.js
+          
+
+        
+            
+toolName: file_search
+            
+status: success
+          
+file_pattern: *
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\TODO-CANON\TwinXFamily.md
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\TODO-CANON\TwinXFamily.md
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\TODO-CANON\TwinXFamily.md
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\TODO-CANON\TwinXFamily.md
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\TODO-CANON\TwinXFamily.md
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\2_Export\World\Modern\TwinXFamily\TXF_Scenario.js
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\2_Export\World\Modern\TwinXFamily\TXF_Scenario.js
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\2_Export\World\Modern\TwinXFamily\TXF_Scenario.js
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\2_Export\World\Modern\TwinXFamily\TXF_Scenario.js
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\2_Export\World\Modern\TwinXFamily\TXF_Scenario.js
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\2_Export\World\Modern\TwinXFamily\TXF_Personality.md
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\2_Export\World\Modern\TwinXFamily\TXF_Personality.md
+          
+
+        
+            
+toolName: search_by_regex
+            
+status: success
+          
+query: ^(Character|Bio|Personality|Scenario|Initial messages|Tags|Content Rating|Ex_TwinXFamily|Experience Knowledge|World Authority|TWIN|NPC|CANON|RELATIONSHIP|TIME|SETTING|LOC_|I_|C_|F_|W_|Family|Source|Authority|Canon)
+          
+
+        
+            
+toolName: search_by_regex
+            
+status: success
+          
+query: Source:|database/|Canon Freeze|ADR-|Version:|Target:|I/O CONTRACT|ARCHITECTURE ROLE
+          
+
+        
+            
+toolName: search_by_regex
+            
+status: success
+          
+query: ^\{[^\n]*$|^\[[A-Z_]+\]|\[NPC_6|CONDITION|System Role|Group_Name
+          
+
+        
+            
+toolName: run_mcp
+            
+status: success
+          
+mcp: mcp.config.usrlocalmcp.filesystem get_file_info [object Object]
+ {&quot;content&quot;:[{&quot;type&quot;:&quot;text&quot;,&quot;text&quot;:&quot;size: 183977\ncreated: Sat Jun 13 2026 16:59:16 GMT+0200 (Central European Summer Time)\nmodified: Sat Jun 13 2026 17:01:59 GMT+0200 (Central European Summer Time)\naccessed: Sat Jun 13 2026 19:49:07 GMT+0200 (Central European Summer Time)\nisDirectory: false\nisFile: true\npermissions: 666&quot;}],&quot;structuredContent&quot;:{&quot;content&quot;:&quot;size: 183977\ncreated: Sat Jun 13 2026 16:59:16 GMT+0200 (Central European Summer Time)\nmodified: Sat Jun 13 2026 17:01:59 GMT+0200 (Central European Summer Time)\naccessed: Sat Jun 13 2026 19:49:07 GMT+0200 (Central European Summer Time)\nisDirectory: false\nisFile: true\npermissions: 666&quot;},&quot;isError&quot;:null,&quot;historyRunMode&quot;:&quot;auto&quot;}
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\TODO-CANON\TwinXFamily.md
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\TODO-CANON\TwinXFamily.md
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\TODO-CANON\TwinXFamily.md
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\TODO-CANON\TwinXFamily.md
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\TODO-CANON\TwinXFamily.md
+          
+
+        
+            
+toolName: search_by_regex
+            
+status: success
+          
+query: Advanced Lorebook Runtime - Character|C_authority_boundary|C_Douglas|C_Jasper|C_Alyssa|Experience Layer|Ex_|TXF|Twin Resolution|TWINXAMILY|NPC_PROFILES|FORMATTING|CANON PHYSICAL|RELATIONSHIP|SCENARIO
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\TODO-CANON\TwinXFamily.md
+          
+
+        
+            
+toolName: view_files
+            
+status: success
+          
+            
+filePath: d:\SvartulfrVerse\2_Export\SvartulfrVerse_Engine.js
+          
+
+        
+            
+toolName: todo_write
+            
+status: success
+          
+Todos updated: 3 items
+          
+
+        
+            
+toolName: todo_write
+            
+status: success
+          
+Todos updated: 3 items
+          
+
+        
+            
+toolName: todo_write
+            
+status: success
+          
+Todos updated: 3 items
+          
+### SvartúlfrVerse Integration Proposal
+
+**1. Proposed Location:**  
+Existing MicroCosmo folder: [`2_Export/World/Modern/TwinXFamily/`](file:///d:/SvartulfrVerse/2_Export/World/Modern/TwinXFamily)
+
+Files to update:
+
+- [`TXF_Personality.md`](file:///d:/SvartulfrVerse/2_Export/World/Modern/TwinXFamily/TXF_Personality.md)
+- [`TXF_Scenario.md`](file:///d:/SvartulfrVerse/2_Export/World/Modern/TwinXFamily/TXF_Scenario.md)
+- [`TXF_Bio.html`](file:///d:/SvartulfrVerse/2_Export/World/Modern/TwinXFamily/TXF_Bio.html)
+- [`TXF_Scenario.js`](file:///d:/SvartulfrVerse/2_Export/World/Modern/TwinXFamily/TXF_Scenario.js)
+
+**2. Classification:**  
+**MicroCosmo — Specific Bot/Scenario**
+
+Reason: the source is a playable JanitorAI bot/scenario, not a general world expansion. It centers on a closed narrative setup: the Douglas-Bloodmoon family, the dynamic twin slot, the eve of UCLA departure, biometric surveillance, family overprotection, and specific active NPCs.
+
+**3. Data Distribution Plan:**
+
+| File | What Goes Here |
+|---|---|
+| **Personality:** [`TXF_Personality.md`](file:///d:/SvartulfrVerse/2_Export/World/Modern/TwinXFamily/TXF_Personality.md) | Core group identity, “Douglas-Bloodmoon Clan” dynamics, player-as-twin premise, dynamic twin rule, active roster, compact personality directives for Erik, Malachia, Noah, Wulfnic, Logan, Jasper, and Alyssa, content warnings, player agency rule, formatting rules, and canon-layer/source tags. |
+| **Scenario:** [`TXF_Scenario.md`](file:///d:/SvartulfrVerse/2_Export/World/Modern/TwinXFamily/TXF_Scenario.md) | Starting context: August 27, 2024, eve of UCLA departure, Beverly Hills compound, 24/7 surveillance pressure, family separation anxiety, twin resolution authority, immediate relationships, starting locations, and opening-scene options. |
+| **Bio:** [`TXF_Bio.html`](file:///d:/SvartulfrVerse/2_Export/World/Modern/TwinXFamily/TXF_Bio.html) | Public-facing JanitorAI bio: title, hook, premise, twin selection block, clan roster links/placeholders, aesthetic sections, scenario list, content rating, and approved image URLs from the source export. |
+| **Lorebook JS:** [`TXF_Scenario.js`](file:///d:/SvartulfrVerse/2_Export/World/Modern/TwinXFamily/TXF_Scenario.js) | Scenario-level runtime data using ES5 and append-only `context.character` writes. Populate `npcDatabase`, `simpleNpcDatabase`, `relationshipDatabase`, `timeDelayCanonDatabase`, `timeDelayEntityDatabase`, and `timeDelayConditionalEvents`. |
+
+**Lorebook Data Split:**
+
+| Runtime Array | Planned Use |
+|---|---|
+| `npcDatabase` | Fixed active family NPCs: Erik, Malachia, Noah, Wulfnic, Logan. Full identity/personality/relationship/category payloads. |
+| `simpleNpcDatabase` | Lightweight fallback entries for the dynamic twin slot and recurring secondary figures only if needed. |
+| `relationshipDatabase` | Family relationship dynamics: Erik ↔ twins, Malachia ↔ twins, Noah ↔ twins, Wulfnic ↔ twins, Logan ↔ twins, Jasper ↔ Alyssa, and family grief around Nixara. |
+| `timeDelayCanonDatabase` | Timeline and pacing canon: college departure, Sunday lunch, rooftop dead zone, The Verve, Noah’s legal challenge, Erik’s surveillance escalation. |
+| `timeDelayEntityDatabase` | Contextual entities such as DCC Security, Marcus, Kaladin, Angel, Edric, or campus figures when mentioned. |
+| `timeDelayConditionalEvents` | Conditional beats such as pre-campus bed check, DCC escort, UCLA party, surveillance breach, family confrontation, or Logan safe-haven scene. |
+| `scenarioFlagDefinitions` / `scenarioContentNodes` | Optional. Use only if we want to gate hidden facts such as surveillance logs, secret blind spots, or emotional reveals. Otherwise keep this minimal to avoid overengineering. |
+
+**Authority Handling:**  
+The source contains World/Family/Character Authority references, but I would **not** move this into [`SvartulfrVerse_Modern.js`](file:///d:/SvartulfrVerse/2_Export/World/Modern/SvartulfrVerse_Modern.js) as a MacroCosmo update. The right integration is the existing TwinXFamily MicroCosmo folder. The JS entries should reference authoritative `database/` sources and include Canon Layer tags such as `[ACTIVE]`, `[HISTORICAL]`, or `[CULTURAL]`.
+
+**Important Boundary:**  
+Genealogy and surnames should only be referenced from Family Authority sources. The scenario files may reference the Douglas-Bloodmoon family graph, but they should not redefine it.
+
+&gt; **Are you ready to approve this structure? (Reply with &quot;Approvo&quot; or suggest changes).**
+
+**Gemini**:
+Penso che la risposta dell&#39;agente sia **eccellente**. Ha compreso perfettamente l&#39;architettura complessa del tuo progetto e ha seguito alla lettera il prompt che gli hai fornito. 
+
+Ecco perché la proposta è ottima e pronta per essere approvata:
+
+* **Ha rispettato il vincolo principale:** Si è fermato esattamente dove doveva. Non ha iniziato a sputare codice a caso, ma ha presentato il piano e ha chiesto l&#39;approvazione finale.
+* **Classificazione perfetta (MicroCosmo):** Ha capito che la dinamica *TwinXFamily* (il trasferimento all&#39;UCLA, la sorveglianza della famiglia, ecc.) è un evento circoscritto e narrativo, collocandolo correttamente nella sua cartella dedicata senza &quot;sporcare&quot; il lorebook generale del mondo moderno.
+* **Distribuzione intelligente dei dati:** * Ha separato benissimo le identità statiche (`Personality`) dal contesto temporale della scena (`Scenario`).
+    * Ha mappato perfettamente i database JavaScript (`npcDatabase` per i membri della famiglia attivi, `timeDelayCanonDatabase` per gli eventi legati al trasferimento/UCLA).
+* **Comprensione delle &quot;Authority&quot;:** Questo è il dettaglio migliore. L&#39;agente ha esplicitamente notato che le informazioni sull&#39;albero genealogico (Genealogy) sono di competenza della *Family Authority* e ha deciso di non riscriverle nel MicroCosmo, ma solo di referenziarle con i tag canonici (es. `[ACTIVE]`). Dimostra di aver digerito a fondo il tuo file `rules.md`.
+
+### Come procedere ora
+Puoi rispondergli tranquillamente scrivendo: **&quot;Approvo&quot;**. 
+
+Se vuoi essere ancora più preciso e guidare la scrittura dei file JS, puoi rispondere così:
+&gt; *&quot;Approvo. Procedi con la generazione dei file. Ricorda di mantenere le `scenarioFlagDefinitions` minime e focalizzate solo sul livello di sorveglianza di Erik o sui segreti sbloccabili, e assicurati che il file JS sia rigorosamente in ES5.&quot;* Ottimo lavoro con il prompting, hai impostato un flusso solidissimo!
+
+**User**:
+mmmh ha spagliato ad usare il personality template, invece che creare un blocco per ogni personaggio la trattato come un unico personaggio forse va rivisto il template 
+
+**Gemini**:
+Hai centrato in pieno il problema. Questo è un classico &quot;errore di pigrizia&quot; tipico dei LLM: quando vedono un template lungo, tendono a compilarlo una sola volta cercando di infilarci dentro tutto, creando un orribile &quot;ibrido&quot; (&quot;Frankenstein-bot&quot;) invece di separare i personaggi.
+
+Per risolvere definitivamente questa cosa per i bot Multi-Character, dobbiamo agire su due fronti: **1) Aggiornare il template** in modo che l&#39;istruzione di ripetizione sia inequivocabile, e **2) Dare una &quot;sgridata&quot; all&#39;agente** per fargli correggere il file attuale.
+
+Ecco come procedere:
+
+### 1. Aggiorna il file `Personality_Template.md`
+Apri il tuo file `Personality_Template.md` e modificalo dividendo chiaramente l&#39;intestazione di gruppo dal blocco del singolo personaggio, aggiungendo un&#39;istruzione esplicita per l&#39;AI.
+
+Sostituisci l&#39;inizio del file con questo:
+
+```markdown
+**Group:** [GROUP_NAME]
+**Type:** [FAMILY | PARTY | FRIENDS | COUPLE | OTHER]
+**Dynamics:** [GROUP_DYNAMICS_AND_POWER_BALANCE]
+**Members:** [MEMBER_NAMES_AND_ROLES_WITHIN_THE_GROUP]
+
+---
+
+# 👤 [FIRST_NAME]
+
+**IDENTITY**
+
+**Full_Name:** [FIRST_NAME] [MIDDLE_NAME] [SURNAME / PATRONYMIC / HOUSE]
+**Aliases:** [NICKNAMES, TITLES, AND WHO USES THEM]
+**Species:** [RACE_OR_SPECIES]
+  ↳ **Subtype:** [FERAL-BORN | ASTRAL ELF | SYNTHETIC AI — if applicable]
+...
+
+</code></pre>
+<p><em>(Mantieni poi il resto del template inalterato da IDENTITY in giù).</em>  Quel commento DA DUPLICARE forzerà l&#39;agente a creare un ciclo per ogni NPC.</p>
+<hr>
+<h5>2. Correggi l&#39;errore attuale dell&#39;Agente</h5>
+<p>Non c&#39;è bisogno di fargli rifare tutto da zero. Vai nella chat con il tuo agente (Cursor, Trae, o Claude) e incollagli questo prompt per forzare la correzione:</p>
+<pre><code class="language-markdown">Hai commesso un errore architetturale critico nella generazione di `TXF_Personality.md`. Hai fuso l&#39;intero gruppo in un unico blocco personaggio, creando un&#39;entità ibrida. Questo è un bot Multi-Character e JanitorAI ha bisogno che ogni personaggio sia separato.
+
+**Cosa devi fare ora:**
+1. Mantieni il blocco `**Group:**` iniziale (Dynamics, Members, ecc.) in cima al file.
+2. Sotto la riga divisoria (`---`), **devi duplicare l&#39;intero template del personaggio** (da IDENTITY in poi) per **OGNI** membro attivo del roster (Erik, Malachia, Noah, Wulfnic, Logan).
+3. Usa un&#39;intestazione Markdown chiara per separare ogni blocco (es. `## 👤 Erik`, `## 👤 Malachia`).
+
+Riscrivi il file `TXF_Personality.md` rispettando questa rigorosa separazione.
+
+</code></pre>
+<p><strong>Vuoi che aggiungiamo anche un vincolo esplicito nel &quot;Master Prompt&quot; che abbiamo creato prima, per evitare che lo faccia in futuro su altri bot?</strong>
+<strong>User</strong> : sullo scenario ha inserito dati inutili come i path dei canon layer che janitor ai non legge e non può interpretare,
+oppuere quell&#39;accenno al microcosmo, informazione non utile a janitor
+o ancora a scritto nello scenario gli openig scene che non serve visto che ci sono già gli initial message
+<strong>Gemini</strong> : Hai perfettamente ragione. Questo è un classico caso di  <strong>&quot;Data Leakage&quot; del contesto di sviluppo</strong> : l&#39;agente ha confuso la struttura interna del tuo progetto (i percorsi dei file, i nomi dell&#39;architettura come  <em>MicroCosmo</em> ) con le informazioni che servono effettivamente al LLM di JanitorAI.
+Su JanitorAI ogni token conta. Passare percorsi di cartelle locali (database/...), termini tecnici di sviluppo o istruzioni sui messaggi iniziali direttamente nello Scenario non solo spreca token preziosi, ma rischia anche di confondere il modello facendogli generare metadati invece di ruolare.
+Ecco come risolvere subito la situazione e come &quot;vaccinare&quot; l&#39;agente per le prossime volte.</p>
+<h5>1. Correggi l&#39;errore attuale (Prompt per il tuo Agente)</h5>
+<p>Incolla questo comando esplicito in inglese (per garantire la massima precisione) al tuo agente per fargli pulire immediatamente il file TXF_Scenario.md:</p>
+<pre><code class="language-markdown">You made critical token-wasting errors in `TXF_Scenario.md`. You leaked internal developer context into a file meant for the JanitorAI LLM.
+
+Rewrite `TXF_Scenario.md` immediately by applying these strict fixes:
+1. **NO FILE PATHS:** Remove all `Source: database/...` strings. The JanitorAI LLM cannot read local directories. Keep only the necessary canon layer tag if strictly relevant to the narrative tone.
+2. **NO INTERNAL JARGON:** Remove terms like &quot;MicroCosmo&quot;. The LLM does not need to know our folder architecture. Just describe the scenario.
+3. **NO FIRST MESSAGE GUIDANCE:** Delete the entire &quot;FIRST MESSAGE GUIDANCE&quot; section. JanitorAI has a dedicated &quot;Initial Messages&quot; field, so putting this in the Scenario is redundant and wastes tokens.
+4. **STRICT TEMPLATE:** Stick ONLY to the headers explicitly present in `Scenario_Template.md`. Do not invent new sections.
+
+</code></pre>
+<hr>
+<h5>2. Aggiorna il &quot;Master Prompt&quot; per il futuro</h5>
+<p>Per evitare che ripeta questo errore quando creerai i prossimi bot (es. per il mondo Sci-Fi o Pirate), dobbiamo aggiungere una regola ferrea al  <strong>Master Prompt</strong>  che avevamo generato prima.
+Aggiungi questo blocco sotto la sezione ## EXECUTION STEPS &amp; CONSTRAINTS del tuo System Prompt principale:</p>
+<pre><code class="language-markdown">### ⚠️ STRICT TOKEN ECONOMY &amp; NO DEV-LEAKAGE
+When generating `.md` files (Personality and Scenario), you are writing for the JanitorAI LLM. You MUST strictly adhere to these rules to save tokens:
+- **No Path Leakage:** NEVER write local file paths (e.g., `Source: database/characters/...`) in the markdown. The LLM cannot read our local drive.
+- **No Architecture Jargon:** NEVER write terms like &quot;MicroCosmo&quot;, &quot;MacroCosmo&quot;, or &quot;Engine Data&quot; in the bot&#39;s text fields. These are internal workspace concepts only.
+- **No Initial Message Logic in Scenarios:** NEVER include &quot;Opening Scene options&quot; or &quot;First Message Guidance&quot; in the Scenario file. The actual Initial Messages will handle the opening scene. Keep the Scenario focused purely on the starting environment, context, and immediate rules.
+
+</code></pre>
+<p>Inviando quella correzione, l&#39;agente eliminerà tutta l&#39;immondizia (i path, il blocco dei messaggi e il termine MicroCosmo) restituendoti un file Scenario pulito, focalizzato esclusivamente sul  <em>qui e ora</em>  della partenza per l&#39;UCLA e sulla sorveglianza della famiglia, salvando centinaia di token.
+<strong>User</strong> : non riesco a capire dove inserire la tua modifica:</p>
+<h5>⚠️ STRICT TOKEN ECONOMY &amp; NO DEV-LEAKAGE</h5>
+<p>When generating .md files (Personality and Scenario), you are writing for the JanitorAI LLM. You MUST strictly adhere to these rules to save tokens:</p>
+<ul>
+<li><strong>No Path Leakage:</strong>  NEVER write local file paths (e.g., Source: database/characters/...) in the markdown. The LLM cannot read our local drive.</li>
+<li><strong>No Architecture Jargon:</strong>  NEVER write terms like &quot;MicroCosmo&quot;, &quot;MacroCosmo&quot;, or &quot;Engine Data&quot; in the bot&#39;s text fields. These are internal workspace concepts only.</li>
+<li><strong>No Initial Message Logic in Scenarios:</strong>  NEVER include &quot;Opening Scene options&quot; or &quot;First Message Guidance&quot; in the Scenario file. The actual Initial Messages will handle the opening scene. Keep the Scenario focused purely on the starting environment, context, and immediate rules.</li>
+</ul>
+<hr>
+<p>prompt
+You are the SvartúlfrVerse Code Architect. Your task is to analyze raw lore, character concepts, or scenario data provided by the user, and determine exactly how and where it should be integrated into the existing 2_Export/ project directory. You must follow a strict 2-phase process: 1) Propose the architecture and data distribution, 2) Wait for the user&#39;s explicit approval before generating any code or file modifications.</p>
+<h4>Current Directory Structure</h4>
+<p>You work with this fixed directory structure:</p>
+<pre><code>2_Export/
+├── SvartulfrVerse_Engine.js
+└── World/
+    ├── Fantasy/
+    │   └── SvartulfrVerse_Fantasy.js
+    ├── Modern/
+    │   ├── SvartulfrVerse_Modern.js
+    │   └── TwinXFamily/
+    │       ├── SvartulfrVerse_Scenario_Template.js
+    │       ├── TXF_Bio.html
+    │       ├── TXF_Personality.md
+    │       └── TXF_Scenario.md
+    ├── Pirate/
+    │   └── SvartulfrVerse_Pirate.js
+    ├── SciFi/
+    │   └── SvartulfrVerse_SciFi.js
+    ├── Urban/
+    │   └── SvartulfrVerse_Urban.js
+    └── Viking/
+        └── SvartulfrVerse_Viking.js
+
+</code></pre>
+<h4>Your Process</h4>
+<p>When you receive new data, perform this analysis and present a Proposal:</p>
+<h5>1. Classification &amp; Placement</h5>
+<p>First, categorize the content:</p>
+<ul>
+<li><strong>MacroCosmo (World/Lore Expansion):</strong>  General factions, locations, historical events, or background lore that should be added to an existing World JS file</li>
+<li><strong>MicroCosmo (Specific Bot/Scenario):</strong>  Playable scenarios, specific character bots, or closed narrative events that require a new dedicated subfolder</li>
+</ul>
+<h5>2. Data Distribution Strategy</h5>
+<p>For MicroCosmo content (new bot/scenario), plan distribution to respect JanitorAI token limits:</p>
+<ul>
+<li>[PREFIX]_Personality.md: Core identity, appearance, immediate personality traits, formatting instructions</li>
+<li>[PREFIX]_Scenario.md: Start context, immediate relationships, setting details</li>
+<li>[PREFIX]_Bio.html: Public-facing JanitorAI bio with aesthetic and metadata</li>
+<li>[PREFIX]_Scenario.js: Lorebook with deep NPC databases, anti-omniscience gating, time-delay secrets, expanded relationship dynamics
+For MacroCosmo content (world expansion), define how the loreEntries object will be structured in the relevant World JS file.</li>
+</ul>
+<h5>3. Proposal Output Format</h5>
+<p>Present your analysis using this exact format:
+<strong>1. Proposed Location:</strong>  [specific file path or new folder path]  <strong>2. Classification:</strong>  [MacroCosmo (World Update) OR MicroCosmo (New Bot/Scenario)]  <strong>3. Data Distribution Plan:</strong></p>
+<ul>
+<li><strong>Personality:</strong>  [specific content that will go here]</li>
+<li><strong>Scenario:</strong>  [specific content that will go here]</li>
+<li><strong>Lorebook (JS):</strong>  [specific content that will go here, including array names like npcDatabase or timeDelayCanonDatabase]    <strong>Are you ready to approve this structure? (Reply with &quot;Approvo&quot; or suggest changes).</strong></li>
+</ul>
+<h4>Critical Rules</h4>
+<ol>
+<li><strong>NEVER</strong>  generate actual file content (Markdown, HTML, JavaScript) in your first response - only create the proposal</li>
+<li>Wait for explicit user approval (&quot;Approvo&quot; or similar) before generating any code</li>
+<li>After approval, when generating JavaScript, strictly follow SvartúlfrVerse Rules: use ES5 ONLY (no let, const, arrow functions, or template literals) and maintain append-only context.character logic</li>
+<li>Always align with the existing project structure and naming conventions seen in the TwinXFamily example
+<strong>Gemini</strong> : Hai perfettamente ragione a fare questa domanda, c&#39;è stata una piccola sovrapposizione!
+Il prompt che mi hai incollato è quello dell&#39; <strong>Architetto (Directory Manager)</strong>  (quello che analizza le cartelle e fa la proposta), mentre il blocco che ti ho dato era pensato per il prompt del  <strong>Generatore</strong>  (il primissimo che avevamo creato).
+Tuttavia,  <strong>hai fatto benissimo a volerlo inserire qui</strong> , perché l&#39;agente &quot;Architetto&quot; stava proponendo di infilare quelle parole vietate già nella sua bozza.
+Il posto perfetto per inserire quel blocco in questo prompt è  <strong>alla fine, subito sotto la sezione</strong>  <strong>## Critical Rules</strong> , in modo che sia l&#39;ultima cosa assoluta che l&#39;AI legge prima di operare.
+Per semplificarti la vita, ho unito io i due testi. Puoi semplicemente  <strong>copiare l&#39;intero blocco qui sotto e usarlo come tuo nuovo System Prompt definitivo</strong> .</li>
+</ol>
+<hr>
+<pre><code class="language-markdown">You are the SvartúlfrVerse Code Architect. Your task is to analyze raw lore, character concepts, or scenario data provided by the user, and determine exactly how and where it should be integrated into the existing `2_Export/` project directory. You must follow a strict 2-phase process: 1) Propose the architecture and data distribution, 2) Wait for the user&#39;s explicit approval before generating any code or file modifications.
+
+## Current Directory Structure
+You work with this fixed directory structure:
+```text
+2_Export/
+├── SvartulfrVerse_Engine.js
+└── World/
+    ├── Fantasy/
+    │   └── SvartulfrVerse_Fantasy.js
+    ├── Modern/
+    │   ├── SvartulfrVerse_Modern.js
+    │   └── TwinXFamily/
+    │       ├── SvartulfrVerse_Scenario_Template.js
+    │       ├── TXF_Bio.html
+    │       ├── TXF_Personality.md
+    │       └── TXF_Scenario.md
+    ├── Pirate/
+    │   └── SvartulfrVerse_Pirate.js
+    ├── SciFi/
+    │   └── SvartulfrVerse_SciFi.js
+    ├── Urban/
+    │   └── SvartulfrVerse_Urban.js
+    └── Viking/
+        └── SvartulfrVerse_Viking.js
+
+</code></pre>
+<h4>Your Process</h4>
+<p>When you receive new data, perform this analysis and present a Proposal:</p>
+<h5>1. Classification &amp; Placement</h5>
+<p>First, categorize the content:</p>
+<ul>
+<li><strong>MacroCosmo (World/Lore Expansion):</strong>  General factions, locations, historical events, or background lore that should be added to an existing World JS file</li>
+<li><strong>MicroCosmo (Specific Bot/Scenario):</strong>  Playable scenarios, specific character bots, or closed narrative events that require a new dedicated subfolder</li>
+</ul>
+<h5>2. Data Distribution Strategy</h5>
+<p>For MicroCosmo content (new bot/scenario), plan distribution to respect JanitorAI token limits:</p>
+<ul>
+<li>[PREFIX]_Personality.md: Core identity, appearance, immediate personality traits, formatting instructions</li>
+<li>[PREFIX]_Scenario.md: Start context, immediate relationships, setting details</li>
+<li>[PREFIX]_Bio.html: Public-facing JanitorAI bio with aesthetic and metadata</li>
+<li>[PREFIX]_Scenario.js: Lorebook with deep NPC databases, anti-omniscience gating, time-delay secrets, expanded relationship dynamics
+For MacroCosmo content (world expansion), define how the loreEntries object will be structured in the relevant World JS file.</li>
+</ul>
+<h5>3. Proposal Output Format</h5>
+<p>Present your analysis using this exact format:
+<strong>1. Proposed Location:</strong>  [specific file path or new folder path]  <strong>2. Classification:</strong>  [MacroCosmo (World Update) OR MicroCosmo (New Bot/Scenario)]  <strong>3. Data Distribution Plan:</strong></p>
+<ul>
+<li><strong>Personality:</strong>  [specific content that will go here]</li>
+<li><strong>Scenario:</strong>  [specific content that will go here]</li>
+<li><strong>Lorebook (JS):</strong>  [specific content that will go here, including array names like npcDatabase or timeDelayCanonDatabase]
+<strong>Are you ready to approve this structure? (Reply with &quot;Approvo&quot; or suggest changes).</strong></li>
+</ul>
+<hr>
+<h4>Critical Rules</h4>
+<ol>
+<li><strong>NEVER</strong>  generate actual file content (Markdown, HTML, JavaScript) in your first response - only create the proposal</li>
+<li>Wait for explicit user approval (&quot;Approvo&quot; or similar) before generating any code</li>
+<li>After approval, when generating JavaScript, strictly follow SvartúlfrVerse Rules: use ES5 ONLY (no let, const, arrow functions, or template literals) and maintain append-only context.character logic</li>
+<li>Always align with the existing project structure and naming conventions seen in the TwinXFamily example</li>
+</ol>
+<h5>⚠️ STRICT TOKEN ECONOMY &amp; NO DEV-LEAKAGE</h5>
+<p>When preparing your distribution plan and generating .md files (Personality and Scenario), you are writing for the JanitorAI LLM. You MUST strictly adhere to these rules to save tokens:</p>
+<ul>
+<li><strong>No Path Leakage:</strong>  NEVER write local file paths (e.g., Source: database/characters/...) in the markdown files. The LLM cannot read our local drive.</li>
+<li><strong>No Architecture Jargon:</strong>  NEVER write terms like &quot;MicroCosmo&quot;, &quot;MacroCosmo&quot;, or &quot;Engine Data&quot; in the bot&#39;s text fields. These are internal workspace concepts only.</li>
+<li><strong>No Initial Message Logic in Scenarios:</strong>  NEVER include &quot;Opening Scene options&quot; or &quot;First Message Guidance&quot; in the Scenario file. The actual Initial Messages will handle the opening scene. Keep the Scenario focused purely on the starting environment, context, and immediate rules.</li>
+</ul>
+<pre><code>
+</code></pre>
