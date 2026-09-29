@@ -1,0 +1,381 @@
+==================================================
+FILE: Concilio_QuattroDistretti_E_Vito_Pureblood_2026-09-14.md
+==================================================
+  L3: Completati i quattro personaggi di distretto che mancavano dal Concilio, più una revisione di Vito Marino già 
+  L5: ## Decisione di lore: età apparente vs età reale
+  L7: Per i Common Bloodline l'età "apparente" indicata dall'utente è il dato fisico, l'età reale è stata scelta da 
+  L13: - **Vito "Scar" Marino** (Ironworks, già esistente): promosso da semplice Alpha a **Pureblood**. Scheda rivist
+  L14: - **Marcus "Mark" O'Connor** (Oldtown, nuovo): scritto direttamente come Pureblood. Origine irlandese, immigra
+  L18: Tutte con pipeline completa: JED+ in `long_summary`, `summary` compatto, `display_description`, titles/keys/pr
+  L20: - **Naomi Black** (`_pPe6prj8qnWaDWpt2Kfnd`), co-Pack Leader di Uptown North insieme a Cass Harrow. Werewolf B
+  L21: - **Darius Vale** (`_YCnHbjcbrLe9AFFXQEqX6`), Pack Leader di Uptown South. Werewolf Alpha, età reale 45. Riser
+  L22: - **Marcus "Mark" O'Connor** (`_C1LapDdDhfXefNcEJ66D8`), Pack Leader di Oldtown, vedi sopra per l'origine Pure
+  L23: - **Prof.ssa Helena Weiss** (`_181C2DDyEUfRgLREyd4CC`), Pack Leader di Arcadia e Rettore del complesso scolast
+  L33: Il materiale fornito dall'utente per tutti e dieci i distretti include anche alleanze e rivalità fra i Pack Le
+==================================================
+FILE: Blackwood_District_Alphas_Completamento_2026-09-14.md
+==================================================
+  L3: Audit e completamento pipeline dei 9 personaggi della cartella "Blackwood" del World, i District Alpha che gov
+  L13: Per ognuno: `summary` riscritto in inglese (JED+ compatto, bracket + prosa breve) dove necessario, `display_de
+  L15: ## Attitudes assegnate
+  L25: - **Eclipse Noir, Isobel Blackwater, Dominic Chen**: nessun altro personaggio del World citato esplicitamente 
+  L31: Rieseguito GET su tutti e 9 dopo un reload completo della pagina (nuovo token). Per ciascuno confermato: 5 out
+==================================================
+FILE: Solarton_FiveCocketeers_2026-09-15.md
+==================================================
+  L3: Cinque schede, dominio SUCC (autore esterno, io wuvs soap), campus Solarton, inserite nel locale Wyldfire. Wor
+  L10: - Intimacy Profile solo per Dean (`GUu9t6xNEZNpVyGeK0A8W`): unico dei cinque con contenuto anatomico/kink espl
+  L15: Decisione esplicita dell'utente su tre domande poste prima di scrivere: fondere il "Russ" della nuova fonte ne
+  L17: Eseguita come **UPDATE in place della riga esistente**, non cancellazione e reinserimento, per preservare l'id
+  L19: Aggiornata separatamente anche l'Attitude di **Jasper Douglas Bloodmoon** verso lo stesso id, sostituendo il t
+  L21: **Collisione di nome evitata**: la fonte nuova conteneva un secondo, distinto personaggio chiamato anch'esso "
+  L28: - **Russ Sinclair → Tigre**: ereditata dalla vecchia scheda Javier Sinclair, non toccata dalla fusione.
+  L43: Nessun contenuto ha richiesto l'estensione 14/09 (non c'era cattività, tratta, o non-consenso): solo materiale
+  L45: ## Attitudes obbligatorie
+  L47: Alyssa Douglas Bloodmoon e Jasper Douglas Bloodmoon (`stranger`/intensity 15, mai incontrati) su tutte e quatt
+  L49: ## Età e date
+  L51: Nate variate come da convenzione (§9.6), nessuna al primo del mese: Dean 3 novembre 2002 (21 anni), Russ Sincl
+  L57: `PRAGMA integrity_check` ok, conteggio World 132/132, zero `{{user}}`, zero em-dash, zero grassetto markdown s
+==================================================
+FILE: Gray_Dean_Rifle_Maddox_Solarton_Completamento_2026-09-14.md
+==================================================
+  L7: La fonte descrive `{{user}}` come "una discreta scopata" che Gray vede come possesso, con l'intento dichiarato
+  L9: A differenza dei casi severi puri (Arthur Sinclair, Zero, Vasile), qui il resto del pacchetto sessuale della f
+  L19: Leader carismatico e spietato della gang, menzionato solo brevemente in fonte ma centrale nella psicologia di 
+  L25: ## Età
+  L27: Entrambe esplicite in fonte (Gray 28, nessuna discrezione), tranne Rifle la cui età non era specificata: scelt
+  L39: Verificato con GET autenticata fresca dopo la scrittura su entrambe le schede: zero `{{user}}`, zero em-dash, 
+==================================================
+FILE: JeanLuc_Virtuoso_Pride_Sinners_Completamento_2026-09-14.md
+==================================================
+  L7: Diversamente da Arthur e Zero, l'Intimacy Profile generale è stato comunque scritto, perché il resto della car
+  L9: ## Età
+  L11: Fonte dava un numero esplicito (38), nessuna discrezione necessaria. Data di nascita scelta per varietà: 22 ap
+  L17: Dante, Arthur, Zero: Attitudes coerenti con quanto già scritto sulle loro schede (già reciproche automaticamen
+  L24: Verificato con GET autenticata fresca dopo la scrittura: zero `{{user}}`, zero em-dash, zero grassetto, birthd
+==================================================
+FILE: Dante_Lust_Sinners_Completamento_2026-09-14.md
+==================================================
+  L3: Prima scheda lavorata della cartella Los Angeles / gruppo Sinners, da import grezzo JanitorAI fornito dall'ute
+  L9: Il contenuto NSFW esplicito (turn-ons, dinamiche a letto, anatomia) è stato spostato in un Intimacy Profile se
+  L13: ## Età
+  L15: Fonte diceva solo "appears 25, in reality much older, won't admit his age", con un riferimento diretto e perso
+  L24: Nota: queste tre schede (Jean-Luc, Roxie, Siobhan) sono ancora placeholder vuoti sul World. Le Attitudes di Da
+  L30: Verificato con GET autenticata fresca dopo la scrittura: zero `{{user}}`, zero em-dash, zero grassetto, tutti 
+==================================================
+FILE: Arthur_Sinclair_Sloth_Sinners_Completamento_2026-09-14.md
+==================================================
+  L7: Questo non è stato trattato come il caso Dante (kink consensuali fra adulti, generalizzabili in un Intimacy Pr
+  L11: ## Età
+  L13: Fonte dava un numero esplicito (64), nessuna discrezione necessaria. Data di nascita scelta per varietà (§9.6)
+  L18: Dante (`_AtUfhTxR6hNagLyDbzwgJ`): acknowledged, intensity 25, fastidio reciproco già lieve e documentato; aggi
+  L25: Verificato con GET autenticata fresca dopo la scrittura: zero `{{user}}`, zero em-dash, zero grassetto, birthd
+==================================================
+FILE: Zero_Wrath_Sinners_Completamento_2026-09-14.md
+==================================================
+  L5: Il materiale sorgente per Zero è il caso più estremo affrontato finora nel gruppo Sinners: oltre al solito `{{
+  L7: Portato avanti: il suo passato di vittima (cresciuto nei ring di combattimento clandestini di Los Angeles, orf
+  L9: ## Età
+  L11: Fonte dava un numero esplicito (24), nessuna discrezione necessaria. Data di nascita scelta per varietà: 7 mar
+  L16: Arthur Sinclair (`_FwqmNYNa3yRhAFPFanE2q`): friend, intensity 60, l'unico che non lo tratta da mostro; aggiunt
+  L24: Verificato con GET autenticata fresca dopo la scrittura: zero `{{user}}`, zero em-dash, zero grassetto, birthd
+==================================================
+FILE: Danny_Boone_Ballantine_Completamento_2026-09-14.md
+==================================================
+  L11: Passato (padre religioso e violento nella campagna inglese, analfabetismo, primo shift traumatico, fuga a Lond
+  L15: Creato in registro prosa, generalizzato: il concetto di "sesso come cosa sacra riservata a un vero legame di c
+  L17: ## Età
+  L19: Fonte dava un numero esplicito (24), nessuna discrezione necessaria. Data di nascita scelta per varietà: 19 lu
+  L33: Verificato con GET autenticata fresca dopo la scrittura: zero `{{user}}`, zero em-dash, zero grassetto, birthd
+==================================================
+FILE: Sully_Jones_Ballantine_Completamento_2026-09-14.md
+==================================================
+  L12: Daniel "Danny" Boone (`_842tdw4BeYdGVgAYnhEdX`): friend, intensity 55, lo ha accompagnato a più visite ospedal
+  L16: ## Età
+  L18: Fonte dava un numero esplicito (55), nessuna discrezione necessaria. Data di nascita scelta per varietà: 2 mar
+  L26: JED+ completo, summary PList, display_description, pronomi, 5 outfit (`outfit-sully-1`...`outfit-sully-5`) con
+  L28: Con questa scheda tutti e quattro i membri principali della famiglia Ballantine (Rory, Danny, Harper, Sully) r
+  L30: Verificato con GET autenticata fresca dopo la scrittura: zero `{{user}}`, zero em-dash, zero grassetto, birthd
+==================================================
+FILE: Harper_Aries_Ballantine_Completamento_2026-09-14.md
+==================================================
+  L9: Jean-Luc Virtuoso (`_U7CH86RKPVkCjMtQnGX1j`): wary, intensity 65, contatto telepatico non richiesto e tentazio
+  L12: ## Età
+  L14: Fonte dava un numero esplicito (20), nessuna discrezione necessaria. Data di nascita scelta per varietà: 11 ma
+  L24: Verificato con GET autenticata fresca dopo la scrittura: zero `{{user}}`, zero em-dash, zero grassetto, birthd
+==================================================
+FILE: Rory_Ballantine_Completamento_2026-09-14.md
+==================================================
+  L13: ## Età
+  L15: Fonte dava un numero esplicito (46), nessuna discrezione necessaria. Data di nascita scelta per varietà: 15 fe
+  L25: Con questa scheda, tutti e quattro i membri principali della famiglia Ballantine costruiti finora (Rory, Danny
+  L27: Verificato con GET autenticata fresca dopo la scrittura: zero `{{user}}`, zero em-dash, zero grassetto, birthd
+==================================================
+FILE: Zeera_HSK_Consulting_Completamento_2026-09-14.md
+==================================================
+  L3: Prima scheda costruita per il Concilio di Blackwood, primo dei sette rappresentanti delle specie minoritarie a
+  L7: Zeera nasce da una character card di una variante fantasy del mondo (mercante di schiavi Vax, clan del sud), f
+  L13: - **Riconversione professionale**: da mercante di schiavi a CEO di **HSK Consulting** (le iniziali giocano sul
+  L27: - **Start/Birth Position**: calcolata dal World Clock per un'età di 34 anni al world_age corrente (10486470 = 
+  L30: - **Attitudes**: Alyssa e Jasper Douglas-Bloodmoon a tier "stranger" (mai incontrati, nessun motivo di contatt
+  L33: ### Nota sui tier delle Attitudes (chiarita dall'utente)
+  L35: Il campo grezzo `tier` (`stranger`, `wary`, `acknowledged`, `rival`, `enemy`, `disliked`, `despised`, `hated`,
+  L39: GET diretto sulla scheda completa dopo tutte le scritture: zero occorrenze di `{{user}}`, em-dash, grassetto m
+  L46: - **"Vax - Reproduction and Compatibility"** (tipo `memory`, `is_global: false`, keys primarie `Vax` + seconda
+  L52: Come da nuova regola generale §13.3 (Intimacy Profile per qualunque personaggio, invece di scartare il contenu
+==================================================
+FILE: Brak_Ironfist_Orc_Representative_2026-09-14.md
+==================================================
+  L7: Brak nasce da una character card fantasy medievale fornita dall'utente (tre varianti della stessa scheda: capo
+  L15: - **Il tema del matrimonio combinato**: rimosso del tutto, non riciclato nemmeno in forma anonima. Sostituito 
+  L16: - **Età**: 47 apparente nella fonte, trattata come età reale (nessuna convenzione di longevità per gli Orchi a
+  L28: - **Attitudes**: Alyssa e Jasper Douglas-Bloodmoon a tier "stranger" (mai incontrati), Erik Douglas a tier "ac
+  L33: Come da nuova regola generale §13.3, è stata creata l'entry Lexicon **"Intimacy Profile - Brak Ironfist"** (id
+  L37: Nessuna relazione con altri membri del Concilio già scritti (Zeera, Huck, ecc.) inserita: il materiale sorgent
+==================================================
+FILE: Barrow_Demihuman_Representative_2026-09-14.md
+==================================================
+  L9: Come da §13, l'intero arco protettivo/romantico costruito specificamente attorno a `{{user}}` (inclusa la scen
+  L11: Quello che è stato portato avanti dal materiale originale: aspetto fisico (minotauro 7'4", pelliccia nera cort
+  L17: - **Età**: 42 nella fonte, trattata come età reale (nessuna convenzione di longevità per i Minotauri ancora st
+  L21: **L'utente ha modificato la regola del progetto in chat**: il contenuto anatomico/di kink esplicito e consensu
+  L35: - **Attitudes**: Alyssa e Jasper a tier "stranger" (mai incontrati), Erik Douglas a tier "acknowledged" (stess
+  L36: - **Intimacy Profile separato** (entry Lexicon `_92VBcqq2Wt8bLYD7H4mMn`): registro in prosa (stile Dominic Rog
+  L43: Le regole di progetto (`Istruzioni di Workflow`) sono state aggiornate in locale per riflettere la nuova regol
+==================================================
+FILE: Huck_Beaumont_Rappresentante_Umano_2026-09-14.md
+==================================================
+  L7: Card fornita dall'utente ambientata su una base militare nel sud degli Stati Uniti, costruita interamente atto
+  L9: Cosa è stato portato avanti: nome, età di partenza (alzata su richiesta dell'utente da 43 a 48, "tipo Logan", 
+  L22: - **Cinque Dialogue Examples**: qualcuno che lo sottovaluta al Concilio, la domanda diretta sul perché ha acce
+  L23: - **Attitudes**: Alyssa e Jasper a tier `stranger` (mai incontrati), Logan Douglas a tier `acquaintance` (inte
+  L28: Come da nuova regola generale §13.3, è stata creata l'entry Lexicon **"Intimacy Profile - Huck"** (id `_XFpQwA
+  L32: Il legame Huck→Logan resta a senso unico: manca ancora l'Attitude reciproca sulla scheda di Logan Douglas (§16
+==================================================
+FILE: Harrison_Black_Umano_Magico_2026-09-14.md
+==================================================
+  L9: **Scartato integralmente**: l'intera ambientazione "New Olympus" (Pantheon Syndicate, Labyrinth Network, Cerbe
+  L11: **Mantenuto e riambientato**: aspetto fisico, nome, professione (proprietario della libreria antiquaria Black 
+  L13: ## Scheda completata
+  L20: - Attitudes: Alyssa e Jasper (stranger, mai incontrati), Helena Weiss (friend, 55, unico membro del Concilio l
+  L26: ## Età
+  L28: 45 anni come indicato dall'utente nella fonte, `birthdate`/`start_timeline_position` calcolati per nascita 14 
+  L32: GET fresca dopo tutte le scritture: 5 outfit con default impostato, 5 Dialogue Examples, 3 Attitudes, `birthda
+  L34: ## Stato Concilio aggiornato
+==================================================
+FILE: Marlowe_Voss_NonMorti_Representative_2026-09-14.md
+==================================================
+  L7: Il concept originale proposto in chat (ghoul che si nutre di carne per sostenersi) è stato **rivisto prima di 
+  L9: Marlowe è stata quindi scritta come **contrappunto coerente a Roland**, non come specie alternativa: stessa ca
+  L15: Morta a 34 anni per una malattia, resuscitata a spese della sua famiglia, ferma nell'aspetto da allora. Aspett
+  L17: ## Scheda completata
+  L24: - Attitudes: Alyssa e Jasper (stranger, mai incontrati). Nessun altro personaggio del Concilio citato esplicit
+  L25: - **Nessun Intimacy Profile**: nessun contenuto intimo scritto in questa scheda (personaggio originale, non da
+  L30: ## Età
+  L32: 81 anni anagrafici (nata 12 marzo 1943, data varia per §9.6), ferma nell'aspetto ai 34 anni della morte/resurr
+  L36: GET fresca dopo tutte le scritture: 5 outfit con default impostato, 5 Dialogue Examples, 2 Attitudes, `birthda
+  L40: Con Marlowe Voss si chiudono tutti e sette i seggi minoritari del Concilio di Blackwood: Demoni (Zeera), Orchi
+==================================================
+FILE: Abel_Vilas_Ibridi_Representative_2026-09-14.md
+==================================================
+  L9: **Scartato integralmente (§13.2)**: la relazione "ex-partner" con `{{user}}` (descritta nella fonte come una s
+  L11: **Mantenuto e riambientato**: aspetto fisico completo, nome, occupazione (CEO di Hydra Luxury Resorts, ora sul
+  L13: ## Scheda completata
+  L19: - 5 Dialogue Examples (l'intruso in spiaggia, la sfida sul non aver costruito nulla da solo, il nuoto notturno
+  L20: - Attitudes: Alyssa e Jasper (stranger, mai incontrati). Nessun altro personaggio del Concilio citato esplicit
+  L26: ## Età
+  L28: 30 anni come indicato dall'utente, `birthdate`/`start_timeline_position` calcolati per nascita 2 settembre 199
+  L32: GET fresca dopo tutte le scritture: 5 outfit con default impostato, 5 Dialogue Examples, 2 Attitudes, `birthda
+  L34: ## Stato Concilio aggiornato
+==================================================
+FILE: Cassian_Aralas_Fatati_Representative_2026-09-14.md
+==================================================
+  L9: **Scartato integralmente per Estensione 14/09**: l'intero arco del "vero compagno" (true mate) con `{{user}}`,
+  L17: Cassian non guida più un villaggio di pescatori su un continente in guerra: guida **Wingrest**, una piccola en
+  L19: ## Scheda completata
+  L26: - Attitudes: Alyssa e Jasper (stranger, mai incontrati), Harrison Black (friend, 55, lo prende in giro per far
+  L32: ## Età
+  L34: 312 anni come indicato dall'utente (coerente con la longevità Alatus Fae fino a 600 anni dichiarata nella font
+  L38: GET fresca dopo tutte le scritture: 5 outfit con default impostato, 5 Dialogue Examples, 4 Attitudes, `birthda
+  L40: ## Stato Concilio aggiornato
+==================================================
+FILE: Grave_Mistake_Band_Schede.md
+==================================================
+  L6: outfit, zero dialoghi, zero attitudes, niente RPG, niente Start Position.
+  L16: 1999, Roland 14 giugno 2000, Via 30 settembre 2001. Start Position uguale alla
+  L17: birthdate su tutti e quattro, nessuna oltre `world_age`.
+  L42: convinzione che fosse "solo accennata" era sbagliata: mancava la scheda, non il
+  L84: da fuori, senza niente sotto, perché l'unico che gliel'avrebbe insegnata se n'è
+  L98: Scritto nella scheda come sezione `THE ALPHA HE IS COPYING`, e ripreso nelle
+  L118: - I blocchi anatomici e di kink dalle description (§13.3), spostati negli
+  L143: scheda le inquadra: sono recenti, importate dai forum dopo la morte, e non
+  L168: Contenuto: sono profili di comportamento, non prosa. Quello di Fade è per metà
+  L195: ## Diagnosi aggiornata del bug relationship trees
+  L197: Accantonato per scelta dell'utente il 2026-09-07: controllerà a mano. La
+==================================================
+FILE: FanOC_Staff_Batch1_7Schede_2026-09-15.md
+==================================================
+  L15: | Alad C. ("Coach Alad") | `inz80I_yHr` | "Coach Alad C. \| Massages" by @Yeckiz |
+  L21: La sessione precedente si era chiusa senza lasciare il testo sorgente verbatim recuperabile in questa chat. Le
+  L29: - **Aiden**: la fonte costruiva un'intera cotta segreta e una dinamica clingy/possessiva specificamente intorn
+  L33: - **Alad C.**: la fonte impostava {{user}} come studente infortunato verso cui Alad è sessualmente attratto, c
+  L35: Contenuto anatomico/kink esplicito di tutti e 7 spostato in Intimacy Profile Lexicon entry separate (formato s
+  L45: Tutte e 7 le schede avevano già Start Position = 10486470 impostata sullo stub, coerente col World Age corrent
+  L56: ## Attitudes
+  L67: Per tutti e 7: JED+ completo con `{{age}}` nel campo AGE, summary come PList di tratti, display_description, 5
+  L75: 5. Verifica programmatica post-scrittura: 7/7 schede con 5 outfit, 5 dialogue examples, default_outfit valido,
+==================================================
+FILE: Otto_Fully_Custom_Completamento_2026-09-13.md
+==================================================
+  L8: - **Kai Mitchell**: long_summary/summary/display_description/Attitudes (2, Alyssa/Jasper) già ottimi. Aggiunti
+  L9: - **Sierra Cruz**: prosa eccellente già presente. Aggiunti: `display_description`, 5 outfit, 5 Dialogue Exampl
+  L10: - **Scarlett Rose**: idem. Aggiunti: `display_description`, 5 outfit, 5 Dialogue Examples, Attitudes (5), `fin
+  L11: - **Rev / Revazhael**: idem, Attitudes (4) già presenti e buone. Aggiunti: `display_description`, 5 outfit, 5 
+  L19: Per tutti e otto: 5 outfit contestuali con Default impostato, 5 Dialogue Examples con disciplina di formato, `
+  L23: Il testo di Sierra Cruz nominava un "Professor Roland Vicker" come sua cotta. Nel World esiste un solo Roland,
+  L27: Scarlett Rose (FWB in evoluzione) e Javier Sinclair (coinquilino) non comparivano nelle Attitudes di Jasper st
+  L31: - Attitudes usate anche per cotte a senso unico e non corrisposte: Sierra verso Roland Vickers (`romantic_inte
+  L32: - Scarlett verso Malachia e Marcus Thornfield: non tier negativo nonostante le "molestie da feromoni comiche" 
+  L33: - Confermato dalla scheda di Rev che il tier `romantic_interest` in questo World viene già usato in modo più a
+  L37: Ricaricata la pagina, ri-autenticato, rifetch di tutti e nove i personaggi toccati (gli 8 più Jasper): zero oc
+  L41: Con questo gruppo si chiude l'intero elenco dei 17 personaggi SUCC mai iniziati identificato nell'audit di com
+==================================================
+FILE: Scenari_Arco_2024_9Schede_Completamento_2026-09-20.md
+==================================================
+  L7: 1. **What Do You Want** — Domenica 7 aprile 2024, Villa Douglas, cucina (world_age 10486350 circa)
+  L17: Ogni scenario ha: Nome, Short Description, Location (obbligatoria), When This Begins (world_age calcolato dall
+  L28: Procedere con la ricostruzione delle card dei personaggi principali della famiglia (Erik, Jasper, Alyssa, Mala
+==================================================
+FILE: Eris_Jasmin_Completamento_2026-09-13.md
+==================================================
+  L3: Chiusi gli ultimi due buchi rimasti dall'audit SUCC: zero Dialogue Examples/Attitudes su Eris Davies, zero Att
+  L7: **Dialogue Examples (5, prima 0)**, scritti da zero nello stile già stabilito in scheda (caustica, sorvegliata
+  L9: **Attitudes (4, prima 0):**
+  L11: - Stanley Davies Jr. (il figlio Stan, World Character già esistente): friend (Trusted), intensità 55, amore in
+  L16: Aveva già 5 Dialogue Examples da una lavorazione precedente (verificati di nuovo, formato corretto, zero probl
+  L18: **Attitudes (6, prima 0):**
+  L32: `long_summary` di entrambe ridotto alla riga: Eris "INTIMACY: Guarded and quietly starved for attention she ha
+  L36: PUT parziali su `speech_examples` (solo Eris) e `attitudes` (entrambe), verificati dopo reload completo: 5 Dia
+  L38: ## Stato SUCC aggiornato
+==================================================
+FILE: Adelin_Coso_Completamento_2026-09-13.md
+==================================================
+  L4: A differenza di Venera Dolce e Hideo Reid, Adelin Coso (`_F9dpXcBcnVARF44VDt8pf`) **non era uno stub**: `long_
+  L9: Fonte JanitorAI (`created by gunko 2026© on janitorai.com`) con attributi, backstory e un first_mes ambientato
+  L20: Ricaricata la pagina, ri-autenticato, rifetch: `check` (em-dash/{{user}}/{{char}}/bold-markdown) vuoto, 5 outf
+==================================================
+FILE: Hideo_Reid_Card_2026-09-13.md
+==================================================
+  L4: Card esistente su Wyvern come stub minimo (`_1WCQ14AbLVDKXcCAqkaCc`): solo `display_name`, `display_descriptio
+  L17: Non è stata creata una entry Lexicon Intimacy Profile per lui: il contenuto intimo della fonte era inscindibil
+  L22: Specie (Kitsune), nazionalità, età (56), aspetto fisico completo, backstory (vedovo, moglie Rosie morta di leu
+  L28: - `long_summary` (JED+: NAME block, BACKSTORY, LIFE AT SUCC, VOICE & BEHAVIOR, THE LINE), `{{age}}` nel campo 
+  L33: - `birthdate`/`start_timeline_position`: 14 novembre 1967 (ora mondo 9992136), età 56 corretta rispetto a worl
+  L35: - Attitudes verso Alyssa/Jasper lasciate invariate (stranger, corrette: nessun altro personaggio del World è c
+  L38: Ricaricata la pagina, ri-autenticato, rifetch della card: `check` (em-dash/{{user}}/{{char}}/bold-markdown) vu
+==================================================
+FILE: Venera_Dolce_Card_2026-09-13.md
+==================================================
+  L1: # Venera Dolce, scheda completa (2026-09-13)
+  L7: - **Relazione con `{{user}}`**: la fonte la descrive come "lab partner di `{{user}}` in xenobiologia" con un a
+  L18: - **Attitudes**: Alyssa e Jasper mantenuti su stranger (già presenti sullo stub, non toccati nella sostanza), 
+  L20: - `birthdate`/`start_timeline_position`: 2000-11-03, calcolata per farla risultare 23enne al world_age attuale
+  L25: Tutto scritto via PUT parziale sul Character più un POST sul Lexicon per l'Intimacy Profile, **verificato dopo
+==================================================
+FILE: Vincent_Campbell_Card.md
+==================================================
+  L1: # Vincent "Vince" Campbell — scheda completata
+  L13: | Outfit | 5: Bears Jersey Game Night, Campus King, Alpha Sigma Sigma Full Rager, The Federation Banquet, Dayl
+  L15: | Attitudes | 6: Andrew, Noah, Finn, Alyssa, Jasper (preesistenti) + **Jared Thompson** |
+  L19: | Start Position | 10524264 (8 agosto 2000) |
+  L20: | Birthdate | 8 agosto 2000, offset `-205104` |
+  L42: è governato dal Sole**, e Vincent è un vampiro che il sole lo fa star male e
+  L48: segreta della squadra rivale. Rimosso ogni destinatario. Quello che resta,
+  L61: **La sezione [The First Line] già presente sulla scheda grezza diceva che Noah
+  L63: `Hockey_Line_And_Finn_Alyssa_Arc.md` e del titolo "Right Wing" sulla scheda di
+  L73: con chi se lo è guadagnato": **il pregiudizio si piega davanti al pedigree.**
+  L84: risentimento senza averne mai patito un giorno. Nella scheda è scritto come la
+  L105: Quindi ho aggiunto una sezione **HEX VALLEY** alla scheda che usa il canon vero
+  L116: | Occhi di Andy | "dark gray" in tre blocchi NPC, "brown" in due | **Dark gray**, che è anche quanto dice la s
+  L117: | Occhi di Finn | Qui "pink", ma la scheda di Finn dice occhi rossi lupini | Lasciata la scheda di Finn, le su
+  L131: Questa è la prima scheda scritta **interamente via API** invece che
+  L134: click a vuoto. Il round-trip resta la garanzia: si rilegge la scheda dal server
+  L137: L'unica cosa che l'API non fa da sola è la **birthdate**, che va calcolata come
+  L139: ricavato dalla scheda di Andrew. Per Vincent: `-205104`.
+  L141: **Da fare prima di ogni scheda nuova:** controllare cosa esiste già come
+==================================================
+FILE: Andrew_Campbell_Card.md
+==================================================
+  L1: # Andrew "Andy" Campbell — scheda completata
+  L15: | Attitudes | 5: Vincent, Noah, Finn, Alyssa, Jasper |
+  L19: | Start Position | 10538088 (7 marzo 2002, giovedì) |
+  L20: | Birthdate | 7 marzo 2002, offset `-191280` |
+  L45: `{{user}}` la cotta o il partner di Andy. Rimosso ogni destinatario, tenuto il
+  L59: (l'outfit `Anime Club` e i riferimenti ad Andrew stanno sulla scheda di
+  L73: pietà. **Stanno portando la stessa ferita**, uno come il Campbell minore e uno
+  L99: | Ghiaccio | Bravo pattinatore in tre varianti, cade rovinosamente in un'altra | Non è un conflitto: cade **de
+  L104: **Condition/Control, misurati sulla stessa scheda:**
+  L116: **Attitudes.** Quattro parti: tipo di bersaglio, bersaglio, livello e
+  L119: `Attitudes_Audit_2026-09-03.md`: attenzione a **Wary**, che sembra "diffidente"
+  L132: **Birthdate.** Toggle, poi anno, mese (combobox) e giorno. Sul server è un
+==================================================
+FILE: Tomas_Matthews_Card.md
+==================================================
+  L1: # Tomas Matthews — scheda completata
+  L3: Fonte: card di `Iorveths` (janitorai.com). A differenza di Santiago, questa card **non era un import grezzo**:
+  L16: | Start Position / Birthdate | 10302288 = 2 aprile 2003 (già presente, non toccata) |
+  L18: | Attitudes | 5 (vedi sotto) |
+  L29: **Secondo passaggio, su indicazione esplicita dell'utente:** l'utente ha chiesto di reintegrare l'ideologia Hu
+  L35: **Non creato** un personaggio separato per Rhodes Adams (il migliore amico), citato solo nel testo se necessar
+  L37: ## Attitudes, con motivazione
+  L49: MGT 8 e AGI 5 perché era davvero un atleta forte al liceo, non un millantatore puro. RES 7, fisico resistente.
+==================================================
+FILE: Santiago_Herrera_Card.md
+==================================================
+  L1: # Santiago Herrera — scheda completata
+  L3: Fonte: card di `Iorveths` (janitorai.com), stesso autore/ecosistema delle schede Grave Mistake. La card esiste
+  L17: | Start Position / Birthdate | 10298160 = 12 ottobre 2002 (inventata, dichiarata: fonte non dava una data di n
+  L19: | Attitudes | 6 (vedi sotto) |
+  L26: La fonte lo dava come fidanzato di `{{user}}`, con un Relationships block dedicato e un First Message intero (
+  L39: - La card di **Jared Thompson** (già completa, 7 outfit, 5 attitudes) descrive tra i suoi amici più stretti "a
+  L42: ## Attitudes, con motivazione
+  L59: - **Tomas Matthews** (Mu Alpha Nu, umano, simpatizzante Humans First) proposto come possibile abbinamento tema
+  L60: - La card di **Jared Thompson** non è stata aggiornata per rendere esplicita la reciprocità dell'amicizia con 
+==================================================
+FILE: Bailey_Rogers_Card.md
+==================================================
+  L1: # Bailey Rogers — Scheda completata
+  L3: Costruita dal materiale sorgente fornito dall'utente (Scenario SUCC/CUMS, blocco Personality raw `<bailey_roge
+  L13: - **`birthdate` e `start_timeline_position`**: mancavano del tutto (campo assente dall'oggetto, non solo vuoto
+  L16: - **Attitudes**: da 3 a 6. Aggiunte: Dominic Rogers (padre, `wary`, intensity 70, rapporto teso ma con l'affet
+  L26: - **First Message fornito dall'utente** (la scena dello spogliatoio con la chiamata del padre): non esiste un 
+  L28: ## Scoperta collaterale: vocabolario reale dei Tier delle Attitudes
+  L34: Tredici valori, snake_case, concettualmente sovrapponibili alla ladder documentata ma con etichette diverse (n
+  L38: Verificato dopo reload completo: `long_summary` 4544 caratteri in JED+, `summary` 763 caratteri PList, `displa
+==================================================
+FILE: Archer_Wolfwood_Card.md
+==================================================
+  L1: # Archer Wolfwood: scheda completata
+  L4: completo. Era una scheda grezza da 1611 caratteri con due errori dentro; adesso è
+  L5: **6352 caratteri** e completa tranne la Start Position, che è bloccata da una
+  L23: - età, data di nascita, trittico zodiacale, biografia, voce, outfit, dialoghi
+  L36: **Nato il 14 maggio 1867. Aveva quarantun anni nel 1908**, quando la città è
+  L39: esattamente la descrizione fisica che la scheda aveva già: capelli scuri striati
+  L44: l'istituzione e non l'ha mai consegnata a nessuno.**
+  L46: ### Il dettaglio che vale la scheda
+  L82: ## Cosa contiene la scheda adesso
+  L91: | Attitudes | 0 | **4** |
+  L94: **Due errori corretti nella scheda vecchia:** diceva `Rettore della SUCC,
+  L120: ### Attitudes
+  L134: vivo**, e ha conosciuto Magnus a un'età che Erik non riconoscerebbe.
+  L136: Sulla scheda c'è scritto così: *non l'ha mai tirato fuori in una trattativa. Se
+  L146: ## Aggiornata anche la entry di fondazione
+  L154: **Start Position**, unico passo della pipeline non fatto, perché dipende dalla
+==================================================
+FILE: Barkley_Rover_Card_v2_DA_APPLICARE.md
+==================================================
+  L13: | Età | 34 | **32** |
+  L25: | Casa | contratto rinnovato sei volte | **bachelor pad incasinato, a piedi dal campus** |
+  L29: Roba nuova dalle fonti entrata in card: rut ogni sei mesi; permaloso sull'essere demiumano cane e detesta esse
+  L50: | Start Position | 10450560 = 12 marzo 1992 |
+  L57: **Perché queste stat.** AGI 2 e WIT 2 sono deliberati: è goffo e non è sveglio, e la scheda deve dirlo. MGT 8 

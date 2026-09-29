@@ -1,0 +1,1068 @@
+{
+  "Eithne Dal'Kereth": {
+    "id": "_fztKQyNBwtnPkcRjRYyXn",
+    "doc_sources": [],
+    "extracted_fields": {}
+  },
+  "Yael": {
+    "id": "_Ht3kV76zrCE9tPmDAYh8Q",
+    "doc_sources": [],
+    "extracted_fields": {}
+  },
+  "Bryson": {
+    "id": "_c9RzyCnzzLey247dtph9x",
+    "doc_sources": [
+      "Piano_Integrazione_Wyldfire_2026-09-22.md"
+    ],
+    "extracted_fields": {}
+  },
+  "Zero": {
+    "id": "_Mwqxw2M1NaxwXgTmxEXGr",
+    "doc_sources": [
+      "Audit_Los_Angeles_2026-09-14.md",
+      "Blackwood_District_Alphas_Completamento_2026-09-14.md",
+      "INDEX.md",
+      "LosAngeles_Sinners_Lieutenants_Everett_Damien_2026-09-15.md",
+      "Ruoli_Branco_E_Casa_E_Pulizia_Formato.md",
+      "Zero_Wrath_Sinners_Completamento_2026-09-14.md"
+    ],
+    "extracted_fields": {
+      "Tutti e 17 hanno **zero** `long_summary`: il campo": "Tutti e 17 hanno **zero** `long_summary`: il campo `summary` contiene ancora il testo grezzo di importazione in stile JanitorAI (blocco `Name/Class/Demographics/Appearance/Personality/Background/Relationships/Dialogue`, in alcuni casi ancora dentro tag `<nome>...</nome>`), esattamente il caso descritto in §2 (\"una scheda importata grezza... non è una scheda lavorata\"). Nessuno ha outfit, dialogue examples, attitudes, o final_instructions.",
+      "3. **Attitudes incrociate interne**: il testo grez": "3. **Attitudes incrociate interne**: il testo grezzo descrive già una fitta rete di rapporti tra questi 17 (Jean-Luc-Siobhan, Zero-Danny odio reciproco, Roxie-Kevin, Dante-Siobhan, Rory-Sully-Harper-Danny come famiglia scelta, Alistair-Cato, DeVille-Ballantine rivalità di fondo). Andranno tutte incrociate e scritte reciprocamente, non solo verso Alyssa/Jasper.",
+      "Audit e completamento pipeline dei 9 personaggi de": "Audit e completamento pipeline dei 9 personaggi della cartella \"Blackwood\" del World, i District Alpha che governano i quartieri di Blackwood City. Stato di partenza (verificato via GET diretto): tutti e 9 avevano `long_summary` in JED+ già scritto e completo, ma **zero** outfit, **zero** speech example, **zero** attitudes, **zero** final_instructions, e display_description vuota. Un divario sistemico non ancora toccato in nessuna sessione precedente.",
+      "## Attitudes assegnate": "## Attitudes assegnate",
+      "Rieseguito GET su tutti e 9 dopo un reload complet": "Rieseguito GET su tutti e 9 dopo un reload completo della pagina (nuovo token). Per ciascuno confermato: 5 outfit con default impostato, 5 speech example, final_instructions presente, birthdate === start_timeline_position (nessuno di questi era stato toccato, erano già coerenti), long_summary in inglese puro (nessun carattere accentato italiano residuo), e `window.CHECK()` pulito su tutti (zero em-dash, zero `{{user}}`, zero grassetto markdown).",
+      "## Aggiornamenti incrociati (Attitudes, §16)": "## Aggiornamenti incrociati (Attitudes, §16)",
+      "- **Zero**: aggiunta l'Attitude reciproca verso Ro": "- **Zero**: aggiunta l'Attitude reciproca verso Roxie (rival/55, \"fights constantly\", citata sulla scheda di Roxie ma assente sul lato di Zero), ora **6 Attitudes**.",
+      "Script eseguito in due tempi (un `NameError` su un": "Script eseguito in due tempi (un `NameError` su una costante mancante nell'ultimo blocco di cross-reference ha richiesto un secondo script di completamento mirato; le sei schede principali erano già state scritte e committate correttamente al momento dell'errore, verificato che nessuna scrittura fosse duplicata prima di procedere). `PRAGMA integrity_check` ok, conteggio World invariato a 134, conteggio Lexicon a 221 (+2 Intimacy Profile). Zero `{{user}}`, zero em-dash, zero markdown grassetto su tutte le sei schede e sulle due entry Lexicon. Tutte le Attitudes risolvono su id di personaggi effettivamente presenti nel World. Outfit: 5 per scheda, tutti con chiave `avatar`, `default_outfit` valido su tutte e sei. Scritto sul dispositivo dopo conferma che Wyldfire fosse chiuso, nessun file `-wal`/`-shm` residuo trovato dopo la scrittura.",
+      "Verificato con GET autenticata fresca dopo la scri": "Verificato con GET autenticata fresca dopo la scrittura: zero `{{user}}`, zero em-dash, zero grassetto, birthdate/start coincidenti, tutti i campi presenti."
+    }
+  },
+  "Zeera": {
+    "id": "_a6KYGdN3BWTgbYEbT4mx8",
+    "doc_sources": [
+      "Concilio_QuattroDistretti_E_Vito_Pureblood_2026-09-14.md",
+      "INDEX.md",
+      "Marek_Zeera_Brak_Huck_Ut_Ariadne_Completamento_2026-09-22.md",
+      "Simulation_World_Features_Disattivate_2026-09-13.md",
+      "Zeera_HSK_Consulting_Completamento_2026-09-14.md"
+    ],
+    "extracted_fields": {
+      "- **Attitudes**: Alyssa e Jasper Douglas-Bloodmoon": "- **Attitudes**: Alyssa e Jasper Douglas-Bloodmoon a tier \"stranger\" (mai incontrati, nessun motivo di contatto), Erik Douglas a tier \"acknowledged\" (rapporto politico principale di Zeera a Blackwood, indipendenza deliberata da DCC).",
+      "### Nota sui tier delle Attitudes (chiarita dall'u": "### Nota sui tier delle Attitudes (chiarita dall'utente)"
+    }
+  },
+  "Vito Marino": {
+    "id": "_QqYg238LKb4K6t3ERh4YD",
+    "doc_sources": [
+      "Blackwood_District_Alphas_Completamento_2026-09-14.md",
+      "Simulation_World_Features_Disattivate_2026-09-13.md"
+    ],
+    "extracted_fields": {
+      "## Attitudes assegnate": "## Attitudes assegnate"
+    }
+  },
+  "Viola Carter": {
+    "id": "_Tq76qk4hArR8WUej4Hxh8",
+    "doc_sources": [],
+    "extracted_fields": {}
+  },
+  "Vincent Campbell": {
+    "id": "_U3JX1Xd9Um2ff4fA64wcr",
+    "doc_sources": [
+      "Audit_Schede_2026-09-03.md",
+      "Fraternity_Sorority_Row.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md",
+      "Supernatural_Civil_Status.md",
+      "TODO_Consolidato.md"
+    ],
+    "extracted_fields": {
+      "**82 schede su 86 non hanno Start Position.** Ne h": "**82 schede su 86 non hanno Start Position.** Ne hanno solo quattro:",
+      "> **Leggere prima `Timeline_Apertura_E_Rush.md`.**": "> **Leggere prima `Timeline_Apertura_E_Rush.md`.** All'apertura del World, il 25",
+      "**Non e' ancora successo.** Vedi `Timeline_Apertur": "**Non e' ancora successo.** Vedi `Timeline_Apertura_E_Rush.md`.",
+      "### Attitudes di Jasper, aggiornate": "### Attitudes di Jasper, aggiornate",
+      "- Rivedere le **Attitudes di Erik verso Jasper** e": "- Rivedere le **Attitudes di Erik verso Jasper** e di **Noah verso Jasper** alla",
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e",
+      "| **Start Position mancante** | **78** | vedi §3, ": "| **Start Position mancante** | **78** | vedi §3, c'è una contraddizione da sciogliere |",
+      "| **Attitudes verso Alyssa e Jasper mancanti** | *": "| **Attitudes verso Alyssa e Jasper mancanti** | **50** | obbligatorie per §16, anche solo a Unknown Scent |",
+      "| **Birthdate mancante** | **42** | vedi §2 |": "| **Birthdate mancante** | **42** | vedi §2 |",
+      "birthdate, età scritta a mano (76), due em-dash. V": "birthdate, età scritta a mano (76), due em-dash. Vive solo di `summary` e cinque",
+      "birthdate: Eris Davies, Jasmin Thompson, Stanley D": "birthdate: Eris Davies, Jasmin Thompson, Stanley Davies Sr. e Jr., Hank",
+      "- **42 schede senza birthdate.** Per le 15 già in ": "- **42 schede senza birthdate.** Per le 15 già in checklist si usa il criterio",
+      "- **5 birthdate segnaposto al 1° gennaio**, contro": "- **5 birthdate segnaposto al 1° gennaio**, contro la preferenza registrata:",
+      "## 3. La contraddizione sulle Start Position (aper": "## 3. La contraddizione sulle Start Position (aperta)",
+      "- La **§7 riscritta**: i **vivi** hanno la sola **": "- La **§7 riscritta**: i **vivi** hanno la sola **Start Position**; i deceduti",
+      "Oggi solo **8 schede su 88** hanno una Start Posit": "Oggi solo **8 schede su 88** hanno una Start Position. Se vale la §7 c'è un",
+      "| **§7 / Character Pool** | sciogliere la contradd": "| **§7 / Character Pool** | sciogliere la contraddizione sui pool e sulle Start Position dei vivi | questo doc, §3 |"
+    }
+  },
+  "Tomas Matthews": {
+    "id": "_pbNb7PrEanM1twU612VNg",
+    "doc_sources": [
+      "Fraternity_Sorority_Row.md",
+      "INDEX.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md",
+      "Santiago_Herrera_Card.md",
+      "Tomas_Matthews_Card.md",
+      "Zodiaco_Trittici_NPC.md"
+    ],
+    "extracted_fields": {
+      "> **Leggere prima `Timeline_Apertura_E_Rush.md`.**": "> **Leggere prima `Timeline_Apertura_E_Rush.md`.** All'apertura del World, il 25",
+      "**Non e' ancora successo.** Vedi `Timeline_Apertur": "**Non e' ancora successo.** Vedi `Timeline_Apertura_E_Rush.md`.",
+      "### Attitudes di Jasper, aggiornate": "### Attitudes di Jasper, aggiornate",
+      "- Rivedere le **Attitudes di Erik verso Jasper** e": "- Rivedere le **Attitudes di Erik verso Jasper** e di **Noah verso Jasper** alla",
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e",
+      "| Attitudes | 6 (vedi sotto) |": "| Attitudes | 6 (vedi sotto) |",
+      "## Attitudes, con motivazione": "## Attitudes, con motivazione",
+      "- **Tomas Matthews** (Mu Alpha Nu, umano, simpatiz": "- **Tomas Matthews** (Mu Alpha Nu, umano, simpatizzante Humans First) proposto come possibile abbinamento tematico: già ha birthdate/Start Position impostati ma zero outfit/dialoghi/attitudes/RPG. L'utente non ha ancora mandato materiale sorgente né confermato l'abbinamento.",
+      "| Start Position / Birthdate | 10302288 = 2 aprile": "| Start Position / Birthdate | 10302288 = 2 aprile 2003 (già presente, non toccata) |",
+      "| Attitudes | 5 (vedi sotto) |": "| Attitudes | 5 (vedi sotto) |",
+      "Applicato per la prima volta alle **cinque schede ": "Applicato per la prima volta alle **cinque schede che avevano una birthdate",
+      "usare sempre il primo del mese. **Nel World non re": "usare sempre il primo del mese. **Nel World non resta più nessuna data di nascita",
+      "**Un'eccezione dichiarata: Marcus.** Avevi detto d": "**Un'eccezione dichiarata: Marcus.** Avevi detto di tenere buona la birthdate, e",
+      "la birthdate salvata era del 1985. Ho tenuto il 19": "la birthdate salvata era del 1985. Ho tenuto il 1985 e cambiato solo giorno e",
+      "Restano **44 schede senza birthdate**, di cui 42 p": "Restano **44 schede senza birthdate**, di cui 42 preesistenti e 2 sono gli stub"
+    }
+  },
+  "Tate": {
+    "id": "_RQQcCAN4MHETcJLhXPe9k",
+    "doc_sources": [
+      "Andrew_Campbell_Card.md",
+      "Coda_Audit_Intimacy_Profile_World_2026-09-14.md",
+      "Dialogue_Examples_Batch1_Finn_Casey_Jared_Tate.md",
+      "Lorebook_Ufficiali_IOVERSE_E_Q_And_A_Residui.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md",
+      "Tate_And_The_Lab_Survivors.md"
+    ],
+    "extracted_fields": {
+      "| Attitudes | 5: Vincent, Noah, Finn, Alyssa, Jasp": "| Attitudes | 5: Vincent, Noah, Finn, Alyssa, Jasper |",
+      "| Start Position | 10538088 (7 marzo 2002, giovedì": "| Start Position | 10538088 (7 marzo 2002, giovedì) |",
+      "| Birthdate | 7 marzo 2002, offset `-191280` |": "| Birthdate | 7 marzo 2002, offset `-191280` |",
+      "**Data di nascita: invenzione dichiarata.** Le fon": "**Data di nascita: invenzione dichiarata.** Le fonti danno solo \"22 anni\".",
+      "**Attitudes.** Quattro parti: tipo di bersaglio, b": "**Attitudes.** Quattro parti: tipo di bersaglio, bersaglio, livello e",
+      "`Attitudes_Audit_2026-09-03.md`: attenzione a **Wa": "`Attitudes_Audit_2026-09-03.md`: attenzione a **Wary**, che sembra \"diffidente\"",
+      "**Birthdate.** Toggle, poi anno, mese (combobox) e": "**Birthdate.** Toggle, poi anno, mese (combobox) e giorno. Sul server è un",
+      "- Gli altri buchi sistemici già noti da audit prec": "- Gli altri buchi sistemici già noti da audit precedenti (display_description, Start Position, format discipline, Default Outfit mancanti) su porzioni del roster mai auditate sistematicamente insieme a questo controllo.",
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e"
+    }
+  },
+  "Sullivan \"Sully\" Jones": {
+    "id": "_E7kHtwcpVYedVkVTmMGKX",
+    "doc_sources": [
+      "INDEX.md",
+      "Roster_Canon_Underworld_Modern_Fantasy.md",
+      "Sully_Jones_Ballantine_Completamento_2026-09-14.md"
+    ],
+    "extracted_fields": {}
+  },
+  "Stanley Davies Sr.": {
+    "id": "_gqFXEaVj4aG9a8QL8R7f1",
+    "doc_sources": [
+      "Coda_Audit_Intimacy_Profile_World_2026-09-14.md",
+      "Lorebook_Ufficiali_IOVERSE_E_Q_And_A_Residui.md",
+      "Outfit_HybridFullShift_SUCC_2026-09-13.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md"
+    ],
+    "extracted_fields": {
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e"
+    }
+  },
+  "Stanley Davies Jr.": {
+    "id": "_C18UjnQzGMLcQaNW3UaKq",
+    "doc_sources": [
+      "Coda_Audit_Intimacy_Profile_World_2026-09-14.md",
+      "Dialogue_Examples_Batch2_Restanti_Dieci.md",
+      "Outfit_HybridFullShift_SUCC_2026-09-13.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md",
+      "SUCC_Setting_Canon.md",
+      "Tate_And_The_Lab_Survivors.md",
+      "Thompson_Family_Reference.md"
+    ],
+    "extracted_fields": {
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e"
+    }
+  },
+  "Sierra": {
+    "id": "_J3pEpeWqWFQBPtN3mjrDW",
+    "doc_sources": [
+      "Fraternity_Sorority_Row.md"
+    ],
+    "extracted_fields": {
+      "> **Leggere prima `Timeline_Apertura_E_Rush.md`.**": "> **Leggere prima `Timeline_Apertura_E_Rush.md`.** All'apertura del World, il 25",
+      "**Non e' ancora successo.** Vedi `Timeline_Apertur": "**Non e' ancora successo.** Vedi `Timeline_Apertura_E_Rush.md`.",
+      "### Attitudes di Jasper, aggiornate": "### Attitudes di Jasper, aggiornate",
+      "- Rivedere le **Attitudes di Erik verso Jasper** e": "- Rivedere le **Attitudes di Erik verso Jasper** e di **Noah verso Jasper** alla"
+    }
+  },
+  "Scarlett Rose": {
+    "id": "_ykqALFc4CQN14zTrMQpat",
+    "doc_sources": [
+      "Audit_Schede_2026-09-03.md",
+      "Fraternity_Sorority_Row.md",
+      "Otto_Fully_Custom_Completamento_2026-09-13.md",
+      "Piano_Integrazione_Wyldfire_2026-09-22.md",
+      "Triage_Memory_Scan_Due_Test.md"
+    ],
+    "extracted_fields": {
+      "**82 schede su 86 non hanno Start Position.** Ne h": "**82 schede su 86 non hanno Start Position.** Ne hanno solo quattro:",
+      "> **Leggere prima `Timeline_Apertura_E_Rush.md`.**": "> **Leggere prima `Timeline_Apertura_E_Rush.md`.** All'apertura del World, il 25",
+      "**Non e' ancora successo.** Vedi `Timeline_Apertur": "**Non e' ancora successo.** Vedi `Timeline_Apertura_E_Rush.md`.",
+      "### Attitudes di Jasper, aggiornate": "### Attitudes di Jasper, aggiornate",
+      "- Rivedere le **Attitudes di Erik verso Jasper** e": "- Rivedere le **Attitudes di Erik verso Jasper** e di **Noah verso Jasper** alla",
+      "- **Scarlett Rose**: idem. Aggiunti: `display_desc": "- **Scarlett Rose**: idem. Aggiunti: `display_description`, 5 outfit, 5 Dialogue Examples, Attitudes (5), `final_instructions`.",
+      "Scarlett Rose (FWB in evoluzione) e Javier Sinclai": "Scarlett Rose (FWB in evoluzione) e Javier Sinclair (coinquilino) non comparivano nelle Attitudes di Jasper stesso, nonostante fossero relazioni sostanziali e già scritte dal loro lato. Su conferma esplicita dell'utente, aggiunte due nuove Attitudes alla scheda di Jasper (letta e riscritta per intero, mantenendo le 6 esistenti): Scarlett Rose a `romantic_interest` 70, Javier Sinclair a `close_friend` 65. Nessun altro campo di Jasper toccato."
+    }
+  },
+  "Santiago Herrera": {
+    "id": "_c643VDjNFzAMgj7xGKGXT",
+    "doc_sources": [
+      "Fraternity_Sorority_Row.md",
+      "INDEX.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md",
+      "Santiago_Herrera_Card.md"
+    ],
+    "extracted_fields": {
+      "> **Leggere prima `Timeline_Apertura_E_Rush.md`.**": "> **Leggere prima `Timeline_Apertura_E_Rush.md`.** All'apertura del World, il 25",
+      "**Non e' ancora successo.** Vedi `Timeline_Apertur": "**Non e' ancora successo.** Vedi `Timeline_Apertura_E_Rush.md`.",
+      "### Attitudes di Jasper, aggiornate": "### Attitudes di Jasper, aggiornate",
+      "- Rivedere le **Attitudes di Erik verso Jasper** e": "- Rivedere le **Attitudes di Erik verso Jasper** e di **Noah verso Jasper** alla",
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e",
+      "| Attitudes | 6 (vedi sotto) |": "| Attitudes | 6 (vedi sotto) |",
+      "## Attitudes, con motivazione": "## Attitudes, con motivazione"
+    }
+  },
+  "Russ Sinclair": {
+    "id": "_8yfNebN71a73b3W84Nee1",
+    "doc_sources": [
+      "Solarton_FiveCocketeers_2026-09-15.md"
+    ],
+    "extracted_fields": {
+      "## Attitudes obbligatorie": "## Attitudes obbligatorie",
+      "Alyssa Douglas Bloodmoon e Jasper Douglas Bloodmoo": "Alyssa Douglas Bloodmoon e Jasper Douglas Bloodmoon (`stranger`/intensity 15, mai incontrati) su tutte e quattro le schede nuove (Dean, Javier Reyes, Eric, Raymond). Russ Sinclair mantiene invece le sue Attitudes preesistenti verso Alyssa (`acquaintance`/30) e Jasper (`close_friend`/65, testo aggiornato), non essendo un personaggio nuovo.",
+      "Nate variate come da convenzione (§9.6), nessuna a": "Nate variate come da convenzione (§9.6), nessuna al primo del mese: Dean 3 novembre 2002 (21 anni), Russ Sinclair 14 agosto 2002 (21 anni, ricalcolata dalla fusione), Javier Reyes 5 dicembre 2001 (22 anni), Eric 27 settembre 2003 (20 anni), Raymond 30 ottobre 2001 (22 anni). Start Position = birthdate su tutti, nessuna End Position (tutti vivi, contemporanei).",
+      "`PRAGMA integrity_check` ok, conteggio World 132/1": "`PRAGMA integrity_check` ok, conteggio World 132/132, zero `{{user}}`, zero em-dash, zero grassetto markdown su tutte le righe toccate (4 character nuovi + 1 character aggiornato + attitudes di Jasper aggiornate + 4 lexicon entry), tutti gli outfit con chiave `avatar` presente, tutti i `default_outfit` validi e presenti nel rispettivo array outfits, tutte le Attitudes risolte correttamente per id locale (compresa la verifica esplicita che l'id di Russ Sinclair sia rimasto invariato e che l'Attitude di Jasper faccia ora riferimento testuale a \"Russ\" e non più a \"Javier\"), nessuna collisione di chiavi tra le schede nuove e quelle esistenti. Scritto sul dispositivo dopo conferma che Wyldfire fosse chiuso, nessun file `-wal`/`-shm` residuo trovato dopo la scrittura."
+    }
+  },
+  "Ruaraidh \"Rory\" Ballantine": {
+    "id": "_13rj1V7hPaJ2QederUYkx",
+    "doc_sources": [
+      "INDEX.md",
+      "Rory_Ballantine_Completamento_2026-09-14.md"
+    ],
+    "extracted_fields": {}
+  },
+  "Roman Blackwood": {
+    "id": "_9prjebmrgUC3zX3Qyew6a",
+    "doc_sources": [
+      "Consolidamento_Sessione_2026-09-15.md",
+      "Solarton_Roman_Kolya_2026-09-15.md",
+      "Stub_FanOC_Creazione_313Schede_2026-09-15.md"
+    ],
+    "extracted_fields": {
+      "- `end_timeline_position`: vuoto (nessuna indicazi": "- `end_timeline_position`: vuoto (nessuna indicazione di decesso dalla fonte)."
+    }
+  },
+  "Roland Vickers": {
+    "id": "_2g1adXnHXcK62pVzGHUBm",
+    "doc_sources": [
+      "Otto_Fully_Custom_Completamento_2026-09-13.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md",
+      "Roster_Canon_SUCC_Stato_Schede.md"
+    ],
+    "extracted_fields": {
+      "- Attitudes usate anche per cotte a senso unico e ": "- Attitudes usate anche per cotte a senso unico e non corrisposte: Sierra verso Roland Vickers (`romantic_interest` 70, lui non sa nemmeno che esiste in questo senso) e Brittany verso Malachia Douglas (`romantic_interest` 65, lui l'ha respinta più volte e in modo esplicito, incluso l'ordine di togliere il poster). In entrambi i casi il `reasoning` chiarisce che non c'è reciprocità, per evitare che il modello la improvvisi.",
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e",
+      "| Scheda | Stato | Outfit | Dialoghi | Attitudes |": "| Scheda | Stato | Outfit | Dialoghi | Attitudes |",
+      "poco sopra, e tutti e tre non hanno outfit, dialog": "poco sopra, e tutti e tre non hanno outfit, dialoghi né attitudes.",
+      "**4. Solo cinque su ventisei hanno una data di nas": "**4. Solo cinque su ventisei hanno una data di nascita.** Andrew, Vincent, Chase,",
+      "che hanno già la data di nascita e il trittico zod": "che hanno già la data di nascita e il trittico zodiacale.",
+      "4. **Le ventuno birthdate mancanti**, col metodo d": "4. **Le ventuno birthdate mancanti**, col metodo del trittico, al momento della"
+    }
+  },
+  "Rev": {
+    "id": "_DGkc2ALEYzNJ6mqGCW1KC",
+    "doc_sources": [
+      "Fraternity_Sorority_Row.md",
+      "INDEX.md",
+      "Review_Pending_Status.md",
+      "Scenari_Arco_2024_9Schede_2026-09-16.md",
+      "Zodiaco_Trittici_NPC.md"
+    ],
+    "extracted_fields": {
+      "> **Leggere prima `Timeline_Apertura_E_Rush.md`.**": "> **Leggere prima `Timeline_Apertura_E_Rush.md`.** All'apertura del World, il 25",
+      "**Non e' ancora successo.** Vedi `Timeline_Apertur": "**Non e' ancora successo.** Vedi `Timeline_Apertura_E_Rush.md`.",
+      "### Attitudes di Jasper, aggiornate": "### Attitudes di Jasper, aggiornate",
+      "- Rivedere le **Attitudes di Erik verso Jasper** e": "- Rivedere le **Attitudes di Erik verso Jasper** e di **Noah verso Jasper** alla",
+      "**MAGNUS DOUGLAS III**: **357 anni**, nato **sabat": "**MAGNUS DOUGLAS III**: **357 anni**, nato **sabato 29 dicembre 1668**. **Timeline Start/End VUOTE** perché vivo: convenzione del World per i viventi (verificata su Logan); Start/End solo per i deceduti. **CORNELIUS**: nato **giovedì 14 agosto 1631** (Leone), morto **3 novembre 1856** (225 anni), Start 7289808 / End 9264072. Nota fonti: LSE_07 lo dice figlio di \"a minor English noble House\", la genealogia dell'utente implica una casata **ducale**; prevale l'utente (regola #9).",
+      "- **Lord Cornelius Douglas e Nixara Bloodmoon**: c": "- **Lord Cornelius Douglas e Nixara Bloodmoon**: creati come Character con Timeline — **COMPLETATO**.",
+      "Applicato per la prima volta alle **cinque schede ": "Applicato per la prima volta alle **cinque schede che avevano una birthdate",
+      "usare sempre il primo del mese. **Nel World non re": "usare sempre il primo del mese. **Nel World non resta più nessuna data di nascita",
+      "**Un'eccezione dichiarata: Marcus.** Avevi detto d": "**Un'eccezione dichiarata: Marcus.** Avevi detto di tenere buona la birthdate, e",
+      "la birthdate salvata era del 1985. Ho tenuto il 19": "la birthdate salvata era del 1985. Ho tenuto il 1985 e cambiato solo giorno e",
+      "Restano **44 schede senza birthdate**, di cui 42 p": "Restano **44 schede senza birthdate**, di cui 42 preesistenti e 2 sono gli stub"
+    }
+  },
+  "Raymond": {
+    "id": "_NEw34RqyjnJHBApGXrt2M",
+    "doc_sources": [
+      "Solarton_FiveCocketeers_2026-09-15.md"
+    ],
+    "extracted_fields": {
+      "## Attitudes obbligatorie": "## Attitudes obbligatorie",
+      "Alyssa Douglas Bloodmoon e Jasper Douglas Bloodmoo": "Alyssa Douglas Bloodmoon e Jasper Douglas Bloodmoon (`stranger`/intensity 15, mai incontrati) su tutte e quattro le schede nuove (Dean, Javier Reyes, Eric, Raymond). Russ Sinclair mantiene invece le sue Attitudes preesistenti verso Alyssa (`acquaintance`/30) e Jasper (`close_friend`/65, testo aggiornato), non essendo un personaggio nuovo.",
+      "Nate variate come da convenzione (§9.6), nessuna a": "Nate variate come da convenzione (§9.6), nessuna al primo del mese: Dean 3 novembre 2002 (21 anni), Russ Sinclair 14 agosto 2002 (21 anni, ricalcolata dalla fusione), Javier Reyes 5 dicembre 2001 (22 anni), Eric 27 settembre 2003 (20 anni), Raymond 30 ottobre 2001 (22 anni). Start Position = birthdate su tutti, nessuna End Position (tutti vivi, contemporanei)."
+    }
+  },
+  "Professor Mollusk Moreau": {
+    "id": "_4rLXE2bVdJCWUNDeKat36",
+    "doc_sources": [],
+    "extracted_fields": {}
+  },
+  "Professor Marit Christiansen": {
+    "id": "_14mG8nbb4Lh7AJ7ehGxcw",
+    "doc_sources": [],
+    "extracted_fields": {}
+  },
+  "Professor Loewe": {
+    "id": "_E2A8prBrWg1q9zNjAR7kQ",
+    "doc_sources": [
+      "Audit_Completezza_Outfit_Shift_2026-09-15.md",
+      "SUCC_Setting_Canon.md"
+    ],
+    "extracted_fields": {
+      "Script di audit programmatico su tutta la tabella ": "Script di audit programmatico su tutta la tabella `world_characters`: completezza dei campi core (`long_summary`, `summary`, `display_description`, `final_instructions`), presenza della riga di format discipline, conteggio outfit (minimo 5) e validità del `default_outfit`, conteggio Dialogue Examples (minimo 5), presenza delle Attitudes obbligatorie verso Alyssa e Jasper, coerenza `birthdate`/`start_timeline_position`, `keys` non vuote, `is_global` attivo. Poi, specificamente per la richiesta sugli outfit Shift/Hybrid: estratta la specie di ogni personaggio dal campo `SPECIES:` del blocco JED+, isolati i 51 personaggi Werewolf/Warg e l'unico altro shifter puro del World (Professor Loewe, leone), verificato per ciascuno se possiede un outfit dedicato alla forma trasformata."
+    }
+  },
+  "Oskar": {
+    "id": "_RAPLVfmBbzaARYUpWGMga",
+    "doc_sources": [
+      "Andrew_Campbell_Card.md",
+      "Coda_Audit_Intimacy_Profile_World_2026-09-14.md",
+      "INDEX.md",
+      "Lorebook_Ufficiali_IOVERSE_E_Q_And_A_Residui.md",
+      "Oskar_Chase_Dominic_Update.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md",
+      "Tate_And_The_Lab_Survivors.md"
+    ],
+    "extracted_fields": {
+      "| Attitudes | 5: Vincent, Noah, Finn, Alyssa, Jasp": "| Attitudes | 5: Vincent, Noah, Finn, Alyssa, Jasper |",
+      "| Start Position | 10538088 (7 marzo 2002, giovedì": "| Start Position | 10538088 (7 marzo 2002, giovedì) |",
+      "| Birthdate | 7 marzo 2002, offset `-191280` |": "| Birthdate | 7 marzo 2002, offset `-191280` |",
+      "**Data di nascita: invenzione dichiarata.** Le fon": "**Data di nascita: invenzione dichiarata.** Le fonti danno solo \"22 anni\".",
+      "**Attitudes.** Quattro parti: tipo di bersaglio, b": "**Attitudes.** Quattro parti: tipo di bersaglio, bersaglio, livello e",
+      "`Attitudes_Audit_2026-09-03.md`: attenzione a **Wa": "`Attitudes_Audit_2026-09-03.md`: attenzione a **Wary**, che sembra \"diffidente\"",
+      "**Birthdate.** Toggle, poi anno, mese (combobox) e": "**Birthdate.** Toggle, poi anno, mese (combobox) e giorno. Sul server è un",
+      "A differenza di Oskar e Chase, questa **era** una ": "A differenza di Oskar e Chase, questa **era** una scheda grezza (0 outfit, 0 dialoghi, 0 attitudes, nessuna birthdate, testo con la sintassi originale della fonte non riformattata). Riscritta in JED+ (3.786 caratteri). Nessun `{{user}}` nel testo sorgente originale per questo personaggio, quindi nessuna epurazione necessaria su quel fronte: il First Message allegato dall'utente lo coinvolge con `{{user}}` (la scena della cena in famiglia con Bailey), ma non è stato portato nella scheda, coerente con la pipeline che non importa gli Initial Messages sorgente nella `long_summary`.",
+      "- **Birthdate/Start Position**: 10044480 = 3 novem": "- **Birthdate/Start Position**: 10044480 = 3 novembre 1973 (inventata, dichiarata: la fonte dava solo \"50 anni\").",
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e"
+    }
+  },
+  "Nikolaj Jökull": {
+    "id": "_AdCJWrQaTgC7xkPQECrtK",
+    "doc_sources": [
+      "Casey_Williams_And_Photography_Thread.md",
+      "Coda_Audit_Intimacy_Profile_World_2026-09-14.md",
+      "Dialogue_Examples_Batch2_Restanti_Dieci.md",
+      "Lorebook_Ufficiali_IOVERSE_E_Q_And_A_Residui.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md",
+      "Tate_And_The_Lab_Survivors.md"
+    ],
+    "extracted_fields": {
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e"
+    }
+  },
+  "Naomi Black": {
+    "id": "_xDFyKfnKEfKWA9NdVhVV7",
+    "doc_sources": [
+      "Concilio_QuattroDistretti_E_Vito_Pureblood_2026-09-14.md",
+      "Simulation_World_Features_Disattivate_2026-09-13.md"
+    ],
+    "extracted_fields": {}
+  },
+  "Marlowe Voss": {
+    "id": "_9J8jRp16w6NbjTWfeqTXy",
+    "doc_sources": [
+      "INDEX.md",
+      "Marlowe_Voss_NonMorti_Representative_2026-09-14.md"
+    ],
+    "extracted_fields": {}
+  },
+  "Marcus O'Connor": {
+    "id": "_hzhkJ7n4FGXBxAHc6Eykj",
+    "doc_sources": [],
+    "extracted_fields": {}
+  },
+  "Mackenzie Sanchez-Rogers": {
+    "id": "_YY8VbpgzYk4dfFAL78rM3",
+    "doc_sources": [
+      "Outfit_HybridFullShift_SUCC_2026-09-13.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md",
+      "SUCC_Roster_Confronto_Completezza_2026-09-15.md"
+    ],
+    "extracted_fields": {
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e"
+    }
+  },
+  "Luisa Sanchez Rogers": {
+    "id": "_XthUhAMktzmFYAVeQbx6a",
+    "doc_sources": [],
+    "extracted_fields": {}
+  },
+  "Kolya Varenkov": {
+    "id": "_k2hYW7HaWMzWHw2EpgVVF",
+    "doc_sources": [
+      "Consolidamento_Sessione_2026-09-15.md",
+      "Solarton_Roman_Kolya_2026-09-15.md"
+    ],
+    "extracted_fields": {}
+  },
+  "Jean-Luc Virtuoso": {
+    "id": "_23CNCRPX7rkcLbX8hbxGr",
+    "doc_sources": [
+      "INDEX.md",
+      "JeanLuc_Virtuoso_Pride_Sinners_Completamento_2026-09-14.md",
+      "LosAngeles_Sinners_Lieutenants_Everett_Damien_2026-09-15.md"
+    ],
+    "extracted_fields": {
+      "Costruiti dal materiale sui \"Lieutenants\" fornito ": "Costruiti dal materiale sui \"Lieutenants\" fornito dall'utente più le tracce già scritte nelle schede esistenti di Jean-Luc Virtuoso e Dante, che li citavano già in prosa e nelle rispettive Attitudes (per Roxie e Siobhan) pur avendo le righe corrispondenti ancora vuote. Età tutte tratte dalla fonte: Kevin 22, Roxie 38. Per Siobhan la fonte dà solo \"100+\"; la cifra esatta (104, nata 1920) è un'invenzione dichiarata sul solo numero preciso, non sull'ordine di grandezza, con data variata rispetto al 1° del mese (§9.6). Nessun contenuto `{{user}}` nella fonte per questi tre. Nessun Intimacy Profile: la fonte non contiene materiale anatomico/kink per loro, solo tratti caratteriali (incel per Kevin, attivismo performativo per Siobhan, ossessione da accumulo per Roxie).",
+      "## Aggiornamenti incrociati (Attitudes, §16)": "## Aggiornamenti incrociati (Attitudes, §16)",
+      "- **Jean-Luc Virtuoso**: aggiunte le tre Attitudes": "- **Jean-Luc Virtuoso**: aggiunte le tre Attitudes mancanti verso Kevin (disliked/35, disgusto malcelato), Siobhan (acknowledged/45, consapevole del suo complotto e lo trova quasi divertente), Roxie (acknowledged/50, \"la tratta come un'arma carica\"). Array riletto e riscritto per intero (§11, gli array si sostituiscono, non si fanno il merge), ora **11 Attitudes** in totale."
+    }
+  },
+  "Javier Reyes": {
+    "id": "_RrLx1FeCAHzffm11fFMXz",
+    "doc_sources": [
+      "Solarton_FiveCocketeers_2026-09-15.md"
+    ],
+    "extracted_fields": {
+      "## Attitudes obbligatorie": "## Attitudes obbligatorie",
+      "Alyssa Douglas Bloodmoon e Jasper Douglas Bloodmoo": "Alyssa Douglas Bloodmoon e Jasper Douglas Bloodmoon (`stranger`/intensity 15, mai incontrati) su tutte e quattro le schede nuove (Dean, Javier Reyes, Eric, Raymond). Russ Sinclair mantiene invece le sue Attitudes preesistenti verso Alyssa (`acquaintance`/30) e Jasper (`close_friend`/65, testo aggiornato), non essendo un personaggio nuovo.",
+      "Nate variate come da convenzione (§9.6), nessuna a": "Nate variate come da convenzione (§9.6), nessuna al primo del mese: Dean 3 novembre 2002 (21 anni), Russ Sinclair 14 agosto 2002 (21 anni, ricalcolata dalla fusione), Javier Reyes 5 dicembre 2001 (22 anni), Eric 27 settembre 2003 (20 anni), Raymond 30 ottobre 2001 (22 anni). Start Position = birthdate su tutti, nessuna End Position (tutti vivi, contemporanei)."
+    }
+  },
+  "Jasmin Thompson": {
+    "id": "_mfjaQDYUnAhLG8UggXg6N",
+    "doc_sources": [
+      "Audit_Completezza_SUCC_2026-09-13.md",
+      "Chiusura_Buchi_Sistemici_SUCC_2026-09-13.md",
+      "Eris_Jasmin_Completamento_2026-09-13.md",
+      "Lorebook_Ufficiali_IOVERSE_E_Q_And_A_Residui.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md"
+    ],
+    "extracted_fields": {
+      "- **Jasmin Thompson**: card altrimenti completa (o": "- **Jasmin Thompson**: card altrimenti completa (outfit, RPG, speech examples) ma **zero Attitudes**. Non era stata segnalata prima.",
+      "**Start Position mancante** (14 personaggi): Casey": "**Start Position mancante** (14 personaggi): Casey Williams, Finnegan Novak, Hank Thompson, Iordan R. Vess, Janice Thompson, Jared Thompson, Jasmin Thompson, Nikolaj Jökull, Oskar, Professor Loewe, Stanley Davies Jr., Stanley Davies Sr., Tate, Eris Davies. Il §7 delle istruzioni è esplicito: \"va sempre messa, senza eccezioni\", proprio per via degli scenari fuori tempo (nave di Wulfnic, scenario 2499). Questi 14 comparirebbero oggi anche in quegli scenari fuori epoca.",
+      "- 2 con Dialogue Examples e/o Attitudes mancanti (": "- 2 con Dialogue Examples e/o Attitudes mancanti (Eris Davies, Jasmin Thompson).",
+      "- 14 senza Start Position.": "- 14 senza Start Position.",
+      "Seguito diretto di `Audit_Completezza_SUCC_2026-09": "Seguito diretto di `Audit_Completezza_SUCC_2026-09-13.md`. Chiusi i tre gap trovati sulle 29 schede SUCC già considerate complete, lasciando fuori per ora solo Dialogue Examples/Attitudes mancanti su Eris Davies e Attitudes su Jasmin Thompson (lavoro creativo separato, non meccanico).",
+      "## 2. Start Position e birthdate (14 personaggi)": "## 2. Start Position e birthdate (14 personaggi)",
+      "- **Jasmin Thompson**: ancora zero Attitudes. Stes": "- **Jasmin Thompson**: ancora zero Attitudes. Stesso discorso.",
+      "Chiusi gli ultimi due buchi rimasti dall'audit SUC": "Chiusi gli ultimi due buchi rimasti dall'audit SUCC: zero Dialogue Examples/Attitudes su Eris Davies, zero Attitudes su Jasmin Thompson. L'utente ha fornito le card sorgente originali (JanitorAI, stesso materiale da cui erano già state costruite le schede esistenti: il confronto con `long_summary` conferma che non c'è nulla di sostanzialmente nuovo su aspetto o backstory, solo dettagli utili per Dialogue Examples e Attitudes che non erano ancora stati sfruttati).",
+      "**Attitudes (4, prima 0):**": "**Attitudes (4, prima 0):**",
+      "**Attitudes (6, prima 0):**": "**Attitudes (6, prima 0):**",
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e"
+    }
+  },
+  "Jared Thompson": {
+    "id": "_BzKwAkgpPfbVkBzbDaEth",
+    "doc_sources": [
+      "Coda_Audit_Intimacy_Profile_World_2026-09-14.md",
+      "Dialogue_Examples_Batch1_Finn_Casey_Jared_Tate.md",
+      "Fraternity_Sorority_Row.md",
+      "INDEX.md",
+      "Jared_Thompson_Completamento_2026-09-21.md",
+      "Kaladin_Nargathon_Completamento_2026-09-21.md",
+      "Lorebook_Ufficiali_IOVERSE_E_Q_And_A_Residui.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md",
+      "Santiago_Herrera_Card.md",
+      "Staff_Stub_Eliminazione_2026-09-15.md",
+      "SUCC_Setting_Canon.md",
+      "Vincent_Campbell_Card.md"
+    ],
+    "extracted_fields": {
+      "> **Leggere prima `Timeline_Apertura_E_Rush.md`.**": "> **Leggere prima `Timeline_Apertura_E_Rush.md`.** All'apertura del World, il 25",
+      "**Non e' ancora successo.** Vedi `Timeline_Apertur": "**Non e' ancora successo.** Vedi `Timeline_Apertura_E_Rush.md`.",
+      "### Attitudes di Jasper, aggiornate": "### Attitudes di Jasper, aggiornate",
+      "- Rivedere le **Attitudes di Erik verso Jasper** e": "- Rivedere le **Attitudes di Erik verso Jasper** e di **Noah verso Jasper** alla",
+      "## Attitudes (5, secondo §16)": "## Attitudes (5, secondo §16)",
+      "- Timeline: Start Position e Birthdate entrambi 10": "- Timeline: Start Position e Birthdate entrambi 10287000, coincidenti, ≤ world_age (10486470).",
+      "- Attitudes: 5 presenti (Hank, Janice, Stanley, Al": "- Attitudes: 5 presenti (Hank, Janice, Stanley, Alyssa, Jasper) con tier/intensity/reasoning corretti.",
+      "- 4 Attitudes con Alyssa e Jasper coperti, nessuna": "- 4 Attitudes con Alyssa e Jasper coperti, nessuna correzione di tier necessaria.",
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e",
+      "| Attitudes | 6 (vedi sotto) |": "| Attitudes | 6 (vedi sotto) |",
+      "- La card di **Jared Thompson** (già completa, 7 o": "- La card di **Jared Thompson** (già completa, 7 outfit, 5 attitudes) descrive tra i suoi amici più stretti \"a demi-dragon fellow jock\" senza nominarlo. È quasi certamente Santiago, quindi la relazione è stata resa esplicita e reciproca: attitude `close_friend` (70) su entrambi i lati concettualmente, anche se per ora scritta solo sulla card di Santiago (la card di Jared non è stata toccata in questa sessione, resta con quella descrizione anonima; toccarla per aggiungere l'attitude reciproca è lavoro residuo, non fatto).",
+      "## Attitudes, con motivazione": "## Attitudes, con motivazione",
+      "| Attitudes | 6: Andrew, Noah, Finn, Alyssa, Jaspe": "| Attitudes | 6: Andrew, Noah, Finn, Alyssa, Jasper (preesistenti) + **Jared Thompson** |",
+      "| Start Position | 10524264 (8 agosto 2000) |": "| Start Position | 10524264 (8 agosto 2000) |",
+      "| Birthdate | 8 agosto 2000, offset `-205104` |": "| Birthdate | 8 agosto 2000, offset `-205104` |",
+      "## Data di nascita: invenzione dichiarata": "## Data di nascita: invenzione dichiarata",
+      "L'unica cosa che l'API non fa da sola è la **birth": "L'unica cosa che l'API non fa da sola è la **birthdate**, che va calcolata come"
+    }
+  },
+  "Janice Thompson": {
+    "id": "_DKY9cDLMUaYpELYAdckH2",
+    "doc_sources": [
+      "Coda_Audit_Intimacy_Profile_World_2026-09-14.md",
+      "Fraternity_Sorority_Row.md",
+      "Lorebook_Ufficiali_IOVERSE_E_Q_And_A_Residui.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md"
+    ],
+    "extracted_fields": {
+      "> **Leggere prima `Timeline_Apertura_E_Rush.md`.**": "> **Leggere prima `Timeline_Apertura_E_Rush.md`.** All'apertura del World, il 25",
+      "**Non e' ancora successo.** Vedi `Timeline_Apertur": "**Non e' ancora successo.** Vedi `Timeline_Apertura_E_Rush.md`.",
+      "### Attitudes di Jasper, aggiornate": "### Attitudes di Jasper, aggiornate",
+      "- Rivedere le **Attitudes di Erik verso Jasper** e": "- Rivedere le **Attitudes di Erik verso Jasper** e di **Noah verso Jasper** alla",
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e"
+    }
+  },
+  "Isobel Blackwater": {
+    "id": "_7pEEWTeTLzd3ATh1y4FYd",
+    "doc_sources": [
+      "Import_Plan_AllContent.md"
+    ],
+    "extracted_fields": {
+      "- ✅ **Isobel Blackwater** — folder BLACKWOOD. Dist": "- ✅ **Isobel Blackwater** — folder BLACKWOOD. District Alpha, Dockside. 55enne, eterosessuale, organizzatrice di contrabbando. Pronomi she/her. Tag Female/Werewolf/Original/Supernatural/Modern. Birthdate 10 novembre 1969."
+    }
+  },
+  "Iordan R. Vess": {
+    "id": "_QfcJQRWUV2yfHGUUjLD8V",
+    "doc_sources": [
+      "Fonti_Summary_Card_Roster_SUCC_Completo.md",
+      "Lorebook_Ufficiali_IOVERSE_E_Q_And_A_Residui.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md"
+    ],
+    "extracted_fields": {
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e"
+    }
+  },
+  "Hideo Reid": {
+    "id": "_wrcbW98qktK4gDFLTyC24",
+    "doc_sources": [
+      "Decisioni_Canon_2026-09-07.md",
+      "Hideo_Reid_Card_2026-09-13.md",
+      "INDEX.md",
+      "Roster_Canon_SUCC_Stato_Schede.md",
+      "Stub_FanOC_Creazione_313Schede_2026-09-15.md",
+      "SUCC_Wiki_Ufficiale_Canon.md",
+      "TODO_Consolidato.md"
+    ],
+    "extracted_fields": {
+      "- L'Environment **SUCC** aveva Start Position al *": "- L'Environment **SUCC** aveva Start Position al **6 aprile 1887**, ora è al",
+      "Attitudes verso Alyssa e Jasper a Unknown Scent 15": "Attitudes verso Alyssa e Jasper a Unknown Scent 15.",
+      "1. **Start Position dei vivi**: la convenzione vec": "1. **Start Position dei vivi**: la convenzione vecchia (vuote per i vivi) contro",
+      "2. **Cinque birthdate segnaposto al 1° gennaio**: ": "2. **Cinque birthdate segnaposto al 1° gennaio**: Tomas, Chase, Revazhael,",
+      "| Scheda | Stato | Outfit | Dialoghi | Attitudes |": "| Scheda | Stato | Outfit | Dialoghi | Attitudes |",
+      "poco sopra, e tutti e tre non hanno outfit, dialog": "poco sopra, e tutti e tre non hanno outfit, dialoghi né attitudes.",
+      "**4. Solo cinque su ventisei hanno una data di nas": "**4. Solo cinque su ventisei hanno una data di nascita.** Andrew, Vincent, Chase,",
+      "che hanno già la data di nascita e il trittico zod": "che hanno già la data di nascita e il trittico zodiacale.",
+      "4. **Le ventuno birthdate mancanti**, col metodo d": "4. **Le ventuno birthdate mancanti**, col metodo del trittico, al momento della",
+      "- `end_timeline_position`: vuoto (nessuna indicazi": "- `end_timeline_position`: vuoto (nessuna indicazione di decesso dalla fonte).",
+      "fonte SUCC. Nel World l'Environment SUCC ha oggi S": "fonte SUCC. Nel World l'Environment SUCC ha oggi Start Position al **6 aprile",
+      "Start Position al **1908**, allineandola all'era c": "Start Position al **1908**, allineandola all'era che già lo dice, ma è una tua",
+      "| **Start Position mancante** | **78** | vedi §3, ": "| **Start Position mancante** | **78** | vedi §3, c'è una contraddizione da sciogliere |",
+      "| **Attitudes verso Alyssa e Jasper mancanti** | *": "| **Attitudes verso Alyssa e Jasper mancanti** | **50** | obbligatorie per §16, anche solo a Unknown Scent |",
+      "| **Birthdate mancante** | **42** | vedi §2 |": "| **Birthdate mancante** | **42** | vedi §2 |",
+      "birthdate, età scritta a mano (76), due em-dash. V": "birthdate, età scritta a mano (76), due em-dash. Vive solo di `summary` e cinque",
+      "birthdate: Eris Davies, Jasmin Thompson, Stanley D": "birthdate: Eris Davies, Jasmin Thompson, Stanley Davies Sr. e Jr., Hank",
+      "- **42 schede senza birthdate.** Per le 15 già in ": "- **42 schede senza birthdate.** Per le 15 già in checklist si usa il criterio",
+      "- **5 birthdate segnaposto al 1° gennaio**, contro": "- **5 birthdate segnaposto al 1° gennaio**, contro la preferenza registrata:",
+      "## 3. La contraddizione sulle Start Position (aper": "## 3. La contraddizione sulle Start Position (aperta)",
+      "- La **§7 riscritta**: i **vivi** hanno la sola **": "- La **§7 riscritta**: i **vivi** hanno la sola **Start Position**; i deceduti",
+      "Oggi solo **8 schede su 88** hanno una Start Posit": "Oggi solo **8 schede su 88** hanno una Start Position. Se vale la §7 c'è un",
+      "| **§7 / Character Pool** | sciogliere la contradd": "| **§7 / Character Pool** | sciogliere la contraddizione sui pool e sulle Start Position dei vivi | questo doc, §3 |"
+    }
+  },
+  "Helena Weiss": {
+    "id": "_yNt949MTQnVmCpVQq8ebF",
+    "doc_sources": [],
+    "extracted_fields": {}
+  },
+  "Harrison Black": {
+    "id": "_ejE6Xp83PhtJrDKCqbjhH",
+    "doc_sources": [
+      "Harrison_Black_Umano_Magico_2026-09-14.md",
+      "INDEX.md"
+    ],
+    "extracted_fields": {}
+  },
+  "Harper Aries": {
+    "id": "_F4qM3efBRVyQnXXUxVqH7",
+    "doc_sources": [
+      "Audit_Los_Angeles_2026-09-14.md",
+      "Harper_Aries_Ballantine_Completamento_2026-09-14.md",
+      "INDEX.md"
+    ],
+    "extracted_fields": {}
+  },
+  "Harlan Beaumont": {
+    "id": "_AjMH4N66RxKj2Pr84wqgz",
+    "doc_sources": [],
+    "extracted_fields": {}
+  },
+  "Hank Thompson": {
+    "id": "_4GdzX4McREFg4zRpEqth2",
+    "doc_sources": [
+      "Coda_Audit_Intimacy_Profile_World_2026-09-14.md",
+      "Lorebook_Ufficiali_IOVERSE_E_Q_And_A_Residui.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md"
+    ],
+    "extracted_fields": {
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e"
+    }
+  },
+  "GREED - Roxie": {
+    "id": "_jf8fr4B9TNxbERGnEcd6b",
+    "doc_sources": [
+      "Audit_Los_Angeles_2026-09-14.md",
+      "Triage_Memory_Scan_Due_Test.md"
+    ],
+    "extracted_fields": {}
+  },
+  "GLUTTONY - Kevin": {
+    "id": "_GEwyNtNGLVGjywcntBnLm",
+    "doc_sources": [
+      "Audit_Los_Angeles_2026-09-14.md",
+      "LosAngeles_Sinners_Lieutenants_Everett_Damien_2026-09-15.md"
+    ],
+    "extracted_fields": {
+      "## Aggiornamenti incrociati (Attitudes, §16)": "## Aggiornamenti incrociati (Attitudes, §16)"
+    }
+  },
+  "Finnegan Novak": {
+    "id": "_PQHGb4gL2LwDhNDrLFa3A",
+    "doc_sources": [
+      "Dialogue_Examples_Batch1_Finn_Casey_Jared_Tate.md",
+      "Fraternity_Sorority_Row.md",
+      "Oskar_Chase_Dominic_Update.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md",
+      "SUCC_Roster_Confronto_Completezza_2026-09-15.md"
+    ],
+    "extracted_fields": {
+      "> **Leggere prima `Timeline_Apertura_E_Rush.md`.**": "> **Leggere prima `Timeline_Apertura_E_Rush.md`.** All'apertura del World, il 25",
+      "**Non e' ancora successo.** Vedi `Timeline_Apertur": "**Non e' ancora successo.** Vedi `Timeline_Apertura_E_Rush.md`.",
+      "### Attitudes di Jasper, aggiornate": "### Attitudes di Jasper, aggiornate",
+      "- Rivedere le **Attitudes di Erik verso Jasper** e": "- Rivedere le **Attitudes di Erik verso Jasper** e di **Noah verso Jasper** alla",
+      "- **5 Attitudes**: Alyssa/Jasper stranger, Finnega": "- **5 Attitudes**: Alyssa/Jasper stranger, Finnegan Novak friend (55), i genitori Louise e Arthur come Generic close_friend (70), \"più successful streamers\" come Generic disliked (45).",
+      "- **Birthdate/Start Position**: 10044480 = 3 novem": "- **Birthdate/Start Position**: 10044480 = 3 novembre 1973 (inventata, dichiarata: la fonte dava solo \"50 anni\").",
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e"
+    }
+  },
+  "Federico \"Riki\" Savini": {
+    "id": "_Vd2Jat7DLhEXaGFzTTr3Y",
+    "doc_sources": [],
+    "extracted_fields": {}
+  },
+  "Fade Greymoor": {
+    "id": "_mbBqR74dFceBFB4YegpyN",
+    "doc_sources": [
+      "Audit_Schede_2026-09-03.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md",
+      "Roster_Canon_SUCC_Stato_Schede.md"
+    ],
+    "extracted_fields": {
+      "**82 schede su 86 non hanno Start Position.** Ne h": "**82 schede su 86 non hanno Start Position.** Ne hanno solo quattro:",
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e",
+      "| Scheda | Stato | Outfit | Dialoghi | Attitudes |": "| Scheda | Stato | Outfit | Dialoghi | Attitudes |",
+      "poco sopra, e tutti e tre non hanno outfit, dialog": "poco sopra, e tutti e tre non hanno outfit, dialoghi né attitudes.",
+      "**4. Solo cinque su ventisei hanno una data di nas": "**4. Solo cinque su ventisei hanno una data di nascita.** Andrew, Vincent, Chase,",
+      "che hanno già la data di nascita e il trittico zod": "che hanno già la data di nascita e il trittico zodiacale.",
+      "4. **Le ventuno birthdate mancanti**, col metodo d": "4. **Le ventuno birthdate mancanti**, col metodo del trittico, al momento della"
+    }
+  },
+  "Eris Davies": {
+    "id": "_q1n7hcz23ThY63JGEjdNq",
+    "doc_sources": [
+      "Audit_Completezza_SUCC_2026-09-13.md",
+      "Chiusura_Buchi_Sistemici_SUCC_2026-09-13.md",
+      "Eris_Jasmin_Completamento_2026-09-13.md",
+      "INDEX.md"
+    ],
+    "extracted_fields": {
+      "- **Eris Davies**: ha `long_summary` in JED+ (3982": "- **Eris Davies**: ha `long_summary` in JED+ (3982 caratteri), 5 outfit con Default Outfit impostato, RPG Livello 43, ma **zero Dialogue Examples e zero Attitudes**. È il caso già noto (per questo era stata esclusa dal giro Outfit Hybrid/Full Shift). Manca il passo 9 e 10 della pipeline.",
+      "**Start Position mancante** (14 personaggi): Casey": "**Start Position mancante** (14 personaggi): Casey Williams, Finnegan Novak, Hank Thompson, Iordan R. Vess, Janice Thompson, Jared Thompson, Jasmin Thompson, Nikolaj Jökull, Oskar, Professor Loewe, Stanley Davies Jr., Stanley Davies Sr., Tate, Eris Davies. Il §7 delle istruzioni è esplicito: \"va sempre messa, senza eccezioni\", proprio per via degli scenari fuori tempo (nave di Wulfnic, scenario 2499). Questi 14 comparirebbero oggi anche in quegli scenari fuori epoca.",
+      "- 2 con Dialogue Examples e/o Attitudes mancanti (": "- 2 con Dialogue Examples e/o Attitudes mancanti (Eris Davies, Jasmin Thompson).",
+      "- 14 senza Start Position.": "- 14 senza Start Position.",
+      "Seguito diretto di `Audit_Completezza_SUCC_2026-09": "Seguito diretto di `Audit_Completezza_SUCC_2026-09-13.md`. Chiusi i tre gap trovati sulle 29 schede SUCC già considerate complete, lasciando fuori per ora solo Dialogue Examples/Attitudes mancanti su Eris Davies e Attitudes su Jasmin Thompson (lavoro creativo separato, non meccanico).",
+      "## 2. Start Position e birthdate (14 personaggi)": "## 2. Start Position e birthdate (14 personaggi)",
+      "- **Eris Davies**: ancora zero Dialogue Examples e": "- **Eris Davies**: ancora zero Dialogue Examples e zero Attitudes. Non toccato in questo giro (lavoro creativo, non meccanico).",
+      "- **Jasmin Thompson**: ancora zero Attitudes. Stes": "- **Jasmin Thompson**: ancora zero Attitudes. Stesso discorso.",
+      "Chiusi gli ultimi due buchi rimasti dall'audit SUC": "Chiusi gli ultimi due buchi rimasti dall'audit SUCC: zero Dialogue Examples/Attitudes su Eris Davies, zero Attitudes su Jasmin Thompson. L'utente ha fornito le card sorgente originali (JanitorAI, stesso materiale da cui erano già state costruite le schede esistenti: il confronto con `long_summary` conferma che non c'è nulla di sostanzialmente nuovo su aspetto o backstory, solo dettagli utili per Dialogue Examples e Attitudes che non erano ancora stati sfruttati).",
+      "**Attitudes (4, prima 0):**": "**Attitudes (4, prima 0):**",
+      "**Attitudes (6, prima 0):**": "**Attitudes (6, prima 0):**"
+    }
+  },
+  "Eric": {
+    "id": "_68EgtxQCgFB8RNKqUbpxB",
+    "doc_sources": [
+      "Solarton_FiveCocketeers_2026-09-15.md"
+    ],
+    "extracted_fields": {
+      "## Attitudes obbligatorie": "## Attitudes obbligatorie",
+      "Alyssa Douglas Bloodmoon e Jasper Douglas Bloodmoo": "Alyssa Douglas Bloodmoon e Jasper Douglas Bloodmoon (`stranger`/intensity 15, mai incontrati) su tutte e quattro le schede nuove (Dean, Javier Reyes, Eric, Raymond). Russ Sinclair mantiene invece le sue Attitudes preesistenti verso Alyssa (`acquaintance`/30) e Jasper (`close_friend`/65, testo aggiornato), non essendo un personaggio nuovo.",
+      "Nate variate come da convenzione (§9.6), nessuna a": "Nate variate come da convenzione (§9.6), nessuna al primo del mese: Dean 3 novembre 2002 (21 anni), Russ Sinclair 14 agosto 2002 (21 anni, ricalcolata dalla fusione), Javier Reyes 5 dicembre 2001 (22 anni), Eric 27 settembre 2003 (20 anni), Raymond 30 ottobre 2001 (22 anni). Start Position = birthdate su tutti, nessuna End Position (tutti vivi, contemporanei)."
+    }
+  },
+  "Eclipse Noir": {
+    "id": "_f3w1hw3qejBNjzNj8thqx",
+    "doc_sources": [
+      "Import_Plan_AllContent.md"
+    ],
+    "extracted_fields": {
+      "- ✅ **Eclipse Noir** — folder BLACKWOOD. District ": "- ✅ **Eclipse Noir** — folder BLACKWOOD. District Alpha, Bluemoon South. 24enne genderfluid, estetica punk, liaison della resistenza \"The Verve\". Pronomi they/them (primo caso non-binario gestito). Tag Genderfluid/Werewolf/Original/Supernatural/Modern. Birthdate 21 giugno 2000."
+    }
+  },
+  "ENVY - Siobhan": {
+    "id": "_VAqqYVbLbhaDbdkrw8Cyn",
+    "doc_sources": [
+      "Audit_Los_Angeles_2026-09-14.md"
+    ],
+    "extracted_fields": {}
+  },
+  "Dullahan": {
+    "id": "_F8ee4UpyLr7Fyr69KKhzV",
+    "doc_sources": [
+      "Audit_Completezza_Outfit_Shift_2026-09-15.md",
+      "Chiusura_Finale_Solarton_2026-09-13.md",
+      "Classificazione_Lupi_Sangue_E_Secondo_Genere.md",
+      "DDM_Universe_Canon.md",
+      "Lorebook_Ufficiali_IOVERSE_E_Q_And_A_Residui.md",
+      "Piano_Integrazione_Wyldfire_2026-09-22.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md"
+    ],
+    "extracted_fields": {
+      "**Dullahan**, `birthdate` diverso da `start_timeli": "**Dullahan**, `birthdate` diverso da `start_timeline_position`: già documentato e intenzionale (Immortal Contractor, Start Position anticipata al 1724 per coprire gli scenari fuori epoca già previsti), non un errore.",
+      "Trovati solo due mismatch birthdate/Start Position": "Trovati solo due mismatch birthdate/Start Position, entrambi risolti:",
+      "**Dullahan**: caso diverso, sottoposto all'utente ": "**Dullahan**: caso diverso, sottoposto all'utente prima di procedere per via della sua natura di Immortal Contractor DDM (AGE narrativo: \"unknown, born in France in the 1700s\"). L'utente ha scelto di assegnare una data meccanica nel 1700s senza toccare la prosa, come già fatto per Oskar. Nello scegliere la data è emerso un vincolo interessante: il suo `start_timeline_position` esistente era già impostato al **1724-01-01**, deliberatamente molto presto, quasi certamente per garantire che un Immortal Contractor risulti presente in qualunque scenario del World, inclusi quelli fuori epoca già previsti (viaggio di Wulfnic, scenario piratesco di Cornelius). Un birthdate successivo al 1724 avrebbe reso Dullahan \"non ancora nato\" nel suo stesso Start Position, quindi la data scelta è il **14 settembre 1710**, prima del suo Start Position e comunque coerente con \"born in the 1700s\". Verificato che `birthdate < start_timeline_position`. Testo AGE lasciato invariato (\"unknown, born in France in the 1700s\").",
+      "| Start Position | 8099616 = 1 gennaio 1724 |": "| Start Position | 8099616 = 1 gennaio 1724 |",
+      "| Start Position | 10450560 = 12 marzo 1992 |": "| Start Position | 10450560 = 12 marzo 1992 |",
+      "**Implicazione:** la convenzione \"Livello = età an": "**Implicazione:** la convenzione \"Livello = età anagrafica\" **non è applicabile ai personaggi molto longevi**. Per Founding Bloodline e Divine Blood (Zefir 1200 anni, Ut, Wulfnic, Dullahan ~300) serve una convenzione alternativa. Proposta: 99 come tetto per chiunque superi il secolo, età reale nel blocco JED+.",
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e"
+    }
+  },
+  "Dr. Arthur Sinclair": {
+    "id": "_aRzJCwP9EwgHMbCytNAJc",
+    "doc_sources": [
+      "Arthur_Sinclair_Sloth_Sinners_Completamento_2026-09-14.md",
+      "INDEX.md"
+    ],
+    "extracted_fields": {}
+  },
+  "Dominic Rogers": {
+    "id": "_dDXdeJrcYHbwagGFQVKQR",
+    "doc_sources": [
+      "Oskar_Chase_Dominic_Update.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md"
+    ],
+    "extracted_fields": {
+      "- **Birthdate/Start Position**: 10044480 = 3 novem": "- **Birthdate/Start Position**: 10044480 = 3 novembre 1973 (inventata, dichiarata: la fonte dava solo \"50 anni\").",
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e"
+    }
+  },
+  "Dominic Chen": {
+    "id": "_8wjMyUNV6yB7ACLk4dhWd",
+    "doc_sources": [
+      "Import_Plan_AllContent.md",
+      "Roster_Canon_Underworld_Modern_Fantasy.md"
+    ],
+    "extracted_fields": {
+      "- ✅ **Dominic Chen** — folder BLACKWOOD. District ": "- ✅ **Dominic Chen** — folder BLACKWOOD. District Alpha, Paradise West. 38enne, bisessuale, fornitore di lusso. Altezza 6'0\"/183cm. Pronomi he/him. Tag Male/Werewolf/Original/Supernatural/Modern. Birthdate 9 settembre 1986."
+    }
+  },
+  "Dean": {
+    "id": "_4BPXYczVx9WratBCyJjfN",
+    "doc_sources": [
+      "Gray_Dean_Rifle_Maddox_Solarton_Completamento_2026-09-14.md",
+      "Solarton_FiveCocketeers_2026-09-15.md"
+    ],
+    "extracted_fields": {
+      "## Attitudes obbligatorie": "## Attitudes obbligatorie",
+      "Alyssa Douglas Bloodmoon e Jasper Douglas Bloodmoo": "Alyssa Douglas Bloodmoon e Jasper Douglas Bloodmoon (`stranger`/intensity 15, mai incontrati) su tutte e quattro le schede nuove (Dean, Javier Reyes, Eric, Raymond). Russ Sinclair mantiene invece le sue Attitudes preesistenti verso Alyssa (`acquaintance`/30) e Jasper (`close_friend`/65, testo aggiornato), non essendo un personaggio nuovo.",
+      "Nate variate come da convenzione (§9.6), nessuna a": "Nate variate come da convenzione (§9.6), nessuna al primo del mese: Dean 3 novembre 2002 (21 anni), Russ Sinclair 14 agosto 2002 (21 anni, ricalcolata dalla fusione), Javier Reyes 5 dicembre 2001 (22 anni), Eric 27 settembre 2003 (20 anni), Raymond 30 ottobre 2001 (22 anni). Start Position = birthdate su tutti, nessuna End Position (tutti vivi, contemporanei)."
+    }
+  },
+  "Darius Vale": {
+    "id": "_R6XD6qLdQTrm7F3nd2j1V",
+    "doc_sources": [
+      "Concilio_QuattroDistretti_E_Vito_Pureblood_2026-09-14.md",
+      "Simulation_World_Features_Disattivate_2026-09-13.md"
+    ],
+    "extracted_fields": {}
+  },
+  "Dante": {
+    "id": "_bKApUbVDFUMdyKc1gyr4L",
+    "doc_sources": [
+      "Anomalies_Snapshot_Dante_JeanLuc_2026-09-27.json",
+      "Dante_Lust_Sinners_Completamento_2026-09-14.md",
+      "INDEX.md"
+    ],
+    "extracted_fields": {
+      "Nota: queste tre schede (Jean-Luc, Roxie, Siobhan)": "Nota: queste tre schede (Jean-Luc, Roxie, Siobhan) sono ancora placeholder vuoti sul World. Le Attitudes di Dante puntano già ai loro ID corretti, pronte per quando verranno lavorate; andrà aggiunta la reciproca su ciascuna quando arriva il turno."
+    }
+  },
+  "Daniel \"Danny\" Boone": {
+    "id": "_VGAN3gQXchpTC2VFAcKUH",
+    "doc_sources": [
+      "Danny_Boone_Ballantine_Completamento_2026-09-14.md",
+      "INDEX.md"
+    ],
+    "extracted_fields": {}
+  },
+  "Coach Mithers": {
+    "id": "_71Bc3wDdCkKmXD8EmLgFe",
+    "doc_sources": [
+      "Gruppo_Cross_Reference_Sei_Personaggi_2026-09-13.md"
+    ],
+    "extracted_fields": {
+      "| **Coach Mithers** | `long_summary`/`summary`/`di": "| **Coach Mithers** | `long_summary`/`summary`/`display_description` già scritti, buoni, 3 Attitudes esistenti (incluso un `rival` verso Adelin Coso, tier confermato valido lato API oltre a quelli già documentati) | Solo pipeline mancante: 5 outfit, 5 Dialogue Examples, `final_instructions` |",
+      "## Date/Start Position: nessuna invenzione necessa": "## Date/Start Position: nessuna invenzione necessaria salvo un caso"
+    }
+  },
+  "Chase Anderson": {
+    "id": "_TLxzk97WmgYCA47nkDCVy",
+    "doc_sources": [
+      "Oskar_Chase_Dominic_Update.md",
+      "Outfit_HybridFullShift_SUCC_2026-09-13.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md",
+      "Zodiaco_Trittici_NPC.md"
+    ],
+    "extracted_fields": {
+      "- **Birthdate/Start Position**: 10044480 = 3 novem": "- **Birthdate/Start Position**: 10044480 = 3 novembre 1973 (inventata, dichiarata: la fonte dava solo \"50 anni\").",
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e",
+      "Applicato per la prima volta alle **cinque schede ": "Applicato per la prima volta alle **cinque schede che avevano una birthdate",
+      "usare sempre il primo del mese. **Nel World non re": "usare sempre il primo del mese. **Nel World non resta più nessuna data di nascita",
+      "**Un'eccezione dichiarata: Marcus.** Avevi detto d": "**Un'eccezione dichiarata: Marcus.** Avevi detto di tenere buona la birthdate, e",
+      "la birthdate salvata era del 1985. Ho tenuto il 19": "la birthdate salvata era del 1985. Ho tenuto il 1985 e cambiato solo giorno e",
+      "Restano **44 schede senza birthdate**, di cui 42 p": "Restano **44 schede senza birthdate**, di cui 42 preesistenti e 2 sono gli stub"
+    }
+  },
+  "Cassian Aralas": {
+    "id": "_GBPCNEWLL2NmdaWAhg6Cn",
+    "doc_sources": [
+      "Cassian_Aralas_Fatati_Representative_2026-09-14.md",
+      "INDEX.md"
+    ],
+    "extracted_fields": {}
+  },
+  "Cass Harrow": {
+    "id": "_AyqP2RkHCKXPjDMK3bLUH",
+    "doc_sources": [
+      "Blackwood_District_Alphas_Completamento_2026-09-14.md",
+      "Import_Plan_AllContent.md"
+    ],
+    "extracted_fields": {
+      "## Attitudes assegnate": "## Attitudes assegnate",
+      "- ✅ **Cass Harrow** — folder BLACKWOOD. District A": "- ✅ **Cass Harrow** — folder BLACKWOOD. District Alpha. Pronomi she/her (Reflexive \"herself\"). Tag Female/Werewolf/Original/Supernatural/Modern. Birthdate 15 aprile 1979."
+    }
+  },
+  "Casey Williams": {
+    "id": "_nBMDwWAEatHAggKWjNNCh",
+    "doc_sources": [
+      "Casey_Williams_And_Photography_Thread.md",
+      "Dialogue_Examples_Batch1_Finn_Casey_Jared_Tate.md",
+      "INDEX.md",
+      "Lorebook_Ufficiali_IOVERSE_E_Q_And_A_Residui.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md",
+      "Supernatural_Civil_Status.md"
+    ],
+    "extracted_fields": {
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e"
+    }
+  },
+  "Brittany Willow": {
+    "id": "_cmFQKKpC14U6qa4FtV9WK",
+    "doc_sources": [
+      "Import_Plan_AllContent.md",
+      "Otto_Fully_Custom_Completamento_2026-09-13.md"
+    ],
+    "extracted_fields": {
+      "- ✅ **Brittany Willow** — folder SOLARTON. Student": "- ✅ **Brittany Willow** — folder SOLARTON. Studentessa SUCC, TIT Sorority, super-fan di Malachia Douglas. 20enne umana. Pronomi she/her. Tag Female/Human/Original/Modern (senza Supernatural, essendo umana). Birthdate 2 agosto 2004."
+    }
+  },
+  "Brak Ironfist": {
+    "id": "_AycV4d9dJRBakCmdH4q4J",
+    "doc_sources": [
+      "Brak_Ironfist_Orc_Representative_2026-09-14.md",
+      "INDEX.md",
+      "Marek_Zeera_Brak_Huck_Ut_Ariadne_Completamento_2026-09-22.md",
+      "Staff_Stub_Eliminazione_2026-09-15.md"
+    ],
+    "extracted_fields": {}
+  },
+  "Bianca Rossi": {
+    "id": "_tEjWAbTqE6abw8UApDADw",
+    "doc_sources": [
+      "Blackwood_District_Alphas_Completamento_2026-09-14.md"
+    ],
+    "extracted_fields": {
+      "## Attitudes assegnate": "## Attitudes assegnate"
+    }
+  },
+  "Barrow": {
+    "id": "_LEeEzdCCyGjQ8kfVkcra8",
+    "doc_sources": [
+      "Barrow_Demihuman_Representative_2026-09-14.md",
+      "INDEX.md"
+    ],
+    "extracted_fields": {}
+  },
+  "Barkley Rover": {
+    "id": "_EXFAYyRCjRU19eebCFfXz",
+    "doc_sources": [
+      "Barkley_Rover_Card_v2_DA_APPLICARE.md",
+      "Chiusura_Finale_Solarton_2026-09-13.md",
+      "DDM_Universe_Canon.md",
+      "INDEX.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md"
+    ],
+    "extracted_fields": {
+      "| Start Position | 10450560 = 12 marzo 1992 |": "| Start Position | 10450560 = 12 marzo 1992 |",
+      "Trovati solo due mismatch birthdate/Start Position": "Trovati solo due mismatch birthdate/Start Position, entrambi risolti:",
+      "**Barkley Rover**: aveva già `start_timeline_posit": "**Barkley Rover**: aveva già `start_timeline_position` (10205376, corrispondente esattamente a 32 anni rispetto all'età odierna del World) ma nessun `birthdate`, e il campo AGE nel `long_summary` era ancora scritto in chiaro (\"32\") invece che con la macro `{{age}}`. Correzione puramente meccanica, nessuna invenzione: copiato lo stesso valore nel campo `birthdate` e convertita la macro.",
+      "| Start Position | 8099616 = 1 gennaio 1724 |": "| Start Position | 8099616 = 1 gennaio 1724 |",
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e"
+    }
+  },
+  "Bailey Rogers": {
+    "id": "_eF7HAqWkLLYhQwt2tm4rn",
+    "doc_sources": [
+      "Bailey_Rogers_Card.md",
+      "Dialogue_Examples_Batch2_Restanti_Dieci.md",
+      "Fraternity_Sorority_Row.md",
+      "INDEX.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md",
+      "SUCC_Setting_Canon.md",
+      "SUCC_Wiki_Ufficiale_Canon.md"
+    ],
+    "extracted_fields": {
+      "## Scoperta collaterale: vocabolario reale dei Tie": "## Scoperta collaterale: vocabolario reale dei Tier delle Attitudes",
+      "- ~~**Bailey Rogers**: `long_summary` ancora in fo": "- ~~**Bailey Rogers**: `long_summary` ancora in formato import grezzo, da riscrivere in JED+ per intero secondo la pipeline standard (non solo Dialogue Examples).~~ **Verificato 2026-09-14: falso, la scheda è già completamente in JED+** (NAME block, BACKSTORY, FAMILY & PACK, VOICE & BEHAVIOR, chiusura tematica \"THE HUNGER HE WON'T TAKE\"), con 5 outfit, 5 Dialogue Examples, 6 Attitudes, `display_description`, e un Intimacy Profile Lexicon dedicato già esistente (`_E7pdzmRnRFPhJMmyFLGE6`). Nessuna azione necessaria: la nota era superata da una lavorazione successiva mai riportata qui.",
+      "> **Leggere prima `Timeline_Apertura_E_Rush.md`.**": "> **Leggere prima `Timeline_Apertura_E_Rush.md`.** All'apertura del World, il 25",
+      "**Non e' ancora successo.** Vedi `Timeline_Apertur": "**Non e' ancora successo.** Vedi `Timeline_Apertura_E_Rush.md`.",
+      "### Attitudes di Jasper, aggiornate": "### Attitudes di Jasper, aggiornate",
+      "- Rivedere le **Attitudes di Erik verso Jasper** e": "- Rivedere le **Attitudes di Erik verso Jasper** e di **Noah verso Jasper** alla",
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e",
+      "fonte SUCC. Nel World l'Environment SUCC ha oggi S": "fonte SUCC. Nel World l'Environment SUCC ha oggi Start Position al **6 aprile",
+      "Start Position al **1908**, allineandola all'era c": "Start Position al **1908**, allineandola all'era che già lo dice, ma è una tua"
+    }
+  },
+  "Aurora Night": {
+    "id": "_A6Wmm1tCLybVYMqGeTckb",
+    "doc_sources": [
+      "Blackwood_District_Alphas_Completamento_2026-09-14.md",
+      "Import_Plan_AllContent.md"
+    ],
+    "extracted_fields": {
+      "## Attitudes assegnate": "## Attitudes assegnate"
+    }
+  },
+  "Ariadne Cirillo": {
+    "id": "_q1rYKHndN64QUgjHQazXB",
+    "doc_sources": [
+      "Ariadne_Cirillo.md",
+      "Coda_Audit_Intimacy_Profile_World_2026-09-14.md",
+      "INDEX.md",
+      "Marek_Zeera_Brak_Huck_Ut_Ariadne_Completamento_2026-09-22.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md",
+      "SUCC_Roster_Confronto_Completezza_2026-09-15.md"
+    ],
+    "extracted_fields": {
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e"
+    }
+  },
+  "Archer Wolfwood": {
+    "id": "_6hc62Ay9tVBXecnAfmqdU",
+    "doc_sources": [
+      "Archer_Wolfwood_Card.md",
+      "Asse_Magnus_Archer_Due_Pureblood.md",
+      "Import_Plan_AllContent.md",
+      "INDEX.md",
+      "Outfit_HybridFullShift_SUCC_2026-09-13.md"
+    ],
+    "extracted_fields": {
+      "**6352 caratteri** e completa tranne la Start Posi": "**6352 caratteri** e completa tranne la Start Position, che è bloccata da una",
+      "- età, data di nascita, trittico zodiacale, biogra": "- età, data di nascita, trittico zodiacale, biografia, voce, outfit, dialoghi",
+      "| Attitudes | 0 | **4** |": "| Attitudes | 0 | **4** |",
+      "### Attitudes": "### Attitudes",
+      "**Start Position**, unico passo della pipeline non": "**Start Position**, unico passo della pipeline non fatto, perché dipende dalla",
+      "Attitudes scritte in entrambe le direzioni, **Ackn": "Attitudes scritte in entrambe le direzioni, **Acknowledged** da tutti e due, 30 e",
+      "- ✅ **Archer Wolfwood** — folder SOLARTON. Rettore": "- ✅ **Archer Wolfwood** — folder SOLARTON. Rettore (Chancellor), S.U.C.C. 60enne, Alpha. Pronomi he/him. Tag Male/Werewolf/Original/Supernatural/Modern. Birthdate 14 maggio 1964."
+    }
+  },
+  "Angelo Moreno": {
+    "id": "_mwqYFKwWfHDMctDJQMR6w",
+    "doc_sources": [
+      "Blackwood_District_Alphas_Completamento_2026-09-14.md",
+      "Piano_Integrazione_Wyldfire_2026-09-22.md",
+      "World_Modifiche_Da_Applicare.md"
+    ],
+    "extracted_fields": {
+      "## Attitudes assegnate": "## Attitudes assegnate"
+    }
+  },
+  "Andrew Campbell": {
+    "id": "_acGaTVmCXxKDrTa6KNYzd",
+    "doc_sources": [
+      "Audit_Schede_2026-09-03.md",
+      "Fraternity_Sorority_Row.md",
+      "Portale_Personaggi_SUCC_Schede_Ufficiali.md",
+      "Tate_And_The_Lab_Survivors.md"
+    ],
+    "extracted_fields": {
+      "**82 schede su 86 non hanno Start Position.** Ne h": "**82 schede su 86 non hanno Start Position.** Ne hanno solo quattro:",
+      "> **Leggere prima `Timeline_Apertura_E_Rush.md`.**": "> **Leggere prima `Timeline_Apertura_E_Rush.md`.** All'apertura del World, il 25",
+      "**Non e' ancora successo.** Vedi `Timeline_Apertur": "**Non e' ancora successo.** Vedi `Timeline_Apertura_E_Rush.md`.",
+      "### Attitudes di Jasper, aggiornate": "### Attitudes di Jasper, aggiornate",
+      "- Rivedere le **Attitudes di Erik verso Jasper** e": "- Rivedere le **Attitudes di Erik verso Jasper** e di **Noah verso Jasper** alla",
+      "che sono il materiale più utile per i Dialogue Exa": "che sono il materiale più utile per i Dialogue Examples e per le Attitudes, e"
+    }
+  },
+  "Allegra Lumsden": {
+    "id": "_Rngxy8LRVnPqGqBamkjMW",
+    "doc_sources": [
+      "Audit_Completezza_Outfit_Shift_2026-09-15.md",
+      "Grave_Mistake_Band_Schede.md",
+      "Gruppo_Cross_Reference_Sei_Personaggi_2026-09-13.md"
+    ],
+    "extracted_fields": {
+      "outfit, zero dialoghi, zero attitudes, niente RPG,": "outfit, zero dialoghi, zero attitudes, niente RPG, niente Start Position.",
+      "1999, Roland 14 giugno 2000, Via 30 settembre 2001": "1999, Roland 14 giugno 2000, Via 30 settembre 2001. Start Position uguale alla",
+      "birthdate su tutti e quattro, nessuna oltre `world": "birthdate su tutti e quattro, nessuna oltre `world_age`.",
+      "## Date/Start Position: nessuna invenzione necessa": "## Date/Start Position: nessuna invenzione necessaria salvo un caso"
+    }
+  },
+  "Alicia Virtuoso": {
+    "id": "_8CCMxWyPxRBaC1f2ycDqe",
+    "doc_sources": [
+      "Audit_Los_Angeles_2026-09-14.md",
+      "LosAngeles_Sinners_Lieutenants_Everett_Damien_2026-09-15.md"
+    ],
+    "extracted_fields": {
+      "## Aggiornamenti incrociati (Attitudes, §16)": "## Aggiornamenti incrociati (Attitudes, §16)"
+    }
+  },
+  "Adelin Coso": {
+    "id": "_UczWkLKQ2td6jrJCR66Eb",
+    "doc_sources": [
+      "Adelin_Coso_Completamento_2026-09-13.md",
+      "Gruppo_Cross_Reference_Sei_Personaggi_2026-09-13.md",
+      "Hideo_Reid_Card_2026-09-13.md",
+      "INDEX.md",
+      "Stub_FanOC_Creazione_313Schede_2026-09-15.md"
+    ],
+    "extracted_fields": {
+      "A differenza di Venera Dolce e Hideo Reid, Adelin ": "A differenza di Venera Dolce e Hideo Reid, Adelin Coso (`_F9dpXcBcnVARF44VDt8pf`) **non era uno stub**: `long_summary`, `summary`, `display_description` e Attitudes erano già scritti, completi, già purgati da `{{user}}` in una lavorazione precedente (sezioni \"THE ASSISTANT COACH\" e \"HIS RELATIONSHIP WITH STUDENTS\" già generalizzate). Esisteva già anche una Lexicon \"Intimacy Profile - Adelin Coso\" (`_mdVbnk1bRKTzeQMk8kAX4`) con `party_conditions` sul personaggio, che copriva già per intero il materiale privato/intimo appena fornito (dating pool, avversione alle app di incontri, preferenza per partner piccoli e per driadi/supernaturali legati alla natura, imbarazzo alle orecchie, cautela sulla propria taglia). **Nessuna modifica necessaria a quella entry.**",
+      "| **Coach Mithers** | `long_summary`/`summary`/`di": "| **Coach Mithers** | `long_summary`/`summary`/`display_description` già scritti, buoni, 3 Attitudes esistenti (incluso un `rival` verso Adelin Coso, tier confermato valido lato API oltre a quelli già documentati) | Solo pipeline mancante: 5 outfit, 5 Dialogue Examples, `final_instructions` |",
+      "| **Rue** | Idem, narrativa già scritta e purgata,": "| **Rue** | Idem, narrativa già scritta e purgata, 2 Attitudes (Alyssa/Jasper stranger) | Pipeline mancante: 5 outfit, 5 Dialogue Examples, `final_instructions`, più 1 Attitude aggiunta verso Adelin Coso (padre, `best_friend` 85, cablata solo ora perché la scheda del padre non collegava ancora questo verso) |",
+      "## Date/Start Position: nessuna invenzione necessa": "## Date/Start Position: nessuna invenzione necessaria salvo un caso",
+      "- `end_timeline_position`: vuoto (nessuna indicazi": "- `end_timeline_position`: vuoto (nessuna indicazione di decesso dalla fonte)."
+    }
+  },
+  "Abel Vilas": {
+    "id": "_bVgKYYURnWGWdX142q99k",
+    "doc_sources": [
+      "Abel_Vilas_Ibridi_Representative_2026-09-14.md",
+      "INDEX.md"
+    ],
+    "extracted_fields": {}
+  }
+}

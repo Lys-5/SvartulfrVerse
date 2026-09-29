@@ -2,7 +2,7 @@
   "id": "_CgYT8fHXpDC4crjmegQF7",
   "_id": "_CgYT8fHXpDC4crjmegQF7",
   "created_at": "2026-09-18T10:30:20.705Z",
-  "updated_at": "2026-09-22T14:39:44.448Z",
+  "updated_at": "2026-09-29T01:31:08.238Z",
   "name": "Svartulfr",
   "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/98e2d06d-a675-45e3-6096-cf976b547400/public",
   "background": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/40cd8fd2-d4de-4a29-fcf6-c562b903ea00/public",
@@ -49,19 +49,21 @@
     "backgroundURL": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/508d176f-8a76-44d9-65fc-f98997264800/public",
     "photoURL": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/bd18ce0c-6994-4729-845d-1fb1e759f900/public",
     "displayName": "Lys",
-    "role": "user"
+    "role": "user",
+    "equipped_border": null,
+    "equipped_badges": []
   },
   "approval_date": "2026-09-19T17:43:59.904Z",
   "rejection_date": null,
   "approval_comment": "Approved by admin",
   "rejection_comment": null,
   "can_fork": false,
-  "enable_ai_tool_creation": false,
+  "enable_ai_tool_creation": true,
   "entity_statistics": {
     "_id": "_WpktghWwJNGp9UewqDHac",
     "id": "_WpktghWwJNGp9UewqDHac",
     "total_likes": 0,
-    "total_views": 10,
+    "total_views": 11,
     "total_messages": 0,
     "total_chats": 0,
     "total_comments": 0,
@@ -72,114 +74,182 @@
   "linked_character_settings": {},
   "secrets": {},
   "commands": [],
+  "custom_introduction": false,
+  "introduction_pages": [],
+  "intro_fields": {},
+  "intro_include_character_select": true,
+  "intro_include_rpg_build": true,
+  "intro_playable_character_ids": [
+    "_x3VY2kcbaDbKyCqywGeET",
+    "_MXcEC8Y6B3BNm3b1ttHj6"
+  ],
+  "intro_greeting": "",
+  "hide_world_intro_entry": false,
+  "persona_presets": [],
+  "stat_templates": [],
   "scan_depth": 5,
   "pending_events_lookahead_hours": 72,
   "avatar_activation_prefix": "",
   "avatar_activation_suffix": "",
   "content_folders": {
-    "characters": [
-      {
-        "id": "lxf_CCMmKRyPEpbGl3CqYgNxm",
-        "name": "Family",
-        "parent_id": null,
-        "entry_ids": [
-          "_W9PLYt9ERTBJBXqKQL2en"
-        ],
-        "position": 0
-      },
-      {
-        "id": "lxf_SvsAXt1Bzq6FzUEjrq3Af",
-        "name": "Pack",
-        "parent_id": null,
-        "entry_ids": [
-          "_FJhtBq4xUM4aUWpaJAPYF",
-          "_NYtBzeKNkm3pedHMnYaka"
-        ],
-        "position": 1
-      },
-      {
-        "id": "lxf_fenGD8DGj_ZvWklh1tXn3",
-        "name": "Solarton",
-        "parent_id": null,
-        "entry_ids": [
-          "_nH4tNHagQ1Cthad7gYRWU",
-          "_Tq76qk4hArR8WUej4Hxh8",
-          "_bVgKYYURnWGWdX142q99k",
-          "_fg7fY3dyNCnNzeT1GVYhP",
-          "_UczWkLKQ2td6jrJCR66Eb",
-          "_q1rYKHndN64QUgjHQazXB",
-          "_6hc62Ay9tVBXecnAfmqdU",
-          "_U3JX1Xd9Um2ff4fA64wcr",
-          "_d1rcReg8z8wKTUmyy9na8",
-          "_RQQcCAN4MHETcJLhXPe9k",
-          "_gqFXEaVj4aG9a8QL8R7f1",
-          "_C18UjnQzGMLcQaNW3UaKq"
-        ],
-        "position": 2
-      },
-      {
-        "id": "lxf_DfFZFo2QS9HiN_Q-odlxK",
-        "name": "Blackwood",
-        "parent_id": null,
-        "entry_ids": [
-          "_kP1gWeyLw9jKbz3Xf73GH",
-          "_a6KYGdN3BWTgbYEbT4mx8",
-          "_mwqYFKwWfHDMctDJQMR6w",
-          "_QqYg238LKb4K6t3ERh4YD"
-        ],
-        "position": 3
-      },
-      {
-        "id": "lxf_5ZVgs5n0b_N0zEfg0Lnog",
-        "name": "Other",
-        "parent_id": null,
-        "entry_ids": [],
-        "position": 4
-      },
-      {
-        "id": "lxf_NV9eBiXfM_EMgZOfnwcaF",
-        "name": "Los Angeles",
-        "parent_id": null,
-        "entry_ids": [
-          "_Mwqxw2M1NaxwXgTmxEXGr",
-          "_8CCMxWyPxRBaC1f2ycDqe",
-          "_E7kHtwcpVYedVkVTmMGKX"
-        ],
-        "position": 5
-      }
-    ],
-    "locations": [
-      {
-        "id": "lxf_X_pqqyj7HQ4-g3Oe6EsE8",
-        "name": "SUCC",
-        "parent_id": null,
-        "entry_ids": [
-          "_4FMaQm3xQCUVHeRf3AWYk",
-          "_Ra4fXd8BEdKUeKTbGAw3b",
-          "_j67Dp2PVwFCpdrfWRYV2M",
-          "_xfz8yrt2RjqHyTa8MXG3W"
-        ],
-        "position": 0
-      }
-    ]
+    "characters": [],
+    "locations": []
   },
   "context_description": "Svartúlfr | Urban is set in modern-day California, centered on Blackwood: the ancient, hidden supernatural seat tucked inland within Blackwood Forest, ruled for a thousand years by the Douglas-Bloodmoon werewolf dynasty. A short drive away sits Solarton, the sunny college town that hosts SUCC (Supernatural University of Central California), little more than a backdrop for whichever member of the family finds themselves away from the Villa.\n\nThe patriarch, Erik Douglas, heads the Douglas Commercial Coalition (DCC), a 350-year-old merchant house (founded 1666 as the Douglas Commercial Company) that grew into an international trade and import/export conglomerate, headquartered in Blackwood. Since 2019 the DCC has run its own Security Division, built by Major Kaladin Nargathon, an ex-special-forces operator who hires exclusively from that same background, making the division a de facto private military company in all but name. Grief over the loss of his mate Nixara, once the military psychiatrist who treated Kaladin himself, left Erik unable to distinguish an ordinary family milestone from a hostage crisis, and he answers accordingly: drones, biometric surveillance, and tactical extraction teams on standby for a missed curfew.\n\nBlackwood City is the true stage of the story, carved into districts: Seven Hills, the wooded luxury enclave where Villa Douglas stands; Uptown, the vampire-run financial core; Paradise, fashion and nightlife, home to the vampire studio Eidolon Creative; Bluemoon, home to The Verve (Logan's club and garage, now one and the same); Oldtown, the 1600s colonial heart of the city; Ironworks, its industrial belt; Dockside, a river import/export district on the Yarrow, not a sea port, since Blackwood lies inland; and Arcadia, the quieter residential district around Blackwood General Hospital and the city's primary schools. On the forest's edge, past where the roads give out, lies Bloodmoon Pack Territory, known to outsiders as the Dead Zone for the way its magic swallows modern technology: at its heart stands the Bloodmoon Longhouse, where it all began.\n\nEvery interaction in this world is filtered through LSE biology: continuous scent communication, Heat and Rut cycles, the Alpha Command, and the permanent neural link of a Mating Bond.\n\nThe narrator is Wulfnic Báleygr, the family's 1199-year-old immortal ancestor, one of the Last Three Firstborn (with Zefir and Ut) and Alpha of Alphas over North America. Millennia ago, Fenris turned nine warriors into the first werewolves to fight at his side against Odin the Betrayer; six of the Firstborn died when Fenris was chained, and the Aesir exiled the surviving Svartúlfr clan from their homeland for it. Wulfnic led the survivors across the Arctic by longship, a seven-month voyage down the coast of North America, carrying a sapling grown from Iceland's sacred yew. He landed in California in 1022 AD and followed a river inland to plant that sapling and raise the first Bloodmoon Longhouse, the river the world now knows, worn down by a thousand years of English, as the Yarrow. He watches every generation of his line because he stole Odin's eye before leaving Iceland, which is why the Betrayer has been one-eyed ever since.",
   "base_instructions": "",
   "final_instructions": "",
   "world_age": 10486470,
+  "human_start_date": "2024-04-07T00:00:00.000Z",
+  "time_of_day_config": {
+    "day_length": 24,
+    "default_time": 12,
+    "periods": [
+      {
+        "id": "ec7de46b-3945-4912-bd0b-1928d3bf15f2",
+        "name": "Dawn",
+        "description": "The sky lightens with the first pale glow of dawn, painting the horizon in soft pinks and golds.",
+        "start": 5,
+        "end": 7
+      },
+      {
+        "id": "9f89d61d-a529-443e-a3d8-49b318b6285a",
+        "name": "Morning",
+        "description": "Bright morning light fills the world as the day gets underway.",
+        "start": 7,
+        "end": 12
+      },
+      {
+        "id": "7dfc4184-90eb-4833-aa85-7ac5f7170e54",
+        "name": "Afternoon",
+        "description": "The sun hangs high, casting warm afternoon light and long, shifting shadows.",
+        "start": 12,
+        "end": 17
+      },
+      {
+        "id": "457cd377-e7a1-44e6-ac06-2946f5a6d7b2",
+        "name": "Evening",
+        "description": "The sun dips low, bathing everything in warm amber and dusky hues as evening settles in.",
+        "start": 17,
+        "end": 20
+      },
+      {
+        "id": "f76d7337-a7eb-40c5-8358-2eb2273047b1",
+        "name": "Night",
+        "description": "Darkness blankets the world under a canopy of stars and moonlight.",
+        "start": 20,
+        "end": 5
+      }
+    ]
+  },
+  "calendar": {
+    "name": "Gregorian Calendar",
+    "epoch_label": "CE",
+    "day_length": 24,
+    "days_per_week": 7,
+    "day_names": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "start_year": 2024,
+    "display_format": "{day_name}, {month} {day}, Year {year} {epoch}",
+    "leap_year": {
+      "every": 4,
+      "except": 100,
+      "unless": 400,
+      "extra_days": 1,
+      "month_id": "feb"
+    },
+    "months": [
+      {
+        "id": "jan",
+        "name": "January",
+        "days": 31
+      },
+      {
+        "id": "feb",
+        "name": "February",
+        "days": 28
+      },
+      {
+        "id": "mar",
+        "name": "March",
+        "days": 31
+      },
+      {
+        "id": "apr",
+        "name": "April",
+        "days": 30
+      },
+      {
+        "id": "may",
+        "name": "May",
+        "days": 31
+      },
+      {
+        "id": "jun",
+        "name": "June",
+        "days": 30
+      },
+      {
+        "id": "jul",
+        "name": "July",
+        "days": 31
+      },
+      {
+        "id": "aug",
+        "name": "August",
+        "days": 31
+      },
+      {
+        "id": "sep",
+        "name": "September",
+        "days": 30
+      },
+      {
+        "id": "oct",
+        "name": "October",
+        "days": 31
+      },
+      {
+        "id": "nov",
+        "name": "November",
+        "days": 30
+      },
+      {
+        "id": "dec",
+        "name": "December",
+        "days": 31
+      }
+    ],
+    "start_month_id": "apr",
+    "start_day_of_month": 7
+  },
+  "starting_properties": [],
   "world_market_config": {
     "delivery_premium_pct": 0.15,
+    "sellback_pct": 0.5,
     "sellback_location_rule": "anywhere",
-    "unpaid_rent_rule": "evict"
+    "furnished_lot_bonus_pct": 0.15,
+    "unpaid_rent_rule": "debt"
   },
   "world_features": {
-    "inventory": false,
-    "currency": false,
-    "show_party_stats": false
+    "inventory": true,
+    "currency": true,
+    "show_party_stats": true,
+    "combat": true,
+    "rpg_stats": true,
+    "ships": true
   },
   "relationship_config": {
-    "enabled": true
+    "enabled": true,
+    "decay_curve": "ease_out"
   },
+  "default_start_location_id": "_hfm1W4nYnXfQEqcNGwNxr",
   "currencies": [
     {
       "id": "fbecc738-f9f7-4426-b8a1-a237b8ad922c",
@@ -190,7 +260,7 @@
       "universal_credit_rate": 1
     }
   ],
-  "ai_inventory_management": false,
+  "ai_inventory_management": true,
   "travel_routes": [
     {
       "id": "174be6fc-f8ee-4c35-9625-308c768dcc04",
@@ -249,17 +319,17 @@
     }
   ],
   "free_travel": false,
-  "allow_ship_arrivals": false,
+  "allow_ship_arrivals": true,
   "ship_arrival_locations": [],
   "collaborators": [],
   "regex_scripts": [],
   "personas": [],
   "sprite_sets": [],
   "linked_characters": [],
-  "lexicon_count": 254,
+  "lexicon_count": 556,
   "gallery_count": 0,
   "environments_count": 2,
-  "locations_count": 135,
+  "locations_count": 148,
   "maps_count": 2,
   "linked_characters_count": 0
 }

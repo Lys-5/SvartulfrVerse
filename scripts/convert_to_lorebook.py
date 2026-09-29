@@ -18,6 +18,13 @@ def parse_json_field(val, default=None):
             return val
     return default if default is not None else []
 
+def clean_format_text(text):
+    if not text or not isinstance(text, str):
+        return text if text is not None else ""
+    # Enforce Rule 2: Remove em-dash (—) and en-dash (–)
+    text = text.replace("—", ", ").replace("–", ", ")
+    return text.strip()
+
 def convert_svartulfr():
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     src_path = os.path.join(base_dir, 'exports', 'Svartulfr_Export.json')
@@ -64,7 +71,7 @@ def convert_svartulfr():
             extensions = {}
 
         name = item.get('name') or f"Lexicon_{uid_counter}"
-        content = item.get('content') or ""
+        content = clean_format_text(item.get('content') or "")
         enabled = bool(item.get('enabled', 1))
         constant = bool(item.get('constant', 0))
         case_sensitive = bool(item.get('case_sensitive', 0))
@@ -146,10 +153,10 @@ def convert_svartulfr():
         selective_logic = logic_map.get(key_logic, 0)
 
         # Prioritize long_summary (rich JED+)
-        content = char.get('long_summary') or char.get('summary') or ""
+        content = clean_format_text(char.get('long_summary') or char.get('summary') or "")
         final_inst = char.get('final_instructions')
-        if final_inst and final_inst.strip() and final_inst.strip() not in content:
-            content = f"{content}\n\n[INSTRUCTIONS: {final_inst.strip()}]"
+        if final_inst and final_inst.strip() and clean_format_text(final_inst) not in content:
+            content = f"{content}\n\n[INSTRUCTIONS: {clean_format_text(final_inst)}]"
 
         entry_id = char.get('id') or f"char_{uid_counter}"
 
@@ -231,10 +238,10 @@ def convert_svartulfr():
             if isinstance(t, str) and t.strip() and t.strip() not in keys:
                 keys.append(t.strip())
 
-        content = loc.get('context_description') or loc.get('description') or ""
+        content = clean_format_text(loc.get('context_description') or loc.get('description') or "")
         final_inst = loc.get('final_instructions')
-        if final_inst and final_inst.strip() and final_inst.strip() not in content:
-            content = f"{content}\n\n[LOCATION INSTRUCTIONS: {final_inst.strip()}]"
+        if final_inst and final_inst.strip() and clean_format_text(final_inst) not in content:
+            content = f"{content}\n\n[LOCATION INSTRUCTIONS: {clean_format_text(final_inst)}]"
 
         entry_id = loc.get('id') or f"loc_{uid_counter}"
 
@@ -297,10 +304,10 @@ def convert_svartulfr():
             if isinstance(t, str) and t.strip() and t.strip() not in keys:
                 keys.append(t.strip())
 
-        content = env.get('context_description') or env.get('description') or ""
+        content = clean_format_text(env.get('context_description') or env.get('description') or "")
         final_inst = env.get('final_instructions')
-        if final_inst and final_inst.strip() and final_inst.strip() not in content:
-            content = f"{content}\n\n[ENVIRONMENT INSTRUCTIONS: {final_inst.strip()}]"
+        if final_inst and final_inst.strip() and clean_format_text(final_inst) not in content:
+            content = f"{content}\n\n[ENVIRONMENT INSTRUCTIONS: {clean_format_text(final_inst)}]"
 
         entry_id = env.get('id') or f"env_{uid_counter}"
 
@@ -360,10 +367,10 @@ def convert_svartulfr():
             if isinstance(t, str) and t.strip() and t.strip() not in keys:
                 keys.append(t.strip())
 
-        content = scen.get('description') or ""
+        content = clean_format_text(scen.get('description') or "")
         scene_inst = scen.get('scene_instructions')
-        if scene_inst and scene_inst.strip() and scene_inst.strip() not in content:
-            content = f"{content}\n\n[SCENARIO INSTRUCTIONS: {scene_inst.strip()}]"
+        if scene_inst and scene_inst.strip() and clean_format_text(scene_inst) not in content:
+            content = f"{content}\n\n[SCENARIO INSTRUCTIONS: {clean_format_text(scene_inst)}]"
 
         entry_id = scen.get('id') or f"scen_{uid_counter}"
 
@@ -425,7 +432,7 @@ def convert_svartulfr():
             if isinstance(t, str) and t.strip() and t.strip() not in keys:
                 keys.append(t.strip())
 
-        content = m.get('description') or f"Cartographic map of {name}."
+        content = clean_format_text(m.get('description') or f"Cartographic map of {name}.")
         if m.get('image_url'):
             content += f"\nMap Asset: {m.get('image_url')}"
 
@@ -494,11 +501,11 @@ def convert_svartulfr():
         if era.get('start_position') is not None:
             content += f"Timeline Hours Range: {era.get('start_position')} to {era.get('end_position') if era.get('end_position') is not None else 'Current World Age'}\n"
         if era.get('description'):
-            content += f"\nDescription: {era.get('description')}\n"
+            content += f"\nDescription: {clean_format_text(era.get('description'))}\n"
         if era.get('context_description'):
-            content += f"\nContext: {era.get('context_description')}\n"
+            content += f"\nContext: {clean_format_text(era.get('context_description'))}\n"
         if era.get('final_instructions'):
-            content += f"\n[ERA INSTRUCTIONS: {era.get('final_instructions')}]\n"
+            content += f"\n[ERA INSTRUCTIONS: {clean_format_text(era.get('final_instructions'))}]\n"
 
         entry_id = era.get('id') or f"era_{uid_counter}"
 
@@ -745,29 +752,41 @@ def convert_svartulfr():
             json.dump(lb, f, indent=2, ensure_ascii=False)
         print(f"Exported valid Lorebook: {filepath} ({len(entries_list)} entries)")
 
-    # 1. Characters (365 entries -> Split into 2 parts: 183 and 182, plus complete archive)
-    char_mid = (len(characters_converted) + 1) // 2
-    chars_p1 = characters_converted[:char_mid]
-    chars_p2 = characters_converted[char_mid:]
+    # Dynamic Lorebook Partition Helper
+    def export_category_with_parts(items, category_key, category_title, file_prefix, desc_fn):
+        if len(items) > MAX_LOREBOOK_ENTRIES:
+            num_parts = (len(items) + MAX_LOREBOOK_ENTRIES - 1) // MAX_LOREBOOK_ENTRIES
+            chunk_size = (len(items) + num_parts - 1) // num_parts
+            for p_idx in range(num_parts):
+                p_num = p_idx + 1
+                start = p_idx * chunk_size
+                end = min((p_idx + 1) * chunk_size, len(items))
+                chunk = items[start:end]
+                export_lorebook_file(
+                    f"{file_prefix}_Part{p_num}.json",
+                    f"Svartúlfr - {category_title} (Part {p_num})",
+                    desc_fn(p_num, num_parts, chunk[0]['name'], chunk[-1]['name']),
+                    category_key,
+                    chunk,
+                    {"part": p_num, "total_parts": num_parts}
+                )
+        else:
+            export_lorebook_file(
+                f"{file_prefix}.json",
+                f"Svartúlfr - {category_title}",
+                f"{category_title} di Svartúlfr ({len(items)} voci)",
+                category_key,
+                items
+            )
 
-    export_lorebook_file(
-        "Svartulfr_Characters_Part1.json",
-        "Svartúlfr - Characters (Part 1)",
-        f"Personaggi e NPC del mondo Svartúlfr - Parte 1 di 2 ({chars_p1[0]['name']} - {chars_p1[-1]['name']})",
+    # 1. Characters (Dynamic split into parts <= 250 entries each, plus complete archive)
+    export_category_with_parts(
+        characters_converted,
         "Characters",
-        chars_p1,
-        {"part": 1, "total_parts": 2}
-    )
-
-    export_lorebook_file(
-        "Svartulfr_Characters_Part2.json",
-        "Svartúlfr - Characters (Part 2)",
-        f"Personaggi e NPC del mondo Svartúlfr - Parte 2 di 2 ({chars_p2[0]['name']} - {chars_p2[-1]['name']})",
         "Characters",
-        chars_p2,
-        {"part": 2, "total_parts": 2}
+        "Svartulfr_Characters",
+        lambda p_num, total, start_name, end_name: f"Personaggi e NPC del mondo Svartúlfr - Parte {p_num} di {total} ({start_name} - {end_name})"
     )
-
     export_lorebook_file(
         "Svartulfr_Characters_Complete.json",
         "Svartúlfr - Characters (Complete Archive)",
@@ -776,7 +795,57 @@ def convert_svartulfr():
         characters_converted
     )
 
-    # 2. Lexicon (254 entries -> Unified file + 2 parts of 127 entries each)
+    # 1.1 Character Tiers (G1: Main Cast, G2: Secondary Cast, G3: Background / NPCs)
+    g1_names = [
+        'erik douglas', 'malachia douglas bloodmoon', 'noah douglas bloodmoon',
+        'jasper douglas bloodmoon', 'alyssa douglas bloodmoon', 'logan douglas',
+        'edric douglas', 'lord cornelius douglas', 'magnus douglas iii',
+        'elizabeth duskwood', 'wulfnic bloodmoon', 'ut berg', 'zefir hvitskog',
+        'fenris', 'nixara bloodmoon', 'kaladin nargathon', 'marcus thornfield'
+    ]
+    g2_list_path = os.path.join(base_dir, 'scratch', 'g2_canonical_list.json')
+    g2_ids = set()
+    if os.path.exists(g2_list_path):
+        with open(g2_list_path, 'r', encoding='utf-8') as f_g2:
+            g2_ids = {item['id'] for item in json.load(f_g2)}
+
+    characters_g1 = []
+    characters_g2 = []
+    characters_g3 = []
+
+    for entry in characters_converted:
+        cid = entry.get('id')
+        name_lower = (entry.get('name') or '').strip().lower()
+        if name_lower in g1_names:
+            characters_g1.append(entry)
+        elif cid in g2_ids:
+            characters_g2.append(entry)
+        else:
+            characters_g3.append(entry)
+
+    export_lorebook_file(
+        "Svartulfr_Characters_G1_Main.json",
+        "Svartúlfr - Characters (G1 Main Cast)",
+        f"Personaggi primari del Main Cast di Svartúlfr ({len(characters_g1)} personaggi)",
+        "Characters",
+        characters_g1
+    )
+    export_lorebook_file(
+        "Svartulfr_Characters_G2_Secondary.json",
+        "Svartúlfr - Characters (G2 Secondary Cast)",
+        f"Personaggi secondari principali di Svartúlfr ({len(characters_g2)} personaggi)",
+        "Characters",
+        characters_g2
+    )
+    export_lorebook_file(
+        "Svartulfr_Characters_G3_NPCs.json",
+        "Svartúlfr - Characters (G3 Background NPCs)",
+        f"Personaggi di fondo e NPC di Svartúlfr ({len(characters_g3)} personaggi)",
+        "Characters",
+        characters_g3
+    )
+
+    # 2. Lexicon (Dynamic split into parts <= 250 entries each, plus complete archive)
     export_lorebook_file(
         "Svartulfr_Lexicon.json",
         "Svartúlfr - Lexicon",
@@ -784,39 +853,25 @@ def convert_svartulfr():
         "Lexicon",
         lexicon_converted
     )
+    if len(lexicon_converted) > MAX_LOREBOOK_ENTRIES:
+        export_category_with_parts(
+            lexicon_converted,
+            "Lexicon",
+            "Lexicon",
+            "Svartulfr_Lexicon",
+            lambda p_num, total, start_name, end_name: f"Voci di lore, magia, fazioni e storia - Parte {p_num} di {total} ({start_name} - {end_name})"
+        )
 
-    lex_mid = (len(lexicon_converted) + 1) // 2
-    lex_p1 = lexicon_converted[:lex_mid]
-    lex_p2 = lexicon_converted[lex_mid:]
-
-    export_lorebook_file(
-        "Svartulfr_Lexicon_Part1.json",
-        "Svartúlfr - Lexicon (Part 1)",
-        f"Voci di lore, magia, fazioni e storia - Parte 1 di 2 ({lex_p1[0]['name']} - {lex_p1[-1]['name']})",
-        "Lexicon",
-        lex_p1,
-        {"part": 1, "total_parts": 2}
-    )
-
-    export_lorebook_file(
-        "Svartulfr_Lexicon_Part2.json",
-        "Svartúlfr - Lexicon (Part 2)",
-        f"Voci di lore, magia, fazioni e storia - Parte 2 di 2 ({lex_p2[0]['name']} - {lex_p2[-1]['name']})",
-        "Lexicon",
-        lex_p2,
-        {"part": 2, "total_parts": 2}
-    )
-
-    # 3. Locations (135 entries <= 250)
-    export_lorebook_file(
-        "Svartulfr_Locations.json",
-        "Svartúlfr - Locations",
-        "Luoghi e distretti dettagliati di Svartúlfr",
+    # 3. Locations
+    export_category_with_parts(
+        locations_converted,
         "Locations",
-        locations_converted
+        "Locations",
+        "Svartulfr_Locations",
+        lambda p_num, total, start_name, end_name: f"Luoghi e distretti dettagliati di Svartúlfr - Parte {p_num} di {total} ({start_name} - {end_name})"
     )
 
-    # 4. Environments (2 entries <= 250)
+    # 4. Environments
     export_lorebook_file(
         "Svartulfr_Environments.json",
         "Svartúlfr - Environments",
@@ -825,7 +880,7 @@ def convert_svartulfr():
         environments_converted
     )
 
-    # 5. Scenarios (9 entries <= 250)
+    # 5. Scenarios
     export_lorebook_file(
         "Svartulfr_Scenarios.json",
         "Svartúlfr - Scenarios",
@@ -834,7 +889,7 @@ def convert_svartulfr():
         scenarios_converted
     )
 
-    # 6. Maps (2 entries <= 250)
+    # 6. Maps
     export_lorebook_file(
         "Svartulfr_Maps.json",
         "Svartúlfr - Maps",
@@ -843,7 +898,7 @@ def convert_svartulfr():
         maps_converted
     )
 
-    # 7. Eras (7 entries <= 250)
+    # 7. Eras
     export_lorebook_file(
         "Svartulfr_Eras.json",
         "Svartúlfr - Eras",
@@ -854,13 +909,24 @@ def convert_svartulfr():
 
     print("\n=== CONVERSION SUMMARY ===")
     print(f"Total processed: {uid_counter} items")
-    print(f"  - Characters:   {len(characters_converted)} (Part1: {len(chars_p1)}, Part2: {len(chars_p2)}, Complete: {len(characters_converted)})")
-    print(f"  - Lexicon:      {len(lexicon_converted)} (Part1: {len(lex_p1)}, Part2: {len(lex_p2)}, Complete: {len(lexicon_converted)})")
+    print(f"  - Characters:   {len(characters_converted)} (G1: {len(characters_g1)}, G2: {len(characters_g2)}, G3: {len(characters_g3)})")
+    print(f"  - Lexicon:      {len(lexicon_converted)}")
     print(f"  - Locations:    {len(locations_converted)}")
     print(f"  - Environments: {len(environments_converted)}")
     print(f"  - Scenarios:    {len(scenarios_converted)}")
     print(f"  - Maps:         {len(maps_converted)}")
     print(f"  - Eras:         {len(eras_converted)}")
+
+    # 8. Integrazione Pipeline Master Export: rigenerazione automatica Lexicon NPC G3
+    try:
+        try:
+            from scripts.convert_g3_to_lexicon import convert_g3_characters
+        except ImportError:
+            from convert_g3_to_lexicon import convert_g3_characters
+        print("\n--- REGENERATING G3 LEXICON NPCS ---")
+        convert_g3_characters()
+    except Exception as e:
+        print(f"Error running convert_g3_characters: {e}")
 
 if __name__ == '__main__':
     convert_svartulfr()

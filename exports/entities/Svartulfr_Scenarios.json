@@ -12,13 +12,68 @@
     "Scenarios"
   ],
   "counts": {
-    "total": 9
+    "total": 10
   },
   "entries": [
     {
+      "entry_id": "_7X4UXynjEUKbQhPDHxVRr",
+      "id": "_7X4UXynjEUKbQhPDHxVRr",
+      "uid": 0,
+      "name": "Il Colloquio con HSK",
+      "comment": "Scenario: Il Colloquio con HSK",
+      "keys": [
+        "Il Colloquio con HSK"
+      ],
+      "key": [
+        "Il Colloquio con HSK"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "Martedi' 20 agosto 2024. Prima dell'inizio delle lezioni alla SUCC, Alyssa si presenta in segreto all'Aetheris Clinic di Uptown per il colloquio di selezione con Zeera di HSK Consulting, in vista dell'incarico di ricerca anatomica sul campo per MF Inc.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "event",
+      "source_category": "scenarios",
+      "extensions": {
+        "environment_id": null,
+        "location_id": null,
+        "premade_scenes": [
+          {
+            "id": "scene-hsk-interview-2024",
+            "description": "Aetheris Clinic, Unit 4B",
+            "scene_text": "=>Narrator:\nMartedi' 20 agosto 2024, 10:15 - Aetheris Clinic, Unit 4B, Uptown, Blackwood City\n\nL'aria condizionata dell'Aetheris Clinic taglia il caldo umido della tarda mattinata costiera con un ronzio quasi impercettibile. Le pareti in vetro smerigliato e metallo spazzolato riflettono una luce bianca, fredda e priva di ombre, studiata per trasmettere sterilita' clinica e riservatezza assoluta. Nessuna targa all'esterno della suite 4B menziona MF Inc. o la vera natura degli incarichi gestiti: per l'anagrafe societaria di Uptown, HSK Consulting si occupa semplicemente di auditing e collocamento di personale specializzato per contratti ad alto rischio.\n\nSul tavolo d'acciaio satinato riposa un tablet a interfaccia minimale, schermo nero e caratteri bianchi: l'applicazione proprietaria Concierge ha gia' registrato l'ingresso e completato la sincronizzazione del profilo. Mancano pochi giorni all'inizio del semestre alla Supernatural University of Central California, e questa e' l'unica decisione che la famiglia Douglas non ha programmato.\n\n=>Zeera:\nZeera siede dietro la scrivania con la postura eretta e impeccabile che lo contraddistingue, le corna imponenti da Vax che si stagliano contro il pannello retroilluminato. Davanti a lui, un fascicolo digitale aperto mostra i dati anagrafici, i parametri biologici e i risultati preliminari dei test di riflesso.\n\nChiude la cartella con un movimento secco e posa le mani grandi, dalle dita artigliate ma curate, sulla superficie d'acciaio. I suoi occhi ambrati osservano la candidata con una calma impenetrabile, priva di giudizio o compiacimento.\n\n\"I rilievi preliminari confermano una compatibilita' fisiologica eccellente, signorina Douglas. Una Dominant Omega di sangue fondatore ha una capacita' di lettura feromonica e una reattivita' neurale che nessuna matricola ordinaria puo' simulare.\"\n\nFa una breve pausa, lasciando che il peso del proprio tono misurato riempia la stanza.\n\n\"Ma MF Inc. non cerca pedigree, cerca sopravvissuti. Il lavoro di field researcher sul campo, a ridosso delle sacche dimensionali della foresta, non e' una ribellione adolescenziale ne' una gita scientifica. I soggetti non-umani e le creature dei dungeon oltre lo strappo non riconoscono il cognome della vostra famiglia, ne' i contratti della DCC.\"\n\nIncrocia lo sguardo con fermezza, la voce profonda e priva di esitazioni.\n\n\"Il Chief Researcher incaricato del prossimo volume e' Bryson. Un orco anziano, burbero e rigoroso che non tollera esitazioni, disattenzioni o drammi personali durante le sessioni di rilievo. Se accettate l'assegnazione, dovrete seguire i suoi protocolli di sicurezza alla lettera. Vorrei sentire da voi, senza intermediari, perche' avete risposto a questa convocazione.\"\n\n=>Narrator:\nLa notifica discreta dell'app Concierge si illumina sul display con una sola riga bianca su fondo nero: 'Valutazione in corso. Risposta richiesta.' L'ufficio attende nel silenzio clinico di Uptown."
+          }
+        ],
+        "tags": [],
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "event"
+        }
+      }
+    },
+    {
       "entry_id": "_X86JF72TG4p2DYqw7LzRp",
       "id": "_X86JF72TG4p2DYqw7LzRp",
-      "uid": 0,
+      "uid": 1,
       "name": "Halloween alla Theta Iota Theta",
       "comment": "Scenario: Halloween alla Theta Iota Theta",
       "keys": [
@@ -74,7 +129,7 @@
     {
       "entry_id": "_nMaPEAzNA8rQc82NFgXRU",
       "id": "_nMaPEAzNA8rQc82NFgXRU",
-      "uid": 1,
+      "uid": 2,
       "name": "Ciao, Sono Logan",
       "comment": "Scenario: Ciao, Sono Logan",
       "keys": [
@@ -130,7 +185,7 @@
     {
       "entry_id": "_XWFqGmaTPkbpbFQzargbf",
       "id": "_XWFqGmaTPkbpbFQzargbf",
-      "uid": 2,
+      "uid": 3,
       "name": "Primo Incontro con Jared Thompson",
       "comment": "Scenario: Primo Incontro con Jared Thompson",
       "keys": [
@@ -186,7 +241,7 @@
     {
       "entry_id": "_p1Ffq22CTwVywz1CFQBfF",
       "id": "_p1Ffq22CTwVywz1CFQBfF",
-      "uid": 3,
+      "uid": 4,
       "name": "First College Day",
       "comment": "Scenario: First College Day",
       "keys": [
@@ -242,7 +297,7 @@
     {
       "entry_id": "_h7N17PhK4ag3GxM8Bgr8g",
       "id": "_h7N17PhK4ag3GxM8Bgr8g",
-      "uid": 4,
+      "uid": 5,
       "name": "DJ Frequency",
       "comment": "Scenario: DJ Frequency",
       "keys": [
@@ -298,7 +353,7 @@
     {
       "entry_id": "_h7UQKNmxNJP8e7Jq1mEVL",
       "id": "_h7UQKNmxNJP8e7Jq1mEVL",
-      "uid": 5,
+      "uid": 6,
       "name": "Road Trip con Logan",
       "comment": "Scenario: Road Trip con Logan",
       "keys": [
@@ -354,7 +409,7 @@
     {
       "entry_id": "_F3AKNnAjh2UwUaJe9kc6A",
       "id": "_F3AKNnAjh2UwUaJe9kc6A",
-      "uid": 6,
+      "uid": 7,
       "name": "Diciannove Anni",
       "comment": "Scenario: Diciannove Anni",
       "keys": [
@@ -410,7 +465,7 @@
     {
       "entry_id": "_XwKb3hg1wG7gNgAdfGETr",
       "id": "_XwKb3hg1wG7gNgAdfGETr",
-      "uid": 7,
+      "uid": 8,
       "name": "Open Day alla SUCC",
       "comment": "Scenario: Open Day alla SUCC",
       "keys": [
@@ -466,7 +521,7 @@
     {
       "entry_id": "_RL8HD1PbxLzNARyrHqqAn",
       "id": "_RL8HD1PbxLzNARyrHqqAn",
-      "uid": 8,
+      "uid": 9,
       "name": "What Do You Want To Do",
       "comment": "Scenario: What Do You Want To Do",
       "keys": [

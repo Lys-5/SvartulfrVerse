@@ -229,6 +229,21 @@ Ogni voce di Lexicon focalizzata su un singolo personaggio (Intimacy Profiles, D
   3. Reddit (`r/WyvernChat`) e canali di supporto.
   *Se la wiki diverge dalla piattaforma:* Fa fede il dato empirico verificato tramite GET autenticata fresca.
 
+### Riferimenti Ufficiali WyvernWiki per Funzionalità Avanzate e Soluzioni Complesse
+Consultare tassativamente queste risorse ufficiali per l'implementazione di logiche complesse, scripting, templating e formattazione:
+- **World & Architecture Hub**: [Features/Worlds](https://wiki.wyvern.chat/Features/Worlds)
+- **Advanced Lexicon (Categorize Entries & Register NPCs)**: [Advanced/Lexicon](https://wiki.wyvern.chat/en/Advanced/Lexicon)
+- **Pronoun Pruned Prose (PPP) Character Guide**: [Guides/PPP-Character-Format](https://wiki.wyvern.chat/en/Guides/PPP-Character-Format) e [Features/Worlds/Characters](https://wiki.wyvern.chat/en/Features/Worlds/Characters)
+- **Handlebars nei World**: [Features/Worlds/handlebars](https://wiki.wyvern.chat/en/Features/Worlds/handlebars)
+- **Advanced Handlebars**: [Advanced/Handlebars](https://wiki.wyvern.chat/en/Advanced/Handlebars)
+- **Lua nei World**: [Features/Worlds/Lua](https://wiki.wyvern.chat/en/Features/Worlds/Lua)
+- **Advanced Lua**: [Advanced/Lua](https://wiki.wyvern.chat/en/Advanced/Lua)
+- **Story Engine Lua-Handlebars**: [Features/StoryEngine/Lua-Handlebars](https://wiki.wyvern.chat/en/Features/StoryEngine/Lua-Handlebars)
+- **Inline Chat Commands**: [Features/Worlds/Inline-Chat-Commands](https://wiki.wyvern.chat/en/Features/Worlds/Inline-Chat-Commands)
+- **Boosts & Supporter Shoutouts**: [Features/Worlds/boosts-supporter-shoutouts](https://wiki.wyvern.chat/en/Features/Worlds/boosts-supporter-shoutouts)
+- **How to Chat Guide**: [Guides/How-to-Chat](https://wiki.wyvern.chat/en/Guides/How-to-Chat)
+- **Prohibited Content Guide (Safety & Content Policy)**: [Policies/Prohibited-Content-Guide](https://wiki.wyvern.chat/en/Policies/Prohibited-Content-Guide)
+
 ### Regole per l'Uso Sicuro dell'API
 - **Lettura (GET):** Libera e sempre consentita senza autorizzazione preventiva.
 - **Modifiche Mirate (PUT / POST):**
@@ -273,17 +288,25 @@ Ogni voce di Lexicon focalizzata su un singolo personaggio (Intimacy Profiles, D
 
 ---
 
-## 13. Epurazione di `{{user}}` e Gestione Intimacy Profiles
+## 13. Epurazione di `{{user}}`, Conformità Policy Wyvern e Intimacy Profiles
 
 1. **Eliminazione di `{{user}}`:** Rimuovere la macro ovunque senza sostituirla con nomi fissi. Generalizzare i ruoli in termini sistemici impersonali.
-2. **Cancellazione di Tenzioni Sessuali e Cotte verso il Giocatore:** Eliminare attrazioni o tensioni romantiche rivolte a `{{user}}` (inaccettabili soprattutto da adulti/staff verso studenti).
-3. **Relazioni con Studenti:** Se il personaggio riveste autorità accademica, inserire una riga esplicita che precluda relazioni intime con il corpo studentesco.
-4. **Bonifica Tematiche Non Consensuali:** Tratta di persone, schiavismo attivo, violenze sessuali o archi romantici forzati vanno eliminati alla radice prima della scrittura; conservare solo aspetto sobrio, voce e dinamiche sane riutilizzabili.
-5. **Divieto di "The Player (Persona)" per sentimenti specifici:** Non usare questa entità nelle Attitudes per relazioni personali.
-6. **Verifica Finale:** Assicurarsi che la stringa `{{user}}` abbia 0 occorrenze totali sulla scheda.
+2. **Age Gating e Divieto Sessualizzazione Minori (Wyvern Policy #1):**
+   - Qualsiasi personaggio coinvolto in romance/intimità deve avere età formalizzata **18+** (`AGE: {{age}}`).
+   - I minorenni (es. Edric, 12 anni) sono categorizzati unicamente come minor background NPC con divieto esplicito di framing intimo o romantico (*"strictly minor background NPC: zero romantic or intimate framing"*).
+   - Divieto assoluto di romance, flirting o grooming su minorenni o studenti delle superiori.
+3. **Cancellazione di Tensioni Sessuali e Cotte verso il Giocatore:** Eliminare attrazioni o tensioni romantiche rivolte a `{{user}}` (inaccettabili soprattutto da adulti/staff verso studenti).
+4. **Relazioni con Studenti e Confini Accademici:** Se il personaggio riveste autorità accademica (professori/coach SUCC), inserire una riga esplicita che precluda relazioni intime con il corpo studentesco.
+5. **Harkness Test e Divieto Bestialità (Wyvern Policy #2):** Rapporti intimi con licantropi, creature o demi-umani sono ammessi solo se i soggetti sono senzienti, padroneggiano il linguaggio e sono adulti per la loro specie. Vietata qualsiasi sessualizzazione verso animali reali o forme feral.
+6. **Divieto di Necrofilia, Guro e Feticizzazione della Morte (Wyvern Policy #3):** Ammesse ferite e morte in scene d'azione, ma divieto assoluto di sessualizzare cadaveri, ferite gravi o mutilazioni. Non-morti senzienti ammessi solo senza descrizioni grafiche di decomposizione sessualizzata.
+7. **Divieto di Scat, Fart, Vomit, STD Fetish e Prompt NSFL (Wyvern Policy #4 & #6):** Vietata la feticizzazione di scarti biologici o infezioni; vietate istruzioni di sistema che abilitano NSFL.
+8. **Bonifica Tematiche Non Consensuali Reali:** Tratta di persone, schiavismo sessuale attivo o violenze non consensuali reali vanno eliminati alla radice prima della scrittura; conservare solo dinamiche sane, consenzienti e riutilizzabili.
+9. **Divieto di "The Player (Persona)" per sentimenti specifici:** Non usare questa entità nelle Attitudes per relazioni personali.
+10. **Verifica Finale:** Assicurarsi che la stringa `{{user}}` abbia 0 occorrenze totali sulla scheda.
 
 ### Specifiche Tecniche Intimacy Profiles (Lexicon)
 I contenuti anatomici e di kink espliciti non vanno nella `description` della card, ma in una voce Lexicon separata:
+- **Conformità Policy:** Riservati unicamente a personaggi maggiorenni (18+); basati su mutuo consenso, confini chiari (*Hard Limits*, *Aftercare*), registro psicologico ed enciclopedico (no volgarità gratuita o contenuti proibiti).
 - **Nome:** `"Intimacy Profile - <NomePersonaggio>"`
 - **Entry Type:** `"memory"` (**Obbligatorio**).
 - **`is_global`:** `true` (la restrizione è delegata alle party conditions).

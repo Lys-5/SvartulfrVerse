@@ -118,6 +118,21 @@ Tutti gli agenti AI e i collaboratori che operano in questo workspace devono seg
 11. [11. Wyvern Web API: Protocolli di Sicurezza e Risoluzione Bug](file:///d:/SvartulfrVerse/.agents/rules/11_wyvern_api_sicurezza_e_bug.md) — Snapshot preventivo, body parziale per PUT, sostituzione array completi, verifica post-scrittura.
 12. [12. Lavoro in Locale su Database SQLite Wyldfire (Sospeso)](file:///d:/SvartulfrVerse/.agents/rules/12_lavoro_locale_sqlite_wyldfire.md) — Protocollo di sicurezza e backup numerati (attivo solo su richiesta esplicita).
 
+### Riferimenti Ufficiali WyvernWiki per Funzionalità Avanzate e Soluzioni Complesse
+Consultare tassativamente queste risorse ufficiali per l'implementazione di logiche complesse, scripting, templating e formattazione:
+- **World & Architecture Hub**: [Features/Worlds](https://wiki.wyvern.chat/Features/Worlds)
+- **Advanced Lexicon (Categorize Entries & Register NPCs)**: [Advanced/Lexicon](https://wiki.wyvern.chat/en/Advanced/Lexicon)
+- **Pronoun Pruned Prose (PPP) Character Guide**: [Guides/PPP-Character-Format](https://wiki.wyvern.chat/en/Guides/PPP-Character-Format) e [Features/Worlds/Characters](https://wiki.wyvern.chat/en/Features/Worlds/Characters)
+- **Handlebars nei World**: [Features/Worlds/handlebars](https://wiki.wyvern.chat/en/Features/Worlds/handlebars)
+- **Advanced Handlebars**: [Advanced/Handlebars](https://wiki.wyvern.chat/en/Advanced/Handlebars)
+- **Lua nei World**: [Features/Worlds/Lua](https://wiki.wyvern.chat/en/Features/Worlds/Lua)
+- **Advanced Lua**: [Advanced/Lua](https://wiki.wyvern.chat/en/Advanced/Lua)
+- **Story Engine Lua-Handlebars**: [Features/StoryEngine/Lua-Handlebars](https://wiki.wyvern.chat/en/Features/StoryEngine/Lua-Handlebars)
+- **Inline Chat Commands**: [Features/Worlds/Inline-Chat-Commands](https://wiki.wyvern.chat/en/Features/Worlds/Inline-Chat-Commands)
+- **Boosts & Supporter Shoutouts**: [Features/Worlds/boosts-supporter-shoutouts](https://wiki.wyvern.chat/en/Features/Worlds/boosts-supporter-shoutouts)
+- **How to Chat Guide**: [Guides/How-to-Chat](https://wiki.wyvern.chat/en/Guides/How-to-Chat)
+- **Prohibited Content Guide (Safety & Content Policy)**: [Policies/Prohibited-Content-Guide](https://wiki.wyvern.chat/en/Policies/Prohibited-Content-Guide)
+
 ---
 
 ## 3. Gestione, Sincronizzazione e Generazione dei Lorebook
@@ -132,7 +147,7 @@ Il workflow di allineamento e generazione dati si avvale di tre script principal
 
 2. **Generazione e Partizionamento Lorebook** ([scripts/convert_to_lorebook.py](file:///d:/SvartulfrVerse/scripts/convert_to_lorebook.py)):
    Processa l'export master e produce:
-   - **Lorebook Unificati e Partizionati** in [exports/lorebooks/](file:///d:/SvartulfrVerse/exports/lorebooks/) (774 voci totali suddivise in 4 parti $\le 250$ voci per compatibilità con l'import di Wyvern).
+   - **Lorebook Unificati e Partizionati** in [exports/lorebooks/](file:///d:/SvartulfrVerse/exports/lorebooks/) (814 voci totali suddivise in 4 parti $\le 250$ voci per compatibilità con l'import di Wyvern).
    - **Esportazioni Modulari per Entità** in [exports/entities/](file:///d:/SvartulfrVerse/exports/entities/) (Characters, Lexicon, Locations, Environments, Scenarios, Maps, Eras).
    - **Dump JSON di Tutte le Tabelle** in [exports/raw_db_dumps/](file:///d:/SvartulfrVerse/exports/raw_db_dumps/).
    ```powershell
@@ -150,11 +165,11 @@ Il workflow di allineamento e generazione dati si avvale di tre script principal
    ```
 
 ### Statistiche Attuali del World (Sincronizzazione Web Autorevole)
-- **Personaggi:** 365
-- **Voci Lexicon:** 254
-- **Locations:** 135
+- **Personaggi:** 377
+- **Voci Lexicon:** 271
+- **Locations:** 145
 - **Environments:** 2
-- **Scenarios:** 9
+- **Scenarios:** 10
 - **Maps:** 2
 - **Eras Cronologiche:** 7
 - **World Age Corrente:** `10486470` (5 aprile 2024, ore 06:00 UTC)

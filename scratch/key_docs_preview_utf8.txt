@@ -1,0 +1,591 @@
+=== claude/NPC_Import_Rules_1to1.md (7607 bytes) ===
+  # Regole di import per i dati NPC provenienti da bot 1:1
+  
+  Stabilite da Lys il 02/09/2026, valide per tutti gli NPC ad alta frequenza di scena e per ogni materiale successivo di provenienza analoga.
+  
+  ## Il problema
+  
+  I dati NPC che Lys fornisce vengono da **character card 1:1**, dove `{{user}}` è il giocatore generico. Nel World Svartúlfr, invece, **`{{user}}` è legato ad Alyssa Douglas-Bloodmoon**. Una traduzione meccanica `{{user}}` → Alyssa creerebbe quindi relazioni mai stabilite: una card che dice "è ossessionato da {{user}}" diventerebbe una dichiarazione che quel personaggio è ossessionato da Alyssa.
+  
+  Va inoltre tenuto presente che quel materiale è spesso costruito attorno al rapporto con `{{user}}`, quindi l'epurazione non è un ritocco marginale ma tocca il cuore di alcune schede.
+  
+  ## Regola 1 — Generalizzare il ruolo, non nominare nessuno
+  
+  Ogni riferimento a `{{user}}` va trasformato in una descrizione di **come il personaggio si comporta in quel tipo di rapporto**, senza nominare alcun personaggio del World.
+  
+  - Sbagliato: "è ossessionato da {{user}}"
+  - Sbagliato: "è ossessionato da Alyssa"
+  - Giusto: "si lega in fretta e male a chi gli mostra attenzione"
+  
+  Così si conserva il valore caratteriale del materiale senza inventare relazioni dentro il World. Nessun riferimento a `{{user}}` deve sopravvivere nel testo inserito.
+  
+  ## Regola 2 — Il materiale NSFW segue gli Intimacy Profile esistenti
+  
+  Il contenuto sessuale o romantico esplicito legato a `{{user}}` **si mantiene**, con lo stesso registro delle entry `Intimacy Profile` già presenti nel Lexicon, ma **generalizzato e non puntato su nessun personaggio specifico**. È la scelta coerente con quanto il World già contiene.
+  
+  ## Conseguenza operativa
+  
+  Ogni scheda NPC va toccata una volta sola: outfit e dati aggiuntivi insieme, con l'epurazione applicata prima dell'inserimento e non dopo.
+  
+  ## Campi da compilare su ogni NPC amplificato
+  
+  Oltre a description, summary e outfit, vanno sistemati anche:
+  
+  **First / Last Name.** Attenzione: alcune schede importate hanno il **nome completo dentro First Name** e Last Name vuoto. Va separato (trovato così su Janice Thompson).
+  
+  **Nicknames / Aliases.** Solo quelli attestati nelle fonti. Alimentano il "Quick add from nicknames" dei Trigger Conditions degli outfit, quindi hanno un uso meccanico oltre che descrittivo.
+
+=== claude/Outfit_Census.md (5747 bytes) ===
+  # Censimento Outfit — tutti gli 86 Character
+  
+  Conteggio dei blocchi outfit nella sezione "Appearance & Outfits" di ogni scheda del World.
+  
+  ## Risultato
+  
+  Al censimento: **12 personaggi con outfit, 74 senza**. Dopo l'intervento su FAMILY e PACK: **16 con outfit, 70 senza**.
+  
+  **FAMILY e PACK sono ora completi al 100%.**
+  
+  ## Con outfit (12)
+  
+  | Character | Outfit |
+  |---|---|
+  | Wulfnic Bloodmoon | 6 |
+  | Alyssa Douglas Bloodmoon | 5 |
+  | Edric Douglas | 5 |
+  | Jasper Douglas Bloodmoon | 5 |
+  | Noah Douglas Bloodmoon | 5 |
+  | Logan Douglas | 4 |
+  | Malachia Douglas Bloodmoon | 4 |
+  | Erik Douglas | 3 |
+  | Kaladin Nargathon | 3 |
+  | Marcus Thornfield | 3 |
+  | Ut Berg | 3 |
+  | Zefir Hvitskog | 3 |
+  
+  ## Colmati — FAMILY (4, completato)
+  
+  I quattro buchi del Main Cast sono stati chiusi, 5 outfit ciascuno, tutti verificati dopo reload.
+  
+  **Magnus Douglas III** — House Formal, The Private Wing, Boardroom, House Ceremony, The Grounds. Costruiti sulla freddezza e sui 187 anni da erede: la sartoria è di quarant'anni fuori moda e cucita abbastanza bene che nessuno sia mai riuscito a dirlo; in boardroom porta un taglio più pesante e più vecchio di qualunque cosa possieda Erik; alle cerimonie della Casa conosce ogni risposta rituale e non ne pronuncia nessuna.
+  
+  **Elizabeth Duskwood** — House Formal, The Private Wing, The Kitchen, Visiting Logan, Remembrance. Usano i due segreti già dichiarati nella scheda: *Visiting Logan* è deliberatamente dimesso perché presentarsi con l'aria di Villa Douglas sarebbe una discussione, e a Magnus dice che è uscita per commissioni; *The Kitchen* rende esplicito che un'Omega che sfama una casa non fa una faccenda domestica, dichiara a chi appartiene la casa.
+  
+
+=== claude/Attitudes_Audit_2026-09-03.md (4636 bytes) ===
+  # Attitudes: audit, correzioni e mappa dei tier
+  
+  Data: 2026-09-03. Dati letti dal server via API autenticata, non dall'interfaccia.
+  **Fase 1 (le 13 schede che avevano già Attitudes) eseguita e verificata.**
+  
+  ## Mappa etichetta → chiave salvata (verificata, definitiva)
+  
+  Letta dai props React delle opzioni del dropdown, non dedotta. **Le chiavi
+  interne non corrispondono ai nomi delle etichette**, ed è la causa di ogni
+  falso allarme di questo audit.
+  
+  | Etichetta nell'interfaccia | Soglia | Chiave salvata |
+  |---|---|---|
+  | Blood Enemy | -100 | `nemesis` |
+  | Enemy | -70 | `enemy` |
+  | **Rival** | -45 | **`despised`** |
+  | **Distrusted** | -25 | **`hated`** |
+  | Wary | -10 | `disliked` |
+  | **Unknown Scent** | 0 | **`stranger`** |
+  | Acknowledged | 15 | `acquaintance` |
+  | Trusted | 35 | `friend` |
+  | Pack | 55 | `close_friend` |
+  | Pack-bonded | 75 | `best_friend` |
+  | **Beloved** | 92 | **`romantic_interest`** |
+  
+  **Falsi allarmi chiusi.** L'AI riceve l'etichetta, non la chiave (wiki: *"The
+  tier name is what the sidebar shows, what the AI sees in the relationship
+  block"*). Quindi Erik verso i figli legge **Beloved**, non `romantic_interest`,
+  e non c'era niente da correggere. Allo stesso modo `despised` e `hated` non
+  erano chiavi orfane: sono semplicemente **Rival** e **Distrusted**.
+  
+  **Da ricordare:** la corrispondenza è posizionale sulla ladder. Aggiungere,
+  togliere o riordinare un gradino rimappa il significato di tutte le attitudes
+  già salvate.
+  
+
+=== claude/Audit_Schede_2026-09-03.md (8807 bytes) ===
+  # Audit completo delle 86 Character — 3 settembre 2026
+  
+  Scansione fatta sull'intero dataset in un colpo solo, non aprendo le schede una per una: agganciando `window.fetch` e leggendo la risposta che l'app stessa riceve da `/api/worlds/characters/world/<id>`. Metodo riutilizzabile per i prossimi audit.
+  
+  ---
+  
+  ## Quadro generale
+  
+  | Stato | Numero |
+  |---|---|
+  | **Completi** (description + outfit + RPG) | 35 |
+  | **Scritti ma grezzi** (description sì, outfit e RPG no) | 25 |
+  | **Vuoti** (segnaposto senza description) | 25 |
+  | Totale | 86 |
+  
+  ---
+  
+  ## 1. Regola 13 — `{{user}}` — LA REGOLA COME L'HO SCRITTA È SBAGLIATA
+  
+  14 schede contengono `{{user}}`, ma **non sono tutte violazioni**. Ce ne sono due tipi completamente diversi, e la §13 che ti ho appena dato non li distingue. Il punto 5 ("verificare che non compaia più la stringa `{{user}}` in nessun campo") **è da correggere**, perché applicato alla lettera distruggerebbe le schede di famiglia.
+  
+  ### Tipo A — corretto, NON toccare (10 schede)
+  
+  Sono schede scritte apposta per questo World, dove `{{user}}` **è** Alyssa per costruzione. Qui `{{user}}` è il modo giusto di scriverlo, e in diversi casi è addirittura la salvaguardia.
+  
+  | Scheda | Uso |
+  |---|---|
+  | Erik Douglas | "NEVER: Pursue romantic or sexual involvement with `{{user}}`, hard-blocked" — è un blocco protettivo, va tenuto |
+  | Malachia | "`{{user}}`'s silent bodyguard", ammorbidimenti solo verso di lei |
+  | Noah | "NEVER write Noah into any romantic or sexual content involving `{{user}}`, siblings, non-negotiable" |
+  | Jasper | "`{{user}}`/Alyssa's twin brother", equivalenza esplicita |
+  | Alyssa | "`{{user}}`'s fixed identity in the first scenario", è la nota di design |
+  | Logan | "the only adult `{{user}}` can be around without feeling managed" |
+  | Wulfnic | "`{{user}}`'s 1199-year-old grandfather" + hard-block nonno |
+  | Nixara | "the twins Jasper and `{{user}}`/Alyssa" |
+
+=== claude/Grave_Mistake_Band_Schede.md (10318 bytes) ===
+  # Grave Mistake: le quattro schede, decisioni e discrepanze
+  
+  Lavorate il 2026-09-07 in un blocco unico, perché le quattro schede si
+  definiscono a vicenda. Tutte e quattro erano import grezzi: `summary` conteneva
+  il blocco della fonte incollato tale e quale, `long_summary` era vuoto, zero
+  outfit, zero dialoghi, zero attitudes, niente RPG, niente Start Position.
+  
+  | | ID | Livello | Specie | Occupazione |
+  |---|---|---|---|---|
+  | Fade Greymoor | `_93KXYePUrXYrMPWnkDVLx` | 24 | Vampire | Student |
+  | Mackenzie Sanchez-Rogers | `_rm9PkkbWEc1zNJAUNUp6U` | 24 | Weres/Shapeshifters | Musician |
+  | Roland Vickers | `_QdB3BNtd3X6Dzrb196PXy` | 23 | Undead | Student |
+  | Viola Carter | `_H84mBnGcVWwX6DFCqY6f2` | 22 | Fae | Student |
+  
+  Date di nascita inventate, varie (§9.6): Fade 23 ottobre 1999, Mac 17 agosto
+  1999, Roland 14 giugno 2000, Via 30 settembre 2001. Start Position uguale alla
+  birthdate su tutti e quattro, nessuna oltre `world_age`.
+  
+  Creati nello stesso passaggio:
+  
+  - Lexicon **Grave Mistake** `_6dxKb4CE4rPNra23WwYTB`, globale, chiavi
+    `Grave Mistake` e `Grave Mistakes`.
+  - Location **The Open Casket** `_1PX31CB2BfMhBxzTJzENQ`, Environment Solarton.
+  - Occupazione RPG **Musician** `_FnwYGq4VdHYLXyM3FcjpM`, modificatore `stat_5 +1`
+    (Presence), collegata alla entry Lexicon della band.
+  - Tre **Intimacy Profile** (sotto).
+  - Scenario **"Ciao, Sono Logan"** `_EyeRqnmmcc89mewWEMVLp`, documentato a parte
+    in `claude/Scenario_Ciao_Sono_Logan.md`.
+  
+  ---
+  
+  ## Fonti usate
+  
+  Sette varianti fornite dall'utente (tre di Fade, due di Mac, due di Roland),
+  autori `veseii` e `Iorveths` su janitorai, più il lorebook ufficiale
+
+=== claude/Solarton_FiveCocketeers_2026-09-15.md (7782 bytes) ===
+  # Solarton — The Five Cocketeers: Dean, Russ Sinclair (fusione Javier Sinclair), Javier Reyes, Eric, Raymond (2026-09-15)
+  
+  Cinque schede, dominio SUCC (autore esterno, io wuvs soap), campus Solarton, inserite nel locale Wyldfire. World a 132 personaggi dopo l'inserimento (128 → 132: quattro inserimenti nuovi, più un aggiornamento in place della scheda esistente di Javier Sinclair).
+  
+  - **Dean**, id locale `Ea94-pidIFA5juFmBC9Tn` — demi-umano procione, spacciatore/cuoco di erba, senza filtri, istinti da procione (raccolta compulsiva, sonno irregolare).
+  - **Russ Sinclair** (ex Javier Sinclair), id locale `skws6yAbn31jzW7jRI5Lx`, **id invariato** — demi-umano tigre, apprendista tatuatore da Claws Steel and Ink, roommate di Jasper Douglas Bloodmoon nei Wyrm Dormitories stanza 72.
+  - **Javier Reyes**, id locale `_8UVl2mdUYsdRXOpYu3RI` — demi-umano gufo, sedicente intellettuale, bilingue, sempre a registrare tutto, mammone.
+  - **Eric**, id locale `vol_ORrb9gT7UT0hOTt45` — demi-umano volpe, caos ambulante da gruppo musicale.
+  - **Raymond**, id locale `SIUtgLp9pezaBtinJjvzr` — demi-umano golden retriever, da fratellanza universitaria.
+  - Intimacy Profile solo per Dean (`GUu9t6xNEZNpVyGeK0A8W`): unico dei cinque con contenuto anatomico/kink esplicito nella fonte, secondo il criterio di segregazione di §13.3. Gli altri quattro non ne hanno, il materiale sorgente descriveva solo stile di corteggiamento generico, non kink/anatomia, quindi resta nella prosa VOICE & BEHAVIOR della card stessa.
+  - Tre entry Lexicon di lore di gruppo: **The Five Cocketeers** (`mBqfMg6ahwpLa_21jUs-u`, tipo `other`), **Gerald, the Golden Cock** (`uqxznA4GYzZ3WE2Ysy82d`, tipo `item`), **The Cocketeers' Costume Competition** (`oAS1Wc70ra6R7k9YxiXTJ`, tipo `concept`).
+  
+  ## La fusione Russ / Javier Sinclair
+  
+  Decisione esplicita dell'utente su tre domande poste prima di scrivere: fondere il "Russ" della nuova fonte nella scheda già esistente di Javier Sinclair (già linkata da un'Attitude su Jasper Douglas Bloodmoon), **usando il nome e la personalità di Russ ma mantenendo la specie/razza di Javier**.
+  
+  Eseguita come **UPDATE in place della riga esistente**, non cancellazione e reinserimento, per preservare l'id e quindi ogni riferimento incrociato già esistente (in particolare l'Attitude su Jasper). Campi lasciati intatti: `id`, `world_id`, `creator_id`, `platform_id`, `created_at`, `rpg_stats`, `home_location_id`, `species_id`, `occupation_id`. Mantenuti dalla vecchia scheda di Javier: specie demi-umano tigre, origine Giamaica, alloggio ai Wyrm Dormitories stanza 72, legame di roommate con Jasper Douglas Bloodmoon, impiego da Claws Steel and Ink (doppiamente giustificato ora, dato che anche Russ nella fonte è apprendista tatuatore). Riscritti integralmente: nome, personalità (secco, tono piatto, intenso), voce, outfit, dialogue examples, quasi tutte le Attitudes, età/birthdate (ricalcolata sui 21 anni dichiarati per Russ nella fonte, contro i circa 19 impliciti nella vecchia scheda Javier).
+  
+  Aggiornata separatamente anche l'Attitude di **Jasper Douglas Bloodmoon** verso lo stesso id, sostituendo il testo di reasoning che nominava "Javier" con uno che nomina "Russ", mantenendo il tier `close_friend`/intensity 65 già esistente (il legame di roommate resta lo stesso, cambia solo chi lo occupa).
+  
+  **Collisione di nome evitata**: la fonte nuova conteneva un secondo, distinto personaggio chiamato anch'esso "Javier" (il tipo sedicente intellettuale, sempre a registrare, bilingue), senza alcuna relazione di personalità con Russ. Per evitare confusione con la scheda ora rinominata "Russ Sinclair", questo secondo Javier ha ricevuto un cognome inventato, **"Reyes"**, dichiarato qui come invenzione (§9.4/§9.6).
+  
+  ## Conversione Urban Fantasy
+  
+  Per scelta esplicita dell'utente, tutti e cinque i membri del gruppo sono diventati demi-umani/sovrannaturali, non più umani generici. Specie assegnate:
+  
+  - **Dean → Procione**: coerente con la sua personalità da "procione umano" nella fonte (raccolta di oggetti a caso, sonno a orari improbabili, curiosità vorace).
+  - **Russ Sinclair → Tigre**: ereditata dalla vecchia scheda Javier Sinclair, non toccata dalla fusione.
+  - **Javier Reyes → Gufo**: coerente con l'immagine da "intellettuale" sempre a osservare e registrare.
+  - **Eric → Volpe**: coerente con l'energia caotica da musicista descritta nella fonte.
+  - **Raymond → Golden Retriever**: **suggerito direttamente dalla fonte stessa**, che lo descrive testualmente come "a golden retriever in a frat bro's body".
+  
+  ## Collocazione
+  
+  Su indicazione esplicita dell'utente, il "college town" generico della fonte è stato collocato a **Solarton, campus SUCC**, il dominio già esistente per questo tipo di ambientazione universitaria/sovrannaturale nel World.
+
+=== claude/FanOC_Staff_Batch1_7Schede_2026-09-15.md (8390 bytes) ===
+  # Fan OC Staff — Batch 1 (7 schede) — Completamento 2026-09-15
+  
+  Lavorazione completata sul database SQLite locale di Wyldfire (§17), non via API web. Le 7 stub row esistenti sono state aggiornate con UPDATE (nessun INSERT di nuovi Character).
+  
+  ## Personaggi lavorati
+  
+  | Personaggio | Row ID | Fonte (janitorai.com) |
+  |---|---|---|
+  | Professor Mollusk Moreau | `olaiPjdq3W` | "Professor Mollusk Moreau" by @biggestboykisser |
+  | Professor Marit Christiansen ("Professor M") | `f_J3ULpc-l` | "Professor M \| SUCC OC" by @MagnoliaField |
+  | Aiden Anderson | `TPmwC6JSHV` | "Aiden Anderson (SUCC FAN BOT)" by @Clover_bud |
+  | Eric Grey | `mdPXYZlveK` | "Eric Grey" by @obmckenzie (testo sorgente usa "Eric Williams"/"Eric William" per un errore dell'autore, ammesso nei commenti: ignorato, nome vero Eric Grey come da tua indicazione) |
+  | Caim Morningstar | `ca-_ROtjfT` | "Caim Morningstar" by @FallenMothh |
+  | Nickolas "Nick" Wolffe | `4dT7DAFN7t` | "Nickolas Wolffe" by @kitski |
+  | Alad C. ("Coach Alad") | `inz80I_yHr` | "Coach Alad C. \| Massages" by @Yeckiz |
+  
+  Tutti confermati Global Character = ON (già impostato sullo stub, non toccato).
+  
+  ## Nota sulla sessione: recupero fonti
+  
+  La sessione precedente si era chiusa senza lasciare il testo sorgente verbatim recuperabile in questa chat. Le 9 tab del browser locale menzionate non erano più raggiungibili all'apertura di questa sessione (l'estensione Claude in Chrome non era connessa). Su tua indicazione ho riletto tutti e 7 i personaggi da zero tramite il browser integrato, riaprendo le pagine su janitorai.com ed espandendo i blocchi Scenario/Personality/First Message per il testo verbatim completo. Nessun dato è stato inventato o assunto dalla sessione precedente.
+  
+  ## Applicazione §13 (purga {{user}})
+  
+  Zero occorrenze di `{{user}}` verificate programmaticamente su tutti i campi testuali di tutte e 7 le schede dopo la scrittura.
+  
+  - **Moreau**: nessun arco romantico preesistente verso {{user}} nella fonte (solo uno scenario "sei stato sfidato a spiarlo"). Purga minima, aggiunta riga di confine professionale con gli studenti (è docente).
+  - **Marit**: nessuna cotta fissa verso {{user}}, solo suggerimenti di scenario generici ("sei uno studente che va nel suo ufficio"). Purga minima, riga di confine aggiunta (è docente con autorità reale sugli studenti).
+  - **Aiden**: la fonte costruiva un'intera cotta segreta e una dinamica clingy/possessiva specificamente intorno a {{user}} come "musa" fissa ("vivono praticamente insieme", crush segreta dichiarata). Applicata l'estensione della regola (stesso trattamento di Barkley Rover/Dullahan): la dinamica di attaccamento eccessivo e gelosia resta come tratto di personalità generale (si affeziona velocemente e intensamente a chi mostra interesse per il suo lavoro), ma la cotta fissa e pre-scritta verso {{user}} specificamente non è stata portata nella scheda.
+  - **Eric Grey**: la fonte lo descriveva come fidanzato di lunga data di {{user}} fin dall'infanzia nella commune, relazione aperta stabilita. Rimossa la relazione fissa e pre-scritta con {{user}}; mantenuta la backstory della commune, la filosofia sulle relazioni aperte come tratto generale, e l'amicizia con Talia Calandria (NPC generico, non un World Character esistente).
+  - **Caim**: la fonte lo presentava esplicitamente come ex-fidanzato di {{user}} con relazione tossica on/off. Rimossa la cornice fissa "ex di {{user}}"; mantenuti backstory familiare, rivalità col gemello Azrael, personalità.
+  - **Nickolas Wolffe**: nessuna relazione preesistente con {{user}} nella fonte (unestablished relationship, scenario di uno scherzo alla porta sbagliata). Nessuna purga necessaria oltre alla rimozione del token.
+  - **Alad C.**: la fonte impostava {{user}} come studente infortunato verso cui Alad è sessualmente attratto, con un intero scenario (massaggio in infermeria) costruito su quella dinamica. Rimossa la cornice fissa; mantenuta la caratterizzazione generale (fisicità, carisma, protettività verso gli atleti) e aggiunta riga di confine esplicita da allenatore con autorità sui suoi giocatori.
+  
+  Contenuto anatomico/kink esplicito di tutti e 7 spostato in Intimacy Profile Lexicon entry separate (formato standard del World: `type: memory`, `is_global: true`, keys sul nome, secondary_keys su intimacy/dating/relationship/romance/flirting/attracted/sex, key_logic AND_ANY, priority 50, `attached_world_character_id` impostato sull'id del personaggio).
+
+=== claude/Concilio_QuattroDistretti_E_Vito_Pureblood_2026-09-14.md (6014 bytes) ===
+  # Concilio di Blackwood — i quattro Pack Leader mancanti, e la promozione Marino/O'Connor a Pureblood (2026-09-14)
+  
+  Completati i quattro personaggi di distretto che mancavano dal Concilio, più una revisione di Vito Marino già esistente. Fonte: profili sintetici forniti dall'utente per tutti e dieci i capi di distretto (età apparente, orientamento, personalità, alleanze), usati per scrivere le schede complete via API, verificate con GET diretto (zero `{{user}}`, em-dash, grassetto o asterischi su tutte e cinque le schede toccate).
+  
+  ## Decisione di lore: età apparente vs età reale
+  
+  Per i Common Bloodline l'età "apparente" indicata dall'utente è il dato fisico, l'età reale è stata scelta da Claude per adattarsi meglio alla personalità del personaggio (non calcolata a rigore dalla formula di invecchiamento lento di `Longevita_Common_Bloodline.md`, che resta comunque coerente nella maggior parte dei casi per pura combinazione). Confermato dall'utente: "intendo l'aspetto fisico, sull'età stabiliamo in base a quella più adatta alla personalità".
+  
+  ## Promozione a Pureblood: Marino e O'Connor
+  
+  Decisione dell'utente: dato che Blackwood è più antica di Solarton, può permettersi qualche famiglia Pureblood in più oltre ai Douglas. Due famiglie promosse:
+  
+  - **Vito "Scar" Marino** (Ironworks, già esistente): promosso da semplice Alpha a **Pureblood**. Scheda rivista per dargli un'origine reale: nato Vittorio Marino nel sud Italia nel 1901, emigrato in America negli anni '20 come molte famiglie italiane dell'epoca, arrivato a Blackwood e risalito nella gerarchia dell'Ironworks da zero. Età reale ora 123 anni (nato 14 marzo 1901), non più calcolata a faccia valore come nella build originale. Aggiunto un accenno d'accento italiano che riemerge quando è arrabbiato, e la sua codardia verso i pari o superiori (dettaglio nuovo emerso dal profilo fornito dall'utente, non presente nella build originale). RPG Stats impostate per la prima volta via API (erano `null`): Livello **99** (tetto di piattaforma per i centenari, §8), specie Weres/Shapeshifters. `birthdate`/`start_timeline_position` aggiornati di conseguenza.
+  - **Marcus "Mark" O'Connor** (Oldtown, nuovo): scritto direttamente come Pureblood. Origine irlandese, immigrato a inizio '800, arrivato a Blackwood mentre Oldtown veniva ancora costruita sopra l'insediamento coloniale di Lord Cornelius Douglas, il che lo rende letteralmente uno dei pochissimi residenti che ricorda davvero la città che Oldtown dice di preservare. Età reale 225 anni (nato 2 settembre 1798). Livello RPG 99.
+  
+  ## Le quattro schede nuove
+  
+  Tutte con pipeline completa: JED+ in `long_summary`, `summary` compatto, `display_description`, titles/keys/pronomi, cinque outfit contestuali con default, RPG Stats via API (specie + livello, budget punti standard 25+base), cinque Dialogue Examples, Attitudes verso Alyssa e Jasper (tier `stranger`, mai incontrati) più le relazioni rilevanti già note dal profilo fornito dall'utente, Global Character ON.
+  
+  - **Naomi Black** (`_pPe6prj8qnWaDWpt2Kfnd`), co-Pack Leader di Uptown North insieme a Cass Harrow. Werewolf Beta (non Alpha, per differenziarla dalla rigidità di Cass), età reale 67. Carismatica, ambiziosa, calcolatrice, gestisce finanza e tecnologia del distretto, legame diretto con Angelo Moreno costruito in decenni. Attitude aggiunta anche sul lato di Cass Harrow (che non l'aveva ancora, nonostante la citasse in background) per chiudere il legame in entrambe le direzioni.
+  - **Darius Vale** (`_YCnHbjcbrLe9AFFXQEqX6`), Pack Leader di Uptown South. Werewolf Alpha, età reale 45. Riservato, leale, determinato, non ha mai cercato il potere che gli è stato affidato. Relazioni cordiali ma non intime con Uptown North.
+  - **Marcus "Mark" O'Connor** (`_C1LapDdDhfXefNcEJ66D8`), Pack Leader di Oldtown, vedi sopra per l'origine Pureblood. Alleato fidato di Logan Douglas (tier `friend`, intensità 75) e protetto personalmente da Malachia Douglas-Bloodmoon (tier `friend`, intensità 60), entrambe le relazioni aggiunte come Attitudes.
+  - **Prof.ssa Helena Weiss** (`_181C2DDyEUfRgLREyd4CC`), Pack Leader di Arcadia e Rettore del complesso scolastico del distretto. Werewolf Beta, età reale 59. Trattata esplicitamente come l'eccezione prevista dal canon LSE del Pack Leader non-Alpha (§12 del progetto: "nel 95% dei casi lo è" implica un 5% che non lo è): tiene il seggio per autorità accademica e istituzionale, non per forza territoriale, ed è scritta come una delle voci più neutre e rispettate del Concilio proprio per questo.
+  
+  ## Stato del Concilio
+  
+  Con questi quattro, tutti i dieci seggi distrettuali del Concilio hanno un personaggio completo su Wyvern: Vito Marino (Ironworks), Bianca Rossi (Paradise East), Dominic Chen (Paradise West), Aurora Night (Bluemoon North), Eclipse Noir (Bluemoon South), Cass Harrow e Naomi Black (Uptown North), Darius Vale (Uptown South), Marcus O'Connor (Oldtown), Isobel Blackwater (Dockside), Helena Weiss (Arcadia).
+  
+  Restano da fare: Erik Douglas già esiste come personaggio (presidente del Concilio, non serve altro lavoro); Angelo Moreno (rappresentante vampiro) e Federico "Riki" Savini (rappresentante Solitaries) andrebbero verificati se già esistono come schede complete o solo come segnaposto; i sette rappresentanti delle specie minoritarie restano con **Zeera** (demoni) come unico completato, gli altri sei ancora da decidere nei dettagli (fatato, orco, demi-human, strega, naga, non-morto) e il rappresentante umano ancora senza nome.
+  
+  ## Nota per il futuro
+  
+  Il materiale fornito dall'utente per tutti e dieci i distretti include anche alleanze e rivalità fra i Pack Leader già esistenti non ancora tradotte in Attitudes sulle rispettive schede (es. Bianca Rossi/Dominic Chen alleati commerciali, Bianca Rossi/Angel&Co legami stretti, Bianca Rossi/Eclipse Noir alleanza instabile, Isobel Blackwater/Vito Marino ostilità aperta, già presente su Vito ma da verificare sul lato di Isobel). Non ancora fatto in questa sessione, segnalato come lavoro pulito da riprendere.
+  
+
+=== claude/Blackwood_District_Alphas_Completamento_2026-09-14.md (4615 bytes) ===
+  # Completamento cartella Blackwood (9 District Alpha) — 2026-09-14
+  
+  Audit e completamento pipeline dei 9 personaggi della cartella "Blackwood" del World, i District Alpha che governano i quartieri di Blackwood City. Stato di partenza (verificato via GET diretto): tutti e 9 avevano `long_summary` in JED+ già scritto e completo, ma **zero** outfit, **zero** speech example, **zero** attitudes, **zero** final_instructions, e display_description vuota. Un divario sistemico non ancora toccato in nessuna sessione precedente.
+  
+  ## Scoperta: lingua mista nei long_summary
+  
+  Solo **Angelo Moreno** aveva long_summary e summary interamente in inglese, già di buona qualità (nessuna riscrittura necessaria oltre alla pipeline meccanica).
+  
+  Gli altri **8** (Vito Marino, Bianca Rossi, Aurora Night, Cass Harrow, Eclipse Noir, Federico "Riki" Savini, Isobel Blackwater, Dominic Chen) avevano il blocco attributi in inglese ma i paragrafi di prosa (BACKSTORY, VOICE & BEHAVIOR, RAPPORTI CON BLACKWOOD) scritti in **italiano**, e il campo `summary` in formato raw non lavorato: o attributi in italiano tra parentesi quadre (Vito), o lo stile JanitorAI `{{char}}: attributo(valore), ...` (gli altri 6/7). Trattati come import grezzi non lavorati per §2, riscritti integralmente in inglese preservando ogni fatto della fonte, senza inventare nulla di nuovo. Il tag `{{char}}` trovato in questi summary non è lo stesso problema di `{{user}}` (§13): è solo artefatto del formato di import raw, risolto sostituendo l'intero summary con un blocco JED+ compatto in prosa, non con una sostituzione mirata del tag.
+  
+  ## Lavoro svolto su ciascuno (stesso set di campi per tutti e 9)
+  
+  Per ognuno: `summary` riscritto in inglese (JED+ compatto, bracket + prosa breve) dove necessario, `display_description` (1-2 righe), 5 `outfits` contestuali con `default_outfit` impostato (il quinto per ciascuno è sempre una "Full Wolf Shift", coerente con la specie Werewolf comune a tutti tranne Angelo, vampiro, che ha invece "Feeding" come quinto), 5 `speech_examples` con disciplina di formattazione (dialogo tra virgolette, niente em-dash, niente asterischi salvo pensieri interni, mai usati qui), `final_instructions` con la riga standard di disciplina di formato, e `attitudes`.
+  
+  ## Attitudes assegnate
+  
+  Tutti e 9 hanno Alyssa e Jasper a `stranger` (bassa intensità, nessun contatto stabilito: sono figure della malavita/politica dei distretti di Blackwood City, non del campus di Solarton). Aggiunte inoltre le relazioni esplicitamente citate nel testo di ciascuno:
+  
+  - **Angelo Moreno** → Wulfnic (`rival`, 55): rivalità secolare tra vampiro e Divine Blood, esplicitamente descritta nel testo come "fastidio quasi affettuoso".
+  - **Vito Marino** → Erik Douglas (`disliked`, 35): tensione con la polizia corporativa della DCC.
+  - **Bianca Rossi** → Angelo Moreno (`friend`, 65): alleanza di reciproco interesse che protegge Paradise East.
+  - **Cass Harrow** → Angelo Moreno (`acquaintance`, 40) ed Erik Douglas (`acquaintance`, 35): rapporti pragmatici e diplomatici.
+  - **Aurora Night** → Erik Douglas (`acquaintance`, 30): scambio di informazioni per autonomia.
+  - **Federico "Riki" Savini** → Malachia Douglas (`close_friend`, 70): decenni di rispetto reciproco e consulenza politica onesta, esplicitamente descritti nel testo come il rapporto più significativo del personaggio.
+  - **Eclipse Noir, Isobel Blackwater, Dominic Chen**: nessun altro personaggio del World citato esplicitamente nel loro testo con un rapporto abbastanza definito da giustificare un'Attitude oltre Alyssa/Jasper (Naomi Black, co-reggente citata nel testo di Cass Harrow, **non esiste come Character nel World**: menzionata solo in prosa, nessuna Attitude creata per lei, per non inventare un target che non c'è).
+  
+  Tier tecnici usati (valori enum confermati validi via API in questa sessione, non le etichette del documento di progetto §16): `stranger`, `acquaintance`, `friend`, `close_friend`, `disliked`, `rival`.
+  
+  ## Verifica
+  
+  Rieseguito GET su tutti e 9 dopo un reload completo della pagina (nuovo token). Per ciascuno confermato: 5 outfit con default impostato, 5 speech example, final_instructions presente, birthdate === start_timeline_position (nessuno di questi era stato toccato, erano già coerenti), long_summary in inglese puro (nessun carattere accentato italiano residuo), e `window.CHECK()` pulito su tutti (zero em-dash, zero `{{user}}`, zero grassetto markdown).
+  
+  ## Stato
+  
+  Cartella **Blackwood completamente chiusa**: 9/9 personaggi con pipeline completa. Prossimo passo: cartella **Los Angeles** (21 personaggi), non ancora auditata in questa sessione.
+
+=== claude/Audit_Blackwood_Family_Pack_Concilio_2026-09-14.md (7943 bytes) ===
+  # Audit Live: Family, Pack, Blackwood, Council (esclusa Los Angeles) — 2026-09-14
+  
+  Verifica in tempo reale eseguita su richiesta dell'utente ("lasciando fuori los angeles, cosa rimane da fare per le altre sezioni?"), perché diversi documenti del Project (in particolare `TODO_Consolidado.md`, datato 7 settembre) risultavano superati dal lavoro fatto in questa sessione e in quella precedente.
+  
+  ## Metodo
+  
+  GET autenticata fresca su `/api/worlds/{world_id}` per `content_folders`, e su `/api/worlds/characters/world/{world_id}` per l'elenco completo (104 personaggi). Controllo campo per campo di ogni scheda nelle cartelle Family (12), Pack (4), Blackwood (9), più i personaggi del Concilio creati in questa sessione.
+  
+  ## Risultato per cartella
+  
+  **Family (12/12) e Pack (4/4): complete.** Ogni scheda ha long_summary in JED+, summary, display_description, 5+ outfit con Default Outfit impostato, Start Position, Global Character ON. Due falsi allarmi trovati e chiariti durante il controllo:
+  - Jasper e Noah Douglas Bloodmoon: il mio primo check segnava "non JED+" perché il long_summary comincia con un'intestazione `# [Nome]` prima del blocco `[NAME: ...]`. È JED+ valido, solo con un titolo markdown-H1 davanti (non un asterisco, quindi non viola §3). Nessuna azione necessaria.
+  - Wulfnic Bloodmoon: il mio primo check segnava "Start Position mancante" perché `start_timeline_position` vale `0`, che in JavaScript è falsy. In realtà `0` è un valore legittimo: coincide con il World Age 0 (21 dicembre 827), coerente con Wulfnic come Divine Blood dell'era fondativa. `birthdate` coincide. Nessuna azione necessaria.
+  
+  Unico dettaglio minore, non bloccante: sette schede di Family/Pack (Edric, Jasper, Noah, Magnus, Nixara, Wulfnic, Kaladin) hanno **3 Dialogue Examples invece di 5**, sotto lo standard di §14.9. Probabile residuo di una convenzione più vecchia. Segnalato, non corretto: nessuna indicazione dell'utente a farlo ora.
+  
+  **Blackwood (9/9): completa.** Angelo Moreno, Vito Marino, Bianca Rossi, Aurora Night, Cass Harrow, Eclipse Noir, Federico "Riki" Savini, Isobel Blackwater, Dominic Chen: tutti con long_summary JED+, 5 outfit con Default Outfit, 5 Dialogue Examples, Attitudes, Start Position, Global Character ON, zero `{{user}}`/em-dash/grassetto. Nessuno ha un Intimacy Profile in Lexicon, ma verificato che nessuno ne ha bisogno: le uniche occorrenze di parole come "sexual" nei long_summary sono etichette di orientamento (pansexual, demisexual, heterosexual, bisexual), non contenuto esplicito da spostare.
+  
+  ## Gap reali trovati
+  
+  **1. Dodici schede non filate in nessuna `content_folder` dei personaggi** (su 104 totali, solo 92 risultano in una cartella):
+  - Le 8 create in questa sessione: Harrison Black, Abel Vilas, Cassian Aralas, Marlowe Voss, Zeera, Brak Ironfist, Barrow, Harlan "Huck" Beaumont.
+  - Altre 4, presumibilmente da lavoro di sessioni precedenti mai filate: Helena Weiss, Darius Vale, Naomi Black, Marcus O'Connor.
+  
+  Non è un problema di merito della scheda (tutte già passate per la pipeline completa), è solo mancata assegnazione a una cartella. Va deciso dove vanno: probabilmente serve una cartella "Council" o "Blackwood" a seconda del personaggio, da confermare con l'utente prima di scrivere (i nomi delle cartelle esistenti sono Family/Pack/Blackwood/Solarton/Los Angeles, nessuna è ovviamente corretta per un Concilio cittadino).
+  
+  **2. Attitudes reciproche mancanti tra i 7 rappresentanti di minoranza del Concilio.** Solo la coppia Cassian Aralas ↔ Harrison Black si conosce reciprocamente (aggiunta durante la lavorazione di Cassian). Le altre 6 schede (Abel Vilas, Barrow, Brak Ironfist, Harlan Beaumont, Marlowe Voss, Zeera) non hanno alcuna Attitude verso gli altri membri del Concilio, né viceversa. Dato che siedono nello stesso organo, è ragionevole che si conoscano almeno di vista/reputazione. Non fatto finora, resta in coda come lavoro opzionale già segnalato in `Marlowe_Voss_NonMorti_Representative_2026-09-14.md`.
+  
+  ## Voci del TODO_Consolidado.md (7 settembre) verificate come superate
+  
+  Confermato risolto dal lavoro di questa sessione e della precedente: Vito Marino, Bianca Rossi, Isobel Blackwater, Eclipse Noir, Dominic Chen, Cass Harrow (tutti nella cartella Blackwood, verificati completi sopra). Elizabeth Duskwood, citata nel TODO come scheda vuota, risulta invece completa nella cartella Family. Le cifre aggregate del TODO (88 personaggi totali, 25 schede vuote, ecc.) sono da considerare obsolete: il World ne conta oggi 104.
+  
+  ## Cosa resta aperto, esclusa Los Angeles
+  
+  - Filing delle 12 schede orfane (punto 1).
+
+=== claude/Thompson_Family_Reference.md (9711 bytes) ===
+  # Famiglia Thompson — regole di riferimento
+  
+  Stabilite da Lys il 02/09/2026. Da applicare a tutte le schede Thompson, incluse quelle ancora da creare.
+  
+  ## Regole certe
+  
+  **Tutti biondi con gli occhi azzurri. L'unica eccezione è Julie: capelli neri, occhi azzurri.**
+  
+  > **RISOLTO — Janice ha gli occhi CASTANI, ereditati da Jasmin.** Nota originale conservata:  Lo dicono tutte e cinque le fonti Jared (blocco npcs: "Blonde hair; brown eyes"), entrambe le card Janice, e **l'avatar ufficiale**, dove sono inequivocabilmente castani. Ho scritto castani sulla scheda perché è ciò che dicono le fonti e l'immagine, ma **la regola di famiglia dice azzurri e va deciso da Lys**: o Janice è una seconda eccezione insieme a Julie, oppure la scheda va corretta in azzurro contro l'avatar.
+  
+  **Tutta la famiglia è rumorosa.** Non è un tratto del solo Jared, è il registro di casa Thompson. Nessuno dei fratelli ha imparato a parlare a voce bassa, e chi entra in quella casa lo nota entro trenta secondi.
+  
+  **Registro Jared, e per estensione il tono di famiglia:** il classico himbo. Grande, grosso e rumoroso, ma **insindacabilmente buono**. La stupidità e l'egocentrismo sono di superficie, la bontà è strutturale. Errore da non ripetere: scrivere i Thompson come egoisti. Jared non è cattivo, è ignaro, ed è una differenza che va sentita in ogni riga.
+  
+  ## Composizione (nove figli)
+  
+  Padre **Hank** (minotauro), madre **Jasmin** (holstaur).
+  
+  | Figlio | Età | Nel World |
+  |---|---|---|
+  | Jared | 22 | sì |
+  | Janice | 21 | sì |
+  | Jake | 20 | sì |
+  | Jaiden | 18 (gemello) | **no** |
+  | Jason | 18 (gemello) | **no** |
+  | Jeremy | 16 | **no** |
+  | Jet | 13 | **no** |
+  | Jerry | 10 | **no** |
+  | Julie | 6 | **no** |
+  
+  Sei schede da creare, con caratterizzazione da inventare entro i vincoli sopra.
+  
+  ## Discrepanze aperte
+  
+  **L'anno.** Le card SUCC dichiarano **2022**, il World parte da **2024**. Con 22 anni nel 2022, Jared ne avrebbe 24 adesso, e a cascata slittano tutte le età dei fratelli. Da decidere: spostare le età di due anni, oppure accettare che il materiale SUCC sia fotografato al 2022.
+
+=== claude/Tate_And_The_Lab_Survivors.md (8354 bytes) ===
+  # Il filone dei laboratori clandestini — Nikolaj, Tate, Oskar
+  
+  ## 🔗 TRE sopravvissuti, tutti alla SUCC, che non si conoscono
+  
+  Non è più una coincidenza: **tre personaggi su tredici NPC lavorati sono sopravvissuti a laboratori clandestini che sperimentavano su demihuman**, e sono tutti e tre iscritti alla SUCC adesso.
+  
+  | | **Nikolaj Jökull** | **Tate** | **Oskar** |
+  |---|---|---|---|
+  | Origine | Nato dentro un programma di ricerca illegale in Islanda | Prima memoria: essere un soggetto in un laboratorio illegale | Fuggito da un laboratorio, non ha la storia in ordine |
+  | Identità | Nessuna identità legale fino alla PERSEUS | Nessun cognome, chiamato Soggetto 36 | Nessun cognome su nessun modulo del college |
+  | Come ne è uscito | Fuggito da adolescente, nave cargo per la Norvegia | Il laboratorio è stato chiuso, lui è finito in strada | È uscito uccidendo le guardie, senza volerlo |
+  | Chi lo ha raccolto | I mercenari della PERSEUS | Il counseling della SUCC | Nessuno. Si è iscritto da solo |
+  | Comunicazione | Muto dalla nascita, ASL e biglietti | Parla, ma quasi solo con se stesso | Dice "noi", con un'eco, e perde il controllo del volume |
+  | Contatto fisico | Avversione totale, eccezione per una persona sola | Identico | Identico, ma per lui toccare qualcuno è letale |
+  | Fissazione | Una persona sola, seguita apertamente | Il suo accompagnatore assegnato | Una firma vibratoria che riconosce in un edificio |
+  | Studia | Linguistica | Part-time, generico | Biologia, per trovare un modo di essere separato dall'alveare |
+  
+  **Nessuno dei tre sa degli altri due.** Sono tre risposte diverse allo stesso danno: **Nikolaj si è chiuso e si è armato, Tate si è aperto e si è appeso, Oskar si è isolato e sta studiando se stesso per trovare una cura.**
+  
+  Il gancio si scrive da solo: qualcuno che li mettesse in contatto, o che scoprisse che i loro laboratori erano lo stesso ente, avrebbe in mano una trama continentale. Non l'ho scritto in nessuna scheda perché è una decisione tua.
+  
+  **Ironia già presente nei dati:** Nikolaj odia i cani perché un demihuman cane, Elijah, gli ha portato via occhio e labbro. Tate è un demihuman cane. E Tate ha paura dei cani.
+  
+  ---
+  
+  # Tate — scheda completata
+  
+  **7.498 char** in JED+, verificata dopo reload. Zero `{{user}}`, zero em-dash. Summary riscritto, 1.383 char.
+  
+  Demihuman cane, incrocio terrier, 22 anni, 6'2", magro in modo che sembra un dato clinico più che una corporatura. Orecchie nere a penzoloni e coda folta, occhi grigi spenti, cicatrici, segni di morsi permanenti sulle mani. Antisettico, cane bagnato e pino. Primo anno part-time, routine di farmaci rigidissima.
+  
+  **Sezioni:** BACKSTORY, THE ARRANGEMENT, VOICE & BEHAVIOR, WHAT HE IS AFRAID OF, WHAT HE THINKS HE IS, WHAT IS ACTUALLY IN THERE, ELIO, INTIMACY.
+  **Outfit:** Everyday, On Campus, At Home, Outdoors, Appointments.
+  **RPG:** Lv.22, 4 MGT / 4 RES / 7 AGI / 5 WIT / 2 PRS / **9 SCT**.
+  
+
+=== claude/Huck_Beaumont_Rappresentante_Umano_2026-09-14.md (4603 bytes) ===
+  # Harlan "Huck" Beaumont — Rappresentante Umano al Concilio (completato 2026-09-14)
+  
+  Secondo dei sette+uno seggi non-distrettuali del Concilio a essere completato dopo Zeera. Character ID Wyvern: `_U6bg8b24JEWEP46f3jJ4U`.
+  
+  ## Origine e riscrittura
+  
+  Card fornita dall'utente ambientata su una base militare nel sud degli Stati Uniti, costruita interamente attorno a una relazione romantica/sessuale con `{{user}}` (nomignoli, flirt continuo, una sottotrama su video pornografici che ritraggono un sosia di `{{user}}`, gelosia, e un'intera sezione di comportamento sessuale esplicito con lista di kink e anatomia dettagliata). Come da §13, **nessuna parte di questo materiale è stata portata nella scheda nuova**, esclusa fin dalla lettura, non solo attenuata.
+  
+  Cosa è stato portato avanti: nome, età di partenza (alzata su richiesta dell'utente da 43 a 48, "tipo Logan", cioè vicina a quella di Logan Douglas), origine (Macon, Georgia), ruolo militare (Sergeant First Class, Fanteria, addestramento di ricognizione avanzata), aspetto fisico in versione non esplicita, personalità spogliata dalla direzione romantica (leader naturale, protettivo, old-fashioned, attento ai dettagli, si allena ossessivamente), cadenza sudista nel parlato (drop delle g finali, "reckon", "fixin' to", "y'all"), un divorzio amichevole ma doloroso di cui non parla volentieri.
+  
+  ## Aggancio a Blackwood, concordato con l'utente
+  
+  Huck si è congedato dopo quasi trent'anni di servizio ed è arrivato a Blackwood quasi per caso, dove ha aperto un'attività indipendente di addestramento tattico per la popolazione umana della città. Non lavora per la DCC né per nessun branco o fazione soprannaturale: è proprio questa indipendenza, unita al fatto di non avere niente da guadagnare favorendo una fazione sull'altra, il motivo per cui il Concilio gli ha offerto il seggio umano. Nessun superpotere, solo lo stesso sangue freddo che teneva in vita le reclute, ora rivolto a un tavolo di gente che potrebbe ucciderlo senza sforzo.
+  
+  ## Cosa è stato scritto su Wyvern
+  
+  Pipeline completa via API, verificata con GET diretto: zero `{{user}}`, em-dash, grassetto o asterischi.
+  
+  - `long_summary` JED+ (BACKSTORY, VOICE AND BEHAVIOR, RELATIONS IN BLACKWOOD), `summary` compatto, `display_description`, titles/keys/pronomi.
+  - **Cinque outfit**: Training Grounds (default), Council Session, Old Uniform, Off Duty, Field Ready.
+  - **RPG Stats** via API: Livello 48, Specie Human, Occupazione Security Commander (nessuna occupazione del blueprint corrispondeva esattamente a "istruttore tattico indipendente", scelta la più vicina disponibile).
+  - **Cinque Dialogue Examples**: qualcuno che lo sottovaluta al Concilio, la domanda diretta sul perché ha accettato il seggio, un allievo che scherza sulla sua età, una serata al Verve con Logan Douglas, un momento vulnerabile sul divorzio.
+  - **Attitudes**: Alyssa e Jasper a tier `stranger` (mai incontrati), Logan Douglas a tier `acquaintance` (intensità 40): un legame leggero nato al Verve, uno dei pochi posti a Blackwood dove un umano senza branco né titolo viene trattato come chiunque altro. Legame nuovo, non ancora presente sul lato della scheda di Logan.
+  - **Global Character**: ON.
+  
+  ## Fix del 14/09: Intimacy Profile aggiunta
+  
+  Come da nuova regola generale §13.3, è stata creata l'entry Lexicon **"Intimacy Profile - Huck"** (id `_XFpQwAKXkHcDaBEV8w9mq`), formato standard (`is_global: true`, `party_conditions` `has_any` su Huck, `keys: ["Huck","Harlan Beaumont"]`, `secondary_keys` su intimacy/dating/relationship/ecc., `priority: 50`). Contenuto scritto da zero in registro prosa, non una ricostruzione dell'arco romantico/kink originale verso `{{user}}` (quello resta escluso per intero secondo l'estensione 14/09): copre il suo essere guardato e disciplinato per abitudine militare, la lentezza nell'abbassare le difese, la cura pratica non appariscente quando si fida di qualcuno, il limite invalicabile (essere usato come strumento politico da una fazione) e il consenso più profondo (un partner paziente che veda oltre il fascino sudista di superficie). Verificato con GET fresca: zero `{{user}}`, zero em-dash, zero grassetto markdown.
+  
+  ## Note aperte
+  
+  Il legame Huck→Logan resta a senso unico: manca ancora l'Attitude reciproca sulla scheda di Logan Douglas (§16, da aggiungere quando si torna a lavorare su quella scheda).
+  
+  ## Stato
+  
+
+=== claude/Harrison_Black_Umano_Magico_2026-09-14.md (4300 bytes) ===
+  # Harrison Black — Umano con Capacità Magiche, Concilio di Blackwood (2026-09-14)
+  
+  Quinto dei sette seggi minoritari del Concilio completato. Fonte: card grezza fornita dall'utente (Harrison "Harry"/"Hades" Black, reincarnazione moderna di Ade, ambientato originariamente a "New Olympus", un altro universo/franchise dell'utente completamente estraneo a questo World, con una propria mitologia di Pantheon Syndicate, Fates, demigod/mostri, e una relazione romantica scriptata con {{user}} come reincarnazione di Persefone).
+  
+  ## Applicazione §10 e §13
+  
+  Non è materiale delle ambientazioni con precedenza di dominio (Underworld/SUCC/DDM): è altro materiale creativo dell'utente, trattato come Zeera/Huck/Yael, riscrittura libera vincolata solo ad aspetto, personalità e voce (§10).
+  
+  **Scartato integralmente**: l'intera ambientazione "New Olympus" (Pantheon Syndicate, Labyrinth Network, Cerberus Security, Medusa Enterprises, Hermes' Couriers, Ares Arms Co., le Tre Parche, la guerra demoni/mostri), e la relazione con `{{user}}` come reincarnazione di Persefone (rimossa per intero per §13.2, non solo attenuata: non è mai stata trascritta nella scheda nuova).
+  
+  **Mantenuto e riambientato**: aspetto fisico, nome, professione (proprietario della libreria antiquaria Black Tomes, ora a Blackwood, distretto Bluemoon), tratti di personalità, gusti (libri antichi, jazz su vinile, giardinaggio, solitudine), i tre animali domestici (gatti Nyx e Charon, mastino Styx), il matrimonio fallito accennato, e il concept centrale richiesto esplicitamente dall'utente: reincarnazione di un dio greco (Ade) con la potenza ormai ridotta a un residuo, sufficiente per una magia minore legata a morte/memoria/cose sepolte, non per altro. Questo è esattamente il concept proposto dall'utente per il seggio "Umani con capacità magiche".
+  
+  ## Scheda completata
+  
+  Pipeline standard §14 completa:
+  - `long_summary` in JED+ (`_gB8QfJega3C6eEHxYU7Tm`): BACKSTORY, THE SHOP AND ITS QUIET ALLIES (equivalente di FAMILY & PACK per un personaggio senza legame di branco), VOICE & BEHAVIOR, chiusura tematica "WHAT'S LEFT OF THE GOD".
+  - `summary` PList, `display_description`, titoli (Human Representative Blackwood Council; Owner, Black Tomes), nicknames (Harry, Councilman Black).
+  - 5 outfit contestuali (At the Shop/default, Council Session, Rooftop Garden, The Back Room, A Rare Evening Out).
+  - 5 Dialogue Examples (il nuovo cliente, il disco graffiato, la domanda a cui non risponde, una sessione di Concilio dove sbroglia Isobel/Vito, la domanda sul matrimonio).
+  - Attitudes: Alyssa e Jasper (stranger, mai incontrati), Helena Weiss (friend, 55, unico membro del Concilio la cui autorità rispetta davvero, corrispondenza rada ma genuina).
+  - **Intimacy Profile** (`_XanBedwwgt3PHnNeeb8KE`, formato §13.3, `is_global: true`, `party_conditions` su di lui): switch, adora fare sesso orale, preferisce lento e passeggero, aftercare sempre e senza eccezioni. Contenuto ricavato dalla sezione Sex della card sorgente, non graficamente esplicito nella fonte, quindi nessuna conversione da misure numeriche necessaria.
+  - RPG Stats: non impostate, in pausa di default (`world_features.rpg_stats` ancora `false`).
+  - `final_instructions` con la riga standard di disciplina di formato.
+  - Global Character ON.
+  
+  ## Età
+  
+  45 anni come indicato dall'utente nella fonte, `birthdate`/`start_timeline_position` calcolati per nascita 14 giugno 1978 (data varia scelta per §9.6, non 1° gennaio), coerente con `world_age` corrente.
+  
+  ## Verifica
+  
+  GET fresca dopo tutte le scritture: 5 outfit con default impostato, 5 Dialogue Examples, 3 Attitudes, `birthdate`/`start_timeline_position` corretti, `is_global: true`, `final_instructions` con disciplina di formato, zero `{{user}}`/em-dash/grassetto su tutti i campi testuali incluso l'Intimacy Profile.
+  
+  ## Stato Concilio aggiornato
+  
+
+=== claude/Marlowe_Voss_NonMorti_Representative_2026-09-14.md (5530 bytes) ===
+  # Marlowe Voss — Rappresentante Non-morti, Concilio di Blackwood (2026-09-14)
+  
+  Ultimo dei sette seggi minoritari del Concilio, e ultimo passo della lavorazione avviata da questa sessione. Personaggio originale, proposto da Claude su richiesta esplicita dell'utente ("per il ghoul invece fai tu non mi vengono idee"), concept confermato dall'utente prima della scrittura sul World.
+  
+  ## Coerenza con Roland Vickers (ghoul già esistente)
+  
+  Il concept originale proposto in chat (ghoul che si nutre di carne per sostenersi) è stato **rivisto prima di scrivere** dopo che l'utente ha segnalato l'esistenza di Roland Vickers, già presente sul World come "Undead, reanimated human, stuck between ghoul e ghost". La scheda di Roland stabilisce il meccanismo canonico degli undead di Blackwood: resurrezione riconosciuta legalmente (con diritti e risarcimento in caso di resurrezione involontaria), corpo tenuto insieme da mezzi soprannaturali, nessuna menzione di nutrirsi di carne.
+  
+  Marlowe è stata quindi scritta come **contrappunto coerente a Roland**, non come specie alternativa: stessa categoria SPECIES "Undead, reanimated human", ma resurrezione riuscita per intero invece che maldestra. Dove Roland è scheletrico sotto le clavicole, tenuto insieme da ectoplasma, tornato per un incantesimo di tre adolescenti finito male, Marlowe è tornata intatta e vivida, resuscitata deliberatamente e correttamente da una famiglia che poteva permetterselo. Stesso fenomeno del World, due esiti socialmente ed economicamente diversi, coerente con come il World tratta già le differenze di classe fra Common/Pureblood (§12).
+  
+  ## Concept
+  
+  CEO e direttrice di **Voss & Kin**, casa funebre di Blackwood specializzata in clientela sovrannaturale. Il ruolo le dà accesso discreto ai segreti di ogni famiglia della città (licantropa o meno) da trent'anni, il che la rende una candidata naturale per un seggio di fiducia trasversale sul Concilio: è l'unica persona al tavolo che ha gestito personalmente i segreti di tutti gli altri e non ne ha mai usato uno.
+  
+  Morta a 34 anni per una malattia, resuscitata a spese della sua famiglia, ferma nell'aspetto da allora. Aspetto fisico intatto e credibile (non scheletrica come Roland), pelle pallida con sottotono bluastro, nessun polso, nessun bisogno di respirare. Personalità: fredda, meticolosa, osservatrice, umorismo secco e macabro usato con parsimonia, lealtà silenziosa verso i pochi vicini, insofferenza per il lutto performativo. Chiusura tematica ("THE WEIGHT OF EVERYONE ELSE'S DEAD"): nessuno ha mai finito di piangerla perché è tornata prima che il lutto avesse un posto dove andare, un dettaglio di vulnerabilità sotto la compostezza professionale.
+  
+  ## Scheda completata
+  
+  Pipeline standard §14 completa:
+  - `long_summary` in JED+ (`_mkCzy9HD1RBVGgrddFrnb`): BACKSTORY, VOSS & KIN (equivalente famiglia/pack), VOICE & BEHAVIOR, chiusura tematica "THE WEIGHT OF EVERYONE ELSE'S DEAD".
+  - `summary` PList, `display_description`, titoli (Undead Representative Blackwood Council; Owner and Director, Voss & Kin).
+  - 5 outfit contestuali (At the House/default, Council Session, Working the Preparation Room, At Home Above the Shop, A Formal Wake).
+  - 5 Dialogue Examples (l'accoglienza a una famiglia in lutto, la domanda diretta sulla propria condizione, l'intervento secco in una sessione di Concilio, il nuovo dipendente che trasalisce al suo tocco freddo, il momento privato con la foto del proprio funerale mai davvero elaborato).
+  - Attitudes: Alyssa e Jasper (stranger, mai incontrati). Nessun altro personaggio del Concilio citato esplicitamente nel concept, quindi nessuna Attitude aggiuntiva inventata (§9.4).
+  - **Nessun Intimacy Profile**: nessun contenuto intimo scritto in questa scheda (personaggio originale, non da materiale importato), quindi §13.3 non si applica qui.
+  - RPG Stats: non impostate, in pausa di default.
+  - `final_instructions` con la riga standard di disciplina di formato.
+  - Global Character ON.
+  
+  ## Età
+  
+  81 anni anagrafici (nata 12 marzo 1943, data varia per §9.6), ferma nell'aspetto ai 34 anni della morte/resurrezione (8 novembre 1977, non scritta come data separata sul World: solo l'età anagrafica alimenta `birthdate`/`{{age}}`, l'età apparente resta narrativa nel `long_summary`). `birthdate`/`start_timeline_position` coerenti con `world_age` corrente.
+  
+  ## Verifica
+  
+
+=== claude/Abel_Vilas_Ibridi_Representative_2026-09-14.md (4392 bytes) ===
+  # Abel Vilas — Rappresentante Ibridi, Concilio di Blackwood (2026-09-14)
+  
+  Sesto dei sette seggi minoritari completato. Fonte: card grezza fornita dall'utente (Abel Vilas, CEO di Hydra Luxury Resorts, sea dragon demihuman, da un'ambientazione diversa da "New Olympus" ma con la stessa logica di materiale libero dell'utente). Il seggio Ibridi era stato originariamente ipotizzato come "un naga" in `Concilio_Blackwood_Struttura_Distretti_2026-09-14.md`; l'utente ha scelto Abel (drago) al suo posto, identità confermata esplicitamente in chat.
+  
+  ## Applicazione §10 e §13
+  
+  Materiale creativo libero dell'utente, non ambientazione con precedenza di dominio: riscrittura libera per backstory/occupazione/agganci (§10), vincolata solo ad aspetto, personalità e voce.
+  
+  **Scartato integralmente (§13.2)**: la relazione "ex-partner" con `{{user}}` (descritta nella fonte come una storia d'amore finita per pressioni familiari, con tanto di battuta diretta a `{{user}}` nel Dialogue "Angry"). Non trascritta in nessuna forma: nella scheda nuova resta solo un accenno neutro a "una vecchia relazione finita per pressioni familiari", senza destinatario, sul modello già usato per Richard Loewe (sezione THE LINE) e Harrison Black.
+  
+  **Mantenuto e riambientato**: aspetto fisico completo, nome, occupazione (CEO di Hydra Luxury Resorts, ora sulla costa di Blackwood invece che sull'Egeo), tratti di personalità, famiglia con legami quasi mafiosi (Apollo e Hestia Vilas, citati in backstory ma non creati come schede separate, essendo menzionati una sola volta), l'amico d'infanzia selkie Devon Moss (idem, citato non schedato), il pregiudizio verso gli umani (mantenuto come tratto caratteriale del personaggio, non come fatto del World), la venatura bioluminescente che si illumina sotto emozione intensa.
+  
+  ## Scheda completata
+  
+  Pipeline standard §14 completa:
+  - `long_summary` in JED+ (`_xFcKFjdrwhLTGpjGk43dA`): BACKSTORY, THE VILAS NAME (equivalente famiglia/pack), VOICE & BEHAVIOR, chiusura tematica "THE WEIGHT OF THE NAME".
+  - `summary` PList, `display_description`, titoli (Hybrid Representative Blackwood Council; CEO Hydra Luxury Resorts).
+  - 5 outfit contestuali (At the Resort/default, Council Session, Night Swim, Off the Clock, A Bad Week).
+  - 5 Dialogue Examples (l'intruso in spiaggia, la sfida sul non aver costruito nulla da solo, il nuoto notturno con Devon, la sessione di Concilio sul perché serve un seggio Ibridi, la domanda sulla vecchia relazione, quest'ultima riscritta senza destinatario per rimuovere ogni traccia di `{{user}}`).
+  - Attitudes: Alyssa e Jasper (stranger, mai incontrati). Nessun altro personaggio del Concilio citato esplicitamente nel materiale fornito, quindi nessuna Attitude aggiuntiva inventata (§9.4).
+  - **Intimacy Profile** (`_zeXKrFMpCBYaxyzMkfU7N`, formato §13.3, `is_global: true`, `party_conditions` su di lui): dominanza primaria, morsi, marcatura olfattiva, uso della coda per immobilizzare, turn-off su infedeltà e sottomissione performata, aftercare fisico e silenzioso (pulisce lui stesso i morsi). Contenuto ricavato dalla sezione Intimacy della card sorgente, non graficamente esplicito, nessuna misura numerica da convertire.
+  - RPG Stats: non impostate, in pausa di default.
+  - `final_instructions` con la riga standard di disciplina di formato.
+  - Global Character ON.
+  
+  ## Età
+  
+  30 anni come indicato dall'utente, `birthdate`/`start_timeline_position` calcolati per nascita 2 settembre 1993 (data varia per §9.6), coerente con `world_age` corrente.
+  
+  ## Verifica
+  
+  GET fresca dopo tutte le scritture: 5 outfit con default impostato, 5 Dialogue Examples, 2 Attitudes, `birthdate`/`start_timeline_position` corretti, `is_global: true`, `final_instructions` con disciplina di formato, zero `{{user}}`/em-dash/grassetto su tutti i campi testuali incluso l'Intimacy Profile.
+  
+  ## Stato Concilio aggiornato
+  
+
