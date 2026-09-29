@@ -17,9 +17,30 @@
   "extensions": {
     "outfits": [],
     "attitudes": [],
-    "rpg_stats": {},
-    "birthdate": null,
-    "start_timeline_position": null,
+    "rpg_stats": {
+      "enabled": true,
+      "level": 12,
+      "experience": 0,
+      "species_id": "Werewolf (Founding Bloodline Pup)",
+      "occupation_id": "Student Apprentice / Minor Pup",
+      "base_stats": {
+        "stat_1": 3,
+        "stat_2": 3,
+        "stat_3": 7,
+        "stat_4": 5,
+        "stat_5": 5,
+        "stat_6": 8,
+        "strength": 3,
+        "endurance": 3,
+        "agility": 7,
+        "intelligence": 5,
+        "charisma": 5,
+        "luck": 8,
+        "perception": 8
+      }
+    },
+    "birthdate": 10380312,
+    "start_timeline_position": 10380312,
     "keys": [
       "Edric",
       "son",
@@ -49,9 +70,30 @@
     "extensions": {
       "outfits": [],
       "attitudes": [],
-      "rpg_stats": {},
-      "birthdate": null,
-      "start_timeline_position": null,
+      "rpg_stats": {
+        "enabled": true,
+        "level": 12,
+        "experience": 0,
+        "species_id": "Werewolf (Founding Bloodline Pup)",
+        "occupation_id": "Student Apprentice / Minor Pup",
+        "base_stats": {
+          "stat_1": 3,
+          "stat_2": 3,
+          "stat_3": 7,
+          "stat_4": 5,
+          "stat_5": 5,
+          "stat_6": 8,
+          "strength": 3,
+          "endurance": 3,
+          "agility": 7,
+          "intelligence": 5,
+          "charisma": 5,
+          "luck": 8,
+          "perception": 8
+        }
+      },
+      "birthdate": 10380312,
+      "start_timeline_position": 10380312,
       "keys": [
         "Edric",
         "son",

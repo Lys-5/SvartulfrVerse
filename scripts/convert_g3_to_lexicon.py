@@ -113,6 +113,8 @@ def convert_g3_characters():
         "marcus o'connor", 'vito marino', 'angelo moreno', 'federico "riki" savini',
         'federico savini', 'harlan "huck" beaumont', 'harlan beaumont', 'zeera',
         'brak ironfist', 'barrow', 'harrison black', 'abel vilas', 'cassian aralas', 'marlowe voss',
+        # Team Ukiyo & Nomads (5)
+        'radek', 'goran', 'kian', 'marek',
         # Grave Mistake (4)
         'fade greymoor', 'mackenzie sanchez-rogers', 'roland vickers', 'viola carter', 'via carter',
         # Athletes (6)

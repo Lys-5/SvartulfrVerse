@@ -1,6 +1,6 @@
 {
   "name": "Svartúlfr - Locations",
-  "description": "Locations di Svartúlfr (148 voci)",
+  "description": "Locations di Svartúlfr (155 voci)",
   "scan_depth": 5,
   "token_budget": 2048,
   "recursive_scanning": true,
@@ -12,13 +12,475 @@
     "Locations"
   ],
   "counts": {
-    "total": 148
+    "total": 155
   },
   "entries": [
     {
+      "entry_id": "_CaKc8CcYADYxLRmb2GYpG",
+      "id": "_CaKc8CcYADYxLRmb2GYpG",
+      "uid": 0,
+      "name": "Trial Dungeon: Hive Apex Rift (Floors 1-18)",
+      "comment": "Location: Trial Dungeon: Hive Apex Rift (Floors 1-18)",
+      "keys": [
+        "Trial Dungeon: Hive Apex Rift (Floors 1-18)",
+        "Dungeon",
+        "Rift",
+        "Grade S",
+        "Hive Apex",
+        "Combat"
+      ],
+      "key": [
+        "Trial Dungeon: Hive Apex Rift (Floors 1-18)",
+        "Dungeon",
+        "Rift",
+        "Grade S",
+        "Hive Apex",
+        "Combat"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "A high-tier Grade S subterranean dungeon rift registered by the DMHA. The upper levels (Floors 1-10) feature glowing quartz caverns, bottomless chasms crossed by floating debris bridges, and sonic-winged predators. The deeper sectors (Floors 11-18) morph into terrifying organic corridors of pulsating flesh and chitinous nests, culminating in Floor 18 where the Apex Hive Guardian protects the ancient pulsing Dungeon Core obelisk.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "location",
+      "source_category": "locations",
+      "extensions": {
+        "parent_location_id": null,
+        "environment_id": null,
+        "tags": [
+          "Dungeon",
+          "Rift",
+          "Grade S",
+          "Hive Apex",
+          "Combat"
+        ],
+        "included_lexicon_entries": [],
+        "excluded_lexicon_entries": [],
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "location"
+        }
+      }
+    },
+    {
+      "entry_id": "_fBmdJReXCqdRLzYzyKw7w",
+      "id": "_fBmdJReXCqdRLzYzyKw7w",
+      "uid": 1,
+      "name": "Braceria McKay (McKay's Smokehouse)",
+      "comment": "Location: Braceria McKay (McKay's Smokehouse)",
+      "keys": [
+        "Braceria McKay (McKay's Smokehouse)",
+        "Restaurant",
+        "Tavern",
+        "Smokehouse",
+        "Food",
+        "Southside"
+      ],
+      "key": [
+        "Braceria McKay (McKay's Smokehouse)",
+        "Restaurant",
+        "Tavern",
+        "Smokehouse",
+        "Food",
+        "Southside"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "A bustling, greasy-spoon smokehouse and steakhouse in Chicago's working-class district, permanently smelling of hickory smoke, sizzling bacon, and roasted meat. Famed among orcs, minotaurs, and heavy laborers for serving colossal racks of barbecue ribs and chocolate milkshakes topped with crispy bacon. It serves as Team Ukiyo's favorite post-dungeon gathering spot to decompress, count bounty coins, and recover lost calories.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "location",
+      "source_category": "locations",
+      "extensions": {
+        "parent_location_id": null,
+        "environment_id": null,
+        "tags": [
+          "Restaurant",
+          "Tavern",
+          "Smokehouse",
+          "Food",
+          "Southside"
+        ],
+        "included_lexicon_entries": [],
+        "excluded_lexicon_entries": [],
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "location"
+        }
+      }
+    },
+    {
+      "entry_id": "_DJxYBCM7rNrXMj1WracGM",
+      "id": "_DJxYBCM7rNrXMj1WracGM",
+      "uid": 2,
+      "name": "Club House Ironhorn Nomads",
+      "comment": "Location: Club House Ironhorn Nomads",
+      "keys": [
+        "Club House Ironhorn Nomads",
+        "Clubhouse",
+        "Ironhorn Nomads",
+        "Biker",
+        "Marek",
+        "Oni"
+      ],
+      "key": [
+        "Club House Ironhorn Nomads",
+        "Clubhouse",
+        "Ironhorn Nomads",
+        "Biker",
+        "Marek",
+        "Oni"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "The fortified industrial compound serving as the world headquarters and sanctuary for the Ironhorn Nomads Motorcycle Club in the Naperville corridor. Enclosed by barbed wire, heavy steel gates, and roar of custom high-caliber motorcycles, it houses custom tuning workshops, a rough timber tavern with pool tables, private armories, and a spacious enclosed courtyard featuring an in-ground swimming pool utilized for boisterous club celebrations and pool parties.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "location",
+      "source_category": "locations",
+      "extensions": {
+        "parent_location_id": null,
+        "environment_id": null,
+        "tags": [
+          "Clubhouse",
+          "Ironhorn Nomads",
+          "Biker",
+          "Marek",
+          "Oni"
+        ],
+        "included_lexicon_entries": [],
+        "excluded_lexicon_entries": [],
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "location"
+        }
+      }
+    },
+    {
+      "entry_id": "_erHMcydnPVEyk7NY3K9wf",
+      "id": "_erHMcydnPVEyk7NY3K9wf",
+      "uid": 3,
+      "name": "Team Ukiyo Operational Base (Warehouse & Black Vault)",
+      "comment": "Location: Team Ukiyo Operational Base (Warehouse & Black Vault)",
+      "keys": [
+        "Team Ukiyo Operational Base (Warehouse & Black Vault)",
+        "Base",
+        "Team Ukiyo",
+        "Warehouse",
+        "Vault",
+        "Southside"
+      ],
+      "key": [
+        "Team Ukiyo Operational Base (Warehouse & Black Vault)",
+        "Base",
+        "Team Ukiyo",
+        "Warehouse",
+        "Vault",
+        "Southside"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "The fortified headquarters of Team Ukiyo in Southside Chicago. Originally an old industrial sewing machine warehouse acquired from Vargus 'The Red', it rests upon bedrock foundations ideal for anchoring high-tier Dungeon Cores. The complex features crew quarters, a heavy armory, a sparring ring, and the Black Vault: an impenetrable subterranean vault designed by Jasper, encased in lead, silver, and anti-scrying runes to store unregistered dungeon artifacts safely.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "location",
+      "source_category": "locations",
+      "extensions": {
+        "parent_location_id": null,
+        "environment_id": null,
+        "tags": [
+          "Base",
+          "Team Ukiyo",
+          "Warehouse",
+          "Vault",
+          "Southside"
+        ],
+        "included_lexicon_entries": [],
+        "excluded_lexicon_entries": [],
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "location"
+        }
+      }
+    },
+    {
+      "entry_id": "_RVRf9PtEdwhGt3rGGFjMC",
+      "id": "_RVRf9PtEdwhGt3rGGFjMC",
+      "uid": 4,
+      "name": "The Cable District & The Void",
+      "comment": "Location: The Cable District & The Void",
+      "keys": [
+        "The Cable District & The Void",
+        "District",
+        "Industrial",
+        "Grey Zone",
+        "Underworld",
+        "Chicago"
+      ],
+      "key": [
+        "The Cable District & The Void",
+        "District",
+        "Industrial",
+        "Grey Zone",
+        "Underworld",
+        "Chicago"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "Chicago's notorious industrial grey zone, situated in the Old Warehouses Sector. A dense, foreboding labyrinth of suspended high-voltage cables, hissing steam conduits, and heavily unstable aetheric ley-lines. While nominally subject to municipal law, it is de facto governed by syndicate bosses and energy barons. At its perimeter lies The Void, an unstable planar tear and black-market bazaar where raw mana crystals, illicit drops, and unregistered magitech are traded.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "location",
+      "source_category": "locations",
+      "extensions": {
+        "parent_location_id": null,
+        "environment_id": null,
+        "tags": [
+          "District",
+          "Industrial",
+          "Grey Zone",
+          "Underworld",
+          "Chicago"
+        ],
+        "included_lexicon_entries": [],
+        "excluded_lexicon_entries": [],
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "location"
+        }
+      }
+    },
+    {
+      "entry_id": "_aWcjmPKnChpzGndYD62gP",
+      "id": "_aWcjmPKnChpzGndYD62gP",
+      "uid": 5,
+      "name": "Clinica Ortus",
+      "comment": "Location: Clinica Ortus",
+      "keys": [
+        "Clinica Ortus",
+        "Clinic",
+        "Medical",
+        "Demi-Human",
+        "Clandestine",
+        "Chicago"
+      ],
+      "key": [
+        "Clinica Ortus",
+        "Clinic",
+        "Medical",
+        "Demi-Human",
+        "Clandestine",
+        "Chicago"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "A premier private medical facility catering to elite and high-ranking demi-humans, operating completely outside standard Guild and DMHA bureaucratic surveillance. Equipped with Grade S sterility wards, multi-tiered arcane scanning circles for anatomical diagnosis, and reinforced surgical theaters. It provides discreet, high-level medical care for combat injuries, mana deviations, and clandestine operations without filing official police or Guild injury reports.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "location",
+      "source_category": "locations",
+      "extensions": {
+        "parent_location_id": null,
+        "environment_id": null,
+        "tags": [
+          "Clinic",
+          "Medical",
+          "Demi-Human",
+          "Clandestine",
+          "Chicago"
+        ],
+        "included_lexicon_entries": [],
+        "excluded_lexicon_entries": [],
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "location"
+        }
+      }
+    },
+    {
+      "entry_id": "_BD8F76PngMyD2yURFWV76",
+      "id": "_BD8F76PngMyD2yURFWV76",
+      "uid": 6,
+      "name": "La Dimora del Rifugio",
+      "comment": "Location: La Dimora del Rifugio",
+      "keys": [
+        "La Dimora del Rifugio",
+        "Dimension",
+        "Refuge",
+        "Father Rev",
+        "Sanctuary",
+        "Thermal Baths"
+      ],
+      "key": [
+        "La Dimora del Rifugio",
+        "Dimension",
+        "Refuge",
+        "Father Rev",
+        "Sanctuary",
+        "Thermal Baths"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "An opulent extradimensional sanctuary hidden beyond the Veil, accessible exclusively via the enchanted golden key entrusted to Alyssa by Father Revazhael. The exterior portal appears as an ethereal doorway framed by coils of black smoke and crimson runes. The interior reveals a majestic stone and cedar manor featuring an arcane library with Father Rev's animated portraits, private suites, and soothing natural geothermal thermal baths fed by subterranean mystic currents. The entire estate is maintained and protected by the bound spirit butler, Kobal.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "location",
+      "source_category": "locations",
+      "extensions": {
+        "parent_location_id": null,
+        "environment_id": null,
+        "tags": [
+          "Dimension",
+          "Refuge",
+          "Father Rev",
+          "Sanctuary",
+          "Thermal Baths"
+        ],
+        "included_lexicon_entries": [],
+        "excluded_lexicon_entries": [],
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "location"
+        }
+      }
+    },
+    {
       "entry_id": "_hcmcH3jKtU82P8Bh11mF1",
       "id": "_hcmcH3jKtU82P8Bh11mF1",
-      "uid": 0,
+      "uid": 7,
       "name": "Jasper's Cavern (Villa Douglas West Wing)",
       "comment": "Location: Jasper's Cavern (Villa Douglas West Wing)",
       "keys": [
@@ -78,7 +540,7 @@
     {
       "entry_id": "_gUjcJKTyq3K3LFF3BbVzd",
       "id": "_gUjcJKTyq3K3LFF3BbVzd",
-      "uid": 1,
+      "uid": 8,
       "name": "Villa Douglas: The Attic Sanctuary",
       "comment": "Location: Villa Douglas: The Attic Sanctuary",
       "keys": [
@@ -138,7 +600,7 @@
     {
       "entry_id": "_4wJ11ttfz78gfH2cqdx4R",
       "id": "_4wJ11ttfz78gfH2cqdx4R",
-      "uid": 2,
+      "uid": 9,
       "name": "St. Brugge Private Academy",
       "comment": "Location: St. Brugge Private Academy",
       "keys": [
@@ -198,7 +660,7 @@
     {
       "entry_id": "_3EALFJfmG91xVpUjnzrEk",
       "id": "_3EALFJfmG91xVpUjnzrEk",
-      "uid": 3,
+      "uid": 10,
       "name": "Silver Marshes",
       "comment": "Location: Silver Marshes",
       "keys": [
@@ -248,7 +710,7 @@
     {
       "entry_id": "_FyNLmfUAaxCea1Ny6mBtm",
       "id": "_FyNLmfUAaxCea1Ny6mBtm",
-      "uid": 4,
+      "uid": 11,
       "name": "Dragonide Sanctum",
       "comment": "Location: Dragonide Sanctum",
       "keys": [
@@ -298,7 +760,7 @@
     {
       "entry_id": "_3tAAgRefjD7VntWhHYRfg",
       "id": "_3tAAgRefjD7VntWhHYRfg",
-      "uid": 5,
+      "uid": 12,
       "name": "Crystal Caves",
       "comment": "Location: Crystal Caves",
       "keys": [
@@ -348,7 +810,7 @@
     {
       "entry_id": "_AqRjXRDRm23gAHJFaWC39",
       "id": "_AqRjXRDRm23gAHJFaWC39",
-      "uid": 6,
+      "uid": 13,
       "name": "The Otherworld",
       "comment": "Location: The Otherworld",
       "keys": [
@@ -398,7 +860,7 @@
     {
       "entry_id": "_yPNABkfHwWeDpEjHfehAz",
       "id": "_yPNABkfHwWeDpEjHfehAz",
-      "uid": 7,
+      "uid": 14,
       "name": "Evirein Academy of Magic",
       "comment": "Location: Evirein Academy of Magic",
       "keys": [
@@ -448,7 +910,7 @@
     {
       "entry_id": "_FVygCThfwJP77BRNc8qYL",
       "id": "_FVygCThfwJP77BRNc8qYL",
-      "uid": 8,
+      "uid": 15,
       "name": "Market-Zone",
       "comment": "Location: Market-Zone",
       "keys": [
@@ -498,7 +960,7 @@
     {
       "entry_id": "_xJ9zaHVxUNnWw6UwwpAVe",
       "id": "_xJ9zaHVxUNnWw6UwwpAVe",
-      "uid": 9,
+      "uid": 16,
       "name": "The Void",
       "comment": "Location: The Void",
       "keys": [
@@ -548,7 +1010,7 @@
     {
       "entry_id": "_7jtmcqHPpFemAnhtghdxq",
       "id": "_7jtmcqHPpFemAnhtghdxq",
-      "uid": 10,
+      "uid": 17,
       "name": "Diner del Sud",
       "comment": "Location: Diner del Sud",
       "keys": [
@@ -598,7 +1060,7 @@
     {
       "entry_id": "_CPWKPYwWeDY7ktNgBLWAy",
       "id": "_CPWKPYwWeDY7ktNgBLWAy",
-      "uid": 11,
+      "uid": 18,
       "name": "Apartment C",
       "comment": "Location: Apartment C",
       "keys": [
@@ -648,7 +1110,7 @@
     {
       "entry_id": "_MxFzj8MUgHPXd8Y9m8hX4",
       "id": "_MxFzj8MUgHPXd8Y9m8hX4",
-      "uid": 12,
+      "uid": 19,
       "name": "The Horns",
       "comment": "Location: The Horns",
       "keys": [
@@ -698,7 +1160,7 @@
     {
       "entry_id": "_8mEgKeWWt4hP1M1AYMQPW",
       "id": "_8mEgKeWWt4hP1M1AYMQPW",
-      "uid": 13,
+      "uid": 20,
       "name": "Aetheris Clinic",
       "comment": "Location: Aetheris Clinic",
       "keys": [
@@ -748,7 +1210,7 @@
     {
       "entry_id": "_4FMaQm3xQCUVHeRf3AWYk",
       "id": "_4FMaQm3xQCUVHeRf3AWYk",
-      "uid": 14,
+      "uid": 21,
       "name": "Library Basement Meeting Room 005",
       "comment": "Location: Library Basement Meeting Room 005",
       "keys": [
@@ -798,7 +1260,7 @@
     {
       "entry_id": "_Ra4fXd8BEdKUeKTbGAw3b",
       "id": "_Ra4fXd8BEdKUeKTbGAw3b",
-      "uid": 15,
+      "uid": 22,
       "name": "Storage & Supplies",
       "comment": "Location: Storage & Supplies",
       "keys": [
@@ -848,7 +1310,7 @@
     {
       "entry_id": "_zjA9MJEAVjjFn64jjtcb6",
       "id": "_zjA9MJEAVjjFn64jjtcb6",
-      "uid": 16,
+      "uid": 23,
       "name": "Zone di Transito e Confine",
       "comment": "Location: Zone di Transito e Confine",
       "keys": [
@@ -898,7 +1360,7 @@
     {
       "entry_id": "_FrXnp2CALTP44CP3KVAhb",
       "id": "_FrXnp2CALTP44CP3KVAhb",
-      "uid": 17,
+      "uid": 24,
       "name": "Ventura / Route 101",
       "comment": "Location: Ventura / Route 101",
       "keys": [
@@ -948,7 +1410,7 @@
     {
       "entry_id": "_j67Dp2PVwFCpdrfWRYV2M",
       "id": "_j67Dp2PVwFCpdrfWRYV2M",
-      "uid": 18,
+      "uid": 25,
       "name": "Supernatural University of Central California",
       "comment": "Location: Supernatural University of Central California",
       "keys": [
@@ -998,7 +1460,7 @@
     {
       "entry_id": "_761mFFeCcQyR9JxhLCWcy",
       "id": "_761mFFeCcQyR9JxhLCWcy",
-      "uid": 19,
+      "uid": 26,
       "name": "Solarton",
       "comment": "Location: Solarton",
       "keys": [
@@ -1048,7 +1510,7 @@
     {
       "entry_id": "_4k3RT1nxw994yHRM66LQb",
       "id": "_4k3RT1nxw994yHRM66LQb",
-      "uid": 20,
+      "uid": 27,
       "name": "Simi Valley",
       "comment": "Location: Simi Valley",
       "keys": [
@@ -1098,7 +1560,7 @@
     {
       "entry_id": "_X4A8gWVr43a7dRr9TbJ4m",
       "id": "_X4A8gWVr43a7dRr9TbJ4m",
-      "uid": 21,
+      "uid": 28,
       "name": "Los Angeles",
       "comment": "Location: Los Angeles",
       "keys": [
@@ -1148,7 +1610,7 @@
     {
       "entry_id": "_6JEr2rqCjJa9tWzgbDcrb",
       "id": "_6JEr2rqCjJa9tWzgbDcrb",
-      "uid": 22,
+      "uid": 29,
       "name": "Hex Valley",
       "comment": "Location: Hex Valley",
       "keys": [
@@ -1198,7 +1660,7 @@
     {
       "entry_id": "_BUfxJEGc4Td36H8kMmVD3",
       "id": "_BUfxJEGc4Td36H8kMmVD3",
-      "uid": 23,
+      "uid": 30,
       "name": "DDM Inc. // Voidspace",
       "comment": "Location: DDM Inc. // Voidspace",
       "keys": [
@@ -1248,7 +1710,7 @@
     {
       "entry_id": "_Caw9nRwKf4Gx9VzW21QJj",
       "id": "_Caw9nRwKf4Gx9VzW21QJj",
-      "uid": 24,
+      "uid": 31,
       "name": "California University of Magical Sciences",
       "comment": "Location: California University of Magical Sciences",
       "keys": [
@@ -1298,7 +1760,7 @@
     {
       "entry_id": "_xEB9X8wUGwQrELYzKX7gt",
       "id": "_xEB9X8wUGwQrELYzKX7gt",
-      "uid": 25,
+      "uid": 32,
       "name": "Bloodmoon Pack Territory",
       "comment": "Location: Bloodmoon Pack Territory",
       "keys": [
@@ -1348,7 +1810,7 @@
     {
       "entry_id": "_HN1tmm3Ex4LBh2HtWGUbq",
       "id": "_HN1tmm3Ex4LBh2HtWGUbq",
-      "uid": 26,
+      "uid": 33,
       "name": "Blackwood Forest",
       "comment": "Location: Blackwood Forest",
       "keys": [
@@ -1398,7 +1860,7 @@
     {
       "entry_id": "_D8B9QAfHPn3NfD4mAnJen",
       "id": "_D8B9QAfHPn3NfD4mAnJen",
-      "uid": 27,
+      "uid": 34,
       "name": "Blackwood City",
       "comment": "Location: Blackwood City",
       "keys": [
@@ -1448,7 +1910,7 @@
     {
       "entry_id": "_fekTA9NRygQ49q7cxRz8A",
       "id": "_fekTA9NRygQ49q7cxRz8A",
-      "uid": 28,
+      "uid": 35,
       "name": "Bakersfield",
       "comment": "Location: Bakersfield",
       "keys": [
@@ -1498,7 +1960,7 @@
     {
       "entry_id": "_cXC2KcP9yMAtPGFkNrTVj",
       "id": "_cXC2KcP9yMAtPGFkNrTVj",
-      "uid": 29,
+      "uid": 36,
       "name": "Yeti Shack",
       "comment": "Location: Yeti Shack",
       "keys": [
@@ -1548,7 +2010,7 @@
     {
       "entry_id": "_jXp8TKEpTNkrtMtENy2Wg",
       "id": "_jXp8TKEpTNkrtMtENy2Wg",
-      "uid": 30,
+      "uid": 37,
       "name": "Yarrow River",
       "comment": "Location: Yarrow River",
       "keys": [
@@ -1598,7 +2060,7 @@
     {
       "entry_id": "_xfz8yrt2RjqHyTa8MXG3W",
       "id": "_xfz8yrt2RjqHyTa8MXG3W",
-      "uid": 31,
+      "uid": 38,
       "name": "Wyrm Dormitories",
       "comment": "Location: Wyrm Dormitories",
       "keys": [
@@ -1648,7 +2110,7 @@
     {
       "entry_id": "_h9UDyMzPtBwnzfbjj3DP3",
       "id": "_h9UDyMzPtBwnzfbjj3DP3",
-      "uid": 32,
+      "uid": 39,
       "name": "Ventura Square",
       "comment": "Location: Ventura Square",
       "keys": [
@@ -1698,7 +2160,7 @@
     {
       "entry_id": "_XQH8GCkktUMfgDa8KbyxK",
       "id": "_XQH8GCkktUMfgDa8KbyxK",
-      "uid": 33,
+      "uid": 40,
       "name": "Vampire & Undead Association",
       "comment": "Location: Vampire & Undead Association",
       "keys": [
@@ -1748,7 +2210,7 @@
     {
       "entry_id": "_8fRJTJVkd7VjkQ3jfJWQ1",
       "id": "_8fRJTJVkd7VjkQ3jfJWQ1",
-      "uid": 34,
+      "uid": 41,
       "name": "Uptown",
       "comment": "Location: Uptown",
       "keys": [
@@ -1798,7 +2260,7 @@
     {
       "entry_id": "_nhdQ7xkycT1yfn1wWXN8U",
       "id": "_nhdQ7xkycT1yfn1wWXN8U",
-      "uid": 35,
+      "uid": 42,
       "name": "Unicorn Hall",
       "comment": "Location: Unicorn Hall",
       "keys": [
@@ -1848,7 +2310,7 @@
     {
       "entry_id": "_Vhqnmrg3YAdWMTfPcGGxP",
       "id": "_Vhqnmrg3YAdWMTfPcGGxP",
-      "uid": 36,
+      "uid": 43,
       "name": "Tidewrack Surf & Rental",
       "comment": "Location: Tidewrack Surf & Rental",
       "keys": [
@@ -1898,7 +2360,7 @@
     {
       "entry_id": "_Ep6xM191zpn6jpUygJakP",
       "id": "_Ep6xM191zpn6jpUygJakP",
-      "uid": 37,
+      "uid": 44,
       "name": "Theta Iota Theta (TIT or ΘΙΘ)",
       "comment": "Location: Theta Iota Theta (TIT or ΘΙΘ)",
       "keys": [
@@ -1948,7 +2410,7 @@
     {
       "entry_id": "_hfm1W4nYnXfQEqcNGwNxr",
       "id": "_hfm1W4nYnXfQEqcNGwNxr",
-      "uid": 38,
+      "uid": 45,
       "name": "The Verve",
       "comment": "Location: The Verve",
       "keys": [
@@ -1998,7 +2460,7 @@
     {
       "entry_id": "_gpBY7HGddd4KHfqaDyy3c",
       "id": "_gpBY7HGddd4KHfqaDyy3c",
-      "uid": 39,
+      "uid": 46,
       "name": "The Underground Fighting Ring",
       "comment": "Location: The Underground Fighting Ring",
       "keys": [
@@ -2048,7 +2510,7 @@
     {
       "entry_id": "_KAa4FrdtffjCETKPEK7fr",
       "id": "_KAa4FrdtffjCETKPEK7fr",
-      "uid": 40,
+      "uid": 47,
       "name": "The Simi Valley Grid",
       "comment": "Location: The Simi Valley Grid",
       "keys": [
@@ -2098,7 +2560,7 @@
     {
       "entry_id": "_XUV6jWXTXG6wgj2WKBEpr",
       "id": "_XUV6jWXTXG6wgj2WKBEpr",
-      "uid": 41,
+      "uid": 48,
       "name": "The Roasted Bean",
       "comment": "Location: The Roasted Bean",
       "keys": [
@@ -2148,7 +2610,7 @@
     {
       "entry_id": "_eb8aWLJfT3Yw1E6nxQEJ4",
       "id": "_eb8aWLJfT3Yw1E6nxQEJ4",
-      "uid": 42,
+      "uid": 49,
       "name": "The Pack",
       "comment": "Location: The Pack",
       "keys": [
@@ -2198,7 +2660,7 @@
     {
       "entry_id": "_EK4EPeKCjmFd3EbPNTCkT",
       "id": "_EK4EPeKCjmFd3EbPNTCkT",
-      "uid": 43,
+      "uid": 50,
       "name": "The Open Casket",
       "comment": "Location: The Open Casket",
       "keys": [
@@ -2248,7 +2710,7 @@
     {
       "entry_id": "_FfUxT1htx6HW9LJAHhdqw",
       "id": "_FfUxT1htx6HW9LJAHhdqw",
-      "uid": 44,
+      "uid": 51,
       "name": "The Nursery",
       "comment": "Location: The Nursery",
       "keys": [
@@ -2298,7 +2760,7 @@
     {
       "entry_id": "_9H2EmzRm92QxBpkmJUR1z",
       "id": "_9H2EmzRm92QxBpkmJUR1z",
-      "uid": 45,
+      "uid": 52,
       "name": "Villa Douglas",
       "comment": "Location: Villa Douglas",
       "keys": [
@@ -2348,7 +2810,7 @@
     {
       "entry_id": "_NNtDFU6T1h929Kc79Uej1",
       "id": "_NNtDFU6T1h929Kc79Uej1",
-      "uid": 46,
+      "uid": 53,
       "name": "The Neon Mirage",
       "comment": "Location: The Neon Mirage",
       "keys": [
@@ -2398,7 +2860,7 @@
     {
       "entry_id": "_1wcb4XHMXfg2YBwa2PFkM",
       "id": "_1wcb4XHMXfg2YBwa2PFkM",
-      "uid": 47,
+      "uid": 54,
       "name": "The Lunar Pharmacy",
       "comment": "Location: The Lunar Pharmacy",
       "keys": [
@@ -2448,7 +2910,7 @@
     {
       "entry_id": "_PVTXK3yRKjVPcxRCg61R3",
       "id": "_PVTXK3yRKjVPcxRCg61R3",
-      "uid": 48,
+      "uid": 55,
       "name": "The Lower Levels",
       "comment": "Location: The Lower Levels",
       "keys": [
@@ -2498,7 +2960,7 @@
     {
       "entry_id": "_KeBE9zTg2zV72Y17bKnex",
       "id": "_KeBE9zTg2zV72Y17bKnex",
-      "uid": 49,
+      "uid": 56,
       "name": "The Long Table",
       "comment": "Location: The Long Table",
       "keys": [
@@ -2548,7 +3010,7 @@
     {
       "entry_id": "_N36MDPCGy43ymPfBMUXnx",
       "id": "_N36MDPCGy43ymPfBMUXnx",
-      "uid": 50,
+      "uid": 57,
       "name": "The Euclidean Division",
       "comment": "Location: The Euclidean Division",
       "keys": [
@@ -2598,7 +3060,7 @@
     {
       "entry_id": "_mfW6WAcWPcwkPxWyfPCye",
       "id": "_mfW6WAcWPcwkPxWyfPCye",
-      "uid": 51,
+      "uid": 58,
       "name": "The Dusty Coyote Diner",
       "comment": "Location: The Dusty Coyote Diner",
       "keys": [
@@ -2648,7 +3110,7 @@
     {
       "entry_id": "_qBt3jf1kppwrmMwTBbYJB",
       "id": "_qBt3jf1kppwrmMwTBbYJB",
-      "uid": 52,
+      "uid": 59,
       "name": "The Dead Dog Motel",
       "comment": "Location: The Dead Dog Motel",
       "keys": [
@@ -2698,7 +3160,7 @@
     {
       "entry_id": "_G33ABhpFceN7HanHwp8rr",
       "id": "_G33ABhpFceN7HanHwp8rr",
-      "uid": 53,
+      "uid": 60,
       "name": "Supernatural Support Center (SSC)",
       "comment": "Location: Supernatural Support Center (SSC)",
       "keys": [
@@ -2748,7 +3210,7 @@
     {
       "entry_id": "_BmQdEBKrrBeWXhJzbhcE9",
       "id": "_BmQdEBKrrBeWXhJzbhcE9",
-      "uid": 54,
+      "uid": 61,
       "name": "Supernatural & Human Alliance",
       "comment": "Location: Supernatural & Human Alliance",
       "keys": [
@@ -2798,7 +3260,7 @@
     {
       "entry_id": "_tLc7FjRTTAgkdy9qjX2zE",
       "id": "_tLc7FjRTTAgkdy9qjX2zE",
-      "uid": 55,
+      "uid": 62,
       "name": "Suds & Such",
       "comment": "Location: Suds & Such",
       "keys": [
@@ -2848,7 +3310,7 @@
     {
       "entry_id": "_aLqMW6UHHj1D9M4xxENF7",
       "id": "_aLqMW6UHHj1D9M4xxENF7",
-      "uid": 56,
+      "uid": 63,
       "name": "Student Association Building",
       "comment": "Location: Student Association Building",
       "keys": [
@@ -2898,7 +3360,7 @@
     {
       "entry_id": "_CKkP1PfqRJDQLBPQeFyWF",
       "id": "_CKkP1PfqRJDQLBPQeFyWF",
-      "uid": 57,
+      "uid": 64,
       "name": "Static & Ink",
       "comment": "Location: Static & Ink",
       "keys": [
@@ -2948,7 +3410,7 @@
     {
       "entry_id": "_ndMkLAHyKgBDyeMpjwhBt",
       "id": "_ndMkLAHyKgBDyeMpjwhBt",
-      "uid": 58,
+      "uid": 65,
       "name": "St. Neptune Stadium",
       "comment": "Location: St. Neptune Stadium",
       "keys": [
@@ -2998,7 +3460,7 @@
     {
       "entry_id": "_WRBThTNK3wJawVdLRhA1e",
       "id": "_WRBThTNK3wJawVdLRhA1e",
-      "uid": 59,
+      "uid": 66,
       "name": "Sports Fields",
       "comment": "Location: Sports Fields",
       "keys": [
@@ -3048,7 +3510,7 @@
     {
       "entry_id": "_Mq1DYmKdnkR83YBjNRyXr",
       "id": "_Mq1DYmKdnkR83YBjNRyXr",
-      "uid": 60,
+      "uid": 67,
       "name": "Solarton Square",
       "comment": "Location: Solarton Square",
       "keys": [
@@ -3098,7 +3560,7 @@
     {
       "entry_id": "_a2pRKBjYnQ1Q1LaN6xdeh",
       "id": "_a2pRKBjYnQ1Q1LaN6xdeh",
-      "uid": 61,
+      "uid": 68,
       "name": "Solarton Public Beach",
       "comment": "Location: Solarton Public Beach",
       "keys": [
@@ -3148,7 +3610,7 @@
     {
       "entry_id": "_BgLjFRGNj9YX7tzybBzda",
       "id": "_BgLjFRGNj9YX7tzybBzda",
-      "uid": 62,
+      "uid": 69,
       "name": "Solarton High School",
       "comment": "Location: Solarton High School",
       "keys": [
@@ -3198,7 +3660,7 @@
     {
       "entry_id": "_NVALjebTDk1kPC9AjWhWt",
       "id": "_NVALjebTDk1kPC9AjWhWt",
-      "uid": 63,
+      "uid": 70,
       "name": "Solarton Ferry Terminal",
       "comment": "Location: Solarton Ferry Terminal",
       "keys": [
@@ -3248,7 +3710,7 @@
     {
       "entry_id": "_NqaNWcjcwHXmXFTptBEbP",
       "id": "_NqaNWcjcwHXmXFTptBEbP",
-      "uid": 64,
+      "uid": 71,
       "name": "Skid Row",
       "comment": "Location: Skid Row",
       "keys": [
@@ -3298,7 +3760,7 @@
     {
       "entry_id": "_82cNpDwVJwVd8qGRUgFw8",
       "id": "_82cNpDwVJwVd8qGRUgFw8",
-      "uid": 65,
+      "uid": 72,
       "name": "Simi Valley Infopoint",
       "comment": "Location: Simi Valley Infopoint",
       "keys": [
@@ -3348,7 +3810,7 @@
     {
       "entry_id": "_VbjcwqJnc7BaED9A9t2Dq",
       "id": "_VbjcwqJnc7BaED9A9t2Dq",
-      "uid": 66,
+      "uid": 73,
       "name": "Sidewinders Bar & Nightclub",
       "comment": "Location: Sidewinders Bar & Nightclub",
       "keys": [
@@ -3398,7 +3860,7 @@
     {
       "entry_id": "_EwMMJ7KEg9ATJ3mTXBaha",
       "id": "_EwMMJ7KEg9ATJ3mTXBaha",
-      "uid": 67,
+      "uid": 74,
       "name": "Seven Hills",
       "comment": "Location: Seven Hills",
       "keys": [
@@ -3448,7 +3910,7 @@
     {
       "entry_id": "_DA14L9eU8wdcfFR1acpbn",
       "id": "_DA14L9eU8wdcfFR1acpbn",
-      "uid": 68,
+      "uid": 75,
       "name": "Science Quarter",
       "comment": "Location: Science Quarter",
       "keys": [
@@ -3498,7 +3960,7 @@
     {
       "entry_id": "_TLEaxwQCB24kQYfYHy8pq",
       "id": "_TLEaxwQCB24kQYfYHy8pq",
-      "uid": 69,
+      "uid": 76,
       "name": "Rory's Estate",
       "comment": "Location: Rory's Estate",
       "keys": [
@@ -3548,7 +4010,7 @@
     {
       "entry_id": "_FQVVaJrXtd4Y66mPna87C",
       "id": "_FQVVaJrXtd4Y66mPna87C",
-      "uid": 70,
+      "uid": 77,
       "name": "Rhodes Farm",
       "comment": "Location: Rhodes Farm",
       "keys": [
@@ -3598,7 +4060,7 @@
     {
       "entry_id": "_C1qMV6LyhPA7yAJLXDFxN",
       "id": "_C1qMV6LyhPA7yAJLXDFxN",
-      "uid": 71,
+      "uid": 78,
       "name": "Phi Omicron Chi (FOX or ΦΟΧ)",
       "comment": "Location: Phi Omicron Chi (FOX or ΦΟΧ)",
       "keys": [
@@ -3648,7 +4110,7 @@
     {
       "entry_id": "_16nUQjhqXaFaUEKy1zgpA",
       "id": "_16nUQjhqXaFaUEKy1zgpA",
-      "uid": 72,
+      "uid": 79,
       "name": "Pershing Square",
       "comment": "Location: Pershing Square",
       "keys": [
@@ -3698,7 +4160,7 @@
     {
       "entry_id": "_rnNnjzcmDkgg2xbHYFftH",
       "id": "_rnNnjzcmDkgg2xbHYFftH",
-      "uid": 73,
+      "uid": 80,
       "name": "Passenger Ferry Solarton Line",
       "comment": "Location: Passenger Ferry Solarton Line",
       "keys": [
@@ -3748,7 +4210,7 @@
     {
       "entry_id": "_t3ReTGT1AjzaKqVM7PtDT",
       "id": "_t3ReTGT1AjzaKqVM7PtDT",
-      "uid": 74,
+      "uid": 81,
       "name": "Parking Lot B",
       "comment": "Location: Parking Lot B",
       "keys": [
@@ -3798,7 +4260,7 @@
     {
       "entry_id": "_CFdc6hPMPCQMja7ABT3zP",
       "id": "_CFdc6hPMPCQMja7ABT3zP",
-      "uid": 75,
+      "uid": 82,
       "name": "Parco Roulotte di Oildale",
       "comment": "Location: Parco Roulotte di Oildale",
       "keys": [
@@ -3848,7 +4310,7 @@
     {
       "entry_id": "_H6PUHPMMUEmM2wJbfd8et",
       "id": "_H6PUHPMMUEmM2wJbfd8et",
-      "uid": 76,
+      "uid": 83,
       "name": "Paradise",
       "comment": "Location: Paradise",
       "keys": [
@@ -3898,7 +4360,7 @@
     {
       "entry_id": "_N923td3fCdLPXBDDftp2T",
       "id": "_N923td3fCdLPXBDDftp2T",
-      "uid": 77,
+      "uid": 84,
       "name": "Osservatorio Griffith",
       "comment": "Location: Osservatorio Griffith",
       "keys": [
@@ -3948,7 +4410,7 @@
     {
       "entry_id": "_Gnm9WMQNjhUWJLhrkpqQk",
       "id": "_Gnm9WMQNjhUWJLhrkpqQk",
-      "uid": 78,
+      "uid": 85,
       "name": "Oldtown",
       "comment": "Location: Oldtown",
       "keys": [
@@ -3998,7 +4460,7 @@
     {
       "entry_id": "_3kFK6JCz9WEM2wGNRXnxq",
       "id": "_3kFK6JCz9WEM2wGNRXnxq",
-      "uid": 79,
+      "uid": 86,
       "name": "Nocturnal Hall",
       "comment": "Location: Nocturnal Hall",
       "keys": [
@@ -4048,7 +4510,7 @@
     {
       "entry_id": "_nKAXKmzHrCbRTQeqqFx3T",
       "id": "_nKAXKmzHrCbRTQeqqFx3T",
-      "uid": 80,
+      "uid": 87,
       "name": "Nightwine Hall",
       "comment": "Location: Nightwine Hall",
       "keys": [
@@ -4098,7 +4560,7 @@
     {
       "entry_id": "_bpQD4kCGHK1LW7WjahdU4",
       "id": "_bpQD4kCGHK1LW7WjahdU4",
-      "uid": 81,
+      "uid": 88,
       "name": "Mu Omega Omega (MOO or ΜΩΩ)",
       "comment": "Location: Mu Omega Omega (MOO or ΜΩΩ)",
       "keys": [
@@ -4148,7 +4610,7 @@
     {
       "entry_id": "_89J6GpNndcJnAEUB33DqP",
       "id": "_89J6GpNndcJnAEUB33DqP",
-      "uid": 82,
+      "uid": 89,
       "name": "Mu Alpha Nu (MAN or ΜΑΝ)",
       "comment": "Location: Mu Alpha Nu (MAN or ΜΑΝ)",
       "keys": [
@@ -4198,7 +4660,7 @@
     {
       "entry_id": "_jABzFFNTGRdRLEkNYTKx2",
       "id": "_jABzFFNTGRdRLEkNYTKx2",
-      "uid": 83,
+      "uid": 90,
       "name": "Molo 42",
       "comment": "Location: Molo 42",
       "keys": [
@@ -4248,7 +4710,7 @@
     {
       "entry_id": "_tbbaxN7A3pgFQ8x73xGNr",
       "id": "_tbbaxN7A3pgFQ8x73xGNr",
-      "uid": 84,
+      "uid": 91,
       "name": "Mercato Contadino (Farmer's Market)",
       "comment": "Location: Mercato Contadino (Farmer's Market)",
       "keys": [
@@ -4298,7 +4760,7 @@
     {
       "entry_id": "_Ft3eYhJaqKPK23edMnPfV",
       "id": "_Ft3eYhJaqKPK23edMnPfV",
-      "uid": 85,
+      "uid": 92,
       "name": "Medusa",
       "comment": "Location: Medusa",
       "keys": [
@@ -4348,7 +4810,7 @@
     {
       "entry_id": "_eq11xwGJqa9rHTtaBQTkL",
       "id": "_eq11xwGJqa9rHTtaBQTkL",
-      "uid": 86,
+      "uid": 93,
       "name": "Med/Bioengineering Labs",
       "comment": "Location: Med/Bioengineering Labs",
       "keys": [
@@ -4398,7 +4860,7 @@
     {
       "entry_id": "_GnNYqapde8TGQtemCwJHT",
       "id": "_GnNYqapde8TGQtemCwJHT",
-      "uid": 87,
+      "uid": 94,
       "name": "Main Pool",
       "comment": "Location: Main Pool",
       "keys": [
@@ -4448,7 +4910,7 @@
     {
       "entry_id": "_pG2ryjWVzDPN4AWX13Vyh",
       "id": "_pG2ryjWVzDPN4AWX13Vyh",
-      "uid": 88,
+      "uid": 95,
       "name": "Main Parking Lot",
       "comment": "Location: Main Parking Lot",
       "keys": [
@@ -4498,7 +4960,7 @@
     {
       "entry_id": "_QJUgPg6nGLqwdTgCL62NH",
       "id": "_QJUgPg6nGLqwdTgCL62NH",
-      "uid": 89,
+      "uid": 96,
       "name": "Magick Research Labs",
       "comment": "Location: Magick Research Labs",
       "keys": [
@@ -4548,7 +5010,7 @@
     {
       "entry_id": "_Jyg1XPDHyNkyJKyzJf13F",
       "id": "_Jyg1XPDHyNkyJKyzJf13F",
-      "uid": 90,
+      "uid": 97,
       "name": "La Segunda Luna",
       "comment": "Location: La Segunda Luna",
       "keys": [
@@ -4598,7 +5060,7 @@
     {
       "entry_id": "_UW8r3dr8VW7T6e1pFEd6U",
       "id": "_UW8r3dr8VW7T6e1pFEd6U",
-      "uid": 91,
+      "uid": 98,
       "name": "Kerrigan & Sons Butchers",
       "comment": "Location: Kerrigan & Sons Butchers",
       "keys": [
@@ -4648,7 +5110,7 @@
     {
       "entry_id": "_jx7cMhrTAtCztbPMJTb1H",
       "id": "_jx7cMhrTAtCztbPMJTb1H",
-      "uid": 92,
+      "uid": 99,
       "name": "Kern River Canyon",
       "comment": "Location: Kern River Canyon",
       "keys": [
@@ -4698,7 +5160,7 @@
     {
       "entry_id": "_jrpjEjGF6eFNcVWATaH91",
       "id": "_jrpjEjGF6eFNcVWATaH91",
-      "uid": 93,
+      "uid": 100,
       "name": "Kappa Sigma Alpha (KSA or ΚΣΑ)",
       "comment": "Location: Kappa Sigma Alpha (KSA or ΚΣΑ)",
       "keys": [
@@ -4748,7 +5210,7 @@
     {
       "entry_id": "_fyC1LJ8CAK8rP7k8Dr2a2",
       "id": "_fyC1LJ8CAK8rP7k8Dr2a2",
-      "uid": 94,
+      "uid": 101,
       "name": "Ironworks",
       "comment": "Location: Ironworks",
       "keys": [
@@ -4798,7 +5260,7 @@
     {
       "entry_id": "_pTqkAfBAEFUtEA3BqUjRz",
       "id": "_pTqkAfBAEFUtEA3BqUjRz",
-      "uid": 95,
+      "uid": 102,
       "name": "Hollywood",
       "comment": "Location: Hollywood",
       "keys": [
@@ -4848,7 +5310,7 @@
     {
       "entry_id": "_C7Nj1emPcrhDQb1gFYMDr",
       "id": "_C7Nj1emPcrhDQb1gFYMDr",
-      "uid": 96,
+      "uid": 103,
       "name": "Hex Valley Ferry Stop",
       "comment": "Location: Hex Valley Ferry Stop",
       "keys": [
@@ -4898,7 +5360,7 @@
     {
       "entry_id": "_jX3bYbn8FHra6qNYUC3Ux",
       "id": "_jX3bYbn8FHra6qNYUC3Ux",
-      "uid": 97,
+      "uid": 104,
       "name": "Helsing Chapel",
       "comment": "Location: Helsing Chapel",
       "keys": [
@@ -4948,7 +5410,7 @@
     {
       "entry_id": "_EmJg3zdjTT8kwteJJkyUR",
       "id": "_EmJg3zdjTT8kwteJJkyUR",
-      "uid": 98,
+      "uid": 105,
       "name": "Gym & Changing Facilities",
       "comment": "Location: Gym & Changing Facilities",
       "keys": [
@@ -4998,7 +5460,7 @@
     {
       "entry_id": "_ptpGD1VeVep7YknRmhFXM",
       "id": "_ptpGD1VeVep7YknRmhFXM",
-      "uid": 99,
+      "uid": 106,
       "name": "Griffin Clocktower",
       "comment": "Location: Griffin Clocktower",
       "keys": [
@@ -5048,7 +5510,7 @@
     {
       "entry_id": "_L8UpkDzCNTFWH7gBWep2r",
       "id": "_L8UpkDzCNTFWH7gBWep2r",
-      "uid": 100,
+      "uid": 107,
       "name": "Gallery",
       "comment": "Location: Gallery",
       "keys": [
@@ -5098,7 +5560,7 @@
     {
       "entry_id": "_cDDqVXg3jbxEhBd3qJ3ME",
       "id": "_cDDqVXg3jbxEhBd3qJ3ME",
-      "uid": 101,
+      "uid": 108,
       "name": "Fort MacArthur",
       "comment": "Location: Fort MacArthur",
       "keys": [
@@ -5148,7 +5610,7 @@
     {
       "entry_id": "_WX48nzYX28GRM1gj9gQBf",
       "id": "_WX48nzYX28GRM1gj9gQBf",
-      "uid": 102,
+      "uid": 109,
       "name": "Flat above Directions & Dragons",
       "comment": "Location: Flat above Directions & Dragons",
       "keys": [
@@ -5198,7 +5660,7 @@
     {
       "entry_id": "_4w7Npw7VkhbAyU1Qy1Wt2",
       "id": "_4w7Npw7VkhbAyU1Qy1Wt2",
-      "uid": 103,
+      "uid": 110,
       "name": "Eidolon Creative",
       "comment": "Location: Eidolon Creative",
       "keys": [
@@ -5248,7 +5710,7 @@
     {
       "entry_id": "_kTjtqx6n2r6JVhFFXe8D7",
       "id": "_kTjtqx6n2r6JVhFFXe8D7",
-      "uid": 104,
+      "uid": 111,
       "name": "Dullahan's Quarters",
       "comment": "Location: Dullahan's Quarters",
       "keys": [
@@ -5298,7 +5760,7 @@
     {
       "entry_id": "_88QNj8BnFMN143XxNat1n",
       "id": "_88QNj8BnFMN143XxNat1n",
-      "uid": 105,
+      "uid": 112,
       "name": "Dullahan's Condo",
       "comment": "Location: Dullahan's Condo",
       "keys": [
@@ -5348,7 +5810,7 @@
     {
       "entry_id": "_8hdAHhey4MxWd3r1BjqL2",
       "id": "_8hdAHhey4MxWd3r1BjqL2",
-      "uid": 106,
+      "uid": 113,
       "name": "Dragon's Shortcut",
       "comment": "Location: Dragon's Shortcut",
       "keys": [
@@ -5398,7 +5860,7 @@
     {
       "entry_id": "_WrymW8qTETkm7r1QXQGaT",
       "id": "_WrymW8qTETkm7r1QXQGaT",
-      "uid": 107,
+      "uid": 114,
       "name": "Lunar Quad",
       "comment": "Location: Lunar Quad",
       "keys": [
@@ -5448,7 +5910,7 @@
     {
       "entry_id": "_AWyPeCP8QWhD4D1M6hfzT",
       "id": "_AWyPeCP8QWhD4D1M6hfzT",
-      "uid": 108,
+      "uid": 115,
       "name": "Dockside Ferry Landing",
       "comment": "Location: Dockside Ferry Landing",
       "keys": [
@@ -5498,7 +5960,7 @@
     {
       "entry_id": "_B7Eq8K8CUXrCe9NKATXGE",
       "id": "_B7Eq8K8CUXrCe9NKATXGE",
-      "uid": 109,
+      "uid": 116,
       "name": "Dockside",
       "comment": "Location: Dockside",
       "keys": [
@@ -5548,7 +6010,7 @@
     {
       "entry_id": "_7LmyTdEgVPeFbmkG4Rwe7",
       "id": "_7LmyTdEgVPeFbmkG4Rwe7",
-      "uid": 110,
+      "uid": 117,
       "name": "Directions & Dragons",
       "comment": "Location: Directions & Dragons",
       "keys": [
@@ -5598,7 +6060,7 @@
     {
       "entry_id": "_Ug2jTR6Wq3XGhQGzchcft",
       "id": "_Ug2jTR6Wq3XGhQGzchcft",
-      "uid": 111,
+      "uid": 118,
       "name": "Delta Omicron Epsilon (DOE or ΔΟΕ)",
       "comment": "Location: Delta Omicron Epsilon (DOE or ΔΟΕ)",
       "keys": [
@@ -5648,7 +6110,7 @@
     {
       "entry_id": "_eUkmTYmVng7bdJTAb8cdC",
       "id": "_eUkmTYmVng7bdJTAb8cdC",
-      "uid": 112,
+      "uid": 119,
       "name": "DDM Inc. Headquarters",
       "comment": "Location: DDM Inc. Headquarters",
       "keys": [
@@ -5698,7 +6160,7 @@
     {
       "entry_id": "_XD2gWgyhTYmDEXWkxMLer",
       "id": "_XD2gWgyhTYmDEXWkxMLer",
-      "uid": 113,
+      "uid": 120,
       "name": "DCC Tower",
       "comment": "Location: DCC Tower",
       "keys": [
@@ -5748,7 +6210,7 @@
     {
       "entry_id": "_UeKEhHTnCP6yQk7mhMVU1",
       "id": "_UeKEhHTnCP6yQk7mhMVU1",
-      "uid": 114,
+      "uid": 121,
       "name": "Coastal Residential",
       "comment": "Location: Coastal Residential",
       "keys": [
@@ -5798,7 +6260,7 @@
     {
       "entry_id": "_3tNeXcGBfcUX6J1mtjqAw",
       "id": "_3tNeXcGBfcUX6J1mtjqAw",
-      "uid": 115,
+      "uid": 122,
       "name": "Claws Steel & Ink",
       "comment": "Location: Claws Steel & Ink",
       "keys": [
@@ -5848,7 +6310,7 @@
     {
       "entry_id": "_VEXr9e9eUWwEpFNCRUm9V",
       "id": "_VEXr9e9eUWwEpFNCRUm9V",
-      "uid": 116,
+      "uid": 123,
       "name": "Campi Petroliferi di Kern River",
       "comment": "Location: Campi Petroliferi di Kern River",
       "keys": [
@@ -5898,7 +6360,7 @@
     {
       "entry_id": "_Bx2U1xzg1D3wpFRe39L7y",
       "id": "_Bx2U1xzg1D3wpFRe39L7y",
-      "uid": 117,
+      "uid": 124,
       "name": "Bulls Stadium",
       "comment": "Location: Bulls Stadium",
       "keys": [
@@ -5948,7 +6410,7 @@
     {
       "entry_id": "_Len9cGpbmncYB2qLArTFM",
       "id": "_Len9cGpbmncYB2qLArTFM",
-      "uid": 118,
+      "uid": 125,
       "name": "Building C",
       "comment": "Location: Building C",
       "keys": [
@@ -5998,7 +6460,7 @@
     {
       "entry_id": "_t4pLDVa4j3PpBbyb7CqGa",
       "id": "_t4pLDVa4j3PpBbyb7CqGa",
-      "uid": 119,
+      "uid": 126,
       "name": "Building B",
       "comment": "Location: Building B",
       "keys": [
@@ -6048,7 +6510,7 @@
     {
       "entry_id": "_Red8pjJGjMhP2XDBejrt2",
       "id": "_Red8pjJGjMhP2XDBejrt2",
-      "uid": 120,
+      "uid": 127,
       "name": "Building A",
       "comment": "Location: Building A",
       "keys": [
@@ -6098,7 +6560,7 @@
     {
       "entry_id": "_MkkwDR7AHq4tYLmnk134f",
       "id": "_MkkwDR7AHq4tYLmnk134f",
-      "uid": 121,
+      "uid": 128,
       "name": "Bluemoon",
       "comment": "Location: Bluemoon",
       "keys": [
@@ -6148,7 +6610,7 @@
     {
       "entry_id": "_qUkFeCX37Agez4XtPhtqp",
       "id": "_qUkFeCX37Agez4XtPhtqp",
-      "uid": 122,
+      "uid": 129,
       "name": "Bloodmoon Longhouse Baths",
       "comment": "Location: Bloodmoon Longhouse Baths",
       "keys": [
@@ -6198,7 +6660,7 @@
     {
       "entry_id": "_RXULtwFjxCBUcxBbTfWrh",
       "id": "_RXULtwFjxCBUcxBbTfWrh",
-      "uid": 123,
+      "uid": 130,
       "name": "Bloodmoon Longhouse",
       "comment": "Location: Bloodmoon Longhouse",
       "keys": [
@@ -6248,7 +6710,7 @@
     {
       "entry_id": "_nXCafeG32thtDKqyX8zV1",
       "id": "_nXCafeG32thtDKqyX8zV1",
-      "uid": 124,
+      "uid": 131,
       "name": "Blackwood General Hospital",
       "comment": "Location: Blackwood General Hospital",
       "keys": [
@@ -6298,7 +6760,7 @@
     {
       "entry_id": "_XAgh9YLPYdmeDUwAeXXDY",
       "id": "_XAgh9YLPYdmeDUwAeXXDY",
-      "uid": 125,
+      "uid": 132,
       "name": "Bigfeet Hiking Club",
       "comment": "Location: Bigfeet Hiking Club",
       "keys": [
@@ -6348,7 +6810,7 @@
     {
       "entry_id": "_yqQeB1GzKJyqfwjUPRP2M",
       "id": "_yqQeB1GzKJyqfwjUPRP2M",
-      "uid": 126,
+      "uid": 133,
       "name": "Beverly Hills",
       "comment": "Location: Beverly Hills",
       "keys": [
@@ -6398,7 +6860,7 @@
     {
       "entry_id": "_p1JatqFwBPeKPQrh6CmGe",
       "id": "_p1JatqFwBPeKPQrh6CmGe",
-      "uid": 127,
+      "uid": 134,
       "name": "Beta Rho Omega (BRO or ΒΡΩ)",
       "comment": "Location: Beta Rho Omega (BRO or ΒΡΩ)",
       "keys": [
@@ -6448,7 +6910,7 @@
     {
       "entry_id": "_Wj2hkqUxDrB4aDaGDM8q9",
       "id": "_Wj2hkqUxDrB4aDaGDM8q9",
-      "uid": 128,
+      "uid": 135,
       "name": "Beta Epsilon Epsilon (BEE or ΒΕΕ)",
       "comment": "Location: Beta Epsilon Epsilon (BEE or ΒΕΕ)",
       "keys": [
@@ -6498,7 +6960,7 @@
     {
       "entry_id": "_Gkxg3QfTh6TFWYf9VpRV6",
       "id": "_Gkxg3QfTh6TFWYf9VpRV6",
-      "uid": 129,
+      "uid": 136,
       "name": "Bay Area",
       "comment": "Location: Bay Area",
       "keys": [
@@ -6548,7 +7010,7 @@
     {
       "entry_id": "_VGJ1w83h4Da3TxPEYbj1R",
       "id": "_VGJ1w83h4Da3TxPEYbj1R",
-      "uid": 130,
+      "uid": 137,
       "name": "Basilisk Library",
       "comment": "Location: Basilisk Library",
       "keys": [
@@ -6598,7 +7060,7 @@
     {
       "entry_id": "_11LzwJB9B6rGrEQTTd7xd",
       "id": "_11LzwJB9B6rGrEQTTd7xd",
-      "uid": 131,
+      "uid": 138,
       "name": "Bakersfield Square",
       "comment": "Location: Bakersfield Square",
       "keys": [
@@ -6648,7 +7110,7 @@
     {
       "entry_id": "_Dw9VQxmgEDGTyQdJzwJgG",
       "id": "_Dw9VQxmgEDGTyQdJzwJgG",
-      "uid": 132,
+      "uid": 139,
       "name": "Arts Building",
       "comment": "Location: Arts Building",
       "keys": [
@@ -6698,7 +7160,7 @@
     {
       "entry_id": "_9YKj9HxFkRWnNJUJk84Tr",
       "id": "_9YKj9HxFkRWnNJUJk84Tr",
-      "uid": 133,
+      "uid": 140,
       "name": "Artemis Dorms",
       "comment": "Location: Artemis Dorms",
       "keys": [
@@ -6748,7 +7210,7 @@
     {
       "entry_id": "_XeqYfUxwTWKmy6rpmqaQC",
       "id": "_XeqYfUxwTWKmy6rpmqaQC",
-      "uid": 134,
+      "uid": 141,
       "name": "Area di Servizio \"The Halfway House\"",
       "comment": "Location: Area di Servizio \"The Halfway House\"",
       "keys": [
@@ -6798,7 +7260,7 @@
     {
       "entry_id": "_hbH9FftNr3AzzVVDyJHgg",
       "id": "_hbH9FftNr3AzzVVDyJHgg",
-      "uid": 135,
+      "uid": 142,
       "name": "Archer Wolfwood Hall",
       "comment": "Location: Archer Wolfwood Hall",
       "keys": [
@@ -6848,7 +7310,7 @@
     {
       "entry_id": "_Y18rdHTpAT3QX82DfLFLF",
       "id": "_Y18rdHTpAT3QX82DfLFLF",
-      "uid": 136,
+      "uid": 143,
       "name": "Arcadia School",
       "comment": "Location: Arcadia School",
       "keys": [
@@ -6898,7 +7360,7 @@
     {
       "entry_id": "_X6R6dKTzkjdFk6cqdt2we",
       "id": "_X6R6dKTzkjdFk6cqdt2we",
-      "uid": 137,
+      "uid": 144,
       "name": "Arcadia",
       "comment": "Location: Arcadia",
       "keys": [
@@ -6948,7 +7410,7 @@
     {
       "entry_id": "_wEkzHgpxfetQr16bTWNUP",
       "id": "_wEkzHgpxfetQr16bTWNUP",
-      "uid": 138,
+      "uid": 145,
       "name": "Apollo Dorms",
       "comment": "Location: Apollo Dorms",
       "keys": [
@@ -6998,7 +7460,7 @@
     {
       "entry_id": "_cXU4CwaxexhU823DAH1M6",
       "id": "_cXU4CwaxexhU823DAH1M6",
-      "uid": 139,
+      "uid": 146,
       "name": "Anime Club",
       "comment": "Location: Anime Club",
       "keys": [
@@ -7048,7 +7510,7 @@
     {
       "entry_id": "_tFj1yzTVDaEhdJLYe13YM",
       "id": "_tFj1yzTVDaEhdJLYe13YM",
-      "uid": 140,
+      "uid": 147,
       "name": "Alpha Sigma Sigma (ASS or ΑΣΣ)",
       "comment": "Location: Alpha Sigma Sigma (ASS or ΑΣΣ)",
       "keys": [
@@ -7098,7 +7560,7 @@
     {
       "entry_id": "_E6ga9CmYQ31CwNkrHkGX9",
       "id": "_E6ga9CmYQ31CwNkrHkGX9",
-      "uid": 141,
+      "uid": 148,
       "name": "Alpha Rho Omega (ARO or ΑΡΩ)",
       "comment": "Location: Alpha Rho Omega (ARO or ΑΡΩ)",
       "keys": [
@@ -7148,7 +7610,7 @@
     {
       "entry_id": "_yXApVAkzqLrFkLkhW7fdU",
       "id": "_yXApVAkzqLrFkLkhW7fdU",
-      "uid": 142,
+      "uid": 149,
       "name": "Fraternity & Sorority Row",
       "comment": "Location: Fraternity & Sorority Row",
       "keys": [
@@ -7198,7 +7660,7 @@
     {
       "entry_id": "_938z2ywf8QND6cA1MwVEr",
       "id": "_938z2ywf8QND6cA1MwVEr",
-      "uid": 143,
+      "uid": 150,
       "name": "Administration",
       "comment": "Location: Administration",
       "keys": [
@@ -7248,7 +7710,7 @@
     {
       "entry_id": "_xLd2GzGayGJXUhjAdTPye",
       "id": "_xLd2GzGayGJXUhjAdTPye",
-      "uid": 144,
+      "uid": 151,
       "name": "Additional Student Housing",
       "comment": "Location: Additional Student Housing",
       "keys": [
@@ -7298,7 +7760,7 @@
     {
       "entry_id": "_R7Cz4Uah9Tjkn4KDC7rxM",
       "id": "_R7Cz4Uah9Tjkn4KDC7rxM",
-      "uid": 145,
+      "uid": 152,
       "name": "A&Co.",
       "comment": "Location: A&Co.",
       "keys": [
@@ -7348,7 +7810,7 @@
     {
       "entry_id": "_hGpPMY77NaH4j6AxNGLVe",
       "id": "_hGpPMY77NaH4j6AxNGLVe",
-      "uid": 146,
+      "uid": 153,
       "name": "Bricklane Mall",
       "comment": "Location: Bricklane Mall",
       "keys": [
@@ -7398,7 +7860,7 @@
     {
       "entry_id": "_7fVP8xkjBC2RYxxgJtPzj",
       "id": "_7fVP8xkjBC2RYxxgJtPzj",
-      "uid": 147,
+      "uid": 154,
       "name": "101 Road",
       "comment": "Location: 101 Road",
       "keys": [

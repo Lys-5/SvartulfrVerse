@@ -17,9 +17,30 @@
   "extensions": {
     "outfits": [],
     "attitudes": [],
-    "rpg_stats": {},
-    "birthdate": null,
-    "start_timeline_position": null,
+    "rpg_stats": {
+      "enabled": true,
+      "level": 99,
+      "experience": 0,
+      "species_id": "Werewolf (Divine Blood Firstborn)",
+      "occupation_id": "Berserker / Divine Champion",
+      "base_stats": {
+        "stat_1": 9,
+        "stat_2": 8,
+        "stat_3": 5,
+        "stat_4": 2,
+        "stat_5": 4,
+        "stat_6": 3,
+        "strength": 9,
+        "endurance": 8,
+        "agility": 5,
+        "intelligence": 2,
+        "charisma": 4,
+        "luck": 3,
+        "perception": 3
+      }
+    },
+    "birthdate": 0,
+    "start_timeline_position": 0,
     "keys": [
       "Ut",
       "Ut Berg",
@@ -48,9 +69,30 @@
     "extensions": {
       "outfits": [],
       "attitudes": [],
-      "rpg_stats": {},
-      "birthdate": null,
-      "start_timeline_position": null,
+      "rpg_stats": {
+        "enabled": true,
+        "level": 99,
+        "experience": 0,
+        "species_id": "Werewolf (Divine Blood Firstborn)",
+        "occupation_id": "Berserker / Divine Champion",
+        "base_stats": {
+          "stat_1": 9,
+          "stat_2": 8,
+          "stat_3": 5,
+          "stat_4": 2,
+          "stat_5": 4,
+          "stat_6": 3,
+          "strength": 9,
+          "endurance": 8,
+          "agility": 5,
+          "intelligence": 2,
+          "charisma": 4,
+          "luck": 3,
+          "perception": 3
+        }
+      },
+      "birthdate": 0,
+      "start_timeline_position": 0,
       "keys": [
         "Ut",
         "Ut Berg",

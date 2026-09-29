@@ -1,6 +1,6 @@
 {
   "name": "Svartúlfr - Characters (G2 Secondary Cast)",
-  "description": "Personaggi secondari principali di Svartúlfr (83 personaggi)",
+  "description": "Personaggi secondari principali di Svartúlfr (87 personaggi)",
   "scan_depth": 5,
   "token_budget": 2048,
   "recursive_scanning": true,
@@ -12,13 +12,690 @@
     "Characters"
   ],
   "counts": {
-    "total": 83
+    "total": 87
   },
   "entries": [
     {
+      "entry_id": "_cDx2yGNtVbCCDUCHcUUxG",
+      "id": "_cDx2yGNtVbCCDUCHcUUxG",
+      "uid": 0,
+      "name": "Marek",
+      "comment": "Character: Marek",
+      "keys": [
+        "Marek",
+        "The Iron Hammer",
+        "Blue Oni"
+      ],
+      "key": [
+        "Marek",
+        "The Iron Hammer",
+        "Blue Oni"
+      ],
+      "secondary_keys": [
+        "Ironhorn Nomads",
+        "Blue Oni",
+        "biker",
+        "ghosting",
+        "enforcer"
+      ],
+      "keysecondary": [
+        "Ironhorn Nomads",
+        "Blue Oni",
+        "biker",
+        "ghosting",
+        "enforcer"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "[NAME: Marek; ALIASES: The Iron Hammer, Blue Devil; SPECIES: Blue Oni; GENDER: Male; AGE: {{age}}; HEIGHT: 206cm / 6'9\"; BUILD: Colossal, broad-backed, powerhouse oni frame with thick thighs and massive chest; HAIR: Long flowing snow-white hair and a trimmed white goatee; EYES: Piercing cold blue-grey; FEATURES: Two large forward-curving dark horns on his forehead, dark royal-blue skin marked with healed combat scars; OCCUPATION: Ironhorn Nomads Primary Enforcer, Black-Market Fixer, Master Motorcycle Mechanic; SCENT: Motor oil, expensive bourbon, burning ancestral incense, and ozone]\n\nBACKSTORY: Born in the post-Veilfall Autonomous Commercial Districts, Marek fought through anti-demi-human prejudice with brutal oni strength. Alongside his blood brother President Niran, Marek co-founded the Ironhorn Nomads Motorcycle Club, forging an outlaw brotherhood that carved out dominion over greater Chicagoland and the interstate trade routes. Operating out of their fortified Naperville Club House, Marek controls high-level black-market operations, specializing in \"Ghosting\": a discreet underground service that launders high-grade dungeon loot, bypasses DMHA seizures, and routes untraceable payments through offshore accounts. Despite his outlaw lifestyle, Marek keeps a traditional ancestral shrine in his private apartment, burning sacred incense daily to honor the ancient Oni spirits.\n\nTERRITORIAL INSTINCTS & ALYSSA: Marek is known as the \"Charismatic Devil\": smooth, dangerous, and utterly unapologetic. When he crosses paths with Alyssa Bloodmoon, he is captivated by her rare combination of delicate beauty, immense healing mana, and disarming innocence. In typical oni fashion, Marek is fiercely possessive: during a pool party at the Nomads' Club House, he publicly threatened to mutilate any biker who dared lay a finger on her. While inspecting her phone during a business negotiation, Marek discovered her high-level contacts with Father Rev, Zeera, and DMHA directors, realizing Alyssa is an indispensable nexus connecting high bureaucracy with dangerous underworld syndicates.\n\nVOICE & BEHAVIOR: Marek speaks in a gravelly, confident baritone dripping with dark charisma and street authority. He never drinks the last sip of any glass (an old oni superstition against bad luck), always drives his own roaring custom motorcycle, and honors every blood debt to the letter.\n\nTHE IRON HAMMER'S LAW: Marek does not pretend to be a hero. He operates by a simple, brutal code: total loyalty to the Nomads, absolute vengeance against enemies, and merciless defense of whatever he claims as his own.\n\n[INSTRUCTIONS: Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead.]",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "npc",
+      "source_category": "characters",
+      "extensions": {
+        "character_meta": {
+          "first_name": "Marek",
+          "last_name": "",
+          "nicknames": [
+            "The Iron Hammer",
+            "Blue Devil"
+          ],
+          "titles": [
+            "Co-Founder of Ironhorn Nomads MC",
+            "Primary Enforcer",
+            "Ghosting Boss"
+          ],
+          "pronouns": {
+            "pronoun_subjective": "he",
+            "pronoun_objective": "him",
+            "pronoun_possessive_determiner": "his",
+            "pronoun_possessive_pronoun": "his",
+            "pronoun_reflexive": "himself"
+          },
+          "species_id": null,
+          "occupation_id": null,
+          "is_global": true,
+          "birthdate": 10079555,
+          "start_timeline_position": 10079555,
+          "summary": "[NAME: Marek; ROLE: Ironhorn Nomads Co-Founder, Primary Enforcer, Black-Market Fixer; TRAITS: Charismatic, Ruthless, Territorial, Possessive, Brutal, Smooth; CORE: Uncompromising Blue Oni biker boss who protects his blood brothers and controls the underworld; GEAR: Custom Chopper, Leather Kutte, Studded Iron Gauntlets]",
+          "display_description": "Colossal Blue Oni biker boss and primary enforcer of the Ironhorn Nomads. Charismatic devil of the underworld, master of the black-market 'Ghosting' service, fiercely possessive and territorial.",
+          "outfits": [
+            {
+              "id": "outfit-1790648957412-mar01",
+              "name": "Ironhorn Nomads Biker Kutte",
+              "description": "Heavy black leather biker vest with Ironhorn Nomads top rocker and oni skull emblem, studded belt, thick leather riding pants, heavy road boots, heavy silver rings.",
+              "avatar": ""
+            },
+            {
+              "id": "outfit-1790648957412-mar02",
+              "name": "Pool Party / Club House Casual",
+              "description": "Black board shorts, sleeveless unbuttoned denim vest exposing his royal-blue muscular torso, scars, and horns, sunglasses resting on forehead, bare feet.",
+              "avatar": ""
+            }
+          ],
+          "speech_examples": [],
+          "attitudes": [
+            {
+              "id": "attitude-1790649041281-mar01",
+              "target_type": "world_character",
+              "target_id": "_MXcEC8Y6B3BNm3b1ttHj6",
+              "target": "",
+              "tier": "best_friend",
+              "intensity": 90,
+              "reasoning": "Fascinating, innocent healer connected to high-level power, she is under my absolute law."
+            },
+            {
+              "id": "attitude-1790649041281-mar02",
+              "target_type": "world_character",
+              "target_id": "_LEeEzdCCyGjQ8kfVkcra8",
+              "target": "",
+              "tier": "best_friend",
+              "intensity": 90,
+              "reasoning": "Old brother and legendary enforcer, one of the few men on Earth I respect."
+            },
+            {
+              "id": "attitude-1790649041281-mar03",
+              "target_type": "world_character",
+              "target_id": "_x3VY2kcbaDbKyCqywGeET",
+              "target": "",
+              "tier": "acquaintance",
+              "intensity": 65,
+              "reasoning": "Clever little cyber-wolf, needs to learn his place around seasoned monsters."
+            }
+          ],
+          "rpg_stats": {
+            "enabled": true,
+            "level": 34,
+            "experience": 0,
+            "species_id": "Oni",
+            "occupation_id": "Frontline Brawler / Ironhorn Nomad Biker",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 6,
+              "stat_4": 3,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 6,
+              "intelligence": 3,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
+          "tags": [
+            "Male",
+            "Oni",
+            "Biker",
+            "Ironhorn Nomads",
+            "Enforcer",
+            "Underworld"
+          ]
+        },
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "npc"
+        }
+      }
+    },
+    {
+      "entry_id": "_kc7TyfPDQwUALKXcmTMxQ",
+      "id": "_kc7TyfPDQwUALKXcmTMxQ",
+      "uid": 1,
+      "name": "Kian",
+      "comment": "Character: Kian",
+      "keys": [
+        "Kian",
+        "Gold-Tooth",
+        "Shadow-Tusk"
+      ],
+      "key": [
+        "Kian",
+        "Gold-Tooth",
+        "Shadow-Tusk"
+      ],
+      "secondary_keys": [
+        "Team Ukiyo",
+        "Orc",
+        "daggers",
+        "infiltrator",
+        "skirmisher"
+      ],
+      "keysecondary": [
+        "Team Ukiyo",
+        "Orc",
+        "daggers",
+        "infiltrator",
+        "skirmisher"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "[NAME: Kian; ALIASES: Gold-Tooth, Shadow-Tusk, The Little Snake; SPECIES: Orc; GENDER: Male; AGE: {{age}}; HEIGHT: 195cm / 6'5\"; BUILD: Lean, agile, athletic frame moving with predator grace; HAIR: Raven-black messy top-knot; EYES: Sharp slate-grey; FEATURES: Unusually handsome symmetrical facial structure, delicate tusks with a polished gold ring through the left one, black ink spiral tattoos flowing from neck to shoulder blades; OCCUPATION: Team Ukiyo Scout, Trap Disarmer, Lockpick, DMHA Hunter; WEAPON: Twin curved shadow daggers and shortswords; ARMOR: Form-fitting dark tactical leather armor; SCENT: Clove cigarettes, sandalwood, and ozone]\n\nBACKSTORY: Raised on the dangerous rooftops and alleyways of Southside Chicago, Kian survived as a pickpocket, burglar, and black-market runner before Radek recruited him into Team Ukiyo. Constantly underestimated and stereotyped as a mindless brute due to his orc heritage, Kian developed a polished, flamboyant persona, reading human poetry, wearing fine jewelry, and speaking with smooth elegance to distance himself from savage tropes. In combat, he is deadly: a blur of shadow-stepping speed who disables arcane traps and strikes vital arteries. When Alyssa Bloodmoon joined the squad, Kian was immediately fascinated by her beauty and Omega vulnerability. Though initially tempted to exploit her biological instincts, Alyssa challenged him to win her respect intellectually; deeply moved, Kian swore an explicit pact to never manipulate her biology, vowing to earn her affection through rational persuasion and authentic loyalty.\n\nSQUAD & BROTHERHOOD: Kian looks up to Radek as the big brother who gave him dignity, and treats Goran like an affectionate, bumbling brute whom he loves to tease. With Jasper Bloodmoon, Kian maintains a razor-sharp, hilarious rivalry: Kian deliberately flaunts his proximity to Alyssa, whispering flirtatious remarks or lingering during medical check-ups simply to watch Jasper's protective wolf instincts flare into frantic jealousy.\n\nVOICE & BEHAVIOR: Kian speaks with a silky, melodious drawl, laced with teasing sarcasm, witty banter, and calculated charm. He has a habit of rolling gold coins or dagger hilts through his nimble fingers. Beneath his playful exterior lies a sharp, hyper-observant scout who notices micro-expressions, mana fluctuations, and structural weaknesses before anyone else.\n\nTHE MASK OF CHARM: Kian's obsession with refinement is his greatest vulnerability. He fears being discarded as a monster, and his loyalty to Team Ukiyo and Alyssa stems from the rare fact that they see the brilliant, cultured mind behind the orc tusks.\n\n[INSTRUCTIONS: Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead.]",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "npc",
+      "source_category": "characters",
+      "extensions": {
+        "character_meta": {
+          "first_name": "Kian",
+          "last_name": "",
+          "nicknames": [
+            "Gold-Tooth",
+            "Shadow-Tusk",
+            "The Little Snake"
+          ],
+          "titles": [
+            "Team Ukiyo Infiltrator",
+            "Arcane Skirmisher"
+          ],
+          "pronouns": {
+            "pronoun_subjective": "he",
+            "pronoun_objective": "him",
+            "pronoun_possessive_determiner": "his",
+            "pronoun_possessive_pronoun": "his",
+            "pronoun_reflexive": "himself"
+          },
+          "species_id": null,
+          "occupation_id": null,
+          "is_global": true,
+          "birthdate": 10252795,
+          "start_timeline_position": 10252795,
+          "summary": "[NAME: Kian; ROLE: Team Ukiyo Infiltrator, Trap Specialist, Arcane Skirmisher; TRAITS: Suave, Flirtatious, Sarcastic, Agile, Cunning, Insecure; CORE: Silver-tongued orc rogue using refined charm to prove he is more than a beast; GEAR: Twin Enchanted Daggers, Form-Fitting Tactical Leather]",
+          "display_description": "Agile, handsome orc infiltrator and trap specialist of Team Ukiyo. Wields twin daggers, uses suave urban charm to mask insecurity, bound by a rational pact with Alyssa.",
+          "outfits": [
+            {
+              "id": "outfit-1790648957412-kia01",
+              "name": "Tactical Shadow Leather",
+              "description": "Form-fitting black leather armor reinforced with shadow-weave silk, twin dagger sheaths at the small of his back, utility pouches for lockpicks and cipher spikes.",
+              "avatar": ""
+            },
+            {
+              "id": "outfit-1790648957412-kia02",
+              "name": "Urban Nightlife Silk",
+              "description": "Fitted charcoal button-down silk shirt unbuttoned to mid-chest displaying spiral collarbone tattoos, dark tailored trousers, gold rings and gold tooth hoop gleaming.",
+              "avatar": ""
+            }
+          ],
+          "speech_examples": [],
+          "attitudes": [
+            {
+              "id": "attitude-1790649041281-kia01",
+              "target_type": "world_character",
+              "target_id": "_MXcEC8Y6B3BNm3b1ttHj6",
+              "target": "",
+              "tier": "best_friend",
+              "intensity": 85,
+              "reasoning": "Bound by a sacred pact to conquer her heart through rational mind, not animal instinct."
+            },
+            {
+              "id": "attitude-1790649041281-kia02",
+              "target_type": "world_character",
+              "target_id": "_x3VY2kcbaDbKyCqywGeET",
+              "target": "",
+              "tier": "friend",
+              "intensity": 75,
+              "reasoning": "Territorial rival, I take immense joy in driving his protective jealousy crazy."
+            },
+            {
+              "id": "attitude-1790649041281-kia03",
+              "target_type": "world_character",
+              "target_id": "_4bazKCAbPMmc19HzHAphC",
+              "target": "",
+              "tier": "best_friend",
+              "intensity": 92,
+              "reasoning": "The big brother who gave me dignity when I was just a street thief."
+            },
+            {
+              "id": "attitude-1790649041281-kia04",
+              "target_type": "world_character",
+              "target_id": "_JQGgmwyA3qRaTLWck3GjX",
+              "target": "",
+              "tier": "best_friend",
+              "intensity": 88,
+              "reasoning": "Big bumbling brute with a heart of gold, my heavy battering ram."
+            }
+          ],
+          "rpg_stats": {
+            "enabled": true,
+            "level": 23,
+            "experience": 0,
+            "species_id": "Half-Elf",
+            "occupation_id": "Team Ukiyo Infiltrator / DPS",
+            "base_stats": {
+              "stat_1": 3,
+              "stat_2": 3,
+              "stat_3": 9,
+              "stat_4": 8,
+              "stat_5": 4,
+              "stat_6": 4,
+              "strength": 3,
+              "endurance": 3,
+              "agility": 9,
+              "intelligence": 8,
+              "charisma": 4,
+              "luck": 4,
+              "perception": 4
+            }
+          },
+          "tags": [
+            "Male",
+            "Orc",
+            "Hunter",
+            "Team Ukiyo",
+            "Rogue",
+            "Infiltrator"
+          ]
+        },
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "npc"
+        }
+      }
+    },
+    {
+      "entry_id": "_JQGgmwyA3qRaTLWck3GjX",
+      "id": "_JQGgmwyA3qRaTLWck3GjX",
+      "uid": 2,
+      "name": "Goran",
+      "comment": "Character: Goran",
+      "keys": [
+        "Goran",
+        "The Brick Wall",
+        "Berserker"
+      ],
+      "key": [
+        "Goran",
+        "The Brick Wall",
+        "Berserker"
+      ],
+      "secondary_keys": [
+        "Team Ukiyo",
+        "Orc",
+        "warhammer",
+        "shock-trooper",
+        "brawler"
+      ],
+      "keysecondary": [
+        "Team Ukiyo",
+        "Orc",
+        "warhammer",
+        "shock-trooper",
+        "brawler"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "[NAME: Goran; ALIASES: The Brick Wall, Berserker; SPECIES: Orc; GENDER: Male; AGE: {{age}}; HEIGHT: 200cm / 6'7\"; BUILD: Built like an impenetrable brick wall, wider than Radek with a massive barrel chest; HAIR: Messy black hair shaved close at the sides; EYES: Bloodshot hazel eyes that ignite into predatory orange when enraged; FEATURES: Flattened broken nose, jagged broken tusk, 'HATRED' tattooed across his knuckles; OCCUPATION: Team Ukiyo Vanguard, Frontline Berserker, DMHA Hunter; WEAPON: Massive dual-headed warhammers and steel-reinforced gauntlets; ARMOR: Distressed heavy leather combat vest, reinforced plate bracers; SCENT: Gunpowder, machine oil, and cheap whiskey]\n\nBACKSTORY: Goran spent his youth trapped in the illegal underground fighting pits of Chicago's Sector Four, forced to brawl to the death for the amusement of human crime syndicates. After an enraged minotaur opponent nearly tore his left arm from its socket, leaving shattered bone fragments and massive fibrosis inside the joint, Goran went berserk, slaughtered his abusive human manager, and escaped into the Southside slums. Found by Radek, Goran was given a purpose, a crew, and a home. Years of high-impact frontline combat also left him with severe L4-S1 spinal disc compression and chronic pain. When Alyssa Bloodmoon used advanced healing mana and surgical skill to extract the bone fragments and realign his shoulder, Goran developed an unshakeable, fiercely protective gratitude toward her.\n\nSQUAD & BROTHERHOOD: Goran is the muscle and beating heart of Team Ukiyo. He views Radek with absolute, unquestioning reverence: whatever Radek orders, Goran executes without hesitation. With Kian, he shares a constant brotherly banter of crude jokes, arm-wrestling contests, and mutual defense. Toward Alyssa, whom he affectionately calls their miracle medic, Goran behaves like an enormous, protective guard dog: any hostile creature or aggressive stranger who approaches her risks being crushed beneath his warhammers. He tolerates Jasper's cynical snark, finding the tech-hacker's paranoia entertaining.\n\nVOICE & BEHAVIOR: Goran speaks in a raspy, booming gravel voice, punctuated by curses, loud laughs, and blunt honesty. He has no filter and laughs off pain that would incapacitate ordinary men. In his downtime at the duplex, he relaxes by watching old 1980s human action movies, blasting classic heavy metal, and lifting improvised automotive scrap metal.\n\nTHE BERSERKER'S CODE: Behind Goran's violent battle frenzy lies a creature of pure, unshakable loyalty. He knows he is not the brain of Team Ukiyo, but he proudly stands as its indestructible shield, willing to break every bone in his body before allowing harm to reach his squad.\n\n[INSTRUCTIONS: Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead.]",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "npc",
+      "source_category": "characters",
+      "extensions": {
+        "character_meta": {
+          "first_name": "Goran",
+          "last_name": "",
+          "nicknames": [
+            "The Brick Wall",
+            "Berserker",
+            "Goran Ukiyo"
+          ],
+          "titles": [
+            "Team Ukiyo Vanguard",
+            "Shock-Trooper"
+          ],
+          "pronouns": {
+            "pronoun_subjective": "he",
+            "pronoun_objective": "him",
+            "pronoun_possessive_determiner": "his",
+            "pronoun_possessive_pronoun": "his",
+            "pronoun_reflexive": "himself"
+          },
+          "species_id": null,
+          "occupation_id": null,
+          "is_global": true,
+          "birthdate": 10233326,
+          "start_timeline_position": 10233326,
+          "summary": "[NAME: Goran; ROLE: Team Ukiyo Shock-Trooper, Heavy Berserker; TRAITS: Brash, Fierce, Loyal, Foul-Mouthed, Resilient, Big-Hearted; CORE: Unstoppable frontline battering ram who loves old-world action movies and protects his squad; GEAR: Heavy Warhammers, Steel Gauntlets, Distressed Leather Vest]",
+          "display_description": "Massive orc shock-trooper and vanguard berserker of Team Ukiyo. Wields heavy warhammers, fiercely loyal, surviving brutal clandestine fighting injuries thanks to Alyssa's surgical magic.",
+          "outfits": [
+            {
+              "id": "outfit-1790648957412-gor01",
+              "name": "Vanguard Combat Rig",
+              "description": "Distressed heavy leather combat vest strapped over broad green-grey scarred shoulders, heavy steel gauntlets, reinforced combat pants tucked into thick mud-spattered boots.",
+              "avatar": ""
+            },
+            {
+              "id": "outfit-1790648957412-gor02",
+              "name": "Workshop & Gym Casual",
+              "description": "Faded sleeveless black metal band t-shirt, baggy cargo shorts, thick leather belt with a heavy brass buckle, bare scarred arms.",
+              "avatar": ""
+            }
+          ],
+          "speech_examples": [],
+          "attitudes": [
+            {
+              "id": "attitude-1790649041281-gor01",
+              "target_type": "world_character",
+              "target_id": "_4bazKCAbPMmc19HzHAphC",
+              "target": "",
+              "tier": "best_friend",
+              "intensity": 95,
+              "reasoning": "My squad leader and savior, I follow his command into hell."
+            },
+            {
+              "id": "attitude-1790649041281-gor02",
+              "target_type": "world_character",
+              "target_id": "_kc7TyfPDQwUALKXcmTMxQ",
+              "target": "",
+              "tier": "best_friend",
+              "intensity": 90,
+              "reasoning": "Slick little brother, love talking trash and watching his back."
+            },
+            {
+              "id": "attitude-1790649041281-gor03",
+              "target_type": "world_character",
+              "target_id": "_MXcEC8Y6B3BNm3b1ttHj6",
+              "target": "",
+              "tier": "best_friend",
+              "intensity": 88,
+              "reasoning": "Miracle healer who cured my crushed shoulder, anyone touching her dies."
+            },
+            {
+              "id": "attitude-1790649041281-gor04",
+              "target_type": "world_character",
+              "target_id": "_x3VY2kcbaDbKyCqywGeET",
+              "target": "",
+              "tier": "friend",
+              "intensity": 70,
+              "reasoning": "Cynical hacker kid with good tricks, fun to watch him get riled up."
+            }
+          ],
+          "rpg_stats": {
+            "enabled": true,
+            "level": 31,
+            "experience": 0,
+            "species_id": "Minotaur",
+            "occupation_id": "Team Ukiyo Tank / Heavy Sledge",
+            "base_stats": {
+              "stat_1": 9,
+              "stat_2": 8,
+              "stat_3": 4,
+              "stat_4": 3,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 9,
+              "endurance": 8,
+              "agility": 4,
+              "intelligence": 3,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
+          "tags": [
+            "Male",
+            "Orc",
+            "Hunter",
+            "Team Ukiyo",
+            "Berserker",
+            "Vanguard"
+          ]
+        },
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "npc"
+        }
+      }
+    },
+    {
+      "entry_id": "_4bazKCAbPMmc19HzHAphC",
+      "id": "_4bazKCAbPMmc19HzHAphC",
+      "uid": 3,
+      "name": "Radek",
+      "comment": "Character: Radek",
+      "keys": [
+        "Radek",
+        "The Tactician",
+        "Squad Leader"
+      ],
+      "key": [
+        "Radek",
+        "The Tactician",
+        "Squad Leader"
+      ],
+      "secondary_keys": [
+        "Team Ukiyo",
+        "Orc",
+        "DMHA",
+        "cleaver",
+        "greatsword",
+        "insomnia"
+      ],
+      "keysecondary": [
+        "Team Ukiyo",
+        "Orc",
+        "DMHA",
+        "cleaver",
+        "greatsword",
+        "insomnia"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "[NAME: Radek; ALIASES: The Tactician, Squad Leader; SPECIES: Orc; GENDER: Male; AGE: {{age}}; HEIGHT: 208cm / 6'10\"; BUILD: Colossal dense muscle, deep weathered olive-grey skin etched with beast scars; HAIR: Jet-black undercut with a thick top-braid; EYES: Piercing amber-gold that glow faintly in darkness; FEATURES: Chipped left ivory tusk, vertical scar through right eyebrow, forearm tattoos of dungeon topographical maps; OCCUPATION: Team Ukiyo Squad Leader, DMHA Grade S Hunter, Heavy Melee Tactician; WEAPON: Massive custom cleaver-greatsword; ARMOR: High-grade tactical carbon-fiber chest plate over compression shirt, combat boots; SCENT: Gunpowder, ozone, and weathered leather]\n\nBACKSTORY: Born in the post-Veilfall ruins of Chicago's Green Zone slums, Radek clawed his way up from street warfare through raw tactical intellect and brutal physical endurance. Refusing to die as an anonymous brawler in the gutter, he recruited Goran from illegal fighting pits and Kian from the back-alleys, forging Team Ukiyo into one of the most formidable independent dungeon strike teams registered with the DMHA. Over a decade of Grade S subterranean incursions has taken its toll: Radek carries a crushing trauma scar at the base of his neck from a collapsed rift, and suffers from chronic \"Tactician's Insomnia\", waking in cold sweats with the smell of sulfur in his nostrils as his mind obsessively replays dive coordinates to prevent squad casualties. When Alyssa Bloodmoon demonstrated her extraordinary vital conduits and battlefield warding during the Floor 18 Hive Apex raid, Radek officially integrated her into the squad with a revised Grade S drop-percentage contract and complete insurance coverage.\n\nSQUAD & BROTHERHOOD: To Radek, Team Ukiyo is not a mercenary unit, it is his chosen family. He acts as the severe, unshakeable elder brother to Goran and Kian. He tolerates Goran's explosive temper because he knows the berserker will take a fatal blow for him without flinching, and he keeps a firm leash on Kian's predatory, silver-tongued arrogance. Toward Alyssa, Radek maintains a deeply respectful, protective professional boundary, recognizing her strategic worth as a peerless force multiplier while quietly worrying about the horrific physical trauma she endures as a field medic. Toward Jasper, Radek displays wary tactical respect, appreciating his arcane slicing while keeping an eye on the young wolf's explosive territorial jealousy.\n\nVOICE & BEHAVIOR: Radek speaks in a low, rumbling, authoritative baritone with economical, clipped phrasing. He never raises his voice, his mere presence commandingly quiets noisy briefing rooms. He constantly analyzes exits, structural load-bearing pillars, and enemy approach angles. When stressed, he unconsciously rubs the old scar at the base of his neck.\n\nTHE TACTICIAN'S BURDEN: Radek refuses to lose a single member of his team. His severe demeanor is not cruelty or coldness, but an armor forged against the terror of failing those who trust him with their lives. Every map etched into his skin represents a subterranean hell he dragged his brothers out of alive.\n\n[INSTRUCTIONS: Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead.]",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "npc",
+      "source_category": "characters",
+      "extensions": {
+        "character_meta": {
+          "first_name": "Radek",
+          "last_name": "",
+          "nicknames": [
+            "The Tactician",
+            "Squad Leader",
+            "Radek Ukiyo"
+          ],
+          "titles": [
+            "Team Ukiyo Squad Leader",
+            "DMHA Grade S Hunter"
+          ],
+          "pronouns": {
+            "pronoun_subjective": "he",
+            "pronoun_objective": "him",
+            "pronoun_possessive_determiner": "his",
+            "pronoun_possessive_pronoun": "his",
+            "pronoun_reflexive": "himself"
+          },
+          "species_id": null,
+          "occupation_id": null,
+          "is_global": true,
+          "birthdate": 10219328,
+          "start_timeline_position": 10219328,
+          "summary": "[NAME: Radek; ROLE: Team Ukiyo Leader, Heavy Combat Tactician, DMHA Grade S Hunter; TRAITS: Severe, Authoritative, Disciplined, Protective, Pragmatic, Calculating; CORE: Unyielding orc commander fighting through insomnia to keep his squad alive; GEAR: Cleaver-Greatsword, Reinforced Carbon-Fiber Armor]",
+          "display_description": "Massive orc combat tactician and squad leader of Team Ukiyo. High pain tolerance, cleaver-greatsword vanguard, battling Tactician's Insomnia to bring his brothers home alive.",
+          "outfits": [
+            {
+              "id": "outfit-1790648957412-rad01",
+              "name": "Tactical Hunter Gear",
+              "description": "Reinforced carbon-fiber chest plate over a dark military compression shirt, combat trousers with utility straps, steel-toed combat boots, and his massive cleaver-greatsword locked into a magnetic back-harness.",
+              "avatar": ""
+            },
+            {
+              "id": "outfit-1790648957412-rad02",
+              "name": "Southside Duplex Casual",
+              "description": "Heavy charcoal tank top revealing scarred olive-grey shoulders and topographical forearm tattoos, worn fleece sweatpants, barefoot or combat boots unlaced.",
+              "avatar": ""
+            }
+          ],
+          "speech_examples": [],
+          "attitudes": [
+            {
+              "id": "attitude-1790649041281-rad01",
+              "target_type": "world_character",
+              "target_id": "_MXcEC8Y6B3BNm3b1ttHj6",
+              "target": "",
+              "tier": "best_friend",
+              "intensity": 85,
+              "reasoning": "Invaluable medical force multiplier and squad savior, protected under official contract."
+            },
+            {
+              "id": "attitude-1790649041281-rad02",
+              "target_type": "world_character",
+              "target_id": "_x3VY2kcbaDbKyCqywGeET",
+              "target": "",
+              "tier": "friend",
+              "intensity": 75,
+              "reasoning": "Skilled arcane infiltrator, though his hyper-jealousy requires constant monitoring."
+            },
+            {
+              "id": "attitude-1790649041281-rad03",
+              "target_type": "world_character",
+              "target_id": "_JQGgmwyA3qRaTLWck3GjX",
+              "target": "",
+              "tier": "best_friend",
+              "intensity": 95,
+              "reasoning": "Frontline brother rescued from the pits, indestructible shock-trooper."
+            },
+            {
+              "id": "attitude-1790649041281-rad04",
+              "target_type": "world_character",
+              "target_id": "_kc7TyfPDQwUALKXcmTMxQ",
+              "target": "",
+              "tier": "best_friend",
+              "intensity": 92,
+              "reasoning": "Little brother and agile scout, kept on a disciplined leash."
+            }
+          ],
+          "rpg_stats": {
+            "enabled": true,
+            "level": 26,
+            "experience": 0,
+            "species_id": "Werewolf",
+            "occupation_id": "Team Ukiyo Leader / Vanguard",
+            "base_stats": {
+              "stat_1": 7,
+              "stat_2": 6,
+              "stat_3": 7,
+              "stat_4": 5,
+              "stat_5": 4,
+              "stat_6": 2,
+              "strength": 7,
+              "endurance": 6,
+              "agility": 7,
+              "intelligence": 5,
+              "charisma": 4,
+              "luck": 2,
+              "perception": 2
+            }
+          },
+          "tags": [
+            "Male",
+            "Orc",
+            "Hunter",
+            "Team Ukiyo",
+            "DMHA",
+            "Vanguard"
+          ]
+        },
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "npc"
+        }
+      }
+    },
+    {
       "entry_id": "_fztKQyNBwtnPkcRjRYyXn",
       "id": "_fztKQyNBwtnPkcRjRYyXn",
-      "uid": 0,
+      "uid": 4,
       "name": "Eithne Dal'Kereth",
       "comment": "Character: Eithne Dal'Kereth",
       "keys": [
@@ -170,7 +847,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 78,
+            "experience": 0,
+            "species_id": "Dark Elf",
+            "occupation_id": "Underboss dell'organizzazione Obsidian B",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 4,
+              "stat_4": 6,
+              "stat_5": 8,
+              "stat_6": 3,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 4,
+              "intelligence": 6,
+              "charisma": 8,
+              "luck": 3,
+              "perception": 3
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -184,7 +882,7 @@
     {
       "entry_id": "_Ht3kV76zrCE9tPmDAYh8Q",
       "id": "_Ht3kV76zrCE9tPmDAYh8Q",
-      "uid": 1,
+      "uid": 5,
       "name": "Yael",
       "comment": "Character: Yael",
       "keys": [
@@ -336,7 +1034,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 25,
+            "experience": 0,
+            "species_id": "Northern Blue Vax",
+            "occupation_id": "Head of Hunters per l'Horned Skull Clan",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -350,7 +1069,7 @@
     {
       "entry_id": "_c9RzyCnzzLey247dtph9x",
       "id": "_c9RzyCnzzLey247dtph9x",
-      "uid": 2,
+      "uid": 6,
       "name": "Bryson",
       "comment": "Character: Bryson",
       "keys": [
@@ -502,7 +1221,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 58,
+            "experience": 0,
+            "species_id": "Orc",
+            "occupation_id": "Chief Researcher and Anatomical Illustra",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -516,7 +1256,7 @@
     {
       "entry_id": "_Mwqxw2M1NaxwXgTmxEXGr",
       "id": "_Mwqxw2M1NaxwXgTmxEXGr",
-      "uid": 3,
+      "uid": 7,
       "name": "Zero",
       "comment": "Character: Zero",
       "keys": [
@@ -654,7 +1394,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 25,
+            "experience": 0,
+            "species_id": "Coyote Shifter, Demihuman",
+            "occupation_id": "Hitman and enforcer for the Sinners",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -668,7 +1429,7 @@
     {
       "entry_id": "_a6KYGdN3BWTgbYEbT4mx8",
       "id": "_a6KYGdN3BWTgbYEbT4mx8",
-      "uid": 4,
+      "uid": 8,
       "name": "Zeera",
       "comment": "Character: Zeera",
       "keys": [
@@ -818,7 +1579,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 34,
+            "experience": 0,
+            "species_id": "Demon, Vax",
+            "occupation_id": "CEO of HSK Consulting, Demon Representat",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -832,7 +1614,7 @@
     {
       "entry_id": "_QqYg238LKb4K6t3ERh4YD",
       "id": "_QqYg238LKb4K6t3ERh4YD",
-      "uid": 5,
+      "uid": 9,
       "name": "Vito Marino",
       "comment": "Character: Vito Marino",
       "keys": [
@@ -978,7 +1760,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 99,
+            "experience": 0,
+            "species_id": "Werewolf, Pureblood, Alpha",
+            "occupation_id": "Pack Leader",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -992,7 +1795,7 @@
     {
       "entry_id": "_Tq76qk4hArR8WUej4Hxh8",
       "id": "_Tq76qk4hArR8WUej4Hxh8",
-      "uid": 6,
+      "uid": 10,
       "name": "Viola Carter",
       "comment": "Character: Viola Carter",
       "keys": [
@@ -1146,7 +1949,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 22,
+            "experience": 0,
+            "species_id": "Plant-fae",
+            "occupation_id": "Lead guitarist of Grave Mistake",
+            "base_stats": {
+              "stat_1": 2,
+              "stat_2": 4,
+              "stat_3": 4,
+              "stat_4": 9,
+              "stat_5": 6,
+              "stat_6": 6,
+              "strength": 2,
+              "endurance": 4,
+              "agility": 4,
+              "intelligence": 9,
+              "charisma": 6,
+              "luck": 6,
+              "perception": 6
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -1160,7 +1984,7 @@
     {
       "entry_id": "_U3JX1Xd9Um2ff4fA64wcr",
       "id": "_U3JX1Xd9Um2ff4fA64wcr",
-      "uid": 7,
+      "uid": 11,
       "name": "Vincent Campbell",
       "comment": "Character: Vincent Campbell",
       "keys": [
@@ -1304,7 +2128,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 23,
+            "experience": 0,
+            "species_id": "Vampire, Campbell line of Montreal",
+            "occupation_id": "senior at SUCC, Business major on track ",
+            "base_stats": {
+              "stat_1": 2,
+              "stat_2": 4,
+              "stat_3": 4,
+              "stat_4": 9,
+              "stat_5": 6,
+              "stat_6": 6,
+              "strength": 2,
+              "endurance": 4,
+              "agility": 4,
+              "intelligence": 9,
+              "charisma": 6,
+              "luck": 6,
+              "perception": 6
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -1318,7 +2163,7 @@
     {
       "entry_id": "_pbNb7PrEanM1twU612VNg",
       "id": "_pbNb7PrEanM1twU612VNg",
-      "uid": 8,
+      "uid": 12,
       "name": "Tomas Matthews",
       "comment": "Character: Tomas Matthews",
       "keys": [
@@ -1458,7 +2303,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 21,
+            "experience": 0,
+            "species_id": "Human",
+            "occupation_id": "Citizen",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -1472,7 +2338,7 @@
     {
       "entry_id": "_RQQcCAN4MHETcJLhXPe9k",
       "id": "_RQQcCAN4MHETcJLhXPe9k",
-      "uid": 9,
+      "uid": 13,
       "name": "Tate",
       "comment": "Character: Tate",
       "keys": [
@@ -1610,7 +2476,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 22,
+            "experience": 0,
+            "species_id": "Dog demihuman, terrier mix",
+            "occupation_id": "Citizen",
+            "base_stats": {
+              "stat_1": 2,
+              "stat_2": 4,
+              "stat_3": 4,
+              "stat_4": 9,
+              "stat_5": 6,
+              "stat_6": 6,
+              "strength": 2,
+              "endurance": 4,
+              "agility": 4,
+              "intelligence": 9,
+              "charisma": 6,
+              "luck": 6,
+              "perception": 6
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -1624,7 +2511,7 @@
     {
       "entry_id": "_E7kHtwcpVYedVkVTmMGKX",
       "id": "_E7kHtwcpVYedVkVTmMGKX",
-      "uid": 10,
+      "uid": 14,
       "name": "Sullivan \"Sully\" Jones",
       "comment": "Character: Sullivan \"Sully\" Jones",
       "keys": [
@@ -1764,7 +2651,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 56,
+            "experience": 0,
+            "species_id": "Human",
+            "occupation_id": "Semi-retired fixer",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -1778,7 +2686,7 @@
     {
       "entry_id": "_gqFXEaVj4aG9a8QL8R7f1",
       "id": "_gqFXEaVj4aG9a8QL8R7f1",
-      "uid": 11,
+      "uid": 15,
       "name": "Stanley Davies Sr.",
       "comment": "Character: Stanley Davies Sr.",
       "keys": [
@@ -1916,7 +2824,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 49,
+            "experience": 0,
+            "species_id": "Werewolf",
+            "occupation_id": "Citizen",
+            "base_stats": {
+              "stat_1": 4,
+              "stat_2": 3,
+              "stat_3": 8,
+              "stat_4": 7,
+              "stat_5": 4,
+              "stat_6": 5,
+              "strength": 4,
+              "endurance": 3,
+              "agility": 8,
+              "intelligence": 7,
+              "charisma": 4,
+              "luck": 5,
+              "perception": 5
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -1930,7 +2859,7 @@
     {
       "entry_id": "_C18UjnQzGMLcQaNW3UaKq",
       "id": "_C18UjnQzGMLcQaNW3UaKq",
-      "uid": 12,
+      "uid": 16,
       "name": "Stanley Davies Jr.",
       "comment": "Character: Stanley Davies Jr.",
       "keys": [
@@ -2074,7 +3003,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 21,
+            "experience": 0,
+            "species_id": "Werewolf",
+            "occupation_id": "Citizen",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -2088,7 +3038,7 @@
     {
       "entry_id": "_J3pEpeWqWFQBPtN3mjrDW",
       "id": "_J3pEpeWqWFQBPtN3mjrDW",
-      "uid": 13,
+      "uid": 17,
       "name": "Sierra",
       "comment": "Character: Sierra",
       "keys": [
@@ -2230,7 +3180,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 18,
+            "experience": 0,
+            "species_id": "Lamia",
+            "occupation_id": "Citizen",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -2244,7 +3215,7 @@
     {
       "entry_id": "_ykqALFc4CQN14zTrMQpat",
       "id": "_ykqALFc4CQN14zTrMQpat",
-      "uid": 14,
+      "uid": 18,
       "name": "Scarlett Rose",
       "comment": "Character: Scarlett Rose",
       "keys": [
@@ -2386,7 +3357,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 18,
+            "experience": 0,
+            "species_id": "Succubus",
+            "occupation_id": "SUCC college student, runs the best part",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -2400,7 +3392,7 @@
     {
       "entry_id": "_c643VDjNFzAMgj7xGKGXT",
       "id": "_c643VDjNFzAMgj7xGKGXT",
-      "uid": 15,
+      "uid": 19,
       "name": "Santiago Herrera",
       "comment": "Character: Santiago Herrera",
       "keys": [
@@ -2542,7 +3534,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 21,
+            "experience": 0,
+            "species_id": "Dragon Demi-human",
+            "occupation_id": "Citizen",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -2556,7 +3569,7 @@
     {
       "entry_id": "_8yfNebN71a73b3W84Nee1",
       "id": "_8yfNebN71a73b3W84Nee1",
-      "uid": 16,
+      "uid": 20,
       "name": "Russ Sinclair",
       "comment": "Character: Russ Sinclair",
       "keys": [
@@ -2704,7 +3717,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 21,
+            "experience": 0,
+            "species_id": "Demihuman Tiger",
+            "occupation_id": "First-year Art and Media student at SUCC",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -2718,7 +3752,7 @@
     {
       "entry_id": "_13rj1V7hPaJ2QederUYkx",
       "id": "_13rj1V7hPaJ2QederUYkx",
-      "uid": 17,
+      "uid": 21,
       "name": "Ruaraidh \"Rory\" Ballantine",
       "comment": "Character: Ruaraidh \"Rory\" Ballantine",
       "keys": [
@@ -2858,7 +3892,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 47,
+            "experience": 0,
+            "species_id": "Dragon Demihuman Hybrid",
+            "occupation_id": "Head of the Ballantine Family, CEO of Ba",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 4,
+              "stat_4": 6,
+              "stat_5": 8,
+              "stat_6": 3,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 4,
+              "intelligence": 6,
+              "charisma": 8,
+              "luck": 3,
+              "perception": 3
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -2872,7 +3927,7 @@
     {
       "entry_id": "_9prjebmrgUC3zX3Qyew6a",
       "id": "_9prjebmrgUC3zX3Qyew6a",
-      "uid": 18,
+      "uid": 22,
       "name": "Roman Blackwood",
       "comment": "Character: Roman Blackwood",
       "keys": [
@@ -3010,7 +4065,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 23,
+            "experience": 0,
+            "species_id": "Wolf Demi-Human",
+            "occupation_id": "MBA student at SUCC, amateur MMA fighter",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -3024,7 +4100,7 @@
     {
       "entry_id": "_2g1adXnHXcK62pVzGHUBm",
       "id": "_2g1adXnHXcK62pVzGHUBm",
-      "uid": 19,
+      "uid": 23,
       "name": "Roland Vickers",
       "comment": "Character: Roland Vickers",
       "keys": [
@@ -3176,7 +4252,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 23,
+            "experience": 0,
+            "species_id": "Undead, reanimated human, stuck between ",
+            "occupation_id": "Drummer of Grave Mistake",
+            "base_stats": {
+              "stat_1": 2,
+              "stat_2": 4,
+              "stat_3": 4,
+              "stat_4": 9,
+              "stat_5": 6,
+              "stat_6": 6,
+              "strength": 2,
+              "endurance": 4,
+              "agility": 4,
+              "intelligence": 9,
+              "charisma": 6,
+              "luck": 6,
+              "perception": 6
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -3190,7 +4287,7 @@
     {
       "entry_id": "_DGkc2ALEYzNJ6mqGCW1KC",
       "id": "_DGkc2ALEYzNJ6mqGCW1KC",
-      "uid": 20,
+      "uid": 24,
       "name": "Rev",
       "comment": "Character: Rev",
       "keys": [
@@ -3332,7 +4429,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 99,
+            "experience": 0,
+            "species_id": "Greater Incubus, Demon of Desire",
+            "occupation_id": "Alpha Rho Omega  fraternity member, hand",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -3346,7 +4464,7 @@
     {
       "entry_id": "_NEw34RqyjnJHBApGXrt2M",
       "id": "_NEw34RqyjnJHBApGXrt2M",
-      "uid": 21,
+      "uid": 25,
       "name": "Raymond",
       "comment": "Character: Raymond",
       "keys": [
@@ -3484,7 +4602,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 22,
+            "experience": 0,
+            "species_id": "Demihuman Golden Retriever",
+            "occupation_id": "SUCC student, fraternity member, gym reg",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -3498,7 +4637,7 @@
     {
       "entry_id": "_4rLXE2bVdJCWUNDeKat36",
       "id": "_4rLXE2bVdJCWUNDeKat36",
-      "uid": 22,
+      "uid": 26,
       "name": "Professor Mollusk Moreau",
       "comment": "Character: Professor Mollusk Moreau",
       "keys": [
@@ -3638,7 +4777,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 55,
+            "experience": 0,
+            "species_id": "Octopus Demihuman",
+            "occupation_id": "Professor of Cryptobiology and Experimen",
+            "base_stats": {
+              "stat_1": 2,
+              "stat_2": 4,
+              "stat_3": 4,
+              "stat_4": 9,
+              "stat_5": 6,
+              "stat_6": 6,
+              "strength": 2,
+              "endurance": 4,
+              "agility": 4,
+              "intelligence": 9,
+              "charisma": 6,
+              "luck": 6,
+              "perception": 6
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -3652,7 +4812,7 @@
     {
       "entry_id": "_14mG8nbb4Lh7AJ7ehGxcw",
       "id": "_14mG8nbb4Lh7AJ7ehGxcw",
-      "uid": 23,
+      "uid": 27,
       "name": "Professor Marit Christiansen",
       "comment": "Character: Professor Marit Christiansen",
       "keys": [
@@ -3794,7 +4954,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 29,
+            "experience": 0,
+            "species_id": "Huldra",
+            "occupation_id": "Environmental Magic Professor, SUCC",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 4,
+              "stat_4": 6,
+              "stat_5": 8,
+              "stat_6": 3,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 4,
+              "intelligence": 6,
+              "charisma": 8,
+              "luck": 3,
+              "perception": 3
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -3808,7 +4989,7 @@
     {
       "entry_id": "_E2A8prBrWg1q9zNjAR7kQ",
       "id": "_E2A8prBrWg1q9zNjAR7kQ",
-      "uid": 24,
+      "uid": 28,
       "name": "Professor Loewe",
       "comment": "Character: Professor Loewe",
       "keys": [
@@ -3958,7 +5139,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 52,
+            "experience": 0,
+            "species_id": "Shapeshifter, lion",
+            "occupation_id": "Citizen",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 4,
+              "stat_4": 6,
+              "stat_5": 8,
+              "stat_6": 3,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 4,
+              "intelligence": 6,
+              "charisma": 8,
+              "luck": 3,
+              "perception": 3
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -3972,7 +5174,7 @@
     {
       "entry_id": "_RAPLVfmBbzaARYUpWGMga",
       "id": "_RAPLVfmBbzaARYUpWGMga",
-      "uid": 25,
+      "uid": 29,
       "name": "Oskar",
       "comment": "Character: Oskar",
       "keys": [
@@ -4118,7 +5320,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 21,
+            "experience": 0,
+            "species_id": "Rapidly Mutating Hivemind, an RMH, and t",
+            "occupation_id": "Citizen",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -4132,7 +5355,7 @@
     {
       "entry_id": "_AdCJWrQaTgC7xkPQECrtK",
       "id": "_AdCJWrQaTgC7xkPQECrtK",
-      "uid": 26,
+      "uid": 30,
       "name": "Nikolaj Jökull",
       "comment": "Character: Nikolaj Jökull",
       "keys": [
@@ -4284,7 +5507,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 28,
+            "experience": 0,
+            "species_id": "Demihuman, half eel",
+            "occupation_id": "Citizen",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -4298,7 +5542,7 @@
     {
       "entry_id": "_xDFyKfnKEfKWA9NdVhVV7",
       "id": "_xDFyKfnKEfKWA9NdVhVV7",
-      "uid": 27,
+      "uid": 31,
       "name": "Naomi Black",
       "comment": "Character: Naomi Black",
       "keys": [
@@ -4440,7 +5684,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 41,
+            "experience": 0,
+            "species_id": "Werewolf, Beta",
+            "occupation_id": "Pack Leader",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 4,
+              "stat_4": 6,
+              "stat_5": 8,
+              "stat_6": 3,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 4,
+              "intelligence": 6,
+              "charisma": 8,
+              "luck": 3,
+              "perception": 3
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -4454,7 +5719,7 @@
     {
       "entry_id": "_9J8jRp16w6NbjTWfeqTXy",
       "id": "_9J8jRp16w6NbjTWfeqTXy",
-      "uid": 28,
+      "uid": 32,
       "name": "Marlowe Voss",
       "comment": "Character: Marlowe Voss",
       "keys": [
@@ -4594,7 +5859,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 81,
+            "experience": 0,
+            "species_id": "Undead, reanimated human",
+            "occupation_id": "Owner and director of Voss & Kin, a fune",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -4608,7 +5894,7 @@
     {
       "entry_id": "_hzhkJ7n4FGXBxAHc6Eykj",
       "id": "_hzhkJ7n4FGXBxAHc6Eykj",
-      "uid": 29,
+      "uid": 33,
       "name": "Marcus O'Connor",
       "comment": "Character: Marcus O'Connor",
       "keys": [
@@ -4752,7 +6038,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 99,
+            "experience": 0,
+            "species_id": "Werewolf, Pureblood, Alpha",
+            "occupation_id": "Pack Leader",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 4,
+              "stat_4": 6,
+              "stat_5": 8,
+              "stat_6": 3,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 4,
+              "intelligence": 6,
+              "charisma": 8,
+              "luck": 3,
+              "perception": 3
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -4766,7 +6073,7 @@
     {
       "entry_id": "_YY8VbpgzYk4dfFAL78rM3",
       "id": "_YY8VbpgzYk4dfFAL78rM3",
-      "uid": 30,
+      "uid": 34,
       "name": "Mackenzie Sanchez-Rogers",
       "comment": "Character: Mackenzie Sanchez-Rogers",
       "keys": [
@@ -5014,7 +6321,28 @@
               "reasoning": "He grew up with nothing in Oakland and got told he was disposable by people with money and a pedigree. He does not have Fade's language for why it is wrong. He just wants to fight about it."
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 24,
+            "experience": 0,
+            "species_id": "Werewolf",
+            "occupation_id": "Keyboardist of Grave Mistake",
+            "base_stats": {
+              "stat_1": 4,
+              "stat_2": 4,
+              "stat_3": 6,
+              "stat_4": 5,
+              "stat_5": 8,
+              "stat_6": 4,
+              "strength": 4,
+              "endurance": 4,
+              "agility": 6,
+              "intelligence": 5,
+              "charisma": 8,
+              "luck": 4,
+              "perception": 4
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -5028,7 +6356,7 @@
     {
       "entry_id": "_XthUhAMktzmFYAVeQbx6a",
       "id": "_XthUhAMktzmFYAVeQbx6a",
-      "uid": 31,
+      "uid": 35,
       "name": "Luisa Sanchez Rogers",
       "comment": "Character: Luisa Sanchez Rogers",
       "keys": [
@@ -5166,7 +6494,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 85,
+            "experience": 0,
+            "species_id": "Werewolf",
+            "occupation_id": "Studying carpentry at a local trade scho",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 5,
+              "stat_4": 6,
+              "stat_5": 6,
+              "stat_6": 4,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 5,
+              "intelligence": 6,
+              "charisma": 6,
+              "luck": 4,
+              "perception": 4
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -5180,7 +6529,7 @@
     {
       "entry_id": "_k2hYW7HaWMzWHw2EpgVVF",
       "id": "_k2hYW7HaWMzWHw2EpgVVF",
-      "uid": 32,
+      "uid": 36,
       "name": "Kolya Varenkov",
       "comment": "Character: Kolya Varenkov",
       "keys": [
@@ -5320,7 +6669,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 23,
+            "experience": 0,
+            "species_id": "Vampire",
+            "occupation_id": "Supernatural Law graduate student at SUC",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 5,
+              "stat_4": 6,
+              "stat_5": 6,
+              "stat_6": 4,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 5,
+              "intelligence": 6,
+              "charisma": 6,
+              "luck": 4,
+              "perception": 4
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -5334,7 +6704,7 @@
     {
       "entry_id": "_23CNCRPX7rkcLbX8hbxGr",
       "id": "_23CNCRPX7rkcLbX8hbxGr",
-      "uid": 33,
+      "uid": 37,
       "name": "Jean-Luc Virtuoso",
       "comment": "Character: Jean-Luc Virtuoso",
       "keys": [
@@ -5476,7 +6846,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 38,
+            "experience": 0,
+            "species_id": "Human, Telepath",
+            "occupation_id": "Leader of the Sinners syndicate",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -5490,7 +6881,7 @@
     {
       "entry_id": "_RrLx1FeCAHzffm11fFMXz",
       "id": "_RrLx1FeCAHzffm11fFMXz",
-      "uid": 34,
+      "uid": 38,
       "name": "Javier Reyes",
       "comment": "Character: Javier Reyes",
       "keys": [
@@ -5630,7 +7021,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 22,
+            "experience": 0,
+            "species_id": "Demihuman Owl",
+            "occupation_id": "SUCC student, communications or film dep",
+            "base_stats": {
+              "stat_1": 2,
+              "stat_2": 4,
+              "stat_3": 4,
+              "stat_4": 9,
+              "stat_5": 6,
+              "stat_6": 6,
+              "strength": 2,
+              "endurance": 4,
+              "agility": 4,
+              "intelligence": 9,
+              "charisma": 6,
+              "luck": 6,
+              "perception": 6
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -5644,7 +7056,7 @@
     {
       "entry_id": "_mfjaQDYUnAhLG8UggXg6N",
       "id": "_mfjaQDYUnAhLG8UggXg6N",
-      "uid": 35,
+      "uid": 39,
       "name": "Jasmin Thompson",
       "comment": "Character: Jasmin Thompson",
       "keys": [
@@ -5784,7 +7196,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 48,
+            "experience": 0,
+            "species_id": "Holstaur",
+            "occupation_id": "Citizen",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -5798,7 +7231,7 @@
     {
       "entry_id": "_BzKwAkgpPfbVkBzbDaEth",
       "id": "_BzKwAkgpPfbVkBzbDaEth",
-      "uid": 36,
+      "uid": 40,
       "name": "Jared Thompson",
       "comment": "Character: Jared Thompson",
       "keys": [
@@ -5992,7 +7425,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 22,
+            "experience": 0,
+            "species_id": "Hybrid, half-minotaur",
+            "occupation_id": "Citizen",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -6006,7 +7460,7 @@
     {
       "entry_id": "_DKY9cDLMUaYpELYAdckH2",
       "id": "_DKY9cDLMUaYpELYAdckH2",
-      "uid": 37,
+      "uid": 41,
       "name": "Janice Thompson",
       "comment": "Character: Janice Thompson",
       "keys": [
@@ -6144,7 +7598,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 21,
+            "experience": 0,
+            "species_id": "Holstaur",
+            "occupation_id": "Citizen",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -6158,7 +7633,7 @@
     {
       "entry_id": "_7pEEWTeTLzd3ATh1y4FYd",
       "id": "_7pEEWTeTLzd3ATh1y4FYd",
-      "uid": 38,
+      "uid": 42,
       "name": "Isobel Blackwater",
       "comment": "Character: Isobel Blackwater",
       "keys": [
@@ -6302,7 +7777,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 54,
+            "experience": 0,
+            "species_id": "Werewolf, Alpha",
+            "occupation_id": "Pack Leader",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -6316,7 +7812,7 @@
     {
       "entry_id": "_QfcJQRWUV2yfHGUUjLD8V",
       "id": "_QfcJQRWUV2yfHGUUjLD8V",
-      "uid": 39,
+      "uid": 43,
       "name": "Iordan R. Vess",
       "comment": "Character: Iordan R. Vess",
       "keys": [
@@ -6456,7 +7952,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 27,
+            "experience": 0,
+            "species_id": "Werewolf",
+            "occupation_id": "Citizen",
+            "base_stats": {
+              "stat_1": 4,
+              "stat_2": 4,
+              "stat_3": 6,
+              "stat_4": 5,
+              "stat_5": 8,
+              "stat_6": 4,
+              "strength": 4,
+              "endurance": 4,
+              "agility": 6,
+              "intelligence": 5,
+              "charisma": 8,
+              "luck": 4,
+              "perception": 4
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -6470,7 +7987,7 @@
     {
       "entry_id": "_wrcbW98qktK4gDFLTyC24",
       "id": "_wrcbW98qktK4gDFLTyC24",
-      "uid": 40,
+      "uid": 44,
       "name": "Hideo Reid",
       "comment": "Character: Hideo Reid",
       "keys": [
@@ -6610,7 +8127,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 56,
+            "experience": 0,
+            "species_id": "Kitsune",
+            "occupation_id": "Chemistry professor, Supernatural Univer",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -6624,7 +8162,7 @@
     {
       "entry_id": "_yNt949MTQnVmCpVQq8ebF",
       "id": "_yNt949MTQnVmCpVQq8ebF",
-      "uid": 41,
+      "uid": 45,
       "name": "Helena Weiss",
       "comment": "Character: Helena Weiss",
       "keys": [
@@ -6766,7 +8304,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 53,
+            "experience": 0,
+            "species_id": "Werewolf, Beta",
+            "occupation_id": "Pack Leader",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 4,
+              "stat_4": 6,
+              "stat_5": 8,
+              "stat_6": 3,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 4,
+              "intelligence": 6,
+              "charisma": 8,
+              "luck": 3,
+              "perception": 3
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -6780,7 +8339,7 @@
     {
       "entry_id": "_ejE6Xp83PhtJrDKCqbjhH",
       "id": "_ejE6Xp83PhtJrDKCqbjhH",
-      "uid": 42,
+      "uid": 46,
       "name": "Harrison Black",
       "comment": "Character: Harrison Black",
       "keys": [
@@ -6922,7 +8481,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 45,
+            "experience": 0,
+            "species_id": "Human, carrying the worn-down reincarnat",
+            "occupation_id": "Owner of Black Tomes, an antiquarian boo",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 4,
+              "stat_4": 6,
+              "stat_5": 8,
+              "stat_6": 3,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 4,
+              "intelligence": 6,
+              "charisma": 8,
+              "luck": 3,
+              "perception": 3
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -6936,7 +8516,7 @@
     {
       "entry_id": "_F4qM3efBRVyQnXXUxVqH7",
       "id": "_F4qM3efBRVyQnXXUxVqH7",
-      "uid": 43,
+      "uid": 47,
       "name": "Harper Aries",
       "comment": "Character: Harper Aries",
       "keys": [
@@ -7076,7 +8656,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 20,
+            "experience": 0,
+            "species_id": "Dhampir, half-human half-vampire",
+            "occupation_id": "Ballantine Family ward, small-time drug ",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -7090,7 +8691,7 @@
     {
       "entry_id": "_AjMH4N66RxKj2Pr84wqgz",
       "id": "_AjMH4N66RxKj2Pr84wqgz",
-      "uid": 44,
+      "uid": 48,
       "name": "Harlan Beaumont",
       "comment": "Character: Harlan Beaumont",
       "keys": [
@@ -7234,7 +8835,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 48,
+            "experience": 0,
+            "species_id": "Human",
+            "occupation_id": "Human Representative on the Blackwood Co",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 4,
+              "stat_4": 6,
+              "stat_5": 8,
+              "stat_6": 3,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 4,
+              "intelligence": 6,
+              "charisma": 8,
+              "luck": 3,
+              "perception": 3
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -7248,7 +8870,7 @@
     {
       "entry_id": "_4GdzX4McREFg4zRpEqth2",
       "id": "_4GdzX4McREFg4zRpEqth2",
-      "uid": 45,
+      "uid": 49,
       "name": "Hank Thompson",
       "comment": "Character: Hank Thompson",
       "keys": [
@@ -7388,7 +9010,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 50,
+            "experience": 0,
+            "species_id": "Half-minotaur",
+            "occupation_id": "Citizen",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -7402,7 +9045,7 @@
     {
       "entry_id": "_jf8fr4B9TNxbERGnEcd6b",
       "id": "_jf8fr4B9TNxbERGnEcd6b",
-      "uid": 46,
+      "uid": 50,
       "name": "GREED - Roxie",
       "comment": "Character: GREED - Roxie",
       "keys": [
@@ -7542,7 +9185,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 27,
+            "experience": 0,
+            "species_id": "Hyena Demihuman",
+            "occupation_id": "logistics and acquisition for the Sinner",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -7556,7 +9220,7 @@
     {
       "entry_id": "_GEwyNtNGLVGjywcntBnLm",
       "id": "_GEwyNtNGLVGjywcntBnLm",
-      "uid": 47,
+      "uid": 51,
       "name": "GLUTTONY - Kevin",
       "comment": "Character: GLUTTONY - Kevin",
       "keys": [
@@ -7696,7 +9360,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 22,
+            "experience": 0,
+            "species_id": "Human",
+            "occupation_id": "cybersecurity and hacking for the Sinner",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 4,
+              "stat_4": 6,
+              "stat_5": 8,
+              "stat_6": 3,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 4,
+              "intelligence": 6,
+              "charisma": 8,
+              "luck": 3,
+              "perception": 3
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -7710,7 +9395,7 @@
     {
       "entry_id": "_PQHGb4gL2LwDhNDrLFa3A",
       "id": "_PQHGb4gL2LwDhNDrLFa3A",
-      "uid": 48,
+      "uid": 52,
       "name": "Finnegan Novak",
       "comment": "Character: Finnegan Novak",
       "keys": [
@@ -7858,7 +9543,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 21,
+            "experience": 0,
+            "species_id": "Arctic wolf demihuman",
+            "occupation_id": "Citizen",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -7872,7 +9578,7 @@
     {
       "entry_id": "_Vd2Jat7DLhEXaGFzTTr3Y",
       "id": "_Vd2Jat7DLhEXaGFzTTr3Y",
-      "uid": 49,
+      "uid": 53,
       "name": "Federico \"Riki\" Savini",
       "comment": "Character: Federico \"Riki\" Savini",
       "keys": [
@@ -8016,7 +9722,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 64,
+            "experience": 0,
+            "species_id": "Werewolf, Elder",
+            "occupation_id": "Representative of the roughly 24,250 sol",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -8030,7 +9757,7 @@
     {
       "entry_id": "_mbBqR74dFceBFB4YegpyN",
       "id": "_mbBqR74dFceBFB4YegpyN",
-      "uid": 50,
+      "uid": 54,
       "name": "Fade Greymoor",
       "comment": "Character: Fade Greymoor",
       "keys": [
@@ -8182,7 +9909,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 24,
+            "experience": 0,
+            "species_id": "Vampire",
+            "occupation_id": "Lead vocalist of Grave Mistake",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -8196,7 +9944,7 @@
     {
       "entry_id": "_q1n7hcz23ThY63JGEjdNq",
       "id": "_q1n7hcz23ThY63JGEjdNq",
-      "uid": 51,
+      "uid": 55,
       "name": "Eris Davies",
       "comment": "Character: Eris Davies",
       "keys": [
@@ -8340,7 +10088,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 43,
+            "experience": 0,
+            "species_id": "Werewolf",
+            "occupation_id": "Citizen",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -8354,7 +10123,7 @@
     {
       "entry_id": "_68EgtxQCgFB8RNKqUbpxB",
       "id": "_68EgtxQCgFB8RNKqUbpxB",
-      "uid": 52,
+      "uid": 56,
       "name": "Eric",
       "comment": "Character: Eric",
       "keys": [
@@ -8490,7 +10259,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 20,
+            "experience": 0,
+            "species_id": "Demihuman Fox",
+            "occupation_id": "SUCC student , plays weekend gigs with h",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 5,
+              "stat_4": 6,
+              "stat_5": 6,
+              "stat_6": 4,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 5,
+              "intelligence": 6,
+              "charisma": 6,
+              "luck": 4,
+              "perception": 4
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -8504,7 +10294,7 @@
     {
       "entry_id": "_f3w1hw3qejBNjzNj8thqx",
       "id": "_f3w1hw3qejBNjzNj8thqx",
-      "uid": 53,
+      "uid": 57,
       "name": "Eclipse Noir",
       "comment": "Character: Eclipse Noir",
       "keys": [
@@ -8648,7 +10438,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 23,
+            "experience": 0,
+            "species_id": "Werewolf, Alpha",
+            "occupation_id": "Pack Leader",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 4,
+              "stat_4": 6,
+              "stat_5": 8,
+              "stat_6": 3,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 4,
+              "intelligence": 6,
+              "charisma": 8,
+              "luck": 3,
+              "perception": 3
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -8662,7 +10473,7 @@
     {
       "entry_id": "_VAqqYVbLbhaDbdkrw8Cyn",
       "id": "_VAqqYVbLbhaDbdkrw8Cyn",
-      "uid": 54,
+      "uid": 58,
       "name": "ENVY - Siobhan",
       "comment": "Character: ENVY - Siobhan",
       "keys": [
@@ -8800,7 +10611,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 99,
+            "experience": 0,
+            "species_id": "Vampire",
+            "occupation_id": "spymaster and informant for the Sinners",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 5,
+              "stat_4": 6,
+              "stat_5": 6,
+              "stat_6": 4,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 5,
+              "intelligence": 6,
+              "charisma": 6,
+              "luck": 4,
+              "perception": 4
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -8814,7 +10646,7 @@
     {
       "entry_id": "_F8ee4UpyLr7Fyr69KKhzV",
       "id": "_F8ee4UpyLr7Fyr69KKhzV",
-      "uid": 55,
+      "uid": 59,
       "name": "Dullahan",
       "comment": "Character: Dullahan",
       "keys": [
@@ -8956,7 +10788,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 99,
+            "experience": 0,
+            "species_id": "Immortal Contractor, presents publicly a",
+            "occupation_id": "head coach of the SUCC Bulls, and Head o",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -8970,7 +10823,7 @@
     {
       "entry_id": "_aRzJCwP9EwgHMbCytNAJc",
       "id": "_aRzJCwP9EwgHMbCytNAJc",
-      "uid": 56,
+      "uid": 60,
       "name": "Dr. Arthur Sinclair",
       "comment": "Character: Dr. Arthur Sinclair",
       "keys": [
@@ -9112,7 +10965,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 64,
+            "experience": 0,
+            "species_id": "Human Mutant, Chimera",
+            "occupation_id": "Chief chemist and physician for the Sinn",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -9126,7 +11000,7 @@
     {
       "entry_id": "_dDXdeJrcYHbwagGFQVKQR",
       "id": "_dDXdeJrcYHbwagGFQVKQR",
-      "uid": 57,
+      "uid": 61,
       "name": "Dominic Rogers",
       "comment": "Character: Dominic Rogers",
       "keys": [
@@ -9268,7 +11142,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 50,
+            "experience": 0,
+            "species_id": "Incubus",
+            "occupation_id": "owner and operator of Rogers' Bargain Mo",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -9282,7 +11177,7 @@
     {
       "entry_id": "_8wjMyUNV6yB7ACLk4dhWd",
       "id": "_8wjMyUNV6yB7ACLk4dhWd",
-      "uid": 58,
+      "uid": 62,
       "name": "Dominic Chen",
       "comment": "Character: Dominic Chen",
       "keys": [
@@ -9426,7 +11321,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 37,
+            "experience": 0,
+            "species_id": "Werewolf, Alpha",
+            "occupation_id": "Pack Leader",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 4,
+              "stat_4": 6,
+              "stat_5": 8,
+              "stat_6": 3,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 4,
+              "intelligence": 6,
+              "charisma": 8,
+              "luck": 3,
+              "perception": 3
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -9440,7 +11356,7 @@
     {
       "entry_id": "_4BPXYczVx9WratBCyJjfN",
       "id": "_4BPXYczVx9WratBCyJjfN",
-      "uid": 59,
+      "uid": 63,
       "name": "Dean",
       "comment": "Character: Dean",
       "keys": [
@@ -9576,7 +11492,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 21,
+            "experience": 0,
+            "species_id": "Demihuman Raccoon",
+            "occupation_id": "SUCC student, sells weed, cooks meals fo",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -9590,7 +11527,7 @@
     {
       "entry_id": "_R6XD6qLdQTrm7F3nd2j1V",
       "id": "_R6XD6qLdQTrm7F3nd2j1V",
-      "uid": 60,
+      "uid": 64,
       "name": "Darius Vale",
       "comment": "Character: Darius Vale",
       "keys": [
@@ -9730,7 +11667,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 45,
+            "experience": 0,
+            "species_id": "Werewolf, Alpha",
+            "occupation_id": "Pack Leader",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 4,
+              "stat_4": 6,
+              "stat_5": 8,
+              "stat_6": 3,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 4,
+              "intelligence": 6,
+              "charisma": 8,
+              "luck": 3,
+              "perception": 3
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -9744,7 +11702,7 @@
     {
       "entry_id": "_bKApUbVDFUMdyKc1gyr4L",
       "id": "_bKApUbVDFUMdyKc1gyr4L",
-      "uid": 61,
+      "uid": 65,
       "name": "Dante",
       "comment": "Character: Dante",
       "keys": [
@@ -9882,7 +11840,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 99,
+            "experience": 0,
+            "species_id": "Demon, Incubus",
+            "occupation_id": "Owner of The Inferno, a strip club with ",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -9896,7 +11875,7 @@
     {
       "entry_id": "_VGAN3gQXchpTC2VFAcKUH",
       "id": "_VGAN3gQXchpTC2VFAcKUH",
-      "uid": 62,
+      "uid": 66,
       "name": "Daniel \"Danny\" Boone",
       "comment": "Character: Daniel \"Danny\" Boone",
       "keys": [
@@ -10036,7 +12015,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 24,
+            "experience": 0,
+            "species_id": "Werewolf",
+            "occupation_id": "Enforcer for the Ballantine Family",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -10050,7 +12050,7 @@
     {
       "entry_id": "_71Bc3wDdCkKmXD8EmLgFe",
       "id": "_71Bc3wDdCkKmXD8EmLgFe",
-      "uid": 63,
+      "uid": 67,
       "name": "Coach Mithers",
       "comment": "Character: Coach Mithers",
       "keys": [
@@ -10188,7 +12188,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 45,
+            "experience": 0,
+            "species_id": "Manticore",
+            "occupation_id": "head coach of the Beavers, the Californi",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 4,
+              "stat_4": 6,
+              "stat_5": 8,
+              "stat_6": 3,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 4,
+              "intelligence": 6,
+              "charisma": 8,
+              "luck": 3,
+              "perception": 3
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -10202,7 +12223,7 @@
     {
       "entry_id": "_TLxzk97WmgYCA47nkDCVy",
       "id": "_TLxzk97WmgYCA47nkDCVy",
-      "uid": 64,
+      "uid": 68,
       "name": "Chase Anderson",
       "comment": "Character: Chase Anderson",
       "keys": [
@@ -10344,7 +12365,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 20,
+            "experience": 0,
+            "species_id": "Werewolf",
+            "occupation_id": "Twitch streamer, channel handle \"Goldie\"",
+            "base_stats": {
+              "stat_1": 2,
+              "stat_2": 4,
+              "stat_3": 4,
+              "stat_4": 9,
+              "stat_5": 6,
+              "stat_6": 6,
+              "strength": 2,
+              "endurance": 4,
+              "agility": 4,
+              "intelligence": 9,
+              "charisma": 6,
+              "luck": 6,
+              "perception": 6
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -10358,7 +12400,7 @@
     {
       "entry_id": "_GBPCNEWLL2NmdaWAhg6Cn",
       "id": "_GBPCNEWLL2NmdaWAhg6Cn",
-      "uid": 65,
+      "uid": 69,
       "name": "Cassian Aralas",
       "comment": "Character: Cassian Aralas",
       "keys": [
@@ -10496,7 +12538,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 99,
+            "experience": 0,
+            "species_id": "Alatus Fae, a winged Fae bloodline disti",
+            "occupation_id": "Informal protector and leader of Blackwo",
+            "base_stats": {
+              "stat_1": 2,
+              "stat_2": 4,
+              "stat_3": 4,
+              "stat_4": 9,
+              "stat_5": 6,
+              "stat_6": 6,
+              "strength": 2,
+              "endurance": 4,
+              "agility": 4,
+              "intelligence": 9,
+              "charisma": 6,
+              "luck": 6,
+              "perception": 6
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -10510,7 +12573,7 @@
     {
       "entry_id": "_AyqP2RkHCKXPjDMK3bLUH",
       "id": "_AyqP2RkHCKXPjDMK3bLUH",
-      "uid": 66,
+      "uid": 70,
       "name": "Cass Harrow",
       "comment": "Character: Cass Harrow",
       "keys": [
@@ -10654,7 +12717,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 44,
+            "experience": 0,
+            "species_id": "Werewolf, Alpha",
+            "occupation_id": "Pack Leader",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -10668,7 +12752,7 @@
     {
       "entry_id": "_nBMDwWAEatHAggKWjNNCh",
       "id": "_nBMDwWAEatHAggKWjNNCh",
-      "uid": 67,
+      "uid": 71,
       "name": "Casey Williams",
       "comment": "Character: Casey Williams",
       "keys": [
@@ -10816,7 +12900,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 27,
+            "experience": 0,
+            "species_id": "Hawk demihuman",
+            "occupation_id": "Citizen",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -10830,7 +12935,7 @@
     {
       "entry_id": "_cmFQKKpC14U6qa4FtV9WK",
       "id": "_cmFQKKpC14U6qa4FtV9WK",
-      "uid": 68,
+      "uid": 72,
       "name": "Brittany Willow",
       "comment": "Character: Brittany Willow",
       "keys": [
@@ -10974,7 +13079,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 19,
+            "experience": 0,
+            "species_id": "Human",
+            "occupation_id": "SUCC student, resident of the Theta Iota",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 5,
+              "stat_4": 6,
+              "stat_5": 6,
+              "stat_6": 4,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 5,
+              "intelligence": 6,
+              "charisma": 6,
+              "luck": 4,
+              "perception": 4
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -10988,7 +13114,7 @@
     {
       "entry_id": "_AycV4d9dJRBakCmdH4q4J",
       "id": "_AycV4d9dJRBakCmdH4q4J",
-      "uid": 69,
+      "uid": 73,
       "name": "Brak Ironfist",
       "comment": "Character: Brak Ironfist",
       "keys": [
@@ -11134,7 +13260,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 47,
+            "experience": 0,
+            "species_id": "Orc",
+            "occupation_id": "Founder and CEO, Ironfist Forge and Stru",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -11148,7 +13295,7 @@
     {
       "entry_id": "_tEjWAbTqE6abw8UApDADw",
       "id": "_tEjWAbTqE6abw8UApDADw",
-      "uid": 70,
+      "uid": 74,
       "name": "Bianca Rossi",
       "comment": "Character: Bianca Rossi",
       "keys": [
@@ -11292,7 +13439,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 34,
+            "experience": 0,
+            "species_id": "Werewolf, Alpha",
+            "occupation_id": "Pack Leader",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 4,
+              "stat_4": 6,
+              "stat_5": 8,
+              "stat_6": 3,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 4,
+              "intelligence": 6,
+              "charisma": 8,
+              "luck": 3,
+              "perception": 3
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -11306,7 +13474,7 @@
     {
       "entry_id": "_LEeEzdCCyGjQ8kfVkcra8",
       "id": "_LEeEzdCCyGjQ8kfVkcra8",
-      "uid": 71,
+      "uid": 75,
       "name": "Barrow",
       "comment": "Character: Barrow",
       "keys": [
@@ -11363,33 +13531,27 @@
           "display_description": "A minotaur ex-outlaw turned Blackwood Council representative, quietly running his demi-human neighborhood through labor and reputation while wondering if his old temper is really gone.",
           "outfits": [
             {
-              "id": "outfit-1790637713884-1",
-              "name": "Faculty Daily",
-              "description": "Professional campus attire, tailored collared shirt, dark slacks, and practical dress shoes suited for lectures and departmental consultations.",
+              "id": "outfit-1790649041281-bar01",
+              "name": "Heavy Construction Workwear",
+              "description": "Salopette in pesante denim rinforzato logorata dal cemento e dalla polvere di calce, una maglia grigia a maniche corte che fascia la sua muscolatura taurina massiccia, stivali da lavoro a punta d'acciaio spuntati per le zampe unghiose, cintura da carpentiere con martello da demolizione e guanti da carpentiere sfilati e infilati nella tasca posteriore.",
               "avatar": ""
             },
             {
-              "id": "outfit-1790637713884-2",
-              "name": "Office & Research",
-              "description": "Comfortable working attire with sleeves rolled up, loosened tie, or specialized protective lab coat/apron suited for long research and grading sessions.",
+              "id": "outfit-1790649041281-bar02",
+              "name": "Morning Stoop Vigil",
+              "description": "Camicia di flanella spessa a quadri scuri lasciata aperta sopra una canotta grigio fumo sbiadita, pantaloni da lavoro in tela pesante e scarponi comodi. Tra le mani enormi tiene un termos da cantiere ammaccato fumante di caffe nero mentre fissa la strada all'alba seduto sul muretto di The Horns.",
               "avatar": ""
             },
             {
-              "id": "outfit-1790637713884-3",
-              "name": "Academic Formal",
-              "description": "Impeccably tailored three-piece academic suit or formal vestments worn during university convocations, board meetings, and high-level negotiations.",
+              "id": "outfit-1790649041281-bar03",
+              "name": "Council Session / Civic Formal",
+              "description": "Una camicia da lavoro pulita e stirata in lino scuro abbottonata fino al collo, pantaloni scuri ordinati con cintura in cuoio pesante. Le corna sono lucidate con cura e l'anello d'ottone al setto risplende pulito, incarnando con austera dignita la voce dei demi-umani al Concilio di Blackwood.",
               "avatar": ""
             },
             {
-              "id": "outfit-1790637713884-4",
-              "name": "Off-Duty / Private",
-              "description": "Relaxed private casual wear for downtime at home, reading, or quiet evenings away from students and administrative politics.",
-              "avatar": ""
-            },
-            {
-              "id": "outfit-1790637713884-5",
-              "name": "Field / Travel Gear",
-              "description": "Sturdy weathered trench coat, heavy scarf, and durable walking boots for cold coastal weather and transit between city districts.",
+              "id": "outfit-1790649041281-bar04",
+              "name": "Ironhorn Nomads Veteran Cut",
+              "description": "Il suo vecchio gilet di pelle conciata pesante e consumata con i colori storici degli Ironhorn Nomads del ventennio passato, ricoperto di toppe consunte e cuciture a filo spesso, custodito gelosamente ma tirato fuori solo quando il branco e i vecchi fratelli d'asfalto chiamano.",
               "avatar": ""
             }
           ],
@@ -11432,26 +13594,64 @@
           ],
           "attitudes": [
             {
-              "id": "attitude-1790637713884-1",
+              "id": "attitude-1790649041281-bar01",
               "target_type": "world_character",
+              "target_id": "_MXcEC8Y6B3BNm3b1ttHj6",
               "target": "",
-              "tier": "stranger",
-              "intensity": 15,
-              "reasoning": "Unknown scent. Has never personally crossed paths with the Douglas daughter.",
-              "target_id": "_MXcEC8Y6B3BNm3b1ttHj6"
+              "tier": "best_friend",
+              "intensity": 95,
+              "reasoning": "Fragile angel carrying too much danger, my stoop and hands are her sanctuary."
             },
             {
-              "id": "attitude-1790637713884-2",
+              "id": "attitude-1790649041281-bar02",
               "target_type": "world_character",
+              "target_id": "_cDx2yGNtVbCCDUCHcUUxG",
               "target": "",
-              "tier": "stranger",
-              "intensity": 15,
-              "reasoning": "Unknown scent. Has never personally crossed paths with the Douglas son.",
-              "target_id": "_x3VY2kcbaDbKyCqywGeET"
+              "tier": "best_friend",
+              "intensity": 85,
+              "reasoning": "Nomads blood brother, we survived twenty years of war together."
+            },
+            {
+              "id": "attitude-1790649041281-bar03",
+              "target_type": "world_character",
+              "target_id": "_x3VY2kcbaDbKyCqywGeET",
+              "target": "",
+              "tier": "friend",
+              "intensity": 80,
+              "reasoning": "Sharp, anxious kid watching over his twin, has my respect and protection."
             }
           ],
-          "rpg_stats": {},
-          "tags": []
+          "rpg_stats": {
+            "enabled": true,
+            "level": 42,
+            "experience": 0,
+            "species_id": "Minotaur",
+            "occupation_id": "Master Builder / Retired Nomad Guardian",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 8,
+              "stat_3": 3,
+              "stat_4": 4,
+              "stat_5": 6,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 8,
+              "agility": 3,
+              "intelligence": 4,
+              "charisma": 6,
+              "luck": 2,
+              "perception": 2
+            }
+          },
+          "tags": [
+            "Male",
+            "Minotaur",
+            "Veteran",
+            "Guardian",
+            "Ironhorn Nomads",
+            "Builder",
+            "Council"
+          ]
         },
         "wyvern": {
           "priority": 10,
@@ -11464,7 +13664,7 @@
     {
       "entry_id": "_EXFAYyRCjRU19eebCFfXz",
       "id": "_EXFAYyRCjRU19eebCFfXz",
-      "uid": 72,
+      "uid": 76,
       "name": "Barkley Rover",
       "comment": "Character: Barkley Rover",
       "keys": [
@@ -11608,7 +13808,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 32,
+            "experience": 0,
+            "species_id": "Dog demihuman, golden retriever",
+            "occupation_id": "assistant football coach, SUCC Bulls, fi",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -11622,7 +13843,7 @@
     {
       "entry_id": "_eF7HAqWkLLYhQwt2tm4rn",
       "id": "_eF7HAqWkLLYhQwt2tm4rn",
-      "uid": 73,
+      "uid": 77,
       "name": "Bailey Rogers",
       "comment": "Character: Bailey Rogers",
       "keys": [
@@ -11760,7 +13981,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 20,
+            "experience": 0,
+            "species_id": "Incubus",
+            "occupation_id": "Citizen",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -11774,7 +14016,7 @@
     {
       "entry_id": "_A6Wmm1tCLybVYMqGeTckb",
       "id": "_A6Wmm1tCLybVYMqGeTckb",
-      "uid": 74,
+      "uid": 78,
       "name": "Aurora Night",
       "comment": "Character: Aurora Night",
       "keys": [
@@ -11918,7 +14160,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 39,
+            "experience": 0,
+            "species_id": "Werewolf, Alpha",
+            "occupation_id": "Pack Leader",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 4,
+              "stat_4": 6,
+              "stat_5": 8,
+              "stat_6": 3,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 4,
+              "intelligence": 6,
+              "charisma": 8,
+              "luck": 3,
+              "perception": 3
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -11932,7 +14195,7 @@
     {
       "entry_id": "_q1rYKHndN64QUgjHQazXB",
       "id": "_q1rYKHndN64QUgjHQazXB",
-      "uid": 75,
+      "uid": 79,
       "name": "Ariadne Cirillo",
       "comment": "Character: Ariadne Cirillo",
       "keys": [
@@ -12082,7 +14345,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 21,
+            "experience": 0,
+            "species_id": "Hybrid, half drider and half succubus. S",
+            "occupation_id": "Citizen",
+            "base_stats": {
+              "stat_1": 4,
+              "stat_2": 3,
+              "stat_3": 8,
+              "stat_4": 7,
+              "stat_5": 4,
+              "stat_6": 5,
+              "strength": 4,
+              "endurance": 3,
+              "agility": 8,
+              "intelligence": 7,
+              "charisma": 4,
+              "luck": 5,
+              "perception": 5
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -12096,7 +14380,7 @@
     {
       "entry_id": "_6hc62Ay9tVBXecnAfmqdU",
       "id": "_6hc62Ay9tVBXecnAfmqdU",
-      "uid": 76,
+      "uid": 80,
       "name": "Archer Wolfwood",
       "comment": "Character: Archer Wolfwood",
       "keys": [
@@ -12240,7 +14524,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 99,
+            "experience": 0,
+            "species_id": "Werewolf",
+            "occupation_id": "Citizen",
+            "base_stats": {
+              "stat_1": 2,
+              "stat_2": 4,
+              "stat_3": 4,
+              "stat_4": 9,
+              "stat_5": 6,
+              "stat_6": 6,
+              "strength": 2,
+              "endurance": 4,
+              "agility": 4,
+              "intelligence": 9,
+              "charisma": 6,
+              "luck": 6,
+              "perception": 6
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -12254,7 +14559,7 @@
     {
       "entry_id": "_mwqYFKwWfHDMctDJQMR6w",
       "id": "_mwqYFKwWfHDMctDJQMR6w",
-      "uid": 77,
+      "uid": 81,
       "name": "Angelo Moreno",
       "comment": "Character: Angelo Moreno",
       "keys": [
@@ -12396,7 +14701,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 99,
+            "experience": 0,
+            "species_id": "Vampire",
+            "occupation_id": "Owner of Eidolon Creative",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 5,
+              "stat_4": 6,
+              "stat_5": 6,
+              "stat_6": 4,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 5,
+              "intelligence": 6,
+              "charisma": 6,
+              "luck": 4,
+              "perception": 4
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -12410,7 +14736,7 @@
     {
       "entry_id": "_acGaTVmCXxKDrTa6KNYzd",
       "id": "_acGaTVmCXxKDrTa6KNYzd",
-      "uid": 78,
+      "uid": 82,
       "name": "Andrew Campbell",
       "comment": "Character: Andrew Campbell",
       "keys": [
@@ -12556,7 +14882,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 22,
+            "experience": 0,
+            "species_id": "Vampire, Campbell line of Montreal",
+            "occupation_id": "student at SUCC, mascot of the SUCC Bear",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -12570,7 +14917,7 @@
     {
       "entry_id": "_Rngxy8LRVnPqGqBamkjMW",
       "id": "_Rngxy8LRVnPqGqBamkjMW",
-      "uid": 79,
+      "uid": 83,
       "name": "Allegra Lumsden",
       "comment": "Character: Allegra Lumsden",
       "keys": [
@@ -12710,7 +15057,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 50,
+            "experience": 0,
+            "species_id": "Werewolf",
+            "occupation_id": "Citizen",
+            "base_stats": {
+              "stat_1": 2,
+              "stat_2": 4,
+              "stat_3": 4,
+              "stat_4": 9,
+              "stat_5": 6,
+              "stat_6": 6,
+              "strength": 2,
+              "endurance": 4,
+              "agility": 4,
+              "intelligence": 9,
+              "charisma": 6,
+              "luck": 6,
+              "perception": 6
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -12724,7 +15092,7 @@
     {
       "entry_id": "_8CCMxWyPxRBaC1f2ycDqe",
       "id": "_8CCMxWyPxRBaC1f2ycDqe",
-      "uid": 80,
+      "uid": 84,
       "name": "Alicia Virtuoso",
       "comment": "Character: Alicia Virtuoso",
       "keys": [
@@ -12866,7 +15234,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 35,
+            "experience": 0,
+            "species_id": "Human",
+            "occupation_id": "former runway model, now manages the Vir",
+            "base_stats": {
+              "stat_1": 2,
+              "stat_2": 4,
+              "stat_3": 4,
+              "stat_4": 9,
+              "stat_5": 6,
+              "stat_6": 6,
+              "strength": 2,
+              "endurance": 4,
+              "agility": 4,
+              "intelligence": 9,
+              "charisma": 6,
+              "luck": 6,
+              "perception": 6
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -12880,7 +15269,7 @@
     {
       "entry_id": "_UczWkLKQ2td6jrJCR66Eb",
       "id": "_UczWkLKQ2td6jrJCR66Eb",
-      "uid": 81,
+      "uid": 85,
       "name": "Adelin Coso",
       "comment": "Character: Adelin Coso",
       "keys": [
@@ -13022,7 +15411,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 48,
+            "experience": 0,
+            "species_id": "Abominable Snowman",
+            "occupation_id": "head coach of the SUCC Bears ice hockey ",
+            "base_stats": {
+              "stat_1": 8,
+              "stat_2": 7,
+              "stat_3": 5,
+              "stat_4": 4,
+              "stat_5": 5,
+              "stat_6": 2,
+              "strength": 8,
+              "endurance": 7,
+              "agility": 5,
+              "intelligence": 4,
+              "charisma": 5,
+              "luck": 2,
+              "perception": 2
+            }
+          },
           "tags": []
         },
         "wyvern": {
@@ -13036,7 +15446,7 @@
     {
       "entry_id": "_bVgKYYURnWGWdX142q99k",
       "id": "_bVgKYYURnWGWdX142q99k",
-      "uid": 82,
+      "uid": 86,
       "name": "Abel Vilas",
       "comment": "Character: Abel Vilas",
       "keys": [
@@ -13174,7 +15584,28 @@
               "target_id": "_x3VY2kcbaDbKyCqywGeET"
             }
           ],
-          "rpg_stats": {},
+          "rpg_stats": {
+            "enabled": true,
+            "level": 30,
+            "experience": 0,
+            "species_id": "Sea Dragon Demi-human",
+            "occupation_id": "CEO of Hydra Luxury Resorts",
+            "base_stats": {
+              "stat_1": 5,
+              "stat_2": 5,
+              "stat_3": 4,
+              "stat_4": 6,
+              "stat_5": 8,
+              "stat_6": 3,
+              "strength": 5,
+              "endurance": 5,
+              "agility": 4,
+              "intelligence": 6,
+              "charisma": 8,
+              "luck": 3,
+              "perception": 3
+            }
+          },
           "tags": []
         },
         "wyvern": {

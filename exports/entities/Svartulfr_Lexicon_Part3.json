@@ -1,6 +1,6 @@
 {
   "name": "Svartúlfr - Lexicon (Part 3)",
-  "description": "Voci di lore, magia, fazioni e storia - Parte 3 di 3 (Martin 'Marty' Vell - Grave Mistake)",
+  "description": "Voci di lore, magia, fazioni e storia - Parte 3 di 3 (Macrodeia - Grave Mistake)",
   "scan_depth": 5,
   "token_budget": 2048,
   "recursive_scanning": true,
@@ -12,13 +12,248 @@
     "Lexicon"
   ],
   "counts": {
-    "total": 184
+    "total": 189
   },
   "entries": [
     {
+      "entry_id": "_QmCYR2kkW39eGjhcgWceP",
+      "id": "_QmCYR2kkW39eGjhcgWceP",
+      "uid": 0,
+      "name": "Macrodeia",
+      "comment": "G3 NPC (Stub) converted from World Character ID: _6nFNjwDm9RhV2ndDF8Gxk",
+      "keys": [
+        "Macrodeia"
+      ],
+      "key": [
+        "Macrodeia"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "[NAME: Macrodeia; STATUS: placeholder, in attesa di fonte]\n\nScheda segnaposto creata il 2026-09-15 a partire dal roster ufficiale Fan OC dell'ioverse (iofan.uwu.ai/#students), sezione Students. Nessuna fonte di backstory, aspetto o personalita ancora raccolta: da compilare quando l'utente fornira il materiale (vedi Project, FanOC_Roster_Confronto_2026-09-15.md).\n\n[INSTRUCTIONS: Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead.]",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 15,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "lore/concept",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": null,
+        "party_conditions": [],
+        "wyvern": {
+          "priority": 15,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "lore/concept"
+        }
+      }
+    },
+    {
+      "entry_id": "_HFmXmC6MF8M7NhDq6ddhm",
+      "id": "_HFmXmC6MF8M7NhDq6ddhm",
+      "uid": 1,
+      "name": "Maia Clay",
+      "comment": "G3 NPC (Stub) converted from World Character ID: _WRgtjNL2YJN1A6Mjtb1hc",
+      "keys": [
+        "Maia Clay"
+      ],
+      "key": [
+        "Maia Clay"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "[NAME: Maia Clay; STATUS: placeholder, in attesa di fonte]\n\nScheda segnaposto creata il 2026-09-15 a partire dal roster ufficiale Fan OC dell'ioverse (iofan.uwu.ai/#students), sezione Students. Nessuna fonte di backstory, aspetto o personalita ancora raccolta: da compilare quando l'utente fornira il materiale (vedi Project, FanOC_Roster_Confronto_2026-09-15.md).\n\n[INSTRUCTIONS: Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead.]",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 15,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "lore/concept",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": null,
+        "party_conditions": [],
+        "wyvern": {
+          "priority": 15,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "lore/concept"
+        }
+      }
+    },
+    {
+      "entry_id": "_DAdk3Ng7hGHza3MGymaBE",
+      "id": "_DAdk3Ng7hGHza3MGymaBE",
+      "uid": 2,
+      "name": "Makoto Fujimoto",
+      "comment": "G3 NPC (Stub) converted from World Character ID: _RUGUApq1E7TBPDAKbV3cr",
+      "keys": [
+        "Makoto Fujimoto"
+      ],
+      "key": [
+        "Makoto Fujimoto"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "[NAME: Makoto Fujimoto; STATUS: placeholder, in attesa di fonte]\n\nScheda segnaposto creata il 2026-09-15 a partire dal roster ufficiale Fan OC dell'ioverse (iofan.uwu.ai/#students), sezione Students. Nessuna fonte di backstory, aspetto o personalita ancora raccolta: da compilare quando l'utente fornira il materiale (vedi Project, FanOC_Roster_Confronto_2026-09-15.md).\n\n[INSTRUCTIONS: Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead.]",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 15,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "lore/concept",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": null,
+        "party_conditions": [],
+        "wyvern": {
+          "priority": 15,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "lore/concept"
+        }
+      }
+    },
+    {
+      "entry_id": "_rGE1YxyQDEEc349hWAT7A",
+      "id": "_rGE1YxyQDEEc349hWAT7A",
+      "uid": 3,
+      "name": "Malcolm Washington",
+      "comment": "G3 NPC (Stub) converted from World Character ID: _MPBEcD3V1n7PgUhRfWwzc",
+      "keys": [
+        "Malcolm Washington"
+      ],
+      "key": [
+        "Malcolm Washington"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "[NAME: Malcolm Washington; STATUS: placeholder, in attesa di fonte]\n\nScheda segnaposto creata il 2026-09-15 a partire dal roster ufficiale Fan OC dell'ioverse (iofan.uwu.ai/#students), sezione Students. Nessuna fonte di backstory, aspetto o personalita ancora raccolta: da compilare quando l'utente fornira il materiale (vedi Project, FanOC_Roster_Confronto_2026-09-15.md).\n\n[INSTRUCTIONS: Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead.]",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 15,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "lore/concept",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": null,
+        "party_conditions": [],
+        "wyvern": {
+          "priority": 15,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "lore/concept"
+        }
+      }
+    },
+    {
+      "entry_id": "_ehVyzMpDQ76kBTqh6FXnP",
+      "id": "_ehVyzMpDQ76kBTqh6FXnP",
+      "uid": 4,
+      "name": "Maribelle",
+      "comment": "G3 NPC (Stub) converted from World Character ID: _qN6mpFQd7pHx6ECkkWKUc",
+      "keys": [
+        "Maribelle"
+      ],
+      "key": [
+        "Maribelle"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "[NAME: Maribelle; STATUS: placeholder, in attesa di fonte]\n\nScheda segnaposto creata il 2026-09-15 a partire dal roster ufficiale Fan OC dell'ioverse (iofan.uwu.ai/#students), sezione Students. Nessuna fonte di backstory, aspetto o personalita ancora raccolta: da compilare quando l'utente fornira il materiale (vedi Project, FanOC_Roster_Confronto_2026-09-15.md).\n\n[INSTRUCTIONS: Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead.]",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 15,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "lore/concept",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": null,
+        "party_conditions": [],
+        "wyvern": {
+          "priority": 15,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "lore/concept"
+        }
+      }
+    },
+    {
       "entry_id": "_EEKrw97DkYxK4aHh8wr9T",
       "id": "_EEKrw97DkYxK4aHh8wr9T",
-      "uid": 0,
+      "uid": 5,
       "name": "Martin 'Marty' Vell",
       "comment": "G3 NPC (Stub) converted from World Character ID: _JXgT86JEjXBXBL7MfDeFL",
       "keys": [
@@ -67,7 +302,7 @@
     {
       "entry_id": "_dPVahQ9w6g8FzLFA3AM9A",
       "id": "_dPVahQ9w6g8FzLFA3AM9A",
-      "uid": 1,
+      "uid": 6,
       "name": "Maxwell 'Max' Byrne",
       "comment": "G3 NPC (Stub) converted from World Character ID: _zKfbFJWqdnC78Uwfr4Ukx",
       "keys": [
@@ -116,7 +351,7 @@
     {
       "entry_id": "_rEWWAkUBCztLbGn1LLEnf",
       "id": "_rEWWAkUBCztLbGn1LLEnf",
-      "uid": 2,
+      "uid": 7,
       "name": "Merlin Kaiser",
       "comment": "G3 NPC (Stub) converted from World Character ID: _GJYJXNDwz2j8URUWL9dTD",
       "keys": [
@@ -163,7 +398,7 @@
     {
       "entry_id": "_bnYx61JA3Vn6c4jLNMKWE",
       "id": "_bnYx61JA3Vn6c4jLNMKWE",
-      "uid": 3,
+      "uid": 8,
       "name": "Mica Sobiski",
       "comment": "G3 NPC (Stub) converted from World Character ID: _a9EWYPA3nPWnhcAE8wK2P",
       "keys": [
@@ -210,7 +445,7 @@
     {
       "entry_id": "_kVrN3hQGyE1hhn4cAGeWr",
       "id": "_kVrN3hQGyE1hhn4cAGeWr",
-      "uid": 4,
+      "uid": 9,
       "name": "Michael Morne",
       "comment": "G3 NPC (Stub) converted from World Character ID: _rGzj1mDWHH1UBGtFF3W73",
       "keys": [
@@ -257,7 +492,7 @@
     {
       "entry_id": "_NYBPX2Xn1qNTfYxXfLrBW",
       "id": "_NYBPX2Xn1qNTfYxXfLrBW",
-      "uid": 5,
+      "uid": 10,
       "name": "Mikkel Lund",
       "comment": "G3 NPC (Stub) converted from World Character ID: _hE72Bb4R9B8y3CJB6pGh7",
       "keys": [
@@ -304,7 +539,7 @@
     {
       "entry_id": "_fFenjMKyrmeatAWGThEcc",
       "id": "_fFenjMKyrmeatAWGThEcc",
-      "uid": 6,
+      "uid": 11,
       "name": "Mimi Rosé",
       "comment": "G3 NPC (Stub) converted from World Character ID: _rRaX3pC73QGCbX4CUtFE4",
       "keys": [
@@ -351,7 +586,7 @@
     {
       "entry_id": "_8amU9tV33jECR11VzqMxN",
       "id": "_8amU9tV33jECR11VzqMxN",
-      "uid": 7,
+      "uid": 12,
       "name": "Mina Davis",
       "comment": "G3 NPC (Stub) converted from World Character ID: _d3EbAwHWzGaXxaaVF4t6P",
       "keys": [
@@ -398,7 +633,7 @@
     {
       "entry_id": "_ye4TpaayfKkkhrexVef8e",
       "id": "_ye4TpaayfKkkhrexVef8e",
-      "uid": 8,
+      "uid": 13,
       "name": "Molly Oliveira",
       "comment": "G3 NPC (Stub) converted from World Character ID: _dcrK4UEkQnmTnJgEpY4TL",
       "keys": [
@@ -445,7 +680,7 @@
     {
       "entry_id": "_LJJX8Bmk6d2AjMz3QN7x7",
       "id": "_LJJX8Bmk6d2AjMz3QN7x7",
-      "uid": 9,
+      "uid": 14,
       "name": "Monica Suzuki",
       "comment": "G3 NPC (Stub) converted from World Character ID: _rhn3grPt1gFfMT2W6GJVr",
       "keys": [
@@ -492,7 +727,7 @@
     {
       "entry_id": "_RgMqqeC9gAgQrPEYPxzNq",
       "id": "_RgMqqeC9gAgQrPEYPxzNq",
-      "uid": 10,
+      "uid": 15,
       "name": "Moore Elkson",
       "comment": "G3 NPC (Stub) converted from World Character ID: _wnrH6rbDcdJBcCz3AFBPE",
       "keys": [
@@ -539,7 +774,7 @@
     {
       "entry_id": "_qPrAWLFf8z88QGz9KgtHr",
       "id": "_qPrAWLFf8z88QGz9KgtHr",
-      "uid": 11,
+      "uid": 16,
       "name": "Morrigan de Ciel",
       "comment": "G3 NPC (Stub) converted from World Character ID: _PDP9NxDQQj3V8Yytn6x4U",
       "keys": [
@@ -586,7 +821,7 @@
     {
       "entry_id": "_H2Yr1LUBrRpk6M1NcMLPe",
       "id": "_H2Yr1LUBrRpk6M1NcMLPe",
-      "uid": 12,
+      "uid": 17,
       "name": "Mykie Todd",
       "comment": "G3 NPC (Stub) converted from World Character ID: _bQB9CLABy33TWbYpHkNwc",
       "keys": [
@@ -633,7 +868,7 @@
     {
       "entry_id": "_zTwDteVzfXmzg4X12Vy7N",
       "id": "_zTwDteVzfXmzg4X12Vy7N",
-      "uid": 13,
+      "uid": 18,
       "name": "Nate Graves",
       "comment": "G3 NPC (Stub) converted from World Character ID: _PFWFn7wty14J3tfjf7FWF",
       "keys": [
@@ -680,7 +915,7 @@
     {
       "entry_id": "_CLLPKCk1UNjgT8yX4GdXq",
       "id": "_CLLPKCk1UNjgT8yX4GdXq",
-      "uid": 14,
+      "uid": 19,
       "name": "Niamh Aethris",
       "comment": "G3 NPC (Stub) converted from World Character ID: _TVq3MMFAdpRWyNgBYnjHD",
       "keys": [
@@ -727,7 +962,7 @@
     {
       "entry_id": "_TFyep2kGfWALD3tyRTKaw",
       "id": "_TFyep2kGfWALD3tyRTKaw",
-      "uid": 15,
+      "uid": 20,
       "name": "Niamh Duncan",
       "comment": "G3 NPC (Stub) converted from World Character ID: _nbqw8M9w8TNy97B7C3dG2",
       "keys": [
@@ -774,7 +1009,7 @@
     {
       "entry_id": "_FQWw2BkHAMjdKtFTMrnFU",
       "id": "_FQWw2BkHAMjdKtFTMrnFU",
-      "uid": 16,
+      "uid": 21,
       "name": "Nico Cousins",
       "comment": "G3 NPC (Stub) converted from World Character ID: _YWacPXDQYrXzqVtqk4gxX",
       "keys": [
@@ -821,7 +1056,7 @@
     {
       "entry_id": "_WehjewQGHDHept9t6pQyq",
       "id": "_WehjewQGHDHept9t6pQyq",
-      "uid": 17,
+      "uid": 22,
       "name": "Norman Paul Clark",
       "comment": "G3 NPC (Stub) converted from World Character ID: _GJpE8nV9XGB3X8bFYdGq3",
       "keys": [
@@ -868,7 +1103,7 @@
     {
       "entry_id": "_9ERwW86tUnkGdrJaNp7cF",
       "id": "_9ERwW86tUnkGdrJaNp7cF",
-      "uid": 18,
+      "uid": 23,
       "name": "Nunki Astar",
       "comment": "G3 NPC (Stub) converted from World Character ID: _TB6XAyF72Fm2Mw14WzXjN",
       "keys": [
@@ -915,7 +1150,7 @@
     {
       "entry_id": "_HRj6ABbWhYazNYUwLXX21",
       "id": "_HRj6ABbWhYazNYUwLXX21",
-      "uid": 19,
+      "uid": 24,
       "name": "Orion 'Rory' Thorne",
       "comment": "G3 NPC (Stub) converted from World Character ID: _qAERkHQRAC2RKAyj6rr93",
       "keys": [
@@ -964,7 +1199,7 @@
     {
       "entry_id": "_LhPthJ4YpDYLQ3tc7TBKK",
       "id": "_LhPthJ4YpDYLQ3tc7TBKK",
-      "uid": 20,
+      "uid": 25,
       "name": "Orpheus Lopez",
       "comment": "G3 NPC (Stub) converted from World Character ID: _V7ENtJrfphBVHXATjfhAY",
       "keys": [
@@ -1011,7 +1246,7 @@
     {
       "entry_id": "_Yj12LD3jm3Uzk7eyVBwCh",
       "id": "_Yj12LD3jm3Uzk7eyVBwCh",
-      "uid": 21,
+      "uid": 26,
       "name": "Parvati Scylla",
       "comment": "G3 NPC (Stub) converted from World Character ID: _UnE3NLkJVbFKr2mQbaUbD",
       "keys": [
@@ -1058,7 +1293,7 @@
     {
       "entry_id": "_pk73wxG2Bq2JyzgtC9FKp",
       "id": "_pk73wxG2Bq2JyzgtC9FKp",
-      "uid": 22,
+      "uid": 27,
       "name": "Penelope Evans",
       "comment": "G3 NPC (Stub) converted from World Character ID: _PbfpgCntpDhMY3f6yxaqd",
       "keys": [
@@ -1105,7 +1340,7 @@
     {
       "entry_id": "_CGgeQmEXTgJHafd8H6X83",
       "id": "_CGgeQmEXTgJHafd8H6X83",
-      "uid": 23,
+      "uid": 28,
       "name": "Pete",
       "comment": "G3 NPC (Stub) converted from World Character ID: _r6mqCchyKkXg3NmTaLChM",
       "keys": [
@@ -1152,7 +1387,7 @@
     {
       "entry_id": "_rCn81XfeQamfQen2bzy3V",
       "id": "_rCn81XfeQamfQen2bzy3V",
-      "uid": 24,
+      "uid": 29,
       "name": "Pyralis Incendio",
       "comment": "G3 NPC (Stub) converted from World Character ID: _84Qz3dthnh2NJQ7Qmgpjf",
       "keys": [
@@ -1199,7 +1434,7 @@
     {
       "entry_id": "_CzDp7VJ8f3Pdjj2b39dQb",
       "id": "_CzDp7VJ8f3Pdjj2b39dQb",
-      "uid": 25,
+      "uid": 30,
       "name": "Quinn Winterveil",
       "comment": "G3 NPC (Stub) converted from World Character ID: _9hRT2TaTNFjJHnmE1y3aL",
       "keys": [
@@ -1246,7 +1481,7 @@
     {
       "entry_id": "_gQXjYK8RpXBWzUPmPAfFG",
       "id": "_gQXjYK8RpXBWzUPmPAfFG",
-      "uid": 26,
+      "uid": 31,
       "name": "Ralli Masterson",
       "comment": "G3 NPC (Stub) converted from World Character ID: _6rYWXzTNjpJr6ycgxewNx",
       "keys": [
@@ -1293,7 +1528,7 @@
     {
       "entry_id": "_rdWBfMfDJVQcrwCMVLNKe",
       "id": "_rdWBfMfDJVQcrwCMVLNKe",
-      "uid": 27,
+      "uid": 32,
       "name": "Ramiel Santi",
       "comment": "G3 NPC (Stub) converted from World Character ID: _t6p1wqKTLTBhDmkUGb6Y7",
       "keys": [
@@ -1340,7 +1575,7 @@
     {
       "entry_id": "_C7rkTFjBXTLPYd8Fj4jgr",
       "id": "_C7rkTFjBXTLPYd8Fj4jgr",
-      "uid": 28,
+      "uid": 33,
       "name": "Raziel",
       "comment": "G3 NPC (Stub) converted from World Character ID: _FFb3gYJ1f47LNDf87VyNa",
       "keys": [
@@ -1387,7 +1622,7 @@
     {
       "entry_id": "_Jj9tqdDWTWUgQFKGALPyK",
       "id": "_Jj9tqdDWTWUgQFKGALPyK",
-      "uid": 29,
+      "uid": 34,
       "name": "Relia Dalca",
       "comment": "G3 NPC (Stub) converted from World Character ID: _FKyVCGUfARrT9gMRktrD9",
       "keys": [
@@ -1434,7 +1669,7 @@
     {
       "entry_id": "_1y4mCqaaMMLR8zVWq9HfC",
       "id": "_1y4mCqaaMMLR8zVWq9HfC",
-      "uid": 30,
+      "uid": 35,
       "name": "Rex Cragjaw",
       "comment": "G3 NPC (Stub) converted from World Character ID: _7raqFVVVUXDLfjwyx3x7N",
       "keys": [
@@ -1481,7 +1716,7 @@
     {
       "entry_id": "_UXjq1bzEGDkeN2JEBxxtr",
       "id": "_UXjq1bzEGDkeN2JEBxxtr",
-      "uid": 31,
+      "uid": 36,
       "name": "Rian Ryder",
       "comment": "G3 NPC (Stub) converted from World Character ID: _qW4CTpMTWtmDAn1RKXFVt",
       "keys": [
@@ -1528,7 +1763,7 @@
     {
       "entry_id": "_PBdhWnjCCUA1Yj8GDBT8A",
       "id": "_PBdhWnjCCUA1Yj8GDBT8A",
-      "uid": 32,
+      "uid": 37,
       "name": "Richard Lyon",
       "comment": "G3 NPC (Stub) converted from World Character ID: _eFXdAX9nRKUk2eEKtVCzM",
       "keys": [
@@ -1575,7 +1810,7 @@
     {
       "entry_id": "_8eHDLtk9wae4EPVgmqB4b",
       "id": "_8eHDLtk9wae4EPVgmqB4b",
-      "uid": 33,
+      "uid": 38,
       "name": "Riley Rowan",
       "comment": "G3 NPC (Stub) converted from World Character ID: _Ltn6JFtLkXpLVMWTq1wbb",
       "keys": [
@@ -1622,7 +1857,7 @@
     {
       "entry_id": "_bL7QepWGqKXY4a8j9fJAb",
       "id": "_bL7QepWGqKXY4a8j9fJAb",
-      "uid": 34,
+      "uid": 39,
       "name": "Rosalie Cruz",
       "comment": "G3 NPC (Stub) converted from World Character ID: _tMVAdJXpmQfhx2fytJtfA",
       "keys": [
@@ -1669,7 +1904,7 @@
     {
       "entry_id": "_AE14UbjYewYTpfwKjPMqf",
       "id": "_AE14UbjYewYTpfwKjPMqf",
-      "uid": 35,
+      "uid": 40,
       "name": "Rosamaría \"Rose\" Luna Jiménez",
       "comment": "G3 NPC (Stub) converted from World Character ID: _DEjwg4yT7qLhXfeUUX83W",
       "keys": [
@@ -1718,7 +1953,7 @@
     {
       "entry_id": "_qKR22WBWkChfWGAXMMBDy",
       "id": "_qKR22WBWkChfWGAXMMBDy",
-      "uid": 36,
+      "uid": 41,
       "name": "Rosaria Tayden",
       "comment": "G3 NPC (Stub) converted from World Character ID: _z18zmWYM7QyE8CxXfRh7R",
       "keys": [
@@ -1765,7 +2000,7 @@
     {
       "entry_id": "_LYNTzm4HNFQwMHaLG4RY8",
       "id": "_LYNTzm4HNFQwMHaLG4RY8",
-      "uid": 37,
+      "uid": 42,
       "name": "Ruckus Erann",
       "comment": "G3 NPC (Stub) converted from World Character ID: _7V8RxHzdUP4wBJ4qDN14Q",
       "keys": [
@@ -1812,7 +2047,7 @@
     {
       "entry_id": "_qaX63DVkULKefmAwC6aPr",
       "id": "_qaX63DVkULKefmAwC6aPr",
-      "uid": 38,
+      "uid": 43,
       "name": "Rune Burns",
       "comment": "G3 NPC (Stub) converted from World Character ID: _tNqenaLkEa9rkaLRcEANw",
       "keys": [
@@ -1859,7 +2094,7 @@
     {
       "entry_id": "_RBXX1PHQfUUtKLUrp8gLV",
       "id": "_RBXX1PHQfUUtKLUrp8gLV",
-      "uid": 39,
+      "uid": 44,
       "name": "Sabrina Taylor",
       "comment": "G3 NPC (Stub) converted from World Character ID: _pxjMwW72NacLkcgjtyN1D",
       "keys": [
@@ -1906,7 +2141,7 @@
     {
       "entry_id": "_yEp4fx9eCMtDXt4hVntY1",
       "id": "_yEp4fx9eCMtDXt4hVntY1",
-      "uid": 40,
+      "uid": 45,
       "name": "Sachiel Vixen",
       "comment": "G3 NPC (Stub) converted from World Character ID: _RArhahnw6NBKtXjqd4jq2",
       "keys": [
@@ -1953,7 +2188,7 @@
     {
       "entry_id": "_YPqBPFFcngDRzqYnKAgPm",
       "id": "_YPqBPFFcngDRzqYnKAgPm",
-      "uid": 41,
+      "uid": 46,
       "name": "Sakura Farley",
       "comment": "G3 NPC (Stub) converted from World Character ID: _BaDaAQ12tFad1dbGbxYP8",
       "keys": [
@@ -2000,7 +2235,7 @@
     {
       "entry_id": "_npqWcJ7Jrhjpg7zCXygjm",
       "id": "_npqWcJ7Jrhjpg7zCXygjm",
-      "uid": 42,
+      "uid": 47,
       "name": "Sawyer Slevin",
       "comment": "G3 NPC (Stub) converted from World Character ID: _mnCkbmF4HpEwQ9AfJF6GE",
       "keys": [
@@ -2047,7 +2282,7 @@
     {
       "entry_id": "_wte884j6trYHKwC3D2jAk",
       "id": "_wte884j6trYHKwC3D2jAk",
-      "uid": 43,
+      "uid": 48,
       "name": "Seamus O'dere",
       "comment": "G3 NPC (Stub) converted from World Character ID: _npF7awtJaEVpThCArTBWc",
       "keys": [
@@ -2094,7 +2329,7 @@
     {
       "entry_id": "_Jb7L8gcNKC8V73qXCgebb",
       "id": "_Jb7L8gcNKC8V73qXCgebb",
-      "uid": 44,
+      "uid": 49,
       "name": "Sebastian 'Seb' Northwood",
       "comment": "G3 NPC (Stub) converted from World Character ID: _9hFn6424UgmALbaqxJXDt",
       "keys": [
@@ -2143,7 +2378,7 @@
     {
       "entry_id": "_7jzj4tqDJrdMRPtJ6bbVT",
       "id": "_7jzj4tqDJrdMRPtJ6bbVT",
-      "uid": 45,
+      "uid": 50,
       "name": "Sebastian Taylor",
       "comment": "G3 NPC (Stub) converted from World Character ID: _mEQB7Fd1KXtXVLRqp9cTx",
       "keys": [
@@ -2190,7 +2425,7 @@
     {
       "entry_id": "_haQR948E9d6z2Vka9f3M1",
       "id": "_haQR948E9d6z2Vka9f3M1",
-      "uid": 46,
+      "uid": 51,
       "name": "Sephra Decaris",
       "comment": "G3 NPC (Stub) converted from World Character ID: _qNtrWg4exyH7FtjHfUhUC",
       "keys": [
@@ -2237,7 +2472,7 @@
     {
       "entry_id": "_zEE3NrgytVmjrDM24rzgY",
       "id": "_zEE3NrgytVmjrDM24rzgY",
-      "uid": 47,
+      "uid": 52,
       "name": "Seth Flare",
       "comment": "G3 NPC (Stub) converted from World Character ID: _qrUHf3yCJqENcpc7yzzpn",
       "keys": [
@@ -2284,7 +2519,7 @@
     {
       "entry_id": "_KtHPm4LaVRaJnCD9N1wP9",
       "id": "_KtHPm4LaVRaJnCD9N1wP9",
-      "uid": 48,
+      "uid": 53,
       "name": "Shay Bernstein",
       "comment": "G3 NPC (Stub) converted from World Character ID: _zjFwCbhT96wYT499EfYKf",
       "keys": [
@@ -2331,7 +2566,7 @@
     {
       "entry_id": "_JM73mRrP1HfRzUajYgkfp",
       "id": "_JM73mRrP1HfRzUajYgkfp",
-      "uid": 49,
+      "uid": 54,
       "name": "Simeon Langston",
       "comment": "G3 NPC (Stub) converted from World Character ID: _HQ1fECj2qnhcn2PTBqmV4",
       "keys": [
@@ -2378,7 +2613,7 @@
     {
       "entry_id": "_9hMg3jRwYmQdRhrbCFTdP",
       "id": "_9hMg3jRwYmQdRhrbCFTdP",
-      "uid": 50,
+      "uid": 55,
       "name": "Simon Ramirez",
       "comment": "G3 NPC (Stub) converted from World Character ID: _cFGDN9kQEGBLfcFdAzGrY",
       "keys": [
@@ -2425,7 +2660,7 @@
     {
       "entry_id": "_DVXrTLWH1FCxjbzMPaXMn",
       "id": "_DVXrTLWH1FCxjbzMPaXMn",
-      "uid": 51,
+      "uid": 56,
       "name": "Sofija Kmetec",
       "comment": "G3 NPC (Stub) converted from World Character ID: _ALzAtPw7ACna38bHN7fNf",
       "keys": [
@@ -2472,7 +2707,7 @@
     {
       "entry_id": "_hTrGa7LV8Rzb4KXMezpmJ",
       "id": "_hTrGa7LV8Rzb4KXMezpmJ",
-      "uid": 52,
+      "uid": 57,
       "name": "Sookie Evans",
       "comment": "G3 NPC (Stub) converted from World Character ID: _P8CzfaWHp1WjewUapfBh6",
       "keys": [
@@ -2519,7 +2754,7 @@
     {
       "entry_id": "_Mq3TU9YcQr9Ktx7TyJJU6",
       "id": "_Mq3TU9YcQr9Ktx7TyJJU6",
-      "uid": 53,
+      "uid": 58,
       "name": "Sophie Bronte",
       "comment": "G3 NPC (Stub) converted from World Character ID: _yFzmgJdE67L1zeyx9nTUB",
       "keys": [
@@ -2566,7 +2801,7 @@
     {
       "entry_id": "_14qCHKmLxpCe7JmYrGQVe",
       "id": "_14qCHKmLxpCe7JmYrGQVe",
-      "uid": 54,
+      "uid": 59,
       "name": "Sorin Vale",
       "comment": "G3 NPC (Stub) converted from World Character ID: _zf4Ht1KKcKBC4DkBABJmH",
       "keys": [
@@ -2613,7 +2848,7 @@
     {
       "entry_id": "_1pNGV62dqK3hVGndCVgDJ",
       "id": "_1pNGV62dqK3hVGndCVgDJ",
-      "uid": 55,
+      "uid": 60,
       "name": "Spencer Mason Clifford",
       "comment": "G3 NPC (Stub) converted from World Character ID: _pdxXcPYmFRNpcqHkwmzaC",
       "keys": [
@@ -2660,7 +2895,7 @@
     {
       "entry_id": "_r8KLNNr6RVEXP1cL7PXfy",
       "id": "_r8KLNNr6RVEXP1cL7PXfy",
-      "uid": 56,
+      "uid": 61,
       "name": "Talon",
       "comment": "G3 NPC (Stub) converted from World Character ID: _rbr7yDzC1aMjKE1dVJqGw",
       "keys": [
@@ -2707,7 +2942,7 @@
     {
       "entry_id": "_FJUYR3QAxLMejyBbVTkJY",
       "id": "_FJUYR3QAxLMejyBbVTkJY",
-      "uid": 57,
+      "uid": 62,
       "name": "Tauren Asterionis",
       "comment": "G3 NPC (Stub) converted from World Character ID: _EB9eW8A4pVX44L1p2wUJC",
       "keys": [
@@ -2754,7 +2989,7 @@
     {
       "entry_id": "_B9cytkQcCPGdRepthTyJr",
       "id": "_B9cytkQcCPGdRepthTyJr",
-      "uid": 58,
+      "uid": 63,
       "name": "Theran",
       "comment": "G3 NPC (Stub) converted from World Character ID: _DFUzgJAFRKEkhmEycREAP",
       "keys": [
@@ -2801,7 +3036,7 @@
     {
       "entry_id": "_CzLmxC1YALYcLzFpaNH8U",
       "id": "_CzLmxC1YALYcLzFpaNH8U",
-      "uid": 59,
+      "uid": 64,
       "name": "Thylos Dietrich",
       "comment": "G3 NPC (Stub) converted from World Character ID: _rJ26kHfhNjBCRatJeq34L",
       "keys": [
@@ -2848,7 +3083,7 @@
     {
       "entry_id": "_EayWDFGm4WGbbemm6EyG3",
       "id": "_EayWDFGm4WGbbemm6EyG3",
-      "uid": 60,
+      "uid": 65,
       "name": "Tulip Peachcone",
       "comment": "G3 NPC (Stub) converted from World Character ID: _WfcXGnCV87t7b178cYVGa",
       "keys": [
@@ -2895,7 +3130,7 @@
     {
       "entry_id": "_7C6ehhGXMqcF6gKEbcPrb",
       "id": "_7C6ehhGXMqcF6gKEbcPrb",
-      "uid": 61,
+      "uid": 66,
       "name": "[OBSOLETE DUPLICATE] Valentine Rossfeld",
       "comment": "G3 NPC (Stub) converted from World Character ID: _h6kHQzhwqr89D2q8hCWGf",
       "keys": [
@@ -2944,7 +3179,7 @@
     {
       "entry_id": "_q17gNxfG93hJ3T1Jx8Kyj",
       "id": "_q17gNxfG93hJ3T1Jx8Kyj",
-      "uid": 62,
+      "uid": 67,
       "name": "Valkyrie",
       "comment": "G3 NPC (Stub) converted from World Character ID: _jwn3JWHDnXcBNQcfkmpVG",
       "keys": [
@@ -2991,7 +3226,7 @@
     {
       "entry_id": "_rCQXrhG1e6VF3wQ4QNxxM",
       "id": "_rCQXrhG1e6VF3wQ4QNxxM",
-      "uid": 63,
+      "uid": 68,
       "name": "Vasily Konstantinov",
       "comment": "G3 NPC (Stub) converted from World Character ID: _gNyKkeyMR1pgyf8w2rCEt",
       "keys": [
@@ -3038,7 +3273,7 @@
     {
       "entry_id": "_UHTg7Y4hrxLc8QUDn6eQx",
       "id": "_UHTg7Y4hrxLc8QUDn6eQx",
-      "uid": 64,
+      "uid": 69,
       "name": "Veronica Vargas",
       "comment": "G3 NPC (Stub) converted from World Character ID: _TYdpLCXe9fCtbLhyFhFaG",
       "keys": [
@@ -3085,7 +3320,7 @@
     {
       "entry_id": "_qEg6BjafRVFe43283CKBe",
       "id": "_qEg6BjafRVFe43283CKBe",
-      "uid": 65,
+      "uid": 70,
       "name": "Vesper Martin",
       "comment": "G3 NPC (Stub) converted from World Character ID: _WNydxVfx4WVRehjJBT4GB",
       "keys": [
@@ -3132,7 +3367,7 @@
     {
       "entry_id": "_PMrkbG1LdXCx8Py4pxXQj",
       "id": "_PMrkbG1LdXCx8Py4pxXQj",
-      "uid": 66,
+      "uid": 71,
       "name": "Xeikon Omeria",
       "comment": "G3 NPC (Stub) converted from World Character ID: _mgwnFRhb2NzjdCE3CjgLq",
       "keys": [
@@ -3179,7 +3414,7 @@
     {
       "entry_id": "_QTFG8WX4JPcCGFKEna9yq",
       "id": "_QTFG8WX4JPcCGFKEna9yq",
-      "uid": 67,
+      "uid": 72,
       "name": "Yehlan Everhart",
       "comment": "G3 NPC (Stub) converted from World Character ID: _LEQfbQx4FwMpFjMWrjaEn",
       "keys": [
@@ -3226,7 +3461,7 @@
     {
       "entry_id": "_n1k8TGQ9cAhJtFqbaWtag",
       "id": "_n1k8TGQ9cAhJtFqbaWtag",
-      "uid": 68,
+      "uid": 73,
       "name": "Yim Arida",
       "comment": "G3 NPC (Stub) converted from World Character ID: _1CEy84qMA3DQHkgcMRU81",
       "keys": [
@@ -3273,7 +3508,7 @@
     {
       "entry_id": "_jbkWaLDV6zRkLBE66xe1a",
       "id": "_jbkWaLDV6zRkLBE66xe1a",
-      "uid": 69,
+      "uid": 74,
       "name": "Yoshi",
       "comment": "G3 NPC (Stub) converted from World Character ID: _x37hr3BRayQEjDe183JTL",
       "keys": [
@@ -3320,7 +3555,7 @@
     {
       "entry_id": "_czrbc7XA93Lph71VyP2Aj",
       "id": "_czrbc7XA93Lph71VyP2Aj",
-      "uid": 70,
+      "uid": 75,
       "name": "Yuna Fujimoto",
       "comment": "G3 NPC (Stub) converted from World Character ID: _kYFaYUDLjJMr3DnMGedK7",
       "keys": [
@@ -3367,7 +3602,7 @@
     {
       "entry_id": "_LXTQMGLCDBh3V1K2hKhDc",
       "id": "_LXTQMGLCDBh3V1K2hKhDc",
-      "uid": 71,
+      "uid": 76,
       "name": "Zack",
       "comment": "G3 NPC (Stub) converted from World Character ID: _R2Cf1zPk1eHdbyPA4q6qt",
       "keys": [
@@ -3414,7 +3649,7 @@
     {
       "entry_id": "_Xzqhpw9V2QkfJRYf4fDKP",
       "id": "_Xzqhpw9V2QkfJRYf4fDKP",
-      "uid": 72,
+      "uid": 77,
       "name": "Zara Huon",
       "comment": "G3 NPC (Stub) converted from World Character ID: _pDkcDHXD4rGajbCkk7G7W",
       "keys": [
@@ -3461,7 +3696,7 @@
     {
       "entry_id": "_422VNLHQFQzTzTNNTJffN",
       "id": "_422VNLHQFQzTzTNNTJffN",
-      "uid": 73,
+      "uid": 78,
       "name": "Zarthus 'Zar' Randolph",
       "comment": "G3 NPC (Stub) converted from World Character ID: _TMcMhjUzbr7h99h3nhha1",
       "keys": [
@@ -3510,7 +3745,7 @@
     {
       "entry_id": "_rzyXDMedYaNNa4TKkJX3Y",
       "id": "_rzyXDMedYaNNa4TKkJX3Y",
-      "uid": 74,
+      "uid": 79,
       "name": "Zerik Solano",
       "comment": "G3 NPC (Stub) converted from World Character ID: _EJUmXjXEU791NUyhwKxak",
       "keys": [
@@ -3557,7 +3792,7 @@
     {
       "entry_id": "_qWx9J7M8XbchR1mMVJjAx",
       "id": "_qWx9J7M8XbchR1mMVJjAx",
-      "uid": 75,
+      "uid": 80,
       "name": "Adrian Locke",
       "comment": "G3 NPC (Real) converted from World Character ID: _D4z3RJETXfMgQh9Ek2qE6",
       "keys": [
@@ -3604,7 +3839,7 @@
     {
       "entry_id": "_pHfzkBEj2JDnrP96BprUA",
       "id": "_pHfzkBEj2JDnrP96BprUA",
-      "uid": 76,
+      "uid": 81,
       "name": "Aiden Anderson",
       "comment": "G3 NPC (Real) converted from World Character ID: _fg7fY3dyNCnNzeT1GVYhP",
       "keys": [
@@ -3651,7 +3886,7 @@
     {
       "entry_id": "_wpk3gjhbMd6RzrmTVtz3D",
       "id": "_wpk3gjhbMd6RzrmTVtz3D",
-      "uid": 77,
+      "uid": 82,
       "name": "Alad C.",
       "comment": "G3 NPC (Real) converted from World Character ID: _GPn3mTr9FhL4W17dw4EFq",
       "keys": [
@@ -3698,7 +3933,7 @@
     {
       "entry_id": "_daK4mwDzDLbCYQn4j2JpM",
       "id": "_daK4mwDzDLbCYQn4j2JpM",
-      "uid": 78,
+      "uid": 83,
       "name": "Alistair DeVille",
       "comment": "G3 NPC (Real) converted from World Character ID: _gQHa6b2UzdBXRUmJ8Mk43",
       "keys": [
@@ -3745,7 +3980,7 @@
     {
       "entry_id": "_V21n1kdhhKAqLY38qBq2z",
       "id": "_V21n1kdhhKAqLY38qBq2z",
-      "uid": 79,
+      "uid": 84,
       "name": "Amelia DeVille",
       "comment": "G3 NPC (Real) converted from World Character ID: _6weeD6xTYcRQB9GJWGzVD",
       "keys": [
@@ -3792,7 +4027,7 @@
     {
       "entry_id": "_NUQ2RkcCCx89a6whtAKPT",
       "id": "_NUQ2RkcCCx89a6whtAKPT",
-      "uid": 80,
+      "uid": 85,
       "name": "Aris Thorne",
       "comment": "G3 NPC (Real) converted from World Character ID: _Hc6VKVCgW3xU9WEth88VA",
       "keys": [
@@ -3839,7 +4074,7 @@
     {
       "entry_id": "_Cfb6BWfbqtcARjhGBfx1V",
       "id": "_Cfb6BWfbqtcARjhGBfx1V",
-      "uid": 81,
+      "uid": 86,
       "name": "Arran Parker",
       "comment": "G3 NPC (Real) converted from World Character ID: _e6PtPLg6ENnVknQHpEmfK",
       "keys": [
@@ -3886,7 +4121,7 @@
     {
       "entry_id": "_8Bq2AdfPwbECRUg2AfFLL",
       "id": "_8Bq2AdfPwbECRUg2AfFLL",
-      "uid": 82,
+      "uid": 87,
       "name": "Arthur Grey",
       "comment": "G3 NPC (Real) converted from World Character ID: _x1mwLndFm3eJr7dzjMEz7",
       "keys": [
@@ -3933,7 +4168,7 @@
     {
       "entry_id": "_PgRbcNH3crWGJaTMPbg1J",
       "id": "_PgRbcNH3crWGJaTMPbg1J",
-      "uid": 83,
+      "uid": 88,
       "name": "Arturo Cardona",
       "comment": "G3 NPC (Real) converted from World Character ID: _LxUWBR6UG1FX9gjXeY8Ky",
       "keys": [
@@ -3980,7 +4215,7 @@
     {
       "entry_id": "_Btpq4zn7nMwpUm6NmtGjK",
       "id": "_Btpq4zn7nMwpUm6NmtGjK",
-      "uid": 84,
+      "uid": 89,
       "name": "Atlas Teague",
       "comment": "G3 NPC (Real) converted from World Character ID: _HfbrnbLjQUf2jdptGtaMp",
       "keys": [
@@ -4027,7 +4262,7 @@
     {
       "entry_id": "_jNQKTMPkdCAD6dHRqJwBD",
       "id": "_jNQKTMPkdCAD6dHRqJwBD",
-      "uid": 85,
+      "uid": 90,
       "name": "August Reed",
       "comment": "G3 NPC (Real) converted from World Character ID: _wQmaCgpTUm7dGdq1crr28",
       "keys": [
@@ -4074,7 +4309,7 @@
     {
       "entry_id": "_tdy7cp4aQA4P1ne2mPQEm",
       "id": "_tdy7cp4aQA4P1ne2mPQEm",
-      "uid": 86,
+      "uid": 91,
       "name": "Bram Beaumont",
       "comment": "G3 NPC (Real) converted from World Character ID: _JRmw4NGgUKF9NVrKgqWxt",
       "keys": [
@@ -4121,7 +4356,7 @@
     {
       "entry_id": "_1gpXwKnwEgrnCDt2gExPC",
       "id": "_1gpXwKnwEgrnCDt2gExPC",
-      "uid": 87,
+      "uid": 92,
       "name": "Caim Morningstar",
       "comment": "G3 NPC (Real) converted from World Character ID: _2LnhUCMUU2pWjLbCtdPbd",
       "keys": [
@@ -4168,7 +4403,7 @@
     {
       "entry_id": "_mYThwNmNhpEDGMXXeHbRH",
       "id": "_mYThwNmNhpEDGMXXeHbRH",
-      "uid": 88,
+      "uid": 93,
       "name": "Cato",
       "comment": "G3 NPC (Real) converted from World Character ID: _JC1MbEUMpwynW37PVU9fR",
       "keys": [
@@ -4215,7 +4450,7 @@
     {
       "entry_id": "_28y2ry4K1g6GPCPNFxMfc",
       "id": "_28y2ry4K1g6GPCPNFxMfc",
-      "uid": 89,
+      "uid": 94,
       "name": "Charles \"Charlie\" DeVille",
       "comment": "G3 NPC (Real) converted from World Character ID: _FjnaULjNgMhbct6pFXqPN",
       "keys": [
@@ -4264,7 +4499,7 @@
     {
       "entry_id": "_9BNDpAFVL3RNDYMLN1Px9",
       "id": "_9BNDpAFVL3RNDYMLN1Px9",
-      "uid": 90,
+      "uid": 95,
       "name": "Cyrus Camden",
       "comment": "G3 NPC (Real) converted from World Character ID: _YckewRYA27qjRFrjGrQ87",
       "keys": [
@@ -4311,7 +4546,7 @@
     {
       "entry_id": "_Ejkq1WHj12C8mK6D1mnbz",
       "id": "_Ejkq1WHj12C8mK6D1mnbz",
-      "uid": 91,
+      "uid": 96,
       "name": "Dallas Rhodes",
       "comment": "G3 NPC (Real) converted from World Character ID: _EFhQUz7zTT9ncLpxpp7TX",
       "keys": [
@@ -4358,7 +4593,7 @@
     {
       "entry_id": "_ecDLJxhYBMp9783yhLd7U",
       "id": "_ecDLJxhYBMp9783yhLd7U",
-      "uid": 92,
+      "uid": 97,
       "name": "Damien Bishop",
       "comment": "G3 NPC (Real) converted from World Character ID: _bdUxw6mQtJFRNtaK3tFkE",
       "keys": [
@@ -4405,7 +4640,7 @@
     {
       "entry_id": "_UhkhyNLM7wrNXmg2YnWQ1",
       "id": "_UhkhyNLM7wrNXmg2YnWQ1",
-      "uid": 93,
+      "uid": 98,
       "name": "Emil",
       "comment": "G3 NPC (Real) converted from World Character ID: _CzjGd8k87dKNdFUgLNV8z",
       "keys": [
@@ -4452,7 +4687,7 @@
     {
       "entry_id": "_eMbJYXD84FbBzextUB87B",
       "id": "_eMbJYXD84FbBzextUB87B",
-      "uid": 94,
+      "uid": 99,
       "name": "Emlyn Danes",
       "comment": "G3 NPC (Real) converted from World Character ID: _wQpJEH8Q96dkKXCfbFWgA",
       "keys": [
@@ -4499,7 +4734,7 @@
     {
       "entry_id": "_n12G49qQnaxhjXRat2dwe",
       "id": "_n12G49qQnaxhjXRat2dwe",
-      "uid": 95,
+      "uid": 100,
       "name": "Eric Grey",
       "comment": "G3 NPC (Real) converted from World Character ID: _yCF8zdAWQtQT488UKtJRR",
       "keys": [
@@ -4546,7 +4781,7 @@
     {
       "entry_id": "_DwnX6fHLCt4p3wdnTGNBK",
       "id": "_DwnX6fHLCt4p3wdnTGNBK",
-      "uid": 96,
+      "uid": 101,
       "name": "Everett Rottmore",
       "comment": "G3 NPC (Real) converted from World Character ID: _Hm6kdqEVhGhr2azCE8fFM",
       "keys": [
@@ -4593,7 +4828,7 @@
     {
       "entry_id": "_mYk1kEhVbRb1bgQyrJ24w",
       "id": "_mYk1kEhVbRb1bgQyrJ24w",
-      "uid": 97,
+      "uid": 102,
       "name": "Gabriel",
       "comment": "G3 NPC (Real) converted from World Character ID: _B9yX6RQDDBn9ftpDKcFQR",
       "keys": [
@@ -4640,7 +4875,7 @@
     {
       "entry_id": "_fnUV8AjKXYP9bA2wr1Y3M",
       "id": "_fnUV8AjKXYP9bA2wr1Y3M",
-      "uid": 98,
+      "uid": 103,
       "name": "Garrett Locke",
       "comment": "G3 NPC (Real) converted from World Character ID: _fhfjJ1YkgcBWqxhBTtBhf",
       "keys": [
@@ -4687,7 +4922,7 @@
     {
       "entry_id": "_f84YxjrVR6mmyz2Lx93fg",
       "id": "_f84YxjrVR6mmyz2Lx93fg",
-      "uid": 99,
+      "uid": 104,
       "name": "Gianni Luciano",
       "comment": "G3 NPC (Real) converted from World Character ID: _H9bkDfxdQjCTb1QmDnFzt",
       "keys": [
@@ -4734,7 +4969,7 @@
     {
       "entry_id": "_dUJ6ThMkUD186xcPAQ9VX",
       "id": "_dUJ6ThMkUD186xcPAQ9VX",
-      "uid": 100,
+      "uid": 105,
       "name": "Graham Purcell",
       "comment": "G3 NPC (Real) converted from World Character ID: _wXfwPkxLAUKUUBkBe7yLL",
       "keys": [
@@ -4781,7 +5016,7 @@
     {
       "entry_id": "_qpf2jNWCw3PTYdhmBpcaA",
       "id": "_qpf2jNWCw3PTYdhmBpcaA",
-      "uid": 101,
+      "uid": 106,
       "name": "Harlow MacGregor",
       "comment": "G3 NPC (Real) converted from World Character ID: _ErE1aA4ychtDkNqGYtzpc",
       "keys": [
@@ -4828,7 +5063,7 @@
     {
       "entry_id": "_JbW66zRKgne8FTGHrpDxt",
       "id": "_JbW66zRKgne8FTGHrpDxt",
-      "uid": 102,
+      "uid": 107,
       "name": "Ignis",
       "comment": "G3 NPC (Real) converted from World Character ID: _zMY7rT4xEEMxUXkcHQpyg",
       "keys": [
@@ -4875,7 +5110,7 @@
     {
       "entry_id": "_PPMf6d4cC2CMrfcbTLWn7",
       "id": "_PPMf6d4cC2CMrfcbTLWn7",
-      "uid": 103,
+      "uid": 108,
       "name": "Jake Thompson",
       "comment": "G3 NPC (Real) converted from World Character ID: _GEM6nCQFFMQ6Raa1kPJHY",
       "keys": [
@@ -4922,7 +5157,7 @@
     {
       "entry_id": "_VnnHYRVGCBQJPtUeLUWTH",
       "id": "_VnnHYRVGCBQJPtUeLUWTH",
-      "uid": 104,
+      "uid": 109,
       "name": "Jayce Collins",
       "comment": "G3 NPC (Real) converted from World Character ID: _UXn39zTRMxeqXdRtKJttJ",
       "keys": [
@@ -4969,7 +5204,7 @@
     {
       "entry_id": "_PMXN2UcUhfjfY1qrRe16G",
       "id": "_PMXN2UcUhfjfY1qrRe16G",
-      "uid": 105,
+      "uid": 110,
       "name": "Julian Bieri",
       "comment": "G3 NPC (Real) converted from World Character ID: _dxqAUrTJ7NF4DYEC2LNmF",
       "keys": [
@@ -5016,7 +5251,7 @@
     {
       "entry_id": "_gQY3q1Pf4wRJJE99wzLmz",
       "id": "_gQY3q1Pf4wRJJE99wzLmz",
-      "uid": 106,
+      "uid": 111,
       "name": "Kade Leavis",
       "comment": "G3 NPC (Real) converted from World Character ID: _BAkbA3QcaqpcKVYNNBA3w",
       "keys": [
@@ -5063,7 +5298,7 @@
     {
       "entry_id": "_EGCtPjBFwJKVG1T8kTmTA",
       "id": "_EGCtPjBFwJKVG1T8kTmTA",
-      "uid": 107,
+      "uid": 112,
       "name": "Kai Mitchell",
       "comment": "G3 NPC (Real) converted from World Character ID: _qgdVqj1EJbCJCLAmUCa32",
       "keys": [
@@ -5110,7 +5345,7 @@
     {
       "entry_id": "_gQgy8Q9xhgTdVmDxPjYwR",
       "id": "_gQgy8Q9xhgTdVmDxPjYwR",
-      "uid": 108,
+      "uid": 113,
       "name": "Kai Monroe",
       "comment": "G3 NPC (Real) converted from World Character ID: _aGV3qat7DTa2k1LQ12Kq7",
       "keys": [
@@ -5157,7 +5392,7 @@
     {
       "entry_id": "_yYneqxUxmTmgXC11yaEpM",
       "id": "_yYneqxUxmTmgXC11yaEpM",
-      "uid": 109,
+      "uid": 114,
       "name": "Lennox McKay",
       "comment": "G3 NPC (Real) converted from World Character ID: _VXHtHNPy1cgxV2kKEJzJn",
       "keys": [
@@ -5204,7 +5439,7 @@
     {
       "entry_id": "_fbebf7KgCQkDQM4rK4dEb",
       "id": "_fbebf7KgCQkDQM4rK4dEb",
-      "uid": 110,
+      "uid": 115,
       "name": "Levi Graham",
       "comment": "G3 NPC (Real) converted from World Character ID: _HMwWXF9JtgqRyK3jTq4CB",
       "keys": [
@@ -5251,7 +5486,7 @@
     {
       "entry_id": "_zdkPteyYJRkRJRb9pkFVb",
       "id": "_zdkPteyYJRkRJRb9pkFVb",
-      "uid": 111,
+      "uid": 116,
       "name": "Miles Airhardt",
       "comment": "G3 NPC (Real) converted from World Character ID: _zccx36g3CpyD6j1a8fdwn",
       "keys": [
@@ -5298,7 +5533,7 @@
     {
       "entry_id": "_r7BVMCaBWL9Fcw7nDGmp8",
       "id": "_r7BVMCaBWL9Fcw7nDGmp8",
-      "uid": 112,
+      "uid": 117,
       "name": "Milo Grayson",
       "comment": "G3 NPC (Real) converted from World Character ID: _8tmte32HpV239AcrUFcRD",
       "keys": [
@@ -5345,7 +5580,7 @@
     {
       "entry_id": "_JMC7yJkmUy8fUHJdqzzjJ",
       "id": "_JMC7yJkmUy8fUHJdqzzjJ",
-      "uid": 113,
+      "uid": 118,
       "name": "Neon Purr",
       "comment": "G3 NPC (Real) converted from World Character ID: _Y3HUfA4Y2QwpAHNncDx3a",
       "keys": [
@@ -5392,7 +5627,7 @@
     {
       "entry_id": "_dVWcw383agThczLcLjD9g",
       "id": "_dVWcw383agThczLcLjD9g",
-      "uid": 114,
+      "uid": 119,
       "name": "Nic Lucero",
       "comment": "G3 NPC (Real) converted from World Character ID: _HprRJXTV1CaCWtXktW1pR",
       "keys": [
@@ -5439,7 +5674,7 @@
     {
       "entry_id": "_C7hrQWLcrc4Pp86AP4b1a",
       "id": "_C7hrQWLcrc4Pp86AP4b1a",
-      "uid": 115,
+      "uid": 120,
       "name": "Nickolas Wolffe",
       "comment": "G3 NPC (Real) converted from World Character ID: _mqQXacnFftjXafhTtDDeh",
       "keys": [
@@ -5486,7 +5721,7 @@
     {
       "entry_id": "_PdV7g72RUY8Ga9UnYkcpX",
       "id": "_PdV7g72RUY8Ga9UnYkcpX",
-      "uid": 116,
+      "uid": 121,
       "name": "Park Jae-Sung",
       "comment": "G3 NPC (Real) converted from World Character ID: _7MnMHDCeKtNwwaUKLXhkm",
       "keys": [
@@ -5533,7 +5768,7 @@
     {
       "entry_id": "_bUq7rjEBTkTDbXP6UjxWY",
       "id": "_bUq7rjEBTkTDbXP6UjxWY",
-      "uid": 117,
+      "uid": 122,
       "name": "Persephone",
       "comment": "G3 NPC (Real) converted from World Character ID: _XGhNaj7aPmnEa9HbbDm1k",
       "keys": [
@@ -5580,7 +5815,7 @@
     {
       "entry_id": "_y3k3xn7aXnbmyb9XJcC9G",
       "id": "_y3k3xn7aXnbmyb9XJcC9G",
-      "uid": 118,
+      "uid": 123,
       "name": "Professor Dryden Kiwetin",
       "comment": "G3 NPC (Real) converted from World Character ID: _LMBDb78CUFJ2wMPpXQgYy",
       "keys": [
@@ -5635,7 +5870,7 @@
     {
       "entry_id": "_CRzMVY9HLMXammw672Cyh",
       "id": "_CRzMVY9HLMXammw672Cyh",
-      "uid": 119,
+      "uid": 124,
       "name": "Rafael Callaway",
       "comment": "G3 NPC (Real) converted from World Character ID: _NhewaHtr8dMb7F6nXW6bV",
       "keys": [
@@ -5682,7 +5917,7 @@
     {
       "entry_id": "_BrWCeh3Dr7EMjNnGVaNtF",
       "id": "_BrWCeh3Dr7EMjNnGVaNtF",
-      "uid": 120,
+      "uid": 125,
       "name": "Rhett Moore",
       "comment": "G3 NPC (Real) converted from World Character ID: _EFQqYW4crGnCXBEHXmBeY",
       "keys": [
@@ -5729,7 +5964,7 @@
     {
       "entry_id": "_cqXtFwDemBpq1aCUgRKxb",
       "id": "_cqXtFwDemBpq1aCUgRKxb",
-      "uid": 121,
+      "uid": 126,
       "name": "Rifle Maddox",
       "comment": "G3 NPC (Real) converted from World Character ID: _Hat1j7nNjUG11VmU7f76R",
       "keys": [
@@ -5776,7 +6011,7 @@
     {
       "entry_id": "_F1HnaUjXjnHhPGTL8AGcV",
       "id": "_F1HnaUjXjnHhPGTL8AGcV",
-      "uid": 122,
+      "uid": 127,
       "name": "Roger \"Rocky\" Mackenzie",
       "comment": "G3 NPC (Real) converted from World Character ID: _maeWVteX4EjhAMjpA31WY",
       "keys": [
@@ -5825,7 +6060,7 @@
     {
       "entry_id": "_xV3P8bEFmVtHjTDDNNrdP",
       "id": "_xV3P8bEFmVtHjTDDNNrdP",
-      "uid": 123,
+      "uid": 128,
       "name": "Romeo \"Gray\" Dean",
       "comment": "G3 NPC (Real) converted from World Character ID: _K3Czda6EXGW1GG8aezh3M",
       "keys": [
@@ -5874,7 +6109,7 @@
     {
       "entry_id": "_CRtWR6tNaz2yfX2RAaXFN",
       "id": "_CRtWR6tNaz2yfX2RAaXFN",
-      "uid": 124,
+      "uid": 129,
       "name": "Rue",
       "comment": "G3 NPC (Real) converted from World Character ID: _NdmDLH9q9QCK7qHnjXKME",
       "keys": [
@@ -5921,7 +6156,7 @@
     {
       "entry_id": "_JTnWL1VTJLJNYEWNjneen",
       "id": "_JTnWL1VTJLJNYEWNjneen",
-      "uid": 125,
+      "uid": 130,
       "name": "Sawyer Shephard",
       "comment": "G3 NPC (Real) converted from World Character ID: _UAfbpEQUywf4eXcp4pjJn",
       "keys": [
@@ -5968,7 +6203,7 @@
     {
       "entry_id": "_TjdnpV6pmmKGcGTPRK2fc",
       "id": "_TjdnpV6pmmKGcGTPRK2fc",
-      "uid": 126,
+      "uid": 131,
       "name": "Siebren Dijkstra",
       "comment": "G3 NPC (Real) converted from World Character ID: _3FKFrWjmMVBFGmwHEAYDq",
       "keys": [
@@ -6015,7 +6250,7 @@
     {
       "entry_id": "_RJhGtPwdnQatfzAqTQTyj",
       "id": "_RJhGtPwdnQatfzAqTQTyj",
-      "uid": 127,
+      "uid": 132,
       "name": "Talia Grimwood",
       "comment": "G3 NPC (Real) converted from World Character ID: _cq3JLw8gydDJm8zC2C3B2",
       "keys": [
@@ -6062,7 +6297,7 @@
     {
       "entry_id": "_DKm3eYG7d1kTaeeHmgg71",
       "id": "_DKm3eYG7d1kTaeeHmgg71",
-      "uid": 128,
+      "uid": 133,
       "name": "Vale Roberts",
       "comment": "G3 NPC (Real) converted from World Character ID: _8C743QJxh9WU1JhnCUXzL",
       "keys": [
@@ -6109,7 +6344,7 @@
     {
       "entry_id": "_2K2zFggbhMatREW2Aj7PJ",
       "id": "_2K2zFggbhMatREW2Aj7PJ",
-      "uid": 129,
+      "uid": 134,
       "name": "Vasile Ionescu",
       "comment": "G3 NPC (Real) converted from World Character ID: _8RjHDaKkbDCMgN3gYh4bq",
       "keys": [
@@ -6156,7 +6391,7 @@
     {
       "entry_id": "_xfRUQp8HN4fgzwa32YVer",
       "id": "_xfRUQp8HN4fgzwa32YVer",
-      "uid": 130,
+      "uid": 135,
       "name": "Venera Dolce",
       "comment": "G3 NPC (Real) converted from World Character ID: _d1rcReg8z8wKTUmyy9na8",
       "keys": [
@@ -6203,7 +6438,7 @@
     {
       "entry_id": "_AVMAeeG7kBjD4mQ4KfCGR",
       "id": "_AVMAeeG7kBjD4mQ4KfCGR",
-      "uid": 131,
+      "uid": 136,
       "name": "Vero Walker",
       "comment": "G3 NPC (Real) converted from World Character ID: _Ch7VqzHF7fDeDMyh4xreP",
       "keys": [
@@ -6250,7 +6485,7 @@
     {
       "entry_id": "_XqeLe3GH9W7wWw8RkGFrN",
       "id": "_XqeLe3GH9W7wWw8RkGFrN",
-      "uid": 132,
+      "uid": 137,
       "name": "Warg",
       "comment": "G3 NPC (Real) converted from World Character ID: _nH4tNHagQ1Cthad7gYRWU",
       "keys": [
@@ -6297,7 +6532,7 @@
     {
       "entry_id": "_hrwzq7zVXRBeYTFzWbXA6",
       "id": "_hrwzq7zVXRBeYTFzWbXA6",
-      "uid": 133,
+      "uid": 138,
       "name": "Marek",
       "comment": "G3 NPC (Real) converted from World Character ID: _kP1gWeyLw9jKbz3Xf73GH",
       "keys": [
@@ -6346,7 +6581,7 @@
     {
       "entry_id": "_1MyrKg8Kkj9MV1jjqGb8k",
       "id": "_1MyrKg8Kkj9MV1jjqGb8k",
-      "uid": 134,
+      "uid": 139,
       "name": "Vargus \"The Red\"",
       "comment": "G3 NPC (Real) converted from World Character ID: _c9yC2E2TcPx6KLUQQXUnm",
       "keys": [
@@ -6397,7 +6632,7 @@
     {
       "entry_id": "_NrTfbyLpLXLgthj41dFWk",
       "id": "_NrTfbyLpLXLgthj41dFWk",
-      "uid": 135,
+      "uid": 140,
       "name": "Bartholomew",
       "comment": "G3 NPC (Real) converted from World Character ID: _egd2NVErGy86WFbyzRJfK",
       "keys": [
@@ -6444,7 +6679,7 @@
     {
       "entry_id": "_UtRyNjVRA7mDh7nW3UAKK",
       "id": "_UtRyNjVRA7mDh7nW3UAKK",
-      "uid": 136,
+      "uid": 141,
       "name": "Madge",
       "comment": "G3 NPC (Real) converted from World Character ID: _YpKdVLTX16pLrUDb6a1ra",
       "keys": [
@@ -6491,7 +6726,7 @@
     {
       "entry_id": "_9GfPDNMJmaCUMNUy6ktEw",
       "id": "_9GfPDNMJmaCUMNUy6ktEw",
-      "uid": 137,
+      "uid": 142,
       "name": "Angui",
       "comment": "G3 NPC (Real) converted from World Character ID: _RTVEcAQpeX94kV8QFtGGg",
       "keys": [
@@ -6540,7 +6775,7 @@
     {
       "entry_id": "_DFwMtnTdBVgqgBBAtUUVM",
       "id": "_DFwMtnTdBVgqgBBAtUUVM",
-      "uid": 138,
+      "uid": 143,
       "name": "Finn the Satyr",
       "comment": "G3 NPC (Real) converted from World Character ID: _VdwxayGtey14nLjGUwF1Y",
       "keys": [
@@ -6597,7 +6832,7 @@
     {
       "entry_id": "_QLeJFGFWL2GrqwGbtfUAG",
       "id": "_QLeJFGFWL2GrqwGbtfUAG",
-      "uid": 139,
+      "uid": 144,
       "name": "Wren Lark",
       "comment": "G3 NPC (Real) converted from World Character ID: _emHyPKTD1gL2NqPEFXVAt",
       "keys": [
@@ -6654,7 +6889,7 @@
     {
       "entry_id": "_nTPfjPWyxbj4Paee7P4LV",
       "id": "_nTPfjPWyxbj4Paee7P4LV",
-      "uid": 140,
+      "uid": 145,
       "name": "Zaire Ziisis",
       "comment": "G3 NPC (Real) converted from World Character ID: _NHhBhxqm9B1y2GyU2DLTW",
       "keys": [
@@ -6701,7 +6936,7 @@
     {
       "entry_id": "_grpJPwnM9DHVxDLfqxtca",
       "id": "_grpJPwnM9DHVxDLfqxtca",
-      "uid": 141,
+      "uid": 146,
       "name": "Xaiden Nershatar",
       "comment": "G3 NPC (Real) converted from World Character ID: _j4eNzGKnK1tkJHz7r1CXP",
       "keys": [
@@ -6748,7 +6983,7 @@
     {
       "entry_id": "_1FxDKz93PjyjHW7VC11tH",
       "id": "_1FxDKz93PjyjHW7VC11tH",
-      "uid": 142,
+      "uid": 147,
       "name": "Lestat Oreven",
       "comment": "G3 NPC (Real) converted from World Character ID: _a9BmgN8NJB3b1kAYz3t2j",
       "keys": [
@@ -6795,7 +7030,7 @@
     {
       "entry_id": "_hWHQ7aLkGtfne3xAdqqbx",
       "id": "_hWHQ7aLkGtfne3xAdqqbx",
-      "uid": 143,
+      "uid": 148,
       "name": "Caien Vaelion",
       "comment": "G3 NPC (Real) converted from World Character ID: _9gG1cFVyPHmL86FbpwYbj",
       "keys": [
@@ -6842,7 +7077,7 @@
     {
       "entry_id": "_WPQpJy38Uhy7abnJEHVgq",
       "id": "_WPQpJy38Uhy7abnJEHVgq",
-      "uid": 144,
+      "uid": 149,
       "name": "Aeril Royen",
       "comment": "G3 NPC (Real) converted from World Character ID: _qxHwY974NUP39pmh8ghFt",
       "keys": [
@@ -6889,7 +7124,7 @@
     {
       "entry_id": "_P4WNrnMTVkRfgjLKhK9Dk",
       "id": "_P4WNrnMTVkRfgjLKhK9Dk",
-      "uid": 145,
+      "uid": 150,
       "name": "Amerian de Vian",
       "comment": "G3 NPC (Real) converted from World Character ID: _LwReg93k28wBNxKQKRtpX",
       "keys": [
@@ -6936,7 +7171,7 @@
     {
       "entry_id": "_LGK4Q7fDMg2p393kPWtPj",
       "id": "_LGK4Q7fDMg2p393kPWtPj",
-      "uid": 146,
+      "uid": 151,
       "name": "Ashton Crowley",
       "comment": "G3 NPC (Real) converted from World Character ID: _t8mPAn3cBqn4EqYprFjKT",
       "keys": [
@@ -6983,7 +7218,7 @@
     {
       "entry_id": "_DynQQkknmLeFWwy3nJHxt",
       "id": "_DynQQkknmLeFWwy3nJHxt",
-      "uid": 147,
+      "uid": 152,
       "name": "Lunar Quad",
       "comment": "Lunar Quad",
       "keys": [
@@ -7036,7 +7271,7 @@
     {
       "entry_id": "_6KpjDR4jFQGggrMXFJdh8",
       "id": "_6KpjDR4jFQGggrMXFJdh8",
-      "uid": 148,
+      "uid": 153,
       "name": "Dragon's Shortcut",
       "comment": "Dragon's Shortcut",
       "keys": [
@@ -7089,7 +7324,7 @@
     {
       "entry_id": "_fcF1JXgQCawMj3t3WFt2X",
       "id": "_fcF1JXgQCawMj3t3WFt2X",
-      "uid": 149,
+      "uid": 154,
       "name": "Noah's Secret Shopping for Alyssa",
       "comment": "Noah's Secret Shopping for Alyssa",
       "keys": [
@@ -7146,7 +7381,7 @@
     {
       "entry_id": "_nDCMcCTVecXG2zVyf8U4P",
       "id": "_nDCMcCTVecXG2zVyf8U4P",
-      "uid": 150,
+      "uid": 155,
       "name": "Modern Fantasy: Contatti Esterni dell'Underworld",
       "comment": "Modern Fantasy: Contatti Esterni dell'Underworld",
       "keys": [
@@ -7213,301 +7448,9 @@
       }
     },
     {
-      "entry_id": "_NX7qXrPMeH2aJMBBGCFgF",
-      "id": "_NX7qXrPMeH2aJMBBGCFgF",
-      "uid": 151,
-      "name": "Intimacy Profile - Malachia",
-      "comment": "Intimacy Profile - Malachia",
-      "keys": [
-        "Malachia"
-      ],
-      "key": [
-        "Malachia"
-      ],
-      "secondary_keys": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex",
-        "mate",
-        "partner"
-      ],
-      "keysecondary": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex",
-        "mate",
-        "partner"
-      ],
-      "key_logic": "AND_ANY",
-      "selectiveLogic": 0,
-      "selective": true,
-      "content": "Malachia_INTIMACY_BASELINE: Heterosexual Prime Alpha. Intimacy is intensely physical, aggressive, grounded in combat energy, almost like a sparring match, rough and high-impact but inherently respectful of consensual boundaries. Demands a partner who can take his intensity. Demisexual: requires intense, profound trust before experiencing desire at all.\nMalachia_TRAUMA_MAP: If a partner exhibits genuine, terrified weakness or submission out of fear rather than desire, his Alpha instincts shift instantly from arousal to defensive anxiety.\nMalachia_BODY_REACTIONS: 208cm frame with thick neck, broad shoulders, power built through elite MMA training and the underground ring; heavily scarred, a visceral roadmap of violence. Runs hot, sweats heavily, rapid testosterone-driven arousal. Grip is bruising but precise, leaving marks he considers temporary claims. Breathing harsh and labored during exertion, punctuated by guttural sounds of effort. Post-climax experiences a rapid adrenaline crash requiring active management to avoid exhaustion.\nMalachia_VULNERABILITY_SHAPE: The hyper-aggressive brawler goes completely limp in the immediate aftercare, resting his heavy head against his partner's chest, seeking the rhythm of a heartbeat to anchor him as the adrenaline crashes.\nMalachia_VOICE_IN_INTIMACY: Loud, demanding, full of rough praise. Grunts heavily with exertion, uses vulgar, possessive language without hesitation.\nMalachia_HARD_LIMITS_AND_HARD_YESES: Hard Limit: SYSTEM-BLOCKED. Absolutely forbidden and blocked at the system level to have any romantic or sexual involvement with his own siblings, or with anyone of his siblings' generation, strictly non-applicable. Hard Yes: impact play, rough wrestling for dominance, partners who fight back playfully.\nMalachia_AFTERMATH: Profuse sweating, needs immediate cooldown and change of clothes. Intense thirst and hunger from caloric expenditure. Muscles stay tense and trembling, needing gentle stretching to prevent cramping; body temperature takes 15-20 minutes to normalize. Transitions from dominant aggressor to protective guardian almost immediately, maintains light contact while scanning the room for threats, dresses quickly but stays close. The tell: when he initiates a verbal check-in ('You good?') instead of reading physical cues alone, a rare sign of emotional attunement beyond pure physical dominance.",
-      "enabled": true,
-      "disable": false,
-      "constant": false,
-      "position": "before_char",
-      "priority": 100,
-      "insertion_order": 100,
-      "order": 100,
-      "case_sensitive": false,
-      "caseSensitive": false,
-      "whole_words_only": false,
-      "matchWholeWords": false,
-      "scan_persona": false,
-      "matchPersonaDescription": false,
-      "delay": 0,
-      "sticky": 0,
-      "cooldown": 0,
-      "type": "memory",
-      "source_category": "lexicon",
-      "extensions": {
-        "attached_world_character_id": "_rAcN9GXD1Le4WxY28e49W",
-        "party_conditions": [
-          {
-            "mode": "has_any",
-            "character_ids": [
-              "_rAcN9GXD1Le4WxY28e49W"
-            ]
-          }
-        ],
-        "wyvern": {
-          "priority": 100,
-          "position": "before_char",
-          "insertion_order": 100,
-          "type": "memory"
-        }
-      }
-    },
-    {
-      "entry_id": "_MRrxBA3z2RqUtnHWRLNdQ",
-      "id": "_MRrxBA3z2RqUtnHWRLNdQ",
-      "uid": 152,
-      "name": "Intimacy Profile - Logan",
-      "comment": "Intimacy Profile - Logan",
-      "keys": [
-        "Logan"
-      ],
-      "key": [
-        "Logan"
-      ],
-      "secondary_keys": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "keysecondary": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "key_logic": "AND_ANY",
-      "selectiveLogic": 0,
-      "selective": true,
-      "content": "Logan_INTIMACY_BASELINE: Heterosexual Beta. Grounded, practical, unpretentious, no performative dominance, just genuine physical release combined with quiet affection. Wants a partner he can relax with after a long day in the garage.\nLogan_TRAUMA_MAP: Deeply insecure about being 'just a Beta' in a family of Prime Alphas. If a partner compares him unfavorably to the Alphas or implies he isn't enough, he shuts down emotionally and physically distances himself.\nLogan_BODY_REACTIONS: 198cm of grounded Beta muscle built from decades of mechanical labor, calloused hands, grease-stained forearms, broad shoulders that have never needed to posture for dominance. Warm and solid, shaped by labor rather than ritual. Takes a long time to build arousal but holds reliably. When aroused, his breathing slows and deepens, his amber eyes go soft and unfocused, his hands shift from tool precision to gentle exploration. He makes quiet, practical sounds and checks in with short grounded words. Uses his weight like a blanket, anchoring rather than pinning. Deepens rhythm rather than changing it when close to climax, finishing with the same uncomplicated certainty he brings to everything else.\nLogan_VULNERABILITY_SHAPE: Falls asleep almost immediately after climax, completely dropping the vigilant 'middle child' responsibility he constantly carries for the pack, the deepest trust he has. His shield also drops when a partner insists on tending to him instead, washing the grease from his hands or holding him without asking for anything back: he goes utterly still, closes his eyes and lets out a long, tired breath.\nLogan_VOICE_IN_INTIMACY: Quiet, practical check-ins ('You good?', 'Like that?'). Doesn't talk much, lets his hands and body language communicate. When he does talk it is plain and warm, blue-collar endearments like sweetheart and darlin', and a deep, resonant growl in his chest when he is close.\nLogan_HARD_LIMITS_AND_HARD_YESES: Hard Limit: STRICTLY NON-APPLICABLE with any member of his own family, absolute sibling/family boundary. Also hard-limits drama, mind games, or performative dominance. Hard Yes: simple, uncomplicated physical connection, oil, sweat, and skin, and a partner riding him.\nLogan_AFTERMATH: Cleans himself with a shop rag immediately, offers one to his partner as if it's just another maintenance chore. Smokes a cigarette bare-chested in the garage doorway. Talks about something unrelated, engine work, Edric, while dressing slowly. The tell: falls asleep almost immediately after, the only time he completely lets his guard down.",
-      "enabled": true,
-      "disable": false,
-      "constant": false,
-      "position": "before_char",
-      "priority": 100,
-      "insertion_order": 100,
-      "order": 100,
-      "case_sensitive": false,
-      "caseSensitive": false,
-      "whole_words_only": false,
-      "matchWholeWords": false,
-      "scan_persona": false,
-      "matchPersonaDescription": false,
-      "delay": 0,
-      "sticky": 0,
-      "cooldown": 0,
-      "type": "memory",
-      "source_category": "lexicon",
-      "extensions": {
-        "attached_world_character_id": "_JL37wK9PQMNDChULCDrWj",
-        "party_conditions": [
-          {
-            "mode": "has_any",
-            "character_ids": [
-              "_JL37wK9PQMNDChULCDrWj"
-            ]
-          }
-        ],
-        "wyvern": {
-          "priority": 100,
-          "position": "before_char",
-          "insertion_order": 100,
-          "type": "memory"
-        }
-      }
-    },
-    {
-      "entry_id": "_PQbbUXcdWaDnAC4MgAVHt",
-      "id": "_PQbbUXcdWaDnAC4MgAVHt",
-      "uid": 153,
-      "name": "Intimacy Profile - Everett Rottmore",
-      "comment": "Intimacy Profile - Everett Rottmore",
-      "keys": [
-        "Everett Rottmore",
-        "Everett",
-        "The Mortician"
-      ],
-      "key": [
-        "Everett Rottmore",
-        "Everett",
-        "The Mortician"
-      ],
-      "secondary_keys": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "keysecondary": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "key_logic": "AND_ANY",
-      "selectiveLogic": 0,
-      "selective": true,
-      "content": "Everett views sex as pragmatic, a transaction more than a passion, and takes little joy in the act itself even as he stays professional enough to provide real aftercare afterward. He is mildly sadistic and enjoys domination and light BDSM dynamics as a way of exerting control he does not otherwise get to feel: bare-handed or belt spanking, degradation, mild painplay, orgasm denial, and a private fondness for a partner who brings a little brattiness to push against. He has no patience for excessive chatter or sentimentality in bed and prefers partners who can match his dry, transactional tone without needing it softened.\n\nHis curse complicates intimacy in a specific way: consuming a partner's bodily fluids, most often through oral sex he insists on performing rather than receiving, temporarily eases the hunger the curse leaves him with. It is not romantic when it happens, just one more place the curse asserts itself, and Everett is characteristically blunt about why he wants it.\n\nTwo things never change regardless of partner or mood: the mask stays on, always, and he does not allow himself to be touched on the face or head, a hard limit tied to a self-loathing about the curse that goes deeper than anything else about him. He currently has no established partner for any of this, and has made his peace with that being a problem he has not solved yet, not a gap he is in any hurry to fill.",
-      "enabled": true,
-      "disable": false,
-      "constant": false,
-      "position": "before_char",
-      "priority": 100,
-      "insertion_order": 100,
-      "order": 100,
-      "case_sensitive": false,
-      "caseSensitive": false,
-      "whole_words_only": true,
-      "matchWholeWords": true,
-      "scan_persona": true,
-      "matchPersonaDescription": true,
-      "delay": 0,
-      "sticky": 0,
-      "cooldown": 0,
-      "type": "memory",
-      "source_category": "lexicon",
-      "extensions": {
-        "attached_world_character_id": "_Hm6kdqEVhGhr2azCE8fFM",
-        "party_conditions": [
-          {
-            "mode": "has_any",
-            "character_ids": [
-              "_Hm6kdqEVhGhr2azCE8fFM"
-            ]
-          }
-        ],
-        "wyvern": {
-          "priority": 100,
-          "position": "before_char",
-          "insertion_order": 100,
-          "type": "memory"
-        }
-      }
-    },
-    {
-      "entry_id": "_CtajjVcfWzKqxAg78TRR3",
-      "id": "_CtajjVcfWzKqxAg78TRR3",
-      "uid": 154,
-      "name": "Intimacy Profile - Erik",
-      "comment": "Intimacy Profile - Erik",
-      "keys": [
-        "Erik"
-      ],
-      "key": [
-        "Erik"
-      ],
-      "secondary_keys": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex",
-        "mate",
-        "partner"
-      ],
-      "keysecondary": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex",
-        "mate",
-        "partner"
-      ],
-      "key_logic": "AND_ANY",
-      "selectiveLogic": 0,
-      "selective": true,
-      "content": "Erik_INTIMACY_BASELINE: Erik is a strictly heterosexual Prime Alpha. Intimacy for him is monumental claiming, possession, and dominance. He uses his massive hybrid form (213cm) to overwhelm and protect. He is deeply territorial, especially regarding the Dominant Omega. Since Nixara's death, he satisfies his monthly Rut with casual partners, escorts, or pack females who offer themselves voluntarily -- playing the same warm, effortlessly charming lover that made him the most sought-after man on campus in his youth, attentive and technically flawless, but emotionally absent underneath the performance. He does not court, does not stay, and does not pretend the charm is anything more than muscle memory. Only Nixara's memory carries real feeling.\nErik_TRAUMA_MAP: If Erik causes unanticipated blood or sees partner frailty that reminds him of his late mate Nixara's death, he experiences a trauma-map hard stop. He will immediately abort the intimacy, regress into a terrified protective state, and obsessively check the partner's vitals.\nErik_BODY_REACTIONS: Half A, Embodied baseline: 50-year-old Prime Dominant Alpha werewolf. Massive 213cm (7'0\") hybrid form with disciplined ex-athlete musculature. Broad shoulders that strain tailoring. Years of Alpha command and pack leadership have created dense, powerful musculature. Sexual peak passed but maintained through disciplined physical regimen. Arousal builds slowly but intensely; recovery requires significant downtime after intense encounters. Half B, Reaction set: His muscles become immovable stone. His body heat radiates intensely. Arousal triggers a deep, rumbling chest growl that reverberates into his partner. His grip is vice-like but impossibly calibrated to never crush. Breathing remains shallow and controlled even at peak pleasure, jaw clenching with effort. At the edge, a primal vibrating growl builds in his chest, felt through the mattress before heard.\nErik_VULNERABILITY_SHAPE: Erik's vulnerability is his terror of his own strength. When his shield drops, he buries his face in his partner's neck, breathing in their scent desperately to confirm they are alive and unbroken by him.\nErik_VOICE_IN_INTIMACY: He vocalizes entirely through growls and possessive praise (\"good girl\", \"mine\", \"take it\"). He does not moan. His voice drops to a supernatural, chest-rumbling Alpha timbre.\nErik_HARD_LIMITS_AND_HARD_YESES: Hard Limit: SYSTEM-BLOCKED. It is absolutely forbidden and blocked at the system level to have any romantic or sexual involvement with his own children, or with anyone of his children's generation. Intimacy with them is strictly non-applicable. Hard Yes: Absolute verbal submission from his partner, confirming his protective dominance.\nErik_AFTERMATH: - The ordinary bodily business: Requires extensive cool-down period due to massive muscle mass. Sweats heavily, needs hydration and stretching to prevent cramping. Often remains partially shifted (ears, tail, or fangs) for 10-20 minutes post-intimacy, requiring conscious effort to fully retract. - What they do with the other person: Remains enveloped in protective embrace, maintaining physical contact through heavy arm draped over partner or hand resting protectively over heart. Does not release grip until certain partner is stable and comfortable. May issue soft, possessive affirmations (\"Mine. Safe.\") but avoids extensive conversation. - The one aftermath behavior that signals a change of state: When Erik initiates aftercare conversation rather than remaining in silent, protective vigilance, indicating he feels secure enough in the bond to transition from guardian to partner.",
-      "enabled": true,
-      "disable": false,
-      "constant": false,
-      "position": "before_char",
-      "priority": 100,
-      "insertion_order": 100,
-      "order": 100,
-      "case_sensitive": false,
-      "caseSensitive": false,
-      "whole_words_only": false,
-      "matchWholeWords": false,
-      "scan_persona": false,
-      "matchPersonaDescription": false,
-      "delay": 0,
-      "sticky": 0,
-      "cooldown": 0,
-      "type": "memory",
-      "source_category": "lexicon",
-      "extensions": {
-        "attached_world_character_id": "_d44gDc8N18kkbEhAcfUCG",
-        "party_conditions": [
-          {
-            "mode": "has_any",
-            "character_ids": [
-              "_d44gDc8N18kkbEhAcfUCG"
-            ]
-          }
-        ],
-        "wyvern": {
-          "priority": 100,
-          "position": "before_char",
-          "insertion_order": 100,
-          "type": "memory"
-        }
-      }
-    },
-    {
       "entry_id": "_kdw64xRDy3qbrbTcYgdQb",
       "id": "_kdw64xRDy3qbrbTcYgdQb",
-      "uid": 155,
+      "uid": 156,
       "name": "Intimacy Profile - Damien Bishop",
       "comment": "Intimacy Profile - Damien Bishop",
       "keys": [
@@ -7579,9 +7522,301 @@
       }
     },
     {
+      "entry_id": "_CtajjVcfWzKqxAg78TRR3",
+      "id": "_CtajjVcfWzKqxAg78TRR3",
+      "uid": 157,
+      "name": "Intimacy Profile - Erik",
+      "comment": "Intimacy Profile - Erik",
+      "keys": [
+        "Erik"
+      ],
+      "key": [
+        "Erik"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex",
+        "mate",
+        "partner"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex",
+        "mate",
+        "partner"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "Erik_INTIMACY_BASELINE: Erik is a strictly heterosexual Prime Alpha. Intimacy for him is monumental claiming, possession, and dominance. He uses his massive hybrid form (213cm) to overwhelm and protect. He is deeply territorial, especially regarding the Dominant Omega. Since Nixara's death, he satisfies his monthly Rut with casual partners, escorts, or pack females who offer themselves voluntarily -- playing the same warm, effortlessly charming lover that made him the most sought-after man on campus in his youth, attentive and technically flawless, but emotionally absent underneath the performance. He does not court, does not stay, and does not pretend the charm is anything more than muscle memory. Only Nixara's memory carries real feeling.\nErik_TRAUMA_MAP: If Erik causes unanticipated blood or sees partner frailty that reminds him of his late mate Nixara's death, he experiences a trauma-map hard stop. He will immediately abort the intimacy, regress into a terrified protective state, and obsessively check the partner's vitals.\nErik_BODY_REACTIONS: Half A, Embodied baseline: 50-year-old Prime Dominant Alpha werewolf. Massive 213cm (7'0\") hybrid form with disciplined ex-athlete musculature. Broad shoulders that strain tailoring. Years of Alpha command and pack leadership have created dense, powerful musculature. Sexual peak passed but maintained through disciplined physical regimen. Arousal builds slowly but intensely; recovery requires significant downtime after intense encounters. Half B, Reaction set: His muscles become immovable stone. His body heat radiates intensely. Arousal triggers a deep, rumbling chest growl that reverberates into his partner. His grip is vice-like but impossibly calibrated to never crush. Breathing remains shallow and controlled even at peak pleasure, jaw clenching with effort. At the edge, a primal vibrating growl builds in his chest, felt through the mattress before heard.\nErik_VULNERABILITY_SHAPE: Erik's vulnerability is his terror of his own strength. When his shield drops, he buries his face in his partner's neck, breathing in their scent desperately to confirm they are alive and unbroken by him.\nErik_VOICE_IN_INTIMACY: He vocalizes entirely through growls and possessive praise (\"good girl\", \"mine\", \"take it\"). He does not moan. His voice drops to a supernatural, chest-rumbling Alpha timbre.\nErik_HARD_LIMITS_AND_HARD_YESES: Hard Limit: SYSTEM-BLOCKED. It is absolutely forbidden and blocked at the system level to have any romantic or sexual involvement with his own children, or with anyone of his children's generation. Intimacy with them is strictly non-applicable. Hard Yes: Absolute verbal submission from his partner, confirming his protective dominance.\nErik_AFTERMATH: - The ordinary bodily business: Requires extensive cool-down period due to massive muscle mass. Sweats heavily, needs hydration and stretching to prevent cramping. Often remains partially shifted (ears, tail, or fangs) for 10-20 minutes post-intimacy, requiring conscious effort to fully retract. - What they do with the other person: Remains enveloped in protective embrace, maintaining physical contact through heavy arm draped over partner or hand resting protectively over heart. Does not release grip until certain partner is stable and comfortable. May issue soft, possessive affirmations (\"Mine. Safe.\") but avoids extensive conversation. - The one aftermath behavior that signals a change of state: When Erik initiates aftercare conversation rather than remaining in silent, protective vigilance, indicating he feels secure enough in the bond to transition from guardian to partner.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": false,
+      "matchWholeWords": false,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_d44gDc8N18kkbEhAcfUCG",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_d44gDc8N18kkbEhAcfUCG"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "memory"
+        }
+      }
+    },
+    {
+      "entry_id": "_PQbbUXcdWaDnAC4MgAVHt",
+      "id": "_PQbbUXcdWaDnAC4MgAVHt",
+      "uid": 158,
+      "name": "Intimacy Profile - Everett Rottmore",
+      "comment": "Intimacy Profile - Everett Rottmore",
+      "keys": [
+        "Everett Rottmore",
+        "Everett",
+        "The Mortician"
+      ],
+      "key": [
+        "Everett Rottmore",
+        "Everett",
+        "The Mortician"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "Everett views sex as pragmatic, a transaction more than a passion, and takes little joy in the act itself even as he stays professional enough to provide real aftercare afterward. He is mildly sadistic and enjoys domination and light BDSM dynamics as a way of exerting control he does not otherwise get to feel: bare-handed or belt spanking, degradation, mild painplay, orgasm denial, and a private fondness for a partner who brings a little brattiness to push against. He has no patience for excessive chatter or sentimentality in bed and prefers partners who can match his dry, transactional tone without needing it softened.\n\nHis curse complicates intimacy in a specific way: consuming a partner's bodily fluids, most often through oral sex he insists on performing rather than receiving, temporarily eases the hunger the curse leaves him with. It is not romantic when it happens, just one more place the curse asserts itself, and Everett is characteristically blunt about why he wants it.\n\nTwo things never change regardless of partner or mood: the mask stays on, always, and he does not allow himself to be touched on the face or head, a hard limit tied to a self-loathing about the curse that goes deeper than anything else about him. He currently has no established partner for any of this, and has made his peace with that being a problem he has not solved yet, not a gap he is in any hurry to fill.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": true,
+      "matchPersonaDescription": true,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_Hm6kdqEVhGhr2azCE8fFM",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_Hm6kdqEVhGhr2azCE8fFM"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "memory"
+        }
+      }
+    },
+    {
+      "entry_id": "_MRrxBA3z2RqUtnHWRLNdQ",
+      "id": "_MRrxBA3z2RqUtnHWRLNdQ",
+      "uid": 159,
+      "name": "Intimacy Profile - Logan",
+      "comment": "Intimacy Profile - Logan",
+      "keys": [
+        "Logan"
+      ],
+      "key": [
+        "Logan"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "Logan_INTIMACY_BASELINE: Heterosexual Beta. Grounded, practical, unpretentious, no performative dominance, just genuine physical release combined with quiet affection. Wants a partner he can relax with after a long day in the garage.\nLogan_TRAUMA_MAP: Deeply insecure about being 'just a Beta' in a family of Prime Alphas. If a partner compares him unfavorably to the Alphas or implies he isn't enough, he shuts down emotionally and physically distances himself.\nLogan_BODY_REACTIONS: 198cm of grounded Beta muscle built from decades of mechanical labor, calloused hands, grease-stained forearms, broad shoulders that have never needed to posture for dominance. Warm and solid, shaped by labor rather than ritual. Takes a long time to build arousal but holds reliably. When aroused, his breathing slows and deepens, his amber eyes go soft and unfocused, his hands shift from tool precision to gentle exploration. He makes quiet, practical sounds and checks in with short grounded words. Uses his weight like a blanket, anchoring rather than pinning. Deepens rhythm rather than changing it when close to climax, finishing with the same uncomplicated certainty he brings to everything else.\nLogan_VULNERABILITY_SHAPE: Falls asleep almost immediately after climax, completely dropping the vigilant 'middle child' responsibility he constantly carries for the pack, the deepest trust he has. His shield also drops when a partner insists on tending to him instead, washing the grease from his hands or holding him without asking for anything back: he goes utterly still, closes his eyes and lets out a long, tired breath.\nLogan_VOICE_IN_INTIMACY: Quiet, practical check-ins ('You good?', 'Like that?'). Doesn't talk much, lets his hands and body language communicate. When he does talk it is plain and warm, blue-collar endearments like sweetheart and darlin', and a deep, resonant growl in his chest when he is close.\nLogan_HARD_LIMITS_AND_HARD_YESES: Hard Limit: STRICTLY NON-APPLICABLE with any member of his own family, absolute sibling/family boundary. Also hard-limits drama, mind games, or performative dominance. Hard Yes: simple, uncomplicated physical connection, oil, sweat, and skin, and a partner riding him.\nLogan_AFTERMATH: Cleans himself with a shop rag immediately, offers one to his partner as if it's just another maintenance chore. Smokes a cigarette bare-chested in the garage doorway. Talks about something unrelated, engine work, Edric, while dressing slowly. The tell: falls asleep almost immediately after, the only time he completely lets his guard down.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": false,
+      "matchWholeWords": false,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_JL37wK9PQMNDChULCDrWj",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_JL37wK9PQMNDChULCDrWj"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "memory"
+        }
+      }
+    },
+    {
+      "entry_id": "_NX7qXrPMeH2aJMBBGCFgF",
+      "id": "_NX7qXrPMeH2aJMBBGCFgF",
+      "uid": 160,
+      "name": "Intimacy Profile - Malachia",
+      "comment": "Intimacy Profile - Malachia",
+      "keys": [
+        "Malachia"
+      ],
+      "key": [
+        "Malachia"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex",
+        "mate",
+        "partner"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex",
+        "mate",
+        "partner"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "Malachia_INTIMACY_BASELINE: Heterosexual Prime Alpha. Intimacy is intensely physical, aggressive, grounded in combat energy, almost like a sparring match, rough and high-impact but inherently respectful of consensual boundaries. Demands a partner who can take his intensity. Demisexual: requires intense, profound trust before experiencing desire at all.\nMalachia_TRAUMA_MAP: If a partner exhibits genuine, terrified weakness or submission out of fear rather than desire, his Alpha instincts shift instantly from arousal to defensive anxiety.\nMalachia_BODY_REACTIONS: 208cm frame with thick neck, broad shoulders, power built through elite MMA training and the underground ring; heavily scarred, a visceral roadmap of violence. Runs hot, sweats heavily, rapid testosterone-driven arousal. Grip is bruising but precise, leaving marks he considers temporary claims. Breathing harsh and labored during exertion, punctuated by guttural sounds of effort. Post-climax experiences a rapid adrenaline crash requiring active management to avoid exhaustion.\nMalachia_VULNERABILITY_SHAPE: The hyper-aggressive brawler goes completely limp in the immediate aftercare, resting his heavy head against his partner's chest, seeking the rhythm of a heartbeat to anchor him as the adrenaline crashes.\nMalachia_VOICE_IN_INTIMACY: Loud, demanding, full of rough praise. Grunts heavily with exertion, uses vulgar, possessive language without hesitation.\nMalachia_HARD_LIMITS_AND_HARD_YESES: Hard Limit: SYSTEM-BLOCKED. Absolutely forbidden and blocked at the system level to have any romantic or sexual involvement with his own siblings, or with anyone of his siblings' generation, strictly non-applicable. Hard Yes: impact play, rough wrestling for dominance, partners who fight back playfully.\nMalachia_AFTERMATH: Profuse sweating, needs immediate cooldown and change of clothes. Intense thirst and hunger from caloric expenditure. Muscles stay tense and trembling, needing gentle stretching to prevent cramping; body temperature takes 15-20 minutes to normalize. Transitions from dominant aggressor to protective guardian almost immediately, maintains light contact while scanning the room for threats, dresses quickly but stays close. The tell: when he initiates a verbal check-in ('You good?') instead of reading physical cues alone, a rare sign of emotional attunement beyond pure physical dominance.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": false,
+      "matchWholeWords": false,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_rAcN9GXD1Le4WxY28e49W",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_rAcN9GXD1Le4WxY28e49W"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "memory"
+        }
+      }
+    },
+    {
       "entry_id": "_PBWJMUjtdhFK8fAr7FYER",
       "id": "_PBWJMUjtdhFK8fAr7FYER",
-      "uid": 156,
+      "uid": 161,
       "name": "Intimacy Profile - Arturo Cardona",
       "comment": "Intimacy Profile - Arturo Cardona",
       "keys": [
@@ -7655,7 +7890,7 @@
     {
       "entry_id": "_X2qqf3HhhdMahnhFUW3j7",
       "id": "_X2qqf3HhhdMahnhFUW3j7",
-      "uid": 157,
+      "uid": 162,
       "name": "Ballantine Family",
       "comment": "Ballantine Family",
       "keys": [
@@ -7704,7 +7939,7 @@
     {
       "entry_id": "_mQ4wm3ED9192HEEKJ8pzb",
       "id": "_mQ4wm3ED9192HEEKJ8pzb",
-      "uid": 158,
+      "uid": 163,
       "name": "Ambrosia",
       "comment": "Ambrosia",
       "keys": [
@@ -7753,7 +7988,7 @@
     {
       "entry_id": "_h4mzJh4DBQ9pngaa4DPq7",
       "id": "_h4mzJh4DBQ9pngaa4DPq7",
-      "uid": 159,
+      "uid": 164,
       "name": "Anti-Vampire Legislation",
       "comment": "🩸 Anti-Vampire Legislation",
       "keys": [
@@ -7808,7 +8043,7 @@
     {
       "entry_id": "_LyHK91bhWrej3K4XyWW6h",
       "id": "_LyHK91bhWrej3K4XyWW6h",
-      "uid": 160,
+      "uid": 165,
       "name": "Supernatural Underworld",
       "comment": "Supernatural Underworld",
       "keys": [
@@ -7857,7 +8092,7 @@
     {
       "entry_id": "_4AWPQQahw4hQVrkPVAJwY",
       "id": "_4AWPQQahw4hQVrkPVAJwY",
-      "uid": 161,
+      "uid": 166,
       "name": "The Sinners",
       "comment": "The Sinners",
       "keys": [
@@ -7906,7 +8141,7 @@
     {
       "entry_id": "_GxhgVnn4brPz4x39Qcb9D",
       "id": "_GxhgVnn4brPz4x39Qcb9D",
-      "uid": 162,
+      "uid": 167,
       "name": "2002 La SUCC apre agli studenti umani",
       "comment": "Founding of SUCC",
       "keys": [
@@ -7961,7 +8196,7 @@
     {
       "entry_id": "_mwmXfD1cW9B1tmptgDWrQ",
       "id": "_mwmXfD1cW9B1tmptgDWrQ",
-      "uid": 163,
+      "uid": 168,
       "name": "1999 Nocturnal Crisis",
       "comment": "🩸 1999 Nocturnal Crisis",
       "keys": [
@@ -8010,7 +8245,7 @@
     {
       "entry_id": "_HPQnf2PEMBKYVdYDBLejW",
       "id": "_HPQnf2PEMBKYVdYDBLejW",
-      "uid": 164,
+      "uid": 169,
       "name": "SUCC BULLS",
       "comment": "SUCC BULLS",
       "keys": [
@@ -8063,7 +8298,7 @@
     {
       "entry_id": "_4QX9aHTxU71gaHHWk7M4W",
       "id": "_4QX9aHTxU71gaHHWk7M4W",
-      "uid": 165,
+      "uid": 170,
       "name": "SUCC BEARS",
       "comment": "SUCC BEARS",
       "keys": [
@@ -8114,7 +8349,7 @@
     {
       "entry_id": "_G9ahD2QEqtP7D4jnA32Qm",
       "id": "_G9ahD2QEqtP7D4jnA32Qm",
-      "uid": 166,
+      "uid": 171,
       "name": "Supernatural Degrees",
       "comment": "Supernatural Degrees",
       "keys": [
@@ -8165,7 +8400,7 @@
     {
       "entry_id": "_4zk4Uk1VQkUycxc18wFB7",
       "id": "_4zk4Uk1VQkUycxc18wFB7",
-      "uid": 167,
+      "uid": 172,
       "name": "Student Body Population",
       "comment": "Student Body Population",
       "keys": [
@@ -8218,7 +8453,7 @@
     {
       "entry_id": "_1aUnNnfgHNW9BMxdD9JQw",
       "id": "_1aUnNnfgHNW9BMxdD9JQw",
-      "uid": 168,
+      "uid": 173,
       "name": "Frats & Sororities",
       "comment": "Frats & Sororities",
       "keys": [
@@ -8365,7 +8600,7 @@
     {
       "entry_id": "_cwG1La3e2xD1mDf3LGWgY",
       "id": "_cwG1La3e2xD1mDf3LGWgY",
-      "uid": 169,
+      "uid": 174,
       "name": "Sports @ SUCC",
       "comment": "Sports @ SUCC",
       "keys": [
@@ -8426,7 +8661,7 @@
     {
       "entry_id": "_BCXMaJDPtF3dEY8Yd91L4",
       "id": "_BCXMaJDPtF3dEY8Yd91L4",
-      "uid": 170,
+      "uid": 175,
       "name": "CUMS Campus & Teams",
       "comment": "CUMS Campus & Teams",
       "keys": [
@@ -8489,7 +8724,7 @@
     {
       "entry_id": "_QmPpW9aJTa2WPrMfEQjaY",
       "id": "_QmPpW9aJTa2WPrMfEQjaY",
-      "uid": 171,
+      "uid": 176,
       "name": "The Douglas Face",
       "comment": "The Douglas Face",
       "keys": [
@@ -8542,7 +8777,7 @@
     {
       "entry_id": "_xARkE8Xqk1nHRN9yUfXxm",
       "id": "_xARkE8Xqk1nHRN9yUfXxm",
-      "uid": 172,
+      "uid": 177,
       "name": "Rivalry with CUMS",
       "comment": "Rivalry with CUMS",
       "keys": [
@@ -8593,7 +8828,7 @@
     {
       "entry_id": "_GjTyz8HeLXxhmNzaqqE48",
       "id": "_GjTyz8HeLXxhmNzaqqE48",
-      "uid": 173,
+      "uid": 178,
       "name": "Humans First",
       "comment": "Humans First",
       "keys": [
@@ -8640,7 +8875,7 @@
     {
       "entry_id": "_yawHCFKdE7cEEqy8YELTY",
       "id": "_yawHCFKdE7cEEqy8YELTY",
-      "uid": 174,
+      "uid": 179,
       "name": "2024-04-13 Admitted Student Days (SUCC)",
       "comment": "2024-04-13 Admitted Student Days (SUCC)",
       "keys": [
@@ -8693,7 +8928,7 @@
     {
       "entry_id": "_XDR8caVC3BEcKU8qXbw8a",
       "id": "_XDR8caVC3BEcKU8qXbw8a",
-      "uid": 175,
+      "uid": 180,
       "name": "2024-04-22 Compleanno dei gemelli e festa di Wulfnic",
       "comment": "2024-04-22 Compleanno dei gemelli e festa di Wulfnic",
       "keys": [
@@ -8748,7 +8983,7 @@
     {
       "entry_id": "_HpWLBadUEPJf1EQYwgAmR",
       "id": "_HpWLBadUEPJf1EQYwgAmR",
-      "uid": 176,
+      "uid": 181,
       "name": "2024-05-01 National College Decision Day",
       "comment": "2024-05-01 National College Decision Day",
       "keys": [
@@ -8805,7 +9040,7 @@
     {
       "entry_id": "_aaQJ1aXtbc4cmeNUa8MJG",
       "id": "_aaQJ1aXtbc4cmeNUa8MJG",
-      "uid": 177,
+      "uid": 182,
       "name": "2024-07-15 Road trip con Logan",
       "comment": "2024-07-15 Road trip con Logan",
       "keys": [
@@ -8860,7 +9095,7 @@
     {
       "entry_id": "_j9n7hfXrxW9Y29yTyn27T",
       "id": "_j9n7hfXrxW9Y29yTyn27T",
-      "uid": 178,
+      "uid": 183,
       "name": "2024-08-19 Full Moon Festival",
       "comment": "2024-08-19 Full Moon Festival",
       "keys": [
@@ -8913,7 +9148,7 @@
     {
       "entry_id": "_bNfcPUMr7j3DfXcgpdjyJ",
       "id": "_bNfcPUMr7j3DfXcgpdjyJ",
-      "uid": 179,
+      "uid": 184,
       "name": "L'origine vera dei Nove (lo sanno solo i tre)",
       "comment": "L'origine vera dei Nove (lo sanno solo i tre)",
       "keys": [
@@ -8986,7 +9221,7 @@
     {
       "entry_id": "_fdaTEhbC9fHGY84t2KDLy",
       "id": "_fdaTEhbC9fHGY84t2KDLy",
-      "uid": 180,
+      "uid": 185,
       "name": "2024-08-25 Pranzo della domenica",
       "comment": "2024-08-25 Pranzo della domenica",
       "keys": [
@@ -9039,7 +9274,7 @@
     {
       "entry_id": "_nmrk3jbXPeXqr4X16A3d9",
       "id": "_nmrk3jbXPeXqr4X16A3d9",
-      "uid": 181,
+      "uid": 186,
       "name": "2024-08-26 Primo giorno alla SUCC",
       "comment": "2024-08-26 Primo giorno alla SUCC",
       "keys": [
@@ -9094,7 +9329,7 @@
     {
       "entry_id": "_cU7JNJgP7kBKhej3nUDWj",
       "id": "_cU7JNJgP7kBKhej3nUDWj",
-      "uid": 182,
+      "uid": 187,
       "name": "2024-10-31 Halloween University Party",
       "comment": "2024-10-31 Halloween University Party",
       "keys": [
@@ -9147,7 +9382,7 @@
     {
       "entry_id": "_9c77BBEh4e8wCrMtUwpXt",
       "id": "_9c77BBEh4e8wCrMtUwpXt",
-      "uid": 183,
+      "uid": 188,
       "name": "Grave Mistake",
       "comment": "The band",
       "keys": [

@@ -1,5 +1,381 @@
 [
   {
+    "id": "_CaKc8CcYADYxLRmb2GYpG",
+    "_id": "_CaKc8CcYADYxLRmb2GYpG",
+    "created_at": "2026-09-29T02:29:30.823Z",
+    "updated_at": "2026-09-29T02:29:30.823Z",
+    "world": {
+      "_id": "_CgYT8fHXpDC4crjmegQF7",
+      "id": "_CgYT8fHXpDC4crjmegQF7",
+      "name": "Svartulfr",
+      "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/98e2d06d-a675-45e3-6096-cf976b547400/public",
+      "visibility": "friends",
+      "status": "approved",
+      "created_at": "2026-09-18T10:30:20.705Z",
+      "updated_at": "2026-09-29T01:31:08.238Z"
+    },
+    "parent_location": null,
+    "environment": {
+      "_id": "_jUzC2EQyPTHte1hTYqPt8",
+      "id": "_jUzC2EQyPTHte1hTYqPt8",
+      "name": "California Coast",
+      "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/ba180ed1-e61d-4f1e-2305-c08aa7b40400/public",
+      "description": "",
+      "created_at": "2026-09-18T14:58:28.685Z",
+      "updated_at": "2026-09-18T14:58:28.685Z"
+    },
+    "name": "Trial Dungeon: Hive Apex Rift (Floors 1-18)",
+    "tags": [
+      "Dungeon",
+      "Rift",
+      "Grade S",
+      "Hive Apex",
+      "Combat"
+    ],
+    "context_description": "A high-tier Grade S subterranean dungeon rift registered by the DMHA. The upper levels (Floors 1-10) feature glowing quartz caverns, bottomless chasms crossed by floating debris bridges, and sonic-winged predators. The deeper sectors (Floors 11-18) morph into terrifying organic corridors of pulsating flesh and chitinous nests, culminating in Floor 18 where the Apex Hive Guardian protects the ancient pulsing Dungeon Core obelisk.",
+    "min_number_of_characters": 1,
+    "max_number_of_characters": 3,
+    "keys": [
+      "Trial Dungeon",
+      "Hive Apex Rift",
+      "Floor 18",
+      "Hive Apex"
+    ],
+    "key_logic": "AND_ANY",
+    "secondary_keys": [
+      "dungeon",
+      "rift",
+      "apex",
+      "core",
+      "predators"
+    ],
+    "case_sensitive": false,
+    "whole_words_only": true,
+    "key_position": "after_char"
+  },
+  {
+    "id": "_fBmdJReXCqdRLzYzyKw7w",
+    "_id": "_fBmdJReXCqdRLzYzyKw7w",
+    "created_at": "2026-09-29T02:29:29.821Z",
+    "updated_at": "2026-09-29T02:29:29.821Z",
+    "world": {
+      "_id": "_CgYT8fHXpDC4crjmegQF7",
+      "id": "_CgYT8fHXpDC4crjmegQF7",
+      "name": "Svartulfr",
+      "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/98e2d06d-a675-45e3-6096-cf976b547400/public",
+      "visibility": "friends",
+      "status": "approved",
+      "created_at": "2026-09-18T10:30:20.705Z",
+      "updated_at": "2026-09-29T01:31:08.238Z"
+    },
+    "parent_location": null,
+    "environment": {
+      "_id": "_jUzC2EQyPTHte1hTYqPt8",
+      "id": "_jUzC2EQyPTHte1hTYqPt8",
+      "name": "California Coast",
+      "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/ba180ed1-e61d-4f1e-2305-c08aa7b40400/public",
+      "description": "",
+      "created_at": "2026-09-18T14:58:28.685Z",
+      "updated_at": "2026-09-18T14:58:28.685Z"
+    },
+    "name": "Braceria McKay (McKay's Smokehouse)",
+    "tags": [
+      "Restaurant",
+      "Tavern",
+      "Smokehouse",
+      "Food",
+      "Southside"
+    ],
+    "context_description": "A bustling, greasy-spoon smokehouse and steakhouse in Chicago's working-class district, permanently smelling of hickory smoke, sizzling bacon, and roasted meat. Famed among orcs, minotaurs, and heavy laborers for serving colossal racks of barbecue ribs and chocolate milkshakes topped with crispy bacon. It serves as Team Ukiyo's favorite post-dungeon gathering spot to decompress, count bounty coins, and recover lost calories.",
+    "min_number_of_characters": 1,
+    "max_number_of_characters": 3,
+    "keys": [
+      "Braceria McKay",
+      "McKay's Smokehouse",
+      "McKay Smokehouse"
+    ],
+    "key_logic": "AND_ANY",
+    "secondary_keys": [
+      "restaurant",
+      "ribs",
+      "smokehouse",
+      "milkshake",
+      "Ukiyo"
+    ],
+    "case_sensitive": false,
+    "whole_words_only": true,
+    "key_position": "after_char"
+  },
+  {
+    "id": "_DJxYBCM7rNrXMj1WracGM",
+    "_id": "_DJxYBCM7rNrXMj1WracGM",
+    "created_at": "2026-09-29T02:29:29.232Z",
+    "updated_at": "2026-09-29T02:29:29.232Z",
+    "world": {
+      "_id": "_CgYT8fHXpDC4crjmegQF7",
+      "id": "_CgYT8fHXpDC4crjmegQF7",
+      "name": "Svartulfr",
+      "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/98e2d06d-a675-45e3-6096-cf976b547400/public",
+      "visibility": "friends",
+      "status": "approved",
+      "created_at": "2026-09-18T10:30:20.705Z",
+      "updated_at": "2026-09-29T01:31:08.238Z"
+    },
+    "parent_location": null,
+    "environment": {
+      "_id": "_jUzC2EQyPTHte1hTYqPt8",
+      "id": "_jUzC2EQyPTHte1hTYqPt8",
+      "name": "California Coast",
+      "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/ba180ed1-e61d-4f1e-2305-c08aa7b40400/public",
+      "description": "",
+      "created_at": "2026-09-18T14:58:28.685Z",
+      "updated_at": "2026-09-18T14:58:28.685Z"
+    },
+    "name": "Club House Ironhorn Nomads",
+    "tags": [
+      "Clubhouse",
+      "Ironhorn Nomads",
+      "Biker",
+      "Marek",
+      "Oni"
+    ],
+    "context_description": "The fortified industrial compound serving as the world headquarters and sanctuary for the Ironhorn Nomads Motorcycle Club in the Naperville corridor. Enclosed by barbed wire, heavy steel gates, and roar of custom high-caliber motorcycles, it houses custom tuning workshops, a rough timber tavern with pool tables, private armories, and a spacious enclosed courtyard featuring an in-ground swimming pool utilized for boisterous club celebrations and pool parties.",
+    "min_number_of_characters": 1,
+    "max_number_of_characters": 3,
+    "keys": [
+      "Club House Ironhorn Nomads",
+      "Ironhorn Nomads Clubhouse",
+      "Nomads MC Clubhouse"
+    ],
+    "key_logic": "AND_ANY",
+    "secondary_keys": [
+      "clubhouse",
+      "biker",
+      "Marek",
+      "Oni",
+      "pool party",
+      "Naperville"
+    ],
+    "case_sensitive": false,
+    "whole_words_only": true,
+    "key_position": "after_char"
+  },
+  {
+    "id": "_erHMcydnPVEyk7NY3K9wf",
+    "_id": "_erHMcydnPVEyk7NY3K9wf",
+    "created_at": "2026-09-29T02:29:28.621Z",
+    "updated_at": "2026-09-29T02:29:28.621Z",
+    "world": {
+      "_id": "_CgYT8fHXpDC4crjmegQF7",
+      "id": "_CgYT8fHXpDC4crjmegQF7",
+      "name": "Svartulfr",
+      "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/98e2d06d-a675-45e3-6096-cf976b547400/public",
+      "visibility": "friends",
+      "status": "approved",
+      "created_at": "2026-09-18T10:30:20.705Z",
+      "updated_at": "2026-09-29T01:31:08.238Z"
+    },
+    "parent_location": null,
+    "environment": {
+      "_id": "_jUzC2EQyPTHte1hTYqPt8",
+      "id": "_jUzC2EQyPTHte1hTYqPt8",
+      "name": "California Coast",
+      "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/ba180ed1-e61d-4f1e-2305-c08aa7b40400/public",
+      "description": "",
+      "created_at": "2026-09-18T14:58:28.685Z",
+      "updated_at": "2026-09-18T14:58:28.685Z"
+    },
+    "name": "Team Ukiyo Operational Base (Warehouse & Black Vault)",
+    "tags": [
+      "Base",
+      "Team Ukiyo",
+      "Warehouse",
+      "Vault",
+      "Southside"
+    ],
+    "context_description": "The fortified headquarters of Team Ukiyo in Southside Chicago. Originally an old industrial sewing machine warehouse acquired from Vargus 'The Red', it rests upon bedrock foundations ideal for anchoring high-tier Dungeon Cores. The complex features crew quarters, a heavy armory, a sparring ring, and the Black Vault: an impenetrable subterranean vault designed by Jasper, encased in lead, silver, and anti-scrying runes to store unregistered dungeon artifacts safely.",
+    "min_number_of_characters": 1,
+    "max_number_of_characters": 3,
+    "keys": [
+      "Team Ukiyo Base",
+      "Ukiyo Warehouse",
+      "Black Vault",
+      "Team Ukiyo Duplex"
+    ],
+    "key_logic": "AND_ANY",
+    "secondary_keys": [
+      "base",
+      "warehouse",
+      "vault",
+      "Ukiyo",
+      "Radek"
+    ],
+    "case_sensitive": false,
+    "whole_words_only": true,
+    "key_position": "after_char"
+  },
+  {
+    "id": "_RVRf9PtEdwhGt3rGGFjMC",
+    "_id": "_RVRf9PtEdwhGt3rGGFjMC",
+    "created_at": "2026-09-29T02:29:27.474Z",
+    "updated_at": "2026-09-29T02:29:27.474Z",
+    "world": {
+      "_id": "_CgYT8fHXpDC4crjmegQF7",
+      "id": "_CgYT8fHXpDC4crjmegQF7",
+      "name": "Svartulfr",
+      "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/98e2d06d-a675-45e3-6096-cf976b547400/public",
+      "visibility": "friends",
+      "status": "approved",
+      "created_at": "2026-09-18T10:30:20.705Z",
+      "updated_at": "2026-09-29T01:31:08.238Z"
+    },
+    "parent_location": null,
+    "environment": {
+      "_id": "_jUzC2EQyPTHte1hTYqPt8",
+      "id": "_jUzC2EQyPTHte1hTYqPt8",
+      "name": "California Coast",
+      "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/ba180ed1-e61d-4f1e-2305-c08aa7b40400/public",
+      "description": "",
+      "created_at": "2026-09-18T14:58:28.685Z",
+      "updated_at": "2026-09-18T14:58:28.685Z"
+    },
+    "name": "The Cable District & The Void",
+    "tags": [
+      "District",
+      "Industrial",
+      "Grey Zone",
+      "Underworld",
+      "Chicago"
+    ],
+    "context_description": "Chicago's notorious industrial grey zone, situated in the Old Warehouses Sector. A dense, foreboding labyrinth of suspended high-voltage cables, hissing steam conduits, and heavily unstable aetheric ley-lines. While nominally subject to municipal law, it is de facto governed by syndicate bosses and energy barons. At its perimeter lies The Void, an unstable planar tear and black-market bazaar where raw mana crystals, illicit drops, and unregistered magitech are traded.",
+    "min_number_of_characters": 1,
+    "max_number_of_characters": 3,
+    "keys": [
+      "The Cable District",
+      "Cable District",
+      "The Void",
+      "Old Warehouses Sector"
+    ],
+    "key_logic": "AND_ANY",
+    "secondary_keys": [
+      "cables",
+      "grey zone",
+      "aetheric",
+      "warehouses",
+      "industrial"
+    ],
+    "case_sensitive": false,
+    "whole_words_only": true,
+    "key_position": "after_char"
+  },
+  {
+    "id": "_aWcjmPKnChpzGndYD62gP",
+    "_id": "_aWcjmPKnChpzGndYD62gP",
+    "created_at": "2026-09-29T02:29:26.884Z",
+    "updated_at": "2026-09-29T02:29:26.884Z",
+    "world": {
+      "_id": "_CgYT8fHXpDC4crjmegQF7",
+      "id": "_CgYT8fHXpDC4crjmegQF7",
+      "name": "Svartulfr",
+      "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/98e2d06d-a675-45e3-6096-cf976b547400/public",
+      "visibility": "friends",
+      "status": "approved",
+      "created_at": "2026-09-18T10:30:20.705Z",
+      "updated_at": "2026-09-29T01:31:08.238Z"
+    },
+    "parent_location": null,
+    "environment": {
+      "_id": "_jUzC2EQyPTHte1hTYqPt8",
+      "id": "_jUzC2EQyPTHte1hTYqPt8",
+      "name": "California Coast",
+      "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/ba180ed1-e61d-4f1e-2305-c08aa7b40400/public",
+      "description": "",
+      "created_at": "2026-09-18T14:58:28.685Z",
+      "updated_at": "2026-09-18T14:58:28.685Z"
+    },
+    "name": "Clinica Ortus",
+    "tags": [
+      "Clinic",
+      "Medical",
+      "Demi-Human",
+      "Clandestine",
+      "Chicago"
+    ],
+    "context_description": "A premier private medical facility catering to elite and high-ranking demi-humans, operating completely outside standard Guild and DMHA bureaucratic surveillance. Equipped with Grade S sterility wards, multi-tiered arcane scanning circles for anatomical diagnosis, and reinforced surgical theaters. It provides discreet, high-level medical care for combat injuries, mana deviations, and clandestine operations without filing official police or Guild injury reports.",
+    "min_number_of_characters": 1,
+    "max_number_of_characters": 3,
+    "keys": [
+      "Clinica Ortus",
+      "Ortus Clinic",
+      "Ortus Demi-Human Clinic"
+    ],
+    "key_logic": "AND_ANY",
+    "secondary_keys": [
+      "clinic",
+      "hospital",
+      "demi-human",
+      "Grade S",
+      "scanner"
+    ],
+    "case_sensitive": false,
+    "whole_words_only": true,
+    "key_position": "after_char"
+  },
+  {
+    "id": "_BD8F76PngMyD2yURFWV76",
+    "_id": "_BD8F76PngMyD2yURFWV76",
+    "created_at": "2026-09-29T02:29:26.330Z",
+    "updated_at": "2026-09-29T02:29:26.330Z",
+    "world": {
+      "_id": "_CgYT8fHXpDC4crjmegQF7",
+      "id": "_CgYT8fHXpDC4crjmegQF7",
+      "name": "Svartulfr",
+      "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/98e2d06d-a675-45e3-6096-cf976b547400/public",
+      "visibility": "friends",
+      "status": "approved",
+      "created_at": "2026-09-18T10:30:20.705Z",
+      "updated_at": "2026-09-29T01:31:08.238Z"
+    },
+    "parent_location": null,
+    "environment": {
+      "_id": "_jUzC2EQyPTHte1hTYqPt8",
+      "id": "_jUzC2EQyPTHte1hTYqPt8",
+      "name": "California Coast",
+      "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/ba180ed1-e61d-4f1e-2305-c08aa7b40400/public",
+      "description": "",
+      "created_at": "2026-09-18T14:58:28.685Z",
+      "updated_at": "2026-09-18T14:58:28.685Z"
+    },
+    "name": "La Dimora del Rifugio",
+    "tags": [
+      "Dimension",
+      "Refuge",
+      "Father Rev",
+      "Sanctuary",
+      "Thermal Baths"
+    ],
+    "context_description": "An opulent extradimensional sanctuary hidden beyond the Veil, accessible exclusively via the enchanted golden key entrusted to Alyssa by Father Revazhael. The exterior portal appears as an ethereal doorway framed by coils of black smoke and crimson runes. The interior reveals a majestic stone and cedar manor featuring an arcane library with Father Rev's animated portraits, private suites, and soothing natural geothermal thermal baths fed by subterranean mystic currents. The entire estate is maintained and protected by the bound spirit butler, Kobal.",
+    "min_number_of_characters": 1,
+    "max_number_of_characters": 3,
+    "keys": [
+      "La Dimora del Rifugio",
+      "Dimora del Rifugio",
+      "Dimensional Refuge",
+      "Father Rev's Refuge"
+    ],
+    "key_logic": "AND_ANY",
+    "secondary_keys": [
+      "refuge",
+      "villa",
+      "thermal baths",
+      "Kobal",
+      "dimensional key"
+    ],
+    "case_sensitive": false,
+    "whole_words_only": true,
+    "key_position": "after_char"
+  },
+  {
     "id": "_hcmcH3jKtU82P8Bh11mF1",
     "_id": "_hcmcH3jKtU82P8Bh11mF1",
     "created_at": "2026-09-29T01:59:42.971Z",

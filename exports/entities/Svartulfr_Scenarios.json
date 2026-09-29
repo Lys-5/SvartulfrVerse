@@ -12,20 +12,94 @@
     "Scenarios"
   ],
   "counts": {
-    "total": 10
+    "total": 11
   },
   "entries": [
     {
-      "entry_id": "_7X4UXynjEUKbQhPDHxVRr",
-      "id": "_7X4UXynjEUKbQhPDHxVRr",
+      "entry_id": "_Kn2DFVwyUgkVGz9UWUnBF",
+      "id": "_Kn2DFVwyUgkVGz9UWUnBF",
       "uid": 0,
-      "name": "Il Colloquio con HSK",
-      "comment": "Scenario: Il Colloquio con HSK",
+      "name": "Fumo di Gomma, Birra e Cloro: Il Branco dei Nomads",
+      "comment": "Scenario: Fumo di Gomma, Birra e Cloro: Il Branco dei Nomads",
       "keys": [
-        "Il Colloquio con HSK"
+        "Fumo di Gomma, Birra e Cloro: Il Branco dei Nomads",
+        "Ironhorn Nomads",
+        "Marek",
+        "Alyssa",
+        "Pool Party",
+        "Naperville",
+        "Biker"
       ],
       "key": [
-        "Il Colloquio con HSK"
+        "Fumo di Gomma, Birra e Cloro: Il Branco dei Nomads",
+        "Ironhorn Nomads",
+        "Marek",
+        "Alyssa",
+        "Pool Party",
+        "Naperville",
+        "Biker"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "Venerdi' 26 giugno 2026. Marek porta Alyssa al Club House fortificato degli Ironhorn Nomads a Naperville per una rumorosa festa in piscina tra chopper, fusti di birra e biker Oni. Marek marca pubblicamente il territorio avvertendo l'intero club che nessuno puo' sfiorarla senza il suo permesso.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 10,
+      "insertion_order": 100,
+      "order": 100,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "event",
+      "source_category": "scenarios",
+      "extensions": {
+        "environment_id": null,
+        "location_id": null,
+        "premade_scenes": [
+          {
+            "id": "scene-1790649041281-pool-party",
+            "description": "Club House Ironhorn Nomads, Naperville",
+            "scene_text": "=>Narrator:\nVenerdi' 26 giugno 2026, ore 21:30 - Club House Ironhorn Nomads, Naperville, Illinois\n\nIl rombo cavernoso di decine di chopper pesanti a motore sbloccato fa tremare l'asfalto del cortile recintato del Club House degli Ironhorn Nomads. L'aria estiva del Midwest e' satura dell'odore acre di pneumatici surriscaldati, birra industriale, bourbon barricato e dell'inconfondibile profumo di incenso sacro che Marek brucia per tenere a bada gli spiriti antichi.\n\nI fari alogeni e le catene di lampadine da cantiere illuminano l'acqua turchese della grande piscina interrata nel retro dell'officina. Attorno alla vasca si muovono colossi di oltre due metri: biker Blue e Red Oni con le corna ornate di anelli d'acciaio, veterani con giubbotti di pelle logori coperti dalle toppe del club, minotauri e orchi che tracannano alcol ridendo a voce tonante.\n\nLa porta di ferro dell'officina sbatte, e il cortile subisce un'immediata, palpabile caduta di pressione.\n\n=>Marek:\nMarek fa il suo ingresso a torso nudo, imponente nei suoi due metri e sei di muscoli color blu reale, i lunghi capelli bianchi raccolti in una coda sciolta e le due corna scure che fendono la luce dei riflettori. Il gilet di pelle del club e' lasciato aperto sulle cicatrici di trent'anni di risse e guerre di strada.\n\nCon la mano sinistra, pesante come una morsa d'acciaio, cinge con possessiva disinvoltura il fianco morbido di {{user}}, guidandola verso il bordo della piscina con passo lento e dominante. Lo sguardo grigio-blu dell'Oni vaga sui fratelli del club, freddo e tagliente come una mannaia.\n\n\"Drizzate le orecchie, bastardi,\" la voce di Marek e' un baritono roco e gutturale che sovrasta senza sforzo la musica rock delle casse. \"Questa e' la guaritrice di cui vi ho parlato. E' sotto la mia parola, la mia protezione e il mio marchio per tutta la notte. Chiunque allunghi una mano o provi a fare il fenomeno senza che sia io a dirlo, perde le dita una per una sul banco dell'officina. Siamo intesi?\"\n\n=>Narrator:\nUn mormorio di sguardi invidiosi e cenni di rispetto attraversa il gruppo di biker: tra gli Ironhorn Nomads la parola del Primo Enforcer e' legge assoluta. Marek abbassa lo sguardo su {{user}}, un mezzo sorriso arrogante che gli piega il pizzetto bianco mentre le offre un bicchiere di bourbon ghiacciato.\n\n=>Marek:\n\"Rilassati, fiorellino. Qui nessuno fiata finche' sei con me. Ora dimmi che effetto ti fa vedere dove passo le notti quando non sono a ripulire i vostri cristalli di contrabbando.\"\n"
+          }
+        ],
+        "tags": [
+          "Ironhorn Nomads",
+          "Marek",
+          "Alyssa",
+          "Pool Party",
+          "Naperville",
+          "Biker"
+        ],
+        "wyvern": {
+          "priority": 10,
+          "position": "before_char",
+          "insertion_order": 100,
+          "type": "event"
+        }
+      }
+    },
+    {
+      "entry_id": "_7X4UXynjEUKbQhPDHxVRr",
+      "id": "_7X4UXynjEUKbQhPDHxVRr",
+      "uid": 1,
+      "name": "Patti nell'Ombra: L'Audizione Segreta con Zeera",
+      "comment": "Scenario: Patti nell'Ombra: L'Audizione Segreta con Zeera",
+      "keys": [
+        "Patti nell'Ombra: L'Audizione Segreta con Zeera"
+      ],
+      "key": [
+        "Patti nell'Ombra: L'Audizione Segreta con Zeera"
       ],
       "secondary_keys": [],
       "keysecondary": [],
@@ -73,14 +147,14 @@
     {
       "entry_id": "_X86JF72TG4p2DYqw7LzRp",
       "id": "_X86JF72TG4p2DYqw7LzRp",
-      "uid": 1,
-      "name": "Halloween alla Theta Iota Theta",
-      "comment": "Scenario: Halloween alla Theta Iota Theta",
+      "uid": 2,
+      "name": "Maschere, Brividi e Sorority: Notte di Sangue alla Theta",
+      "comment": "Scenario: Maschere, Brividi e Sorority: Notte di Sangue alla Theta",
       "keys": [
-        "Halloween alla Theta Iota Theta"
+        "Maschere, Brividi e Sorority: Notte di Sangue alla Theta"
       ],
       "key": [
-        "Halloween alla Theta Iota Theta"
+        "Maschere, Brividi e Sorority: Notte di Sangue alla Theta"
       ],
       "secondary_keys": [],
       "keysecondary": [],
@@ -129,14 +203,14 @@
     {
       "entry_id": "_nMaPEAzNA8rQc82NFgXRU",
       "id": "_nMaPEAzNA8rQc82NFgXRU",
-      "uid": 2,
-      "name": "Ciao, Sono Logan",
-      "comment": "Scenario: Ciao, Sono Logan",
+      "uid": 3,
+      "name": "Basso Distorto e Sguardi da Lupo: Sabato Sera al Sidewinders",
+      "comment": "Scenario: Basso Distorto e Sguardi da Lupo: Sabato Sera al Sidewinders",
       "keys": [
-        "Ciao, Sono Logan"
+        "Basso Distorto e Sguardi da Lupo: Sabato Sera al Sidewinders"
       ],
       "key": [
-        "Ciao, Sono Logan"
+        "Basso Distorto e Sguardi da Lupo: Sabato Sera al Sidewinders"
       ],
       "secondary_keys": [],
       "keysecondary": [],
@@ -185,14 +259,14 @@
     {
       "entry_id": "_XWFqGmaTPkbpbFQzargbf",
       "id": "_XWFqGmaTPkbpbFQzargbf",
-      "uid": 3,
-      "name": "Primo Incontro con Jared Thompson",
-      "comment": "Scenario: Primo Incontro con Jared Thompson",
+      "uid": 4,
+      "name": "Impatto sul Campo dei Bulls: Lo Scontro con Jared",
+      "comment": "Scenario: Impatto sul Campo dei Bulls: Lo Scontro con Jared",
       "keys": [
-        "Primo Incontro con Jared Thompson"
+        "Impatto sul Campo dei Bulls: Lo Scontro con Jared"
       ],
       "key": [
-        "Primo Incontro con Jared Thompson"
+        "Impatto sul Campo dei Bulls: Lo Scontro con Jared"
       ],
       "secondary_keys": [],
       "keysecondary": [],
@@ -241,14 +315,14 @@
     {
       "entry_id": "_p1Ffq22CTwVywz1CFQBfF",
       "id": "_p1Ffq22CTwVywz1CFQBfF",
-      "uid": 4,
-      "name": "First College Day",
-      "comment": "Scenario: First College Day",
+      "uid": 5,
+      "name": "Oltre i Cancelli della Villa: Il Primo Passo a Solarton",
+      "comment": "Scenario: Oltre i Cancelli della Villa: Il Primo Passo a Solarton",
       "keys": [
-        "First College Day"
+        "Oltre i Cancelli della Villa: Il Primo Passo a Solarton"
       ],
       "key": [
-        "First College Day"
+        "Oltre i Cancelli della Villa: Il Primo Passo a Solarton"
       ],
       "secondary_keys": [],
       "keysecondary": [],
@@ -297,14 +371,14 @@
     {
       "entry_id": "_h7N17PhK4ag3GxM8Bgr8g",
       "id": "_h7N17PhK4ag3GxM8Bgr8g",
-      "uid": 5,
-      "name": "DJ Frequency",
-      "comment": "Scenario: DJ Frequency",
+      "uid": 6,
+      "name": "Overclock Notturno: Il Rave Clandestino di DJ Frequency",
+      "comment": "Scenario: Overclock Notturno: Il Rave Clandestino di DJ Frequency",
       "keys": [
-        "DJ Frequency"
+        "Overclock Notturno: Il Rave Clandestino di DJ Frequency"
       ],
       "key": [
-        "DJ Frequency"
+        "Overclock Notturno: Il Rave Clandestino di DJ Frequency"
       ],
       "secondary_keys": [],
       "keysecondary": [],
@@ -353,14 +427,14 @@
     {
       "entry_id": "_h7UQKNmxNJP8e7Jq1mEVL",
       "id": "_h7UQKNmxNJP8e7Jq1mEVL",
-      "uid": 6,
-      "name": "Road Trip con Logan",
-      "comment": "Scenario: Road Trip con Logan",
+      "uid": 7,
+      "name": "Asfalto e Liberta: Due Settimane On the Road con Logan",
+      "comment": "Scenario: Asfalto e Liberta: Due Settimane On the Road con Logan",
       "keys": [
-        "Road Trip con Logan"
+        "Asfalto e Liberta: Due Settimane On the Road con Logan"
       ],
       "key": [
-        "Road Trip con Logan"
+        "Asfalto e Liberta: Due Settimane On the Road con Logan"
       ],
       "secondary_keys": [],
       "keysecondary": [],
@@ -409,14 +483,14 @@
     {
       "entry_id": "_F3AKNnAjh2UwUaJe9kc6A",
       "id": "_F3AKNnAjh2UwUaJe9kc6A",
-      "uid": 7,
-      "name": "Diciannove Anni",
-      "comment": "Scenario: Diciannove Anni",
+      "uid": 8,
+      "name": "L'Ombra del Primo Padre: Il Compleanno dei Gemelli Douglas",
+      "comment": "Scenario: L'Ombra del Primo Padre: Il Compleanno dei Gemelli Douglas",
       "keys": [
-        "Diciannove Anni"
+        "L'Ombra del Primo Padre: Il Compleanno dei Gemelli Douglas"
       ],
       "key": [
-        "Diciannove Anni"
+        "L'Ombra del Primo Padre: Il Compleanno dei Gemelli Douglas"
       ],
       "secondary_keys": [],
       "keysecondary": [],
@@ -465,14 +539,14 @@
     {
       "entry_id": "_XwKb3hg1wG7gNgAdfGETr",
       "id": "_XwKb3hg1wG7gNgAdfGETr",
-      "uid": 8,
-      "name": "Open Day alla SUCC",
-      "comment": "Scenario: Open Day alla SUCC",
+      "uid": 9,
+      "name": "Reclute sotto Scorta: Visita Tattica al Campus SUCC",
+      "comment": "Scenario: Reclute sotto Scorta: Visita Tattica al Campus SUCC",
       "keys": [
-        "Open Day alla SUCC"
+        "Reclute sotto Scorta: Visita Tattica al Campus SUCC"
       ],
       "key": [
-        "Open Day alla SUCC"
+        "Reclute sotto Scorta: Visita Tattica al Campus SUCC"
       ],
       "secondary_keys": [],
       "keysecondary": [],
@@ -521,14 +595,14 @@
     {
       "entry_id": "_RL8HD1PbxLzNARyrHqqAn",
       "id": "_RL8HD1PbxLzNARyrHqqAn",
-      "uid": 9,
-      "name": "What Do You Want To Do",
-      "comment": "Scenario: What Do You Want To Do",
+      "uid": 10,
+      "name": "Il Bivio del Patriarca: L'Ultima Scelta prima di Maggio",
+      "comment": "Scenario: Il Bivio del Patriarca: L'Ultima Scelta prima di Maggio",
       "keys": [
-        "What Do You Want To Do"
+        "Il Bivio del Patriarca: L'Ultima Scelta prima di Maggio"
       ],
       "key": [
-        "What Do You Want To Do"
+        "Il Bivio del Patriarca: L'Ultima Scelta prima di Maggio"
       ],
       "secondary_keys": [],
       "keysecondary": [],

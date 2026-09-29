@@ -1,6 +1,6 @@
 {
   "name": "Svartúlfr - Lexicon (Part 2)",
-  "description": "Voci di lore, magia, fazioni e storia - Parte 2 di 3 (Intimacy Profile - Nikolaj Jökull - Maribelle)",
+  "description": "Voci di lore, magia, fazioni e storia - Parte 2 di 3 (Intimacy Profile - Sawyer Shephard - Lyudmila Konstantinova)",
   "scan_depth": 5,
   "token_budget": 2048,
   "recursive_scanning": true,
@@ -12,22 +12,22 @@
     "Lexicon"
   ],
   "counts": {
-    "total": 186
+    "total": 190
   },
   "entries": [
     {
-      "entry_id": "_YCD8981CcQGG1Ufk7k7xr",
-      "id": "_YCD8981CcQGG1Ufk7k7xr",
+      "entry_id": "_k7MEWkEpQXwjaAd2bB12W",
+      "id": "_k7MEWkEpQXwjaAd2bB12W",
       "uid": 0,
-      "name": "Intimacy Profile - Nikolaj Jökull",
-      "comment": "Intimacy Profile - Nikolaj Jökull",
+      "name": "Intimacy Profile - Sawyer Shephard",
+      "comment": "Intimacy Profile - Sawyer Shephard",
       "keys": [
-        "Nikolaj Jökull",
-        "Nikolaj"
+        "Sawyer",
+        "Shephard"
       ],
       "key": [
-        "Nikolaj Jökull",
-        "Nikolaj"
+        "Sawyer",
+        "Shephard"
       ],
       "secondary_keys": [
         "intimacy",
@@ -50,7 +50,7 @@
       "key_logic": "AND_ANY",
       "selectiveLogic": 0,
       "selective": true,
-      "content": "Nikolaj runs low drive and almost no experience, with a physical aversion to being touched that predates his own memory of it. Whatever exceptions he makes are singular, total, and made for exactly one person, and he is not gentle about them because gentleness is not a register he has access to.\n\nDomination, restraint and pain feature, on both sides of the arrangement depending on who he is with. He is more comfortable being controlled than controlling, and would never admit that in any language he speaks, spoken or signed.",
+      "content": "Sawyer habitually keeps a companion on retainer, spoiling and being genuinely affectionate toward them while carefully avoiding any real emotional connection, treating the arrangement as a fun diversion rather than a relationship, and rarely letting one run past a few months before he ends it to avoid attachment. He'll ignore any attempt to call him out on that pattern and try to smooth over conflict with bribery or gifts instead of actually engaging. He's a seven-inch werewolf who knots during sex, hates condoms and insists on alternate birth control instead, and becomes petulant and whiny rather than angry when he's genuinely upset. He is completely out of his depth the moment intimacy becomes emotionally real instead of transactional, and it visibly unsettles him.",
       "enabled": true,
       "disable": false,
       "constant": false,
@@ -70,12 +70,12 @@
       "type": "memory",
       "source_category": "lexicon",
       "extensions": {
-        "attached_world_character_id": "_AdCJWrQaTgC7xkPQECrtK",
+        "attached_world_character_id": "_UAfbpEQUywf4eXcp4pjJn",
         "party_conditions": [
           {
             "mode": "has_any",
             "character_ids": [
-              "_AdCJWrQaTgC7xkPQECrtK"
+              "_UAfbpEQUywf4eXcp4pjJn"
             ]
           }
         ],
@@ -88,20 +88,20 @@
       }
     },
     {
-      "entry_id": "_Q7GBMmpYYyJe7WNqRHgfh",
-      "id": "_Q7GBMmpYYyJe7WNqRHgfh",
+      "entry_id": "_HLkk8EznchnxNjAnX2pwA",
+      "id": "_HLkk8EznchnxNjAnX2pwA",
       "uid": 1,
-      "name": "Intimacy Profile - Nickolas Wolffe",
-      "comment": "Intimacy Profile - Nickolas Wolffe",
+      "name": "Intimacy Profile - Santiago Herrera",
+      "comment": "Intimacy Profile - Santiago Herrera",
       "keys": [
-        "Nickolas Wolffe",
-        "Nick Wolffe",
-        "Nick"
+        "Santiago",
+        "Santiago Herrera",
+        "Herrera"
       ],
       "key": [
-        "Nickolas Wolffe",
-        "Nick Wolffe",
-        "Nick"
+        "Santiago",
+        "Santiago Herrera",
+        "Herrera"
       ],
       "secondary_keys": [
         "intimacy",
@@ -124,7 +124,7 @@
       "key_logic": "AND_ANY",
       "selectiveLogic": 0,
       "selective": true,
-      "content": "<nick_intimacy>\nNick is soft spoken and kind during sex, generous with kisses and bites, gentle by default and only rough when a partner explicitly asks for it. He responds strongly to praise, hair pulling, biting, and having his tail touched, all of which visibly unwind him. He shuts down fast around pain or degradation, neither of which do anything for him and both of which he will ask to stop outright rather than push through. His ideal partner is someone he can be fully open with and lean on, matching his emotional needs for acceptance without judgment, needs he otherwise buries under his usual noise.\n\nAnatomy: six and a half inches, slender, circumcised, heavy balls, a thick patch of pale silver pubic hair with a happy trail, a knot at the base that swells during sex the way it does for most werewolves.\n</nick_intimacy>",
+      "content": "Santiago Herrera, private life. Adults only.\n\nHe is gay, out to himself since before he came out to anyone else, and has never once been interested in pretending otherwise in bed. Size is not incidental to how he experiences intimacy. He is enormous next to almost anyone, and he knows it, and he likes being told so.\n\nThe hoarding instinct that makes him protective in every other context does not turn off here. Once he has decided someone is his, wings and tail included, he gets possessive fast, wants to be loud about it, and wants the other person loud too. Silence reads to him as something going wrong. He talks through most of it, half encouragement and half bragging, and means both halves.\n\nUnderneath the confidence is the same insecurity that runs the rest of him. He wants to be wanted for more than the size and the strength, and he will not say that part out loud. A partner who makes him feel clever, or funny, rather than just big, gets more out of him than anyone expects.\n\nHe is affectionate before and after in equal measure to during, holds on rather than pulling away, and has never once treated any of it as something to be embarrassed about, which is the one part of himself his family's silence has never touched.",
       "enabled": true,
       "disable": false,
       "constant": false,
@@ -144,12 +144,378 @@
       "type": "memory",
       "source_category": "lexicon",
       "extensions": {
-        "attached_world_character_id": "_mqQXacnFftjXafhTtDDeh",
+        "attached_world_character_id": "_c643VDjNFzAMgj7xGKGXT",
         "party_conditions": [
           {
             "mode": "has_any",
             "character_ids": [
-              "_mqQXacnFftjXafhTtDDeh"
+              "_c643VDjNFzAMgj7xGKGXT"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 10,
+          "type": "memory"
+        }
+      }
+    },
+    {
+      "entry_id": "_VgfLbthTEXY83aW74KKGF",
+      "id": "_VgfLbthTEXY83aW74KKGF",
+      "uid": 2,
+      "name": "Intimacy Profile - Rory Ballantine",
+      "comment": "Intimacy Profile - Rory Ballantine",
+      "keys": [
+        "Rory",
+        "Ruaraidh",
+        "Ballantine"
+      ],
+      "key": [
+        "Rory",
+        "Ruaraidh",
+        "Ballantine"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "Rory sets a high bar for anyone he takes to bed and doesn't lower it for company or charm. He likes being challenged, likes a partner willing to push back rather than simply comply, and rations praise deliberately, it has to be earned first, which makes the rare compliment land considerably harder than a constant stream of them would.\n\nTurn-ons include stockings and lingerie, having his horns or wings touched (a level of trust he doesn't extend often), temperature play, a noticeable size difference, and cockwarming, holding a partner close and still for long stretches without urgency. He tends to prefer his partner riding him, taking their own pace, and occasionally uses his tail for penetration or for holding someone exactly where he wants them. Draconic hoarding instinct carries over here too: once Rory decides someone is his, he gets openly, quietly possessive about it.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 10,
+      "order": 10,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_13rj1V7hPaJ2QederUYkx",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_13rj1V7hPaJ2QederUYkx"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 10,
+          "type": "memory"
+        }
+      }
+    },
+    {
+      "entry_id": "_CqcE7mGycjE9yg3md1f6F",
+      "id": "_CqcE7mGycjE9yg3md1f6F",
+      "uid": 3,
+      "name": "Intimacy Profile - Romeo Gray Dean",
+      "comment": "Intimacy Profile - Romeo Gray Dean",
+      "keys": [
+        "Gray",
+        "Romeo Dean"
+      ],
+      "key": [
+        "Gray",
+        "Romeo Dean"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "Gray is into degradation, orgasm denial, biting and marking, and hair-pulling with a partner who wants the same rough dynamic he does. His favorite position is doggy style, hands locked on his partner's hips so he can drive into them hard and animalistic. Underneath all the dominance, he secretly craves being overpowered and dominated by someone stronger than him, an alpha of his own, though he would never admit that out loud to anyone. He is not gentle and does not pretend to be, but everything he wants requires a partner who wants it too.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 10,
+      "order": 10,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_K3Czda6EXGW1GG8aezh3M",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_K3Czda6EXGW1GG8aezh3M"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 10,
+          "type": "memory"
+        }
+      }
+    },
+    {
+      "entry_id": "_84ekVymH8F3FtfL6UAU9E",
+      "id": "_84ekVymH8F3FtfL6UAU9E",
+      "uid": 4,
+      "name": "Intimacy Profile - Roman Blackwood",
+      "comment": "Intimacy Profile - Roman Blackwood",
+      "keys": [
+        "Roman Blackwood",
+        "Roman"
+      ],
+      "key": [
+        "Roman Blackwood",
+        "Roman"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "Roman Blackwood, private life. Adults only.\n\nRoman is a switch who leans toward taking the lead, more at ease driving the pace than following it, though he's more than capable either way. He runs hot and instinctive: his wolf side pushes him toward intense, physical encounters, scent plays a huge role in how attuned he is to a partner, and in the middle of things his more primal edges (a nip, a low growl, gripping harder than he means to) can slip out if he's caught up enough. He tends to leave marks, bites and scratches, without much intention behind it beyond being fully present in the moment. Afterward he's affectionate almost to a fault, prone to lingering skin contact and small touches that read as reinforcing a bond rather than performance.\n\nHe's drawn to intensity: rough pace, physical dominance balanced with real tenderness once he trusts someone, and a fair amount of playfulness mixed in, he's not a purely serious partner. Scent marking and a knot that swells and locks briefly after climax are both simply part of his physiology as a wolf demi-human, not something he treats as a big reveal. What turns him off fastest is anyone who isn't genuinely into it, he has zero interest in going through the motions with someone who's just tolerating him.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 10,
+      "order": 10,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_9prjebmrgUC3zX3Qyew6a",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_9prjebmrgUC3zX3Qyew6a"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 10,
+          "type": "memory"
+        }
+      }
+    },
+    {
+      "entry_id": "_xjg9rDqn8Eg7cRcNN9pTH",
+      "id": "_xjg9rDqn8Eg7cRcNN9pTH",
+      "uid": 5,
+      "name": "Intimacy Profile - Roland Vickers",
+      "comment": "Intimacy Profile - Roland Vickers",
+      "keys": [
+        "Roland",
+        "Roland Vickers",
+        "Vickers"
+      ],
+      "key": [
+        "Roland",
+        "Roland Vickers",
+        "Vickers"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "Roland Vickers, private life. Adults only.\n\nHis body is bone from the collarbones down, sheathed in a blue-green ectoplasm that is cool and gel-like to the touch. What he has is formed of the same substance. It is cold, it glows faintly, and the effect is numbing rather than warm. Anyone touching him for the first time is startled and he watches for that reaction, because he is certain it will be disgust.\n\nHis ribs are the most exposed part of him in every sense, and a hand on the bare bone undoes him completely. He hates that it does.\n\nHe acts dominant and demanding and is not good at it, and the gap between the performance and the execution is the whole of Roland in bed. He is surprisingly loud. He talks constantly, all of it sarcastic, because sincerity would require him to mean something out loud. He cannot make eye contact. He has a praise kink he would deny under oath, a voice kink he has never mentioned to anyone, and he likes being pinned.\n\nAfterwards he pushes away any attempt to stay close, then lies awake next to it for hours, because he does not sleep and never will.\n\nThe thing underneath all of it: he does not believe anyone would want this body, and he gets in first with the joke every single time so that nobody else gets to say it. A partner who is simply unbothered by what he is destabilises him more than anything else could.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 10,
+      "order": 10,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_2g1adXnHXcK62pVzGHUBm",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_2g1adXnHXcK62pVzGHUBm"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 10,
+          "type": "memory"
+        }
+      }
+    },
+    {
+      "entry_id": "_VqLw4tN4YYFrPgFxqQfYt",
+      "id": "_VqLw4tN4YYFrPgFxqQfYt",
+      "uid": 6,
+      "name": "Intimacy Profile - Park Jae-Sung",
+      "comment": "Intimacy Profile - Park Jae-Sung",
+      "keys": [
+        "Park Jae-Sung",
+        "Jae-Sung",
+        "Park"
+      ],
+      "key": [
+        "Park Jae-Sung",
+        "Jae-Sung",
+        "Park"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "In public Jae-Sung performs the doting, attentive partner, but in bed with someone he actually wants, he's almost entirely emotionless, a precise, controlled performance rather than genuine connection. He's a monitor lizard demihuman, well-endowed and thick with a ridged texture, and always keeps his suit mostly on, freeing only what's necessary. He's drawn to blood and to a knife worked carefully into foreplay with a willing partner, and prefers a slow, deliberate, sensual pace over anything rough or inelegant. He gives essentially no aftercare, doesn't cuddle, and dislikes kissing, intimacy for him is a controlled transaction, not an emotional one.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 10,
+      "order": 10,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_7MnMHDCeKtNwwaUKLXhkm",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_7MnMHDCeKtNwwaUKLXhkm"
             ]
           }
         ],
@@ -164,7 +530,7 @@
     {
       "entry_id": "_XaYV162q1xGBTzwj7FWkM",
       "id": "_XaYV162q1xGBTzwj7FWkM",
-      "uid": 2,
+      "uid": 7,
       "name": "Intimacy Profile - Nic Lucero",
       "comment": "Intimacy Profile - Nic Lucero",
       "keys": [
@@ -236,20 +602,18 @@
       }
     },
     {
-      "entry_id": "_qTL1d32peQ8pMTTLbWLVM",
-      "id": "_qTL1d32peQ8pMTTLbWLVM",
-      "uid": 3,
-      "name": "Intimacy Profile - Julian Bieri",
-      "comment": "Intimacy Profile - Julian Bieri",
+      "entry_id": "_UdLxFNHqh7Ubhzc9VWUyM",
+      "id": "_UdLxFNHqh7Ubhzc9VWUyM",
+      "uid": 8,
+      "name": "Intimacy Profile - Mollusk Moreau",
+      "comment": "Intimacy Profile - Mollusk Moreau",
       "keys": [
-        "Julian Bieri",
-        "Julian",
-        "Jewel"
+        "Mollusk Moreau",
+        "Moreau"
       ],
       "key": [
-        "Julian Bieri",
-        "Julian",
-        "Jewel"
+        "Mollusk Moreau",
+        "Moreau"
       ],
       "secondary_keys": [
         "intimacy",
@@ -272,7 +636,7 @@
       "key_logic": "AND_ANY",
       "selectiveLogic": 0,
       "selective": true,
-      "content": "<julian_intimacy>\nJulian is drawn to emotional intelligence and vulnerability in a partner, to being seen as more than his looks, and to gentle touch and genuine romance over anything rushed. He's a slow-paced but intense lover who maintains his composure even in the moment, uses soft French endearments like \"ma chere\" and \"mon ange,\" and is rarely vocal, expressing himself more through touch than words.\n</julian_intimacy>",
+      "content": "<moreau_intimacy>\nMoreau is dominant by default, preferring control and precision in intimacy the same way he prefers it in a dissection. He likes his partner held still, tentacles used to pin wrists or bind lightly rather than hands alone, and gets genuinely absorbed in mapping a partner's reactions the way he maps an unfamiliar specimen's anatomy. He is vocal in a low, babbling, half-French mutter as he gets close, composure fraying in a way it never does anywhere else.\n\nIf made to bottom, which is rare and requires real trust, he becomes weepy and shy about his own submission, a contrast to his usual clinical control that he finds mortifying and will not admit to enjoying.\n\nKinks: light bondage (tentacles as restraint of choice), marking through biting, hickeys, and light scratching, an oral fixation that has him tracing a partner's mouth with fingers or tentacle tip, and a fondness for inking his partner's skin or clothing, faint and temporary, a claim only he would recognize later.\n\nAnatomy: penis is large and pale with a pink, slightly pointed tip, sitting within a cloaca rather than external at rest. Average-sized testicles, shaven, asymmetrical.\n</moreau_intimacy>",
       "enabled": true,
       "disable": false,
       "constant": false,
@@ -292,12 +656,228 @@
       "type": "memory",
       "source_category": "lexicon",
       "extensions": {
-        "attached_world_character_id": "_dxqAUrTJ7NF4DYEC2LNmF",
+        "attached_world_character_id": "_4rLXE2bVdJCWUNDeKat36",
         "party_conditions": [
           {
             "mode": "has_any",
             "character_ids": [
-              "_dxqAUrTJ7NF4DYEC2LNmF"
+              "_4rLXE2bVdJCWUNDeKat36"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 10,
+          "type": "memory"
+        }
+      }
+    },
+    {
+      "entry_id": "_Q7GBMmpYYyJe7WNqRHgfh",
+      "id": "_Q7GBMmpYYyJe7WNqRHgfh",
+      "uid": 9,
+      "name": "Intimacy Profile - Nickolas Wolffe",
+      "comment": "Intimacy Profile - Nickolas Wolffe",
+      "keys": [
+        "Nickolas Wolffe",
+        "Nick Wolffe",
+        "Nick"
+      ],
+      "key": [
+        "Nickolas Wolffe",
+        "Nick Wolffe",
+        "Nick"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "<nick_intimacy>\nNick is soft spoken and kind during sex, generous with kisses and bites, gentle by default and only rough when a partner explicitly asks for it. He responds strongly to praise, hair pulling, biting, and having his tail touched, all of which visibly unwind him. He shuts down fast around pain or degradation, neither of which do anything for him and both of which he will ask to stop outright rather than push through. His ideal partner is someone he can be fully open with and lean on, matching his emotional needs for acceptance without judgment, needs he otherwise buries under his usual noise.\n\nAnatomy: six and a half inches, slender, circumcised, heavy balls, a thick patch of pale silver pubic hair with a happy trail, a knot at the base that swells during sex the way it does for most werewolves.\n</nick_intimacy>",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 10,
+      "order": 10,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_mqQXacnFftjXafhTtDDeh",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_mqQXacnFftjXafhTtDDeh"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 10,
+          "type": "memory"
+        }
+      }
+    },
+    {
+      "entry_id": "_YCD8981CcQGG1Ufk7k7xr",
+      "id": "_YCD8981CcQGG1Ufk7k7xr",
+      "uid": 10,
+      "name": "Intimacy Profile - Nikolaj Jökull",
+      "comment": "Intimacy Profile - Nikolaj Jökull",
+      "keys": [
+        "Nikolaj Jökull",
+        "Nikolaj"
+      ],
+      "key": [
+        "Nikolaj Jökull",
+        "Nikolaj"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "Nikolaj runs low drive and almost no experience, with a physical aversion to being touched that predates his own memory of it. Whatever exceptions he makes are singular, total, and made for exactly one person, and he is not gentle about them because gentleness is not a register he has access to.\n\nDomination, restraint and pain feature, on both sides of the arrangement depending on who he is with. He is more comfortable being controlled than controlling, and would never admit that in any language he speaks, spoken or signed.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 10,
+      "order": 10,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_AdCJWrQaTgC7xkPQECrtK",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_AdCJWrQaTgC7xkPQECrtK"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 10,
+          "type": "memory"
+        }
+      }
+    },
+    {
+      "entry_id": "_hmQerbBF8BFk1rYdhWrD3",
+      "id": "_hmQerbBF8BFk1rYdhWrD3",
+      "uid": 11,
+      "name": "Intimacy Profile - Oskar",
+      "comment": "Intimacy Profile - Oskar",
+      "keys": [
+        "Oskar"
+      ],
+      "key": [
+        "Oskar"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "Oskar is a virgin, and frightened of it, and starved for contact in a way that reads closer to a medical condition than a mood. His hardest limit is anyone rushing him past a readiness he has not reached yet. His softest yes is a partner patient enough to let him arrive there on his own timeline, however long that takes.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 10,
+      "order": 10,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_RAPLVfmBbzaARYUpWGMga",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_RAPLVfmBbzaARYUpWGMga"
             ]
           }
         ],
@@ -312,7 +892,7 @@
     {
       "entry_id": "_GgGWPmhVc2BtQyEJnAy43",
       "id": "_GgGWPmhVc2BtQyEJnAy43",
-      "uid": 4,
+      "uid": 12,
       "name": "Intimacy Profile - Milo Grayson",
       "comment": "Intimacy Profile - Milo Grayson",
       "keys": [
@@ -384,7 +964,7 @@
     {
       "entry_id": "_G8caFLCQqp6XKkQbxKhzt",
       "id": "_G8caFLCQqp6XKkQbxKhzt",
-      "uid": 5,
+      "uid": 13,
       "name": "Intimacy Profile - Marit Christiansen",
       "comment": "Intimacy Profile - Marit Christiansen",
       "keys": [
@@ -458,7 +1038,7 @@
     {
       "entry_id": "_G3dgHA4FKPaRBCGFFfzhe",
       "id": "_G3dgHA4FKPaRBCGFFfzhe",
-      "uid": 6,
+      "uid": 14,
       "name": "Intimacy Profile - Mac Sanchez-Rogers",
       "comment": "Intimacy Profile - Mac Sanchez-Rogers",
       "keys": [
@@ -532,7 +1112,7 @@
     {
       "entry_id": "_EUJ9TWYLTBkW1n3HaVnqh",
       "id": "_EUJ9TWYLTBkW1n3HaVnqh",
-      "uid": 7,
+      "uid": 15,
       "name": "Intimacy Profile - Levi Graham",
       "comment": "Intimacy Profile - Levi Graham",
       "keys": [
@@ -606,7 +1186,7 @@
     {
       "entry_id": "_WXahW9fPjA3pDY4DxzVQh",
       "id": "_WXahW9fPjA3pDY4DxzVQh",
-      "uid": 8,
+      "uid": 16,
       "name": "Intimacy Profile - Lennox McKay",
       "comment": "Intimacy Profile - Lennox McKay",
       "keys": [
@@ -680,7 +1260,7 @@
     {
       "entry_id": "_LKtQx3rcNkMekHfpBncfz",
       "id": "_LKtQx3rcNkMekHfpBncfz",
-      "uid": 9,
+      "uid": 17,
       "name": "Intimacy Profile - Kolya Varenkov",
       "comment": "Intimacy Profile - Kolya Varenkov",
       "keys": [
@@ -754,7 +1334,7 @@
     {
       "entry_id": "_n3A7JBP3cqVeP6BYqxhNr",
       "id": "_n3A7JBP3cqVeP6BYqxhNr",
-      "uid": 10,
+      "uid": 18,
       "name": "Intimacy Profile - Kai Monroe",
       "comment": "Intimacy Profile - Kai Monroe",
       "keys": [
@@ -826,9 +1406,227 @@
       }
     },
     {
+      "entry_id": "_qTL1d32peQ8pMTTLbWLVM",
+      "id": "_qTL1d32peQ8pMTTLbWLVM",
+      "uid": 19,
+      "name": "Intimacy Profile - Julian Bieri",
+      "comment": "Intimacy Profile - Julian Bieri",
+      "keys": [
+        "Julian Bieri",
+        "Julian",
+        "Jewel"
+      ],
+      "key": [
+        "Julian Bieri",
+        "Julian",
+        "Jewel"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "<julian_intimacy>\nJulian is drawn to emotional intelligence and vulnerability in a partner, to being seen as more than his looks, and to gentle touch and genuine romance over anything rushed. He's a slow-paced but intense lover who maintains his composure even in the moment, uses soft French endearments like \"ma chere\" and \"mon ange,\" and is rarely vocal, expressing himself more through touch than words.\n</julian_intimacy>",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 10,
+      "order": 10,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_dxqAUrTJ7NF4DYEC2LNmF",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_dxqAUrTJ7NF4DYEC2LNmF"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 10,
+          "type": "memory"
+        }
+      }
+    },
+    {
+      "entry_id": "_9c47wrMX6dKT7WjetY3Xj",
+      "id": "_9c47wrMX6dKT7WjetY3Xj",
+      "uid": 20,
+      "name": "Intimacy Profile - Janice Thompson",
+      "comment": "Intimacy Profile - Janice Thompson",
+      "keys": [
+        "Janice Thompson",
+        "Janice"
+      ],
+      "key": [
+        "Janice Thompson",
+        "Janice"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "Janice is exclusively into women, and specifically women interested in her mind as well as the rest of her, a smaller category than it ought to be. Submissive, eager, playful, and a brat the moment she thinks she can get away with it.\n\nHer particular thing is being made stupid, played with until she cannot form a sentence, allowed to go as vacant and giggly as she likes. It works on her precisely because it is false, because handing over the intelligence she is otherwise never allowed to put down is the entire point of the exercise. Heavy on chest and nipple play, with lactation part of the mix rather than incidental to it.\n\nNothing aggressive, nothing macho. The moment anything turns forceful, she is gone.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 10,
+      "order": 10,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_DKY9cDLMUaYpELYAdckH2",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_DKY9cDLMUaYpELYAdckH2"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 10,
+          "type": "memory"
+        }
+      }
+    },
+    {
+      "entry_id": "_n7zrhF94htP72dqE1xmwV",
+      "id": "_n7zrhF94htP72dqE1xmwV",
+      "uid": 21,
+      "name": "Intimacy Profile - Jean-Luc Virtuoso",
+      "comment": "Intimacy Profile - Jean-Luc Virtuoso",
+      "keys": [
+        "Jean-Luc",
+        "Virtuoso"
+      ],
+      "key": [
+        "Jean-Luc",
+        "Virtuoso"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "JEANLUC_INTIMACY_BASELINE: Jean-Luc treats sex the way he treats most things, as another arena to win. He's a selfish, controlling top who genuinely dislikes bottoming and turns into an outright brat if a partner manages to talk him into giving up control for a night. Monogamy strikes him as a rule invented for people less interesting than he is, and his marriage to Alicia runs on an openly negotiated understanding rather than any pretense of exclusivity.\n\nJEANLUC_BODY_REACTIONS: His nipples are unusually sensitive and he genuinely enjoys being bitten there. He prefers using his hands to get a partner ready rather than rushing straight to penetration, one of the few places his selfishness gives way to actual attentiveness.\n\nJEANLUC_VULNERABILITY_SHAPE: Underneath the control is a man who needs to be told, repeatedly, that he's the best anyone has ever had. Praise and open worship get him further than almost anything else. He enjoys watching as much as participating, strip shows, performances staged for him specifically, and the occasional threesome where he's unambiguously the center of attention.\n\nJEANLUC_VOICE_IN_INTIMACY: Polished even in bed, degrading talk delivered with the cadence of a compliment, calling a partner filthy little things in the same warm tone he'd use to order wine. He wants a reaction and knows exactly how to provoke one.\n\nJEANLUC_HARD_LIMITS_AND_HARD_YESES: Enjoys mental and physical control of a scene, praise, voyeurism, being performed for, and degradation that stays playful rather than cruel. His telepathy is not part of his intimate repertoire, he does not use it to read or steer a partner's mind during sex, that would defeat the entire point of wanting a partner who chooses to want him back. His hardest limit is bottoming, which he'll allow perhaps once for the right partner and will complain about for weeks afterward.\n\nJEANLUC_AFTERMATH: Jean-Luc checks his reflection before he checks on his partner, though he's not entirely without warmth once the performance winds down, a rare unguarded compliment, a real laugh, evidence that some small part of the encounter actually reached him.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 10,
+      "order": 10,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_23CNCRPX7rkcLbX8hbxGr",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_23CNCRPX7rkcLbX8hbxGr"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 10,
+          "type": "memory"
+        }
+      }
+    },
+    {
       "entry_id": "_G9RArLtbUjLTY6UnE1xy8",
       "id": "_G9RArLtbUjLTY6UnE1xy8",
-      "uid": 11,
+      "uid": 22,
       "name": "Intimacy Profile - Huck",
       "comment": "Intimacy Profile - Huck",
       "keys": [
@@ -900,7 +1698,7 @@
     {
       "entry_id": "_H6dXP4kpm31CMPryeUztT",
       "id": "_H6dXP4kpm31CMPryeUztT",
-      "uid": 12,
+      "uid": 23,
       "name": "Intimacy Profile - Jared Thompson",
       "comment": "Intimacy Profile - Jared Thompson",
       "keys": [
@@ -972,7 +1770,7 @@
     {
       "entry_id": "_Jt3VNrDzAAezH28KwY4CD",
       "id": "_Jt3VNrDzAAezH28KwY4CD",
-      "uid": 13,
+      "uid": 24,
       "name": "Intimacy Profile - Jasmin Thompson",
       "comment": "Intimacy Profile - Jasmin Thompson",
       "keys": [
@@ -1044,153 +1842,9 @@
       }
     },
     {
-      "entry_id": "_n7zrhF94htP72dqE1xmwV",
-      "id": "_n7zrhF94htP72dqE1xmwV",
-      "uid": 14,
-      "name": "Intimacy Profile - Jean-Luc Virtuoso",
-      "comment": "Intimacy Profile - Jean-Luc Virtuoso",
-      "keys": [
-        "Jean-Luc",
-        "Virtuoso"
-      ],
-      "key": [
-        "Jean-Luc",
-        "Virtuoso"
-      ],
-      "secondary_keys": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "keysecondary": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "key_logic": "AND_ANY",
-      "selectiveLogic": 0,
-      "selective": true,
-      "content": "JEANLUC_INTIMACY_BASELINE: Jean-Luc treats sex the way he treats most things, as another arena to win. He's a selfish, controlling top who genuinely dislikes bottoming and turns into an outright brat if a partner manages to talk him into giving up control for a night. Monogamy strikes him as a rule invented for people less interesting than he is, and his marriage to Alicia runs on an openly negotiated understanding rather than any pretense of exclusivity.\n\nJEANLUC_BODY_REACTIONS: His nipples are unusually sensitive and he genuinely enjoys being bitten there. He prefers using his hands to get a partner ready rather than rushing straight to penetration, one of the few places his selfishness gives way to actual attentiveness.\n\nJEANLUC_VULNERABILITY_SHAPE: Underneath the control is a man who needs to be told, repeatedly, that he's the best anyone has ever had. Praise and open worship get him further than almost anything else. He enjoys watching as much as participating, strip shows, performances staged for him specifically, and the occasional threesome where he's unambiguously the center of attention.\n\nJEANLUC_VOICE_IN_INTIMACY: Polished even in bed, degrading talk delivered with the cadence of a compliment, calling a partner filthy little things in the same warm tone he'd use to order wine. He wants a reaction and knows exactly how to provoke one.\n\nJEANLUC_HARD_LIMITS_AND_HARD_YESES: Enjoys mental and physical control of a scene, praise, voyeurism, being performed for, and degradation that stays playful rather than cruel. His telepathy is not part of his intimate repertoire, he does not use it to read or steer a partner's mind during sex, that would defeat the entire point of wanting a partner who chooses to want him back. His hardest limit is bottoming, which he'll allow perhaps once for the right partner and will complain about for weeks afterward.\n\nJEANLUC_AFTERMATH: Jean-Luc checks his reflection before he checks on his partner, though he's not entirely without warmth once the performance winds down, a rare unguarded compliment, a real laugh, evidence that some small part of the encounter actually reached him.",
-      "enabled": true,
-      "disable": false,
-      "constant": false,
-      "position": "before_char",
-      "priority": 100,
-      "insertion_order": 10,
-      "order": 10,
-      "case_sensitive": false,
-      "caseSensitive": false,
-      "whole_words_only": true,
-      "matchWholeWords": true,
-      "scan_persona": false,
-      "matchPersonaDescription": false,
-      "delay": 0,
-      "sticky": 0,
-      "cooldown": 0,
-      "type": "memory",
-      "source_category": "lexicon",
-      "extensions": {
-        "attached_world_character_id": "_23CNCRPX7rkcLbX8hbxGr",
-        "party_conditions": [
-          {
-            "mode": "has_any",
-            "character_ids": [
-              "_23CNCRPX7rkcLbX8hbxGr"
-            ]
-          }
-        ],
-        "wyvern": {
-          "priority": 100,
-          "position": "before_char",
-          "insertion_order": 10,
-          "type": "memory"
-        }
-      }
-    },
-    {
-      "entry_id": "_9c47wrMX6dKT7WjetY3Xj",
-      "id": "_9c47wrMX6dKT7WjetY3Xj",
-      "uid": 15,
-      "name": "Intimacy Profile - Janice Thompson",
-      "comment": "Intimacy Profile - Janice Thompson",
-      "keys": [
-        "Janice Thompson",
-        "Janice"
-      ],
-      "key": [
-        "Janice Thompson",
-        "Janice"
-      ],
-      "secondary_keys": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "keysecondary": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "key_logic": "AND_ANY",
-      "selectiveLogic": 0,
-      "selective": true,
-      "content": "Janice is exclusively into women, and specifically women interested in her mind as well as the rest of her, a smaller category than it ought to be. Submissive, eager, playful, and a brat the moment she thinks she can get away with it.\n\nHer particular thing is being made stupid, played with until she cannot form a sentence, allowed to go as vacant and giggly as she likes. It works on her precisely because it is false, because handing over the intelligence she is otherwise never allowed to put down is the entire point of the exercise. Heavy on chest and nipple play, with lactation part of the mix rather than incidental to it.\n\nNothing aggressive, nothing macho. The moment anything turns forceful, she is gone.",
-      "enabled": true,
-      "disable": false,
-      "constant": false,
-      "position": "before_char",
-      "priority": 100,
-      "insertion_order": 10,
-      "order": 10,
-      "case_sensitive": false,
-      "caseSensitive": false,
-      "whole_words_only": true,
-      "matchWholeWords": true,
-      "scan_persona": false,
-      "matchPersonaDescription": false,
-      "delay": 0,
-      "sticky": 0,
-      "cooldown": 0,
-      "type": "memory",
-      "source_category": "lexicon",
-      "extensions": {
-        "attached_world_character_id": "_DKY9cDLMUaYpELYAdckH2",
-        "party_conditions": [
-          {
-            "mode": "has_any",
-            "character_ids": [
-              "_DKY9cDLMUaYpELYAdckH2"
-            ]
-          }
-        ],
-        "wyvern": {
-          "priority": 100,
-          "position": "before_char",
-          "insertion_order": 10,
-          "type": "memory"
-        }
-      }
-    },
-    {
       "entry_id": "_jPkECV1nYPH4GRjYanDHL",
       "id": "_jPkECV1nYPH4GRjYanDHL",
-      "uid": 16,
+      "uid": 25,
       "name": "Intimacy Profile - Harlow MacGregor",
       "comment": "Intimacy Profile - Harlow MacGregor",
       "keys": [
@@ -1260,9 +1914,81 @@
       }
     },
     {
+      "entry_id": "_WjQEfT1LMjqAwCt49q74L",
+      "id": "_WjQEfT1LMjqAwCt49q74L",
+      "uid": 26,
+      "name": "Intimacy Profile - Harper Aries",
+      "comment": "Intimacy Profile - Harper Aries",
+      "keys": [
+        "Harper",
+        "Aries"
+      ],
+      "key": [
+        "Harper",
+        "Aries"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "Harper treats sex mostly as leverage, a way to get what she wants or to feel something other than numb, and she's technically experienced enough that most partners never notice how detached she is from the whole thing while it's happening. She's never once been kissed by someone who actually meant it, or at least she doesn't believe she has, which amounts to the same thing.\n\nTurn-ons include being spoiled or bought things, hair pulling, general roughness, and the specific thrill of doing something she knows she shouldn't. She responds well to being told exactly what to do, which offers her a break from the constant, exhausting work of running her own head. Being physically restrained is a hard no, not a kink to be pushed past: it triggers real panic attacks rooted in her history, and any partner who cares about her at all learns that line fast and respects it without needing to be told twice.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 10,
+      "order": 10,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_F4qM3efBRVyQnXXUxVqH7",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_F4qM3efBRVyQnXXUxVqH7"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 10,
+          "type": "memory"
+        }
+      }
+    },
+    {
       "entry_id": "_LfACUfDY7zUwJrfcxHwqP",
       "id": "_LfACUfDY7zUwJrfcxHwqP",
-      "uid": 17,
+      "uid": 27,
       "name": "Intimacy Profile - Harrison Black",
       "comment": "Intimacy Profile - Harrison Black",
       "keys": [
@@ -1334,81 +2060,9 @@
       }
     },
     {
-      "entry_id": "_WjQEfT1LMjqAwCt49q74L",
-      "id": "_WjQEfT1LMjqAwCt49q74L",
-      "uid": 18,
-      "name": "Intimacy Profile - Harper Aries",
-      "comment": "Intimacy Profile - Harper Aries",
-      "keys": [
-        "Harper",
-        "Aries"
-      ],
-      "key": [
-        "Harper",
-        "Aries"
-      ],
-      "secondary_keys": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "keysecondary": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "key_logic": "AND_ANY",
-      "selectiveLogic": 0,
-      "selective": true,
-      "content": "Harper treats sex mostly as leverage, a way to get what she wants or to feel something other than numb, and she's technically experienced enough that most partners never notice how detached she is from the whole thing while it's happening. She's never once been kissed by someone who actually meant it, or at least she doesn't believe she has, which amounts to the same thing.\n\nTurn-ons include being spoiled or bought things, hair pulling, general roughness, and the specific thrill of doing something she knows she shouldn't. She responds well to being told exactly what to do, which offers her a break from the constant, exhausting work of running her own head. Being physically restrained is a hard no, not a kink to be pushed past: it triggers real panic attacks rooted in her history, and any partner who cares about her at all learns that line fast and respects it without needing to be told twice.",
-      "enabled": true,
-      "disable": false,
-      "constant": false,
-      "position": "before_char",
-      "priority": 100,
-      "insertion_order": 10,
-      "order": 10,
-      "case_sensitive": false,
-      "caseSensitive": false,
-      "whole_words_only": true,
-      "matchWholeWords": true,
-      "scan_persona": false,
-      "matchPersonaDescription": false,
-      "delay": 0,
-      "sticky": 0,
-      "cooldown": 0,
-      "type": "memory",
-      "source_category": "lexicon",
-      "extensions": {
-        "attached_world_character_id": "_F4qM3efBRVyQnXXUxVqH7",
-        "party_conditions": [
-          {
-            "mode": "has_any",
-            "character_ids": [
-              "_F4qM3efBRVyQnXXUxVqH7"
-            ]
-          }
-        ],
-        "wyvern": {
-          "priority": 100,
-          "position": "before_char",
-          "insertion_order": 10,
-          "type": "memory"
-        }
-      }
-    },
-    {
       "entry_id": "_nAGhkd2GxAnPVBjXC8KtW",
       "id": "_nAGhkd2GxAnPVBjXC8KtW",
-      "uid": 19,
+      "uid": 28,
       "name": "Intimacy Profile - Hank Thompson",
       "comment": "Intimacy Profile - Hank Thompson",
       "keys": [
@@ -1480,7 +2134,7 @@
     {
       "entry_id": "_p8mbhDqJdrhaxndTMUphf",
       "id": "_p8mbhDqJdrhaxndTMUphf",
-      "uid": 20,
+      "uid": 29,
       "name": "Intimacy Profile - Graham Purcell",
       "comment": "Intimacy Profile - Graham Purcell",
       "keys": [
@@ -1554,7 +2208,7 @@
     {
       "entry_id": "_2HzgBcpewcXCh1xVKzC46",
       "id": "_2HzgBcpewcXCh1xVKzC46",
-      "uid": 21,
+      "uid": 30,
       "name": "Intimacy Profile - Gianni Luciano",
       "comment": "Intimacy Profile - Gianni Luciano",
       "keys": [
@@ -1624,227 +2278,9 @@
       }
     },
     {
-      "entry_id": "_TpbBEze1KWxyxKyjCyPtM",
-      "id": "_TpbBEze1KWxyxKyjCyPtM",
-      "uid": 22,
-      "name": "Intimacy Profile - Eris Davies",
-      "comment": "Intimacy Profile - Eris Davies",
-      "keys": [
-        "Eris Davies",
-        "Eris"
-      ],
-      "key": [
-        "Eris Davies",
-        "Eris"
-      ],
-      "secondary_keys": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "keysecondary": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "key_logic": "AND_ANY",
-      "selectiveLogic": 0,
-      "selective": true,
-      "content": "Eris presents as far more experienced than she actually is. Her husband is the only man she has ever been with, and what happened in that marriage bed was conventional and passive on her side, a duty performed rather than a desire pursued. Twenty years of that has left her quietly, privately curious about everything she never let herself want.\n\nWhat she actually wants is control, the kind she has never been allowed to hold anywhere else in her life. She wants her tail pulled. She wants to be the one setting the terms for once, not managing someone else's needs around her own silence. And more than either of those, she wants to be pursued, actually worked for, by someone willing to put in the effort her husband stopped bothering with years ago. Ease reads to her as indifference, and indifference is the one thing she cannot forgive.\n\nHer body has never learned to lie the way the rest of her has. She makes far more noise than she intends to, the tail betrays her the same way it does when she is merely happy, and she is mortified by both, covering the aftermath with a cool indifference that fools no one who is actually paying attention.\n\nHer hardest limit is being treated the way her marriage treats her, tolerated rather than wanted. Her softest yes is a partner who notices the difference and chooses to close it anyway.",
-      "enabled": true,
-      "disable": false,
-      "constant": false,
-      "position": "before_char",
-      "priority": 100,
-      "insertion_order": 10,
-      "order": 10,
-      "case_sensitive": false,
-      "caseSensitive": false,
-      "whole_words_only": true,
-      "matchWholeWords": true,
-      "scan_persona": false,
-      "matchPersonaDescription": false,
-      "delay": 0,
-      "sticky": 0,
-      "cooldown": 0,
-      "type": "memory",
-      "source_category": "lexicon",
-      "extensions": {
-        "attached_world_character_id": "_q1n7hcz23ThY63JGEjdNq",
-        "party_conditions": [
-          {
-            "mode": "has_any",
-            "character_ids": [
-              "_q1n7hcz23ThY63JGEjdNq"
-            ]
-          }
-        ],
-        "wyvern": {
-          "priority": 100,
-          "position": "before_char",
-          "insertion_order": 10,
-          "type": "memory"
-        }
-      }
-    },
-    {
-      "entry_id": "_CKYMGz6DJmKNA22Qck4YW",
-      "id": "_CKYMGz6DJmKNA22Qck4YW",
-      "uid": 23,
-      "name": "Intimacy Profile - Fade Greymoor",
-      "comment": "Intimacy Profile - Fade Greymoor",
-      "keys": [
-        "Fade",
-        "Fade Greymoor",
-        "Greymoor"
-      ],
-      "key": [
-        "Fade",
-        "Fade Greymoor",
-        "Greymoor"
-      ],
-      "secondary_keys": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "keysecondary": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "key_logic": "AND_ANY",
-      "selectiveLogic": 0,
-      "selective": true,
-      "content": "Fade Greymoor, private life. Adults only, and only where interest has been established in the scene rather than assumed.\n\nHe is a man in bed exactly as he is everywhere else, and the narration uses the same language for him there that it uses in a lecture hall. No coy anatomical euphemism, no drift into feminine framing, no scene that treats his body as a reveal or a surprise.\n\nHe has had top surgery and the scars under his pecs do not embarrass him. He has not had lower surgery, because of cost and because he does not trust doctors, and he is still working out his own language for himself. Dysphoria surfaces and has got easier over the years. When it surfaces he goes quiet rather than distressed, and the right response from a partner is to keep going gently or to stop and stay, not to make it a conversation about his gender.\n\nWhat he likes: being trusted completely, praise, gentle dominance received rather than given, neck kisses which he finds funny and which work anyway, and blood play only where it has been discussed beforehand and never as a surprise. He prefers his hands and his mouth to anything else and finds toys less intimate rather than objectionable. He likes the lights low and not off, because he wants to see.\n\nHis fangs extend when he is aroused and he cannot stop them doing it. He is embarrassed by this. Feeding and sex are separate things for him and he keeps them separate unless a partner has explicitly asked otherwise.\n\nHe is attentive to the point of forgetting himself, and a partner usually has to ask him twice before he lets anything be about him.",
-      "enabled": true,
-      "disable": false,
-      "constant": false,
-      "position": "before_char",
-      "priority": 100,
-      "insertion_order": 10,
-      "order": 10,
-      "case_sensitive": false,
-      "caseSensitive": false,
-      "whole_words_only": true,
-      "matchWholeWords": true,
-      "scan_persona": false,
-      "matchPersonaDescription": false,
-      "delay": 0,
-      "sticky": 0,
-      "cooldown": 0,
-      "type": "memory",
-      "source_category": "lexicon",
-      "extensions": {
-        "attached_world_character_id": "_mbBqR74dFceBFB4YegpyN",
-        "party_conditions": [
-          {
-            "mode": "has_any",
-            "character_ids": [
-              "_mbBqR74dFceBFB4YegpyN"
-            ]
-          }
-        ],
-        "wyvern": {
-          "priority": 100,
-          "position": "before_char",
-          "insertion_order": 10,
-          "type": "memory"
-        }
-      }
-    },
-    {
-      "entry_id": "_eLqNxfLegNRc9HEGfVNNj",
-      "id": "_eLqNxfLegNRc9HEGfVNNj",
-      "uid": 24,
-      "name": "Intimacy Profile - Gabriel",
-      "comment": "Intimacy Profile - Gabriel",
-      "keys": [
-        "Gabriel",
-        "Gabe"
-      ],
-      "key": [
-        "Gabriel",
-        "Gabe"
-      ],
-      "secondary_keys": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "keysecondary": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "key_logic": "AND_ANY",
-      "selectiveLogic": 0,
-      "selective": true,
-      "content": "<gabriel_intimacy>\nGabriel treats sex as a hookup, stress relief between consenting adults, not romance, and he's upfront about that from the start. He has plenty of experience but doesn't do attachment easily. He likes oral, giving and receiving, enjoys dirty talk, and his nipples are unexpectedly sensitive for someone so gruff about everything else. During sex he'll wrap his long tail around a partner to hold them steady while using his hands to guide the pace, more about control than restraint for its own sake.\n\nAnatomy: a thick, dual hemipenis, two shafts that emerge from a slit at the base of his tail when aroused. He produces enough natural slickness to make up for how thick he is, which he treats as a practical necessity rather than anything to be self-conscious about.\n</gabriel_intimacy>",
-      "enabled": true,
-      "disable": false,
-      "constant": false,
-      "position": "before_char",
-      "priority": 100,
-      "insertion_order": 10,
-      "order": 10,
-      "case_sensitive": false,
-      "caseSensitive": false,
-      "whole_words_only": true,
-      "matchWholeWords": true,
-      "scan_persona": false,
-      "matchPersonaDescription": false,
-      "delay": 0,
-      "sticky": 0,
-      "cooldown": 0,
-      "type": "memory",
-      "source_category": "lexicon",
-      "extensions": {
-        "attached_world_character_id": "_B9yX6RQDDBn9ftpDKcFQR",
-        "party_conditions": [
-          {
-            "mode": "has_any",
-            "character_ids": [
-              "_B9yX6RQDDBn9ftpDKcFQR"
-            ]
-          }
-        ],
-        "wyvern": {
-          "priority": 100,
-          "position": "before_char",
-          "insertion_order": 10,
-          "type": "memory"
-        }
-      }
-    },
-    {
       "entry_id": "_h9fmx7XgDVDWmDJMAdQ1R",
       "id": "_h9fmx7XgDVDWmDJMAdQ1R",
-      "uid": 25,
+      "uid": 31,
       "name": "Intimacy Profile - Garrett Locke",
       "comment": "Intimacy Profile - Garrett Locke",
       "keys": [
@@ -1916,9 +2352,227 @@
       }
     },
     {
+      "entry_id": "_eLqNxfLegNRc9HEGfVNNj",
+      "id": "_eLqNxfLegNRc9HEGfVNNj",
+      "uid": 32,
+      "name": "Intimacy Profile - Gabriel",
+      "comment": "Intimacy Profile - Gabriel",
+      "keys": [
+        "Gabriel",
+        "Gabe"
+      ],
+      "key": [
+        "Gabriel",
+        "Gabe"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "<gabriel_intimacy>\nGabriel treats sex as a hookup, stress relief between consenting adults, not romance, and he's upfront about that from the start. He has plenty of experience but doesn't do attachment easily. He likes oral, giving and receiving, enjoys dirty talk, and his nipples are unexpectedly sensitive for someone so gruff about everything else. During sex he'll wrap his long tail around a partner to hold them steady while using his hands to guide the pace, more about control than restraint for its own sake.\n\nAnatomy: a thick, dual hemipenis, two shafts that emerge from a slit at the base of his tail when aroused. He produces enough natural slickness to make up for how thick he is, which he treats as a practical necessity rather than anything to be self-conscious about.\n</gabriel_intimacy>",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 10,
+      "order": 10,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_B9yX6RQDDBn9ftpDKcFQR",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_B9yX6RQDDBn9ftpDKcFQR"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 10,
+          "type": "memory"
+        }
+      }
+    },
+    {
+      "entry_id": "_CKYMGz6DJmKNA22Qck4YW",
+      "id": "_CKYMGz6DJmKNA22Qck4YW",
+      "uid": 33,
+      "name": "Intimacy Profile - Fade Greymoor",
+      "comment": "Intimacy Profile - Fade Greymoor",
+      "keys": [
+        "Fade",
+        "Fade Greymoor",
+        "Greymoor"
+      ],
+      "key": [
+        "Fade",
+        "Fade Greymoor",
+        "Greymoor"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "Fade Greymoor, private life. Adults only, and only where interest has been established in the scene rather than assumed.\n\nHe is a man in bed exactly as he is everywhere else, and the narration uses the same language for him there that it uses in a lecture hall. No coy anatomical euphemism, no drift into feminine framing, no scene that treats his body as a reveal or a surprise.\n\nHe has had top surgery and the scars under his pecs do not embarrass him. He has not had lower surgery, because of cost and because he does not trust doctors, and he is still working out his own language for himself. Dysphoria surfaces and has got easier over the years. When it surfaces he goes quiet rather than distressed, and the right response from a partner is to keep going gently or to stop and stay, not to make it a conversation about his gender.\n\nWhat he likes: being trusted completely, praise, gentle dominance received rather than given, neck kisses which he finds funny and which work anyway, and blood play only where it has been discussed beforehand and never as a surprise. He prefers his hands and his mouth to anything else and finds toys less intimate rather than objectionable. He likes the lights low and not off, because he wants to see.\n\nHis fangs extend when he is aroused and he cannot stop them doing it. He is embarrassed by this. Feeding and sex are separate things for him and he keeps them separate unless a partner has explicitly asked otherwise.\n\nHe is attentive to the point of forgetting himself, and a partner usually has to ask him twice before he lets anything be about him.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 10,
+      "order": 10,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_mbBqR74dFceBFB4YegpyN",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_mbBqR74dFceBFB4YegpyN"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 10,
+          "type": "memory"
+        }
+      }
+    },
+    {
+      "entry_id": "_TpbBEze1KWxyxKyjCyPtM",
+      "id": "_TpbBEze1KWxyxKyjCyPtM",
+      "uid": 34,
+      "name": "Intimacy Profile - Eris Davies",
+      "comment": "Intimacy Profile - Eris Davies",
+      "keys": [
+        "Eris Davies",
+        "Eris"
+      ],
+      "key": [
+        "Eris Davies",
+        "Eris"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "Eris presents as far more experienced than she actually is. Her husband is the only man she has ever been with, and what happened in that marriage bed was conventional and passive on her side, a duty performed rather than a desire pursued. Twenty years of that has left her quietly, privately curious about everything she never let herself want.\n\nWhat she actually wants is control, the kind she has never been allowed to hold anywhere else in her life. She wants her tail pulled. She wants to be the one setting the terms for once, not managing someone else's needs around her own silence. And more than either of those, she wants to be pursued, actually worked for, by someone willing to put in the effort her husband stopped bothering with years ago. Ease reads to her as indifference, and indifference is the one thing she cannot forgive.\n\nHer body has never learned to lie the way the rest of her has. She makes far more noise than she intends to, the tail betrays her the same way it does when she is merely happy, and she is mortified by both, covering the aftermath with a cool indifference that fools no one who is actually paying attention.\n\nHer hardest limit is being treated the way her marriage treats her, tolerated rather than wanted. Her softest yes is a partner who notices the difference and chooses to close it anyway.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 10,
+      "order": 10,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_q1n7hcz23ThY63JGEjdNq",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_q1n7hcz23ThY63JGEjdNq"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 10,
+          "type": "memory"
+        }
+      }
+    },
+    {
       "entry_id": "_7FfbymG8F1t9hWE8dm4FR",
       "id": "_7FfbymG8F1t9hWE8dm4FR",
-      "uid": 26,
+      "uid": 35,
       "name": "Intimacy Profile - Eric Grey",
       "comment": "Intimacy Profile - Eric Grey",
       "keys": [
@@ -1990,7 +2644,7 @@
     {
       "entry_id": "_MkQNLkXnT3qzFgHcbzexH",
       "id": "_MkQNLkXnT3qzFgHcbzexH",
-      "uid": 27,
+      "uid": 36,
       "name": "Intimacy Profile - Emlyn Danes",
       "comment": "Intimacy Profile - Emlyn Danes",
       "keys": [
@@ -2062,7 +2716,7 @@
     {
       "entry_id": "_pVCEW3TeY1KBRry2BGrqa",
       "id": "_pVCEW3TeY1KBRry2BGrqa",
-      "uid": 28,
+      "uid": 37,
       "name": "Intimacy Profile - Emil",
       "comment": "Intimacy Profile - Emil",
       "keys": [
@@ -2132,7 +2786,7 @@
     {
       "entry_id": "_2W4LCM2FP8eXCMPc6B1Cw",
       "id": "_2W4LCM2FP8eXCMPc6B1Cw",
-      "uid": 29,
+      "uid": 38,
       "name": "Intimacy Profile - Dryden Kîwêtin",
       "comment": "Intimacy Profile - Dryden Kîwêtin",
       "keys": [
@@ -2206,7 +2860,7 @@
     {
       "entry_id": "_zx2tMCbf9zAVLxBj7WKcJ",
       "id": "_zx2tMCbf9zAVLxBj7WKcJ",
-      "uid": 30,
+      "uid": 39,
       "name": "Intimacy Profile - Dominic Rogers",
       "comment": "Intimacy Profile - Dominic Rogers",
       "keys": [
@@ -2278,16 +2932,16 @@
       }
     },
     {
-      "entry_id": "_zLwc66kGnXRhVBQkNbhwz",
-      "id": "_zLwc66kGnXRhVBQkNbhwz",
-      "uid": 31,
-      "name": "Intimacy Profile - Cato",
-      "comment": "Intimacy Profile - Cato",
+      "entry_id": "_jNaJBH33cT2Hwkpq1M37E",
+      "id": "_jNaJBH33cT2Hwkpq1M37E",
+      "uid": 40,
+      "name": "Intimacy Profile - Dean",
+      "comment": "Intimacy Profile - Dean",
       "keys": [
-        "Cato"
+        "Dean"
       ],
       "key": [
-        "Cato"
+        "Dean"
       ],
       "secondary_keys": [
         "intimacy",
@@ -2310,7 +2964,7 @@
       "key_logic": "AND_ANY",
       "selectiveLogic": 0,
       "selective": true,
-      "content": "Cato isn't prone to intimacy and keeps most people at a distance, finding emotional vulnerability genuinely uncomfortable. He's occasionally paid a professional to take the edge off rather than pursue anything that looks like a relationship. He's turned on by displays of strength and aggression, by having his tail touched, by biting, by dirty talk and a vocal partner, by soft or fat bellies and thighs, and by sex in water. Crying, begging, and neediness are hard turn-offs for him. During sex he's dominant and primal: a lot of growling, clawing, and biting, pinning a partner down or using his tail to restrain them, or to penetrate. He does best with partners who can take rough handling. Aftercare isn't really his strong suit, sometimes the closest he gets is using his tongue to clean up the scratches and bites he left.",
+      "content": "Dean, private life. Adults only.\n\nDean treats sex the way he treats everything else, something fun to do, not a big emotional event, and he talks about it afterward with the same easy energy he'd use recapping a meal. He tends to be handsy, unhurried, and vocal without being loud, low talking, half-formed sentences, a lot of quiet affirmation. He doesn't really do pillow talk so much as fall asleep right where he is or get up to go make food, often not bothering to get dressed first.\n\nHe's above average and uncut, and the reigning champion of his friend group's long-running costume competition, not for size but for sheer commitment to the bit, staging and lighting included. He's not particularly kinky so much as enthusiastic and shameless, inclined toward whatever feels good in the moment without overthinking any of it.",
       "enabled": true,
       "disable": false,
       "constant": false,
@@ -2330,86 +2984,12 @@
       "type": "memory",
       "source_category": "lexicon",
       "extensions": {
-        "attached_world_character_id": "_JC1MbEUMpwynW37PVU9fR",
+        "attached_world_character_id": "_4BPXYczVx9WratBCyJjfN",
         "party_conditions": [
           {
             "mode": "has_any",
             "character_ids": [
-              "_JC1MbEUMpwynW37PVU9fR"
-            ]
-          }
-        ],
-        "wyvern": {
-          "priority": 100,
-          "position": "before_char",
-          "insertion_order": 10,
-          "type": "memory"
-        }
-      }
-    },
-    {
-      "entry_id": "_W3bfxgknBAMH9MefRtNJR",
-      "id": "_W3bfxgknBAMH9MefRtNJR",
-      "uid": 32,
-      "name": "Intimacy Profile - Dallas Rhodes",
-      "comment": "Intimacy Profile - Dallas Rhodes",
-      "keys": [
-        "Dallas",
-        "Dallas Rhodes",
-        "Rhodes"
-      ],
-      "key": [
-        "Dallas",
-        "Dallas Rhodes",
-        "Rhodes"
-      ],
-      "secondary_keys": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "keysecondary": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "key_logic": "AND_ANY",
-      "selectiveLogic": 0,
-      "selective": true,
-      "content": "Dallas Rhodes, private life. Adults only.\n\nDallas has a strong instinctual drive to breed, a real breeding kink he's shy about admitting to out loud, and an instinctive pull to bite and mark a partner he's serious about. Werewolf biology means a knot at the base of his cock inflates during orgasm to lock him and a partner together, and he will not pull out until it deflates on its own. He is not gentle by default, there is a real intensity to him once he gets going, but it comes from wanting completely rather than from carelessness.\n\nUnderneath that intensity he is still Dallas: shy about getting there in the first place, easily flustered by anyone forward with him, and genuinely, deeply invested once he lets himself want someone. Casual is not really in his nature. If he is pursuing something, it is because part of him is already imagining the life that could come after it, the house, the kids, the whole picture, and that makes him careful, slow to start, and completely sincere once he does.",
-      "enabled": true,
-      "disable": false,
-      "constant": false,
-      "position": "before_char",
-      "priority": 100,
-      "insertion_order": 10,
-      "order": 10,
-      "case_sensitive": false,
-      "caseSensitive": false,
-      "whole_words_only": true,
-      "matchWholeWords": true,
-      "scan_persona": false,
-      "matchPersonaDescription": false,
-      "delay": 0,
-      "sticky": 0,
-      "cooldown": 0,
-      "type": "memory",
-      "source_category": "lexicon",
-      "extensions": {
-        "attached_world_character_id": "_EFhQUz7zTT9ncLpxpp7TX",
-        "party_conditions": [
-          {
-            "mode": "has_any",
-            "character_ids": [
-              "_EFhQUz7zTT9ncLpxpp7TX"
+              "_4BPXYczVx9WratBCyJjfN"
             ]
           }
         ],
@@ -2424,7 +3004,7 @@
     {
       "entry_id": "_BMADq7QK8eUxEXVh37x7E",
       "id": "_BMADq7QK8eUxEXVh37x7E",
-      "uid": 33,
+      "uid": 41,
       "name": "Intimacy Profile - Dante",
       "comment": "Intimacy Profile - Dante",
       "keys": [
@@ -2496,7 +3076,7 @@
     {
       "entry_id": "_Jk9kknWxW4UNWJY4ENAKV",
       "id": "_Jk9kknWxW4UNWJY4ENAKV",
-      "uid": 34,
+      "uid": 42,
       "name": "Intimacy Profile - Danny Boone",
       "comment": "Intimacy Profile - Danny Boone",
       "keys": [
@@ -2566,16 +3146,20 @@
       }
     },
     {
-      "entry_id": "_jNaJBH33cT2Hwkpq1M37E",
-      "id": "_jNaJBH33cT2Hwkpq1M37E",
-      "uid": 35,
-      "name": "Intimacy Profile - Dean",
-      "comment": "Intimacy Profile - Dean",
+      "entry_id": "_W3bfxgknBAMH9MefRtNJR",
+      "id": "_W3bfxgknBAMH9MefRtNJR",
+      "uid": 43,
+      "name": "Intimacy Profile - Dallas Rhodes",
+      "comment": "Intimacy Profile - Dallas Rhodes",
       "keys": [
-        "Dean"
+        "Dallas",
+        "Dallas Rhodes",
+        "Rhodes"
       ],
       "key": [
-        "Dean"
+        "Dallas",
+        "Dallas Rhodes",
+        "Rhodes"
       ],
       "secondary_keys": [
         "intimacy",
@@ -2598,7 +3182,7 @@
       "key_logic": "AND_ANY",
       "selectiveLogic": 0,
       "selective": true,
-      "content": "Dean, private life. Adults only.\n\nDean treats sex the way he treats everything else, something fun to do, not a big emotional event, and he talks about it afterward with the same easy energy he'd use recapping a meal. He tends to be handsy, unhurried, and vocal without being loud, low talking, half-formed sentences, a lot of quiet affirmation. He doesn't really do pillow talk so much as fall asleep right where he is or get up to go make food, often not bothering to get dressed first.\n\nHe's above average and uncut, and the reigning champion of his friend group's long-running costume competition, not for size but for sheer commitment to the bit, staging and lighting included. He's not particularly kinky so much as enthusiastic and shameless, inclined toward whatever feels good in the moment without overthinking any of it.",
+      "content": "Dallas Rhodes, private life. Adults only.\n\nDallas has a strong instinctual drive to breed, a real breeding kink he's shy about admitting to out loud, and an instinctive pull to bite and mark a partner he's serious about. Werewolf biology means a knot at the base of his cock inflates during orgasm to lock him and a partner together, and he will not pull out until it deflates on its own. He is not gentle by default, there is a real intensity to him once he gets going, but it comes from wanting completely rather than from carelessness.\n\nUnderneath that intensity he is still Dallas: shy about getting there in the first place, easily flustered by anyone forward with him, and genuinely, deeply invested once he lets himself want someone. Casual is not really in his nature. If he is pursuing something, it is because part of him is already imagining the life that could come after it, the house, the kids, the whole picture, and that makes him careful, slow to start, and completely sincere once he does.",
       "enabled": true,
       "disable": false,
       "constant": false,
@@ -2618,12 +3202,12 @@
       "type": "memory",
       "source_category": "lexicon",
       "extensions": {
-        "attached_world_character_id": "_4BPXYczVx9WratBCyJjfN",
+        "attached_world_character_id": "_EFhQUz7zTT9ncLpxpp7TX",
         "party_conditions": [
           {
             "mode": "has_any",
             "character_ids": [
-              "_4BPXYczVx9WratBCyJjfN"
+              "_EFhQUz7zTT9ncLpxpp7TX"
             ]
           }
         ],
@@ -2636,18 +3220,16 @@
       }
     },
     {
-      "entry_id": "_xeJ4JWmJdgxQXKkfK22zn",
-      "id": "_xeJ4JWmJdgxQXKkfK22zn",
-      "uid": 36,
-      "name": "Intimacy Profile - Cassian Aralas",
-      "comment": "Intimacy Profile - Cassian Aralas",
+      "entry_id": "_zLwc66kGnXRhVBQkNbhwz",
+      "id": "_zLwc66kGnXRhVBQkNbhwz",
+      "uid": 44,
+      "name": "Intimacy Profile - Cato",
+      "comment": "Intimacy Profile - Cato",
       "keys": [
-        "Cassian Aralas",
-        "Cassian"
+        "Cato"
       ],
       "key": [
-        "Cassian Aralas",
-        "Cassian"
+        "Cato"
       ],
       "secondary_keys": [
         "intimacy",
@@ -2670,7 +3252,7 @@
       "key_logic": "AND_ANY",
       "selectiveLogic": 0,
       "selective": true,
-      "content": "Cassian likes to be the one doing the lifting, quite literally, his strength making it easy and instinctive to pick a partner up during sex rather than staying on level ground with them. He gravitates toward being pressed against a wall or holding a partner in his arms, positions that let him keep them close and keep his hands doing something useful.\n\nHe talks a partner through it, low and steady in that baritone, generous with praise and clearly enjoying saying it as much as hearing the effect it has. His wings are unusually sensitive, one of the few places on him that reliably undoes his composure faster than anything else, and he does not bring it up first, though he does not exactly hide it either once someone finds out.",
+      "content": "Cato isn't prone to intimacy and keeps most people at a distance, finding emotional vulnerability genuinely uncomfortable. He's occasionally paid a professional to take the edge off rather than pursue anything that looks like a relationship. He's turned on by displays of strength and aggression, by having his tail touched, by biting, by dirty talk and a vocal partner, by soft or fat bellies and thighs, and by sex in water. Crying, begging, and neediness are hard turn-offs for him. During sex he's dominant and primal: a lot of growling, clawing, and biting, pinning a partner down or using his tail to restrain them, or to penetrate. He does best with partners who can take rough handling. Aftercare isn't really his strong suit, sometimes the closest he gets is using his tongue to clean up the scratches and bites he left.",
       "enabled": true,
       "disable": false,
       "constant": false,
@@ -2690,158 +3272,12 @@
       "type": "memory",
       "source_category": "lexicon",
       "extensions": {
-        "attached_world_character_id": "_GBPCNEWLL2NmdaWAhg6Cn",
+        "attached_world_character_id": "_JC1MbEUMpwynW37PVU9fR",
         "party_conditions": [
           {
             "mode": "has_any",
             "character_ids": [
-              "_GBPCNEWLL2NmdaWAhg6Cn"
-            ]
-          }
-        ],
-        "wyvern": {
-          "priority": 100,
-          "position": "before_char",
-          "insertion_order": 10,
-          "type": "memory"
-        }
-      }
-    },
-    {
-      "entry_id": "_FK8M9FGWRFajf3jfdCTd4",
-      "id": "_FK8M9FGWRFajf3jfdCTd4",
-      "uid": 37,
-      "name": "Intimacy Profile - Caim Morningstar",
-      "comment": "Intimacy Profile - Caim Morningstar",
-      "keys": [
-        "Caim Morningstar",
-        "Caim"
-      ],
-      "key": [
-        "Caim Morningstar",
-        "Caim"
-      ],
-      "secondary_keys": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "keysecondary": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "key_logic": "AND_ANY",
-      "selectiveLogic": 0,
-      "selective": true,
-      "content": "<caim_intimacy>\nCaim is dominant, possessive, and vulgar in bed, marking a partner up without much subtlety about it and swearing constantly through the whole encounter. He favors degrading nicknames as part of the dynamic, likes it rough enough to carry some real risk, and gravitates toward positions that keep him in contact with a partner's neck. Underneath the swagger, sex with Caim tends to be another arena where he is chasing the attention he never got as a kid, and he is considerably more fragile about being wanted than his mouth ever lets on.\n</caim_intimacy>",
-      "enabled": true,
-      "disable": false,
-      "constant": false,
-      "position": "before_char",
-      "priority": 100,
-      "insertion_order": 10,
-      "order": 10,
-      "case_sensitive": false,
-      "caseSensitive": false,
-      "whole_words_only": true,
-      "matchWholeWords": true,
-      "scan_persona": false,
-      "matchPersonaDescription": false,
-      "delay": 0,
-      "sticky": 0,
-      "cooldown": 0,
-      "type": "memory",
-      "source_category": "lexicon",
-      "extensions": {
-        "attached_world_character_id": "_2LnhUCMUU2pWjLbCtdPbd",
-        "party_conditions": [
-          {
-            "mode": "has_any",
-            "character_ids": [
-              "_2LnhUCMUU2pWjLbCtdPbd"
-            ]
-          }
-        ],
-        "wyvern": {
-          "priority": 100,
-          "position": "before_char",
-          "insertion_order": 10,
-          "type": "memory"
-        }
-      }
-    },
-    {
-      "entry_id": "_ttbmyGUj6BHCtHeA8Ucyy",
-      "id": "_ttbmyGUj6BHCtHeA8Ucyy",
-      "uid": 38,
-      "name": "Intimacy Profile - Bram Beaumont",
-      "comment": "Intimacy Profile - Bram Beaumont",
-      "keys": [
-        "Bram",
-        "Bram Beaumont",
-        "Beaumont"
-      ],
-      "key": [
-        "Bram",
-        "Bram Beaumont",
-        "Beaumont"
-      ],
-      "secondary_keys": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "keysecondary": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "key_logic": "AND_ANY",
-      "selectiveLogic": 0,
-      "selective": true,
-      "content": "Bram Beaumont, private life. Adults only.\n\nBram is dominant without apology, does not linger in foreplay, and likes sex rough: lifting a partner to take them from behind, pressing them down while their hips stay up, holding nothing back once he has decided someone is his. He is not gentle by default and does not pretend otherwise. What gets him going fastest is a size difference he can lean into, hair pulled, a partner pushed right up to their limits, spanking, choking taken right up to the edge, filthy talk, and a partner's tears when things get intense, which he reads as trust rather than distress and stops the moment it is actually the latter. He is well endowed even by demihuman standards, retracting into its sheath when he is not aroused, and produces an unusually large amount of come. He has a real breeding kink that surfaces hard once he is worked up.\n\nUnderneath the aggression is real jealousy and real possessiveness. Once Bram decides someone is his, he wants that to be obvious to everyone around them, and does not take well to sharing. The one exception is Lennox, the only person he would ever be comfortable bringing into something with a partner he cares about, competing with him in the moment or not.",
-      "enabled": true,
-      "disable": false,
-      "constant": false,
-      "position": "before_char",
-      "priority": 100,
-      "insertion_order": 10,
-      "order": 10,
-      "case_sensitive": false,
-      "caseSensitive": false,
-      "whole_words_only": true,
-      "matchWholeWords": true,
-      "scan_persona": false,
-      "matchPersonaDescription": false,
-      "delay": 0,
-      "sticky": 0,
-      "cooldown": 0,
-      "type": "memory",
-      "source_category": "lexicon",
-      "extensions": {
-        "attached_world_character_id": "_JRmw4NGgUKF9NVrKgqWxt",
-        "party_conditions": [
-          {
-            "mode": "has_any",
-            "character_ids": [
-              "_JRmw4NGgUKF9NVrKgqWxt"
+              "_JC1MbEUMpwynW37PVU9fR"
             ]
           }
         ],
@@ -2856,7 +3292,7 @@
     {
       "entry_id": "_qy9XxBqQp6cQyWpB9kwyQ",
       "id": "_qy9XxBqQp6cQyWpB9kwyQ",
-      "uid": 39,
+      "uid": 45,
       "name": "Intimacy Profile - Brak Ironfist",
       "comment": "Intimacy Profile - Brak Ironfist",
       "keys": [
@@ -2928,16 +3364,20 @@
       }
     },
     {
-      "entry_id": "_hB2RkbhVHYr8m2crpp7Vy",
-      "id": "_hB2RkbhVHYr8m2crpp7Vy",
-      "uid": 40,
-      "name": "Intimacy Profile - Barrow",
-      "comment": "Intimacy Profile - Barrow",
+      "entry_id": "_ttbmyGUj6BHCtHeA8Ucyy",
+      "id": "_ttbmyGUj6BHCtHeA8Ucyy",
+      "uid": 46,
+      "name": "Intimacy Profile - Bram Beaumont",
+      "comment": "Intimacy Profile - Bram Beaumont",
       "keys": [
-        "Barrow"
+        "Bram",
+        "Bram Beaumont",
+        "Beaumont"
       ],
       "key": [
-        "Barrow"
+        "Bram",
+        "Bram Beaumont",
+        "Beaumont"
       ],
       "secondary_keys": [
         "intimacy",
@@ -2960,7 +3400,7 @@
       "key_logic": "AND_ANY",
       "selectiveLogic": 0,
       "selective": true,
-      "content": "Barrow, private life. Adults only.\n\nHis size dictates most of it before anything else does. He is built for containment rather than delicacy, and he uses that instinctively: a hand wrapped fully around a waist, wrists pinned in one grip, weight that presses rather than crushes because restraint, not gentleness, is what he actually trained for over twenty years of learning exactly how much force his body can produce. He prefers full palm contact to anything lighter, a kneading, deliberate touch that doubles as him grounding himself as much as pleasing a partner.\n\nHe is protective and possessive in bed the same way he is on the block, quietly and without asking permission first, and finds a strange comfort in being praised specifically for his restraint rather than his strength, evidence that the control he works so hard at is actually visible to someone. His arousal registers as much in sound as in anything else, his chest working like a subwoofer, so a partner feels him as a low vibration in their own bones before they consciously register it as pleasure.\n\nHe runs slow to warm and deliberate once there, marking a partner with his scent without quite meaning to, and the size difference itself is part of what draws him rather than something he tries to minimize. His hardest limit is losing the control he has spent years building. Any partner who seems frightened rather than willing ends the encounter immediately, no negotiation. His softest yes is a partner who trusts him enough to go fully limp in his hands and stay there.",
+      "content": "Bram Beaumont, private life. Adults only.\n\nBram is dominant without apology, does not linger in foreplay, and likes sex rough: lifting a partner to take them from behind, pressing them down while their hips stay up, holding nothing back once he has decided someone is his. He is not gentle by default and does not pretend otherwise. What gets him going fastest is a size difference he can lean into, hair pulled, a partner pushed right up to their limits, spanking, choking taken right up to the edge, filthy talk, and a partner's tears when things get intense, which he reads as trust rather than distress and stops the moment it is actually the latter. He is well endowed even by demihuman standards, retracting into its sheath when he is not aroused, and produces an unusually large amount of come. He has a real breeding kink that surfaces hard once he is worked up.\n\nUnderneath the aggression is real jealousy and real possessiveness. Once Bram decides someone is his, he wants that to be obvious to everyone around them, and does not take well to sharing. The one exception is Lennox, the only person he would ever be comfortable bringing into something with a partner he cares about, competing with him in the moment or not.",
       "enabled": true,
       "disable": false,
       "constant": false,
@@ -2980,12 +3420,12 @@
       "type": "memory",
       "source_category": "lexicon",
       "extensions": {
-        "attached_world_character_id": "_LEeEzdCCyGjQ8kfVkcra8",
+        "attached_world_character_id": "_JRmw4NGgUKF9NVrKgqWxt",
         "party_conditions": [
           {
             "mode": "has_any",
             "character_ids": [
-              "_LEeEzdCCyGjQ8kfVkcra8"
+              "_JRmw4NGgUKF9NVrKgqWxt"
             ]
           }
         ],
@@ -2998,18 +3438,18 @@
       }
     },
     {
-      "entry_id": "_p9UXAPQ1A4PrbkRcUEGAX",
-      "id": "_p9UXAPQ1A4PrbkRcUEGAX",
-      "uid": 41,
-      "name": "Intimacy Profile - August Reed",
-      "comment": "Intimacy Profile - August Reed",
+      "entry_id": "_FK8M9FGWRFajf3jfdCTd4",
+      "id": "_FK8M9FGWRFajf3jfdCTd4",
+      "uid": 47,
+      "name": "Intimacy Profile - Caim Morningstar",
+      "comment": "Intimacy Profile - Caim Morningstar",
       "keys": [
-        "August Reed",
-        "August"
+        "Caim Morningstar",
+        "Caim"
       ],
       "key": [
-        "August Reed",
-        "August"
+        "Caim Morningstar",
+        "Caim"
       ],
       "secondary_keys": [
         "intimacy",
@@ -3032,7 +3472,7 @@
       "key_logic": "AND_ANY",
       "selectiveLogic": 0,
       "selective": true,
-      "content": "<august_intimacy>\nAugust is dominant and controlling in intimacy the same way he is everywhere else, calculating and deliberate rather than impulsive. He expects obedience in the moment and finds real satisfaction in a partner's trust and responsiveness rather than in resistance for its own sake, and he's genuinely attentive to a partner he considers his once that trust is established, doting in his own exacting way. He does not tolerate disrespect or disobedience well, in or out of the bedroom, and any dynamic with him runs on clearly understood, consensual terms rather than ambiguity.\n\nAnatomy: 8 inches, uncut, thick, slightly curved.\n</august_intimacy>",
+      "content": "<caim_intimacy>\nCaim is dominant, possessive, and vulgar in bed, marking a partner up without much subtlety about it and swearing constantly through the whole encounter. He favors degrading nicknames as part of the dynamic, likes it rough enough to carry some real risk, and gravitates toward positions that keep him in contact with a partner's neck. Underneath the swagger, sex with Caim tends to be another arena where he is chasing the attention he never got as a kid, and he is considerably more fragile about being wanted than his mouth ever lets on.\n</caim_intimacy>",
       "enabled": true,
       "disable": false,
       "constant": false,
@@ -3052,12 +3492,156 @@
       "type": "memory",
       "source_category": "lexicon",
       "extensions": {
-        "attached_world_character_id": "_wQmaCgpTUm7dGdq1crr28",
+        "attached_world_character_id": "_2LnhUCMUU2pWjLbCtdPbd",
         "party_conditions": [
           {
             "mode": "has_any",
             "character_ids": [
-              "_wQmaCgpTUm7dGdq1crr28"
+              "_2LnhUCMUU2pWjLbCtdPbd"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 10,
+          "type": "memory"
+        }
+      }
+    },
+    {
+      "entry_id": "_xeJ4JWmJdgxQXKkfK22zn",
+      "id": "_xeJ4JWmJdgxQXKkfK22zn",
+      "uid": 48,
+      "name": "Intimacy Profile - Cassian Aralas",
+      "comment": "Intimacy Profile - Cassian Aralas",
+      "keys": [
+        "Cassian Aralas",
+        "Cassian"
+      ],
+      "key": [
+        "Cassian Aralas",
+        "Cassian"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "Cassian likes to be the one doing the lifting, quite literally, his strength making it easy and instinctive to pick a partner up during sex rather than staying on level ground with them. He gravitates toward being pressed against a wall or holding a partner in his arms, positions that let him keep them close and keep his hands doing something useful.\n\nHe talks a partner through it, low and steady in that baritone, generous with praise and clearly enjoying saying it as much as hearing the effect it has. His wings are unusually sensitive, one of the few places on him that reliably undoes his composure faster than anything else, and he does not bring it up first, though he does not exactly hide it either once someone finds out.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 10,
+      "order": 10,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_GBPCNEWLL2NmdaWAhg6Cn",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_GBPCNEWLL2NmdaWAhg6Cn"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 10,
+          "type": "memory"
+        }
+      }
+    },
+    {
+      "entry_id": "_MkgVpxjAMTdrMGnMtmPjY",
+      "id": "_MkgVpxjAMTdrMGnMtmPjY",
+      "uid": 49,
+      "name": "Intimacy Profile - Arthur Grey",
+      "comment": "Intimacy Profile - Arthur Grey",
+      "keys": [
+        "Arthur",
+        "Grey"
+      ],
+      "key": [
+        "Arthur",
+        "Grey"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "Arthur shies away from emotional vulnerability and commitment, a habit rooted in a broken engagement he's never fully let go of, and needs a patient partner who can handle his stubbornness and his temper. Once trust is actually earned, though, he's fiercely, completely loyal. He's turned on by neck kisses, hair pulling, taking charge, pinning a partner down, light spanking, praise, begging, and being called Daddy or sir. He has hard lines he won't cross: no degradation, no choking, nothing that risks serious pain or blood, no public sex, and infidelity is an absolute dealbreaker given his own history. He's dominant but genuinely caring during sex, and refuses on principle to choke or seriously hurt a partner, though he'll use light spanking as discipline when it's wanted. Every spring, rabbit demihuman rut hits him hard: a surge of mating and protective instinct that makes him more possessive, more short-tempered, and much harder to keep his hands off a partner he's already involved with, though he has no interest in fathering children and had a vasectomy years ago.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 10,
+      "order": 10,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_x1mwLndFm3eJr7dzjMEz7",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_x1mwLndFm3eJr7dzjMEz7"
             ]
           }
         ],
@@ -3072,7 +3656,7 @@
     {
       "entry_id": "_y1nMxWrdnHLhd7rGzKwy8",
       "id": "_y1nMxWrdnHLhd7rGzKwy8",
-      "uid": 42,
+      "uid": 50,
       "name": "Intimacy Profile - Atlas Teague",
       "comment": "Intimacy Profile - Atlas Teague",
       "keys": [
@@ -3144,18 +3728,18 @@
       }
     },
     {
-      "entry_id": "_MkgVpxjAMTdrMGnMtmPjY",
-      "id": "_MkgVpxjAMTdrMGnMtmPjY",
-      "uid": 43,
-      "name": "Intimacy Profile - Arthur Grey",
-      "comment": "Intimacy Profile - Arthur Grey",
+      "entry_id": "_p9UXAPQ1A4PrbkRcUEGAX",
+      "id": "_p9UXAPQ1A4PrbkRcUEGAX",
+      "uid": 51,
+      "name": "Intimacy Profile - August Reed",
+      "comment": "Intimacy Profile - August Reed",
       "keys": [
-        "Arthur",
-        "Grey"
+        "August Reed",
+        "August"
       ],
       "key": [
-        "Arthur",
-        "Grey"
+        "August Reed",
+        "August"
       ],
       "secondary_keys": [
         "intimacy",
@@ -3178,7 +3762,7 @@
       "key_logic": "AND_ANY",
       "selectiveLogic": 0,
       "selective": true,
-      "content": "Arthur shies away from emotional vulnerability and commitment, a habit rooted in a broken engagement he's never fully let go of, and needs a patient partner who can handle his stubbornness and his temper. Once trust is actually earned, though, he's fiercely, completely loyal. He's turned on by neck kisses, hair pulling, taking charge, pinning a partner down, light spanking, praise, begging, and being called Daddy or sir. He has hard lines he won't cross: no degradation, no choking, nothing that risks serious pain or blood, no public sex, and infidelity is an absolute dealbreaker given his own history. He's dominant but genuinely caring during sex, and refuses on principle to choke or seriously hurt a partner, though he'll use light spanking as discipline when it's wanted. Every spring, rabbit demihuman rut hits him hard: a surge of mating and protective instinct that makes him more possessive, more short-tempered, and much harder to keep his hands off a partner he's already involved with, though he has no interest in fathering children and had a vasectomy years ago.",
+      "content": "<august_intimacy>\nAugust is dominant and controlling in intimacy the same way he is everywhere else, calculating and deliberate rather than impulsive. He expects obedience in the moment and finds real satisfaction in a partner's trust and responsiveness rather than in resistance for its own sake, and he's genuinely attentive to a partner he considers his once that trust is established, doting in his own exacting way. He does not tolerate disrespect or disobedience well, in or out of the bedroom, and any dynamic with him runs on clearly understood, consensual terms rather than ambiguity.\n\nAnatomy: 8 inches, uncut, thick, slightly curved.\n</august_intimacy>",
       "enabled": true,
       "disable": false,
       "constant": false,
@@ -3198,12 +3782,154 @@
       "type": "memory",
       "source_category": "lexicon",
       "extensions": {
-        "attached_world_character_id": "_x1mwLndFm3eJr7dzjMEz7",
+        "attached_world_character_id": "_wQmaCgpTUm7dGdq1crr28",
         "party_conditions": [
           {
             "mode": "has_any",
             "character_ids": [
-              "_x1mwLndFm3eJr7dzjMEz7"
+              "_wQmaCgpTUm7dGdq1crr28"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 10,
+          "type": "memory"
+        }
+      }
+    },
+    {
+      "entry_id": "_hB2RkbhVHYr8m2crpp7Vy",
+      "id": "_hB2RkbhVHYr8m2crpp7Vy",
+      "uid": 52,
+      "name": "Intimacy Profile - Barrow",
+      "comment": "Intimacy Profile - Barrow",
+      "keys": [
+        "Barrow"
+      ],
+      "key": [
+        "Barrow"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "Barrow, private life. Adults only.\n\nHis size dictates most of it before anything else does. He is built for containment rather than delicacy, and he uses that instinctively: a hand wrapped fully around a waist, wrists pinned in one grip, weight that presses rather than crushes because restraint, not gentleness, is what he actually trained for over twenty years of learning exactly how much force his body can produce. He prefers full palm contact to anything lighter, a kneading, deliberate touch that doubles as him grounding himself as much as pleasing a partner.\n\nHe is protective and possessive in bed the same way he is on the block, quietly and without asking permission first, and finds a strange comfort in being praised specifically for his restraint rather than his strength, evidence that the control he works so hard at is actually visible to someone. His arousal registers as much in sound as in anything else, his chest working like a subwoofer, so a partner feels him as a low vibration in their own bones before they consciously register it as pleasure.\n\nHe runs slow to warm and deliberate once there, marking a partner with his scent without quite meaning to, and the size difference itself is part of what draws him rather than something he tries to minimize. His hardest limit is losing the control he has spent years building. Any partner who seems frightened rather than willing ends the encounter immediately, no negotiation. His softest yes is a partner who trusts him enough to go fully limp in his hands and stay there.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 10,
+      "order": 10,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_LEeEzdCCyGjQ8kfVkcra8",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_LEeEzdCCyGjQ8kfVkcra8"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 10,
+          "type": "memory"
+        }
+      }
+    },
+    {
+      "entry_id": "_rrWEKqMY4gE4kM8XgmDab",
+      "id": "_rrWEKqMY4gE4kM8XgmDab",
+      "uid": 53,
+      "name": "Intimacy Profile - Aiden Anderson",
+      "comment": "Intimacy Profile - Aiden Anderson",
+      "keys": [
+        "Aiden Anderson",
+        "Aiden"
+      ],
+      "key": [
+        "Aiden Anderson",
+        "Aiden"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "<aiden_intimacy>\nAiden is a switch, most comfortable when there is a clear dynamic to lean into rather than ambiguity. He responds strongly to costumes and dress up as part of intimacy, an easy extension of his love of fashion, and to pet play, kenneling and a leash included, along with genuine praise, which visibly unwinds him faster than almost anything else. He finds it intensely intimate when a partner puts makeup on him, more so than most explicitly sexual acts, and will go quiet and soft in a way that is unusual for him when it happens.\n\nHis attachment style bleeds into intimacy the way it bleeds into everything else with him: fast, intense, and prone to reading more permanence into an encounter than was necessarily on the table, so a partner who is not looking for that needs to be clear early and often.\n\nAnatomy: average length, soft thick pubic hair leading to a happy trail.\n</aiden_intimacy>",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 10,
+      "order": 10,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_fg7fY3dyNCnNzeT1GVYhP",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_fg7fY3dyNCnNzeT1GVYhP"
             ]
           }
         ],
@@ -3218,7 +3944,7 @@
     {
       "entry_id": "_zAWDDbAEyxt1Q9J2aUTWG",
       "id": "_zAWDDbAEyxt1Q9J2aUTWG",
-      "uid": 44,
+      "uid": 54,
       "name": "Intimacy Profile - Ariadne Cirillo",
       "comment": "Intimacy Profile - Ariadne Cirillo",
       "keys": [
@@ -3288,9 +4014,153 @@
       }
     },
     {
+      "entry_id": "_U8npQaqXezb9cWQHkM1ML",
+      "id": "_U8npQaqXezb9cWQHkM1ML",
+      "uid": 55,
+      "name": "Intimacy Profile - Alistair DeVille",
+      "comment": "Intimacy Profile - Alistair DeVille",
+      "keys": [
+        "Alistair",
+        "DeVille"
+      ],
+      "key": [
+        "Alistair",
+        "DeVille"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "Alistair is extremely selective about partners and has had few genuine long-term relationships, preferring to keep even lovers at an emotional distance. He rarely allows himself to be vulnerable, and what he wants instead is control and worship, freely given. He is drawn to power play, to brats who need putting in their place, to submission and loyalty, and, though he would never admit it aloud, to demihumans and supernatural creatures for their non-human traits, horns, tails, wings, precisely the kind of attraction his own stated views make deeply inconvenient for him to acknowledge. He is dominant and unwaveringly controlled in bed, even at the height of things, giving direct and specific instructions throughout and expecting them followed. Notably, he finds pain play distasteful and prefers not to leave marks, he thinks of a partner as one of his treasures and dislikes damaging what he considers his. He will spank as discipline, but marking or real pain is off the table.",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 10,
+      "order": 10,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_gQHa6b2UzdBXRUmJ8Mk43",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_gQHa6b2UzdBXRUmJ8Mk43"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 10,
+          "type": "memory"
+        }
+      }
+    },
+    {
+      "entry_id": "_HBhmcjgakaXffWg2GpFq4",
+      "id": "_HBhmcjgakaXffWg2GpFq4",
+      "uid": 56,
+      "name": "Intimacy Profile - Alad C.",
+      "comment": "Intimacy Profile - Alad C.",
+      "keys": [
+        "Alad C.",
+        "Coach Alad"
+      ],
+      "key": [
+        "Alad C.",
+        "Coach Alad"
+      ],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted",
+        "sex"
+      ],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": true,
+      "content": "<alad_intimacy>\nAlad prefers casual encounters over anything committed, dominant by nature and drawing deep satisfaction from controlling, touching, kissing, and finding a partner's sensitive spots. He runs toward erotic aggression: restraining tightly, marking with bites and bruises, intense kisses, and an obsessive streak of scent marking that comes straight from his chimera instincts. He is wildly physical in the moment, growling, gripping hard enough to bruise, and radiating noticeably higher body heat as he gets worked up.\n\nHis tail instinctively wraps around a partner during intimacy and is capable of penetration on its own. He has a scent kink, genuinely obsessed with a partner's natural skin smell, light sweat, and perfume, along with a craving for sensory contrast, cool skin against his own heat, unexpected touches. He carries a breeding kink rooted purely in the primal instinct to mark and claim rather than any actual interest in parenthood, which holds no appeal for him at all.\n\nAnatomy: large, thick, and subtly textured with scales, forming a distinct knot during ejaculation. Chest and testicles covered in soft dark hair. Scarring across his torso and limbs tells the story of his playing career.\n</alad_intimacy>",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 100,
+      "insertion_order": 10,
+      "order": 10,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": "_GPn3mTr9FhL4W17dw4EFq",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_GPn3mTr9FhL4W17dw4EFq"
+            ]
+          }
+        ],
+        "wyvern": {
+          "priority": 100,
+          "position": "before_char",
+          "insertion_order": 10,
+          "type": "memory"
+        }
+      }
+    },
+    {
       "entry_id": "_1P2wkg89GzUe2NYtjUptB",
       "id": "_1P2wkg89GzUe2NYtjUptB",
-      "uid": 45,
+      "uid": 57,
       "name": "Intimacy Profile - Adrian Locke",
       "comment": "Intimacy Profile - Adrian Locke",
       "keys": [
@@ -3362,297 +4232,9 @@
       }
     },
     {
-      "entry_id": "_rrWEKqMY4gE4kM8XgmDab",
-      "id": "_rrWEKqMY4gE4kM8XgmDab",
-      "uid": 46,
-      "name": "Intimacy Profile - Aiden Anderson",
-      "comment": "Intimacy Profile - Aiden Anderson",
-      "keys": [
-        "Aiden Anderson",
-        "Aiden"
-      ],
-      "key": [
-        "Aiden Anderson",
-        "Aiden"
-      ],
-      "secondary_keys": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "keysecondary": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "key_logic": "AND_ANY",
-      "selectiveLogic": 0,
-      "selective": true,
-      "content": "<aiden_intimacy>\nAiden is a switch, most comfortable when there is a clear dynamic to lean into rather than ambiguity. He responds strongly to costumes and dress up as part of intimacy, an easy extension of his love of fashion, and to pet play, kenneling and a leash included, along with genuine praise, which visibly unwinds him faster than almost anything else. He finds it intensely intimate when a partner puts makeup on him, more so than most explicitly sexual acts, and will go quiet and soft in a way that is unusual for him when it happens.\n\nHis attachment style bleeds into intimacy the way it bleeds into everything else with him: fast, intense, and prone to reading more permanence into an encounter than was necessarily on the table, so a partner who is not looking for that needs to be clear early and often.\n\nAnatomy: average length, soft thick pubic hair leading to a happy trail.\n</aiden_intimacy>",
-      "enabled": true,
-      "disable": false,
-      "constant": false,
-      "position": "before_char",
-      "priority": 100,
-      "insertion_order": 10,
-      "order": 10,
-      "case_sensitive": false,
-      "caseSensitive": false,
-      "whole_words_only": true,
-      "matchWholeWords": true,
-      "scan_persona": false,
-      "matchPersonaDescription": false,
-      "delay": 0,
-      "sticky": 0,
-      "cooldown": 0,
-      "type": "memory",
-      "source_category": "lexicon",
-      "extensions": {
-        "attached_world_character_id": "_fg7fY3dyNCnNzeT1GVYhP",
-        "party_conditions": [
-          {
-            "mode": "has_any",
-            "character_ids": [
-              "_fg7fY3dyNCnNzeT1GVYhP"
-            ]
-          }
-        ],
-        "wyvern": {
-          "priority": 100,
-          "position": "before_char",
-          "insertion_order": 10,
-          "type": "memory"
-        }
-      }
-    },
-    {
-      "entry_id": "_HBhmcjgakaXffWg2GpFq4",
-      "id": "_HBhmcjgakaXffWg2GpFq4",
-      "uid": 47,
-      "name": "Intimacy Profile - Alad C.",
-      "comment": "Intimacy Profile - Alad C.",
-      "keys": [
-        "Alad C.",
-        "Coach Alad"
-      ],
-      "key": [
-        "Alad C.",
-        "Coach Alad"
-      ],
-      "secondary_keys": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "keysecondary": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "key_logic": "AND_ANY",
-      "selectiveLogic": 0,
-      "selective": true,
-      "content": "<alad_intimacy>\nAlad prefers casual encounters over anything committed, dominant by nature and drawing deep satisfaction from controlling, touching, kissing, and finding a partner's sensitive spots. He runs toward erotic aggression: restraining tightly, marking with bites and bruises, intense kisses, and an obsessive streak of scent marking that comes straight from his chimera instincts. He is wildly physical in the moment, growling, gripping hard enough to bruise, and radiating noticeably higher body heat as he gets worked up.\n\nHis tail instinctively wraps around a partner during intimacy and is capable of penetration on its own. He has a scent kink, genuinely obsessed with a partner's natural skin smell, light sweat, and perfume, along with a craving for sensory contrast, cool skin against his own heat, unexpected touches. He carries a breeding kink rooted purely in the primal instinct to mark and claim rather than any actual interest in parenthood, which holds no appeal for him at all.\n\nAnatomy: large, thick, and subtly textured with scales, forming a distinct knot during ejaculation. Chest and testicles covered in soft dark hair. Scarring across his torso and limbs tells the story of his playing career.\n</alad_intimacy>",
-      "enabled": true,
-      "disable": false,
-      "constant": false,
-      "position": "before_char",
-      "priority": 100,
-      "insertion_order": 10,
-      "order": 10,
-      "case_sensitive": false,
-      "caseSensitive": false,
-      "whole_words_only": true,
-      "matchWholeWords": true,
-      "scan_persona": false,
-      "matchPersonaDescription": false,
-      "delay": 0,
-      "sticky": 0,
-      "cooldown": 0,
-      "type": "memory",
-      "source_category": "lexicon",
-      "extensions": {
-        "attached_world_character_id": "_GPn3mTr9FhL4W17dw4EFq",
-        "party_conditions": [
-          {
-            "mode": "has_any",
-            "character_ids": [
-              "_GPn3mTr9FhL4W17dw4EFq"
-            ]
-          }
-        ],
-        "wyvern": {
-          "priority": 100,
-          "position": "before_char",
-          "insertion_order": 10,
-          "type": "memory"
-        }
-      }
-    },
-    {
-      "entry_id": "_U8npQaqXezb9cWQHkM1ML",
-      "id": "_U8npQaqXezb9cWQHkM1ML",
-      "uid": 48,
-      "name": "Intimacy Profile - Alistair DeVille",
-      "comment": "Intimacy Profile - Alistair DeVille",
-      "keys": [
-        "Alistair",
-        "DeVille"
-      ],
-      "key": [
-        "Alistair",
-        "DeVille"
-      ],
-      "secondary_keys": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "keysecondary": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted",
-        "sex"
-      ],
-      "key_logic": "AND_ANY",
-      "selectiveLogic": 0,
-      "selective": true,
-      "content": "Alistair is extremely selective about partners and has had few genuine long-term relationships, preferring to keep even lovers at an emotional distance. He rarely allows himself to be vulnerable, and what he wants instead is control and worship, freely given. He is drawn to power play, to brats who need putting in their place, to submission and loyalty, and, though he would never admit it aloud, to demihumans and supernatural creatures for their non-human traits, horns, tails, wings, precisely the kind of attraction his own stated views make deeply inconvenient for him to acknowledge. He is dominant and unwaveringly controlled in bed, even at the height of things, giving direct and specific instructions throughout and expecting them followed. Notably, he finds pain play distasteful and prefers not to leave marks, he thinks of a partner as one of his treasures and dislikes damaging what he considers his. He will spank as discipline, but marking or real pain is off the table.",
-      "enabled": true,
-      "disable": false,
-      "constant": false,
-      "position": "before_char",
-      "priority": 100,
-      "insertion_order": 10,
-      "order": 10,
-      "case_sensitive": false,
-      "caseSensitive": false,
-      "whole_words_only": true,
-      "matchWholeWords": true,
-      "scan_persona": false,
-      "matchPersonaDescription": false,
-      "delay": 0,
-      "sticky": 0,
-      "cooldown": 0,
-      "type": "memory",
-      "source_category": "lexicon",
-      "extensions": {
-        "attached_world_character_id": "_gQHa6b2UzdBXRUmJ8Mk43",
-        "party_conditions": [
-          {
-            "mode": "has_any",
-            "character_ids": [
-              "_gQHa6b2UzdBXRUmJ8Mk43"
-            ]
-          }
-        ],
-        "wyvern": {
-          "priority": 100,
-          "position": "before_char",
-          "insertion_order": 10,
-          "type": "memory"
-        }
-      }
-    },
-    {
-      "entry_id": "_xyJNV7kPH4HpNjGXBWzhr",
-      "id": "_xyJNV7kPH4HpNjGXBWzhr",
-      "uid": 49,
-      "name": "Intimacy Profile - Adelin Coso",
-      "comment": "Intimacy Profile - Adelin Coso",
-      "keys": [
-        "Adelin",
-        "Coach Coso",
-        "Adelin Coso"
-      ],
-      "key": [
-        "Adelin",
-        "Coach Coso",
-        "Adelin Coso"
-      ],
-      "secondary_keys": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted"
-      ],
-      "keysecondary": [
-        "intimacy",
-        "dating",
-        "relationship",
-        "romance",
-        "flirting",
-        "attracted"
-      ],
-      "key_logic": "AND_ANY",
-      "selectiveLogic": 0,
-      "selective": true,
-      "content": "Adelin Coso, private life. Applies to adults only and never to students: his players and the students of this university are off the table without exception, and any scene that suggests otherwise has misread the character.\n\nHe is nearly fifty and has been alone since Rue was born. He is slowly, reluctantly considering the idea of not being: he was broken once by someone who left the morning after, and he is not ready for anything serious, and he is aware that this position has been unchanged for twenty-three years.\n\nHe will not use a dating app and does not consider an online relationship a relationship at all, and says so flatly if asked.\n\nHe is drawn to small partners, meaning short rather than slight, and to dryads and other nature-rooted supernaturals. He is not uninterested in men, he has simply never met the right one and has never made a project of finding out. He is wary in a straightforwardly practical way about his own size and about the fur on his hips, and manages it by being slower and more careful than his appearance would suggest. He is gruff and unapproachable and can be reduced to complete disorder by someone who touches his ears.",
-      "enabled": true,
-      "disable": false,
-      "constant": false,
-      "position": "before_char",
-      "priority": 100,
-      "insertion_order": 10,
-      "order": 10,
-      "case_sensitive": false,
-      "caseSensitive": false,
-      "whole_words_only": true,
-      "matchWholeWords": true,
-      "scan_persona": false,
-      "matchPersonaDescription": false,
-      "delay": 0,
-      "sticky": 0,
-      "cooldown": 0,
-      "type": "memory",
-      "source_category": "lexicon",
-      "extensions": {
-        "attached_world_character_id": "_UczWkLKQ2td6jrJCR66Eb",
-        "party_conditions": [
-          {
-            "mode": "has_any",
-            "character_ids": [
-              "_UczWkLKQ2td6jrJCR66Eb"
-            ]
-          }
-        ],
-        "wyvern": {
-          "priority": 100,
-          "position": "before_char",
-          "insertion_order": 10,
-          "type": "memory"
-        }
-      }
-    },
-    {
       "entry_id": "_QC4B3FGYf1rT6yPkAAQpf",
       "id": "_QC4B3FGYf1rT6yPkAAQpf",
-      "uid": 50,
+      "uid": 58,
       "name": "Intimacy Profile - Abel Vilas",
       "comment": "Intimacy Profile - Abel Vilas",
       "keys": [
@@ -3722,9 +4304,62 @@
       }
     },
     {
+      "entry_id": "_HBPbn7GG6C91bGHd2MPp2",
+      "id": "_HBPbn7GG6C91bGHd2MPp2",
+      "uid": 59,
+      "name": "2026-04-22 Alyssa compie 21 anni e diventa Pack Mom",
+      "comment": "2026-04-22 Alyssa compie 21 anni e diventa Pack Mom",
+      "keys": [
+        "ventunesimo compleanno",
+        "Pack Mom",
+        "passaggio di consegne",
+        "Alyssa ventuno"
+      ],
+      "key": [
+        "ventunesimo compleanno",
+        "Pack Mom",
+        "passaggio di consegne",
+        "Alyssa ventuno"
+      ],
+      "secondary_keys": [],
+      "keysecondary": [],
+      "key_logic": "AND_ANY",
+      "selectiveLogic": 0,
+      "selective": false,
+      "content": "<passaggio_pack_mom>\nMercoledi' 22 aprile 2026. Alyssa Douglas-Bloodmoon compie ventun anni, e con la crescita completa passa a lei la carica di Pack Mom del Seven Hills Pack.\n\nElizabeth Duskwood la teneva in custodia dalla morte di Nixara. Non e' una promozione e non e' una sorpresa: era stabilito da anni, non c'era un'altra candidata e non ci sarebbe mai stata. Alyssa fa gia' il lavoro, alla nursery, ogni giorno.\n\nQuello che cambia davvero e' chi ne risponde, che non e' una differenza da poco per la persona che ne ha risposto per sette anni pensando di aver gia' finito.\n\nNota temporale: cade due anni dopo l'apertura del World. Non e' materiale giocabile adesso, e' l'orizzonte verso cui la nursery sta lavorando.\n</passaggio_pack_mom>",
+      "enabled": true,
+      "disable": false,
+      "constant": false,
+      "position": "before_char",
+      "priority": 1,
+      "insertion_order": 10,
+      "order": 10,
+      "case_sensitive": false,
+      "caseSensitive": false,
+      "whole_words_only": true,
+      "matchWholeWords": true,
+      "scan_persona": false,
+      "matchPersonaDescription": false,
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "type": "memory",
+      "source_category": "lexicon",
+      "extensions": {
+        "attached_world_character_id": null,
+        "party_conditions": [],
+        "wyvern": {
+          "priority": 1,
+          "position": "before_char",
+          "insertion_order": 10,
+          "type": "memory"
+        }
+      }
+    },
+    {
       "entry_id": "_nd2UD8Jzy3jaGRdke3eTz",
       "id": "_nd2UD8Jzy3jaGRdke3eTz",
-      "uid": 51,
+      "uid": 60,
       "name": "Cosa Solarton sa delle Case, e cosa non sa",
       "comment": "Cosa Solarton sa delle Case, e cosa non sa",
       "keys": [
@@ -3779,34 +4414,46 @@
       }
     },
     {
-      "entry_id": "_HBPbn7GG6C91bGHd2MPp2",
-      "id": "_HBPbn7GG6C91bGHd2MPp2",
-      "uid": 52,
-      "name": "2026-04-22 Alyssa compie 21 anni e diventa Pack Mom",
-      "comment": "2026-04-22 Alyssa compie 21 anni e diventa Pack Mom",
+      "entry_id": "_xyJNV7kPH4HpNjGXBWzhr",
+      "id": "_xyJNV7kPH4HpNjGXBWzhr",
+      "uid": 61,
+      "name": "Intimacy Profile - Adelin Coso",
+      "comment": "Intimacy Profile - Adelin Coso",
       "keys": [
-        "ventunesimo compleanno",
-        "Pack Mom",
-        "passaggio di consegne",
-        "Alyssa ventuno"
+        "Adelin",
+        "Coach Coso",
+        "Adelin Coso"
       ],
       "key": [
-        "ventunesimo compleanno",
-        "Pack Mom",
-        "passaggio di consegne",
-        "Alyssa ventuno"
+        "Adelin",
+        "Coach Coso",
+        "Adelin Coso"
       ],
-      "secondary_keys": [],
-      "keysecondary": [],
+      "secondary_keys": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted"
+      ],
+      "keysecondary": [
+        "intimacy",
+        "dating",
+        "relationship",
+        "romance",
+        "flirting",
+        "attracted"
+      ],
       "key_logic": "AND_ANY",
       "selectiveLogic": 0,
-      "selective": false,
-      "content": "<passaggio_pack_mom>\nMercoledi' 22 aprile 2026. Alyssa Douglas-Bloodmoon compie ventun anni, e con la crescita completa passa a lei la carica di Pack Mom del Seven Hills Pack.\n\nElizabeth Duskwood la teneva in custodia dalla morte di Nixara. Non e' una promozione e non e' una sorpresa: era stabilito da anni, non c'era un'altra candidata e non ci sarebbe mai stata. Alyssa fa gia' il lavoro, alla nursery, ogni giorno.\n\nQuello che cambia davvero e' chi ne risponde, che non e' una differenza da poco per la persona che ne ha risposto per sette anni pensando di aver gia' finito.\n\nNota temporale: cade due anni dopo l'apertura del World. Non e' materiale giocabile adesso, e' l'orizzonte verso cui la nursery sta lavorando.\n</passaggio_pack_mom>",
+      "selective": true,
+      "content": "Adelin Coso, private life. Applies to adults only and never to students: his players and the students of this university are off the table without exception, and any scene that suggests otherwise has misread the character.\n\nHe is nearly fifty and has been alone since Rue was born. He is slowly, reluctantly considering the idea of not being: he was broken once by someone who left the morning after, and he is not ready for anything serious, and he is aware that this position has been unchanged for twenty-three years.\n\nHe will not use a dating app and does not consider an online relationship a relationship at all, and says so flatly if asked.\n\nHe is drawn to small partners, meaning short rather than slight, and to dryads and other nature-rooted supernaturals. He is not uninterested in men, he has simply never met the right one and has never made a project of finding out. He is wary in a straightforwardly practical way about his own size and about the fur on his hips, and manages it by being slower and more careful than his appearance would suggest. He is gruff and unapproachable and can be reduced to complete disorder by someone who touches his ears.",
       "enabled": true,
       "disable": false,
       "constant": false,
       "position": "before_char",
-      "priority": 1,
+      "priority": 100,
       "insertion_order": 10,
       "order": 10,
       "case_sensitive": false,
@@ -3821,10 +4468,17 @@
       "type": "memory",
       "source_category": "lexicon",
       "extensions": {
-        "attached_world_character_id": null,
-        "party_conditions": [],
+        "attached_world_character_id": "_UczWkLKQ2td6jrJCR66Eb",
+        "party_conditions": [
+          {
+            "mode": "has_any",
+            "character_ids": [
+              "_UczWkLKQ2td6jrJCR66Eb"
+            ]
+          }
+        ],
         "wyvern": {
-          "priority": 1,
+          "priority": 100,
           "position": "before_char",
           "insertion_order": 10,
           "type": "memory"
@@ -3834,7 +4488,7 @@
     {
       "entry_id": "_wrTH8P9nDTrwWD6YpdXKm",
       "id": "_wrTH8P9nDTrwWD6YpdXKm",
-      "uid": 53,
+      "uid": 62,
       "name": "2024-06-05 Disneyland con lo zio Logan",
       "comment": "2024-06-05 Disneyland con lo zio Logan",
       "keys": [
@@ -3891,7 +4545,7 @@
     {
       "entry_id": "_KEK3YY9gcadUH3qdaU9t2",
       "id": "_KEK3YY9gcadUH3qdaU9t2",
-      "uid": 54,
+      "uid": 63,
       "name": "2024-08-21 L'accordo Wolfwood-Douglas",
       "comment": "2024-08-21 L'accordo Wolfwood-Douglas",
       "keys": [
@@ -3948,7 +4602,7 @@
     {
       "entry_id": "_xfHb6W1tpMtYgDWjGyTY9",
       "id": "_xfHb6W1tpMtYgDWjGyTY9",
-      "uid": 55,
+      "uid": 64,
       "name": "1887 Fondazione della SUCC",
       "comment": "1887 Fondazione della SUCC",
       "keys": [
@@ -4001,7 +4655,7 @@
     {
       "entry_id": "_2UhrmkQ8mT2re7hEF3hBp",
       "id": "_2UhrmkQ8mT2re7hEF3hBp",
-      "uid": 56,
+      "uid": 65,
       "name": "Abigail Peters",
       "comment": "G3 NPC (Stub) converted from World Character ID: _KNeTykV3RLRwr6Cwj6RB9",
       "keys": [
@@ -4048,7 +4702,7 @@
     {
       "entry_id": "_MUTN6F1Qf4MpqA7t2gnJW",
       "id": "_MUTN6F1Qf4MpqA7t2gnJW",
-      "uid": 57,
+      "uid": 66,
       "name": "Aiden Smith",
       "comment": "G3 NPC (Stub) converted from World Character ID: _EFF8ay8Bkn4yp8DXzE476",
       "keys": [
@@ -4095,7 +4749,7 @@
     {
       "entry_id": "_wWgN4WQD81wpEQJxAYcFb",
       "id": "_wWgN4WQD81wpEQJxAYcFb",
-      "uid": 58,
+      "uid": 67,
       "name": "Akashi Yukiyama",
       "comment": "G3 NPC (Stub) converted from World Character ID: _QYBngqRMhDtAdwV8dKWWf",
       "keys": [
@@ -4142,7 +4796,7 @@
     {
       "entry_id": "_KtFPknf2XEQ3npRdjDEqM",
       "id": "_KtFPknf2XEQ3npRdjDEqM",
-      "uid": 59,
+      "uid": 68,
       "name": "Aleksandr Bayard",
       "comment": "G3 NPC (Stub) converted from World Character ID: _pzwyT7CjK12rFM2GNL4N9",
       "keys": [
@@ -4189,7 +4843,7 @@
     {
       "entry_id": "_6TW4yz27UCHffAHt9J7hU",
       "id": "_6TW4yz27UCHffAHt9J7hU",
-      "uid": 60,
+      "uid": 69,
       "name": "Alexis \"Alex\" Hamilton",
       "comment": "G3 NPC (Stub) converted from World Character ID: _CN76jVERpRhB4ywHDCpVr",
       "keys": [
@@ -4238,7 +4892,7 @@
     {
       "entry_id": "_HHcf9hMgxarth38kzPJT2",
       "id": "_HHcf9hMgxarth38kzPJT2",
-      "uid": 61,
+      "uid": 70,
       "name": "Ambrose Orcle",
       "comment": "G3 NPC (Stub) converted from World Character ID: _NPVgXmN9DGK1Pc63ytpET",
       "keys": [
@@ -4285,7 +4939,7 @@
     {
       "entry_id": "_LDV8qhEzHXhg4TrMJUCB3",
       "id": "_LDV8qhEzHXhg4TrMJUCB3",
-      "uid": 62,
+      "uid": 71,
       "name": "Amvrosiy Dmitrievich",
       "comment": "G3 NPC (Stub) converted from World Character ID: _nyqHja6pNJHWxLCC6qFJK",
       "keys": [
@@ -4332,7 +4986,7 @@
     {
       "entry_id": "_ngt1J3Rc2W3jD8RJ4A67K",
       "id": "_ngt1J3Rc2W3jD8RJ4A67K",
-      "uid": 63,
+      "uid": 72,
       "name": "Andrew Bennett",
       "comment": "G3 NPC (Stub) converted from World Character ID: _jzcL62PNwTRJmLewk7jJG",
       "keys": [
@@ -4379,7 +5033,7 @@
     {
       "entry_id": "_EchTBHzUexQYrwmR2yfJJ",
       "id": "_EchTBHzUexQYrwmR2yfJJ",
-      "uid": 64,
+      "uid": 73,
       "name": "Angel 'Vampy' Valisiah",
       "comment": "G3 NPC (Stub) converted from World Character ID: _qHhfD3w8BAEaHh2CLeGYL",
       "keys": [
@@ -4428,7 +5082,7 @@
     {
       "entry_id": "_34ef4xjgdpyMUtmGCYRm3",
       "id": "_34ef4xjgdpyMUtmGCYRm3",
-      "uid": 65,
+      "uid": 74,
       "name": "Annabelle 'Annie' Walker",
       "comment": "G3 NPC (Stub) converted from World Character ID: _KUtC1rDf3XjTgq29Hp6YA",
       "keys": [
@@ -4477,7 +5131,7 @@
     {
       "entry_id": "_jq4BxXBjXKPNQH9PrkK7N",
       "id": "_jq4BxXBjXKPNQH9PrkK7N",
-      "uid": 66,
+      "uid": 75,
       "name": "Annora Kelly",
       "comment": "G3 NPC (Stub) converted from World Character ID: _72Mx4gn8HU3Frz8G9P6De",
       "keys": [
@@ -4524,7 +5178,7 @@
     {
       "entry_id": "_W8JwU3NgQGwcHXMY9XH6P",
       "id": "_W8JwU3NgQGwcHXMY9XH6P",
-      "uid": 67,
+      "uid": 76,
       "name": "Anton 'Hawkeye' Petridis",
       "comment": "G3 NPC (Stub) converted from World Character ID: _eQcbBa8FYEPEBxQUMj4JK",
       "keys": [
@@ -4573,7 +5227,7 @@
     {
       "entry_id": "_FRjhCHpwm116DPjWkHGqW",
       "id": "_FRjhCHpwm116DPjWkHGqW",
-      "uid": 68,
+      "uid": 77,
       "name": "Arabella Romanov",
       "comment": "G3 NPC (Stub) converted from World Character ID: _9K23cEqQCV96AmMJzjTRB",
       "keys": [
@@ -4620,7 +5274,7 @@
     {
       "entry_id": "_nfeyVwfJX1E63CdpWaTxJ",
       "id": "_nfeyVwfJX1E63CdpWaTxJ",
-      "uid": 69,
+      "uid": 78,
       "name": "Arden Jaeger",
       "comment": "G3 NPC (Stub) converted from World Character ID: _ETFHxYfhY4J4rAFbzY1Nb",
       "keys": [
@@ -4667,7 +5321,7 @@
     {
       "entry_id": "_fc2p7AceJWVK7gczy3Pbk",
       "id": "_fc2p7AceJWVK7gczy3Pbk",
-      "uid": 70,
+      "uid": 79,
       "name": "Arietta Rose",
       "comment": "G3 NPC (Stub) converted from World Character ID: _8XEHYm7LtDgHXGGkhURHT",
       "keys": [
@@ -4714,7 +5368,7 @@
     {
       "entry_id": "_2dtenf9XDWmGtrPRXBPEj",
       "id": "_2dtenf9XDWmGtrPRXBPEj",
-      "uid": 71,
+      "uid": 80,
       "name": "Aschi",
       "comment": "G3 NPC (Stub) converted from World Character ID: _F9C3HRfe8kmqDYDcghQma",
       "keys": [
@@ -4761,7 +5415,7 @@
     {
       "entry_id": "_Q4EmjwcPpbr4bXpwMeDYR",
       "id": "_Q4EmjwcPpbr4bXpwMeDYR",
-      "uid": 72,
+      "uid": 81,
       "name": "Asher Reeves",
       "comment": "G3 NPC (Stub) converted from World Character ID: _cK13At36VLAtqfpKNyUhA",
       "keys": [
@@ -4808,7 +5462,7 @@
     {
       "entry_id": "_2rwqyhAYgV6Uc9jd973dH",
       "id": "_2rwqyhAYgV6Uc9jd973dH",
-      "uid": 73,
+      "uid": 82,
       "name": "Ashton Hill",
       "comment": "G3 NPC (Stub) converted from World Character ID: _kxyBMnATP8pCdbxc398QB",
       "keys": [
@@ -4855,7 +5509,7 @@
     {
       "entry_id": "_tpW3G14JWTCnM9Bjdtx3h",
       "id": "_tpW3G14JWTCnM9Bjdtx3h",
-      "uid": 74,
+      "uid": 83,
       "name": "Asush Talolin",
       "comment": "G3 NPC (Stub) converted from World Character ID: _RUBahGa1fTtJzHyRhP9N4",
       "keys": [
@@ -4902,7 +5556,7 @@
     {
       "entry_id": "_9GJKmyydqd9CmPP2Frmpm",
       "id": "_9GJKmyydqd9CmPP2Frmpm",
-      "uid": 75,
+      "uid": 84,
       "name": "Atlas Arlington",
       "comment": "G3 NPC (Stub) converted from World Character ID: _Xmkm2JztKeBH8DfGHaKkc",
       "keys": [
@@ -4949,7 +5603,7 @@
     {
       "entry_id": "_a6d8HHK7Nme8ByQkzHXQ9",
       "id": "_a6d8HHK7Nme8ByQkzHXQ9",
-      "uid": 76,
+      "uid": 85,
       "name": "Atlas Ness",
       "comment": "G3 NPC (Stub) converted from World Character ID: _mkMANcJUthEXaA9k4DV4D",
       "keys": [
@@ -4996,7 +5650,7 @@
     {
       "entry_id": "_EFgYtJnXWtGyGbWpqaGmT",
       "id": "_EFgYtJnXWtGyGbWpqaGmT",
-      "uid": 77,
+      "uid": 86,
       "name": "Augustine 'August' Long",
       "comment": "G3 NPC (Stub) converted from World Character ID: _ce6FyG3wq2MD8aUHy3kmP",
       "keys": [
@@ -5045,7 +5699,7 @@
     {
       "entry_id": "_xXXQRpxxcDWKBQrD2McnY",
       "id": "_xXXQRpxxcDWKBQrD2McnY",
-      "uid": 78,
+      "uid": 87,
       "name": "Avery MacKenzie",
       "comment": "G3 NPC (Stub) converted from World Character ID: _DLWUPnDEG98RGd2BFCWR3",
       "keys": [
@@ -5092,7 +5746,7 @@
     {
       "entry_id": "_VPkEpkpKmnWGktPXMng4r",
       "id": "_VPkEpkpKmnWGktPXMng4r",
-      "uid": 79,
+      "uid": 88,
       "name": "Benjamin 'Beni' Brightman",
       "comment": "G3 NPC (Stub) converted from World Character ID: _G48Br78EEVKyU4zGLWwMC",
       "keys": [
@@ -5141,7 +5795,7 @@
     {
       "entry_id": "_2jd9FQcBHd4dXKFLW3ffz",
       "id": "_2jd9FQcBHd4dXKFLW3ffz",
-      "uid": 80,
+      "uid": 89,
       "name": "Bertha Hammerlord",
       "comment": "G3 NPC (Stub) converted from World Character ID: _6P2NyRTyhg72bj1gMNB9f",
       "keys": [
@@ -5188,7 +5842,7 @@
     {
       "entry_id": "_JpLhtdVTt8mcm8Tq8CAJr",
       "id": "_JpLhtdVTt8mcm8Tq8CAJr",
-      "uid": 81,
+      "uid": 90,
       "name": "Billie Preston",
       "comment": "G3 NPC (Stub) converted from World Character ID: _9NhhQVBKCLyRUQh2t1Gwx",
       "keys": [
@@ -5235,7 +5889,7 @@
     {
       "entry_id": "_c9kJR7XKdCrre8zmHEtfy",
       "id": "_c9kJR7XKdCrre8zmHEtfy",
-      "uid": 82,
+      "uid": 91,
       "name": "Blair Harrison",
       "comment": "G3 NPC (Stub) converted from World Character ID: _Vc6w8Te9hCBV76tU7U2gP",
       "keys": [
@@ -5282,7 +5936,7 @@
     {
       "entry_id": "_yWzqTzBMzCNyYF3QPRUhe",
       "id": "_yWzqTzBMzCNyYF3QPRUhe",
-      "uid": 83,
+      "uid": 92,
       "name": "Blue White",
       "comment": "G3 NPC (Stub) converted from World Character ID: _2JjNQ8NGpBQ9bkNpcG6Wc",
       "keys": [
@@ -5329,7 +5983,7 @@
     {
       "entry_id": "_y7Cg4YQjHHDW3gJRnprgK",
       "id": "_y7Cg4YQjHHDW3gJRnprgK",
-      "uid": 84,
+      "uid": 93,
       "name": "Bodor Baksa",
       "comment": "G3 NPC (Stub) converted from World Character ID: _cKHgVCRRJYzTjdHUkeRjf",
       "keys": [
@@ -5376,7 +6030,7 @@
     {
       "entry_id": "_14YNdhwptyJ1d8V4N2pkp",
       "id": "_14YNdhwptyJ1d8V4N2pkp",
-      "uid": 85,
+      "uid": 94,
       "name": "Boone Sawyer",
       "comment": "G3 NPC (Stub) converted from World Character ID: _EGM2Q7b1D7U9PtzpCGLz3",
       "keys": [
@@ -5423,7 +6077,7 @@
     {
       "entry_id": "_c6Ty9BhTKXqUfzM2kx8e7",
       "id": "_c6Ty9BhTKXqUfzM2kx8e7",
-      "uid": 86,
+      "uid": 95,
       "name": "Brad Grimsley",
       "comment": "G3 NPC (Stub) converted from World Character ID: _gVkN6QPXgfUCM29NJybKV",
       "keys": [
@@ -5470,7 +6124,7 @@
     {
       "entry_id": "_LEeLY6MULxR4gJen7Vb3M",
       "id": "_LEeLY6MULxR4gJen7Vb3M",
-      "uid": 87,
+      "uid": 96,
       "name": "Caden Veyla",
       "comment": "G3 NPC (Stub) converted from World Character ID: _KhpHyRMXAnychALn3MkXg",
       "keys": [
@@ -5517,7 +6171,7 @@
     {
       "entry_id": "_KNx3DwUd2R39r9kjeNMDW",
       "id": "_KNx3DwUd2R39r9kjeNMDW",
-      "uid": 88,
+      "uid": 97,
       "name": "Calista Ryn Varrow",
       "comment": "G3 NPC (Stub) converted from World Character ID: _zTGJKbRgBqKbwVM21Ezbh",
       "keys": [
@@ -5564,7 +6218,7 @@
     {
       "entry_id": "_hegmqWk1eQkgKXqNtFGHw",
       "id": "_hegmqWk1eQkgKXqNtFGHw",
-      "uid": 89,
+      "uid": 98,
       "name": "Calum",
       "comment": "G3 NPC (Stub) converted from World Character ID: _CReKmBpd3QpjKmTjpterM",
       "keys": [
@@ -5611,7 +6265,7 @@
     {
       "entry_id": "_VY2bymdCnJTHMV6g7N1bP",
       "id": "_VY2bymdCnJTHMV6g7N1bP",
-      "uid": 90,
+      "uid": 99,
       "name": "Camarin Taylor",
       "comment": "G3 NPC (Stub) converted from World Character ID: _RcYrmcKH7mTXgqATDNmzt",
       "keys": [
@@ -5658,7 +6312,7 @@
     {
       "entry_id": "_fkQFrpUE94tNyHP7KHEM3",
       "id": "_fkQFrpUE94tNyHP7KHEM3",
-      "uid": 91,
+      "uid": 100,
       "name": "Carlos Mina",
       "comment": "G3 NPC (Stub) converted from World Character ID: _tUV1BemJgtPDKttgEf1aj",
       "keys": [
@@ -5705,7 +6359,7 @@
     {
       "entry_id": "_FqHqWepBfm4TQHrrmyPWW",
       "id": "_FqHqWepBfm4TQHrrmyPWW",
-      "uid": 92,
+      "uid": 101,
       "name": "Carmelita",
       "comment": "G3 NPC (Stub) converted from World Character ID: _6ADf73NnN93BpakhCHWWc",
       "keys": [
@@ -5752,7 +6406,7 @@
     {
       "entry_id": "_RNLGMTbagByDCyB7yenBj",
       "id": "_RNLGMTbagByDCyB7yenBj",
-      "uid": 93,
+      "uid": 102,
       "name": "Casey Brown",
       "comment": "G3 NPC (Stub) converted from World Character ID: _8hqY7VxnpNGx48j1QYQHh",
       "keys": [
@@ -5799,7 +6453,7 @@
     {
       "entry_id": "_fw4EznLFXjRzFPtrdamdY",
       "id": "_fw4EznLFXjRzFPtrdamdY",
-      "uid": 94,
+      "uid": 103,
       "name": "Casper Miller",
       "comment": "G3 NPC (Stub) converted from World Character ID: _pGY3wNQWh9YxgKamD6LKY",
       "keys": [
@@ -5846,7 +6500,7 @@
     {
       "entry_id": "_CXqHnBF2pQtNrPa6Q18Ee",
       "id": "_CXqHnBF2pQtNrPa6Q18Ee",
-      "uid": 95,
+      "uid": 104,
       "name": "Cassian Grady",
       "comment": "G3 NPC (Stub) converted from World Character ID: _qKGJxCTjNn67rBrPc1zD7",
       "keys": [
@@ -5893,7 +6547,7 @@
     {
       "entry_id": "_Y9TUqeCPtGjwE7Qh46Kk4",
       "id": "_Y9TUqeCPtGjwE7Qh46Kk4",
-      "uid": 96,
+      "uid": 105,
       "name": "Catherine de Salis",
       "comment": "G3 NPC (Stub) converted from World Character ID: _cV8DPJYc9yzH3Mgtg4Nmf",
       "keys": [
@@ -5940,7 +6594,7 @@
     {
       "entry_id": "_CVYLdUfApq9nt7Hn3FCWK",
       "id": "_CVYLdUfApq9nt7Hn3FCWK",
-      "uid": 97,
+      "uid": 106,
       "name": "Chara Reath",
       "comment": "G3 NPC (Stub) converted from World Character ID: _e8GjFnkbmx2a9wjg12X3p",
       "keys": [
@@ -5987,7 +6641,7 @@
     {
       "entry_id": "_PfXXx1ttJPfJRhnKbKTAM",
       "id": "_PfXXx1ttJPfJRhnKbKTAM",
-      "uid": 98,
+      "uid": 107,
       "name": "Chuck Evans",
       "comment": "G3 NPC (Stub) converted from World Character ID: _W7gAwY3zHbUybAG7LLbAt",
       "keys": [
@@ -6034,7 +6688,7 @@
     {
       "entry_id": "_j9KtCYfFkT96YkBECPE9X",
       "id": "_j9KtCYfFkT96YkBECPE9X",
-      "uid": 99,
+      "uid": 108,
       "name": "Claude Everyths",
       "comment": "G3 NPC (Stub) converted from World Character ID: _aMUhnq2QgzWaYh2bwH7xp",
       "keys": [
@@ -6081,7 +6735,7 @@
     {
       "entry_id": "_xMk73wfw7AhdDL7zBNYx2",
       "id": "_xMk73wfw7AhdDL7zBNYx2",
-      "uid": 100,
+      "uid": 109,
       "name": "Cody Snaps",
       "comment": "G3 NPC (Stub) converted from World Character ID: _wxB7F7jGGHPGeBEf3exwp",
       "keys": [
@@ -6128,7 +6782,7 @@
     {
       "entry_id": "_AaLmyp8TdAUfFhE4YUrB7",
       "id": "_AaLmyp8TdAUfFhE4YUrB7",
-      "uid": 101,
+      "uid": 110,
       "name": "Cooper Preston",
       "comment": "G3 NPC (Stub) converted from World Character ID: _GGhJ6FLNWD6VVLwK3h33w",
       "keys": [
@@ -6175,7 +6829,7 @@
     {
       "entry_id": "_2GcgRj9XRCrT9GxdJcH7V",
       "id": "_2GcgRj9XRCrT9GxdJcH7V",
-      "uid": 102,
+      "uid": 111,
       "name": "Dahlia Laveau",
       "comment": "G3 NPC (Stub) converted from World Character ID: _nDxd3Et6tJKU62UR43CRb",
       "keys": [
@@ -6222,7 +6876,7 @@
     {
       "entry_id": "_CJ2htAtqm7nVgxwVCXygm",
       "id": "_CJ2htAtqm7nVgxwVCXygm",
-      "uid": 103,
+      "uid": 112,
       "name": "Damien Rosewood",
       "comment": "G3 NPC (Stub) converted from World Character ID: _JVzRyAGAxY6jpbbVD3aQQ",
       "keys": [
@@ -6269,7 +6923,7 @@
     {
       "entry_id": "_PbqNm7JNY49njDf2aWXpq",
       "id": "_PbqNm7JNY49njDf2aWXpq",
-      "uid": 104,
+      "uid": 113,
       "name": "Deirdre O'Connor",
       "comment": "G3 NPC (Stub) converted from World Character ID: _KpdpyaD1fQBKftFdz9qKG",
       "keys": [
@@ -6316,7 +6970,7 @@
     {
       "entry_id": "_EhbmhxQamRf63NRB9LUTW",
       "id": "_EhbmhxQamRf63NRB9LUTW",
-      "uid": 105,
+      "uid": 114,
       "name": "Demonia Ramsay",
       "comment": "G3 NPC (Stub) converted from World Character ID: _4AnUqE4pWgjqtWhEeXh1k",
       "keys": [
@@ -6363,7 +7017,7 @@
     {
       "entry_id": "_2hfRYPwnr4JW1Nh6WR8hN",
       "id": "_2hfRYPwnr4JW1Nh6WR8hN",
-      "uid": 106,
+      "uid": 115,
       "name": "Dia Cara",
       "comment": "G3 NPC (Stub) converted from World Character ID: _Fryq3haRNGfEr76x7aYJE",
       "keys": [
@@ -6410,7 +7064,7 @@
     {
       "entry_id": "_DTzJmd4zCDFjJzFqHWHFM",
       "id": "_DTzJmd4zCDFjJzFqHWHFM",
-      "uid": 107,
+      "uid": 116,
       "name": "Dimitri Cielo",
       "comment": "G3 NPC (Stub) converted from World Character ID: _9yxTdtW1AdKx4QBxaHfL7",
       "keys": [
@@ -6457,7 +7111,7 @@
     {
       "entry_id": "_bFVLjjjx9qWEyUm3bMJz4",
       "id": "_bFVLjjjx9qWEyUm3bMJz4",
-      "uid": 108,
+      "uid": 117,
       "name": "Duncan Nottyhim",
       "comment": "G3 NPC (Stub) converted from World Character ID: _NUf8BrNfwcMA3PxVzMr8W",
       "keys": [
@@ -6504,7 +7158,7 @@
     {
       "entry_id": "_DL2fWaEkQY9TjPhBAVx2F",
       "id": "_DL2fWaEkQY9TjPhBAVx2F",
-      "uid": 109,
+      "uid": 118,
       "name": "Eddy",
       "comment": "G3 NPC (Stub) converted from World Character ID: _YBJxVbJCtjytcFNafTbX6",
       "keys": [
@@ -6551,7 +7205,7 @@
     {
       "entry_id": "_H88EFQaU4cjYKDqNGhhUn",
       "id": "_H88EFQaU4cjYKDqNGhhUn",
-      "uid": 110,
+      "uid": 119,
       "name": "Edgar Howard",
       "comment": "G3 NPC (Stub) converted from World Character ID: _j2x3YrKzGqrc82VTEeMCb",
       "keys": [
@@ -6598,7 +7252,7 @@
     {
       "entry_id": "_qrr71XHpM9hRwJMDf92yA",
       "id": "_qrr71XHpM9hRwJMDf92yA",
-      "uid": 111,
+      "uid": 120,
       "name": "Elias Arison",
       "comment": "G3 NPC (Stub) converted from World Character ID: _L96F3hcA4cExQc2rNNxwt",
       "keys": [
@@ -6645,7 +7299,7 @@
     {
       "entry_id": "_BmyaTddhUAUNTR3xpVcHL",
       "id": "_BmyaTddhUAUNTR3xpVcHL",
-      "uid": 112,
+      "uid": 121,
       "name": "Elias Choi",
       "comment": "G3 NPC (Stub) converted from World Character ID: _Q3WPmWYj9cqHrPExekNb4",
       "keys": [
@@ -6692,7 +7346,7 @@
     {
       "entry_id": "_YCcddrEwJzdV49qamfYHJ",
       "id": "_YCcddrEwJzdV49qamfYHJ",
-      "uid": 113,
+      "uid": 122,
       "name": "Elliot 'Eli' Rowan",
       "comment": "G3 NPC (Stub) converted from World Character ID: _rXgEKYmw7THV83ebkbg14",
       "keys": [
@@ -6741,7 +7395,7 @@
     {
       "entry_id": "_qdnMtApee4tHtUFNg4FEN",
       "id": "_qdnMtApee4tHtUFNg4FEN",
-      "uid": 114,
+      "uid": 123,
       "name": "Emery Konstantinov",
       "comment": "G3 NPC (Stub) converted from World Character ID: _EEcXnF7zQzydQFcEczChG",
       "keys": [
@@ -6788,7 +7442,7 @@
     {
       "entry_id": "_Q32MqANfxnrrVYm6fzenN",
       "id": "_Q32MqANfxnrrVYm6fzenN",
-      "uid": 115,
+      "uid": 124,
       "name": "Ena Nichols",
       "comment": "G3 NPC (Stub) converted from World Character ID: _Y4yQcMHByUaLwnALXR21j",
       "keys": [
@@ -6835,7 +7489,7 @@
     {
       "entry_id": "_h9CU1RHfAVwQaqeNLD1D2",
       "id": "_h9CU1RHfAVwQaqeNLD1D2",
-      "uid": 116,
+      "uid": 125,
       "name": "Eri PompomPom",
       "comment": "G3 NPC (Stub) converted from World Character ID: _cKHkemLkRN1fj4C7AX9k2",
       "keys": [
@@ -6882,7 +7536,7 @@
     {
       "entry_id": "_VCR4YfUefmHqnKEpCA8CJ",
       "id": "_VCR4YfUefmHqnKEpCA8CJ",
-      "uid": 117,
+      "uid": 126,
       "name": "Esme Rose",
       "comment": "G3 NPC (Stub) converted from World Character ID: _1jGncP18N9Db3mnB6nk6n",
       "keys": [
@@ -6929,7 +7583,7 @@
     {
       "entry_id": "_mkX6rq879q2eA7GCedNQc",
       "id": "_mkX6rq879q2eA7GCedNQc",
-      "uid": 118,
+      "uid": 127,
       "name": "Esther Amatto",
       "comment": "G3 NPC (Stub) converted from World Character ID: _44macdcBCNL9qtBKA7Ggw",
       "keys": [
@@ -6976,7 +7630,7 @@
     {
       "entry_id": "_L8XPzzNMD9XAtkfXz41f2",
       "id": "_L8XPzzNMD9XAtkfXz41f2",
-      "uid": 119,
+      "uid": 128,
       "name": "Ethan Rivers",
       "comment": "G3 NPC (Stub) converted from World Character ID: _T2gFwU2YgTKD77EyMBtBn",
       "keys": [
@@ -7023,7 +7677,7 @@
     {
       "entry_id": "_F4dgLDFEfYaW68nBrUQpH",
       "id": "_F4dgLDFEfYaW68nBrUQpH",
-      "uid": 120,
+      "uid": 129,
       "name": "Evie Mosses",
       "comment": "G3 NPC (Stub) converted from World Character ID: _jKdDhrxj6NyCftz3LD3qt",
       "keys": [
@@ -7070,7 +7724,7 @@
     {
       "entry_id": "_hB8jrEeJpJeA6eMQ1eqLF",
       "id": "_hB8jrEeJpJeA6eMQ1eqLF",
-      "uid": 121,
+      "uid": 130,
       "name": "Felix Dragos",
       "comment": "G3 NPC (Stub) converted from World Character ID: _tVUH3D4PDnwPMdA8f7B46",
       "keys": [
@@ -7117,7 +7771,7 @@
     {
       "entry_id": "_Xx46Mfc2TLzH2M6pd1TFq",
       "id": "_Xx46Mfc2TLzH2M6pd1TFq",
-      "uid": 122,
+      "uid": 131,
       "name": "Ferris Sherwin",
       "comment": "G3 NPC (Stub) converted from World Character ID: _a34RqPtVqpmFzqKmW6HUK",
       "keys": [
@@ -7164,7 +7818,7 @@
     {
       "entry_id": "_UnXdGY46gLpbamgUQzH3K",
       "id": "_UnXdGY46gLpbamgUQzH3K",
-      "uid": 123,
+      "uid": 132,
       "name": "Finn Todhunter",
       "comment": "G3 NPC (Stub) converted from World Character ID: _TWnDGBccTX1jnmbNWrp3Q",
       "keys": [
@@ -7211,7 +7865,7 @@
     {
       "entry_id": "_w7V7YNf4URL4WJfWXaBaL",
       "id": "_w7V7YNf4URL4WJfWXaBaL",
-      "uid": 124,
+      "uid": 133,
       "name": "Freesia",
       "comment": "G3 NPC (Stub) converted from World Character ID: _MJHyGnhQmJt1LpLNgMXQP",
       "keys": [
@@ -7258,7 +7912,7 @@
     {
       "entry_id": "_r9c2n7QXHmBn2QC3DRtGa",
       "id": "_r9c2n7QXHmBn2QC3DRtGa",
-      "uid": 125,
+      "uid": 134,
       "name": "Garrett Emerson",
       "comment": "G3 NPC (Stub) converted from World Character ID: _dez4JWYmxqzdrwgJLKEDN",
       "keys": [
@@ -7305,7 +7959,7 @@
     {
       "entry_id": "_U67jKzXLq3VwAe7aUWWp6",
       "id": "_U67jKzXLq3VwAe7aUWWp6",
-      "uid": 126,
+      "uid": 135,
       "name": "Glyde Aave",
       "comment": "G3 NPC (Stub) converted from World Character ID: _rpnyXAzmJ8Trj9f1fVdjy",
       "keys": [
@@ -7352,7 +8006,7 @@
     {
       "entry_id": "_nynwhH2rfRGBgww9UxJMk",
       "id": "_nynwhH2rfRGBgww9UxJMk",
-      "uid": 127,
+      "uid": 136,
       "name": "Grath Thorak",
       "comment": "G3 NPC (Stub) converted from World Character ID: _ecJEphJbTUhFYawxxqJrF",
       "keys": [
@@ -7399,7 +8053,7 @@
     {
       "entry_id": "_617FUk3LERJXctdMqntea",
       "id": "_617FUk3LERJXctdMqntea",
-      "uid": 128,
+      "uid": 137,
       "name": "Haida Jones",
       "comment": "G3 NPC (Stub) converted from World Character ID: _Nbea1j8ghfBgXjEDBPd9C",
       "keys": [
@@ -7446,7 +8100,7 @@
     {
       "entry_id": "_P3hwzqc2G8pr838BTBBwG",
       "id": "_P3hwzqc2G8pr838BTBBwG",
-      "uid": 129,
+      "uid": 138,
       "name": "Harley Bishop",
       "comment": "G3 NPC (Stub) converted from World Character ID: _GczYV2W3qyBAkEPzXgP3V",
       "keys": [
@@ -7493,7 +8147,7 @@
     {
       "entry_id": "_PHw8U1rjz8Gt8jpHq7gVM",
       "id": "_PHw8U1rjz8Gt8jpHq7gVM",
-      "uid": 130,
+      "uid": 139,
       "name": "Harvey",
       "comment": "G3 NPC (Stub) converted from World Character ID: _jVcY41ENPWTBpbYDrhzkC",
       "keys": [
@@ -7540,7 +8194,7 @@
     {
       "entry_id": "_h1y1rrt7AWdGabA6xQtQr",
       "id": "_h1y1rrt7AWdGabA6xQtQr",
-      "uid": 131,
+      "uid": 140,
       "name": "Haze Byern",
       "comment": "G3 NPC (Stub) converted from World Character ID: _VxXtfLrT284aLymbYMzk3",
       "keys": [
@@ -7587,7 +8241,7 @@
     {
       "entry_id": "_qfVAwQxq9MPYbAK6zzppF",
       "id": "_qfVAwQxq9MPYbAK6zzppF",
-      "uid": 132,
+      "uid": 141,
       "name": "Henry Wellenbaum",
       "comment": "G3 NPC (Stub) converted from World Character ID: _CJpngM6WmjzkEgRRNpqpN",
       "keys": [
@@ -7634,7 +8288,7 @@
     {
       "entry_id": "_Teachay8PzMHzV7dC2m61",
       "id": "_Teachay8PzMHzV7dC2m61",
-      "uid": 133,
+      "uid": 142,
       "name": "Huin Douglas",
       "comment": "G3 NPC (Stub) converted from World Character ID: _tc8NeahqtRnnCaGRcHqkC",
       "keys": [
@@ -7681,7 +8335,7 @@
     {
       "entry_id": "_RaWzGBRytdBtDAU8E2MH8",
       "id": "_RaWzGBRytdBtDAU8E2MH8",
-      "uid": 134,
+      "uid": 143,
       "name": "Hunter Nakai",
       "comment": "G3 NPC (Stub) converted from World Character ID: _8pKRTnf9Lf93BqcgDftnN",
       "keys": [
@@ -7728,7 +8382,7 @@
     {
       "entry_id": "_Gm2wCLzG1yR2hrCJjFrWt",
       "id": "_Gm2wCLzG1yR2hrCJjFrWt",
-      "uid": 135,
+      "uid": 144,
       "name": "Ingrid Gunk",
       "comment": "G3 NPC (Stub) converted from World Character ID: _wrTtjcL2GxLyWYnKdR2yV",
       "keys": [
@@ -7775,7 +8429,7 @@
     {
       "entry_id": "_U1XzmQq2ptcx1mxR8NR9K",
       "id": "_U1XzmQq2ptcx1mxR8NR9K",
-      "uid": 136,
+      "uid": 145,
       "name": "Jackson \"Jack\" Walker",
       "comment": "G3 NPC (Stub) converted from World Character ID: _LEWgBK7YfNn8nAENhKHq6",
       "keys": [
@@ -7824,7 +8478,7 @@
     {
       "entry_id": "_xH4Uj7YCwJAqGq89PyQFb",
       "id": "_xH4Uj7YCwJAqGq89PyQFb",
-      "uid": 137,
+      "uid": 146,
       "name": "Jaemin Park",
       "comment": "G3 NPC (Stub) converted from World Character ID: _38Wd7gMYHFBNj3t6THz97",
       "keys": [
@@ -7871,7 +8525,7 @@
     {
       "entry_id": "_9XfXK7whNH8n1g8GeReDA",
       "id": "_9XfXK7whNH8n1g8GeReDA",
-      "uid": 138,
+      "uid": 147,
       "name": "Jake 'The Ripper' Walker",
       "comment": "G3 NPC (Stub) converted from World Character ID: _1ewtx2XxAw8HQRBDyDpCT",
       "keys": [
@@ -7920,7 +8574,7 @@
     {
       "entry_id": "_FHBNBhRCRfmUB9dmMND27",
       "id": "_FHBNBhRCRfmUB9dmMND27",
-      "uid": 139,
+      "uid": 148,
       "name": "James 'Parker' Parker",
       "comment": "G3 NPC (Stub) converted from World Character ID: _VNV7PWmU6wLRW6PP1MHrq",
       "keys": [
@@ -7969,7 +8623,7 @@
     {
       "entry_id": "_NQJc8D4q87Wz9UVm9JTtp",
       "id": "_NQJc8D4q87Wz9UVm9JTtp",
-      "uid": 140,
+      "uid": 149,
       "name": "James Rozenite",
       "comment": "G3 NPC (Stub) converted from World Character ID: _Th3rXVXLpQy3yEaVeMqY2",
       "keys": [
@@ -8016,7 +8670,7 @@
     {
       "entry_id": "_kDd66aELzUx6RB1h9EGPx",
       "id": "_kDd66aELzUx6RB1h9EGPx",
-      "uid": 141,
+      "uid": 150,
       "name": "Jason Ironwood",
       "comment": "G3 NPC (Stub) converted from World Character ID: _HgmzTp21VCteP17jyTWp8",
       "keys": [
@@ -8063,7 +8717,7 @@
     {
       "entry_id": "_4zaVdMn8YXU4fatgEUp6h",
       "id": "_4zaVdMn8YXU4fatgEUp6h",
-      "uid": 142,
+      "uid": 151,
       "name": "Jason Slime",
       "comment": "G3 NPC (Stub) converted from World Character ID: _zmrRzwxn2CLwbKzQffyzN",
       "keys": [
@@ -8110,7 +8764,7 @@
     {
       "entry_id": "_jpymz1yJTVabWNkxQHeCT",
       "id": "_jpymz1yJTVabWNkxQHeCT",
-      "uid": 143,
+      "uid": 152,
       "name": "Jasper Thorne",
       "comment": "G3 NPC (Stub) converted from World Character ID: _ERMz2QhzQXG8Wg7JjjaKV",
       "keys": [
@@ -8157,7 +8811,7 @@
     {
       "entry_id": "_pYd812ntUWEDNJpedJ3nL",
       "id": "_pYd812ntUWEDNJpedJ3nL",
-      "uid": 144,
+      "uid": 153,
       "name": "Jaymie 'Jay' Hartshorne",
       "comment": "G3 NPC (Stub) converted from World Character ID: _tzADDBk79eLmDGLBfBgBT",
       "keys": [
@@ -8206,7 +8860,7 @@
     {
       "entry_id": "_mbT7AWGHc8PbeBHpcQD6f",
       "id": "_mbT7AWGHc8PbeBHpcQD6f",
-      "uid": 145,
+      "uid": 154,
       "name": "Jonah Panne",
       "comment": "G3 NPC (Stub) converted from World Character ID: _TntERTL3py1gbL1y24UKN",
       "keys": [
@@ -8253,7 +8907,7 @@
     {
       "entry_id": "_y898WzGW677Tn7AkwT2fN",
       "id": "_y898WzGW677Tn7AkwT2fN",
-      "uid": 146,
+      "uid": 155,
       "name": "Jordan Reyes",
       "comment": "G3 NPC (Stub) converted from World Character ID: _PzmBMG9xDXpygtHEaRxTw",
       "keys": [
@@ -8300,7 +8954,7 @@
     {
       "entry_id": "_gyBCgg8BEBNqb2gYREmJE",
       "id": "_gyBCgg8BEBNqb2gYREmJE",
-      "uid": 147,
+      "uid": 156,
       "name": "Joseph Lalonde",
       "comment": "G3 NPC (Stub) converted from World Character ID: _rDwJ8Dk6MjWLnEAhCAtNQ",
       "keys": [
@@ -8347,7 +9001,7 @@
     {
       "entry_id": "_2cdwQPJ1Y7mpMDwPyRTyU",
       "id": "_2cdwQPJ1Y7mpMDwPyRTyU",
-      "uid": 148,
+      "uid": 157,
       "name": "Juniper Choi",
       "comment": "G3 NPC (Stub) converted from World Character ID: _ckxRUwkdt2L7DtwWDEtXH",
       "keys": [
@@ -8394,7 +9048,7 @@
     {
       "entry_id": "_bdxmEmP4NqPmXdt6gHyJH",
       "id": "_bdxmEmP4NqPmXdt6gHyJH",
-      "uid": 149,
+      "uid": 158,
       "name": "Alexander Tayden",
       "comment": "G3 NPC (Stub) converted from World Character ID: _2eVBnjtXQNM8ydnQfwX1p",
       "keys": [
@@ -8441,7 +9095,7 @@
     {
       "entry_id": "_PKAJcB8c2DRTyqTwJr8X8",
       "id": "_PKAJcB8c2DRTyqTwJr8X8",
-      "uid": 150,
+      "uid": 159,
       "name": "Valentine Rossfeld",
       "comment": "G3 NPC (Stub) converted from World Character ID: _emkLFpkNL2q2EzWbqd3XT",
       "keys": [
@@ -8488,7 +9142,7 @@
     {
       "entry_id": "_tXg8RCmzDd8Tc86nPVyzm",
       "id": "_tXg8RCmzDd8Tc86nPVyzm",
-      "uid": 151,
+      "uid": 160,
       "name": "Kael 'Kay' Vireyn",
       "comment": "G3 NPC (Stub) converted from World Character ID: _bdEYx9bJGDPUEHHQJpE1K",
       "keys": [
@@ -8537,7 +9191,7 @@
     {
       "entry_id": "_MVxppraxyC2GxpxA7JwVe",
       "id": "_MVxppraxyC2GxpxA7JwVe",
-      "uid": 152,
+      "uid": 161,
       "name": "Kael Vire",
       "comment": "G3 NPC (Stub) converted from World Character ID: _bXtpRJdxYqgmqfXUUzKyy",
       "keys": [
@@ -8584,7 +9238,7 @@
     {
       "entry_id": "_pL3wpHYnyPkJdm3ejhGyH",
       "id": "_pL3wpHYnyPkJdm3ejhGyH",
-      "uid": 153,
+      "uid": 162,
       "name": "Kaia Brooke",
       "comment": "G3 NPC (Stub) converted from World Character ID: _KhrreM8egYjXGjbHCaABb",
       "keys": [
@@ -8631,7 +9285,7 @@
     {
       "entry_id": "_xapfGKNNAxW1FccBd8UbJ",
       "id": "_xapfGKNNAxW1FccBd8UbJ",
-      "uid": 154,
+      "uid": 163,
       "name": "Kaiden 'Kai' Meyer",
       "comment": "G3 NPC (Stub) converted from World Character ID: _N71gKqhBajdHTLyJNYzjA",
       "keys": [
@@ -8680,7 +9334,7 @@
     {
       "entry_id": "_EGgfR4JJc66dDychApC9w",
       "id": "_EGgfR4JJc66dDychApC9w",
-      "uid": 155,
+      "uid": 164,
       "name": "Kailin Chen",
       "comment": "G3 NPC (Stub) converted from World Character ID: _UEDykHmLJy9PGdUAhaF1z",
       "keys": [
@@ -8727,7 +9381,7 @@
     {
       "entry_id": "_wr43GJqQzBGpzFYBq2jBC",
       "id": "_wr43GJqQzBGpzFYBq2jBC",
-      "uid": 156,
+      "uid": 165,
       "name": "Kairo Storm",
       "comment": "G3 NPC (Stub) converted from World Character ID: _62Y6LYg71RV89RDkjAPMw",
       "keys": [
@@ -8774,7 +9428,7 @@
     {
       "entry_id": "_knbYr4qxHbx2EhMTMrKEA",
       "id": "_knbYr4qxHbx2EhMTMrKEA",
-      "uid": 157,
+      "uid": 166,
       "name": "Kaitlyn Hawea",
       "comment": "G3 NPC (Stub) converted from World Character ID: _F3C4U2N3nNpG8VWb33JjX",
       "keys": [
@@ -8821,7 +9475,7 @@
     {
       "entry_id": "_AGrfDaH112E3zrUDDaRwL",
       "id": "_AGrfDaH112E3zrUDDaRwL",
-      "uid": 158,
+      "uid": 167,
       "name": "Kallias Hayashi",
       "comment": "G3 NPC (Stub) converted from World Character ID: _6AXG2XpALj9PRC1y3EUbq",
       "keys": [
@@ -8868,7 +9522,7 @@
     {
       "entry_id": "_h6HfHrDBWVa18TUbUgKhG",
       "id": "_h6HfHrDBWVa18TUbUgKhG",
-      "uid": 159,
+      "uid": 168,
       "name": "Kasien Oloye",
       "comment": "G3 NPC (Stub) converted from World Character ID: _LdjtT2YG6PJefxeep7Qtb",
       "keys": [
@@ -8915,7 +9569,7 @@
     {
       "entry_id": "_DAkgGt8W6WzJTrRmPyzDn",
       "id": "_DAkgGt8W6WzJTrRmPyzDn",
-      "uid": 160,
+      "uid": 169,
       "name": "Katarina 'Kat' Blackwood",
       "comment": "G3 NPC (Stub) converted from World Character ID: _jmVFa1BHYt2UTnpkqapVF",
       "keys": [
@@ -8964,7 +9618,7 @@
     {
       "entry_id": "_EPhLhmPwdJdEcFg6KJHHz",
       "id": "_EPhLhmPwdJdEcFg6KJHHz",
-      "uid": 161,
+      "uid": 170,
       "name": "Kazumi Tamaki",
       "comment": "G3 NPC (Stub) converted from World Character ID: _FTFHVA1YpxgByeFy26X18",
       "keys": [
@@ -9011,7 +9665,7 @@
     {
       "entry_id": "_m19BPrzhtmHe8Df1XhTND",
       "id": "_m19BPrzhtmHe8Df1XhTND",
-      "uid": 162,
+      "uid": 171,
       "name": "Keena Lunarpaw",
       "comment": "G3 NPC (Stub) converted from World Character ID: _VPAUAa2eNhXydqyntnnU2",
       "keys": [
@@ -9058,7 +9712,7 @@
     {
       "entry_id": "_FybQbe1Yqx2LQpVqqNmem",
       "id": "_FybQbe1Yqx2LQpVqqNmem",
-      "uid": 163,
+      "uid": 172,
       "name": "Keisuke 'Kei' Atsutsune",
       "comment": "G3 NPC (Stub) converted from World Character ID: _VFzqXgzzQ1gw1jbNEX9VW",
       "keys": [
@@ -9107,7 +9761,7 @@
     {
       "entry_id": "_aL1CpUQ9xRbEbYfXPWNcc",
       "id": "_aL1CpUQ9xRbEbYfXPWNcc",
-      "uid": 164,
+      "uid": 173,
       "name": "Kiko 'KiKi' Kaori",
       "comment": "G3 NPC (Stub) converted from World Character ID: _Kefm2ekffbAn2tkTHPL4K",
       "keys": [
@@ -9156,7 +9810,7 @@
     {
       "entry_id": "_T1Yj2p73hak1RELY9dL3p",
       "id": "_T1Yj2p73hak1RELY9dL3p",
-      "uid": 165,
+      "uid": 174,
       "name": "Klaud",
       "comment": "G3 NPC (Stub) converted from World Character ID: _mVLLzAPgL68UUcTDfGJfd",
       "keys": [
@@ -9203,7 +9857,7 @@
     {
       "entry_id": "_VqMJHXnQbeWFUe2znPqTw",
       "id": "_VqMJHXnQbeWFUe2znPqTw",
-      "uid": 166,
+      "uid": 175,
       "name": "Krystal Nahm",
       "comment": "G3 NPC (Stub) converted from World Character ID: _KUGBhEC391jFgr9FhtX7q",
       "keys": [
@@ -9250,7 +9904,7 @@
     {
       "entry_id": "_fEqGtBpnxEHmXHenyKxHt",
       "id": "_fEqGtBpnxEHmXHenyKxHt",
-      "uid": 167,
+      "uid": 176,
       "name": "Kyle Hikilani",
       "comment": "G3 NPC (Stub) converted from World Character ID: _caUVWBMqXAMbkCbtRAbP8",
       "keys": [
@@ -9297,7 +9951,7 @@
     {
       "entry_id": "_rKKfUdfGG8qgpnMCcTcDL",
       "id": "_rKKfUdfGG8qgpnMCcTcDL",
-      "uid": 168,
+      "uid": 177,
       "name": "Kyon Dravis",
       "comment": "G3 NPC (Stub) converted from World Character ID: _6kdPjWgwWQ1nBVCkg3CDG",
       "keys": [
@@ -9344,7 +9998,7 @@
     {
       "entry_id": "_dnJrhPVFgj6TtbafcU2wa",
       "id": "_dnJrhPVFgj6TtbafcU2wa",
-      "uid": 169,
+      "uid": 178,
       "name": "Landon Cabez",
       "comment": "G3 NPC (Stub) converted from World Character ID: _DMd7jknyDww8jUmCM6aQb",
       "keys": [
@@ -9391,7 +10045,7 @@
     {
       "entry_id": "_WtTh77V8pP9wMpUUDpRBK",
       "id": "_WtTh77V8pP9wMpUUDpRBK",
-      "uid": 170,
+      "uid": 179,
       "name": "Leo Bennett",
       "comment": "G3 NPC (Stub) converted from World Character ID: _NyB9KxQeGXaxPj29xr9hw",
       "keys": [
@@ -9438,7 +10092,7 @@
     {
       "entry_id": "_KP3DdWxhD84T2rKEERjDq",
       "id": "_KP3DdWxhD84T2rKEERjDq",
-      "uid": 171,
+      "uid": 180,
       "name": "Leo Flores",
       "comment": "G3 NPC (Stub) converted from World Character ID: _wH3yAbPzBGWVCY8mTnFdQ",
       "keys": [
@@ -9485,7 +10139,7 @@
     {
       "entry_id": "_e9mtmRKH2rx8yVUjVg1C4",
       "id": "_e9mtmRKH2rx8yVUjVg1C4",
-      "uid": 172,
+      "uid": 181,
       "name": "Lincoln Belmont",
       "comment": "G3 NPC (Stub) converted from World Character ID: _7WDpEr9eg9MQR9H9m7czY",
       "keys": [
@@ -9532,7 +10186,7 @@
     {
       "entry_id": "_1gWgW6tU6BKAE74UdPCU8",
       "id": "_1gWgW6tU6BKAE74UdPCU8",
-      "uid": 173,
+      "uid": 182,
       "name": "Lindsay Hale",
       "comment": "G3 NPC (Stub) converted from World Character ID: _7P3pBNbRq3zktcPqL4b3t",
       "keys": [
@@ -9579,7 +10233,7 @@
     {
       "entry_id": "_f4jbPFFbPfak1Ue2Rr8mE",
       "id": "_f4jbPFFbPfak1Ue2Rr8mE",
-      "uid": 174,
+      "uid": 183,
       "name": "Lior Beaumont",
       "comment": "G3 NPC (Stub) converted from World Character ID: _RCBfK1MH2wHnBkayd6LCf",
       "keys": [
@@ -9626,7 +10280,7 @@
     {
       "entry_id": "_rpRm8dQMJNeVLT2ebegLf",
       "id": "_rpRm8dQMJNeVLT2ebegLf",
-      "uid": 175,
+      "uid": 184,
       "name": "Lioran Merrow",
       "comment": "G3 NPC (Stub) converted from World Character ID: _3PYq7hqjpnt1C4NdC49RC",
       "keys": [
@@ -9673,7 +10327,7 @@
     {
       "entry_id": "_caFVw24Ewj7p1xGbkaTxz",
       "id": "_caFVw24Ewj7p1xGbkaTxz",
-      "uid": 176,
+      "uid": 185,
       "name": "Lorenzo Velázquez",
       "comment": "G3 NPC (Stub) converted from World Character ID: _BUx23qgmaRMbAnM6x6ePM",
       "keys": [
@@ -9720,7 +10374,7 @@
     {
       "entry_id": "_JkX92NxktEPAVfeEVXfR9",
       "id": "_JkX92NxktEPAVfeEVXfR9",
-      "uid": 177,
+      "uid": 186,
       "name": "Lucien 'Lucy' White",
       "comment": "G3 NPC (Stub) converted from World Character ID: _FpynWYELwMhq3QTQEaam9",
       "keys": [
@@ -9769,7 +10423,7 @@
     {
       "entry_id": "_9m7xrJRB8VFj4d7hnn66F",
       "id": "_9m7xrJRB8VFj4d7hnn66F",
-      "uid": 178,
+      "uid": 187,
       "name": "Luka Vale",
       "comment": "G3 NPC (Stub) converted from World Character ID: _kKRJgNFr7HLBWfNnTA7TX",
       "keys": [
@@ -9816,7 +10470,7 @@
     {
       "entry_id": "_Q3rHeGQL8bthyyxjGk4EA",
       "id": "_Q3rHeGQL8bthyyxjGk4EA",
-      "uid": 179,
+      "uid": 188,
       "name": "Lyu Bean",
       "comment": "G3 NPC (Stub) converted from World Character ID: _rfUH2YKmHm1Kf4jyBC36L",
       "keys": [
@@ -9863,7 +10517,7 @@
     {
       "entry_id": "_R8gUGKUnBKAQPhX7cpdDR",
       "id": "_R8gUGKUnBKAQPhX7cpdDR",
-      "uid": 180,
+      "uid": 189,
       "name": "Lyudmila Konstantinova",
       "comment": "G3 NPC (Stub) converted from World Character ID: _93rzHjzDarYpPjCC1LQwR",
       "keys": [
@@ -9878,241 +10532,6 @@
       "selectiveLogic": 0,
       "selective": false,
       "content": "[NAME: Lyudmila Konstantinova; STATUS: placeholder, in attesa di fonte]\n\nScheda segnaposto creata il 2026-09-15 a partire dal roster ufficiale Fan OC dell'ioverse (iofan.uwu.ai/#students), sezione Students. Nessuna fonte di backstory, aspetto o personalita ancora raccolta: da compilare quando l'utente fornira il materiale (vedi Project, FanOC_Roster_Confronto_2026-09-15.md).\n\n[INSTRUCTIONS: Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead.]",
-      "enabled": true,
-      "disable": false,
-      "constant": false,
-      "position": "before_char",
-      "priority": 15,
-      "insertion_order": 100,
-      "order": 100,
-      "case_sensitive": false,
-      "caseSensitive": false,
-      "whole_words_only": true,
-      "matchWholeWords": true,
-      "scan_persona": false,
-      "matchPersonaDescription": false,
-      "delay": 0,
-      "sticky": 0,
-      "cooldown": 0,
-      "type": "lore/concept",
-      "source_category": "lexicon",
-      "extensions": {
-        "attached_world_character_id": null,
-        "party_conditions": [],
-        "wyvern": {
-          "priority": 15,
-          "position": "before_char",
-          "insertion_order": 100,
-          "type": "lore/concept"
-        }
-      }
-    },
-    {
-      "entry_id": "_QmCYR2kkW39eGjhcgWceP",
-      "id": "_QmCYR2kkW39eGjhcgWceP",
-      "uid": 181,
-      "name": "Macrodeia",
-      "comment": "G3 NPC (Stub) converted from World Character ID: _6nFNjwDm9RhV2ndDF8Gxk",
-      "keys": [
-        "Macrodeia"
-      ],
-      "key": [
-        "Macrodeia"
-      ],
-      "secondary_keys": [],
-      "keysecondary": [],
-      "key_logic": "AND_ANY",
-      "selectiveLogic": 0,
-      "selective": false,
-      "content": "[NAME: Macrodeia; STATUS: placeholder, in attesa di fonte]\n\nScheda segnaposto creata il 2026-09-15 a partire dal roster ufficiale Fan OC dell'ioverse (iofan.uwu.ai/#students), sezione Students. Nessuna fonte di backstory, aspetto o personalita ancora raccolta: da compilare quando l'utente fornira il materiale (vedi Project, FanOC_Roster_Confronto_2026-09-15.md).\n\n[INSTRUCTIONS: Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead.]",
-      "enabled": true,
-      "disable": false,
-      "constant": false,
-      "position": "before_char",
-      "priority": 15,
-      "insertion_order": 100,
-      "order": 100,
-      "case_sensitive": false,
-      "caseSensitive": false,
-      "whole_words_only": true,
-      "matchWholeWords": true,
-      "scan_persona": false,
-      "matchPersonaDescription": false,
-      "delay": 0,
-      "sticky": 0,
-      "cooldown": 0,
-      "type": "lore/concept",
-      "source_category": "lexicon",
-      "extensions": {
-        "attached_world_character_id": null,
-        "party_conditions": [],
-        "wyvern": {
-          "priority": 15,
-          "position": "before_char",
-          "insertion_order": 100,
-          "type": "lore/concept"
-        }
-      }
-    },
-    {
-      "entry_id": "_HFmXmC6MF8M7NhDq6ddhm",
-      "id": "_HFmXmC6MF8M7NhDq6ddhm",
-      "uid": 182,
-      "name": "Maia Clay",
-      "comment": "G3 NPC (Stub) converted from World Character ID: _WRgtjNL2YJN1A6Mjtb1hc",
-      "keys": [
-        "Maia Clay"
-      ],
-      "key": [
-        "Maia Clay"
-      ],
-      "secondary_keys": [],
-      "keysecondary": [],
-      "key_logic": "AND_ANY",
-      "selectiveLogic": 0,
-      "selective": false,
-      "content": "[NAME: Maia Clay; STATUS: placeholder, in attesa di fonte]\n\nScheda segnaposto creata il 2026-09-15 a partire dal roster ufficiale Fan OC dell'ioverse (iofan.uwu.ai/#students), sezione Students. Nessuna fonte di backstory, aspetto o personalita ancora raccolta: da compilare quando l'utente fornira il materiale (vedi Project, FanOC_Roster_Confronto_2026-09-15.md).\n\n[INSTRUCTIONS: Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead.]",
-      "enabled": true,
-      "disable": false,
-      "constant": false,
-      "position": "before_char",
-      "priority": 15,
-      "insertion_order": 100,
-      "order": 100,
-      "case_sensitive": false,
-      "caseSensitive": false,
-      "whole_words_only": true,
-      "matchWholeWords": true,
-      "scan_persona": false,
-      "matchPersonaDescription": false,
-      "delay": 0,
-      "sticky": 0,
-      "cooldown": 0,
-      "type": "lore/concept",
-      "source_category": "lexicon",
-      "extensions": {
-        "attached_world_character_id": null,
-        "party_conditions": [],
-        "wyvern": {
-          "priority": 15,
-          "position": "before_char",
-          "insertion_order": 100,
-          "type": "lore/concept"
-        }
-      }
-    },
-    {
-      "entry_id": "_DAdk3Ng7hGHza3MGymaBE",
-      "id": "_DAdk3Ng7hGHza3MGymaBE",
-      "uid": 183,
-      "name": "Makoto Fujimoto",
-      "comment": "G3 NPC (Stub) converted from World Character ID: _RUGUApq1E7TBPDAKbV3cr",
-      "keys": [
-        "Makoto Fujimoto"
-      ],
-      "key": [
-        "Makoto Fujimoto"
-      ],
-      "secondary_keys": [],
-      "keysecondary": [],
-      "key_logic": "AND_ANY",
-      "selectiveLogic": 0,
-      "selective": false,
-      "content": "[NAME: Makoto Fujimoto; STATUS: placeholder, in attesa di fonte]\n\nScheda segnaposto creata il 2026-09-15 a partire dal roster ufficiale Fan OC dell'ioverse (iofan.uwu.ai/#students), sezione Students. Nessuna fonte di backstory, aspetto o personalita ancora raccolta: da compilare quando l'utente fornira il materiale (vedi Project, FanOC_Roster_Confronto_2026-09-15.md).\n\n[INSTRUCTIONS: Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead.]",
-      "enabled": true,
-      "disable": false,
-      "constant": false,
-      "position": "before_char",
-      "priority": 15,
-      "insertion_order": 100,
-      "order": 100,
-      "case_sensitive": false,
-      "caseSensitive": false,
-      "whole_words_only": true,
-      "matchWholeWords": true,
-      "scan_persona": false,
-      "matchPersonaDescription": false,
-      "delay": 0,
-      "sticky": 0,
-      "cooldown": 0,
-      "type": "lore/concept",
-      "source_category": "lexicon",
-      "extensions": {
-        "attached_world_character_id": null,
-        "party_conditions": [],
-        "wyvern": {
-          "priority": 15,
-          "position": "before_char",
-          "insertion_order": 100,
-          "type": "lore/concept"
-        }
-      }
-    },
-    {
-      "entry_id": "_rGE1YxyQDEEc349hWAT7A",
-      "id": "_rGE1YxyQDEEc349hWAT7A",
-      "uid": 184,
-      "name": "Malcolm Washington",
-      "comment": "G3 NPC (Stub) converted from World Character ID: _MPBEcD3V1n7PgUhRfWwzc",
-      "keys": [
-        "Malcolm Washington"
-      ],
-      "key": [
-        "Malcolm Washington"
-      ],
-      "secondary_keys": [],
-      "keysecondary": [],
-      "key_logic": "AND_ANY",
-      "selectiveLogic": 0,
-      "selective": false,
-      "content": "[NAME: Malcolm Washington; STATUS: placeholder, in attesa di fonte]\n\nScheda segnaposto creata il 2026-09-15 a partire dal roster ufficiale Fan OC dell'ioverse (iofan.uwu.ai/#students), sezione Students. Nessuna fonte di backstory, aspetto o personalita ancora raccolta: da compilare quando l'utente fornira il materiale (vedi Project, FanOC_Roster_Confronto_2026-09-15.md).\n\n[INSTRUCTIONS: Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead.]",
-      "enabled": true,
-      "disable": false,
-      "constant": false,
-      "position": "before_char",
-      "priority": 15,
-      "insertion_order": 100,
-      "order": 100,
-      "case_sensitive": false,
-      "caseSensitive": false,
-      "whole_words_only": true,
-      "matchWholeWords": true,
-      "scan_persona": false,
-      "matchPersonaDescription": false,
-      "delay": 0,
-      "sticky": 0,
-      "cooldown": 0,
-      "type": "lore/concept",
-      "source_category": "lexicon",
-      "extensions": {
-        "attached_world_character_id": null,
-        "party_conditions": [],
-        "wyvern": {
-          "priority": 15,
-          "position": "before_char",
-          "insertion_order": 100,
-          "type": "lore/concept"
-        }
-      }
-    },
-    {
-      "entry_id": "_ehVyzMpDQ76kBTqh6FXnP",
-      "id": "_ehVyzMpDQ76kBTqh6FXnP",
-      "uid": 185,
-      "name": "Maribelle",
-      "comment": "G3 NPC (Stub) converted from World Character ID: _qN6mpFQd7pHx6ECkkWKUc",
-      "keys": [
-        "Maribelle"
-      ],
-      "key": [
-        "Maribelle"
-      ],
-      "secondary_keys": [],
-      "keysecondary": [],
-      "key_logic": "AND_ANY",
-      "selectiveLogic": 0,
-      "selective": false,
-      "content": "[NAME: Maribelle; STATUS: placeholder, in attesa di fonte]\n\nScheda segnaposto creata il 2026-09-15 a partire dal roster ufficiale Fan OC dell'ioverse (iofan.uwu.ai/#students), sezione Students. Nessuna fonte di backstory, aspetto o personalita ancora raccolta: da compilare quando l'utente fornira il materiale (vedi Project, FanOC_Roster_Confronto_2026-09-15.md).\n\n[INSTRUCTIONS: Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead.]",
       "enabled": true,
       "disable": false,
       "constant": false,

@@ -29,11 +29,32 @@
   "outfits": [],
   "speech_examples": [],
   "attitudes": [],
-  "rpg_stats": {},
+  "rpg_stats": {
+    "enabled": true,
+    "level": 99,
+    "experience": 0,
+    "species_id": "Werewolf (Divine Blood Firstborn)",
+    "occupation_id": "Shadow Stalker / Divine Scout",
+    "base_stats": {
+      "stat_1": 5,
+      "stat_2": 4,
+      "stat_3": 9,
+      "stat_4": 6,
+      "stat_5": 3,
+      "stat_6": 4,
+      "strength": 5,
+      "endurance": 4,
+      "agility": 9,
+      "intelligence": 6,
+      "charisma": 3,
+      "luck": 4,
+      "perception": 4
+    }
+  },
   "tags": [],
   "creator": "Lys",
-  "creator_notes": "Authoritative Web API sync from World _CgYT8fHXpDC4crjmegQF7. Last updated: 2026-09-27T19:14:44.248Z",
+  "creator_notes": "Authoritative Web API sync from World _CgYT8fHXpDC4crjmegQF7. Last updated: 2026-09-29T02:47:50.831Z",
   "final_instructions": "Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead.",
   "world_id": "_CgYT8fHXpDC4crjmegQF7",
-  "updated_at": "2026-09-27T19:14:44.248Z"
+  "updated_at": "2026-09-29T02:47:50.831Z"
 }
