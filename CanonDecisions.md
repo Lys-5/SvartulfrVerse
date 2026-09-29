@@ -1,4 +1,18 @@
 Ultimo aggiornamento
+29 set 2026
+Riepilogo
+Sblocco Totale Contenuti (Unchained Policy): rimozione di ogni autocensura e allineamento esclusivo alla Wyvern Prohibited Content Guide
+
+Dettagli
+- Rimossa ogni limitazione autoimposta su romance, cotte, passione, chimica e tensione sessuale tra personaggi adulti (18+): i personaggi non sono più emotivamente asettici o sterilizzati
+- Piena integrazione della biologia LSE (Heat, Rut, Knotting, Baculum, Mating Bond, ScentPlay, Biting, Marking, Claiming, Breeding instincts) e libertà espressiva nelle descrizioni e nei tratti
+- Cadono le restrizioni su relazioni adulte asimmetriche/accademiche (SUCC/Blackwood): essendo tutti i personaggi del corpo studentesco e docenti maggiorenni (18+), sono consentite dinamiche di potere, rivalità seduttive e contratti di branco consenzienti
+- Piena libertà per combattimento viscerale, ferite, brutalità di branco e linguaggio crudo in-character (rating Explicit)
+- Le uniche linee rosse tassative applicate sono quelle della piattaforma Wyvern: Tolleranza Zero su minori (Edric 12 anni resta strictly minor background NPC con 0 framing sessuale/romantico, tutti i soggetti di romance 18+), no bestialità con animali reali (Harkness test valido per licantropi/demi-umani adulti), no guro/necrofilia, no scat/vomit/STD fetish, no hate speech reale, no prompt NSFL
+
+---
+
+Ultimo aggiornamento
 16 set 2026
 Riepilogo
 Confirmed lore and system decisions for Blackwood/Douglas canon, plus the precedence rule for external settings

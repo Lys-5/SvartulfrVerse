@@ -12,7 +12,7 @@ Tutti gli agenti che operano in questo workspace devono seguire le 17 direttive 
 4. [04. World Clock e Gestione Timeline](file:///d:/SvartulfrVerse/.agents/rules/04_world_clock_e_timeline.md)
 5. [05. Precedenza di Lore e Gestione Discrepanze](file:///d:/SvartulfrVerse/.agents/rules/05_precedenza_lore_e_discrepanze.md)
 6. [06. Invecchiamento, Longevità e Filone SciFi](file:///d:/SvartulfrVerse/.agents/rules/06_invecchiamento_e_longevita.md)
-7. [07. Epurazione di {{user}} e Creazione Intimacy Profiles](file:///d:/SvartulfrVerse/.agents/rules/07_epurazione_user_e_intimacy_profiles.md)
+7. [07. Gestione Contenuti, Policy Wyvern e Piena Libertà Espressiva (Unchained)](file:///d:/SvartulfrVerse/.agents/rules/07_epurazione_user_e_intimacy_profiles.md)
 8. [08. Triage Import Lorebook ed Architettura Lexicon World](file:///d:/SvartulfrVerse/.agents/rules/08_triage_lorebook_e_lexicon.md)
 9. [09. RPG Stats e Sistemi di Simulazione](file:///d:/SvartulfrVerse/.agents/rules/09_rpg_stats_e_simulation.md)
 10. [10. Pipeline Standard delle Card e Configurazione Attitudes](file:///d:/SvartulfrVerse/.agents/rules/10_pipeline_standard_e_attitudes.md)

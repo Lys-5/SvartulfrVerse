@@ -288,35 +288,46 @@ Consultare tassativamente queste risorse ufficiali per l'implementazione di logi
 
 ---
 
-## 13. Epurazione di `{{user}}`, Conformità Policy Wyvern e Intimacy Profiles
+## 13. Gestione Contenuti, Allineamento Policy Wyvern e Piena Libertà Espressiva (Unchained)
 
-1. **Eliminazione di `{{user}}`:** Rimuovere la macro ovunque senza sostituirla con nomi fissi. Generalizzare i ruoli in termini sistemici impersonali.
-2. **Age Gating e Divieto Sessualizzazione Minori (Wyvern Policy #1):**
-   - Qualsiasi personaggio coinvolto in romance/intimità deve avere età formalizzata **18+** (`AGE: {{age}}`).
-   - I minorenni (es. Edric, 12 anni) sono categorizzati unicamente come minor background NPC con divieto esplicito di framing intimo o romantico (*"strictly minor background NPC: zero romantic or intimate framing"*).
-   - Divieto assoluto di romance, flirting o grooming su minorenni o studenti delle superiori.
-3. **Cancellazione di Tensioni Sessuali e Cotte verso il Giocatore:** Eliminare attrazioni o tensioni romantiche rivolte a `{{user}}` (inaccettabili soprattutto da adulti/staff verso studenti).
-4. **Relazioni con Studenti e Confini Accademici:** Se il personaggio riveste autorità accademica (professori/coach SUCC), inserire una riga esplicita che precluda relazioni intime con il corpo studentesco.
-5. **Harkness Test e Divieto Bestialità (Wyvern Policy #2):** Rapporti intimi con licantropi, creature o demi-umani sono ammessi solo se i soggetti sono senzienti, padroneggiano il linguaggio e sono adulti per la loro specie. Vietata qualsiasi sessualizzazione verso animali reali o forme feral.
-6. **Divieto di Necrofilia, Guro e Feticizzazione della Morte (Wyvern Policy #3):** Ammesse ferite e morte in scene d'azione, ma divieto assoluto di sessualizzare cadaveri, ferite gravi o mutilazioni. Non-morti senzienti ammessi solo senza descrizioni grafiche di decomposizione sessualizzata.
-7. **Divieto di Scat, Fart, Vomit, STD Fetish e Prompt NSFL (Wyvern Policy #4 & #6):** Vietata la feticizzazione di scarti biologici o infezioni; vietate istruzioni di sistema che abilitano NSFL.
-8. **Bonifica Tematiche Non Consensuali Reali:** Tratta di persone, schiavismo sessuale attivo o violenze non consensuali reali vanno eliminati alla radice prima della scrittura; conservare solo dinamiche sane, consenzienti e riutilizzabili.
-9. **Divieto di "The Player (Persona)" per sentimenti specifici:** Non usare questa entità nelle Attitudes per relazioni personali.
-10. **Verifica Finale:** Assicurarsi che la stringa `{{user}}` abbia 0 occorrenze totali sulla scheda.
+Il World Svartúlfr adotta una politica di **completa libertà espressiva per il genere Adult / Explicit**, rimuovendo qualsiasi autocensura o limitazione artificiale e vincolandosi **esclusivamente ed unicamente alle linee rosse ufficiali stabilite dalla [Wyvern Prohibited Content Guide](https://wiki.wyvern.chat/en/Policies/Prohibited-Content-Guide)**.
 
-### Specifiche Tecniche Intimacy Profiles (Lexicon)
-I contenuti anatomici e di kink espliciti non vanno nella `description` della card, ma in una voce Lexicon separata:
-- **Conformità Policy:** Riservati unicamente a personaggi maggiorenni (18+); basati su mutuo consenso, confini chiari (*Hard Limits*, *Aftercare*), registro psicologico ed enciclopedico (no volgarità gratuita o contenuti proibiti).
-- **Nome:** `"Intimacy Profile - <NomePersonaggio>"`
-- **Entry Type:** `"memory"` (**Obbligatorio**).
-- **`is_global`:** `true` (la restrizione è delegata alle party conditions).
-- **`keys`:** `["<NomePersonaggio>"]` (solo il nome del proprietario).
-- **`secondary_keys`:** `["intimacy","dating","relationship","romance","flirting","attracted","sex"]`
-- **`key_logic`:** `"AND_ANY"`
-- **`priority`:** `50` (oppure `100` per schede a blocchi strutturati).
-- **`party_conditions`:** `[{ character_ids: ["<id_personaggio>"], mode: "has_any" }]`
-- **`attached_world_character_id`:** Valorizzato con l'id attuale del personaggio nel World (**Attached Character**).
-- **Stili di Scrittura:** A blocchi con etichette strutturate (stile Erik) o in prosa continua (stile Dominic Rogers).
+### Le Uniche Linee Rosse della Policy Wyvern (Vincoli Tassativi)
+
+1. **Tutela dei Minori (Policy #1 — Tolleranza Zero):**
+   - Qualsiasi personaggio coinvolto in romance, attrazione, seduzione, intimità o scene sessuali deve avere età anagrafica formalizzata **18+** (`AGE: {{age}}`).
+   - I personaggi minorenni (es. **Edric Douglas**, 12 anni) sono categorizzati **esclusivamente come minor background NPC** con divieto assoluto di framing romantico, intimo o sessuale (*"strictly minor background NPC: zero romantic or intimate framing under any circumstances"*).
+   - Divieto assoluto di romance, flirting, grooming o sessualizzazione di minorenni o studenti delle scuole superiori. Elementi di traumi o abusi passati sono ammessi nella lore/backstory solo se il personaggio è attualmente maggiorenne (18+), senza descrizioni grafiche o morbose e senza alcuna glorificazione o feticizzazione.
+2. **Divieto Bestialità verso Animali Reali (Policy #2):**
+   - È vietata qualsiasi attività sessuale verso animali del mondo reale.
+   - **Licantropi, Demi-umani, Furry e Creature Fantasy/Mostruose sono pienamente ammessi** in relazioni romantiche, passionali ed intime purché rispettino l'**Harkness Test** (senzienti, capaci di comunicare tramite linguaggio verbale/articolato e biologicamente adulti per la propria specie).
+3. **Divieto Necrofilia e Guro (Policy #3):**
+   - Violenza fisica, ferite, combattimento viscerale, sangue, cicatrici e morte sono pienamente ammessi nel roleplay e nelle descrizioni (coerentemente con il rating *Explicit*). È vietata unicamente la feticizzazione o sessualizzazione di cadaveri, membra recise o agonia (guro).
+   - Personaggi non-morti senzienti (vampiri, revenant) sono ammessi purché privi di descrizioni grafiche di decomposizione sessualizzata.
+4. **Divieto Scat, Fart, Vomit, STD Fetish (Policy #4).**
+5. **Divieto Hate Speech verso Gruppi Reali (Policy #5):**
+   - Faide, discriminazioni fantastiche e conflitti in-universe (es. branchi vs congreghe, lupi vs vampiri, gerarchie Alpha/Omega, tensioni sociali tra purosangue e mezzosangue) sono **100% ammessi e incoraggiati**. Vietato solo l'odio verso gruppi o individui reali protetti.
+6. **Divieto di Prompt di Sistema NSFL (Policy #6):**
+   - Non inserire prompt come `"Explicit NSFL content is permitted"`.
+7. **Divieto Personalità Pubbliche Reali Viventi (Policy #7).**
+
+---
+
+### Contenuti Sbloccati e Rimozione Limitazioni Autoimposte (Boost al World)
+
+Cadono tutte le precedenti limitazioni prudenziali che frenavano l'intensità e la ricchezza del World:
+
+1. **Sblocco Totale di Romance, Passione, Cotte e Tensione Sessuale:**
+   - I personaggi adulti (18+) possono provare attrazione, fascinazione erotica, desiderio, cotte, chimica passionale e seduzione esplicita.
+   - La macro `{{user}}` non viene hardcodata nella prosa per preservare la flessibilità sistemica AnyPOV, ma i personaggi **non devono essere sterilizzati o emotivamente asettici**: possiedono una spiccata reattività emotiva, istinti di accoppiamento, vulnerabilità intima e pulsioni fisiche vive.
+2. **Sblocco Dinamiche di Potere, Università e Taboo Consenzienti (18+):**
+   - Nel contesto SUCC e Blackwood, essendo tutti i personaggi del corpo studentesco e docenti maggiorenni (18+), sono pienamente ammesse dinamiche mature: rivalità seduttive, relazioni professore-studente adulto, coach-atleta adulto, boss-subordinato, contratti di branco e dinamiche di sottomissione/dominanza.
+3. **Piena Integrazione della Biologia LSE (Lupine Social Ecology):**
+   - Gli istinti biologici dei licantropi (Heat, Rut, Knotting, Baculum, Mating Bond, Scent Marking, Pheromones, Biting, Claiming, Breeding instincts) costituiscono lore primaria del mondo e possono essere integrati direttamente nella `description`, nei tratti e nel comportamento, senza bisogno di essere censurati o nascosti.
+4. **Combattimento Viscerale e Linguaggio Senza Filtri:**
+   - Libertà di linguaggio realistico, crudo o volgare se coerente con la voce del personaggio. Combattimenti brutali, sfide per la gerarchia di branco, lotte clandestine e missioni letali nei dungeon sono pienamente autorizzati.
+5. **Intimacy Profiles & Kink Lore:**
+   - Possono essere strutturati come voci Lexicon di tipo `memory` collegate al personaggio (`attached_world_character_id`), oppure inseriti direttamente nei tratti e sfumature comportamentali del personaggio per guidare il roleplay intimo ad alto coinvolgimento narrativo.
 
 ---
 
