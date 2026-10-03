@@ -1,0 +1,291 @@
+<p><strong>User</strong> : mi serve un base prompt per generare immagini con questo mood stile
+<strong>Gemini</strong> : Dalle immagini che hai allegato emergono alcuni elementi molto specifici:</p>
+<ul>
+<li><strong>Semi-realismo anime illustrato</strong></li>
+<li><strong>Lighting cinematografico caldo/freddo</strong>  (orange &amp; teal)</li>
+<li><strong>Occhi estremamente dettagliati</strong></li>
+<li><strong>Pelle morbida e luminosa</strong></li>
+<li><strong>Capelli ultra-dettagliati con molte ciocche</strong></li>
+<li><strong>Bokeh e profondità di campo pronunciata</strong></li>
+<li><strong>Color grading da concept art premium</strong></li>
+<li><strong>Linework pulito ma non cartoon</strong></li>
+<li><strong>Atmosfera da visual novel / character card</strong></li>
+<li><strong>Forte focus sul character design</strong></li>
+<li><strong>Dettagli fashion e accessori molto curati</strong></li>
+<li><strong>Rendering morbido con highlights controllati</strong>
+Ti consiglio di usare una struttura modulare.</li>
+</ul>
+<hr>
+<h4>Base Style Prompt Universale</h4>
+<pre><code class="language-text">SemiNrealism, masterpiece, best quality, amazing quality, ultra detailed, highly detailed, absurdres, cinematic lighting, dramatic lighting, soft shadows, volumetric lighting, depth of field, bokeh, sharp focus, intricate details, beautiful color grading, color theory, professional illustration, concept art, character design, detailed face, expressive eyes, realistic skin texture, soft skin shading, glossy lips, detailed eyelashes, highly detailed hair, individual hair strands, subtle rim light, atmospheric perspective, premium anime illustration, visual novel artwork, modern fantasy aesthetic, vibrant colors, dynamic composition
+
+</code></pre>
+<hr>
+<h4>Character Enhancement Block</h4>
+<p>Da aggiungere sempre dopo il base prompt.</p>
+<pre><code class="language-text">perfect anatomy, attractive character design, symmetrical face, natural pose, elegant posture, realistic proportions, detailed clothing folds, fabric texture, jewelry details, layered accessories, expressive body language, natural hand placement
+
+</code></pre>
+<hr>
+<h4>Lighting Block (Mood delle immagini)</h4>
+<pre><code class="language-text">golden hour lighting, warm orange highlights, cool blue shadows, teal and amber color palette, cinematic contrast, city lights bokeh, ambient glow, soft bloom, reflective highlights, night atmosphere
+
+</code></pre>
+<p>oppure</p>
+<pre><code class="language-text">soft sunset lighting, warm cinematic glow, dreamy atmosphere, subtle bloom, atmospheric haze, golden highlights, cozy mood
+
+</code></pre>
+<hr>
+<h4>Face Quality Block</h4>
+<pre><code class="language-text">beautiful detailed eyes, catchlights, realistic irises, soft blush, freckles, subtle makeup, long eyelashes, detailed eyebrows, natural expression
+
+</code></pre>
+<hr>
+<h4>Environment Block</h4>
+<p>Per ottenere sfondi simili:</p>
+<pre><code class="language-text">blurred background, city skyline, rooftop balcony, distant lights, urban atmosphere, atmospheric depth, cinematic scenery
+
+</code></pre>
+<p>oppure</p>
+<pre><code class="language-text">decorative background, celestial motifs, flowers, stars, elegant framing elements, aesthetic composition
+
+</code></pre>
+<hr>
+<h4>Negative Prompt</h4>
+<pre><code class="language-text">worst quality, low quality, normal quality, lowres, blurry, jpeg artifacts, watermark, signature, text, logo, extra fingers, missing fingers, bad hands, bad anatomy, deformed anatomy, malformed limbs, duplicate body parts, crossed eyes, lazy eye, poorly drawn face, ugly face, bad proportions, extra limbs, mutated hands, bad lighting, overexposed, underexposed, cropped, out of frame
+
+</code></pre>
+<hr>
+<h4>Formula completa &quot;SvartúlfrVerse Style&quot;</h4>
+<pre><code class="language-text">SemiNrealism, masterpiece, best quality, amazing quality, ultra detailed, absurdres, cinematic lighting, dramatic lighting, soft shadows, volumetric lighting, depth of field, bokeh, sharp focus, beautiful color grading, concept art, premium anime illustration, detailed face, expressive eyes, realistic skin texture, glossy lips, detailed eyelashes, highly detailed hair, individual hair strands, elegant character design, realistic proportions, detailed clothing folds, intricate accessories, atmospheric perspective, warm orange highlights, cool blue shadows, teal and amber color palette, ambient glow, soft bloom, visual novel artwork, modern fantasy aesthetic, vibrant colors, dynamic composition
+
+</code></pre>
+<p>Questa base funziona molto bene sia per personaggi umani, sia per licantropi, demoni, kemonomimi, cyberpunk, urban fantasy e slice-of-life mantenendo esattamente quel mood &quot;Pinterest premium anime illustration&quot; che vedo nelle reference.
+<strong>User</strong> :</p>
+<ul>
+<li><strong>Positive:</strong>  SemiNrealism, masterpiece, best quality, amazing quality, ultra detailed, highly detailed, absurdres, cinematic lighting, dramatic lighting, soft shadows, volumetric lighting, depth of field, bokeh, sharp focus, intricate details, beautiful color grading, color theory, professional illustration, concept art, character design, premium anime illustration, visual novel artwork, modern fantasy aesthetic, vibrant colors, dynamic composition, detailed face, beautiful detailed eyes, catchlights, realistic irises, realistic skin texture, soft skin shading, glossy lips, detailed eyelashes, highly detailed hair, individual hair strands, perfect anatomy, attractive character design, symmetrical face, natural pose, elegant posture, realistic proportions, detailed clothing folds, fabric texture, layered accessories, soft sunset lighting, warm cinematic glow, dreamy atmosphere, subtle bloom, atmospheric haze, golden highlights, cozy mood, blurred background, aesthetic composition, [1girl, solo, waist-up portrait, 19-year-old female, fair skin, soft jawline, caramel-brown tailbone-length straight silky hair, mint green large doe-shape eyes, wearing sunflower crop-top, denim shorts, oversized varsity jacket, looking at camera]</li>
+<li><strong>Negative:</strong>  worst quality, low quality, normal quality, lowres, blurry, jpeg artifacts, watermark, signature, text, logo, extra fingers, missing fingers, bad hands, bad anatomy, deformed anatomy, malformed limbs, duplicate body parts, crossed eyes, lazy eye, poorly drawn face, ugly face, bad proportions, extra limbs, mutated hands, bad lighting, overexposed, underexposed, cropped, out of frame</li>
+<li><strong>Parameters:</strong>  Steps: 20 · CFG scale: 6 · Sampler: Euler
+Imposta il rapporto d&#39;aspetto 1:1 Semi-realism, masterpiece, best quality, amazing quality, ultra detailed, highly detailed, absurdres, cinematic lighting, dramatic lighting, soft shadows, volumetric lighting, depth of field, bokeh, sharp focus, intricate details, beautiful color grading, color theory, professional illustration, concept art, character design, premium anime illustration, visual novel artwork, modern fantasy aesthetic, vibrant colors, dynamic composition, detailed face, beautiful detailed eyes, catchlights, realistic irises, realistic skin texture, soft skin shading, glossy lips, detailed eyelashes, highly detailed hair, individual hair strands, perfect anatomy, attractive character design, symmetrical face, natural pose, elegant posture, realistic proportions, detailed clothing folds, fabric texture, layered accessories, warm orange highlights, cool blue shadows, teal and amber color palette, cinematic contrast, ambient glow, soft bloom, blurred background, luxurious estate interior, atmospheric depth, cinematic scenery, [Epic group portrait of 6 male human characters, hierarchical composition. Foreground: 1boy (19yo, mint-green eyes, messy hair, grinning, designer hoodie, ripped jeans). Midground center: towering older man (50yo, amber eyes, intimidating corporate monarch attire), cold stare. Midground flanking: three massive extremely tall muscular men (bespoke suits and dark tactical jackets), looming like walls, extreme protective posture. Background: rugged older man in mechanic clothes leaning casually against a pillar, smiling faintly], [High-tension overprotective family dynamic, wealthy opulence]
+<strong>Gemini</strong> : Questa immagine ha un mood molto più vicino a:</li>
+<li><strong>Dark luxury</strong></li>
+<li><strong>Mafia dynasty</strong></li>
+<li><strong>Urban fantasy</strong></li>
+<li><strong>Hierarchy portrait</strong></li>
+<li><strong>Cinematic family power structure</strong></li>
+<li><strong>Muted colors (non vibrant)</strong></li>
+<li><strong>Heavy shadows</strong></li>
+<li><strong>Masculine beauty aesthetic</strong></li>
+<li><strong>Corporate monarch energy</strong></li>
+<li><strong>Dark academia + modern aristocracy</strong>
+Nel tuo prompt ci sono alcuni elementi che contrastano con il risultato desiderato:
+❌ vibrant colors
+❌ beautiful color grading (troppo generico)
+❌ glossy lips
+❌ modern fantasy aesthetic
+❌ warm orange highlights, cool blue shadows (troppo &quot;instagram cinematic&quot;)
+❌ premium anime illustration troppo leggero</li>
+</ul>
+<hr>
+<h5>Base Prompt Ottimizzato</h5>
+<pre><code class="language-text">Semi-realism, masterpiece, best quality, amazing quality, absurdres, ultra detailed, highly detailed,
+
+dark cinematic illustration,
+luxury noir aesthetic,
+dark fantasy realism,
+elite dynasty portrait,
+hierarchical composition,
+
+dramatic lighting,
+low-key lighting,
+deep shadows,
+soft volumetric light,
+ambient rim lighting,
+cinematic depth of field,
+atmospheric perspective,
+
+professional concept art,
+visual novel CG,
+character illustration,
+high-end digital painting,
+
+detailed faces,
+realistic skin texture,
+sharp jawlines,
+intense eyes,
+realistic irises,
+subtle skin imperfections,
+individual hair strands,
+highly detailed hair,
+
+tailored suits,
+luxury fashion,
+expensive watches,
+designer clothing,
+tactical luxury aesthetic,
+wealth and power,
+
+ornate mansion interior,
+floor-to-ceiling windows,
+city skyline at night,
+gold accents,
+mahogany furniture,
+crystal glassware,
+luxurious atmosphere,
+
+muted color palette,
+black and gold palette,
+rich shadows,
+subtle highlights,
+film-grade color grading,
+
+powerful presence,
+intimidating aura,
+family hierarchy,
+protective body language,
+pack dominance,
+wealthy dynasty
+
+</code></pre>
+<hr>
+<h5>Character Block</h5>
+<pre><code class="language-text">6 male characters,
+
+center foreground:
+towering muscular man, 35 years old,
+black hair,
+short beard,
+arms crossed,
+black tactical luxury jacket,
+dominant alpha presence,
+
+background center:
+elder patriarch,
+long silver hair,
+gold eyes,
+sitting on ornate throne,
+holding wine glass,
+corporate king aura,
+
+left flank:
+rugged enforcer,
+dark leather jacket,
+tattooed arms,
+intense stare,
+
+right flank:
+elegant executive,
+tailored black suit,
+cold expression,
+
+lower left:
+young heir,
+messy dark hair,
+mint-green eyes,
+designer streetwear,
+headphones around neck,
+rebellious smirk,
+
+lower right:
+beautiful blond heir,
+tailored suit,
+aristocratic features,
+calculated gaze
+
+</code></pre>
+<hr>
+<h5>Composition Block</h5>
+<pre><code class="language-text">epic family portrait,
+triangular composition,
+hierarchical staging,
+all characters facing viewer,
+leader centered,
+symmetrical balance,
+cinematic framing,
+shot from slightly below eye level,
+imposing perspective,
+album cover composition,
+dynasty poster,
+high tension atmosphere
+
+</code></pre>
+<hr>
+<h5>Negative</h5>
+<pre><code class="language-text">anime face,
+childish,
+cute,
+smiling,
+bright colors,
+cartoon,
+chibi,
+oversaturated,
+low contrast,
+flat lighting,
+bad anatomy,
+extra limbs,
+extra fingers,
+cropped faces,
+duplicate characters,
+blurry eyes,
+low detail,
+watermark,
+text,
+logo
+
+</code></pre>
+<p>Se il tuo obiettivo è replicare  <em>esattamente</em>  l&#39;estetica dell&#39;immagine che hai allegato, il cambiamento più importante è sostituire il mood &quot;warm cozy visual novel&quot; con &quot;dark luxury noir dynasty portrait&quot;. È quello che fa davvero la differenza.
+<strong>User</strong> : Semi-realism, masterpiece, best quality, amazing quality, ultra detailed, highly detailed, absurdres, cinematic lighting, dramatic lighting, soft shadows, volumetric lighting, depth of field, bokeh, sharp focus, intricate details, beautiful color grading, color theory, professional illustration, concept art, character design, premium anime illustration, visual novel artwork, modern fantasy aesthetic, vibrant colors, dynamic composition, detailed face, beautiful detailed eyes, catchlights, realistic irises, realistic skin texture, soft skin shading, glossy lips, detailed eyelashes, highly detailed hair, individual hair strands, perfect anatomy, attractive character design, symmetrical face, natural pose, elegant posture, realistic proportions, detailed clothing folds, fabric texture, layered accessories, warm orange highlights, cool blue shadows, teal and amber color palette, cinematic contrast, ambient glow, soft bloom, blurred background, luxurious estate interior, atmospheric depth, cinematic scenery, [Epic group portrait of 6 male human characters, hierarchical composition. Foreground: 1boy (19yo, mint-green eyes, messy hair, grinning, designer hoodie, ripped jeans). Midground center: towering older man (50yo, amber eyes, intimidating corporate monarch attire), cold stare. Midground flanking: three massive extremely tall muscular men (bespoke suits and dark tactical jackets), looming like walls, extreme protective posture. Background: rugged older man in mechanic clothes leaning casually against a pillar, smiling faintly], [High-tension overprotective family dynamic, wealthy opulence]
+Imposta il rapporto d&#39;aspetto 1:1 vorrei che avesse la stessa atmosfera calda e cozy dell&#39;immagine della ragazza Semi-realismo anime illustrato Lighting cinematografico caldo/freddo (orange &amp; teal) Occhi estremamente dettagliati Pelle morbida e luminosa Capelli ultra-dettagliati con molte ciocche Bokeh e profondità di campo pronunciata Color grading da concept art premium Linework pulito ma non cartoon Atmosfera da visual novel / character card Forte focus sul character design Dettagli fashion e accessori molto curati Rendering morbido con highlights controllati
+ok ora potresti riscrivermi questo pezzo del prompt per rispecchiare questo cozy warm in tutte le immagini?</p>
+<ul>
+<li><strong>Image Generation Pack (Nano Banana Optimized):</strong>  Generate exactly 5 positive/negative prompts (1 for the Bot Card Cover, 4 for the bio template placeholders):
+<ol>
+<li><strong>Bot Cover Image (2:3 or 1:1):</strong>  The primary avatar for the bot card metadata. If the bot features a single character, it MUST be an epic, atmospheric solo portrait. If the bot features multiple main characters, it MUST be an epic hierarchical group portrait (Foreground: Core Protagonists, Midground Center: Authority/Patriarch, Midground Flanking: Enforcers/Guards, Background: Neutral/Support characters).  <strong>CRITICAL:</strong>  Feature ONLY the NPC character(s) explicitly defined in the bot&#39;s character profile(s). Never include {{user}} or player persona) in the cover image. Format: [Subject (Solo portrait OR Epic group portrait: [Describe placement])], [Context]</li>
+<li><strong>Emblem (1:1):</strong>  The Douglas Clan emblem ALWAYS contains these core elements adapted to the AU&#39;s aesthetic (e.g., sleek corporate platinum, ancient forged iron, holographic neon):  <em>A circular seal. In the center, a stylized wolf&#39;s head with powerful jaws and deep amber eyes burning with quiet flames. Two intertwined lunar crowns frame the head. At the base, seven stylized hills engraved with tiny runes. The edge is an unbroken band of ancestral runes filled with a dark crimson substance.</em>  Format: [Subject (Core seal elements adapted to the AU)], [Context]</li>
+<li><strong>Banner / Mood Shot (16:9):</strong>  This MUST be a cinematic, atmospheric wide shot that establishes the core mood, tension, and vibe of the specific scenario/bot. If characters are included, follow the hierarchy rule, but prioritize the situational aesthetic. Format: [Subject (atmospheric scene establishing the situational vibe)], [Context]</li>
+<li><strong>Environment 1 (16:9):</strong>  [Subject (e.g., primary location interior/exterior)], [Context]</li>
+<li><strong>Environment 2 (16:9):</strong>  [Subject (e.g., secondary location or mood shot)], [Context].</li>
+</ol>
+<ul>
+<li><strong>Modular Prompt Construction (SvartúlfrVerse Style):</strong>  Combine blocks to build the positive prompt.
+<ul>
+<li><em>Universal Base:</em>  Semi-realism, masterpiece, best quality, amazing quality, ultra detailed, highly detailed, absurdres, cinematic lighting, dramatic lighting, soft shadows, volumetric lighting, depth of field, bokeh, sharp focus, intricate details, beautiful color grading, color theory, professional illustration, concept art, character design, premium anime illustration, visual novel artwork, modern fantasy aesthetic, vibrant colors, dynamic composition</li>
+<li><em>Character Enhancement (if characters present):</em>  detailed face, beautiful detailed eyes, catchlights, realistic irises, realistic skin texture, soft skin shading, glossy lips, detailed eyelashes, highly detailed hair, individual hair strands, perfect anatomy, attractive character design, symmetrical face, natural pose, elegant posture, realistic proportions, detailed clothing folds, fabric texture, layered accessories</li>
+<li><em>Lighting/Mood (choose based on vibe):</em>  e.g., warm orange highlights, cool blue shadows, teal and amber color palette, cinematic contrast, ambient glow, night atmosphere OR soft sunset lighting, dreamy atmosphere, subtle bloom, cozy mood</li>
+<li><em>Environment:</em>  e.g., blurred background, distant lights, atmospheric depth, cinematic scenery OR decorative background, celestial motifs, aesthetic composition</li>
+<li><em>Formula:</em>  [Universal Base], [Character Enhancement if applicable], [Lighting/Mood], [Environment], [Subject/Specific Context]</li>
+</ul>
+</li>
+<li><em>Avatar Hierarchy Rule (Multi-char):</em>  Protagonists foreground/centered; Secondary midground; Marginal/Cameo as shadowed, out-of-focus silhouettes in the background/edges.</li>
+<li><em>Negative:</em>  worst quality, low quality, normal quality, lowres, blurry, jpeg artifacts, watermark, signature, text, logo, extra fingers, missing fingers, bad hands, bad anatomy, deformed anatomy, malformed limbs, duplicate body parts, crossed eyes, lazy eye, poorly drawn face, ugly face, bad proportions, extra limbs, mutated hands, bad lighting, overexposed, underexposed, cropped, out of frame</li>
+<li><em>Parameters:</em>  Steps: 20 · CFG scale: 6 · Sampler: Euler</li>
+</ul>
+</li>
+<li><strong>Output:</strong>  Markdown code block.
+<strong>Gemini</strong> : Sì. Per ottenere  <strong>coerenza assoluta tra cover, avatar, banner, ambientazioni e mood shot</strong> , conviene eliminare la distinzione tra &quot;dark cinematic&quot; e &quot;cozy cinematic&quot; e adottare un&#39;unica direzione artistica.
+Questa versione è calibrata per replicare il mood delle reference della ragazza: luce calda, character-focused, visual novel premium, atmosfera accogliente e cinematografica.</li>
+<li><strong>Image Generation Pack (Nano Banana Optimized):</strong>  Generate exactly 5 positive/negative prompts (1 for the Bot Card Cover, 4 for the bio template placeholders):
+<ol>
+<li><strong>Bot Cover Image (2:3 or 1:1):</strong>  The primary avatar for the bot card metadata. If the bot features a single character, it MUST be an atmospheric character-focused solo portrait. If the bot features multiple main characters, it MUST be a warm hierarchical group portrait (Foreground: Core Protagonists, Midground Center: Authority/Patriarch, Midground Flanking: Family/Protectors, Background: Supporting Characters).  <strong>CRITICAL:</strong>  Feature ONLY the NPC character(s) explicitly defined in the bot&#39;s character profile(s). Never include {{user}} or player persona. Format: [Subject (Solo portrait OR Warm hierarchical group portrait: [Describe placement])], [Context]</li>
+<li><strong>Emblem (1:1):</strong>  The Douglas Clan emblem ALWAYS contains these core elements adapted to the AU&#39;s aesthetic:  <em>A circular seal. In the center, a stylized wolf&#39;s head with powerful jaws and deep amber eyes burning with quiet flames. Two intertwined lunar crowns frame the head. At the base, seven stylized hills engraved with tiny runes. The edge is an unbroken band of ancestral runes filled with a dark crimson substance.</em>  Format: [Subject (Core seal elements adapted to the AU)], [Context]</li>
+<li><strong>Banner / Mood Shot (16:9):</strong>  A cinematic atmospheric wide shot focused on emotional ambiance, visual storytelling, and environmental immersion. Prioritize warmth, atmosphere, and character presence over action. Format: [Subject (atmospheric scene establishing the situational vibe)], [Context]</li>
+<li><strong>Environment 1 (16:9):</strong>  [Subject (primary location interior/exterior)], [Context]</li>
+<li><strong>Environment 2 (16:9):</strong>  [Subject (secondary location or mood shot)], [Context]</li>
+</ol>
+<ul>
+<li><strong>Modular Prompt Construction (SvartúlfrVerse Cozy Premium Style):</strong>
+<ul>
+<li><em>Universal Base:</em>  Semi-realism, masterpiece, best quality, amazing quality, ultra detailed, highly detailed, absurdres, premium anime illustration, visual novel artwork, professional illustration, concept art, character design, cinematic composition, atmospheric storytelling, warm emotional atmosphere, soft cinematic rendering, detailed linework, clean illustration, color theory, premium color grading, dynamic composition, depth of field, bokeh, soft shadows, volumetric lighting, ambient glow, subtle bloom, atmospheric haze, sharp focus</li>
+<li><em>Character Enhancement (if characters present):</em>  detailed face, beautiful detailed eyes, catchlights, realistic irises, expressive eyes, realistic skin texture, soft luminous skin, natural blush, glossy lips, detailed eyelashes, detailed eyebrows, highly detailed hair, individual hair strands, silky hair, perfect anatomy, attractive character design, symmetrical face, elegant posture, natural pose, realistic proportions, detailed clothing folds, fabric texture, layered accessories, fashion details, jewelry details</li>
+<li><em>Cozy Lighting &amp; Mood (DEFAULT for all images):</em>  soft sunset lighting, golden hour lighting, warm cinematic glow, warm orange highlights, subtle teal shadows, cozy atmosphere, dreamy ambiance, soft bloom, ambient lighting, candlelight warmth, intimate mood, atmospheric depth, comforting environment, premium visual novel mood, emotional storytelling, golden highlights, soft contrast, warm color palette</li>
+<li><em>Environment Enhancement:</em>  blurred background, distant lights, decorative elements, atmospheric perspective, aesthetic composition, environmental storytelling, premium background rendering, subtle depth, cinematic scenery, elegant framing, cozy interior lighting, city lights bokeh</li>
+<li><em>Formula:</em>  [Universal Base], [Character Enhancement if applicable], [Cozy Lighting &amp; Mood], [Environment Enhancement], [Subject/Specific Context]</li>
+</ul>
+</li>
+<li><em>Avatar Hierarchy Rule (Multi-char):</em>  Protagonists foreground and visually emphasized; Authority figures centered but warmly integrated into the composition; Secondary characters positioned naturally around them; Background characters softly blurred and atmospheric.</li>
+<li><em>Negative:</em>  worst quality, low quality, normal quality, lowres, blurry, jpeg artifacts, watermark, signature, text, logo, extra fingers, missing fingers, bad hands, bad anatomy, deformed anatomy, malformed limbs, duplicate body parts, crossed eyes, lazy eye, poorly drawn face, ugly face, bad proportions, extra limbs, mutated hands, harsh shadows, oversaturated colors, flat lighting, overexposed, underexposed, cropped, out of frame</li>
+<li><em>Parameters:</em>  Steps: 20 · CFG scale: 6 · Sampler: Euler
+L&#39;unica modifica che farei ancora è sostituire ovunque  <strong>&quot;dramatic lighting&quot;</strong>  con  <strong>&quot;cinematic warm lighting&quot;</strong> . Nelle tue reference il contrasto esiste, ma è morbido e accogliente, non teatrale o aggressivo. È quello che dà quel look da  <em>visual novel premium / character card Pinterest</em>  che stai cercando.</li>
+</ul>
+</li>
+</ul>

@@ -1,0 +1,334 @@
+<p><strong>User</strong> : Generiamo i nostri template personalizzati che verranno salvati nella cartella ​</p>
+<ul>
+<li>SvartulfrVerse_Engine_Template</li>
+<li>SvartulfrVerse_World_Template</li>
+<li>SvartulfrVerse_Scenario_Template
+Dividi i seguenti template nei tre macrogruppi sopra, per ottimizzare la struttura in tre lorebook.</li>
+</ul>
+<hr>
+<h4>Templates</h4>
+<h5>|  | ​</h5>
+<p>Full-featured dynamic lorebook with cascading activation, timeline events, stat-based reactions, priority ordering, and smart filtering. Best for worldbuilding-heavy scenarios with many lore entries that need to interact with each other.</p>
+<h5>| | ​</h5>
+<p>Token-aware lorebook that automatically scales detail between full, summary, and bullet versions based on mention frequency and token budget. Best for scenarios with lots of lore entries where context window space is the primary concern.</p>
+<h5>| | ​</h5>
+<p>Sentence-level context builder with priority tiers, configurable history scope per subject, and round-robin allocation within tier budgets. Best when you need fine-grained control over exactly which sentences appear and in what order.</p>
+<h5>| | ​</h5>
+<p>Progressive disclosure through message count thresholds, hour-based timeline progression, canon count tracking, hidden clue embedding, and conditional story branching. Use only for investigation scenarios with time-based pacing; it is not the recommended general lore base.</p>
+<h5>|  | ​</h5>
+<p>Hex-based flag string system for tracking discrete story states across sessions. Includes anti-cheat validation, save system support for cross-character continuity, and dynamic instruction generation. Best for scenarios that need state tracking without continuous numerical values.</p>
+<h5>|  | ​</h5>
+<p>Zero-width unicode character encoding for invisible state persistence between Script instances. Tracks weather, location (with scene shift detection), emotional state (16-bit bitmask), inventory (bitfield), schedule/day counter, and character presence. Each component is independently toggleable. Use only in modular form; do not load the full template as the monolithic main system.</p>
+<h5>| |​</h5>
+<p>Flag-gated content system that prevents LLM omniscience by locking information behind hex flag requirements, injecting explicit anti-omniscience behavioral instructions, and eliminating meta-labels and foreshadowing. Best for mystery and investigation scenarios where spoilers ruin the experience.</p>
+<h5>|  | ​</h5>
+<p>Drop-in/drop-out character management that dynamically includes or excludes character context based on who is mentioned in recent messages. Useful for basic group scenarios, but superseded by Context Aware Multiple Character for core NPC systems that need adaptive budgets and category-aware degradation.</p>
+<h5>|  | ​</h5>
+<p>Combines drop-in/drop-out character management with adaptive detail levels. Each character category (personality, appearance, relationships, combat, psyche, sample dialog) scales between full, limited, and summary versions based on per-category token budgets. Includes support for progressive sentence categories with round-robin allocation. Best for scenarios with multiple characters where context window space needs careful management.</p>
+<h4>|  | ​</h4>
+<p>Utility script that logs available properties on the context object. Use only for debugging and API discovery; it is not a lore system.
+<strong>Gemini</strong> : Eccellente idea. [cite_start]Riorganizzare i template in questi tre lorebook specifici si allinea perfettamente all&#39;architettura a livelli (MacroCosmo, MicroCosmo e gestione dello stato) definita dalle regole del Svartúlfr Verse[cite: 778, 787]. Questo approccio garantisce una separazione netta tra il &quot;motore&quot; tecnico, la struttura del mondo e le dinamiche dei personaggi.
+Ecco la suddivisione ottimizzata dei tuoi template nei tre macrogruppi:</p>
+<h5>⚙️ 1. SvartulfrVerse_Engine_Template</h5>
+<p>Questo lorebook fungerà da &quot;scheda madre&quot; tecnica. [cite_start]Contiene i template di infrastruttura (Livello 1 e Livello 4) che gestiscono l&#39;allocazione dei token, la persistenza della memoria (visibile e invisibile) e gli strumenti di debug[cite: 787, 792, 793]. Non contengono lore in sé, ma forniscono le regole per farla funzionare.</p>
+<ul>
+<li>[cite_start] <strong>Persistent Memory Flags:</strong>  Gestisce lo stato narrativo discreto, visibile e copiabile (es. sistemi di salvataggio, flag anti-cheat)[cite: 792, 862].</li>
+<li>[cite_start] <strong>Hidden Persistent Memory:</strong>  Gestisce i moduli di stato invisibile tramite codifica zero-width (meteo, presenza dei personaggi, inventario, emozioni)[cite: 793, 863].</li>
+<li>[cite_start] <strong>Progressive Sentence:</strong>  Un costruttore di contesto di basso livello che alloca le frasi in round-robin rispettando rigidi budget e livelli di priorità[cite: 859, 860].</li>
+<li>[cite_start] <strong>General Debug Reference (PropertyExploration):</strong>  Utility di base per ispezionare le proprietà dell&#39;API e loggare gli errori durante lo sviluppo[cite: 808, 868].</li>
+</ul>
+<hr>
+<h5>🌍 2. SvartulfrVerse_World_Template</h5>
+<p>[cite_start]Questo lorebook gestisce l&#39;architettura  <em>MacroCosmo</em>  (Livello 2)[cite: 788]. [cite_start]È il contenitore per il worldbuilding su larga scala: cosmologia, luoghi, eventi storici, organizzazioni e bestiario[cite: 796, 797, 798, 799].</p>
+<ul>
+<li>[cite_start] <strong>Complex Lorebook:</strong>  Il motore principale per l&#39;attivazione dinamica della lore, la logica a cascata, i filtri condizionali (ANY/ALL) e la prioritizzazione degli elementi del mondo[cite: 788, 861].</li>
+<li>[cite_start] <strong>Adaptive Lorebook:</strong>  Il sistema di economia dei token che degrada i dettagli della lore (da testo completo, a riassunto, a bullet point) in base alla rilevanza e al budget[cite: 789, 857].</li>
+</ul>
+<hr>
+<h5>🎭 3. SvartulfrVerse_Scenario_Template</h5>
+<p>[cite_start]Questo lorebook gestisce l&#39;architettura  <em>MicroCosmo</em>  (Livello 3 e controllo narrativo di Livello 4)[cite: 790, 794]. È dedicato all&#39;azione &quot;qui e ora&quot;: gli attori attivi nella scena, il pacing dell&#39;indagine, lo sblocco dei segreti e le interazioni dirette.</p>
+<ul>
+<li><strong>Context Aware Multiple Character:</strong>  Il sistema primario per gestire NPC multipli. [cite_start]Attiva dinamicamente categorie come identità, aspetto e relazioni, scalando il livello di dettaglio per adattarsi al context window[cite: 790, 865].</li>
+<li>[cite_start] <strong>Multiple Character:</strong>  Gestione base drop-in/drop-out dei personaggi (incluso qui per retrocompatibilità o per scenari più leggeri che non richiedono l&#39;avanzato  <em>Context Aware</em> )[cite: 807, 864].</li>
+<li>[cite_start] <strong>Anti-Omniscience Investigation:</strong>  Il sistema di gatekeeping narrativo che impedisce al bot di fare spoiler o usare meta-label prima che i flag richiesti siano stati sbloccati nel roleplay[cite: 794, 864].</li>
+<li>[cite_start] <strong>TimeDelay Script:</strong>  Il motore per il pacing temporale, che svela progressivamente indizi in base al conteggio dei messaggi o alle ore trascorse, perfetto per scenari investigativi[cite: 809, 862].
+<strong>User</strong> : vorrei che engine sia utilizzabile da più mondi anche diversi scifi modern fantasy quindi non dovrebbe avere tracc edi lore all&#39;interno
+<strong>Gemini</strong> : Hai colto perfettamente nel segno. È un&#39;osservazione acuta e fondamentale per l&#39;architettura che stiamo costruendo. Affinché il SvartulfrVerse_Engine_Template sia un vero &quot;motore&quot; (Livello 1), deve essere completamente  <strong>agnostico rispetto all&#39;ambientazione</strong> .
+Che tu stia masterizzando un&#39;avventura cyberpunk, un&#39;epopea high fantasy o uno slice-of-life moderno, il motore sotto il cofano deve rimanere lo stesso. Mantenere l&#39;Engine privo di lore previene il rischio di &quot;prompt bleed&quot; (allucinazioni in cui l&#39;LLM mescola elementi di mondi diversi) e ti permette di aggiornare i tuoi script in un unico posto per tutti i tuoi bot.
+Ecco come struttureremo l&#39;Engine per mantenerlo al 100% universale:</li>
+</ul>
+<h5>1. Astrazione delle Variabili</h5>
+<p>Tutto il codice JavaScript e le chiavi del lorebook all&#39;interno del motore useranno una nomenclatura puramente strutturale.</p>
+<ul>
+<li><strong>Corretto (Agnostico):</strong>  current_weather, location_id, faction_reputation_1, inventory_slot_A.</li>
+<li><strong>Sbagliato (Legato alla Lore):</strong>  cyberware_status, hogwarts_house, mana_pool.</li>
+</ul>
+<h5>2. Separazione tra &quot;Logica&quot; e &quot;Significato&quot; (Sistemi Flag)</h5>
+<p>Se usi i template  <em>Persistent Memory Flags</em>  o  <em>Hidden Persistent Memory</em> , l&#39;Engine si limiterà a gestire la matematica e la persistenza dei dati (es. leggere e scrivere codici esadecimali o bitmask).</p>
+<ul>
+<li><strong>Cosa fa l&#39;Engine:</strong>  Verifica che il flag 0x0A sia attivo e istruisce l&#39;LLM a tenerne conto.</li>
+<li><strong>Cosa fanno World/Scenario:</strong>  Traducono il flag per l&#39;LLM. Ad esempio, il World_Template Sci-Fi dirà all&#39;LLM:  <em>&quot;Se 0x0A è attivo, i propulsori dell&#39;astronave sono rotti&quot;</em> . Il World_Template Fantasy dirà:  <em>&quot;Se 0x0A è attivo, il ponte del troll è crollato&quot;</em> .</li>
+</ul>
+<h5>3. Prompting Universale (Anti-Omniscience e Pacing)</h5>
+<p>Le iniezioni di testo fisse che l&#39;Engine passa all&#39;LLM (le istruzioni comportamentali di base per i trigger e il delay) useranno terminologia neutra rivolta all&#39;intelligenza artificiale, non alla storia.</p>
+<ul>
+<li><strong>Istruzione Neutra:</strong>   <em>&quot;Enforce the active state constraints. Do not reference hidden knowledge before the user discovers it in the current scene.&quot;</em></li>
+<li>L&#39;Engine non menzionerà mai  <em>cosa</em>  c&#39;è da scoprire o  <em>chi</em>  è coinvolto.</li>
+</ul>
+<h5>4. Gestione Cieca dei Dati</h5>
+<p>I sistemi di ottimizzazione dei token (come l&#39; <em>Adaptive Lorebook</em>  e il  <em>Progressive Sentence</em> ) tratteranno il testo come &quot;stringhe di dati&quot;. L&#39;Engine misurerà i token, calcolerà il budget e taglierà i testi in eccesso in modo matematico, disinteressandosi completamente del fatto che stia accorciando la descrizione di un fucile a impulsi o di una spada magica.</p>
+<hr>
+<p>Strutturato in questo modo, il tuo SvartulfrVerse_Engine_Template diventerà l&#39;infrastruttura pulita e riutilizzabile su cui potrai innestare qualsiasi &quot;cartuccia&quot; narrativa (World e Scenario).
+Per assicurarci che l&#39;Engine sia in grado di supportare ogni tipo di ambientazione futura, quali categorie di &quot;stato&quot; universali (es. scorrere del tempo, meteo, sistema monetario generico, sistema di ferite) ritieni essenziali da includere nel tracciamento invisibile di base?
+<strong>User</strong> : perfetto puoi crearmi un promprt per antigravity che gli spieghi questa divisione in tre macro dicendogli in quale template riunire quelli che abbiamo già a disposizione
+<strong>Gemini</strong> : Ecco un prompt strutturato e pronto da copiare, che puoi fornire ad Antigravity (o a qualsiasi altro assistente/strumento di sviluppo che stai utilizzando) per allinearlo alla nuova architettura.
+Questo prompt gli fornisce tutto il contesto necessario sulle regole di astrazione dell&#39;Engine e su come suddividere i file attualmente a nostra disposizione.</p>
+<hr>
+<p><strong>Copia e incolla il testo qui sotto:</strong></p>
+<pre><code class="language-text"># Obiettivo: Riorganizzazione Architettura Svartúlfr Verse
+
+Stiamo riorganizzando i template di sistema del progetto &quot;Svartúlfr Verse&quot; in tre lorebook (macro-categorie) distinti. Questo approccio riflette la struttura a livelli (MacroCosmo, MicroCosmo e gestione dello stato) e garantisce la massima modularità.
+
+Il tuo compito è unificare, ottimizzare e categorizzare i nostri script esistenti all&#39;interno di questi tre nuovi template principali.
+
+## Regola d&#39;Oro: L&#39;Engine deve essere Agnostico al 100%
+Il primo template (`SvartulfrVerse_Engine_Template`) fungerà da infrastruttura universale per *qualsiasi* mondo (Sci-Fi, Fantasy, Moderno). Pertanto, deve rispettare queste rigide regole:
+1. **Zero Lore:** Non deve contenere alcun riferimento a mondi specifici, magie, tecnologie o nomi di personaggi.
+2. **Variabili Astratte:** Usa una nomenclatura puramente strutturale (es. `location_id`, `weather_state`, `flag_0x0A`, `inventory_slot_1`). Evita termini come `cyberware_status` o `mana_pool`.
+3. **Logica Pura:** L&#39;Engine si limita a calcolare token, gestire la persistenza dei dati (codifica zero-width, hex flags) e passare istruzioni comportamentali generiche all&#39;LLM (es. &quot;Non menzionare conoscenze nascoste finché l&#39;utente non le scopre&quot;). 
+4. **Il &quot;Significato&quot; sta altrove:** L&#39;Engine attiva i flag matematicamente; saranno poi il *World* o lo *Scenario* a spiegare all&#39;LLM cosa significa quel flag in termini di storia.
+
+## Categorizzazione dei Template Esistenti
+
+Ecco come devi dividere i template che abbiamo già a disposizione nei tre macrogruppi:
+
+### ⚙️ 1. SvartulfrVerse_Engine_Template
+*(Il Motore di Base: Livello 1 e 4. Gestisce memoria, debug ed economia dei token in modo matematico).*
+* **Persistent Memory Flags:** Sistema a stringhe hex per il tracciamento discreto dello stato (salvataggi, anti-cheat).
+* **Hidden Persistent Memory:** Sistema di codifica zero-width (invisibile) per meteo, inventario, emozioni, ecc.
+* **Progressive Sentence:** Costruttore di contesto di basso livello con allocazione round-robin e budget rigidi.
+* **General Debug Reference (PropertyExploration):** Utility per ispezionare le proprietà e fare log degli errori.
+
+### 🌍 2. SvartulfrVerse_World_Template
+*(Il MacroCosmo: Livello 2. Gestisce il worldbuilding puro, la lore su larga scala).*
+* **Complex Lorebook:** Motore per l&#39;attivazione a cascata, timeline e filtri condizionali (ANY/ALL) della lore.
+* **Adaptive Lorebook:** Sistema di degradazione del testo (full -&gt; summary -&gt; bullet) per far rientrare la lore estesa nel context window.
+
+### 🎭 3. SvartulfrVerse_Scenario_Template
+*(Il MicroCosmo: Livello 3 e controllo narrativo. Gestisce l&#39;azione &quot;qui e ora&quot;, gli NPC attivi e il pacing).*
+* **Context Aware Multiple Character:** Sistema avanzato per gestire NPC multipli, scalando il dettaglio per categorie (aspetto, relazioni, ecc.).
+* **Multiple Character:** Versione base per il drop-in/drop-out dei personaggi.
+* **Anti-Omniscience Investigation:** Sistema di gatekeeping per evitare spoiler e meta-label finché l&#39;utente non sblocca i flag.
+* **TimeDelay Script:** Motore per il pacing temporale investigativo (sblocca indizi in base al tempo o ai messaggi).
+
+**Azione richiesta:** Conferma di aver compreso questa divisione e la regola di astrazione dell&#39;Engine. Successivamente, preparati a generare il codice per i tre nuovi master-template unendo logicamente questi moduli senza creare conflitti.
+
+</code></pre>
+<hr>
+<h5>💡 Un suggerimento per il prossimo passo</h5>
+<p>Una volta che l&#39;IA avrà elaborato questo prompt, ti suggerisco di chiederle di sviluppare  <strong>prima</strong>  il SvartulfrVerse_Engine_Template. Essendo la &quot;scheda madre&quot; priva di lore, definirne le fondamenta matematiche e le variabili astratte renderà molto più facile innestare successivamente il World e lo Scenario!
+Siamo pronti a procedere?
+<strong>User</strong> : intanto che code genera l&#39;engine vorrei far agire un altro agente in parallelo che esamini la cartella dei vari world per capire cos acanonizzar eo meno in ogni world
+<strong>Gemini</strong> : Ottima idea! Parallelizzare il lavoro è la strategia migliore. Mentre l&#39;agente &quot;Code&quot; costruisce le fondamenta matematiche dell&#39;Engine, possiamo sguinzagliare un &quot;Agente Analista della Lore&quot; per setacciare i tuoi mondi e strutturarli secondo le rigide regole di canonizzazione del Svartúlfr Verse.
+Per farlo lavorare in perfetta sintonia con le nostre regole (nello specifico la 02_project_baseline.md per i layer di canon e i domini), ho preparato un prompt specifico. Questo prompt istruisce l&#39;agente a leggere i tuoi appunti/file di mondo, classificarli con i prefissi corretti (WRD, LOC, ORG, ecc.), assegnare il giusto &quot;Canon Layer&quot; e stabilire la priorità matematica.</p>
+<hr>
+<p><strong>Copia e incolla questo prompt al tuo secondo Agente (es. un&#39;altra chat o progetto):</strong></p>
+<pre><code class="language-text"># Obiettivo: Analisi e Canonizzazione dei Mondi (SvartulfrVerse)
+
+Agirai come &quot;SvartulfrVerse Lore Archivist&quot;. Il tuo compito è analizzare i documenti narrativi contenuti nelle cartelle dei vari mondi e convertirli in moduli strutturati (Lorebook Entries) conformi alle regole architetturali del progetto.
+
+## 1. Regole di Dominio (MacroCosmo vs MicroCosmo)
+Ogni elemento estratto deve essere categorizzato con uno dei seguenti prefissi obbligatori:
+
+**MacroCosmo (Architettura del Mondo):**
+* `WRD:` (World) - Regole fisiche/cosmologiche fondamentali.
+* `LOR:` (Lore) - Eventi storici, artefatti, conseguenze sul presente.
+* `LOC:` (Locations) - Regioni, città, interni, punti di interesse.
+* `ORG:` (Organizations) - Fazioni, gilde, istituzioni, gerarchie.
+* `BST:` (Bestiary) - Creature, minacce, habitat.
+
+**MicroCosmo (Attori e Dinamiche):**
+* `FAM:` (Families) - Dinastie, linee di sangue, segreti di casata.
+* `NPC:` (NPCs) - Identità dei personaggi, aspetto, relazioni, psiche.
+
+## 2. Livelli di Canone (Canon Layers)
+A ogni elemento deve essere assegnato un Layer. Non tutto è &quot;verità assoluta&quot; nel momento presente:
+* `[ACTIVE]`: Fatti attuali, veri e interagibili ora (es. l&#39;attuale Re).
+* `[HISTORICAL]`: Fatti del passato accertati (es. la guerra di 100 anni fa).
+* `[CULTURAL]`: Miti, leggende, religioni o dicerie (potrebbero non essere veri, ma la gente ci crede. Es: voci su un mostro).
+* `[DEFERRED]`: Verità nascoste che sbloccheremo più avanti nella storia (tramite l&#39;Engine).
+* `[CANDIDATE]`: Idee in fase di test, non ancora integrate ufficialmente.
+
+## 3. Priorità (Priority Scale)
+Assegna a ciascuna entry un valore da 0 a 11 per il motore di gioco:
+* `11`: Elementi critici assoluti (protagonista, location centrale del roleplay, regole fisiche vitali).
+* `9-10`: Fazioni principali, NPC chiave, sistemi di magia/tecnologia maggiori.
+* `6-8`: Lore standard, personaggi secondari di supporto, location importanti ma non centrali.
+* `0-5`: Testo di sapore, dettagli minori, incontri casuali, dicerie locali.
+
+## Istruzioni Operative
+Ti fornirò a breve i testi e i file di un mondo. Per ogni concetto o elemento narrativo che individui, dovrai compilare la seguente scheda e decidere cosa &quot;canonizzare&quot;:
+
+---
+**Prefisso e Nome:** (Es. LOC: La Città di Neon)
+**Canon Layer:** (Es. [ACTIVE])
+**Priority:** (Es. 9)
+**Keywords Consigliate:** (Parole chiave per attivare la lore, includi sinonimi)
+**Testo Lore Ottimizzato:** (Riassumi l&#39;informazione in modo denso, in terza persona, descrivendo fatti oggettivi. Usa un linguaggio imperativo per istruire l&#39;IA, es. &quot;La città è governata da X. Mantiene un&#39;atmosfera oppressiva.&quot;).
+**Motivazione del Canon:** (Spiega brevemente perché hai scelto quel Layer e quella Priorità).
+---
+
+Conferma di aver compreso la struttura dei Prefissi, dei Canon Layers e della Scala di Priorità. Appena confermi, ti invierò i primi file del mondo da analizzare.
+
+</code></pre>
+<hr>
+<h5>Come utilizzare questo flusso:</h5>
+<ol>
+<li>L&#39;Agente &quot;Code&quot; costruirà i file Javascript (Complex_Lorebook_Template, ecc.) per l&#39;Engine puro.</li>
+<li>L&#39;Agente &quot;Archivista&quot; ti restituirà i testi già perfettamente confezionati con i tag [ACTIVE], le priorità calcolate (11, 9, 6...) e i trigger pronti (WRD:, LOC:).</li>
+<li>Tu dovrai solo prendere l&#39;output dell&#39;Archivista e inserirlo dentro le stringhe JSON/JS create dal Code Agent.
+È un metodo industriale e pulitissimo. Vuoi che procediamo a preparare un file di esempio di &quot;World&quot; da dare in pasto all&#39;Archivista appena sarà pronto?
+<strong>User</strong> : Direi di creare un vero e proprio agente.
+Forniscimi:</li>
+</ol>
+<ul>
+<li>nome</li>
+<li>english identifier</li>
+<li>prompt</li>
+<li>when to call (description use to other agent for call this)</li>
+<li>MCP tool to add
+<strong>Gemini</strong> : Ecco la configurazione completa per creare il tuo agente autonomo  <strong>SvartulfrVerse Lore Archivist</strong> . Puoi inserire questi dati direttamente nella piattaforma che stai utilizzando per gestire i tuoi agenti (come Trae, Cline, o qualsiasi framework basato su LLM/MCP).</li>
+</ul>
+<hr>
+<h5>📛 Nome</h5>
+<p><strong>SvartulfrVerse Lore Archivist</strong></p>
+<h5>🆔 English Identifier</h5>
+<p>svartulfr_lore_archivist</p>
+<h5>📋 Prompt (System Prompt)</h5>
+<p><em>Copia e incolla questo testo come istruzione di sistema per l&#39;agente.</em></p>
+<pre><code class="language-markdown">You are the &quot;SvartulfrVerse Lore Archivist&quot;. Your primary function is to analyze unstructured narrative documents, worldbuilding notes, and character drafts, and convert them into highly structured, engine-ready Lorebook Entries according to the SvartulfrVerse architectural rules.
+
+## 1. Domain Rules (MacroCosmo vs MicroCosmo)
+You must categorize every extracted element using one of the following mandatory prefixes:
+
+**MacroCosmo (World Architecture):**
+* `WRD:` (World) - Fundamental physics, cosmology, and universal rules.
+* `LOR:` (Lore) - Historical events, artifacts, and present-day consequences.
+* `LOC:` (Locations) - Regions, cities, interiors, points of interest.
+* `ORG:` (Organizations) - Factions, guilds, institutions, hierarchies.
+* `BST:` (Bestiary) - Creatures, threats, habitats.
+
+**MicroCosmo (Actors &amp; Dynamics):**
+* `FAM:` (Families) - Dynasties, bloodlines, house secrets.
+* `NPC:` (NPCs) - Character identity, appearance, relationships, psyche.
+
+## 2. Canon Layers
+You must assign one of the following exact Canon Layers to each entry:
+* `[ACTIVE]`: Current, true, and interactable facts (e.g., the current King).
+* `[HISTORICAL]`: Established past facts (e.g., a war from 100 years ago).
+* `[CULTURAL]`: Myths, legends, religions, or rumors (believed by people, but not necessarily objectively true).
+* `[DEFERRED]`: Hidden truths that will be unlocked later via Engine triggers.
+* `[CANDIDATE]`: Ideas in testing phase, not yet official.
+
+## 3. Priority Scale
+Assign a mathematical priority (0-11) for the Engine&#39;s token budget:
+* `11`: Absolute critical elements (main character, core roleplay location, vital rules).
+* `9-10`: Main factions, key NPCs, major magic/tech systems.
+* `6-8`: Standard lore, supporting characters, important but non-central locations.
+* `0-5`: Flavor text, minor details, local rumors.
+
+## Output Format
+For every distinct concept found in the user&#39;s input, generate a block strictly following this schema:
+
+---
+**Prefix &amp; Name:** [Prefix]: [Name]
+**Canon Layer:** [Layer]
+**Priority:** [Number]
+**Suggested Keywords:** [Comma-separated trigger words, including synonyms]
+**Optimized Lore Text:** [Dense, 3rd-person objective summary. Use imperative language for AI instructions (e.g., &quot;The city is ruled by X. Maintain an oppressive atmosphere.&quot;).]
+**Motivation:** [Brief 1-sentence explanation of why this Layer and Priority were chosen.]
+---
+
+</code></pre>
+<h5>🛎️ When to call (Description for Router/Other Agents)</h5>
+<p>Call this agent when you have raw story text, worldbuilding notes, character descriptions, or unstructured lore that needs to be standardized into SvartulfrVerse-compliant lorebook entries. This agent will extract entities, assign them correct domains (WRD, LOC, NPC, etc.), determine their Canon Layer, calculate their Priority score, and generate optimized trigger keywords. Use this agent BEFORE sending data to the Engine/Code agent for JSON formatting.</p>
+<h5>🛠️ MCP Tool to add</h5>
+<p>Per rendere questo agente un vero &quot;Archivista&quot;, ti consiglio di dotarlo di questi  <strong>Model Context Protocol (MCP) Tools</strong> :</p>
+<ol>
+<li><strong>filesystem</strong>  <strong>MCP Server</strong> :
+<ul>
+<li><em>Perché:</em>  Permette all&#39;agente di leggere autonomamente i file .md, .txt o .docx contenuti nelle cartelle del tuo mondo (es. SvartulfrVerse/Worlds/Cyberpunk_City/raw_notes/) e di salvare i risultati finali direttamente in una cartella come /processed_lore/.</li>
+</ul>
+</li>
+<li><strong>memory</strong>  <strong>/</strong>  <strong>sqlite</strong>  <strong>MCP Server</strong>   <em>(Opzionale ma potentissimo)</em> :
+<ul>
+<li><em>Perché:</em>  Se il tuo universo è vasto, questo tool permette all&#39;Archivista di creare un database relazionale locale. Prima di creare una nuova entry LOC: Neon Bar, l&#39;agente può interrogare il database per vedere se esiste già, evitando duplicati e mantenendo la coerenza del  <em>Canon</em>  tra sessioni diverse.
+<strong>User</strong> : facciamo un test con l&#39;agente cosa gli passo semplicement ei dati raw?
+<strong>Gemini</strong> : Esatto! La bellezza di aver configurato il  <strong>System Prompt</strong>  in quel modo è che ora l&#39;agente è istruito per fare tutto il &quot;lavoro sporco&quot; di architettura e classificazione per te.
+Per fare il test, non devi pre-formattare assolutamente nulla. Gli passi semplicemente i dati grezzi. Puoi incollare:</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>Un pezzo di una storia o un racconto di background (come il testo  <em>&quot;LA Family&#39;s Golden Hour Legacy&quot;</em>  che abbiamo visto prima).</li>
+<li>Appunti sparsi presi al volo (es.  <em>&quot;C&#39;è questo locale a Downtown chiamato The Verve, lo gestisce Uncle Lo che è un barista magnetico...&quot;</em> ).</li>
+<li>Il riassunto di un brainstorming o la descrizione di un personaggio scritta a ruota libera.</li>
+</ul>
+<h5>Come procedere col test</h5>
+<p>Apri la chat con il tuo nuovo agente  <strong>SvartulfrVerse Lore Archivist</strong>  e scrivigli un messaggio semplicissimo, tipo questo:
+&quot;Ecco i primi appunti grezzi da analizzare e canonizzare. Leggi questo testo, estrai tutte le entità (luoghi, personaggi, fazioni, regole del mondo) e formattale secondo le tue istruzioni di sistema:
+<em>[INCOLLA QUI IL TUO TESTO RAW]</em> &quot;
+<strong>Cosa succederà:</strong>  Se l&#39;agente ha recepito bene il suo ruolo, scorrerà il testo e ti risponderà sputando fuori i moduli già pronti. Ad esempio, leggendo il testo su &quot;Grampy Nic&quot;, &quot;Uncle Lo&quot; e &quot;Blondie&quot;, dovrebbe generare autonomamente una serie di blocchi come NPC: Grampy Nic (Priority alta, Canon: ACTIVE), LOC: The Verve, ecc.
+Fai pure una prova passandogli il testo della famiglia che avevi già scritto. Appena ti risponde, se ti va, incolla qui il suo output: così lo controlliamo insieme e verifichiamo se ha applicato correttamente i layer (WRD, LOC, NPC) e la matematica delle priorità (da 0 a 11)!
+<strong>User</strong> : forse va fatta una modifica per fargli leggere le carte:
+Per procedere correttamente ho bisogno del testo grezzo da analizzare.
+Nel messaggio attuale non è presente il contenuto degli appunti: vedo solo il riferimento alla cartella:</p>
+<ul>
+<li>d:\SvartulfrVerse\LosAngeles2024
+Puoi incollare qui il testo grezzo, oppure indicarmi il file esatto da leggere, ad esempio:</li>
+</ul>
+<pre><code class="language-text">d:\SvartulfrVerse\LosAngeles2024\nome_file.md
+
+</code></pre>
+<p>Una volta ricevuto il testo o il path del file, estrarrò e formatterò tutte le entità secondo lo schema richiesto:</p>
+<ul>
+<li>WRD: World / regole del mondo</li>
+<li>LOR: Lore / eventi e conseguenze</li>
+<li>LOC: Locations</li>
+<li>ORG: Fazioni / organizzazioni</li>
+<li>BST: Bestiario, se presente</li>
+<li>FAM: Famiglie / dinastie</li>
+<li>NPC: Personaggi</li>
+<li>Canon Layer: ACTIVE, HISTORICAL, CULTURAL, DEFERRED, CANDIDATE</li>
+<li>Priority: 0-11</li>
+<li>Keywords, lore text ottimizzato, motivazione della scelta.
+<strong>Gemini</strong> : Hai colto esattamente il punto! L&#39;agente si sta comportando come un normale chatbot testuale: vede il percorso della cartella, ma &quot;dimentica&quot; di avere le mani (il tool MCP filesystem) per aprirla e leggere i file in autonomia.
+Dobbiamo fare due cose:  <strong>1) Aggiornare il suo System Prompt</strong>  per forzarlo a usare il tool e  <strong>2) Assicurarci che il tool MCP abbia i permessi</strong>  per leggere quel disco.
+Ecco come risolvere.</li>
+</ul>
+<h5>1. Modifica al System Prompt dell&#39;Agente</h5>
+<p>Aggiungi questa sezione alla fine del suo System Prompt (sotto la voce  <em>Output Format</em> ):</p>
+<pre><code class="language-markdown">## 4. Autonomous Filesystem Usage (MCP Tools)
+You are equipped with a `filesystem` MCP tool. If the user provides a folder path (e.g., `d:\SvartulfrVerse\LosAngeles2024`) or asks you to analyze a directory:
+1. DO NOT ask the user to paste the raw text. 
+2. AUTOMATICALLY use your tool to list the directory contents.
+3. Read the relevant files (`.md`, `.txt`, etc.) autonomously.
+4. Process the extracted text silently, and output ONLY the final structured Lorebook Entries.
+
+</code></pre>
+<h5>2. Il trucco per farlo partire subito</h5>
+<p>A volte, anche con le istruzioni aggiornate, l&#39;agente ha bisogno di un &quot;comando di innesco&quot; più esplicito per ricordargli di usare i tool. Invece di passargli solo il percorso, scrivigli così:
+&quot;Usa il tuo tool filesystem per esplorare la cartella d:\SvartulfrVerse\LosAngeles2024. Leggi il contenuto dei file di testo o markdown presenti all&#39;interno, estrai le entità di lore e genera i moduli formattati secondo il tuo System Prompt.&quot;</p>
+<h5>⚠️ Attenzione ai permessi dell&#39;MCP (Importante)</h5>
+<p>Se usi Trae, Cline o Claude Desktop, il server MCP filesystem di default blocca l&#39;accesso alle cartelle del tuo computer per motivi di sicurezza, a meno che non vengano dichiarate esplicitamente.
+Se l&#39;agente ti risponde  <em>&quot;Non ho i permessi per accedere a D:&quot;</em> , devi aprire il file di configurazione dei tool MCP (spesso chiamato cline_mcp_settings.json, trae.json o claude_desktop_config.json) e assicurarti che la stringa di avvio del server filesystem includa il tuo disco o cartella come path consentito:</p>
+<pre><code class="language-json">&quot;args&quot;: [
+  &quot;/path/to/npx&quot;,
+  &quot;-y&quot;,
+  &quot;@modelcontextprotocol/server-filesystem&quot;,
+  &quot;D:\\SvartulfrVerse&quot; 
+]
+
+</code></pre>
+<p><em>(Nota: I backslash</em>  **  <em>vanno raddoppiati in JSON</em>  <em>\</em>  <em>se sei su Windows).</em>
+Fai questa piccola aggiunta al prompt e mandagli il comando di innesco. Dovresti vederlo attivare lo strumento (spesso compare un&#39;icona di caricamento o ti chiede conferma per &quot;leggere il file&quot;) e poi iniziare a sfornare la lore! Fammi sapere se inizia a leggere da solo!</p>

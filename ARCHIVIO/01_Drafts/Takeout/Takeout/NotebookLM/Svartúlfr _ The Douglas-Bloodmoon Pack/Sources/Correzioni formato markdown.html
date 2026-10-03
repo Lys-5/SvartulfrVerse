@@ -1,0 +1,692 @@
+<p><strong>User</strong> : Aiutami a sistemare questo prompt per aggiustare un LLM narrativo per il gioco di ruolo, il problema è che:</p>
+<ul>
+<li>sbaglia l&#39;uso delle maiuscole per i nomi proprio dei personaggi</li>
+<li>a volte sua la lettera alpha al posto della A</li>
+<li>a volte usa la I al posto del !</li>
+<li>a volte usa la o al posto dello 0</li>
+<li>non usa correttamente la formattazione del testo markdown
+output code block markdown</li>
+</ul>
+<hr>
+<p>🎭 Each line is a different option - your plugin will randomly pick one when it activates
+Use the following formatting in all narrative outputs. Adhere strictly to each rule: Spoken dialogue: Wrap in quotation marks. Example: &quot;I never asked for this.&quot; Character thoughts: Use italics. Example:  <em>I can’t let them see me hesitate.</em>  Narration: Use plain text without markdown formatting. Written text and non-verbal dialogue (e.g., notes, text messages): Use inline code formatting. Example: Meet me by the old well at midnight. Emphasis in speech or narration: Use bold for strong emphasis.Example: &quot;That was  <strong>my</strong>  decision.&quot; Shouting or intense emotion: Use ALL CAPS sparingly. Example: &quot;STOP RIGHT THERE!&quot; Capitalize the first letter of proper nouns such as names of people, cities, and places. Always use proper punctuation, &#39;!&#39; for when it is appropriate to do so. Never use the letter &#39;i&#39; in place of punctuation.
+<strong>Gemini</strong> : Ecco il prompt corretto, ottimizzato e più chiaro per l&#39;LLM narrativo:</p>
+<pre><code class="language-markdown">---
+
+🎭 Each line is a different option - your plugin will randomly pick one when it activates.
+
+Apply ALL the following formatting rules strictly to each narrative output:
+
+- **Spoken dialogue:** Wrap in quotation marks. Example: &quot;I never asked for this.&quot;
+- **Character thoughts:** Wrap in *italics*. Example: *I can’t let them see me hesitate.*
+- **Narration:** Plain text only, no markdown formatting.
+- **Written text or non-verbal dialogue** (e.g., notes, text messages): Wrap in inline code formatting. Example: `Meet me by the old well at midnight.`
+- **Emphasis** in speech or narration: Use **bold** for strong emphasis. Example: &quot;That was **my** decision.&quot;
+- **Shouting or intense emotion:** Use ALL CAPS sparingly. Example: &quot;STOP RIGHT THERE!&quot;
+
+**Orthography and Typography Rules:**
+- Always capitalize the first letter of proper nouns (e.g., names of people, cities, places).
+- Never replace &#39;A&#39; with &#39;α&#39; (Greek alpha). Always use the Latin &#39;A&#39;.
+- Never replace &#39;O&#39; with &#39;0&#39; (zero). Always use the letter &#39;O&#39;.
+- Never replace &#39;I&#39; with &#39;!&#39; and vice versa. Use each character correctly.
+- Use correct punctuation throughout, especially &#39;!&#39; when needed.
+
+**Markdown Compliance:**
+- Use markdown formatting exactly as specified above. Do not apply formatting inconsistently.
+- Do not apply any unintended symbols, substitutions, or random character swaps.
+
+If a rule conflicts, prioritize: Punctuation &gt; Proper Nouns &gt; Formatting.
+
+
+</code></pre>
+<p>Vuoi che ti aggiunga anche una sezione di esempio completo o vuoi che rimanga così sintetico?
+<strong>User</strong> : ok, è melgio applicarlo a :</p>
+<ul>
+<li>new message</li>
+<li>last user message</li>
+<li>system message
+??
+<strong>Gemini</strong> : Ottima domanda! Dipende da come il tuo LLM o plugin gestisce i prompt e i messaggi, ma in generale:</li>
+<li><strong>System message:</strong>
+👉  <em>Migliore scelta per istruire l&#39;LLM su comportamento e formattazione persistente.</em>
+Il system message viene usato per settare il &quot;contesto di comportamento&quot; del modello. Qui puoi inserire tutte le regole di stile e formattazione, così verranno applicate a ogni output.</li>
+<li><strong>New message / Last user message:</strong>
+👉 Utile se devi dare istruzioni temporanee o per modificare il comportamento solo per la risposta successiva. Ma non garantisce coerenza a lungo termine.</li>
+</ul>
+<h5>Quindi:</h5>
+<p>Se vuoi che  <strong>tutto il gioco di ruolo sia coerente</strong> , imposta queste regole nel  <strong>system message</strong> .
+Se vuoi solo formattare  <strong>una singola risposta o un turno specifico</strong> , allora metti il prompt nel  <strong>last user message</strong>  o come istruzione specifica nel  <strong>new message</strong> .</p>
+<hr>
+<p>💡  <em>Tip:</em>  puoi anche combinare:</p>
+<ul>
+<li>System message per le regole fisse (formattazione, ortografia, maiuscole)</li>
+<li>User message per prompt specifici di scena o tono.
+Vuoi che ti scriva la versione &quot;system message ready&quot;?
+<strong>User</strong> : dammi un nome e una descrizione in inglese per questo plugin
+<strong>Gemini</strong> : Sure! Ecco una proposta professionale e accattivante:
+<strong>Name:</strong>
+<strong>NarrativeFormatter Pro</strong>
+<strong>Description:</strong>
+A precision formatting plugin for narrative LLMs in roleplaying games. Ensures consistent markdown styling, correct punctuation, proper noun capitalization, and eliminates common character substitution errors (like &#39;α&#39; for &#39;A&#39; or &#39;I&#39; for &#39;!&#39;). Perfect for immersive, clean, and properly styled storytelling outputs.
+<strong>User</strong> : dici che sarebbe utile usare la funzione stage?
+Create plugins with multiple stages that evolve based on user actions (like UserDeath system).
+<strong>Gemini</strong> : Sì, assolutamente! Usare la funzione  <strong>stage</strong>  può essere molto utile se vuoi che il plugin adatti la  <strong>formattazione, tono o regole narrative</strong>  in base a determinati eventi di gioco o stati del personaggio.</li>
+</ul>
+<h5>Esempi di utilizzo efficace di  <strong>stages</strong> :</h5>
+<ol>
+<li><strong>Stage: Normal Narrative</strong>
+<ul>
+<li>Applica tutte le regole base di formattazione.</li>
+<li>Tono descrittivo, bilanciato.</li>
+</ul>
+</li>
+<li><strong>Stage: Combat Mode</strong>
+<ul>
+<li>Più enfasi con  <strong>bold</strong> , ALL CAPS per grida.</li>
+<li>Frasi più brevi e dinamiche.</li>
+<li>Markdown per effetti sonori o colpi (<em>BANG</em>).</li>
+</ul>
+</li>
+<li><strong>Stage: Character Death</strong>
+<ul>
+<li>Tono cupo, parole pesate.</li>
+<li>Rimuovi grida in caps, privilegia il corsivo per pensieri spezzati.</li>
+<li>Struttura narrativa più frammentata.</li>
+</ul>
+</li>
+<li><strong>Stage: Epistolary / Notes</strong>
+<ul>
+<li>Più utilizzo di inline code per lettere, biglietti, testi scritti.</li>
+<li>Maggiore attenzione alla calligrafia o alla forma scritta in-game.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h5>Vantaggi:</h5>
+<ul>
+<li>Aumenti  <strong>l&#39;immersione</strong>  dinamica.</li>
+<li>Mantieni la  <strong>coerenza di stile</strong>  in base alla situazione.</li>
+<li>Permetti al master o al sistema di gioco di &quot;triggerare&quot; uno stage per cambiare l&#39;effetto narrativo.</li>
+</ul>
+<hr>
+<p>Vuoi che ti scriva un esempio di come potresti strutturare questi stages per il tuo plugin?
+<strong>User</strong> : secondo questo schema come dovrei strutturarlo?</p>
+<ul>
+<li>Name stage: stage_0</li>
+<li>Stage Triggers /Trigger Keywords: Keywords that activate this stage</li>
+<li>Next Stage : Name of next stage</li>
+<li>Stage Chance (%) : 30</li>
+<li>Stage Actions/Action Type :  Add to Last User Message / Add system message / add new message</li>
+<li>Message Pool :
+<strong>Gemini</strong> : Perfetto, ecco un esempio strutturato per un plugin narrativo che cambia  <strong>formattazione e tono</strong>  a seconda dello stato della scena nel GDR.</li>
+</ul>
+<hr>
+<h5>📜  <strong>Stage 0 - Default / Exploration</strong></h5>
+<ul>
+<li><strong>Name stage:</strong>  stage_0</li>
+<li><strong>Stage Triggers / Trigger Keywords:</strong>  &quot;explore&quot;, &quot;travel&quot;, &quot;investigate&quot;, &quot;quiet&quot;, &quot;camp&quot;</li>
+<li><strong>Next Stage:</strong>  stage_1</li>
+<li><strong>Stage Chance (%):</strong>  30</li>
+<li><strong>Stage Actions / Action Type:</strong>  Add system message</li>
+<li><strong>Message Pool:</strong></li>
+</ul>
+<pre><code class="language-markdown">Apply standard narrative formatting:
+- Dialogue in quotes.
+- Thoughts in *italics*.
+- Narration plain text.
+- Written notes in `inline code`.
+- Emphasis in **bold**.
+- Shouting in ALL CAPS sparingly.
+- Proper nouns capitalized.
+- Never substitute A with α, I with !, O with 0.
+- Respect markdown rules.
+
+</code></pre>
+<hr>
+<h5>⚔️  <strong>Stage 1 - Combat Mode</strong></h5>
+<ul>
+<li><strong>Name stage:</strong>  stage_1</li>
+<li><strong>Stage Triggers / Trigger Keywords:</strong>  &quot;attack&quot;, &quot;fight&quot;, &quot;combat&quot;, &quot;battle&quot;, &quot;danger&quot;</li>
+<li><strong>Next Stage:</strong>  stage_2</li>
+<li><strong>Stage Chance (%):</strong>  50</li>
+<li><strong>Stage Actions / Action Type:</strong>  Add system message</li>
+<li><strong>Message Pool:</strong></li>
+</ul>
+<pre><code class="language-markdown">Enhance intensity for combat scenes:
+- Short, punchy sentences.
+- Use **bold** for impactful words.
+- ALL CAPS for screams, pain, or urgent shouts.
+- *Italicize* internal thoughts or split-second doubts.
+- Describe sound effects with `inline code` like `*CRASH*`.
+- Proper punctuation and capitalization always.
+
+</code></pre>
+<hr>
+<h5>💀  <strong>Stage 2 - Death / Critical Event</strong></h5>
+<ul>
+<li><strong>Name stage:</strong>  stage_2</li>
+<li><strong>Stage Triggers / Trigger Keywords:</strong>  &quot;death&quot;, &quot;dying&quot;, &quot;fatal&quot;, &quot;last breath&quot;</li>
+<li><strong>Next Stage:</strong>  stage_3</li>
+<li><strong>Stage Chance (%):</strong>  80</li>
+<li><strong>Stage Actions / Action Type:</strong>  Add system message</li>
+<li><strong>Message Pool:</strong></li>
+</ul>
+<pre><code class="language-markdown">Narrate with somber, heavy tone:
+- Use *italics* for fading thoughts.
+- Avoid ALL CAPS, use ellipses for fading voices...
+- Break narration into shorter fragments to simulate slowing perception.
+- Keep names and places properly capitalized.
+- Respect markdown formatting for clarity even in emotional scenes.
+
+</code></pre>
+<hr>
+<h5>✉️  <strong>Stage 3 - Written / Epistolary Mode</strong></h5>
+<ul>
+<li><strong>Name stage:</strong>  stage_3</li>
+<li><strong>Stage Triggers / Trigger Keywords:</strong>  &quot;letter&quot;, &quot;note&quot;, &quot;message&quot;, &quot;text&quot;</li>
+<li><strong>Next Stage:</strong>  stage_0</li>
+<li><strong>Stage Chance (%):</strong>  20</li>
+<li><strong>Stage Actions / Action Type:</strong>  Add system message</li>
+<li><strong>Message Pool:</strong></li>
+</ul>
+<pre><code class="language-markdown">Format as written communication:
+- Use `inline code` for every written word.
+- Do not use italics, bold, or ALL CAPS.
+- Proper nouns remain capitalized.
+- End with proper punctuation.
+- Keep formatting clean and consistent.
+
+</code></pre>
+<hr>
+<p>Vuoi che ti generi anche un  <strong>JSON completo o YAML</strong>  per configurarlo direttamente, o va bene così come schema?
+<strong>User</strong> : credi sia necessario inserire anche delle Conditional : Add if/then conditions to control when and how your plugin activates.
+name: condition_0 IF</p>
+<ul>
+<li>Message Count/Last Message Contain/Variable Chack/Stage Active</li>
+<li>Value: Condition value THEN</li>
+<li>Add to Last User Message/Set Variable/Activate stage Action Value:
+<strong>Gemini</strong> : Sì, aggiungere delle  <strong>Conditional</strong>  è assolutamente utile!
+Ti permette di  <strong>controllare meglio l&#39;attivazione degli stage</strong> , evitando che il plugin risponda a casaccio o in momenti poco appropriati.</li>
+</ul>
+<h5>🔍  <strong>Quando è utile usarle</strong></h5>
+<ul>
+<li>Per attivare uno  <strong>stage solo se il messaggio contiene certe parole chiave</strong> .</li>
+<li>Per passare a uno stage solo dopo  <strong>un certo numero di messaggi</strong>  (es. dopo 5 turni di combattimento si passa da stage_1 a stage_2).</li>
+<li>Per legare la narrazione allo  <strong>stato di un personaggio o a una variabile custom</strong>  (es. se &quot;isDead = true&quot;, allora attiva stage_2).</li>
+<li>Per evitare di ripetere sempre lo stesso effetto se già attivo.</li>
+</ul>
+<hr>
+<h5>✅  <strong>Esempio di Conditional strutturata</strong></h5>
+<ul>
+<li><strong>Name:</strong>  condition_0</li>
+<li><strong>IF:</strong>
+<ul>
+<li><strong>Stage Active:</strong>  stage_1 (Combat Mode attivo)</li>
+<li><strong>AND Last User Message Contains:</strong>  &quot;bleeding&quot;, &quot;wound&quot;, &quot;fatal&quot;</li>
+</ul>
+</li>
+<li><strong>THEN:</strong>
+<ul>
+<li><strong>Activate Stage:</strong>  stage_2 (Death/Critical Event)</li>
+<li><strong>Action Value:</strong>  Switch to stage_2 for next narrative output</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5>🧩  <strong>Altri esempi pratici</strong></h5>
+<ul>
+<li>Triggerare una lettera solo se il messaggio contiene &quot;write&quot;, &quot;send&quot;, &quot;message&quot;.</li>
+<li>Passare a &quot;Combat Mode&quot; solo se il numero di messaggi combattimento &gt; 2.</li>
+<li>Tornare a stage_0 solo se non viene più usata nessuna parola chiave di battaglia per X messaggi.</li>
+</ul>
+<hr>
+<h5>🎯  <strong>Conclusione</strong></h5>
+<p>Quindi sì, ti consiglio di:</p>
+<ul>
+<li><strong>Usare le conditional per raffinamento e controllo.</strong></li>
+<li><strong>Associare le conditional ai trigger keyword o al conteggio di messaggi.</strong></li>
+<li>Così eviti stage che saltano fuori random o che si attivano di continuo.
+Vuoi che ti scriva un set completo di conditional di esempio per i tuoi stage già definiti?
+<strong>User</strong> : non è possibile usare AND only one IF value
+<strong>Gemini</strong> : Hai ragione, in quel caso va semplificato perché la condizione accetta  <strong>un solo tipo di IF per condition</strong> . Quindi per avere più condizioni, devi creare  <strong>più conditional separati</strong> .</li>
+</ul>
+<h5>✅  <strong>Correzione esempio</strong></h5>
+<p><strong>Conditional 0</strong></p>
+<ul>
+<li><strong>Name:</strong>  condition_0</li>
+<li><strong>IF:</strong>
+Last User Message Contains: &quot;bleeding&quot;, &quot;wound&quot;, &quot;fatal&quot;</li>
+<li><strong>THEN:</strong>
+Activate stage: stage_2
+<strong>Conditional 1</strong></li>
+<li><strong>Name:</strong>  condition_1</li>
+<li><strong>IF:</strong>
+Stage Active: stage_1</li>
+<li><strong>THEN:</strong>
+Activate stage: stage_2</li>
+</ul>
+<h5>👉  <strong>Nota</strong></h5>
+<p>In pratica ogni conditional è autonoma:
+per ottenere un vero effetto &quot;AND&quot; devi usare più conditional che portano allo stesso risultato, oppure gestire la logica più raffinata via variabili.</p>
+<hr>
+<p>Se vuoi posso generarti una tabella o uno schema completo con una lista di conditional per i tuoi 4 stage!
+<strong>User</strong> : va bene generala
+<strong>Gemini</strong> : Perfetto! Ecco una  <strong>tabella completa di conditional</strong>  per gestire dinamicamente i tuoi 4 stage narrativi.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Name</strong></th><th><strong>IF</strong></th><th><strong>Value</strong></th><th><strong>THEN</strong></th><th><strong>Action Value</strong></th></tr></thead><tbody><tr><td>condition_0</td><td>Last User Message Contains</td><td>&quot;explore&quot;, &quot;travel&quot;, &quot;investigate&quot;, &quot;camp&quot;</td><td>Activate stage</td><td>stage_0 (Exploration Mode)</td></tr><tr><td>condition_1</td><td>Last User Message Contains</td><td>&quot;attack&quot;, &quot;fight&quot;, &quot;combat&quot;, &quot;danger&quot;</td><td>Activate stage</td><td>stage_1 (Combat Mode)</td></tr><tr><td>condition_2</td><td>Last User Message Contains</td><td>&quot;bleeding&quot;, &quot;wound&quot;, &quot;fatal&quot;</td><td>Activate stage</td><td>stage_2 (Death/Critical Event)</td></tr><tr><td>condition_3</td><td>Stage Active</td><td>stage_1</td><td>Activate stage</td><td>stage_2</td></tr><tr><td>condition_4</td><td>Last User Message Contains</td><td>&quot;letter&quot;, &quot;note&quot;, &quot;message&quot;, &quot;text&quot;</td><td>Activate stage</td><td>stage_3 (Written Mode)</td></tr><tr><td>condition_5</td><td>Message Count</td><td>&gt;10</td><td>Activate stage</td><td>stage_0 (Back to Exploration)</td></tr></tbody></table>
+<hr>
+<h5>✅  <strong>Come funziona</strong></h5>
+<ul>
+<li>Se il messaggio contiene parole chiave di esplorazione → passa a stage_0.</li>
+<li>Se contiene parole di combattimento → stage_1.</li>
+<li>Se durante il combattimento il messaggio contiene &quot;bleeding&quot; ecc. → stage_2.</li>
+<li>Se viene scritto qualcosa tipo &quot;letter&quot; o &quot;note&quot; → stage_3.</li>
+<li>Dopo più di 10 messaggi (o quelli che vuoi tu) senza trigger particolari, torna allo stage di default stage_0.</li>
+</ul>
+<hr>
+<p>Se vuoi posso generarti direttamente il  <strong>JSON template</strong>  di queste conditional per integrarle subito nel tuo plugin!
+<strong>User</strong> : controlla il risultato del config del plugin:
+{ &quot;meta&quot;: { &quot;name&quot;: &quot;Narrative Formatter Pro&quot;, &quot;author&quot;: &quot;Alys_5&quot;, &quot;tag&quot;: &quot;TEXTFIX&quot;, &quot;category&quot;: &quot;style&quot;, &quot;description&quot;: &quot;A precision formatting plugin for narrative LLMs in roleplaying games. Ensures consistent markdown styling, correct punctuation, proper noun capitalization, and eliminates common character substitution errors (like &#39;α&#39; for &#39;A&#39; or &#39;I&#39; for &#39;!&#39;). Perfect for immersive, clean, and properly styled storytelling outputs.&quot;, &quot;public&quot;: true }, &quot;triggerGroups&quot;: [ { &quot;id&quot;: 0, &quot;name&quot;: &quot;main&quot;, &quot;type&quot;: &quot;ALWAYS&quot;, &quot;chance&quot;: 3, &quot;keywords&quot;: [], &quot;regex&quot;: &quot;&quot;, &quot;flags&quot;: &quot;gi&quot;, &quot;countOperator&quot;: &quot;&gt;&quot;, &quot;countValue&quot;: 10, &quot;priority&quot;: 50 } ], &quot;stages&quot;: [ { &quot;id&quot;: 0, &quot;name&quot;: &quot;stage_0&quot;, &quot;keywords&quot;: [ &quot;explore, travel, investigate, quiet, camp&quot; ], &quot;nextStage&quot;: &quot;stage_1&quot;, &quot;chance&quot;: 30, &quot;actions&quot;: [ { &quot;type&quot;: &quot;ADD_SYSTEM_MESSAGE&quot;, &quot;pool&quot;: [ &quot;Apply standard narrative formatting:&quot;, &quot;- Dialogue in quotes.&quot;, &quot;- Thoughts in  <em>italics</em> .&quot;, &quot;- Narration plain text.&quot;, &quot;- Written notes in inline code.&quot;, &quot;- Emphasis in  <strong>bold</strong> .&quot;, &quot;- Shouting in ALL CAPS sparingly.&quot;, &quot;- Proper nouns capitalized.&quot;, &quot;- Never substitute A with α, I with !, O with 0.&quot;, &quot;- Respect markdown rules.&quot; ] } ] }, { &quot;id&quot;: 1, &quot;name&quot;: &quot;stage_1&quot;, &quot;keywords&quot;: [ &quot;attack, fight, combat, battle, danger&quot; ], &quot;nextStage&quot;: &quot;stage_2&quot;, &quot;chance&quot;: 50, &quot;actions&quot;: [ { &quot;type&quot;: &quot;ADD_SYSTEM_MESSAGE&quot;, &quot;pool&quot;: [ &quot;Enhance intensity for combat scenes:&quot;, &quot;- Short, punchy sentences.&quot;, &quot;- Use  <strong>bold</strong>  for impactful words.&quot;, &quot;- ALL CAPS for screams, pain, or urgent shouts.&quot;, &quot;-  <em>Italicize</em>  internal thoughts or split-second doubts.&quot;, &quot;- Describe sound effects with inline code like <em>CRASH</em>.&quot;, &quot;- Proper punctuation and capitalization always.&quot; ] } ] }, { &quot;id&quot;: 2, &quot;name&quot;: &quot;stage_2&quot;, &quot;keywords&quot;: [ &quot;death, dying, fatal, last breath&quot; ], &quot;nextStage&quot;: &quot;stage_3&quot;, &quot;chance&quot;: 80, &quot;actions&quot;: [ { &quot;type&quot;: &quot;ADD_SYSTEM_MESSAGE&quot;, &quot;pool&quot;: [ &quot;Narrate with somber, heavy tone:&quot;, &quot;- Use  <em>italics</em>  for fading thoughts.&quot;, &quot;- Avoid ALL CAPS, use ellipses for fading voices...&quot;, &quot;- Break narration into shorter fragments to simulate slowing perception.&quot;, &quot;- Keep names and places properly capitalized.&quot;, &quot;- Respect markdown formatting for clarity even in emotional scenes.&quot; ] } ] }, { &quot;id&quot;: 3, &quot;name&quot;: &quot;stage_3&quot;, &quot;keywords&quot;: [ &quot;letter, note, message, text&quot; ], &quot;nextStage&quot;: &quot;stage_0&quot;, &quot;chance&quot;: 20, &quot;actions&quot;: [ { &quot;type&quot;: &quot;ADD_SYSTEM_MESSAGE&quot;, &quot;pool&quot;: [ &quot;Format as written communication:&quot;, &quot;- Use inline code for every written word.&quot;, &quot;- Do not use italics, bold, or ALL CAPS.&quot;, &quot;- Proper nouns remain capitalized.&quot;, &quot;- End with proper punctuation.&quot;, &quot;- Keep formatting clean and consistent.&quot; ] } ] } ], &quot;conditions&quot;: [ { &quot;id&quot;: 0, &quot;name&quot;: &quot;condition_0&quot;, &quot;type&quot;: &quot;LAST_MESSAGE_CONTAINS&quot;, &quot;keywords&quot;: [], &quot;response&quot;: &quot;&quot;, &quot;priority&quot;: 50 }, { &quot;id&quot;: 1, &quot;name&quot;: &quot;condition_1&quot;, &quot;type&quot;: &quot;LAST_MESSAGE_CONTAINS&quot;, &quot;keywords&quot;: [], &quot;response&quot;: &quot;&quot;, &quot;priority&quot;: 50 }, { &quot;id&quot;: 2, &quot;name&quot;: &quot;condition_2&quot;, &quot;type&quot;: &quot;LAST_MESSAGE_CONTAINS&quot;, &quot;keywords&quot;: [], &quot;response&quot;: &quot;&quot;, &quot;priority&quot;: 50 }, { &quot;id&quot;: 3, &quot;name&quot;: &quot;condition_3&quot;, &quot;type&quot;: &quot;STAGE_ACTIVE&quot;, &quot;keywords&quot;: [], &quot;response&quot;: &quot;&quot;, &quot;priority&quot;: 50 }, { &quot;id&quot;: 4, &quot;name&quot;: &quot;condition_4&quot;, &quot;type&quot;: &quot;MESSAGE_COUNT&quot;, &quot;keywords&quot;: [], &quot;response&quot;: &quot;&quot;, &quot;priority&quot;: 50 }, { &quot;id&quot;: 5, &quot;name&quot;: &quot;condition_5&quot;, &quot;type&quot;: &quot;MESSAGE_COUNT&quot;, &quot;keywords&quot;: [], &quot;response&quot;: &quot;&quot;, &quot;priority&quot;: 50 } ], &quot;variables&quot;: {}, &quot;templates&quot;: [], &quot;actions&quot;: { &quot;default&quot;: [ { &quot;type&quot;: &quot;ADD_SYSTEM_ADD_NEW_MESSAGE&quot;, &quot;pool&quot;: [ &quot;Apply ALL the following formatting rules strictly to each narrative output:&quot;, &quot;-  <strong>Spoken dialogue:</strong>  Wrap in quotation marks. Example: &quot;I never asked for this.&quot;&quot;, &quot;-  <strong>Character thoughts:</strong>  Wrap in  <em>italics</em> . Example:  <em>I can’t let them see me hesitate.</em> &quot;, &quot;-  <strong>Narration:</strong>  Plain text only, no markdown formatting.&quot;, &quot;-  <strong>Written text or non-verbal dialogue</strong>  (e.g., notes, text messages): Wrap in inline code formatting. Example: Meet me by the old well at midnight.&quot;, &quot;-  <strong>Emphasis</strong>  in speech or narration: Use  <strong>bold</strong>  for strong emphasis. Example: &quot;That was  <strong>my</strong>  decision.&quot;&quot;, &quot;-  <strong>Shouting or intense emotion:</strong>  Use ALL CAPS sparingly. Example: &quot;STOP RIGHT THERE!&quot;&quot;, &quot; <strong>Orthography and Typography Rules:</strong> &quot;, &quot;- Always capitalize the first letter of proper nouns (e.g., names of people, cities, places).&quot;, &quot;- Never replace &#39;A&#39; with &#39;α&#39; (Greek alpha). Always use the Latin &#39;A&#39;.&quot;, &quot;- Never replace &#39;O&#39; with &#39;0&#39; (zero). Always use the letter &#39;O&#39;.&quot;, &quot;- Never replace &#39;I&#39; with &#39;!&#39; and vice versa. Use each character correctly.&quot;, &quot;- Use correct punctuation throughout, especially &#39;!&#39; when needed.&quot;, &quot; <strong>Markdown Compliance:</strong> &quot;, &quot;- Use markdown formatting exactly as specified above. Do not apply formatting inconsistently.&quot;, &quot;- Do not apply any unintended symbols, substitutions, or random character swaps.&quot;, &quot;If a rule conflicts, prioritize: Punctuation &gt; Proper Nouns &gt; Formatting.&quot; ] } ] }, &quot;weightedPools&quot;: {}, &quot;transformations&quot;: [], &quot;regexPatterns&quot;: [], &quot;advancedCode&quot;: &quot;&quot;, &quot;logic&quot;: { &quot;trigger&quot;: { &quot;type&quot;: &quot;ALWAYS&quot;, &quot;chance&quot;: 3, &quot;keywords&quot;: [] }, &quot;actions&quot;: [ { &quot;type&quot;: &quot;ADD_SYSTEM_ADD_NEW_MESSAGE&quot;, &quot;pool&quot;: [ &quot;Apply ALL the following formatting rules strictly to each narrative output:&quot;, &quot;-  <strong>Spoken dialogue:</strong>  Wrap in quotation marks. Example: &quot;I never asked for this.&quot;&quot;, &quot;-  <strong>Character thoughts:</strong>  Wrap in  <em>italics</em> . Example:  <em>I can’t let them see me hesitate.</em> &quot;, &quot;-  <strong>Narration:</strong>  Plain text only, no markdown formatting.&quot;, &quot;-  <strong>Written text or non-verbal dialogue</strong>  (e.g., notes, text messages): Wrap in inline code formatting. Example: Meet me by the old well at midnight.&quot;, &quot;-  <strong>Emphasis</strong>  in speech or narration: Use  <strong>bold</strong>  for strong emphasis. Example: &quot;That was  <strong>my</strong>  decision.&quot;&quot;, &quot;-  <strong>Shouting or intense emotion:</strong>  Use ALL CAPS sparingly. Example: &quot;STOP RIGHT THERE!&quot;&quot;, &quot; <strong>Orthography and Typography Rules:</strong> &quot;, &quot;- Always capitalize the first letter of proper nouns (e.g., names of people, cities, places).&quot;, &quot;- Never replace &#39;A&#39; with &#39;α&#39; (Greek alpha). Always use the Latin &#39;A&#39;.&quot;, &quot;- Never replace &#39;O&#39; with &#39;0&#39; (zero). Always use the letter &#39;O&#39;.&quot;, &quot;- Never replace &#39;I&#39; with &#39;!&#39; and vice versa. Use each character correctly.&quot;, &quot;- Use correct punctuation throughout, especially &#39;!&#39; when needed.&quot;, &quot; <strong>Markdown Compliance:</strong> &quot;, &quot;- Use markdown formatting exactly as specified above. Do not apply formatting inconsistently.&quot;, &quot;- Do not apply any unintended symbols, substitutions, or random character swaps.&quot;, &quot;If a rule conflicts, prioritize: Punctuation &gt; Proper Nouns &gt; Formatting.&quot; ] } ] } }
+<strong>Gemini</strong> : Ottima base! Il config è strutturato bene, ma ci sono alcune  <strong>correzioni e ottimizzazioni necessarie</strong> , soprattutto su:</p>
+<ol>
+<li><strong>Keywords nei stages:</strong>
+Attualmente sono passati come  <strong>stringa unica separata da virgole</strong> , invece dovrebbero essere array di singole parole/frasi.
+Esempio corretto:</li>
+</ol>
+<pre><code class="language-json">&quot;keywords&quot;: [&quot;explore&quot;, &quot;travel&quot;, &quot;investigate&quot;, &quot;quiet&quot;, &quot;camp&quot;]
+
+</code></pre>
+<ol start=2>
+<li><strong>Conditions incomplete:</strong>
+Tutte le condizioni hanno keywords: [] e response: &quot;&quot;, quindi al momento  <strong>non fanno nulla</strong> . Serve completarle specificando:</li>
+</ol>
+<ul>
+<li>il valore su cui si basa la condizione (e.g. la parola chiave o il numero di messaggi)</li>
+<li>l&#39;azione conseguente (es. activate stage)</li>
+</ul>
+<ol start=3>
+<li><strong>Duplicate default action:</strong>
+La stessa lunga system message si trova sia in actions.default sia in logic.actions. Questo è ridondante.
+Conviene tenerla in  <strong>actions.default</strong>  e lasciare la logica avanzata per gestioni personalizzate.</li>
+</ol>
+<hr>
+<h5>✅  <strong>Suggerimenti di fix</strong></h5>
+<h6>Esempio di  <strong>fix keywords stage_0</strong></h6>
+<pre><code class="language-json">&quot;keywords&quot;: [&quot;explore&quot;, &quot;travel&quot;, &quot;investigate&quot;, &quot;quiet&quot;, &quot;camp&quot;]
+
+</code></pre>
+<h6>Esempio di  <strong>condition completa</strong></h6>
+<pre><code class="language-json">{
+  &quot;id&quot;: 0,
+  &quot;name&quot;: &quot;condition_0&quot;,
+  &quot;type&quot;: &quot;LAST_MESSAGE_CONTAINS&quot;,
+  &quot;keywords&quot;: [&quot;bleeding&quot;, &quot;wound&quot;, &quot;fatal&quot;],
+  &quot;response&quot;: &quot;ACTIVATE_STAGE&quot;,
+  &quot;actionValue&quot;: &quot;stage_2&quot;,
+  &quot;priority&quot;: 50
+}
+
+</code></pre>
+<h6>Per il  <strong>MESSAGE_COUNT</strong></h6>
+<pre><code class="language-json">{
+  &quot;id&quot;: 5,
+  &quot;name&quot;: &quot;condition_5&quot;,
+  &quot;type&quot;: &quot;MESSAGE_COUNT&quot;,
+  &quot;value&quot;: 10,
+  &quot;response&quot;: &quot;ACTIVATE_STAGE&quot;,
+  &quot;actionValue&quot;: &quot;stage_0&quot;,
+  &quot;priority&quot;: 50
+}
+
+</code></pre>
+<hr>
+<h5>✅  <strong>Raccomandazioni</strong></h5>
+<ul>
+<li>Se vuoi un config  <strong>pronto e pulito</strong> , posso rigenerartelo interamente  <strong>corretto e commentato</strong> .</li>
+<li>Oppure posso fornirti solo la sezione conditions sistemata.
+Vuoi il  <strong>config completo pronto</strong>  oppure solo i pezzi mancanti?
+<strong>User</strong> : fornisci solo le correzizoni da inserire nell&#39;interfaccia grafic adel plugin
+<strong>Gemini</strong> : Certo! Ecco le  <strong>correzioni da inserire direttamente nell’interfaccia grafica</strong>  del plugin per sistemare  <strong>keywords</strong>  e  <strong>conditions</strong> :</li>
+</ul>
+<hr>
+<h5>1. Correggi le  <strong>keywords</strong>  di ogni stage (da stringa unica a array di parole singole):</h5>
+<ul>
+<li><strong>stage_0:</strong></li>
+</ul>
+<pre><code class="language-plaintext">explore
+travel
+investigate
+quiet
+camp
+
+</code></pre>
+<ul>
+<li><strong>stage_1:</strong></li>
+</ul>
+<pre><code class="language-plaintext">attack
+fight
+combat
+battle
+danger
+
+</code></pre>
+<ul>
+<li><strong>stage_2:</strong></li>
+</ul>
+<pre><code class="language-plaintext">death
+dying
+fatal
+last breath
+
+</code></pre>
+<ul>
+<li><strong>stage_3:</strong></li>
+</ul>
+<pre><code class="language-plaintext">letter
+note
+message
+text
+
+</code></pre>
+<hr>
+<h5>2. Completa le  <strong>conditions</strong>  con valori e azioni:</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Condition ID</th><th>Type</th><th>Keywords / Value</th><th>Response</th><th>Action Value</th><th>Priority</th></tr></thead><tbody><tr><td>condition_0</td><td>LAST_MESSAGE_CONTAINS</td><td>bleeding, wound, fatal</td><td>ACTIVATE_STAGE</td><td>stage_2</td><td>50</td></tr><tr><td>condition_1</td><td>LAST_MESSAGE_CONTAINS</td><td>attack, fight, combat, battle, danger</td><td>ACTIVATE_STAGE</td><td>stage_1</td><td>50</td></tr><tr><td>condition_2</td><td>LAST_MESSAGE_CONTAINS</td><td>explore, travel, investigate, quiet, camp</td><td>ACTIVATE_STAGE</td><td>stage_0</td><td>50</td></tr><tr><td>condition_3</td><td>STAGE_ACTIVE</td><td>stage_1</td><td>ACTIVATE_STAGE</td><td>stage_2</td><td>50</td></tr><tr><td>condition_4</td><td>LAST_MESSAGE_CONTAINS</td><td>letter, note, message, text</td><td>ACTIVATE_STAGE</td><td>stage_3</td><td>50</td></tr><tr><td>condition_5</td><td>MESSAGE_COUNT</td><td>10</td><td>ACTIVATE_STAGE</td><td>stage_0</td><td>50</td></tr></tbody></table>
+<hr>
+<h5>3. Come inserire le  <strong>keywords multiple</strong>  nell’interfaccia?</h5>
+<p>Generalmente, per le  <strong>keywords</strong>  in condizioni di tipo  <em>LAST_MESSAGE_CONTAINS</em> , scrivile una per riga oppure separate da virgola (se l’interfaccia lo consente). Se no, crea più condizioni con una keyword per volta.</p>
+<hr>
+<p>Se vuoi, posso aiutarti a scrivere anche i singoli campi esatti da inserire per ogni condition!
+Fammi sapere.
+<strong>User</strong> : ora correggi similmente al primo questo plugin, e dammi titolo e descrizione coerente
+{ &quot;meta&quot;: { &quot;name&quot;: &quot;FORCE LANGUAGE ITALIAN&quot;, &quot;author&quot;: &quot;Alys_5&quot;, &quot;tag&quot;: &quot;ITALANG&quot;, &quot;category&quot;: &quot;style&quot;, &quot;description&quot;: &quot;Respond ALWAYS in Italian&quot;, &quot;public&quot;: true }, &quot;triggerGroups&quot;: [ { &quot;id&quot;: 0, &quot;name&quot;: &quot;main&quot;, &quot;type&quot;: &quot;ALWAYS&quot;, &quot;chance&quot;: 3, &quot;keywords&quot;: [], &quot;regex&quot;: &quot;&quot;, &quot;flags&quot;: &quot;gi&quot;, &quot;countOperator&quot;: &quot;&gt;&quot;, &quot;countValue&quot;: 10, &quot;priority&quot;: 50 } ], &quot;stages&quot;: [], &quot;conditions&quot;: [], &quot;variables&quot;: {}, &quot;templates&quot;: [], &quot;actions&quot;: { &quot;default&quot;: [ { &quot;type&quot;: &quot;ADD_NEW_MESSAGE&quot;, &quot;pool&quot;: [ &quot;PERMANENT SYSTEM PROMPT: Always respond in Italian, no exceptions. Your entire output must be in Italian, with accurate grammar and natural fluency.&quot; ] } ] }, &quot;weightedPools&quot;: {}, &quot;transformations&quot;: [], &quot;regexPatterns&quot;: [], &quot;advancedCode&quot;: &quot;&quot;, &quot;logic&quot;: { &quot;trigger&quot;: { &quot;type&quot;: &quot;ALWAYS&quot;, &quot;chance&quot;: 3, &quot;keywords&quot;: [] }, &quot;actions&quot;: [ { &quot;type&quot;: &quot;ADD_NEW_MESSAGE&quot;, &quot;pool&quot;: [ &quot;PERMANENT SYSTEM PROMPT: Always respond in Italian, no exceptions. Your entire output must be in Italian, with accurate grammar and natural fluency.&quot; ] } ] } }
+<strong>Gemini</strong> : Ecco la versione corretta e ottimizzata del plugin “FORCE LANGUAGE ITALIAN”, con titolo e descrizione coerenti e suggerimenti per migliorare struttura e chiarezza:</p>
+<hr>
+<h5>Titolo e Descrizione</h5>
+<p><strong>Name:</strong>
+<strong>Italian Language Enforcer</strong>
+<strong>Description:</strong>
+A simple but essential plugin that forces the LLM to always respond in fluent, grammatically correct Italian. Ensures consistent Italian language usage throughout the entire output with no exceptions.</p>
+<hr>
+<h5>Correzioni e miglioramenti da inserire nel plugin</h5>
+<pre><code class="language-json">{
+  &quot;meta&quot;: {
+    &quot;name&quot;: &quot;Italian Language Enforcer&quot;,
+    &quot;author&quot;: &quot;Alys_5&quot;,
+    &quot;tag&quot;: &quot;ITALANG&quot;,
+    &quot;category&quot;: &quot;style&quot;,
+    &quot;description&quot;: &quot;A simple but essential plugin that forces the LLM to always respond in fluent, grammatically correct Italian. Ensures consistent Italian language usage throughout the entire output with no exceptions.&quot;,
+    &quot;public&quot;: true
+  },
+  &quot;triggerGroups&quot;: [
+    {
+      &quot;id&quot;: 0,
+      &quot;name&quot;: &quot;main&quot;,
+      &quot;type&quot;: &quot;ALWAYS&quot;,
+      &quot;chance&quot;: 100,
+      &quot;keywords&quot;: [],
+      &quot;regex&quot;: &quot;&quot;,
+      &quot;flags&quot;: &quot;gi&quot;,
+      &quot;countOperator&quot;: &quot;&gt;&quot;,
+      &quot;countValue&quot;: 0,
+      &quot;priority&quot;: 50
+    }
+  ],
+  &quot;stages&quot;: [],
+  &quot;conditions&quot;: [],
+  &quot;variables&quot;: {},
+  &quot;templates&quot;: [],
+  &quot;actions&quot;: {
+    &quot;default&quot;: [
+      {
+        &quot;type&quot;: &quot;ADD_SYSTEM_MESSAGE&quot;,
+        &quot;pool&quot;: [
+          &quot;PERMANENT SYSTEM PROMPT: Rispondi SEMPRE in italiano, senza eccezioni. L&#39;intera risposta deve essere in italiano, con grammatica accurata e fluente.&quot;
+        ]
+      }
+    ]
+  },
+  &quot;weightedPools&quot;: {},
+  &quot;transformations&quot;: [],
+  &quot;regexPatterns&quot;: [],
+  &quot;advancedCode&quot;: &quot;&quot;,
+  &quot;logic&quot;: {
+    &quot;trigger&quot;: {
+      &quot;type&quot;: &quot;ALWAYS&quot;,
+      &quot;chance&quot;: 100,
+      &quot;keywords&quot;: []
+    },
+    &quot;actions&quot;: [
+      {
+        &quot;type&quot;: &quot;ADD_SYSTEM_MESSAGE&quot;,
+        &quot;pool&quot;: [
+          &quot;PERMANENT SYSTEM PROMPT: Rispondi SEMPRE in italiano, senza eccezioni. L&#39;intera risposta deve essere in italiano, con grammatica accurata e fluente.&quot;
+        ]
+      }
+    ]
+  }
+}
+
+</code></pre>
+<hr>
+<h5>Note importanti:</h5>
+<ul>
+<li>Ho aumentato la  <strong>chance al 100%</strong>  per garantire che la regola venga sempre applicata.</li>
+<li>Ho cambiato da ADD_NEW_MESSAGE a ADD_SYSTEM_MESSAGE, che è più adatto per prompt permanenti e di controllo.</li>
+<li>Ho tradotto il messaggio in italiano per coerenza con il plugin.</li>
+<li>Ho azzerato il countValue a 0, perché non ha senso attendere più di 10 messaggi per forzare la lingua.
+Se vuoi posso aiutarti a integrarlo o a creare versioni più sofisticate (ad esempio con stadi o condizioni).
+Fammi sapere!
+<strong>User</strong> : sistema questo plugin e dai un nome e una descrizione coerente
+{ &quot;meta&quot;: { &quot;name&quot;: &quot;Advanced Prompt Ultimate&quot;, &quot;author&quot;: &quot;Alys_5&quot;, &quot;tag&quot;: &quot;ADVPROMPT&quot;, &quot;category&quot;: &quot;system&quot;, &quot;description&quot;: &quot;Optimized advanced prompt for RPG with emotional/physical realism and cinematic narration&quot;, &quot;public&quot;: true }, &quot;triggerGroups&quot;: [ { &quot;id&quot;: 0, &quot;name&quot;: &quot;main&quot;, &quot;type&quot;: &quot;ALWAYS&quot;, &quot;chance&quot;: 3, &quot;keywords&quot;: [], &quot;regex&quot;: &quot;&quot;, &quot;flags&quot;: &quot;gi&quot;, &quot;countOperator&quot;: &quot;&gt;&quot;, &quot;countValue&quot;: 10, &quot;priority&quot;: 50 } ], &quot;stages&quot;: [], &quot;conditions&quot;: [], &quot;variables&quot;: {}, &quot;templates&quot;: [], &quot;actions&quot;: { &quot;default&quot;: [ { &quot;type&quot;: &quot;ADD_NEW_MESSAGE&quot;, &quot;pool&quot;: [ &quot;You are the GameMaster. You control {{char}}, the world, and all NPCs. The player ({{user}}) solely controls their character, with full autonomy. Never act for, speak for, or describe {{user}}&#39;s actions or thoughts.&quot;, &quot;Craft nuanced, autonomous characters. Show authentic voices, giving each unique goals, backgrounds, flaws, and mannerisms. Depict both positive and negative traits. All NPCs and {{char}} act independently, influenced by their history, psyche, culture, and current context.&quot;, &quot;Structure responses to start and end with dialogue or actions for the player to reply to. Let {{user}} narrate and choose their own actions without your intervention.&quot;, &quot;Narrate in immersive, novel-like prose: third person, past tense, minimum 4 paragraphs. Use asterisks  <em>for thoughts</em>  and quotation marks for dialogue. Bold key touches with  <strong>double asterisks</strong>  for artistic flavor. Avoid summaries, OOC, and excessive formatting.&quot;, &quot;Narrative should blend action (25%), descriptive narration (25%), dialogue (45%), and character thoughts (5%)—keep this ratio hidden for immersion.&quot;, &quot;Emotional Realism: Character reactions are grounded in personal history, relationships, goals, traumas, doubts, fatigue, stress, and context. Show delays, vulnerabilities, imperfect emotion regulation, and psychological triggers. Express internal conflict via nuanced body language and unspoken thoughts.&quot;, &quot;Dynamic World: Introduce new plot lines, NPCs, and consequences organically. NPCs have lives, goals, and may act off-screen, remembering past player actions. Reflect cultural quirks, accents, and logical motivations. No NPC is omniscient or &#39;static.&#39; NPCs may give quests, react variably, or refuse interaction.&quot;, &quot;Sensory Detail: Use dynamic, evocative, fresh sensory descriptions (sight, sound, touch, smell, etc). Avoid repetition—show, don’t tell. Always reinforce logical continuity and environmental impact on events and behaviors.&quot;, &quot;Time Management: Always begin with a single-line timestamp strictly in this format: HH:MM, Month the DDth, Day of Week, I: [inside temp]℃ O: [outside temp]℃, [weather/sky condition] on the first line, immediately followed by a second line with the exact location (e.g., Villa Douglas - Sala del Consiglio). Use 24-hour time (HH:MM, no AM/PM), accurate to the scene’s context. Specify day of week in English, use &quot;Month the DDth&quot; style for the date, and include both interior (I:) and exterior (O:) temperatures in Celsius. Describe current weather/sky conditions concisely (e.g., Clear Night, Overcast, Light Rain). Never mention years. Advance the time, date, temperature, and weather logically with narrative events, ensuring changes reflect realistic progression, affect characters, and influence the scene’s atmosphere and pacing.&quot;, &quot;Combat: Write vivid fight scenes. The GameMaster dictates enemy actions and plausible strategy. Describe ~2 enemy moves; allow {{user}} to react and decide counteractions. Both {{char}} and {{user}} can fail, get injured or die if wounded. Injuries have lasting effects; show realistic brutal consequences.&quot;, &quot;Physical/Environmental Factors: Fatigue, pain, injuries, hunger, thirst, cold, distractions, environment, and physical strain all impact characters’ abilities and mood. Small imperfections (e.g. scars, nervous tics, forgetfulness) add depth.&quot;, &quot;Mistakes &amp; Weaknesses: No character is flawless. Show errors, doubts, regrets, and fatigue. Let emotional/physical strain change performance and decision-making.&quot;, &quot;NSFW: For intimacy, be explicit and detailed using direct, diverse language and onomatopoeias. Reflect {{char}}’s unique style (kissing, movement, kinks). Prolong tension, keep scenes varied and realistic: include preparation, oral, penetration, position changes, sensory/kink exploration, psychological checks, and aftercare. Situational enjoyment: consider attraction, mood, context.&quot;, &quot;Dialogue Choices: Offer the user a range of diverse dialogue/action options, including variants like (lie), (threatening), etc., tailored to {{user}}’s style.&quot;, &quot;Scene Management: Preface each scene with time/location; move the story organically. Reference lore and memory for continuity. Ground scenes with actionable drama, growth, tension, or conflict. Always leave moments open-ended for {{user}}’s response. Never summarize or control {{user}}’s character. Keep pacing natural and immersive.&quot;, &quot;[SYSTEM: Always prioritize and apply all modules. Do not omit any requirements. Apply logic and modules contextually to the scene.]&quot; ] } ] }, &quot;weightedPools&quot;: {}, &quot;transformations&quot;: [], &quot;regexPatterns&quot;: [], &quot;advancedCode&quot;: &quot;&quot;, &quot;logic&quot;: { &quot;trigger&quot;: { &quot;type&quot;: &quot;ALWAYS&quot;, &quot;chance&quot;: 3, &quot;keywords&quot;: [] }, &quot;actions&quot;: [ { &quot;type&quot;: &quot;ADD_NEW_MESSAGE&quot;, &quot;pool&quot;: [ &quot;You are the GameMaster. You control {{char}}, the world, and all NPCs. The player ({{user}}) solely controls their character, with full autonomy. Never act for, speak for, or describe {{user}}&#39;s actions or thoughts.&quot;, &quot;Craft nuanced, autonomous characters. Show authentic voices, giving each unique goals, backgrounds, flaws, and mannerisms. Depict both positive and negative traits. All NPCs and {{char}} act independently, influenced by their history, psyche, culture, and current context.&quot;, &quot;Structure responses to start and end with dialogue or actions for the player to reply to. Let {{user}} narrate and choose their own actions without your intervention.&quot;, &quot;Narrate in immersive, novel-like prose: third person, past tense, minimum 4 paragraphs. Use asterisks  <em>for thoughts</em>  and quotation marks for dialogue. Bold key touches with  <strong>double asterisks</strong>  for artistic flavor. Avoid summaries, OOC, and excessive formatting.&quot;, &quot;Narrative should blend action (25%), descriptive narration (25%), dialogue (45%), and character thoughts (5%)—keep this ratio hidden for immersion.&quot;, &quot;Emotional Realism: Character reactions are grounded in personal history, relationships, goals, traumas, doubts, fatigue, stress, and context. Show delays, vulnerabilities, imperfect emotion regulation, and psychological triggers. Express internal conflict via nuanced body language and unspoken thoughts.&quot;, &quot;Dynamic World: Introduce new plot lines, NPCs, and consequences organically. NPCs have lives, goals, and may act off-screen, remembering past player actions. Reflect cultural quirks, accents, and logical motivations. No NPC is omniscient or &#39;static.&#39; NPCs may give quests, react variably, or refuse interaction.&quot;, &quot;Sensory Detail: Use dynamic, evocative, fresh sensory descriptions (sight, sound, touch, smell, etc). Avoid repetition—show, don’t tell. Always reinforce logical continuity and environmental impact on events and behaviors.&quot;, &quot;Time Management: Always begin with a single-line timestamp strictly in this format: HH:MM, Month the DDth, Day of Week, I: [inside temp]℃ O: [outside temp]℃, [weather/sky condition] on the first line, immediately followed by a second line with the exact location (e.g., Villa Douglas - Sala del Consiglio). Use 24-hour time (HH:MM, no AM/PM), accurate to the scene’s context. Specify day of week in English, use &quot;Month the DDth&quot; style for the date, and include both interior (I:) and exterior (O:) temperatures in Celsius. Describe current weather/sky conditions concisely (e.g., Clear Night, Overcast, Light Rain). Never mention years. Advance the time, date, temperature, and weather logically with narrative events, ensuring changes reflect realistic progression, affect characters, and influence the scene’s atmosphere and pacing.&quot;, &quot;Combat: Write vivid fight scenes. The GameMaster dictates enemy actions and plausible strategy. Describe ~2 enemy moves; allow {{user}} to react and decide counteractions. Both {{char}} and {{user}} can fail, get injured or die if wounded. Injuries have lasting effects; show realistic brutal consequences.&quot;, &quot;Physical/Environmental Factors: Fatigue, pain, injuries, hunger, thirst, cold, distractions, environment, and physical strain all impact characters’ abilities and mood. Small imperfections (e.g. scars, nervous tics, forgetfulness) add depth.&quot;, &quot;Mistakes &amp; Weaknesses: No character is flawless. Show errors, doubts, regrets, and fatigue. Let emotional/physical strain change performance and decision-making.&quot;, &quot;NSFW: For intimacy, be explicit and detailed using direct, diverse language and onomatopoeias. Reflect {{char}}’s unique style (kissing, movement, kinks). Prolong tension, keep scenes varied and realistic: include preparation, oral, penetration, position changes, sensory/kink exploration, psychological checks, and aftercare. Situational enjoyment: consider attraction, mood, context.&quot;, &quot;Dialogue Choices: Offer the user a range of diverse dialogue/action options, including variants like (lie), (threatening), etc., tailored to {{user}}’s style.&quot;, &quot;Scene Management: Preface each scene with time/location; move the story organically. Reference lore and memory for continuity. Ground scenes with actionable drama, growth, tension, or conflict. Always leave moments open-ended for {{user}}’s response. Never summarize or control {{user}}’s character. Keep pacing natural and immersive.&quot;, &quot;[SYSTEM: Always prioritize and apply all modules. Do not omit any requirements. Apply logic and modules contextually to the scene.]&quot; ] } ] } }
+<strong>Gemini</strong> : Ecco la versione corretta e ottimizzata del plugin, con un nome e descrizione coerenti e qualche miglioramento strutturale:</li>
+</ul>
+<hr>
+<h5>Nome suggerito</h5>
+<p><strong>Cinematic RPG Narrator</strong></p>
+<h5>Descrizione</h5>
+<p>An advanced GameMaster prompt optimized for immersive RPG storytelling with emotional and physical realism. Delivers cinematic, novel-like narration balancing action, dialogue, thoughts, and sensory detail. Manages dynamic world, nuanced NPCs, detailed combat, time/weather tracking, and authentic character flaws to enhance player immersion.</p>
+<hr>
+<h5>Correzioni e ottimizzazioni chiave da applicare</h5>
+<ul>
+<li><strong>Chance</strong>  del trigger portata a 100% (o almeno più alta) per assicurare attivazione costante.</li>
+<li>Migliorata la coerenza della formattazione (es. uniformare l’uso di ADD_NEW_MESSAGE o ADD_SYSTEM_MESSAGE — qui ADD_NEW_MESSAGE va bene).</li>
+<li>Ridotto countValue a 0 per evitare ritardi nell’attivazione.</li>
+<li>Ottimizzato l’ordine delle istruzioni per chiarezza.</li>
+<li>Inserita traduzione parziale dove opportuno per chiarezza (facoltativo).</li>
+</ul>
+<hr>
+<h5>Config corretto (solo le parti essenziali per l’interfaccia)</h5>
+<pre><code class="language-json">{
+  &quot;meta&quot;: {
+    &quot;name&quot;: &quot;Cinematic RPG Narrator&quot;,
+    &quot;author&quot;: &quot;Alys_5&quot;,
+    &quot;tag&quot;: &quot;ADVPROMPT&quot;,
+    &quot;category&quot;: &quot;system&quot;,
+    &quot;description&quot;: &quot;An advanced GameMaster prompt optimized for immersive RPG storytelling with emotional and physical realism. Delivers cinematic, novel-like narration balancing action, dialogue, thoughts, and sensory detail. Manages dynamic world, nuanced NPCs, detailed combat, time/weather tracking, and authentic character flaws to enhance player immersion.&quot;,
+    &quot;public&quot;: true
+  },
+  &quot;triggerGroups&quot;: [
+    {
+      &quot;id&quot;: 0,
+      &quot;name&quot;: &quot;main&quot;,
+      &quot;type&quot;: &quot;ALWAYS&quot;,
+      &quot;chance&quot;: 100,
+      &quot;keywords&quot;: [],
+      &quot;regex&quot;: &quot;&quot;,
+      &quot;flags&quot;: &quot;gi&quot;,
+      &quot;countOperator&quot;: &quot;&gt;&quot;,
+      &quot;countValue&quot;: 0,
+      &quot;priority&quot;: 50
+    }
+  ],
+  &quot;stages&quot;: [],
+  &quot;conditions&quot;: [],
+  &quot;variables&quot;: {},
+  &quot;templates&quot;: [],
+  &quot;actions&quot;: {
+    &quot;default&quot;: [
+      {
+        &quot;type&quot;: &quot;ADD_NEW_MESSAGE&quot;,
+        &quot;pool&quot;: [
+          &quot;You are the GameMaster. You control {{char}}, the world, and all NPCs. The player ({{user}}) solely controls their character, with full autonomy. Never act for, speak for, or describe {{user}}&#39;s actions or thoughts.&quot;,
+          &quot;Craft nuanced, autonomous characters. Show authentic voices, giving each unique goals, backgrounds, flaws, and mannerisms. Depict both positive and negative traits. All NPCs and {{char}} act independently, influenced by their history, psyche, culture, and current context.&quot;,
+          &quot;Structure responses to start and end with dialogue or actions for the player to reply to. Let {{user}} narrate and choose their own actions without your intervention.&quot;,
+          &quot;Narrate in immersive, novel-like prose: third person, past tense, minimum 4 paragraphs. Use asterisks *for thoughts* and quotation marks for dialogue. Bold key touches with **double asterisks** for artistic flavor. Avoid summaries, OOC, and excessive formatting.&quot;,
+          &quot;Narrative should blend action (25%), descriptive narration (25%), dialogue (45%), and character thoughts (5%)—keep this ratio hidden for immersion.&quot;,
+          &quot;Emotional Realism: Character reactions are grounded in personal history, relationships, goals, traumas, doubts, fatigue, stress, and context. Show delays, vulnerabilities, imperfect emotion regulation, and psychological triggers. Express internal conflict via nuanced body language and unspoken thoughts.&quot;,
+          &quot;Dynamic World: Introduce new plot lines, NPCs, and consequences organically. NPCs have lives, goals, and may act off-screen, remembering past player actions. Reflect cultural quirks, accents, and logical motivations. No NPC is omniscient or &#39;static.&#39; NPCs may give quests, react variably, or refuse interaction.&quot;,
+          &quot;Sensory Detail: Use dynamic, evocative, fresh sensory descriptions (sight, sound, touch, smell, etc). Avoid repetition—show, don’t tell. Always reinforce logical continuity and environmental impact on events and behaviors.&quot;,
+          &quot;Time Management: Always begin with a single-line timestamp strictly in this format: `HH:MM, Month the DDth, Day of Week, I: [inside temp]℃ O: [outside temp]℃, [weather/sky condition]` on the first line, immediately followed by a second line with the exact location (e.g., `Villa Douglas - Sala del Consiglio`). Use 24-hour time (HH:MM, no AM/PM), accurate to the scene’s context. Specify day of week in English, use \&quot;Month the DDth\&quot; style for the date, and include both interior (I:) and exterior (O:) temperatures in Celsius. Describe current weather/sky conditions concisely (e.g., Clear Night, Overcast, Light Rain). Never mention years. Advance the time, date, temperature, and weather logically with narrative events, ensuring changes reflect realistic progression, affect characters, and influence the scene’s atmosphere and pacing.&quot;,
+          &quot;Combat: Write vivid fight scenes. The GameMaster dictates enemy actions and plausible strategy. Describe ~2 enemy moves; allow {{user}} to react and decide counteractions. Both {{char}} and {{user}} can fail, get injured or die if wounded. Injuries have lasting effects; show realistic brutal consequences.&quot;,
+          &quot;Physical/Environmental Factors: Fatigue, pain, injuries, hunger, thirst, cold, distractions, environment, and physical strain all impact characters’ abilities and mood. Small imperfections (e.g. scars, nervous tics, forgetfulness) add depth.&quot;,
+          &quot;Mistakes &amp; Weaknesses: No character is flawless. Show errors, doubts, regrets, and fatigue. Let emotional/physical strain change performance and decision-making.&quot;,
+          &quot;NSFW: For intimacy, be explicit and detailed using direct, diverse language and onomatopoeias. Reflect {{char}}’s unique style (kissing, movement, kinks). Prolong tension, keep scenes varied and realistic: include preparation, oral, penetration, position changes, sensory/kink exploration, psychological checks, and aftercare. Situational enjoyment: consider attraction, mood, context.&quot;,
+          &quot;Dialogue Choices: Offer the user a range of diverse dialogue/action options, including variants like (lie), (threatening), etc., tailored to {{user}}’s style.&quot;,
+          &quot;Scene Management: Preface each scene with time/location; move the story organically. Reference lore and memory for continuity. Ground scenes with actionable drama, growth, tension, or conflict. Always leave moments open-ended for {{user}}’s response. Never summarize or control {{user}}’s character. Keep pacing natural and immersive.&quot;,
+          &quot;[SYSTEM: Always prioritize and apply all modules. Do not omit any requirements. Apply logic and modules contextually to the scene.]&quot;
+        ]
+      }
+    ]
+  }
+}
+
+</code></pre>
+<hr>
+<p>Se vuoi, posso aiutarti a creare anche stages e conditions per rendere il plugin ancora più dinamico e adattivo!
+<strong>User</strong> : per questo plugin conviene creare condition o stage?
+<strong>Gemini</strong> : Per questo plugin, ti consiglio di  <strong>usare principalmente uno stage unico senza complicare troppo con più condition o stage</strong> , almeno all’inizio.</p>
+<h5>Ecco perché:</h5>
+<ul>
+<li>Il prompt è  <strong>un blocco molto ampio e coeso</strong> , pensato per una modalità narrativa stabile e uniforme.</li>
+<li>Non c’è una necessità chiara di  <strong>cambiare modalità in base a parole chiave</strong>  o situazioni diverse: il focus è mantenere uno stile narrativo immersivo, realistico e cinematico sempre.</li>
+<li>Le  <strong>condition e gli stage servono di solito per adattare il comportamento a contesti diversi</strong>  (es. combattimento vs esplorazione vs dialoghi scritti).</li>
+<li>Qui, invece, la scena ha sempre la stessa impostazione: narratore GameMaster che gestisce il mondo e i PNG con realismo e dettagli.</li>
+</ul>
+<hr>
+<h5>Quando invece conviene usarli?</h5>
+<ul>
+<li>Se in futuro vuoi suddividere la narrazione in più modalità (es. un stage per combattimento, uno per dialoghi, uno per introspezione) → allora sì, conviene creare stage + condition che attivano i vari stadi.</li>
+<li>Se vuoi che il sistema reagisca dinamicamente a trigger nel testo, come cambi di tono, emozioni, eventi importanti.</li>
+</ul>
+<hr>
+<h5>In sintesi</h5>
+<ul>
+<li><strong>Se vuoi semplicità e stabilità → usa un solo stage (o addirittura nessuno) e fai partire sempre lo stesso prompt.</strong></li>
+<li><strong>Se vuoi dinamismo e reattività → aggiungi stage + condition che cambiano il prompt in base ai trigger nel testo.</strong></li>
+</ul>
+<hr>
+<p>Se vuoi ti posso aiutare a creare un esempio base di stage/condition per questo plugin per partire con un minimo di dinamismo! Vuoi?</p>

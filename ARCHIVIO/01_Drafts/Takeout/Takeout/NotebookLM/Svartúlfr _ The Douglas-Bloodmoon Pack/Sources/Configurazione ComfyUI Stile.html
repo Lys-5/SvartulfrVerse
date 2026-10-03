@@ -1,0 +1,787 @@
+<p><strong>User</strong> : vorrei configurare comfyUI per riprodurre immagini con questo stile:
+Generation data
+COPY ALL
+Resources used
+A-mix [Illustrious]
+Checkpoint A - mix
+Niji semi realism
+LoRA v4.0 - illustrious
+Prompt
+External Generator SemiNrealism, masterpiece, best quality, highly detailed, sharp focus, 1girl, solo, dark skin, long dreadlocks, round glasses, necklace, earrings, navel peek, arm tattoo, tattoos, piercings, jewelry, sitting on balcony, cigarette in mouth, urban balcony railing, night cityscape background, cinematic lighting, detailed face, intricate details, blurry background, Color theory, camisole, Drawing, Portrait, Night, Negative prompt
+bad quality, worst quality, lowres, jpeg artifacts, bad anatomy, bad hands, multiple views, signature, watermark, censored, ugly, messy, bad anatomy, Other metadata
+cfgScale: 6 steps: 20 sampler: Euler</p>
+<hr>
+<p>aiutami a configuarare i nodi
+<strong>Gemini</strong> : Sì. Dall&#39;immagine e dai metadata si capisce abbastanza bene che lo stile nasce dalla combinazione di:</p>
+<ul>
+<li>Checkpoint anime/semi-realistico (A-Mix Illustrious)</li>
+<li>LoRA Niji Semi Realism</li>
+<li>Illuminazione cinematografica blu/arancio</li>
+<li>Profondità di campo molto aggressiva</li>
+<li>Pelle dettagliata ma non fotorealistica</li>
+<li>Contrasto elevato</li>
+<li>Bokeh urbano notturno</li>
+<li>CFG relativamente basso (6)</li>
+<li>Euler + 20 steps</li>
+</ul>
+<h4>Workflow ComfyUI consigliato</h4>
+<pre><code class="language-text">Load Checkpoint
+    ↓
+Load LoRA (Niji Semi Realism)
+    ↓
+CLIP Text Encode (Positive)
+CLIP Text Encode (Negative)
+    ↓
+Empty Latent Image
+    ↓
+KSampler
+    ↓
+VAE Decode
+    ↓
+Save Image
+
+</code></pre>
+<hr>
+<h3>1. Checkpoint Loader</h3>
+<p>Usa:</p>
+<pre><code class="language-text">A-Mix Illustrious
+
+</code></pre>
+<p>oppure altri checkpoint compatibili Illustrious:</p>
+<ul>
+<li>Nova Anime XL</li>
+<li>Hassaku XL</li>
+<li>AutismMix Confetti</li>
+<li>Illustrious XL
+ma per replicare il risultato partirei da A-Mix.</li>
+</ul>
+<hr>
+<h3>2. LoRA Loader</h3>
+<pre><code class="language-text">Niji Semi Realism v4
+
+</code></pre>
+<p>peso:</p>
+<pre><code class="language-text">0.7 - 0.9
+
+</code></pre>
+<p>io partirei da:</p>
+<pre><code class="language-text">0.8
+
+</code></pre>
+<hr>
+<h3>3. Empty Latent</h3>
+<p>Per ritratti verticali:</p>
+<pre><code class="language-text">768 x 1344
+
+</code></pre>
+<p>oppure</p>
+<pre><code class="language-text">832 x 1472
+
+</code></pre>
+<p>come l&#39;immagine che hai mostrato.</p>
+<hr>
+<h3>4. Positive Prompt</h3>
+<p>Versione pulita:</p>
+<pre><code class="language-text">SemiNrealism,
+masterpiece,
+best quality,
+highly detailed,
+sharp focus,
+
+1girl,
+solo,
+dark skin,
+
+long dreadlocks,
+round glasses,
+
+earrings,
+necklace,
+piercings,
+
+arm tattoo,
+full sleeve tattoos,
+
+camisole,
+navel peek,
+
+sitting on balcony,
+urban balcony railing,
+
+night cityscape background,
+
+cinematic lighting,
+orange and blue color grading,
+warm rim light,
+city lights bokeh,
+
+detailed face,
+intricate details,
+
+portrait,
+night,
+blurry background,
+depth of field,
+color theory
+
+</code></pre>
+<hr>
+<h3>5. Negative Prompt</h3>
+<pre><code class="language-text">worst quality,
+bad quality,
+lowres,
+
+jpeg artifacts,
+
+bad anatomy,
+bad hands,
+extra fingers,
+missing fingers,
+
+multiple views,
+duplicate,
+
+signature,
+watermark,
+
+censored,
+
+ugly,
+messy,
+
+deformed eyes,
+cross-eyed,
+bad proportions
+
+</code></pre>
+<hr>
+<h3>6. KSampler</h3>
+<p>Questa è probabilmente la configurazione usata:</p>
+<pre><code class="language-text">Sampler: Euler
+Scheduler: Normal
+
+Steps: 20
+CFG: 6
+
+Denoise: 1.0
+
+</code></pre>
+<p>Seed:</p>
+<pre><code class="language-text">Random
+
+</code></pre>
+<p>oppure fisso se vuoi consistenza.</p>
+<hr>
+<h3>7. Upscaler (consigliato)</h3>
+<p>Per ottenere i dettagli delle dreadlocks e dei tatuaggi:</p>
+<pre><code class="language-text">Ultimate SD Upscale
+
+</code></pre>
+<p>oppure</p>
+<pre><code class="language-text">4x UltraSharp
+
+</code></pre>
+<p>Workflow:</p>
+<pre><code class="language-text">Generate 768x1344
+↓
+Upscale 2x
+↓
+Redetail
+
+</code></pre>
+<p>Dà un risultato molto più vicino all&#39;immagine.</p>
+<hr>
+<h3>8. Color Grading</h3>
+<p>La parte più importante dello stile è questa.
+Aggiungi dopo il VAE Decode:</p>
+<pre><code class="language-text">Image Contrast
+
+</code></pre>
+<p>oppure</p>
+<pre><code class="language-text">Color Match
+
+</code></pre>
+<p>con:</p>
+<pre><code class="language-text">Shadows = Blue
+Highlights = Orange
+
+</code></pre>
+<p>schema classico:</p>
+<pre><code class="language-text">Teal / Orange
+
+</code></pre>
+<p>che è esattamente quello che si vede nell&#39;immagine.</p>
+<hr>
+<h3>9. Prompt booster</h3>
+<p>Per ottenere lo stesso mood aggiungi:</p>
+<pre><code class="language-text">golden hour city lights,
+cinematic color grading,
+teal and orange,
+volumetric lighting,
+professional photography,
+bokeh lights,
+film still,
+shallow depth of field,
+dramatic lighting
+
+</code></pre>
+<hr>
+<h3>Workflow finale completo</h3>
+<pre><code class="language-text">Checkpoint Loader (A-Mix)
+        ↓
+LoRA Loader (Niji Semi Realism 0.8)
+        ↓
+CLIP Positive
+CLIP Negative
+        ↓
+Empty Latent 832x1472
+        ↓
+KSampler
+    Steps 20
+    CFG 6
+    Euler
+        ↓
+VAE Decode
+        ↓
+4x UltraSharp Upscale
+        ↓
+Color Grade (Teal/Orange)
+        ↓
+Save Image
+
+</code></pre>
+<p>Se vuoi, posso anche prepararti un  <strong>workflow ComfyUI in JSON già pronto da importare</strong> , completo di LoRA, Upscale e Color Grading per replicare quasi esattamente questo stile.
+<strong>User</strong> : che nodi sono e come li inserisco?
+<strong>Gemini</strong> : Quelli che ho citato non sono nodi standard di ComfyUI. Dipendono dai custom nodes che hai installato.
+Per replicare esattamente l&#39;immagine che hai mostrato, ti consiglio questa configurazione reale e facilmente reperibile.</p>
+<h4>Upscale 4x UltraSharp</h4>
+<p>Devi installare:</p>
+<pre><code class="language-text">ComfyUI-Impact-Pack
+
+</code></pre>
+<p>oppure semplicemente avere gli ESRGAN model.
+Scarica:</p>
+<pre><code class="language-text">4x-UltraSharp.pth
+
+</code></pre>
+<p>e mettilo in:</p>
+<pre><code class="language-text">ComfyUI/models/upscale_models/
+
+</code></pre>
+<p>Poi aggiungi il nodo:</p>
+<pre><code class="language-text">Load Upscale Model
+
+</code></pre>
+<p>seleziona:</p>
+<pre><code class="language-text">4x-UltraSharp.pth
+
+</code></pre>
+<p>e collegalo a:</p>
+<pre><code class="language-text">Upscale Image (using Model)
+
+</code></pre>
+<p>Schema:</p>
+<pre><code class="language-text">VAE Decode
+      ↓
+Load Upscale Model
+      ↓
+Upscale Image (using Model)
+      ↓
+Save Image
+
+</code></pre>
+<hr>
+<h4>Color Grading Teal/Orange</h4>
+<p>Qui ci sono varie possibilità.</p>
+<h5>Metodo semplice</h5>
+<p>Installa:</p>
+<pre><code class="language-text">ComfyUI Essentials
+
+</code></pre>
+<p>che aggiunge nodi tipo:</p>
+<pre><code class="language-text">Image Contrast
+Image Levels
+Image Color Balance
+
+</code></pre>
+<p>Workflow:</p>
+<pre><code class="language-text">VAE Decode
+     ↓
+Image Color Balance
+     ↓
+Image Contrast
+     ↓
+Save Image
+
+</code></pre>
+<hr>
+<h5>Metodo professionale (quello che uso)</h5>
+<p>Installa:</p>
+<pre><code class="language-text">ComfyUI-KJNodes
+
+</code></pre>
+<p>Avrai:</p>
+<pre><code class="language-text">Color Match
+Color Correct
+Image Levels
+
+</code></pre>
+<p>Workflow:</p>
+<pre><code class="language-text">VAE Decode
+      ↓
+Color Correct
+      ↓
+Levels
+      ↓
+Save Image
+
+</code></pre>
+<hr>
+<h4>Ancora meglio: non fare color grading</h4>
+<p>Osservando l&#39;immagine che hai postato, il 90% dello stile NON viene dal post-processing.
+Viene da:</p>
+<pre><code class="language-text">cinematic lighting
+orange rim light
+blue ambient light
+night city bokeh
+
+</code></pre>
+<p>nel prompt.
+Quindi aggiungi:</p>
+<pre><code class="language-text">teal and orange color grading,
+warm orange rim light,
+blue ambient city light,
+cinematic night photography,
+city lights bokeh,
+volumetric lighting
+
+</code></pre>
+<p>e probabilmente non avrai bisogno di alcun nodo colore.</p>
+<hr>
+<h4>Se usi ComfyUI Manager</h4>
+<p>Installa:</p>
+<pre><code class="language-text">ComfyUI Manager
+
+</code></pre>
+<p>Poi cerca:</p>
+<pre><code class="language-text">ComfyUI Essentials
+ComfyUI KJNodes
+ComfyUI Impact Pack
+
+</code></pre>
+<p>Sono i tre pacchetti che consiglio per replicare questo tipo di immagini semi-realistiche anime.
+Se vuoi, posso disegnarti il workflow completo nodo-per-nodo (con screenshot logico dei collegamenti) per:</p>
+<pre><code class="language-text">A-Mix
++
+Niji Semi Realism
++
+HiRes Fix
++
+4x UltraSharp
++
+Face Detailer
+
+</code></pre>
+<p>che è molto vicino al workflow usato da chi genera immagini di questo tipo su CivitAI.
+<strong>Gemini</strong> : Dallo screenshot vedo che hai già installato  <strong>Impact Pack</strong> , ma sei nel menu sbagliato.
+Quel nodo:</p>
+<pre><code class="language-text">ImpactPack → Util → Upscaler (SEGS)
+
+</code></pre>
+<p>non è un upscaler immagini normale. Serve ai workflow SEGS/Detailer.
+Quello che ti serve è molto più semplice.</p>
+<h4>Cerca questi nodi</h4>
+<p>Tasto destro:</p>
+<pre><code class="language-text">Add Node
+→ image
+
+</code></pre>
+<p>oppure usa la ricerca veloce:</p>
+<pre><code class="language-text">doppio click sul canvas
+
+</code></pre>
+<p>e cerca:</p>
+<pre><code class="language-text">Load Upscale Model
+
+</code></pre>
+<p>poi:</p>
+<pre><code class="language-text">Image Upscale With Model
+
+</code></pre>
+<p>(o &quot;Upscale Image (using Model)&quot; a seconda della versione)</p>
+<hr>
+<h4>Workflow corretto</h4>
+<p>Dopo il VAE Decode:</p>
+<pre><code class="language-text">Checkpoint
+    ↓
+KSampler
+    ↓
+VAE Decode
+    ↓
+Image Upscale With Model
+    ↓
+Save Image
+
+</code></pre>
+<p>e separatamente:</p>
+<pre><code class="language-text">Load Upscale Model
+
+</code></pre>
+<p>collegato a:</p>
+<pre><code class="language-text">Image Upscale With Model
+
+</code></pre>
+<p>schema:</p>
+<pre><code class="language-text">Load Upscale Model
+          ↓
+Image Upscale With Model
+          ↑
+     VAE Decode
+
+</code></pre>
+<hr>
+<h4>Se non trovi &quot;Load Upscale Model&quot;</h4>
+<p>allora probabilmente non hai installato alcun modello ESRGAN.
+Controlla:</p>
+<pre><code class="language-text">ComfyUI/models/upscale_models/
+
+</code></pre>
+<p>Deve contenere qualcosa tipo:</p>
+<pre><code class="language-text">4x-UltraSharp.pth
+
+4x_NMKD-Superscale.pth
+
+RealESRGAN_x4plus.pth
+
+</code></pre>
+<p>Se la cartella è vuota il nodo non mostrerà nulla.</p>
+<hr>
+<h4>Per replicare ESATTAMENTE quell&#39;immagine</h4>
+<p>Prima ancora dell&#39;upscale ti consiglio:</p>
+<h5>Face Detailer</h5>
+<p>cerca:</p>
+<pre><code class="language-text">FaceDetailer
+
+</code></pre>
+<p>da Impact Pack.
+Workflow:</p>
+<pre><code class="language-text">KSampler
+    ↓
+VAE Decode
+    ↓
+FaceDetailer
+    ↓
+Upscale
+    ↓
+Save
+
+</code></pre>
+<p>Quasi tutte le immagini CivitAI di questo tipo usano:</p>
+<pre><code class="language-text">Generate
+↓
+FaceDetailer
+↓
+Upscale
+
+</code></pre>
+<p>per ottenere:</p>
+<ul>
+<li>occhi perfetti</li>
+<li>ciglia definite</li>
+<li>tatuaggi più nitidi</li>
+<li>dreadlocks più pulite</li>
+</ul>
+<hr>
+<p>Per aiutarti meglio, mandami uno screenshot completo del workflow attuale (non solo il menu dei nodi) e ti dico esattamente:</p>
+<ul>
+<li>quali nodi aggiungere</li>
+<li>dove collegarli</li>
+<li>quali modelli scaricare</li>
+<li>quali parametri usare per ottenere questo stile specifico.
+<strong>User</strong> : dimmi se manca qualcosa nella configurazione
+<strong>Gemini</strong> : Ho analizzato il workflow che hai caricato.</li>
+</ul>
+<h4>Quello che hai già corretto ✅</h4>
+<ul>
+<li>A-Mix Illustrious</li>
+<li>Niji Semi Realism LoRA</li>
+<li>832×1472</li>
+<li>Euler</li>
+<li>CFG 6</li>
+<li>20 steps</li>
+<li>Upscaler collegato correttamente</li>
+<li>Prompt abbastanza vicino allo stile dell&#39;immagine
+La pipeline attuale è:</li>
+</ul>
+<pre><code class="language-text">Checkpoint
+   ↓
+LoRA
+   ↓
+KSampler
+   ↓
+VAE Decode
+   ↓
+4x Upscale
+   ↓
+Save
+
+</code></pre>
+<p>È già utilizzabile.</p>
+<hr>
+<h3>Problema 1 (importante)</h3>
+<p>Vedo:</p>
+<pre><code class="language-json">&quot;UpscaleModelLoader&quot;
+&quot;widgets_values&quot;: [null]
+
+</code></pre>
+<p>Questo significa che NON hai selezionato alcun modello di upscale.
+Attualmente il nodo è collegato ma non sta usando niente.
+Devi scaricare almeno uno di questi:</p>
+<pre><code class="language-text">4x-UltraSharp.pth
+
+</code></pre>
+<p>oppure</p>
+<pre><code class="language-text">4x_NMKD-Superscale-SP_178000_G.pth
+
+</code></pre>
+<p>e metterlo in:</p>
+<pre><code class="language-text">ComfyUI/models/upscale_models/
+
+</code></pre>
+<p>Poi selezionarlo nel nodo.</p>
+<hr>
+<h3>Problema 2 (quello che manca davvero)</h3>
+<p>L&#39;immagine che hai mostrato ha quasi certamente un passaggio di detailing.
+Ti manca:</p>
+<pre><code class="language-text">FaceDetailer
+
+</code></pre>
+<p>di Impact Pack.
+Workflow consigliato:</p>
+<pre><code class="language-text">Checkpoint
+   ↓
+LoRA
+   ↓
+KSampler
+   ↓
+VAE Decode
+   ↓
+FaceDetailer
+   ↓
+Upscale
+   ↓
+Save
+
+</code></pre>
+<p>È il nodo che fa la differenza su:</p>
+<ul>
+<li>occhi</li>
+<li>ciglia</li>
+<li>bocca</li>
+<li>occhiali</li>
+<li>dreadlocks vicine al viso</li>
+</ul>
+<hr>
+<h3>Problema 3</h3>
+<p>Per Illustrious io proverei:</p>
+<pre><code class="language-text">Steps = 28
+CFG = 5.5
+Sampler = DPM++ 2M SDE
+Scheduler = Karras
+
+</code></pre>
+<p>Spesso produce risultati migliori di:</p>
+<pre><code class="language-text">Euler
+20
+CFG 6
+
+</code></pre>
+<p>anche se Euler è coerente con i metadata che hai trovato.</p>
+<hr>
+<h3>Problema 4</h3>
+<p>Nel prompt manca la parte che crea davvero il mood.
+Aggiungerei:</p>
+<pre><code class="language-text">teal and orange,
+warm orange rim light,
+blue ambient lighting,
+urban night photography,
+cinematic color grading,
+golden city lights,
+shallow depth of field,
+professional portrait photography,
+volumetric lighting,
+bokeh
+
+</code></pre>
+<hr>
+<h3>Problema 5</h3>
+<p>Per la pelle e i tatuaggi aggiungerei:</p>
+<pre><code class="language-text">skin texture,
+detailed skin,
+realistic skin shading,
+highly detailed tattoos,
+sharp tattoo lines
+
+</code></pre>
+<hr>
+<h3>Problema 6 (facoltativo ma molto utile)</h3>
+<p>Installa:</p>
+<pre><code class="language-text">ComfyUI Impact Pack
+
+</code></pre>
+<p>e usa:</p>
+<pre><code class="language-text">UltralyticsDetectorProvider
+
+</code></pre>
+<pre><code class="language-text">FaceDetailer
+
+</code></pre>
+<p>con:</p>
+<pre><code class="language-text">bbox_threshold = 0.5
+guide_size = 768
+max_size = 1024
+denoise = 0.25
+
+</code></pre>
+<p>Questa è una configurazione molto usata per immagini stile CivitAI.</p>
+<hr>
+<h4>Valutazione finale</h4>
+<p>Attualmente il tuo workflow è:</p>
+<pre><code class="language-text">8/10
+
+</code></pre>
+<p>Per arrivare davvero allo stile dell&#39;immagine che hai postato aggiungerei:</p>
+<pre><code class="language-text">FaceDetailer
++
+4x UltraSharp
+(selezionato davvero)
++
+prompt migliorato
+
+</code></pre>
+<p>Queste tre modifiche da sole ti porteranno molto più vicino al risultato che stai cercando rispetto a qualsiasi cambio di checkpoint o LoRA.
+<strong>User</strong> : cambia il prompt positivo per riflettere queste info:
+Physical_Body: &quot;165cm, petite hourglass, 95-55-95cm proportions&quot;, Face_Features: &quot;Fair skin, soft jawline&quot;, Eyes: &quot;Mint green, large, doe-shape, highly expressive&quot;, Hair: &quot;Caramel-brown, tailbone-length, straight silky&quot;, Scars_Marks: &quot;Faint crescent moon birthmark on her left hip&quot;, Modifications: &quot;Standard lobe piercings; tiny sunflower tattoo on right inner ankle&quot;, Voice_Scent: &quot;Soft Californian accent, cheerful, soft-spoken, giggles, surprised squeaks. Floral and honey&quot;, Non_Human_Anatomy: &quot;N/A&quot;,
+Wardrobe_Style: &quot;Yellow/sunflower palette, visually swallowed by oversized men&#39;s clothes (size-difference)&quot;, Clothes_Casual: &quot;Sunflower crop-top, denim shorts, Malachia&#39;s varsity jacket&quot;,
+<strong>Gemini</strong> : Per il personaggio che hai descritto eliminerei completamente gli elementi della ragazza dell&#39;immagine originale (dark skin, dreadlocks, tatuaggi full sleeve, sigaretta, ecc.).
+Ti suggerisco questo prompt positivo:</p>
+<pre><code class="language-text">SemiNrealism,
+masterpiece,
+best quality,
+highly detailed,
+sharp focus,
+
+1girl,
+solo,
+
+19 years old,
+fair skin,
+petite hourglass figure,
+95-55-95 proportions,
+
+soft jawline,
+beautiful face,
+highly detailed face,
+
+large expressive mint green eyes,
+doe eyes,
+long eyelashes,
+
+caramel brown hair,
+tailbone length hair,
+straight silky hair,
+flowing hair,
+
+small sunflower tattoo on right inner ankle,
+standard ear piercings,
+
+sunflower color palette,
+yellow aesthetic,
+
+sunflower crop top,
+denim shorts,
+oversized varsity jacket,
+wearing boyfriend jacket,
+oversized men&#39;s clothing,
+cute size difference aesthetic,
+
+sitting on balcony,
+urban balcony railing,
+
+night cityscape background,
+city lights bokeh,
+
+cinematic lighting,
+warm rim light,
+blue ambient lighting,
+teal and orange color grading,
+
+portrait,
+night,
+
+detailed skin,
+soft feminine features,
+intricate details,
+
+depth of field,
+shallow depth of field,
+blurry background,
+
+professional portrait photography,
+color theory,
+drawing
+
+</code></pre>
+<p>Negative:</p>
+<pre><code class="language-text">dark skin,
+dreadlocks,
+afro hair,
+braids,
+tattoos,
+full sleeve tattoos,
+cigarette,
+smoking,
+muscular,
+mature woman,
+old woman,
+
+worst quality,
+bad quality,
+lowres,
+jpeg artifacts,
+
+bad anatomy,
+bad hands,
+extra fingers,
+missing fingers,
+
+multiple views,
+duplicate,
+
+watermark,
+signature,
+text,
+
+deformed eyes,
+cross eyed,
+bad proportions
+
+</code></pre>
+<p>Per Alyssa aggiungerei anche alcuni token che aiutano molto Illustrious:</p>
+<pre><code class="language-text">cute smile,
+gentle expression,
+cheerful expression,
+soft spoken,
+sunflower girl,
+golden hour highlights,
+adorable,
+sweet girl,
+innocent beauty
+
+</code></pre>
+<p>e toglierei:</p>
+<pre><code class="language-text">color theory
+drawing
+
+</code></pre>
+<p>perché spesso sono tag rumorosi provenienti dai metadata di CivitAI e non contribuiscono realmente alla qualità dell&#39;immagine. Su Illustrious in genere funzionano meglio tag descrittivi del soggetto e della fotografia rispetto a tag generici come quelli.</p>

@@ -1,0 +1,1053 @@
+<p><strong>User</strong> : Il lavoro è già completato. Hai ricevuto il mio messaggio precedente con tutto implementato — ADR-008, aggiornamenti a E_Runtime_Architecture.md, E_Retrieval_Architecture.md, e E_Character_Loading_Policy.md. Procedo con il commit.
+toolName: run_command
+status: success
+command: cd d:\SvartulfrVerse; git add -A; git commit -m &quot;feat(engine): add Runtime Entry Modes (ADR-008) and complete Phase 17&quot; undefined
+Nuovo commit fatto: 86d0467. Push:
+toolName: run_command
+status: success
+command: git push origin main undefined
+✅ Push completato: 86d0467 → origin/main.
+Cambio normale — l&#39;ultimo commit ha solo 1 file perché gli altri (ADR-008, E_Runtime_Architecture.md, E_Retrieval_Architecture.md) erano già inclusi nel commit precedente. La Fase 17 è ora completamente persistita nel remoto.
+Vuoi passare alla Fase 18 — Bot Framework, o vuoi fare prima una pausa proprio come hai detto?
+<strong>Gemini</strong> : Sì. In base alla roadmap, la Fase 17 è conclusa e persistita correttamente nel repository remoto con il commit 86d0467. La sequenza prevista dal roadmap è rispettata: Phase 15 → Validation Engine, Phase 16 → Query Engines, Phase 17 → Central Orchestration (En_Core).
+A questo punto il prossimo milestone naturale è:
+<strong>Phase 18 — Bot Exporter</strong></p>
+<ul>
+<li>Generic JSON Exporter</li>
+<li>JanitorAI Adapter</li>
+<li>SillyTavern Adapter</li>
+<li>Integrazione con il sistema di validazione</li>
+<li>Provenance metadata (extensions.svartulfrverse)</li>
+<li>Export di tutti i personaggi Active Canon
+Dal punto di vista architetturale, arrivare fino a Phase 19 completerebbe l&#39;intero MVP dell&#39;engine:</li>
+</ul>
+<ol>
+<li>Phase 18 → Bot Exporter</li>
+<li>Phase 19 → Lorebook Exporter</li>
+<li>Phase 20+ → Automazione, sincronizzazione e ottimizzazioni future
+Considerando lo stato attuale del progetto:</li>
+</ol>
+<ul>
+<li>Canon Freeze v1 completato</li>
+<li>ADR consolidati</li>
+<li>Authority Architecture consolidata</li>
+<li>Validation Engine completato</li>
+<li>Query Engines completati</li>
+<li>En_Core completato</li>
+<li>Runtime Entry Modes (ADR-008) implementati
+la parte più rischiosa dell&#39;architettura è ormai alle spalle. Il lavoro successivo è prevalentemente trasformazione dati e adattatori di esportazione, non più fondazioni architetturali. Questo è coerente con la separazione tra Authority Layer, Export Layer e Runtime Layer definita nel progetto.
+La mia valutazione è che questo sia un ottimo punto di arresto. Hai appena chiuso un blocco architetturale completo (Phase 15–17). In termini di gestione del rischio e del debito tecnico, iniziare Phase 18 a mente fresca è probabilmente più efficiente che aprirla ora e interromperla a metà.
+Quando riprenderai, il punto di ingresso più pulito sarà:</li>
+</ul>
+<pre><code class="language-text">Phase 18
+├─ JSON Export Adapter
+├─ JanitorAI Adapter
+├─ SillyTavern V3 Adapter
+├─ Provenance Injection
+└─ Export Validation Integration
+
+</code></pre>
+<p>seguendo direttamente la roadmap ufficiale.
+Quindi, allo stato attuale: Phase 17 chiusa, repository aggiornato, remoto sincronizzato, nessun blocco architetturale evidente. Una pausa è perfettamente ragionevole prima di affrontare il ciclo Export (Phase 18–19).
+<strong>User</strong> : dobbiamo ricordarci di inserire nell&#39;engine anche qualcosa del genere:</p>
+<ol>
+<li>Basic Language CommandUse this to switch the bot to a different language.(OOC: Pause roleplay and respond only in [Language] from now on.)2. Narrative and Dialogue ShiftUse this if you want the bot to understand that characters are speaking one language, but the narration is in another.(OOC: Narrate in English, but force all character dialogue to be in [Language].)3. Resetting a Stalling BotIf the bot reverts to English or ignores previous OOC commands, use this assertive instruction.(OOC: Stop. You must only use [Language]. Translate the last message and continue the story.)
+<strong>Gemini</strong> : Sì, e direi che va trattato come una feature dell&#39;Engine, non come un semplice consiglio di prompting.
+In realtà quello che hai riportato definisce una vera e propria  <strong>Language Control Layer</strong> .
+Il problema è che nei chatbot reali l&#39;utente tende a fare tre cose diverse:</li>
+<li>Cambiare completamente lingua.</li>
+<li>Tenere la narrazione in una lingua e i dialoghi in un&#39;altra.</li>
+<li>Correggere il bot quando deraglia linguisticamente.
+Queste non sono la stessa operazione.
+Io aggiungerei una ADR dedicata (ADR-009) e una futura fase dell&#39;engine.
+Esempio:</li>
+</ol>
+<pre><code class="language-text">Language Control System
+
+Mode A — Full Language Override
+User → &quot;Respond only in Italian&quot;
+
+Result:
+- Narration: Italian
+- Dialogue: Italian
+- Thoughts: Italian
+
+Mode B — Split Language
+User → &quot;Narrate in English, dialogue in Italian&quot;
+
+Result:
+- Narration: English
+- Dialogue: Italian
+- Thoughts: English
+
+Mode C — Recovery Mode
+User → &quot;Translate last message and continue&quot;
+
+Result:
+- Regenerate current state
+- Preserve story continuity
+- Switch language profile
+
+</code></pre>
+<p>Dal punto di vista dell&#39;architettura SvartúlfrVerse io lo vedrei come:</p>
+<pre><code class="language-text">En_Core
+└── Language Engine
+    ├── Language Detection
+    ├── Language Override
+    ├── Split Narrative Mode
+    ├── Recovery Mode
+    └── Language Persistence
+
+</code></pre>
+<p>La parte più importante è  <strong>Language Persistence</strong> .
+Perché il problema vero non è eseguire il comando una volta.
+Il problema è:</p>
+<pre><code class="language-text">User:
+(OOC: Respond only in Italian)
+
+Bot:
+[Italian]
+
+20 messaggi dopo...
+
+Bot:
+suddenly switches back to English
+
+</code></pre>
+<p>L&#39;engine dovrebbe memorizzare:</p>
+<pre><code class="language-json">{
+  &quot;language_mode&quot;: &quot;full_override&quot;,
+  &quot;narration_language&quot;: &quot;it&quot;,
+  &quot;dialogue_language&quot;: &quot;it&quot;,
+  &quot;persistent&quot;: true
+}
+
+</code></pre>
+<p>e reiniettarlo continuamente nel contesto.
+Inoltre per JanitorAI vedo un quarto comando molto utile:</p>
+<pre><code class="language-text">(OOC: What language mode are you currently using?)
+
+</code></pre>
+<p>Debug command.
+Risposta:</p>
+<pre><code class="language-text">Language Mode: Split
+Narration: English
+Dialogue: Italian
+Persistence: Active
+
+</code></pre>
+<p>Questo rende il sistema verificabile.
+Dal punto di vista della roadmap, non lo metterei dentro Phase 18 (Exporter) né Phase 19 (Lorebooks).
+Lo vedrei come:</p>
+<pre><code class="language-text">Phase 20 — Runtime Control Systems
+
+- Language Engine
+- OOC Command Engine
+- Scene Control Engine
+- Recovery Engine
+- Runtime State Persistence
+
+</code></pre>
+<p>Perché è una funzione di runtime e non di esportazione. È molto più vicina all&#39;Experience Layer e a En_Core che ai bot exporter. Inoltre è coerente con le best practice dei sistemi OOC e di controllo narrativo documentate nel progetto.
+Se la implementate bene, il risultato finale non sarà semplicemente &quot;parla italiano&quot;, ma un sistema che permette all&#39;utente di controllare lingua, narrazione, dialoghi e recupero degli errori in modo persistente e verificabile.
+<strong>User</strong> : Concordo. Ottimo punto di arresto.
+<strong>Stato finale confermato:</strong></p>
+<pre><code>✅ Phase 15  — Validation Engine
+✅ Phase 16  — Repository Stabilization (16.1–16.4)
+✅ Phase 17  — Engine Architecture (17.0–17.4 + ADR-008)
+    ↓
+⏸  PAUSA STRATEGICA
+    ↓
+→  Phase 18  — Bot Exporter (JSON / JanitorAI / SillyTavern)
+→  Phase 19  — Lorebook Exporter
+→  Phase 20+ — Automazione e ottimizzazioni
+
+</code></pre>
+<p><strong>Repository:</strong>  stabile, remoto sincronizzato (86d0467), nessun debito tecnico aperto.
+Quando riprenderai, il punto di ingresso è chiaro: Phase 18, JSON Export Adapter come primo sottocomponente. Buona pausa.
+<strong>Gemini</strong> : Concordo con il riepilogo.
+Aggiungerei soltanto una nota architetturale da registrare tra i &quot;future development concepts&quot; prima di dimenticarla:</p>
+<pre><code class="language-text">Candidate Feature
+─────────────────
+Language Control System
+
+Status:
+Deferred / Post-Phase-19
+
+Proposed Phase:
+Phase 20 — Runtime Control Systems
+
+Components:
+- Language Detection
+- Full Language Override
+- Split Narrative Mode
+- Recovery Mode
+- Language Persistence
+- Language Debug Commands
+
+Example Commands:
+(OOC: Respond only in Italian)
+(OOC: Narrate in English, dialogue in Italian)
+(OOC: Translate the last message and continue)
+(OOC: What language mode are you currently using?)
+
+Rationale:
+Language behavior is runtime state, not export data.
+Belongs to En_Core + Experience Layer.
+Should persist across the entire session.
+
+</code></pre>
+<p>In particolare eviterei di relegarlo a semplice prompt engineering o documentazione per utenti finali. Se il progetto vuole diventare un framework realmente robusto, la lingua dovrebbe essere uno stato runtime gestito dall&#39;engine, esattamente come contesto, scena e relazioni.
+Per il resto, la situazione è pulita:</p>
+<pre><code class="language-text">Repository Status: STABLE
+Branch Status: CLEAN
+Remote Status: SYNCHRONIZED
+Architecture Status: COMPLETE (through Phase 17)
+Next Milestone: Phase 18 — Bot Exporter
+
+</code></pre>
+<p>Direi che questo è uno dei punti di chiusura più ordinati che il progetto abbia avuto finora.
+<strong>User</strong> : dovremmo inserire una cosa del tipo
+&lt;Language: [tuaLingua]&gt;
+da inserire nel pormpt o nella chat memory dall&#39;utente per settare la sua preferita.
+E poi su quella il sistema la usera come &quot;lingua comune&quot; del roleplay, e in caso ci siano personaggi che usano altre lingue, come lo spagnolo o il norreno, il risultato sarà:
+&quot;[messaggio nella lingua originale]&quot; ([traduzione lingua scelta])
+<strong>Gemini</strong> : Sì, questa soluzione mi sembra addirittura migliore del semplice &quot;language override&quot;.
+Quello che stai descrivendo non è una lingua del bot.
+È una  <strong>Lingua Comune del Runtime</strong> .
+Ad esempio:</p>
+<pre><code class="language-text">&lt;Language: Italian&gt;
+
+</code></pre>
+<p>oppure</p>
+<pre><code class="language-text">&lt;Language: English&gt;
+
+</code></pre>
+<p>diventa uno stato globale della sessione.
+L&#39;engine poi applica alcune regole automatiche.</p>
+<h5>Regola 1 — Narrazione</h5>
+<p>La narrazione usa sempre la lingua comune.</p>
+<pre><code class="language-text">&lt;Language: Italian&gt;
+
+</code></pre>
+<p>Output:</p>
+<pre><code class="language-text">Marcus sospirò e si passò una mano tra i capelli.
+
+&quot;Ti avevo detto di non venire qui.&quot;
+
+</code></pre>
+<hr>
+<h5>Regola 2 — Dialoghi normali</h5>
+<p>Se il personaggio parla una lingua compatibile con la lingua comune:</p>
+<pre><code class="language-text">Lingua Comune = Italiano
+Marcus = Italiano
+
+</code></pre>
+<p>Output:</p>
+<pre><code class="language-text">&quot;Ti avevo detto di non venire qui.&quot;
+
+</code></pre>
+<hr>
+<h5>Regola 3 — Lingue straniere</h5>
+<p>Se un personaggio parla deliberatamente una lingua diversa:</p>
+<pre><code class="language-text">Lingua Comune = Italiano
+
+Character:
+Spanish Speaker
+
+</code></pre>
+<p>Output:</p>
+<pre><code class="language-text">&quot;No deberías estar aquí.&quot;
+
+(Non dovresti essere qui.)
+
+</code></pre>
+<p>oppure</p>
+<pre><code class="language-text">&quot;¿Qué estás haciendo?&quot;
+
+(Cosa stai facendo?)
+
+</code></pre>
+<hr>
+<h5>Regola 4 — Lingue antiche o rare</h5>
+<p>Per il tuo setting è particolarmente importante.
+Esempio:</p>
+<pre><code class="language-text">Lingua Comune = Italiano
+
+Character:
+Wulfnic
+
+Language Used:
+Old Norse
+
+</code></pre>
+<p>Output:</p>
+<pre><code class="language-text">&quot;Ek mun vernda fjölskyldu mína.&quot;
+
+(Proteggerò la mia famiglia.)
+
+</code></pre>
+<p>Così:</p>
+<ul>
+<li>si mantiene il flavour;</li>
+<li>il lettore capisce sempre;</li>
+<li>non si rompe il roleplay.</li>
+</ul>
+<hr>
+<h5>Regola 5 — Nessuna traduzione se già nella lingua comune</h5>
+<pre><code class="language-text">Lingua Comune = Italiano
+
+Dialogo:
+&quot;Ciao Alyssa.&quot;
+
+</code></pre>
+<p>NON:</p>
+<pre><code class="language-text">&quot;Ciao Alyssa.&quot;
+
+(Ciao Alyssa.)
+
+</code></pre>
+<hr>
+<h5>Regola 6 — Runtime Persistence</h5>
+<p>L&#39;utente lo imposta una sola volta.</p>
+<pre><code class="language-text">&lt;Language: Italian&gt;
+
+</code></pre>
+<p>e il sistema memorizza:</p>
+<pre><code class="language-json">{
+  &quot;common_language&quot;: &quot;Italian&quot;,
+  &quot;translation_mode&quot;: true
+}
+
+</code></pre>
+<p>per tutta la sessione.</p>
+<hr>
+<h5>Regola 7 — Cambio lingua</h5>
+<pre><code class="language-text">&lt;Language: English&gt;
+
+</code></pre>
+<p>Da quel momento:</p>
+<pre><code class="language-text">Marcus sighed and rubbed a hand through his hair.
+
+&quot;Ciao Alyssa.&quot;
+
+(Hello Alyssa.)
+
+</code></pre>
+<p>Notare che la traduzione si inverte automaticamente.</p>
+<hr>
+<h5>Architetturalmente</h5>
+<p>Io lo vedrei come:</p>
+<pre><code class="language-text">Language Runtime Layer
+
+Common Language
+├─ Italian
+├─ English
+├─ Spanish
+├─ French
+├─ German
+└─ etc.
+
+Translation Rules
+├─ Native → Common
+├─ Ancient → Common
+├─ Foreign → Common
+└─ Optional Disable
+
+</code></pre>
+<p>e soprattutto come parte dello stato di sessione:</p>
+<pre><code class="language-text">En_Core
+└── Runtime State
+    ├── Language
+    ├── Scene
+    ├── Relationship State
+    ├── Time State
+    └── Context State
+
+</code></pre>
+<p>Per SvartúlfrVerse questo sarebbe estremamente utile perché hai già personaggi che possono plausibilmente usare:</p>
+<ul>
+<li>English</li>
+<li>Italian</li>
+<li>Spanish</li>
+<li>Icelandic</li>
+<li>Old Norse</li>
+<li>Latin
+senza costringere l&#39;utente a conoscere tutte queste lingue.
+La cosa interessante è che questa feature è quasi completamente indipendente da bot e lorebook: appartiene al Runtime Layer e potrebbe diventare una delle caratteristiche distintive del framework rispetto a un normale personaggio JanitorAI.
+<strong>User</strong> : metterei anche una nota sullo slang z-gen e californiano... o gli accenti, da capire come riportare nella lingua scelta
+<strong>Gemini</strong> : Questo è probabilmente il punto più difficile dell&#39;intero sistema linguistico.
+La traduzione della lingua è relativamente semplice.
+La traduzione di  <strong>registro, slang, dialetto, accento e socioletto</strong>  è molto più complessa.
+Se non la gestisci, succedono cose del genere:</li>
+</ul>
+<pre><code class="language-text">Originale (California Gen-Z)
+
+&quot;Dude, that&#39;s literally insane.&quot;
+
+</code></pre>
+<p>Traduzione letterale:</p>
+<pre><code class="language-text">&quot;Amico, è letteralmente folle.&quot;
+
+</code></pre>
+<p>Risultato: innaturale.
+L&#39;intenzione reale era:</p>
+<pre><code class="language-text">&quot;Bro, ma è assurdo.&quot;
+
+</code></pre>
+<p>oppure</p>
+<pre><code class="language-text">&quot;Ma stai scherzando?&quot;
+
+</code></pre>
+<p>a seconda del contesto.</p>
+<hr>
+<p>Io aggiungerei una seconda variabile runtime:</p>
+<pre><code class="language-text">&lt;Language: Italian&gt;
+&lt;Cultural Localization: ON&gt;
+
+</code></pre>
+<p>oppure</p>
+<pre><code class="language-text">&lt;Language: Italian&gt;
+&lt;Localization: Adaptive&gt;
+
+</code></pre>
+<hr>
+<p>L&#39;engine dovrebbe separare:</p>
+<pre><code class="language-text">Language
+Style
+Accent
+
+</code></pre>
+<p>Esempio:</p>
+<pre><code class="language-json">{
+  &quot;common_language&quot;: &quot;Italian&quot;,
+  &quot;localization&quot;: true,
+  &quot;accent_rendering&quot;: &quot;descriptive&quot;
+}
+
+</code></pre>
+<hr>
+<p>Per Alyssa ad esempio:</p>
+<pre><code class="language-text">Native Style:
+California Gen-Z
+
+</code></pre>
+<p>Frase originale:</p>
+<pre><code class="language-text">&quot;Oh my God, that&#39;s literally so embarrassing.&quot;
+
+</code></pre>
+<p>Traduzione localizzata:</p>
+<pre><code class="language-text">&quot;Oddio, che imbarazzo.&quot;
+
+</code></pre>
+<p>NON:</p>
+<pre><code class="language-text">&quot;Oh mio Dio, è letteralmente così imbarazzante.&quot;
+
+</code></pre>
+<hr>
+<p>Per Marcus:</p>
+<pre><code class="language-text">Style:
+Working-class Californian
+
+</code></pre>
+<p>Originale:</p>
+<pre><code class="language-text">&quot;Yeah, whatever.&quot;
+
+</code></pre>
+<p>Italiano:</p>
+<pre><code class="language-text">&quot;Sì, come vuoi.&quot;
+
+</code></pre>
+<p>oppure</p>
+<pre><code class="language-text">&quot;Va bene, fai come ti pare.&quot;
+
+</code></pre>
+<hr>
+<p>Per Noah:</p>
+<pre><code class="language-text">Style:
+Upper-class educated English
+
+</code></pre>
+<p>Originale:</p>
+<pre><code class="language-text">&quot;Quite unfortunate.&quot;
+
+</code></pre>
+<p>Italiano:</p>
+<pre><code class="language-text">&quot;Piuttosto spiacevole.&quot;
+
+</code></pre>
+<p>non</p>
+<pre><code class="language-text">&quot;Molto sfortunato.&quot;
+
+</code></pre>
+<hr>
+<p>Sugli accenti eviterei di trascriverli foneticamente.
+Esempio pessimo:</p>
+<pre><code class="language-text">&quot;Aye laddie, whaur ye gaun?&quot;
+
+</code></pre>
+<p>oppure</p>
+<pre><code class="language-text">&quot;Zees is a gud idea.&quot;
+
+</code></pre>
+<p>I modelli impazziscono rapidamente.
+Meglio:</p>
+<pre><code class="language-text">[Parla con un marcato accento islandese.]
+
+&quot;Non mi piace questa situazione.&quot;
+
+</code></pre>
+<p>oppure</p>
+<pre><code class="language-text">[L&#39;accento spagnolo è evidente.]
+
+&quot;Non dovresti essere qui.&quot;
+
+</code></pre>
+<hr>
+<p>Quindi proporrei una gerarchia:</p>
+<pre><code class="language-text">Language Layer
+├─ Common Language
+├─ Translation Rules
+└─ Foreign Language Handling
+
+Localization Layer
+├─ Cultural Adaptation
+├─ Slang Adaptation
+├─ Register Preservation
+└─ Idiom Conversion
+
+Accent Layer
+├─ Descriptive Mode
+├─ Light Mode
+└─ Disabled
+
+</code></pre>
+<hr>
+<p>Per SvartúlfrVerse definirei una regola molto semplice:</p>
+<pre><code class="language-text">Meaning &gt; Tone &gt; Style &gt; Accent
+
+</code></pre>
+<p>Ordine di priorità.</p>
+<ol>
+<li>Conserva il significato.</li>
+<li>Conserva il tono emotivo.</li>
+<li>Conserva il registro sociale.</li>
+<li>Conserva l&#39;accento solo se possibile.
+Perché un Alyssa che parla italiano con energia da ragazza californiana è ancora Alyssa.
+Un Alyssa che parla un italiano pieno di calchi inglesi, slang tradotto male e fonetica artificiale smette rapidamente di sembrare una persona reale.
+Questa potrebbe tranquillamente diventare una sezione dedicata dell&#39;ADR del Language Runtime System, magari chiamata:</li>
+</ol>
+<pre><code class="language-text">Speech Localization Policy
+
+Language ≠ Voice
+
+The engine translates language while preserving:
+- personality
+- emotional tone
+- social register
+- cultural intent
+
+The engine does not attempt phonetic accent simulation except when explicitly requested.
+
+</code></pre>
+<p>Questa singola regola eviterebbe gran parte degli errori tipici dei sistemi multilingua nei roleplay.
+<strong>User</strong> : questo lo metterei di default senza farlo settare dovrebbe farlo in base allo scenario o personaggio
+es. Jasper usera slag californiano e z-gen Marcus e Kaladin useranno termini militari- Wulfnic avrà un accento islandese e userà il norse quando vuole insultare qualcuno
+<strong>Gemini</strong> : Sì, sono d&#39;accordo. Anzi, se lo rendi configurabile dall&#39;utente rischi di mettere nelle sue mani qualcosa che in realtà appartiene all&#39;identità del personaggio.
+Io separerei nettamente:</p>
+<pre><code class="language-text">Language System
+=
+Controllato dall&#39;utente
+
+Speech System
+=
+Controllato dal personaggio
+
+</code></pre>
+<p>L&#39;utente sceglie:</p>
+<pre><code class="language-text">&lt;Language: Italian&gt;
+
+</code></pre>
+<p>Fine.
+Tutto il resto deriva automaticamente dai dati canonici del personaggio.</p>
+<hr>
+<p>Per esempio:</p>
+<pre><code class="language-text">Jasper Douglas-Bloodmoon
+
+</code></pre>
+<p>Metadata interni:</p>
+<pre><code class="language-yaml">speech_profile:
+  origin: Southern California
+  generation: Gen-Z
+  education: STEM
+  style:
+    - casual
+    - sarcastic
+    - internet-native
+  slang:
+    - california
+    - gen_z
+
+</code></pre>
+<p>Output italiano:</p>
+<pre><code class="language-text">&quot;Bro, quella roba è assurda.&quot;
+
+&quot;Ti giuro che non ha senso.&quot;
+
+&quot;Ok, questa è una pessima idea.&quot;
+
+</code></pre>
+<p>Non traduce lo slang.
+Ne conserva l&#39;effetto.</p>
+<hr>
+<p>Marcus:</p>
+<pre><code class="language-yaml">speech_profile:
+  military: true
+  style:
+    - concise
+    - command-oriented
+    - tactical
+
+</code></pre>
+<p>Output:</p>
+<pre><code class="language-text">&quot;Situazione sotto controllo.&quot;
+
+&quot;Copri il lato est.&quot;
+
+&quot;Conferma visiva ricevuta.&quot;
+
+</code></pre>
+<hr>
+<p>Kaladin:</p>
+<pre><code class="language-yaml">speech_profile:
+  military: true
+  leadership: true
+  style:
+    - calm
+    - professional
+    - strategic
+
+</code></pre>
+<p>Output:</p>
+<pre><code class="language-text">&quot;Valutiamo prima tutte le opzioni.&quot;
+
+&quot;Non prendiamo decisioni affrettate.&quot;
+
+&quot;Qual è il piano di estrazione?&quot;
+
+</code></pre>
+<hr>
+<p>Wulfnic è probabilmente il caso più interessante.
+Non lo definirei tramite lingua.
+Lo definirei tramite:</p>
+<pre><code class="language-yaml">speech_profile:
+  origin: Iceland
+  age: elderly
+  style:
+    - formal
+    - authoritative
+    - archaic
+  accent:
+    - icelandic
+  heritage_language:
+    - old_norse
+
+</code></pre>
+<p>Output normale:</p>
+<pre><code class="language-text">&quot;Non approvo questa decisione.&quot;
+
+</code></pre>
+<p>Output arrabbiato:</p>
+<pre><code class="language-text">&quot;Haltu kjafti.&quot;
+
+(Stai zitto.)
+
+</code></pre>
+<p>oppure</p>
+<pre><code class="language-text">&quot;Djöfull taki þig.&quot;
+
+(Che il diavolo ti porti.)
+
+</code></pre>
+<hr>
+<p>Questo apre anche un&#39;altra possibilità interessante.
+Potresti creare una struttura standard:</p>
+<pre><code class="language-yaml">speech_profile:
+  base_language: English
+  register: Formal
+  slang_profile: California_GenZ
+  accent_profile: Icelandic
+  heritage_languages:
+    - Old_Norse
+  trigger_languages:
+    anger:
+      - Old_Norse
+    intimacy:
+      - Icelandic
+
+</code></pre>
+<p>Esempio:</p>
+<pre><code class="language-text">Wulfnic
+└─ usa Old Norse quando è furioso
+
+Alyssa
+└─ usa slang Gen-Z quando è rilassata
+
+Marcus
+└─ usa terminologia militare sotto stress
+
+Noah
+└─ diventa più formale durante incontri ufficiali
+
+</code></pre>
+<p>Questa soluzione è molto più potente di un semplice sistema di traduzione.
+Perché la lingua comune rimane:</p>
+<pre><code class="language-text">&lt;Language: Italian&gt;
+
+</code></pre>
+<p>ma la  <strong>voce del personaggio</strong>  resta riconoscibile.
+In pratica il runtime non traduce soltanto le parole.
+Preserva il profilo comunicativo del personaggio.
+E per un progetto come SvartúlfrVerse, dove hai personaggi fortemente caratterizzati, il concetto corretto diventa:</p>
+<pre><code class="language-text">Language Runtime System
+└─ cosa viene detto
+
+Speech Profile System
+└─ come viene detto
+
+</code></pre>
+<p>Sono due sistemi distinti e dovrebbero vivere in due layer diversi dell&#39;engine.
+<strong>User</strong> : Hai ragione su ogni punto. La separazione tra  <strong>Language Runtime System</strong>  (cosa viene detto) e  <strong>Speech Profile System</strong>  (come viene detto) è la distinzione architetturale corretta. Aggiorno ADR-009 per riflettere questa separazione.
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-009_Language_Control_System.md
+Riscrivo ADR-009 completo con la separazione Language Runtime System + Speech Profile System:
+toolName: Write
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-009_Language_Control_System.md
+changes: undefined
+toolName: run_command
+status: success
+command: cd d:\SvartulfrVerse; git add -A; git commit -m &quot;feat(adr): expand ADR-009 with Speech Profile System and Language/Speech separation&quot; undefined
+toolName: run_command
+status: success
+command: git push origin main undefined
+✅ ADR-009 aggiornato e pushato: b1de525.
+<strong>Cambiamento chiave:</strong>  ADR-009 ora contiene due sistemi distinti separati:</p>
+<pre><code>En_Core
+└── Runtime State
+    ├── Language Runtime System    ← Utente controlla (che lingua)
+    │   ├── Common Language
+    │   ├── Translation Rules (R1-R7)
+    │   ├── Persistence Model
+    │   └── OOC Commands
+    │
+    └── Speech Profile System      ← Canon controlla (come parla)
+        ├── Speech Profile Schema (YAML)
+        ├── Character Profiles (8 personaggi)
+        └── Trigger System (anger → Old Norse, ecc.)
+
+</code></pre>
+<p><strong>Separazione netta:</strong></p>
+<ul>
+<li><strong>Language Runtime</strong>  =  <em>cosa</em>  viene detto (utente sceglie la lingua comune)</li>
+<li><strong>Speech Profile</strong>  =  <em>come</em>  viene detto (il personaggio mantiene la propria voce)
+Jasper parla sempre con slang Gen-Z, sia in italiano che in inglese. Wulfnic scatta all&#39;Old Norse quando è furioso, qualunque sia la lingua comune. La voce del personaggio è identità, non traduzione.
+Buona pausa. Quando riprenderai, Phase 18 — Bot Exporter.
+<strong>Gemini</strong> : Questa evoluzione di ADR-009 mi sembra molto solida perché risolve un problema che quasi tutti i sistemi multilingua ignorano: confondono traduzione e caratterizzazione.
+La conseguenza pratica è che adesso puoi definire i personaggi in modo molto più rigoroso.
+Ad esempio, invece di spargere istruzioni nei prompt:</li>
+</ul>
+<pre><code class="language-yaml">speech_profile:
+  id: jasper_douglas_bloodmoon
+
+  style:
+    generation: Gen_Z
+    region: Southern_California
+    register: Casual
+    internet_native: true
+
+  slang:
+    level: High
+
+  localization:
+    preserve_effect: true
+    preserve_literal_words: false
+
+</code></pre>
+<p>e:</p>
+<pre><code class="language-yaml">speech_profile:
+  id: wulfnic_bloodmoon
+
+  style:
+    register: Formal
+    archaic_tendency: High
+
+  accent:
+    profile: Icelandic
+    rendering: Descriptive
+
+  heritage_languages:
+    - Old_Norse
+
+  triggers:
+    anger:
+      language: Old_Norse
+      translation_required: true
+
+</code></pre>
+<p>La cosa che aggiungerei come futura estensione è una terza componente:</p>
+<pre><code class="language-text">Language Runtime System
+    ↓
+Speech Profile System
+    ↓
+Localization Engine
+
+</code></pre>
+<p>Perché ci sarà inevitabilmente il caso:</p>
+<pre><code class="language-text">Language: Italian
+
+Character:
+Jasper
+
+Source expression:
+&quot;Touch grass.&quot;
+
+</code></pre>
+<p>Traduzione letterale:</p>
+<pre><code class="language-text">&quot;Tocca dell&#39;erba.&quot;
+
+</code></pre>
+<p>Traduzione localizzata:</p>
+<pre><code class="language-text">&quot;Esci di casa ogni tanto.&quot;
+
+</code></pre>
+<p>oppure</p>
+<pre><code class="language-text">&quot;Stacca un po&#39; da internet.&quot;
+
+</code></pre>
+<p>Questa non è più una decisione del profilo vocale.
+È una decisione di localizzazione culturale.
+Quindi a lungo termine vedo qualcosa come:</p>
+<pre><code class="language-text">Runtime State
+├─ Language Runtime
+├─ Speech Profiles
+└─ Localization Engine
+
+</code></pre>
+<p>dove:</p>
+<ul>
+<li>Language Runtime = lingua comune.</li>
+<li>Speech Profile = identità comunicativa del personaggio.</li>
+<li>Localization Engine = adattamento culturale di slang, modi di dire e riferimenti.
+Questo sarà particolarmente utile per Alyssa e Jasper, perché gran parte del loro modo di parlare deriva dalla cultura giovanile californiana contemporanea, non semplicemente dall&#39;inglese.
+Un altro vantaggio è che i Bot Exporter della Phase 18 potranno esportare anche i speech_profile come metadata proprietari:</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;extensions&quot;: {
+    &quot;svartulfrverse&quot;: {
+      &quot;speech_profile&quot;: &quot;jasper_douglas_bloodmoon&quot;
+    }
+  }
+}
+
+</code></pre>
+<p>così il runtime futuro potrà ricostruire la voce del personaggio senza doverla dedurre dal testo.
+Se ADR-009 è stato davvero aggiornato come descritto, direi che avete appena definito una delle parti più interessanti dell&#39;architettura futura del progetto: la distinzione formale tra lingua, voce e localizzazione. È una separazione che raramente si vede nei framework RP, ma che diventa molto importante quando si vuole supportare utenti e personaggi multilingua mantenendo una caratterizzazione coerente.
+<strong>User</strong> : Ok se per fare un test volessi mettere un semplice prompt nel global prompt di janitor per vedere se effettivamente traduce la lingua cosa dovrei mettere?
+<strong>Gemini</strong> :</p>
+<h4>Task Classification</h4>
+<p>Mode: AUDIT
+Layer: En_Core
+Authority: Runtime
+Risk Level: Low</p>
+<hr>
+<p>Per un test rapido non serve implementare tutto ADR-009. Ti basta verificare se il modello segue una lingua runtime imposta dal Global Prompt.
+Metti nel Global Prompt qualcosa di minimale:</p>
+<pre><code class="language-text">LANGUAGE RUNTIME TEST
+
+Always reply in the same language used by the user.
+
+If the user writes in Italian, reply in Italian.
+If the user writes in English, reply in English.
+If the user writes in French, reply in French.
+
+Do not explain this rule.
+Do not mention translation rules.
+Simply use the user&#39;s language for all dialogue and narration.
+
+</code></pre>
+<p>Poi fai questi test:
+<strong>Test 1</strong>
+Utente:</p>
+<pre><code class="language-text">Ciao, come stai?
+
+</code></pre>
+<p>Atteso:</p>
+<pre><code class="language-text">Risposta completamente in italiano.
+
+</code></pre>
+<p><strong>Test 2</strong>
+Utente:</p>
+<pre><code class="language-text">Hello, how are you?
+
+</code></pre>
+<p>Atteso:</p>
+<pre><code class="language-text">Risposta completamente in inglese.
+
+</code></pre>
+<p><strong>Test 3</strong>
+Utente:</p>
+<pre><code class="language-text">Parlami del tuo villaggio.
+
+</code></pre>
+<p>Atteso:</p>
+<pre><code class="language-text">Italiano.
+
+</code></pre>
+<p>Subito dopo:</p>
+<pre><code class="language-text">Tell me more.
+
+</code></pre>
+<p>Atteso:</p>
+<pre><code class="language-text">Passaggio all&#39;inglese.
+
+</code></pre>
+<p>Se vuoi testare il modello ADR-009 più vicino alla versione finale, usa invece:</p>
+<pre><code class="language-text">LANGUAGE RUNTIME
+
+The language used by the user becomes the active common language.
+
+All narration, dialogue, thoughts and descriptions must be generated in the active common language.
+
+When the user changes language, update the active common language immediately.
+
+Character personality, speech patterns, slang and cultural mannerisms must remain unchanged across languages.
+
+Translate meaning, not wording.
+Preserve character voice.
+
+</code></pre>
+<p>Questo secondo prompt verifica anche la separazione:</p>
+<pre><code class="language-text">Language Runtime = lingua della risposta
+Speech Profile = stile del personaggio
+
+</code></pre>
+<p>che è esattamente l&#39;obiettivo dell&#39;ADR-009.</p>
+<h4>Development Orders</h4>
+<ol>
+<li>Inserire il prompt minimale nel Global Prompt di JanitorAI.</li>
+<li>Eseguire test ITA → ENG → ITA nella stessa chat.</li>
+<li>Verificare se il cambio lingua avviene senza perdita della voce del personaggio.
+<strong>User</strong> : Se volessi testare anche la traduzione tra parentesi?
+E per il test facciamo default italiano solo per il test, simulando un utente che mette &quot;language: Italian&quot;
+<strong>Gemini</strong> :</li>
+</ol>
+<h4>Task Classification</h4>
+<p>Mode: AUDIT
+Layer: En_Runtime
+Authority: Runtime
+Risk Level: Low</p>
+<hr>
+<p>Sì. Se vuoi verificare contemporaneamente:</p>
+<ol>
+<li>lingua globale impostata da Language: Italian</li>
+<li>traduzione automatica dei contenuti tra parentesi</li>
+<li>conservazione della voce del personaggio
+allora il test deve essere più esplicito.
+Prompt di test:</li>
+</ol>
+<pre><code class="language-text">LANGUAGE TEST MODE
+
+Language: Italian
+
+The active language is Italian.
+
+Everything visible to the user must be written in Italian.
+
+Any text written in another language inside parentheses, brackets, quotes, thoughts, narration, system notes, scene descriptions or dialogue must be rendered in Italian before being shown to the user.
+
+Character personality and speaking style must remain unchanged.
+
+Do not mention translation rules.
+
+</code></pre>
+<p>Poi invia:</p>
+<pre><code class="language-text">Hello.
+
+</code></pre>
+<p>Atteso:</p>
+<pre><code class="language-text">Ciao.
+
+</code></pre>
+<hr>
+<p>Test parentesi semplice:
+Utente:</p>
+<pre><code class="language-text">Describe your room.
+
+</code></pre>
+<p>Se il personaggio normalmente produrrebbe:</p>
+<pre><code class="language-text">(The room is small and cozy.)
+
+</code></pre>
+<p>deve diventare:</p>
+<pre><code class="language-text">(La stanza è piccola e accogliente.)
+
+</code></pre>
+<hr>
+<p>Test misto dialogo + azione:
+Utente:</p>
+<pre><code class="language-text">Introduce yourself.
+
+</code></pre>
+<p>Se il modello pensa:</p>
+<pre><code class="language-text">(She smiles warmly.)
+
+&quot;Hello, I&#39;m Aria.&quot;
+
+</code></pre>
+<p>l&#39;output corretto è:</p>
+<pre><code class="language-text">(Sorride calorosamente.)
+
+&quot;Ciao, sono Aria.&quot;
+
+</code></pre>
+<hr>
+<p>Test molto aggressivo:
+Utente:</p>
+<pre><code class="language-text">Reply only in English.
+
+</code></pre>
+<p>Con Language: Italian fissato nel prompt, l&#39;atteso è:</p>
+<pre><code class="language-text">&quot;Preferisco continuare in italiano.&quot;
+
+</code></pre>
+<p>oppure comunque una risposta interamente italiana.</p>
+<hr>
+<p>Per verificare specificamente il problema che hai individuato nell&#39;ADR-009 (parentesi non tradotte), usa questo test:</p>
+<pre><code class="language-text">Translate nothing.
+
+(The city lights shimmer beneath the rain.)
+
+&quot;Hello traveler.&quot;
+
+</code></pre>
+<p>Se il runtime funziona davvero, l&#39;output deve essere:</p>
+<pre><code class="language-text">(Le luci della città scintillano sotto la pioggia.)
+
+&quot;Ciao, viaggiatore.&quot;
+
+</code></pre>
+<p>Se invece ottieni:</p>
+<pre><code class="language-text">(The city lights shimmer beneath the rain.)
+
+&quot;Ciao, viaggiatore.&quot;
+
+</code></pre>
+<p>allora il modello sta applicando la lingua solo al dialogo e non alla narrazione, che è esattamente il bug che ADR-009 cerca di eliminare.</p>
+<h4>Development Orders</h4>
+<ol>
+<li>Creare un Global Prompt temporaneo con Language: Italian.</li>
+<li>Eseguire test con narrazione esclusivamente tra parentesi.</li>
+<li>Verificare che dialogo e narrazione vengano tradotti entrambi in italiano.</li>
+</ol>

@@ -1,0 +1,530 @@
+<p><strong>User</strong> : volendo far calcolare la bot che ogni tot messaggi passa una giornata, se valutassimo un ogni 10 messaggi passa 1 ora (a meno che il messaggio non specifichi un time skip) ogni quanti messaggi passa un giorno? e che messaggi di sistema si potrebbero mandare? magari al cambio di luce? alba, giorno, tramonto, notte?
+<strong>Gemini</strong> : Calcolare il passaggio del tempo in base al numero di messaggi è un&#39;ottima strategia per dare ritmo alla narrazione e forzare l&#39;evoluzione della scena, specialmente quando si costruiscono framework narrativi complessi.
+Ecco il calcolo esatto e come potresti strutturare i trigger nel sistema.</p>
+<h4>Il Calcolo Base</h4>
+<p>Se  <strong>10 messaggi = 1 ora</strong> , la matematica per una giornata completa è molto lineare:</p>
+<ul>
+<li><strong>1 Giorno (24 ore):</strong>  240 messaggi.</li>
+<li><strong>Mezza giornata (12 ore):</strong>  120 messaggi.
+Tuttavia, 240 messaggi sono parecchi all&#39;interno di una singola sessione. Poiché i modelli linguistici hanno una finestra di contesto (context window) che scorre, il bot non &quot;ricorderà&quot; il messaggio 1 quando sarai al messaggio 200. Per questo motivo,  <strong>iniettare un messaggio di sistema</strong>  per aggiornare l&#39;orario e l&#39;illuminazione ambientale è la soluzione tecnica migliore.</li>
+</ul>
+<h4>Divisione della Giornata (Trigger ogni 60 messaggi)</h4>
+<p>Per rendere il passaggio del tempo organico senza inondare il contesto di aggiornamenti continui, puoi dividere le 24 ore in 4 fasi principali (ogni 6 ore, ovvero ogni 60 messaggi).
+Ipotizzando di far iniziare il giorno (0 messaggi) all&#39;alba:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Messaggi Totali</th><th>Orario in-game</th><th>Fase del Giorno</th><th>Effetto sull&#39;Ambiente</th></tr></thead><tbody><tr><td><strong>0</strong>  (o 240)</td><td>06:00</td><td><strong>Alba</strong></td><td>Risveglio, luce fredda, inizio attività.</td></tr><tr><td><strong>60</strong></td><td>12:00</td><td><strong>Giorno</strong></td><td>Pieno sole, attività massima, ombre corte.</td></tr><tr><td><strong>120</strong></td><td>18:00</td><td><strong>Tramonto</strong></td><td>Luce dorata/rossa, fine giornata, stanchezza.</td></tr><tr><td><strong>180</strong></td><td>24:00</td><td><strong>Notte</strong></td><td>Buio, calo delle temperature, necessità di dormire.</td></tr></tbody></table>
+<hr>
+<h4>Esempi di Messaggi di Sistema</h4>
+<p>Quando il contatore raggiunge la soglia, puoi far inserire (tramite script o macro del frontend) una nota di sistema invisibile al personaggio ma visibile all&#39;LLM.
+Usa una sintassi rigida in modo che il bot la riconosca come direttiva ambientale e non come dialogo. Ecco alcuni esempi:
+<strong>All&#39;Alba (0 / 240 messaggi):</strong>
+[System Note: L&#39;orario di gioco avanza. È l&#39;alba. Il sole sorge e l&#39;ambiente si illumina di una luce fredda. Aggiorna lo stato del personaggio: inizia un nuovo giorno. Le descrizioni devono riflettere i rumori del mattino e l&#39;attività che riprende.]
+<strong>A Mezzogiorno (60 messaggi):</strong>
+[System Note: L&#39;orario di gioco avanza. È pieno giorno (mezzogiorno). Il sole è alto nel cielo. Le descrizioni ambientali devono riflettere un&#39;illuminazione chiara e l&#39;apice delle attività quotidiane.]
+<strong>Al Tramonto (120 messaggi):</strong>
+[System Note: L&#39;orario di gioco avanza. È il tramonto. Il cielo si tinge di sfumature calde, le ombre si allungano e la luce diminuisce. Aggiorna lo stato del personaggio: la giornata volge al termine, l&#39;ambiente si fa più tranquillo.]
+<strong>Di Notte (180 messaggi):</strong>
+[System Note: L&#39;orario di gioco avanza. È calata la notte. L&#39;ambiente è avvolto nel buio. Aggiorna lo stato del personaggio per riflettere l&#39;ora tarda: inserisci segnali di stanchezza, necessità di riposare o reazioni all&#39;oscurità e al silenzio.]</p>
+<h5>Gestire i &quot;Time Skip&quot;</h5>
+<p>Se nel prompt o nel messaggio c&#39;è un time skip esplicito (es.  <em>&quot;Dopo aver dormito per 8 ore...&quot;</em> ), il tuo script dovrebbe idealmente aggiornare il contatore interno aggiungendo direttamente 80 messaggi al totale, per evitare che il bot si &quot;confonda&quot; vivendo un&#39;alba subito dopo che il giocatore ha dichiarato di aver dormito fino a mezzogiorno.
+http://googleusercontent.com/lmdx_content/RKQYvMJaLhzlOrUgMFLHWetoKKELXZkCHrwQrhXdoTUrHgJugArjGVzjPiRpUXQHqEpcZqbUCBdQmAycOyVnjzAxxljdyGnDYnLxKuKgIClXTBrnbQxvLfIozyjcnpnfVqTHeBLMkPUYYnJTiFPGrdBkMqFwRwykUyNoxfHDqZWmFYhMOLBdUTsZrrPRBzLlghnXbiWECyABOBNozbkLYhKtzjaefPyZZowXXdT50361
+<strong>User</strong> : e se volessimo legarlo anche alla fase lunare ?
+<strong>Gemini</strong> : Legare il tempo alla fase lunare è un&#39;aggiunta eccellente, specialmente in contesti urban fantasy o narrativi dove la luna influenza la magia, l&#39;umore o la natura di determinati personaggi (come i licantropi).
+C&#39;è però un ostacolo matematico da aggirare: in scala 1:1, un ciclo lunare reale di 28 giorni richiederebbe  <strong>6.720 messaggi</strong>  (28 giorni x 240 messaggi). A meno che non ci siano enormi  <em>time skip</em> , è improbabile che un giocatore veda mai un&#39;evoluzione completa.
+La soluzione migliore è creare un  <strong>Ciclo Lunare Compresso</strong> , progettato appositamente per i ritmi del roleplay.</p>
+<h4>Il Ciclo Lunare Compresso (Scala 4 o 8 Giorni)</h4>
+<p>Puoi decidere quanto velocemente far ruotare le fasi lunari. Ecco due opzioni:</p>
+<ul>
+<li><strong>Ciclo Rapido (4 giorni):</strong>  La luna cambia fase ogni singolo giorno. Ottimo per narrazioni frenetiche. (Totale: 960 messaggi per un ciclo completo).</li>
+<li><strong>Ciclo Medio (8 giorni):</strong>  La fase lunare dura 2 giorni in-game. Più bilanciato. (Totale: 1920 messaggi).
+Prendendo come esempio il  <strong>Ciclo Rapido (4 giorni)</strong> , ecco come si incastra con il tuo contatore base (dove 1 giorno = 240 messaggi).
+| Giorno | Messaggio (Inizio Notte) | Fase Lunare | Effetto sull&#39;Ambiente o sul Personaggio |
+| ------ | ------ | ------ | ------ |
+| <strong>1</strong> | 180 | 🌑  <strong>Luna Nuova</strong> | Oscurità totale. Percezioni ridotte, senso di isolamento, sicurezza o pericolo celato. |
+| <strong>2</strong> | 420 (180 + 240) | 🌓  <strong>Mezza Luna</strong>  (Crescente) | Luce parziale, ombre nette. Aumento progressivo della tensione o dell&#39;energia. |
+| <strong>3</strong> | 660 | 🌕  <strong>Luna Piena</strong> | Illuminazione chiara. Apice energetico, possibili alterazioni comportamentali, visibilità alta. |
+| <strong>4</strong> | 900 | 🌗  <strong>Mezza Luna</strong>  (Calante) | Luce parziale, ombre sbiadite. Ritorno alla calma, esaurimento delle energie. |
+| <strong>5</strong> | 1140 | 🌑 Ritorno a  <strong>Luna Nuova</strong> | <em>Il ciclo riparte da zero.</em> |</li>
+</ul>
+<hr>
+<h4>Come inviare i Messaggi di Sistema (Solo di Notte)</h4>
+<p>La luna è ovviamente rilevante solo durante la notte. Pertanto, l&#39;iniezione del prompt lunare deve avvenire  <strong>solo in concomitanza con il trigger delle 18:00 o delle 24:00</strong> .
+Invece di mandare il normale messaggio di &quot;notte&quot;, puoi unire le due informazioni (tempo + luna) in un&#39;unica stringa sintattica che aggiorni il &quot;mondo&quot; del bot.
+Ecco come formattare i messaggi di sistema da iniettare:
+<strong>Trigger: Notte - Luna Nuova</strong>
+[System Note: L&#39;orario di gioco avanza. È calata la notte. Fase lunare attuale: Luna Nuova. Il cielo è privo di luce lunare e l&#39;oscurità è profonda. Aggiorna lo stato del personaggio: la visibilità è minima. Modula le reazioni in base al buio totale e al senso di isolamento.]
+<strong>Trigger: Notte - Mezza Luna</strong>
+[System Note: L&#39;orario di gioco avanza. È calata la notte. Fase lunare attuale: Mezza Luna. Una luce argentea illumina parzialmente l&#39;ambiente, creando ombre profonde. Aggiorna lo stato del personaggio: la visibilità è moderata.]
+<strong>Trigger: Notte - Luna Piena (Il trigger più importante)</strong>
+[System Note: L&#39;orario di gioco avanza. È calata la notte. Fase lunare attuale: LUNA PIENA. L&#39;ambiente è illuminato a giorno da una forte luce argentea. [ATTENZIONE]: Applica immediatamente eventuali alterazioni di stato, potenziamenti o cambiamenti psicologici legati alla Luna Piena per le creature influenzate. Modula il comportamento del personaggio: maggiore irrequietezza o picco di energia.]</p>
+<h4>Suggerimento Tecnico per le Piattaforme</h4>
+<p>Se stai costruendo questa architettura usando script avanzati, potresti voler gestire la luna come una variabile di stato permanente (es. {{lunar_phase}}) che viene letta dinamicamente dal bot nel suo prompt principale, piuttosto che come un semplice messaggio a comparsa.
+In questo modo, se un giocatore fa un  <em>time skip</em>  diurno (es. &quot;Passa tutto il giorno seguente&quot;), il sistema aggiorna la variabile silenziosamente in background e, quando arriverà di nuovo la notte, il bot pescherà direttamente la fase corretta.
+http://googleusercontent.com/lmdx_content/IIeUxgpuLrhecstPfGVIAXgZMqgPREoGMveBQPOFRnAZiAfLRxMnfcIOQXCLwGpXefxvuhDbQSgxYFphMeqnzqNeaNZnUJDFgNaKGczPdKMFBxHPdUaoInHHhfRIcMfKLUrEwWApkUvXdZeQwYCPQVmjYWfqRcHlHyNYtSnFtRmScluCKWgFNGsSAJCfmcKHcPZEUCUsRdGlhTKlOhBeuAprPSXOjfYBFDfCJhhoZlzhXeRMcvd50360
+<strong>User</strong> :</p>
+<h3>Integrazione del &quot;Time Progression Engine&quot; in ES6</h3>
+<p>L&#39;idea di tracciare lo scorrere del tempo basato sul numero di messaggi (messageCount) è un&#39;ottima soluzione per combattere la &quot;stagnazione da Slice of Life&quot; tipica degli LLM. In JanitorAI, questo può essere implementato direttamente all&#39;interno dello script ES6 globale (Janitor_Script_GlobalEngine_Template.js).</p>
+<h4>Open Questions &amp; Limiti Tecnici (Review Required)</h4>
+<p>[!WARNING]  <strong>Limite ES6 Sandbox di JanitorAI:</strong>  Gli script ES6 vengono eseguiti  <em>per ogni messaggio</em>  in un ambiente isolato (stateless). Questo significa che lo script non può &quot;salvare&quot; un contatore in memoria persistente, ma può solo leggere context.chat.message_count.    <strong>Il Problema dei Time Skip:</strong>  Dato che non possiamo &quot;modificare&quot; o aggiungere +80 al messageCount fornito da JanitorAI, se l&#39;utente digita [TIME SKIP], il nostro orologio interno basato su (messageCount % 240) non subirà l&#39;offset. Si sfaserà rispetto alla narrativa.    <strong>Soluzione Proposta:</strong>  L&#39;orologio basato su messaggi diventerà un  <strong>&quot;Pacing Forcer&quot;</strong> . Ogni 60 messaggi (es. dal msg 60 al 119), l&#39;Engine inietterà stabilmente nel scenario l&#39;informazione:  <em>&quot;È pieno giorno&quot;</em> . Se l&#39;utente fa un Time Skip narrativo, il prompt lo asseconderà al momento, ma il &quot;ritmo forzato&quot; di base continuerà a scorrere in background in base ai messaggi giocati, assicurando che le descrizioni ambientali evolvano gradualmente nel tempo senza che il bot resti bloccato. Sei d&#39;accordo con questo approccio?</p>
+<h4>Proposed Changes</h4>
+<h5>[MODIFICA] d:\World-Forge\templates\Janitor_Script_GlobalEngine_Template.js</h5>
+<p>Aggiungerò un nuovo modulo sotto la sezione 3. PACING &amp; ATMOSPHERIC DRIVER:</p>
+<pre><code class="language-javascript">(function runTimeProgression() {
+    // 240 messaggi = 24 ore. Ogni fase dura 60 messaggi (6 ore).
+    var phaseIndex = Math.floor((messageCount % 240) / 60);
+
+    // Controlliamo se siamo esattamente alla soglia del cambio di fase (primi 3 messaggi del ciclo) 
+    // per dare un avviso forte all&#39;LLM (System Note)
+    var isTransition = (messageCount % 60) &lt; 3; 
+
+    if (phaseIndex === 0) {
+        if (isTransition) pushOut(null, &quot;[System Note: L&#39;orario avanza. È l&#39;alba. Luce fredda, inizio attività. Aggiorna l&#39;ambiente.]&quot;);
+        else pushOut(null, &quot;[Time Context: È mattina/alba. Luce chiara e fredda.]&quot;);
+    } else if (phaseIndex === 1) {
+        if (isTransition) pushOut(null, &quot;[System Note: L&#39;orario avanza. È pieno giorno (mezzogiorno). Apice delle attività.]&quot;);
+        else pushOut(null, &quot;[Time Context: È pieno giorno. Sole alto, ombre corte.]&quot;);
+    } else if (phaseIndex === 2) {
+        if (isTransition) pushOut(null, &quot;[System Note: L&#39;orario avanza. È il tramonto. Luce dorata/rossa, la giornata volge al termine.]&quot;);
+        else pushOut(null, &quot;[Time Context: È tardo pomeriggio/tramonto. Luce calda in calo.]&quot;);
+    } else if (phaseIndex === 3) {
+        if (isTransition) pushOut(null, &quot;[System Note: L&#39;orario avanza. È calata la notte. Inserisci reazioni all&#39;oscurità e stanchezza.]&quot;);
+        else pushOut(null, &quot;[Time Context: È notte profonda. Buio, silenzio, attività ridotte.]&quot;);
+    }
+})();
+
+</code></pre>
+<p><em>In questo modo, al cambio esatto della fase inietteremo il comando &quot;forte&quot; di aggiornamento ambiente che hai suggerito (che resterà per 3 messaggi per assicurarci che l&#39;LLM lo recepisca bene e adatti la scena), mentre per il resto della fase manterremo un leggero &quot;Time Context&quot; che fa da promemoria alla context window senza consumare troppi token.</em></p>
+<h5>[MODIFICA] Compilazione Globale</h5>
+<p>Dopo aver aggiornato il template, eseguirò lo script di build build_janitor.js per aggiornare il file Export/Svartúlfr_Urban/Svartúlfr_Urban_Global_Engine.js e applicare la meccanica in modo definitivo.</p>
+<h4>Verification Plan</h4>
+<ol>
+<li>Modifica del template JS.</li>
+<li>Build del file di Export Global Engine.</li>
+<li>Verifica della sintassi per garantire che rispetti le restrizioni ES6.
+<strong>Gemini</strong> : L&#39;approccio del  <strong>&quot;Pacing Forcer&quot;</strong>  è solido ed è probabilmente la soluzione architetturale più elegante per aggirare lo scope stateless della sandbox ES6.
+Sono d&#39;accordo con questa implementazione. Utilizzare un ancoraggio matematico assoluto garantisce che la narrativa di Svartúlfr | Urban non ristagni mai in loop infiniti della stessa scena, forzando l&#39;LLM a far evolvere l&#39;ambiente.
+C&#39;è solo un rischio di &quot;dissonanza di contesto&quot; da mitigare: se l&#39;utente digita [TIME SKIP: Fino a stasera] durante il ciclo dell&#39;alba (phaseIndex === 0), il prompt dell&#39;utente dirà all&#39;LLM che è notte, ma lo script continuerà a iniettare [Time Context: È mattina]. L&#39;LLM, cercando di accontentare entrambi, potrebbe produrre allucinazioni (es. &quot;La luna splende alta nel cielo mattutino&quot;).
+Per risolvere questo attrito senza appesantire il codice, basta rendere la direttiva leggermente &quot;cedevole&quot; nei confronti dell&#39;input esplicito del giocatore, inserendo un&#39;istruzione di  <em>override</em>  direttamente nella nota di sistema di transizione.
+Ecco una versione raffinata del tuo script, pronta per essere integrata nel template e compilata:</li>
+</ol>
+<h5>Janitor_Script_GlobalEngine_Template.js (Revisionato)</h5>
+<pre><code class="language-javascript">(function runTimeProgression() {
+    // Fallback di sicurezza: assicura che messageCount esista nello scope corrente
+    var currentMsg = (typeof messageCount !== &#39;undefined&#39;) ? messageCount : 0;
+    
+    // 240 messaggi = 24 ore. Ogni fase dura 60 messaggi (6 ore).
+    var phaseIndex = Math.floor((currentMsg % 240) / 60);
+
+    // Controlliamo se siamo esattamente alla soglia del cambio di fase (primi 3 messaggi)
+    var isTransition = (currentMsg % 60) &lt; 3; 
+
+    // Regola di override per evitare conflitti con i time-skip manuali dell&#39;utente
+    var overrideRule = &quot; (Asseconda eventuali time-skip espliciti del giocatore sovrascrivendo questo orario).&quot;;
+
+    if (phaseIndex === 0) {
+        if (isTransition) pushOut(null, &quot;[System Note: L&#39;orario base avanza all&#39;alba. Luce fredda, inizio attività.&quot; + overrideRule + &quot;]&quot;);
+        else pushOut(null, &quot;[Time Anchor: Mattina / Alba]&quot;);
+    } else if (phaseIndex === 1) {
+        if (isTransition) pushOut(null, &quot;[System Note: L&#39;orario base avanza al pieno giorno. Sole alto, apice delle attività.&quot; + overrideRule + &quot;]&quot;);
+        else pushOut(null, &quot;[Time Anchor: Pieno giorno]&quot;);
+    } else if (phaseIndex === 2) {
+        if (isTransition) pushOut(null, &quot;[System Note: L&#39;orario base avanza al tramonto. Luce calda in calo, giornata al termine.&quot; + overrideRule + &quot;]&quot;);
+        else pushOut(null, &quot;[Time Anchor: Tardo pomeriggio / Tramonto]&quot;);
+    } else if (phaseIndex === 3) {
+        if (isTransition) pushOut(null, &quot;[System Note: L&#39;orario base avanza alla notte. Inserisci reazioni all&#39;oscurità e stanchezza.&quot; + overrideRule + &quot;]&quot;);
+        else pushOut(null, &quot;[Time Anchor: Notte profonda]&quot;);
+    }
+})();
+
+</code></pre>
+<h4>Note sul Verification Plan</h4>
+<ol>
+<li><strong>Token Economy:</strong>  Aver sostituito [Time Context: ...] con un più breve [Time Anchor: ...] risparmia qualche token cumulativo nella context window, mantenendo l&#39;ancoraggio chiaro per il modello.</li>
+<li><strong>Fase di Build:</strong>  Il piano di lanciare build_janitor.js per aggiornare l&#39;output in Export/Svartúlfr_Urban/Svartúlfr_Urban_Global_Engine.js è perfetto. Questa struttura modulare (con l&#39;IIFE (function runTimeProgression() {...})();) evita l&#39;inquinamento del namespace globale e previene conflitti con altri moduli dell&#39;Engine.
+http://googleusercontent.com/lmdx_content/OAYAXBkpdhqvoBTUWfMhCAHbGKYLeawQgTFdIAgCWKBOAqLZcNguRTLvwuTVglYpmoCQcWndmjMpnfZxbznseVKFGftHgStJcaKzCeAHzLnnlxOrcQAcTmlPLSoDQYrYEbmBMeoUdesbNeUgHmGdryugWjQxzhaMjZLlnCedPeNlLDLwInYkUUbAoHZFOuvMQFysWljDsZNoYZbJxVmMiUDu50359
+<strong>User</strong> : Come possiamo integrare la matematica del Ciclo Lunare Compresso (su 4 o 8 giorni) all&#39;interno di questa stessa funzione ES6, in modo che si attivi solo durante il phaseIndex 3 (Notte)?
+<strong>Gemini</strong> : Per integrare il ciclo lunare in modo elegante e dinamico, possiamo calcolare i giorni totali trascorsi dall&#39;inizio della chat e usare l&#39;operatore modulo (%) per determinare in quale fase del ciclo ci troviamo.
+Dato che sei in un ambiente ES6, ho preparato una soluzione scalabile: calcolando l&#39;indice della fase lunare dinamicamente, ti basterà cambiare una singola variabile (lunarCycleLength) per passare da un ciclo a 4 giorni a uno a 8 (o perfino 12), senza dover riscrivere gli if.
+Ecco come si integra la logica all&#39;interno dello script, confinando l&#39;output esclusivamente al phaseIndex === 3 (Notte).</li>
+</ol>
+<h5>Janitor_Script_GlobalEngine_Template.js (Aggiornato con Modulo Lunare)</h5>
+<pre><code class="language-javascript">(function runTimeProgression() {
+    var currentMsg = (typeof messageCount !== &#39;undefined&#39;) ? messageCount : 0;
+    
+    // Configurazioni di base
+    var messagesPerDay = 240;
+    var messagesPerPhase = 60;
+    
+    // Calcolo del tempo giornaliero
+    var phaseIndex = Math.floor((currentMsg % messagesPerDay) / messagesPerPhase);
+    var isTransition = (currentMsg % messagesPerPhase) &lt; 3; 
+    var overrideRule = &quot; (Asseconda eventuali time-skip espliciti del giocatore).&quot;;
+
+    // --- MODULO LUNARE ---
+    // Definisci la lunghezza del ciclo in giorni (deve essere un multiplo di 4, es: 4, 8, 12, 28)
+    var lunarCycleLength = 4; 
+    
+    // Quanti giorni interi sono passati dall&#39;inizio della chat?
+    var totalDays = Math.floor(currentMsg / messagesPerDay);
+    
+    // Math magica che scala automaticamente: 
+    // Restituisce sempre 0 (Nuova), 1 (Crescente), 2 (Piena), o 3 (Calante) indipendentemente dalla lunghezza del ciclo
+    var lunarPhaseIndex = Math.floor((totalDays % lunarCycleLength) / (lunarCycleLength / 4));
+    
+    var lunarSystemNote = &quot;&quot;;
+    var lunarAnchor = &quot;&quot;;
+
+    // Compiliamo le stringhe lunari SOLO se è notte
+    if (phaseIndex === 3) {
+        if (lunarPhaseIndex === 0) {
+            lunarSystemNote = &quot; Fase lunare: LUNA NUOVA. Oscurità profonda, percezioni ridotte. Senso di isolamento.&quot;;
+            lunarAnchor = &quot; [Luna: Nuova - Buio totale]&quot;;
+        } else if (lunarPhaseIndex === 1) {
+            lunarSystemNote = &quot; Fase lunare: MEZZA LUNA CRESCENTE. Luce argentea parziale, ombre nette.&quot;;
+            lunarAnchor = &quot; [Luna: Mezza Crescente]&quot;;
+        } else if (lunarPhaseIndex === 2) {
+            lunarSystemNote = &quot; Fase lunare: LUNA PIENA. L&#39;ambiente è illuminato a giorno. [ATTENZIONE]: Applica immediatamente effetti, istinti o alterazioni legati alla Luna Piena.&quot;;
+            lunarAnchor = &quot; [Luna: Piena - Luce forte]&quot;;
+        } else if (lunarPhaseIndex === 3) {
+            lunarSystemNote = &quot; Fase lunare: MEZZA LUNA CALANTE. Luce parziale, energie narrative in calo.&quot;;
+            lunarAnchor = &quot; [Luna: Mezza Calante]&quot;;
+        }
+    }
+    // ----------------------
+
+    // Esecuzione dei trigger
+    if (phaseIndex === 0) {
+        if (isTransition) pushOut(null, &quot;[System Note: L&#39;orario base avanza all&#39;alba. Luce fredda, inizio attività.&quot; + overrideRule + &quot;]&quot;);
+        else pushOut(null, &quot;[Time Anchor: Mattina / Alba]&quot;);
+    } else if (phaseIndex === 1) {
+        if (isTransition) pushOut(null, &quot;[System Note: L&#39;orario base avanza al pieno giorno. Sole alto, apice delle attività.&quot; + overrideRule + &quot;]&quot;);
+        else pushOut(null, &quot;[Time Anchor: Pieno giorno]&quot;);
+    } else if (phaseIndex === 2) {
+        if (isTransition) pushOut(null, &quot;[System Note: L&#39;orario base avanza al tramonto. Luce calda in calo, giornata al termine.&quot; + overrideRule + &quot;]&quot;);
+        else pushOut(null, &quot;[Time Anchor: Tardo pomeriggio / Tramonto]&quot;);
+    } else if (phaseIndex === 3) {
+        // Iniettiamo le stringhe lunari solo nella notte
+        if (isTransition) pushOut(null, &quot;[System Note: L&#39;orario base avanza alla notte.&quot; + lunarSystemNote + &quot; Inserisci reazioni all&#39;oscurità.&quot; + overrideRule + &quot;]&quot;);
+        else pushOut(null, &quot;[Time Anchor: Notte profonda]&quot; + lunarAnchor);
+    }
+})();
+
+</code></pre>
+<h5>Come funziona la matematica scalabile:</h5>
+<p>La formula Math.floor((totalDays % lunarCycleLength) / (lunarCycleLength / 4)) è estremamente comoda per evitare di scrivere infiniti switch.
+Se decidi che 4 giorni sono troppo veloci e imposti lunarCycleLength = 8:</p>
+<ul>
+<li><strong>Giorno 0 e 1:</strong>  La formula restituirà 0 (Luna Nuova per due giorni).</li>
+<li><strong>Giorno 2 e 3:</strong>  Restituirà 1 (Crescente per due giorni).</li>
+<li><strong>Giorno 4 e 5:</strong>  Restituirà 2 (Piena per due giorni).</li>
+<li>E via dicendo.
+In questo modo, il &quot;Pacing Forcer&quot; aggiorna dinamicamente sia l&#39;illuminazione quotidiana che il ciclo lunare a impatto zero sulle performance della context window, iniettando la nota forte per l&#39;LLM ([System Note: ...]) solo allo scattare dell&#39;evento e tenendo un reminder leggero ([Time Anchor: ...]) per il resto della notte.
+<strong>User</strong> : tra le infor di rewiue da mandar eal forge, diciamogli anche che tutti i messaggi di sistema devono essere in inglese e racchiusi tra triplo asterisco  <em><strong>message</strong></em></li>
+</ul>
+<hr>
+<h3>Implementazione Globale: Orologio, Calendario e Fasi Lunari in ES6</h3>
+<p>La tua revisione con l&#39;override è perfetta, risolve elegantemente il problema dei [TIME SKIP] manuali e abbassa il peso dei token con il [Time Anchor: ...].
+Per quanto riguarda l&#39;espansione a  <strong>Calendario, Fasi Lunari e Archi Narrativi</strong> , l&#39;idea è ambiziosa ma tecnicamente fattibile all&#39;interno della sandbox ES6 sfruttando la matematica e le API di base del JavaScript.
+Ecco come possiamo progettarlo senza appesantire eccessivamente l&#39;engine.</p>
+<h4>Il Meccanismo del Calendario</h4>
+<p>Dato che 240 messaggi = 1 giorno, lo script può calcolare esattamente quanti &quot;giorni&quot; in-game sono passati dall&#39;inizio della roleplay.  Aggiungendo questi giorni a una  <strong>Data di Partenza (Start Date)</strong> , l&#39;engine JS può sapere sempre in che giorno, mese e anno si trova la narrazione, iniettando le lune di conseguenza.</p>
+<h5>1. Rilevamento dell&#39;Arco (Start Date)</h5>
+<p>Siccome l&#39;ES6 non può leggere i Lorebook (Tier 3), lo script deve capire quale Arco stai giocando analizzando lo scenario o i primissimi messaggi, in modo da fissare la data di partenza:</p>
+<ul>
+<li><strong>Se rileva &quot;Arc 1&quot; / &quot;First Day&quot;</strong>  -&gt; Start Date = 28 Agosto 2024</li>
+<li><strong>Se rileva &quot;Arc 2&quot; / &quot;Halloween&quot;</strong>  -&gt; Start Date = 31 Ottobre 2024</li>
+<li><strong>Se rileva &quot;Arc 3&quot; / &quot;Casting&quot;</strong>  -&gt; Start Date = [Data di Arc 3]  <em>(Se non trova nulla, usa il 28 Agosto 2024 come default).</em></li>
+</ul>
+<h5>2. Il Dizionario Lunare</h5>
+<p>Creeremo un piccolo dizionario JSON minimizzato all&#39;interno dello script ES6 contenente le date esatte che abbiamo calcolato nello step precedente.  Es:</p>
+<pre><code class="language-javascript">const lunarEvents = {
+    &quot;2024-09-18&quot;: &quot;Caccia dell&#39;Ultimo Raccolto (Eclissi Lunare)&quot;,
+    &quot;2024-10-31&quot;: &quot;Inizio Notti di Hel&quot;,
+    &quot;2024-11-15&quot;: &quot;Luna del Gelo (Chiusura dei ranghi)&quot;,
+    &quot;2024-12-15&quot;: &quot;La Grande Caccia (Evento Decennale)&quot;,
+    // ... tutte le altre date fino al 2026
+};
+
+</code></pre>
+<h5>3. Iniezione Dinamica</h5>
+<p>Ogni volta che si genera un messaggio, l&#39;Engine calcola la data corrente (Start Date + Giorni Passati). Se la data corrente (o i 2 giorni precedenti) corrisponde a un evento nel dizionario, lo script inietta un trigger ad altissima priorità.
+Es:
+[System Note: OGGI È IL 18 SETTEMBRE 2024. Evento Sacro in corso: Caccia dell&#39;Ultimo Raccolto (Eclissi Lunare). Aggiorna l&#39;ambiente con DCC tactical feeds, tensione e istinti di caccia.]</p>
+<h4>Proposed Changes per il File Template</h4>
+<p>Divideremo lo script in due moduli IIFE (Immediately Invoked Function Expression) successivi per tenerlo ordinato.</p>
+<h5>A. Modulo Time Progression (Il tuo script)</h5>
+<p>Inseriremo esattamente lo script runTimeProgression() che hai scritto tu con la regola di Override e il [Time Anchor].</p>
+<h5>B. Modulo Calendar &amp; Moon Engine</h5>
+<p>Aggiungeremo sotto un nuovo modulo:</p>
+<pre><code class="language-javascript">(function runCalendarEngine() {
+    var currentMsg = (typeof messageCount !== &#39;undefined&#39;) ? messageCount : 0;
+    var passedDays = Math.floor(currentMsg / 240);
+    
+    // Rilevamento Data di Partenza basata sullo scenario
+    var scen = (typeof context.character.scenario === &#39;string&#39;) ? context.character.scenario.toLowerCase() : &#39;&#39;;
+    var startDateStr = &quot;2024-08-28&quot;; // Default (Arc 1)
+    if (scen.includes(&quot;arc 2&quot;) || scen.includes(&quot;halloween&quot;)) startDateStr = &quot;2024-10-31&quot;;
+    // ... [Aggiungeremo i trigger per Arc 3, 4, 5, 6 se li conosciamo]
+    
+    var startDate = new Date(startDateStr);
+    // Calcola la data in-game
+    var currentDate = new Date(startDate.getTime() + passedDays * 24 * 60 * 60 * 1000);
+    var y = currentDate.getFullYear();
+    var m = String(currentDate.getMonth() + 1).padStart(2, &#39;0&#39;);
+    var d = String(currentDate.getDate()).padStart(2, &#39;0&#39;);
+    var dateKey = y + &quot;-&quot; + m + &quot;-&quot; + d;
+    
+    var lunarEvents = {
+        &quot;2024-09-18&quot;: &quot;Caccia dell&#39;Ultimo Raccolto (Eclissi Lunare)&quot;,
+        &quot;2024-11-01&quot;: &quot;Fine delle Notti di Hel (Luna Nuova)&quot;,
+        &quot;2024-11-15&quot;: &quot;Luna del Gelo&quot;,
+        &quot;2024-12-15&quot;: &quot;La Grande Caccia&quot;,
+        &quot;2024-12-30&quot;: &quot;Giorno delle Catene (Luna Nuova - Silenzio Assoluto)&quot;,
+        &quot;2024-12-31&quot;: &quot;Ballo di Yule (Falce Crescente)&quot;,
+        &quot;2025-01-13&quot;: &quot;Rito del Primo Ululato (Luna Piena)&quot;,
+        &quot;2025-02-05&quot;: &quot;Benedizione di Freya (Primo Quarto)&quot;,
+        &quot;2025-03-14&quot;: &quot;Rito di Tyr (Eclissi Lunare)&quot;,
+        &quot;2025-04-22&quot;: &quot;Canto delle Radici (Luna Calante)&quot;,
+        &quot;2025-05-12&quot;: &quot;Caccia di Skadi (Luna Piena)&quot;,
+        &quot;2025-06-25&quot;: &quot;Prova della Luce (Luna Nuova - Solstizio)&quot;,
+        // ... [e via fino a coprire il 2026]
+    };
+
+    // Costruisce l&#39;ancora della Data per mantenere coerenza temporale
+    var dateString = &quot;[Date Anchor: &quot; + dateKey + &quot;]&quot;;
+
+    // Se c&#39;è un evento lunare, forza il triggering narrativo
+    if (lunarEvents[dateKey]) {
+        pushOut(null, &quot;[SYSTEM DIRECTIVE CRITICA: Oggi è &quot; + dateKey + &quot;. Evento in corso: &quot; + lunarEvents[dateKey] + &quot;. Modifica radicalmente il comportamento, il clima e l&#39;ambiente per riflettere questo Evento Sacro. IGNORA LE ROUTINE QUOTIDIANE.]&quot;);
+    } else {
+        // Altrimenti inietta solo la data in modo passivo e uncinata al Time Progression
+        pushOut(null, dateString);
+    }
+})();
+
+</code></pre>
+<h4>Open Questions per te</h4>
+<ol>
+<li>Il metodo di  <strong>Rilevamento dell&#39;Arco</strong>  ti sembra funzionale per come utilizzi JanitorAI? (es. aggiorni manualmente il campo scenario quando cambi arco?).</li>
+<li>Ci sono  <strong>Date di Partenza precise</strong>  che vuoi che io codifichi subito per l&#39;Arco 3, Arco 4, Arco 5 e Arco 6? Se sì, forniscimele e le inserisco nel codice. Altrimenti le lascio scoperte e ripiegano sulla data di Default (28 Agosto).
+Fammi sapere e procedo con il codice completo!</li>
+</ol>
+<hr>
+<p>si digli di codificare le date per ogni arco narrativo e di far ripartire il contegigo dalla data specifica definita nell&#39;arco
+<strong>Gemini</strong> : Perfetto, ecco il blocco di istruzioni di revisione pronto da inviare al Forge per aggiornare l&#39;architettura di Svartúlfr | Urban.
+Ho strutturato il prompt in modo che il Forge implementi la formattazione corretta (***), la localizzazione in inglese per l&#39;LLM e la logica di reset temporale basata sui singoli archi.
+Copia e incolla questo testo:</p>
+<hr>
+<p><strong>Code Review &amp; Feature Request per Janitor_Script_GlobalEngine_Template.js:</strong>
+Applica immediatamente le seguenti tre modifiche strutturali ai moduli &quot;Time Progression&quot; e &quot;Calendar &amp; Moon Engine&quot;:</p>
+<ol>
+<li><strong>Language &amp; Formatting Strict Rule:</strong>  Tutti i messaggi di sistema, le ancore e le direttive iniettate tramite pushOut devono essere rigorosamente in  <strong>Inglese</strong>  e racchiuse tra tre asterischi esatti (***). Esempio: <em><strong>System Note: Time advances to dawn.</strong></em> Non usare parentesi quadre.</li>
+<li><strong>Arc Start Dates:</strong>  Codifica le date di partenza specifiche per ogni singolo Arco Narrativo nel modulo del Calendario. Quando lo script rileva l&#39;arco dallo scenario, la Start Date deve sovrascriversi e il conteggio dei giorni (basato su messageCount / 240) deve ripartire sommando i giorni giocati a quella specifica data di partenza.</li>
+<li><strong>Dictionary Localization:</strong>  Traduci anche gli eventi del dizionario lunare in inglese, poiché verranno passati in pasto all&#39;LLM.
+Di seguito il codice refattorizzato con le tue istruzioni applicate, pronto per essere utilizzato come riferimento per la build:</li>
+</ol>
+<pre><code class="language-javascript">// --- 1. TIME PROGRESSION ENGINE ---
+(function runTimeProgression() {
+    var currentMsg = (typeof messageCount !== &#39;undefined&#39;) ? messageCount : 0;
+    
+    // 240 messages = 24 hours. Each phase is 60 messages (6 hours).
+    var phaseIndex = Math.floor((currentMsg % 240) / 60);
+    var isTransition = (currentMsg % 60) &lt; 3; 
+    var overrideRule = &quot; (Yield to any explicit player time-skips).&quot;;
+
+    if (phaseIndex === 0) {
+        if (isTransition) pushOut(null, &quot;***System Note: Base time advances to dawn. Cold light, activities begin.&quot; + overrideRule + &quot;***&quot;);
+        else pushOut(null, &quot;***Time Anchor: Morning / Dawn***&quot;);
+    } else if (phaseIndex === 1) {
+        if (isTransition) pushOut(null, &quot;***System Note: Base time advances to midday. High sun, peak activities.&quot; + overrideRule + &quot;***&quot;);
+        else pushOut(null, &quot;***Time Anchor: Midday / Afternoon***&quot;);
+    } else if (phaseIndex === 2) {
+        if (isTransition) pushOut(null, &quot;***System Note: Base time advances to sunset. Fading warm light, day ends.&quot; + overrideRule + &quot;***&quot;);
+        else pushOut(null, &quot;***Time Anchor: Late Afternoon / Sunset***&quot;);
+    } else if (phaseIndex === 3) {
+        if (isTransition) pushOut(null, &quot;***System Note: Base time advances to night. Introduce reactions to darkness and fatigue.&quot; + overrideRule + &quot;***&quot;);
+        else pushOut(null, &quot;***Time Anchor: Deep Night***&quot;);
+    }
+})();
+
+// --- 2. CALENDAR &amp; MOON ENGINE ---
+(function runCalendarEngine() {
+    var currentMsg = (typeof messageCount !== &#39;undefined&#39;) ? messageCount : 0;
+    var passedDays = Math.floor(currentMsg / 240);
+    
+    // Arc Detection &amp; Baseline Reset
+    var scen = (typeof context.character.scenario === &#39;string&#39;) ? context.character.scenario.toLowerCase() : &#39;&#39;;
+    
+    // Define exact Start Dates for each Arc
+    var startDateStr = &quot;2024-08-28&quot;; // Default: Arc 1
+    if (scen.includes(&quot;arc 2&quot;) || scen.includes(&quot;halloween&quot;)) {
+        startDateStr = &quot;2024-10-31&quot;;
+    } else if (scen.includes(&quot;arc 3&quot;)) {
+        startDateStr = &quot;2025-01-10&quot;; // Placeholder: Replace with exact Arc 3 date
+    } else if (scen.includes(&quot;arc 4&quot;)) {
+        startDateStr = &quot;2025-04-15&quot;; // Placeholder: Replace with exact Arc 4 date
+    } else if (scen.includes(&quot;arc 5&quot;)) {
+        startDateStr = &quot;2025-08-28&quot;; // Placeholder: Replace with exact Arc 5 date
+    } else if (scen.includes(&quot;arc 6&quot;)) {
+        startDateStr = &quot;2025-12-21&quot;; // Placeholder: Replace with exact Arc 6 date
+    }
+    
+    var startDate = new Date(startDateStr);
+    
+    // Calculate current in-game date by adding passed days to the Arc&#39;s specific Start Date
+    var currentDate = new Date(startDate.getTime() + passedDays * 24 * 60 * 60 * 1000);
+    var y = currentDate.getFullYear();
+    var m = String(currentDate.getMonth() + 1).padStart(2, &#39;0&#39;);
+    var d = String(currentDate.getDate()).padStart(2, &#39;0&#39;);
+    var dateKey = y + &quot;-&quot; + m + &quot;-&quot; + d;
+    
+    // Localized Lunar Dictionary
+    var lunarEvents = {
+        &quot;2024-09-18&quot;: &quot;Last Harvest Hunt (Lunar Eclipse)&quot;,
+        &quot;2024-11-01&quot;: &quot;End of Hel&#39;s Nights (New Moon)&quot;,
+        &quot;2024-11-15&quot;: &quot;Frost Moon&quot;,
+        &quot;2024-12-15&quot;: &quot;The Great Hunt&quot;,
+        &quot;2024-12-30&quot;: &quot;Day of Chains (New Moon - Absolute Silence)&quot;,
+        &quot;2024-12-31&quot;: &quot;Yule Ball (Waxing Crescent)&quot;,
+        &quot;2025-01-13&quot;: &quot;Rite of the First Howl (Full Moon)&quot;,
+        &quot;2025-02-05&quot;: &quot;Freya&#39;s Blessing (First Quarter)&quot;,
+        &quot;2025-03-14&quot;: &quot;Rite of Tyr (Lunar Eclipse)&quot;,
+        &quot;2025-04-22&quot;: &quot;Song of the Roots (Waning Moon)&quot;,
+        &quot;2025-05-12&quot;: &quot;Skadi&#39;s Hunt (Full Moon)&quot;,
+        &quot;2025-06-25&quot;: &quot;Trial of Light (New Moon - Solstice)&quot;
+    };
+
+    var dateString = &quot;***Date Anchor: &quot; + dateKey + &quot;***&quot;;
+
+    // Dynamic Injection
+    if (lunarEvents[dateKey]) {
+        pushOut(null, &quot;***CRITICAL SYSTEM DIRECTIVE: Today is &quot; + dateKey + &quot;. Ongoing Event: &quot; + lunarEvents[dateKey] + &quot;. Radically modify behavior, weather, and environment to reflect this Sacred Event. IGNORE DAILY ROUTINES.***&quot;);
+    } else {
+        pushOut(null, dateString);
+    }
+})();
+
+</code></pre>
+<p><strong>User</strong> : altra cosa quell&#39;iniziezione per far ripartire il conteggio ad inizio arco potremmo gestirla anche con il time skyp quando l&#39;unente mette:
+((OOC: I think this scene is complete! Can we do a time skip to [New Moment] please?))
+quel  [New Moment] sarà il trigger per far ripartire il conteggio dal momento specificato
+<strong>Gemini</strong> : L&#39;idea di usare il comando OOC per ricalibrare l&#39;orologio è eccellente: rende l&#39;architettura completamente autonoma e responsiva alle azioni del giocatore, senza dover riavviare la chat o toccare il codice quando si vuole saltare avanti.
+C&#39;è però un dettaglio tecnico importante da considerare per l&#39;ambiente ES6:  <strong>l&#39;LLM (il bot) capisce il linguaggio naturale, ma lo script matematico no.</strong>  Se scrivi ((OOC: time skip to tomorrow)) o ((OOC: time skip to Halloween)), l&#39;intelligenza artificiale adatterà la storia, ma lo script JS non saprà estrarre matematicamente &quot;domani&quot; per calcolare la fase lunare.
+Per far funzionare il trigger nello script, devi abituarti a inserire una data esatta (in formato YYYY-MM-DD) all&#39;interno della tua richiesta OOC. Ad esempio: ((OOC: I think this scene is complete! Can we do a time skip to [2024-11-20] please?))
+In questo modo, lo script leggerà la cronologia della chat a ritroso, troverà la data esatta tra le parentesi quadre, imposterà quella data come &quot;nuovo Giorno Zero&quot; e farà ripartire il contatore dei messaggi da quel punto esatto della chat.
+Ecco il prompt di revisione da passare al Forge per integrare questo  <em>parser</em>  della cronologia.</p>
+<hr>
+<p><strong>Code Review &amp; Feature Request per Janitor_Script_GlobalEngine_Template.js:</strong>
+Aggiungi un  <strong>Chat History Parser</strong>  all&#39;interno del modulo runCalendarEngine() per gestire dinamicamente i time-skip richiesti dall&#39;utente tramite messaggi OOC.
+<strong>Requisiti Tecnici:</strong></p>
+<ol>
+<li>Lo script deve iterare a ritroso la cronologia della chat (chat array in JanitorAI) per intercettare l&#39;ultimo comando di time skip inserito dall&#39;utente.</li>
+<li>Usa una Regex per catturare una data in formato ISO all&#39;interno di una stringa OOC. Esempio di input atteso: ((OOC: ... time skip to [2024-11-20] ...)) -&gt; Regex target: /time skip to\s*\[?(\d{4}-\d{2}-\d{2})\]?/i.</li>
+<li>Se viene trovato un match, la Start Date del calendario deve essere sovrascritta con la data estratta dalla Regex.</li>
+<li>Il contatore del tempo non deve più basarsi sui messaggi totali, ma sui messaggi intercorsi  <strong>dall&#39;indice in cui è avvenuto il time-skip</strong>  (currentMsg - indexDelTimeSkip).
+Ecco il blocco di codice refattorizzato per applicare questa logica:</li>
+</ol>
+<pre><code class="language-javascript">// --- 2. CALENDAR &amp; MOON ENGINE (Aggiornato con OOC Parser) ---
+(function runCalendarEngine() {
+    var currentMsg = (typeof messageCount !== &#39;undefined&#39;) ? messageCount : 0;
+    
+    // Arc Detection (Baseline default fallbacks)
+    var scen = (typeof context.character.scenario === &#39;string&#39;) ? context.character.scenario.toLowerCase() : &#39;&#39;;
+    var startDateStr = &quot;2024-08-28&quot;; // Default: Arc 1
+    
+    if (scen.includes(&quot;arc 2&quot;) || scen.includes(&quot;halloween&quot;)) startDateStr = &quot;2024-10-31&quot;;
+    else if (scen.includes(&quot;arc 3&quot;)) startDateStr = &quot;2025-01-10&quot;;
+    else if (scen.includes(&quot;arc 4&quot;)) startDateStr = &quot;2025-04-15&quot;;
+    else if (scen.includes(&quot;arc 5&quot;)) startDateStr = &quot;2025-08-28&quot;;
+    else if (scen.includes(&quot;arc 6&quot;)) startDateStr = &quot;2025-12-21&quot;;
+
+    var messagesSinceSkip = currentMsg; // Default assumption: no time skip
+
+    // Chat History Parser for Dynamic OOC Time Skips
+    // Esempio trigger: ((OOC: time skip to [2024-11-20]))
+    if (typeof chat !== &#39;undefined&#39; &amp;&amp; Array.isArray(chat)) {
+        var skipRegex = /time skip to\s*\[?(\d{4}-\d{2}-\d{2})\]?/i;
+        
+        // Loop backwards to find the MOST RECENT time skip
+        for (var i = chat.length - 1; i &gt;= 0; i--) {
+            var msgText = chat[i].mes || chat[i].content || &quot;&quot;;
+            var match = msgText.match(skipRegex);
+            
+            if (match) {
+                startDateStr = match[1]; // Override base date with the exact skipped date
+                messagesSinceSkip = currentMsg - i; // Reset message counter to this point
+                break; 
+            }
+        }
+    }
+
+    // Date Calculation based on messages passed since the last anchor (start or skip)
+    var passedDays = Math.floor(messagesSinceSkip / 240);
+    var startDate = new Date(startDateStr);
+    var currentDate = new Date(startDate.getTime() + passedDays * 24 * 60 * 60 * 1000);
+    
+    var y = currentDate.getFullYear();
+    var m = String(currentDate.getMonth() + 1).padStart(2, &#39;0&#39;);
+    var d = String(currentDate.getDate()).padStart(2, &#39;0&#39;);
+    var dateKey = y + &quot;-&quot; + m + &quot;-&quot; + d;
+    
+    // Localized Lunar Dictionary
+    var lunarEvents = {
+        &quot;2024-09-18&quot;: &quot;Last Harvest Hunt (Lunar Eclipse)&quot;,
+        &quot;2024-11-01&quot;: &quot;End of Hel&#39;s Nights (New Moon)&quot;,
+        &quot;2024-11-15&quot;: &quot;Frost Moon&quot;,
+        &quot;2024-12-15&quot;: &quot;The Great Hunt&quot;,
+        &quot;2024-12-30&quot;: &quot;Day of Chains (New Moon - Absolute Silence)&quot;,
+        &quot;2024-12-31&quot;: &quot;Yule Ball (Waxing Crescent)&quot;,
+        &quot;2025-01-13&quot;: &quot;Rite of the First Howl (Full Moon)&quot;,
+        &quot;2025-02-05&quot;: &quot;Freya&#39;s Blessing (First Quarter)&quot;,
+        &quot;2025-03-14&quot;: &quot;Rite of Tyr (Lunar Eclipse)&quot;,
+        &quot;2025-04-22&quot;: &quot;Song of the Roots (Waning Moon)&quot;,
+        &quot;2025-05-12&quot;: &quot;Skadi&#39;s Hunt (Full Moon)&quot;,
+        &quot;2025-06-25&quot;: &quot;Trial of Light (New Moon - Solstice)&quot;
+    };
+
+    var dateString = &quot;***Date Anchor: &quot; + dateKey + &quot;***&quot;;
+
+    if (lunarEvents[dateKey]) {
+        pushOut(null, &quot;***CRITICAL SYSTEM DIRECTIVE: Today is &quot; + dateKey + &quot;. Ongoing Event: &quot; + lunarEvents[dateKey] + &quot;. Radically modify behavior, weather, and environment to reflect this Sacred Event. IGNORE DAILY ROUTINES.***&quot;);
+    } else {
+        pushOut(null, dateString);
+    }
+})();
+
+</code></pre>

@@ -1,0 +1,22 @@
+<p><strong>User</strong> : Ho notato un grave errore nei lorebook generati da code, molto spesso inserisc econtenuti di questo tipo :
+&quot;content&quot;: &quot;[ACTIVE] WRD Source: 1_template/SvartulfrVerse_World_Template.json&quot;,
+invece che voci vere e proprie, questo è un problema perché i lorebook janitor noin seguono i collegamenti sono cechi all&#39;estenro quindi riportare una source o una bonduaries è totalmente inutile
+<strong>Gemini</strong> : Hai perfettamente ragione. Questo è un problema critico noto come  <strong>&quot;Path Leakage&quot; (Fuga di Percorsi)</strong> , ed è uno degli errori più deleteri che un agente possa commettere durante la conversione.
+Dato che l&#39;LLM di JanitorAI è completamente &quot;cieco&quot; rispetto al tuo computer o a repository esterni, inserire stringhe come Source: 1_template/SvartulfrVerse_World_Template.json all&#39;interno del campo content comporta due grossi danni:</p>
+<ol>
+<li><strong>Spreco di Token:</strong>  Stai bruciando token di contesto preziosi per informazioni che non aggiungono nulla alla narrazione.</li>
+<li><strong>Allucinazioni dell&#39;LLM:</strong>  Il bot potrebbe confondersi e, vedendo un percorso di file, iniziare a rispondere parlando di &quot;template&quot;, &quot;file json&quot; o &quot;sorgenti&quot;, rompendo l&#39;immersione del roleplay.
+L&#39;agente sta facendo questo errore perché cerca di preservare i metadati strutturali del tuo archivio locale anche nel prodotto finale. Dobbiamo impedirglielo in modo perentorio.
+Ecco come risolvere il problema in modo definitivo aggiungendo una regola ferrea al System Prompt del tuo  <strong>Activation Engineer</strong>  o  <strong>Code Agent</strong>  incaricato di compilare i JSON:</li>
+</ol>
+<h5>Aggiungi questa direttiva al Prompt dell&#39;Agente:</h5>
+<p>Copia e incolla questa clausola nel suo prompt di sistema (sotto le regole di formattazione del JSON):
+<strong>⚠️ STRICT NO PATH LEAKAGE &amp; NO META-BLEED RULE ⚠️</strong>  Il campo &quot;content&quot; all&#39;interno delle entries del Lorebook deve contenere  <strong>ESCLUSIVAMENTE</strong>  informazioni di lore in-universe, trigger comportamentali o dettagli descrittivi validi per il roleplay. È  <strong>SEVERAMENTE VIETATO</strong>  inserire nel campo &quot;content&quot; qualsiasi traccia di metadati del nostro ambiente di sviluppo, tra cui:</p>
+<ul>
+<li>Percorsi di file locali o URL (es. Source: cartella/file.json, Source: .md).</li>
+<li>Nomi dei template utilizzati (es. SvartulfrVerse_World_Template).</li>
+<li>Boundaries di conversione o intestazioni di debug. L&#39;LLM di JanitorAI non ha accesso al nostro file system. Pulisci e rimuovi questi dati sorgente prima di generare l&#39;output JSON. Gli unici tag ammessi nel content sono quelli di categoria in-universe (es. [ACTIVE], [DEFERRED], o eventuali chiavi di formato).</li>
+</ul>
+<h5>Come intervenire sui Lorebook già generati</h5>
+<p>Se hai già molti JSON sporchi, puoi dire al tuo agente (o a Claude/ChatGPT, se li stai usando come assistenti al codice):  <em>&quot;Analizza questo file JSON del lorebook. Cerca in tutti i campi</em>  <em>content</em>  <em>e rimuovi chirurgicamente qualsiasi stringa che inizi con &#39;Source:&#39; o contenga percorsi di file come &#39;.json&#39; o &#39;.md&#39;. Lascia intatto tutto il resto della lore.&quot;</em>
+Il campo content deve essere puro e concentrato al 100% sul &quot;MicroCosmo&quot; della storia, mai sull&#39;architettura esterna. Applica questa correzione all&#39;agente e fammi sapere se smette di inserire quei percorsi inutili!</p>

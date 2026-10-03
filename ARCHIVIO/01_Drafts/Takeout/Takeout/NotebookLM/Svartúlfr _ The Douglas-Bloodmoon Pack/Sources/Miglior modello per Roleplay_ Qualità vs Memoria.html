@@ -1,0 +1,162 @@
+<p><strong>User</strong> : qual&#39;è il migliore per il roleplay tra questi?
+ModelInput / 1MCache / 1MOutput / 1MMax contextagnes-2.0-flash
+Vision0.1xRp500 $0.03 Rp50 $0 Rp2.000 $0.11 512K agnes-2.5-flash
+Vision0.2xRp1.000 $0.06 Rp100 $0.01 Rp5.000 $0.28 512K mistral-large
+TextRp2.699 $0.15 Rp270 $0.01 Rp8.097 $0.45 252K mistral-medium-3-5
+VisionRp5.398 $0.3 Rp1.000 $0.06 Rp26.988 $1.49 256K stepfun-3.7-flash
+VisionRp724 $0.04 Rp145 $0.01 Rp4.164 $0.23 262K
+<strong>Gemini</strong> : Scegliere il modello migliore per il roleplay tra questi dipende da cosa consideri più importante per la tua sessione:  <strong>qualità della scrittura (intelligenza)</strong> ,  <strong>memoria a lungo termine (contesto)</strong>  o  <strong>costo</strong> .
+Ecco un&#39;analisi dettagliata per aiutarti a scegliere:</p>
+<h5>1. Il migliore per Qualità della Narrazione: mistral-large</h5>
+<p>Se cerchi la migliore interpretazione del personaggio, sfumature emotive e prosa di alta qualità, questo è il modello di punta.</p>
+<ul>
+<li><strong>Perché per il Roleplay:</strong>  I modelli di classe &quot;Large&quot; hanno un numero maggiore di parametri e capacità di ragionamento superiori. Questo si traduce in un bot che capisce meglio i sottintesi, mantiene una personalità coerente ed evita di diventare ripetitivo.</li>
+<li><strong>Memoria:</strong>  252K di contesto, che è più che sufficiente per ricordare centinaia di pagine di interazioni passate.</li>
+<li><strong>Contro:</strong>  È il più costoso per token generato (Output), ma la qualità giustifica il prezzo.</li>
+</ul>
+<h5>2. Il migliore per Roleplay Lunghissimi (Memoria): agnes-2.5-flash</h5>
+<p>Se hai una campagna di roleplay che va avanti da mesi e vuoi che l&#39;IA ricordi ogni singolo dettaglio descritto all&#39;inizio della storia senza dimenticarsi il passato.</p>
+<ul>
+<li><strong>Perché per il Roleplay:</strong>  Offre un enorme  <strong>contesto di 512K token</strong>  (il doppio rispetto a Mistral). Inoltre, la dicitura &quot;flash&quot; indica che è ottimizzato per essere estremamente veloce nel rispondere.</li>
+<li><strong>Costo-Efficacia:</strong>  La versione 2.5 rappresenta probabilmente il miglior compromesso della lista tra un prezzo molto basso e una buona capacità di comprensione.</li>
+</ul>
+<h5>3. L&#39;opzione Budget per chat rapide: stepfun-3.7-flash o agnes-2.0-flash</h5>
+<p>Se fai roleplay con botte e risposte molto veloci (stile chat messaggistica) e il tuo obiettivo principale è non consumare crediti/budget.</p>
+<ul>
+<li><strong>Perché per il Roleplay:</strong>  Hanno costi di Input e Output irrisori (frazioni di centesimo), permettendoti di giocare per ore spendendo quasi nulla.</li>
+<li><strong>Contro:</strong>  I modelli più piccoli/veloci tendono a produrre risposte più &quot;piatte&quot;, possono perdere il personaggio più facilmente se messi di fronte a prompt complessi e usano un vocabolario meno ricco rispetto a mistral-large.</li>
+</ul>
+<hr>
+<h5>Verdetto Finale</h5>
+<ul>
+<li>Se vuoi  <strong>l&#39;esperienza migliore in assoluto</strong> , scrivi in modo dettagliato e non ti preoccupa spendere qualche centesimo in più: scegli  <strong>mistral-large</strong> .</li>
+<li>Se cerchi il  <strong>miglior rapporto qualità-prezzo</strong>  con una memoria immensa per storie infinite: scegli  <strong>agnes-2.5-flash</strong> .
+<strong>User</strong> : analizza le offerte di https://www.studentoffers.co/tools?category=ai-and-machine-learning
+e individuami le migliori offerte per token gratuiti per GLM 5.2 o GLM 4.7 usabili tramite api su janitor
+<strong>Gemini</strong> : Ho analizzato le offerte presenti sulla pagina di  <strong>StudentOffers</strong>  che mi hai indicato.
+Guardando l&#39;elenco attuale,  <strong>non ci sono offerte esclusive dedicate specificamente a &quot;GLM 5.2&quot; o &quot;GLM 4.7&quot;</strong>  (i modelli di Zhipu AI). Tuttavia, la pagina propone alcune eccellenti  <strong>piattaforme di aggregazione API (Hub LLM)</strong>  che regalano crediti mensili.
+Questi servizi ti permettono di accedere a tutti i principali modelli sul mercato (che di solito includono l&#39;intera famiglia GLM) e forniscono un endpoint  <strong>compatibile con OpenAI</strong> , che è il requisito fondamentale per poterli inserire e usare su  <strong>JanitorAI</strong> .
+Ecco le due migliori opzioni sulla pagina da sfruttare per il tuo scopo:</li>
+</ul>
+<h5>1. Merge Gateway (La Scelta Migliore)</h5>
+<ul>
+<li><strong>Offerta:</strong>   <strong>10$ al mese in crediti LLM gratuiti</strong>  per gli studenti.</li>
+<li><strong>Come funziona:</strong>  È un gateway che offre &quot;un&#39;unica API per ogni principale LLM&quot;. Essendo un aggregatore che punta a raggruppare l&#39;accesso ai grandi modelli, è quasi certo che supporti i modelli GLM di Zhipu AI (comprese le versioni più richieste).</li>
+<li><strong>Perché va bene per Janitor:</strong>  Puoi generare la loro chiave API, prendere il loro  <em>Base URL</em>  e inserirlo su JanitorAI selezionando l&#39;opzione proxy OpenAI. Con 10$ al mese di crediti gratuiti, avrai a disposizione moltissimi messaggi per il roleplay, considerando che i modelli cinesi come GLM tendono ad avere costi per token molto bassi.</li>
+</ul>
+<h5>2. TokenRouter</h5>
+<ul>
+<li><strong>Offerta:</strong>  Hub di modelli AI unificato (attualmente in promo per crediti API gratuiti).</li>
+<li><strong>Come funziona:</strong>  Viene descritto esplicitamente come un servizio dotato di  <strong>&quot;API compatibili con OpenAI per i migliori LLM&quot;</strong> . Anche se al momento stanno spingendo una promo specifica per il modello  <em>Kimi K3</em>  (gratis fino al 5 agosto), la loro piattaforma funge da router per i vari modelli di punta.</li>
+<li><strong>Perché va bene per Janitor:</strong>  La compatibilità nativa con lo standard OpenAI rende facilissimo l&#39;inserimento su JanitorAI senza dover fare conversioni di formato. Ti basterà controllare nella loro dashboard se le versioni GLM 4.7 e 5.2 sono attive e selezionare il modello corrispondente.</li>
+</ul>
+<hr>
+<h5>💡 Come usarli su JanitorAI:</h5>
+<p>Una volta riscattata l&#39;offerta su uno di questi due siti tramite il tuo status di studente:</p>
+<ol>
+<li>Vai sulla dashboard del servizio (es. Merge Gateway) e crea una  <strong>API Key</strong> .</li>
+<li>Copia il loro  <strong>Base URL</strong>  (es. <a href="https://api.mergegateway.com/v1">https://api.mergegateway.com/v1</a>).</li>
+<li>Vai nelle impostazioni API di JanitorAI, seleziona  <strong>OpenAI</strong>  e attiva l&#39;opzione per usare un  <strong>Proxy / Reverse Proxy</strong> .</li>
+<li>Incolla il Base URL nel campo dell&#39;URL e inserisci la tua API Key.</li>
+<li>Scrivi manualmente il nome del modello (es. glm-5.2 o glm-4.7, a seconda di come viene chiamato nel listino dell&#39;aggregatore) nell&#39;apposito campo del Custom Model.
+<strong>User</strong> : serve il suffisso chat completition?
+<strong>Gemini</strong> : Di solito  <strong>no</strong> , su JanitorAI non è necessario aggiungere il suffisso /chat/completions alla fine dell&#39;URL.
+JanitorAI è strutturato per aggiungere automaticamente l&#39;endpoint finale dietro le quinte quando selezioni l&#39;opzione  <strong>OpenAI Proxy / Custom</strong> .
+Ecco la regola pratica da seguire:</li>
+</ol>
+<ul>
+<li><strong>Cosa inserire (Opzione standard):</strong>  Ti basta incollare il Base URL che ti fornisce il provider, che quasi sempre termina con /v1.
+<ul>
+<li><em>Esempio corretto:</em>  <a href="https://api.mergegateway.com/v1">https://api.mergegateway.com/v1</a></li>
+</ul>
+</li>
+<li><strong>Quando inserire il suffisso (Piano B):</strong>  Se, provando a mandare un messaggio, ricevi un errore di connessione (come 404 Not Found o Endpoint non valido), significa che quel proxy specifico è meno elastico e vuole l&#39;indirizzo assoluto. Solo in quel caso, aggiorna il campo aggiungendo il suffisso.
+<ul>
+<li><em>Esempio:</em>  <a href="https://api.mergegateway.com/v1/chat/completions">https://api.mergegateway.com/v1/chat/completions</a>
+A differenza di altre interfacce più stratificate come SillyTavern (dove a volte la configurazione delle API richiede di specificare manualmente il percorso esatto per la chat o per la generazione di immagini), Janitor tende a gestire il routing in modo più snello e automatico, permettendoti di passare direttamente al testing del bot.
+Parti con il Base URL pulito (solo /v1): nella stragrande maggioranza dei casi si connetterà senza problemi al primo tentativo.
+<strong>User</strong> : merge gateway richiede una carta per il credito gratis mi servono alternative
+<strong>Gemini</strong> : Capisco la frustrazione: richiedere la carta di credito rende vano il concetto di &quot;prova gratuita&quot;.
+Se cerchi token gratuiti senza dovere inserire alcuna carta o metodo di pagamento, ci sono alternative eccellenti che offrono  <strong>modelli GLM (e altri ottimi modelli per il roleplay)</strong>  perfettamente compatibili con JanitorAI tramite proxy OpenAI.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5>1. SiliconFlow (SiliconCloud) —  <em>Il migliore per la famiglia GLM</em></h5>
+<p>È uno dei provider cinesi principali per i modelli della serie GLM (sviluppati da Zhipu AI) e DeepSeek.</p>
+<ul>
+<li><strong>Carta di credito richiesta:</strong>   <strong>NO</strong> . Si registra semplicemente con e-mail o account sociale.</li>
+<li><strong>Offerta:</strong>  Dà crediti gratuiti all&#39;iscrizione e offre  <strong>GLM-4-Flash e altri modelli GLM completamente GRATIS in modo permanente</strong> .</li>
+<li><strong>Modelli per Roleplay:</strong>  THUDM/glm-4-9b-chat, THUDM/GLM-4-Flash, oltre a varianti di DeepSeek e Qwen.</li>
+<li><strong>Configurazione su JanitorAI:</strong>
+<ul>
+<li><strong>Proxy URL:</strong>  <a href="https://api.siliconflow.cn/v1">https://api.siliconflow.cn/v1</a></li>
+<li><strong>API Key:</strong>  Generabile gratuitamente dalla dashboard di SiliconFlow.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5>2. OpenRouter —  <em>La scelta più versatile e immediata</em></h5>
+<p>OpenRouter è l&#39;hub per eccellenza per la community di roleplay. Mantiene un catalogo costantemente aggiornato di  <strong>modelli 100% gratuiti</strong>  (identificati dal suffisso :free), inclusi modelli GLM, Qwen e Llama.</p>
+<ul>
+<li><strong>Carta di credito richiesta:</strong>   <strong>NO</strong> . Basta un account Google o GitHub.</li>
+<li><strong>Offerta:</strong>  Accesso gratuito a decine di modelli senza limiti di tempo (solo rate limit sui messaggi al minuto).</li>
+<li><strong>Modelli gratuiti consigliati:</strong>
+<ul>
+<li>zhipuai/glm-4-9b-chat:free (della famiglia GLM)</li>
+<li>meta-llama/llama-3.3-70b-instruct:free (eccellente per il roleplay)</li>
+<li>google/gemini-2.0-flash-exp:free</li>
+</ul>
+</li>
+<li><strong>Configurazione su JanitorAI:</strong>
+<ul>
+<li><strong>Proxy URL:</strong>  <a href="https://openrouter.ai/api/v1">https://openrouter.ai/api/v1</a></li>
+<li><strong>API Key:</strong>  Creabile con un click su OpenRouter senza versare alcun deposito.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5>3. Google AI Studio (Gemini API) —  <em>Memoria enorme e zero spese</em></h5>
+<p>Se desideri un modello potente con una finestra di contesto gigantesca per roleplay lunghi e complessi, la chiave API nativa di Google è una delle opzioni più solide in assoluto.</p>
+<ul>
+<li><strong>Carta di credito richiesta:</strong>   <strong>NO</strong> . Serve solo un account Google standard.</li>
+<li><strong>Offerta:</strong>  Tier gratuito generoso (fino a 15 richieste al minuto su modelli di punta come Gemini Flash/Pro).</li>
+<li><strong>Configurazione su JanitorAI:</strong>
+<ul>
+<li>Puoi usarlo selezionando direttamente l&#39;opzione nativa  <strong>Google Gemini</strong>  nelle impostazioni API di Janitor, oppure inserendo la chiave generata su <a href="https://aistudio.google.com/">aistudio.google.com</a>.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5>Tabella riassuntiva di configurazione per JanitorAI</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Provider</th><th>Serve Carta?</th><th>Base URL per JanitorAI</th><th>Modello consigliato da scrivere in Custom Model</th></tr></thead><tbody><tr><td><strong>SiliconFlow</strong></td><td>❌ No</td><td><a href="https://api.siliconflow.cn/v1">https://api.siliconflow.cn/v1</a></td><td>THUDM/glm-4-9b-chat oppure THUDM/GLM-4-Flash</td></tr><tr><td><strong>OpenRouter</strong></td><td>❌ No</td><td><a href="https://openrouter.ai/api/v1">https://openrouter.ai/api/v1</a></td><td>zhipuai/glm-4-9b-chat:free</td></tr><tr><td><strong>Google AI Studio</strong></td><td>❌ No</td><td><em>(Integrazione nativa Gemini)</em></td><td>gemini-1.5-flash o gemini-2.0-flash</td></tr></tbody></table>
+<p>http://googleusercontent.com/lmdx_content/</p>

@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Ironhorn Nomads MC",
+    "id": "_eVzj3Ve4fxDCXyAmc9qXD",
+    "type": "organization/faction",
+    "is_global": true,
+    "keys": ["Ironhorn Nomads", "Ironhorn", "Nomads MC", "Obsidian Blades", "biker gang", "Ironworks gang"],
+    "secondary_keys": ["Marek", "Niran", "Vannak", "Vargus", "Barrow", "underworld", "contraband"],
+    "key_logic": "AND_ANY",
+    "priority": 70
+  },
+  {
+    "name": "Horned Skull Clan",
+    "id": "_khhNdHFj4KnzEdwHYrTja",
+    "type": "organization/faction",
+    "is_global": true,
+    "keys": ["Horned Skull", "Horned Skull Clan", "Red Clan", "clan dei Vax", "Red Vax clan"],
+    "secondary_keys": ["Zeera", "Yael", "HSK", "mercenari", "caccia", "fortress", "caverns"],
+    "key_logic": "AND_ANY",
+    "priority": 70
+  },
+  {
+    "name": "Minotaurs and Dragonids",
+    "id": "_h66GbhkJgcxMLxLJmGH2W",
+    "type": "lore/concept",
+    "is_global": true,
+    "keys": ["minotaur", "minotaurs", "dragonid", "dragonids", "demi-human"],
+    "secondary_keys": ["The Horns", "Dockside", "Ironworks", "horns", "scales"],
+    "key_logic": "AND_ANY",
+    "priority": 50
+  },
+  {
+    "name": "Minotaur Cultural Taboo - Beef",
+    "id": "_EchQqRDeLL3KA4JdcLLt9",
+    "type": "lore/concept",
+    "is_global": true,
+    "keys": ["minotaur", "beef", "taboo", "bovino", "carne bovina"],
+    "secondary_keys": ["Barrow", "food", "meat", "culture"],
+    "key_logic": "AND_ANY",
+    "priority": 60
+  },
+  {
+    "name": "Mana Crash",
+    "id": "_hqmbdmjzWawbqygW84cV4",
+    "type": "lore/concept",
+    "is_global": true,
+    "keys": ["Mana Crash", "mana exhaustion", "collasso da mana", "sovraccarico magico", "mana depletion"],
+    "secondary_keys": ["magic", "mana", "spell", "fatigue", "collapse", "CUMS"],
+    "key_logic": "AND_ANY",
+    "priority": 60
+  },
+  {
+    "name": "Dimensional Bag",
+    "id": "_gQga39XbehpJa2YLjKBN4",
+    "type": "item",
+    "is_global": true,
+    "keys": ["bag", "dimensional bag", "spatial bag", "borsa dimensionale"],
+    "secondary_keys": ["inventory", "storage", "adventurer", "dungeon"],
+    "key_logic": "AND_ANY",
+    "priority": 50
+  },
+  {
+    "name": "Naga Species",
+    "id": "_yWw4JURECRynU9RXGx3Ce",
+    "type": "lore/concept",
+    "is_global": true,
+    "keys": ["naga", "nagas", "serpentine", "demi-human"],
+    "secondary_keys": ["Otherworld", "Silver Marshes", "scales", "venom"],
+    "key_logic": "AND_ANY",
+    "priority": 50
+  },
+  {
+    "name": "Naga - Reproduction and Anatomy",
+    "id": "_YMwkDBp9Aw7aNXzM4r3qr",
+    "type": "memory",
+    "is_global": false,
+    "keys": ["Naga", "nagas", "anatomy", "reproduction", "copulation"],
+    "secondary_keys": ["coils", "genitalia", "intimacy"],
+    "key_logic": "AND_ANY",
+    "priority": 50
+  },
+  {
+    "name": "Orc Compatibility and Reproduction",
+    "id": "_WRh8dqUn9fr2aEyW2rcm3",
+    "type": "memory",
+    "is_global": false,
+    "keys": ["Orc", "orcs", "compatibility", "reproduction", "breeding", "hybrid"],
+    "secondary_keys": ["intimacy", "conception", "knot"],
+    "key_logic": "AND_ANY",
+    "priority": 50
+  },
+  {
+    "name": "Satyr Pheromones",
+    "id": "_nw98wBMJGeJBWeVhjM1gL",
+    "type": "memory",
+    "is_global": false,
+    "keys": ["Satyr", "satyrs", "pheromone", "pheromones"],
+    "secondary_keys": ["scent", "euphoria", "intimacy"],
+    "key_logic": "AND_ANY",
+    "priority": 50
+  },
+  {
+    "name": "Ice Satyrs",
+    "id": "_b66ztLLgNRKTyfafhqRg7",
+    "type": "creature",
+    "is_global": true,
+    "keys": ["Ice Satyr", "Ice Satyrs", "satiro dei ghiacci", "creature"],
+    "secondary_keys": ["tundra", "Otherworld", "horns", "frost"],
+    "key_logic": "AND_ANY",
+    "priority": 50
+  },
+  {
+    "name": "Potions and Alchemical Recovery",
+    "id": "_TYfbwB7NaDXtz3FARfcTK",
+    "type": "lore/concept",
+    "is_global": true,
+    "keys": ["potion", "potions", "alchemy", "fiala", "recovery", "contraceptive potion"],
+    "secondary_keys": ["elixir", "healing", "draught", "alchemical"],
+    "key_logic": "AND_ANY",
+    "priority": 50
+  }
+]

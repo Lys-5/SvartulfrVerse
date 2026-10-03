@@ -1,0 +1,450 @@
+<p><strong>User</strong> : riscrivimi questo prompot:
+Optimize this json <a href="about:invalid#zCSafez">SvartulfrVerse_Workd_Template.json</a> <a href="about:invalid#zCSafez">SvartulfrVerse_Fantasy.json</a> <a href="about:invalid#zCSafez">SvartulfrVerse_Modern.json</a> <a href="about:invalid#zCSafez">SvartulfrVerse_Pirate.json</a> <a href="about:invalid#zCSafez">SvartulfrVerse_Regency.json</a> <a href="about:invalid#zCSafez">SvartulfrVerse_SciFi.json</a> <a href="about:invalid#zCSafez">SvartulfrVerse_Urban.json</a> <a href="about:invalid#zCSafez">SvartulfrVerse_Viking.json</a> <a href="about:invalid#zCSafez">SvartulfrVerse_Wasteland.json</a>
+Seguendo queste rules:
+-Le key e keysecondary (raw e not) sono chiavi in game usate all&#39;interno della chat quindi devo essere trigger in game, sempre (When these words appear in chat, this lore will be activated. You can use Regular Expressions (RegEx) by wrapping the pattern in slashes (e.g. /pattern/). Flags can be added after the closing slash (e.g. /pattern/gi).)
+-Use secondary keys to either include or exclude entries (and any, and all, not any, not all)</p>
+<ul>
+<li>placement deve essere segnato (deafualt, personality, scenario, example dialogs) e la position after o before
+tutti i seguenti campi devo essere inclusi: { &quot;activationMode&quot;: &quot;standard&quot;, &quot;activationScript&quot;: &quot;&quot;, &quot;case_sensitive&quot;: false, &quot;category&quot;: &quot;other&quot;, &quot;comment&quot;: &quot;Comment&quot;, &quot;constant&quot;: false, &quot;content&quot;: &quot;[ACTIVE] WRD: [Canon Layer: ACTIVE] Fantasy è il macro-contesto high magic del SvartulfrVerse, centrato su Amarantia555 nell&#39;Era della Foglia 127 EDF. Comprende magia regolata, Guardiani, profezie, creature leggendarie, rotte imperiali, città-stato, porti, borghi e conflitti tra destino e agency; integra lore Amarantia555 attiva, culturale, storica e deferred senza attivare contenuti non core. In Amarantia, capitale dell’Impero, i Guardiani sono la massima autorità politica: centro nevralgico della capitale, governo imperiale e giudizio delle contese tra città. L’Imperatore è eletto dal popolo ogni 100 anni tra i Primi Guardiani delle città e amministra le terre dell’Impero.&quot;, &quot;enabled&quot;: true, &quot;extensions&quot;: {}, &quot;groupWeight&quot;: 100, &quot;id&quot;: &quot;6f3a4e33-ca92-4e4e-9c1e-c87b7fd3f803&quot;, &quot;inclusionGroup&quot;: [ &quot;Group-Label&quot; ], &quot;inclusionGroupRaw&quot;: &quot;Group-Label&quot;, &quot;insertion_order&quot;: 100, &quot;key&quot;: [ &quot;Fantasy&quot;, &quot;Amarantia&quot;, &quot;Amarantia555&quot;, &quot;555&quot;, &quot;127 EDF&quot;, &quot;Era della Foglia&quot;, &quot;high magic&quot;, &quot;Guardiani&quot;, &quot;magic laws&quot; ], &quot;keyMatchPriority&quot;: false, &quot;keysecondary&quot;: [], &quot;keysecondaryRaw&quot;: &quot;&quot;, &quot;keysRaw&quot;: &quot;Fantasy, Amarantia, Amarantia555, 555, 127 EDF, Era della Foglia, high magic, Guardiani, magic laws&quot;, &quot;matchWholeWords&quot;: true, &quot;minMessages&quot;: 0, &quot;name&quot;: &quot;Entry Name&quot;, &quot;prioritizeInclusion&quot;: false, &quot;priority&quot;: 1, &quot;probability&quot;: 100, &quot;selectiveLogic&quot;: 0, &quot;tags&quot;: [ &quot;lore&quot; ], &quot;placement&quot;: &quot;example_dialogs&quot;, &quot;placementPosition&quot;: &quot;before&quot; },
+<strong>Gemini</strong> : Ecco il Master Prompt riscritto, strutturato e ottimizzato in inglese. È progettato appositamente per essere copiato e incollato al tuo Code Agent (come Cursor, Trae o Claude), garantendo che rispetti rigorosamente le regole di attivazione in-game, i filtri logici e lo schema JSON esatto di JanitorAI.</li>
+</ul>
+<hr>
+<h5>📋 Copia e incolla questo prompt al tuo Agente:</h5>
+<pre><code class="language-markdown">**Role &amp; Context**
+You are an Expert JanitorAI Lorebook Engineer and JSON Architect. Your task is to process, optimize, and standardize the following SvartulfrVerse JSON files into a unified, platform-compliant format:
+
+- SvartulfrVerse_Workd_Template.json
+- SvartulfrVerse_Fantasy.json
+- SvartulfrVerse_Modern.json
+- SvartulfrVerse_Pirate.json
+- SvartulfrVerse_Regency.json
+- SvartulfrVerse_SciFi.json
+- SvartulfrVerse_Urban.json
+- SvartulfrVerse_Viking.json
+- SvartulfrVerse_Wasteland.json
+
+**CRITICAL RULES FOR CONVERSION**
+
+**1. In-Game Trigger Keys (`key`, `keysecondary`, `keysRaw`, `keysecondaryRaw`)**
+- Keys and secondary keys are strictly IN-GAME triggers. When these words appear in chat, the lore will be activated. Do not use abstract meta-tags as keys if they won&#39;t naturally occur in the roleplay dialogue or narration.
+- **RegEx Support:** You can use Regular Expressions by wrapping the pattern in slashes (e.g., `/pattern/`). Flags can be added after the closing slash (e.g., `/pattern/gi`).
+- Ensure `keysRaw` and `keysecondaryRaw` perfectly reflect the array contents as comma-separated strings.
+
+**2. Selective Logic (Secondary Keys)**
+- Use `keysecondary` to build conditional activations (include or exclude entries).
+- Apply the appropriate `selectiveLogic` integer to represent: AND ANY, AND ALL, NOT ANY, NOT ALL. This ensures complex lore only triggers in the exact right context.
+
+**3. Placement and Positioning**
+- Every entry must explicitly declare where it injects into the prompt.
+- `placement` MUST be exactly one of these values: `default`, `personality`, `scenario`, `example_dialogs`.
+- `placementPosition` MUST be exactly one of these values: `before` or `after`.
+
+**4. Strict JSON Schema Compliance**
+Every single entry in the output JSON arrays MUST contain ALL the following fields. Do not omit any keys, even if they are empty or false. Generate a unique UUID `id` for each entry.
+
+**Target Schema Template:**
+```json
+  {
+    &quot;activationMode&quot;: &quot;standard&quot;,
+    &quot;activationScript&quot;: &quot;&quot;,
+    &quot;case_sensitive&quot;: false,
+    &quot;category&quot;: &quot;other&quot;,
+    &quot;comment&quot;: &quot;Comment&quot;,
+    &quot;constant&quot;: false,
+    &quot;content&quot;: &quot;[ACTIVE] WRD: [Canon Layer: ACTIVE] Fantasy è il macro-contesto high magic del SvartulfrVerse, centrato su Amarantia555 nell&#39;Era della Foglia 127 EDF. Comprende magia regolata, Guardiani, profezie, creature leggendarie, rotte imperiali, città-stato, porti, borghi e conflitti tra destino e agency; integra lore Amarantia555 attiva, culturale, storica e deferred senza attivare contenuti non core. In Amarantia, capitale dell’Impero, i Guardiani sono la massima autorità politica: centro nevralgico della capitale, governo imperiale e giudizio delle contese tra città. L’Imperatore è eletto dal popolo ogni 100 anni tra i Primi Guardiani delle città e amministra le terre dell’Impero.&quot;,
+    &quot;enabled&quot;: true,
+    &quot;extensions&quot;: {},
+    &quot;groupWeight&quot;: 100,
+    &quot;id&quot;: &quot;6f3a4e33-ca92-4e4e-9c1e-c87b7fd3f803&quot;,
+    &quot;inclusionGroup&quot;: [
+      &quot;Group-Label&quot;
+    ],
+    &quot;inclusionGroupRaw&quot;: &quot;Group-Label&quot;,
+    &quot;insertion_order&quot;: 100,
+    &quot;key&quot;: [
+      &quot;Fantasy&quot;,
+      &quot;Amarantia&quot;,
+      &quot;Amarantia555&quot;,
+      &quot;555&quot;,
+      &quot;127 EDF&quot;,
+      &quot;Era della Foglia&quot;,
+      &quot;high magic&quot;,
+      &quot;Guardiani&quot;,
+      &quot;magic laws&quot;
+    ],
+    &quot;keyMatchPriority&quot;: false,
+    &quot;keysecondary&quot;: [],
+    &quot;keysecondaryRaw&quot;: &quot;&quot;,
+    &quot;keysRaw&quot;: &quot;Fantasy, Amarantia, Amarantia555, 555, 127 EDF, Era della Foglia, high magic, Guardiani, magic laws&quot;,
+    &quot;matchWholeWords&quot;: true,
+    &quot;minMessages&quot;: 0,
+    &quot;name&quot;: &quot;Entry Name&quot;,
+    &quot;prioritizeInclusion&quot;: false,
+    &quot;priority&quot;: 1,
+    &quot;probability&quot;: 100,
+    &quot;selectiveLogic&quot;: 0,
+    &quot;tags&quot;: [
+      &quot;lore&quot;
+    ],
+    &quot;placement&quot;: &quot;example_dialogs&quot;,
+    &quot;placementPosition&quot;: &quot;before&quot;
+  }
+
+</code></pre>
+<p><strong>Execution Step:</strong>  Please acknowledge these instructions. Once acknowledged, read the provided files from my local workspace and begin the optimization, outputting the clean JSON files according to these exact specifications.</p>
+<pre><code>
+### 💡 Perché questa versione funziona meglio:
+1. **Blindaggio dello Schema**: Impone al modello di copiare esattamente la struttura che hai fornito, inclusi `activationMode`, `selectiveLogic` e i campi `Raw`.
+2. **Definizione chiara della RegEx**: Rende esplicito all&#39;agente che può formattare i trigger complessi in `/pattern/gi` invece di limitarsi alle parole intere, salvando token ed evitando trigger accidentali.
+3. **Execution Pause**: Forza l&#39;agente a confermare di aver capito le regole prima di iniziare a sputare codice, riducendo drasticamente le allucinazioni sui field mancanti.
+
+**User**:
+dammi anche una legenda dei vari campi del jason di janitor
+
+**Gemini**:
+Certamente! Ecco una legenda dettagliata dei campi previsti nello schema JSON di JanitorAI. Comprendere questi campi è fondamentale per controllare esattamente come, quando e dove la tua lore verrà iniettata nel contesto dell&#39;Intelligenza Artificiale.
+
+Ho suddiviso i campi per categorie logiche per renderne più semplice la consultazione:
+
+### 🆔 Identificazione &amp; Metadati
+* **`id`** *(Stringa)*: Un identificativo univoco universale (UUID) per l&#39;entry (es. `&quot;6f3a4e33-ca92-...&quot;`).
+* **`name`** *(Stringa)*: Il nome dell&#39;entry. Serve per organizzazione visiva nell&#39;interfaccia.
+* **`comment`** *(Stringa)*: Una nota a uso interno del creatore per ricordarsi a cosa serve questa entry.
+* **`category`** *(Stringa)*: Categoria dell&#39;entry (spesso `&quot;other&quot;`, `&quot;lore&quot;`, ecc.).
+* **`tags`** *(Array di stringhe)*: Etichette per raggruppare visivamente o organizzare le entries (es. `[&quot;lore&quot;, &quot;fantasy&quot;]`).
+* **`enabled`** *(Booleano)*: Se `true`, l&#39;entry è accesa e può essere attivata. Se `false`, viene ignorata.
+
+### 📝 Contenuto &amp; Posizionamento
+* **`content`** *(Stringa)*: Il &quot;succo&quot; dell&#39;entry. Questo è il testo effettivo che verrà letto dall&#39;LLM quando il nodo si attiva.
+* **`placement`** *(Stringa)*: **CRITICO.** Indica in quale blocco della scheda del bot il testo verrà iniettato. I valori consentiti sono:
+    * `default` (nel prompt di sistema generale)
+    * `personality` (nel blocco della personalità del bot)
+    * `scenario` (nel blocco dell&#39;ambiente/situazione)
+    * `example_dialogs` (nei dialoghi di esempio)
+* **`placementPosition`** *(Stringa)*: Posiziona il testo `before` (prima) o `after` (dopo) il blocco specificato in `placement`.
+* **`insertion_order`** *(Intero)*: Ordine di lettura per l&#39;LLM (es. 100). Tra due entry che si attivano nello stesso punto, quella con l&#39;insertion_order più alto/basso (a seconda del client) viene letta prima.
+
+### 🎯 Trigger Principali (Chiavi di Attivazione)
+* **`key`** *(Array di stringhe)*: Le parole chiave in-game. Se l&#39;utente o il bot scrivono una di queste parole, l&#39;entry si attiva. (es. `[&quot;Amarantia&quot;, &quot;Guardiani&quot;]`). Supporta le RegEx (es. `/guardin(o|i)/gi`).
+* **`keysRaw`** *(Stringa)*: La versione a testo semplice, separata da virgole, dell&#39;array `key` (es. `&quot;Amarantia, Guardiani&quot;`).
+* **`constant`** *(Booleano)*: Se `true`, ignora le chiavi e mantiene l&#39;entry **sempre attiva** nella memoria dell&#39;IA (brucia token velocemente, usare con parsimonia per concetti vitali).
+* **`case_sensitive`** *(Booleano)*: Se `true`, distingue maiuscole e minuscole per i trigger (es. &quot;Mela&quot; non attiverà &quot;mela&quot;).
+* **`matchWholeWords`** *(Booleano)*: Se `true`, cerca solo parole esatte. Ad esempio, se la chiave è &quot;Re&quot;, impedirà che l&#39;entry si attivi a caso quando scrivi &quot;Realtà&quot;.
+
+### 🧠 Logica Selettiva (Chiavi Secondarie)
+* **`keysecondary`** *(Array di stringhe)*: Parole chiave secondarie utilizzate per filtri più complessi (es. se la primary key è &quot;Spada&quot;, la secondary potrebbe essere &quot;Rompere&quot;).
+* **`keysecondaryRaw`** *(Stringa)*: Versione a testo semplice, separata da virgole, dell&#39;array `keysecondary`.
+* **`selectiveLogic`** *(Intero)*: Stabilisce la regola matematica che collega le primary keys alle secondary keys. Di norma i valori standard (a seconda delle interfacce) mappano su:
+    * `0` = **AND ANY** (Deve esserci almeno una Primary E almeno una Secondary)
+    * `1` = **AND ALL** (Deve esserci almeno una Primary E TUTTE le Secondary)
+    * `2` = **NOT ANY** (Si attiva con le Primary, ma NON si attiva se c&#39;è almeno una Secondary)
+    * `3` = **NOT ALL** (Si attiva con le Primary, ma NON si attiva se sono presenti tutte le Secondary contemporaneamente)
+
+### ⚖️ Priorità, Pacing &amp; Pesi
+* **`priority`** *(Intero)*: Priorità di contesto (es. 1, 10, 50). Se il limite dei token è stato raggiunto e non c&#39;è spazio per tutto, l&#39;LLM scarterà le entry con priorità più bassa per conservare quelle con priorità più alta.
+* **`probability`** *(Intero 0-100)*: La percentuale di possibilità che l&#39;entry venga inviata all&#39;LLM quando viene triggerata. Usato per lore &quot;casuale&quot; (es. eventi meteo o piccoli tic del personaggio). Quasi sempre settato a `100`.
+* **`minMessages`** *(Intero)*: Un timer di pacing eccellente. Se impostato a `10`, questa lore non si attiverà **mai** prima che siano stati scambiati almeno 10 messaggi nella chat. Perfetto per lore &quot;Deferred&quot;, segreti svelati gradualmente o evoluzioni della trama.
+* **`groupWeight`** / **`inclusionGroup`** / **`inclusionGroupRaw`**: Usati per raggruppare entità mutuamente esclusive. Utile se hai un gruppo di entry per &quot;Clima&quot;, e vuoi che solo una per volta (col peso maggiore in quel contesto) venga caricata.
+
+### ⚙️ Campi Tecnici &amp; Vuoti
+* **`activationMode`** *(Stringa)*: Spesso lasciata su `&quot;standard&quot;`.
+* **`activationScript`** *(Stringa)*: Codice JavaScript puro che può forzare regole di attivazione estreme. Di norma viene lasciata stringa vuota `&quot;&quot;`.
+* **`extensions`** *(Oggetto)*: `{}`. Campo vuoto riservato ad eventuali estensioni custom dei client (come SillyTavern o plugin specifici).
+* **`keyMatchPriority`** e **`prioritizeInclusion`** *(Booleani)*: Settaggi minori che dicono al parser se dare la precedenza assoluta al caricamento in base al numero esatto di keyword matchate. Spesso `false`.
+
+**User**:
+riscrivi l&#39;esempio mettendo questo nei vari campi con la spiegazione:
+
+
+  {
+    &quot;activationMode&quot;: &quot;standard&quot;,
+    &quot;activationScript&quot;: &quot;&quot;,
+    &quot;case_sensitive&quot;: false,
+    &quot;category&quot;: &quot;other&quot;,
+    &quot;comment&quot;: &quot;Comment&quot;,
+    &quot;constant&quot;: false,
+    &quot;content&quot;: &quot;[ACTIVE] WRD: [Canon Layer: ACTIVE] Fantasy è il macro-contesto high magic del SvartulfrVerse, centrato su Amarantia555 nell&#39;Era della Foglia 127 EDF. Comprende magia regolata, Guardiani, profezie, creature leggendarie, rotte imperiali, città-stato, porti, borghi e conflitti tra destino e agency; integra lore Amarantia555 attiva, culturale, storica e deferred senza attivare contenuti non core. In Amarantia, capitale dell’Impero, i Guardiani sono la massima autorità politica: centro nevralgico della capitale, governo imperiale e giudizio delle contese tra città. L’Imperatore è eletto dal popolo ogni 100 anni tra i Primi Guardiani delle città e amministra le terre dell’Impero.&quot;,
+    &quot;enabled&quot;: true,
+    &quot;extensions&quot;: {},
+    &quot;groupWeight&quot;: 100,
+    &quot;id&quot;: &quot;6f3a4e33-ca92-4e4e-9c1e-c87b7fd3f803&quot;,
+    &quot;inclusionGroup&quot;: [
+      &quot;Group-Label&quot;
+    ],
+    &quot;inclusionGroupRaw&quot;: &quot;Group-Label&quot;,
+    &quot;insertion_order&quot;: 100,
+    &quot;key&quot;: [
+      &quot;Fantasy&quot;,
+      &quot;Amarantia&quot;,
+      &quot;Amarantia555&quot;,
+      &quot;555&quot;,
+      &quot;127 EDF&quot;,
+      &quot;Era della Foglia&quot;,
+      &quot;high magic&quot;,
+      &quot;Guardiani&quot;,
+      &quot;magic laws&quot;
+    ],
+    &quot;keyMatchPriority&quot;: false,
+    &quot;keysecondary&quot;: [],
+    &quot;keysecondaryRaw&quot;: &quot;&quot;,
+    &quot;keysRaw&quot;: &quot;Fantasy, Amarantia, Amarantia555, 555, 127 EDF, Era della Foglia, high magic, Guardiani, magic laws&quot;,
+    &quot;matchWholeWords&quot;: true,
+    &quot;minMessages&quot;: 0,
+    &quot;name&quot;: &quot;Entry Name&quot;,
+    &quot;prioritizeInclusion&quot;: false,
+    &quot;priority&quot;: 1,
+    &quot;probability&quot;: 100,
+    &quot;selectiveLogic&quot;: 0,
+    &quot;tags&quot;: [
+      &quot;lore&quot;
+    ],
+    &quot;placement&quot;: &quot;example_dialogs&quot;,
+    &quot;placementPosition&quot;: &quot;before&quot;
+  },
+
+**Gemini**:
+Ecco il tuo esempio riscritto e arricchito con le spiegazioni per ogni singolo campo. Ho formattato il tutto come un blocco JSON commentato, in modo che sia chiarissimo sia per te che per un eventuale agente AI a cosa serva ogni riga.
+
+```jsonc
+{
+  // ⚙️ IMPOSTAZIONI TECNICHE BASE
+  &quot;activationMode&quot;: &quot;standard&quot;, // Modalità di lettura del trigger (quasi sempre &quot;standard&quot;)
+  &quot;activationScript&quot;: &quot;&quot;, // Spazio per codice JavaScript custom per forzare attivazioni complesse (vuoto di default)
+  &quot;id&quot;: &quot;6f3a4e33-ca92-4e4e-9c1e-c87b7fd3f803&quot;, // Identificativo Univoco Universale (UUID) fondamentale per non sovrascrivere altre entry
+  &quot;enabled&quot;: true, // Interruttore on/off: se &quot;false&quot;, il sistema ignora questa voce
+  &quot;extensions&quot;: {}, // Spazio vuoto usato da client di terze parti (come SillyTavern) per dati extra
+
+  // 🆔 IDENTIFICAZIONE E ORGANIZZAZIONE (Per l&#39;interfaccia utente)
+  &quot;name&quot;: &quot;Entry Name&quot;, // Il titolo dell&#39;entry che vedrai tu nell&#39;interfaccia (es. &quot;Lore Amarantia&quot;)
+  &quot;comment&quot;: &quot;Comment&quot;, // Una tua nota privata per ricordarti a cosa serve questa entry
+  &quot;category&quot;: &quot;other&quot;, // Macrocategoria organizzativa (es. &quot;other&quot;, &quot;lore&quot;, &quot;character&quot;)
+  &quot;tags&quot;: [
+    &quot;lore&quot; // Etichette per filtrare visivamente le voci nell&#39;editor
+  ],
+
+  // 📝 IL CONTENUTO VERO E PROPRIO
+  &quot;content&quot;: &quot;[ACTIVE] WRD: [Canon Layer: ACTIVE] Fantasy è il macro-contesto high magic del SvartulfrVerse... l’Impero.&quot;, // ⚠️ CRITICO: Questo è il testo effettivo che l&#39;Intelligenza Artificiale leggerà e utilizzerà.
+
+  // 🎯 TRIGGER E ATTIVAZIONE (Quando si attiva?)
+  &quot;constant&quot;: false, // Se &quot;true&quot;, ignora le chiavi e rimane sempre fissa in memoria (brucia token, usare raramente!)
+  &quot;key&quot;: [
+    &quot;Fantasy&quot;,
+    &quot;Amarantia&quot;,
+    &quot;Amarantia555&quot;,
+    &quot;555&quot;,
+    &quot;127 EDF&quot;,
+    &quot;Era della Foglia&quot;,
+    &quot;high magic&quot;,
+    &quot;Guardiani&quot;,
+    &quot;magic laws&quot;
+  ], // ⚠️ CRITICO: Le chiavi &quot;in-game&quot;. Se una di queste parole appare in chat, l&#39;entry si attiva. Supporta RegEx (es. /pattern/gi).
+  &quot;keysRaw&quot;: &quot;Fantasy, Amarantia, Amarantia555, 555, 127 EDF, Era della Foglia, high magic, Guardiani, magic laws&quot;, // Versione testuale (separata da virgole) dell&#39;array &quot;key&quot;
+
+  // 🧠 FILTRI E LOGICA AVANZATA (Condizioni specifiche di attivazione)
+  &quot;keysecondary&quot;: [], // Chiavi secondarie usate come filtro (es. per escludere o richiedere un contesto specifico)
+  &quot;keysecondaryRaw&quot;: &quot;&quot;, // Versione testuale dell&#39;array &quot;keysecondary&quot;
+  &quot;selectiveLogic&quot;: 0, // Regola matematica per le chiavi secondarie (0 = AND ANY, 1 = AND ALL, 2 = NOT ANY, 3 = NOT ALL)
+  &quot;case_sensitive&quot;: false, // Se &quot;true&quot;, distingue tra maiuscole e minuscole (&quot;Guardiani&quot; non si attiverà con &quot;guardiani&quot;)
+  &quot;matchWholeWords&quot;: true, // Se &quot;true&quot;, evita falsi positivi attivandosi solo su parole intere (es. &quot;Re&quot; non si attiva con &quot;Realtà&quot;)
+  &quot;minMessages&quot;: 0, // Pacing: Il numero di messaggi che devono passare in chat prima che questa lore Possa attivarsi (es. 10 per i segreti svelati in ritardo)
+
+  // ⚖️ POSIZIONAMENTO E PRIORITÀ NELLA MEMORIA DELL&#39;IA
+  &quot;placement&quot;: &quot;example_dialogs&quot;, // ⚠️ CRITICO: Dove viene iniettato il testo. Valori validi: &quot;default&quot;, &quot;personality&quot;, &quot;scenario&quot;, &quot;example_dialogs&quot;
+  &quot;placementPosition&quot;: &quot;before&quot;, // ⚠️ CRITICO: Mette il testo &quot;before&quot; (prima) o &quot;after&quot; (dopo) il blocco indicato in &quot;placement&quot;
+  &quot;insertion_order&quot;: 100, // Ordine gerarchico di posizionamento: se più entry vanno nello stesso punto, chi ha il numero più alto/basso va per primo
+  &quot;priority&quot;: 1, // Se la memoria scarseggia, l&#39;IA eliminerà prima le entry con priority bassa per salvare quelle con priority alta
+  &quot;probability&quot;: 100, // Percentuale (0-100) di probabilità che l&#39;entry venga inviata quando scatta il trigger (100 = succede sempre)
+  
+  // 🧩 RAGGRUPPAMENTO (Per entità mutuamente esclusive)
+  &quot;inclusionGroup&quot;: [
+    &quot;Group-Label&quot; // Nome del gruppo (es. &quot;Meteo&quot;). Solo un&#39;entry di questo gruppo si attiverà in contemporanea.
+  ],
+  &quot;inclusionGroupRaw&quot;: &quot;Group-Label&quot;, // Versione testuale del gruppo
+  &quot;groupWeight&quot;: 100, // Se due entry dello stesso inclusionGroup cercano di attivarsi, vince quella con il peso maggiore
+  &quot;prioritizeInclusion&quot;: false, // Se &quot;true&quot;, forza l&#39;IA a preferire questa entry in caso di conflitti
+  &quot;keyMatchPriority&quot;: false // Se &quot;true&quot;, scala la priorità in base a quante keyword sono state matchate contemporaneamente
+}
+
+</code></pre>
+<p>Questo formato &quot;esploso&quot; e commentato è uno strumento di riferimento perfetto da allegare ai tuoi prompt o da tenere nei tuoi appunti: mappa esplicitamente la funzione di ogni riga rispettando lo schema esatto che l&#39;engine di JanitorAI si aspetta!
+<strong>User</strong> : ok ora come gli dico di verificare voce per voce perché abbia senso e sia utilizzabile per un gidr?
+<strong>Role &amp; Context</strong>  You are an Expert JanitorAI Lorebook Engineer and JSON Architect. Your task is to process, optimize, and standardize the following SvartulfrVerse JSON files into a unified, platform-compliant format:
+<a href="about:invalid#zCSafez">SvartulfrVerse_Workd_Template.json</a> <a href="about:invalid#zCSafez">SvartulfrVerse_Fantasy.json</a> <a href="about:invalid#zCSafez">SvartulfrVerse_Modern.json</a> <a href="about:invalid#zCSafez">SvartulfrVerse_Pirate.json</a> <a href="about:invalid#zCSafez">SvartulfrVerse_Regency.json</a> <a href="about:invalid#zCSafez">SvartulfrVerse_SciFi.json</a> <a href="about:invalid#zCSafez">SvartulfrVerse_Urban.json</a> <a href="about:invalid#zCSafez">SvartulfrVerse_Viking.json</a> <a href="about:invalid#zCSafez">SvartulfrVerse_Wasteland.json</a>
+<strong>CRITICAL RULES FOR CONVERSION</strong>
+<strong>1. In-Game Trigger Keys (</strong>  <strong>key</strong>  <strong>,</strong>  <strong>keysecondary</strong>  <strong>,</strong>  <strong>keysRaw</strong>  <strong>,</strong>  <strong>keysecondaryRaw</strong>  <strong>)</strong></p>
+<ul>
+<li>Keys and secondary keys are strictly IN-GAME triggers. When these words appear in chat, the lore will be activated. Do not use abstract meta-tags as keys if they won&#39;t naturally occur in the roleplay dialogue or narration.</li>
+<li><strong>RegEx Support:</strong>  You can use Regular Expressions by wrapping the pattern in slashes (e.g., /pattern/). Flags can be added after the closing slash (e.g., /pattern/gi).</li>
+<li>Ensure keysRaw and keysecondaryRaw perfectly reflect the array contents as comma-separated strings.
+<strong>2. Selective Logic (Secondary Keys)</strong></li>
+<li>Use keysecondary to build conditional activations (include or exclude entries).</li>
+<li>Apply the appropriate selectiveLogic integer to represent: AND ANY, AND ALL, NOT ANY, NOT ALL. This ensures complex lore only triggers in the exact right context.
+<strong>3. Placement and Positioning</strong></li>
+<li>Every entry must explicitly declare where it injects into the prompt.</li>
+<li>placement MUST be exactly one of these values: default, personality, scenario, example_dialogs.</li>
+<li>placementPosition MUST be exactly one of these values: before or after.
+<strong>4. Strict JSON Schema Compliance</strong>  Every single entry in the output JSON arrays MUST contain ALL the following fields. Do not omit any keys, even if they are empty or false. Generate a unique UUID id for each entry.
+<strong>Target Schema Template:</strong></li>
+</ul>
+<pre><code class="language-json">{
+  // ⚙️ IMPOSTAZIONI TECNICHE BASE
+  &quot;activationMode&quot;: &quot;standard&quot;, // Modalità di lettura del trigger (quasi sempre &quot;standard&quot;)
+  &quot;activationScript&quot;: &quot;&quot;, // Spazio per codice JavaScript custom per forzare attivazioni complesse (vuoto di default)
+  &quot;id&quot;: &quot;6f3a4e33-ca92-4e4e-9c1e-c87b7fd3f803&quot;, // Identificativo Univoco Universale (UUID) fondamentale per non sovrascrivere altre entry
+  &quot;enabled&quot;: true, // Interruttore on/off: se &quot;false&quot;, il sistema ignora questa voce
+  &quot;extensions&quot;: {}, // Spazio vuoto usato da client di terze parti (come SillyTavern) per dati extra
+
+  // 🆔 IDENTIFICAZIONE E ORGANIZZAZIONE (Per l&#39;interfaccia utente)
+  &quot;name&quot;: &quot;Entry Name&quot;, // Il titolo dell&#39;entry che vedrai tu nell&#39;interfaccia (es. &quot;Lore Amarantia&quot;)
+  &quot;comment&quot;: &quot;Comment&quot;, // Una tua nota privata per ricordarti a cosa serve questa entry
+  &quot;category&quot;: &quot;other&quot;, // Macrocategoria organizzativa (es. &quot;other&quot;, &quot;lore&quot;, &quot;character&quot;)
+  &quot;tags&quot;: [
+   // Etichette per filtrare visivamente le voci nell&#39;editor
+      &quot;lore&quot;,
+      &quot;character&quot;,
+      &quot;location&quot;,
+      &quot;item&quot;,
+      &quot;faction&quot;,
+      &quot;relationship&quot;,
+      &quot;backstory&quot;,
+      &quot;event&quot;,
+      &quot;secret&quot;,
+      &quot;magic&quot;,
+      &quot;world&quot;,
+      &quot;culture&quot;,
+      &quot;history&quot;,
+      &quot;important&quot;,
+      &quot;technology&quot;
+  ],
+
+  // 📝 IL CONTENUTO VERO E PROPRIO
+  &quot;content&quot;: &quot;contenuto mandato al modello ia&quot;, // ⚠️ CRITICO: Questo è il testo effettivo che l&#39;Intelligenza Artificiale leggerà e utilizzerà.
+
+  // 🎯 TRIGGER E ATTIVAZIONE (Quando si attiva?)
+  &quot;constant&quot;: false, // Se &quot;true&quot;, ignora le chiavi e rimane sempre fissa in memoria (brucia token, usare raramente!)
+  &quot;key&quot;: [
+    &quot;Amarantia&quot;,
+    &quot;Era della Foglia&quot;,
+    &quot;Guardiani&quot;,
+  ], // ⚠️ CRITICO: Le chiavi &quot;in-game&quot;. Se una di queste parole appare in chat, l&#39;entry si attiva. Supporta RegEx (es. /pattern/gi).
+  &quot;keysRaw&quot;: &quot;&quot;, // Versione testuale (separata da virgole) dell&#39;array &quot;key&quot;
+
+  // 🧠 FILTRI E LOGICA AVANZATA (Condizioni specifiche di attivazione)
+  &quot;keysecondary&quot;: [], // Chiavi secondarie usate come filtro (es. per escludere o richiedere un contesto specifico)
+  &quot;keysecondaryRaw&quot;: &quot;&quot;, // Versione testuale dell&#39;array &quot;keysecondary&quot;
+  &quot;selectiveLogic&quot;: 0, // Regola matematica per le chiavi secondarie (0 = AND ANY, 1 = AND ALL, 2 = NOT ANY, 3 = NOT ALL)
+  &quot;case_sensitive&quot;: false, // Se &quot;true&quot;, distingue tra maiuscole e minuscole (&quot;Guardiani&quot; non si attiverà con &quot;guardiani&quot;)
+  &quot;matchWholeWords&quot;: true, // Se &quot;true&quot;, evita falsi positivi attivandosi solo su parole intere (es. &quot;Re&quot; non si attiva con &quot;Realtà&quot;)
+  &quot;minMessages&quot;: 0, // Pacing: Il numero di messaggi che devono passare in chat prima che questa lore Possa attivarsi (es. 10 per i segreti svelati in ritardo)
+
+  // ⚖️ POSIZIONAMENTO E PRIORITÀ NELLA MEMORIA DELL&#39;IA
+  &quot;placement&quot;: &quot;example_dialogs&quot;, // ⚠️ CRITICO: Dove viene iniettato il testo. Valori validi: &quot;default&quot;, &quot;personality&quot;, &quot;scenario&quot;, &quot;example_dialogs&quot;
+  &quot;placementPosition&quot;: &quot;before&quot;, // ⚠️ CRITICO: Mette il testo &quot;before&quot; (prima) o &quot;after&quot; (dopo) il blocco indicato in &quot;placement&quot;
+  &quot;insertion_order&quot;: 100, // Ordine gerarchico di posizionamento: se più entry vanno nello stesso punto, chi ha il numero più alto/basso va per primo
+  &quot;priority&quot;: 1, // Se la memoria scarseggia, l&#39;IA eliminerà prima le entry con priority bassa per salvare quelle con priority alta
+  &quot;probability&quot;: 100, // Percentuale (0-100) di probabilità che l&#39;entry venga inviata quando scatta il trigger (100 = succede sempre)
+  
+  // 🧩 RAGGRUPPAMENTO (Per entità mutuamente esclusive)
+  &quot;inclusionGroup&quot;: [
+    &quot;Group-Label&quot; // Nome del gruppo (es. &quot;Meteo&quot;). Solo un&#39;entry di questo gruppo si attiverà in contemporanea.
+  ],
+  &quot;inclusionGroupRaw&quot;: &quot;Group-Label&quot;, // Versione testuale del gruppo
+  &quot;groupWeight&quot;: 100, // Se due entry dello stesso inclusionGroup cercano di attivarsi, vince quella con il peso maggiore
+  &quot;prioritizeInclusion&quot;: false, // Se &quot;true&quot;, forza l&#39;IA a preferire questa entry in caso di conflitti
+  &quot;keyMatchPriority&quot;: false // Se &quot;true&quot;, scala la priorità in base a quante keyword sono state matchate contemporaneamente
+}
+ ```
+
+**Gemini**:
+Per fare in modo che l&#39;Agente IA non si limiti a &quot;copiare e incollare&quot; i dati, ma li valuti criticamente per un Gioco di Ruolo (GDR / RPG), devi aggiungere una regola specifica che lo forzi a fare un passaggio di **Quality Assurance (QA)** prima di sputare fuori il JSON. 
+
+Inoltre, modificheremo la frase di &quot;Execution Step&quot; finale per costringerlo a pensare ad alta voce (Chain of Thought), in modo che ti spieghi *perché* ha scelto certe chiavi prima di scriverle nel JSON.
+
+Ecco la sezione da aggiungere al tuo Master Prompt. Inseriscila subito dopo la regola 4.
+
+### Copia e incolla questa aggiunta nel tuo prompt:
+
+```markdown
+**5. RPG Usability &amp; Quality Assurance (The Roleplay Check)**
+Before finalizing the JSON, you MUST critically evaluate each entry to ensure it is practical and usable in a live Roleplaying Game (RPG) context:
+- **Trigger Viability:** Would a user or bot *actually* type these `key` words in natural dialogue or narration? (e.g., &quot;Amarantia&quot; or &quot;Imperial Guard&quot; are good; &quot;Faction_Guard_01&quot; or &quot;History_Summary&quot; are terrible triggers).
+- **Actionable Content:** Is the `content` useful for the LLM during a roleplay? It shouldn&#39;t just be dry wiki facts. It must include behavioral hooks, sensory details, or attitudes (e.g., &quot;The guards are highly suspicious of outsiders and smell of ozone&quot;).
+- **False Positive Prevention:** Are the triggers too common? If a key is a common word (like &quot;Sword&quot; or &quot;City&quot;), you MUST use `keysecondary` and `selectiveLogic` to ensure it only triggers in the correct context, or use `matchWholeWords: true`.
+- **Pacing:** Is this a secret or late-game reveal? If so, apply a `minMessages` value greater than 0 so the bot doesn&#39;t lore-dump on the first turn.
+
+**Execution Step:** Please acknowledge these instructions. Once acknowledged, wait for me to provide the raw text. Then, for each entry, briefly explain your reasoning for the chosen `key` triggers and `minMessages`/`selectiveLogic` (to prove it passes the RPG Usability check) BEFORE outputting the final JSON arrays.
+
+</code></pre>
+<h5>💡 Perché questa aggiunta fa la differenza:</h5>
+<ol>
+<li><strong>Actionable Content:</strong>  Spiega all&#39;LLM che non sta scrivendo un&#39;enciclopedia (dry wiki facts), ma sta dando istruzioni a un &quot;attore&quot; (behavioral hooks).</li>
+<li><strong>False Positive Prevention:</strong>  Risolve il problema numero uno dei lorebook: le attivazioni accidentali. Costringe l&#39;IA a chiedersi: &quot;Se scrivo  <em>capitale</em>  come trigger, si attiverà ogni volta che qualcuno parla di soldi o di altre città?&quot;.</li>
+<li><strong>Spiegazione obbligatoria (Chain of Thought):</strong>  Dicendogli di  <em>spiegare il suo ragionamento prima di generare il JSON</em> , lo forzi a pensare. Gli LLM ragionano &quot;scrivendo&quot;: se gli chiedi di motivare la scelta dei trigger in base all&#39;utilità per il GDR, produrrà chiavi infinitamente migliori rispetto a generare direttamente il codice a freddo.
+<strong>User</strong> : ora dovrei dirgli che per ogni npc presente nel lorebook deve creare tante entries quanti sono i blocchi di questo schema:</li>
+</ol>
+<h4>CHARACTER</h4>
+<p><strong>Name:</strong>  [FULL NAME]  <strong>Aliases / Role:</strong>  [TITLES, NICKNAMES, OR FUNCTION]  <strong>Age / Apparent Age:</strong>  [AGE AND LIFE STAGE]  <strong>Pronouns:</strong>  [PRONOUNS]  <strong>Canon Layer:</strong>  [ACTIVE] | [HISTORICAL] | [CULTURAL] | [DEFERRED] | [CANDIDATE]  <strong>Source:</strong>  [...]/[source_file].md</p>
+<h4>APPEARANCE</h4>
+<p><strong>Immediate Impression:</strong>  [ONE OR TWO SENTENCES]  <strong>Body / Face / Style:</strong>  [ONLY DETAILS THAT CHANGE INTERACTION]  <strong>Nonhuman / Tech Details:</strong>  [OMIT IF NOT APPLICABLE]</p>
+<h4>PSYCHOLOGICAL_PROFILE</h4>
+<p><strong>Core Traits:</strong>  [3-6 TRAITS]  <strong>Desire:</strong>  [WHAT THEY WANT NOW]  <strong>Fear / Blind Spot:</strong>  [WHAT DISTORTS JUDGMENT]  <strong>Strengths:</strong>  [USEFUL CAPABILITIES]  <strong>Flaws:</strong>  [BEHAVIORAL LIMITS]  <strong>Stress Response:</strong>  [TRIGGER -&gt; EMOTION -&gt; ACTION -&gt; AFTERMATH]  <strong>Repair Pattern:</strong>  [HOW THEY DE-ESCALATE OR MAKE AMENDS]</p>
+<h4>SOCIAL_BEHAVIOR</h4>
+<p><strong>Default Manner:</strong>  [HOW THEY ENTER A SCENE]  <strong>With {{user}}:</strong>  [CURRENT DYNAMIC ONLY]  <strong>Boundaries:</strong>  [WHAT THEY REFUSE OR RESIST]  <strong>Relationship State:</strong>  [CURRENT RELATIONSHIP STATUS, NOT FAMILY GENEALOGY]  <strong>Family References:</strong>  [REFER TO Family Authority records only; do not redefine genealogy.]</p>
+<h4>SENSORY</h4>
+<p><strong>Voice:</strong>  [PITCH, CADENCE, WORD CHOICE]  <strong>Mannerisms:</strong>  [GESTURES, HABITS, MICRO-ACTIONS]  <strong>Sensory Anchors:</strong>  [SMELL, SOUND, TEXTURE, LIGHT, OR ATMOSPHERE]
+<strong>Gemini</strong> : Ottima idea. Questo approccio si chiama  <strong>&quot;Modularizzazione del Profilo&quot;</strong>  (o &quot;Token-Aware Splitting&quot;) ed è la tecnica più avanzata per risparmiare token: invece di caricare l&#39;intera scheda di un personaggio ogni volta che viene nominato, l&#39;IA caricherà solo il blocco &quot;SENSORY&quot; se l&#39;utente descrive un suono o un odore, o il blocco &quot;APPEARANCE&quot; se si parla di vestiti.
+Ecco il blocco da aggiungere al tuo Master Prompt. Inseriscilo come  <strong>Regola 6</strong> , subito prima dell&#39; <strong>Execution Step</strong> .</p>
+<h5>Copia e incolla questa aggiunta nel tuo prompt:</h5>
+<pre><code class="language-markdown">**6. NPC Modularization (The 5-Block Split)**
+When processing Characters or NPCs, DO NOT dump all their information into a single massive JSON entry. You MUST split each NPC into exactly 5 separate, targeted JSON entries. Each entry will cover one specific aspect of the character according to the schema below. 
+
+Format the `content` field of each entry cleanly, starting with an identifier like `[NPC: Name - Block Name]`, followed by the bolded keys and their data. 
+
+**Entry 1: CHARACTER (Core Identity)**
+- **Content Schema:**
+  **Name:** [FULL NAME]
+  **Aliases / Role:** [TITLES, NICKNAMES, OR FUNCTION]
+  **Age / Apparent Age:** [AGE AND LIFE STAGE]
+  **Pronouns:** [PRONOUNS]
+  **Canon Layer:** `[ACTIVE]` | `[HISTORICAL]` | `[CULTURAL]` | `[DEFERRED]` | `[CANDIDATE]`
+  **Source:** `[...]/[source_file].md`
+- **Trigger Strategy:** Base triggers (Name, Aliases). Use `selectiveLogic: 0` (AND ANY) if needed.
+
+**Entry 2: APPEARANCE (Visuals)**
+- **Content Schema:**
+  **Immediate Impression:** [ONE OR TWO SENTENCES]
+  **Body / Face / Style:** [ONLY DETAILS THAT CHANGE INTERACTION]
+  **Nonhuman / Tech Details:** [OMIT IF NOT APPLICABLE]
+- **Trigger Strategy:** Base Name triggers + `keysecondary` containing visual words (e.g., look, eyes, wear, clothes, tall, face). Set `selectiveLogic: 1` (AND ALL) or `0` (AND ANY) to ensure it only triggers when their appearance is relevant.
+
+**Entry 3: PSYCHOLOGICAL_PROFILE (Mindset &amp; Reactions)**
+- **Content Schema:**
+  **Core Traits:** [3-6 TRAITS]
+  **Desire:** [WHAT THEY WANT NOW]
+  **Fear / Blind Spot:** [WHAT DISTORTS JUDGMENT]
+  **Strengths:** [USEFUL CAPABILITIES]
+  **Flaws:** [BEHAVIORAL LIMITS]
+  **Stress Response:** [TRIGGER -&gt; EMOTION -&gt; ACTION -&gt; AFTERMATH]
+  **Repair Pattern:** [HOW THEY DE-ESCALATE OR MAKE AMENDS]
+- **Trigger Strategy:** Base Name triggers + `keysecondary` containing psychological or conflict words (e.g., feel, think, want, fear, anger, fight, sorry).
+
+**Entry 4: SOCIAL_BEHAVIOR (Dynamics)**
+- **Content Schema:**
+  **Default Manner:** [HOW THEY ENTER A SCENE]
+  **With {{user}}:** [CURRENT DYNAMIC ONLY]
+  **Boundaries:** [WHAT THEY REFUSE OR RESIST]
+  **Relationship State:** [CURRENT RELATIONSHIP STATUS]
+  **Family References:** [REFER TO Family Authority records only]
+- **Trigger Strategy:** Base Name triggers + `keysecondary` containing interaction words (e.g., approach, talk, ask, relationship, boundary, family names).
+
+**Entry 5: SENSORY (Atmosphere &amp; Tics)**
+- **Content Schema:**
+  **Voice:** [PITCH, CADENCE, WORD CHOICE]
+  **Mannerisms:** [GESTURES, HABITS, MICRO-ACTIONS]
+  **Sensory Anchors:** [SMELL, SOUND, TEXTURE, LIGHT, OR ATMOSPHERE]
+- **Trigger Strategy:** Base Name triggers + `keysecondary` containing sensory words (e.g., voice, sound, smell, scent, touch, habit).
+
+</code></pre>
+<h5>💡 Come cambia il comportamento dell&#39;Agente:</h5>
+<p>Con questa istruzione, il tuo Agente saprà che  <strong>per ogni singolo NPC</strong>  dovrà generare 5 oggetti JSON separati, ognuno con un suo UUID.
+Inoltre, applicando le &quot;Trigger Strategy&quot; indicate, assegnerà automaticamente le chiavi primarie (es. &quot;Alyssa&quot;) e secondarie (es. &quot;smell&quot;, &quot;voice&quot;) con le giuste logiche selettive. In questo modo, l&#39;LLM di JanitorAI non si sovraccaricherà mai leggendo la paura segreta di un NPC solo perché qualcuno ha nominato il suo nome per salutare; leggerà la sua &quot;Psychological Profile&quot; solo quando il contesto lo richiederà davvero!</p>

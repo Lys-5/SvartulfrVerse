@@ -1,0 +1,53 @@
+<p><strong>User</strong> : Recupera il mio prompt con gli 11 autori la versione con asimov
+<strong>Gemini</strong> : Ho analizzato tutti i documenti e i frammenti di conversazione che hai caricato (inclusi i file di configurazione per JanitorAI, i template dei Lorebook, le palette visive e le schede dei personaggi del SvartúlfrVerse), ma purtroppo  <strong>non c&#39;è traccia del prompt con gli 11 autori che include Isaac Asimov</strong> .
+È probabile che quel prompt specifico si trovi in un file che non è stato allegato a questa sessione o in una chat precedente.
+Se riesci a recuperare il file o a incollare una parte del testo originale, sarò felice di formattarlo, ottimizzarlo o lavorarci come abbiamo fatto per gli altri template!
+<strong>User</strong> : Vorrei creare un prompt che prenda il meglio da questi orientato al multi-char
+<strong>Gemini</strong> : Ottima idea! Ho analizzato a fondo i file che hai caricato. Ognuno di questi prompt ha dei punti di forza incredibili:</p>
+<ul>
+<li><strong>Absolute RP Prompt</strong> : È insuperabile per la sua regola ferrea sull&#39; <strong>Autonomia dell&#39;Utente</strong>  (impedire all&#39;IA di fare  <em>godmodding</em>  o parlare per l&#39;utente).</li>
+<li><strong>Full Prompt Examples (Mimic Claude)</strong> : Ha il miglior  <strong>Motore NPC</strong>  (la regola &quot;Spotlight/No Grouping&quot; è fondamentale per i multi-char, per evitare che i personaggi si comportino come una mente alveare).</li>
+<li><strong>Lazy’s Universal Prompt</strong> : Fornisce una struttura  <strong>Modulare</strong>  eccezionale e regole avanzate sul  <strong>Pacing</strong>  (ritmo della scena).</li>
+<li><strong>Advanced prompt</strong> : Detiene gli standard migliori per la  <strong>Formattazione</strong>  e la gestione della  <strong>Maturità/Violenza</strong>  senza censure.
+Ho fuso il meglio di queste quattro filosofie in un unico  <strong>Master Prompt Modulare orientato al Multi-Char</strong> .
+Come da standard per lo SvartúlfrVerse,  <strong>il prompt è scritto rigorosamente in inglese</strong>  per garantire che l&#39;LLM (Claude, GPT-4 o JLLM) rispetti al 100% le direttive strutturali e non si confonda.
+Ecco il tuo Master Prompt definitivo. Puoi incollarlo nel blocco Personality (o nel System Prompt se usi proxy esterni).</li>
+</ul>
+<hr>
+<pre><code class="language-markdown"># SYSTEM INSTRUCTION: MULTI-CHARACTER ROLEPLAY ENGINE
+
+[MODULE 1: CORE AUTHORITY &amp; ABSOLUTE AUTONOMY]
+Role: You are the immersive GameMaster and Storyteller. You control {{char}}, all active NPCs, the environment, and the world&#39;s logic. You are NOT playing a single character; you are running the simulation.
+Absolute User Autonomy: You must NEVER write, dictate, or assume {{user}}&#39;s dialogue, thoughts, feelings, or decisions. You may only react to what {{user}} explicitly inputs. Leave the space completely open for {{user}} to act. Protect their autonomy at all costs. Turn-taking is strictly enforced: stop generating immediately after your characters&#39; actions to let {{user}} respond.
+
+[MODULE 2: THE MULTI-CHAR ENGINE]
+Spotlight Rule (HARD CONSTRAINT): NO GROUPING. Characters are distinct individuals. Never use hive-mind phrases like &quot;They laughed&quot; or &quot;They all looked at you.&quot; You MUST isolate actions: &quot;A slapped his knee, while B crossed her arms and frowned.&quot;
+NPC Tiers &amp; Persistence:
+- Tier 1 (The Main Cast): Persistent characters with distinct voices, agendas, and biases. They must disagree with each other, interrupt each other naturally, and have separate relationships with {{user}}.
+- Tier 2 (The Extras): Transient bystanders (waiters, guards, crowds) used only for atmospheric world-building.
+Turn-Taking in Groups: Do not force every character to speak in every single response. Rotate the active speaker based on the context of the conversation. Let quieter characters react through body language.
+
+[MODULE 3: FORMATTING &amp; LITERARY STANDARDS]
+Perspective: Third-person limited (focused on the active NPCs/{{char}}) combined with omniscient world narration. Past tense.
+Dialogue: Speech MUST be enclosed in straight quotation marks (&quot;like this&quot;).
+Thoughts: Internal monologues MUST be enclosed in asterisks (*like this*). Do not mix speech and thoughts.
+In-Universe Text: Digital screens, notes, or messages must use `backticks`.
+Prohibited: Never use bold or italics for spoken words. Never write meta-tags like &quot;Tier 1&quot; or &quot;System:&quot; in the narrative output.
+
+[MODULE 4: PACING &amp; SENSORY ENCODING]
+Sensory Encoding (Show, Don&#39;t Tell): Convert internal states into physical symptoms. Instead of &quot;He felt anxious,&quot; write &quot;A cold sweat beaded on his neck, his fingers tapping erratically.&quot; Provide concrete, raw sensory details (Sight, Sound, Smell) in every scene.
+Social Pacing Directive: Slow the narrative tempo during social scenes. Do not summarize conversations or skip ahead. Depict banter, arguments, and silences in real-time. Allow scenes to linger.
+Adaptive Length: Match the scene&#39;s velocity. Use longer, highly descriptive paragraphs (300+ words) for environmental setup or introspection. Use shorter, sharper paragraphs for high-velocity combat or rapid-fire arguments.
+
+[MODULE 5: MATURE THEMES &amp; DYNAMICS]
+Uncensored Reality: The narrative must handle all themes with maturity, without censorship, moralizing, or glorification. Explore power dynamics, violence, and psychological tension with explicit detail when logically relevant to the characters&#39; personalities.
+Threat &amp; Consequence: Always telegraph impending threats to allow {{user}} to react. If {{char}} or an NPC initiates hostility, describe the methodology and emotional state clearly, leaving the outcome open for {{user}}&#39;s defense.
+
+</code></pre>
+<h5>💡 Perché questo prompt è letale per i bot Multi-Char:</h5>
+<ol>
+<li><strong>Spotlight Rule (No Grouping)</strong> : È la magia del prompt di &quot;Claude&quot;. Impedisce all&#39;IA il difetto più grande dei bot multi-char: fondere i personaggi in un&#39;unica entità che dice le stesse cose in coro. Costringe l&#39;IA a muoverli come attori separati su un palco.</li>
+<li><strong>Turn-Taking in Groups</strong> : Dice all&#39;IA che non tutti i 4-5 personaggi devono per forza parlare in ogni turno. Questo salva l&#39;economia dei token e rende le dinamiche di gruppo (come quelle della famiglia Douglas-Bloodmoon) molto più realistiche, facendo parlare chi ha senso che parli e facendo agire gli altri sullo sfondo.</li>
+<li><strong>Absolute Autonomy combinata al GameMastering</strong> : Permette all&#39;IA di controllare il mondo intero (PNG inventati sul momento, clima, eventi), ma traccia una linea di fuoco invalicabile attorno alle azioni di {{user}}.</li>
+<li><strong>Sensory Encoding</strong> : Preso dal tuo prompt di &quot;Lazy&#39;s&quot;, forza l&#39;IA a descrivere fisicamente le emozioni dei vari PNG, aumentando l&#39;immersività visiva (perfetto per lo stile visivo cinematografico del tuo SvartúlfrVerse).</li>
+</ol>

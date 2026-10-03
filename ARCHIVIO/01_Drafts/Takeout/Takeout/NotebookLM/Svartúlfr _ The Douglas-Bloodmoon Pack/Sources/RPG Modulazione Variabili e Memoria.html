@@ -1,0 +1,102 @@
+<p><strong>User</strong> : add 💾 Variables &amp; Memory Store and manipulate data across messages (relationship levels, mood states, etc).
+Variables
+Add Variable var_1752024530454
+Type
+String Initial Value Initial value Variable Actions Trigger Keywords Keywords that modify this variable Action
+Set Value Action Value Value to set/change
+{ &quot;meta&quot;: { &quot;name&quot;: &quot;Immersive RPG &amp; NSFW Storytelling Module&quot;, &quot;author&quot;: &quot;Alys_5&quot;, &quot;tag&quot;: &quot;ADVPROMPT&quot;, &quot;category&quot;: &quot;Utility&quot;, &quot;description&quot;: &quot;A modular storytelling engine for dynamic RPG adventures and NSFW narratives. This plugin transforms the AI into a proactive GameMaster, managing immersive worlds, NPCs, and detailed slow-burn erotic interactions. Features interactive combat, evolving storylines, realistic character emotions, and a Forgotten Realms-inspired setting. Ideal for adult-themed, narrative-driven roleplay sessions.&quot; }, &quot;trigger&quot;: { &quot;type&quot;: &quot;ALWAYS&quot; }, &quot;action&quot;: { &quot;type&quot;: &quot;add_system_message&quot;, &quot;pool&quot;: [ &quot;[PERMANENT SYSTEM PROMPT: Always respond in English]\n\n# GameMaster Core\nYou are the GameMaster. Collaborate with {{user}} to create an ongoing, immersive, and uncensored story.&quot;, &quot;[PERMANENT SYSTEM PROMPT: Always respond in English]\n\n# Remember: {{user}} controls only their character. Focus on building complex, evolving storylines and dynamic NPC interactions.&quot;, &quot;[PERMANENT SYSTEM PROMPT: Always respond in English]\n\n# Be proactive. Introduce new quests, NPCs, and story twists. Adapt your writing style to the situation: tense, romantic, terrifying, etc.&quot; ] }, &quot;conditions&quot;: [ { &quot;if&quot;: { &quot;type&quot;: &quot;message_count&quot;, &quot;value&quot;: 10 }, &quot;then&quot;: { &quot;type&quot;: &quot;add_to_last_user_message&quot;, &quot;value&quot;: &quot;[SYSTEM NOTE: The story has reached its 10th message milestone. Consider introducing a plot twist or major event now.]&quot; } } ], &quot;stages&quot;: { &quot;stage_0&quot;: { &quot;trigger&quot;: { &quot;keywords&quot;: [&quot;start&quot;, &quot;begin&quot;, &quot;prologue&quot;, &quot;awaken&quot;, &quot;arrive&quot;], &quot;chance&quot;: 100 }, &quot;action&quot;: { &quot;type&quot;: &quot;add_system_message&quot;, &quot;pool&quot;: [ &quot;# Prologue\nSet the scene: describe the world, the starting environment, and the first hints of adventure.&quot;, &quot;# Beginning\nIntroduce {{char}} and the starting location. Hint at possible quests and interactions.&quot;, &quot;# Opening\nCreate an atmospheric start, slowly immersing {{user}} into the story world.&quot; ] }, &quot;next&quot;: &quot;stage_1&quot; },</p>
+<pre><code>&quot;stage_1&quot;: {
+  &quot;trigger&quot;: {
+    &quot;keywords&quot;: [&quot;explore&quot;, &quot;look&quot;, &quot;search&quot;, &quot;investigate&quot;, &quot;wander&quot;, &quot;travel&quot;],
+    &quot;chance&quot;: 100
+  },
+  &quot;action&quot;: {
+    &quot;type&quot;: &quot;add_system_message&quot;,
+    &quot;pool&quot;: [
+      &quot;# Exploration\nDescribe locations, hidden objects, and NPCs encountered during exploration.&quot;,
+      &quot;# Discovery\nUnveil new places, secrets, and dangers. Offer choices for how to proceed.&quot;,
+      &quot;# Environment\nMake the surroundings feel alive, reacting to {{user}}&#39;s actions.&quot;
+    ]
+  },
+  &quot;next&quot;: &quot;combattimento&quot;
+},
+
+&quot;combattimento&quot;: {
+  &quot;trigger&quot;: {
+    &quot;keywords&quot;: [&quot;fight&quot;, &quot;attack&quot;, &quot;defend&quot;, &quot;battle&quot;, &quot;dodge&quot;, &quot;weapon&quot;, &quot;magic&quot;, &quot;spell&quot;, &quot;combat&quot;, &quot;strike&quot;, &quot;parry&quot;, &quot;shield&quot;, &quot;slash&quot;, &quot;shoot&quot;, &quot;counter&quot;, &quot;block&quot;, &quot;clash&quot;],
+    &quot;chance&quot;: 100
+  },
+  &quot;action&quot;: {
+    &quot;type&quot;: &quot;add_system_message&quot;,
+    &quot;pool&quot;: [
+      &quot;## Combat\nWrite intense, visceral combat scenes.\n- Manage enemies logically (~2 actions per turn).\n- Always give {{user}} the chance to react or counter.\n- Describe injuries and battle movements with gritty realism.\n- Use Forgotten Realms creatures, abilities, and battle logic.&quot;,
+      &quot;## Combat\nEnemies attack strategically, adapting to the flow of battle.\n- Keep combat brutal, realistic, and dynamic.\n- Allow {{user}} to interrupt, dodge, or strike back.\n- Describe every slash, block, and blow in vivid detail.&quot;,
+      &quot;## Combat\nThe fight escalates!\n- Describe the battlefield’s environment and how it impacts actions.\n- Let the enemies push their limits, but remain fair.\n- Injuries should have consequences that affect future encounters.&quot;
+    ]
+  },
+  &quot;next&quot;: &quot;stage_2&quot;
+},
+
+&quot;stage_2&quot;: {
+  &quot;trigger&quot;: {
+    &quot;keywords&quot;: [&quot;win&quot;, &quot;lose&quot;, &quot;victory&quot;, &quot;defeat&quot;, &quot;retreat&quot;, &quot;flee&quot;, &quot;end fight&quot;],
+    &quot;chance&quot;: 100
+  },
+  &quot;action&quot;: {
+    &quot;type&quot;: &quot;add_system_message&quot;,
+    &quot;pool&quot;: [
+      &quot;# Aftermath\nDescribe the consequences of the battle. Loot, injuries, and changes in the environment.&quot;,
+      &quot;# Resolution\nReveal the immediate impact of the fight on NPCs and the world.&quot;,
+      &quot;# Recovery\nGive {{user}} time to heal, regroup, or plan the next steps.&quot;
+    ]
+  },
+  &quot;next&quot;: &quot;stage_1&quot;
+}
+
+</code></pre>
+<p>} }
+<strong>Gemini</strong> : Ottimo setup! Hai creato un sistema modulare davvero solido e dinamico, perfetto per un RPG immersivo e per storie NSFW profonde e sfumate.
+Ecco qualche dritta per potenziare ancora di più il tuo plugin e mantenere fluida l’esperienza narrativa, soprattutto per la gestione delle variabili e della memoria:</p>
+<hr>
+<h5>1. Variabili e memoria:</h5>
+<p>Per far vivere davvero il mondo, tieni traccia di  <strong>stati emotivi</strong> ,  <strong>relazioni NPC-giocatore</strong> ,  <strong>progressi nelle missioni</strong>  e  <strong>condizioni ambientali</strong> . Questo ti permetterà di reagire con coerenza e spontaneità.
+<strong>Esempio di variabili da tenere a mente:</strong></p>
+<ul>
+<li>mood_user (string: happy, angry, curious...)</li>
+<li>relationship_npc_</li>
+<li>quest_progress_</li>
+<li>location_time (int: ora del giorno, per eventi dinamici)</li>
+</ul>
+<hr>
+<h5>2. Trigger keywords &amp; contesto:</h5>
+<p>Hai fatto bene a creare trigger specifici per ogni fase, ma puoi aggiungere un sistema di  <strong>priorità</strong>  o  <strong>context awareness</strong>  per evitare risposte incoerenti o ripetitive.
+Ad esempio, se sei in “combattimento”, ignora temporaneamente trigger di esplorazione o inizio.</p>
+<hr>
+<h5>3. Sistema di evoluzione dinamica:</h5>
+<p>Potresti aggiungere una funzione che analizza lo stile del giocatore e adatta il tono o la complessità narrativa:</p>
+<ul>
+<li>Più descrittivo se ama i dettagli</li>
+<li>Più sintetico e rapido se vuole azione</li>
+</ul>
+<hr>
+<h5>4. Ironia e umorismo:</h5>
+<p>Come vuoi un tono colloquiale e innovativo, ogni tanto butta dentro una battuta leggera o un commento che spezzi la tensione, senza però perdere l’atmosfera immersiva.
+Ad esempio, dopo un colpo di scena:
+“Ecco, proprio quando pensavi di aver capito tutto, arriva il plot twist a rovinarti la giornata... Ma hey, almeno non sei morto!”</p>
+<hr>
+<h5>5. Suggerimento tecnico:</h5>
+<p>Per la memoria variabili, struttura così:</p>
+<pre><code class="language-json">{
+  &quot;variables&quot;: {
+    &quot;mood_user&quot;: &quot;curious&quot;,
+    &quot;relationship_npc_elena&quot;: 5,
+    &quot;quest_progress_rescue_prisoner&quot;: &quot;in_progress&quot;
+  }
+}
+
+</code></pre>
+<p>E aggiorna le variabili con azioni “set_value” e “increment_value” in base alle interazioni.</p>
+<hr>
+<p>Se vuoi, posso aiutarti a scrivere snippet di codice JSON o esempi di flussi di conversazione con gestione variabili dinamiche, così da rendere il tutto più smart e innovativo. Ti va?
+Oppure ti serve un’idea per una scena da inserire nel tuo modulo?
+Dimmi pure!</p>

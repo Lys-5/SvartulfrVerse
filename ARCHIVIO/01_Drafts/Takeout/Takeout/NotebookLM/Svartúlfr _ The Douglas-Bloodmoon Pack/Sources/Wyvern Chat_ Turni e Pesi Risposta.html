@@ -1,0 +1,70 @@
+<p><strong>User</strong> : Come funziona il characther turn order su wyverns chat?
+Cosa significa: Drag to reorder characters and set their response weights
+I pesi devo essere in totale 100% ?
+<strong>Gemini</strong> : Nelle chat di gruppo su piattaforme di AI roleplay come Wyvern Chat, il  <strong>Turn Order</strong>  (ordine di turno) gestisce in che modo i vari personaggi interverranno nella conversazione.
+La dicitura  <strong>&quot;Drag to reorder characters and set their response weights&quot;</strong>  fa riferimento al pannello di controllo del gruppo, dove puoi personalizzare il comportamento dei bot compiendo due azioni specifiche:</p>
+<ol>
+<li><strong>Drag to reorder (Trascina per riordinare):</strong>  Ti permette di cliccare e trascinare le schede dei personaggi su o giù per la lista. Se decidi di impostare una turnazione di tipo &quot;sequenziale&quot;, questa operazione definisce l&#39;ordine esatto in cui i bot parleranno (es. il Personaggio A parla sempre prima del Personaggio B).</li>
+<li><strong>Set their response weights (Imposta i loro pesi di risposta):</strong>  Ti permette di assegnare un valore numerico a ciascun personaggio. Questo valore indica al sistema con quale frequenza e priorità quel personaggio deve prendere l&#39;iniziativa e rispondere in modo autonomo rispetto agli altri.</li>
+</ol>
+<hr>
+<h5>I pesi devono arrivare a un totale del 100%?</h5>
+<p><strong>No, non devono sommare a 100.</strong>
+I  <em>weights</em>  utilizzati in questi sistemi di intelligenza artificiale non sono percentuali assolute, ma  <strong>valori relativi</strong>  (o proporzionali). Il motore della chat prende tutti i numeri che hai inserito, li somma tra loro dietro le quinte e calcola automaticamente le probabilità di intervento.
+Puoi assegnare i valori usando l&#39;approccio che trovi più comodo:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Configurazione</th><th>Esempio</th><th>Comportamento in Chat</th></tr></thead><tbody><tr><td><strong>Proporzioni semplici</strong></td><td>Personaggio A: 1<br>Personaggio B: 2</td><td>Il Personaggio B ha esattamente il doppio delle probabilità di intervenire rispetto ad A (rapporto 1:2).</td></tr><tr><td><strong>Valori identici</strong></td><td>Personaggio A: 50<br>Personaggio B: 50</td><td>Entrambi interverranno con la stessa frequenza (rapporto 1:1, equivalente a mettere 1 e 1).</td></tr><tr><td><strong>Protagonista e Comparse</strong></td><td>Leader: 10<br>Aiutanti: 2</td><td>Il leader dominerà la scena rispondendo quasi sempre, mentre gli aiutanti interverranno molto di rado.</td></tr></tbody></table>
+<p>In sintesi: non è necessario fare calcoli per far quadrare la somma a 100. Ti basta semplicemente alzare il numero per i bot che vuoi rendere più attivi e loquaci, e abbassarlo per i personaggi che preferisci tenere sullo sfondo.
+<strong>User</strong> : In questo caso ho:
+A - bot principale 3 relazione di user B - bot 1 personaggio fratello di user C - bot 4 personaggi famiglia di user
+Come distribuire i pesi?
+Wyvern accetta valori da 0 a 100
+<strong>Gemini</strong> : Pensa a questa distribuzione come alla gestione dello &quot;spotlight&quot; al tavolo da gioco quando fai da Game Master: devi decidere chi ha l&#39;attenzione principale nella scena e chi fa da comprimario, evitando che i vari PNG si rubino la scena a vicenda o saturino la conversazione.
+Considerando che Wyvern accetta valori da 0 a 100, ecco una strategia di distribuzione ideale per bilanciare questa dinamica:</p>
+<h5>1. Bot A: Il Focus (Valore consigliato: 75 - 85)</h5>
+<p>Essendo il bot principale e la relazione del tuo personaggio, deve guidare la scena, avere l&#39;iniziativa più alta e reagire in modo tempestivo.</p>
+<ul>
+<li><strong>Perché:</strong>  Assegnando un valore nettamente superiore agli altri, ti assicuri che il LLM dia priorità alle sue risposte e alle interazioni dirette con te. È il fulcro della narrazione.</li>
+</ul>
+<h5>2. Bot B: Il Comprimario (Valore consigliato: 40 - 50)</h5>
+<p>Il fratello è un personaggio singolo e definito, che deve intervenire nella storia ma senza oscurare la dinamica di coppia principale.</p>
+<ul>
+<li><strong>Perché:</strong>  Un peso medio gli permette di inserirsi con battute o reazioni proprie in modo naturale. Agisce come una spalla narrativa: interviene abbastanza spesso da far sentire la sua presenza, ma non ruba il &quot;context window&quot; al Bot A.</li>
+</ul>
+<h5>3. Bot C: Il Coro / Background (Valore consigliato: 15 - 25)</h5>
+<p>Un bot che gestisce 4 personaggi contemporaneamente (la famiglia) funziona essenzialmente come una &quot;folla&quot; o un elemento d&#39;ambiente.</p>
+<ul>
+<li><strong>Perché:</strong>  Le card multi-character tendono a diventare caotiche se attivate troppo di frequente, col rischio che l&#39;intelligenza artificiale faccia parlare tutti e quattro i membri insieme in un&#39;unica risposta chilometrica. Un peso basso fa sì che la famiglia intervenga solo sporadicamente per dare colore alla scena, reagire a eventi generali o fare da contorno, lasciando il palcoscenico ad A e B.</li>
+</ul>
+<hr>
+<h5>Aggiustamenti dinamici</h5>
+<p>Questa configurazione non deve essere fissa e puoi modularla in base all&#39;architettura della scena che stai giocando:</p>
+<ul>
+<li><strong>Scene affollate (es. una cena di famiglia):</strong>  Puoi alzare temporaneamente il Bot C a  <strong>40</strong>  e il Bot B a  <strong>60</strong> , in modo che la famiglia e il fratello partecipino attivamente al dialogo corale.</li>
+<li><strong>Scene intime:</strong>  Quando l&#39;interazione si sposta solo su di te e il Bot A, puoi abbattere i pesi di B e C a  <strong>5</strong>  o  <strong>0</strong> , &quot;silenziandoli&quot; del tutto affinché non si intromettano improvvisamente in un momento privato.
+Vuoi che esploriamo come strutturare il prompt di sistema e le definizioni del Bot C per evitare che l&#39;IA costringa tutti e quattro i membri della famiglia a parlare contemporaneamente durante i loro turni?</li>
+</ul>

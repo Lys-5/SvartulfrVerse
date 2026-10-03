@@ -1,0 +1,38 @@
+<p><strong>User</strong> : FreeModel.dev dove trovare lista modelli disponibili
+<strong>Gemini</strong> : Per consultare la lista aggiornata dei modelli disponibili su  <strong>FreeModel.dev</strong>  (o servizi/API router correlati come OpenRouter o i repository di modelli gratuiti), hai principalmente tre strade a seconda che tu ne abbia bisogno via browser, da codice o via terminale:</p>
+<hr>
+<h4>1. Dalla Dashboard Web</h4>
+<p>Il modo più immediato per esplorare l&#39;elenco con filtri su limiti di utilizzo, dimensioni e modalità (testo, visione, audio) è accedere direttamente al portale:</p>
+<ul>
+<li><strong>Sito Web:</strong>  Vai su freemodel.dev (o openrouter.ai/models?max_price=0 se utilizzi la libreria/API di instradamento OpenRouter).</li>
+<li><strong>Filtro Free:</strong>  Nella barra di ricerca della dashboard o nei filtri sulla sinistra, seleziona la spunta  <strong>&quot;Free&quot; / &quot;Price: $0&quot;</strong>  per isolare solo gli endpoint a costo zero.</li>
+</ul>
+<hr>
+<h4>2. Via API / Endpoints (Per Sviluppatori)</h4>
+<p>Se stai configurando uno script o un&#39;applicazione (es. via Python o cURL) e vuoi recuperare l&#39;elenco programmaticamente dei modelli disponibili in tempo reale, puoi interrogare direttamente l&#39;endpoint /models compatibile con le specifiche OpenAI:</p>
+<pre><code class="language-bash">curl https://openrouter.ai/api/v1/models
+
+</code></pre>
+<p>Oppure in  <strong>Python</strong> :</p>
+<pre><code class="language-python">import requests
+
+response = requests.get(&quot;https://openrouter.ai/api/v1/models&quot;)
+models = response.json()[&quot;data&quot;]
+
+# Filtra solo i modelli gratuiti
+free_models = [
+    m[&quot;id&quot;] for m in models 
+    if m.get(&quot;pricing&quot;, {}).get(&quot;prompt&quot;) == &quot;0&quot;
+]
+
+print(&quot;Modelli gratuiti disponibili:&quot;)
+for model in free_models:
+    print(f&quot;- {model}&quot;)
+
+</code></pre>
+<hr>
+<h4>3. GitHub &amp; Repository Community</h4>
+<p>Se cerchi un tracciamento giornaliero e una panoramica dettagliata sui limiti di rate (rate limits), contesti massimi e provider, la community mantiene elenchi auto-aggiornati:</p>
+<ul>
+<li><strong>GitHub Tracker:</strong>  Repository come ClawLabsAI/free-ai-models su GitHub aggiornano quotidianamente la tabella di tutti i modelli LLM e Vision ad accesso gratuito (tra cui i vari  <em>Gemini, Llama, Qwen, Nemotron, Mistral</em> ).</li>
+</ul>

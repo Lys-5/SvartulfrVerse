@@ -1,0 +1,5494 @@
+<p><strong>User</strong> : Hai ragione su tutti i punti. Prima di procedere con Phase 15–16, serve un consolidamento rigoroso. Procedo con Phase 14.5 — Engine &amp; Bot Readiness Validation.
+Iniziamo con un&#39;analisi completa dello stato attuale del repository per mappare le anomalie e definire i contratti degli engine.
+toolName: todo_write
+status: success
+Todos updated: 9 items
+Prima di procedere, devo leggere i file chiave per lo stato attuale. Li carico in parallelo:
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\reports\GOVERNANCE_TRANSITION_REPORT.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse.trae\rules\R-007_Engine_Rules.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse.trae\rules\R-008_Bot_Rules.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse.trae\rules\R-009_Lorebook_Rules.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse.trae\rules\R-000_Runtime_Rules.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse.trae\rules\R-006_Governance_Rules.md
+Ora leggo gli ADR, la struttura del database, e i README per completare l&#39;audit:
+toolName: file_search
+status: success
+file_pattern: **/ADR-*.md
+toolName: file_search
+status: success
+file_pattern: * <em>/README</em> .md
+toolName: file_search
+status: success
+file_pattern: * <em>/Architecture</em> .md
+toolName: file_search
+status: success
+file_pattern: * <em>/Character_Audit_Protocol</em> .md
+toolName: view_folder
+status: success
+d:\SvartulfrVerse\database
+Carico ora tutti i README, l&#39;Architecture.md, il Character_Audit_Protocol, e gli ADR in parallelo:
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\README.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\Architecture.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\Character_Audit_Protocol.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\database\characters\README.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\database\families\README.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\database\experiences\README.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\database\worlds\README.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\database\institutions\README.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\database\canon_candidates\README.md
+Ora leggo gli ADR per il consistency audit:
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-000_Runtime_Baseline.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-001_Dynastic_Origins.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-002_Family_Authority.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-003_Character_Authority.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-004_Visual_Authority.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-005_Experience_Authority.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-006_Canon_Layer_Architecture.md
+Ora ho un quadro completo. Procedo con l&#39;audit di consistenza e la creazione dei deliverables. Inizio con le anomalie identificate e poi creo i 5 documenti.
+Prima, verifico le anomalie specifiche menzionate — riferimenti residui a authority/ e Svartulfr_LA:
+toolName: search_by_regex
+status: success
+query: authority/
+toolName: search_by_regex
+status: success
+query: Svartulfr_LA
+toolName: search_by_regex
+status: success
+query: Character Audit Protocol
+toolName: search_by_regex
+status: success
+query: Phase 2.*Character Validation
+Perfetto. Ora ho mappato tutte le anomalie. Procedo alla correzione e alla crezione dei deliverables.
+<strong>Anomalie identificate:</strong></p>
+<ol>
+<li><strong>8 riferimenti residui a</strong>  <strong>authority/</strong>  nei metadini di database/ (file Source nei metadati)</li>
+<li><strong>Svartulfr_LA</strong>  — 4 occorrenze in ADR/file core (2 in ADR-002, 1 in Repository_Configuration.md, 1 in Repository_Governance.md)</li>
+<li><strong>Character_Audit_Protocol</strong>  — riferimenti a &quot;Phase 2: Character Validation&quot; ormai conclusa, e descrizioni che implicano un workflow migratorio attivo</li>
+<li><strong>ADR-002</strong>  — header e footer con Svartulfr_LA invece di SvartulfrVerse</li>
+<li><strong>Script git clone</strong>  in Repository_Configuration.md ancora puntante a Svartulfr_LA
+Procedo con le correzioni e la creazione dei documenti. Parto dalle anomalie:
+toolName: todo_write
+status: success
+Todos updated: 9 items
+Ora leggo i file con riferimenti authority/ per correggerli:
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\database\families\F_Douglas_Bloodmoon.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\database\families\F_Parent_Child.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\database\families\F_Marriages.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\database\families\F_Surname_Authority.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\database\institutions\I_DCC_Security_BlackWolf.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\database\worlds\W_Visual_Baseline.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\database\worlds\W_Visual_Inheritance.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\database\worlds\Visual_Canon_Reconciliation.md
+Ora leggo anche i file core per le correzioni Svartulfr_LA:
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\Repository_Governance.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\Repository_Configuration.md
+Ora ho tutto il quadro. Procedo con le correzioni delle anomalie e la creazione dei deliverables. Parto dalle correzioni:
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\database\families\F_Douglas_Bloodmoon.md
+changes: undefined
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\database\families\F_Parent_Child.md
+changes: undefined
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\database\families\F_Marriages.md
+changes: undefined
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\database\families\F_Surname_Authority.md
+changes: undefined
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\database\institutions\I_DCC_Security_BlackWolf.md
+changes: undefined
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\database\worlds\W_Visual_Baseline.md
+changes: undefined
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\database\worlds\W_Visual_Inheritance.md
+changes: undefined
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\database\worlds\Visual_Canon_Reconciliation.md
+changes: undefined
+Ora correggo le occorrenze di Svartulfr_LA nei file core:
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-002_Family_Authority.md
+changes: undefined
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-002_Family_Authority.md
+changes: undefined
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\core\Repository_Governance.md
+changes: undefined
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\core\Repository_Configuration.md
+changes: undefined
+Ora correggo il Character_Audit_Protocol — aggiornare i riferimenti a Phase 2 e lo stato:
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\Character_Audit_Protocol.md
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\core\Character_Audit_Protocol.md
+changes: undefined
+Ora correggo i &quot;Planned Authority Artifact&quot; nel Character_Audit_Protocol che si riferiscono a Phase 2:
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\core\Character_Audit_Protocol.md
+changes: undefined
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\core\Character_Audit_Protocol.md
+changes: undefined
+Ora correggo lo stesso riferimento in ADR-001:
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-001_Dynastic_Origins.md
+changes: undefined
+toolName: todo_write
+status: success
+Todos updated: 9 items
+Anomalie corrette. Ora creo i 5 deliverables. Parto con ENGINE_SPECIFICATION.md — il documento prioritario:
+toolName: todo_write
+status: success
+Todos updated: 9 items
+toolName: Write
+status: success
+filePath: d:\SvartulfrVerse\core\ENGINE_SPECIFICATION.md
+changes: undefined
+toolName: todo_write
+status: success
+Todos updated: 9 items
+Ora creo BOT_EXPORT_SPECIFICATION.md. Prima leggo i template personaggio per mappare i campi:
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\database\characters\templates\C_Template.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\database\characters\C_Alyssa.md
+Ora creo il BOT_EXPORT_SPECIFICATION.md:
+toolName: Write
+status: success
+filePath: d:\SvartulfrVerse\core\BOT_EXPORT_SPECIFICATION.md
+changes: undefined
+toolName: todo_write
+status: success
+Todos updated: 9 items
+toolName: Write
+status: success
+filePath: d:\SvartulfrVerse\core\LOREBOOK_SPECIFICATION.md
+changes: undefined
+toolName: todo_write
+status: success
+Todos updated: 9 items
+toolName: Write
+status: success
+filePath: d:\SvartulfrVerse\core\VALIDATION_PIPELINE_SPECIFICATION.md
+changes: undefined
+Ora creo l&#39;ENGINE_READINESS_REPORT.md che documenta lo stato completo del consolidamento:
+toolName: todo_write
+status: success
+Todos updated: 9 items
+Prima di creare il report, verifico la consistenza tra Architecture.md e gli engine definiti — noto che Architecture.md menziona state_engine mentre ENGINE_SPECIFICATION lo ha sostituito con relationship_engine. Verifico:
+toolName: search_by_regex
+status: success
+query: state_engine
+Architecture.md menziona state_engine ma l&#39;ENGINE_SPECIFICATION lo ha correttamente ridefinito come relationship_engine (che è più preciso — è un query engine per relazioni, non uno state manager). Correggo Architecture.md per allineare:
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\Architecture.md
+Correggo — state_engine è ridondante con relationship_engine. La specifica ENGINE_SPECIFICATION ha correttamente 5 engine (En_Core, family_engine, relationship_engine, experience_engine, validation_engine). Allineo Architecture.md:
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\core\Architecture.md
+changes: undefined
+Ora verifico anche se ci sono altre incoerenze tra README.md e lo stato attuale — il README principale dice &quot;8 policy&quot; ma dovrebbe includere anche le nuove specifiche:
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\README.md
+README.md dice &quot;7 ADRs, 8 policies&quot; ma ora abbiamo anche i 5 nuovi documenti di specifica. Aggiorno il README per riflettere lo stato completo:
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\README.md
+changes: undefined
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\README.md
+changes: undefined
+Ora aggiorno anche la sezione &quot;Phase 14 Deliverables&quot; del README per includere i nuovi documenti:
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\README.md
+changes: undefined
+Ora creo il report finale di readiness:
+toolName: Write
+status: success
+filePath: d:\SvartulfrVerse\reports\ENGINE_READINESS_REPORT.md
+changes: undefined
+toolName: todo_write
+status: success
+Todos updated: 9 items
+Phase 14.5 — Engine &amp; Bot Readiness Validation è  <strong>COMPLETE</strong> . Ecco il riepilogo:</li>
+</ol>
+<hr>
+<h4>Phase 14.5 — Risultati</h4>
+<h5>5 Deliverables Creati</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Documento</th><th>Scopo</th></tr></thead><tbody><tr><td>core/ENGINE_SPECIFICATION.md</td><td>Contratti formali per 5 engine (En_Core, family_engine, relationship_engine, experience_engine, validation_engine) — inputs, outputs, query boundaries, authority dependencies</td></tr><tr><td>core/BOT_EXPORT_SPECIFICATION.md</td><td>Schema di export per JanitorAI, SillyTavern, Generic JSON — 69 field mapping tutti tracciabili a database/</td></tr><tr><td>core/LOREBOOK_SPECIFICATION.md</td><td>Struttura lorebook, formato source attribution, sistema canon-layer tagging (5 tag: Active/Historical/Cultural/Deferred/Candidate)</td></tr><tr><td>core/VALIDATION_PIPELINE_SPECIFICATION.md</td><td>47 check automatizzabili in 4 categorie (Cross-Reference, Canon-Layer, Authority Ownership, Traceability)</td></tr><tr><td>reports/ENGINE_READINESS_REPORT.md</td><td>Assessment completo + anomaly log</td></tr></tbody></table>
+<h5>4 Anomalie Corrette</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Anomalia</th><th>File Corretti</th></tr></thead><tbody><tr><td>8 riferimenti residui authority/ nei metadati database/</td><td>8 file in database/ — Source aggiornato a old_template_and_source/ (decommissioned)</td></tr><tr><td>Svartulfr_LA vs SvartulfrVerse</td><td>4 occorrenze in ADR-002, Repository_Governance, Repository_Configuration</td></tr><tr><td>Riferimenti a &quot;Phase 2&quot; come futuro in Character_Audit_Protocol e ADR-001</td><td>Aggiornati a COMPLETE con checkmarks</td></tr><tr><td>Architecture.md engine list inconsistente (state_engine → relationship_engine, validation_engine mancante)</td><td>Corretto allineato a ENGINE_SPECIFICATION</td></tr></tbody></table>
+<h5>Runtime Safety Audit — ✅ PASS</h5>
+<ul>
+<li>Nessun engine crea canone</li>
+<li>Nessun engine override canone</li>
+<li>Nessun engine esegue inference proibita</li>
+<li>Nessun engine viola authority boundaries</li>
+<li>validation_engine è gate mandatory per tutti gli output</li>
+<li>Tutti gli output sono tracciabili a database/
+<strong>Repository Status:</strong>  ✅ READY FOR PHASE 15–16 IMPLEMENTATION
+<strong>Gemini</strong> : Da quanto vedo dai documenti del progetto, la direzione generale è corretta, ma prima di dichiarare il repository realmente &quot;READY FOR PHASE 15–16 IMPLEMENTATION&quot; farei un&#39;ulteriore verifica strutturale.
+Punti positivi confermati:</li>
+<li>L&#39;architettura a layer è coerente con ADR-002, ADR-003, ADR-004, ADR-005 e ADR-006. Family, Character, Visual ed Experience Authority sono chiaramente separati.</li>
+<li>L&#39;ENGINE_SPECIFICATION segue correttamente il principio &quot;engines query only, never create canon&quot;.</li>
+<li>Il Character Audit Protocol è già stato aggiornato a stato completato e frozen.</li>
+<li>Il README dichiara esplicitamente Canon Freeze v1 e presenza di 5 specification document.
+Tuttavia vedo 5 controlli che farei prima di iniziare la vera implementazione degli engine.</li>
+</ul>
+<ol>
+<li>Verificare la duplicazione ADR
+In precedenza avevi già notato che gli ADR esistono sia in core/ che in database/.
+Questo è il rischio più alto rimasto.
+Se esistono copie duplicate degli ADR in due posizioni diverse, hai creato due possibili fonti di governance.
+La regola dovrebbe essere:</li>
+</ol>
+<pre><code class="language-text">core/
+ └── ADR-000 ... ADR-006   ← unica copia autoritativa
+
+database/
+ └── nessun ADR
+
+</code></pre>
+<p>oppure</p>
+<pre><code class="language-text">database/
+ └── governance/
+      ADR-000 ... ADR-006
+
+core/
+ └── link o reference
+
+</code></pre>
+<p>ma non entrambe.
+Prima di Phase 15 farei un audit completo delle duplicazioni.
+2. Normalizzare C_Wulfnic
+Hai già individuato l&#39;incoerenza:</p>
+<pre><code class="language-text">characters/
+ ├── C_Alyssa.md
+ ├── C_Erik.md
+ ├── ...
+ └── C_Wulfnic/
+
+</code></pre>
+<p>Questo romperà:</p>
+<ul>
+<li>parser automatici</li>
+<li>export engine</li>
+<li>validation pipeline</li>
+<li>bot exporter
+La BOT_EXPORT_SPECIFICATION presuppone access path uniformi tipo:</li>
+</ul>
+<pre><code class="language-text">database/characters/C_[Name].md
+
+</code></pre>
+<p>Quindi C_Wulfnic dovrebbe essere convertito nello stesso formato degli altri personaggi prima di sviluppare gli engine.
+3. Aggiungere un ADR per gli Engine
+Attualmente gli engine sono definiti in una specification.
+Ma gli ADR sono l&#39;autorità architetturale.
+Hai:</p>
+<ul>
+<li>ADR-000 Runtime</li>
+<li>ADR-001 Dynastic Origins</li>
+<li>ADR-002 Family</li>
+<li>ADR-003 Character</li>
+<li>ADR-004 Visual</li>
+<li>ADR-005 Experience</li>
+<li>ADR-006 Canon Layers
+Manca qualcosa tipo:</li>
+</ul>
+<pre><code class="language-text">ADR-007 Engine Authority Architecture
+
+</code></pre>
+<p>che formalizzi:</p>
+<ul>
+<li>En_Core</li>
+<li>family_engine</li>
+<li>relationship_engine</li>
+<li>experience_engine</li>
+<li>validation_engine
+e soprattutto definisca che:</li>
+</ul>
+<pre><code class="language-text">Engines may query authority layers.
+Engines may never create authority.
+
+</code></pre>
+<p>Oggi è scritto nella specification, non nell&#39;architecture layer.
+4. Definire il contratto dei Lorebook Layer
+ADR-006 definisce:</p>
+<ul>
+<li>Active</li>
+<li>Historical</li>
+<li>Cultural</li>
+<li>Deferred</li>
+<li>Candidate
+Ma per il lorebook engine serve anche una policy operativa del tipo:</li>
+</ul>
+<pre><code class="language-text">Default Export:
+  Active only
+
+Extended Export:
+  Active + Historical
+
+Research Export:
+  All except Candidate
+
+</code></pre>
+<p>Altrimenti due exporter diversi potrebbero generare lorebook diversi partendo dallo stesso repository.
+5. Preparare il vero &quot;Build Pipeline&quot;
+Hai già la VALIDATION_PIPELINE_SPECIFICATION.
+Quello che manca è il workflow finale:</p>
+<pre><code class="language-text">database/
+     ↓
+validation_engine
+     ↓
+bot_export_engine
+     ↓
+lorebook_export_engine
+     ↓
+JanitorAI
+SillyTavern
+Generic JSON
+
+</code></pre>
+<p>Oggi esiste la documentazione.
+Phase 15 dovrebbe trasformarla in:</p>
+<pre><code class="language-text">tools/
+ ├── validate.py
+ ├── export_bot.py
+ ├── export_lorebook.py
+ └── build.py
+
+</code></pre>
+<p>con un comando unico:</p>
+<pre><code class="language-bash">build.py C_Alyssa
+
+</code></pre>
+<p>che produca:</p>
+<pre><code class="language-text">exports/
+ ├── janitor/
+ ├── sillytavern/
+ └── lorebooks/
+
+</code></pre>
+<p>Valutazione finale:</p>
+<pre><code class="language-text">Governance:        100%
+Canon Integrity:   100%
+Repository Layout: 95%
+Engine Readiness:  90%
+Build Readiness:   70%
+
+</code></pre>
+<p>Direi che il repository è pronto per entrare in Phase 15, ma farei prima un &quot;Phase 14.6 — Pre-Implementation Hardening&quot; focalizzato su:</p>
+<ol>
+<li>eliminazione ADR duplicati;</li>
+<li>normalizzazione C_Wulfnic;</li>
+<li>ADR-007 Engine Authority;</li>
+<li>export-layer policy;</li>
+<li>build pipeline design.
+Dopo questi cinque punti, l&#39;implementazione degli engine può iniziare con un rischio architetturale molto basso.
+<strong>User</strong> : va bene andiamo per step code funziona meglio con mini-task, quindi separiamo la phase 14.6 in micro task da fare uno alla volta.
+direi di partire da un audit dell&#39;attuale tree del repository
+<strong>Gemini</strong> : Sì. Per come lavora Code/Codex, la strategia migliore è ridurre Phase 14.6 in task che producano un singolo risultato verificabile.
+Proporrei questa scomposizione:</li>
+</ol>
+<h5>Phase 14.6-A — Repository Tree Audit</h5>
+<p>Obiettivo: fotografare lo stato reale del repository.
+Deliverable:</p>
+<pre><code class="language-text">reports/REPOSITORY_TREE_AUDIT.md
+
+</code></pre>
+<p>Contenuti:</p>
+<ul>
+<li>tree completo</li>
+<li>conteggio file per directory</li>
+<li>file duplicati per nome</li>
+<li>file duplicati per contenuto (se presenti)</li>
+<li>directory vuote</li>
+<li>README mancanti</li>
+<li>file orfani</li>
+<li>deviazioni dagli standard definiti in Repository_Scope e Architecture
+Output finale:</li>
+</ul>
+<pre><code class="language-text">PASS
+WARNING
+FAIL
+
+</code></pre>
+<p>per ogni sezione.</p>
+<hr>
+<h5>Phase 14.6-B — Governance Duplication Audit</h5>
+<p>Solo dopo aver congelato il tree.
+Obiettivo:</p>
+<ul>
+<li>verificare ADR duplicati</li>
+<li>verificare Rules duplicate</li>
+<li>verificare Specification duplicate</li>
+<li>identificare la copia autoritativa
+Deliverable:</li>
+</ul>
+<pre><code class="language-text">reports/GOVERNANCE_DUPLICATION_AUDIT.md
+
+</code></pre>
+<hr>
+<h5>Phase 14.6-C — Character Structure Audit</h5>
+<p>Obiettivo:
+verificare che tutti i character record seguano lo stesso schema.
+Controlli:</p>
+<pre><code class="language-text">database/characters/
+
+</code></pre>
+<ul>
+<li>un file per personaggio</li>
+<li>naming convention</li>
+<li>metadata consistency</li>
+<li>template compliance
+Qui emergerà immediatamente il caso C_Wulfnic.
+Deliverable:</li>
+</ul>
+<pre><code class="language-text">reports/CHARACTER_STRUCTURE_AUDIT.md
+
+</code></pre>
+<hr>
+<h5>Phase 14.6-D — Export Path Audit</h5>
+<p>Obiettivo:
+validare che tutti i path usati da:</p>
+<ul>
+<li>ENGINE_SPECIFICATION</li>
+<li>BOT_EXPORT_SPECIFICATION</li>
+<li>LOREBOOK_SPECIFICATION
+esistano davvero nel repository.
+Deliverable:</li>
+</ul>
+<pre><code class="language-text">reports/EXPORT_PATH_AUDIT.md
+
+</code></pre>
+<hr>
+<h5>Phase 14.6-E — Build Pipeline Readiness Audit</h5>
+<p>Ultimo step.
+Verifica:</p>
+<ul>
+<li>tutti gli input necessari agli engine esistono</li>
+<li>tutti gli output sono definibili</li>
+<li>nessun engine dipende da file inesistenti
+Deliverable:</li>
+</ul>
+<pre><code class="language-text">reports/BUILD_PIPELINE_READINESS.md
+
+</code></pre>
+<hr>
+<p>Per il primo task (14.6-A) darei a Code un prompt molto ristretto:
+Phase 14.6-A — Repository Tree Audit
+Objectives:</p>
+<ol>
+<li>Scan the entire repository tree.</li>
+<li>Produce reports/REPOSITORY_TREE_AUDIT.md.
+Audit Requirements:</li>
+</ol>
+<ul>
+<li>Generate complete repository tree.</li>
+<li>Count files per directory.</li>
+<li>Count directories per section.</li>
+<li>Detect:
+<ul>
+<li>duplicate filenames</li>
+<li>duplicate documents</li>
+<li>empty directories</li>
+<li>missing README files</li>
+<li>orphaned files</li>
+<li>deprecated migration artifacts</li>
+</ul>
+</li>
+<li>Verify compliance against:
+<ul>
+<li>Repository_Scope.md</li>
+<li>Architecture.md</li>
+<li>Repository_Governance.md</li>
+<li>Repository_Configuration.md
+Output Sections:</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>Executive Summary</li>
+<li>Repository Statistics</li>
+<li>Tree Snapshot</li>
+<li>Duplicate Analysis</li>
+<li>Empty Directory Analysis</li>
+<li>README Coverage</li>
+<li>Structural Compliance</li>
+<li>Anomaly Log</li>
+<li>Recommended Remediation Actions
+Rules:</li>
+</ol>
+<ul>
+<li>Audit only.</li>
+<li>Do not modify any file.</li>
+<li>Do not delete any file.</li>
+<li>Do not create remediation commits.</li>
+<li>Produce findings only.
+Success Criteria:</li>
+<li>Repository structure fully mapped.</li>
+<li>All anomalies documented.</li>
+<li>No repository changes performed.
+Questo è sufficientemente piccolo da dare un output molto affidabile e ci fornirà la base per tutti i task successivi.
+<strong>User</strong> : per evitare di ingolfare il repository con report direi che dal prossimo task gli chiediamo di restituire il report come parte del messaggio di chat e non creando un reportt, che ne pensi?
+<strong>Gemini</strong> : Sono d&#39;accordo.
+A questo punto del progetto il repository dovrebbe contenere:</li>
+<li>canone</li>
+<li>governance</li>
+<li>specifiche operative</li>
+<li>documentazione permanente
+non audit temporanei.
+I report di audit hanno valore durante la migrazione, ma dopo il Canon Freeze rischiano di diventare rapidamente:</li>
+</ul>
+<pre><code class="language-text">stale
+duplicati
+rumore documentale
+
+</code></pre>
+<p>e aumentano il costo di manutenzione.
+Io adotterei questa regola per tutta la Phase 14.6:</p>
+<pre><code class="language-text">Audit → output in chat
+Decision → modifica repository
+
+</code></pre>
+<p>In pratica:</p>
+<h5>Audit</h5>
+<p>Il modello:</p>
+<ul>
+<li>legge repository</li>
+<li>esegue verifiche</li>
+<li>restituisce il report nel messaggio
+Non crea file.</li>
+</ul>
+<hr>
+<h5>Remediation</h5>
+<p>Solo dopo tua approvazione.
+Se dall&#39;audit emerge un problema:</p>
+<pre><code class="language-text">Issue Found
+    ↓
+Discussione
+    ↓
+Decisione
+    ↓
+Modifica repository
+
+</code></pre>
+<hr>
+<h5>Eccezioni</h5>
+<p>Creerei file solo quando il risultato diventa parte permanente dell&#39;architettura.
+Esempi:
+✅ Da salvare</p>
+<pre><code class="language-text">ADR-007_Engine_Authority.md
+ENGINE_SPECIFICATION.md
+BOT_EXPORT_SPECIFICATION.md
+LOREBOOK_SPECIFICATION.md
+VALIDATION_PIPELINE_SPECIFICATION.md
+
+</code></pre>
+<p>❌ Non da salvare</p>
+<pre><code class="language-text">TREE_AUDIT.md
+DUPLICATION_AUDIT.md
+STRUCTURE_AUDIT.md
+PATH_AUDIT.md
+READINESS_AUDIT.md
+
+</code></pre>
+<hr>
+<p>Per evitare che Code inizi comunque a generare report, aggiungerei questa clausola all&#39;inizio di ogni micro-task:
+Audit Mode
+This task is an audit-only task.
+Do NOT create:</p>
+<ul>
+<li>reports/</li>
+<li>markdown files</li>
+<li>temporary documents</li>
+<li>analysis artifacts
+Return the complete audit report in the chat response only.
+Repository modifications are forbidden unless explicitly requested in a later remediation task.
+In questo modo mantieni il repository pulito e ogni micro-task produce un unico output: una lista di anomalie da correggere nel task successivo. Questo si adatta molto meglio a una fase di hardening pre-implementazione.
+<strong>User</strong> : ora che abbiamo la skill audit, creiamo altre utili al progetto
+abbiamo:</li>
+<li>skill: https://docs.trae.ai/ide/skills</li>
+<li>commands: https://docs.trae.ai/ide/slash-commands</li>
+<li>rules:: https://docs.trae.ai/ide/rules
+che insieme a audit e alle rules da R-000  a R-009 andranno a creare il tool set del progetto
+Serve che ti mandi le R-* per controllare cosa manca?
+<strong>Gemini</strong> : Sì, ha senso vedere le R-*.
+Non perché serva leggerle tutte per forza, ma perché le skill, i comandi e le regole dovrebbero occupare livelli diversi dell&#39;architettura.
+Quello che vedo spesso succedere è:</li>
+</ul>
+<pre><code class="language-text">Rules
+↓
+ripetono le skill
+
+Skills
+↓
+ripetono i comandi
+
+Commands
+↓
+ripetono le rules
+
+</code></pre>
+<p>e dopo qualche settimana diventa difficile capire dove aggiungere una nuova capacità.
+Io farei questa distinzione:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Livello</th><th>Scopo</th></tr></thead><tbody><tr><td>R-* Rules</td><td>Governance e vincoli</td></tr><tr><td>Skills</td><td>Procedure operative riutilizzabili</td></tr><tr><td>Slash Commands</td><td>Entry point rapidi per eseguire una skill</td></tr><tr><td>Specifications</td><td>Contratti architetturali</td></tr><tr><td>ADR</td><td>Decisioni architetturali permanenti</td></tr></tbody></table>
+<p>Ad esempio:</p>
+<h5>Rule</h5>
+<pre><code class="language-text">R-007 Engine Rules
+
+Engine may query canon.
+Engine may never create canon.
+
+</code></pre>
+<hr>
+<h5>Skill</h5>
+<pre><code class="language-text">Engine Audit
+
+Verifica che un engine:
+- non scriva canon
+- rispetti authority boundaries
+- produca provenance
+
+</code></pre>
+<hr>
+<h5>Command</h5>
+<pre><code class="language-text">/engine-audit
+
+</code></pre>
+<p>che richiama la skill.</p>
+<hr>
+<p>Prima ancora di leggere le R-*, però, posso già vedere alcune skill quasi certamente utili per SvartúlfrVerse:</p>
+<pre><code class="language-text">audit
+
+</code></pre>
+<p>(già fatta)</p>
+<pre><code class="language-text">character-audit
+
+</code></pre>
+<p>Audit completo di un personaggio contro:</p>
+<ul>
+<li>ADR</li>
+<li>Character Authority</li>
+<li>Family Authority</li>
+<li>Visual Authority</li>
+<li>Experience Authority</li>
+</ul>
+<hr>
+<pre><code class="language-text">canon-validation
+
+</code></pre>
+<p>Verifica che una modifica proposta:</p>
+<ul>
+<li>non violi ADR</li>
+<li>non violi authority ownership</li>
+<li>non introduca drift</li>
+</ul>
+<hr>
+<pre><code class="language-text">cross-reference-audit
+
+</code></pre>
+<p>Verifica link tra:</p>
+<ul>
+<li>characters</li>
+<li>families</li>
+<li>experiences</li>
+<li>institutions</li>
+<li>worlds</li>
+</ul>
+<hr>
+<pre><code class="language-text">export-readiness
+
+</code></pre>
+<p>Verifica che un personaggio sia esportabile in:</p>
+<ul>
+<li>JanitorAI</li>
+<li>SillyTavern</li>
+<li>Generic JSON</li>
+</ul>
+<hr>
+<pre><code class="language-text">lorebook-build
+
+</code></pre>
+<p>Genera il lorebook da Active Canon.</p>
+<hr>
+<pre><code class="language-text">canon-candidate-review
+
+</code></pre>
+<p>Valuta materiale in:</p>
+<pre><code class="language-text">database/canon_candidates/
+
+</code></pre>
+<p>e propone:</p>
+<pre><code class="language-text">Reject
+Deferred
+Historical
+Active
+
+</code></pre>
+<p>senza applicare modifiche.</p>
+<hr>
+<pre><code class="language-text">repository-hardening
+
+</code></pre>
+<p>Audit pre-release.
+Controlla:</p>
+<ul>
+<li>duplicazioni</li>
+<li>file orfani</li>
+<li>path rotti</li>
+<li>documentazione incoerente</li>
+</ul>
+<hr>
+<pre><code class="language-text">engine-contract-validation
+
+</code></pre>
+<p>Confronta:</p>
+<pre><code class="language-text">ENGINE_SPECIFICATION
+BOT_EXPORT_SPECIFICATION
+LOREBOOK_SPECIFICATION
+VALIDATION_PIPELINE_SPECIFICATION
+
+</code></pre>
+<p>e segnala incompatibilità.</p>
+<hr>
+<p>Come slash commands vedrei bene qualcosa del genere:</p>
+<pre><code class="language-text">/audit
+/character-audit
+/canon-check
+/candidate-review
+/export-check
+/lorebook-build
+/hardening
+/engine-check
+
+</code></pre>
+<p>Ma prima di progettare davvero il toolset farei un passaggio preliminare:
+<strong>mappare le R-000 → R-009 e capire cosa coprono già.</strong>
+Da lì possiamo costruire una matrice:</p>
+<pre><code class="language-text">Rule
+↓
+Skill
+↓
+Command
+
+</code></pre>
+<p>e identificare eventuali buchi funzionali invece di creare skill ridondanti. Quindi sì, se mi mandi le R-* posso fare un audit del futuro toolset e dirti esattamente cosa manca e cosa invece è già coperto dalla governance esistente.
+<strong>User</strong> : ecco cosa abbiamo ora
+<strong>Gemini</strong> : Dopo aver letto le R-000 → R-009 e la skill Audit, la mia impressione è che la governance sia già molto solida e che il prossimo passo non sia aggiungere altre Rules, ma costruire le Skills operative che trasformano la governance in workflow eseguibili.
+Vedo il toolset organizzato così:</p>
+<pre><code class="language-text">ADR
+ ↓
+Rules (R-000 → R-009)
+ ↓
+Skills
+ ↓
+Slash Commands
+ ↓
+Engine Implementation
+
+</code></pre>
+<p>Al momento hai:</p>
+<pre><code class="language-text">Rules: 10
+Skills: 1 (Audit)
+Commands: 0
+
+</code></pre>
+<p>Quello che manca davvero è il layer Skills.
+Le skill che considero ad alta priorità sono:</p>
+<h5>1. Character Audit</h5>
+<p>Scopo:</p>
+<ul>
+<li>validare un personaggio contro tutte le authority</li>
+<li>verificare ownership</li>
+<li>verificare template compliance</li>
+<li>verificare cross-reference
+Userebbe principalmente:</li>
+</ul>
+<pre><code class="language-text">R-002
+R-003
+R-004
+R-005
+R-006
+
+</code></pre>
+<p>Command:</p>
+<pre><code class="language-text">/character-audit
+
+</code></pre>
+<hr>
+<h5>2. Canon Validation</h5>
+<p>Scopo:
+valutare una proposta di modifica.
+Output:</p>
+<pre><code class="language-text">PASS
+WARNING
+FAIL
+
+</code></pre>
+<p>con motivazione.
+Userebbe:</p>
+<pre><code class="language-text">R-000
+R-006
+R-007
+
+</code></pre>
+<p>Command:</p>
+<pre><code class="language-text">/canon-check
+
+</code></pre>
+<hr>
+<h5>3. Candidate Review</h5>
+<p>Questa secondo me è fondamentale.
+Serve per:</p>
+<pre><code class="language-text">database/canon_candidates/
+
+</code></pre>
+<p>Workflow:</p>
+<pre><code class="language-text">candidate
+↓
+audit
+↓
+classification
+↓
+recommendation
+
+</code></pre>
+<p>Output:</p>
+<pre><code class="language-text">REJECT
+DEFER
+APPROVE
+
+</code></pre>
+<p>Userebbe direttamente il Canon Recovery Workflow.
+Command:</p>
+<pre><code class="language-text">/candidate-review
+
+</code></pre>
+<hr>
+<h5>4. Cross Reference Audit</h5>
+<p>Scopo:
+controllare:</p>
+<pre><code class="language-text">character → family
+character → visual
+character → experience
+family → dynasty
+
+</code></pre>
+<p>e trovare riferimenti rotti.
+Command:</p>
+<pre><code class="language-text">/xref-audit
+
+</code></pre>
+<hr>
+<h5>5. Export Readiness</h5>
+<p>Questa la vedo come ponte verso Phase 15.
+Controlla:</p>
+<ul>
+<li>exportabilità JanitorAI</li>
+<li>exportabilità SillyTavern</li>
+<li>lorebook compliance</li>
+<li>traceability
+Basata su:</li>
+</ul>
+<pre><code class="language-text">R-007
+R-008
+R-009
+
+</code></pre>
+<p>Command:</p>
+<pre><code class="language-text">/export-check
+
+</code></pre>
+<hr>
+<h5>6. Repository Hardening</h5>
+<p>Questa è praticamente la skill che userai moltissimo nella Phase 14.6.
+Controlla:</p>
+<ul>
+<li>duplicati</li>
+<li>file orfani</li>
+<li>README</li>
+<li>path</li>
+<li>compliance
+È diversa da Audit perché è focalizzata sulla struttura repository.
+Command:</li>
+</ul>
+<pre><code class="language-text">/hardening
+
+</code></pre>
+<hr>
+<h5>7. Engine Contract Validation</h5>
+<p>Controlla che:</p>
+<pre><code class="language-text">ENGINE_SPECIFICATION
+BOT_EXPORT_SPECIFICATION
+LOREBOOK_SPECIFICATION
+VALIDATION_PIPELINE_SPECIFICATION
+
+</code></pre>
+<p>siano ancora compatibili tra loro.
+Basata soprattutto su R-007.
+Command:</p>
+<pre><code class="language-text">/engine-check
+
+</code></pre>
+<hr>
+<p>Quello che invece NON farei è creare nuove Rules adesso.
+Le R-000 → R-009 coprono già:</p>
+<ul>
+<li>runtime</li>
+<li>dinastie</li>
+<li>famiglie</li>
+<li>personaggi</li>
+<li>visual</li>
+<li>experience</li>
+<li>governance</li>
+<li>engine</li>
+<li>bot</li>
+<li>lorebook
+Il vero gap è che oggi hai regole ma poche procedure operative.
+Se dovessi scegliere le prossime due skill da creare subito, farei:</li>
+</ul>
+<pre><code class="language-text">1. Character Audit
+2. Export Readiness
+
+</code></pre>
+<p>perché sono quelle che verranno usate continuamente sia durante l&#39;hardening sia durante la futura costruzione di engine e bot.
+<strong>User</strong> : ok, andiamo step by step dammi la prima, e quando ti dico OK mi passi la successiva
+ti allego gli screen del form di creazione delle skill e comand interno all&#39;ide
+<strong>Gemini</strong> : Partirei da  <strong>Character Audit</strong> .
+È la skill che userai più spesso durante sviluppo, import, manutenzione, recovery e validazione dei personaggi.
+Può diventare anche la base futura di /character-audit.
+<strong>Skill Name</strong></p>
+<pre><code class="language-text">Character Audit
+
+</code></pre>
+<p><strong>Description</strong></p>
+<pre><code class="language-text">Use this skill when auditing, validating, reviewing, importing, modifying, recovering, or troubleshooting character records. This skill verifies compliance with Character Authority, Family Authority, Visual Authority, Experience Authority, governance rules, and repository standards without modifying the repository.
+
+</code></pre>
+<p><strong>Instructions</strong></p>
+<hr>
+<h4>name: Character Auditdescription: Use this skill when auditing, validating, reviewing, importing, modifying, recovering, or troubleshooting character records. This skill verifies compliance with Character Authority, Family Authority, Visual Authority, Experience Authority, governance rules, and repository standards without modifying the repository.</h4>
+<h3>Character Audit</h3>
+<h4>Purpose</h4>
+<p>Perform a complete compliance audit of a character record against repository governance, authority boundaries, canonical ownership rules, and repository structure.
+This is an audit-only workflow.</p>
+<hr>
+<h4>Audit Scope</h4>
+<p>Validate the character against:</p>
+<ul>
+<li>R-002 Family Rules</li>
+<li>R-003 Character Rules</li>
+<li>R-004 Visual Rules</li>
+<li>R-005 Experience Rules</li>
+<li>R-006 Governance Rules
+Verify compliance with:</li>
+<li>Character Authority</li>
+<li>Family Authority</li>
+<li>Visual Authority</li>
+<li>Experience Authority</li>
+<li>Canon Layer Architecture</li>
+</ul>
+<hr>
+<h4>Required Checks</h4>
+<h5>Identity Validation</h5>
+<p>Verify:</p>
+<ul>
+<li>name consistency</li>
+<li>surname consistency</li>
+<li>pronouns</li>
+<li>identity ownership
+Flag:</li>
+<li>conflicting identity data</li>
+<li>duplicated identity ownership</li>
+<li>non-canonical naming</li>
+</ul>
+<hr>
+<h5>Genealogy Validation</h5>
+<p>Verify:</p>
+<ul>
+<li>genealogy ownership</li>
+<li>family references</li>
+<li>dynasty membership
+Flag:</li>
+<li>genealogy stored in character file</li>
+<li>duplicated family data</li>
+<li>authority violations</li>
+</ul>
+<hr>
+<h5>Appearance Validation</h5>
+<p>Verify:</p>
+<ul>
+<li>appearance references</li>
+<li>visual inheritance classification</li>
+<li>visual authority compliance
+Flag:</li>
+<li>appearance ownership violations</li>
+<li>visual baseline contradictions</li>
+<li>duplicated visual data</li>
+</ul>
+<hr>
+<h5>Experience Validation</h5>
+<p>Verify:</p>
+<ul>
+<li>scenario-scoped data</li>
+<li>occupation overrides</li>
+<li>relationship extensions
+Flag:</li>
+<li>scenario data stored as canon</li>
+<li>residence ownership violations</li>
+<li>employment ownership violations</li>
+</ul>
+<hr>
+<h5>Governance Validation</h5>
+<p>Verify:</p>
+<ul>
+<li>source traceability</li>
+<li>authority ownership</li>
+<li>canon compliance</li>
+<li>rejected canon contamination
+Flag:</li>
+<li>undocumented imports</li>
+<li>authority conflicts</li>
+<li>governance violations</li>
+</ul>
+<hr>
+<h4>Output Format</h4>
+<p>Return the audit report in chat only.
+Do not create files.
+Structure:</p>
+<ol>
+<li>Executive Summary</li>
+<li>Compliance Results</li>
+<li>Authority Boundary Review</li>
+<li>Findings</li>
+<li>Anomalies</li>
+<li>Risk Assessment</li>
+<li>Recommended Actions</li>
+</ol>
+<hr>
+<h4>Severity Levels</h4>
+<p>Use:</p>
+<ul>
+<li>PASS</li>
+<li>WARNING</li>
+<li>FAIL
+Definitions:
+PASS: No issue detected.
+WARNING: Potential issue or incomplete information.
+FAIL: Confirmed violation of repository rules.</li>
+</ul>
+<hr>
+<h4>Remediation Policy</h4>
+<p>Do not modify repository files.
+Do not create reports.
+Do not create remediation artifacts.
+Provide findings only.
+Wait for explicit user approval before proposing modifications.</p>
+<hr>
+<h4>Success Criteria</h4>
+<ul>
+<li>Repository remains unchanged.</li>
+<li>All authority boundaries validated.</li>
+<li>All violations documented.</li>
+<li>Findings returned in chat only.
+Dopo averla creata, il comando naturale associato sarà:</li>
+</ul>
+<pre><code class="language-text">/character-audit
+
+</code></pre>
+<p>Quando mi dici  <strong>OK</strong> , passiamo alla seconda skill.
+<strong>User</strong> : OK
+<strong>Gemini</strong> : La seconda skill che farei è  <strong>Export Readiness</strong> .
+Questa sarà la skill ponte tra repository e Phase 15 (engine, bot, lorebook).
+<strong>Skill Name</strong></p>
+<pre><code class="language-text">Export Readiness
+
+</code></pre>
+<p><strong>Description</strong></p>
+<pre><code class="language-text">Use this skill when evaluating whether a character, authority record, lorebook source, or repository section is ready for export into JanitorAI, SillyTavern, Generic JSON, or future runtime engines. This skill validates export compatibility, traceability, authority compliance, and generation readiness without modifying repository content.
+
+</code></pre>
+<p><strong>Instructions</strong></p>
+<hr>
+<h4>name: Export Readinessdescription: Use this skill when evaluating whether a character, authority record, lorebook source, or repository section is ready for export into JanitorAI, SillyTavern, Generic JSON, or future runtime engines.</h4>
+<h3>Export Readiness</h3>
+<h4>Purpose</h4>
+<p>Determine whether repository content is ready for runtime generation and export.
+This includes:</p>
+<ul>
+<li>Bot generation</li>
+<li>Lorebook generation</li>
+<li>Engine consumption</li>
+<li>Platform exports
+This is an audit-only workflow.</li>
+</ul>
+<hr>
+<h4>Validation Scope</h4>
+<p>Validate against:</p>
+<ul>
+<li>R-007 Engine Rules</li>
+<li>R-008 Bot Rules</li>
+<li>R-009 Lorebook Rules
+Verify compliance with:</li>
+<li>ENGINE_SPECIFICATION</li>
+<li>BOT_EXPORT_SPECIFICATION</li>
+<li>LOREBOOK_SPECIFICATION</li>
+<li>VALIDATION_PIPELINE_SPECIFICATION</li>
+</ul>
+<hr>
+<h4>Required Checks</h4>
+<h5>Traceability Validation</h5>
+<p>Verify:</p>
+<ul>
+<li>all exported content maps to canonical records</li>
+<li>source attribution exists</li>
+<li>authority ownership is identifiable
+Flag:</li>
+<li>orphaned content</li>
+<li>undocumented sources</li>
+<li>non-traceable data</li>
+</ul>
+<hr>
+<h5>Authority Validation</h5>
+<p>Verify:</p>
+<ul>
+<li>ownership boundaries respected</li>
+<li>no cross-authority contamination</li>
+<li>no duplicated authority data
+Flag:</li>
+<li>ownership violations</li>
+<li>duplicated records</li>
+<li>conflicting authority sources</li>
+</ul>
+<hr>
+<h5>Bot Generation Readiness</h5>
+<p>Verify:</p>
+<ul>
+<li>required character fields exist</li>
+<li>personality data exists</li>
+<li>biography data exists</li>
+<li>visual references exist</li>
+<li>family references resolve correctly
+Flag:</li>
+<li>missing export fields</li>
+<li>unresolved references</li>
+<li>incomplete character records</li>
+</ul>
+<hr>
+<h5>Lorebook Readiness</h5>
+<p>Verify:</p>
+<ul>
+<li>source records exist</li>
+<li>canon layer classification exists</li>
+<li>source attribution exists
+Flag:</li>
+<li>missing canon layers</li>
+<li>uncited entries</li>
+<li>unresolved dependencies</li>
+</ul>
+<hr>
+<h5>Engine Readiness</h5>
+<p>Verify:</p>
+<ul>
+<li>records are machine-consumable</li>
+<li>references resolve correctly</li>
+<li>validation pipeline can process records
+Flag:</li>
+<li>broken paths</li>
+<li>invalid references</li>
+<li>export blockers</li>
+</ul>
+<hr>
+<h4>Output Format</h4>
+<p>Return results in chat only.
+Do not create files.
+Structure:</p>
+<ol>
+<li>Executive Summary</li>
+<li>Export Status</li>
+<li>Bot Readiness</li>
+<li>Lorebook Readiness</li>
+<li>Engine Readiness</li>
+<li>Findings</li>
+<li>Export Blockers</li>
+<li>Recommended Actions</li>
+</ol>
+<hr>
+<h4>Status Levels</h4>
+<p>Use:</p>
+<ul>
+<li>READY</li>
+<li>READY WITH WARNINGS</li>
+<li>NOT READY
+Definitions:
+READY: Export can proceed immediately.
+READY WITH WARNINGS: Export possible but improvements recommended.
+NOT READY: Export blocked by unresolved issues.</li>
+</ul>
+<hr>
+<h4>Remediation Policy</h4>
+<p>Do not modify repository files.
+Do not generate exports.
+Do not create reports.
+Provide findings only.
+Wait for explicit approval before recommending repository changes.</p>
+<hr>
+<h4>Success Criteria</h4>
+<ul>
+<li>Repository remains unchanged.</li>
+<li>Export blockers identified.</li>
+<li>Traceability validated.</li>
+<li>Runtime compatibility verified.</li>
+<li>Results returned in chat only.
+<strong>Command associato</strong></li>
+</ul>
+<pre><code class="language-text">/export-check
+
+</code></pre>
+<p>Questa sarà probabilmente una delle skill più usate una volta che inizierete a costruire davvero bot exporter, lorebook exporter ed engine runtime.
+<strong>User</strong> : OK
+<strong>Gemini</strong> : La terza skill che farei è  <strong>Canon Candidate Review</strong> .
+Questa skill formalizza il Canon Recovery Workflow e diventerà il punto di ingresso per qualsiasi nuova proposta futura.
+È una skill estremamente importante perché protegge il Canon Freeze e impedisce che nuove idee entrino direttamente nel repository.
+<strong>Skill Name</strong></p>
+<pre><code class="language-text">Canon Candidate Review
+
+</code></pre>
+<p><strong>Description</strong></p>
+<pre><code class="language-text">Use this skill when evaluating new canon proposals, recovered archive material, imported records, unresolved evidence, or content stored in canon_candidates. This skill performs a governance review and produces an approval recommendation without modifying the repository.
+
+</code></pre>
+<p><strong>Instructions</strong></p>
+<hr>
+<h4>name: Canon Candidate Reviewdescription: Use this skill when evaluating new canon proposals, recovered archive material, imported records, unresolved evidence, or content stored in canon_candidates.</h4>
+<h3>Canon Candidate Review</h3>
+<h4>Purpose</h4>
+<p>Evaluate proposed canon before it enters the repository.
+This skill enforces the Canon Recovery Workflow and Canon Freeze policies.
+This is an audit-only workflow.</p>
+<hr>
+<h4>Review Scope</h4>
+<p>Validate against:</p>
+<ul>
+<li>R-000 Runtime Rules</li>
+<li>R-006 Governance Rules</li>
+<li>ADR-006 Canon Layer Architecture
+Review:</li>
+<li>candidate records</li>
+<li>recovered archive content</li>
+<li>imported material</li>
+<li>unresolved evidence</li>
+<li>deferred canon proposals</li>
+</ul>
+<hr>
+<h4>Required Checks</h4>
+<h5>Evidence Review</h5>
+<p>Verify:</p>
+<ul>
+<li>evidence exists</li>
+<li>evidence sources are documented</li>
+<li>evidence is traceable
+Classify:</li>
+<li>Stable</li>
+<li>Variant</li>
+<li>Conflicting</li>
+<li>Unsupported
+Flag:</li>
+<li>unsupported claims</li>
+<li>undocumented sources</li>
+<li>missing evidence</li>
+</ul>
+<hr>
+<h5>Canon Recovery Workflow Validation</h5>
+<p>Verify completion of:</p>
+<ol>
+<li>Research</li>
+<li>Recovery Audit</li>
+<li>Architecture Review</li>
+<li>Authority Decision</li>
+<li>Import Readiness
+Flag:</li>
+</ol>
+<ul>
+<li>skipped workflow stages</li>
+<li>incomplete reviews</li>
+<li>undocumented decisions</li>
+</ul>
+<hr>
+<h5>Authority Ownership Validation</h5>
+<p>Verify:</p>
+<ul>
+<li>correct authority destination</li>
+<li>ownership boundaries respected</li>
+<li>no cross-authority contamination
+Flag:</li>
+<li>ownership conflicts</li>
+<li>wrong destination layer</li>
+<li>duplicated authority ownership</li>
+</ul>
+<hr>
+<h5>Canon Freeze Validation</h5>
+<p>Verify:</p>
+<ul>
+<li>no rejected canon is reintroduced</li>
+<li>no prohibited recovery attempts exist</li>
+<li>no freeze violations exist
+Flag:</li>
+<li>rejected canon contamination</li>
+<li>prohibited recovery requests</li>
+<li>unauthorized canon creation</li>
+</ul>
+<hr>
+<h5>Canon Layer Classification</h5>
+<p>Determine:</p>
+<ul>
+<li>Active Canon</li>
+<li>Historical Canon</li>
+<li>Cultural Canon</li>
+<li>Deferred Canon</li>
+<li>Candidate Canon
+Flag:</li>
+<li>missing classification</li>
+<li>incorrect classification</li>
+<li>unresolved status</li>
+</ul>
+<hr>
+<h4>Recommendation Engine</h4>
+<p>Produce exactly one recommendation:</p>
+<h5>APPROVE</h5>
+<p>Evidence is sufficient.
+Authority ownership is correct.
+Candidate may proceed to Authority Decision.</p>
+<hr>
+<h5>DEFER</h5>
+<p>Evidence exists but requires clarification.
+Additional review required.
+Candidate remains unresolved.</p>
+<hr>
+<h5>REJECT</h5>
+<p>Evidence insufficient or conflicts with governance.
+Candidate must not enter repository.</p>
+<hr>
+<h4>Output Format</h4>
+<p>Return results in chat only.
+Do not create files.
+Structure:</p>
+<ol>
+<li>Executive Summary</li>
+<li>Evidence Assessment</li>
+<li>Governance Review</li>
+<li>Authority Review</li>
+<li>Canon Layer Classification</li>
+<li>Findings</li>
+<li>Risks</li>
+<li>Final Recommendation</li>
+</ol>
+<hr>
+<h4>Severity Levels</h4>
+<p>Use:</p>
+<ul>
+<li>PASS</li>
+<li>WARNING</li>
+<li>FAIL</li>
+</ul>
+<hr>
+<h4>Remediation Policy</h4>
+<p>Do not modify repository files.
+Do not import content.
+Do not create reports.
+Do not update canon.
+Provide findings only.
+Wait for explicit approval before any repository modification.</p>
+<hr>
+<h4>Success Criteria</h4>
+<ul>
+<li>Repository remains unchanged.</li>
+<li>Candidate properly classified.</li>
+<li>Governance validated.</li>
+<li>Recommendation clearly produced.</li>
+<li>Results returned in chat only.
+<strong>Command associato</strong></li>
+</ul>
+<pre><code class="language-text">/candidate-review
+
+</code></pre>
+<p>Questa skill copre l&#39;intero ciclo di vita di qualsiasi futura espansione del canone ed è probabilmente la più importante dopo Audit e Character Audit.
+<strong>User</strong> : OK
+<strong>Gemini</strong> : La quarta skill che farei è  <strong>Cross Reference Audit</strong> .
+Questa è quella che probabilmente troverà più bug strutturali nel repository durante la Phase 14.6 e nelle future espansioni.
+Serve a verificare che tutti i collegamenti tra authority layer siano coerenti.
+<strong>Skill Name</strong></p>
+<pre><code class="language-text">Cross Reference Audit
+
+</code></pre>
+<p><strong>Description</strong></p>
+<pre><code class="language-text">Use this skill when validating relationships, references, dependencies, links, ownership boundaries, or cross-authority consistency between characters, families, worlds, institutions, experiences, and canon layers. This skill identifies broken references and structural inconsistencies without modifying repository content.
+
+</code></pre>
+<p><strong>Instructions</strong></p>
+<hr>
+<h4>name: Cross Reference Auditdescription: Use this skill when validating relationships, references, dependencies, links, ownership boundaries, or cross-authority consistency between characters, families, worlds, institutions, experiences, and canon layers.</h4>
+<h3>Cross Reference Audit</h3>
+<h4>Purpose</h4>
+<p>Validate repository-wide reference integrity.
+This skill verifies that all authority layers, records, references, and relationships remain internally consistent.
+This is an audit-only workflow.</p>
+<hr>
+<h4>Validation Scope</h4>
+<p>Audit:</p>
+<ul>
+<li>characters</li>
+<li>families</li>
+<li>worlds</li>
+<li>institutions</li>
+<li>experiences</li>
+<li>historical records</li>
+<li>canon candidates
+Verify consistency between authority layers.</li>
+</ul>
+<hr>
+<h4>Required Checks</h4>
+<h5>Character → Family References</h5>
+<p>Verify:</p>
+<ul>
+<li>referenced family records exist</li>
+<li>dynasty references resolve correctly</li>
+<li>surname authority resolves correctly
+Flag:</li>
+<li>missing family records</li>
+<li>broken dynasty references</li>
+<li>invalid surname ownership</li>
+</ul>
+<hr>
+<h5>Character → Visual References</h5>
+<p>Verify:</p>
+<ul>
+<li>appearance references resolve</li>
+<li>visual inheritance references exist</li>
+<li>visual authority ownership respected
+Flag:</li>
+<li>missing visual records</li>
+<li>invalid appearance references</li>
+<li>ownership violations</li>
+</ul>
+<hr>
+<h5>Character → Experience References</h5>
+<p>Verify:</p>
+<ul>
+<li>experience references exist</li>
+<li>scenario links resolve correctly</li>
+<li>context ownership respected
+Flag:</li>
+<li>broken experience references</li>
+<li>invalid context links</li>
+<li>scope violations</li>
+</ul>
+<hr>
+<h5>Family Graph Integrity</h5>
+<p>Verify:</p>
+<ul>
+<li>parent-child relationships resolve</li>
+<li>marriages resolve</li>
+<li>dynasty membership resolves
+Flag:</li>
+<li>orphaned nodes</li>
+<li>broken edges</li>
+<li>circular structures</li>
+<li>invalid relationships</li>
+</ul>
+<hr>
+<h5>Authority Boundary Validation</h5>
+<p>Verify:</p>
+<ul>
+<li>ownership remains within authority layer</li>
+<li>no duplicated ownership exists</li>
+<li>no conflicting authority sources exist
+Flag:</li>
+<li>cross-authority contamination</li>
+<li>duplicate ownership</li>
+<li>conflicting records</li>
+</ul>
+<hr>
+<h5>Canon Layer Consistency</h5>
+<p>Verify:</p>
+<ul>
+<li>Active Canon references valid records</li>
+<li>Historical Canon references valid records</li>
+<li>Cultural Canon references valid records</li>
+<li>Deferred Canon references valid records</li>
+<li>Candidate Canon references valid records
+Flag:</li>
+<li>missing layer assignments</li>
+<li>invalid layer references</li>
+<li>layer contamination</li>
+</ul>
+<hr>
+<h5>Repository Reference Integrity</h5>
+<p>Verify:</p>
+<ul>
+<li>internal file references</li>
+<li>path references</li>
+<li>source attribution references
+Flag:</li>
+<li>broken paths</li>
+<li>missing files</li>
+<li>orphaned references</li>
+</ul>
+<hr>
+<h4>Output Format</h4>
+<p>Return results in chat only.
+Do not create files.
+Structure:</p>
+<ol>
+<li>Executive Summary</li>
+<li>Reference Integrity Status</li>
+<li>Authority Layer Review</li>
+<li>Broken References</li>
+<li>Ownership Violations</li>
+<li>Findings</li>
+<li>Risk Assessment</li>
+<li>Recommended Actions</li>
+</ol>
+<hr>
+<h4>Status Levels</h4>
+<p>Use:</p>
+<ul>
+<li>PASS</li>
+<li>WARNING</li>
+<li>FAIL
+Definitions:
+PASS: Reference validated.
+WARNING: Reference incomplete or ambiguous.
+FAIL: Reference broken or invalid.</li>
+</ul>
+<hr>
+<h4>Remediation Policy</h4>
+<p>Do not modify repository files.
+Do not create reports.
+Do not create remediation artifacts.
+Provide findings only.
+Wait for explicit approval before proposing modifications.</p>
+<hr>
+<h4>Success Criteria</h4>
+<ul>
+<li>Repository remains unchanged.</li>
+<li>All references validated.</li>
+<li>Broken references documented.</li>
+<li>Authority boundaries verified.</li>
+<li>Results returned in chat only.
+<strong>Command associato</strong></li>
+</ul>
+<pre><code class="language-text">/ xref-audit
+
+</code></pre>
+<p>(senza spazio: /xref-audit)
+Questa skill è particolarmente utile perché intercetta problemi che né Character Audit né Export Readiness vedono facilmente: riferimenti rotti, ownership duplicata e inconsistenze tra layer. È anche una delle migliori candidate per diventare in futuro un controllo automatico del validation_engine.
+<strong>User</strong> : OK
+<strong>Gemini</strong> : La quinta skill che farei è  <strong>Repository Hardening</strong> .
+Questa diventa la skill ufficiale per tutte le attività della tua attuale Phase 14.6.
+A differenza di Audit, che è generica, questa è focalizzata esclusivamente sulla salute strutturale del repository.
+<strong>Skill Name</strong></p>
+<pre><code class="language-text">Repository Hardening
+
+</code></pre>
+<p><strong>Description</strong></p>
+<pre><code class="language-text">Use this skill when evaluating repository structure, governance consistency, documentation alignment, duplicate content, orphaned files, migration residue, path integrity, or implementation readiness. This skill identifies structural weaknesses and hardening opportunities without modifying repository content.
+
+</code></pre>
+<p><strong>Instructions</strong></p>
+<hr>
+<h4>name: Repository Hardeningdescription: Use this skill when evaluating repository structure, governance consistency, documentation alignment, duplicate content, orphaned files, migration residue, path integrity, or implementation readiness.</h4>
+<h3>Repository Hardening</h3>
+<h4>Purpose</h4>
+<p>Evaluate repository health, structural consistency, governance alignment, and implementation readiness.
+This skill is intended for pre-implementation reviews, stabilization phases, migration validation, and repository maintenance.
+This is an audit-only workflow.</p>
+<hr>
+<h4>Validation Scope</h4>
+<p>Audit:</p>
+<ul>
+<li>repository structure</li>
+<li>governance documents</li>
+<li>ADRs</li>
+<li>specifications</li>
+<li>rules</li>
+<li>database records</li>
+<li>templates</li>
+<li>documentation
+Verify alignment with:</li>
+<li>Repository_Scope</li>
+<li>Repository_Governance</li>
+<li>Repository_Configuration</li>
+<li>Architecture</li>
+<li>ADRs</li>
+<li>Rules</li>
+</ul>
+<hr>
+<h4>Required Checks</h4>
+<h5>Repository Structure</h5>
+<p>Verify:</p>
+<ul>
+<li>directory structure compliance</li>
+<li>expected folders exist</li>
+<li>naming conventions respected
+Flag:</li>
+<li>structural deviations</li>
+<li>inconsistent layouts</li>
+<li>unexpected folders</li>
+</ul>
+<hr>
+<h5>Duplicate Analysis</h5>
+<p>Detect:</p>
+<ul>
+<li>duplicated files</li>
+<li>duplicated governance documents</li>
+<li>duplicated ADRs</li>
+<li>duplicated specifications</li>
+<li>duplicated templates
+Flag:</li>
+<li>competing authority sources</li>
+<li>duplicate ownership</li>
+<li>redundant documentation</li>
+</ul>
+<hr>
+<h5>Documentation Consistency</h5>
+<p>Verify:</p>
+<ul>
+<li>README alignment</li>
+<li>Architecture alignment</li>
+<li>Governance alignment</li>
+<li>Specification alignment
+Flag:</li>
+<li>outdated documentation</li>
+<li>conflicting documentation</li>
+<li>stale references</li>
+</ul>
+<hr>
+<h5>Migration Residue Detection</h5>
+<p>Verify:</p>
+<ul>
+<li>deprecated references removed</li>
+<li>old repository names removed</li>
+<li>legacy migration artifacts removed
+Flag:</li>
+<li>residual migration paths</li>
+<li>obsolete references</li>
+<li>deprecated structures</li>
+</ul>
+<hr>
+<h5>Repository Integrity</h5>
+<p>Verify:</p>
+<ul>
+<li>internal references resolve</li>
+<li>paths remain valid</li>
+<li>ownership boundaries respected
+Flag:</li>
+<li>broken references</li>
+<li>invalid paths</li>
+<li>ownership conflicts</li>
+</ul>
+<hr>
+<h5>Implementation Readiness</h5>
+<p>Verify:</p>
+<ul>
+<li>engine prerequisites satisfied</li>
+<li>export prerequisites satisfied</li>
+<li>validation prerequisites satisfied
+Flag:</li>
+<li>missing dependencies</li>
+<li>unresolved blockers</li>
+<li>incomplete preparation</li>
+</ul>
+<hr>
+<h4>Output Format</h4>
+<p>Return results in chat only.
+Do not create files.
+Structure:</p>
+<ol>
+<li>Executive Summary</li>
+<li>Repository Health Score</li>
+<li>Structural Review</li>
+<li>Governance Review</li>
+<li>Documentation Review</li>
+<li>Findings</li>
+<li>Risk Assessment</li>
+<li>Hardening Recommendations</li>
+</ol>
+<hr>
+<h4>Status Levels</h4>
+<p>Use:</p>
+<ul>
+<li>PASS</li>
+<li>WARNING</li>
+<li>FAIL
+Definitions:
+PASS: No issue detected.
+WARNING: Issue exists but does not block implementation.
+FAIL: Issue blocks implementation or creates governance risk.</li>
+</ul>
+<hr>
+<h4>Remediation Policy</h4>
+<p>Do not modify repository files.
+Do not create reports.
+Do not create remediation artifacts.
+Provide findings only.
+Wait for explicit approval before proposing modifications.</p>
+<hr>
+<h4>Success Criteria</h4>
+<ul>
+<li>Repository remains unchanged.</li>
+<li>Structural integrity verified.</li>
+<li>Governance consistency verified.</li>
+<li>Implementation blockers identified.</li>
+<li>Results returned in chat only.
+<strong>Command associato</strong></li>
+</ul>
+<pre><code class="language-text">/hardening
+
+</code></pre>
+<p>Questa skill diventerà probabilmente la più usata durante tutta la preparazione agli engine, perché sostituisce la necessità di creare continuamente report di audit temporanei nel repository.
+<strong>User</strong> : OK
+<strong>Gemini</strong> : La sesta skill che farei è  <strong>Engine Contract Validation</strong> .
+Questa è la skill che proteggerà l&#39;architettura quando inizierai a implementare davvero gli engine.
+Finché gli engine esistono solo come documentazione il rischio è basso. Appena iniziano a comparire codice, exporter e pipeline, il rischio diventa che le specifiche divergano tra loro.
+<strong>Skill Name</strong></p>
+<pre><code class="language-text">Engine Contract Validation
+
+</code></pre>
+<p><strong>Description</strong></p>
+<pre><code class="language-text">Use this skill when validating engine architecture, specifications, runtime contracts, exporter compatibility, validation pipelines, or implementation readiness. This skill verifies consistency between engine specifications, repository governance, authority boundaries, and runtime expectations without modifying repository content.
+
+</code></pre>
+<p><strong>Instructions</strong></p>
+<hr>
+<h4>name: Engine Contract Validationdescription: Use this skill when validating engine architecture, specifications, runtime contracts, exporter compatibility, validation pipelines, or implementation readiness.</h4>
+<h3>Engine Contract Validation</h3>
+<h4>Purpose</h4>
+<p>Validate consistency between engine specifications, authority architecture, governance rules, export systems, and runtime contracts.
+This skill ensures that implementation remains aligned with repository architecture.
+This is an audit-only workflow.</p>
+<hr>
+<h4>Validation Scope</h4>
+<p>Audit:</p>
+<ul>
+<li>ENGINE_SPECIFICATION</li>
+<li>BOT_EXPORT_SPECIFICATION</li>
+<li>LOREBOOK_SPECIFICATION</li>
+<li>VALIDATION_PIPELINE_SPECIFICATION
+Validate against:</li>
+<li>ADR-000 Runtime Baseline</li>
+<li>ADR-002 Family Authority</li>
+<li>ADR-003 Character Authority</li>
+<li>ADR-004 Visual Authority</li>
+<li>ADR-005 Experience Authority</li>
+<li>ADR-006 Canon Layer Architecture</li>
+<li>R-007 Engine Rules</li>
+<li>R-008 Bot Rules</li>
+<li>R-009 Lorebook Rules</li>
+</ul>
+<hr>
+<h4>Required Checks</h4>
+<h5>Engine Boundary Validation</h5>
+<p>Verify:</p>
+<ul>
+<li>engines respect authority ownership</li>
+<li>engines consume canon without owning canon</li>
+<li>runtime remains downstream from repository
+Flag:</li>
+<li>ownership violations</li>
+<li>canon creation logic</li>
+<li>authority overlap</li>
+</ul>
+<hr>
+<h5>Engine Specification Consistency</h5>
+<p>Verify:</p>
+<ul>
+<li>engine responsibilities are clearly defined</li>
+<li>engine scopes do not overlap</li>
+<li>engine outputs remain traceable
+Flag:</li>
+<li>duplicated responsibilities</li>
+<li>undefined responsibilities</li>
+<li>conflicting engine definitions</li>
+</ul>
+<hr>
+<h5>Export Contract Validation</h5>
+<p>Verify:</p>
+<ul>
+<li>bot exports remain compatible with engine outputs</li>
+<li>lorebook exports remain compatible with canon layers</li>
+<li>export specifications remain aligned
+Flag:</li>
+<li>incompatible contracts</li>
+<li>missing export requirements</li>
+<li>specification drift</li>
+</ul>
+<hr>
+<h5>Validation Pipeline Compatibility</h5>
+<p>Verify:</p>
+<ul>
+<li>validation requirements exist</li>
+<li>validation coverage remains complete</li>
+<li>outputs are verifiable
+Flag:</li>
+<li>missing validation stages</li>
+<li>unverifiable outputs</li>
+<li>incomplete coverage</li>
+</ul>
+<hr>
+<h5>Runtime Governance Compliance</h5>
+<p>Verify:</p>
+<ul>
+<li>runtime systems remain consumers</li>
+<li>repository remains authority</li>
+<li>traceability remains possible
+Flag:</li>
+<li>governance violations</li>
+<li>runtime authority drift</li>
+<li>non-traceable outputs</li>
+</ul>
+<hr>
+<h5>Future Implementation Readiness</h5>
+<p>Verify:</p>
+<ul>
+<li>specifications can be implemented</li>
+<li>dependencies are clearly defined</li>
+<li>build sequence is coherent
+Flag:</li>
+<li>implementation blockers</li>
+<li>circular dependencies</li>
+<li>undefined prerequisites</li>
+</ul>
+<hr>
+<h4>Output Format</h4>
+<p>Return results in chat only.
+Do not create files.
+Structure:</p>
+<ol>
+<li>Executive Summary</li>
+<li>Contract Consistency Review</li>
+<li>Authority Boundary Review</li>
+<li>Specification Compatibility</li>
+<li>Validation Coverage</li>
+<li>Findings</li>
+<li>Risks</li>
+<li>Recommended Actions</li>
+</ol>
+<hr>
+<h4>Status Levels</h4>
+<p>Use:</p>
+<ul>
+<li>PASS</li>
+<li>WARNING</li>
+<li>FAIL
+Definitions:
+PASS: Contract validated.
+WARNING: Potential incompatibility or ambiguity.
+FAIL: Confirmed architectural conflict.</li>
+</ul>
+<hr>
+<h4>Remediation Policy</h4>
+<p>Do not modify repository files.
+Do not create reports.
+Do not generate implementation code.
+Provide findings only.
+Wait for explicit approval before recommending modifications.</p>
+<hr>
+<h4>Success Criteria</h4>
+<ul>
+<li>Repository remains unchanged.</li>
+<li>Engine contracts validated.</li>
+<li>Specification consistency verified.</li>
+<li>Governance compliance verified.</li>
+<li>Results returned in chat only.
+<strong>Command associato</strong></li>
+</ul>
+<pre><code class="language-text">/engine-check
+
+</code></pre>
+<p>A questo punto il nucleo principale delle skill è praticamente completo:</p>
+<pre><code class="language-text">Audit
+Character Audit
+Export Readiness
+Canon Candidate Review
+Cross Reference Audit
+Repository Hardening
+Engine Contract Validation
+
+</code></pre>
+<p>Le prossime che suggerirei (ma di priorità leggermente inferiore) sarebbero:</p>
+<pre><code class="language-text">Bot Build Review
+Lorebook Build Review
+Validation Pipeline Review
+Authority Boundary Audit
+
+</code></pre>
+<p>che sono molto più orientate alla futura implementazione degli engine.
+<strong>User</strong> : va bene ora come procediamo?
+<strong>Gemini</strong> : A questo punto eviterei di creare altre skill.
+Hai già costruito il nucleo operativo necessario per entrare nella fase di hardening:</p>
+<pre><code class="language-text">Audit
+Character Audit
+Export Readiness
+Canon Candidate Review
+Cross Reference Audit
+Repository Hardening
+Engine Contract Validation
+
+</code></pre>
+<p>La cosa più utile adesso è completare il  <strong>toolset Trae</strong>  aggiungendo i relativi slash command.
+Ordine che suggerisco:</p>
+<h5>Step 1 — Creare i Command</h5>
+<p>Uno per ogni skill:</p>
+<pre><code class="language-text">/audit
+/character-audit
+/export-check
+/candidate-review
+/xref-audit
+/hardening
+/engine-check
+
+</code></pre>
+<p>In questo modo il team lavora sempre tramite workflow standardizzati.</p>
+<hr>
+<h5>Step 2 — Eseguire il primo vero audit</h5>
+<p>Usare:</p>
+<pre><code class="language-text">/ hardening
+
+</code></pre>
+<p>(senza spazio)
+sul repository reale.
+Obiettivo:</p>
+<pre><code class="language-text">Phase 14.6-A
+Repository Tree Audit
+
+</code></pre>
+<p>ma senza creare report nel repository.
+Output solo in chat.</p>
+<hr>
+<h5>Step 3 — Correggere una sola anomalia alla volta</h5>
+<p>Non:</p>
+<pre><code class="language-text">audit
+↓
+20 fix
+
+</code></pre>
+<p>Ma:</p>
+<pre><code class="language-text">audit
+↓
+anomalia #1
+↓
+fix
+↓
+re-audit
+↓
+anomalia #2
+↓
+fix
+
+</code></pre>
+<p>Con repository grandi questo approccio è molto più stabile.</p>
+<hr>
+<h5>Step 4 — Creare ADR-007</h5>
+<p>Quando il tree sarà pulito.
+Secondo me è il prossimo documento architetturale realmente mancante:</p>
+<pre><code class="language-text">ADR-007_Engine_Authority.md
+
+</code></pre>
+<p>per formalizzare:</p>
+<pre><code class="language-text">repository
+↓
+authority layers
+↓
+engines
+↓
+exports
+
+</code></pre>
+<p>e fissare definitivamente il principio:</p>
+<pre><code class="language-text">Engines consume canon.
+Engines never create canon.
+
+</code></pre>
+<hr>
+<h5>Step 5 — Solo dopo iniziare Phase 15</h5>
+<p>A quel punto:</p>
+<pre><code class="language-text">validation_engine
+
+</code></pre>
+<p>prima implementazione.
+Perché è l&#39;engine meno rischioso:</p>
+<pre><code class="language-text">input
+↓
+repository
+↓
+checks
+↓
+report
+
+</code></pre>
+<p>nessuna generazione, nessun export.</p>
+<hr>
+<p>Se fossi io a guidare il progetto, il prossimo task che darei a Code sarebbe semplicemente:</p>
+<pre><code class="language-text">Phase 14.6-A
+
+Run Repository Hardening.
+
+Audit only.
+No file creation.
+No modifications.
+
+Return findings in chat.
+
+Focus:
+- repository tree
+- duplicate governance
+- duplicate ADRs
+- orphaned files
+- README coverage
+- structural inconsistencies
+
+</code></pre>
+<p>e da lì inizierei il ciclo:</p>
+<pre><code class="language-text">audit
+↓
+1 fix
+↓
+audit
+↓
+1 fix
+
+</code></pre>
+<p>fino ad avere un repository completamente pulito prima di scrivere una sola riga di engine code.
+<strong>User</strong> : ecco l&#39;interface dei commands
+<strong>Gemini</strong> : Perfetto. Questo chiarisce una cosa importante: i  <strong>commands in Trae non sono semplici alias</strong> , ma veri file markdown con frontmatter.
+Quindi io li userei come &quot;entry point intelligenti&quot; verso le skill.
+Per esempio /audit non dovrebbe contenere tutta la skill Audit duplicata, ma semplicemente istruire il modello a usare la skill corretta.
+Per il command audit.md farei:</p>
+<hr>
+<h4>name: auditdescription: Run a repository audit using the Audit skill.</h4>
+<h3>Audit Command</h3>
+<p>Use the  <strong>Audit</strong>  skill.
+Determine the audit scope from the user&#39;s request.
+Possible audit targets include:</p>
+<ul>
+<li>repository structure</li>
+<li>governance</li>
+<li>ADR consistency</li>
+<li>rules</li>
+<li>specifications</li>
+<li>exports</li>
+<li>engines</li>
+<li>documentation</li>
+<li>migration residue
+Follow all requirements defined by the Audit skill.
+Return findings in chat only.
+Do not create files.
+Do not modify repository content unless explicitly requested in a separate remediation task.
+In pratica:</li>
+</ul>
+<pre><code class="language-text">Skill = procedura completa
+Command = trigger rapido
+
+</code></pre>
+<p>Quindi eviterei di copiare 200 righe di skill dentro ogni command.</p>
+<hr>
+<p>Io organizzerei la cartella così:</p>
+<pre><code class="language-text">.trae/
+├── rules/
+│   ├── R-000 ...
+│   └── R-009 ...
+│
+├── skills/
+│   ├── Audit.md
+│   ├── Character_Audit.md
+│   ├── Export_Readiness.md
+│   ├── Canon_Candidate_Review.md
+│   ├── Cross_Reference_Audit.md
+│   ├── Repository_Hardening.md
+│   └── Engine_Contract_Validation.md
+│
+└── commands/
+    ├── audit.md
+    ├── character-audit.md
+    ├── export-check.md
+    ├── candidate-review.md
+    ├── xref-audit.md
+    ├── hardening.md
+    └── engine-check.md
+
+</code></pre>
+<p>Con questa filosofia:</p>
+<pre><code class="language-text">Rules
+    ↓
+governance
+
+Skills
+    ↓
+workflow
+
+Commands
+    ↓
+shortcut UX
+
+</code></pre>
+<p>Prima di creare tutti i command, però, farei un test reale:</p>
+<ol>
+<li>crea /audit</li>
+<li>crea la skill Audit</li>
+<li>lancia un audit banale</li>
+<li>verifica che Trae richiami davvero la skill come previsto
+Perché alcuni IDE gestiscono i command come semplice prompt injection e altri come workflow veri e propri.
+Se il test funziona, allora possiamo scrivere in 5 minuti tutti gli altri command con lo stesso pattern.
+<strong>Gemini</strong> : Ottimo. Questo screenshot conferma che Trae sta facendo esattamente quello che speravamo:</li>
+</ol>
+<pre><code class="language-text">/audit
+    ↓
+Launching skill: Audit
+    ↓
+Esecuzione skill
+
+</code></pre>
+<p>Quindi l&#39;architettura:</p>
+<pre><code class="language-text">Rules
+  ↓
+Skills
+  ↓
+Commands
+
+</code></pre>
+<p>funziona nativamente.
+Questo ha alcune conseguenze molto positive per SvartúlfrVerse:</p>
+<h5>Le Rules diventano il &quot;sistema operativo&quot;</h5>
+<p>Contengono:</p>
+<ul>
+<li>governance</li>
+<li>ADR enforcement</li>
+<li>repository standards</li>
+<li>canon authority</li>
+<li>naming conventions</li>
+<li>forbidden behaviors
+Sempre caricate.</li>
+</ul>
+<hr>
+<h5>Le Skills diventano workflow specializzati</h5>
+<p>Ad esempio:</p>
+<pre><code class="language-text">Audit
+Character Audit
+Export Readiness
+Canon Candidate Review
+Cross Reference Audit
+Repository Hardening
+Engine Contract Validation
+Migration Validation
+
+</code></pre>
+<p>Ogni skill può essere anche molto grande.</p>
+<hr>
+<h5>I Commands diventano UX</h5>
+<p>Ad esempio:</p>
+<pre><code class="language-text">/character-audit C_Wulfnic
+/export-check
+/xref-audit
+/engine-check
+/candidate-review
+
+</code></pre>
+<p>e Trae richiama automaticamente la skill corretta.</p>
+<hr>
+<p>A questo punto eviterei di creare decine di rules enormi.
+Per SvartúlfrVerse farei:</p>
+<pre><code class="language-text">.rules
+
+</code></pre>
+<p>solo per:</p>
+<ul>
+<li>repository governance</li>
+<li>ADR hierarchy</li>
+<li>authority system</li>
+<li>repository structure</li>
+<li>naming conventions
+Tutto il resto andrebbe nelle skill.</li>
+</ul>
+<hr>
+<p>Per la fase successiva (costruzione engine + bot) le skill più importanti diventano:</p>
+<pre><code class="language-text">Audit
+Character Audit
+Engine Build
+Engine Validation
+Bot Build
+Bot Validation
+Export Readiness
+Canon Review
+
+</code></pre>
+<p>perché saranno eseguite continuamente.</p>
+<hr>
+<p>La prova dello screenshot dimostra anche che puoi usare i command come una vera CLI del progetto:</p>
+<pre><code class="language-text">/audit
+/engine-check
+/build-engine
+/build-bot
+/export-check
+
+</code></pre>
+<p>che è probabilmente il modello più scalabile per SvartúlfrVerse man mano che il repository cresce.
+<strong>User</strong> : ok dammi i comandi da creare oltre audit
+<strong>Gemini</strong> : Per SvartúlfrVerse eviterei di creare comandi per ogni micro-operazione. Conviene creare pochi comandi ad alto livello che corrispondano ai workflow reali del repository.
+Core Repository</p>
+<pre><code class="language-text">/audit
+
+</code></pre>
+<p>Audit completo repository.</p>
+<pre><code class="language-text">/repo-check
+
+</code></pre>
+<p>Verifica struttura repository, ADR, README, standards, naming.</p>
+<pre><code class="language-text">/health-check
+
+</code></pre>
+<p>Controllo rapido stato progetto.</p>
+<pre><code class="language-text">/freeze-check
+
+</code></pre>
+<p>Verifica preparazione Canon Freeze.</p>
+<hr>
+<p>Canon Management</p>
+<pre><code class="language-text">/canon-review
+
+</code></pre>
+<p>Valuta nuove informazioni candidate al canone.</p>
+<pre><code class="language-text">/xref-audit
+
+</code></pre>
+<p>Controlla cross-reference tra personaggi, famiglie, eventi e luoghi.</p>
+<pre><code class="language-text">/consistency-check
+
+</code></pre>
+<p>Ricerca contraddizioni canoniche.</p>
+<pre><code class="language-text">/canon-freeze
+
+</code></pre>
+<p>Prepara report finale pre-freeze.</p>
+<hr>
+<p>Character Workflow</p>
+<pre><code class="language-text">/character-audit
+
+</code></pre>
+<p>Audit completo di un personaggio.
+Esempio:</p>
+<pre><code class="language-text">/character-audit C_Wulfnic
+
+</code></pre>
+<hr>
+<pre><code class="language-text">/character-check
+
+</code></pre>
+<p>Validazione rapida.</p>
+<pre><code class="language-text">/character-rebuild
+
+</code></pre>
+<p>Applica Rebuild Principles.</p>
+<pre><code class="language-text">/character-ready
+
+</code></pre>
+<p>Verifica export readiness.</p>
+<hr>
+<p>Engine Workflow</p>
+<pre><code class="language-text">/build-engine
+
+</code></pre>
+<p>Costruzione engine da character package.</p>
+<pre><code class="language-text">/engine-check
+
+</code></pre>
+<p>Validazione ENGINE_SPECIFICATION.</p>
+<pre><code class="language-text">/engine-audit
+
+</code></pre>
+<p>Audit approfondito engine.</p>
+<pre><code class="language-text">/engine-ready
+
+</code></pre>
+<p>Verifica readiness export.</p>
+<hr>
+<p>Bot Workflow</p>
+<pre><code class="language-text">/build-bot
+
+</code></pre>
+<p>Generazione bot package.</p>
+<pre><code class="language-text">/bot-check
+
+</code></pre>
+<p>Validazione BOT_EXPORT_SPECIFICATION.</p>
+<pre><code class="language-text">/bot-audit
+
+</code></pre>
+<p>Audit completo bot.</p>
+<pre><code class="language-text">/bot-ready
+
+</code></pre>
+<p>Verifica esportabilità.</p>
+<hr>
+<p>Lorebook Workflow</p>
+<pre><code class="language-text">/build-lorebook
+
+</code></pre>
+<p>Generazione lorebook.</p>
+<pre><code class="language-text">/lorebook-check
+
+</code></pre>
+<p>Verifica LOREBOOK_SPECIFICATION.</p>
+<pre><code class="language-text">/lorebook-audit
+
+</code></pre>
+<p>Audit lorebook.</p>
+<hr>
+<p>Migration / Cleanup</p>
+<pre><code class="language-text">/migration-check
+
+</code></pre>
+<p>Controllo residui migrazione.</p>
+<pre><code class="language-text">/template-purge
+
+</code></pre>
+<p>Ricerca riferimenti legacy.</p>
+<pre><code class="language-text">/cleanup
+
+</code></pre>
+<p>Pulizia report e artefatti obsoleti.</p>
+<hr>
+<p>Validation Pipeline</p>
+<pre><code class="language-text">/validate
+
+</code></pre>
+<p>Esegue l&#39;intera pipeline.</p>
+<pre><code class="language-text">/pre-release
+
+</code></pre>
+<p>Controlli pre-rilascio.</p>
+<pre><code class="language-text">/release-check
+
+</code></pre>
+<p>Verifica export finale.</p>
+<hr>
+<p>Se dovessi scegliere il set minimo realmente utile, farei solo questi 12:</p>
+<pre><code class="language-text">/audit
+/repo-check
+
+/character-audit
+/character-ready
+
+/build-engine
+/engine-check
+
+/build-bot
+/bot-check
+
+/build-lorebook
+/lorebook-check
+
+/validate
+/release-check
+
+</code></pre>
+<p>Coprono praticamente il 95% del lavoro futuro di SvartúlfrVerse senza creare una proliferazione inutile di comandi.
+<strong>User</strong> : permetto dammi il prompt con le istruzioni diremo a code di crearsi i command da solo
+<strong>Gemini</strong> : Puoi dare a Code un task unico che generi tutti i command in modo coerente con le skill già esistenti.</p>
+<pre><code class="language-text">Task: Create Project Command Layer
+
+Context
+
+SvartúlfrVerse already contains:
+
+- ADR architecture
+- R-000 → R-009 Rules
+- Project Skills
+
+The command system is working correctly and commands can invoke skills directly.
+
+Example:
+
+/audit
+→ Launches Audit skill
+
+Objective
+
+Create the complete command layer for the project.
+
+Commands must act as lightweight entry points to existing skills.
+
+Do NOT duplicate skill instructions inside commands.
+
+Commands should simply:
+
+- identify the correct skill
+- invoke the correct workflow
+- pass control to the skill
+- enforce audit-only behavior where applicable
+
+Repository Location
+
+.trae/commands/
+
+Requirements
+
+1. Create command files only.
+
+2. Do NOT modify:
+   - ADRs
+   - Rules
+   - Skills
+   - Specifications
+   - Database records
+
+3. Use existing project governance.
+
+4. Commands must remain thin wrappers.
+
+5. Avoid duplicating workflow logic already present in skills.
+
+6. Each command must contain:
+
+---
+name: &lt;command-name&gt;
+description: &lt;short description&gt;
+---
+
+# Command Name
+
+Use the appropriate project skill.
+
+Follow all requirements defined by that skill.
+
+Return findings in chat only unless the invoked skill explicitly allows repository modifications.
+
+Do not create reports unless explicitly requested.
+
+7. Ensure naming consistency across all commands.
+
+Commands To Create
+
+Core
+
+/audit
+/repo-check
+
+Character
+
+/character-audit
+/character-ready
+
+Engine
+
+/build-engine
+/engine-check
+
+Bot
+
+/build-bot
+/bot-check
+
+Lorebook
+
+/build-lorebook
+/lorebook-check
+
+Validation
+
+/validate
+/release-check
+
+Command Mapping
+
+/audit
+→ Audit
+
+/repo-check
+→ Repository Hardening
+
+/character-audit
+→ Character Audit
+
+/character-ready
+→ Export Readiness
+
+/build-engine
+→ Engine Contract Validation
+
+/engine-check
+→ Engine Contract Validation
+
+/build-bot
+→ Export Readiness
+
+/bot-check
+→ Export Readiness
+
+/build-lorebook
+→ Export Readiness
+
+/lorebook-check
+→ Export Readiness
+
+/validate
+→ Export Readiness + Engine Contract Validation
+
+/release-check
+→ Repository Hardening + Export Readiness + Engine Contract Validation
+
+Output
+
+Create all command markdown files under:
+
+.trae/commands/
+
+Return a summary containing:
+
+- commands created
+- command → skill mapping
+- any conflicts detected
+
+Do not create reports.
+Do not create additional documentation.
+Do not modify repository content outside .trae/commands/.
+
+</code></pre>
+<p>Piccola nota architetturale: io eviterei ancora di creare /build-engine, /build-bot e /build-lorebook se oggi non esistono skill di build vere. In quel caso chiederei a Code di creare solo i command di audit/validation e lasciare i command di build per quando inizierete la Phase 15. Questo evita comandi &quot;vuoti&quot; che promettono una build che ancora non esiste.
+<strong>User</strong> : dammi un prompt anche per le skill, per verificare se c&#39;è la skill e se non c&#39;è crearla e idem per le rules
+<strong>Gemini</strong> : Ti consiglio di fare  <strong>due task separati</strong> .
+Uno per le  <strong>Skills</strong>  e uno per le  <strong>Rules</strong> .
+Le Rules sono governance permanente. Le Skills sono workflow operativi. Meglio non mischiarle.</p>
+<hr>
+<h3>Prompt Skills Audit &amp; Creation</h3>
+<pre><code class="language-text">Task: Skill Registry Audit and Completion
+
+Context
+
+SvartúlfrVerse uses the following architecture:
+
+ADR
+↓
+Rules (R-000 → R-009)
+↓
+Skills
+↓
+Commands
+↓
+Engine / Bot / Lorebook Runtime
+
+Skills are the operational workflow layer.
+
+Commands invoke skills.
+
+Rules define governance.
+
+Objective
+
+Audit the existing skill registry and ensure all required project skills exist.
+
+If a required skill already exists:
+
+- verify completeness
+- verify consistency with project governance
+- verify naming consistency
+- do not recreate it
+
+If a required skill is missing:
+
+- create it
+
+Repository Location
+
+.trae/skills/
+
+Requirements
+
+1. Audit existing skills first.
+
+2. Do not duplicate existing skills.
+
+3. Prefer updating incomplete skills over creating replacements.
+
+4. Maintain consistency with:
+   - ADRs
+   - Repository Governance
+   - Repository Scope
+   - Architecture
+   - R-000 → R-009
+
+5. Skills must remain workflow-oriented.
+
+6. Skills must never redefine governance already covered by Rules.
+
+7. Audit-only skills must explicitly:
+   - return findings in chat only
+   - avoid repository modifications
+   - avoid report generation unless explicitly requested
+
+Required Skills
+
+Audit
+
+Character Audit
+
+Export Readiness
+
+Canon Candidate Review
+
+Cross Reference Audit
+
+Repository Hardening
+
+Engine Contract Validation
+
+Validation Pipeline Review
+
+Authority Boundary Audit
+
+Bot Build Review
+
+Lorebook Build Review
+
+Audit Procedure
+
+For each skill:
+
+- Exists?
+- Complete?
+- Consistent with governance?
+- Consistent with repository architecture?
+- Requires update?
+
+Output
+
+Return:
+
+1. Existing Skills
+2. Missing Skills
+3. Updated Skills
+4. Newly Created Skills
+5. Recommendations
+
+Only create missing or incomplete skills.
+
+Do not modify repository content outside:
+
+.trae/skills/
+
+Do not create reports.
+
+</code></pre>
+<hr>
+<h3>Prompt Rules Audit &amp; Creation</h3>
+<pre><code class="language-text">Task: Governance Rule Audit
+
+Context
+
+SvartúlfrVerse governance is implemented through:
+
+R-000 → R-009
+
+Rules are the authoritative governance layer.
+
+Rules define:
+
+- authority ownership
+- repository governance
+- canon protection
+- runtime restrictions
+- export restrictions
+
+Rules are not workflows.
+
+Skills are workflows.
+
+Objective
+
+Audit the current rule set and determine whether governance coverage is complete.
+
+Verify:
+
+- no missing governance areas
+- no duplicate rules
+- no conflicting rules
+- no obsolete rules
+- no migration-era residue
+
+Repository Location
+
+.trae/rules/
+
+Requirements
+
+1. Audit all existing rules.
+
+2. Build a governance coverage map.
+
+3. Identify:
+
+   - duplicate governance
+   - conflicting governance
+   - obsolete governance
+   - missing governance
+
+4. Verify alignment with:
+
+   - ADR-000 → ADR-006
+   - Repository Governance
+   - Repository Scope
+   - Architecture
+   - Engine Specification
+   - Bot Export Specification
+   - Lorebook Specification
+   - Validation Pipeline Specification
+
+Rule Creation Policy
+
+Create a new rule ONLY if:
+
+- a governance gap exists
+- the gap is not already covered by an ADR
+- the gap is not already covered by another Rule
+- the gap cannot be solved by a Skill
+
+Prefer extending existing Rules.
+
+Avoid rule proliferation.
+
+Potential Governance Areas To Verify
+
+- Repository Governance
+- Canon Governance
+- Authority Ownership
+- Runtime Restrictions
+- Engine Restrictions
+- Bot Restrictions
+- Lorebook Restrictions
+- Validation Requirements
+- Naming Conventions
+- Repository Structure Standards
+- Build Pipeline Governance
+- Export Governance
+
+Output
+
+Return:
+
+1. Rule Coverage Map
+2. Governance Gaps
+3. Duplicate Rules
+4. Recommended Updates
+5. Recommended New Rules (if any)
+
+Only create new rules if absolutely necessary.
+
+Do not create reports.
+
+Do not modify repository content outside:
+
+.trae/rules/
+
+</code></pre>
+<p>Io mi aspetto che il secondo audit restituisca qualcosa di simile a:</p>
+<pre><code class="language-text">Rules Coverage: 95-100%
+
+No new rules required.
+
+Use Skills for operational workflows.
+Use ADRs for architecture.
+Use Rules for governance only.
+
+</code></pre>
+<p>Perché, da quello che hai mostrato finora, il repository sembra già molto ben coperto lato governance; il vero valore aggiunto nei prossimi step sarà quasi certamente nelle  <strong>Skills</strong>  e poi negli  <strong>Engine</strong> , non nell&#39;aggiungere altre Rules.
+<strong>User</strong> : Required (11 skills):</p>
+<ol>
+<li>✅ Audit — exists</li>
+<li>✅ Character Audit — exists (but has duplicated frontmatter)</li>
+<li>✅ Export Readiness — exists (but has duplicated frontmatter)</li>
+<li>✅ Canon Candidate Review — exists (but has duplicated frontmatter)</li>
+<li>✅ Cross Reference Audit — exists (but has duplicated frontmatter)</li>
+<li>✅ Repository Hardening — exists (but has duplicated frontmatter)</li>
+<li>✅ Engine Contract Validation — exists (but has duplicated frontmatter)</li>
+<li>❌ Validation Pipeline Review — MISSING</li>
+<li>❌ Authority Boundary Audit — MISSING</li>
+<li>❌ Bot Build Review — MISSING</li>
+<li>❌ Lorebook Build Review — MISSING
+dammi il prompt per fargli gneerare le 4 skill mancanti
+<strong>Gemini</strong> :</li>
+</ol>
+<pre><code class="language-text">Task: Create Missing Project Skills
+
+Context
+
+A skill registry audit has been completed.
+
+The following skills already exist and must NOT be recreated:
+
+- Audit
+- Character Audit
+- Export Readiness
+- Canon Candidate Review
+- Cross Reference Audit
+- Repository Hardening
+- Engine Contract Validation
+
+The following skills are missing and must be created:
+
+1. Validation Pipeline Review
+2. Authority Boundary Audit
+3. Bot Build Review
+4. Lorebook Build Review
+
+Repository Location
+
+.trae/skills/
+
+Requirements
+
+1. Create only the four missing skills.
+
+2. Do NOT modify:
+   - ADRs
+   - Rules
+   - Commands
+   - Specifications
+   - Database records
+
+3. Maintain full alignment with:
+   - ADR-000 → ADR-006
+   - R-000 → R-009
+   - Repository Governance
+   - Repository Scope
+   - Architecture
+   - ENGINE_SPECIFICATION
+   - BOT_EXPORT_SPECIFICATION
+   - LOREBOOK_SPECIFICATION
+   - VALIDATION_PIPELINE_SPECIFICATION
+
+4. Skills must remain workflow-oriented.
+
+5. Skills must never redefine governance already covered by Rules.
+
+6. Audit and review skills must:
+   - return findings in chat only
+   - avoid repository modifications
+   - avoid report generation unless explicitly requested
+
+7. Use the same structure and style as the existing project skills.
+
+Skill #1 — Validation Pipeline Review
+
+Purpose
+
+Validate the repository validation system.
+
+Verify:
+
+- validation coverage
+- validation stages
+- validation completeness
+- authority validation
+- export validation
+- canon layer validation
+- traceability validation
+
+Detect:
+
+- missing checks
+- redundant checks
+- validation gaps
+- unvalidated repository areas
+
+Output:
+
+- validation coverage assessment
+- pipeline weaknesses
+- implementation readiness
+- recommendations
+
+Status Levels:
+
+- PASS
+- WARNING
+- FAIL
+
+Command Compatibility:
+
+/validate
+
+--------------------------------------------------
+
+Skill #2 — Authority Boundary Audit
+
+Purpose
+
+Validate ownership boundaries between all authority layers.
+
+Verify:
+
+- Family Authority
+- Character Authority
+- Visual Authority
+- Experience Authority
+- Canon Layer ownership
+
+Detect:
+
+- ownership violations
+- duplicated ownership
+- authority overlap
+- authority conflicts
+- canon contamination
+
+Output:
+
+- authority map
+- ownership review
+- violations
+- recommendations
+
+Status Levels:
+
+- PASS
+- WARNING
+- FAIL
+
+Potential Command:
+
+/authority-audit
+
+--------------------------------------------------
+
+Skill #3 — Bot Build Review
+
+Purpose
+
+Review bot-generation readiness before export.
+
+Validate against:
+
+- BOT_EXPORT_SPECIFICATION
+- Engine Rules
+- Bot Rules
+
+Verify:
+
+- character completeness
+- field availability
+- export mapping
+- traceability
+- runtime compatibility
+
+Detect:
+
+- missing export fields
+- unresolved references
+- export blockers
+- specification drift
+
+Output:
+
+- build readiness
+- export readiness
+- blockers
+- recommendations
+
+Status Levels:
+
+- READY
+- READY WITH WARNINGS
+- NOT READY
+
+Potential Commands:
+
+/build-bot
+/bot-check
+
+--------------------------------------------------
+
+Skill #4 — Lorebook Build Review
+
+Purpose
+
+Review lorebook-generation readiness before export.
+
+Validate against:
+
+- LOREBOOK_SPECIFICATION
+- Canon Layer Architecture
+- Lorebook Rules
+
+Verify:
+
+- source attribution
+- canon layer classification
+- lorebook completeness
+- dependency resolution
+- export readiness
+
+Detect:
+
+- uncited entries
+- missing canon layers
+- unresolved dependencies
+- lorebook blockers
+
+Output:
+
+- lorebook readiness
+- canon layer review
+- blockers
+- recommendations
+
+Status Levels:
+
+- READY
+- READY WITH WARNINGS
+- NOT READY
+
+Potential Commands:
+
+/build-lorebook
+/lorebook-check
+
+--------------------------------------------------
+
+Deliverables
+
+Create:
+
+- Validation_Pipeline_Review.md
+- Authority_Boundary_Audit.md
+- Bot_Build_Review.md
+- Lorebook_Build_Review.md
+
+under:
+
+.trae/skills/
+
+Output
+
+Return:
+
+1. Skills created
+2. Skill purpose summary
+3. Suggested command mappings
+
+Do not create reports.
+
+Do not modify repository content outside:
+
+.trae/skills/
+
+</code></pre>
+<p>Prima di eseguirlo, gli farei aggiungere una nota iniziale:</p>
+<pre><code class="language-text">IMPORTANT
+
+The existing skills contain duplicated frontmatter issues.
+
+Before creating new skills:
+
+1. Audit all existing skills.
+2. Normalize frontmatter structure.
+3. Ensure every skill contains a single valid frontmatter block.
+4. Then create the four missing skills.
+
+</code></pre>
+<p>Così risolve anche il problema che l&#39;audit ha già individuato nelle skill esistenti.
+<strong>User</strong> : This is an audit task — the  <strong>Audit</strong>  skill is relevant. Let me invoke it.
+toolName: Skill
+status: success
+Audit skill loaded. Now I need to read all 10 rules and the key governance documents to build the coverage map. Let me read all rules in parallel.
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse.trae\rules\R-000_Runtime_Rules.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse.trae\rules\R-001_Dynastic_Rules.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse.trae\rules\R-002_Family_Rules.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse.trae\rules\R-003_Character_Rules.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse.trae\rules\R-004_Visual_Rules.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse.trae\rules\R-005_Experience_Rules.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse.trae\rules\R-006_Governance_Rules.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse.trae\rules\R-007_Engine_Rules.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse.trae\rules\R-008_Bot_Rules.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse.trae\rules\R-009_Lorebook_Rules.md
+All 10 rules read. Now let me also quickly check the ADRs and key specs to verify alignment.
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-000_Runtime_Baseline.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-006_Canon_Layer_Architecture.md
+Now I have complete data on all 10 rules, 7 ADRs, and the key specifications. Let me produce the audit report.</p>
+<hr>
+<h3>Governance Rule Audit Report</h3>
+<p><strong>Date:</strong>  2026-06-08
+<strong>Auditor:</strong>  OWL (Audit Skill)
+<strong>Scope:</strong>  .trae/rules/ — R-000 through R-009
+<strong>Policy:</strong>  Audit only — no files created or modified</p>
+<hr>
+<h4>1. Rule Coverage Map</h4>
+<h5>1.1 Rule Inventory</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Rule</th><th>Name</th><th>Rules Count</th><th>Authority</th><th>Governance Areas Covered</th></tr></thead><tbody><tr><td><strong>R-000</strong></td><td>Runtime Rules</td><td>7</td><td>ADR-000</td><td>Runtime behavior, evidence, canon freeze, SSOT, migration audit, correctness, archive-first</td></tr><tr><td><strong>R-001</strong></td><td>Dynastic Rules</td><td>8</td><td>ADR-001</td><td>Dynasty origins, migration, surnames, union, prohibited relationships</td></tr><tr><td><strong>R-002</strong></td><td>Family Rules</td><td>8</td><td>ADR-002</td><td>Genealogy ownership, explicit/derived relationships, knowledge layer, graph structure, surnames</td></tr><tr><td><strong>R-003</strong></td><td>Character Rules</td><td>10</td><td>ADR-003</td><td>Identity, personality, biography, sex, skills, occupation, cross-authority prohibitions</td></tr><tr><td><strong>R-004</strong></td><td>Visual Rules</td><td>10</td><td>ADR-004</td><td>Visual baselines, fusion model, per-character inheritance, authority independence</td></tr><tr><td><strong>R-005</strong></td><td>Experience Rules</td><td>10</td><td>ADR-005</td><td>Consumer role, scenario ownership, occupation override, relationship extension, scope rules</td></tr><tr><td><strong>R-006</strong></td><td>Governance Rules</td><td>13</td><td>ADR-006, Governance</td><td>Canon recovery workflow, authority hierarchy, audit trail, import destinations, rejected canon</td></tr><tr><td><strong>R-007</strong></td><td>Engine Rules</td><td>4</td><td>ADR-000, Architecture</td><td>Canon authority, runtime separation, traceability, validation pipeline</td></tr><tr><td><strong>R-008</strong></td><td>Bot Rules</td><td>4</td><td>ADR-003, ADR-006</td><td>Canon-derived generation, no lore injection, traceability, canon layer compliance</td></tr><tr><td><strong>R-009</strong></td><td>Lorebook Rules</td><td>4</td><td>ADR-005, ADR-006</td><td>Derived artifact status, non-contradiction, source attribution, canon layer distinction</td></tr></tbody></table>
+<p><strong>Total rules: 78 individual rule clauses across 10 rule files</strong></p>
+<h5>1.2 Governance Area Coverage Matrix</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Governance Area</th><th>Covered By</th><th>Status</th></tr></thead><tbody><tr><td><strong>Repository Governance</strong></td><td>R-006 (13 rules)</td><td>✅ Complete</td></tr><tr><td><strong>Canon Governance</strong></td><td>R-000-RUN-003, R-006-GOV-001/004/008/013</td><td>✅ Complete</td></tr><tr><td><strong>Authority Ownership</strong></td><td>R-002, R-003, R-004, R-005</td><td>✅ Complete</td></tr><tr><td><strong>Runtime Restrictions</strong></td><td>R-000, R-007</td><td>✅ Complete</td></tr><tr><td><strong>Engine Restrictions</strong></td><td>R-007 (4 rules)</td><td>✅ Complete</td></tr><tr><td><strong>Bot Restrictions</strong></td><td>R-008 (4 rules)</td><td>✅ Complete</td></tr><tr><td><strong>Lorebook Restrictions</strong></td><td>R-009 (4 rules)</td><td>✅ Complete</td></tr><tr><td><strong>Validation Requirements</strong></td><td>R-007-ENG-004</td><td>⚠️ Minimal — only 1 rule</td></tr><tr><td><strong>Naming Conventions</strong></td><td>R-001-DYN-005/006</td><td>⚠️ Partial — dynastic only</td></tr><tr><td><strong>Repository Structure Standards</strong></td><td>R-006-GOV-010</td><td>⚠️ Minimal — import destinations only</td></tr><tr><td><strong>Build Pipeline Governance</strong></td><td>R-007-ENG-004, R-008, R-009</td><td>⚠️ Indirect — no dedicated build pipeline rules</td></tr><tr><td><strong>Export Governance</strong></td><td>R-008, R-009</td><td>✅ Complete</td></tr></tbody></table>
+<hr>
+<h4>2. Governance Gaps</h4>
+<h5>2.1 Identified Gaps</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>ID</th><th>Gap</th><th>Severity</th><th>Impact</th><th>Recommendation</th></tr></thead><tbody><tr><td><strong>G-001</strong></td><td><strong>Validation Pipeline Governance</strong>  — No dedicated rule set for the 47-check validation pipeline. R-007-ENG-004 mentions validation but doesn&#39;t define pipeline governance, check coverage requirements, or validation execution rules.</td><td><strong>Medium</strong></td><td>Validation pipeline is defined in VALIDATION_PIPELINE_SPECIFICATION.md but has no governing rule. Skills reference it, but rules don&#39;t enforce it.</td><td>Extend R-007 with 2-3 additional rules covering: (a) validation pipeline mandatory execution, (b) 47-check coverage requirement, (c) validation outcome enforcement (valid/invalid/warning).</td></tr><tr><td><strong>G-002</strong></td><td><strong>Naming Conventions</strong>  — Only dynastic naming (R-001-DYN-005/006) is governed. No rules for file naming conventions, directory naming, template naming, or ID prefix standards (C_, F_, W_, Ex_, I_, HC_, CC_).</td><td><strong>Low</strong></td><td>Informal naming conventions exist in practice but aren&#39;t codified. Risk of inconsistency if repository expands.</td><td>Add a naming convention section to R-000 or R-006 covering file/directory/ID prefix standards.</td></tr><tr><td><strong>G-003</strong></td><td><strong>Repository Structure Standards</strong>  — No rule explicitly defines required directory structure, template placement rules, or file organization standards. R-006-GOV-010 defines import destinations but not structural requirements.</td><td><strong>Low</strong></td><td>Structure is stable currently but ungoverned. Future expansion could introduce structural drift.</td><td>Add 1-2 rules to R-006 defining mandatory directory structure and template placement.</td></tr><tr><td><strong>G-004</strong></td><td><strong>Build Pipeline Governance</strong>  — No rules governing the build/release pipeline sequence (e.g., validation → generation → export). R-008 and R-009 govern output quality but not the pipeline orchestration.</td><td><strong>Low</strong></td><td>Build pipeline is currently skill-driven without rule-level governance. Acceptable for current phase.</td><td>Defer — can be addressed when engine implementation begins.</td></tr></tbody></table>
+<h5>2.2 Non-Gaps (Verified Covered)</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Area</th><th>Verification</th></tr></thead><tbody><tr><td>Canon Freeze enforcement</td><td>✅ R-000-RUN-003 + R-006-GOV-013</td></tr><tr><td>Authority boundary separation</td><td>✅ R-002 through R-005 each define ownership + prohibitions</td></tr><tr><td>Cross-authority contamination prevention</td><td>✅ R-003-CHR-007/008/009, R-004-VIS-010, R-005-EXP-005/006/007</td></tr><tr><td>Rejected canon enforcement</td><td>✅ R-006-GOV-013 (explicit list)</td></tr><tr><td>Single source of truth</td><td>✅ R-000-RUN-004, R-006-GOV-005</td></tr><tr><td>Canon Recovery Workflow</td><td>✅ R-006-GOV-001 through R-006-GOV-012</td></tr><tr><td>Consumer layer restrictions</td><td>✅ R-005-EXP-001/008</td></tr><tr><td>Traceability</td><td>✅ R-007-ENG-003, R-008-BOT-003, R-009-LRB-003</td></tr><tr><td>Platform export compliance</td><td>✅ R-008 (4 rules), R-009 (4 rules)</td></tr></tbody></table>
+<hr>
+<h4>3. Duplicate Rules Analysis</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Check</th><th>Result</th></tr></thead><tbody><tr><td><strong>R-000-RUN-004</strong>  (SSOT) vs  <strong>R-006-GOV-005</strong>  (SSOT)</td><td>⚠️  <strong>Near-duplicate</strong>  — Both state &quot;Single Source of Truth&quot; but from different angles. R-000 focuses on runtime behavior; R-006 focuses on repository structure.  <strong>Not a conflict</strong>  — complementary.</td></tr><tr><td><strong>R-000-RUN-005</strong>  (No Migration Without Audit) vs  <strong>R-006-GOV-011</strong>  (No Direct Archive Imports)</td><td>⚠️  <strong>Near-duplicate</strong>  — Both prohibit unaudited imports. R-000 is general; R-006 is specific to archives.  <strong>Not a conflict</strong>  — R-006-GOV-011 is a specialization of R-000-RUN-005.</td></tr><tr><td><strong>R-003-CHR-007</strong>  (No Genealogy in Character Files) vs  <strong>R-002-FAM-005</strong>  (No Genealogy Duplication)</td><td>⚠️  <strong>Near-duplicate</strong>  — Both prohibit genealogy outside Family Authority. R-003 is character-specific; R-002 is general.  <strong>Not a conflict</strong>  — complementary enforcement.</td></tr><tr><td><strong>R-003-CHR-008</strong>  (No Scenario Data in Character Files) vs  <strong>R-005-EXP-001</strong>  (Consumer Role)</td><td>⚠️  <strong>Near-duplicate</strong>  — Both enforce character/scenario separation.  <strong>Not a conflict</strong>  — R-003 prohibits; R-005 defines the consumer role.</td></tr></tbody></table>
+<p><strong>Verdict:</strong>  No true duplicates. All near-duplicates are  <strong>complementary specializations</strong>  at different abstraction levels. This is acceptable governance layering.</p>
+<hr>
+<h4>4. Conflicting Rules Analysis</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Check</th><th>Result</th></tr></thead><tbody><tr><td>R-000-RUN-007 (Archive First — no priority ordering) vs Repository_Configuration.md (old_template_and_source FIRST)</td><td>⚠️  <strong>Minor tension</strong>  — R-000-RUN-007 says &quot;query all research archives without priority ordering&quot; but project_memory defines a strict priority.  <strong>Not a direct conflict</strong>  — R-000 is principle-level; project_memory is operational.</td></tr><tr><td>R-004-VIS-003 (Visual Fusion Model) vs genetic inheritance</td><td>✅ No conflict — explicitly prohibits genetic model</td></tr><tr><td>R-001-DYN-007 (Wulfnic-Erik rejection) vs family records</td><td>✅ No conflict — consistently enforced</td></tr><tr><td>R-006-GOV-002 (Authority Hierarchy) vs ADR-006 (Layer Authority Matrix)</td><td>✅ Aligned — both define ADRs as highest authority</td></tr></tbody></table>
+<p><strong>Verdict:</strong>  No conflicting rules detected.</p>
+<hr>
+<h4>5. Obsolete / Migration Residue Analysis</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Check</th><th>Result</th></tr></thead><tbody><tr><td>References to old_template_and_source/</td><td>✅ None found</td></tr><tr><td>References to authority/ directory</td><td>✅ None found</td></tr><tr><td>References to Progetti as active development</td><td>✅ None — correctly referenced as read-only archive</td></tr><tr><td>References to supernatural systems as active</td><td>✅ None — correctly classified as Cultural Canon or rejected</td></tr><tr><td>References to rejected canon (Valeria, Twin Peaks, KSA)</td><td>✅ None — only in R-006-GOV-013 as explicit prohibitions</td></tr><tr><td>Legacy naming conventions</td><td>✅ None found</td></tr></tbody></table>
+<p><strong>Verdict:</strong>  No obsolete rules or migration residue detected.</p>
+<hr>
+<h4>6. ADR Alignment Verification</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>ADR</th><th>Rule Coverage</th><th>Status</th></tr></thead><tbody><tr><td><strong>ADR-000</strong>  (Runtime Baseline)</td><td>R-000 (7 rules), R-007 (4 rules)</td><td>✅ Fully covered</td></tr><tr><td><strong>ADR-001</strong>  (Dynastic Origins)</td><td>R-001 (8 rules)</td><td>✅ Fully covered</td></tr><tr><td><strong>ADR-002</strong>  (Family Authority)</td><td>R-002 (8 rules)</td><td>✅ Fully covered</td></tr><tr><td><strong>ADR-003</strong>  (Character Authority)</td><td>R-003 (10 rules)</td><td>✅ Fully covered</td></tr><tr><td><strong>ADR-004</strong>  (Visual Authority)</td><td>R-004 (10 rules)</td><td>✅ Fully covered</td></tr><tr><td><strong>ADR-005</strong>  (Experience Authority)</td><td>R-005 (10 rules)</td><td>✅ Fully covered</td></tr><tr><td><strong>ADR-006</strong>  (Canon Layer Architecture)</td><td>R-006 (13 rules), R-008-BOT-004, R-009-LRB-004</td><td>✅ Fully covered</td></tr></tbody></table>
+<hr>
+<h4>7. Specification Alignment Verification</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Specification</th><th>Rule Coverage</th><th>Status</th></tr></thead><tbody><tr><td><strong>ENGINE_SPECIFICATION</strong></td><td>R-007 (4 rules)</td><td>✅ Aligned</td></tr><tr><td><strong>BOT_EXPORT_SPECIFICATION</strong></td><td>R-008 (4 rules)</td><td>✅ Aligned</td></tr><tr><td><strong>LOREBOOK_SPECIFICATION</strong></td><td>R-009 (4 rules)</td><td>✅ Aligned</td></tr><tr><td><strong>VALIDATION_PIPELINE_SPECIFICATION</strong></td><td>R-007-ENG-004 only</td><td>⚠️ Under-covered — 47-check pipeline has only 1 governing rule</td></tr><tr><td><strong>Repository_Governance</strong></td><td>R-006 (13 rules)</td><td>✅ Aligned</td></tr><tr><td><strong>Repository_Scope</strong></td><td>R-000-RUN-003, R-001, R-004</td><td>✅ Aligned</td></tr><tr><td><strong>Architecture</strong></td><td>R-000-RUN-004, R-002 through R-005</td><td>✅ Aligned</td></tr></tbody></table>
+<hr>
+<h4>8. Recommended Updates</h4>
+<h5>Priority 1 (Recommended)</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>ID</th><th>Recommendation</th><th>Target Rule</th><th>Effort</th></tr></thead><tbody><tr><td><strong>U-001</strong></td><td>Extend R-007 with validation pipeline governance: (a) mandatory pipeline execution before any export, (b) 47-check coverage requirement, (c) validation outcome enforcement</td><td>R-007_Engine_Rules.md</td><td>Add 2-3 rules</td></tr></tbody></table>
+<h5>Priority 2 (Optional)</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>ID</th><th>Recommendation</th><th>Target Rule</th><th>Effort</th></tr></thead><tbody><tr><td><strong>U-002</strong></td><td>Add naming convention rule(s) covering file/directory/ID prefix standards</td><td>R-000 or R-006</td><td>Add 1-2 rules</td></tr><tr><td><strong>U-003</strong></td><td>Add repository structure rule defining mandatory directories and template placement</td><td>R-006</td><td>Add 1-2 rules</td></tr></tbody></table>
+<h5>Priority 3 (Defer)</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>ID</th><th>Recommendation</th><th>Rationale</th></tr></thead><tbody><tr><td><strong>U-004</strong></td><td>Build pipeline orchestration rules</td><td>Not needed until engine implementation phase</td></tr></tbody></table>
+<hr>
+<h4>9. Recommended New Rules</h4>
+<p>Based on the gap analysis,  <strong>3 new rules are recommended</strong>  (all extensions to existing rules, not new rule files):</p>
+<h5>New Rule 1: R-007-ENG-005 — Validation Pipeline Execution</h5>
+<pre><code>Authority: VALIDATION_PIPELINE_SPECIFICATION.md, ADR-000
+Rule: All generated assets must pass the 47-check validation pipeline before release.
+Allowed: Automated validation, manual review for edge cases
+Prohibited: Release of unvalidated assets, bypassing pipeline checks
+
+</code></pre>
+<h5>New Rule 2: R-007-ENG-006 — Validation Coverage Requirement</h5>
+<pre><code>Authority: VALIDATION_PIPELINE_SPECIFICATION.md
+Rule: Validation coverage must include all 47 checks across 4 categories 
+(Cross-Reference, Canon-Layer, Authority Ownership, Traceability).
+Allowed: Automated check implementation, coverage reporting
+Prohibited: Partial validation, skipped check categories
+
+</code></pre>
+<h5>New Rule 3: R-006-GOV-014 — Naming Convention Standard</h5>
+<pre><code>Authority: Architecture.md, Repository_Configuration.md
+Rule: All repository files follow standardized naming: 
+C_[Name].md (characters), F_[Name].md (families), W_[Name].md (worlds), 
+Ex_[Name].md (experiences), I_[Name].md (institutions), 
+HC_[Name].md (historical), CC_[Name].md (candidates).
+Allowed: Standardized prefixes, descriptive suffixes
+Prohibited: Ad-hoc naming, missing prefixes, inconsistent conventions
+
+</code></pre>
+<hr>
+<h4>10. Executive Summary</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody><tr><td><strong>Total rule files</strong></td><td>10 (R-000 → R-009)</td></tr><tr><td><strong>Total rule clauses</strong></td><td>78</td></tr><tr><td><strong>Governance gaps identified</strong></td><td>4 (1 medium, 3 low)</td></tr><tr><td><strong>Duplicate rules</strong></td><td>0 (4 near-duplicates — all complementary)</td></tr><tr><td><strong>Conflicting rules</strong></td><td>0</td></tr><tr><td><strong>Obsolete rules</strong></td><td>0</td></tr><tr><td><strong>ADR alignment</strong></td><td>7/7 ✅</td></tr><tr><td><strong>Specification alignment</strong></td><td>6/7 ✅ (1 under-covered)</td></tr><tr><td><strong>Recommended new rules</strong></td><td>3 (all extensions)</td></tr><tr><td><strong>Recommended new rule files</strong></td><td>0</td></tr></tbody></table>
+<p><strong>Verdict:</strong>  Governance rule set is  <strong>COMPLETE and CONSISTENT</strong> . The rule architecture provides comprehensive coverage across all 12 governance areas. The only meaningful gap is validation pipeline governance (R-007 has only 1 rule covering a 47-check pipeline). Three rule extensions are recommended — no new rule files needed.
+<strong>Gemini</strong> : Questo audit è buono e soprattutto fa emergere una cosa importante:
+<strong>non avete bisogno di nuove rule file.</strong>
+Le lacune identificate sono quasi tutte estensioni di rule esistenti.
+Io però farei alcune correzioni alle raccomandazioni prima di applicarle.</p>
+<h5>G-001 — Validation Pipeline Governance</h5>
+<p>Sono d&#39;accordo.
+Questa è l&#39;unica vera lacuna architetturale.
+Hai:</p>
+<pre><code class="language-text">VALIDATION_PIPELINE_SPECIFICATION.md
+
+</code></pre>
+<p>ma la governance è minima.
+Farei effettivamente:</p>
+<pre><code class="language-text">R-007-ENG-005
+Validation Pipeline Execution
+
+</code></pre>
+<p>e</p>
+<pre><code class="language-text">R-007-ENG-006
+Validation Coverage Requirement
+
+</code></pre>
+<p>Ma eviterei di hardcodare &quot;47 checks&quot;.
+Meglio:</p>
+<pre><code class="language-text">Validation coverage must include all checks defined by
+VALIDATION_PIPELINE_SPECIFICATION.md.
+
+</code></pre>
+<p>Così se domani diventano 53 o 61 non devi aggiornare le Rules.</p>
+<hr>
+<h5>G-002 — Naming Convention</h5>
+<p>Concordo sul problema.
+Ma non farei una nuova rule.
+La metterei dentro:</p>
+<pre><code class="language-text">R-006_Governance_Rules
+
+</code></pre>
+<p>come sezione:</p>
+<pre><code class="language-text">Naming and Record Standards
+
+</code></pre>
+<p>Perché è governance repository, non runtime.</p>
+<hr>
+<h5>G-003 — Repository Structure Standards</h5>
+<p>Anche qui sono d&#39;accordo.
+Ma la farei derivare da:</p>
+<pre><code class="language-text">Repository_Scope.md
+Repository_Configuration.md
+
+</code></pre>
+<p>La Rule dovrebbe imporre:</p>
+<pre><code class="language-text">Repository structure is defined by
+Repository_Scope.md and Repository_Configuration.md.
+
+</code></pre>
+<p>Non duplicare il tree nelle Rules.
+Altrimenti avrai tre fonti:</p>
+<pre><code class="language-text">Repository_Scope
+Repository_Configuration
+Rules
+
+</code></pre>
+<p>che possono divergere.</p>
+<hr>
+<h5>G-004 — Build Pipeline Governance</h5>
+<p>Io la ignorerei per ora.
+Perché oggi:</p>
+<pre><code class="language-text">engine code = 0
+
+</code></pre>
+<p>Quindi staresti governando qualcosa che ancora non esiste.
+La affronterei dopo:</p>
+<pre><code class="language-text">ADR-007 Engine Authority
+
+</code></pre>
+<p>e l&#39;implementazione del primo engine.</p>
+<hr>
+<h4>Cosa farei adesso</h4>
+<p>Darei a Code un task molto piccolo:</p>
+<pre><code class="language-text">Phase 14.6-B
+
+Rule Hardening
+
+Objectives:
+
+1. Audit R-007 Engine Rules.
+2. Add:
+   - Validation Pipeline Execution
+   - Validation Coverage Requirement
+
+3. Audit R-006 Governance Rules.
+4. Add:
+   - Naming Convention Standards
+   - Repository Structure Authority
+
+Requirements:
+
+- Extend existing rules.
+- Do not create new rule files.
+- Do not duplicate repository tree definitions.
+- Reference authoritative documents whenever possible.
+- Preserve backward compatibility.
+
+</code></pre>
+<p>Dopo questo task mi aspetterei:</p>
+<pre><code class="language-text">Rules Coverage: 100%
+Governance Gaps: 0
+New Rule Files: 0
+
+</code></pre>
+<p>e a quel punto chiuderei definitivamente il capitolo Rules e passerei a:</p>
+<pre><code class="language-text">ADR-007_Engine_Authority.md
+
+</code></pre>
+<p>che secondo me è il vero documento mancante prima della Phase 15.
+<strong>User</strong> : bhe ora abbiamo skill e command prevedi di usarli negli snippet dei prompt (te li carichero nelle fonti come riferimento)
+<strong>Gemini</strong> : Sì, assolutamente.
+Anzi, una volta che Skills e Commands sono stabilizzati, smetterei gradualmente di scrivere nei prompt lunghi istruzioni operative già presenti nel toolset.
+In pratica gli snippet futuri dovrebbero diventare sempre più &quot;orchestrazione&quot; e sempre meno &quot;procedura&quot;.
+Ad esempio oggi scrivi qualcosa del genere:</p>
+<pre><code class="language-text">Run a repository audit.
+
+Check:
+- duplicate files
+- orphaned files
+- governance consistency
+- ADR alignment
+- README coverage
+
+Return findings in chat only.
+Do not modify repository.
+
+</code></pre>
+<p>Con il toolset maturo potresti semplicemente scrivere:</p>
+<pre><code class="language-text">Use:
+/hardening
+
+Scope:
+repository tree
+
+Objectives:
+- identify structural anomalies
+- prioritize blockers
+
+Audit only.
+
+</code></pre>
+<p>oppure</p>
+<pre><code class="language-text">Use:
+Character Audit
+
+Target:
+C_Wulfnic
+
+Objective:
+determine compliance with repository standards.
+
+Audit only.
+
+</code></pre>
+<hr>
+<p>Io vedo gli snippet futuri strutturati così:</p>
+<pre><code class="language-text">Context
+↓
+Command / Skill
+↓
+Target
+↓
+Objective
+↓
+Constraints
+
+</code></pre>
+<p>Esempio:</p>
+<pre><code class="language-text">Phase 14.6-A
+
+Use:
+/hardening
+
+Target:
+entire repository
+
+Objective:
+repository tree audit
+
+Constraints:
+- audit only
+- chat output only
+- no file creation
+
+</code></pre>
+<p>Invece di 40-50 righe di istruzioni duplicate.</p>
+<hr>
+<p>Quando mi caricherai le fonti aggiornate (Rules, Skills e Commands), nei prompt che ti aiuterò a scrivere inizierò a referenziare direttamente:</p>
+<pre><code class="language-text">Use:
+Audit
+
+Use:
+Repository Hardening
+
+Use:
+Character Audit
+
+Use:
+Engine Contract Validation
+
+</code></pre>
+<p>invece di reincorporarne la logica.
+Questo ha tre vantaggi:</p>
+<ol>
+<li>Prompt più corti.</li>
+<li>Meno rischio di divergenza tra prompt e skill.</li>
+<li>Se aggiorni una skill, tutti i workflow che la usano migliorano automaticamente.
+Per SvartúlfrVerse, l&#39;obiettivo ideale è arrivare a prompt di questo tipo:</li>
+</ol>
+<pre><code class="language-text">Phase 15-A
+
+Use:
+Engine Contract Validation
+
+Target:
+ENGINE_SPECIFICATION.md
+
+Objective:
+verify implementation readiness
+
+Constraints:
+audit only
+
+</code></pre>
+<p>perché tutta la conoscenza operativa è già incapsulata nelle Skill e tutta la governance nelle Rules. Il prompt deve solo dire  <strong>cosa fare</strong> , non  <strong>come farlo</strong> .
+<strong>User</strong> : perfetto dammi un prompt per farci dare un report con command skill e rules da caricare nel progetto come sorgente perché tutte le chat del progetto abbiamo a mente la possibilità di sfruttarle per i prompt di code
+<strong>Gemini</strong> : Sì. A questo punto conviene creare un documento &quot;Toolset Reference&quot; da tenere nelle fonti del progetto e usare come riferimento nei prompt futuri.
+L&#39;obiettivo non è documentare il contenuto delle skill/rules, ma spiegare a Code  <strong>quando usare cosa</strong> .
+Ti suggerisco questo prompt:
+Task: Generate SvartúlfrVerse Toolset Reference
+Context
+The project now contains:</p>
+<ul>
+<li>ADR architecture</li>
+<li>R-000 → R-009 Rules</li>
+<li>Project Skills</li>
+<li>Project Commands
+Future prompts should leverage these assets instead of duplicating workflow instructions.
+Objective
+Analyze the complete project toolset and generate a single reference document.
+The document will be stored as project source material and used as a prompt-writing reference.
+Do NOT modify repository content.
+Do NOT create or update skills.
+Do NOT create or update rules.
+Do NOT create or update commands.
+Produce documentation only.
+Required Analysis</li>
+</ul>
+<ol>
+<li>Rules Inventory
+For every rule:</li>
+</ol>
+<ul>
+<li>Rule ID</li>
+<li>Name</li>
+<li>Purpose</li>
+<li>Authority</li>
+<li>Typical use cases
+Group by governance domain.</li>
+</ul>
+<ol start=2>
+<li>Skills Inventory
+For every skill:</li>
+</ol>
+<ul>
+<li>Name</li>
+<li>Purpose</li>
+<li>When to use</li>
+<li>When NOT to use</li>
+<li>Typical outputs
+Group by workflow domain.</li>
+</ul>
+<ol start=3>
+<li>Commands Inventory
+For every command:</li>
+</ol>
+<ul>
+<li>Command</li>
+<li>Associated skill(s)</li>
+<li>Purpose</li>
+<li>Typical usage
+Group by workflow domain.</li>
+</ul>
+<ol start=4>
+<li>Tool Selection Matrix
+Build a decision matrix:
+If objective is... → Use skill... → Use command...
+Examples:
+Repository audit Character validation Cross-reference verification Canon review Export readiness Engine validation Lorebook validation Bot validation Authority ownership review Pipeline validation</li>
+<li>Prompt Writing Guidelines
+Define best practices for future prompts.
+Explain:</li>
+</ol>
+<ul>
+<li>when to invoke commands</li>
+<li>when to invoke skills directly</li>
+<li>when rules should be referenced</li>
+<li>when ADRs should be referenced</li>
+</ul>
+<ol start=6>
+<li>Prompt Simplification Examples
+Show before/after examples.
+Example:
+Long procedural prompt ↓
+Use: /hardening
+Objective: repository structure audit
+Constraints: audit only</li>
+<li>Recommended Prompt Pattern
+Provide a standard project prompt template:
+Context ↓ Command or Skill ↓ Target ↓ Objective ↓ Constraints ↓ Expected Output
+Deliverable
+Generate:
+SVARTULFRVERSE_TOOLSET_REFERENCE.md
+Sections:</li>
+<li>Executive Summary</li>
+<li>Rules Reference</li>
+<li>Skills Reference</li>
+<li>Commands Reference</li>
+<li>Tool Selection Matrix</li>
+<li>Prompt Writing Guidelines</li>
+<li>Prompt Templates</li>
+<li>Future Expansion Recommendations
+Goal
+Create a reference that allows future project chats to leverage Rules, Skills and Commands instead of rewriting workflow instructions.
+Questa diventerebbe probabilmente una delle fonti più utili del progetto, perché ogni futura chat potrebbe consultarla e capire immediatamente:</li>
+</ol>
+<pre><code class="language-text">Ho bisogno di un audit struttura?
+→ /hardening
+
+Ho bisogno di verificare un personaggio?
+→ Character Audit
+
+Ho bisogno di validare un export?
+→ Export Readiness
+
+Ho bisogno di controllare ownership?
+→ Authority Boundary Audit
+
+</code></pre>
+<p>riducendo enormemente la lunghezza dei prompt futuri.
+<strong>User</strong> : che altri documenti protrebbeor tornare utili come fonti per il progetto?
+<strong>Gemini</strong> : Ora che il repository sta passando da &quot;migrazione&quot; a &quot;piattaforma di generazione&quot;, io dividerei le fonti in due categorie:</p>
+<h4>Fondamentali (le caricherei sicuramente)</h4>
+<h5>1. Toolset Reference</h5>
+<p>Quello di cui abbiamo appena parlato.</p>
+<pre><code class="language-text">SVARTULFRVERSE_TOOLSET_REFERENCE.md
+
+</code></pre>
+<p>Serve a tutte le chat.</p>
+<hr>
+<h5>2. Authority Matrix</h5>
+<p>Documento estremamente utile.</p>
+<pre><code class="language-text">AUTHORITY_MATRIX.md
+
+</code></pre>
+<p>Contiene:</p>
+<pre><code class="language-text">Family Authority
+  owns:
+    genealogy
+    surnames
+    dynasty membership
+
+Character Authority
+  owns:
+    identity
+    personality
+    biography
+
+Visual Authority
+  owns:
+    appearance
+
+Experience Authority
+  owns:
+    scenario state
+
+</code></pre>
+<p>e soprattutto:</p>
+<pre><code class="language-text">Allowed
+Forbidden
+References only
+
+</code></pre>
+<p>per ogni layer.
+Riduce enormemente gli errori.</p>
+<hr>
+<h5>3. Prompt Design Guide</h5>
+<pre><code class="language-text">PROMPT_DESIGN_GUIDE.md
+
+</code></pre>
+<p>Spiega:</p>
+<pre><code class="language-text">Quando usare ADR
+Quando usare Rules
+Quando usare Skills
+Quando usare Commands
+
+</code></pre>
+<p>e contiene esempi.
+Molto utile per tutte le future chat.</p>
+<hr>
+<h5>4. Engine Roadmap</h5>
+<pre><code class="language-text">ENGINE_IMPLEMENTATION_ROADMAP.md
+
+</code></pre>
+<p>Documento leggero.
+Non governance.
+Solo:</p>
+<pre><code class="language-text">Phase 15
+Phase 16
+Phase 17
+
+</code></pre>
+<p>con ordine di implementazione.
+Serve a evitare che un modello tenti di costruire il lorebook engine prima del validation engine.</p>
+<hr>
+<h4>Molto utili</h4>
+<h5>5. Repository Glossary</h5>
+<pre><code class="language-text">GLOSSARY.md
+
+</code></pre>
+<p>Definizioni ufficiali.
+Ad esempio:</p>
+<pre><code class="language-text">Authority
+Canon
+Candidate
+Deferred
+Historical
+Cultural
+Experience
+Runtime
+Consumer Layer
+Export
+Validation
+
+</code></pre>
+<p>Molti errori nascono da interpretazioni diverse.</p>
+<hr>
+<h5>6. Decision Registry</h5>
+<pre><code class="language-text">DECISION_REGISTRY.md
+
+</code></pre>
+<p>Versione breve degli ADR.
+Tipo:</p>
+<pre><code class="language-text">ADR-000
+Runtime consumes canon
+
+ADR-002
+Family owns genealogy
+
+ADR-004
+Visual inheritance is not genetic
+
+</code></pre>
+<p>Una pagina.
+Molto utile per i modelli.</p>
+<hr>
+<h5>7. Validation Checklist</h5>
+<pre><code class="language-text">VALIDATION_CHECKLIST.md
+
+</code></pre>
+<p>Versione leggibile della pipeline.
+Non la specifica tecnica.
+Una checklist.</p>
+<pre><code class="language-text">✓ traceability
+✓ ownership
+✓ canon layer
+✓ references
+✓ export fields
+
+</code></pre>
+<p>Perfetta per audit veloci.</p>
+<hr>
+<h4>Quando inizierete gli engine</h4>
+<h5>8. Engine Interaction Map</h5>
+<pre><code class="language-text">ENGINE_INTERACTION_MAP.md
+
+</code></pre>
+<p>Diagramma logico:</p>
+<pre><code class="language-text">database
+ ↓
+validation_engine
+ ↓
+family_engine
+ ↓
+relationship_engine
+ ↓
+bot_export
+ ↓
+lorebook_export
+
+</code></pre>
+<p>Molto utile per evitare implementazioni errate.</p>
+<hr>
+<h5>9. Export Mapping Matrix</h5>
+<pre><code class="language-text">EXPORT_MAPPING_MATRIX.md
+
+</code></pre>
+<p>Una tabella:</p>
+<pre><code class="language-text">Character Field
+ ↓
+JanitorAI Field
+
+Character Field
+ ↓
+SillyTavern Field
+
+Character Field
+ ↓
+Lorebook Entry
+
+</code></pre>
+<p>Diventerà preziosissima in Phase 15.</p>
+<hr>
+<h4>Quello che NON aggiungerei</h4>
+<p>Eviterei:</p>
+<pre><code class="language-text">TREE_AUDIT_REPORT
+READINESS_REPORT
+MIGRATION_REPORT
+PHASE_REPORT
+STATUS_REPORT
+
+</code></pre>
+<p>Sono documenti temporanei.
+Le fonti migliori sono:</p>
+<pre><code class="language-text">stabili
+consultabili
+riutilizzabili
+
+</code></pre>
+<p>non fotografie di uno stato momentaneo.</p>
+<hr>
+<p>Se dovessi scegliere le  <strong>5 fonti più utili da aggiungere subito</strong> , farei:</p>
+<pre><code class="language-text">1. SVARTULFRVERSE_TOOLSET_REFERENCE.md
+2. AUTHORITY_MATRIX.md
+3. PROMPT_DESIGN_GUIDE.md
+4. DECISION_REGISTRY.md
+5. VALIDATION_CHECKLIST.md
+
+</code></pre>
+<p>Perché migliorano direttamente la qualità di qualsiasi futura chat, prompt, audit, engine o bot che verrà costruito nel progetto.
+<strong>User</strong> : ok dami un comando per far generare a code tutte queste fonti da caricare sul progetto
+<strong>Gemini</strong> : Ti suggerisco di fare un unico task &quot;Knowledge Layer Generation&quot;, così Code analizza tutto il repository una sola volta e genera tutte le fonti in modo coerente.
+Task: Generate Project Knowledge Sources
+Context
+SvartúlfrVerse has completed repository migration, governance consolidation, rule implementation, skill implementation, and command implementation.
+The repository now contains:</p>
+<ul>
+<li>ADR architecture</li>
+<li>Repository governance</li>
+<li>Rules (R-000 → R-009)</li>
+<li>Skills</li>
+<li>Commands</li>
+<li>Engine specifications</li>
+<li>Export specifications</li>
+<li>Validation specifications
+Future project chats should be able to use these sources as reference material.
+Objective
+Generate the project knowledge layer.
+These documents are intended to become permanent project sources.
+Analyze the repository and create the following files.
+Required Deliverables</li>
+</ul>
+<ol>
+<li>SVARTULFRVERSE_TOOLSET_REFERENCE.md
+Purpose:
+Complete reference for:</li>
+</ol>
+<ul>
+<li>Rules</li>
+<li>Skills</li>
+<li>Commands
+Include:</li>
+<li>inventory</li>
+<li>command mappings</li>
+<li>skill mappings</li>
+<li>tool selection matrix</li>
+<li>prompt-writing guidance</li>
+<li>workflow examples</li>
+</ul>
+<hr>
+<ol start=2>
+<li>AUTHORITY_MATRIX.md
+Purpose:
+Single-source reference for ownership boundaries.
+Include:
+Family Authority Character Authority Visual Authority Experience Authority Canon Layers
+For each authority:</li>
+</ol>
+<ul>
+<li>owns</li>
+<li>may reference</li>
+<li>prohibited ownership</li>
+<li>common violations
+Include a complete ownership matrix.</li>
+</ul>
+<hr>
+<ol start=3>
+<li>PROMPT_DESIGN_GUIDE.md
+Purpose:
+Guide for writing future project prompts.
+Include:</li>
+</ol>
+<ul>
+<li>when to use ADRs</li>
+<li>when to use Rules</li>
+<li>when to use Skills</li>
+<li>when to use Commands
+Include:
+Prompt patterns
+Examples:
+Audit Character work Export work Engine work Lorebook work
+Show before/after prompt simplification examples.</li>
+</ul>
+<hr>
+<ol start=4>
+<li>DECISION_REGISTRY.md
+Purpose:
+Condensed architecture reference.
+Summarize:
+ADR-000 through ADR-006
+For each ADR:</li>
+</ol>
+<ul>
+<li>decision</li>
+<li>rationale</li>
+<li>implications
+Keep concise.
+Designed for rapid consultation by future chats.</li>
+</ul>
+<hr>
+<ol start=5>
+<li>VALIDATION_CHECKLIST.md
+Purpose:
+Human-readable version of the validation system.
+Summarize:</li>
+</ol>
+<ul>
+<li>Cross-Reference Validation</li>
+<li>Canon Layer Validation</li>
+<li>Authority Validation</li>
+<li>Traceability Validation
+Provide:</li>
+<li>checklist format</li>
+<li>PASS/WARNING/FAIL guidance</li>
+<li>audit workflow
+Do not duplicate the technical specification.
+Provide an operational validation guide.</li>
+</ul>
+<hr>
+<ol start=6>
+<li>ENGINE_IMPLEMENTATION_ROADMAP.md
+Purpose:
+Implementation sequencing guide.
+Describe:
+Current State Phase 15 Phase 16 Future Phases
+Recommend implementation order for:</li>
+</ol>
+<ul>
+<li>validation_engine</li>
+<li>family_engine</li>
+<li>relationship_engine</li>
+<li>bot exporter</li>
+<li>lorebook exporter
+Include dependencies.</li>
+</ul>
+<hr>
+<ol start=7>
+<li>ENGINE_INTERACTION_MAP.md
+Purpose:
+Runtime architecture overview.
+Describe:
+database ↓ validation_engine ↓ query engines ↓ export engines ↓ runtime artifacts
+Explain:
+inputs outputs authority boundaries traceability flow</li>
+</ol>
+<hr>
+<ol start=8>
+<li>EXPORT_MAPPING_MATRIX.md
+Purpose:
+Reference mapping between repository data and exports.
+Map:
+Repository Source ↓ Bot Export Fields ↓ Lorebook Entries ↓ Runtime Outputs
+Document field ownership and traceability requirements.
+Requirements</li>
+<li>Analyze existing repository sources before writing.</li>
+<li>Reuse governance definitions already present in ADRs, Rules and Specifications.</li>
+<li>Do not invent new governance.</li>
+<li>Do not modify existing ADRs.</li>
+<li>Do not modify existing Rules.</li>
+<li>Do not modify existing Skills.</li>
+<li>Do not modify existing Commands.</li>
+<li>Generate documentation only.</li>
+<li>Maintain consistency with:
+<ul>
+<li>Architecture.md</li>
+<li>Repository_Governance.md</li>
+<li>Repository_Scope.md</li>
+<li>ADR-000 → ADR-006</li>
+<li>R-000 → R-009</li>
+<li>ENGINE_SPECIFICATION.md</li>
+<li>BOT_EXPORT_SPECIFICATION.md</li>
+<li>LOREBOOK_SPECIFICATION.md</li>
+<li>VALIDATION_PIPELINE_SPECIFICATION.md
+Output
+Create all documents under an appropriate project documentation location.
+Return:</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>files created</li>
+<li>summary of each document</li>
+<li>any detected inconsistencies
+Goal
+Create a reusable knowledge layer that future project chats can use as source material instead of repeatedly reconstructing repository architecture and governance.
+Un piccolo miglioramento: io li metterei tutti in una cartella dedicata, ad esempio:</li>
+</ul>
+<pre><code class="language-text">knowledge/
+├── SVARTULFRVERSE_TOOLSET_REFERENCE.md
+├── AUTHORITY_MATRIX.md
+├── PROMPT_DESIGN_GUIDE.md
+├── DECISION_REGISTRY.md
+├── VALIDATION_CHECKLIST.md
+├── ENGINE_IMPLEMENTATION_ROADMAP.md
+├── ENGINE_INTERACTION_MAP.md
+└── EXPORT_MAPPING_MATRIX.md
+
+</code></pre>
+<p>separandoli nettamente da core/, che dovrebbe continuare a contenere solo documenti normativi e architetturali.
+<strong>User</strong> : perfetto dammi il prompt per il ref ai link utili:</p>
+<h5>🤖 AI &amp; LLM</h5>
+<p>https://docs.google.com/document/d/e/2PACX-1vQggoBXOep1Twy3izYOAH2-fG2qALEGYT1CT3tyROEeHcWhmnabludnGYMwuQg4yKiNTp5PBzP5xLg8/pub
+https://rentry.org/ai-models#deepseek-on-chutes-free-provider
+https://docs.google.com/document/u/0/d/16scfv4rjV3kgPGkGOGo4fRDC8sxiPrgHTE1WFJQLlFk/mobilebasic
+https://perchance.org/ai-character-generator
+https://rentry.co/BDSM_Prompts#switch
+https://jaitutorial.uwu.ai/#
+https://rentry.org/absolutetrashs-bot-guide
+https://rentry.co/jaibotmakingresources
+https://aistudio.google.com/apps
+https://cheesey-wizards-organization.gitbook.io/masterlist
+https://civitai.com/?utm_source=chatgpt.com
+https://rentry.co/cryptidsprompts2
+https://rentry.co/pddvz4oo
+https://emochi.com/
+https://huggingface.co/
+https://civitai.com/models/795765/illustrious-xl?modelVersionId=889818
+https://tensor.art/
+https://wikia.schneedc.com/bot-creation/trappu/introduction
+https://rentry.co/iorveths-bot-creation-guide
+https://janitorai.com/
+https://rentry.co/botmaking
+https://rentry.co/MarPrompt
+https://www.reddit.com/r/JanitorAI_Official/comments/1kvh4pz/my_goto_ooc_templates_for_scene_control_plot/
+https://cheesey-wizards-organization.gitbook.io/masterlist/prompts-and-troubleshooting/my-prompt
+https://notebooklm.google.com/notebook/86c599db-3e72-4d2f-8776-044d0d372a21
+https://openrouter.ai/
+https://docs.google.com/document/u/0/d/1xfJOM3KnxKqQLD_I29nXGj2u-gz_RAs8ojqtXy3sSQE/mobilebasic?pli=1
+https://pixai.art/en
+https://railway.com/?referralCode=fireship
+https://sophiasunblocker.onrender.com/
+https://rentry.co/statuotwtips#the-additions
+https://rentry.co/statuobotmakie
+https://aistudio.google.com/apps/665584a6-1a8c-4ceb-a224-025eee8dd6bb?showPreview=true&amp;showAssistant=true
+https://tiktokenizer.vercel.app/
+https://peipei1998.gitbook.io/peipei1998s-universal-prompt/
+https://sopakcosauce.gitbook.io/sopakcosauce-docs
+e cerca altri link correlati sugli script di janitor da aggiungere ai link utili
+<strong>Gemini</strong> : Ti consiglio di non mischiare questi link dentro i documenti core del progetto.
+Crea invece una fonte dedicata:</p>
+<pre><code class="language-text">knowledge/
+└── EXTERNAL_RESOURCES_INDEX.md
+
+</code></pre>
+<p>e fai generare a Code una versione strutturata, categorizzata e deduplicata.
+Prompt:
+Task: Build External Resources Knowledge Index
+Context
+The SvartúlfrVerse repository contains internal governance, architecture, rules, skills, commands, ADRs and specifications.
+In addition, the project relies on a large collection of external references covering:</p>
+<ul>
+<li>AI tooling</li>
+<li>Prompt engineering</li>
+<li>Character creation</li>
+<li>JanitorAI</li>
+<li>SillyTavern</li>
+<li>Lorebooks</li>
+<li>LLM prompting</li>
+<li>Image generation</li>
+<li>Model providers</li>
+<li>Bot design</li>
+<li>Narrative design</li>
+<li>Export platforms
+These resources should become a structured project source.
+Objective
+Create:
+knowledge/EXTERNAL_RESOURCES_INDEX.md
+Requirements
+Analyze and classify all supplied resources.
+For each resource provide:</li>
+<li>Title</li>
+<li>URL</li>
+<li>Category</li>
+<li>Description (2-5 lines)</li>
+<li>Recommended Usage</li>
+<li>Relevance to SvartulfrVerse
+Organize resources into sections.
+Required Categories</li>
+</ul>
+<h3>AI Platforms</h3>
+<p>Examples:</p>
+<ul>
+<li>OpenRouter</li>
+<li>Google AI Studio</li>
+<li>HuggingFace</li>
+<li>NotebookLM</li>
+</ul>
+<h3>Character Creation</h3>
+<p>Examples:</p>
+<ul>
+<li>Iorveth Bot Creation Guide</li>
+<li>JanitorAI Creation Guide</li>
+<li>Botmaking Guides</li>
+<li>Character Generators</li>
+</ul>
+<h3>Prompt Engineering</h3>
+<p>Examples:</p>
+<ul>
+<li>Prompt collections</li>
+<li>Prompt design references</li>
+<li>OOC templates</li>
+<li>Narrative prompting</li>
+</ul>
+<h3>Lorebook Design</h3>
+<p>Examples:</p>
+<ul>
+<li>Lorebook guides</li>
+<li>Worldbuilding references</li>
+<li>Knowledge-base design</li>
+</ul>
+<h3>JanitorAI Ecosystem</h3>
+<p>Examples:</p>
+<ul>
+<li>JanitorAI</li>
+<li>JanitorAI tutorials</li>
+<li>JanitorAI community resources</li>
+<li>JanitorAI prompt engineering resources</li>
+</ul>
+<h3>SillyTavern Ecosystem</h3>
+<p>Examples:</p>
+<ul>
+<li>SillyTavern guides</li>
+<li>Card design references</li>
+<li>Prompting references</li>
+</ul>
+<h3>Image Generation</h3>
+<p>Examples:</p>
+<ul>
+<li>CivitAI</li>
+<li>TensorArt</li>
+<li>PixAI</li>
+<li>Model repositories</li>
+</ul>
+<h3>LLM Research</h3>
+<p>Examples:</p>
+<ul>
+<li>Prompt engineering papers</li>
+<li>Reasoning references</li>
+<li>AI workflow documentation</li>
+</ul>
+<h3>Utility Tools</h3>
+<p>Examples:</p>
+<ul>
+<li>Tokenizers</li>
+<li>Hosting platforms</li>
+<li>Workflow utilities
+Required Additional Work</li>
+</ul>
+<ol>
+<li>Detect duplicate links.</li>
+<li>Merge duplicates.</li>
+<li>Detect dead or suspicious links.</li>
+<li>Flag resources requiring manual review.</li>
+<li>Flag resources that should NOT be used as authoritative sources.</li>
+<li>Distinguish:
+<ul>
+<li>Canonical Learning Resources</li>
+<li>Community Resources</li>
+<li>Experimental Resources
+New Resource Discovery
+Search for additional high-quality resources related to:</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>JanitorAI bot creation</li>
+<li>JanitorAI prompting</li>
+<li>JanitorAI lorebooks</li>
+<li>SillyTavern character cards</li>
+<li>SillyTavern lorebooks</li>
+<li>Character card design</li>
+<li>Advanced prompt engineering</li>
+<li>LLM roleplay systems</li>
+<li>Narrative AI design
+Add only resources that are:</li>
+<li>Widely referenced</li>
+<li>Educational</li>
+<li>Relevant to repository goals
+For every discovered resource include:</li>
+<li>Why it was added</li>
+<li>Category</li>
+<li>Usage recommendation
+Output Structure</li>
+</ul>
+<ol>
+<li>Executive Summary</li>
+<li>Resource Statistics</li>
+<li>Categorized Resource Library</li>
+<li>Newly Discovered Resources</li>
+<li>Recommended Resources for:
+<ul>
+<li>Bot Creation</li>
+<li>Lorebook Creation</li>
+<li>Prompt Engineering</li>
+<li>Character Design</li>
+<li>Engine Development</li>
+</ul>
+</li>
+<li>Resources To Avoid Using As Authority</li>
+<li>Maintenance Recommendations
+Constraints</li>
+<li>Do not modify repository governance.</li>
+<li>Do not modify ADRs.</li>
+<li>Do not modify Rules.</li>
+<li>Do not modify Skills.</li>
+<li>Do not modify Commands.</li>
+<li>Documentation only.</li>
+<li>Deduplicate aggressively.</li>
+<li>Prefer educational value over quantity.
+Goal
+Create a permanent curated external knowledge index that future project chats can use as reference material when designing bots, lorebooks, prompts, exports and runtime systems.
+Dopo che Code lo genera, io farei anche una seconda fonte molto utile:</li>
+</ol>
+<pre><code class="language-text">knowledge/
+└── JANITORAI_AND_ROLEPLAY_BEST_PRACTICES.md
+
+</code></pre>
+<p>che estragga dai vari Iorveth, JanitorAI Guide, community guide, OOC templates, lorebook guide e prompt collections le best practice consolidate, invece di dover consultare 20 link diversi ogni volta. Quella probabilmente diventerà una delle fonti più usate durante la costruzione effettiva dei bot.
+<strong>User</strong> : ci sta cerca delle fonti utili da agigungerci analizzando i link e le best practise
+tipo https://www.reddit.com/r/JanitorAI_Official/comments/1lykj9v/explaining_lorebooks_take_2_better_resolution/ https://help.janitorai.com/en/category/scripts-1qzakwc/ https://drive.google.com/file/d/1V-lFxmlsYMSmt4CZI2SA_xzWRxoXzC11/view?pli=1 https://drive.google.com/file/d/1kMce-Jx3zFBSq-EKjSwqBqRw6boRioNZ/view
+<strong>Gemini</strong> : Sì. Guardando i link che hai raccolto e considerando che il focus reale del progetto è:</p>
+<ul>
+<li>JanitorAI</li>
+<li>Lorebook generation</li>
+<li>Character cards</li>
+<li>Prompt engineering</li>
+<li>Runtime behavior</li>
+<li>Export quality</li>
+<li>Engine → Bot → Lorebook pipeline
+vedo alcune fonti che mancano e che vale la pena aggiungere come sorgenti permanenti.
+Priorità ALTA.</li>
+</ul>
+<h5>1. JanitorAI Scripts Documentation</h5>
+<p>Hai già trovato:</p>
+<pre><code class="language-text">https://help.janitorai.com/en/category/scripts-1qzakwc/
+
+</code></pre>
+<p>Da aggiungere sicuramente.
+Perché:</p>
+<ul>
+<li>è documentazione ufficiale</li>
+<li>serve per capire scripting runtime</li>
+<li>utile quando arriverete alla fase bot avanzati</li>
+<li>riduce allucinazioni sulle API di Janitor
+Classificazione:</li>
+</ul>
+<pre><code class="language-text">Authority Level: Official
+Category: JanitorAI Runtime
+Priority: High
+
+</code></pre>
+<hr>
+<h5>2. Lorebook Best Practices (Reddit)</h5>
+<p>Hai già trovato:</p>
+<pre><code class="language-text">https://www.reddit.com/r/JanitorAI_Official/comments/1lykj9v/explaining_lorebooks_take_2_better_resolution/
+
+</code></pre>
+<p>Da aggiungere.
+Perché:</p>
+<ul>
+<li>i lorebook sono spesso usati male</li>
+<li>contiene esperienza pratica reale</li>
+<li>utile per capire:
+<ul>
+<li>trigger strategy</li>
+<li>token economy</li>
+<li>key management</li>
+<li>lorebook layering
+Classificazione:</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-text">Authority Level: Community
+Category: Lorebook Design
+Priority: High
+
+</code></pre>
+<hr>
+<h5>3. SillyTavern Documentation</h5>
+<p>Manca completamente.
+Aggiungerei:</p>
+<pre><code class="language-text">https://docs.sillytavern.app/
+
+</code></pre>
+<p>Perché:</p>
+<ul>
+<li>Janitor e SillyTavern condividono molte pratiche</li>
+<li>lorebook system più maturo</li>
+<li>character card architecture molto ben documentata
+Categoria:</li>
+</ul>
+<pre><code class="language-text">Character Cards
+Lorebooks
+Prompt Runtime
+
+</code></pre>
+<hr>
+<h5>4. Character Card V2/V3 Specification</h5>
+<p>Molto importante.</p>
+<pre><code class="language-text">https://github.com/malfoyslastname/character-card-spec-v2
+
+</code></pre>
+<p>oppure la spec aggiornata che troverai su GitHub.
+Serve per:</p>
+<ul>
+<li>exporter</li>
+<li>interoperabilità</li>
+<li>metadati</li>
+<li>card design
+Categoria:</li>
+</ul>
+<pre><code class="language-text">Export Standards
+Priority: High
+
+</code></pre>
+<hr>
+<h5>5. STScript Documentation</h5>
+<p>Quando inizierete a fare bot complessi.</p>
+<pre><code class="language-text">https://docs.sillytavern.app/usage/st-script/
+
+</code></pre>
+<p>Serve per:</p>
+<ul>
+<li>automation</li>
+<li>memory injection</li>
+<li>runtime behavior
+Categoria:</li>
+</ul>
+<pre><code class="language-text">Runtime Systems
+Advanced
+
+</code></pre>
+<hr>
+<h5>6. Advanced Lorebook Design</h5>
+<p>Molto utile:</p>
+<pre><code class="language-text">https://rentry.org/lorebooks
+
+</code></pre>
+<p>(se ancora disponibile)
+oppure equivalenti community guide.
+Perché:</p>
+<ul>
+<li>keyword hierarchy</li>
+<li>recursive entries</li>
+<li>trigger minimization</li>
+<li>token optimization</li>
+</ul>
+<hr>
+<h5>7. Character Card Hub</h5>
+<p>Da aggiungere come riferimento qualitativo:</p>
+<pre><code class="language-text">https://chub.ai/
+
+</code></pre>
+<p>Non come autorità.
+Ma come:</p>
+<pre><code class="language-text">Community Reference
+Benchmark Dataset
+
+</code></pre>
+<p>Serve per studiare:</p>
+<ul>
+<li>card structure</li>
+<li>formatting</li>
+<li>metadata</li>
+<li>examples</li>
+</ul>
+<hr>
+<h5>8. LLM Prompt Engineering</h5>
+<p>Ti manca una vera fonte strutturata.
+Aggiungerei:</p>
+<pre><code class="language-text">https://platform.openai.com/docs/guides/prompt-engineering
+
+</code></pre>
+<p>e</p>
+<pre><code class="language-text">https://www.anthropic.com/engineering
+
+</code></pre>
+<p>Categoria:</p>
+<pre><code class="language-text">Prompt Engineering
+System Design
+
+</code></pre>
+<hr>
+<h5>9. Narrative Design</h5>
+<p>Per i bot roleplay.
+Aggiungerei:</p>
+<pre><code class="language-text">https://emshort.blog/
+
+</code></pre>
+<p>Perché:</p>
+<ul>
+<li>interactive fiction</li>
+<li>branching narrative</li>
+<li>character consistency
+Molto più utile di molte guide Janitor.</li>
+</ul>
+<hr>
+<h5>10. Memory Systems</h5>
+<p>Per il futuro engine.
+Aggiungerei:</p>
+<pre><code class="language-text">https://docs.langchain.com/
+
+</code></pre>
+<p>solo come riferimento architetturale.
+Non per implementare LangChain.
+Ma per:</p>
+<ul>
+<li>memory patterns</li>
+<li>retrieval patterns</li>
+<li>lorebook architectures</li>
+</ul>
+<hr>
+<p>Le tre fonti che considero più importanti e che oggi vi mancano davvero sono:</p>
+<ol>
+<li>docs.sillytavern.app</li>
+<li>help.janitorai.com/scripts</li>
+<li>la Character Card Specification V2/V3
+Perché sono documentazione tecnica stabile e saranno molto più utili durante la Phase 15-19 dell&#39;engine rispetto a decine di guide community. Inoltre si integrano bene con il toolset che avete costruito (Rules, Skills, Commands, Validation Pipeline, Export Mapping Matrix) e con la roadmap di implementazione dell&#39;engine e degli exporter già definita nel repository.
+<strong>User</strong> : DAMMI IL PROMPT
+<strong>Gemini</strong> : Task: Generate JanitorAI &amp; Roleplay Best Practices Knowledge Base
+Context
+The project has collected a large number of external resources covering:</li>
+</ol>
+<ul>
+<li>JanitorAI</li>
+<li>SillyTavern</li>
+<li>Character card design</li>
+<li>Lorebooks</li>
+<li>Prompt engineering</li>
+<li>OOC templates</li>
+<li>Runtime scripting</li>
+<li>Narrative AI</li>
+<li>Roleplay systems</li>
+<li>Community best practices
+These resources are currently fragmented across guides, Reddit discussions, Google Docs, GitBooks, Rentry pages, PDFs and official documentation.
+Objective
+Create a consolidated knowledge source:
+knowledge/JANITORAI_AND_ROLEPLAY_BEST_PRACTICES.md
+The goal is to extract the durable principles, recurring patterns, common mistakes and proven practices from all available resources so future project work does not require consulting dozens of external guides.
+Sources To Analyze
+Existing project resources:</li>
+<li>Iorveth Bot Creation Guide</li>
+<li>JanitorAI Chatbot Creation Guide</li>
+<li>Lorebook Script Guide</li>
+<li>External Resources Index</li>
+<li>Existing bot creation resources</li>
+<li>Existing prompt resources
+Additional resources:
+https://www.reddit.com/r/JanitorAI_Official/comments/1lykj9v/explaining_lorebooks_take_2_better_resolution/
+https://help.janitorai.com/en/category/scripts-1qzakwc/
+https://drive.google.com/file/d/1V-lFxmlsYMSmt4CZI2SA_xzWRxoXzC11/view
+https://drive.google.com/file/d/1kMce-Jx3zFBSq-EKjSwqBqRw6boRioNZ/view
+Plus all JanitorAI, lorebook, prompting and character creation resources already cataloged in the project.
+Required Analysis
+Do not summarize resources individually.
+Instead extract:</li>
+<li>recurring best practices</li>
+<li>recurring recommendations</li>
+<li>recurring warnings</li>
+<li>repeated design patterns</li>
+<li>proven workflows
+Focus on consensus across multiple sources.
+Document Structure</li>
+</ul>
+<h3>1. Executive Summary</h3>
+<p>What consistently separates:</p>
+<ul>
+<li>high quality bots</li>
+<li>average bots</li>
+<li>poor bots</li>
+</ul>
+<h3>2. Character Card Design</h3>
+<p>Cover:</p>
+<ul>
+<li>character definition</li>
+<li>personality design</li>
+<li>motivations</li>
+<li>flaws</li>
+<li>relationship design</li>
+<li>behavioral consistency</li>
+<li>avoiding over-description</li>
+<li>avoiding under-definition
+Include:
+Best Practices
+Common Mistakes
+Recommended Structure</li>
+</ul>
+<h3>3. Scenario Design</h3>
+<p>Cover:</p>
+<ul>
+<li>opening messages</li>
+<li>scenario framing</li>
+<li>user agency</li>
+<li>narrative hooks</li>
+<li>pacing
+Include:
+Best Practices
+Common Mistakes</li>
+</ul>
+<h3>4. Dialogue Design</h3>
+<p>Cover:</p>
+<ul>
+<li>speech patterns</li>
+<li>emotional expression</li>
+<li>internal thoughts</li>
+<li>consistency
+Include:
+Best Practices
+Common Mistakes</li>
+</ul>
+<h3>5. Lorebook Design</h3>
+<p>Cover:</p>
+<ul>
+<li>lorebook architecture</li>
+<li>entry sizing</li>
+<li>keyword strategy</li>
+<li>trigger strategy</li>
+<li>token economy</li>
+<li>entry relationships</li>
+<li>worldbuilding structure
+Include:
+Best Practices
+Common Mistakes
+Optimization Guidelines</li>
+</ul>
+<h3>6. Prompt Engineering</h3>
+<p>Cover:</p>
+<ul>
+<li>system prompts</li>
+<li>author notes</li>
+<li>jailbreak resistance</li>
+<li>narrative control</li>
+<li>instruction hierarchy
+Include:
+Best Practices
+Anti-Patterns</li>
+</ul>
+<h3>7. OOC Systems</h3>
+<p>Cover:</p>
+<ul>
+<li>scene control</li>
+<li>pacing control</li>
+<li>plot steering</li>
+<li>correction systems
+Include:
+When To Use
+When NOT To Use</li>
+</ul>
+<h3>8. JanitorAI Scripts</h3>
+<p>Cover:</p>
+<ul>
+<li>scripting philosophy</li>
+<li>use cases</li>
+<li>limitations</li>
+<li>maintainability
+Include:
+Recommended Patterns
+Patterns To Avoid</li>
+</ul>
+<h3>9. SillyTavern Compatibility</h3>
+<p>Cover:</p>
+<ul>
+<li>character cards</li>
+<li>lorebooks</li>
+<li>metadata</li>
+<li>portability</li>
+</ul>
+<h3>10. Long-Term Memory &amp; Continuity</h3>
+<p>Cover:</p>
+<ul>
+<li>maintaining consistency</li>
+<li>preventing drift</li>
+<li>managing large worlds</li>
+<li>managing recurring characters</li>
+</ul>
+<h3>11. Roleplay Quality Framework</h3>
+<p>Define:
+Poor Average Good Excellent
+Across:</p>
+<ul>
+<li>Character Quality</li>
+<li>Lorebook Quality</li>
+<li>Prompt Quality</li>
+<li>Scenario Quality</li>
+</ul>
+<h3>12. SvartulfrVerse Recommendations</h3>
+<p>Translate all findings into project-specific guidance.
+Include:
+Recommended standards for:</p>
+<ul>
+<li>Bot exports</li>
+<li>Lorebook exports</li>
+<li>Character design</li>
+<li>Prompt design</li>
+<li>Runtime behavior
+Define:
+Mandatory Practices
+Recommended Practices
+Practices To Avoid
+Requirements</li>
+</ul>
+<ol>
+<li>Focus on principles, not link summaries.</li>
+<li>Prioritize consensus appearing across multiple sources.</li>
+<li>Separate:
+<ul>
+<li>official guidance</li>
+<li>community guidance</li>
+<li>experimental techniques</li>
+</ul>
+</li>
+<li>Explicitly identify:
+<ul>
+<li>high-confidence practices</li>
+<li>controversial practices</li>
+</ul>
+</li>
+<li>Extract information useful for:
+<ul>
+<li>JanitorAI</li>
+<li>SillyTavern</li>
+<li>SvartulfrVerse bot generation</li>
+<li>SvartulfrVerse lorebook generation</li>
+</ul>
+</li>
+<li>Create a document designed for long-term use.</li>
+<li>Avoid platform-specific temporary trends.</li>
+<li>Favor durable design principles.
+Output
+Create:
+knowledge/JANITORAI_AND_ROLEPLAY_BEST_PRACTICES.md
+Return:</li>
+</ol>
+<ul>
+<li>sources analyzed</li>
+<li>major themes discovered</li>
+<li>sections created</li>
+<li>recommendations for future expansion
+Goal
+Create the definitive reference document for bot quality, lorebook quality, prompt quality and roleplay quality within SvartulfrVerse, replacing the need to repeatedly consult dozens of external guides.
+<strong>User</strong> : dammi un prompt per fargli convertire quei file in una knoledge
+<strong>Gemini</strong> : Se vuoi trasformare documenti come:</li>
+<li>BOT_EXPORT_SPECIFICATION.md</li>
+<li>BOT_SEARCH_SPECIFICATION.md</li>
+<li>ENGINE_SPECIFICATION.md</li>
+<li>LOREBOOK_SPECIFICATION.md</li>
+<li>VALIDATION_PIPELINE_SPECIFICATION.md
+in una  <strong>Knowledge Source operativa</strong>  invece che in semplici specifiche tecniche, darei questo task a Code:</li>
+</ul>
+<pre><code class="language-text">Task: Convert Technical Specifications Into Knowledge Sources
+
+Context
+
+The repository contains several technical specifications that were originally written as implementation and architecture documents.
+
+These specifications are valuable but are not optimized for use as project knowledge sources by future chats, prompt generation workflows, engine design sessions, bot creation sessions, lorebook creation sessions, or repository audits.
+
+Objective
+
+Analyze the existing specification documents and create knowledge-oriented versions designed for long-term consultation.
+
+Target Documents
+
+- BOT_EXPORT_SPECIFICATION.md
+- BOT_SEARCH_SPECIFICATION.md
+- ENGINE_SPECIFICATION.md
+- LOREBOOK_SPECIFICATION.md
+- VALIDATION_PIPELINE_SPECIFICATION.md
+
+Transformation Goal
+
+Do NOT rewrite the original documents.
+
+Do NOT replace the specifications.
+
+Instead create companion knowledge documents that explain:
+
+- what the specification means
+- why it exists
+- how it should be used
+- common implementation patterns
+- common mistakes
+- practical examples
+
+The resulting documents should be optimized for:
+
+- future project chats
+- prompt generation
+- engine implementation planning
+- bot creation workflows
+- lorebook creation workflows
+- validation workflows
+
+Output Location
+
+knowledge/
+
+Required Deliverables
+
+1. ENGINE_KNOWLEDGE_GUIDE.md
+
+Explain:
+
+- engine architecture
+- engine responsibilities
+- engine boundaries
+- authority ownership
+- engine interaction flow
+- common implementation mistakes
+- future implementation guidance
+
+---
+
+2. BOT_EXPORT_KNOWLEDGE_GUIDE.md
+
+Explain:
+
+- JanitorAI exports
+- SillyTavern exports
+- Generic JSON exports
+
+For each:
+
+- required fields
+- optional fields
+- source ownership
+- export flow
+- validation requirements
+
+Include examples and anti-patterns.
+
+Based on:
+BOT_EXPORT_SPECIFICATION.md
+
+
+---
+
+3. BOT_SEARCH_KNOWLEDGE_GUIDE.md
+
+Explain:
+
+- bot discovery
+- bot indexing
+- metadata strategy
+- searchability
+- tags
+- categorization
+
+Include:
+
+Best Practices
+Common Mistakes
+Optimization Recommendations
+
+Based on:
+BOT_SEARCH_SPECIFICATION.md
+
+
+---
+
+4. LOREBOOK_KNOWLEDGE_GUIDE.md
+
+Explain:
+
+- lorebook architecture
+- trigger design
+- keyword design
+- token optimization
+- source attribution
+- canon-layer management
+
+Include:
+
+Best Practices
+Anti-Patterns
+Optimization Guidelines
+
+Based on:
+LOREBOOK_SPECIFICATION.md
+and BOT_SEARCH_SPECIFICATION.md
+
+
+---
+
+5. VALIDATION_KNOWLEDGE_GUIDE.md
+
+Explain:
+
+- validation philosophy
+- validation categories
+- validation workflow
+- PASS/WARNING/FAIL interpretation
+
+Convert technical validation rules into an operational checklist.
+
+---
+
+6. IMPLEMENTATION_PATTERNS.md
+
+Extract recurring patterns from all specifications.
+
+Include:
+
+- recommended workflows
+- reusable patterns
+- implementation order
+- dependency mapping
+- traceability patterns
+
+This document should become the practical handbook for future implementation work.
+
+Requirements
+
+1. Preserve alignment with:
+   - ADR-000 → ADR-006
+   - R-000 → R-009
+   - Repository Governance
+   - Repository Scope
+
+2. Do not modify the original specifications.
+
+3. Treat specifications as authoritative.
+
+4. Knowledge guides are explanatory layers only.
+
+5. Include:
+   - Best Practices
+   - Common Mistakes
+   - Anti-Patterns
+   - Examples
+
+6. Prefer operational guidance over technical repetition.
+
+Output
+
+Create all knowledge guides under:
+
+knowledge/
+
+Return:
+
+- documents created
+- specification → knowledge mapping
+- reusable patterns discovered
+- recommendations for future knowledge sources
+
+Goal
+
+Transform technical specifications into reusable project knowledge sources that future chats can consume directly without re-reading the underlying specifications.
+
+</code></pre>
+<p>Questo approccio crea un vero  <strong>Knowledge Layer</strong>  sopra le specifiche, lasciando le specifiche come documenti normativi e usando i guide come fonti da caricare nel progetto.</p>

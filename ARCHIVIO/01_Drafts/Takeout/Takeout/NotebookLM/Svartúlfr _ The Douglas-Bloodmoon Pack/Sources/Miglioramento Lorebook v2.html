@@ -1,0 +1,109 @@
+<p><strong>User</strong> : migliora questo lorebook basandoti su queste guide: https://fcgod.github.io/JanitorAI-Scripts-Centralized-Repository/GuideBookSite/book/index.html https://help.janitorai.com/en/article/advanced-lorebook-by-icehellionx-peps4q/ https://help.janitorai.com/en/article/emotion-engine-by-icehellionx-1fhy8xp/ https://help.janitorai.com/en/article/action-social-reaction-engine-by-icehellionx-lnomag/ https://help.janitorai.com/en/article/random-encounter-by-icehellionx-arucex/ https://help.janitorai.com/en/article/likes-dislikes-fears-engine-by-icehellionx-19z33zi/ https://help.janitorai.com/en/article/scene-orchestrator-engine-by-icehellionx-11kkuql/ https://help.janitorai.com/en/article/general-debugging-script-by-arcanox-lo8xqc/ https://help.janitorai.com/en/article/basic-weighted-random-events-by-arcanox-1ai4r15/
+<strong>Gemini</strong> : Ho analizzato il tuo AdvancedLorebook_Engine.js. La base è già strutturata bene: contiene gestione di priorità, blocchi, requisiti, shift, probabilità e stato persistente.
+Ho applicato una revisione orientata ai sistemi descritti nelle guide che hai indicato: separazione dei moduli, attivazione condizionale, memoria di stato, eventi pesati, reazioni sociali/emotive e orchestrazione della scena. I pattern principali usati nelle guide puntano proprio a evitare lorebook statici troppo pesanti, preferendo attivazioni dinamiche, cascata di eventi e gestione dello stato narrativo.  Inoltre ho mantenuto l&#39;approccio a trigger e condizioni perché i lorebook funzionano principalmente come sistemi di inserimento contestuale attivati da chiavi e condizioni.
+Modifiche introdotte nella versione v2:</p>
+<ul>
+<li><strong>Feature Toggle System</strong>
+<ul>
+<li>attiva/disattiva facilmente:
+<ul>
+<li>lorebook core</li>
+<li>emotion engine</li>
+<li>social reaction engine</li>
+<li>random events</li>
+<li>scene orchestrator</li>
+<li>cascading triggers</li>
+<li>debug</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Emotion Engine</strong>
+<ul>
+<li>aggiunta una memoria emotiva interna:
+<ul>
+<li>trust</li>
+<li>affection</li>
+<li>fear</li>
+<li>anger</li>
+<li>curiosity</li>
+</ul>
+</li>
+<li>ogni entry può modificare lo stato emotivo.</li>
+</ul>
+</li>
+<li><strong>Action / Social Reaction Engine</strong>
+<ul>
+<li>predisposto per reagire ad azioni dell&#39;utente tramite keyword.</li>
+<li>permette di modificare relazioni e comportamento senza caricare tutto il carattere.</li>
+</ul>
+</li>
+<li><strong>Random Encounter Engine</strong>
+<ul>
+<li>eventi con peso probabilistico.</li>
+<li>esempio:
+<ul>
+<li>incontro casuale</li>
+<li>evento narrativo</li>
+<li>interruzione scena.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Scene Orchestrator</strong>
+<ul>
+<li>predisposizione per gestire stati scena:
+<ul>
+<li>neutral</li>
+<li>tension</li>
+<li>combat</li>
+<li>romance</li>
+<li>investigation</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Cascade Lore</strong>
+<ul>
+<li>una entry può richiamarne altre tramite triggers.</li>
+</ul>
+</li>
+<li><strong>Debug Mode</strong>
+<ul>
+<li>utile per verificare cosa viene attivato durante i test.</li>
+</ul>
+</li>
+<li><strong>Struttura più modulare</strong>
+<ul>
+<li>separazione fra:
+<ul>
+<li>configurazione</li>
+<li>stato</li>
+<li>lore entries</li>
+<li>eventi</li>
+<li>motore di esecuzione
+Ho creato il file aggiornato:
+<a href="about:invalid#zCSafez">Scarica AdvancedLorebook_Engine_v2.js</a>
+Nota: questa è una revisione dell&#39;engine, non ancora il tuo lorebook narrativo specifico. Per completarlo al livello delle guide servirebbe anche convertire le tue singole entry del mondo/personaggi nel nuovo formato:</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-js">{
+ id:&quot;&quot;,
+ keywords:[],
+ priority:10,
+ probability:1,
+ emotions:{
+   trust:0,
+   fear:0
+ },
+ scene:&quot;&quot;,
+ personality:&quot;&quot;,
+ scenario:&quot;&quot;,
+ triggers:[]
+}
+
+</code></pre>
+<p>Se mi fornisci il lorebook completo (personaggi, fazioni, ambientazione, regole, eventi), posso convertirlo direttamente in questa architettura.</p>

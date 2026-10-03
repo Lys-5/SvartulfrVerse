@@ -1,0 +1,42 @@
+{
+  "id": "_nfnLQgmj11V2pmMzGV7Tq",
+  "_id": "_nfnLQgmj11V2pmMzGV7Tq",
+  "lexicon_species_id": null,
+  "lexicon_occupation_id": null,
+  "created_at": "2026-09-29T02:29:37.790Z",
+  "updated_at": "2026-09-29T02:29:37.790Z",
+  "name": "Ironhorn Nomads Motorcycle Club",
+  "keys": [
+    "Ironhorn Nomads",
+    "Ironhorn Nomads MC",
+    "Nomads MC"
+  ],
+  "key_logic": "AND_ANY",
+  "secondary_keys": [
+    "biker",
+    "club",
+    "Oni",
+    "Marek",
+    "Barrow",
+    "Naperville"
+  ],
+  "case_sensitive": false,
+  "whole_words_only": true,
+  "content": "A powerful, outlaw motorcycle club founded by Blue and Red Oni alongside other demi-human outlanders post-Veilfall. Headquartered in Naperville with branches across the Midwest, the Nomads operate as a fiercely loyal brotherhood that rejects human prejudice, dominating interstate trade corridors, heavy mechanic workshops, and high-tier black-market fencing under leaders like President Niran and Enforcer Marek.",
+  "extensions": {},
+  "enabled": true,
+  "insertion_order": 0,
+  "priority": 30,
+  "comment": "",
+  "constant": false,
+  "position": "before_char",
+  "scan_persona": false,
+  "labels": [],
+  "custom_fields": {},
+  "related_entries": [],
+  "avatar": "",
+  "custom_avatar_regex": false,
+  "lines_parsed": 2,
+  "type": "organization/faction",
+  "is_global": true
+}

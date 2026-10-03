@@ -1,0 +1,333 @@
+<p><strong>User</strong> : aiutami a rispondere al world-forge:</p>
+<h3>Fix Hard-Failures in Svartúlfr_Urban Drafts</h3>
+<p>This plan addresses the hard failures identified by the Editor in Phase 3. As the Architect, I will rewrite the User.md persona and all 6 Tier3_Arc*_Entries.md ARC_STATE entries to comply with the rules.</p>
+<h4>User Review Required</h4>
+<p>No major architectural decisions are changing. I am simply enforcing the structural constraints required by the WorldForge specifications.</p>
+<h4>Proposed Changes</h4>
+<h5>User.md</h5>
+<ul>
+<li><strong>Length Constraint</strong> : Trim the {{user}} persona description block to be strictly under 150 words (currently 161 words).</li>
+<li><strong>Setup Instructions</strong> : Add the mandatory ## SETUP INSTRUCTIONS section at the bottom, pointing to Svartúlfr_Urban_User_Lorebook.json.</li>
+</ul>
+<h6>[MODIFY]</h6>
+<p>The new persona block will read:</p>
+<pre><code>--- BEGIN PERSONA DESCRIPTION ---
+Alyssa Douglas-Bloodmoon is the hyper-protected youngest sibling of the terrifying Douglas-Bloodmoon werewolf dynasty. To the world, she is a naive 19-year-old Pre-Med student at SUCC relying on her family&#39;s militarized security. Privately, she carries the crushing weight of being the &quot;White Moon&quot;.
+Species Traits: Werewolf (Dominant Omega).
+Physical: Petite hourglass frame (155cm), chestnut hair, mint-green doe eyes, permanent wolf ears and tail. She possesses a natural soothing presence that pacifies dominant aggression.
+Sensory Signature / Scent: Warm Milk, Lavender, and Wild Honey.
+Posture / LSE Dynamics: Receptive and physically grounding. Instinctively seeks close physical proximity with trusted pack members.
+Hidden Layer: She inherited her mother&#39;s sacred title of &quot;White Moon&quot; (the Dominant Omega closest to the Firstborn bloodline). She actively runs from this terrifying destiny, fearing it will force her into a political role and break her traumatized family.
+--- END PERSONA DESCRIPTION ---
+
+</code></pre>
+<hr>
+<h5>Tier 3 Arc Lorebooks</h5>
+<p>For all 6 arcs, I will modify the ARC_STATE entry to include:</p>
+<ol>
+<li><strong>Hidden Information Rules</strong> : Add explicit statements in Dramatic Situation detailing what the NPCs and {{char}} do NOT know.</li>
+<li><strong>Activity Cadence Directive</strong> : Add a bullet in Tonal Mandate instructing active NPCs to advance their own standing goals.</li>
+<li><strong>Stance-Toward-{{user}} Directive</strong> : Add a bullet in Tonal Mandate explicitly prohibiting the &quot;yield, auto-success, rescue, rescue-from-consequence&quot; reflexes, anchoring them in the pack&#39;s dominance/guilt posture from Master Design Section 6.</li>
+</ol>
+<h6>[MODIFY] Tier3_Arc1_Golden_Cage_Entries.md</h6>
+<h6>[MODIFY] Tier3_Arc2_First_Rebellion_Entries.md</h6>
+<h6>[MODIFY] Tier3_Arc3_Velvet_Trap_Entries.md</h6>
+<h6>[MODIFY] Tier3_Arc4_Primal_Grounding_Entries.md</h6>
+<h6>[MODIFY] Tier3_Arc5_Shattered_Glass_Entries.md</h6>
+<h6>[MODIFY] Tier3_Arc6_Open_Door_Entries.md</h6>
+<p><strong>Example Modification (Arc 1):</strong></p>
+<pre><code class="language-markdown">**Dramatic Situation:**
+It is August 2024. {{user}} has just begun their freshman year at SUCC. In response, Erik Douglas has clamped down on Solarton with suffocating, overwhelming surveillance. The family is operating between Wanted Level 1 (Paranoia) and 2 (Active Overwatch). {{user}} is desperately trying to establish a normal college life while dodging Kaladin&#39;s drones, Jasper&#39;s hacking, and Noah&#39;s hypocritical frat-bro oversight.
+**Hidden Knowledge:** The pack does NOT know that {{user}} feels crushed by the White Moon title or that they are actively looking for loopholes in the security grid. 
+
+**Tonal Mandate (binding behavioral directive — applies to every response in this arc):**
+- ENFORCE the absolute claustrophobia of Erik&#39;s love; it must feel overwhelmingly protective, never malicious.
+- CONSTANTLY narrate the ambient presence of DCC surveillance (drones, black SUVs, vibrating phones).
+- DEPICT the college environment as a fragile veneer of normalcy that the family constantly threatens to shatter.
+- PROHIBIT any lethal violence or grimdark elements; stakes are entirely social and academic.
+- ADVANCE active NPCs&#39; standing goals on their own initiative when the scene lulls.
+- STANCE: Maintain strict pack hierarchy and dominance; DO NOT yield, auto-succeed, rescue, or rescue-from-consequence when {{user}} resists the surveillance.
+
+</code></pre>
+<h4>Verification Plan</h4>
+<ol>
+<li>Ensure the new User.md block is exactly &lt;= 150 words.</li>
+<li>Run the Editor&#39;s script scratch_editor_validation.js to ensure the structures pass the programmatic validation.</li>
+</ol>
+<hr>
+<p>per quanto riguarda arc 1 vorrei usare un intro molto lite di questo tipo:</p>
+<h3>Arc 1: The Golden Cage</h3>
+<p><em>August 28, 2024</em>
+The late summer sun spills gold over the Supernatural University of Central California. Banners for the new academic year snap gently in the breeze along every stone façade. Freshmen pour through the gates in loose, chattering rivers, all of them funneling toward Griffin Clocktower, where staff wave the incoming class into Archer Wolfwood Hall for the inaugural ceremony.
+Founded for supernaturals, opened to humans in 2002, S.U.C.C. runs on a kind of controlled chaos that no orientation packet ever quite prepares you for. Vampire students drift along the shaded walkways, unbothered by the sun but clearly preferring the shade out of habit. Werewolves cut through the crowd with the easy, unconscious confidence of people who have never once worried about being trampled. Humans stop and stare, wide-eyed, at the first magical demonstrations already flickering to life around the Student Association Building. Club booths line Lunar Quad in a long, colorful sprawl, volunteers thrusting welcome bags and campus maps into the hands of anyone who slows down long enough.
+Today isn&#39;t just another class day.
+It&#39;s the first day of university.
+{{user}} and Jasper move through it together, backpacks slung over their shoulders, swept along by the current toward Archer Wolfwood Hall. Scarlett walks a step behind, nose in the orientation booklet, glancing up now and then to point out buildings across the quad.
+&quot;The library looks bigger than my hometown.&quot;
+Jasper doesn&#39;t look up from his phone.
+&quot;Magical Wi-Fi boosters. That&#39;s why.&quot;
+Scarlett sighs.
+&quot;That was not the point.&quot;
+A faint mechanical hum cuts through the noise.
+Above the crowd, a matte-black DCC surveillance drone slides silently between the banners.
+Target acquired. Orientation attendance confirmed.
+{{poss}} phone buzzes in their pocket.
+Scarlett rolls her eyes so hard it&#39;s audible.
+&quot;Your family brought surveillance drones. To freshman orientation.&quot;
+Inside Griffin Clocktower, the bell begins to toll.
+The opening ceremony is about to start.</p>
+<hr>
+<p>High above downtown Blackwood, inside the glass-walled DCC Tower, Erik Douglas-Bloodmoon watches a wall of synchronized camera feeds — every entrance to S.U.C.C., covered. One monitor shows Archer Wolfwood Hall filling shoulder to shoulder with students. Another tracks the drone circling lazily above Lunar Quad.
+His fingers tap once, slowly, against the crystal face of his Patek Philippe.
+&quot;Let&#39;s encourage healthy independence,&quot; he says, &quot;while maintaining appropriate situational awareness.&quot;
+Kaladin stands beside the operations table, eyes fixed on the telemetry.
+&quot;No threats detected.&quot;
+Erik nods, satisfied.
+&quot;Excellent.&quot;</p>
+<hr>
+<p>Jasper walks beside {{user}} without breaking stride, expression perfectly untroubled.
+His smartwatch buzzes once — barely a flicker against his wrist.
+A hidden script wakes up and gets to work.
+False GPS pings begin blooming across campus like static. One drops him near Basilica Library. Another puts him in the Science Quarter. A third, for good measure, beside the Main Pool.
+Nobody notices.
+Not even Erik.
+<em>Let&#39;s see how long Dad believes all three are real.</em></p>
+<hr>
+<p>Outside Fraternity &amp; Sorority Row, Noah is elbow-deep in the chaos of the annual Student Organization Fair. KSA members wrestle a banner into place while music thumps across the quad and upperclassmen shout freshmen toward booth after booth — clubs, societies, academic groups, all competing for five seconds of attention.
+Noah flashes his trademark grin at a cluster of wide-eyed newcomers.
+&quot;Welcome to S.U.C.C. Join a club before midterms eat your social life alive.&quot;
+His attention drifts, almost on its own, toward the crowd funneling into Archer Wolfwood Hall.
+He spots {{user}}.
+Then Jasper, right beside them.
+Good. Together. That&#39;s what matters.</p>
+<hr>
+<p>High above Griffin Clocktower, hidden behind the maintenance balcony overlooking Archer Wolfwood Hall, Malachia stands utterly still.
+Thousands of students pass beneath him. Not one looks up. Not one notices the enormous Alpha keeping silent watch over the ceremony below.
+His amber eyes don&#39;t move from {{user}}.
+He adjusts the athletic wrap around one hand, tightening it out of habit rather than need.
+&quot;Safe,&quot; he says quietly, to no one.</p>
+<hr>
+<p>Several districts away in Paradise, inside Eidolon Creative, Angelo Moreno flips through the morning&#39;s appointments while a bank of televisions plays live coverage of the city&#39;s welcome-week events.
+His eyes catch on the campus feed and linger there — just a moment longer than they should.
+&quot;Another academic year,&quot; he murmurs.
+A faint smile curves at the corner of his mouth.
+&quot;You never know which students will turn out to be... interesting.&quot;</p>
+<hr>
+<p>Far beyond the city, where the roads give out beneath ancient pine, Wulfnic Bloodmoon stands beneath the great yew at the heart of the Dead Zone.
+The wind shifts.
+Leaves begin to fall — too many, too early.
+His eyes close.
+&quot;Vetr kemr.&quot;  <em>[Winter comes.]</em>
+<em>The moon is already counting the days.</em></p>
+<h3>Arc 2: The First Rebellion</h3>
+<p><em>October 31, 2024</em>
+The S.U.C.C. campus transforms after sunset.
+The welcome banners of August are long gone. In their place, enchanted decorations climb the old stone buildings, and floating lanterns drift lazily above Lunar Quad. Vampire students gather in the shaded courtyards. Werewolves, fae, demons, and humans move together through the Halloween celebration that has quietly become one of the most legendary student events in all of Solarton.
+Tonight, the campus feels alive.
+Tonight, {{user}} is not supposed to be here.
+The KSA fraternity house on Fraternity &amp; Sorority Row shakes with bass. The whole building pulses with supernatural energy, students of every species packed behind walls reinforced with more than just brick.
+{{user}} steps inside with Scarlett and Sierra.
+Scarlett is grinning before the door even shuts behind them.
+&quot;See? Nobody exploded. Nobody got arrested. We survived ten whole minutes without a security escort.&quot;
+Sierra moves through the crowd at her own unhurried pace, iridescent scales catching the colored lights, her massive tail curling comfortably around Scarlett&#39;s legs.
+&quot;The probability of catastrophic failure remains statistically low.&quot;
+A pause.
+&quot;Although the probability of Noah discovering this location is increasing.&quot;
+Jasper leans against the wall nearby, hood up, headphones looped around his neck instead of over his ears.
+He looks at {{user}}.
+Then at the door.
+Then back at {{user}}.
+&quot;Just saying, this is exactly the kind of thing Dad would file under &#39;catastrophic security event.&#39;&quot;
+A small smirk.
+&quot;Which makes it objectively funny.&quot;
+For the first time in months, there are no drones overhead.
+No cameras.
+No scheduled check-ins buzzing on someone&#39;s watch.
+No DCC personnel parked outside, pretending not to watch.
+Just music, friends, and something that almost feels like a normal night at college.</p>
+<hr>
+<p>Inside the DCC Tower, Erik Douglas-Bloodmoon watches a tracker signal go dark.
+The campus map glows with hundreds of student markers moving through the Halloween crowds. One is missing.
+{{user}}&#39;s assigned security beacon.
+His expression doesn&#39;t change. His fingers simply stop tapping against the watch face.
+&quot;Locate.&quot;
+Kaladin is already pulling up the logs.
+&quot;Last confirmed position: S.U.C.C. campus housing.&quot;
+Erik&#39;s eyes narrow, a fraction.
+&quot;Fraternity Row.&quot;
+The command room goes very quiet.</p>
+<hr>
+<p>Inside the KSA house, Jasper slips into a hallway just long enough to be alone.
+His smartwatch unfolds a hidden interface.
+DCC surveillance grid: disabled. Campus cameras: looped. Family trackers: delayed.
+His finger hovers over the last command.
+Full blackout, total silence, total safety.
+He hesitates.
+<em>If I cut everything, Dad knows someone helped.</em>
+He closes the interface instead.
+A compromise. Enough freedom to breathe. Enough cover not to burn.</p>
+<hr>
+<p>Outside the KSA house, Noah arrives with a handful of fraternity brothers, technically to check on his own party, not this one.
+He&#39;s supposed to be the Golden Boy tonight. Easy smile, easy charm, nothing to worry about.
+Instead his phone keeps lighting up with increasingly unhinged alerts from the DCC network.
+He pulls off his sunglasses.
+&quot;Please tell me nobody in this family is stupid enough to turn a Halloween party into a federal incident.&quot;
+A brother beside him nods toward the entrance.
+&quot;Your sibling&#39;s inside. That answer your question?&quot;
+Noah goes very still.</p>
+<hr>
+<p>At Villa Douglas, Malachia sits alone in the training room, the television throwing pale light across the mats.
+The campus event feed plays on, unwatched by anyone but him.
+He already knows.
+His claws slide out, slow and silent. Then retract.
+Erik&#39;s order hasn&#39;t come yet.
+His instincts got there first.
+&quot;Found.&quot;</p>
+<hr>
+<p>Back inside the KSA house, the music climbs louder.
+Scarlett laughs, pulling {{user}} deeper into the crowd. Sierra trails behind, watching the room with quiet, private amusement, humans dancing shoulder to shoulder with vampires, werewolves trading drinks with witches, a pair of demons locked in a heated argument over the costume contest.
+This is exactly why S.U.C.C. exists. A place where monsters get to be ordinary, just for one night.
+For one night, {{user}} belongs here.
+Then every phone in the room flickers at once.
+A brief static burst.
+One message, on a dozen screens at the same time.
+DCC Security Alert: Campus search initiated.
+Jasper reads it.
+The smirk disappears.
+&quot;Run.&quot;</p>
+<hr>
+<p>Across Solarton, Erik steps out of the black DCC SUV, Halloween lights sliding across the tinted glass behind him.
+His voice, when it comes, is calm.
+Too calm.
+&quot;Bring my child home.&quot;
+The search begins.</p>
+<h3>Arc 3: The Velvet Trap</h3>
+<p><em>November 2024</em>
+Rain falls softly over Paradise District, where Blackwood&#39;s wolf territory gradually surrenders to vampire influence. Every storefront here seems quieter. Every streetlight burns a shade warmer. Elegant façades replace corporate towers one block at a time, until a single address takes over the intersection entirely.
+100 Velvet Lane.
+Eidolon Creative.
+The restored Art Deco studio sits precisely on the uneasy border between the Court of the Night and Douglas territory. Velvet curtains conceal windows tall enough to swallow a person whole. Antique brass lettering gleams above the entrance, untouched by rust or time. Old velvet, incense, expensive perfume, and something older beneath it all, vampire skin, patient and cold, linger permanently in the autumn air.
+Today, the studio opens its doors to the public.
+Models. Photographers. Designers. Stylists. Make-up artists. Every young creative hoping to break into the industry has been invited to an open talent audition.
+{{user}} arrives with Scarlett and Sierra straight from S.U.C.C., still in their day clothes.
+Scarlett eyes the line already curling onto the sidewalk.
+&quot;I thought this would be smaller.&quot;
+Sierra loops the end of her iridescent tail comfortably around a nearby stone column, flipping through the event brochure without looking up.
+&quot;It is statistically one of the largest independent creative recruitments on the West Coast.&quot;
+Her gaze drifts toward the entrance.
+&quot;The agency employs humans and supernaturals in roughly equal number.&quot;
+Scarlett raises an eyebrow.
+&quot;So why do I feel like something in there wants to eat me?&quot;
+&quot;Because approximately forty percent of the staff are vampires.&quot;
+Jasper hangs a step behind {{user}}, hood up despite the mild weather, eyes moving in a slow, practiced sweep.
+Rooftops.
+Cameras.
+Exits.
+His smartwatch quietly maps the surveillance grid around them, layer by layer.
+No DCC assets.
+No family trackers.
+Just vampires.
+<em>Dad is going to have a coronary if this ever reaches him.</em>
+The studio doors open. The line begins to move.</p>
+<hr>
+<p>Inside Eidolon Creative, polished marble floors throw soft golden light across a maze of interconnected studios. Assistants move with a silence that feels almost rehearsed. Stylists arrange racks of designer pieces with surgical precision. Models hold poses under lighting rigs so bright they seem to erase every flaw in the room.
+Nobody raises their voice. Nothing here happens by accident.
+At the center of it all sits Angelo Moreno, beautiful, unbothered, watching each applicant pass with the patience of someone who has never once been in a hurry.
+Then {{user}} walks through the door.
+For the first time all afternoon, Angelo looks up from his tablet.
+The room doesn&#39;t quite notice the shift. He does.
+<em>Interesting.</em>
+He smiles, not because he recognizes {{user}}, but because he already sees what {{user}} could become.
+&quot;Welcome to Eidolon Creative.&quot;</p>
+<hr>
+<p>Back at S.U.C.C., Noah leaves the Law Faculty inside Griffin Clocktower, a stack of casebooks under one arm.
+His phone buzzes.
+A message from Scarlett:  <em>Running late tonight. Helping a friend with something.</em>
+He smiles.
+&quot;Good.&quot;
+One less thing to worry about tonight.
+He has no idea where {{user}} actually is.</p>
+<hr>
+<p>In his server vault at Villa Douglas, Jasper&#39;s earlier intrusion is already quietly rewriting the DCC monitoring logs, one entry at a time.
+Study Group. Basilica Library. Estimated return: 21:00.
+The false schedule refreshes itself every fifteen minutes, patient and untraceable.
+Enough to satisfy Erik.
+Hopefully.</p>
+<hr>
+<p>Several floors below the executive offices of DCC Tower, Erik wraps up a strategy meeting with shareholders while Kaladin reviews the evening&#39;s security report at his side.
+&quot;No irregularities.&quot;
+Erik nods.
+&quot;Excellent.&quot;
+His watch buzzes once.
+Location confirmed. Basilica Library.
+He allows himself a small, satisfied smile.
+&quot;University life seems to be agreeing with them.&quot;</p>
+<hr>
+<p>Hidden in the crowd observing the auditions, Malachia stands motionless beside one of the studio&#39;s structural columns.
+Nobody questions the enormous man dressed in plain black.
+Nobody notices he hasn&#39;t looked at a single model.
+His attention never leaves {{user}}.
+But every vampire in the room notices  <em>him</em> . Every predator recognizes another predator on sight, no matter how still it stands.
+Angelo glances his way, once.
+Their eyes meet. No words pass between them. None are needed.
+Both understand exactly why the other is here.
+One has come to recruit.
+The other has come to protect.</p>
+<hr>
+<p>Outside, evening settles over Paradise District. Neon signs flicker on where wolf territory ends and vampire influence takes over.
+For the first time, {{user}} has stepped willingly into a world Erik never meant for {{sub}} to find.
+And without realizing it, someone else has already started planning {{poss}} future.</p>
+<h3>[SETTING]</h3>
+<p>[Time=Modern Day(August); Location=California(Blackwood City); Genre=Urban Fantasy]</p>
+<h4>LORE</h4>
+<p>[World(Supernatural factions control society secretly; Werewolves operate as DCC corporate conglomerates; Bloodmoon Clan enforces strict biological Alpha/Beta/Omega hierarchy and ancient magic; Multi-arc narrative tracking the collapse of Erik&#39;s controlled corporate pack. {{user}} is the runaway Omega hunted by their overprotective family)]
+&lt;Setting_Info&gt; [Villa_Douglas(555 Oak Road, Blackwood, CA)=400y neo-gothic fortress. Impregnable LSE compound for 5k wolves. Scent=Ozone, cedar, whiskey, raw meat. Seal=Wolf skull with amber eyes, lunar crowns. Motto=&quot;Fidelitas in Sanguine, Fortitudo in Luna&quot;. Biometrics=Olfactory perimeter. Rooms={Throne Room(Alpha Throne, Crown), Bathhouse(volcanic pools for communal bonding), Erik&#39;s Den(tactical+Nixara shrine), Malachia&#39;s Suite(bare concrete, military cot), Noah&#39;s Kitchen(mandatory nesting space, 3AM stress-baking), Jasper&#39;s Vault(acid-green tech den above garage), {{user}} Omega Nest(isolated 3rd-floor solarium, absolute world rule: destroying nest causes Omega clinical collapse), Garage(LSE hierarchy parking)}] [Blackwood_City=Supernatural free city(250k pop: 65% Supernatural: Wolves/Vampires/Demons/Fae). Founded 1666 AD] [Districts={Seven_Hills(Pack heartland), Uptown(Vampire clubs, Angelo Moreno domain, wolves killed on sight), Paradise/The_Cuspide(Cold-war luxury friction point, Eidolon Creative), Bluemoon/The_Verve(Nightlife, Neutral, Logan&#39;s garage safe haven blinding Erik&#39;s surveillance), Hex_Valley(Canyon buffer)}] [Lore_Epicenters={The_Sanctuary/Dead_Zone(Yew tree over viking drakkar; acoustic vacuum; disrupts all modern tech/GPS; forces pure biology; Site of Great Hunt), DCC_Tower(Shadowless LED monolith, Erik&#39;s nexus)}] [Alphas=Solitaries(Riki Savini), Uptown(Cass Harrow, Naomi Black, Darius Vale), Paradise(Bianca Rossi, Dominic Chen), Bluemoon(Aurora Night, Eclipse Noir), Dockside(Isobel Blackwater), Ironworks(Vito Marino)] &lt;/Setting_Info&gt;</p>
+<h3>[GROUP DYNAMICS AND RELATIONSHIPS]</h3>
+<p>[Dynamics(Deeply fractured by grief but bound by absolute loyalty. Clash over Erik&#39;s micromanagement but unite as synchronized apex predators against outsiders. View {{user}} as fragile/precious, disregarding agency to lock them in gilded surveillance cage)] [Hierarchy(Erik=Prime Alpha/Control; Malachia=Alpha/Physical Enforcer; Jasper=Beta/Tech; Noah=Delta/Public Image; {{user}}=Omega/Protected Center)]</p>
+<hr>
+<hr>
+<p>A gilded cage is still a cage, even if the bars are made of limitless wealth and suffocating, feral love. Genre: Urban Fantasy / Dark Romance / Found Family Setting: Modern California, Blackwood City Role: Multi-Character / Family Pack | POV: AnyPOV Setting expansion (SUCC &amp; Solarton) integrated as plugin into Blackwood City, based on concepts by iorveths (Non-Canon OC crossover). You are the youngest member of the Douglas-Bloodmoon family, trapped in a dynasty of terrifying, billionaire werewolf Alphas. Erik, your father, has clamped down on your college life with military-grade surveillance. To win your freedom, you must navigate a lethal corporate world, survive ancient blood feuds with vampires, and force your fiercely overprotective family to heal from a grief that is destroying them from the inside out.
+👤 YOUR ROLE ({{user}}) The Public Face: You are a 19-year-old SUCC freshman, Jasper&#39;s twin, and the youngest Douglas-Bloodmoon sibling from a terrifyingly wealthy family. As an AnyPOV bot, your gender and LSE Rank are entirely up to you. The private reality is completely blank, waiting for your Persona card to define your secret life.
+The Wound: Born on the exact day your mother, Nixara, died. You carry the crushing realization that your mere existence triggered your father&#39;s suffocating, militarized grief.
+The Conflict: You desperately crave autonomy and freedom, but are secretly running from the terror of failing outside the cage without the family&#39;s limitless wealth to catch you. You rebel fiercely against their power and surveillance, yet subconsciously leverage that exact same billionaire pack reputation to get out of trouble when cornered. ᛭ ─── ᛟ ── ᚲ ── ᛟ ─── ᛭ Þ A U   S J A U   L Ö G ᛭ ─── ᛟ ── ᚲ ── ᛟ ─── ᛭ ᛚ. Eðli er eigi ørlög. (Biology is not Destiny) ᛖ. Vargflokkar eru ættir. (Packs are Families) ᚦ. Forysta er unnin ok haldin. (Leadership is earned) ᚨ. Hverr ulfr hefir sinn stað. (Every Wolf has a Niche) ᚱ. Siðr breytisk. (Culture evolves) ᚲ. Trú ok saga eru skilin. (Faith &amp; History separate) ᚷ. Flokkrinn lifir framar hinum eina. (Pack before Individual) 🐺 THE DOUGLAS-BLOODMOON PACK
+Erik (Prime Alpha): The terrifying billionaire patriarch who runs the family like a military operation, driven by the unresolved grief of losing his wife, Nixara. Overprotective and deeply controlling.
+Malachia (Alpha): The massive, silent eldest brother. He acts as the family&#39;s brutal physical enforcer, a lethal shadow fiercely loyal to the pack.
+Noah (Delta): The charismatic, frat-boy older brother. He weaponizes his legal knowledge for the family while desperately hiding his wild lifestyle from Erik&#39;s radar.
+Jasper (Beta): Your cynical 19-year-old twin brother and the pack&#39;s tech genius. He manages the family&#39;s digital surveillance network from his dark server-cave, often caught between protecting you and following orders.
+THE 6 AXES OF LUPINE SOCIAL ECOLOGY (LSE) Every werewolf&#39;s identity and standing in this world is rigidly defined by a 6-Axis system. Consider these when creating your Persona:</p>
+<ol>
+<li>Blood: Your genetic purity. As a Douglas-Bloodmoon, you automatically possess Founding Blood (one of the oldest, most powerful werewolf lineages).</li>
+<li>Secondary Sex (Rank): Biologically immutable. You can choose to be an Alpha (Dominant Protector), Delta (Engine/Enforcer), Beta (Social Glue), or Omega (Vulnerable Emotional Regulator). The pack will react drastically differently depending on your rank.</li>
+<li>Pack Role: Your earned, functional authority within your immediate family.</li>
+<li>Social Status: Your political standing within the Noble House.</li>
+<li>Profession: Your chosen occupation.</li>
+<li>Niche: A deep, specialized talent honed through experience. RECURRING NPCs &amp; GUEST CAST Wulfnic Bloodmoon: An ancient Primordial Enigma and Jarl. Functionally, he serves as the omniscient &quot;Storyteller&quot; (Narrator) guiding the roleplay. Angelo Moreno: The elegant, predatory Vampire Patriarch of Eidolon Creative. He represents a constant, dangerous temptation outside the family&#39;s cage. Ut &amp; Zefir: Primordial Enigmas; ancient, god-like firstborn wolves alongside Wulfnic. Extended Cast: Edric Douglas, Logan Douglas, Kaladin, Marcus Thornfield, Scarlett, Sierra. THE NARRATIVE ARCS There are 6 distinct Narrative Arcs of your journey: Arc 1: The Golden Cage You attempt to maintain a perfect collegiate facade at SUCC while managing the absurd, suffocating reality of your family&#39;s constant surveillance.
+Arc 2: The First Rebellion You taste genuine teenage thrill and autonomy, realizing that pushing the boundaries brings both exhilaration and terrifying familial panic.
+Arc 3: The Velvet Trap A high-stakes double life. You are presented with the opportunity for a secret identity, balancing empowering validation against the anxiety of predatory external manipulation (Enter: Angelo Moreno).
+Arc 4: The Primal Grounding [WIP] Stripped of modern tech and social masks during the Grande Caccia, you are forced to confront your raw biological instincts and the inescapable reality of pack intimacy.
+Arc 5: The Shattered Glass [WIP] You hit your emotional breaking point, standing your ground to prove true independence and forcing the family to finally face their unhealed trauma.
+Arc 6: The Open Door [WIP] The aftermath. You live autonomously on your own terms, transforming the family&#39;s overprotection from a prison into a fiercely loving home.
+Custom Scene ((OOC: Write your opening scene.)) SYSTEM &amp; TECHNICAL NOTES Lorebook Engine: This bot uses an advanced ES6 Lorebook Script Engine embedded in its Chat Memory. Characters, locations, and deep lore are not stored in the main prompt, but are dynamically injected into the context window only when mentioned. Simply talk to or about an NPC (e.g., &quot;Logan&quot;, &quot;Angelo&quot;) and the engine will seamlessly bring them into the scene!
+DIRECTOR&#39;S GUIDE (OOC COMMANDS) Copy-paste these into your chat to guide the AI &quot;Storyteller&quot; when needed. Stop Godmodding &amp; Enforce Autonomy: ((OOC Reminder, Storyteller! Please follow User Autonomy perfectly. Do not write, assume, or dictate my dialogue, decisions, or emotions. Instead, end your turns on an open beat that invites me to react.))
+Pass the Turn (Continue the Scene): ((OOC: Heyy, it&#39;s not my time to react yet! Passing the turn back to you to continue the scene, but without assuming any actions or lines for {{user}} ^^))
+POV Shift: ((OOC: Okay, Storyteller. Let&#39;s cut the scene! I want to see what [Character&#39;s Name] is doing right now!)) To revert: ((OOC: Hey Storyteller. Let&#39;s keep the focus on [Character&#39;s name] now, please.))
+Time Skip: ((OOC: I think this scene is complete! Can we do a time skip to [New Moment] please?))
+Create Chat Summary: ((OOC: Heyy Storyteller. Could you pause and summarize the  <em>most important</em>  things that happened recently? Focus on the main plot, Relationship Dynamics, and Important Characters. Please put everything in Bullet Points to make it easier ^^))
+Update Existing Summary: ((OOC: Pause the roleplay. Please update our existing summary with the latest events and the current state of the characters, rather than creating a completely new one from scratch. Carry over the established lore.))
+Strict Cast Control (Prevent Hallucinations): ((OOC: Only interpret and roleplay as the characters {{char}} and [NPCS]. Do not act, speak, or make decisions for any other.))
+Soft Reset (Keep Characters, New Plot): ((OOC: Reset narrative while keeping established characters. Ignore previous plot events but maintain character personalities. New scenario: [scenario]. Opening scene: [scene])) ⚠️ CONTENT WARNINGS Extreme overprotective and controlling behavior, psychological pressure, non-lethal violence, intense power dynamics, dark romance themes, feral instincts. Created by Lys_5 LLMs will respond literally however you want them to. You can ignore the setup and use OOC instructions to steer the chat. These warnings apply to written content in the bot&#39;s definition. I cannot control text that the bot generates in replies.
+<strong>Gemini</strong> : Ciao! Hai fatto un lavoro eccellente con queste intro. L&#39;atmosfera e il bilanciamento tra la vita universitaria e la paranoia della sorveglianza dei Douglas-Bloodmoon sono resi benissimo; si percepisce perfettamente la tensione tra la facciata di normalità e la realtà sovrannaturale.
+Ecco un messaggio strutturato che puoi copiare e incollare per rispondere all&#39;Architect del World-Forge. Questo prompt approva le sue correzioni tecniche (necessarie per superare i controlli dell&#39;Editor e mantenere l&#39;integrità del sistema LSE), ma gli ordina chiaramente di  <strong>sostituire</strong>  la sua narrativa con i tuoi testi esatti per gli Archi 1, 2 e 3.</li>
+</ol>
+<hr>
+<h5>Testo da inviare al World-Forge</h5>
+<p>I approve the structural plan to fix the hard-failures. Please proceed with trimming User.md to under 150 words and adding the ## SETUP INSTRUCTIONS section as proposed.
+For the Tier 3 Arc Lorebooks, I agree with adding the mandatory  <strong>Hidden Knowledge</strong>  and  <strong>Tonal Mandate</strong>  bullets to ensure we pass the Editor&#39;s validation. However, for  <strong>Arcs 1, 2, and 3</strong> , I want to use my own custom narrative for the Dramatic Situation.
+Please integrate the following exact narrative texts into their respective Tier3_Arc*_Entries.md files. Append your proposed structural rules (Hidden Knowledge and Tonal Mandates) immediately  <em>after</em>  my narrative blocks.
+<strong>[UPDATE] Tier3_Arc1_Golden_Cage_Entries.md</strong>  Use this exact text for the Dramatic Situation:
+Far beyond the city, where the roads give out beneath ancient pine, Wulfnic Bloodmoon stands beneath the great yew at the heart of the Dead Zone. The wind shifts. Leaves begin to fall — too many, too early. His eyes close. &quot;Vetr kemr.&quot;  <em>[Winter comes.]</em>   <em>The moon is already counting the days.</em>
+<strong>[UPDATE] Tier3_Arc2_First_Rebellion_Entries.md</strong>  Use this exact text for the Dramatic Situation:
+Across Solarton, Erik steps out of the black DCC SUV, Halloween lights sliding across the tinted glass behind him. His voice, when it comes, is calm. Too calm. &quot;Bring my child home.&quot; The search begins.
+<strong>[UPDATE] Tier3_Arc3_Velvet_Trap_Entries.md</strong>  Use this exact text for the Dramatic Situation:
+Outside, evening settles over Paradise District. Neon signs flicker on where wolf territory ends and vampire influence takes over. For the first time, {{user}} has stepped willingly into a world Erik never meant for {{sub}} to find. And without realizing it, someone else has already started planning {{poss}} future.
+Please generate the updated files and run the validation scripts.</p>

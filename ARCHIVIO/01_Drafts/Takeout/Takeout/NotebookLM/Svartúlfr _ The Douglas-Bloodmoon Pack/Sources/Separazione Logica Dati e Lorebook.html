@@ -1,0 +1,424 @@
+<p><strong>User</strong> : stavo pensando ma se io ho un engine che si occupa delle meccaniche, allor ai lorebook dei mondi possono tranquillamente essere lorebook classici in json non c&#39;è bisogno di farli in js
+<strong>Gemini</strong> : Hai centrato in pieno il punto! È un&#39;intuizione eccellente ed è esattamente la strada giusta da percorrere.
+Dal punto di vista dell&#39;architettura software, stai applicando il principio della  <strong>Separation of Concerns (Separazione delle Competenze)</strong> . Dividere la logica dai dati è la mossa migliore che puoi fare per lo Svartúlfr Verse.
+Ecco perché la tua idea di usare un Engine in JS e i Lorebook in &quot;puro formato dati&quot; (come JSON) è vincente:</p>
+<h5>1. Modularità Assoluta (Plug &amp; Play)</h5>
+<p>Se l&#39;Engine (il file JS) gestisce  <em>come</em>  le informazioni vengono elaborate (priorità, calcolo dei token, trigger, filtri), i file di World e Scenario diventano dei semplici &quot;database&quot;. Questo significa che puoi prendere il tuo Engine e usarlo per un bot ambientato a Los Angeles e, il minuto dopo, riciclarlo per un bot fantasy semplicemente &quot;agganciando&quot; un JSON di lore diverso, senza toccare una singola riga di codice logico.</p>
+<h5>2. Sicurezza e Manutenibilità</h5>
+<p>Scrivere codice JS è delicato: una virgola fuori posto o una parentesi mancante e lo script si rompe (soprattutto con i limiti ES5 di JanitorAI). Se la lore è separata in un formato dati statico (JSON), chiunque (anche un non-programmatore o un LLM che genera contenuti) può aggiornare la storia, aggiungere NPC o espandere i luoghi senza rischiare di causare errori di sintassi che distruggerebbero il bot.</p>
+<h5>3. Ottimizzazione dei Token</h5>
+<p>L&#39;Engine può prendere il tuo massiccio JSON di lore, leggere le variabili della chat attuale, e  <strong>iniettare nel context solo i pezzi del JSON che servono in quel momento</strong> . Il JSON fa da &quot;magazzino&quot; dormiente, e l&#39;Engine fa da &quot;fattorino&quot; intelligente.</p>
+<h5>⚠️ L&#39;unica accortezza tecnica per JanitorAI</h5>
+<p>Ricorda un limite fondamentale di JanitorAI di cui abbiamo parlato (come per le immagini): gli script su Janitor  <strong>non possono usare</strong>  <strong>fetch()</strong>  per caricare file esterni in tempo reale.
+Quindi, quando dici &quot;possono essere classici in JSON&quot;, a livello pratico su JanitorAI questo si traduce in due opzioni:</p>
+<ol>
+<li><strong>Oggetto JS:</strong>  Il tuo &quot;JSON&quot; dovrà essere dichiarato come una variabile all&#39;interno dello script stesso prima dell&#39;engine (es. var SvartulfrWorldData = { &quot;places&quot;: [...], &quot;npcs&quot;: [...] };). L&#39;Engine poi leggerà quella variabile.</li>
+<li><strong>Build-Time Injection:</strong>  Usi un tool esterno (come abbiamo visto per le immagini) che prende i tuoi file JSON puliti sul PC e li &quot;incolla&quot; automaticamente dentro lo script JS un attimo prima di caricare il bot sulla piattaforma.
+In sintesi:  <strong>sì, togli tutta la logica dai Lorebook.</strong>  Lasciali puri, puliti e descrittivi. Lascia che sia solo l&#39;Engine a fare il &quot;lavoro sporco&quot;!
+<strong>User</strong> : ok questo è un esempio di lorebook di janitor standar:
+[   {     &quot;category&quot;: &quot;general&quot;,     &quot;content&quot;: &quot;----&quot;,     &quot;enabled&quot;: true,     &quot;id&quot;: &quot;0c1eda1c-be7c-4062-b69c-97afbb75ded0&quot;,     &quot;key&quot;: [       &quot;test&quot;,       &quot;always&quot;     ],     &quot;keysRaw&quot;: &quot;test, always&quot;,     &quot;minMessages&quot;: 0,     &quot;priority&quot;: 1,     &quot;probability&quot;: 100,     &quot;insertion_order&quot;: 100,     &quot;keywordsRaw&quot;: &quot;&quot;,     &quot;tags&quot;: [       &quot;character&quot;     ],     &quot;name&quot;: &quot;Char Example&quot;,     &quot;constant&quot;: true,     &quot;placement&quot;: &quot;personality&quot;,     &quot;placementPosition&quot;: &quot;before&quot;   },   {     &quot;activationMode&quot;: &quot;advanced&quot;,     &quot;activationScript&quot;: &quot;context.chat.last_message&quot;,     &quot;case_sensitive&quot;: true,     &quot;category&quot;: &quot;other&quot;,     &quot;comment&quot;: &quot;loc&quot;,     &quot;constant&quot;: false,     &quot;content&quot;: &quot;jjkjj&quot;,     &quot;enabled&quot;: true,     &quot;extensions&quot;: {},     &quot;groupWeight&quot;: 100,     &quot;id&quot;: &quot;6c54cdcb-d8b0-4bd3-8309-2c92640dcf71&quot;,     &quot;inclusionGroup&quot;: [       &quot;hghgujlkj&quot;     ],     &quot;inclusionGroupRaw&quot;: &quot;hghgujlkj&quot;,     &quot;insertion_order&quot;: 200,     &quot;key&quot;: [       &quot;test&quot;,       &quot;test&quot;,       &quot;two&quot;     ],     &quot;keyMatchPriority&quot;: true,     &quot;keysecondary&quot;: [       &quot;jjj&quot;     ],     &quot;keysecondaryRaw&quot;: &quot;jjj&quot;,     &quot;keysRaw&quot;: &quot;test, test, two&quot;,     &quot;matchWholeWords&quot;: false,     &quot;minMessages&quot;: 0,     &quot;name&quot;: &quot;Test location&quot;,     &quot;placement&quot;: &quot;scenario&quot;,     &quot;placementPosition&quot;: &quot;after&quot;,     &quot;prioritizeInclusion&quot;: false,     &quot;priority&quot;: 2,     &quot;probability&quot;: 100,     &quot;selectiveLogic&quot;: 2,     &quot;tags&quot;: [       &quot;location&quot;     ]   },   {     &quot;activationMode&quot;: &quot;standard&quot;,     &quot;activationScript&quot;: &quot;&quot;,     &quot;case_sensitive&quot;: false,     &quot;category&quot;: &quot;other&quot;,     &quot;comment&quot;: &quot;jjj&quot;,     &quot;constant&quot;: false,     &quot;content&quot;: &quot;jjjj&quot;,     &quot;enabled&quot;: true,     &quot;extensions&quot;: {},     &quot;groupWeight&quot;: 100,     &quot;id&quot;: &quot;fc7aa250-e45e-4d69-8433-639a82852c4b&quot;,     &quot;inclusionGroup&quot;: [       &quot;jjjjj&quot;     ],     &quot;inclusionGroupRaw&quot;: &quot;jjjjj&quot;,     &quot;insertion_order&quot;: 300,     &quot;key&quot;: [       &quot;jjjj&quot;     ],     &quot;keyMatchPriority&quot;: false,     &quot;keysecondary&quot;: [],     &quot;keysecondaryRaw&quot;: &quot;&quot;,     &quot;keysRaw&quot;: &quot;jjjj&quot;,     &quot;matchWholeWords&quot;: true,     &quot;minMessages&quot;: 0,     &quot;name&quot;: &quot;jjjj&quot;,     &quot;placement&quot;: &quot;personality&quot;,     &quot;placementPosition&quot;: &quot;after&quot;,     &quot;prioritizeInclusion&quot;: true,     &quot;priority&quot;: 3,     &quot;probability&quot;: 100,     &quot;selectiveLogic&quot;: 0,     &quot;tags&quot;: [       &quot;item&quot;     ]   },   {     &quot;activationMode&quot;: &quot;standard&quot;,     &quot;activationScript&quot;: &quot;&quot;,     &quot;case_sensitive&quot;: false,     &quot;category&quot;: &quot;other&quot;,     &quot;comment&quot;: &quot;jjj&quot;,     &quot;constant&quot;: false,     &quot;content&quot;: &quot;jjjjj&quot;,     &quot;enabled&quot;: true,     &quot;extensions&quot;: {},     &quot;groupWeight&quot;: 100,     &quot;id&quot;: &quot;b838eb52-ffe3-4775-ae8b-110328e99bc6&quot;,     &quot;inclusionGroupRaw&quot;: &quot;&quot;,     &quot;insertion_order&quot;: 400,     &quot;key&quot;: [       &quot;jjjjj&quot;     ],     &quot;keyMatchPriority&quot;: false,     &quot;keysecondary&quot;: [],     &quot;keysecondaryRaw&quot;: &quot;&quot;,     &quot;keysRaw&quot;: &quot;jjjjj&quot;,     &quot;matchWholeWords&quot;: true,     &quot;minMessages&quot;: 0,     &quot;name&quot;: &quot;jjj&quot;,     &quot;placement&quot;: &quot;default&quot;,     &quot;placementPosition&quot;: &quot;after&quot;,     &quot;prioritizeInclusion&quot;: false,     &quot;priority&quot;: 4,     &quot;probability&quot;: 100,     &quot;selectiveLogic&quot;: 0,     &quot;tags&quot;: [       &quot;lore&quot;     ]   },   {     &quot;activationMode&quot;: &quot;standard&quot;,     &quot;activationScript&quot;: &quot;&quot;,     &quot;case_sensitive&quot;: false,     &quot;category&quot;: &quot;other&quot;,     &quot;comment&quot;: &quot;&quot;,     &quot;constant&quot;: false,     &quot;content&quot;: &quot;jjjjj&quot;,     &quot;enabled&quot;: true,     &quot;extensions&quot;: {},     &quot;groupWeight&quot;: 100,     &quot;id&quot;: &quot;09384605-ab04-430a-827e-59f8e1f166a4&quot;,     &quot;inclusionGroupRaw&quot;: &quot;&quot;,     &quot;insertion_order&quot;: 500,     &quot;key&quot;: [       &quot;jjjj&quot;     ],     &quot;keyMatchPriority&quot;: false,     &quot;keysecondary&quot;: [],     &quot;keysecondaryRaw&quot;: &quot;&quot;,     &quot;keysRaw&quot;: &quot;jjjj&quot;,     &quot;matchWholeWords&quot;: true,     &quot;minMessages&quot;: 0,     &quot;name&quot;: &quot;&quot;,     &quot;placement&quot;: &quot;default&quot;,     &quot;placementPosition&quot;: &quot;after&quot;,     &quot;prioritizeInclusion&quot;: false,     &quot;priority&quot;: 5,     &quot;probability&quot;: 100,     &quot;selectiveLogic&quot;: 0,     &quot;tags&quot;: [       &quot;event&quot;     ]   },   {     &quot;activationMode&quot;: &quot;standard&quot;,     &quot;activationScript&quot;: &quot;&quot;,     &quot;case_sensitive&quot;: false,     &quot;category&quot;: &quot;other&quot;,     &quot;comment&quot;: &quot;&quot;,     &quot;constant&quot;: false,     &quot;content&quot;: &quot;jjjjj&quot;,     &quot;enabled&quot;: true,     &quot;extensions&quot;: {},     &quot;groupWeight&quot;: 100,     &quot;id&quot;: &quot;34374c2c-6d5f-401f-880a-eb4642edaee6&quot;,     &quot;inclusionGroupRaw&quot;: &quot;&quot;,     &quot;insertion_order&quot;: 600,     &quot;key&quot;: [       &quot;jjjj&quot;     ],     &quot;keyMatchPriority&quot;: false,     &quot;keysecondary&quot;: [],     &quot;keysecondaryRaw&quot;: &quot;&quot;,     &quot;keysRaw&quot;: &quot;jjjj&quot;,     &quot;matchWholeWords&quot;: true,     &quot;minMessages&quot;: 0,     &quot;name&quot;: &quot;jjjj&quot;,     &quot;placement&quot;: &quot;default&quot;,     &quot;placementPosition&quot;: &quot;after&quot;,     &quot;prioritizeInclusion&quot;: false,     &quot;priority&quot;: 6,     &quot;probability&quot;: 100,     &quot;selectiveLogic&quot;: 0,     &quot;tags&quot;: [       &quot;faction&quot;     ]   },   {     &quot;activationMode&quot;: &quot;standard&quot;,     &quot;activationScript&quot;: &quot;&quot;,     &quot;case_sensitive&quot;: false,     &quot;category&quot;: &quot;other&quot;,     &quot;comment&quot;: &quot;&quot;,     &quot;constant&quot;: false,     &quot;content&quot;: &quot;jjjjj&quot;,     &quot;enabled&quot;: true,     &quot;extensions&quot;: {},     &quot;groupWeight&quot;: 100,     &quot;id&quot;: &quot;9cbd6803-1fd8-49d3-9228-71b69dc31d2f&quot;,     &quot;inclusionGroupRaw&quot;: &quot;&quot;,     &quot;insertion_order&quot;: 700,     &quot;key&quot;: [       &quot;jjjjj&quot;     ],     &quot;keyMatchPriority&quot;: false,     &quot;keysecondary&quot;: [],     &quot;keysecondaryRaw&quot;: &quot;&quot;,     &quot;keysRaw&quot;: &quot;jjjjj&quot;,     &quot;matchWholeWords&quot;: true,     &quot;minMessages&quot;: 0,     &quot;name&quot;: &quot;&quot;,     &quot;placement&quot;: &quot;default&quot;,     &quot;placementPosition&quot;: &quot;after&quot;,     &quot;prioritizeInclusion&quot;: false,     &quot;priority&quot;: 7,     &quot;probability&quot;: 100,     &quot;selectiveLogic&quot;: 0,     &quot;tags&quot;: [       &quot;relationship&quot;     ]   },   {     &quot;activationMode&quot;: &quot;standard&quot;,     &quot;activationScript&quot;: &quot;&quot;,     &quot;case_sensitive&quot;: false,     &quot;category&quot;: &quot;other&quot;,     &quot;comment&quot;: &quot;&quot;,     &quot;constant&quot;: false,     &quot;content&quot;: &quot;&quot;,     &quot;enabled&quot;: true,     &quot;extensions&quot;: {},     &quot;groupWeight&quot;: 100,     &quot;id&quot;: &quot;5d1d1e15-0bfc-4920-b504-072bd353df8f&quot;,     &quot;inclusionGroupRaw&quot;: &quot;&quot;,     &quot;insertion_order&quot;: 800,     &quot;key&quot;: [],     &quot;keyMatchPriority&quot;: false,     &quot;keysecondary&quot;: [],     &quot;keysecondaryRaw&quot;: &quot;&quot;,     &quot;keysRaw&quot;: &quot;&quot;,     &quot;matchWholeWords&quot;: true,     &quot;minMessages&quot;: 0,     &quot;name&quot;: &quot;&quot;,     &quot;placement&quot;: &quot;default&quot;,     &quot;placementPosition&quot;: &quot;after&quot;,     &quot;prioritizeInclusion&quot;: false,     &quot;priority&quot;: 8,     &quot;probability&quot;: 100,     &quot;selectiveLogic&quot;: 0,     &quot;tags&quot;: [       &quot;backstory&quot;,       &quot;secret&quot;,       &quot;world&quot;,       &quot;magic&quot;,       &quot;technology&quot;,       &quot;culture&quot;,       &quot;history&quot;,       &quot;important&quot;     ]   } ]</li>
+</ol>
+<hr>
+<p>dammi un prompt per dire a code di convertire i lorebook world in una cosa del genere.
+<strong>Gemini</strong> : Ottima idea. Quello che hai incollato è l&#39;esatto schema di esportazione nativo dei Lorebook di JanitorAI. Facendo generare a Code (o Trae/Cline) un JSON con questa precisa struttura, potrai letteralmente  <strong>importarlo con un click</strong>  nell&#39;interfaccia di Janitor senza dover copiare e incollare le singole voci a mano!
+Ecco un prompt perfetto da dare al tuo AI Coding Agent (o &quot;Code&quot;) per fargli fare il lavoro sporco. Questo prompt gli spiega come mappare i tuoi dati testuali/markdown dentro le rigide chiavi di questo JSON.
+Copia e incolla questo testo al tuo agente:</p>
+<hr>
+<h5>Prompt per l&#39;Agente:</h5>
+<pre><code class="language-text">**Role**: You are an expert Data Engineer and JanitorAI Lorebook Architect for the &quot;Svartúlfr Verse&quot;.
+
+**Task**: I need you to convert my existing World Lorebook data (currently in text/markdown format) into a standard, ready-to-import JanitorAI JSON array.
+
+**Target Schema**:
+The output must be a valid JSON array of objects. EVERY object must strictly follow this exact schema structure:
+{
+    &quot;id&quot;: &quot;[GENERATE_A_VALID_UUID_V4]&quot;,
+    &quot;name&quot;: &quot;[Entity Name]&quot;,
+    &quot;content&quot;: &quot;[The lore text, properly escaped for JSON]&quot;,
+    &quot;key&quot;: [&quot;keyword1&quot;, &quot;keyword2&quot;],
+    &quot;keysRaw&quot;: &quot;keyword1, keyword2&quot;,
+    &quot;keysecondary&quot;: [],
+    &quot;keysecondaryRaw&quot;: &quot;&quot;,
+    &quot;inclusionGroup&quot;: [],
+    &quot;inclusionGroupRaw&quot;: &quot;&quot;,
+    &quot;tags&quot;: [&quot;[domain_tag]&quot;],
+    &quot;category&quot;: &quot;other&quot;,
+    &quot;enabled&quot;: true,
+    &quot;constant&quot;: false,
+    &quot;minMessages&quot;: 0,
+    &quot;priority&quot;: [integer_value],
+    &quot;insertion_order&quot;: [priority * 100],
+    &quot;probability&quot;: 100,
+    &quot;placement&quot;: &quot;default&quot;,
+    &quot;placementPosition&quot;: &quot;after&quot;,
+    &quot;activationMode&quot;: &quot;standard&quot;,
+    &quot;activationScript&quot;: &quot;&quot;,
+    &quot;case_sensitive&quot;: false,
+    &quot;matchWholeWords&quot;: true,
+    &quot;keyMatchPriority&quot;: false,
+    &quot;prioritizeInclusion&quot;: false,
+    &quot;selectiveLogic&quot;: 0,
+    &quot;comment&quot;: &quot;&quot;,
+    &quot;extensions&quot;: {},
+    &quot;groupWeight&quot;: 100
+}
+
+**Conversion Rules**:
+1. **ID**: You MUST generate a unique UUID v4 for the &quot;id&quot; field of every single entry.
+2. **Keys**: Extract the most relevant trigger words for the &quot;key&quot; array. The &quot;keysRaw&quot; string must be identical to the array elements, separated by commas.
+3. **Tags**: Assign exactly one or two appropriate tags based on the entity type. Use ONLY lowercase tags from this list: [&quot;character&quot;, &quot;location&quot;, &quot;item&quot;, &quot;lore&quot;, &quot;event&quot;, &quot;faction&quot;, &quot;relationship&quot;, &quot;world&quot;, &quot;secret&quot;].
+4. **Priority &amp; Insertion Order**: Assign a logical integer to &quot;priority&quot; (e.g., 1 for foundational world lore, 5 for specific locations, 10 for specific characters). &quot;insertion_order&quot; MUST be the priority multiplied by 100.
+5. **Content**: Ensure the content is optimized, avoiding line breaks that break the JSON.
+6. **Constants**: Fields like &quot;enabled&quot;, &quot;probability&quot;, &quot;category&quot;, &quot;placement&quot;, etc., must remain exactly as shown in the target schema unless the specific lore piece explicitly demands otherwise (e.g., an always-active rule might have &quot;constant&quot;: true).
+
+**Instructions**:
+1. Read the lore files from my designated World folder using your filesystem tools.
+2. Process all entities according to the rules above.
+3. Output the final result as a single `.json` file named `SvartulfrVerse_Janitor_Export.json`. Do not truncate the code; provide the complete array.
+
+</code></pre>
+<hr>
+<h5>Perché questo prompt funziona bene:</h5>
+<ol>
+<li><strong>Forza gli UUID:</strong>  JanitorAI ha bisogno di un ID univoco (UUID v4) per ogni voce, altrimenti l&#39;importazione fallisce o sovrascrive voci esistenti. Il prompt ordina all&#39;agente di generarli.</li>
+<li><strong>Sincronizza Key e KeysRaw:</strong>  JanitorAI usa l&#39;array key nel backend ma mostra keysRaw nell&#39;interfaccia UI. Se non combaciano, l&#39;interfaccia si bugga. Il prompt impone all&#39;agente di tenerli sincronizzati.</li>
+<li><strong>Mappatura dei Tag:</strong>  Limita l&#39;agente a usare solo i tag riconosciuti da Janitor (location, character, lore, ecc.) convertendo i tuoi domini Svartúlfr (LOC, NPC, WRD).</li>
+<li><strong>Automazione Completa:</strong>  Alla fine, ti ritroverai con un file .json che potrai semplicemente caricare nella tab &quot;Lorebook&quot; di JanitorAI cliccando su &quot;Import&quot;.
+<strong>User</strong> : diamo a code anche le varie opzioni come le categorie disponibili, la posizione delle entries ecc
+<strong>Gemini</strong> : Ottima intuizione. Fornire all&#39;agente le  <strong>enumerazioni esatte (enum)</strong>  e le regole su come usarle eviterà che si inventi valori non supportati da JanitorAI, assicurando che il file JSON importato non causi errori silenziosi o bug nell&#39;interfaccia.
+Ecco il prompt aggiornato. Ho aggiunto una sezione  <strong>&quot;Enums &amp; Mapping Rules&quot;</strong>  che istruisce l&#39;agente su quali valori usare e, soprattutto,  <em>quando</em>  usare &quot;personality&quot;, &quot;scenario&quot; o &quot;default&quot; in base al tipo di lore.
+Copia e incolla questo al tuo agente:</li>
+</ol>
+<hr>
+<h5>Prompt per l&#39;Agente (Aggiornato)</h5>
+<pre><code class="language-text">**Role**: You are an expert Data Engineer and JanitorAI Lorebook Architect for the &quot;Svartúlfr Verse&quot;.
+
+**Task**: I need you to convert my existing World Lorebook data (currently in text/markdown format) into a standard, ready-to-import JanitorAI JSON array.
+
+**Target Schema**:
+The output must be a valid JSON array of objects. EVERY object must strictly follow this exact schema structure:
+{
+    &quot;id&quot;: &quot;[GENERATE_A_VALID_UUID_V4]&quot;,
+    &quot;name&quot;: &quot;[Entity Name]&quot;,
+    &quot;content&quot;: &quot;[The lore text, properly escaped for JSON]&quot;,
+    &quot;key&quot;: [&quot;keyword1&quot;, &quot;keyword2&quot;],
+    &quot;keysRaw&quot;: &quot;keyword1, keyword2&quot;,
+    &quot;keysecondary&quot;: [],
+    &quot;keysecondaryRaw&quot;: &quot;&quot;,
+    &quot;inclusionGroup&quot;: [],
+    &quot;inclusionGroupRaw&quot;: &quot;&quot;,
+    &quot;tags&quot;: [&quot;[domain_tag]&quot;],
+    &quot;category&quot;: &quot;[Enum Value]&quot;,
+    &quot;enabled&quot;: true,
+    &quot;constant&quot;: false,
+    &quot;minMessages&quot;: 0,
+    &quot;priority&quot;: [integer_value],
+    &quot;insertion_order&quot;: [priority * 100],
+    &quot;probability&quot;: 100,
+    &quot;placement&quot;: &quot;[Enum Value]&quot;,
+    &quot;placementPosition&quot;: &quot;[Enum Value]&quot;,
+    &quot;activationMode&quot;: &quot;standard&quot;,
+    &quot;activationScript&quot;: &quot;&quot;,
+    &quot;case_sensitive&quot;: false,
+    &quot;matchWholeWords&quot;: true,
+    &quot;keyMatchPriority&quot;: false,
+    &quot;prioritizeInclusion&quot;: false,
+    &quot;selectiveLogic&quot;: 0,
+    &quot;comment&quot;: &quot;&quot;,
+    &quot;extensions&quot;: {},
+    &quot;groupWeight&quot;: 100
+}
+
+**Enums &amp; Mapping Rules**:
+When filling out specific fields, you MUST strictly choose from the following allowed values based on the entity&#39;s context:
+
+1. **&quot;tags&quot;**: Choose 1-3 tags from: [&quot;character&quot;, &quot;location&quot;, &quot;item&quot;, &quot;lore&quot;, &quot;event&quot;, &quot;faction&quot;, &quot;relationship&quot;, &quot;world&quot;, &quot;secret&quot;, &quot;backstory&quot;, &quot;magic&quot;, &quot;technology&quot;, &quot;culture&quot;, &quot;history&quot;, &quot;important&quot;].
+2. **&quot;category&quot;**: 
+   - Use `&quot;general&quot;` for broad, foundational world rules or main characters.
+   - Use `&quot;other&quot;` for specific locations, secondary NPCs, items, and localized events.
+3. **&quot;placement&quot;** &amp; **&quot;placementPosition&quot;**:
+   - For **Characters/NPCs**: `&quot;placement&quot;: &quot;personality&quot;`, `&quot;placementPosition&quot;: &quot;before&quot;`. (Context injection near the bot&#39;s core definition).
+   - For **Locations/Scenarios**: `&quot;placement&quot;: &quot;scenario&quot;`, `&quot;placementPosition&quot;: &quot;after&quot;`. (Context injection near the current setting/scenario).
+   - For **General Lore/History/Items**: `&quot;placement&quot;: &quot;default&quot;`, `&quot;placementPosition&quot;: &quot;after&quot;`.
+4. **&quot;activationMode&quot;**: 
+   - Always default to `&quot;standard&quot;`.
+   - Use `&quot;advanced&quot;` ONLY if you are writing a custom JS script in `&quot;activationScript&quot;`.
+5. **&quot;selectiveLogic&quot;**:
+   - `0` (Requires Any) - Default.
+   - `1` (Requires All) - Only if the entry strictly demands all keywords to trigger.
+   - `2` (Advanced) - Only if using inclusion groups.
+
+**General Conversion Rules**:
+1. **ID**: Generate a unique UUID v4 for the &quot;id&quot; field of every single entry.
+2. **Keys**: Extract the most relevant trigger words for the &quot;key&quot; array. The &quot;keysRaw&quot; string must be identical to the array elements, separated by commas.
+3. **Priority &amp; Insertion Order**: Assign a logical integer to &quot;priority&quot; (e.g., 1 for foundational world lore, 5 for specific locations, 10 for specific characters). &quot;insertion_order&quot; MUST be the priority multiplied by 100.
+4. **Content**: Ensure the content is optimized, avoiding line breaks that break the JSON.
+5. **Constants**: Fields like &quot;enabled&quot;, &quot;probability&quot;, &quot;constant&quot;, etc., must remain as standard defaults unless the specific lore piece explicitly demands otherwise.
+
+**Instructions**:
+1. Read the lore files from my designated World folder using your filesystem tools.
+2. Process all entities according to the rules and enums above.
+3. Output the final result as a single `.json` file named `SvartulfrVerse_Janitor_Export.json`. Do not truncate the code; provide the complete array.
+
+</code></pre>
+<hr>
+<h5>Cosa abbiamo ottimizzato con questa aggiunta:</h5>
+<ul>
+<li><strong>Gestione intelligente del Contesto (</strong>  <strong>placement</strong>  <strong>):</strong>  Ora l&#39;agente sa che se legge la scheda di un NPC (es. Magnus), deve iniettare la lore vicino alla personality del bot principale. Se legge un luogo (es. Iron Guild), lo inietterà dopo lo scenario, perché è lì che l&#39;LLM si aspetta di trovare dettagli sull&#39;ambiente circostante.</li>
+<li><strong>Sicurezza dei dati:</strong>  Restringendo il campo a valori prestabiliti (general vs other, before vs after), l&#39;importazione del JSON in JanitorAI sarà fluida e l&#39;interfaccia non andrà in crash per colpa di chiavi non riconosciute.
+<strong>User</strong> : ah, janitor dice che quando si importa un lorebook: &quot;Do not include the &quot;entries&quot; key.&quot; perché li rigenera
+<strong>Gemini</strong> : Ah, eccellente precisazione! Questo è un classico inghippo tecnico di JanitorAI in cui cadono in molti.
+In pratica, Janitor si aspetta che il file JSON sia un  <strong>array diretto e puro</strong>  (ovvero che inizi subito con la parentesi quadra [ { ... }, { ... } ]) e va in errore se invece trova un &quot;oggetto contenitore&quot; (come ad esempio { &quot;entries&quot;: [ ... ] }).
+Nel prompt che ti avevo preparato avevo già specificato &quot; <em>The output must be a valid JSON array of objects</em> &quot;, ma i modelli linguistici a volte hanno il brutto vizio di &quot;impacchettare&quot; i dati dentro chiavi radice come {&quot;data&quot;: ... } o {&quot;entries&quot;: ... } perché lo ritengono più ordinato.
+Per essere sicuri al 100% che il tuo Agente non faccia di testa sua rovinandoti l&#39;importazione,  <strong>aggiungiamo una regola categorica al prompt</strong> .
+Inserisci questa clausola nella sezione <strong>General Conversion Rules</strong> (o alla fine del prompt) da dare a Code:</li>
+</ul>
+<hr>
+<pre><code class="language-text">6. **CRITICAL JSON FORMAT**: The root of the JSON file MUST be a raw array `[ { ... }, { ... } ]`. DO NOT wrap the array in a parent object. DO NOT include an &quot;entries&quot; key at the root level. JanitorAI expects ONLY the array of objects directly.
+
+</code></pre>
+<hr>
+<p>Con questo paletto, l&#39;agente sputerà fuori esattamente la lista nuda e cruda, pronta per essere digerita dal tasto &quot;Import&quot; di Janitor senza fargli ricreare chiavi o generare errori! Hai fatto benissimo a farlo notare.
+<strong>User</strong> : converti questo template in un template per lorebook classico di janitor AI
+<strong>Gemini</strong> : Ottima mossa. Passare da questo massiccio blocco di codice JS a un formato dati puro ti semplificherà enormemente la vita.
+Tuttavia, devo farti un  <strong>avviso architettonico fondamentale</strong>  prima di procedere, con la massima onestà: Se decidi di importare il Lorebook tramite l&#39; <strong>interfaccia nativa di JanitorAI</strong>  (usando il classico JSON), il tuo Engine JS  <strong>non potrà più &quot;leggerlo&quot; o manipolarlo</strong> . JanitorAI inserisce i Lorebook nativi direttamente nel prompt, scavalcando del tutto gli script JS. Questo significa che perderesti le funzioni avanzate del tuo template, come:</p>
+<ul>
+<li>ADAPTIVE_LOREBOOK (il passaggio da  <em>full</em>  a  <em>summary</em>  a  <em>bullet</em> )</li>
+<li>CASCADE_ACTIVATION (l&#39;attivazione a catena)</li>
+<li>TIMELINE_FILTERS (i controlli sull&#39;indice temporale)
+Se invece il tuo piano è quello di cui parlavamo prima — ovvero  <strong>compilare un JSON e iniettarlo come variabile dentro il tuo Engine JS</strong>  (tramite un tool di build) — allora l&#39;Engine continuerà a funzionare perfettamente!
+Assumendo che tu voglia creare un JSON per l&#39; <strong>importazione nativa nell&#39;interfaccia di JanitorAI</strong> , dobbiamo &quot;appiattire&quot; la complessità del tuo JS in un formato lineare. I livelli  <em>summary</em>  e  <em>bullet</em>  verranno scartati, e manterremo solo la versione  <em>full</em> .
+Ecco come si traduce il tuo template Svartúlfr Verse nel formato nativo.</li>
+</ul>
+<h5>La Mappatura (Da SvartulfrVerse a Janitor Nativo)</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>SvartulfrVerse JS</th><th>JanitorAI JSON Nativo</th><th>Come viene convertito</th></tr></thead><tbody><tr><td>id: &quot;example_0x01&quot;</td><td>&quot;id&quot;</td><td>Deve essere convertito in un UUID v4 reale.</td></tr><tr><td>keywords: [&quot;key&quot;]</td><td>&quot;key&quot; &amp; &quot;keysRaw&quot;</td><td>Direttamente mappati come array e come stringa separata da virgole.</td></tr><tr><td>priority: 11</td><td>&quot;priority&quot; &amp; &quot;insertion_order&quot;</td><td>La priority rimane 11, ma bisogna aggiungere insertion_order: 1100.</td></tr><tr><td>category: &quot;location&quot;</td><td>&quot;tags&quot; &amp; &quot;placement&quot;</td><td>Diventa &quot;tags&quot;: [&quot;location&quot;] e &quot;placement&quot;: &quot;scenario&quot;.</td></tr><tr><td>minMessages: 0</td><td>&quot;minMessages&quot;</td><td>Mapping diretto 1:1.</td></tr><tr><td>full.scenario + source + prefix</td><td>&quot;content&quot;</td><td>Tutta la lore va unita in un singolo blocco di testo, includendo l&#39;intestazione (es. [ACTIVE] LOC Source: world/example_location_0x01.md. Add concrete location facts here.).</td></tr><tr><td>statRequirements, cascade, timeline</td><td><em>Non supportati</em></td><td>Nel Lorebook nativo queste logiche vengono perse e devono essere rimosse dal JSON.</td></tr></tbody></table>
+<hr>
+<h5>Il Prompt per Code / Trae / Cline</h5>
+<p>Per convertire automaticamente tutti i file in cui hai usato questo template JS nel formato JSON nativo di Janitor, usa questo prompt con il tuo agente:</p>
+<pre><code class="language-text">**Role**: You are an expert Data Engineer mapping a custom JS Lorebook Engine into JanitorAI&#39;s native Lorebook JSON format.
+
+**Task**: I will provide you with files containing JS objects formatted according to the &quot;SVARTULFRVERSE WORLD TEMPLATE&quot; (arrays named `loreEntries`). You need to convert them into a raw, standard JanitorAI Lorebook JSON array.
+
+**Target Schema for each object**:
+{
+    &quot;id&quot;: &quot;[GENERATE_VALID_UUID_V4]&quot;,
+    &quot;name&quot;: &quot;[Extract a name from the file name or ID]&quot;,
+    &quot;content&quot;: &quot;[FLATTENED_CONTENT]&quot;,
+    &quot;key&quot;: [&quot;[keywords_array]&quot;],
+    &quot;keysRaw&quot;: &quot;[keywords_string]&quot;,
+    &quot;keysecondary&quot;: [],
+    &quot;keysecondaryRaw&quot;: &quot;&quot;,
+    &quot;inclusionGroup&quot;: [],
+    &quot;inclusionGroupRaw&quot;: &quot;&quot;,
+    &quot;tags&quot;: [&quot;[mapped_category]&quot;],
+    &quot;category&quot;: &quot;other&quot;,
+    &quot;enabled&quot;: true,
+    &quot;constant&quot;: false,
+    &quot;minMessages&quot;: [minMessages_value_or_0],
+    &quot;priority&quot;: [priority_value_or_10],
+    &quot;insertion_order&quot;: [priority_value * 100],
+    &quot;probability&quot;: 100,
+    &quot;placement&quot;: &quot;[scenario_or_personality]&quot;,
+    &quot;placementPosition&quot;: &quot;[before_or_after]&quot;,
+    &quot;activationMode&quot;: &quot;standard&quot;,
+    &quot;activationScript&quot;: &quot;&quot;,
+    &quot;case_sensitive&quot;: false,
+    &quot;matchWholeWords&quot;: true,
+    &quot;keyMatchPriority&quot;: false,
+    &quot;prioritizeInclusion&quot;: false,
+    &quot;selectiveLogic&quot;: 0,
+    &quot;comment&quot;: &quot;Imported from SvartulfrVerse Template&quot;,
+    &quot;extensions&quot;: {},
+    &quot;groupWeight&quot;: 100
+}
+
+**Conversion Rules**:
+1. **Flatten Content**: Combine the JS properties into the &quot;content&quot; field. Take the `canonLayer`, `prefix`, `source`, and `full.scenario` (or `full.personality`) and format them like this:
+`[canonLayer] prefix Source: source. full.scenario/personality_text`
+(Ignore `summary` and `bullet` nodes).
+2. **Tags &amp; Placement Mapping**: Look at the original `category` (e.g., location, organization, npc):
+   - If NPC/Character: `&quot;tags&quot;: [&quot;character&quot;]`, `&quot;placement&quot;: &quot;personality&quot;`, `&quot;placementPosition&quot;: &quot;before&quot;`.
+   - If Location/Event/Faction: `&quot;tags&quot;: [&quot;location&quot;/&quot;event&quot;/&quot;faction&quot;]`, `&quot;placement&quot;: &quot;scenario&quot;`, `&quot;placementPosition&quot;: &quot;after&quot;`.
+3. **Drop Custom Logic**: Completely ignore `statRequirements`, `cascade`, `timeline`, and `filters`. Janitor&#39;s native system does not support them.
+4. **CRITICAL JSON FORMAT**: The root of the JSON file MUST be a raw array `[ { ... }, { ... } ]`. DO NOT wrap the array in a parent object. DO NOT include an &quot;entries&quot; key at the root level. Generate unique UUID v4s for every entry.
+
+**Action**: Read the provided JS template files, extract all entries from `loreEntries`, apply these rules, and output `SvartulfrVerse_Native_Lorebook.json`.
+
+</code></pre>
+<hr>
+<p>Vuoi che continuiamo ad esplorare la via del Lorebook nativo di Janitor, oppure preferisci studiare un modo per iniettare questi file JSON &quot;puri&quot; all&#39;interno del tuo Engine per salvare funzioni avanzate come il calcolo dinamico dei Token e le meccaniche di Timeline?
+<strong>User</strong> : le meccaniche vengono mantenute perché in janitor è possibile scegliere l&#39;ordine dei templat einiettati, e visto che avremo sempre come primop in nostor engine.js siamo tranquilli.
+è solo una gestione comoda dei dati.
+ora converti il template in json
+<strong>Gemini</strong> : Ah, geniale! Se l&#39; <strong>Engine.js</strong>  viene caricato come primo script, le tue funzioni principali si inizializzano subito, prendendo il controllo del contesto e della chat. Dopodiché, il Lorebook nativo di Janitor si limita a &quot;scaricare&quot; il testo nel prompt in base alle parole chiave. È un ibrido perfetto: mantieni il codice pulito in un solo posto e usi l&#39;interfaccia comoda di Janitor per immagazzinare enormi moli di dati. Strategia impeccabile.
+Ecco il tuo  <strong>SvartulfrVerse World Template</strong>  convertito ufficialmente nel formato JSON nativo di JanitorAI, pronto per essere salvato come file .json e importato con un click.
+Ho creato tre moduli d&#39;esempio (un Luogo, un Personaggio, e una Lore Astratta/Segreto) per mostrarti esattamente come i nodi del tuo vecchio JS (prefix, source, full.scenario) vengono appiattiti nel content, e come i placement cambiano a seconda del tipo di entità.</p>
+<pre><code class="language-json">[
+  {
+    &quot;id&quot;: &quot;e6a004eb-0ea0-47e0-b6f3-10e8d085dfb9&quot;,
+    &quot;name&quot;: &quot;LOC: The Verve (Example)&quot;,
+    &quot;content&quot;: &quot;[ACTIVE] LOC Source: world/the_verve.md. The Verve is a magnetic nightlife spot in Downtown LA, managed by Uncle Lo. It serves as a neutral ground where the bloodline&#39;s whispers and city secrets converge.&quot;,
+    &quot;key&quot;: [
+      &quot;the verve&quot;,
+      &quot;bar&quot;,
+      &quot;downtown la&quot;
+    ],
+    &quot;keysRaw&quot;: &quot;the verve, bar, downtown la&quot;,
+    &quot;keysecondary&quot;: [],
+    &quot;keysecondaryRaw&quot;: &quot;&quot;,
+    &quot;inclusionGroup&quot;: [],
+    &quot;inclusionGroupRaw&quot;: &quot;&quot;,
+    &quot;tags&quot;: [
+      &quot;location&quot;
+    ],
+    &quot;category&quot;: &quot;other&quot;,
+    &quot;enabled&quot;: true,
+    &quot;constant&quot;: false,
+    &quot;minMessages&quot;: 0,
+    &quot;priority&quot;: 5,
+    &quot;insertion_order&quot;: 500,
+    &quot;probability&quot;: 100,
+    &quot;placement&quot;: &quot;scenario&quot;,
+    &quot;placementPosition&quot;: &quot;after&quot;,
+    &quot;activationMode&quot;: &quot;standard&quot;,
+    &quot;activationScript&quot;: &quot;&quot;,
+    &quot;case_sensitive&quot;: false,
+    &quot;matchWholeWords&quot;: true,
+    &quot;keyMatchPriority&quot;: false,
+    &quot;prioritizeInclusion&quot;: false,
+    &quot;selectiveLogic&quot;: 0,
+    &quot;comment&quot;: &quot;SvartulfrVerse: Location data injected into Scenario&quot;,
+    &quot;extensions&quot;: {},
+    &quot;groupWeight&quot;: 100
+  },
+  {
+    &quot;id&quot;: &quot;2b9a7102-127e-40af-bcf4-7634f19b22e1&quot;,
+    &quot;name&quot;: &quot;NPC: Uncle Lo (Example)&quot;,
+    &quot;content&quot;: &quot;[ACTIVE] NPC Source: characters/uncle_lo.md. Uncle Lo is a magnetic bartender at The Verve. He polishes glasses and stories in equal measure. He is the bridge between the estate and the streets.&quot;,
+    &quot;key&quot;: [
+      &quot;uncle lo&quot;,
+      &quot;lo&quot;,
+      &quot;bartender&quot;
+    ],
+    &quot;keysRaw&quot;: &quot;uncle lo, lo, bartender&quot;,
+    &quot;keysecondary&quot;: [],
+    &quot;keysecondaryRaw&quot;: &quot;&quot;,
+    &quot;inclusionGroup&quot;: [],
+    &quot;inclusionGroupRaw&quot;: &quot;&quot;,
+    &quot;tags&quot;: [
+      &quot;character&quot;
+    ],
+    &quot;category&quot;: &quot;other&quot;,
+    &quot;enabled&quot;: true,
+    &quot;constant&quot;: false,
+    &quot;minMessages&quot;: 0,
+    &quot;priority&quot;: 10,
+    &quot;insertion_order&quot;: 1000,
+    &quot;probability&quot;: 100,
+    &quot;placement&quot;: &quot;personality&quot;,
+    &quot;placementPosition&quot;: &quot;before&quot;,
+    &quot;activationMode&quot;: &quot;standard&quot;,
+    &quot;activationScript&quot;: &quot;&quot;,
+    &quot;case_sensitive&quot;: false,
+    &quot;matchWholeWords&quot;: true,
+    &quot;keyMatchPriority&quot;: false,
+    &quot;prioritizeInclusion&quot;: false,
+    &quot;selectiveLogic&quot;: 0,
+    &quot;comment&quot;: &quot;SvartulfrVerse: NPC data injected near Personality&quot;,
+    &quot;extensions&quot;: {},
+    &quot;groupWeight&quot;: 100
+  },
+  {
+    &quot;id&quot;: &quot;8a3d5e90-c2f1-4a3b-9a8c-6b7d5e4f3a21&quot;,
+    &quot;name&quot;: &quot;LORE: The Ledger (Example Secret)&quot;,
+    &quot;content&quot;: &quot;[DEFERRED] WRD Source: artifacts/the_ledger.md. The Ledger holds the true names and debts of the Golden Hour Legacy. It is never spoken of directly, only referenced as &#39;The Archive&#39;.&quot;,
+    &quot;key&quot;: [
+      &quot;the ledger&quot;,
+      &quot;the archive&quot;,
+      &quot;debts&quot;
+    ],
+    &quot;keysRaw&quot;: &quot;the ledger, the archive, debts&quot;,
+    &quot;keysecondary&quot;: [],
+    &quot;keysecondaryRaw&quot;: &quot;&quot;,
+    &quot;inclusionGroup&quot;: [],
+    &quot;inclusionGroupRaw&quot;: &quot;&quot;,
+    &quot;tags&quot;: [
+      &quot;lore&quot;,
+      &quot;secret&quot;
+    ],
+    &quot;category&quot;: &quot;general&quot;,
+    &quot;enabled&quot;: true,
+    &quot;constant&quot;: false,
+    &quot;minMessages&quot;: 10,
+    &quot;priority&quot;: 8,
+    &quot;insertion_order&quot;: 800,
+    &quot;probability&quot;: 100,
+    &quot;placement&quot;: &quot;default&quot;,
+    &quot;placementPosition&quot;: &quot;after&quot;,
+    &quot;activationMode&quot;: &quot;standard&quot;,
+    &quot;activationScript&quot;: &quot;&quot;,
+    &quot;case_sensitive&quot;: false,
+    &quot;matchWholeWords&quot;: true,
+    &quot;keyMatchPriority&quot;: false,
+    &quot;prioritizeInclusion&quot;: false,
+    &quot;selectiveLogic&quot;: 0,
+    &quot;comment&quot;: &quot;SvartulfrVerse: World Lore with minMessages delay&quot;,
+    &quot;extensions&quot;: {},
+    &quot;groupWeight&quot;: 100
+  }
+]
+
+</code></pre>
+<h5>Note chiave sulla conversione:</h5>
+<ol>
+<li><strong>Nessun contenitore</strong>  <strong>{&quot;entries&quot;: [...]}</strong> : Come ci siamo detti, inizia e finisce con le parentesi quadre.</li>
+<li><strong>Appiattimento del Content</strong> : I metadati che prima gestivi a livello di oggetti (es. Livello Canone [ACTIVE], sorgente del file Source: ...) ora sono unificati come intestazione testuale direttamente dentro il campo &quot;content&quot;.</li>
+<li><strong>Targeting (</strong>  <strong>placement</strong>  <strong>)</strong> : I luoghi sono iniettati nello scenario, i personaggi vicino alla personality, e la lore globale nel default.</li>
+<li><strong>Timeline Delay</strong> : Nel terzo esempio (&quot;The Ledger&quot;) ho simulato una meccanica di timeline basica nativa di Janitor settando &quot;minMessages&quot;: 10, così l&#39;informazione apparirà solo a chat inoltrata senza bisogno di calcoli extra in JS.
+Se passi questo JSON al tuo  <em>Code Agent</em>  o  <em>Activation Engineer</em>  come schema bersaglio (assieme al prompt aggiornato di prima), ti convertirà l&#39;intero Svartúlfr Verse alla perfezione!</li>
+</ol>

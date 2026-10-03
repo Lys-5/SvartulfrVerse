@@ -1,0 +1,2160 @@
+<p><strong>User</strong> : Siamo pronti per la phase 15
+<strong>Gemini</strong> : Sì, direi che siete pronti per la Phase 15, ma con una precisazione importante.
+Da quello che emerge dalle conversazioni precedenti, avete già completato sostanzialmente tutto ciò che normalmente costituisce una &quot;Canon Migration &amp; Repository Stabilization&quot;:</p>
+<ul>
+<li>migrazione database completata</li>
+<li>eliminazione della dipendenza da old_template_and_source</li>
+<li>consolidamento della documentazione</li>
+<li>riallineamento dei README</li>
+<li>normalizzazione della struttura repository</li>
+<li>identificazione e risoluzione delle incoerenze principali</li>
+<li>canon SvartúlfrVerse ormai separato dal materiale sorgente
+Inoltre il repository contiene già:</li>
+<li>Authority Matrix</li>
+<li>Decision Registry</li>
+<li>Implementation Patterns</li>
+<li>Engine Knowledge</li>
+<li>Validation Framework</li>
+<li>Export Mapping</li>
+<li>Toolset Reference
+quindi la parte architetturale è sufficientemente matura per entrare nella fase di costruzione vera e propria.
+L&#39;unica verifica che farei prima di dichiarare conclusa la preparazione è:
+<strong>Gate di ingresso Phase 15</strong></li>
+<li>Nessun riferimento residuo a old_template_and_source</li>
+<li>Nessun README che descriva ancora il repository come &quot;in migrazione&quot;</li>
+<li>Tutti gli ADR consolidati in una singola posizione canonica</li>
+<li>Struttura database/characters coerente per tutti i character package</li>
+<li>Validation Checklist aggiornata allo stato post-migrazione</li>
+<li>Decision Registry aggiornato con la chiusura della fase di migrazione
+Se questi punti sono già stati verificati, la Phase 15 può diventare il vero passaggio:</li>
+</ul>
+<h3>Phase 15 — Engine Foundation &amp; Bot Production Preparation</h3>
+<h4>Objectives</h4>
+<h5>1. Freeze Repository Architecture</h5>
+<ul>
+<li>Declare current repository structure canonical.</li>
+<li>Record final migration completion ADR.</li>
+<li>Lock folder standards for:
+<ul>
+<li>characters</li>
+<li>lore</li>
+<li>factions</li>
+<li>locations</li>
+<li>artifacts</li>
+<li>engines</li>
+</ul>
+</li>
+</ul>
+<h5>2. Establish Engine Framework</h5>
+<p>Create canonical engine architecture:</p>
+<pre><code class="language-text">engines/
+├── core_engine/
+├── relationship_engine/
+├── world_state_engine/
+├── progression_engine/
+├── memory_engine/
+├── narrative_engine/
+└── validation/
+
+</code></pre>
+<p>Define:</p>
+<ul>
+<li>responsibilities</li>
+<li>ownership boundaries</li>
+<li>interaction rules</li>
+<li>data contracts</li>
+</ul>
+<h5>3. Create Runtime Constraints Document</h5>
+<p>Based on validated JanitorAI behavior:</p>
+<ul>
+<li>no shared script state assumptions</li>
+<li>no execution-order dependency assumptions</li>
+<li>personality/scenario modification limits</li>
+<li>token budget guidelines</li>
+<li>performance constraints</li>
+<li>sandbox limitations
+Use observed runtime behavior as primary authority.</li>
+</ul>
+<h5>4. Define Canon-to-Bot Pipeline</h5>
+<p>Document:</p>
+<pre><code class="language-text">Canon
+→ Database
+→ Engine Inputs
+→ Engine Outputs
+→ Character Package
+→ Janitor Export
+→ Validation
+
+</code></pre>
+<p>Every future bot must follow this path.</p>
+<h5>5. Build First Production Blueprint</h5>
+<p>Create:</p>
+<pre><code class="language-text">templates/
+└── production_bot_blueprint/
+
+</code></pre>
+<p>Containing:</p>
+<ul>
+<li>personality template</li>
+<li>scenario template</li>
+<li>example dialogue template</li>
+<li>lorebook template</li>
+<li>engine integration template</li>
+<li>validation checklist
+Following token-budget and prompt-order best practices.</li>
+</ul>
+<h5>6. Define Character Production Order</h5>
+<p>Generate prioritized production queue:</p>
+<ol>
+<li>Wulfnic</li>
+<li>Nixara</li>
+<li>Core Svartúlfr lineage</li>
+<li>Major supporting cast</li>
+<li>Factions</li>
+<li>Scenario systems
+Each entry should include:</li>
+</ol>
+<ul>
+<li>dependencies</li>
+<li>required lore assets</li>
+<li>required engine support</li>
+<li>validation requirements</li>
+</ul>
+<h5>7. Update Project Rules</h5>
+<p>Review and update all project rules to reflect:</p>
+<ul>
+<li>migration completed</li>
+<li>architecture frozen</li>
+<li>repository is now in production phase</li>
+<li>all future work must prioritize:
+<ul>
+<li>engine implementation</li>
+<li>bot production</li>
+<li>validation</li>
+<li>export readiness</li>
+</ul>
+</li>
+</ul>
+<h5>8. Generate Phase 15 Completion Report</h5>
+<p>Report must include:</p>
+<ul>
+<li>architecture status</li>
+<li>engine readiness assessment</li>
+<li>documentation readiness assessment</li>
+<li>canon readiness assessment</li>
+<li>bot production readiness assessment</li>
+<li>risks</li>
+<li>recommended Phase 16</li>
+</ul>
+<hr>
+<p>Io chiamerei questa fase non più &quot;migrazione&quot;, ma  <strong>Production Bootstrap</strong> . Da qui in avanti il focus non è più sistemare il repository: è costruire il primo stack Engine → Character → Export e validarlo in JanitorAI reale. Questo è anche coerente con il principio che avete definito nel progetto: il runtime osservato ha sempre precedenza sulle assunzioni teoriche.
+<strong>User</strong> : Bene come da convenzione iniziamo dando a code dei mini task per iniziare la migrazione.
+visto che c&#39;è un bot già pubblicato https://janitorai.com/characters/4bf8b24c-7128-46e7-871f-0829c89feec8_character-svartulfr-los-angeles
+inizierei con l&#39;aggiornamento di quest&#39;ultimo
+<strong>Gemini</strong> : Per mantenere la logica delle mini-task incrementali, darei a Code un incarico estremamente limitato: non toccare ancora engine, lorebook o architettura. Prima bisogna capire cosa c&#39;è nel bot pubblicato e allinearlo al canon attuale.
+Prompt per Code:</p>
+<pre><code class="language-text">Phase 15.1 — Existing Bot Canon Alignment Audit
+
+Target Bot:
+https://janitorai.com/characters/4bf8b24c-7128-46e7-871f-0829c89feec8_character-svartulfr-los-angeles
+
+Objective:
+Produce a complete audit and update plan for the existing published Svartúlfr: Los Angeles bot.
+
+Rules:
+
+1. Do NOT modify repository files yet.
+2. Do NOT generate replacement content yet.
+3. Do NOT redesign the bot.
+4. This phase is analysis only.
+
+Tasks:
+
+A. Extract Current Bot Structure
+
+Document:
+
+- personality
+- scenario
+- first message
+- example dialogues
+- tags
+- description
+- lorebook usage
+- image usage
+- any scripting
+- token estimates
+
+B. Canon Comparison
+
+Compare the published bot against the current SvartúlfrVerse canon.
+
+Check alignment with:
+
+- repository character canon
+- world canon
+- faction canon
+- location canon
+- naming conventions
+- timeline conventions
+- authority decisions
+- ADR decisions
+
+Identify:
+
+- outdated information
+- missing canon information
+- contradictions
+- deprecated concepts
+- references to pre-migration material
+
+C. Production Readiness Assessment
+
+Determine whether the current bot:
+
+- can be updated in-place
+- requires partial rewrite
+- requires complete rebuild
+
+Provide reasoning.
+
+D. Asset Reuse Analysis
+
+Classify every bot component as:
+
+KEEP
+REVISE
+REPLACE
+REMOVE
+
+for:
+
+- personality
+- scenario
+- first message
+- example dialogues
+- lorebook
+- metadata
+- presentation
+
+E. Migration Plan
+
+Create a step-by-step update plan.
+
+Order tasks from lowest risk to highest risk.
+
+Do not perform updates.
+
+Only generate:
+
+1. Audit Report
+2. Canon Gap Report
+3. Reuse Matrix
+4. Recommended Update Sequence
+
+Success Criteria:
+
+The report must allow Phase 15.2 to update the published bot while preserving maximum compatibility with the current SvartúlfrVerse canon and repository architecture.
+
+</code></pre>
+<p>Questo approccio evita un errore molto comune: iniziare a riscrivere il bot prima di sapere quanto materiale pubblicato sia ancora recuperabile. Prima audit, poi piano di aggiornamento, poi refactor del bot.
+<strong>User</strong> : il bot ha i dati hidden posso fare un esportazione altrimenti non può accedere ai dati
+<strong>Gemini</strong> : Esatto.
+JanitorAI non espone i campi hidden pubblicamente, quindi Code non può fare un audit reale del bot soltanto dal link.
+Hai due opzioni:</p>
+<h5>Opzione A (consigliata)</h5>
+<p>Esporta il bot e fornisci a Code il file export completo.
+In questo modo potrà analizzare:</p>
+<ul>
+<li>Personality</li>
+<li>Scenario</li>
+<li>Initial Message</li>
+<li>Example Dialogues</li>
+<li>Lorebook links</li>
+<li>Advanced Prompt</li>
+<li>Tags</li>
+<li>Metadata</li>
+<li>qualsiasi configurazione presente
+e produrre un audit accurato.</li>
+</ul>
+<h5>Opzione B</h5>
+<p>Incolla manualmente:</p>
+<ul>
+<li>Personality</li>
+<li>Scenario</li>
+<li>Initial Message</li>
+<li>Example Dialogues
+ma è molto più scomodo e rischia di perdere informazioni.</li>
+</ul>
+<hr>
+<p>Se farai l&#39;export, modificherei il task in questo modo:</p>
+<pre><code class="language-text">Phase 15.1 — Existing Bot Canon Alignment Audit
+
+Source of Truth:
+
+Use the attached JanitorAI bot export as the authoritative representation of the currently published bot.
+
+Do not rely on public page information when export data is available.
+
+Tasks:
+
+1. Parse the export completely.
+2. Reconstruct the current bot architecture.
+3. Compare against current SvartúlfrVerse canon.
+4. Produce:
+   - Audit Report
+   - Canon Gap Report
+   - Reuse Matrix
+   - Migration Plan
+
+Do not perform modifications.
+
+Analysis only.
+
+</code></pre>
+<p>Anzi, per SvartúlfrVerse farei una cosa ancora migliore:
+<strong>prima importiamo il bot nel repository come asset legacy</strong>  e poi facciamo l&#39;audit.
+Percorso suggerito:</p>
+<pre><code class="language-text">database/
+└── legacy_exports/
+    └── svartulfr_los_angeles/
+        ├── original_export.json
+        └── audit/
+
+</code></pre>
+<p>Così il primo bot pubblicato diventa parte del patrimonio storico del progetto e qualsiasi refactor futuro può sempre essere confrontato con la versione originaria. Questo è particolarmente utile ora che state entrando nella fase di produzione vera e propria.
+<strong>User</strong> : che formato mi suggerisci di utilizzare per original_export.md
+<strong>Gemini</strong> : Per original_export.md non userei un dump JSON puro. Lo scopo non è conservare il formato JanitorAI, ma creare un archivio leggibile e auditabile nel tempo.
+Ti suggerisco una struttura &quot;snapshot document&quot; che separa chiaramente i campi del bot.</p>
+<h3>Svartúlfr Los Angeles — Original Export Snapshot</h3>
+<p>Status: Legacy Export Source: JanitorAI Production Bot Export Date: YYYY-MM-DD Version: Legacy Pre-Phase15</p>
+<hr>
+<h3>Metadata</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Bot Name</td><td></td></tr><tr><td>Character ID</td><td></td></tr><tr><td>Visibility</td><td></td></tr><tr><td>Creator</td><td></td></tr><tr><td>Tags</td><td></td></tr><tr><td>Model Notes</td><td></td></tr></tbody></table>
+<hr>
+<h3>Description</h3>
+<pre><code class="language-text">[description]
+
+</code></pre>
+<hr>
+<h3>Personality</h3>
+<pre><code class="language-text">[full personality]
+
+</code></pre>
+<hr>
+<h3>Scenario</h3>
+<pre><code class="language-text">[full scenario]
+
+</code></pre>
+<hr>
+<h3>Initial Message</h3>
+<pre><code class="language-text">[first message]
+
+</code></pre>
+<hr>
+<h3>Example Dialogues</h3>
+<pre><code class="language-text">[examples]
+
+</code></pre>
+<hr>
+<h3>Advanced Prompt</h3>
+<pre><code class="language-text">[advanced prompt]
+
+</code></pre>
+<hr>
+<h3>Lorebook References</h3>
+<h4>Entry 01</h4>
+<p>Name: Keywords:</p>
+<pre><code class="language-text">[content]
+
+</code></pre>
+<h4>Entry 02</h4>
+<p>Name: Keywords:</p>
+<pre><code class="language-text">[content]
+
+</code></pre>
+<hr>
+<h3>Images</h3>
+<h4>Primary Image</h4>
+<p>Filename: Source:</p>
+<h4>Additional Assets</h4>
+<ul>
+<li>asset_01</li>
+<li>asset_02</li>
+</ul>
+<hr>
+<h3>Technical Notes</h3>
+<p>Token Estimate: Export Format: Known Dependencies:</p>
+<hr>
+<h3>Legacy Preservation Notice</h3>
+<p>This document is an immutable snapshot of the original published bot before repository-driven migration and canon alignment.
+Do not modify.
+All future revisions must be stored as separate migration artifacts.
+Io inoltre conserverei  <strong>anche il JSON originale</strong> :</p>
+<pre><code class="language-text">legacy_exports/
+└── svartulfr_los_angeles/
+    ├── original_export.json
+    ├── original_export.md
+    └── audit/
+
+</code></pre>
+<p>Dove:</p>
+<ul>
+<li>original_export.json = fonte forense originale</li>
+<li>original_export.md = versione leggibile per audit e review</li>
+<li>audit/ = report di migrazione, gap analysis, decisioni e refactor
+In questo modo non perdi mai il formato nativo JanitorAI, ma hai anche una rappresentazione stabile e leggibile all&#39;interno del repository.
+<strong>User</strong> : *.md --&gt; Profile del bot (descrizione, personality, metadata, ecc...) *.js --&gt; Export di Script e Lorebook
+<strong>Gemini</strong> : Sì, questa convenzione è addirittura migliore per SvartúlfrVerse.
+La distinguerei così:</li>
+</ul>
+<pre><code class="language-text">legacy_exports/
+└── svartulfr_los_angeles/
+    ├── original_export.md
+    ├── scripts.js
+    └── lorebook.js
+
+</code></pre>
+<p>oppure, se il bot ha più script:</p>
+<pre><code class="language-text">legacy_exports/
+└── svartulfr_los_angeles/
+    ├── original_export.md
+    ├── scripts/
+    │   ├── relationship_engine.js
+    │   ├── memory_engine.js
+    │   └── world_engine.js
+    └── lorebook/
+        ├── lorebook.js
+        └── lorebook.json
+
+</code></pre>
+<p>Per original_export.md io conserverei:</p>
+<pre><code class="language-md"># Svartúlfr: Los Angeles
+
+## Metadata
+
+- Character ID:
+- Export Date:
+- Visibility:
+- Tags:
+- Creator:
+
+---
+
+## Description
+
+...
+
+---
+
+## Personality
+
+...
+
+---
+
+## Scenario
+
+...
+
+---
+
+## Initial Message
+
+...
+
+---
+
+## Example Dialogues
+
+...
+
+---
+
+## Advanced Prompt
+
+...
+
+---
+
+## Notes
+
+Legacy snapshot imported from published JanitorAI bot.
+No canonical corrections applied.
+
+</code></pre>
+<p>Mentre gli script e i lorebook li lascerei fuori dal markdown perché:</p>
+<ul>
+<li>mantengono la sintassi originale</li>
+<li>possono essere diffati da git</li>
+<li>possono essere riutilizzati direttamente</li>
+<li>possono essere validati automaticamente
+Quindi la convenzione diventa:
+| File | Scopo |
+| ------ | ------ |
+| original_export.md | Snapshot umano leggibile del bot |
+| <em>.js | Script runtime originali |
+| <em>.json | Export strutturati originali |
+| audit/</em>.md | Analisi e report di migrazione |
+| migration/</em>.md | Piano di aggiornamento |
+| rebuilt/*.md | Nuova versione canonica |</li>
+</ul>
+<p>Questo è molto vicino a come normalmente si conserva un &quot;legacy system&quot; prima di un refactor: snapshot leggibile separato dagli asset eseguibili. Inoltre si integra bene con la futura pipeline:</p>
+<pre><code class="language-text">Legacy Export
+    ↓
+Audit
+    ↓
+Canon Alignment
+    ↓
+Engine Integration
+    ↓
+Production Bot
+    ↓
+Janitor Export
+
+</code></pre>
+<p>che probabilmente diventerà il workflow standard della Phase 15.
+<strong>User</strong> : ora che c&#39;è l&#39;export dami il primo task per code
+e ricorda che abbiamo settato i command e le skill hai la guida all&#39;uso nelle tue fonti
+<strong>Gemini</strong> : Sì. Considerando la roadmap che avete definito, il primo task non dovrebbe essere ancora &quot;aggiornare il bot&quot;, ma  <strong>trasformare l&#39;export in un asset repository conforme agli standard SvartúlfrVerse</strong> .
+Questo crea il baseline da cui poi fare audit, gap analysis e rebuild.
+Puoi dare a Code questo task:</p>
+<h3>Phase 15.1 — Legacy Bot Import &amp; Repository Registration</h3>
+<h4>Objective</h4>
+<p>Import the exported JanitorAI bot into the SvartúlfrVerse repository as a canonical legacy asset.
+This phase is NOT a refactor.
+This phase is NOT a canon update.
+This phase is repository registration only.</p>
+<hr>
+<h4>Input</h4>
+<p>Use the files located in:</p>
+<pre><code class="language-text">legacy_exports/svartulfr_los_angeles/
+
+</code></pre>
+<p>Available assets:</p>
+<ul>
+<li>original_export.md</li>
+<li>scripts.js (if present)</li>
+<li>lorebook.js (if present)</li>
+</ul>
+<hr>
+<h4>Tasks</h4>
+<h5>1. Validate Import Package</h5>
+<p>Verify:</p>
+<ul>
+<li>export is complete</li>
+<li>personality exists</li>
+<li>scenario exists</li>
+<li>first message exists</li>
+<li>example dialogues exist</li>
+<li>metadata exists
+Document any missing components.</li>
+</ul>
+<hr>
+<h5>2. Generate Legacy Asset Inventory</h5>
+<p>Produce:</p>
+<pre><code class="language-text">legacy_exports/svartulfr_los_angeles/inventory.md
+
+</code></pre>
+<p>Inventory must include:</p>
+<ul>
+<li>asset list</li>
+<li>file purpose</li>
+<li>estimated token usage</li>
+<li>detected dependencies</li>
+<li>detected lorebook references</li>
+<li>detected script references</li>
+</ul>
+<hr>
+<h5>3. Repository Classification</h5>
+<p>Classify the bot according to current SvartúlfrVerse standards.
+Determine:</p>
+<ul>
+<li>primary character</li>
+<li>world association</li>
+<li>faction association</li>
+<li>timeline association</li>
+<li>canon status</li>
+<li>repository ownership domain
+Do NOT modify content.
+Only classify.</li>
+</ul>
+<hr>
+<h5>4. Runtime Asset Discovery</h5>
+<p>Using current scripting knowledge and repository standards:
+Identify:</p>
+<ul>
+<li>existing runtime logic</li>
+<li>lorebook architecture</li>
+<li>reusable components</li>
+<li>obsolete components
+Create:</li>
+</ul>
+<pre><code class="language-text">legacy_exports/svartulfr_los_angeles/runtime_inventory.md
+
+</code></pre>
+<hr>
+<h5>5. Migration Readiness Report</h5>
+<p>Generate:</p>
+<pre><code class="language-text">legacy_exports/svartulfr_los_angeles/migration_readiness.md
+
+</code></pre>
+<p>Containing:</p>
+<ul>
+<li>import status</li>
+<li>structural completeness</li>
+<li>repository compliance</li>
+<li>detected risks</li>
+<li>recommended next phase</li>
+</ul>
+<hr>
+<h4>Constraints</h4>
+<p>Do NOT rewrite:</p>
+<ul>
+<li>personality</li>
+<li>scenario</li>
+<li>first message</li>
+<li>lorebook</li>
+<li>scripts
+Do NOT perform canon corrections.
+Do NOT perform modernization.
+Do NOT perform engine integration.
+Analysis and registration only.</li>
+</ul>
+<hr>
+<h4>Success Criteria</h4>
+<p>At completion the exported bot is:</p>
+<ul>
+<li>registered</li>
+<li>inventoried</li>
+<li>classified</li>
+<li>ready for canon audit
+without altering the original exported content.
+Questo è coerente con la vostra architettura e con il principio &quot;Repository First&quot;.
+La  <strong>Phase 15.2</strong>  sarà poi:</li>
+</ul>
+<pre><code class="language-text">Legacy Audit &amp; Canon Gap Analysis
+
+</code></pre>
+<p>dove inizierete davvero a confrontare il bot con il canon attuale usando i command e le skill già presenti nel progetto.
+<strong>User</strong> : in attesa che code finisca direi di raccogliere un po&#39; di lore reale, visto che siano a los angeles e anche al college ucla raccogliamo qualche infor, tipo nome della squadra di football, confraternite, associazioni
+<strong>Gemini</strong> : Ottima idea. Se il bot è ambientato tra Los Angeles, Westwood e UCLA, avere lore reale rende l&#39;ambientazione molto più credibile e dà tantissimi hook per NPC, eventi e trame.</p>
+<h4>UCLA Essentials</h4>
+<p><strong>Università:</strong>  University of California, Los Angeles
+<strong>Quartiere:</strong>  Westwood
+<strong>Colori ufficiali:</strong>  Blue &amp; Gold.
+<strong>Mascotte:</strong></p>
+<ul>
+<li>Joe Bruin</li>
+<li>Josephine Bruin
+<strong>Soprannome degli studenti e delle squadre:</strong></li>
+<li>Bruins
+<strong>Football Team:</strong></li>
+<li>UCLA Bruins Football</li>
+<li>NCAA Division I FBS</li>
+<li>Big Ten Conference</li>
+<li>Stadio: Rose Bowl (Pasadena)</li>
+</ul>
+<hr>
+<h4>Greek Life (molto utile per RP universitario)</h4>
+<p>UCLA ha una delle comunità Greek Life più grandi della California:</p>
+<ul>
+<li>circa 60 organizzazioni greche</li>
+<li>circa 4.100 studenti coinvolti</li>
+<li>circa il 13% degli undergraduate students
+Questo significa che per un bot ambientato a UCLA è assolutamente plausibile:</li>
+<li>feste private</li>
+<li>rivalità tra confraternite</li>
+<li>charity events</li>
+<li>rush week</li>
+<li>initiations</li>
+<li>social mixers</li>
+<li>tailgate parties</li>
+</ul>
+<hr>
+<h4>Fraternities più note (IFC)</h4>
+<p>Tra le confraternite ufficialmente presenti:</p>
+<ul>
+<li>Alpha Epsilon Pi</li>
+<li>Alpha Tau Omega</li>
+<li>Beta Theta Pi</li>
+<li>Lambda Chi Alpha</li>
+<li>Pi Kappa Alpha</li>
+<li>Sigma Alpha Epsilon</li>
+<li>Sigma Chi</li>
+<li>Sigma Nu</li>
+<li>Sigma Phi Epsilon</li>
+<li>Theta Chi</li>
+<li>Theta Xi</li>
+<li>Zeta Beta Tau
+Per RP conviene usarle come ispirazione e creare eventualmente versioni fittizie SvartúlfrVerse-corrupted.</li>
+</ul>
+<hr>
+<h4>Sororities note</h4>
+<p>Panhellenic Association: circa 11 sororities.
+Tra le più riconoscibili:</p>
+<ul>
+<li>Alpha Chi Omega</li>
+<li>Alpha Phi</li>
+<li>Delta Gamma</li>
+<li>Kappa Kappa Gamma</li>
+<li>Pi Beta Phi</li>
+</ul>
+<hr>
+<h4>Organizzazioni Studentesche</h4>
+<p>UCLA ha oltre 1.000 club e organizzazioni.
+Categorie molto utili per il worldbuilding:</p>
+<ul>
+<li>Student Government</li>
+<li>Debate Teams</li>
+<li>Pre-Law Society</li>
+<li>Journalism Clubs</li>
+<li>Film Production Clubs</li>
+<li>Gaming Clubs</li>
+<li>Anime Clubs</li>
+<li>Computer Science Clubs</li>
+<li>Medical Student Groups</li>
+<li>Cultural Associations</li>
+<li>Political Organizations</li>
+<li>Volunteer Groups</li>
+</ul>
+<hr>
+<h4>Luoghi Iconici per Scene RP</h4>
+<p>Da usare direttamente nel bot:</p>
+<ul>
+<li>Royce Hall</li>
+<li>Powell Library</li>
+<li>Bruin Walk</li>
+<li>Ackerman Union</li>
+<li>Kerckhoff Hall</li>
+<li>Janss Steps</li>
+<li>Bruin Plaza</li>
+<li>Student Activities Center</li>
+<li>Sunset Recreation Center</li>
+<li>Wooden Center
+Questi nomi fanno immediatamente percepire l&#39;ambientazione come autentica.</li>
+</ul>
+<hr>
+<h4>Materiale SvartúlfrVerse che puoi derivare</h4>
+<p>Per Los Angeles/UCLA io vedo già alcune sottostrutture utilissime:</p>
+<h5>UCLA Night Society</h5>
+<p>Club studentesco apparentemente innocuo.
+In realtà:</p>
+<ul>
+<li>reclutamento occulto</li>
+<li>copertura per vampiri giovani</li>
+<li>studenti stregoni</li>
+<li>hunters infiltrati</li>
+</ul>
+<h5>Bruin Tailgate Network</h5>
+<p>Le partite al Rose Bowl sono eventi perfetti per:</p>
+<ul>
+<li>incontri tra fazioni</li>
+<li>scambi di informazioni</li>
+<li>cacce soprannaturali</li>
+<li>traffico di artefatti</li>
+</ul>
+<h5>Fraternity Row</h5>
+<p>Zona ideale per:</p>
+<ul>
+<li>confraternite controllate da famiglie vampiriche</li>
+<li>case protette da ward magici</li>
+<li>società segrete universitarie</li>
+</ul>
+<h5>UCLA Medical Research Program</h5>
+<p>Ottima copertura per:</p>
+<ul>
+<li>studi sul sangue</li>
+<li>biotecnologie vampiriche</li>
+<li>esperimenti di corporazioni occulte
+Se il bot &quot;Svartúlfr: Los Angeles&quot; è centrato su studenti universitari, questa è probabilmente la prima area del canon reale che vale la pena trasformare in lorebook dedicato durante la Phase 15.
+<strong>User</strong> : ok, dammi un prompt con tutte queste informazioni per creare la voce istitution I_UCLA e magari un location quindi L_LosAngeles oppure lo mettiamo direttamente nel W_Contemporaney
+<strong>Gemini</strong> : Per la struttura SvartúlfrVerse eviterei di mettere UCLA direttamente dentro W_Contemporary.
+Meglio mantenere la gerarchia:</li>
+</ul>
+<pre><code class="language-text">W_Contemporary
+│
+├── L_LosAngeles
+│   ├── I_UCLA
+│   ├── L_Westwood
+│   ├── L_RoseBowl
+│   └── ...
+
+</code></pre>
+<p>Motivi:</p>
+<ul>
+<li>Los Angeles probabilmente verrà riutilizzata da molti bot.</li>
+<li>UCLA è una singola istituzione.</li>
+<li>Westwood è una location distinta.</li>
+<li>In futuro potrebbero comparire USC, Caltech, Pepperdine, ecc.</li>
+<li>Mantieni separazione World → Location → Institution.
+Io farei quindi:</li>
+</ul>
+<pre><code class="language-text">database/
+├── worlds/
+│   └── W_Contemporary.md
+│
+├── locations/
+│   └── L_LosAngeles.md
+│
+└── institutions/
+    └── I_UCLA.md
+
+</code></pre>
+<p>Primo task per Code:</p>
+<h3>Create Canon Institution Record — I_UCLA</h3>
+<h4>Objective</h4>
+<p>Create the canonical institution record for UCLA (University of California, Los Angeles) within the SvartúlfrVerse repository.
+This is a real-world institution adapted for use inside W_Contemporary.
+Do not add supernatural content yet.
+Document the real institution first.</p>
+<hr>
+<h3>File</h3>
+<p>institutions/I_UCLA.md</p>
+<hr>
+<h3>Classification</h3>
+<p>Institution ID: I_UCLA
+Type: University
+World: W_Contemporary
+Location: L_LosAngeles
+District: Westwood
+Status: Canon</p>
+<hr>
+<h3>Core Identity</h3>
+<p>Official Name: University of California, Los Angeles (UCLA)
+Common Name: UCLA
+Nickname: Bruins
+School Colors: Blue and Gold
+Mascots:</p>
+<ul>
+<li>Joe Bruin</li>
+<li>Josephine (Josie) Bruin
+Conference: Big Ten Conference
+Primary Football Team: UCLA Bruins Football
+Home Football Venue: Rose Bowl Stadium (Pasadena)</li>
+</ul>
+<hr>
+<h3>Historical Notes</h3>
+<p>Document:</p>
+<ul>
+<li>UCLA founding context</li>
+<li>significance within Los Angeles</li>
+<li>academic reputation</li>
+<li>athletic reputation</li>
+<li>student culture
+Keep concise.</li>
+</ul>
+<hr>
+<h3>Campus Culture</h3>
+<p>Document:</p>
+<ul>
+<li>Bruin identity</li>
+<li>school traditions</li>
+<li>rivalry with USC</li>
+<li>Victory Bell tradition</li>
+<li>game-day culture</li>
+<li>student social life</li>
+</ul>
+<hr>
+<h3>Greek Life</h3>
+<p>Document UCLA Greek Life as an institutional feature.
+Current scale:</p>
+<ul>
+<li>approximately 60 Greek organizations</li>
+<li>approximately 4,100 participating students</li>
+<li>approximately 13% undergraduate participation
+Include overview only.
+Do not list every organization in the main summary.
+Create separate subsection:</li>
+</ul>
+<h4>Notable Fraternities</h4>
+<p>Include:</p>
+<ul>
+<li>Alpha Epsilon Pi</li>
+<li>Alpha Tau Omega</li>
+<li>Beta Theta Pi</li>
+<li>Lambda Chi Alpha</li>
+<li>Pi Kappa Alpha</li>
+<li>Sigma Alpha Epsilon</li>
+<li>Sigma Chi</li>
+<li>Sigma Nu</li>
+<li>Sigma Phi Epsilon</li>
+<li>Theta Chi</li>
+<li>Theta Xi</li>
+<li>Zeta Beta Tau</li>
+</ul>
+<hr>
+<h3>Student Organizations</h3>
+<p>Document categories:</p>
+<ul>
+<li>Student Government</li>
+<li>Academic Organizations</li>
+<li>Pre-Law</li>
+<li>Engineering</li>
+<li>Film &amp; Media</li>
+<li>Gaming</li>
+<li>Cultural Organizations</li>
+<li>Faith Organizations</li>
+<li>Volunteer Organizations</li>
+<li>Sports Clubs
+Note that UCLA hosts over 1,000 student organizations.</li>
+</ul>
+<hr>
+<h3>Major Campus Locations</h3>
+<p>Create concise entries for:</p>
+<ul>
+<li>Royce Hall</li>
+<li>Powell Library</li>
+<li>Bruin Walk</li>
+<li>Bruin Plaza</li>
+<li>Ackerman Union</li>
+<li>Kerckhoff Hall</li>
+<li>Janss Steps</li>
+<li>Student Activities Center</li>
+<li>Wooden Center</li>
+<li>Sunset Recreation Center</li>
+</ul>
+<hr>
+<h3>Narrative Utility Notes</h3>
+<p>Create repository-facing notes describing why UCLA is a useful setting for:</p>
+<ul>
+<li>student stories</li>
+<li>political intrigue</li>
+<li>faction recruitment</li>
+<li>social events</li>
+<li>athletics</li>
+<li>research programs</li>
+<li>future supernatural overlays
+These notes are for writers and engine designers.
+No supernatural canon yet.</li>
+</ul>
+<hr>
+<h3>Sources</h3>
+<p>Record source references used during creation.</p>
+<hr>
+<p>Success Criteria:
+Produce a clean institution record suitable for later expansion into SvartúlfrVerse-specific lore without mixing real-world facts and supernatural canon.
+Fonti di riferimento utilizzate: mascotte Bruins, Joe e Josephine Bruin, colori ufficiali, tradizioni e rivalità UCLA-USC, organizzazioni studentesche e Greek Life UCLA.
+Subito dopo farei L_LosAngeles, perché diventerà quasi certamente uno degli hub principali del mondo contemporaneo.
+<strong>User</strong> : si per los angeles direi di parlare del distretto universitario e nominare qualche bar e locale frequentato da studenti, e poi magari qualche mall diamo una panoramica di location
+<strong>Gemini</strong> :
+Per L_LosAngeles io non farei una scheda enciclopedica della città intera. Per il bot e per SvartúlfrVerse è molto più utile una versione &quot;narrative-oriented&quot; centrata sui luoghi che un personaggio UCLA frequenta davvero.
+Puoi dare a Code questo task.</p>
+<h3>Create Canon Location Record — L_LosAngeles</h3>
+<h4>Objective</h4>
+<p>Create the canonical Los Angeles location record for W_Contemporary.
+This document should focus on the portions of Los Angeles most relevant to SvartúlfrVerse stories currently centered around UCLA and young adult characters.
+Do not attempt to document the entire city.
+Focus on narrative utility.</p>
+<hr>
+<h3>File</h3>
+<p>locations/L_LosAngeles.md</p>
+<hr>
+<h3>Classification</h3>
+<p>Location ID: L_LosAngeles
+Type: Major Metropolitan Area
+World: W_Contemporary
+Country: United States
+State: California
+Status: Canon</p>
+<hr>
+<h3>Overview</h3>
+<p>Document:</p>
+<ul>
+<li>Los Angeles as a sprawling metropolitan region</li>
+<li>cultural diversity</li>
+<li>entertainment industry influence</li>
+<li>university presence</li>
+<li>nightlife</li>
+<li>wealth disparity</li>
+<li>importance within contemporary North America
+Keep concise.</li>
+</ul>
+<hr>
+<h3>Key Districts</h3>
+<p>Create sections for:</p>
+<h4>Westwood</h4>
+<p>Primary UCLA district.
+Document:</p>
+<ul>
+<li>student population</li>
+<li>walkability</li>
+<li>Westwood Village</li>
+<li>restaurants</li>
+<li>nightlife</li>
+<li>university influence</li>
+</ul>
+<h4>Century City</h4>
+<p>Document:</p>
+<ul>
+<li>corporate presence</li>
+<li>luxury retail</li>
+<li>business district atmosphere</li>
+</ul>
+<h4>Santa Monica</h4>
+<p>Document:</p>
+<ul>
+<li>beach culture</li>
+<li>tourism</li>
+<li>nightlife</li>
+<li>student excursions</li>
+</ul>
+<h4>Hollywood</h4>
+<p>Document:</p>
+<ul>
+<li>entertainment industry</li>
+<li>tourism</li>
+<li>nightlife</li>
+</ul>
+<h4>Downtown Los Angeles</h4>
+<p>Document:</p>
+<ul>
+<li>government</li>
+<li>business</li>
+<li>cultural institutions</li>
+</ul>
+<hr>
+<h3>UCLA Sphere of Influence</h3>
+<p>Describe the areas most commonly frequented by UCLA students.
+Include:</p>
+<ul>
+<li>Westwood Village</li>
+<li>Bruin Plaza</li>
+<li>nearby residential zones</li>
+<li>major transportation routes</li>
+</ul>
+<hr>
+<h3>Student Social Locations</h3>
+<p>Create concise entries for:</p>
+<h4>Westwood Village</h4>
+<p>Primary social hub for UCLA students.
+Document:</p>
+<ul>
+<li>restaurants</li>
+<li>cafés</li>
+<li>study spaces</li>
+<li>nightlife</li>
+</ul>
+<h4>Student-Frequented Venues</h4>
+<p>Include:</p>
+<ul>
+<li>Rocco&#39;s Tavern</li>
+<li>Barney&#39;s Beanery</li>
+<li>Wolfsglen
+Use them as examples of common gathering spaces.
+Do not overfocus on business details.
+Focus on narrative utility.</li>
+</ul>
+<hr>
+<h3>Shopping Destinations</h3>
+<p>Create entries for:</p>
+<h4>Westfield Century City</h4>
+<p>Major upscale shopping destination.</p>
+<h4>Brentwood Town Center</h4>
+<p>Neighborhood-scale retail destination.
+Document why these locations matter for student and civilian life.</p>
+<hr>
+<h3>Local Culture</h3>
+<p>Document:</p>
+<ul>
+<li>college sports culture</li>
+<li>Bruins identity</li>
+<li>USC rivalry</li>
+<li>nightlife</li>
+<li>food culture</li>
+<li>multicultural influences</li>
+</ul>
+<hr>
+<h3>Narrative Utility Notes</h3>
+<p>Create repository-facing notes describing why Los Angeles is useful for:</p>
+<ul>
+<li>university stories</li>
+<li>political stories</li>
+<li>celebrity stories</li>
+<li>corporate intrigue</li>
+<li>nightlife</li>
+<li>social drama</li>
+<li>future supernatural overlays
+No supernatural canon yet.</li>
+</ul>
+<hr>
+<h3>Relationship To I_UCLA</h3>
+<p>Create a dedicated section describing how UCLA influences:</p>
+<ul>
+<li>local economy</li>
+<li>social life</li>
+<li>housing</li>
+<li>nightlife</li>
+<li>student movement across the city</li>
+</ul>
+<hr>
+<h3>Sources</h3>
+<p>Record source references used during creation.</p>
+<hr>
+<p>Success Criteria
+Produce a location record that gives writers enough real-world grounding to write believable UCLA and Los Angeles stories while remaining concise and expandable.
+Dati chiave da incorporare:</p>
+<ul>
+<li>Westwood Village è il centro sociale naturale degli studenti UCLA.</li>
+<li>Westwood è storicamente orientata alla vita universitaria e alla nightlife studentesca.</li>
+<li>Luoghi come Rocco&#39;s Tavern e Barney&#39;s Beanery sono riferimenti realistici per incontri, feste e watch party universitari.</li>
+<li>Westfield Century City è probabilmente il mall più rilevante per studenti e giovani professionisti dell&#39;area UCLA/Century City.
+Questo ti crea una base molto solida per futuri lorebook di quartieri, confraternite, organizzazioni studentesche e fazioni nascoste senza dover continuamente tornare a fare ricerca sul mondo reale.
+<strong>User</strong> : code a finito il task di check dei dati:
+I&#39;ll start by reading the available skill to check relevance, then proceed with the import package validation.
+toolName: Skill
+status: success
+The Character Audit skill is focused on individual character records, not on bot import/registration workflows. This task is a legacy bot import and repository registration — it&#39;s more of a governance/inventory operation. Let me proceed directly with the tasks.
+Let me first read the export files and the referenced source files to build a complete picture.
+toolName: todo_write
+status: success
+Todos updated: 5 items
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\legacy_exports\svartulfr_los_angeles\original_export.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\legacy_exports\svartulfr_los_angeles\original_export.json
+toolName: view_folder
+status: success
+d:\SvartulfrVerse\legacy_exports\svartulfr_los_angeles
+Now let me read the referenced source files in parallel to understand the current repository state.
+toolName: view_files
+status: success
+filePath: d:\Progetti\database\bots\ensemble\Ex_LosAngeles.md
+toolName: view_files
+status: success
+filePath: d:\Progetti\database\bots\ensemble\Ex_LosAngeles.js
+toolName: view_files
+status: success
+filePath: d:\Progetti\database\core\En_Core.js
+toolName: view_files
+status: success
+filePath: d:\Progetti\database\scripts\relationship_engine.js
+toolName: view_files
+status: success
+filePath: d:\Progetti\database\scripts\state_engine.js
+Now let me read the remaining referenced source files — character files, world files, and persona.
+toolName: view_files
+status: success
+filePath: d:\Progetti\database\characters\C_Erik.md
+toolName: view_files
+status: success
+filePath: d:\Progetti\database\characters\C_Erik.js
+toolName: view_files
+status: success
+filePath: d:\Progetti\database\characters\C_Jasper.md
+toolName: view_files
+status: success
+filePath: d:\Progetti\database\characters\C_Jasper.js
+toolName: view_files
+status: success
+filePath: d:\Progetti\database\worlds\contemporary\W_Contemporary.md
+toolName: view_files
+status: success
+filePath: d:\Progetti\database\worlds\contemporary\W_Contemporary.js
+toolName: view_files
+status: success
+filePath: d:\Progetti\database\personas\alyssa_avatar.md
+Now I have a comprehensive picture of all the assets. Let me also quickly check the remaining character files referenced in the source files list.
+toolName: view_files
+status: success
+filePath: d:\Progetti\database\characters\C_Logan.md
+toolName: view_files
+status: success
+filePath: d:\Progetti\database\characters\C_Malachia.md
+toolName: view_files
+status: success
+filePath: d:\Progetti\database\characters\C_Noah.md
+toolName: view_files
+status: success
+filePath: d:\Progetti\database\characters\C_Wulfnic.md
+toolName: view_files
+status: success
+filePath: d:\Progetti\database\worlds\contemporary\Visual_DNA.md
+toolName: view_files
+status: success
+filePath: d:\Progetti\database\assets\Visual_DNA.md
+I now have all the information needed. Let me proceed with generating all five deliverables. I&#39;ll mark task 1 as complete and start generating the files.
+toolName: todo_write
+status: success
+Todos updated: 5 items
+Now let me generate all five output files. I&#39;ll write them in parallel since they&#39;re independent.
+toolName: Write
+status: success
+filePath: d:\SvartulfrVerse\legacy_exports\svartulfr_los_angeles\inventory.md
+changes: undefined
+toolName: Write
+status: success
+filePath: d:\SvartulfrVerse\legacy_exports\svartulfr_los_angeles\classification.md
+changes: undefined
+Now let me generate the remaining two files — runtime_inventory.md and migration_readiness.md.
+toolName: todo_write
+status: success
+Todos updated: 5 items
+toolName: Write
+status: success
+filePath: d:\SvartulfrVerse\legacy_exports\svartulfr_los_angeles\runtime_inventory.md
+changes: undefined
+toolName: Write
+status: success
+filePath: d:\SvartulfrVerse\legacy_exports\svartulfr_los_angeles\migration_readiness.md
+changes: undefined
+Now let me mark all tasks as complete.
+toolName: todo_write
+status: success
+Todos updated: 5 items
+Phase 15.1 — Legacy Bot Import &amp; Repository Registration —  <strong>COMPLETE.</strong></li>
+</ul>
+<hr>
+<h4>Summary</h4>
+<p>All 5 deliverables generated at legacy_exports/svartulfr_los_angeles/:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>File</th><th>Content</th></tr></thead><tbody><tr><td><strong>inventory.md</strong></td><td>35 assets catalogued, token estimates (~15-18K total), dependencies, lorebook/script references, validation results</td></tr><tr><td><strong>classification.md</strong></td><td>ENSEMBLE archetype, Contemporary world, Experience Authority domain, 6-NPC cast, faction/timeline/POV classification</td></tr><tr><td><strong>runtime_inventory.md</strong></td><td>14 active engine systems, lorebook architecture (L0→L3), 6 reusable component patterns, obsolete components identified</td></tr><tr><td><strong>migration_readiness.md</strong></td><td>91% readiness score, 9 detected risks (1 medium, 3 moderate, 5 low), constraints verified</td></tr></tbody></table>
+<h5>Key Findings</h5>
+<ul>
+<li><strong>Import:</strong>  COMPLETE — all components present and valid</li>
+<li><strong>Structure:</strong>  PASS — all required/recommended/optional components present</li>
+<li><strong>Compliance:</strong>  PASS — all authority boundaries respected per R-000 through R-009</li>
+<li><strong>Notable bug:</strong>  state_engine.js has an uninitialized inject variable (line 14)</li>
+<li><strong>Missing:</strong>  No C_Alyssa.js character script exists despite POV override referencing it</li>
+</ul>
+<h5>Classification</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Archetype</td><td>ENSEMBLE</td></tr><tr><td>World</td><td>Contemporary</td></tr><tr><td>Canon Status</td><td>CANON — Published Production Bot</td></tr><tr><td>Repository Domain</td><td>Experience Authority (Ex_)</td></tr></tbody></table>
+<h5>Recommended Next Phase</h5>
+<p><strong>Phase 15.2 — Canon Audit</strong>  — Review character data alignment, family tree consistency, visual inheritance compliance, and cross-reference integrity.
+<strong>Gemini</strong> : Direi che il risultato più interessante non è tanto il 91% di readiness quanto ciò che Code ha scoperto indirettamente:</p>
+<h5>Cose positive</h5>
+<ul>
+<li>Il bot non è un semplice character card.</li>
+<li>È un vero sistema ensemble.</li>
+<li>Ha già una struttura engine-driven.</li>
+<li>Ha già una separazione tra:
+<ul>
+<li>character data</li>
+<li>world data</li>
+<li>experience data</li>
+<li>runtime logic
+Questo significa che storicamente il progetto era già orientato verso la direzione che stiamo seguendo oggi.</li>
+</ul>
+</li>
+</ul>
+<h5>Cose che mi preoccupano</h5>
+<p>Code ha scavato in:</p>
+<pre><code class="language-text">d:\Progetti\database\
+
+</code></pre>
+<p>e non nel repository canonico attuale.
+Quindi Phase 15.1 è stata utile come archeologia, ma non come audit canonico.
+Infatti ha classificato:</p>
+<pre><code class="language-text">Experience Authority (Ex_)
+
+</code></pre>
+<p>perché sta leggendo la vecchia architettura.
+Il prossimo step deve essere il confronto con:</p>
+<pre><code class="language-text">D:\SvartulfrVerse\database\
+
+</code></pre>
+<p>e NON con:</p>
+<pre><code class="language-text">D:\Progetti\database\
+
+</code></pre>
+<p>altrimenti rischiamo di validare il legacy contro il legacy.</p>
+<hr>
+<p>Io farei adesso una vera  <strong>Phase 15.2 — Legacy vs Canon Audit</strong> .
+L&#39;obiettivo non è ancora aggiornare il bot.
+L&#39;obiettivo è capire:</p>
+<pre><code class="language-text">Published Bot
+        VS
+Current Canon
+
+</code></pre>
+<p>e misurare il delta.
+Prompt:</p>
+<h3>Phase 15.2 — Legacy vs Canon Audit</h3>
+<h4>Objective</h4>
+<p>Compare the imported legacy bot against the current SvartúlfrVerse canon.
+This is the first canon-facing audit.
+Use ONLY the current repository as authority.</p>
+<hr>
+<h3>Authority Sources</h3>
+<p>Primary:</p>
+<pre><code class="language-text">D:\SvartulfrVerse\database\
+
+</code></pre>
+<p>Secondary:</p>
+<pre><code class="language-text">D:\SvartulfrVerse\core\
+
+</code></pre>
+<p>Reference legacy material only when needed for comparison.
+Do not use legacy files as authority.</p>
+<hr>
+<h3>Audit Scope</h3>
+<p>Compare the legacy bot against:</p>
+<ul>
+<li>current character canon</li>
+<li>current family canon</li>
+<li>current world canon</li>
+<li>current institution canon</li>
+<li>current location canon</li>
+<li>current visual canon</li>
+<li>current authority architecture</li>
+</ul>
+<hr>
+<h3>Required Reports</h3>
+<h4>Character Alignment Report</h4>
+<p>For every character appearing in the bot:
+Determine:</p>
+<ul>
+<li>canon compliant</li>
+<li>partially compliant</li>
+<li>non-compliant
+List all deviations.</li>
+</ul>
+<hr>
+<h4>Family Canon Report</h4>
+<p>Validate:</p>
+<ul>
+<li>parent-child relationships</li>
+<li>marriages</li>
+<li>dynasty membership</li>
+<li>surname usage
+Identify legacy genealogy assumptions.</li>
+</ul>
+<hr>
+<h4>Visual Canon Report</h4>
+<p>Validate against:</p>
+<ul>
+<li>W_Visual_Baseline</li>
+<li>W_Visual_Inheritance
+Identify:</li>
+<li>outdated appearances</li>
+<li>deprecated visual descriptions</li>
+<li>inheritance conflicts</li>
+</ul>
+<hr>
+<h4>World Canon Report</h4>
+<p>Validate:</p>
+<ul>
+<li>locations</li>
+<li>organizations</li>
+<li>institutions</li>
+<li>timeline assumptions
+Identify missing world records that should be created.
+Example:</li>
+<li>UCLA</li>
+<li>Los Angeles</li>
+<li>Westwood</li>
+<li>Student organizations</li>
+</ul>
+<hr>
+<h4>Architecture Report</h4>
+<p>Identify references to:</p>
+<ul>
+<li>old engines</li>
+<li>deprecated scripts</li>
+<li>obsolete runtime assumptions</li>
+<li>non-canonical ownership models</li>
+</ul>
+<hr>
+<h4>Gap Matrix</h4>
+<p>Classify findings:
+KEEP UPDATE REWRITE REMOVE
+for:</p>
+<ul>
+<li>personality</li>
+<li>scenario</li>
+<li>first message</li>
+<li>examples</li>
+<li>lorebook</li>
+<li>runtime logic</li>
+</ul>
+<hr>
+<h3>Constraints</h3>
+<p>Do not modify files.
+Do not perform migration.
+Do not create replacements.
+Audit only.</p>
+<hr>
+<h3>Success Criteria</h3>
+<p>Produce a complete delta analysis between:
+Published Bot and Current SvartúlfrVerse Canon
+so that Phase 15.3 can perform targeted migration work instead of a blind rewrite.
+Se il risultato è buono, la Phase 15.3 non sarà una riscrittura ma un &quot;surgical refactor&quot;, che è molto meno rischioso.
+<strong>User</strong> : intanto che aspettiamo ti faccio vedere cosa a fatot con la ucla e los angeles
+<strong>Gemini</strong> : A prima lettura il risultato è sorprendentemente buono. Non sembra un semplice &quot;riempimento&quot;, sembra che Code abbia capito abbastanza bene la differenza tra:</p>
+<ul>
+<li><strong>Authority Record</strong></li>
+<li><strong>Narrative Utility</strong></li>
+<li><strong>Future Expansion Hooks</strong>
+che è esattamente quello che serve per SvartúlfrVerse.
+I punti che considero particolarmente riusciti:</li>
+</ul>
+<h5>I_UCLA</h5>
+<p>La sezione &quot;Narrative Utility Notes&quot; è molto forte.
+In particolare:</p>
+<ul>
+<li>Student Stories</li>
+<li>Political Intrigue</li>
+<li>Faction Recruitment</li>
+<li>Social Events</li>
+<li>Athletics</li>
+<li>Research Programs
+Queste non sono informazioni enciclopediche inutili: sono direttamente riutilizzabili per costruire bot, eventi, lorebook e engine.
+Inoltre mi piace molto che abbia separato:</li>
+</ul>
+<pre><code class="language-text">Current Canon
+
+</code></pre>
+<p>da</p>
+<pre><code class="language-text">Future Supernatural Overlays
+
+</code></pre>
+<p>evitando di contaminare il record istituzionale con lore vampirica.
+Questa è una pratica che io estenderei a tutto il repository.</p>
+<hr>
+<h5>L_LosAngeles</h5>
+<p>Probabilmente ancora migliore di UCLA.
+La cosa che mi piace di più è:</p>
+<pre><code class="language-text">This is not an encyclopedic record.
+
+</code></pre>
+<p>perché impedisce la deriva Wikipedia.
+Ha descritto LA dal punto di vista dei personaggi.
+Ha già individuato:</p>
+<ul>
+<li>Westwood</li>
+<li>Century City</li>
+<li>Santa Monica</li>
+<li>Hollywood</li>
+<li>DTLA
+come nodi narrativi.
+Questo è molto più utile di avere 40 quartieri che nessuno userà mai.</li>
+</ul>
+<hr>
+<h4>Due cose che aggiungerei</h4>
+<h5>1. Greek Life come istituzioni</h5>
+<p>Vedo che UCLA descrive bene il sistema.
+Secondo me vale la pena creare in futuro:</p>
+<pre><code class="language-text">institutions/
+├── I_UCLA_GreekLife.md
+├── I_UCLA_USAC.md
+└── I_UCLA_StudentOrganizations.md
+
+</code></pre>
+<p>perché saranno quasi certamente generatori di NPC.</p>
+<hr>
+<h5>2. Rose Bowl</h5>
+<p>È citato spesso in entrambi i documenti.
+Io lo promuoverei a location autonoma.</p>
+<pre><code class="language-text">locations/
+└── L_RoseBowl.md
+
+</code></pre>
+<p>Perché:</p>
+<ul>
+<li>partite</li>
+<li>concerti</li>
+<li>eventi</li>
+<li>meeting pubblici</li>
+<li>eventuali eventi soprannaturali futuri
+avranno bisogno di un luogo dedicato.</li>
+</ul>
+<hr>
+<h4>Una cosa che NON farei</h4>
+<p>Non creerei ancora:</p>
+<pre><code class="language-text">I_Fraternity_X
+I_Fraternity_Y
+I_Fraternity_Z
+
+</code></pre>
+<p>Le confraternite reali rischiano di essere un enorme buco nero di documentazione.
+Meglio:</p>
+<pre><code class="language-text">I_UCLA_GreekLife
+
+</code></pre>
+<p>e poi, quando servirà per una trama o per un bot:</p>
+<pre><code class="language-text">F_NightSociety
+F_OrderOfTheBell
+F_BlackRoseHouse
+
+</code></pre>
+<p>cioè organizzazioni canoniche SvartúlfrVerse ispirate alla Greek Life reale.</p>
+<hr>
+<p>Il vero segnale positivo è un altro:
+Prima avevate praticamente solo:</p>
+<pre><code class="language-text">Characters
++
+World
+
+</code></pre>
+<p>Adesso iniziano ad apparire:</p>
+<pre><code class="language-text">Characters
++
+Locations
++
+Institutions
++
+Social Structures
+
+</code></pre>
+<p>che è esattamente ciò che serve prima di costruire i nuovi engine e i bot di seconda generazione.
+<strong>User</strong> : forse l&#39;unica fraterniti da promuovere è quella che di lore coninvolge tutti i maschi douglas
+La confraternita associata ai maschi della famiglia Douglas presso la UCLA (University of California, Los Angeles) è la  <strong>Kappa Sigma Alpha (KSA)</strong> . Questa organizzazione studentesca non è solo un club universitario per i fratelli, ma rappresenta un tassello storico e generazionale fondamentale per l&#39;intera dinastia Douglas-Bloodmoon.
+Ecco i dettagli sul rapporto che i vari membri della famiglia hanno con la confraternita:
+<strong>L&#39;importanza storica: Erik Douglas e Nixara</strong>  Il legame più profondo della famiglia con la KSA risale a circa trent&#39;anni prima della linea temporale attuale, quando il patriarca Erik Douglas incontrò per la prima volta la sua futura moglie, Nixara Bloodmoon, proprio a una festa della confraternita.
+Anche lo zio paterno, Logan Douglas, risulta essere un  <em>alumnus</em>  della KSA.
+<strong>La generazione attuale: I fratelli Douglas-Bloodmoon</strong>  I figli di Erik e Nixara hanno un rapporto con la confraternita che riflette perfettamente i loro rispettivi archetipi e ruoli all&#39;interno della famiglia:</p>
+<ul>
+<li><strong>Malachia Douglas-Bloodmoon:</strong>  Il primogenito, attualmente dottorando al quinto anno in Scienze dello Sport presso la UCLA ed ex pugile professionista, è un membro  <em>Alumni</em>  della KSA.</li>
+<li><strong>Noah Douglas-Bloodmoon:</strong>  Il secondogenito, descritto come il manipolatore sociale e avvocato della famiglia (attualmente candidato al 3L Juris Doctor alla UCLA School of Law), è anch&#39;egli un membro  <em>Alumni</em>  della confraternita.</li>
+<li><strong>Jasper Douglas-Bloodmoon:</strong>  Il gemello ribelle e hacker della famiglia, iscritto al primo anno di Ingegneria alla UCLA, rappresenta l&#39;eccezione. Essendo figlio e fratello di ex membri, Jasper è classificato come &quot;Legacy Eligible&quot; (idoneo per diritto di parentela), ma  <strong>rifiuta esplicitamente il reclutamento</strong>  e l&#39;iscrizione alla Kappa Sigma Alpha, andando contro le forti pressioni della famiglia.
+Questa scelta si allinea al suo ruolo di spirito libero e anti-establishment che vive una doppia vita come DJ underground.
+In generale, all&#39;interno dell&#39;universo narrativo, il sistema delle confraternite della UCLA (il  <em>Greek Life</em> ) non è solo un elemento di colore, ma funge da importante infrastruttura sociale per le dinamiche di potere istituzionale, offrendo un terreno pronto per intrighi politici, costruzione di alleanze e rivalità.
+<strong>Gemini</strong> : Questa è effettivamente l&#39;eccezione che giustifica una promozione.
+Non perché sia una fraternità reale UCLA, ma perché è diventata una  <strong>istituzione narrativa Douglas-Bloodmoon</strong> .
+La differenza è importante.
+Se avessi:</li>
+</ul>
+<pre><code class="language-text">Sigma Chi
+SAE
+ATO
+
+</code></pre>
+<p>non le promuoverei mai a record dedicati.
+Ma la KSA ha:</p>
+<ul>
+<li>impatto multi-generazionale</li>
+<li>collegamento diretto alla fondazione della famiglia moderna</li>
+<li>collegamento a Erik e Nixara</li>
+<li>collegamento a Logan</li>
+<li>collegamento a Malachia</li>
+<li>collegamento a Noah</li>
+<li>conflitto identitario con Jasper</li>
+<li>presenza nella timeline contemporanea
+Quindi non è più una semplice fraternità.
+È una parte della storia della casata.
+Io la strutturerei così:</li>
+</ul>
+<pre><code class="language-text">institutions/
+└── I_KappaSigmaAlpha.md
+
+</code></pre>
+<p>oppure ancora meglio:</p>
+<pre><code class="language-text">organizations/
+└── O_KappaSigmaAlpha.md
+
+</code></pre>
+<p>Perché tecnicamente non è un&#39;istituzione universitaria.
+È una organizzazione che opera dentro UCLA.</p>
+<hr>
+<p>Dal punto di vista narrativo ha già tre archi pronti:</p>
+<h5>1. Origin Arc</h5>
+<pre><code class="language-text">Erik + Nixara
+
+</code></pre>
+<p>Primo incontro.
+Evento fondativo della linea Douglas-Bloodmoon moderna.</p>
+<hr>
+<h5>2. Legacy Arc</h5>
+<pre><code class="language-text">Logan
+→ Malachia
+→ Noah
+
+</code></pre>
+<p>Tradizione familiare.
+Passaggio generazionale.
+Networking.
+Prestigio.</p>
+<hr>
+<h5>3. Rebellion Arc</h5>
+<pre><code class="language-text">Jasper
+
+</code></pre>
+<p>Legacy Eligible.
+Pressioni familiari.
+Rifiuto.
+Anti-establishment.
+DJ underground.
+Questo è probabilmente il conflitto più interessante.</p>
+<hr>
+<p>La cosa che mi piace è che non serve aggiungere nulla di soprannaturale.
+Funziona già come:</p>
+<pre><code class="language-text">social institution
+
+</code></pre>
+<p>e basta.
+Poi un domani puoi decidere:</p>
+<pre><code class="language-text">KSA = normale
+
+</code></pre>
+<p>oppure</p>
+<pre><code class="language-text">KSA = infiltrata
+
+</code></pre>
+<p>oppure</p>
+<pre><code class="language-text">KSA = copertura storica Douglas
+
+</code></pre>
+<p>senza dover modificare il record base.</p>
+<hr>
+<p>Io darei a Code un task molto piccolo:</p>
+<h3>Create Canon Organization Record — O_KappaSigmaAlpha</h3>
+<h4>Objective</h4>
+<p>Create the canonical organization record for Kappa Sigma Alpha (KSA).
+KSA is a UCLA-affiliated fraternity with historical significance to the Douglas-Bloodmoon family.
+This record must remain entirely mundane.
+Do not add supernatural content.</p>
+<hr>
+<h4>Classification</h4>
+<p>ID: O_KappaSigmaAlpha
+Type: Fraternity
+Affiliation: I_UCLA
+World: W_Contemporary
+Status: Active Canon</p>
+<hr>
+<h4>Historical Importance</h4>
+<p>Document:</p>
+<ul>
+<li>Erik Douglas met Nixara Bloodmoon at a KSA event approximately thirty years before the current timeline.</li>
+<li>Logan Douglas is a KSA alumnus.</li>
+<li>Malachia Douglas-Bloodmoon is a KSA alumnus.</li>
+<li>Noah Douglas-Bloodmoon is a KSA alumnus.</li>
+<li>Jasper Douglas-Bloodmoon is Legacy Eligible but explicitly refuses membership.</li>
+</ul>
+<hr>
+<h4>Family Significance</h4>
+<p>Explain why KSA became an informal Douglas family tradition.
+Document:</p>
+<ul>
+<li>networking</li>
+<li>social status</li>
+<li>alumni relationships</li>
+<li>family expectations</li>
+</ul>
+<hr>
+<h4>Membership Status</h4>
+<h5>Logan Douglas</h5>
+<p>Alumnus</p>
+<h5>Erik Douglas</h5>
+<p>Alumnus</p>
+<h5>Malachia Douglas-Bloodmoon</h5>
+<p>Alumnus</p>
+<h5>Noah Douglas-Bloodmoon</h5>
+<p>Alumnus</p>
+<h5>Jasper Douglas-Bloodmoon</h5>
+<p>Legacy Eligible Non-member by choice</p>
+<hr>
+<h4>Narrative Utility</h4>
+<p>Document:</p>
+<ul>
+<li>family expectations</li>
+<li>generational pressure</li>
+<li>alumni influence</li>
+<li>social networking</li>
+<li>political alliances</li>
+<li>Jasper&#39;s rejection as a recurring source of conflict</li>
+</ul>
+<hr>
+<h4>Future Expansion Notes</h4>
+<p>No supernatural content.
+Any future factional or supernatural integration requires separate authority approval.</p>
+<hr>
+<p>Success Criteria
+Establish KSA as a recurring Douglas-family social institution rather than merely a UCLA fraternity.
+Secondo me questa organizzazione finirà per essere molto più importante di qualunque confraternita reale UCLA all&#39;interno del canon.
+<strong>User</strong> : dammi anche i task per le altre entries promuovibili
+institutions/ ├── I_UCLA_GreekLife.md ├── I_UCLA_USAC.md └── I_UCLA_StudentOrganizations.md
+<strong>Gemini</strong> : Queste tre secondo me valgono assolutamente la promozione perché non sono semplici dettagli UCLA: sono  <strong>generatori di trame, NPC e conflitti</strong> .
+Le farei però con una logica diversa:</p>
+<pre><code class="language-text">institutions/
+├── I_UCLA.md
+├── I_UCLA_GreekLife.md
+├── I_UCLA_USAC.md
+└── I_UCLA_StudentOrganizations.md
+
+</code></pre>
+<p>dove I_UCLA resta il parent record.</p>
+<hr>
+<h3>Create Canon Institution Record — I_UCLA_GreekLife</h3>
+<h4>Objective</h4>
+<p>Create the canonical institutional record for UCLA Greek Life.
+This record documents the fraternity and sorority ecosystem as a social structure operating within UCLA.
+Do not focus on individual chapters.
+Document the system itself.</p>
+<hr>
+<h4>Classification</h4>
+<p>ID: I_UCLA_GreekLife
+Type: Institutional Social System
+Parent Institution: I_UCLA
+World: W_Contemporary
+Status: Active Canon</p>
+<hr>
+<h4>Scope</h4>
+<p>Document:</p>
+<ul>
+<li>role of Greek Life within UCLA</li>
+<li>fraternity structure</li>
+<li>sorority structure</li>
+<li>alumni networks</li>
+<li>philanthropy</li>
+<li>recruitment culture</li>
+<li>chapter housing</li>
+<li>campus influence</li>
+</ul>
+<hr>
+<h4>Current Scale</h4>
+<p>Document:</p>
+<ul>
+<li>approximately 60 organizations</li>
+<li>approximately 4,100 participating students</li>
+<li>approximately 13% undergraduate participation</li>
+</ul>
+<hr>
+<h4>Organizational Structure</h4>
+<p>Explain:</p>
+<ul>
+<li>IFC fraternities</li>
+<li>Panhellenic sororities</li>
+<li>multicultural councils</li>
+<li>NPHC organizations</li>
+</ul>
+<hr>
+<h4>Social Influence</h4>
+<p>Document:</p>
+<ul>
+<li>social events</li>
+<li>networking</li>
+<li>alumni influence</li>
+<li>status systems</li>
+<li>inter-chapter rivalries</li>
+<li>recruitment cycles</li>
+</ul>
+<hr>
+<h4>Narrative Utility</h4>
+<p>Explain how Greek Life can support:</p>
+<ul>
+<li>rivalries</li>
+<li>social drama</li>
+<li>recruitment</li>
+<li>alliances</li>
+<li>leadership struggles</li>
+<li>alumni influence</li>
+<li>family traditions
+Reference:</li>
+<li>O_KappaSigmaAlpha
+without making it central.</li>
+</ul>
+<hr>
+<h4>Future Expansion Notes</h4>
+<p>No supernatural content.
+Any future faction integration requires separate authority approval.</p>
+<hr>
+<p>Success Criteria
+Create a reusable social infrastructure record for all future UCLA stories.</p>
+<hr>
+<h3>Create Canon Institution Record — I_UCLA_USAC</h3>
+<h4>Objective</h4>
+<p>Create the canonical institutional record for the Undergraduate Students Association Council (USAC).
+USAC functions as the primary student government authority within UCLA.</p>
+<hr>
+<h4>Classification</h4>
+<p>ID: I_UCLA_USAC
+Type: Student Government
+Parent Institution: I_UCLA
+World: W_Contemporary
+Status: Active Canon</p>
+<hr>
+<h4>Overview</h4>
+<p>Document:</p>
+<ul>
+<li>mission</li>
+<li>governance role</li>
+<li>student representation</li>
+<li>budget authority</li>
+<li>elections</li>
+</ul>
+<hr>
+<h4>Structure</h4>
+<p>Document:</p>
+<ul>
+<li>executive officers</li>
+<li>legislative council</li>
+<li>judicial functions</li>
+<li>committees</li>
+<li>administrative support</li>
+</ul>
+<hr>
+<h4>Election System</h4>
+<p>Document:</p>
+<ul>
+<li>election cycles</li>
+<li>campaigning</li>
+<li>voter participation</li>
+<li>political blocs</li>
+<li>controversies common to student government</li>
+</ul>
+<hr>
+<h4>Areas of Influence</h4>
+<p>Document:</p>
+<ul>
+<li>student organizations</li>
+<li>campus events</li>
+<li>student services</li>
+<li>university advocacy</li>
+<li>campus policy discussions</li>
+</ul>
+<hr>
+<h4>Narrative Utility</h4>
+<p>Explain how USAC supports:</p>
+<ul>
+<li>political intrigue</li>
+<li>election campaigns</li>
+<li>faction building</li>
+<li>public debates</li>
+<li>scandals</li>
+<li>coalition politics</li>
+<li>leadership rivalries</li>
+</ul>
+<hr>
+<h4>Future Expansion Notes</h4>
+<p>No supernatural content.</p>
+<hr>
+<p>Success Criteria
+Create a realistic student-government framework usable by future narratives and bots.</p>
+<hr>
+<h3>Create Canon Institution Record — I_UCLA_StudentOrganizations</h3>
+<h4>Objective</h4>
+<p>Create the canonical institutional record for UCLA&#39;s student organization ecosystem.
+This record documents the organizational landscape rather than individual clubs.</p>
+<hr>
+<h4>Classification</h4>
+<p>ID: I_UCLA_StudentOrganizations
+Type: Institutional Organization Network
+Parent Institution: I_UCLA
+World: W_Contemporary
+Status: Active Canon</p>
+<hr>
+<h4>Overview</h4>
+<p>Document UCLA&#39;s ecosystem of 1,000+ registered organizations.
+Explain why student organizations are one of the primary social structures on campus.</p>
+<hr>
+<h4>Categories</h4>
+<p>Create sections for:</p>
+<ul>
+<li>Academic Organizations</li>
+<li>Pre-Law Organizations</li>
+<li>Engineering Organizations</li>
+<li>Film &amp; Media Organizations</li>
+<li>Gaming Organizations</li>
+<li>Cultural Organizations</li>
+<li>Faith Organizations</li>
+<li>Volunteer Organizations</li>
+<li>Political Organizations</li>
+<li>Sports Clubs</li>
+</ul>
+<hr>
+<h4>Organizational Lifecycle</h4>
+<p>Document:</p>
+<ul>
+<li>recruitment</li>
+<li>membership</li>
+<li>leadership elections</li>
+<li>funding</li>
+<li>event organization</li>
+<li>alumni continuity</li>
+</ul>
+<hr>
+<h4>Campus Influence</h4>
+<p>Explain:</p>
+<ul>
+<li>identity formation</li>
+<li>networking</li>
+<li>reputation building</li>
+<li>social mobility</li>
+<li>professional development</li>
+</ul>
+<hr>
+<h4>Narrative Utility</h4>
+<p>Explain how organizations support:</p>
+<ul>
+<li>friendships</li>
+<li>rivalries</li>
+<li>recruitment</li>
+<li>leadership struggles</li>
+<li>public events</li>
+<li>investigations</li>
+<li>information networks</li>
+</ul>
+<hr>
+<h4>Future Expansion Notes</h4>
+<p>Identify candidate future records:</p>
+<ul>
+<li>specific clubs</li>
+<li>esports organizations</li>
+<li>debate societies</li>
+<li>pre-law societies</li>
+<li>engineering teams
+Only when canon relevance justifies promotion.</li>
+</ul>
+<hr>
+<p>Success Criteria
+Create a reusable framework for all future UCLA club-based storylines without requiring individual club records.
+L&#39;ordine che darei a Code è:</p>
+<pre><code class="language-text">1. O_KappaSigmaAlpha
+2. I_UCLA_GreekLife
+3. I_UCLA_USAC
+4. I_UCLA_StudentOrganizations
+5. L_RoseBowl
+
+</code></pre>
+<p>Perché KSA è già collegata direttamente alla famiglia Douglas-Bloodmoon, mentre le altre sono infrastrutture narrative di supporto. Una volta create queste cinque entry, l&#39;ecosistema UCLA sarà praticamente completo e pronto per essere utilizzato dai futuri bot universitari.
+<strong>User</strong> : a questo punto gli farei fare una ricerca a parola chiave per poter trovare collegamenti con altre risorse del database
+<strong>Gemini</strong> : Sì. Anzi, prima di continuare a creare nuove entry farei proprio una  <strong>Link Discovery Phase</strong> .
+In SvartúlfrVerse il rischio non è creare poche entry, ma crearne troppe senza collegamenti al canon esistente.
+Darei a Code un task simile:</p>
+<h3>Phase 15.X — UCLA &amp; Los Angeles Canon Link Discovery</h3>
+<h4>Objective</h4>
+<p>Identify all existing repository references that should connect to:</p>
+<ul>
+<li>I_UCLA</li>
+<li>L_LosAngeles</li>
+<li>O_KappaSigmaAlpha</li>
+<li>I_UCLA_GreekLife</li>
+<li>I_UCLA_USAC</li>
+<li>I_UCLA_StudentOrganizations</li>
+<li>L_RoseBowl
+Before creating additional records, determine where these entities already appear in canon.</li>
+</ul>
+<hr>
+<h4>Search Scope</h4>
+<p>Search entire repository:</p>
+<pre><code class="language-text">D:\SvartulfrVerse\
+
+</code></pre>
+<p>including:</p>
+<ul>
+<li>database/</li>
+<li>core/</li>
+<li>ADR/</li>
+<li>reports/</li>
+<li>migration artifacts</li>
+<li>legacy exports</li>
+</ul>
+<hr>
+<h4>Keywords</h4>
+<h5>UCLA</h5>
+<p>Search:</p>
+<ul>
+<li>UCLA</li>
+<li>University of California Los Angeles</li>
+<li>Bruin</li>
+<li>Bruins</li>
+<li>Westwood</li>
+</ul>
+<hr>
+<h4>Los Angeles</h4>
+<p>Search:</p>
+<ul>
+<li>Los Angeles</li>
+<li>LA</li>
+<li>Hollywood</li>
+<li>Century City</li>
+<li>Santa Monica</li>
+<li>Beverly Hills</li>
+<li>Westwood</li>
+</ul>
+<hr>
+<h4>Kappa Sigma Alpha</h4>
+<p>Search:</p>
+<ul>
+<li>Kappa Sigma Alpha</li>
+<li>KSA</li>
+<li>fraternity</li>
+<li>Greek Life</li>
+<li>alumni</li>
+</ul>
+<hr>
+<h4>Douglas Family Education</h4>
+<p>Search:</p>
+<ul>
+<li>student</li>
+<li>university</li>
+<li>college</li>
+<li>undergraduate</li>
+<li>graduate</li>
+<li>law school</li>
+<li>engineering</li>
+<li>doctoral</li>
+<li>PhD</li>
+<li>JD
+Focus on:</li>
+<li>Erik</li>
+<li>Logan</li>
+<li>Malachia</li>
+<li>Noah</li>
+<li>Jasper</li>
+<li>Alyssa</li>
+</ul>
+<hr>
+<h4>Institutional Activity</h4>
+<p>Search:</p>
+<ul>
+<li>student government</li>
+<li>election</li>
+<li>campaign</li>
+<li>club</li>
+<li>society</li>
+<li>organization</li>
+<li>recruitment</li>
+<li>fraternity</li>
+<li>sorority</li>
+</ul>
+<hr>
+<h4>Deliverables</h4>
+<h5>1. Reference Matrix</h5>
+<p>Create:</p>
+<pre><code class="language-text">research/ucla_link_matrix.md
+
+</code></pre>
+<p>For every hit:</p>
+<ul>
+<li>file path</li>
+<li>entity referenced</li>
+<li>context</li>
+<li>relevance</li>
+</ul>
+<hr>
+<h5>2. Missing Link Report</h5>
+<p>Identify:</p>
+<ul>
+<li>records that should reference UCLA but do not</li>
+<li>records that should reference Los Angeles but do not</li>
+<li>records that should reference KSA but do not</li>
+</ul>
+<hr>
+<h5>3. Promotion Candidates</h5>
+<p>Identify additional entities that may deserve promotion to:</p>
+<ul>
+<li>location</li>
+<li>institution</li>
+<li>organization</li>
+<li>faction
+Examples:</li>
+<li>Rose Bowl</li>
+<li>Douglas Commerce Company</li>
+<li>UCLA School of Law</li>
+<li>UCLA Athletics</li>
+<li>specific clubs</li>
+<li>recurring venues
+Do not create records.
+Only identify candidates.</li>
+</ul>
+<hr>
+<h4>Constraints</h4>
+<p>Do not modify files.
+Do not create backlinks.
+Do not perform migrations.
+Discovery only.</p>
+<hr>
+<h4>Success Criteria</h4>
+<p>Produce a complete map of existing canon connections before further UCLA ecosystem expansion.
+Questo task spesso produce sorprese.
+Ad esempio potresti scoprire che:</p>
+<pre><code class="language-text">Noah
+
+</code></pre>
+<p>è già descritto come UCLA Law in 4 file diversi,
+oppure che:</p>
+<pre><code class="language-text">Malachia
+
+</code></pre>
+<p>ha riferimenti sparsi a sport universitari,
+oppure che:</p>
+<pre><code class="language-text">Angel Moreno
+
+</code></pre>
+<p>ha collegamenti impliciti con Hollywood che giustificano una futura I_HollywoodPhotographyCommunity o simili.
+Prima di creare altre entry, avere una mappa dei collegamenti esistenti è probabilmente il miglior investimento.</p>

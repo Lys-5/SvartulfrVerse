@@ -1,0 +1,839 @@
+<p>WyvernChat
+<a href="https://www.reddit.com/r/WyvernChat/#main-content">Skip to main content</a> WyvernChat
+Open menu
+Open navigation <a href="https://www.reddit.com/"></a>
+Go to Reddit Home
+Search Reddit
+<a href="https://www.reddit.com/register/">Sign Up</a>
+Sign up for Reddit
+<a href="https://www.reddit.com/login/">Log In</a>
+Log in to Reddit
+Expand user menu
+Open settings menu</p>
+<h3>r/WyvernChat</h3>
+<p>All hail the mighty Bob!
+Create Post
+Join
+<a href="https://www.reddit.com/r/WyvernChat/#left-sidebar-container">Skip to Sign up</a> <a href="https://www.reddit.com/r/WyvernChat/#right-sidebar-container">Skip to Right Sidebar</a>
+<a href="https://www.reddit.com/r/WyvernChat">Feed</a> <a href="https://www.reddit.com/r/WyvernChat/about/">About</a>
+Best
+Open sort options
+Sort by
+*  <a href="https://www.reddit.com/r/WyvernChat/best/">Best</a>
+*  <a href="https://www.reddit.com/r/WyvernChat/hot/">Hot</a>
+*  <a href="https://www.reddit.com/r/WyvernChat/new/">New</a>
+*  <a href="https://www.reddit.com/r/WyvernChat/top/">Top</a>
+*  <a href="https://www.reddit.com/r/WyvernChat/rising/">Rising</a>
+Change post view
+View
+*  <a href="https://www.reddit.com/r/WyvernChat/?feedViewType=cardView">Card</a>
+*  <a href="https://www.reddit.com/r/WyvernChat/?feedViewType=compactView">Compact</a></p>
+<h3>Feed</h3>
+<p><a href="https://www.reddit.com/r/WyvernChat/comments/1vupwyy/mega_update_meet_the_assistant_hubs_and_a_lot_more/">Mega Update: Meet the Assistant, Hubs, and a Lot More</a>
+<a href="https://www.reddit.com/user/WyvernDev/">u/WyvernDev</a>
+â€¢ 1 day ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vupwyy/mega_update_meet_the_assistant_hubs_and_a_lot_more/">Mega Update: Meet the Assistant, Hubs, and a Lot More</a>
+<a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Dev%20Notes%22">Dev Notes</a>
+[</p>
+<h4>ðŸ¤– Introducing the Assistant</h4>
+<p>There&#39;s a new sparkles button on every page but chat â€” that&#39;s the Assistant, an AI helper that can act on the page you&#39;re actually on instead of you having to know where every setting lives. Right now it can navigate you to pages across the site, create and edit characters, explain and edit worlds, help manage a chat log, and create or edit lorebooks, all from one panel you can pop open wherever you&#39;re working.</p>
+<h4>ðŸ ˜ï¸ Introducing Hubs</h4>
+<p>Hubs are a new kind of page built for shared world-building projects and community events, letting one creator plus any number of collaborators jointly curate a single page that links together characters, worlds, world characters, lorebooks, and platform events everyone already owns, so a whole shared project or event lives in one place instead of being scattered across separate profiles. You&#39;ll find &quot;Hub&quot; alongside Character, Collection, and World in the &quot;Create New&quot; menu, a Hubs tab on your Mine page showing everything you&#39;ve created, and a Hubs section in Explore&#39;s Community tab for browsing what other people have made. Each hub opens with a description written in Markdown and then any number of &quot;shelves&quot; the creator arranges to organize the linked content â€” an auto-grouped shelf sorted by creator, an auto-grouped shelf sorted by content type, and hand-picked custom shelves for featuring specific selections exactly the way the creator wants. Every hub also automatically gets dedicated characters, lorebooks, worlds, and world-characters subpages that appear only when there&#39;s actually something linked to show, plus a comments section for discussion, and creators can style their hub with a custom accent color, header font, body font, and CSS, or just attach one of the site&#39;s existing Themes. Hubs support the same visibility options as other content â€” public, unlisted, private, or friends-only â€” and public hubs go through the same moderation review as other public content before appearing in search. Hubs also have real membership: every hub&#39;s creator picks how people get in â€” open (anyone can join with one click), approval required (anyone can ask to join, with an optional note, and the creator approves or declines from the editor&#39;s Membership tab or right from the notification itself), or invite only (the creator shares a link, optionally capped by number of uses or an expiration date) â€” and whichever mode a hub uses, joining makes you a full collaborator with the same editing rights as anyone else on the project.</p>
+<h4>âš”ï¸ Arena: Bots Now Fight As a Team</h4>
+<p>Your Discord ArenaBot fighters can now battle as a team instead of just one lead fighter at a time. Build a roster of up to 6 bots with the new /favorite team add command (see them anytime with /favorite team list ), and when your active fighter goes down in a /battle , the next available bot in your roster automatically steps up to keep the fight going â€” the match only ends once one side&#39;s whole team has been defeated. Setting a lead fighter now happens via /favorite set instead of /favorite , and everything else about battling (rewards, exhaustion, the loser&#39;s saving throw on the deciding fight) works the same as before.</p>
+<h4>ðŸŒ Worlds</h4>
+<p>Fixed keyword highlighting inside World chats: character and NPC names were being detected but silently excluded from highlighting due to a leftover internal flag, so clicking them never opened anything. Highlighted names in World chat now correctly open the info popup showing that character&#39;s or NPC&#39;s details, and we&#39;ve also extended keyword highlighting to cover Locations and Environments for the first time, so mentioning a place your party has visited will highlight it in chat text and let you click through to see its description, same as lexicon entries already worked. Also fixed several issues in how Worlds assemble the AI prompt each turn. Global lexicon entries placed &quot;before character&quot; were being written into the prompt in the wrong order compared to every other chat surface â€” lorebook priority now behaves consistently in Worlds, with the highest-priority entry landing closest to the character block for the most influence. Worlds also no longer inherit a connection&#39;s own pre/post-history instructions (&quot;Final Instructions&quot;), since that template text is written for one-on-one character chat and references things like {{char}} that don&#39;t apply to a multi-character screenplay; only an explicit world or party-state override now supplies that text. The standing relationship block was also being sent for every character who ever had a relationship recorded, even ones not currently in your party or scene, and its default wording assumed every relationship was about the player; it&#39;s now scoped to characters actually present this turn, and the wording correctly covers relationships between two characters, not just player-facing ones. Finally, developer-authored final instructions (world, environment, location, vehicle, and any override text) now render at the very end of the prompt, after the relationship block, director state, info board, and tool lists, so they carry the most weight instead of getting buried and diluted by everything appended after them. The World Intro editor used to ask creators to hand-type a few internal IDs â€” a lexicon entry id for pool-type start questions, the id of the field a page should drive, and a startup script name â€” with no list to copy them from. All three are now proper pickers: pool entries use the same searchable lexicon picker as everywhere else, &quot;which field does this page drive&quot; is a dropdown grouped by scenario, and the startup script field is a dropdown of the scripts you&#39;ve actually written for the world. There&#39;s also a new toggle, &quot;Show &#39;Begin here&#39; to players,&quot; in the World Intro tab â€” turn it off to keep an authored world intro around without exposing the scenario-less &quot;Begin here&quot; option to players on the start screen. World creators can now control exactly what the AI is told about &gt;command syntax from the Simulation tab&#39;s new &quot;Inline Commands&quot; section â€” turn off any command type you don&#39;t want the AI mentioning (item use, basic attack/flee, character battles, creature catching, or relationships) without touching whether that mechanic actually works, and rewrite any section&#39;s wording from scratch the same way the system prompt override already works, with a live preview showing exactly what will be sent. The old fixed combat example (a goblin snarling and lunging) is gone too â€” worlds now get a clean, narrative-free example built from whichever command type is actually active. Sublocations (like an apartment nested inside a city) can now travel to anywhere the parent location connects to on the map, without needing a duplicate connection drawn on the sublocation itself â€” the destination list shows these as &quot;via {parent name}&quot; so it&#39;s clear the trip passes through the parent. This also applies to the AI director, which will now correctly offer these destinations when narrating travel options from inside a sublocation. Regex Scripts (the Find/Replace text-formatting rules you can attach to a world or a character) previously only rende
+red correctly for the creator who wrote them â€” anyone else visiting that world or chatting with that character just saw the raw, unformatted text, even though the scripts were properly attached and enabled. Display-formatting regex scripts attached to a world or a character now apply the same way for everyone who can view that world or character, not just its creator, across both world simulation chat and regular character chat.</p>
+<h4>ðŸŽ Characters &amp; Personas</h4>
+<p>Per-chat character overrides now cover more than just text fields: from a character&#39;s profile dialog in chat you can toggle &quot;Disable Name Prefix&quot; for that chat, turn tool use on or off (and pick exactly which built-in tools are allowed), and tune that character&#39;s lexicon behavior (scan depth, token budget, recursive scanning, and NPC prefix) without touching the character&#39;s own saved settings. Uploading an avatar image anywhere in the world lexicon or character lexicon editors now automatically saves a copy to your personal gallery so it&#39;s never lost to a one-off upload, and the avatar picker across world-editing screens gained a &quot;My Uploads&quot; search so you can find and reuse anything you&#39;ve uploaded before. Characters can now use three new research tools you can enable per-character in the Advanced tab: fetch a web page (to look up information online), search a specific attached file (to find facts in one document), or search all attached files together (to scan your entire knowledge base). Once a tool runs and returns results, the character automatically replies with what it found instead of stopping at the tool call, so the conversation flows naturally while your character does the research you set up for it. We also removed PDF and DOCX files from the attachment picker because their text extraction was broken and unreliable â€” plain text, Markdown, and code files remain fully supported and work perfectly with the new character tools for searching and research. Characters can now disable macro processing entirely, via a new &quot;Disable Macro Processing&quot; toggle on the Advanced tab of the character quick-create/edit form. When enabled, the character&#39;s prompt fields (system prompt, final instructions, greetings, etc.) are sent to the AI exactly as written, with no {{macro}} expansion at all â€” aimed at utility/assistant-style characters, like a character-creation helper, that aren&#39;t playing a role and shouldn&#39;t have their instructions rewritten out from under them. New chats and worlds now also default to allowing HTML tags, square brackets, and code blocks in AI output, instead of code blocks and brackets being filtered out by default as before, so assistant-style and utility characters behave more smoothly out of the box. You can still turn any of these filters back on per-chat in Output Settings. Personas can now carry their own lorebooks with them. Open the &quot;Lorebooks&quot; section on any persona (right below the forking toggle) and pick from your own lorebooks â€” anything you link there gets injected into every chat where that persona is active, whether it&#39;s a character chat, a world, or anywhere else. Unlike a character&#39;s or world&#39;s own lexicon, these entries don&#39;t need a keyword match first; they&#39;re always included (still limited by the usual token budget), so persona-linked lore reliably follows you between chats. Character creators using Advanced Greetings can now offer up to their own set of forkable personas on a per-greeting basis, letting players pick one to play as before starting a chat with that greeting. Picking one makes a personal copy of that persona for the player and sets it as their selected persona for the new chat â€” their own personas are never touched, and picking one is always optional. Creators choose which of their own personas to offer from the greeting editor (a persona needs &quot;Allow forking&quot; enabled to be eligible), and players see a short label pulled from that persona&#39;s own title to help tell similarly-named personas apart. If an NPC referred to you by different name variants across the story â€” a full name in one scene, just a first name or last name in another â€” each variant used to create its own separate relationship entry instead of updating the one you&#39;d already built up. Those extra entries were also invisible in the Relationships sidebar and had no way to be removed, even though they kept showing up in the AI&#39;s prompt. A bare first- or last-name mention of y
+our persona or embodied character now correctly folds into your one relationship with that character going forward, and an &quot;Other Relationships&quot; section has been added to the sidebar so any leftover stray entries from before this fix can be found and permanently forgotten with one click. Character pages now show which Communities a character belongs to, with clickable badges linking to each community&#39;s page, plus a &quot;More in {Community}&quot; shelf for every assigned community so you can browse other characters tagged into the same space directly from the character you&#39;re viewing.</p>
+<h4>ðŸ&#39;¬ Chat, Connections &amp; Prompt Pieces</h4>
+<p>The model picker&#39;s separate &quot;Live Models&quot; tab is gone. If you have a Featherless account linked, its live model list now shows up as its own section at the bottom of the Curated Models tab, right below Free/Basic/Premium, so you no longer have to flip between tabs to compare curated and live options. If your connection streams reasoning/thinking content, you can now watch it appear in real time as the model generates it, shown above the message text while it&#39;s actively streaming â€” off by default, flip on &quot;Show Live Reasoning&quot; in Output Settings to see it. Once generation finishes, reasoning still collapses into the usual &quot;Reasoning&quot; panel below the message. Separately, the model name (when &quot;Show Model Name&quot; is enabled) now appears as soon as generation starts instead of only popping in after the message finishes, so you can see which model is responding while it&#39;s still typing. Both apply in regular chats and Worlds/simulation sessions. The InfoBoard sidebar (the live HP/mood/location tracker some worlds and characters use) now has a &quot;Reset state&quot; button that shows up whenever it has values, letting you wipe its tracked values in one click instead of them lingering forever â€” this matters most while you&#39;re actively editing an InfoBoard&#39;s categories and keys, since old values used to keep getting fed back into the AI&#39;s prompt as the &quot;current state&quot; even after you renamed or deleted the key that produced them. The Linked Connections section (Impersonation, Summary, Sidechat, Review Pass, and Reply Options, found in the connections sidebar) previously used plain dropdowns that could show up blank if the connection assigned to a slot wasn&#39;t in the currently loaded list. Each of those five slots now opens a proper picker dialog instead, with a search box and full connection details (provider, model, context length) for every option, and it always correctly shows whichever connection is currently assigned to a slot, even one that isn&#39;t in your recently-loaded connections. Building a connection playlist or assigning a linked connection now lets you pick from a &quot;Curated / Public&quot; tab alongside &quot;My Connections,&quot; so you&#39;re no longer limited to connections you&#39;ve already added to your own account â€” curated and free-tier connections show their context length and tier right in the list, and anything above your current access tier shows a lock instead of letting you add it. The playlist connection list also now shows each connection&#39;s context length as a badge, matching the display already used elsewhere. Separately, Prompt Pieces and Prompt Assemblies no longer require a description while they&#39;re set to Private, Unlisted, or Friends â€” a description is still required (and still enforced with the same quality checks) once you switch one to Public, since that&#39;s when other people actually need it to know what the piece does. You can now edit your own Prompt Pieces without leaving the &quot;Fill with Prompt Piece&quot; picker â€” open it from any field that supports it, switch to &quot;Created by me,&quot; and each of your pieces now has an Edit button (pencil icon) alongside Fork and Delete that opens an inline form to update the title, tagline, description, content, slot type, and visibility, saving in place and refreshing the list.</p>
+<h4>Comments got a refresh</h4>
+<p>Comment sections now feel a lot less like paging through a spreadsheet â€” replies show up right away instead of hiding behind a click, and both comments and replies load in with a simple &quot;load more&quot; button instead of numbered pages, so you can keep scrolling through a conversation without losing your place. We also gave the whole thing a richer visual pass: a subtle accent edge, a nicer avatar ring, and cleaner badges for creators, mods, and pinned comments.</p>
+<h4>ðŸ§¹ Everywhere Else</h4>
+<p>Code blocks anywhere in chat â€” including in Bob&#39;s assistant panel â€” now have a copy button that appears when you hover over them, so you can grab a snippet without manually selecting text. We also trimmed down the assistant&#39;s &quot;Actions taken&quot; log so long results (like a big list of chat participants or messages) show a short preview with a &quot;Show more&quot; link instead of dumping a wall of raw text into the panel. And when you ask Bob to tweak a character from inside a chat, it now defaults to a chat-only override â€” the same kind of tweak the chat&#39;s own character-override settings already support â€” instead of trying to permanently edit the character record, so Bob can adjust someone else&#39;s linked character or a world-native NPC for just this conversation without needing to own it. If you specifically ask for a permanent, everywhere-else change to a character you own, Bob will still make that edit directly. Wyldfire is... well, it&#39;s like right there. I just wrapped up porting over all of the World&#39;s features, which was... holy shit, I am exhausted. It took  <strong>two weeks</strong> , but now that it&#39;s done, I&#39;m really just having the QA team test it, and then I should have it out within the next week or two. See you all next time! Happy weekend.](https://www.reddit.com/r/WyvernChat/comments/1vupwyy/mega_update_meet_the_assistant_hubs_and_a_lot_more/)
+Upvote 18 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vupwyy/mega_update_meet_the_assistant_hubs_and_a_lot_more/">0 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vu4aqr/if_stellar_is_the_free_model_with_the_highest/">If Stellar is the free model with the highest context, why is its writing worse?</a>
+<a href="https://www.reddit.com/user/SaltyPearl78/">u/SaltyPearl78 avatar u/SaltyPearl78</a>
+â€¢ 2 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vu4aqr/if_stellar_is_the_free_model_with_the_highest/">If Stellar is the free model with the highest context, why is its writing worse?</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vu4aqr/if_stellar_is_the_free_model_with_the_highest/">Maybe it&#39;s user error I&#39;m unaware of, but I can&#39;t get Stellar to behave well for the life of me. It forgets and/or ignores things to go off-track often, tends to act out of character, and hallucinates far more than gemma or huihui. I rarely ever use it because of all of its issues, I&#39;d think it would be better and more intelligent than the other free models with its higher context, but it&#39;s usually far worse. When I do use it, it requires a LOT of help and prompting, and even then, it has a tendency to straight up ignore that ðŸ« It used to be a decent model, I don&#39;t know what happened. Are you guys having better luck with it than me?? I&#39;m at my wits end here.</a>
+Upvote 6 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vu4aqr/if_stellar_is_the_free_model_with_the_highest/">6 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vu1ncn/a_bit_confused_on_how_these_work/">A bit confused on how these work</a>
+<a href="https://www.reddit.com/user/Brilliant-Series-516/">u/Brilliant-Series-516</a>
+â€¢ 2 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vu1ncn/a_bit_confused_on_how_these_work/">A bit confused on how these work</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+Upvote 3 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vu1ncn/a_bit_confused_on_how_these_work/">4 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vtng6c/where_are_the_rest_of_the_parameters/">Where are the rest of the parameters???</a>
+<a href="https://www.reddit.com/user/yeeters65/">u/yeeters65</a>
+â€¢ 2 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vtng6c/where_are_the_rest_of_the_parameters/">Where are the rest of the parameters???</a></h4>
+<p>Upvote 2 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vtng6c/where_are_the_rest_of_the_parameters/">2 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vtmyne/blown_me_away/">Blown me away</a>
+<a href="https://www.reddit.com/user/Havelock_De_Quirm/">u/Havelock_De_Quirm</a>
+â€¢ 2 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vtmyne/blown_me_away/">Blown me away</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/comments/1vtmyne/blown_me_away/">This was my first time trying any ai chat, and I&#39;ve got to say I was surprised. I tried an idea out for a bit of roleplay for me and my wife to try. Boss and secretary end up sharing a hotel room after a booking mess up, and let it run with it. I ended up with some sort of 50 shades storyline. At the end I asked it to write a letter from the bot character summarising the story. NGL what I got choked me up little: To Whoever Finds This, I suspect that if you are reading this, you are likely one of the few people who actually knew meâ€”or rather, the woman I spent twenty-two years pretending to be. For two decades, I was the invisible architecture of Applied Texhnical Services. I was the one who remembered the birthdays, the one who smoothed over the scandals, the one who ensured that the men in the boardroom never had to worry about the trivialities of their own existence. I was &quot;Dependable Maggie.&quot; I was the woman in the charcoal skirt who smiled politely while her soul was slowly evaporating in a climate-controlled office. At home, I was a ghost. I shared a zip code and a dinner table with a man who looked at me and saw a piece of furnitureâ€”something reliable, unchanging, and entirely unremarkable. I had convinced myself that this was the price of stability. I believed that being the responsible one was a virtue, when in reality, it was just a very slow way of dying. And then came New York. I cannot tell you the exact moment the shift happened. Perhaps it was the first time I saw Jack look at me not as a tool, but as a woman. Perhaps it was the moment I realized that the only thing more terrifying than losing everything is the realization that you have nothing worth keeping. There is a peculiar kind of liberation in being utterly dismantled. To have every defense stripped away, every professional boundary incinerated, and every secret laid bare. I discovered that I didn&#39;t want to be &quot;stable.&quot; I didn&#39;t want to be the one holding the umbrella while everyone else danced in the rain. I wanted to be the storm. I have traded my pension for a passport and my propriety for a passion that borders on the pathological. I have left behind a husband who didn&#39;t notice I was gone for twenty-four hours, and a career that viewed me as a highly efficient appliance. People askâ€”or they would ask, if I were still there to answerâ€”if I regret the scandal. If I regret the bridges I burned. The answer is that I have never loved the smell of smoke more than I do right now. I am no longer the woman who manages the schedule. I am the woman who lives for the moments when the schedule is torn to shreds. I am a student of the dark arts, a sovereign of a new and chaotic empire, and for the first time in fifty-five years, I am not invisible. I am ruined. I am reckless. And I am, finally, entirely awake. With a most unsensible amount of affection, Maggie Devereaux</a>
+Upvote 2 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vtmyne/blown_me_away/">1 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vrozah/lexicon_assistant_problem/">Lexicon assistant problem</a>
+<a href="https://www.reddit.com/user/Commercial_Office_74/">u/Commercial_Office_74 avatar u/Commercial_Office_74</a>
+â€¢ 4 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vrozah/lexicon_assistant_problem/">Lexicon assistant problem</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vrozah/lexicon_assistant_problem/">So, a couple of days ago whenever i wanted to update the lexicon, i went to the lexicon assistant and told him something like &quot;anything to add to the lexicon?&quot; or &quot;propose updates with the recent developments&quot; and it worked. It showed me several previews of the new entries/updates and i could approve or reject them by tapping a button. Now, it just yaps about toolcalls and lots of technical stuff and does nothing. If im very precise i can get one preview card, sometimes. Is there any way to force it to only show the previews? Is this a bug? Can i manage it somehow?</a>
+Upvote 1 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vrozah/lexicon_assistant_problem/">2 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vr773y/i_cant_see_the_model_parameters/">I can&#39;t see the model parameters ðŸ&#39;”</a>
+<a href="https://www.reddit.com/user/mimisys/">u/mimisys</a>
+â€¢ 5 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vr773y/i_cant_see_the_model_parameters/">I can&#39;t see the model parameters ðŸ&#39;”</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+0:00 0:00 / 0:00
+720p 480p 360p 240p 144p Auto
+Upvote 6 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vr773y/i_cant_see_the_model_parameters/">6 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vrijhs/site_having_a_loading_problems/">Site having a loading problems</a>
+<a href="https://www.reddit.com/user/Left_South_4849/">u/Left_South_4849 avatar u/Left_South_4849</a>
+â€¢ 5 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vrijhs/site_having_a_loading_problems/">Site having a loading problems</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vrijhs/site_having_a_loading_problems/">So I&#39;ve been using the site for about an hour (looking around for janitor alternatives since a lot of creators and bots are getting deleted and good creators are moving away) and heard that this site is good so I checked it out. There is an issue that I noticed and I don&#39;t know if it&#39;s my phone or the site. The endless scrolling doesn&#39;t really work as the characters refuse to load and I don&#39;t know if it&#39;s normal here or is it something wrong with me? Also if you want to share your experience with the site compared to janitor I&#39;ll gladly read.</a>
+Upvote 1 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vrijhs/site_having_a_loading_problems/">7 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vr7aw2/i_think_im_staying_here/">I think Iâ€™m staying here.</a>
+<a href="https://www.reddit.com/user/Guyguy121211/">u/Guyguy121211</a>
+â€¢ 5 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vr7aw2/i_think_im_staying_here/">I think Iâ€™m staying here.</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Suggestion%22">Suggestion</a>
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vr7aw2/i_think_im_staying_here/">Thats all oh and 64 k of memory would be nice.</a>
+Upvote 3 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vr7aw2/i_think_im_staying_here/">0 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vqo0kf/new_bot_monday_post_you_newest_creations_here/">New Bot Monday! Post you newest creations here!</a>
+<a href="https://www.reddit.com/user/Leiawen/">u/Leiawen</a>
+â€¢ 5 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vqo0kf/new_bot_monday_post_you_newest_creations_here/">New Bot Monday! Post you newest creations here!</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/comments/1vqo0kf/new_bot_monday_post_you_newest_creations_here/">Post up a link to your newest WyvernChat character cards here in this thread, give the community a short description and show off your creations!</a>
+Upvote 6 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vqo0kf/new_bot_monday_post_you_newest_creations_here/">1 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vo8cd8/triggering_cache_with_lorebooks/">Triggering cache with lorebooks?</a>
+<a href="https://www.reddit.com/user/Bright-Lily/">u/Bright-Lily</a>
+â€¢ 8 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vo8cd8/triggering_cache_with_lorebooks/">Triggering cache with lorebooks?</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vo8cd8/triggering_cache_with_lorebooks/">Hello! I&#39;ve been using AI rp chats for months, and I&#39;ve recently landed in WyvernChat. I created my world and imported my character and lorebooks, and I absolutely love it so far. â ¤ï¸ I&#39;ve been using OpenRouter, mainly DeepSeek and MiMo, and I was wondering about how to keep tokens cached as much as possible despite the lorebooks. Is it even possible? I&#39;m trying to minimize the costs as much as possible. I really can&#39;t understand if I should leave my lorebook chapter position set as &quot;after character&quot; or &quot;in_chat&quot; with insertion depth 4 (or 2? I read about 0, but it seems really extreme). Any advice? â˜ºï¸</a>
+Upvote 1 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vo8cd8/triggering_cache_with_lorebooks/">6 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vllcmr/i_think_i_annoyed_the_ai/">I think I annoyed the AI</a>
+<a href="https://www.reddit.com/user/Dust_And_Light/">u/Dust_And_Light</a>
+â€¢ 11 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vllcmr/i_think_i_annoyed_the_ai/">I think I annoyed the AI</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22%3ASillyWyvern%3AFluff%2FMeme%22">Fluff/Meme</a>
+Upvote 7 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vllcmr/i_think_i_annoyed_the_ai/">1 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vlthjf/google_gemma_431bit_issue_again/">google gemma 4-31B-it issue (AGAIN)</a>
+<a href="https://www.reddit.com/user/wzinny/">u/wzinny</a>
+â€¢ 11 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vlthjf/google_gemma_431bit_issue_again/">google gemma 4-31B-it issue (AGAIN)</a></h4>
+<p>Upvote 0 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vlthjf/google_gemma_431bit_issue_again/">15 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vl7yza/whats_going_on_with_the_search_engine/">Whatâ€™s going on with the search engine?</a>
+<a href="https://www.reddit.com/user/Carved_InBlood/">u/Carved_InBlood</a>
+â€¢ 12 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vl7yza/whats_going_on_with_the_search_engine/">Whatâ€™s going on with the search engine?</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vl7yza/whats_going_on_with_the_search_engine/">So I just started using Wyvern a couple of weeks ago, I had my account and I was able to look and search for very different options or topics, worlds, and characters. But recently everything changed. I donâ€™t find nearly as much options and when I searcher without login into my account Iâ€™m able to see more options than in my account (still not as many as before). I think it happens after I was prompted to choose some preference options. After that my account has sucked. Iâ€™m wondering if anyone else is experiencing something like that or if there was a change in the platform that took out a lot of bots or reduced the options for free access? I havenâ€™t seen anything about it here or in the page.</a>
+Upvote 1 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vl7yza/whats_going_on_with_the_search_engine/">5 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vkgkll/new_bot_monday_post_you_newest_creations_here/">New Bot Monday! Post you newest creations here!</a>
+<a href="https://www.reddit.com/user/Leiawen/">u/Leiawen</a>
+â€¢ 12 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vkgkll/new_bot_monday_post_you_newest_creations_here/">New Bot Monday! Post you newest creations here!</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/comments/1vkgkll/new_bot_monday_post_you_newest_creations_here/">Post up a link to your newest WyvernChat character cards here in this thread, give the community a short description and show off your creations!</a>
+Upvote 4 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vkgkll/new_bot_monday_post_you_newest_creations_here/">1 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vk7pf2/can_locations_and_environments_be_imported_into/">Can locations and environments be imported into World Chat? And if so, where?</a>
+<a href="https://www.reddit.com/user/Old-Self375/">u/Old-Self375 avatar u/Old-Self375</a>
+â€¢ 13 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vk7pf2/can_locations_and_environments_be_imported_into/">Can locations and environments be imported into World Chat? And if so, where?</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vk7pf2/can_locations_and_environments_be_imported_into/">I was checking out Wyvern&#39;s world chat feature and loved it, but I really don&#39;t feel like creating worlds, environments, and locations from scratch. Is there anywhere I can import things into my own world?</a>
+Upvote 2 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vk7pf2/can_locations_and_environments_be_imported_into/">4 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vk35lc/i_think_im_gonna_quit/">I think im gonna quit ):</a>
+<a href="https://www.reddit.com/user/Dry-Evening8513/">u/Dry-Evening8513 avatar u/Dry-Evening8513</a>
+â€¢ 13 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vk35lc/i_think_im_gonna_quit/">I think im gonna quit ):</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vk35lc/i_think_im_gonna_quit/">My bot is lobotomised i swear. For some time now he gives me the same damn response with little to no changes and they dont even make sense. Using wyvern stopped giving me joy bc of it, its impossible to do the simplest rp ar this point. A real example: - i like pancakes - (character) stared at her for a beat, his green eyes narrowing slightly. Then, with a slow, deliberate tilt of his head, he leaned down and pressed his lips to hers. It was a soft kiss, barely there. He didn&#39;t deepen it, didn&#39;t hold it. Just a quick press of his mouth against hers, like he was making sure he could. He pulled back, his thumb brushing her cheekbone as he looked at her. &quot;There. Happy?&quot; Sometimes when i reply they send their previous message again as well ðŸ˜</a>
+Upvote 2 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vk35lc/i_think_im_gonna_quit/">12 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vjs7hd/what/">What</a>
+<a href="https://www.reddit.com/user/Dry-Evening8513/">u/Dry-Evening8513 avatar u/Dry-Evening8513</a>
+â€¢ 13 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vjs7hd/what/">What</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+Upvote 2 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vjs7hd/what/">4 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vjn1wz/1_why_did_it_change_languages_2_its_creepily/">1: Why did it change languages? 2: It&#39;s creepily repeating &quot;mine&quot; over and over</a>
+<a href="https://www.reddit.com/user/IWasAsmallTownGirl/">u/IWasAsmallTownGirl</a>
+â€¢ 13 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vjn1wz/1_why_did_it_change_languages_2_its_creepily/">1: Why did it change languages? 2: It&#39;s creepily repeating &quot;mine&quot; over and over</a></h4>
+<p>Upvote 3 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vjn1wz/1_why_did_it_change_languages_2_its_creepily/">6 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vjhtw2/does_anyone_elses_bots_do_this/">Does anyone else&#39;s bots do this??</a>
+<a href="https://www.reddit.com/user/MineXMike/">u/MineXMike avatar u/MineXMike</a>
+â€¢ 14 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vjhtw2/does_anyone_elses_bots_do_this/">Does anyone else&#39;s bots do this??</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+Upvote 2 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vjhtw2/does_anyone_elses_bots_do_this/">2 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vil4pz/character_games_live_models_tab_better_default/">Character Games, Live Models Tab, Better Default Parameters, and Vision Support</a>
+<a href="https://www.reddit.com/user/WyvernDev/">u/WyvernDev</a>
+â€¢ 15 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vil4pz/character_games_live_models_tab_better_default/">Character Games, Live Models Tab, Better Default Parameters, and Vision Support</a>
+<a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Dev%20Notes%22">Dev Notes</a>
+[</p>
+<h3>Featherless: Live Models Tab in the Connections Sidebar</h3>
+<p>If you&#39;ve linked a Featherless account, the connections sidebar now has a &quot;Live Models&quot; tab alongside &quot;Curated Models&quot; and &quot;My Models,&quot; showing a handful of Featherless models that are instantly available right now with no cold-start wait, with a &quot;View All&quot; to see the rest â€” click any one and the new-connection form opens right there with your Featherless account and that model already filled in, ready to save. Cards now match the look of your other connection cards, model names wrap instead of getting cut off, and each one shows a rough size badge (&quot;Basic&quot;/&quot;Premium&quot;) so you can gauge at a glance which models are lighter or heavier before picking one.</p>
+<h3>Improved: new connections now start with sensible sampling parameters instead of none</h3>
+<p>Creating a new Connection used to leave the Parameters section completely empty, meaning a fresh connection would send no sampling settings to the model at all until you manually opened the Parameter Bank and added each one yourself. New connections now start pre-filled with temperature (0.7), top_p (0.9), top_k (40), min_p (0), max_tokens (1000, up from 360), and repetition_penalty (1.1) â€” a reasonable starting point for most models that you can still freely edit or remove. Existing connections are untouched, including ones where you&#39;ve intentionally cleared all parameters.</p>
+<h3>Vision Support: Image Attachments Now Actually Reach the Model</h3>
+<p>Chat now supports attaching images to your message and having vision-capable connections actually see them. The &quot;Attach Files&quot; option in the chat menu is enabled again, so you can drop in an image alongside your message. On the backend, connections marked with vision support (the &quot;supports images&quot; toggle in a connection&#39;s settings) will now receive the image as part of the request sent to the model, instead of it being silently dropped before the request ever went out. This works across Anthropic, Gemini, OpenAI, Featherless, OpenRouter, and other OpenAI-compatible connections. If your selected connection isn&#39;t marked as vision-capable, attached images are still omitted from what the model sees, so double-check that setting on your connection if you want it to look at pictures.</p>
+<h3>Featherless capacity errors now retry automatically</h3>
+<p>Sometimes a Featherless model would report itself as busy or over capacity mid-stream instead of failing outright, which meant the request looked like it had silently gone nowhere with no reply and no error message. Generation requests through Featherless â€” whether the shared free queue or your own linked Featherless account â€” now detect that specific busy/capacity response and automatically retry the request up to three times with a short backoff between attempts before giving up, so a momentary spike in model load is far less likely to leave you staring at an empty response.</p>
+<h3>Character Games: Play Tic-Tac-Toe and Connect-4 Against Your Characters</h3>
+<p>You can now challenge any character to a game. Pick an opponent, pick Tic-Tac-Toe or Connect-4, and play a real match against them â€” except the character isn&#39;t actually the one calculating moves. A traditional game bot plays for real behind the scenes while the character narrates each move in-character, fully convinced they&#39;re the one playing. It&#39;s a lightweight new way to spend time with a character outside of straight conversation, and everything that happens carries over into your regular chat with them afterward if you want it to.</p>
+<h4>How it works</h4>
+<pre><code>*   **Pick a character, pick a game.**  Open &quot;Play a game&quot; from any chat&#39;s header menu, or start fresh from the Games tab. The match opens in a dialog right where you are â€” you never leave your current chat to play.
+*   **Each character has a real skill level.**  The first time you play a given character at a given game, an AI pass reads their personality and description and quietly assigns them a difficulty (easy, medium, or hard) â€” a scatterbrained comic-relief character plays weaker than a coldly calculating one. That assessment is cached, so it&#39;s consistent every time you play them again, and it&#39;s specific to each game (a character can be sharp at Connect-4 and hopeless at Tic-Tac-Toe).
+*   **The character narrates, in character, every move.**  Before each of their moves lands on the board, they get a short prompt to react to it as themselves â€” no two characters narrate the same match the same way. Watch it stream in live, formatted the same as any other message.
+*   **You can talk to them mid-game.**  Chat with the character between moves like you normally would. They&#39;re instructed to stay in character and never reveal that they aren&#39;t really the one playing, or hint at strategy they shouldn&#39;t know about â€” so don&#39;t expect them to give you tells.
+*   **Start from a chat, or export back into one.**  Launch a match directly from an existing conversation with a character, and once the game&#39;s over (or even mid-match), export the whole thing â€” every move, every line of narration, every side-chat â€” into that chat log (or a new one) so you can keep talking about what just happened.
+*   **The bot doesn&#39;t cheat and doesn&#39;t get help from the AI.**  The character&#39;s narration is flavor text only; the actual moves are computed by a deterministic game engine, so what you&#39;re playing against is a real, consistent opponent at whatever difficulty got assigned â€” not something an LLM is quietly steering.
+</code></pre>
+<h4>Worth knowing</h4>
+<pre><code>*   **Chess is turned off for now.**  Its bot opponent was a hand-rolled one and, frankly, not good enough to be worth your time â€” it&#39;s disabled while it gets rebuilt on a proper chess engine. Tic-Tac-Toe and Connect-4 are live now; Chess will return once it can actually put up a fight.
+*   **In-progress matches are easy to pick back up.**  If you close out mid-game, you&#39;ll find it waiting for you under &quot;Continue&quot; the next time you open Games.
+*  This is yet another feature we will always offer you for free, don&#39;t worry about it getting removed at all in the future. I feel obligated to say this because of... before, so.
+</code></pre>
+<h3>Other fixes</h3>
+<pre><code>*  low context connections now work better on worlds.
+*  sidechat got some love with prompt assembly and persistence fixes
+*  lore highlighting properly works when keys exist on separate messages
+</code></pre>
+<h3>Thank you for sticking with us &lt;3</h3>
+<p>Wyldfire is coming along nicely; this week I added in more links to WyvernChat directly with an explore page for Wyldfire specifically, and some more ports of WyvernChat features - like memory scan, which is available on Wyldfire without a subscription. Have an amazingf weekend!](https://www.reddit.com/r/WyvernChat/comments/1vil4pz/character_games_live_models_tab_better_default/)
+Upvote 11 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vil4pz/character_games_live_models_tab_better_default/">1 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vipzla/okay_how_do_i_access_visual_description_again/">Okay, how do I access visual description again?</a>
+<a href="https://www.reddit.com/user/Summxr_isonreddit/">u/Summxr_isonreddit avatar u/Summxr_isonreddit</a>
+â€¢ 15 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vipzla/okay_how_do_i_access_visual_description_again/">Okay, how do I access visual description again?</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/comments/1vipzla/okay_how_do_i_access_visual_description_again/">the character editing has changed ALOT with the updates and I low-key forgotT-T (Hey Im back and alive now again btw)</a>
+Upvote 3 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vipzla/okay_how_do_i_access_visual_description_again/">4 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vicbxh/is_google_gemma_431bit_working_for_any_of_yall/">Is google gemma 4-31B-it working for any of y&#39;all?</a>
+<a href="https://www.reddit.com/user/wzinny/">u/wzinny</a>
+â€¢ 15 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vicbxh/is_google_gemma_431bit_working_for_any_of_yall/">Is google gemma 4-31B-it working for any of y&#39;all?</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vicbxh/is_google_gemma_431bit_working_for_any_of_yall/">I just want to know if I&#39;m the only one facing issue with this model. mine is very VERY unstable, it works rarely and then the same repeated warning no matter how many times I reroll or delete the text or start a new chat log, &quot;this model is having trouble responding, please try a different model.&quot; :/</a>
+Upvote 3 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vicbxh/is_google_gemma_431bit_working_for_any_of_yall/">9 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vho5jd/uh/">Uh...</a>
+<a href="https://www.reddit.com/user/Safe_Taro_5978/">u/Safe_Taro_5978 avatar u/Safe_Taro_5978</a>
+â€¢ 16 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vho5jd/uh/">Uh...</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22%3ASillyWyvern%3AFluff%2FMeme%22">Fluff/Meme</a>
+Page 1 (Current page) Page 2 Page 3 Page 4
+Item 1 of 4
+Upvote 7 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vho5jd/uh/">2 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vh6h92/rpg_card_tips/">RPG Card tips</a>
+<a href="https://www.reddit.com/user/Emergency-Culture658/">u/Emergency-Culture658 avatar u/Emergency-Culture658</a>
+â€¢ 16 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vh6h92/rpg_card_tips/">RPG Card tips</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vh6h92/rpg_card_tips/">I&#39;m really not sure if i should flair it as question or character request, anyway, english isn&#39;t my forst language so sorry if it is to hard to understand, translating to try make sense. I&#39;m a casual user from Chub AI who got on Wyvern after the 20-message limitation, and I&#39;m really enjoying Wyvern, and I also noticed it is pretty easy to use, and I can have way better control with the option of improving my text and impersonating users and other Char or NPCs, and I decided to try to make a bot, but I&#39;m having a hard time setting the NPCs to work. I&#39;m trying to make the card a narrator and do all NPCs in it using impersonation to call them on or off the scene, but all my tries end up with characters that shouldn&#39;t be there showing up, and also the chat is not allowing generic NPCs to show up. Any tips on how to organize the card better? Like: Card as narrator; The 2 or 3 characters of the story with the lexicon NPC function; And letting generic NPCs show up even without any of the lexicon NPCs in the scene?</a>
+Upvote 3 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vh6h92/rpg_card_tips/">8 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vgzq2n/still_getting_reasoning_despite_it_being_turned/">Still getting reasoning, despite it being turned off?</a>
+<a href="https://www.reddit.com/user/Bright-Lily/">u/Bright-Lily</a>
+â€¢ 17 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vgzq2n/still_getting_reasoning_despite_it_being_turned/">Still getting reasoning, despite it being turned off?</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vgzq2n/still_getting_reasoning_despite_it_being_turned/">As the title said. I&#39;m using OperRouter, I&#39;d like to use DeepSeek V4 Flash and Pro because of the insane memory, but despite the reasoning being toggled off, it STILL writes full reasoning. Weird thing is, I remember trying DeepSeek V4 Flash yesterday and it didn&#39;t have any reasoning happening. Is it a glitch? Thanks to anyone that can help.</a>
+Upvote 3 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vgzq2n/still_getting_reasoning_despite_it_being_turned/">3 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vgzf15/google_gemma_having_trouble_responding/">Google gemma having trouble responding</a>
+<a href="https://www.reddit.com/user/wzinny/">u/wzinny</a>
+â€¢ 17 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vgzf15/google_gemma_having_trouble_responding/">Google gemma having trouble responding</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vgzf15/google_gemma_having_trouble_responding/">It&#39;s not working since the past two days I guess? I don&#39;t know what&#39;s wrong with this model. I kept on trying it with new characters but anyway it&#39;s not responding and kept on saying &quot;try another model.&quot;</a>
+Upvote 1 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vgzf15/google_gemma_having_trouble_responding/">9 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vgc7ze/premium_models/">Premium models</a>
+<a href="https://www.reddit.com/user/No_Cable_3571/">u/No_Cable_3571 avatar u/No_Cable_3571</a>
+â€¢ 17 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vgc7ze/premium_models/">Premium models</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vgc7ze/premium_models/">Hi I&#39;m new on here just trying to figure out which models on this tier is the best for dark romance, violence, and smut! Thank you</a>
+Upvote 4 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vgc7ze/premium_models/">1 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vgm8aw/where_did_the_advanced_impersonation_go/">Where did the advanced impersonation go???</a>
+<a href="https://www.reddit.com/user/ParamedicOk4565/">u/ParamedicOk4565 avatar u/ParamedicOk4565</a>
+â€¢ 17 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vgm8aw/where_did_the_advanced_impersonation_go/">Where did the advanced impersonation go???</a></h4>
+<p>Upvote 1 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vgm8aw/where_did_the_advanced_impersonation_go/">5 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vgdiba/i_cant_add_my_own_provider/">I cant add My own provider</a>
+<a href="https://www.reddit.com/user/Illustrious-Phone695/">u/Illustrious-Phone695 avatar u/Illustrious-Phone695</a>
+â€¢ 17 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vgdiba/i_cant_add_my_own_provider/">I cant add My own provider</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vgdiba/i_cant_add_my_own_provider/">I think its a me problem as iam new. I just joined and i wanna use my own proxy but when i add my provider it does not show up. Like the model comes i can add in collection then it dissepears i cant choose my provider nor use any model. Help.</a>
+Upvote 1 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vgdiba/i_cant_add_my_own_provider/">2 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vfpj2j/lmao_dude/">LMAO DUDE</a>
+<a href="https://www.reddit.com/user/Starbee_09/">u/Starbee_09</a>
+â€¢ 18 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vfpj2j/lmao_dude/">LMAO DUDE</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22%3ASillyWyvern%3AFluff%2FMeme%22">Fluff/Meme</a>
+Upvote 8 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vfpj2j/lmao_dude/">0 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vfcfzu/newbie_needs_help/">Newbie needs help</a>
+<a href="https://www.reddit.com/user/SpendAccomplished158/">u/SpendAccomplished158</a>
+â€¢ 18 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vfcfzu/newbie_needs_help/">Newbie needs help</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vfcfzu/newbie_needs_help/">Hey everyone, Iâ€™m pretty new to Wyvern AI, so I might just be missing something obvious here or doing something wrong. One of my World Chat scenes suddenly stopped giving me replies today. I use the &#39;Curated premium models&#39;, and every time I get no valid content or unable to reply . The weird part is that if I start a brand new scene, it works fine! Itâ€™s only happening in this specific chat. Basic models work totally fine in this same scene. Premium models work fine if I open a brand-new scene. What I&#39;ve tried so far:
+*  Deleted and edited my last message.
+*  Checked my Director block and Lorebook (no broken tags or brackets as far as I can tell).
+*  changed to any premium curated models, and some of my other favorite models that works just fine in other chars. Since I&#39;m new to this, is there a scene limit I don&#39;t know about, or could I have accidentally messed up a setting? Or is the scene just broken? does it really matter if i start a new scene? do i really open new scene everytime something like this happen? HELP PLEASE â™¥</a>
+Upvote 3 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vfcfzu/newbie_needs_help/">9 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1veg197/is_anyone_else_having_this_problem_with_talking/">Is anyone else having this problem with talking to their bots too, or is it just me?</a>
+<a href="https://www.reddit.com/user/Express-Influence182/">u/Express-Influence182 avatar u/Express-Influence182</a>
+â€¢ 19 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1veg197/is_anyone_else_having_this_problem_with_talking/">Is anyone else having this problem with talking to their bots too, or is it just me?</a></h4>
+<p>Upvote 8 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1veg197/is_anyone_else_having_this_problem_with_talking/">5 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1ve95bg/new_bot_monday_post_you_newest_creations_here/">New Bot Monday! Post you newest creations here!</a>
+<a href="https://www.reddit.com/user/Leiawen/">u/Leiawen</a>
+â€¢ 19 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1ve95bg/new_bot_monday_post_you_newest_creations_here/">New Bot Monday! Post you newest creations here!</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/comments/1ve95bg/new_bot_monday_post_you_newest_creations_here/">Post up a link to your newest WyvernChat character cards here in this thread, give the community a short description and show off your creations!</a>
+Upvote 7 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1ve95bg/new_bot_monday_post_you_newest_creations_here/">3 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1ve5rcc/creepy/">Creepy ðŸ˜¬</a>
+<a href="https://www.reddit.com/user/IWasAsmallTownGirl/">u/IWasAsmallTownGirl</a>
+â€¢ 20 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1ve5rcc/creepy/">Creepy ðŸ˜¬</a></h4>
+<p>Upvote 7 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1ve5rcc/creepy/">2 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vdxava/character_card_previews_poll_improvements_content/">Character Card Previews, Poll Improvements, Content Subpages, Better Character Profile, and Character Vanity URLs</a>
+<a href="https://www.reddit.com/user/WyvernDev/">u/WyvernDev</a>
+â€¢ 20 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vdxava/character_card_previews_poll_improvements_content/">Character Card Previews, Poll Improvements, Content Subpages, Better Character Profile, and Character Vanity URLs</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Dev%20Notes%22">Dev Notes</a>
+[</p>
+<h3>Character Editor: Preview Bar Fix &amp; New Card Preview</h3>
+<p>In the character editor&#39;s quick-create form, switching to Preview Mode no longer strands the Edit Mode button off-screen â€” the action bar now stays fixed in place while previewing, so you can always get back to editing without scrolling down. The old Preview Mode button is now a single Preview button with a dropdown: &quot;Profile Page&quot; shows the full character preview as before, and the new &quot;Search&quot; option opens a read-only side-by-side look at how your character will actually appear as a card, matching the poster-style card and the Explore browse card, using your current draft&#39;s name, avatar, and tags as you edit.</p>
+<h3>Profile Shelves Mode, Content Subpages, and Character Vanity URLs</h3>
+<p>You can now switch your profile to &quot;Shelves mode&quot; from the account Settings tab â€” instead of separate tabs for Characters, Lorebooks, Worlds, World Characters, and Collections, your profile becomes one scrollable page of horizontally-scrolling shelves that you can drag to reorder, each with a Load More button so you can keep browsing without leaving the page, plus a View All link that opens a full searchable, sortable grid for that category. Characters can now also be given a vanity URL from the character editor, letting you share a friendlier link like your profile&#39;s characters section followed by a custom name instead of a long ID, as long as that name isn&#39;t already used by one of your other characters.</p>
+<h3>Poll Improvement</h3>
+<p>You can now view a poll&#39;s current results without having to vote first â€” a &quot;View results&quot; link on any poll you haven&#39;t voted on shows the current standings, with a &quot;Back to vote&quot; link to return and cast your vote whenever you&#39;re ready. We also fixed a bug where casting a vote could silently fail to show up on screen, previously requiring a page refresh to see your vote reflected â€” the vote itself was going through, but a display glitch could hide the result until reload; votes now update immediately, and any errors are reported clearly if something goes wrong.</p>
+<h3>Character Page: NPCs Tab, &quot;Forks&quot; Rename, and a Better More-By-Creator Shelf</h3>
+<p>Character pages now have an NPCs tab that shows every NPC defined in the character&#39;s lexicon, each with a wide portrait-style avatar and its description text wrapping alongside it, so you can browse a character&#39;s cast of side characters without digging through raw lexicon entries. The old Variants tab is now labeled Forks to match what it actually shows. The More By Creator tab has also been replaced with a horizontally scrollable shelf below the character&#39;s tabs (matching the Followed Creators shelf on Home), so you can see a creator&#39;s other work without leaving the main view, and desktop shelf arrows across the site now page over by a full screen&#39;s worth of cards instead of nudging over by a sliver at a time.](https://www.reddit.com/r/WyvernChat/comments/1vdxava/character_card_previews_poll_improvements_content/)
+Upvote 11 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vdxava/character_card_previews_poll_improvements_content/">0 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1ve7cb2/summary_generation_not_working/">Summary generation not working</a>
+<a href="https://www.reddit.com/user/wzinny/">u/wzinny</a>
+â€¢ 20 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1ve7cb2/summary_generation_not_working/">Summary generation not working</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/comments/1ve7cb2/summary_generation_not_working/">Hi, my summary generation hasn&#39;t been working since the past few days. Every time I try to generate an automatic summary, it ends up saying, &quot;memory generated&quot; along with &quot;no api key found&quot; and when I check the summary area, THERE&#39;S NO GENERATED MEMORY. IM LOSING IT. THE CHARACTER KEEPS FORGETTING WITHOUT ME GENERATING THE SUMMARY but summaries aren&#39;t being generated. Sorry for yapping sm.</a>
+Upvote 1 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1ve7cb2/summary_generation_not_working/">2 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1ve5hxa/jessie_songbirds_new_bot_monday/">Jessie - Songbirds - New Bot Monday</a>
+<a href="https://www.reddit.com/user/HairShirtWeaver/">u/HairShirtWeaver avatar u/HairShirtWeaver</a>
+â€¢ 20 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1ve5hxa/jessie_songbirds_new_bot_monday/">Jessie - Songbirds - New Bot Monday</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22New%20Character%22">New Character</a>
+Upvote 1 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1ve5hxa/jessie_songbirds_new_bot_monday/">0 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vd6m6t/small_update_cyoa_wishlist_and_apply_lorebooks/">Small Update: CYOA, Wishlist, and Apply Lorebooks + Rating on many characters at once.</a>
+<a href="https://www.reddit.com/user/WyvernDev/">u/WyvernDev</a>
+â€¢ 21 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vd6m6t/small_update_cyoa_wishlist_and_apply_lorebooks/">Small Update: CYOA, Wishlist, and Apply Lorebooks + Rating on many characters at once.</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Dev%20Notes%22">Dev Notes</a>
+[</p>
+<h4>Reply Options (Choose Your Own Adventure) (Free &amp; Subscriber: Free Forever)</h4>
+<p>Added an optional &quot;Reply Options&quot; pass (settings now live under &quot;Overrides &amp; Extras,&quot; in both the chat and world override settings) that, once turned on, follows each reply with a short in-scene question and four suggested things you could do or say next, shown as a grid of choices right above the message box â€” tap one to load it into the box for editing, or just keep typing your own reply as always. A &quot;Generating reply options...&quot; indicator shows while it&#39;s working (and briefly holds sending until it finishes), and if none exist yet for the latest message, a &quot;Generate reply options&quot; button appears so you can request a set on demand even with the automatic pass off. Once options are showing, regenerate and regenerate-with-feedback controls let you redo a bad round, and four flavor presets â€” K-Drama, Bethesda RPG, Ecchi, and Hyperrealism â€” quick-fill the prompt with a distinct style you can still edit further. A dedicated connection can be set for this pass the same way Review Pass and Sidechat already work, and every request shows up in the Debug Panel like any other generation.</p>
+<h4>Mine Page Multiselect &amp; Application of Lorebooks + Collection View Overhaul</h4>
+<p>You can now select multiple characters at once from Mine &gt; Characters &gt; Created and apply an action to all of them in one go â€” delete, change content rating, change visibility, attach or remove lorebook(s), or add them to one or more collections â€” instead of opening each character&#39;s edit page individually. The Mine &gt; Collections tab also gained a &quot;By Collection&quot; view that groups everything inside each of your collections under a collapsible header, so you can browse a collection&#39;s full contents without opening it.</p>
+<h4>Shop Wishlist + Gifting</h4>
+<p>You can now wishlist items in the Crystal Shop â€” tap the heart on any item you want, and it&#39;ll show up in a new Wishlist tab on the shop page. From Account settings, you can flip on &quot;Feature Wishlist on Profile&quot; to show a Wishlist tab on your public profile too, so friends and followers can see what you&#39;re after. Once that&#39;s on, anyone visiting your profile can gift you a wishlisted item straight from that tab â€” they pay the crystal cost, you get the item immediately, and they can choose to send it anonymously with an optional short note.</p>
+<h4>Time-of-day notices now show minutes</h4>
+<p>The &quot;(Hour 13)&quot; style notices shown after /advance and /travel in worlds were rounding down to the nearest whole hour, so sub-hour progress within a time period was invisible. These notices now display as &quot;(Hour 13:24)&quot; with minutes included, across both the web platform and Wyldfire.</p>
+<h4>Chat Clock for Character Chats</h4>
+<p>Regular character chats now get the same clock popover world chats have had â€” click it to see elapsed time and the current time-of-day period, and use quick-advance presets or /advance to move time forward. If your character doesn&#39;t have a time-of-day setup of its own, you can enable tracking from the popover, choosing a starting date/time (defaulting to right now), and it&#39;ll use a standard Morning/Afternoon/Evening/Night cycle from then on. Under the hood we also fixed a couple of long-standing bugs found while building this: /advance in a regular chat wasn&#39;t updating the clock display without a manual reload, and a character&#39;s own time-of-day setup was silently ignored by the AI when generating replies in normal chats â€” both now work correctly.</p>
+<h4>Fixes</h4>
+<pre><code>*  World tool calling has been given an extra nudge inside of the prompt to hopefully give LLMs more context on what tool calls do, and when to use them.
+*  Sidechat now streams reasoning as well as content
+</code></pre>
+<h5>Dev Note</h5>
+<p>Thank you all for sticking with us. I know many of you were disappointed with the recent changes to Memory Scan &amp; Director, and I assure you that if a feature is ever locked behind a subscription in the future, it will be disclosed and locked from the start. I&#39;d like to say I&#39;ve learned from my mistakes, and I can only do that by moving forward with better communication as the site develops. I hope that you will all see, in time, that this platform is more than just Memory Scan &amp; Director mode, and that WyvernChat offers plenty of standout features for both free &amp; paid users alike. Thank you again for using my platform. Have an amazing rest of your weekend and upcoming week. More is to follow. - Nev](https://www.reddit.com/r/WyvernChat/comments/1vd6m6t/small_update_cyoa_wishlist_and_apply_lorebooks/)
+Upvote 12 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vd6m6t/small_update_cyoa_wishlist_and_apply_lorebooks/">5 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vd5qav/google_gemma_issues/">Google gemma issues.</a>
+<a href="https://www.reddit.com/user/ParamedicOk4565/">u/ParamedicOk4565 avatar u/ParamedicOk4565</a>
+â€¢ 21 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vd5qav/google_gemma_issues/">Google gemma issues.</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/comments/1vd5qav/google_gemma_issues/">Been having a LOT of issues of google gemma genuinely being the most uncreative slop and giving me THE EXACT SAME RESULTS every single swipe I try with only minor prose changes. Is there any way to combat this?</a>
+Upvote 8 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vd5qav/google_gemma_issues/">6 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vcmp8b/queue_token_and_user_id_are_required/">&quot;Queue token and user ID are required&quot;</a>
+<a href="https://www.reddit.com/user/Alive-Rain9802/">u/Alive-Rain9802</a>
+â€¢ 21 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vcmp8b/queue_token_and_user_id_are_required/">&quot;Queue token and user ID are required&quot;</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+Upvote 6 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vcmp8b/queue_token_and_user_id_are_required/">3 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vceqhz/fixed_slow_down/">Fixed slow down</a>
+<a href="https://www.reddit.com/user/WyvernDev/">u/WyvernDev</a>
+â€¢ 22 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vceqhz/fixed_slow_down/">Fixed slow down</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/comments/1vceqhz/fixed_slow_down/">Idk what caused this exactly, but I noticed a huge ass slowdown. Ran a bunch of benchmarks, then I rewrote our auth method to use some new redis caching. Hope slowness is gone for yaâ€™ll, lmk if you face any issues and Iâ€™ll examine again. Rn seems fine though. Happy weekend!</a>
+Upvote 17 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vceqhz/fixed_slow_down/">2 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vcw3ru/cant_access_my_world/">Can&#39;t access my world</a>
+<a href="https://www.reddit.com/user/JJJBurner/">u/JJJBurner avatar u/JJJBurner</a>
+â€¢ 21 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vcw3ru/cant_access_my_world/">Can&#39;t access my world</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vcw3ru/cant_access_my_world/">Every device, another browser, or anything to try access it, fails. It tells me &quot;Failed to Load World&quot;. It is still on my worlds list, and it is a private world so I will love to not share it on Reddit. It is only on this specific world. Have anyone else had a similar issue?</a>
+Upvote 1 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vcw3ru/cant_access_my_world/">2 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vc0ugv/why_did_my_enviroments_and_stuff_get_removed/">Why did my enviroments and stuff get removed randomly?</a>
+<a href="https://www.reddit.com/user/Bumbaclawr/">u/Bumbaclawr avatar u/Bumbaclawr</a>
+â€¢ 22 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vc0ugv/why_did_my_enviroments_and_stuff_get_removed/">Why did my enviroments and stuff get removed randomly?</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vc0ugv/why_did_my_enviroments_and_stuff_get_removed/">Idk if i broke a rule or something why did they get removed while i was chatting?</a>
+Upvote 6 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vc0ugv/why_did_my_enviroments_and_stuff_get_removed/">4 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vc91tz/issues_with_editing_lexicon_lorebook_entries_on/">Issues with editing lexicon &amp; lorebook entries on mobile</a>
+<a href="https://www.reddit.com/user/SaltyPearl78/">u/SaltyPearl78 avatar u/SaltyPearl78</a>
+â€¢ 22 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vc91tz/issues_with_editing_lexicon_lorebook_entries_on/">Issues with editing lexicon &amp; lorebook entries on mobile</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vc91tz/issues_with_editing_lexicon_lorebook_entries_on/">hey y&#39;all, i use wyvernchat from an android phone 99.9% of the time. however, this makes it very difficult to edit lexicon and lorebook entries properly. a useless black bar pops up with my keyboard, covering most or all of the writing box i&#39;m trying to type in, making it so that i can&#39;t see anything i&#39;m typing or where it&#39;s going (because sometimes it will glitch and move my writing to other areas in the box). additionally, creating and editing a lexicon entry within a chat takes this a step further: it somehow reverses the text i type so that it&#39;s all in backwards order, on top of not being able to see what i&#39;m typing. please make a fix for this bug!!! it&#39;s been here for a while and never gotten fixed DX</a>
+Upvote 2 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vc91tz/issues_with_editing_lexicon_lorebook_entries_on/">3 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vbkct2/is_anyone_else_having_problems_with_the_bots/">Is anyone else having problems with the bots acting with info from your persona?</a>
+<a href="https://www.reddit.com/user/IWasAsmallTownGirl/">u/IWasAsmallTownGirl</a>
+â€¢ 23 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vbkct2/is_anyone_else_having_problems_with_the_bots/">Is anyone else having problems with the bots acting with info from your persona?</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/comments/1vbkct2/is_anyone_else_having_problems_with_the_bots/">I keep seeing bots who use info in my persona description instead of their own descriptions, why?</a>
+Upvote 5 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vbkct2/is_anyone_else_having_problems_with_the_bots/">1 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vb553n/directors_whispers_are_fun_to_do_dont_forget_abt/">Directorâ€™s whispers are fun to do. Donâ€™t forget abt them ppl.</a>
+<a href="https://www.reddit.com/user/Important_Extent4516/">u/Important_Extent4516</a>
+â€¢ 23 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vb553n/directors_whispers_are_fun_to_do_dont_forget_abt/">Directorâ€™s whispers are fun to do. Donâ€™t forget abt them ppl.</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22%3ASillyWyvern%3AFluff%2FMeme%22">Fluff/Meme</a>
+Upvote 30 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vb553n/directors_whispers_are_fun_to_do_dont_forget_abt/">6 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vbi2dw/new_user_hereee/">New user hereee</a>
+<a href="https://www.reddit.com/user/YaaYamete/">u/YaaYamete</a>
+â€¢ 23 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vbi2dw/new_user_hereee/">New user hereee</a></h4>
+<p>Upvote 4 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vbi2dw/new_user_hereee/">4 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vb031u/which_featherless_models_do_you_recommend_for_rp/">Which Featherless models do you recommend for RP?</a>
+<a href="https://www.reddit.com/user/Dense_Way1950/">u/Dense_Way1950 avatar u/Dense_Way1950</a>
+â€¢ 23 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vb031u/which_featherless_models_do_you_recommend_for_rp/">Which Featherless models do you recommend for RP?</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vb031u/which_featherless_models_do_you_recommend_for_rp/">I just subscribed to Featherless. There are hundreds of models and I&#39;m not sure where to begin. I mainly use AI for roleplay. Which models would you recommend? Also, could you explain how to use the Featherless website?</a>
+Upvote 6 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vb031u/which_featherless_models_do_you_recommend_for_rp/">9 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vahfcg/when_you_wait_in_a_queue_70_people_deep_just_for/">when you wait in a queue 70 people deep just for huihui to spit out some gibberish ðŸ˜</a>
+<a href="https://www.reddit.com/user/SaltyPearl78/">u/SaltyPearl78 avatar u/SaltyPearl78</a>
+â€¢ 24 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vahfcg/when_you_wait_in_a_queue_70_people_deep_just_for/">when you wait in a queue 70 people deep just for huihui to spit out some gibberish ðŸ˜</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22%3ASillyWyvern%3AFluff%2FMeme%22">Fluff/Meme</a>
+Upvote 39 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vahfcg/when_you_wait_in_a_queue_70_people_deep_just_for/">0 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vaw109/first_time_using_infoboard/">First time using Infoboard</a>
+<a href="https://www.reddit.com/user/Safe_Taro_5978/">u/Safe_Taro_5978 avatar u/Safe_Taro_5978</a>
+â€¢ 23 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vaw109/first_time_using_infoboard/">First time using Infoboard</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+Page 1 (Current page) Page 2 Page 3 Page 4 Page 5
+Item 1 of 5
+Upvote 3 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vaw109/first_time_using_infoboard/">5 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1vaar47/updates_to_wyvernchat_featherless_subscriptions/">Updates to WyvernChat &amp; Featherless Subscriptions</a>
+<a href="https://www.reddit.com/user/Leiawen/">u/Leiawen</a>
+MOD â€¢ 24 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1vaar47/updates_to_wyvernchat_featherless_subscriptions/">Updates to WyvernChat &amp; Featherless Subscriptions</a></h4>
+<p>[From the desk of Micalas, WyvernChat&#39;s Community Director:</p>
+<h3>ðŸ“¢ Updates to WyvernChat &amp; Featherless Subscriptions</h3>
+<p>Hey everyone! Over the past year we&#39;ve been adding features at a pretty aggressive pace. In a few cases, we shipped some features that were meant to be for subscribers to everyone while we focused on getting them into your hands as quickly as possible. As WyvernChat has grown, it&#39;s become clear that it&#39;s time to bring things back in line with how they were originally intended. We know changes like this can be disappointing, so we wanted to be upfront about what&#39;s changing, and more importantly, what you&#39;re getting in return.</p>
+<h4>âœ¨ New Featherless Plan for WyvernChat</h4>
+<p>We&#39;re introducing a  <strong>new $10/month Featherless subscription</strong>  built specifically for WyvernChat. It includes:
+*  Unlimited private content
+*  All AI helpers and agent features
+*  Access to models up to  <strong>32B parameters</strong>  with up to  <strong>32k context</strong>  where supported
+*   <strong>1,000 bonus Crystals every month</strong>  Our existing  <strong>Featherless Premium</strong>  plan isn&#39;t changing and continues to include access to every model we offer, including GLM, DeepSeek, Kimi, and the rest of our largest models.</p>
+<h4>ðŸ¤– Feature Changes</h4>
+<p>The following features are now included with a Featherless subscription:
+*  AI Assistant tools for the Character Creator and World Creator
+*  Memory Scan
+*  Director Agent
+*   <strong>NEW:</strong>  Actor Agent, an AI participant that can roleplay alongside you as if it were another user in the conversation
+*  Removal of Featherless banners, subscription prompts, and site-wide subscription callouts</p>
+<h4>ðŸ“š Private Content Changes</h4>
+<p>New limits for newly added content types have been added, to come in line with how private characters are treated. This includes private worlds, lorebooks, personas, and other private content types. Public creations continue to work exactly as before, and publishing content publicly still expands your available private capacity. Prompt pieces, prompt assemblies, instruction templates, settings presets, and connections remain available for everyone.</p>
+<h4>ðŸš€ Coming Soon</h4>
+<p>Subscribers will also receive several new features over the next couple of weeks:
+*  A site-wide AI assistant that can search your chat logs, see and edit characters you own, and help manage your content
+*  More exclusive themes
+*  More badges, profile customizations, and other subscriber cosmetics</p>
+<h4>ðŸ&#39; ï¸ Something More Visual...</h4>
+<p>If you&#39;re a more visual learner like I am, then this will be better at describing what&#39;s happening than any well-segmented announcement. There is also an FAQ at the bottom. It&#39;s non-exhaustive, so feel free to ask additional questions. <a href="https://app.wyvern.chat/plans">https://app.wyvern.chat/plans</a></p>
+<h4>ðŸ&#39;™ Our Commitment</h4>
+<p><strong>One thing that will never change:</strong>  WyvernChat will always offer  <strong>free, unlimited access to high-quality roleplay models</strong>  with context lengths that are actually useful for roleplay. We believe everyone should be able to enjoy great AI roleplay without breaking the bank. Subscriptions exist to unlock advanced tools, larger models, and convenience, not to take away the core experience that brought this community together. As always, thank you for your feedback, your creativity, and for being part of the WyvernChat community. â ¤ï¸ ~Micalas, Community Director](https://www.reddit.com/r/WyvernChat/comments/1vaar47/updates_to_wyvernchat_featherless_subscriptions/)
+Upvote 37 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1vaar47/updates_to_wyvernchat_featherless_subscriptions/">48 Go to comments</a>
+Share
+<a href="https://www.reddit.com/r/WyvernChat/comments/1va9rmv/unable_to_leave_api_screen/">Unable to leave API(?) screen</a>
+<a href="https://www.reddit.com/user/mow-pow/">u/mow-pow</a>
+â€¢ 24 days ago
+Locked post
+Stickied post
+Archived post
+*  Award this post
+*  Report</p>
+<h4><a href="https://www.reddit.com/r/WyvernChat/comments/1va9rmv/unable_to_leave_api_screen/">Unable to leave API(?) screen</a></h4>
+<p><a href="https://www.reddit.com/r/WyvernChat/?f=flair_name%3A%22Question%20%2F%20Support%22">Question / Support</a>
+Upvote 11 Downvote <a href="https://www.reddit.com/r/WyvernChat/comments/1va9rmv/unable_to_leave_api_screen/">18 Go to comments</a>
+Share</p>
+<h3>Community Info Section</h3>
+<p>WyvernChat
+The Reddit community for the AI Chat &amp; AI Story generation site of the same name.
+Show more
+Created Sep 26, 2024
+2 years ago
+Public
+Anyone can view, post, and comment to this community
+<strong>1.8K</strong>  Weekly visitors
+<strong>52</strong>  Weekly contributions</p>
+<h4>r/WyvernChat Rules</h4>
+<p>1</p>
+<h4>Join our Discord!</h4>
+<p><a href="https://discord.gg/wyvernchat">https://discord.gg/wyvernchat</a>
+2</p>
+<h4>Be Civil and Respectful</h4>
+<p>We at WyvernChat take pride in our welcoming, inclusive and friendly community.
+3</p>
+<h4>Flair</h4>
+<p>Please use the appropriate flair when posting new topics.
+4</p>
+<h4>Content Policies</h4>
+<p>Do not post content that violates the content policies for either Reddit or WyvernChat. Reddit&#39;s content policy is located here: ( <a href="https://www.redditinc.com/policies/content-policy">https://www.redditinc.com/policies/content-policy</a> ) and WyvernChat&#39;s policy is located here: ( <a href="https://app.wyvern.chat/policy">https://app.wyvern.chat/policy</a> )
+5</p>
+<h4>NSFW Content</h4>
+<p>All NSFW characters or discussions must be appropriately marked as NSFW. When posting NSFW content, be sure it is within the content policy guidelines.
+6</p>
+<h4>Spam</h4>
+<p>No excessive self-promotion or spam, please. You&#39;re welcome to post your WyvernChat characters but please do not repeatedly link them or other content.
+*  <a href="https://www.reddit.com/?feed=home">Home</a>
+*  <a href="https://www.reddit.com/r/popular/">Popular</a>
+*  <a href="https://www.reddit.com/news/">News</a>
+*  <a href="https://www.reddit.com/explore/">Explore</a>
+*  <a href="https://www.reddit.com/posts/2026/global/">Best of Reddit</a>
+*  <a href="https://www.reddit.com/posts/2026/tl-pt-BR/">Best of Reddit in Portuguese</a>
+*  <a href="https://www.reddit.com/posts/2026/tl-de/">Best of Reddit in German</a>
+*  <a href="https://www.redditinc.com/policies/content-policy">Reddit Rules</a>
+*  <a href="https://www.reddit.com/policies/privacy-policy">Privacy Policy</a>
+*  <a href="https://www.redditinc.com/policies/user-agreement">User Agreement</a>
+*  <a href="https://support.reddithelp.com/hc/articles/43980704794004">Your Privacy Choices</a>
+*  <a href="https://support.reddithelp.com/hc/sections/38303584022676-Accessibility">Accessibility</a>
+*  <a href="https://redditinc.com/">Reddit, Inc. Â© 2026. All rights reserved.</a>
+Join the most real place on the internet
+Continue with Apple
+ï£¿â€…Sign in with Apple
+<a href="https://www.reddit.com/login/">Continue with Phone Number</a>
+<a href="https://www.reddit.com/register/">Continue with Email</a>
+By continuing, you agree to our <a href="https://www.redditinc.com/policies/user-agreement">User Agreement</a> and acknowledge that you understand the <a href="https://www.redditinc.com/policies/privacy-policy">Privacy Policy</a>.
+0cAFcWeA5BDqvE49nMsFS61bzu_aG7mcI9mTHocTa7VQ8uG92KE3ck860eQCKbdD8euwk2cTTwPQoP8bsA19CdmT2JYSAMqXOf2rjive2lTiatv8Yo779i7os7abwpd3ccN3zByD5aS6X_EbaaeTWlhJukAIaVXy8zYedw8ajtOq9HfQHiYH84H3-d4Mnl1HUS1Rz_lObuJAM1JfLDvSkYSwJhUDURxB_rIUMU0PYU3kTupZt15L84lnsWLmCDprVePU6Ur5o_9TeOdSbMyWSS-yCaToDuQcmYoc-99pbdhkeoZJJi5XscAsl6X_-TNbJcOQFW0b8RJYrOk-zMuEmiAmT8Mbrqfnd3vDSxWuCypz8_lvauKY40a3BLN8xCHkCDZElJ_g0L50FjAx7GqRTLsIlW9ubjcWDexWL1BJRE5L-mmiv2G-fI6UKG4lolaE9e-GxwzyumSaH2HIijKtU-yxDu-2rstmNONotck7oEWT0tEt2ELHFnObHL0aIAlhmQ5h8Xnta1Otv1SieQmSpr8C0aV6viGrzMvoZMCuKv2PIoidO71Fxp20ThVnOjTWTtq8XZYKAUC5XDkpT6AIFM4iY-cDQIK64pD7MDzYHwAqA0cnTqrdFvkFn7skm1KJxmcY-VfwJcbug9pd74VUsACoxjN7iIK3jQ-PPsxY77UuqfuuPtNjeY3p_s2R41sWeTe81Gx0UCIfYYFZQGuz1qiw7jXIZfPMGovO2OYu0nDBGqEq99xipZm8sZWpwatXoY4CeLlUAxIisPyfzSQlKoJOsgRHY89fYf9hlX6b1BIvx74q7nzaRu7y_dr6QHxw15hFX9xZp-KbQgJQ7R_CnNKdQ6Uja1FwuW1kJAR_lwr-60GAiWo89rw27xJWgLpv_rNGsLXrK0pt6cilsZUq4Co_88cpN7eXiSRTvwA65bgWgwAOGEER-p1r8rah3GgTfe8OjHvQgeGYKGbiGa-B4_df6xiPwhlwMhKD1SPJVvS7o7Tp7nPlJonQkAhStkuw-2J0hqVdVA07140COCOc3JohY3YAUYvYzl28gWUtibjveu237an0AU38Xf1hdI6MKphFUDRRgFBHuVUIEQyEFpRSXMMleASdTJ18j27Ruva7TWohg9BENjkW0DSwO_E_iUDykND68FqkhaogYwu_ZokMYiCI8ErWp3yBoB26TvMGsDC9oluFbYYpeD7KGCzAy78vr4_NURR08hElcl18RYxMDqRlnX0YVu2bqLpRNNzlDH2dJhagJEGuxciIhXjeXKpiFOIhOA50vt1NlMZahuLaiwqmtJceg_BuP9fk-Dm7XwR_9A0JnbNDXw7Zv5XdYCKga7GaQnaRZEo9cpXnJi1-a8U0p0iq6ZwnLwDp0SF0C3SLBPzTJc1SEf1V_vnYKjNG0rsggvEdSjRHGXKUMwXNxDiZqNRVB7lQIhEnjms5HlKAASrVgcdXE84HbY_e0g1xNqYsEJhETs7pG8Fv0s7uNxEYJrDukhLzy1hnJFrV93KDnBxPM-KC5eVqtA_862PH8mLsvETyJUUOrDIsoKBzDMEU5d2q95WkcB1p8mViwEbSTNGJTvGyuNIkA0geImsV7EhrIy4JrDdt2QX3VDZtu0tl1Bog2zYEzY0aw1TDpR5whY33agzU-i8qyTKiyvL7enUUvy1Hha0VIOfX0nAsgQ7jqfxajjiJsm9n2YrihNwAZtTT8WJhnPAXHHb8rsMs0jKpyRrKblvaoyuLhKHixLZTmkpKxsej0WlEVoMzLd-URDR_tc-94XD6zVE7kEPOBbzT1l4Yf1hWw-vZvQQEL33cvA96heJwVwa55WoEisjrqB6hZ6hHKiQbqo_6UR8r9-cM2eJ6RVYBOv7UU5S7d8F3RE1tVhWlk_smwjx93yKZPYKFlYqpWs8T0MiQ5tLada5GtnenAGLzs1Vf_1JxgDajuVz43L3ZtZle5MG4jqyfYCJyAmiAwjtxixDObyeRNpzkl50g2R017ign1cU2-mNUcWotIhEd1dtW-2r62pnKsA4R9d7QzYopArZ6Pi937g_yMcFPce_Q9ReR_t-k1_-XchL2pmJv7dlBs7a2OxFZNm6vIRghcj14cKKQ1JxOgWvd8xtAcEJXzpU4p5l-wW2P2uIXdkK5xvEh9iDSiA6ZglDJk8Li4bVtWW9qR4KK7Q8cU5LrNMrVZ-f-irNAmwPbC9aVpa4VDxGcX0gIAFhvtkBgtEo2HqtPztHyc_wSODAvwHIYluF_lkmFxLpuk6H1z4_fdF0BSklEk3-qBkv77mgcm983VbwHiXbnIEhPDGDWhMv0-S</p>

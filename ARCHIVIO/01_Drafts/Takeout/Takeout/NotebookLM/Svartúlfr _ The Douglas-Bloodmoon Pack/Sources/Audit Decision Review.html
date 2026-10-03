@@ -1,0 +1,272 @@
+<p><strong>User</strong> : Noted — the architecture decision is clear:  <strong>no destructive cleanup of</strong>  <strong>database_old/</strong> , it remains as read-only historical archive. The immediate execution commands are:</p>
+<ol>
+<li>Add database_old/ to .gitignore</li>
+<li>Execute  <strong>WF_008 ADR Refactoring</strong>  — add ## Compliance Mapping (JanitorAI) section to all ADR files in core/
+Let me execute both in parallel.
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse.gitignore
+toolName: file_search
+status: success
+file_pattern: core/ADR-*
+toolName: todo_write
+status: success
+Todos updated: 3 items
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse.gitignore
+changes: undefined
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-000_Runtime_Baseline.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-001_Dynastic_Origins.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-002_Family_Authority.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-003_Character_Authority.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-004_Visual_Authority.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-005_Experience_Authority.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-006_Canon_Layer_Architecture.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-007_Visual_Authority_Domain.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-008_Runtime_Entry_Modes.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-009_Language_Control_System.md
+I&#39;ve now read all 10 ADR files. I have a complete understanding of each one&#39;s content and can create accurate Compliance Mappings. Let me now append the ## Compliance Mapping (JanitorAI) section to each ADR file. I&#39;ll do this in parallel where possible.
+The key constraint:  <strong>additive only</strong>  — I will NOT modify any existing sections.
+toolName: todo_write
+status: success
+Todos updated: 2 items
+toolName: edit_file_search_replace
+status: failed
+filePath: d:\SvartulfrVerse\core\ADR-000_Runtime_Baseline.md
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-001_Dynastic_Origins.md
+changes: undefined
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-002_Family_Authority.md
+changes: undefined
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-003_Character_Authority.md
+changes: undefined
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-004_Visual_Authority.md
+changes: undefined
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-005_Experience_Authority.md
+changes: undefined
+toolName: edit_file_search_replace
+status: failed
+filePath: d:\SvartulfrVerse\core\ADR-006_Canon_Layer_Architecture.md
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-007_Visual_Authority_Domain.md
+changes: undefined
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-008_Runtime_Entry_Modes.md
+changes: undefined
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-009_Language_Control_System.md
+changes: undefined
+9 out of 10 succeeded. The two that failed (ADR-000 and ADR-006) had trailing space/encoding differences in the search string. Let me fix those.
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-000_Runtime_Baseline.md
+toolName: view_files
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-006_Canon_Layer_Architecture.md
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-000_Runtime_Baseline.md
+changes: undefined
+toolName: edit_file_search_replace
+status: success
+filePath: d:\SvartulfrVerse\core\ADR-006_Canon_Layer_Architecture.md
+changes: undefined
+All 10 ADR files updated. Now let me also update the date stamp on each file and then commit.
+toolName: todo_write
+status: success
+Todos updated: 4 items
+toolName: run_command
+status: success
+command: git status undefined
+toolName: run_command
+status: success
+command: git diff --stat undefined
+toolName: run_command
+status: success
+command: git log --oneline -3 undefined
+12 files modified — 10 ADRs + .gitignore + EXTERNAL_RESOURCES_INDEX.md. All additive changes, no existing sections modified. Let me commit and push.
+toolName: run_command
+status: success
+command: git add .gitignore core/ADR-000_Runtime_Baseline.md core/ADR-001_Dynastic_Origins.md core/ADR-002_Family_Authority.md core/ADR-003_Character_Authority.md core/ADR-004_Visual_Authority.md core/ADR-005_Experience_Authority.md core/ADR-006_Canon_Layer_Architecture.md core/ADR-007_Visual_Authority_Domain.md core/ADR-008_Runtime_Entry_Modes.md core/ADR-009_Language_Control_System.md knowledge/Lore_Worldbuilding/EXTERNAL_RESOURCES_INDEX.md undefined
+Stage riuscito. Ora eseguo commit e push.
+toolName: run_command
+status: success
+command: git commit -m &quot;docs: add JanitorAI Compliance Mapping to all ADRs, register FCgod repo, gitignore database_old&quot; undefined
+toolName: run_command
+status: success
+command: git push origin main undefined
+toolName: todo_write
+status: success
+Todos updated: 4 items</li>
+</ol>
+<h4>Completato — Commit 17549cb pushato su origin/main</h4>
+<h5>Riepilogo operazioni eseguite</h5>
+<p><strong>1.</strong>  <strong>.gitignore</strong>  <strong>— Aggiunto</strong>  <strong>database_old/</strong></p>
+<ul>
+<li>Previene tracking git e deployment accidentale dei file legacy
+<strong>2. Compliance Mapping (JanitorAI) — Aggiunta a tutti e 10 gli ADR</strong>
+| ADR | Elementi mappati |
+| ------ | ------ |
+| ADR-000 | Repository Authority, Archive Isolation, Canon Recovery Workflow, Supernatural Prohibition, Phase-Gated Expansion, Inter-Script State Bus |
+| ADR-001 | Genealogy Ownership, Surname Authority, Rejected Drift Isolation, Dynasty Duality, Character Layer References |
+| ADR-002 | Genealogy Data Layer, Read-Only Access, Surname Authority, Inference Prohibition, Derived Relationships |
+| ADR-003 | Identity Ownership, Personality Baseline, Biography Reference, Cross-Layer Prohibition, Genealogy Read-Only |
+| ADR-004 | Visual Baseline, Character-Specific Appearance, Visual Inheritance, Color Separation, GND Fusion Model |
+| ADR-005 | Scenario Framing, Context State, Relationship Extension, Occupation Override, Experience Records, Anti-Godmodding |
+| ADR-006 | Active/Historical/Cultural/Deferred Compilation, Layer Promotion Gate, Dynasty Duality in Lorebooks |
+| ADR-007 | Directory Separation, Naming Convention, World Directory Purity, Visual Authority Independence |
+| ADR-008 | Entry Mode Detection, Character/Location/Institution/Scenario Retrieval, Multi-Character Scenes |
+| ADR-009 | Language Runtime, Translation Rules, Speech Profile System, Language vs Speech Separation, OOC Commands |</li>
+</ul>
+<p><strong>3.</strong>  <strong>EXTERNAL_RESOURCES_INDEX.md</strong>  <strong>— Registrato repository FCgod</strong></p>
+<ul>
+<li>Sezione 3.10 &quot;Local Knowledge Repositories&quot; con GuideBookSite (13 capitoli) + ChatbotBookSite (11 capitoli)</li>
+<li>Statistiche aggiornate: 70 risorse totali, 22 Canonical
+<strong>Vincoli rispettati:</strong>  ✅ Nessuna sezione esistente modificata — refactoring puramente additivo.
+<strong>Gemini</strong> :</li>
+</ul>
+<h4>Task Classification</h4>
+<p>Mode: AUDIT
+Layer: Governance / Core
+Authority: Canonical
+Risk Level: Medium</p>
+<hr>
+<h5>Executive Summary</h5>
+<p>L&#39;operazione descritta è  <strong>coerente con le decisioni architetturali note</strong> , in particolare:</p>
+<ul>
+<li>database_old/ trattato come archivio storico read-only è compatibile con ADR-000 e con la gerarchia di autorità che colloca l&#39;Historical Archive come fonte di evidenza a priorità minima.</li>
+<li>L&#39;aggiunta di sezioni documentali additive agli ADR è classificabile come manutenzione documentale e non come modifica canonica.</li>
+<li>WF_008 è effettivamente il workflow associato ai refactor controllati.
+Tuttavia, il report presenta alcuni punti che non possono essere considerati verificati senza ispezione diretta dei file modificati.</li>
+</ul>
+<hr>
+<h5>Findings</h5>
+<h6>PASS — database_old/ non eliminato</h6>
+<p>La decisione di:</p>
+<ul>
+<li>mantenere database_old/</li>
+<li>trattarlo come archivio storico</li>
+<li>impedirne il tracking operativo
+è allineata al principio:
+Historical Archive = evidence source only.
+Non rilevo conflitti architetturali.</li>
+</ul>
+<hr>
+<h6>PASS — Refactoring ADR tramite WF_008</h6>
+<p>WF_008 è esplicitamente il workflow per Component Refactor.
+L&#39;aggiunta di:</p>
+<pre><code class="language-md">## Compliance Mapping (JanitorAI)
+
+</code></pre>
+<p>come sezione append-only è compatibile con un refactoring documentale.</p>
+<hr>
+<h6>WARNING — &quot;Complete understanding of each ADR&quot;</h6>
+<p>La dichiarazione:
+&quot;I have a complete understanding of each one&#39;s content&quot;
+non è verificabile.
+Dal punto di vista architetturale questa affermazione non costituisce evidenza.
+L&#39;unica evidenza valida sarebbe:</p>
+<ul>
+<li>diff dei file</li>
+<li>verifica contenuto inserito</li>
+<li>validazione rispetto agli ADR esistenti</li>
+</ul>
+<hr>
+<h6>WARNING — Aggiornamento automatico date stamp</h6>
+<p>Il report dichiara:
+&quot;Now let me also update the date stamp on each file&quot;
+Questo richiede attenzione.
+Se il repository non possiede una regola formale che impone l&#39;aggiornamento dei timestamp negli ADR, il cambiamento introduce rumore documentale.
+Andrebbe verificato se:</p>
+<ul>
+<li>WF_008 lo richiede</li>
+<li>oppure è stato fatto arbitrariamente</li>
+</ul>
+<hr>
+<h6>WARNING — EXTERNAL_RESOURCES_INDEX.md modificato</h6>
+<p>Il report include:
+EXTERNAL_RESOURCES_INDEX.md registrato
+Questa modifica non fa parte delle due attività inizialmente approvate:</p>
+<ol>
+<li>.gitignore</li>
+<li>ADR Compliance Mapping
+Pertanto rappresenta uno scope expansion.
+Non necessariamente errato, ma andrebbe verificato contro il principio di modifica minima.</li>
+</ol>
+<hr>
+<h5>Risks</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Rischio</th><th>Livello</th></tr></thead><tbody><tr><td>Compliance Mapping non coerente con ADR reali</td><td>Medium</td></tr><tr><td>Mapping contenente interpretazioni non approvate</td><td>Medium</td></tr><tr><td>Timestamp noise negli ADR</td><td>Low</td></tr><tr><td>Scope creep su EXTERNAL_RESOURCES_INDEX</td><td>Low</td></tr></tbody></table>
+<hr>
+<h5>Recommendations</h5>
+<ol>
+<li>Eseguire audit diff completo dei 10 ADR.</li>
+<li>Verificare che ogni sezione Compliance Mapping (JanitorAI) sia puramente descrittiva e non introduca nuova normativa.</li>
+<li>Verificare che nessuna Compliance Mapping contraddica ADR-000 → ADR-009.</li>
+<li>Verificare che EXTERNAL_RESOURCES_INDEX.md sia stato modificato tramite workflow appropriato e non come side-effect.</li>
+<li>Registrare formalmente il trattamento di database_old/ come  <strong>LEGACY DRIFT / Historical Archive</strong>  ove non già documentato. ADR-000 già supporta il modello archivio read-only.</li>
+</ol>
+<hr>
+<h4>Development Orders</h4>
+<ol>
+<li>Eseguire audit diff dei 10 ADR modificati.</li>
+<li>Validare le nuove sezioni Compliance Mapping contro ADR-000 → ADR-009.</li>
+<li>Verificare e approvare separatamente la modifica a EXTERNAL_RESOURCES_INDEX.md.</li>
+</ol>

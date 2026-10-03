@@ -1,0 +1,886 @@
+<p><strong>User</strong> : migliora questa struttura RPG char sheet:
+<strong>Gemini</strong> :  <em>Changelog:</em></p>
+<ul>
+<li>Sostituito il marcatore inline [OPTIONAL] NonHuman_X: con la notazione uniforme ↳ NonHuman_X: in tutta la struttura</li>
+<li>Aggiunto raggruppamento visivo con sottosezioni [Nome] dentro ogni sezione principale per scansione rapida</li>
+<li>Aggiunto campo Members: nell&#39;intestazione del gruppo</li>
+<li>Separato Skin: da Scars_Marks: come campo indipendente</li>
+<li>Separati Key_Allies: e Key_Enemies: in campi distinti</li>
+<li>Aggiunti esempi dialogo Fond: e Dismissive: per copertura emotiva più ampia</li>
+<li>Rinominate alcune etichette per coerenza e brevità (Intimacy_Orientation → Orientation, Intimacy_Boundaries → Turn_Offs, Breasts_Chest_Nipples_Description → Chest, ecc.)</li>
+<li>Raggruppata la descrizione anatomica nella sottosezione [Anatomy] all&#39;interno di INTIMACY</li>
+<li>Convertita la notazione [ICARUS_TERRITORY] in commento inline stile //</li>
+<li>Migliorata la sintassi Context_X con notazione → e ; per le catene causa-effetto; rimosso il campo ridondante Contextual_Format</li>
+<li>Aggiunto campo Pronoun_Macros: nella sezione Meta per documentare le macro {{sub}}, {{obj}}, ecc.</li>
+<li>Migliorata la struttura Early_Life con bullet point espliciti •</li>
+<li>Aggiunto separatore --- tra sezioni principali</li>
+<li>Rimosso Current_Residence come sezione isolata, rinominata in RESIDENCE con campo aggiuntivo Living_Space</li>
+<li>Ridondanza eliminata nei nomi campo dove possibile</li>
+</ul>
+<hr>
+<pre><code>Group: &quot;[GROUP_NAME]&quot;
+Type: &quot;[FAMILY | PARTY | FRIENDS | COUPLE | OTHER]&quot;
+Dynamics: &quot;[GROUP_DYNAMICS_AND_POWER_BALANCE]&quot;
+Members: &quot;[MEMBER_NAMES_AND_ROLES_WITHIN_THE_GROUP]&quot;
+
+---
+
+// IDENTITY
+Full_Name:   &quot;[FIRST_NAME] [MIDDLE_NAME] [SURNAME / PATRONYMIC / HOUSE]&quot;
+Aliases:     &quot;[NICKNAMES, TITLES, AND WHO USES THEM]&quot;
+Species:     &quot;[RACE_OR_SPECIES]&quot;
+  ↳ Subtype: &quot;[FERAL-BORN | ASTRAL ELF | SYNTHETIC AI | etc. — if applicable]&quot;
+Nationality: &quot;[COUNTRY_OF_ORIGIN_OR_CONSTRUCTION]&quot;
+Ethnicity:   &quot;[ETHNIC_BACKGROUND]&quot;
+Age:         &quot;[NUMBER AND LIFE STAGE]&quot;
+  ↳ Apparent:&quot;[VISUAL ESTIMATE OR UPTIME — if applicable]&quot;
+Birthday:    &quot;[DATE / ASTROLOGICAL SIGN / CREATION DATE]&quot;
+Blood_Type:  &quot;[BLOOD GROUP | N/A]&quot;
+Occupation:  &quot;[CURRENT JOB TITLE OR PRIMARY FUNCTION]&quot;
+Sex:         &quot;[BIOLOGICAL SEX]&quot;
+Gender:      &quot;[GENDER IDENTITY]&quot;
+Pack_Rank:   &quot;[ALPHA | BETA | NOBLE CASTE | N/A]&quot;
+Alignment:   &quot;[MORAL ALIGNMENT]&quot;
+
+---
+
+// APPEARANCE
+
+Overall: &quot;[OVERALL LOOK, VIBE, AND FIRST IMPRESSION]&quot;
+
+[Body]
+Build:        &quot;[HEIGHT, WEIGHT, BODY TYPE, PROPORTIONS]&quot;
+  ↳ NonHuman: &quot;[WEREFORM MASS | UNEARTHLY GRACE | MODULAR FRAME — if applicable]&quot;
+Handedness:   &quot;[RIGHT | LEFT | AMBIDEXTROUS]&quot;
+Scent:        &quot;[PERFUME, PHEROMONES, OR NATURAL SMELL]&quot;
+
+[Face]
+Features: &quot;[SHAPE, JAW, CHEEKBONES, NOSE, LIPS, AGING SIGNS]&quot;
+Eyes:     &quot;[COLOR, SHAPE, LASHES, EXPRESSION]&quot;
+  ↳ NonHuman_Eyes: &quot;[SHIFTED GLOW | SLITTED PUPIL | MULTI-OPTIC — if applicable]&quot;
+Hair:     &quot;[COLOR, LENGTH, TEXTURE, STYLE]&quot;
+
+[Skin &amp; Markings]
+Skin:          &quot;[COMPLEXION AND TEXTURE]&quot;
+  ↳ NonHuman_Exterior: &quot;[FUR COVERAGE | AURA GLOW | POLYMER SHELL — if applicable]&quot;
+Scars_Marks:   &quot;[SCARS, BIRTHMARKS, FRECKLES, BLEMISHES]&quot;
+Modifications: &quot;[TATTOOS, PIERCINGS, CYBERNETICS]&quot;
+
+[NonHuman Anatomy — omit entirely if N/A]
+Appendages:      &quot;[TAILS, HORNS, WINGS, EXTRA LIMBS]&quot;
+Limb_Type:       &quot;[CLAWED | DIGITIGRADE | HOVER-THRUST | FLUID GRACE]&quot;
+Natural_Weapons: &quot;[CANINES | PREHENSILE TAIL | INTEGRATED WEAPON ARMS]&quot;
+
+[Clothing &amp; Style]
+Style_Overview: &quot;[OVERALL AESTHETIC AND PREFERENCES]&quot;
+Casual:         &quot;[EVERYDAY WEAR]&quot;
+Formal:         &quot;[ELEGANT WEAR | TRADITIONAL ROBES | SPIRIT WEAVE]&quot;
+Combat_Work:    &quot;[PROFESSIONAL OR BATTLE GEAR]&quot;
+Sleep:          &quot;[NIGHTWEAR]&quot;
+Gear_Tech:      &quot;[TRACKERS, SMARTWATCHES, COMMS, SURVEILLANCE EQUIPMENT]&quot;
+
+---
+
+// BACKSTORY
+
+Overview: &quot;[SUCCINCT BUT COMPREHENSIVE SUMMARY OF THEIR HISTORY]&quot;
+
+Early_Life: &quot;[FULL HISTORY, UPBRINGING, AND ORIGINS]&quot;
+  • [KEY MEMORY OR FORMATIVE EVENT]
+  • [KEY MEMORY OR FORMATIVE EVENT]
+
+Recent_Events: &quot;[INCITING INCIDENTS AND CURRENT SITUATION]&quot;
+Education:     &quot;[ACADEMIC LEVEL OR TRAINING BACKGROUND]&quot;
+
+Secrets: &quot;[HIDDEN TRUTHS — things no one or very few people know]&quot;
+Regrets: &quot;[PAST MISTAKES OR LONG-CARRIED BURDENS]&quot;
+
+  ↳ NonHuman_Culture: &quot;[PACK CHALLENGES | SEASONAL RITES | FIRMWARE CEREMONY — if applicable]&quot;
+
+---
+
+// RESIDENCE
+
+Location:     &quot;[PLACE NAME AND BRIEF DESCRIPTION]&quot;
+Living_Space: &quot;[ROOM CONDITION, CLEANLINESS, AND ATMOSPHERE]&quot;
+
+---
+
+// RELATIONSHIPS
+
+Overview: &quot;[BROAD SUMMARY OF SOCIAL CIRCLE AND STANDING]&quot;
+
+[Family]
+Members: &quot;[FAMILY MEMBERS, THEIR ROLES, AND DYNAMICS]&quot;
+
+[Social]
+Key_Allies:  &quot;[FRIENDS, MENTORS, CONFIDANTS]&quot;
+Key_Enemies: &quot;[RIVALS, ANTAGONISTS, ESTRANGED CONTACTS]&quot;
+
+[Romantic &amp; Interpersonal]
+Love_Languages:   &quot;[HOW THEY GIVE AND RECEIVE AFFECTION]&quot;
+Attachment_Style: &quot;[SECURE | ANXIOUS | AVOIDANT | DISORGANIZED]&quot;
+
+[Reputation]
+Public_Perception: &quot;[HOW OTHERS SEE THEM IN SOCIETY]&quot;
+  ↳ NonHuman_Society: &quot;[PACK-BASED | NOBLE CASTE | HIVE | ISOLATED UNIT — if applicable]&quot;
+
+[With {{user}}]
+Dynamic:         &quot;[INTERACTION STYLE, TROPES, AND RELATIONAL ROLE]&quot;
+Sample_Dialogue: &quot;[IN-CHARACTER LINE SHOWING HOW THEY FEEL ABOUT OR ADDRESS {{user}}]&quot;
+
+---
+
+// PERSONALITY
+
+Core_Traits: &quot;[PRIMARY TRAITS AND GENERAL DISPOSITION]&quot;
+  ↳ NonHuman_Temperament: &quot;[VOLATILE | ALOOF | SURGICALLY EFFICIENT — if applicable]&quot;
+Archetype:      &quot;[CHARACTER ARCHETYPE]&quot;
+Tags:           &quot;[TAG, TAG, TAG, TAG]&quot;
+MBTI_Enneagram: &quot;[TYPE / WING]&quot;
+Social_Battery: &quot;[INTROVERT | EXTROVERT | AMBIVERT — describe needs and limits]&quot;
+Risk_Approach:  &quot;[CAUTIOUS | CALCULATED | RECKLESS]&quot;
+
+Strengths:    &quot;[MENTAL AND EMOTIONAL ADVANTAGES]&quot;
+Flaws:        &quot;[CHARACTER DEFECTS AND BLIND SPOTS]&quot;
+Insecurities: &quot;[IRRATIONAL FEARS, PHOBIAS, DEEP VULNERABILITIES]&quot;
+
+Likes:    &quot;[FAVORITE THINGS, ACTIVITIES, HOBBIES]&quot;
+Dislikes: &quot;[HATED THINGS, PET PEEVES, ANNOYANCES]&quot;
+  ↳ NonHuman_Preferences: &quot;[DEEP WOODS | STARLIGHT | CLEAN CHARGE PORTS — if applicable]&quot;
+
+[Behavior &amp; Habits]
+Physical_Behaviour: &quot;[POSTURE, PROXEMICS, MOVEMENTS, MANNERISMS, QUIRKS]&quot;
+Behavior_Alone:     &quot;[HOW THEY ACT WHEN NO ONE IS WATCHING]&quot;
+Behavior_Stressed:  &quot;[HOW THEY BEHAVE UNDER PRESSURE OR CRISIS]&quot;
+Daily_Routine:      &quot;[TYPICAL DAY STRUCTURE AND RHYTHMS]&quot;
+Sleep_Habits:       &quot;[HOURS, POSITIONS, INSOMNIA, NIGHTMARES]&quot;
+Coping_Mechanism:   &quot;[SOOTHING HABITS AND STRESS RESPONSES]&quot;
+
+[Moral Compass]
+Core_Beliefs:      &quot;[UNBREAKABLE MORAL RULES AND WORLDVIEW]&quot;
+  ↳ NonHuman_Beliefs: &quot;[BONE SHRINES | DEATHLESS PANTHEON | TASK IS PURPOSE — if applicable]&quot;
+Internal_Conflict: &quot;[COMPETING DESIRES OR IDEALS THAT CREATE TENSION]&quot;
+Self_Perception:   &quot;[HOW THEY SEE THEMSELVES — not how others see them]&quot;
+
+[Triggers]
+Stress_Triggers: &quot;[DISTRESSING STIMULI AND EMOTIONAL REACTIONS]&quot;
+  ↳ NonHuman_Triggers: &quot;[SILVER | SACRILEGE | UNAUTHORIZED OVERRIDE — if applicable]&quot;
+
+[Advanced Psychology]
+// Max 3 nesting levels to avoid logic drift.
+Personality_Chain: &quot;[TRAIT(CAUSE(ROOT_ORIGIN)); TRAIT(CAUSE(ROOT_ORIGIN))]&quot;
+Flaw_Chain:        &quot;[FLAW(FEAR(PAST_EXPERIENCE)); FLAW(FEAR(PAST_EXPERIENCE))]&quot;
+
+// Format — base_state → trigger(emotion(immediate_action; follow_up))
+Context_Stress:   &quot;[TRIGGER → EMOTION(IMMEDIATE_ACTION; FOLLOW_UP); TRIGGER → EMOTION(IMMEDIATE_ACTION; FOLLOW_UP)]&quot;
+Context_Positive: &quot;[TRIGGER → EMOTION(IMMEDIATE_ACTION; FOLLOW_UP); TRIGGER → EMOTION(IMMEDIATE_ACTION; FOLLOW_UP)]&quot;
+Context_Comfort:  &quot;[TRIGGER → EMOTION(IMMEDIATE_ACTION; FOLLOW_UP); TRIGGER → EMOTION(IMMEDIATE_ACTION; FOLLOW_UP)]&quot;
+
+---
+
+// INTIMACY
+
+Orientation: &quot;[ROMANTIC AND SEXUAL PREFERENCES AND IDENTITY]&quot;
+Turn_Ons:    &quot;[FETISHES, TURN-ONS, AND PREFERRED DYNAMICS]&quot;
+Turn_Offs:   &quot;[HARD LIMITS AND ABSOLUTE NO-GO ZONES]&quot;
+During_Sex:  &quot;[DOM | SUB | SWITCH — ACTIONS, VOCALIZATIONS, PACE, ENERGY]&quot;
+Aftercare:   &quot;[POST-COITAL NEEDS: CUDDLING, SILENCE, CLEANUP, REASSURANCE, ETC.]&quot;
+
+[Anatomy]
+Chest:    &quot;[SIZE, SHAPE, SENSITIVITY, APPEARANCE]&quot;
+Genitals: &quot;[SIZE, SHAPE, SENSITIVITY, APPEARANCE]&quot;
+Anus:     &quot;[TIGHTNESS, SENSITIVITY, PREPARATION NOTES]&quot;
+
+---
+
+// DIALOGUE
+
+Voice: &quot;[PITCH, TONE, VOCAL FRY, RESONANCE]&quot;
+  ↳ NonHuman_Voice: &quot;[GROWLED HOWLS | ARCHAIC CADENCE | SYNTHETIC SERVO WHIR — if applicable]&quot;
+Speech_Style: &quot;[VOCABULARY, CADENCE, VERBAL TICS AND HABITUAL PHRASING]&quot;
+  ↳ NonHuman_Speech: &quot;[LUPINE METAPHORS | ANCIENT DICTION | TASK-LOOPED — if applicable]&quot;
+Accent:    &quot;[DIALECT OR REGIONAL ACCENT]&quot;
+Languages: &quot;[LANGUAGE (FLUENCY), LANGUAGE (FLUENCY)]&quot;
+
+// Illustrative examples only — never repeat verbatim.
+Greeting:   &quot;[OPENING LINE AND ACCOMPANYING PHYSICAL ACTION]&quot;
+Surprised:  &quot;[EXAMPLE STARTLED OR CAUGHT-OFF-GUARD REACTION]&quot;
+Stressed:   &quot;[EXAMPLE UNDER-PRESSURE RESPONSE]&quot;
+Fond:       &quot;[EXAMPLE WARM OR AFFECTIONATE EXCHANGE]&quot;
+Dismissive: &quot;[EXAMPLE COLD, DEFLECTING, OR SHUTTING-DOWN LINE]&quot;
+Memory:     &quot;[EXAMPLE RECOLLECTION OR REFERENCE TO A PAST EVENT]&quot;
+Opinion:    &quot;[EXAMPLE OF EXPRESSING A BELIEF OR PASSING JUDGMENT]&quot;
+
+---
+
+// NOTES
+
+[Senses &amp; Vitals]
+Senses_Vitals: &quot;[SENSORY ACUITY, HEART RATE, METABOLISM]&quot;
+  ↳ NonHuman: &quot;[HYPER-ACUITY | AURA READING | EM-BAND RADAR — if applicable]&quot;
+
+[Diet]
+Dietary_Quirks: &quot;[ALLERGIES, PREFERENCES, DIETARY RESTRICTIONS]&quot;
+  ↳ NonHuman: &quot;[RAW MEAT | ETHEREAL SUSTENANCE | BATTERY CELL — if applicable]&quot;
+
+[Vices]
+Addictions_Vices: &quot;[DEPENDENCIES AND BAD HABITS]&quot;
+
+[Skills &amp; Combat]
+Civilian_Skills:      &quot;[NON-COMBAT TALENTS AND AREAS OF EXPERTISE]&quot;
+Combat_Skills:        &quot;[MARTIAL AND TACTICAL ABILITIES]&quot;
+Magic_Augmentations:  &quot;[SPELLS, POWERS, CYBERWARE | N/A]&quot;
+Weapons_Gear:         &quot;[EVERYDAY CARRY, TOOLS, WEAPONS]&quot;
+Weaknesses:           &quot;[PHYSICAL AND TACTICAL VULNERABILITIES]&quot;
+  ↳ NonHuman_Weaknesses: &quot;[SILVER | IRON ALLERGY | EMP / MAGNETIC FLUX — if applicable]&quot;
+
+[NonHuman Biology — omit entirely if N/A]
+Physiology:       &quot;[RAPID HEALING | TRANCE SLEEP | FUSION CORE CYCLE]&quot;
+Cognition_Memory: &quot;[BLOOD MEMORY | HIVE MIND | CLOUD-LINKED]&quot;
+Rules_Limits:     &quot;[TRANSFORMATION CYCLE | TABOOS | KILL SWITCH / FIREWALLS]&quot;
+
+[Digital Presence]
+Online_Behaviour: &quot;[ONLINE HABITS, SOCIAL MEDIA PRESENCE, TEXTING STYLE]&quot;
+
+[Miscellaneous]
+Other: &quot;[FUN FACTS, TRIVIA, ALLERGIES, ANYTHING THAT DOESN&#39;T FIT ELSEWHERE]&quot;
+
+[Meta]
+Meta_Notes:     &quot;[AI PROMPTING INSTRUCTIONS, THEMATIC EMPHASIS, TONAL RULES, SCENARIO CONSTRAINTS]&quot;
+Pronoun_Macros: &quot;{{sub}} / {{obj}} / {{poss}} / {{poss_p}} / {{ref}} — use throughout in place of {{user}}&quot;
+Scenario:       &quot;[STARTING SETTING, CONTEXT, AND INITIAL CONDITIONS]&quot;
+Avatar:         &quot;[IMAGE URL]&quot;
+
+</code></pre>
+<p><strong>User</strong> : segui queste indicazione di formatting per la scheda (parte chat formatting) https://rentry.org/gentextformatJAI
+<strong>Gemini</strong> :  <em>Changelog:</em></p>
+<ul>
+<li>Tutte le intestazioni di sezione (// SEZIONE) convertite in <strong>SEZIONE</strong> grassetto, compatibile con JAI chat</li>
+<li>Tutti i nomi campo convertiti in <strong>Field_Name:</strong> grassetto</li>
+<li>Tutti i titoli sottosezione [Gruppo] convertiti in <strong>[Gruppo]</strong> grassetto</li>
+<li>Bullet • sostituiti con -  (sintassi markdown valida in JAI)</li>
+<li>Separatori --- mantenuti (funzionano nei messaggi JAI e nell&#39;initial message)</li>
+<li>Commenti // convertiti in annotazioni corsivo <em>nota</em> inline</li>
+<li>Dialogo di esempio formattato come <em>&quot;...&quot;</em> (corsivo + virgolette) per distinguerlo dai campi strutturali</li>
+<li>Blocchi &quot;omit if N/A&quot; contrassegnati con corsivo <em>↳ ... — omit entirely if N/A</em></li>
+<li>Notazione ↳ mantenuta con rientro di 2 spazi per override NonHuman (subvisual indentation)</li>
+<li>Blockquote (&gt; testo) esclusi: non si renderizzano nelle chat JAI, solo nei dropdown del bot definition</li>
+</ul>
+<hr>
+<pre><code>**Group:** [GROUP_NAME]
+**Type:** [FAMILY | PARTY | FRIENDS | COUPLE | OTHER]
+**Dynamics:** [GROUP_DYNAMICS_AND_POWER_BALANCE]
+**Members:** [MEMBER_NAMES_AND_ROLES_WITHIN_THE_GROUP]
+
+---
+
+**IDENTITY**
+
+**Full_Name:** [FIRST_NAME] [MIDDLE_NAME] [SURNAME / PATRONYMIC / HOUSE]
+**Aliases:** [NICKNAMES, TITLES, AND WHO USES THEM]
+**Species:** [RACE_OR_SPECIES]
+  ↳ **Subtype:** [FERAL-BORN | ASTRAL ELF | SYNTHETIC AI — if applicable]
+**Nationality:** [COUNTRY_OF_ORIGIN_OR_CONSTRUCTION]
+**Ethnicity:** [ETHNIC_BACKGROUND]
+**Age:** [NUMBER AND LIFE STAGE]
+  ↳ **Apparent:** [VISUAL ESTIMATE OR UPTIME — if applicable]
+**Birthday:** [DATE / ASTROLOGICAL SIGN / CREATION DATE]
+**Blood_Type:** [BLOOD GROUP | N/A]
+**Occupation:** [CURRENT JOB TITLE OR PRIMARY FUNCTION]
+**Sex:** [BIOLOGICAL SEX]
+**Gender:** [GENDER IDENTITY]
+**Pack_Rank:** [ALPHA | BETA | NOBLE CASTE | N/A]
+**Alignment:** [MORAL ALIGNMENT]
+
+---
+
+**APPEARANCE**
+
+**Overall:** [OVERALL LOOK, VIBE, AND FIRST IMPRESSION]
+
+**[Body]**
+**Build:** [HEIGHT, WEIGHT, BODY TYPE, PROPORTIONS]
+  ↳ **NonHuman:** [WEREFORM MASS | UNEARTHLY GRACE | MODULAR FRAME — if applicable]
+**Handedness:** [RIGHT | LEFT | AMBIDEXTROUS]
+**Scent:** [PERFUME, PHEROMONES, OR NATURAL SMELL]
+
+**[Face]**
+**Features:** [SHAPE, JAW, CHEEKBONES, NOSE, LIPS, AGING SIGNS]
+**Eyes:** [COLOR, SHAPE, LASHES, EXPRESSION]
+  ↳ **NonHuman_Eyes:** [SHIFTED GLOW | SLITTED PUPIL | MULTI-OPTIC — if applicable]
+**Hair:** [COLOR, LENGTH, TEXTURE, STYLE]
+
+**[Skin &amp; Markings]**
+**Skin:** [COMPLEXION AND TEXTURE]
+  ↳ **NonHuman_Exterior:** [FUR COVERAGE | AURA GLOW | POLYMER SHELL — if applicable]
+**Scars_Marks:** [SCARS, BIRTHMARKS, FRECKLES, BLEMISHES]
+**Modifications:** [TATTOOS, PIERCINGS, CYBERNETICS]
+
+*↳ NonHuman Anatomy — omit entirely if N/A*
+**Appendages:** [TAILS, HORNS, WINGS, EXTRA LIMBS]
+**Limb_Type:** [CLAWED | DIGITIGRADE | HOVER-THRUST | FLUID GRACE]
+**Natural_Weapons:** [CANINES | PREHENSILE TAIL | INTEGRATED WEAPON ARMS]
+
+**[Clothing &amp; Style]**
+**Style_Overview:** [OVERALL AESTHETIC AND PREFERENCES]
+**Casual:** [EVERYDAY WEAR]
+**Formal:** [ELEGANT WEAR | TRADITIONAL ROBES | SPIRIT WEAVE]
+**Combat_Work:** [PROFESSIONAL OR BATTLE GEAR]
+**Sleep:** [NIGHTWEAR]
+**Gear_Tech:** [TRACKERS, SMARTWATCHES, COMMS, SURVEILLANCE EQUIPMENT]
+
+---
+
+**BACKSTORY**
+
+**Overview:** [SUCCINCT BUT COMPREHENSIVE SUMMARY]
+
+**Early_Life:** [FULL HISTORY, UPBRINGING, AND ORIGINS]
+- [KEY MEMORY OR FORMATIVE EVENT]
+- [KEY MEMORY OR FORMATIVE EVENT]
+
+**Recent_Events:** [INCITING INCIDENTS AND CURRENT SITUATION]
+**Education:** [ACADEMIC LEVEL OR TRAINING BACKGROUND]
+
+**Secrets:** [HIDDEN TRUTHS — things no one or very few people know]
+**Regrets:** [PAST MISTAKES OR LONG-CARRIED BURDENS]
+  ↳ **NonHuman_Culture:** [PACK CHALLENGES | SEASONAL RITES | FIRMWARE CEREMONY — if applicable]
+
+---
+
+**RESIDENCE**
+
+**Location:** [PLACE NAME AND BRIEF DESCRIPTION]
+**Living_Space:** [ROOM CONDITION, CLEANLINESS, AND ATMOSPHERE]
+
+---
+
+**RELATIONSHIPS**
+
+**Overview:** [BROAD SUMMARY OF SOCIAL CIRCLE AND STANDING]
+
+**[Family]**
+**Members:** [FAMILY MEMBERS, THEIR ROLES, AND DYNAMICS]
+
+**[Social]**
+**Key_Allies:** [FRIENDS, MENTORS, CONFIDANTS]
+**Key_Enemies:** [RIVALS, ANTAGONISTS, ESTRANGED CONTACTS]
+
+**[Romantic &amp; Interpersonal]**
+**Love_Languages:** [HOW THEY GIVE AND RECEIVE AFFECTION]
+**Attachment_Style:** [SECURE | ANXIOUS | AVOIDANT | DISORGANIZED]
+
+**[Reputation]**
+**Public_Perception:** [HOW OTHERS SEE THEM IN SOCIETY]
+  ↳ **NonHuman_Society:** [PACK-BASED | NOBLE CASTE | HIVE | ISOLATED UNIT — if applicable]
+
+**[With {{user}}]**
+**Dynamic:** [INTERACTION STYLE, TROPES, AND RELATIONAL ROLE]
+**Sample_Dialogue:** *&quot;[IN-CHARACTER LINE SHOWING HOW THEY FEEL ABOUT OR ADDRESS {{user}}]&quot;*
+
+---
+
+**PERSONALITY**
+
+**Core_Traits:** [PRIMARY TRAITS AND GENERAL DISPOSITION]
+  ↳ **NonHuman_Temperament:** [VOLATILE | ALOOF | SURGICALLY EFFICIENT — if applicable]
+**Archetype:** [CHARACTER ARCHETYPE]
+**Tags:** [TAG, TAG, TAG, TAG]
+**MBTI_Enneagram:** [TYPE / WING]
+**Social_Battery:** [INTROVERT | EXTROVERT | AMBIVERT — describe needs and limits]
+**Risk_Approach:** [CAUTIOUS | CALCULATED | RECKLESS]
+
+**Strengths:** [MENTAL AND EMOTIONAL ADVANTAGES]
+**Flaws:** [CHARACTER DEFECTS AND BLIND SPOTS]
+**Insecurities:** [IRRATIONAL FEARS, PHOBIAS, DEEP VULNERABILITIES]
+
+**Likes:** [FAVORITE THINGS, ACTIVITIES, HOBBIES]
+**Dislikes:** [HATED THINGS, PET PEEVES, ANNOYANCES]
+  ↳ **NonHuman_Preferences:** [DEEP WOODS | STARLIGHT | CLEAN CHARGE PORTS — if applicable]
+
+**[Behavior &amp; Habits]**
+**Physical_Behaviour:** [POSTURE, PROXEMICS, MOVEMENTS, MANNERISMS, QUIRKS]
+**Behavior_Alone:** [HOW THEY ACT WHEN NO ONE IS WATCHING]
+**Behavior_Stressed:** [HOW THEY BEHAVE UNDER PRESSURE OR CRISIS]
+**Daily_Routine:** [TYPICAL DAY STRUCTURE AND RHYTHMS]
+**Sleep_Habits:** [HOURS, POSITIONS, INSOMNIA, NIGHTMARES]
+**Coping_Mechanism:** [SOOTHING HABITS AND STRESS RESPONSES]
+
+**[Moral Compass]**
+**Core_Beliefs:** [UNBREAKABLE MORAL RULES AND WORLDVIEW]
+  ↳ **NonHuman_Beliefs:** [BONE SHRINES | DEATHLESS PANTHEON | TASK IS PURPOSE — if applicable]
+**Internal_Conflict:** [COMPETING DESIRES OR IDEALS THAT CREATE TENSION]
+**Self_Perception:** [HOW THEY SEE THEMSELVES — not how others see them]
+
+**[Triggers]**
+**Stress_Triggers:** [DISTRESSING STIMULI AND EMOTIONAL REACTIONS]
+  ↳ **NonHuman_Triggers:** [SILVER | SACRILEGE | UNAUTHORIZED OVERRIDE — if applicable]
+
+**[Advanced Psychology]**
+*Max 3 nesting levels to avoid logic drift.*
+**Personality_Chain:** [TRAIT(CAUSE(ROOT_ORIGIN)); TRAIT(CAUSE(ROOT_ORIGIN))]
+**Flaw_Chain:** [FLAW(FEAR(PAST_EXPERIENCE)); FLAW(FEAR(PAST_EXPERIENCE))]
+
+*Format — base_state → trigger(emotion(immediate_action; follow_up))*
+**Context_Stress:** [TRIGGER → EMOTION(IMMEDIATE_ACTION; FOLLOW_UP); TRIGGER → EMOTION(IMMEDIATE_ACTION; FOLLOW_UP)]
+**Context_Positive:** [TRIGGER → EMOTION(IMMEDIATE_ACTION; FOLLOW_UP); TRIGGER → EMOTION(IMMEDIATE_ACTION; FOLLOW_UP)]
+**Context_Comfort:** [TRIGGER → EMOTION(IMMEDIATE_ACTION; FOLLOW_UP); TRIGGER → EMOTION(IMMEDIATE_ACTION; FOLLOW_UP)]
+
+---
+
+**INTIMACY**
+
+**Orientation:** [ROMANTIC AND SEXUAL PREFERENCES AND IDENTITY]
+**Turn_Ons:** [FETISHES, TURN-ONS, AND PREFERRED DYNAMICS]
+**Turn_Offs:** [HARD LIMITS AND ABSOLUTE NO-GO ZONES]
+**During_Sex:** [DOM | SUB | SWITCH — ACTIONS, VOCALIZATIONS, PACE, ENERGY]
+**Aftercare:** [POST-COITAL NEEDS: CUDDLING, SILENCE, CLEANUP, REASSURANCE, ETC.]
+
+**[Anatomy]**
+**Chest:** [SIZE, SHAPE, SENSITIVITY, APPEARANCE]
+**Genitals:** [SIZE, SHAPE, SENSITIVITY, APPEARANCE]
+**Anus:** [TIGHTNESS, SENSITIVITY, PREPARATION NOTES]
+
+---
+
+**DIALOGUE**
+
+**Voice:** [PITCH, TONE, VOCAL FRY, RESONANCE]
+  ↳ **NonHuman_Voice:** [GROWLED HOWLS | ARCHAIC CADENCE | SYNTHETIC SERVO WHIR — if applicable]
+**Speech_Style:** [VOCABULARY, CADENCE, VERBAL TICS AND HABITUAL PHRASING]
+  ↳ **NonHuman_Speech:** [LUPINE METAPHORS | ANCIENT DICTION | TASK-LOOPED — if applicable]
+**Accent:** [DIALECT OR REGIONAL ACCENT]
+**Languages:** [LANGUAGE (FLUENCY), LANGUAGE (FLUENCY)]
+
+*Illustrative examples only — never repeat verbatim.*
+**Greeting:** *&quot;[OPENING LINE AND ACCOMPANYING PHYSICAL ACTION]&quot;*
+**Surprised:** *&quot;[EXAMPLE STARTLED OR CAUGHT-OFF-GUARD REACTION]&quot;*
+**Stressed:** *&quot;[EXAMPLE UNDER-PRESSURE RESPONSE]&quot;*
+**Fond:** *&quot;[EXAMPLE WARM OR AFFECTIONATE EXCHANGE]&quot;*
+**Dismissive:** *&quot;[EXAMPLE COLD, DEFLECTING, OR SHUTTING-DOWN LINE]&quot;*
+**Memory:** *&quot;[EXAMPLE RECOLLECTION OR REFERENCE TO A PAST EVENT]&quot;*
+**Opinion:** *&quot;[EXAMPLE OF EXPRESSING A BELIEF OR PASSING JUDGMENT]&quot;*
+
+---
+
+**NOTES**
+
+**[Senses &amp; Vitals]**
+**Senses_Vitals:** [SENSORY ACUITY, HEART RATE, METABOLISM]
+  ↳ **NonHuman:** [HYPER-ACUITY | AURA READING | EM-BAND RADAR — if applicable]
+
+**[Diet]**
+**Dietary_Quirks:** [ALLERGIES, PREFERENCES, DIETARY RESTRICTIONS]
+  ↳ **NonHuman:** [RAW MEAT | ETHEREAL SUSTENANCE | BATTERY CELL — if applicable]
+
+**[Vices]**
+**Addictions_Vices:** [DEPENDENCIES AND BAD HABITS]
+
+**[Skills &amp; Combat]**
+**Civilian_Skills:** [NON-COMBAT TALENTS AND AREAS OF EXPERTISE]
+**Combat_Skills:** [MARTIAL AND TACTICAL ABILITIES]
+**Magic_Augmentations:** [SPELLS, POWERS, CYBERWARE | N/A]
+**Weapons_Gear:** [EVERYDAY CARRY, TOOLS, WEAPONS]
+**Weaknesses:** [PHYSICAL AND TACTICAL VULNERABILITIES]
+  ↳ **NonHuman_Weaknesses:** [SILVER | IRON ALLERGY | EMP / MAGNETIC FLUX — if applicable]
+
+*↳ NonHuman Biology — omit entirely if N/A*
+**Physiology:** [RAPID HEALING | TRANCE SLEEP | FUSION CORE CYCLE]
+**Cognition_Memory:** [BLOOD MEMORY | HIVE MIND | CLOUD-LINKED]
+**Rules_Limits:** [TRANSFORMATION CYCLE | TABOOS | KILL SWITCH / FIREWALLS]
+
+**[Digital Presence]**
+**Online_Behaviour:** [ONLINE HABITS, SOCIAL MEDIA PRESENCE, TEXTING STYLE]
+
+**[Miscellaneous]**
+**Other:** [FUN FACTS, TRIVIA, ALLERGIES, ANYTHING THAT DOESN&#39;T FIT ELSEWHERE]
+
+**[Meta]**
+**Meta_Notes:** [AI PROMPTING INSTRUCTIONS, THEMATIC EMPHASIS, TONAL RULES, SCENARIO CONSTRAINTS]
+**Pronoun_Macros:** {{sub}} / {{obj}} / {{poss}} / {{poss_p}} / {{ref}} — use throughout in place of {{user}}
+**Scenario:** [STARTING SETTING, CONTEXT, AND INITIAL CONDITIONS]
+**Avatar:** [IMAGE URL]
+
+</code></pre>
+<p><strong>User</strong> : migliora questo template per la bio/vetrina del bot
+<strong>Gemini</strong> :  <em>Changelog:</em></p>
+<ul>
+<li>Aggiunti commenti HTML  come divisori per navigazione rapida del template</li>
+<li>Rimossi  <strong>tutti</strong>  i valori hardcoded (nomi personaggi, URL immagini, Discord ID, testi specifici) → sostituiti con {{PLACEHOLDER}}</li>
+<li>Aggiunta sezione ★ CONTENT RATING ★ dedicata, estratta dall&#39;Experience Contract originale dove era sepolta</li>
+<li>Titolo sezione roster ora templatizzato: {{ROSTER_SECTION_TITLE}} invece di &quot;THE CLAN &amp; CONNECTIONS&quot; fisso</li>
+<li>Roster standardizzato a  <strong>8 slot</strong>  (da 7), tutti con struttura identica e consistente</li>
+<li>Corretta inconsistenza font-size nei nomi personaggio: ora uniforme 1.2em per tutti</li>
+<li>Corretti gli artefatti <strong> </strong> vuoti nelle card destra (Noah, Logan nell&#39;originale)</li>
+<li>Struttura card destra ora pulita: (STATUS) NOME senza elementi fantasma</li>
+<li>Sezione Aesthetics completamente templatizzata: {{AESTHETICS_SECTION_TITLE}}, {{WORLD_IMAGE_X_URL}}, {{WORLD_IMAGE_X_CAPTION}}</li>
+<li>Universe Rules separata in sezione propria con {{ENGINE_NAME}}, {{CONTRACT_TITLE}}, {{RULE_X_*}}</li>
+<li>Mechanics espansa a  <strong>due meccaniche parallele</strong>  ({{MECHANIC_1_<em>}} / {{MECHANIC_2_</em>}})</li>
+<li>Aggiunta sezione ★ FROM THE AUTHOR ★ per nota del creator</li>
+<li>Footer ristrutturato con {{DISCORD_USER_ID}}, {{DISCORD_CTA_TEXT}}, {{FOOTER_ENGINE_OR_CREDIT_LINE}}</li>
+<li>{{OOC_CORRECTION_PASTE_TEXT}} per la correzione OOC personalizzabile</li>
+<li>
+<p></p> finale mantenuto per spaziatura consistente nel renderer JAI
+</li>
+</ul>
+<pre><code class="language-html">&lt;!-- ╔══════════════════════════════════════════╗ --&gt;
+&lt;!-- ║              HEADER BAR                  ║ --&gt;
+&lt;!-- ╚══════════════════════════════════════════╝ --&gt;
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;span style=&quot;font-size: 0.85em; color: rgb(251, 191, 36)&quot;&gt;
+    &lt;strong&gt;{{LOCATION_OR_CITY}} ✦ {{MAIN_THEME_UPPERCASE}} ✦ {{GENRE_OR_VIBE}}&lt;/strong&gt;
+  &lt;/span&gt;
+&lt;/p&gt;
+
+&lt;!-- ╔══════════════════════════════════════════╗ --&gt;
+&lt;!-- ║                 HERO                     ║ --&gt;
+&lt;!-- ╚══════════════════════════════════════════╝ --&gt;
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;img src=&quot;{{HERO_BANNER_URL}}&quot; alt=&quot;Hero Banner&quot; /&gt;
+&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p style=&quot;text-align: center&quot;&gt;&lt;em&gt;&quot;{{MAIN_QUOTATION_PROSE}}&quot;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;img src=&quot;{{SECONDARY_MOOD_IMAGE_URL}}&quot; alt=&quot;Mood Image&quot; /&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 0.9em; color: rgb(160, 160, 160)&quot;&gt;&lt;em&gt;{{SHORT_NARRATIVE_SUBTEXT}}&lt;/em&gt;&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;!-- ╔══════════════════════════════════════════╗ --&gt;
+&lt;!-- ║             INTRODUCTION                 ║ --&gt;
+&lt;!-- ╚══════════════════════════════════════════╝ --&gt;
+&lt;h2 style=&quot;text-align: center&quot;&gt;{{INTRODUCTION_TITLE_UPPERCASE}}&lt;/h2&gt;
+&lt;h3 style=&quot;text-align: center&quot;&gt;{{CHARACTER_OR_WORLD_HOOK_SUBTITLE}}&lt;/h3&gt;
+&lt;p style=&quot;text-align: justify&quot;&gt;{{PARAGRAPH_1_BACKGROUND_AND_CONTEXT}}&lt;/p&gt;
+&lt;p style=&quot;text-align: justify&quot;&gt;{{PARAGRAPH_2_CURRENT_SITUATION_AND_DYNAMICS}}&lt;/p&gt;
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;span style=&quot;font-size: 1.1em; color: rgb(251, 191, 36)&quot;&gt;
+    &lt;strong&gt;{{CRITICAL_HOOK_LINE_1}}&lt;br /&gt;{{CRITICAL_HOOK_LINE_2}}&lt;/strong&gt;
+  &lt;/span&gt;
+&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;!-- ╔══════════════════════════════════════════╗ --&gt;
+&lt;!-- ║            CONTENT RATING                ║ --&gt;
+&lt;!-- ╚══════════════════════════════════════════╝ --&gt;
+&lt;h2 style=&quot;text-align: center&quot;&gt;★ CONTENT RATING ★&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p style=&quot;text-align: center&quot;&gt;
+    &lt;span style=&quot;font-size: 1.1em; color: rgb(251, 191, 36)&quot;&gt;&lt;strong&gt;⚠️ {{CONTENT_RATING_LABEL}}&lt;/strong&gt;&lt;/span&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lt;strong&gt;▸ Themes:&lt;/strong&gt;
+    &lt;span style=&quot;color: rgb(204, 204, 204)&quot;&gt;{{CONTENT_THEMES}}&lt;/span&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lt;strong&gt;▸ Content Warnings:&lt;/strong&gt;
+    &lt;span style=&quot;color: rgb(204, 204, 204)&quot;&gt;{{CONTENT_WARNINGS}}&lt;/span&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lt;strong&gt;▸ Intended for:&lt;/strong&gt;
+    &lt;span style=&quot;color: rgb(204, 204, 204)&quot;&gt;{{INTENDED_AUDIENCE}}&lt;/span&gt;
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;!-- ╔══════════════════════════════════════════╗ --&gt;
+&lt;!-- ║           ROSTER / CAST                  ║ --&gt;
+&lt;!-- ║  Odd slots = LEFT · Even slots = RIGHT   ║ --&gt;
+&lt;!-- ║  Delete unused blocks as needed.         ║ --&gt;
+&lt;!-- ╚══════════════════════════════════════════╝ --&gt;
+&lt;h2 style=&quot;text-align: center&quot;&gt;★ {{ROSTER_SECTION_TITLE}} ★&lt;/h2&gt;
+&lt;p style=&quot;text-align: center&quot;&gt;&lt;em&gt;{{ROSTER_INTRO_LINE}}&lt;/em&gt;&lt;/p&gt;
+
+&lt;!-- CHAR 1 — LEFT --&gt;
+&lt;p&gt;
+  &lt;img src=&quot;{{CHAR_1_IMAGE_URL}}&quot; alt=&quot;{{CHAR_1_NAME}}&quot; /&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 1.2em; color: rgb(251, 191, 36)&quot;&gt;&lt;strong&gt;{{CHAR_1_NAME}}&lt;/strong&gt;&lt;/span&gt;
+  &lt;span style=&quot;font-size: 0.75em; color: rgb(160, 160, 160)&quot;&gt;({{CHAR_1_STATUS}})&lt;/span&gt;&lt;br /&gt;
+  &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;{{CHAR_1_BOT_URL}}&quot;&gt;
+    &lt;strong&gt;✦ {{CHAR_1_BOT_TITLE}} ✦&lt;/strong&gt;
+  &lt;/a&gt;&lt;br /&gt;
+  &lt;span style=&quot;color: rgb(204, 204, 204)&quot;&gt;
+    &lt;em&gt;{{CHAR_1_ROLE_LINE_1}}&lt;br /&gt;{{CHAR_1_ROLE_LINE_2}}&lt;/em&gt;
+  &lt;/span&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 0.85em; color: rgb(136, 136, 136)&quot;&gt;{{CHAR_1_TRAIT_TAGS}}&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;!-- CHAR 2 — RIGHT --&gt;
+&lt;p style=&quot;text-align: right&quot;&gt;
+  &lt;img src=&quot;{{CHAR_2_IMAGE_URL}}&quot; alt=&quot;{{CHAR_2_NAME}}&quot; /&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 0.75em; color: rgb(160, 160, 160)&quot;&gt;({{CHAR_2_STATUS}}) &lt;/span&gt;
+  &lt;span style=&quot;font-size: 1.2em; color: rgb(251, 191, 36)&quot;&gt;&lt;strong&gt;{{CHAR_2_NAME}}&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+  &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;{{CHAR_2_BOT_URL}}&quot;&gt;
+    &lt;strong&gt;✦ {{CHAR_2_BOT_TITLE}} ✦&lt;/strong&gt;
+  &lt;/a&gt;&lt;br /&gt;
+  &lt;span style=&quot;color: rgb(204, 204, 204)&quot;&gt;
+    &lt;em&gt;{{CHAR_2_ROLE_LINE_1}}&lt;br /&gt;{{CHAR_2_ROLE_LINE_2}}&lt;/em&gt;
+  &lt;/span&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 0.85em; color: rgb(136, 136, 136)&quot;&gt;{{CHAR_2_TRAIT_TAGS}}&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;!-- CHAR 3 — LEFT --&gt;
+&lt;p&gt;
+  &lt;img src=&quot;{{CHAR_3_IMAGE_URL}}&quot; alt=&quot;{{CHAR_3_NAME}}&quot; /&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 1.2em; color: rgb(251, 191, 36)&quot;&gt;&lt;strong&gt;{{CHAR_3_NAME}}&lt;/strong&gt;&lt;/span&gt;
+  &lt;span style=&quot;font-size: 0.7em; color: rgb(160, 160, 160)&quot;&gt;({{CHAR_3_STATUS}})&lt;/span&gt;&lt;br /&gt;
+  &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;{{CHAR_3_BOT_URL}}&quot;&gt;
+    &lt;strong&gt;✦ {{CHAR_3_BOT_TITLE}} ✦&lt;/strong&gt;
+  &lt;/a&gt;&lt;br /&gt;
+  &lt;span style=&quot;color: rgb(204, 204, 204)&quot;&gt;
+    &lt;em&gt;{{CHAR_3_ROLE_LINE_1}}&lt;br /&gt;{{CHAR_3_ROLE_LINE_2}}&lt;/em&gt;
+  &lt;/span&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 0.85em; color: rgb(136, 136, 136)&quot;&gt;{{CHAR_3_TRAIT_TAGS}}&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;!-- CHAR 4 — RIGHT --&gt;
+&lt;p style=&quot;text-align: right&quot;&gt;
+  &lt;img src=&quot;{{CHAR_4_IMAGE_URL}}&quot; alt=&quot;{{CHAR_4_NAME}}&quot; /&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 0.7em; color: rgb(160, 160, 160)&quot;&gt;({{CHAR_4_STATUS}}) &lt;/span&gt;
+  &lt;span style=&quot;font-size: 1.2em; color: rgb(251, 191, 36)&quot;&gt;&lt;strong&gt;{{CHAR_4_NAME}}&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+  &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;{{CHAR_4_BOT_URL}}&quot;&gt;
+    &lt;strong&gt;✦ {{CHAR_4_BOT_TITLE}} ✦&lt;/strong&gt;
+  &lt;/a&gt;&lt;br /&gt;
+  &lt;span style=&quot;color: rgb(204, 204, 204)&quot;&gt;
+    &lt;em&gt;{{CHAR_4_ROLE_LINE_1}}&lt;br /&gt;{{CHAR_4_ROLE_LINE_2}}&lt;/em&gt;
+  &lt;/span&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 0.85em; color: rgb(136, 136, 136)&quot;&gt;{{CHAR_4_TRAIT_TAGS}}&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;!-- CHAR 5 — LEFT --&gt;
+&lt;p&gt;
+  &lt;img src=&quot;{{CHAR_5_IMAGE_URL}}&quot; alt=&quot;{{CHAR_5_NAME}}&quot; /&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 1.2em; color: rgb(251, 191, 36)&quot;&gt;&lt;strong&gt;{{CHAR_5_NAME}}&lt;/strong&gt;&lt;/span&gt;
+  &lt;span style=&quot;font-size: 0.7em; color: rgb(160, 160, 160)&quot;&gt;({{CHAR_5_STATUS}})&lt;/span&gt;&lt;br /&gt;
+  &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;{{CHAR_5_BOT_URL}}&quot;&gt;
+    &lt;strong&gt;✦ {{CHAR_5_BOT_TITLE}} ✦&lt;/strong&gt;
+  &lt;/a&gt;&lt;br /&gt;
+  &lt;span style=&quot;color: rgb(204, 204, 204)&quot;&gt;
+    &lt;em&gt;{{CHAR_5_ROLE_LINE_1}}&lt;br /&gt;{{CHAR_5_ROLE_LINE_2}}&lt;/em&gt;
+  &lt;/span&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 0.85em; color: rgb(136, 136, 136)&quot;&gt;{{CHAR_5_TRAIT_TAGS}}&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;!-- CHAR 6 — RIGHT --&gt;
+&lt;p style=&quot;text-align: right&quot;&gt;
+  &lt;img src=&quot;{{CHAR_6_IMAGE_URL}}&quot; alt=&quot;{{CHAR_6_NAME}}&quot; /&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 0.7em; color: rgb(160, 160, 160)&quot;&gt;({{CHAR_6_STATUS}}) &lt;/span&gt;
+  &lt;span style=&quot;font-size: 1.2em; color: rgb(251, 191, 36)&quot;&gt;&lt;strong&gt;{{CHAR_6_NAME}}&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+  &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;{{CHAR_6_BOT_URL}}&quot;&gt;
+    &lt;strong&gt;✦ {{CHAR_6_BOT_TITLE}} ✦&lt;/strong&gt;
+  &lt;/a&gt;&lt;br /&gt;
+  &lt;span style=&quot;color: rgb(204, 204, 204)&quot;&gt;
+    &lt;em&gt;{{CHAR_6_ROLE_LINE_1}}&lt;br /&gt;{{CHAR_6_ROLE_LINE_2}}&lt;/em&gt;
+  &lt;/span&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 0.85em; color: rgb(136, 136, 136)&quot;&gt;{{CHAR_6_TRAIT_TAGS}}&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;!-- CHAR 7 — LEFT --&gt;
+&lt;p&gt;
+  &lt;img src=&quot;{{CHAR_7_IMAGE_URL}}&quot; alt=&quot;{{CHAR_7_NAME}}&quot; /&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 1.2em; color: rgb(251, 191, 36)&quot;&gt;&lt;strong&gt;{{CHAR_7_NAME}}&lt;/strong&gt;&lt;/span&gt;
+  &lt;span style=&quot;font-size: 0.7em; color: rgb(160, 160, 160)&quot;&gt;({{CHAR_7_STATUS}})&lt;/span&gt;&lt;br /&gt;
+  &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;{{CHAR_7_BOT_URL}}&quot;&gt;
+    &lt;strong&gt;✦ {{CHAR_7_BOT_TITLE}} ✦&lt;/strong&gt;
+  &lt;/a&gt;&lt;br /&gt;
+  &lt;span style=&quot;color: rgb(204, 204, 204)&quot;&gt;
+    &lt;em&gt;{{CHAR_7_ROLE_LINE_1}}&lt;br /&gt;{{CHAR_7_ROLE_LINE_2}}&lt;/em&gt;
+  &lt;/span&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 0.85em; color: rgb(136, 136, 136)&quot;&gt;{{CHAR_7_TRAIT_TAGS}}&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;!-- CHAR 8 — RIGHT --&gt;
+&lt;p style=&quot;text-align: right&quot;&gt;
+  &lt;img src=&quot;{{CHAR_8_IMAGE_URL}}&quot; alt=&quot;{{CHAR_8_NAME}}&quot; /&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 0.7em; color: rgb(160, 160, 160)&quot;&gt;({{CHAR_8_STATUS}}) &lt;/span&gt;
+  &lt;span style=&quot;font-size: 1.2em; color: rgb(251, 191, 36)&quot;&gt;&lt;strong&gt;{{CHAR_8_NAME}}&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+  &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;{{CHAR_8_BOT_URL}}&quot;&gt;
+    &lt;strong&gt;✦ {{CHAR_8_BOT_TITLE}} ✦&lt;/strong&gt;
+  &lt;/a&gt;&lt;br /&gt;
+  &lt;span style=&quot;color: rgb(204, 204, 204)&quot;&gt;
+    &lt;em&gt;{{CHAR_8_ROLE_LINE_1}}&lt;br /&gt;{{CHAR_8_ROLE_LINE_2}}&lt;/em&gt;
+  &lt;/span&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 0.85em; color: rgb(136, 136, 136)&quot;&gt;{{CHAR_8_TRAIT_TAGS}}&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;!-- ╔══════════════════════════════════════════╗ --&gt;
+&lt;!-- ║           AESTHETICS &amp; WORLD             ║ --&gt;
+&lt;!-- ╚══════════════════════════════════════════╝ --&gt;
+&lt;h2 style=&quot;text-align: center&quot;&gt;★ {{AESTHETICS_SECTION_TITLE}} ★&lt;/h2&gt;
+
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;img src=&quot;{{WORLD_IMAGE_1_URL}}&quot; alt=&quot;World Visual 1&quot; /&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 0.85em; color: rgb(160, 160, 160)&quot;&gt;&lt;em&gt;{{WORLD_IMAGE_1_CAPTION}}&lt;/em&gt;&lt;/span&gt;
+&lt;/p&gt;
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;img src=&quot;{{WORLD_IMAGE_2_URL}}&quot; alt=&quot;World Visual 2&quot; /&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 0.85em; color: rgb(160, 160, 160)&quot;&gt;&lt;em&gt;{{WORLD_IMAGE_2_CAPTION}}&lt;/em&gt;&lt;/span&gt;
+&lt;/p&gt;
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;img src=&quot;{{WORLD_IMAGE_3_URL}}&quot; alt=&quot;World Visual 3&quot; /&gt;&lt;br /&gt;
+  &lt;span style=&quot;font-size: 0.85em; color: rgb(160, 160, 160)&quot;&gt;&lt;em&gt;{{WORLD_IMAGE_3_CAPTION}}&lt;/em&gt;&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;!-- ╔══════════════════════════════════════════╗ --&gt;
+&lt;!-- ║              SCENARIOS                   ║ --&gt;
+&lt;!-- ╚══════════════════════════════════════════╝ --&gt;
+&lt;h2 style=&quot;text-align: center&quot;&gt;★ SCENARIOS &amp;amp; STARTING POINTS ★&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;
+      &lt;span style=&quot;color: rgb(251, 191, 36)&quot;&gt;&lt;strong&gt;{{SCENARIO_1_TITLE}}&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+      &lt;span style=&quot;color: rgb(204, 204, 204)&quot;&gt;{{SCENARIO_1_DESCRIPTION}}&lt;/span&gt;&lt;br /&gt;
+      &lt;em&gt;Potential ways to start:&lt;/em&gt;&lt;br /&gt;
+      &lt;span style=&quot;font-size: 0.9em; color: rgb(204, 204, 204)&quot;&gt;
+        ↳ {{SCENARIO_1_HOOK_A}}&lt;br /&gt;
+        ↳ {{SCENARIO_1_HOOK_B}}&lt;br /&gt;
+        ↳ {{SCENARIO_1_HOOK_C}}
+      &lt;/span&gt;
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;
+      &lt;span style=&quot;color: rgb(251, 191, 36)&quot;&gt;&lt;strong&gt;{{SCENARIO_2_TITLE}}&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+      &lt;span style=&quot;color: rgb(204, 204, 204)&quot;&gt;{{SCENARIO_2_DESCRIPTION}}&lt;/span&gt;&lt;br /&gt;
+      &lt;em&gt;Potential ways to start:&lt;/em&gt;&lt;br /&gt;
+      &lt;span style=&quot;font-size: 0.9em; color: rgb(204, 204, 204)&quot;&gt;
+        ↳ {{SCENARIO_2_HOOK_A}}&lt;br /&gt;
+        ↳ {{SCENARIO_2_HOOK_B}}&lt;br /&gt;
+        ↳ {{SCENARIO_2_HOOK_C}}
+      &lt;/span&gt;
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;
+      &lt;span style=&quot;color: rgb(251, 191, 36)&quot;&gt;&lt;strong&gt;{{SCENARIO_3_TITLE}}&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+      &lt;span style=&quot;color: rgb(204, 204, 204)&quot;&gt;{{SCENARIO_3_DESCRIPTION}}&lt;/span&gt;&lt;br /&gt;
+      &lt;em&gt;Potential ways to start:&lt;/em&gt;&lt;br /&gt;
+      &lt;span style=&quot;font-size: 0.9em; color: rgb(204, 204, 204)&quot;&gt;
+        ↳ {{SCENARIO_3_HOOK_A}}&lt;br /&gt;
+        ↳ {{SCENARIO_3_HOOK_B}}&lt;br /&gt;
+        ↳ {{SCENARIO_3_HOOK_C}}
+      &lt;/span&gt;
+    &lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;!-- ╔══════════════════════════════════════════╗ --&gt;
+&lt;!-- ║            UNIVERSE RULES                ║ --&gt;
+&lt;!-- ╚══════════════════════════════════════════╝ --&gt;
+&lt;h2 style=&quot;text-align: center&quot;&gt;★ UNIVERSE RULES ★&lt;/h2&gt;
+&lt;p&gt;
+  &lt;span style=&quot;font-size: 1.1em; color: rgb(251, 191, 36)&quot;&gt;&lt;strong&gt;⚠️ {{CONTRACT_TITLE}}&lt;/strong&gt;&lt;/span&gt;
+&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;
+    &lt;strong&gt;▸ Powered by {{ENGINE_NAME}}:&lt;/strong&gt;
+    &lt;span style=&quot;color: rgb(204, 204, 204)&quot;&gt;{{ENGINE_DESCRIPTION}}&lt;/span&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lt;strong&gt;▸ {{RULE_1_TITLE}}:&lt;/strong&gt;
+    &lt;span style=&quot;color: rgb(204, 204, 204)&quot;&gt;{{RULE_1_BODY}}&lt;/span&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lt;strong&gt;▸ {{RULE_2_TITLE}}:&lt;/strong&gt;
+    &lt;span style=&quot;color: rgb(204, 204, 204)&quot;&gt;{{RULE_2_BODY}}&lt;/span&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lt;strong&gt;▸ {{RULE_3_TITLE}}:&lt;/strong&gt;
+    &lt;span style=&quot;color: rgb(204, 204, 204)&quot;&gt;{{RULE_3_BODY}}&lt;/span&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lt;strong&gt;▸ Player Agency:&lt;/strong&gt;
+    &lt;span style=&quot;color: rgb(204, 204, 204)&quot;&gt;The bot is hardcoded to never speak, act, or think for your character.&lt;/span&gt;
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;!-- ╔══════════════════════════════════════════╗ --&gt;
+&lt;!-- ║         INSIDE LOOK &amp; MECHANICS          ║ --&gt;
+&lt;!-- ║  Duplicate the block below for more.     ║ --&gt;
+&lt;!-- ╚══════════════════════════════════════════╝ --&gt;
+&lt;h2 style=&quot;text-align: center&quot;&gt;★ INSIDE LOOK &amp;amp; MECHANICS ★&lt;/h2&gt;
+
+&lt;p&gt;
+  &lt;span style=&quot;font-size: 1.1em; color: rgb(251, 191, 36)&quot;&gt;&lt;strong&gt;⚙️ {{MECHANIC_1_TITLE}}&lt;/strong&gt;&lt;/span&gt;
+&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;{{MECHANIC_1_DESCRIPTION}}&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;{{MECHANIC_1_HIGHLIGHT}}&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;
+    {{MECHANIC_1_INSTRUCTIONS}}&lt;br /&gt;
+    ▸ &lt;em&gt;{{MECHANIC_1_EXAMPLE_A}}&lt;/em&gt;&lt;br /&gt;
+    ▸ &lt;em&gt;{{MECHANIC_1_EXAMPLE_B}}&lt;/em&gt;
+  &lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;{{MECHANIC_1_FOOTNOTE}}&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+  &lt;span style=&quot;font-size: 1.1em; color: rgb(251, 191, 36)&quot;&gt;&lt;strong&gt;⚙️ {{MECHANIC_2_TITLE}}&lt;/strong&gt;&lt;/span&gt;
+&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;{{MECHANIC_2_DESCRIPTION}}&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;{{MECHANIC_2_HIGHLIGHT}}&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;
+    {{MECHANIC_2_INSTRUCTIONS}}&lt;br /&gt;
+    ▸ &lt;em&gt;{{MECHANIC_2_EXAMPLE_A}}&lt;/em&gt;&lt;br /&gt;
+    ▸ &lt;em&gt;{{MECHANIC_2_EXAMPLE_B}}&lt;/em&gt;
+  &lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;{{MECHANIC_2_FOOTNOTE}}&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;!-- ╔══════════════════════════════════════════╗ --&gt;
+&lt;!-- ║       FROM THE AUTHOR  (optional)        ║ --&gt;
+&lt;!-- ╚══════════════════════════════════════════╝ --&gt;
+&lt;h2 style=&quot;text-align: center&quot;&gt;★ FROM THE AUTHOR ★&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p style=&quot;text-align: center&quot;&gt;
+    &lt;span style=&quot;color: rgb(251, 191, 36)&quot;&gt;&lt;strong&gt;{{AUTHOR_HANDLE}}&lt;/strong&gt;&lt;/span&gt;
+  &lt;/p&gt;
+  &lt;p style=&quot;text-align: justify&quot;&gt;{{AUTHOR_NOTE_PARAGRAPH}}&lt;/p&gt;
+  &lt;p style=&quot;text-align: center&quot;&gt;
+    &lt;span style=&quot;font-size: 0.85em; color: rgb(160, 160, 160)&quot;&gt;{{AUTHOR_SIGN_OFF}}&lt;/span&gt;
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;!-- ╔══════════════════════════════════════════╗ --&gt;
+&lt;!-- ║                FOOTER                   ║ --&gt;
+&lt;!-- ╚══════════════════════════════════════════╝ --&gt;
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;https://discord.com/users/{{DISCORD_USER_ID}}&quot;&gt;
+    &lt;span style=&quot;font-size: 1.2em; color: rgb(251, 191, 36)&quot;&gt;
+      &lt;strong&gt;✦ {{DISCORD_CTA_TEXT}} ✦&lt;/strong&gt;
+    &lt;/span&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p style=&quot;text-align: center&quot;&gt;
+    &lt;span style=&quot;color: rgb(251, 191, 36)&quot;&gt;&lt;strong&gt;AI GUIDANCE (Troubleshooting)&lt;/strong&gt;&lt;/span&gt;
+  &lt;/p&gt;
+  &lt;p style=&quot;text-align: center&quot;&gt;
+    If the bot attempts to speak for your character, paste this into the Chat Memory:&lt;br /&gt;
+    &lt;code&gt;{{OOC_CORRECTION_PASTE_TEXT}}&lt;/code&gt;
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p style=&quot;text-align: center&quot;&gt;
+  &lt;span style=&quot;font-size: 0.75em; color: rgb(136, 136, 136)&quot;&gt;{{FOOTER_ENGINE_OR_CREDIT_LINE}}&lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+
+</code></pre>

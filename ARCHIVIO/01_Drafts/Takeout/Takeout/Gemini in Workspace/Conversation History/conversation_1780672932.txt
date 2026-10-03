@@ -1,0 +1,31 @@
+{
+ "conversation_turns": [
+  {
+   "user_turn": {
+    "prompt": "Crea uno schema per questo file.",
+    "turn_index": 0,
+    "turn_last_modified": "2026-06-05T15:22:12.983087+00:00"
+   }
+  },
+  {
+   "system_turn": {
+    "citations": [
+     {
+      "display_text": "Lorebook-Script.pdf",
+      "url": "https://drive.google.com/open?id=1Wd-ED-0vd1EejXg0oBD6C-HXrwYTY-sm"
+     }
+    ],
+    "text": [
+     {
+      "data": "Ecco uno schema dettagliato basato sul file fornito riguardante l'utilizzo di Lorebook/Script in JanitorAI:**1. Introduzione al Lorebook/Script**\n\n  - **Definizione**: È uno strumento per espandere il mondo, i personaggi e altri elementi narrativi nei bot di JanitorAI.\n  - **Funzioni principali**:\n      - Espandere mondi di finzione, personaggi secondari, eventi e mostri.\n      - Controllare e attivare memorie specifiche che il bot deve ricordare.\n      - Guidare le reazioni del bot a determinati eventi o personaggi.\n      - Gestire eventi casuali (fase di test).\n      - Ottimizzare il consumo di token per bot con lore complessa.\n\n**2. Creazione e Accesso**\n\n  - **Accesso**: Attualmente solo i creatori possono aggiungere Lorebook ai bot tramite il menu \"Script beta\" nel profilo.\n  - **Configurazione iniziale**:\n      - **Nome e Tipo**: Inserire un nome e selezionare \"Lorebook\".\n      - **Message Depth**: Numero di messaggi in cui l'informazione rimarrà disponibile dopo l'attivazione.\n      - **Assegnazione**: Il Lorebook deve essere assegnato a personaggi specifici e poi pubblicato (il tasto \"Publish\" funge anche da salvataggio).\n\n**3. Anatomia di un'Entry (Voce del Lorebook)**\n\n  - **Chiavi (Keywords)**: Parole che attivano la voce nel Lorebook.\n      - **Regole critiche**: Non usare punteggiatura (come i punti) all'interno delle chiavi.\n      - **Case Sensitive**: Se attivo, distingue tra maiuscole e minuscole (es. \"bless\" ≠ \"Bless\").\n      - **Match Whole Words**: Corrispondenza solo per parole intere (es. \"king\" non attiverà \"liking\").\n  - **Secondary Keys (Chiavi Secondarie)**: Filtri aggiuntivi per l'attivazione.\n      - **AND ANY**: Si attiva se è presente almeno una di queste chiavi.\n      - **AND ALL**: Richiede la presenza di tutte le chiavi elencate.\n      - **NOT ANY/ALL**: Blocca l'attivazione se le chiavi sono presenti.\n  - **Content**: L'informazione effettiva su personaggi o ambientazione che viene inviata al bot.\n\n**4. Condizioni di Attivazione e Gruppi**\n\n  - **Always Include**: Se attivo, la voce è sempre presente. **Sconsigliato** (eccetto per riassunti globali o liste NPC) perché consuma token e rallenta l'AI.\n  - **Min Messages**: Numero minimo di messaggi prima che la voce possa attivarsi.\n  - **Probability**: Percentuale di probabilità di attivazione (default 100%).\n  - **Inclusion Groups**: Permette di raggruppare voci simili (es. diverse locazioni). Solo una voce per gruppo viene attivata alla volta.\n      - **Group Weight**: Peso per la selezione casuale all'interno del gruppo.\n\n**5. Consigli Pratici e Limitazioni**\n\n  - **Token**: Ogni voce dovrebbe idealmente restare sotto i 500 token.\n  - **Keywords**: Evitare di ripetere le stesse keyword in voci diverse per lo stesso personaggio.\n  - **Efficienza**: Non è necessario aggiungere virgolette nelle keyword."
+     }
+    ],
+    "turn_index": 1,
+    "turn_last_modified": "2026-06-05T15:22:12.983087+00:00"
+   }
+  }
+ ],
+ "creation_time": "2026-06-05T15:22:12.983087+00:00",
+ "last_modification_time": "2026-06-05T15:22:12.983087+00:00",
+ "title": "Crea uno schema per questo file."
+}

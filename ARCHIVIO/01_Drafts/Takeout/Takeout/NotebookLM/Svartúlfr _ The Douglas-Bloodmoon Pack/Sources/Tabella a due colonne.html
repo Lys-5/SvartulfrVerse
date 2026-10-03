@@ -1,0 +1,173 @@
+<p><strong>User</strong> : puoi mettermelo su due colonne?
+<strong>Gemini</strong> : Sì. La soluzione più compatibile (JanitorAI, Chub, HTML semplice) è usare una tabella a due colonne:</p>
+<pre><code class="language-html">&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;◆ THE CLAN ◆&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table style=&quot;width:100%;&quot;&gt;
+&lt;tr&gt;
+&lt;td style=&quot;width:50%; vertical-align:top;&quot;&gt;
+
+&lt;strong&gt;ALYSSA&lt;/strong&gt;&lt;br&gt;
+↳ Pre-Med Student&lt;br&gt;
+↳ Secret Art Model&lt;br&gt;
+↳ The Family&#39;s Emotional Core
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;strong&gt;JASPER&lt;/strong&gt;&lt;br&gt;
+↳ Engineering Student&lt;br&gt;
+↳ Hacker &amp;amp; Underground DJ&lt;br&gt;
+↳ Professional Bad Influence
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;strong&gt;MALACHIA&lt;/strong&gt;&lt;br&gt;
+↳ Heavyweight Boxer&lt;br&gt;
+↳ PhD Candidate&lt;br&gt;
+↳ Human Tank
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;strong&gt;NOAH&lt;/strong&gt;&lt;br&gt;
+↳ Law Student&lt;br&gt;
+↳ Diplomat&lt;br&gt;
+↳ The Velvet Glove
+
+&lt;/td&gt;
+
+&lt;td style=&quot;width:50%; vertical-align:top;&quot;&gt;
+
+&lt;strong&gt;WULFNIC&lt;/strong&gt;&lt;br&gt;
+↳ Family Patriarch&lt;br&gt;
+↳ Keeper of Tradition&lt;br&gt;
+↳ Old-World Authority
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;strong&gt;ERIK&lt;/strong&gt;&lt;br&gt;
+↳ CEO of DCC&lt;br&gt;
+↳ Helicopter Father&lt;br&gt;
+↳ Walking Threat Assessment
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;strong&gt;LOGAN&lt;/strong&gt;&lt;br&gt;
+↳ Mechanic&lt;br&gt;
+↳ Owner of &lt;em&gt;The Verve&lt;/em&gt;&lt;br&gt;
+↳ The Cool Uncle
+
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+</code></pre>
+<p>Se JanitorAI supporta il CSS flexbox nel campo descrizione, puoi anche usare una versione più pulita:</p>
+<pre><code class="language-html">&lt;p style=&quot;text-align:center;&quot;&gt;&lt;strong&gt;◆ THE CLAN ◆&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div style=&quot;display:flex; gap:20px;&quot;&gt;
+
+&lt;div style=&quot;flex:1;&quot;&gt;
+
+&lt;strong&gt;ALYSSA&lt;/strong&gt;&lt;br&gt;
+↳ Pre-Med Student&lt;br&gt;
+↳ Secret Art Model&lt;br&gt;
+↳ The Family&#39;s Emotional Core
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;strong&gt;JASPER&lt;/strong&gt;&lt;br&gt;
+↳ Engineering Student&lt;br&gt;
+↳ Hacker &amp;amp; Underground DJ&lt;br&gt;
+↳ Professional Bad Influence
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;strong&gt;MALACHIA&lt;/strong&gt;&lt;br&gt;
+↳ Heavyweight Boxer&lt;br&gt;
+↳ PhD Candidate&lt;br&gt;
+↳ Human Tank
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;strong&gt;NOAH&lt;/strong&gt;&lt;br&gt;
+↳ Law Student&lt;br&gt;
+↳ Diplomat&lt;br&gt;
+↳ The Velvet Glove
+
+&lt;/div&gt;
+
+&lt;div style=&quot;flex:1;&quot;&gt;
+
+&lt;strong&gt;WULFNIC&lt;/strong&gt;&lt;br&gt;
+↳ Family Patriarch&lt;br&gt;
+↳ Keeper of Tradition&lt;br&gt;
+↳ Old-World Authority
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;strong&gt;ERIK&lt;/strong&gt;&lt;br&gt;
+↳ CEO of DCC&lt;br&gt;
+↳ Helicopter Father&lt;br&gt;
+↳ Walking Threat Assessment
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;strong&gt;LOGAN&lt;/strong&gt;&lt;br&gt;
+↳ Mechanic&lt;br&gt;
+↳ Owner of &lt;em&gt;The Verve&lt;/em&gt;&lt;br&gt;
+↳ The Cool Uncle
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+</code></pre>
+<p>La versione con </p> è quella con la compatibilità più alta.
+<strong>User</strong> : il sanitizer a tolto la tabella:<p></p>
+<hr>
+<p>il bloblema è che il clan così lascia troppo spazio libero
+<strong>Gemini</strong> : Sì, il problema non è tanto la colonna quanto il fatto che stai usando una lista verticale di 7 personaggi. In un box descrizione JanitorAI conviene comprimere l&#39;informazione.
+Puoi usare un layout &quot;inline&quot; che occupa molto meno spazio:</p>
+<pre><code class="language-html">&lt;p style=&quot;text-align:center;&quot;&gt;&lt;strong&gt;◆ THE CLAN ◆&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align:center;&quot;&gt;
+&lt;strong&gt;ALYSSA&lt;/strong&gt; • Pre-Med • Art Model • Heart of the Family&lt;br&gt;
+&lt;strong&gt;JASPER&lt;/strong&gt; • Engineer • Hacker DJ • Bad Influence&lt;br&gt;
+&lt;strong&gt;MALACHIA&lt;/strong&gt; • Boxer • PhD • Human Tank&lt;br&gt;
+&lt;strong&gt;NOAH&lt;/strong&gt; • Law Student • Diplomat • Velvet Glove&lt;br&gt;
+&lt;strong&gt;WULFNIC&lt;/strong&gt; • Patriarch • Tradition Keeper&lt;br&gt;
+&lt;strong&gt;ERIK&lt;/strong&gt; • DCC CEO • Helicopter Father&lt;br&gt;
+&lt;strong&gt;LOGAN&lt;/strong&gt; • Mechanic • The Verve • Cool Uncle
+&lt;/p&gt;
+
+</code></pre>
+<p>Oppure una versione più elegante che sembra una &quot;cast card&quot;:</p>
+<pre><code class="language-html">&lt;p style=&quot;text-align:center;&quot;&gt;
+&lt;strong&gt;◆ THE CLAN ◆&lt;/strong&gt;&lt;br&gt;&lt;br&gt;
+
+&lt;strong&gt;ALYSSA&lt;/strong&gt; ✦ Pre-Med ✦ Art Model&lt;br&gt;
+&lt;strong&gt;JASPER&lt;/strong&gt; ✦ Engineer ✦ Hacker DJ&lt;br&gt;
+&lt;strong&gt;MALACHIA&lt;/strong&gt; ✦ Boxer ✦ PhD Candidate&lt;br&gt;
+&lt;strong&gt;NOAH&lt;/strong&gt; ✦ Law Student ✦ Diplomat&lt;br&gt;&lt;br&gt;
+
+&lt;strong&gt;WULFNIC&lt;/strong&gt; ✦ Patriarch&lt;br&gt;
+&lt;strong&gt;ERIK&lt;/strong&gt; ✦ CEO of DCC&lt;br&gt;
+&lt;strong&gt;LOGAN&lt;/strong&gt; ✦ Owner of The Verve
+&lt;/p&gt;
+
+</code></pre>
+<p>Oppure, per massimizzare lo spazio disponibile, fare una riga unica:</p>
+<pre><code class="language-html">&lt;p style=&quot;text-align:center;&quot;&gt;
+&lt;strong&gt;◆ THE CLAN ◆&lt;/strong&gt;&lt;br&gt;&lt;br&gt;
+
+&lt;strong&gt;ALYSSA&lt;/strong&gt; • Pre-Med |
+&lt;strong&gt;JASPER&lt;/strong&gt; • Engineer |
+&lt;strong&gt;MALACHIA&lt;/strong&gt; • Boxer |
+&lt;strong&gt;NOAH&lt;/strong&gt; • Law |
+&lt;strong&gt;WULFNIC&lt;/strong&gt; • Patriarch |
+&lt;strong&gt;ERIK&lt;/strong&gt; • CEO |
+&lt;strong&gt;LOGAN&lt;/strong&gt; • Mechanic
+&lt;/p&gt;
+
+</code></pre>
+<p>Per una pagina JanitorAI come questa sceglierei la seconda opzione: mantiene l&#39;identità dei personaggi ma dimezza lo spazio occupato rispetto alla lista attuale.</p>
+<table></table>

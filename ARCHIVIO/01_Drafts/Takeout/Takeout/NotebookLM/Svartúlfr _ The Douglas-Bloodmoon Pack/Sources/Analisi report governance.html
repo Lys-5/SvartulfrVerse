@@ -1,0 +1,775 @@
+<p><strong>User</strong> : ok che ne pensi?
+<strong>Gemini</strong> :</p>
+<h4>Task Classification</h4>
+<p>Mode: Audit
+Layer: Governance / Canonical Repository
+Authority: Governance
+Risk Level: Medium</p>
+<hr>
+<p>Nel complesso, il report è buono e la direzione è corretta.
+I punti che considero particolarmente solidi:</p>
+<ul>
+<li>Separazione netta tra  <strong>migrare</strong> ,  <strong>archiviare</strong> ,  <strong>scartare</strong> .</li>
+<li>Distinzione tra materiale canonico e materiale what-if.</li>
+<li>Identificazione dei file legacy sostituiti da record già presenti nel database.</li>
+<li>Recupero di ADR, workflow, template ed engine scripts come asset architetturali di valore.</li>
+<li>Preservazione delle esperienze alternative in future_expansions/ invece di eliminarle.
+Tuttavia vedo anche alcune criticità.</li>
+</ul>
+<h5>1. Non eliminerei legacy_exports immediatamente</h5>
+<p>Secondo le tue regole di governance, il contenuto legacy deve essere trattato come  <strong>LEGACY DRIFT</strong>  fino a validazione completa.
+Il report stesso suggerisce:
+non eliminare la cartella finché il trasferimento non è verificato.
+Quindi farei:</p>
+<ol>
+<li>Audit</li>
+<li>Classificazione</li>
+<li>Migrazione</li>
+<li>Verifica</li>
+<li>Tag &quot;LEGACY DRIFT COMPLETE&quot;</li>
+<li>Solo dopo eliminazione
+Non il contrario.</li>
+</ol>
+<hr>
+<h5>2. Alcuni file classificati come &quot;archiviare&quot; meritano una seconda verifica</h5>
+<p>Ad esempio:</p>
+<ul>
+<li>relationship_engine.js</li>
+<li>state_engine.js
+sono classificati come asset architetturali da trasferire nel database e non da buttare.
+Prima di costruire i nuovi engine della Fase 17 farei un confronto:</li>
+<li>feature già implementate</li>
+<li>feature progettate nei nuovi ADR</li>
+<li>gap analysis
+Potrebbero contenere logica riutilizzabile.</li>
+</ul>
+<hr>
+<h5>3. Attenzione ai &quot;what-if&quot;</h5>
+<p>Il report propone di archiviare:</p>
+<ul>
+<li>CyberWerewolf</li>
+<li>Warlord Merchant</li>
+<li>Werewolf Pack</li>
+<li>Ensemble LA</li>
+<li>DJ Frequency
+come espansioni future e non come canon.
+Sono d&#39;accordo.
+Non li promuoverei nel canone principale.
+Ma non li eliminerei perché rappresentano:</li>
+<li>test narrativi</li>
+<li>prototipi di esperienza</li>
+<li>possibili future linee editoriali</li>
+</ul>
+<hr>
+<h5>4. L&#39;audit Gemini contiene alcune affermazioni che non prenderei come fatti canonici</h5>
+<p>Esempio:</p>
+<ul>
+<li>Seven Hills Estate fondata nel 1740</li>
+<li>Malachia pugile professionista heavyweight</li>
+<li>PhD in scienze sportive
+Queste informazioni non dovrebbero essere promosse automaticamente solo perché citate nel commento finale.
+Devono esistere in:</li>
+</ul>
+<ol>
+<li>record canonici</li>
+<li>canon candidate approvati</li>
+<li>ADR o decision registry
+prima di essere considerate verità canoniche.
+Altrimenti rischiano di diventare canon per contaminazione.</li>
+</ol>
+<hr>
+<h5>5. La vera priorità non è la Fase 17</h5>
+<p>Io farei:
+<strong>A. Legacy Recovery Completion</strong></p>
+<ul>
+<li>completare catalogazione</li>
+<li>trasferire asset validi</li>
+<li>archiviare what-if</li>
+<li>eliminare solo il materiale realmente deprecato
+<strong>B. Canon Freeze v1.1</strong></li>
+<li>verificare che nessun dato utile sia rimasto nel legacy
+<strong>C. Lorebook Split</strong></li>
+<li>JSON entries</li>
+<li>runtime rules</li>
+<li>engine hooks
+<strong>D. Engine Architecture</strong>
+Solo dopo.</li>
+</ul>
+<hr>
+<p>Verdetto finale:
+<strong>L&#39;audit mi sembra circa 8.5/10.</strong>
+La classificazione del materiale legacy è convincente e molto vicina a ciò che serve per chiudere definitivamente la migrazione. L&#39;unico punto su cui sarei rigoroso è evitare qualsiasi eliminazione definitiva prima della verifica post-migrazione e della conferma che non esistano ulteriori Canon Candidates nascosti nel legacy.</p>
+<h4>Development Orders</h4>
+<ol>
+<li>Completare il catalogo LEGACY DRIFT con classificazione A/B/C definitiva.</li>
+<li>Eseguire verifica post-migrazione e confronto con i record canonici attuali.</li>
+<li>Autorizzare l&#39;eliminazione di legacy_exports solo dopo la chiusura formale del Legacy Recovery.
+<strong>User</strong> : 1 - legacy_exports è già stato eliminato qui parliano della cartella &quot;old_database&quot;, io direi di trasferire quello che va trasferito e poi eliminare 2 - sono d&#39;accordo 3 - sono daccordo 4 - sono fatti canonizzati con l&#39;autore durante alcuni test
+<strong>Gemini</strong> :</li>
+</ol>
+<h4>Task Classification</h4>
+<p>Mode: Audit
+Layer: Governance
+Authority: Canonical + Repository Governance
+Risk Level: Low</p>
+<hr>
+<p>Con queste precisazioni, aggiorno la valutazione.</p>
+<h5>1. database_old</h5>
+<p>Se stiamo parlando di database_old/ e non di legacy_exports/, allora la mia posizione cambia.
+Secondo la governance che hai stabilito in questi giorni:</p>
+<ul>
+<li>database_old/ è un archivio di migrazione</li>
+<li>non è una sorgente canonica</li>
+<li>non è una sorgente runtime</li>
+<li>non è una sorgente export
+Quindi, una volta completate:</li>
+</ul>
+<ol>
+<li>classificazione</li>
+<li>trasferimento asset validi</li>
+<li>archiviazione what-if</li>
+<li>verifica finale
+non vedo ragioni architetturali per mantenerlo.
+L&#39;unica cosa che farei prima dell&#39;eliminazione è produrre un ultimo:
+DATABASE_OLD_RECOVERY_REPORT.md
+con:</li>
+</ol>
+<ul>
+<li>file trasferiti</li>
+<li>file archiviati</li>
+<li>file scartati</li>
+<li>eventuali eccezioni
+In questo modo l&#39;eliminazione è auditabile.</li>
+</ul>
+<hr>
+<h5>2. Engine legacy</h5>
+<p>Perfettamente allineato.
+Io farei un confronto tra:</p>
+<ul>
+<li>relationship_engine.js</li>
+<li>state_engine.js
+e quanto progettato nelle nuove fasi.
+Spesso in questi casi si scopre che il vecchio sistema aveva già risolto problemi pratici che nella nuova architettura esistono ancora solo sulla carta.</li>
+</ul>
+<hr>
+<h5>3. What-if</h5>
+<p>Nessuna obiezione.
+La classificazione proposta è coerente:</p>
+<ul>
+<li>non canon</li>
+<li>non runtime</li>
+<li>non eliminati</li>
+<li>archiviati come materiale progettuale</li>
+</ul>
+<hr>
+<h5>4. Canonizzazione con l&#39;autore</h5>
+<p>Questa informazione cambia completamente il punto.
+Se:</p>
+<ul>
+<li>i dati sono stati validati direttamente con l&#39;autore</li>
+<li>esiste stata una decisione esplicita</li>
+<li>sono stati usati nei test di validazione
+allora non sono &quot;allucinazioni dell&#39;audit&quot;.
+Il vero problema diventa un altro:
+<strong>dove sono registrati?</strong>
+Se sono canonici ma vivono solo in:</li>
+<li>chat storiche</li>
+<li>audit Gemini</li>
+<li>note temporanee
+allora esiste un rischio di perdita di conoscenza.
+Io aprirei una mini attività:
+<strong>Canon Recovery</strong>
+per trasferire quelle informazioni in:</li>
+<li>Character Records</li>
+<li>Canon Candidates</li>
+<li>Decision Registry
+a seconda della loro natura.</li>
+</ul>
+<hr>
+<h5>Valutazione aggiornata</h5>
+<p>Con le tue precisazioni passo da  <strong>8.5/10</strong>  a  <strong>9.5/10</strong> .
+L&#39;unico elemento che mi manca per considerare chiusa l&#39;intera operazione è:
+<strong>Formalizzare il contenuto canonizzato durante i test che non è ancora presente nei record ufficiali.</strong>
+Per il resto, la strategia:
+database_old → recupero → archiviazione → verifica → eliminazione
+mi sembra corretta e coerente con l&#39;architettura attuale.</p>
+<hr>
+<h4>Development Orders</h4>
+<ol>
+<li>Completare il recupero degli asset validi da database_old/.</li>
+<li>Generare un report finale di tracciabilità prima dell&#39;eliminazione della cartella.</li>
+<li>Verificare che tutte le informazioni canonizzate durante i test siano state promosse nei record ufficiali.
+<strong>User</strong> : ok, crea un prompt completo per code per farlo avanzarte su questi punti
+<strong>Gemini</strong> :</li>
+</ol>
+<pre><code class="language-text"># SVARTÚLFRVERSE — DATABASE_OLD FINAL RECOVERY &amp; DECOMMISSIONING
+
+You are operating as a Senior Repository Migration Engineer.
+
+Follow all governance documents, ADRs, workflows, and repository standards.
+
+This is a GOVERNANCE-COMPLIANT RECOVERY OPERATION.
+
+DO NOT implement new features.
+DO NOT modify canon.
+DO NOT invent data.
+DO NOT delete anything until verification is complete.
+
+==================================================
+OBJECTIVE
+==================================================
+
+Complete the final recovery of `database_old/`.
+
+The goal is to:
+
+1. Recover any remaining valuable assets.
+2. Verify no canonical information is lost.
+3. Archive approved non-canonical content.
+4. Produce complete traceability reports.
+5. Prepare `database_old/` for safe deletion.
+
+==================================================
+AUTHORITY ORDER
+==================================================
+
+1. Canon Freeze
+2. ADRs
+3. DECISION_REGISTRY.md
+4. VALIDATION_PIPELINE_SPECIFICATION.md
+5. Governance Rules
+6. Workflow Specifications
+7. Layer Specifications
+8. Implementation Files
+
+If conflicts are found:
+
+STOP.
+
+Create:
+
+CONFLICT_REPORT.md
+
+Do not continue until resolved.
+
+==================================================
+PHASE 1 — FULL DATABASE_OLD AUDIT
+==================================================
+
+Audit every file inside:
+
+database_old/
+
+Classify each file into one of:
+
+A = Transfer to active repository
+B = Archive into future_expansions/
+C = Safe deletion
+
+Generate:
+
+reports/DATABASE_OLD_FINAL_AUDIT.md
+
+For every file include:
+
+- Original path
+- Classification
+- Reason
+- Target destination
+- Governance justification
+
+==================================================
+PHASE 2 — CANON LOSS PREVENTION
+==================================================
+
+Perform a deep comparison between:
+
+database_old/
+
+and
+
+database/
+
+Verify:
+
+- characters
+- worlds
+- institutions
+- families
+- experiences
+- canon candidates
+
+Identify any information present in database_old but missing from current canonical records.
+
+DO NOT automatically merge.
+
+Generate:
+
+reports/CANON_RECOVERY_CANDIDATES.md
+
+Format:
+
+### Candidate
+Source:
+Target Record:
+Missing Information:
+Suggested Action:
+Risk Level:
+
+==================================================
+PHASE 3 — TEST-CANON REVIEW
+==================================================
+
+Search database_old for information that may have been:
+
+- validated during author tests
+- present in legacy character files
+- present in legacy world files
+- present in historical notes
+
+Examples:
+
+- character details
+- family details
+- estate history
+- relationship facts
+- timeline events
+
+Generate:
+
+reports/TEST_CANON_DISCOVERY.md
+
+DO NOT promote anything automatically.
+
+Only report.
+
+==================================================
+PHASE 4 — ENGINE LEGACY ANALYSIS
+==================================================
+
+Analyze:
+
+relationship_engine.js
+state_engine.js
+
+Compare against:
+
+current architecture
+ADR decisions
+runtime design
+
+Generate:
+
+reports/LEGACY_ENGINE_ANALYSIS.md
+
+For each engine:
+
+- Purpose
+- Features
+- Reusable logic
+- Superseded logic
+- Recommended actions
+
+Classification:
+
+KEEP
+ARCHIVE
+REIMPLEMENT
+DEPRECATE
+
+==================================================
+PHASE 5 — WHAT-IF PRESERVATION
+==================================================
+
+Verify all non-canonical experiences are preserved.
+
+Examples:
+
+- CyberWerewolf
+- Warlord Merchant
+- Werewolf Pack
+- Ensemble LA
+- DJ Frequency
+
+Verify destination:
+
+future_expansions/
+
+Generate:
+
+reports/WHATIF_ARCHIVE_VERIFICATION.md
+
+Include:
+
+- Source
+- Destination
+- Status
+- Missing files
+- Risks
+
+==================================================
+PHASE 6 — TRANSFER EXECUTION
+==================================================
+
+Transfer all approved Category A files.
+
+Requirements:
+
+- Preserve structure
+- Preserve filenames
+- Preserve metadata
+- Preserve history when possible
+
+Generate:
+
+reports/TRANSFER_EXECUTION_REPORT.md
+
+Include:
+
+- Source
+- Destination
+- Status
+- Warnings
+
+==================================================
+PHASE 7 — POST-TRANSFER VALIDATION
+==================================================
+
+Validate:
+
+- file readability
+- internal references
+- templates
+- workflows
+- ADR links
+- script locations
+
+Generate:
+
+reports/POST_TRANSFER_VALIDATION.md
+
+Include:
+
+PASS / FAIL
+
+for every validation area.
+
+==================================================
+PHASE 8 — DECOMMISSION READINESS
+==================================================
+
+Create:
+
+reports/DATABASE_OLD_RECOVERY_REPORT.md
+
+Include:
+
+SUMMARY
+
+Transferred:
+Archived:
+Deleted Candidates:
+Canon Recovery Candidates:
+Open Risks:
+Blocked Items:
+
+Final Recommendation:
+
+[ ] READY FOR DELETION
+[ ] NOT READY FOR DELETION
+
+==================================================
+PHASE 9 — SAFE DELETION
+==================================================
+
+ONLY IF:
+
+DATABASE_OLD_RECOVERY_REPORT.md
+marks:
+
+READY FOR DELETION
+
+THEN:
+
+Delete:
+
+database_old/
+
+Generate:
+
+reports/DATABASE_OLD_DECOMMISSION_REPORT.md
+
+Include:
+
+- Deletion timestamp
+- Files removed
+- Verification completed
+- Governance compliance confirmation
+
+==================================================
+SUCCESS CRITERIA
+==================================================
+
+Success means:
+
+✓ No canonical information lost
+✓ All recoverable assets transferred
+✓ All what-if content archived
+✓ Legacy engines analyzed
+✓ Full audit trail generated
+✓ database_old safely removable
+✓ Repository governance preserved
+
+Output all findings as markdown reports.
+Do not skip phases.
+Do not delete anything before readiness verification is complete.
+
+</code></pre>
+<p><strong>Gemini</strong> :</p>
+<h4>Task Classification</h4>
+<p>Mode: AUDIT
+Layer: Governance / Repository Recovery
+Authority: Governance
+Risk Level: HIGH</p>
+<hr>
+<p>L&#39;audit di OWL è buono come punto di partenza, ma  <strong>non considererei ancora conclusa la decommissione senza una seconda verifica architetturale indipendente</strong> .
+Ci sono alcune incongruenze che richiedono attenzione:</p>
+<h5>Finding 1 — Numeri non coerenti</h5>
+<p>Nel DATABASE_OLD_FINAL_AUDIT risultano:</p>
+<ul>
+<li>38 file Categoria A</li>
+<li>22 file Categoria B</li>
+<li>12 file Categoria C</li>
+<li>Totale 72 file
+Nel DATABASE_OLD_RECOVERY_REPORT risultano invece:</li>
+<li>40 trasferiti</li>
+<li>43 archiviati</li>
+<li>46 eliminati</li>
+<li>Totale 129 file
+Questi due report non descrivono lo stesso inventario.
+Serve chiarire:</li>
+<li>quale audit è quello finale</li>
+<li>se è stato eseguito un secondo passaggio</li>
+<li>se sono stati inclusi file inizialmente esclusi
+Attualmente esiste una divergenza documentale.</li>
+</ul>
+<hr>
+<h5>Finding 2 — Deletion eseguita prima della chiusura delle review</h5>
+<p>Nel Recovery Report risultano ancora:</p>
+<ul>
+<li>15 Canon Recovery Candidates</li>
+<li>2 Blocked Items</li>
+<li>4 Open Risks
+Tra questi:</li>
+<li>Chloe Douglas-Bloodmoon</li>
+<li>Liam Douglas-Bloodmoon
+sono esplicitamente segnalati come non auditati e bloccati.
+Questo significa che:
+il contenuto è stato preservato, ma la review canonica non è stata completata.
+Non è un problema se il materiale è stato trasferito correttamente, ma significa che la decommissione non equivale a chiusura del processo di recovery.</li>
+</ul>
+<hr>
+<h5>Finding 3 — Possibile perdita di materiale esterno</h5>
+<p>Sono stati classificati come eliminabili:</p>
+<ul>
+<li>JanitorAI Chatbot Creation Guide</li>
+<li>Icehellionx Script Guide</li>
+<li>Lorebook-Script.pdf
+Tuttavia questi documenti:</li>
+<li>hanno già influenzato l&#39;architettura Janitor</li>
+<li>sono ancora utilizzati come fonti di riferimento
+Se non esistono copie in:</li>
+<li>docs/references/</li>
+<li>knowledge/research/</li>
+<li>archive/
+allora la cancellazione sarebbe prematura.</li>
+</ul>
+<hr>
+<h5>Finding 4 — Engine Legacy da preservare</h5>
+<p>L&#39;analisi motori identifica:</p>
+<ul>
+<li>relationship_engine.js</li>
+<li>state_engine.js
+come materiale di riferimento architetturale
+e il report di trasferimento conferma lo spostamento in:
+knowledge/Engine_Logic/Engine_Template/
+Questo è corretto.
+Tuttavia consiglio una verifica che:</li>
+<li>siano inclusi nel registry</li>
+<li>siano referenziati dalla documentazione Engine v2</li>
+<li>siano marcati esplicitamente come LEGACY REFERENCE</li>
+</ul>
+<hr>
+<h5>Finding 5 — What-if Archive</h5>
+<p>La preservazione delle esperienze alternative sembra corretta:</p>
+<ul>
+<li>CyberWerewolf</li>
+<li>Warlord Merchant</li>
+<li>Werewolf Pack</li>
+<li>Ensemble LA</li>
+<li>DJ Frequency
+risultano archiviati.
+Questa parte appare conforme.</li>
+</ul>
+<hr>
+<h5>Finding 6 — Materiale potenzialmente più importante dell&#39;intera recovery</h5>
+<p>Il report TEST-CANON individua materiale che probabilmente vale più del 90% di database_old:</p>
+<ul>
+<li>Color Palette</li>
+<li>Style Guide</li>
+<li>Diegetic Comms Framework</li>
+<li>Universal Lorebook Template</li>
+<li>Persona Template
+Questi asset sono probabilmente il vero valore storico della repository legacy.
+Consiglierei una review dedicata.</li>
+</ul>
+<hr>
+<h4>Valutazione Finale</h4>
+<p>Stato reale:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Area</th><th>Stato</th></tr></thead><tbody><tr><td>Asset Recovery</td><td>PASS</td></tr><tr><td>What-if Preservation</td><td>PASS</td></tr><tr><td>Legacy Engine Preservation</td><td>PASS</td></tr><tr><td>Canon Review</td><td>PARTIAL</td></tr><tr><td>Documentation Consistency</td><td>WARNING</td></tr><tr><td>Safe Deletion Authorization</td><td>WARNING</td></tr></tbody></table>
+<p>Non vedo segnali di perdita critica di dati.
+Vedo però abbastanza incongruenze da giustificare un&#39;ultima fase:
+<strong>Phase 10 — Governance Closure Audit</strong>
+prima di considerare definitivamente chiusa l&#39;operazione.</p>
+<h4>Development Orders</h4>
+<ol>
+<li>Eseguire Governance Closure Audit sui report prodotti.</li>
+<li>Verificare la presenza di copie archiviate delle fonti PDF esterne.</li>
+<li>Validare e classificare i 15 Canon Recovery Candidates rimasti aperti.
+<strong>Gemini</strong> :</li>
+</ol>
+<h4>Task Classification</h4>
+<p>Mode: AUDIT
+Layer: Governance
+Authority: Governance
+Risk Level: HIGH</p>
+<hr>
+<h5>Executive Summary</h5>
+<p>I do  <strong>not</strong>  consider the GOVERNANCE_CLOSURE_CERTIFICATE.md sufficient evidence that database_old/ was actually decommissioned.
+The certificate and the audit directly contradict each other.
+The critical issue is that the certificate is based on a sequence of reported filesystem operations, but the only independently verifiable audit included here states that those operations had  <strong>not yet occurred</strong>  and that the repository was  <strong>not ready for decommissioning</strong> .</p>
+<h5>Findings</h5>
+<h6>1. Direct contradiction between Audit and Certificate</h6>
+<p>The Governance Closure Audit states:</p>
+<ul>
+<li>database_old/ still contained 130 files.</li>
+<li>No transfers had been executed.</li>
+<li>Multiple target directories did not exist.</li>
+<li>Decommissioning was blocked.
+The Closure Certificate states the opposite:</li>
+<li>38 files transferred.</li>
+<li>46 files archived.</li>
+<li>46 files deleted.</li>
+<li>database_old/ deleted.</li>
+<li>Governance closed.
+These two documents cannot simultaneously be true.</li>
+</ul>
+<hr>
+<h6>2. Missing independent validation evidence</h6>
+<p>The certificate asserts that:</p>
+<ul>
+<li>directories were created,</li>
+<li>files were copied,</li>
+<li>files were archived,</li>
+<li>source data was deleted,
+but the certificate contains no independently verifiable inventory dump, checksum report, or post-transfer validation artifact.
+From a governance perspective, this is a traceability gap.</li>
+</ul>
+<hr>
+<h6>3. Canon candidate status remains open</h6>
+<p>Even the certificate acknowledges:</p>
+<ul>
+<li>Chloe Douglas-Bloodmoon is blocked.</li>
+<li>Liam Douglas-Bloodmoon is blocked.</li>
+<li>Canon recovery remains partial.
+Therefore repository closure and canon closure are not equivalent.</li>
+</ul>
+<hr>
+<h6>4. What-if archive classification appears consistent</h6>
+<p>The What-If Archive Verification is internally coherent and aligns with the original recovery strategy:</p>
+<ul>
+<li>What-if content preserved.</li>
+<li>Rejected canon isolated.</li>
+<li>Deprecated canonical worlds deleted rather than archived.
+This portion does not raise governance concerns.</li>
+</ul>
+<hr>
+<h5>Risk Assessment</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Risk</th><th>Level</th></tr></thead><tbody><tr><td>Audit/Certificate contradiction</td><td>HIGH</td></tr><tr><td>Missing post-transfer evidence</td><td>HIGH</td></tr><tr><td>Canon recovery still open</td><td>MEDIUM</td></tr><tr><td>What-if preservation</td><td>LOW</td></tr></tbody></table>
+<hr>
+<h5>Recommendation</h5>
+<p>The authoritative document should currently be the  <strong>Governance Closure Audit</strong> , not the Certificate, because it contains explicit filesystem verification findings and identifies unresolved blocking conditions.
+Before accepting the Closure Certificate as valid, I would require:</p>
+<ol>
+<li>A fresh filesystem inventory after the claimed transfer.</li>
+<li>Verification that database_old/ no longer exists.</li>
+<li>Verification that all destination directories actually exist.</li>
+<li>Verification that transferred file counts match the certificate.</li>
+<li>A post-transfer validation report generated after those checks.
+Without that evidence, the repository status should be treated as  <strong>&quot;Closure Claimed, Not Independently Verified.&quot;</strong></li>
+</ol>
+<hr>
+<h4>Development Orders</h4>
+<ol>
+<li>Generate a new filesystem inventory of all destination paths.</li>
+<li>Perform post-transfer validation against the certificate counts.</li>
+<li>Issue a revised governance certificate only after independent verification passes.</li>
+</ol>

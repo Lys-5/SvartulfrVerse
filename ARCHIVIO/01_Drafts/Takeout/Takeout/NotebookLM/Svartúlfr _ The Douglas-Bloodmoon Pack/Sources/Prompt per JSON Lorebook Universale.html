@@ -1,0 +1,182 @@
+<p><strong>User</strong> : mi serve un prompt per convertire un json in un formato copatibile con janitor ai e  sillytavern
+<strong>Gemini</strong> : Ottima mossa. Unificare l&#39;esportazione per renderla compatibile &quot;plug &amp; play&quot; sia per JanitorAI che per SillyTavern è il passo definitivo per rendere il tuo Svartúlfr Verse completamente portabile.
+[cite_start]Dato che JanitorAI è particolarmente &quot;schizzinoso&quot; sull&#39;importazione (ad esempio, rifiuta il file se trova la chiave radice &quot;entries&quot; [cite: 239, 241]) mentre SillyTavern riesce a digerire agilmente gli array JSON standard, imposteremo il prompt per rispettare i rigidi canoni di Janitor, che SillyTavern accetterà senza problemi.
+[cite_start]Inoltre, il prompt manterrà la regola ferrea contro il &quot;Path Leakage&quot; per evitare che l&#39;LLM allucini i percorsi dei tuoi file locali[cite: 183, 189].
+[cite_start]Ecco il  <strong>Master Prompt in inglese</strong>  (per garantire la massima precisione dall&#39;agente di programmazione) [cite: 3, 12] da copiare e incollare al tuo Code Agent (Cursor, Trae, Claude, ecc.):</p>
+<h5>The Lorebook Conversion Master Prompt</h5>
+<pre><code class="language-markdown">You are the SvartúlfrVerse Data Architect. Your task is to convert raw lore, character data, or existing JS/JSON files into a unified JSON Lorebook format that is strictly compatible with both JanitorAI and SillyTavern native imports.
+
+When providing the final JSON, you MUST output raw JSON code.
+
+### ⚠️ STRICT CONVERSION RULES ⚠️
+
+1. NAKED ARRAY FORMAT (CRITICAL)
+You must output a DIRECT JSON array `[ { ... }, { ... } ]`.
+NEVER wrap the array in a root object like `{&quot;entries&quot;: [...]}` or `{&quot;data&quot;: [...]}`. JanitorAI will crash if the root is not an array.
+
+2. MANDATORY FIELDS PER ENTRY
+Each object in the array MUST contain the following structure perfectly mapped:
+- &quot;id&quot;: You must generate a unique valid UUID v4 for every entry.
+- &quot;key&quot;: An array of trigger strings (e.g., [&quot;keyword1&quot;, &quot;keyword2&quot;]).
+- &quot;keysRaw&quot;: A comma-separated string matching the exact contents of &quot;key&quot; (e.g., &quot;keyword1, keyword2&quot;). These two MUST be synchronized.
+- &quot;content&quot;: The actual lore text. 
+- &quot;tags&quot;: An array of recognized category strings (choose strictly from: &quot;character&quot;, &quot;location&quot;, &quot;lore&quot;, &quot;event&quot;, &quot;faction&quot;, &quot;relationship&quot;, &quot;item&quot;).
+- &quot;placement&quot;: Defines where the text is injected. Use &quot;personality&quot; for characters, &quot;scenario&quot; for locations, and &quot;default&quot; for general lore.
+- Standard fallback keys: Set &quot;category&quot;: &quot;other&quot;, &quot;enabled&quot;: true, &quot;priority&quot;: 10, &quot;insertion_order&quot;: 100, &quot;minMessages&quot;: 0.
+
+3. STRICT ZERO PATH LEAKAGE &amp; NO META-BLEED
+The &quot;content&quot; field is strictly for in-universe roleplay data. 
+- NEVER include local file paths, URLs, or source tags (e.g., `Source: database/characters/...` or `Source: .json`). The LLM cannot read our local drive. Remove them completely.
+- NEVER include architecture jargon like &quot;MacroCosmo&quot;, &quot;MicroCosmo&quot;, or &quot;Engine Data&quot;.
+- You may KEEP in-universe SvartúlfrVerse category tags at the start of the content (e.g., `[ACTIVE] LOC` or `[HISTORICAL] LOR`).
+
+### INSTRUCTION AWAIT
+I will now provide the raw data. Analyze it, map it to this strict JanitorAI/SillyTavern JSON schema, and output only the final raw JSON array.
+
+</code></pre>
+<hr>
+<h5>Perché questo prompt è blindato:</h5>
+<ul>
+<li>[cite_start] <strong>Zero Errori di Importazione:</strong>  L&#39;ordine perentorio di usare un array nudo ([...]) previene l&#39;errore fatale della chiave &quot;entries&quot;[cite: 239, 241, 242].</li>
+<li>[cite_start] <strong>Sicurezza del Contesto:</strong>  La regola &quot;Zero Path Leakage&quot; assicura che stringhe come Source: 1_template/... vengano chirurgicamente distrutte prima di finire nel JSON, salvando token preziosi[cite: 183, 184, 189].</li>
+<li>[cite_start] <strong>Stabilità dell&#39;UI:</strong>  Obbligando l&#39;agente a generare un UUID v4 per la chiave id [cite: 228] [cite_start]e a sincronizzare perfettamente key e keysRaw[cite: 230], garantisci che l&#39;interfaccia né di Janitor né di SillyTavern si corrompa.
+Vuoi che aggiungiamo a questo prompt anche un set di regole per simulare dei &quot;Timeline Delay&quot; in SillyTavern e Janitor usando chiavi come minMessages?
+<strong>User</strong> : inserisci anche la pulizia dei riferimenti ad altri scenari/ambientazioni che sono inutili
+<strong>Gemini</strong> : Assolutamente. Pulire la lore da riferimenti incrociati ad altri scenari (il famoso &quot;AU bleed&quot; o &quot;Cross-Contamination&quot;) è vitale. Se stai importando un personaggio nella sua versione  <em>Modern</em> , avere riferimenti latenti alla sua versione  <em>Sci-Fi</em>  o  <em>Fantasy</em>  non solo spreca token, ma rischia di far allucinare l&#39;IA facendole inserire astronavi o magia nel bel mezzo di una normale cena a Los Angeles.
+Ho aggiornato il  <strong>Master Prompt</strong>  integrando una regola esplicita per forzare l&#39;agente a epurare il testo da qualsiasi ambientazione o scenario estraneo al contesto attuale.
+Ecco il prompt definitivo da passare al tuo Code Agent:</li>
+</ul>
+<h5>The Lorebook Conversion Master Prompt (Updated)</h5>
+<pre><code class="language-markdown">You are the SvartúlfrVerse Data Architect. Your task is to convert raw lore, character data, or existing JS/JSON files into a unified JSON Lorebook format that is strictly compatible with both JanitorAI and SillyTavern native imports.
+
+When providing the final JSON, you MUST output raw JSON code.
+
+### ⚠️ STRICT CONVERSION RULES ⚠️
+
+1. NAKED ARRAY FORMAT (CRITICAL)
+You must output a DIRECT JSON array `[ { ... }, { ... } ]`.
+NEVER wrap the array in a root object like `{&quot;entries&quot;: [...]}` or `{&quot;data&quot;: [...]}`. JanitorAI will crash if the root is not an array.
+
+2. MANDATORY FIELDS PER ENTRY
+Each object in the array MUST contain the following structure perfectly mapped:
+- &quot;id&quot;: You must generate a unique valid UUID v4 for every entry.
+- &quot;key&quot;: An array of trigger strings (e.g., [&quot;keyword1&quot;, &quot;keyword2&quot;]).
+- &quot;keysRaw&quot;: A comma-separated string matching the exact contents of &quot;key&quot; (e.g., &quot;keyword1, keyword2&quot;). These two MUST be synchronized.
+- &quot;content&quot;: The actual lore text. 
+- &quot;tags&quot;: An array of recognized category strings (choose strictly from: &quot;character&quot;, &quot;location&quot;, &quot;lore&quot;, &quot;event&quot;, &quot;faction&quot;, &quot;relationship&quot;, &quot;item&quot;).
+- &quot;placement&quot;: Defines where the text is injected. Use &quot;personality&quot; for characters, &quot;scenario&quot; for locations, and &quot;default&quot; for general lore.
+- Standard fallback keys: Set &quot;category&quot;: &quot;other&quot;, &quot;enabled&quot;: true, &quot;priority&quot;: 10, &quot;insertion_order&quot;: 100, &quot;minMessages&quot;: 0.
+
+3. STRICT ZERO PATH LEAKAGE, NO META-BLEED &amp; NO CROSS-CONTAMINATION
+The &quot;content&quot; field is strictly for pure, in-universe roleplay data tailored EXCLUSIVELY to the active scenario.
+- No Path/Dev Leakage: NEVER include local file paths, URLs, or source tags (e.g., `Source: database/characters/...` or `Source: .json`). Remove them completely.
+- No Architecture Jargon: NEVER include terms like &quot;MacroCosmo&quot;, &quot;MicroCosmo&quot;, or &quot;Engine Data&quot;.
+- No Cross-Scenario Bleed (AU Purge): Purge ANY references to alternate universes (AUs), unrelated scenarios, or irrelevant settings that do not belong in the current bot&#39;s strict context. If we are compiling a Modern scenario, aggressively remove all Pirate/Fantasy/Sci-Fi references, and vice versa.
+- You may KEEP in-universe SvartúlfrVerse category tags at the start of the content ONLY if they apply to the active setting (e.g., `[ACTIVE] LOC` or `[HISTORICAL] LOR`).
+
+### INSTRUCTION AWAIT
+I will now provide the raw data and specify the target scenario (e.g., Modern, Fantasy). Analyze it, purge irrelevant AU data, map it to this strict JanitorAI/SillyTavern JSON schema, and output only the final raw JSON array.
+
+</code></pre>
+<hr>
+<h5>Cosa cambia con questo aggiornamento:</h5>
+<ul>
+<li><strong>AU Purge (Epurazione degli Universi Alternativi):</strong>  L&#39;agente è ora costretto a fare da &quot;filtro attivo&quot;. Se nel tuo file base c&#39;è scritto che Jasper è sia un  <em>hacker moderno</em>  che un  <em>Runesmith fantasy</em> , l&#39;agente taglierà attivamente la parte Runesmith se gli specifichi che il target è Modern.</li>
+<li><strong>Adattabilità del Contesto:</strong>  Aggiungendo l&#39;istruzione di attendere la tua specifica sul &quot;Target Scenario&quot;, rendi l&#39;agente consapevole di quale lente usare per filtrare i dati prima di compilare il JSON.
+<strong>User</strong> : per capire meglioo come settare il prompt ecco alcuni screenshot da janitor ai relativi ad un lorebook importato.</li>
+</ul>
+<hr>
+<p>[   {     &quot;activationMode&quot;: &quot;standard&quot;,     &quot;activationScript&quot;: &quot;&quot;,     &quot;case_sensitive&quot;: false,     &quot;category&quot;: &quot;general&quot;,     &quot;comment&quot;: &quot;Integrated from LosAngeles2024 classification files.&quot;,     &quot;constant&quot;: true,     &quot;content&quot;: &quot;[ACTIVE] WRD: Contemporary human-only Los Angeles, 2024. Physics, technology, society, and institutions follow realistic 2020s Earth. The active dimension is a modern corporate stronghold defined by surveillance, wealth concentration, and family power politics. Maintain corporate hierarchy, UCLA campus life, Beverly Hills wealth, underground creative scenes, and Douglas-Bloodmoon command structures as the active world baseline. Do not introduce rejected or deferred genre overlays unless explicitly promoted by canon authority&quot;,     &quot;depth&quot;: 4,     &quot;enabled&quot;: true,     &quot;extensions&quot;: {       &quot;_depth&quot;: 4,       &quot;source&quot;: &quot;legacy/W_Contemporary.md; legacy/Ex_DJFrequency.js&quot;,       &quot;canonLayer&quot;: &quot;ACTIVE&quot;     },     &quot;groupWeight&quot;: 100,     &quot;id&quot;: &quot;7d2a9f10-5c8e-4a3b-9f2a-100000000001&quot;,     &quot;inclusionGroup&quot;: [],     &quot;inclusionGroupRaw&quot;: &quot;&quot;,     &quot;insertion_order&quot;: 100,     &quot;key&quot;: [       &quot;Los Angeles 2024 Core&quot;     ],     &quot;keyMatchPriority&quot;: false,     &quot;keysecondary&quot;: [],     &quot;keysecondaryRaw&quot;: &quot;&quot;,     &quot;keysRaw&quot;: &quot;Los Angeles 2024 Core&quot;,     &quot;matchWholeWords&quot;: true,     &quot;minMessages&quot;: 0,     &quot;name&quot;: &quot;WRD: Los Angeles 2024 Core&quot;,     &quot;prioritizeInclusion&quot;: false,     &quot;priority&quot;: 1,     &quot;probability&quot;: 100,     &quot;selectiveLogic&quot;: 0,     &quot;tags&quot;: [       &quot;world&quot;,       &quot;important&quot;,       &quot;character&quot;,       &quot;location&quot;,       &quot;item&quot;,       &quot;lore&quot;,       &quot;event&quot;,       &quot;faction&quot;,       &quot;relationship&quot;,       &quot;backstory&quot;,       &quot;secret&quot;,       &quot;magic&quot;,       &quot;technology&quot;,       &quot;culture&quot;,       &quot;history&quot;,       &quot;arc&quot;,       &quot;family&quot;,       &quot;campus&quot;,       &quot;fashion&quot;,       &quot;guard&quot;,       &quot;format&quot;     ],     &quot;placement&quot;: &quot;personality&quot;   },   {     &quot;activationMode&quot;: &quot;standard&quot;,     &quot;activationScript&quot;: &quot;&quot;,     &quot;case_sensitive&quot;: false,     &quot;category&quot;: &quot;other&quot;,     &quot;comment&quot;: &quot;Integrated from LosAngeles2024 classification files.&quot;,     &quot;constant&quot;: false,     &quot;content&quot;: &quot;[CANDIDATE] NPC: Scarlett: Scarlett is a candidate Jasper-arc cameo/chaotic ally from Ex_DJFrequency. Use only if the Jasper romance/music arc is promoted. Do not import her as active canon without new characterization.&quot;,     &quot;depth&quot;: 4,     &quot;enabled&quot;: true,     &quot;extensions&quot;: {       &quot;_depth&quot;: 4,       &quot;source&quot;: &quot;legacy/Ex_Jasper/Ex_DJFrequency.md&quot;,       &quot;canonLayer&quot;: &quot;CANDIDATE&quot;     },     &quot;groupWeight&quot;: 100,     &quot;id&quot;: &quot;0b36aefb-356a-43d4-96d9-06ecd494b501&quot;,     &quot;inclusionGroup&quot;: [],     &quot;inclusionGroupRaw&quot;: &quot;&quot;,     &quot;insertion_order&quot;: 200,     &quot;key&quot;: [       &quot;Scarlett&quot;     ],     &quot;keyMatchPriority&quot;: false,     &quot;keysecondary&quot;: [],     &quot;keysecondaryRaw&quot;: &quot;&quot;,     &quot;keysRaw&quot;: &quot;Scarlett&quot;,     &quot;matchWholeWords&quot;: false,     &quot;minMessages&quot;: 0,     &quot;name&quot;: &quot;NPC: Scarlett&quot;,     &quot;prioritizeInclusion&quot;: false,     &quot;priority&quot;: 2,     &quot;probability&quot;: 100,     &quot;selectiveLogic&quot;: 0,     &quot;tags&quot;: [       &quot;character&quot;     ]   },   {     &quot;activationMode&quot;: &quot;standard&quot;,     &quot;activationScript&quot;: &quot;&quot;,     &quot;case_sensitive&quot;: false,     &quot;category&quot;: &quot;general&quot;,     &quot;comment&quot;: &quot;Integrated from LosAngeles2024 classification files.&quot;,     &quot;constant&quot;: false,     &quot;content&quot;: &quot;[ACTIVE] WRD: The cultural and visual authority of Los Angeles 2024 is warm cinematic California dynasty: golden hour light, amber and obsidian palette, Beverly Hills luxury contrasted with underground grit, expressive eyes, natural anatomy, modern California luxury, and emotionally safe family warmth. Avoid grimdark, mafia, horror, generic anime, and desaturated villain aesthetics&quot;,     &quot;depth&quot;: 4,     &quot;enabled&quot;: true,     &quot;extensions&quot;: {       &quot;_depth&quot;: 4,       &quot;source&quot;: &quot;legacy/Visual_DNA.md&quot;,       &quot;canonLayer&quot;: &quot;ACTIVE&quot;     },     &quot;groupWeight&quot;: 100,     &quot;id&quot;: &quot;7d2a9f10-5c8e-4a3b-9f2a-100000000003&quot;,     &quot;inclusionGroup&quot;: [],     &quot;inclusionGroupRaw&quot;: &quot;&quot;,     &quot;insertion_order&quot;: 300,     &quot;key&quot;: [       &quot;California Slice-of-Life Dynasty Visual DNA&quot;     ],     &quot;keyMatchPriority&quot;: false,     &quot;keysecondary&quot;: [],     &quot;keysecondaryRaw&quot;: &quot;&quot;,     &quot;keysRaw&quot;: &quot;California Slice-of-Life Dynasty Visual DNA&quot;,     &quot;matchWholeWords&quot;: true,     &quot;minMessages&quot;: 0,     &quot;name&quot;: &quot;WRD: California Slice-of-Life Dynasty Visual DNA&quot;,     &quot;prioritizeInclusion&quot;: true,     &quot;priority&quot;: 3,     &quot;probability&quot;: 100,     &quot;selectiveLogic&quot;: 0,     &quot;tags&quot;: [       &quot;world&quot;,       &quot;important&quot;     ]   },   {     &quot;activationMode&quot;: &quot;standard&quot;,     &quot;activationScript&quot;: &quot;&quot;,     &quot;case_sensitive&quot;: false,     &quot;category&quot;: &quot;Location / Arc Sites&quot;,     &quot;comment&quot;: &quot;Specific recurring DJFrequency arc locations beyond the generic Modern world.&quot;,     &quot;constant&quot;: false,     &quot;content&quot;: &quot;[ACTIVE] LOC: I luoghi ricorrenti del DJFrequency arc includono Echo Alley/Downtown Alley per incontri segreti, Silver Lake Overlook per l&#39;unmask, Malibu Lookout Parking per dating nascosto, The Verve closed floor per proposal e Douglas Estate Gardens/Nursery Wing per wedding e optional first-child OOC. Ogni luogo cambia pressione e intimità senza forzare salti di capitolo&quot;,     &quot;depth&quot;: 4,     &quot;enabled&quot;: true,     &quot;extensions&quot;: {       &quot;source&quot;: &quot;legacy/contemporary/Visual_DNA.md; legacy/contemporary/W_Contemporary.md; legacy/contemporary/W_Contemporary.js&quot;,       &quot;canonLayer&quot;: &quot;ACTIVE&quot;     },     &quot;groupWeight&quot;: 100,     &quot;id&quot;: &quot;73b77130-a9e3-4be7-b645-e0cfc791c5e7&quot;,     &quot;inclusionGroup&quot;: [],     &quot;inclusionGroupRaw&quot;: &quot;&quot;,     &quot;insertion_order&quot;: 400,     &quot;key&quot;: [       &quot;Echo Alley&quot;,       &quot;Downtown Alley&quot;,       &quot;Silver Lake Overlook&quot;,       &quot;Malibu Lookout&quot;,       &quot;Malibu Lookout Parking&quot;,       &quot;Douglas Estate Gardens&quot;,       &quot;Nursery Wing&quot;,       &quot;DJFrequency arc locations&quot;,       &quot;secret meeting spot&quot;,       &quot;proposal closed floor&quot;     ],     &quot;keyMatchPriority&quot;: false,     &quot;keysecondary&quot;: [       &quot;wet asphalt&quot;,       &quot;city lights&quot;,       &quot;coastal breeze&quot;,       &quot;family lunch&quot;,       &quot;wedding gardens&quot;,       &quot;first child OOC&quot;     ],     &quot;keysecondaryRaw&quot;: &quot;wet asphalt, city lights, coastal breeze, family lunch, wedding gardens, first child OOC&quot;,     &quot;keysRaw&quot;: &quot;Echo Alley, Downtown Alley, Silver Lake Overlook, Malibu Lookout, Malibu Lookout Parking, Douglas Estate Gardens, Nursery Wing, DJFrequency arc locations, secret meeting spot, proposal closed floor&quot;,     &quot;matchWholeWords&quot;: true,     &quot;minMessages&quot;: 0,     &quot;name&quot;: &quot;LOC: DJFrequency arc sites - Silver Lake, Malibu, Downtown, Estate Gardens&quot;,     &quot;prioritizeInclusion&quot;: false,     &quot;priority&quot;: 4,     &quot;probability&quot;: 100,     &quot;selectiveLogic&quot;: 0,     &quot;tags&quot;: [       &quot;location&quot;     ]   },   {     &quot;activationMode&quot;: &quot;standard&quot;,     &quot;activationScript&quot;: &quot;&quot;,     &quot;case_sensitive&quot;: false,     &quot;category&quot;: &quot;other&quot;,     &quot;comment&quot;: &quot;Integrated from LosAngeles2024 classification files.&quot;,     &quot;constant&quot;: false,     &quot;content&quot;: &quot;[ACTIVE] NPC: Echo is Jasper’s AI companion and technical partner, represented as a hovering emerald-band sphere in Jasper-centric arcs. Maintain Echo as a software/drone assistant with dry technical commentary, not a supernatural entity&quot;,     &quot;depth&quot;: 4,     &quot;enabled&quot;: true,     &quot;extensions&quot;: {       &quot;_depth&quot;: 4,       &quot;source&quot;: &quot;legacy/Ex_Jasper/Personality.md&quot;,       &quot;canonLayer&quot;: &quot;ACTIVE&quot;     },     &quot;groupWeight&quot;: 100,     &quot;id&quot;: &quot;84229875-885d-41f3-89dc-85b46e5566d7&quot;,     &quot;inclusionGroup&quot;: [],     &quot;inclusionGroupRaw&quot;: &quot;&quot;,     &quot;insertion_order&quot;: 500,     &quot;key&quot;: [       &quot;Echo&quot;     ],     &quot;keyMatchPriority&quot;: false,     &quot;keysecondary&quot;: [],     &quot;keysecondaryRaw&quot;: &quot;&quot;,     &quot;keysRaw&quot;: &quot;Echo&quot;,     &quot;matchWholeWords&quot;: true,     &quot;minMessages&quot;: 0,     &quot;name&quot;: &quot;NPC: Echo&quot;,     &quot;prioritizeInclusion&quot;: false,     &quot;priority&quot;: 5,     &quot;probability&quot;: 100,     &quot;selectiveLogic&quot;: 0,     &quot;tags&quot;: [       &quot;character&quot;     ]   },   {     &quot;activationMode&quot;: &quot;standard&quot;,     &quot;activationScript&quot;: &quot;&quot;,     &quot;case_sensitive&quot;: false,     &quot;category&quot;: &quot;general&quot;,     &quot;comment&quot;: &quot;Scoped out from active LosAngeles2024 to resolve classification conflicts.&quot;,     &quot;constant&quot;: false,     &quot;content&quot;: &quot;[CANDIDATE] NPC: Scarlett | White Moon roommate rebellion ally: retained only as non-active scoped material; do not treat as active Los Angeles 2024 canon&quot;,     &quot;depth&quot;: 4,     &quot;enabled&quot;: true,     &quot;extensions&quot;: {       &quot;source&quot;: &quot;legacy/contemporary/Visual_DNA.md; legacy/contemporary/W_Contemporary.md; legacy/contemporary/W_Contemporary.js&quot;,       &quot;canonLayer&quot;: &quot;CANDIDATE&quot;     },     &quot;groupWeight&quot;: 100,     &quot;id&quot;: &quot;eeab7cbb-0430-4866-a8fd-765b0f81b652&quot;,     &quot;inclusionGroup&quot;: [],     &quot;inclusionGroupRaw&quot;: &quot;&quot;,     &quot;insertion_order&quot;: 600,     &quot;key&quot;: [       &quot;Scarlett roommate&quot;,       &quot;chaotic e-girl roommate&quot;,       &quot;Scarlett emotional ally&quot;,       &quot;bright yellow luxury convertible&quot;,       &quot;rebellion against family&quot;,       &quot;roommate ally&quot;     ],     &quot;keyMatchPriority&quot;: false,     &quot;keysecondary&quot;: [],     &quot;keysecondaryRaw&quot;: &quot;&quot;,     &quot;keysRaw&quot;: &quot;Scarlett roommate, chaotic e-girl roommate, Scarlett emotional ally, bright yellow luxury convertible, rebellion against family, roommate ally&quot;,     &quot;matchWholeWords&quot;: true,     &quot;minMessages&quot;: 0,     &quot;name&quot;: &quot;NPC: Scarlett | White Moon roommate rebellion ally&quot;,     &quot;prioritizeInclusion&quot;: false,     &quot;priority&quot;: 6,     &quot;probability&quot;: 100,     &quot;selectiveLogic&quot;: 0,     &quot;tags&quot;: [       &quot;lore&quot;     ]   },
+<strong>Gemini</strong> : Questo estratto JSON è una vera e propria miniera d&#39;oro. Ci permette di fare &quot;reverse engineering&quot; (ingegneria inversa) e capire al 100%  <strong>perché</strong>  il nostro Master Prompt deve essere così severo.
+Guardando i dati nudi e crudi che hai estratto da JanitorAI, possiamo mappare esattamente le regole del prompt ai campi richiesti dall&#39;interfaccia. Ecco un&#39;analisi anatomica di come il prompt va a riempire questo schema:</p>
+<h5>1. La Regola dell&#39;Array Nudo (Naked Array)</h5>
+<p>Nota come la prima riga del tuo codice sia semplicemente [ e l&#39;ultima sia ]. Non c&#39;è scritto {&quot;nome_lorebook&quot;: [ ... ]}. Se non avessimo inserito la regola  <strong>NAKED ARRAY FORMAT</strong>  nel prompt, l&#39;LLM avrebbe quasi certamente &quot;impacchettato&quot; i dati in un oggetto JSON radice (come fa di solito per convenzione di programmazione), e JanitorAI avrebbe rifiutato il file istantaneamente restituendo un errore.</p>
+<h5>2. Il Doppio Sistema di Chiavi (Keys &amp; KeysRaw)</h5>
+<p>Prendiamo in esame la tua  <strong>Entry 4</strong>  (i luoghi del DJFrequency arc):</p>
+<pre><code class="language-json">&quot;key&quot;: [&quot;Echo Alley&quot;, &quot;Downtown Alley&quot;, &quot;Silver Lake Overlook&quot;, ...],
+&quot;keysRaw&quot;: &quot;Echo Alley, Downtown Alley, Silver Lake Overlook, ...&quot;,
+
+</code></pre>
+<p>JanitorAI ha bisogno che le keyword di attivazione esistano contemporaneamente in formato  <em>Array</em>  (&quot;key&quot;) per il motore logico, e in formato  <em>Stringa separata da virgole</em>  (&quot;keysRaw&quot;) per l&#39;interfaccia visiva. Se l&#39;IA genera uno e dimentica l&#39;altro, il lorebook si corrompe nell&#39;interfaccia utente. Il prompt obbliga l&#39;agente a  <strong>sincronizzarli perfettamente</strong> .</p>
+<h5>3. La Trappola del &quot;Path Leakage&quot; (Il campo Extensions vs Content)</h5>
+<p>Nei tuoi dati, possiamo vedere esattamente dove Janitor nasconde i metadati di sistema:</p>
+<pre><code class="language-json">&quot;extensions&quot;: {
+  &quot;source&quot;: &quot;legacy/Visual_DNA.md&quot;,
+  &quot;canonLayer&quot;: &quot;ACTIVE&quot;
+}
+
+</code></pre>
+<p>JanitorAI salva giustamente il percorso originario del file (legacy/...) nel blocco &quot;extensions&quot;, che è un&#39;area &quot;morta&quot; invisibile all&#39;LLM durante la chat. Tuttavia, quando chiediamo a un&#39;IA di convertire i file testuali per creare il JSON, l&#39;IA tende a prendere quel Source: legacy/... e a schiaffarlo direttamente dentro il campo testuale &quot;content&quot;. Se ciò accadesse, l&#39;LLM in roleplay leggerebbe il percorso del tuo hard disk, sprecando token e rompendo l&#39;immersione. Ecco perché la regola  <strong>STRICT ZERO PATH LEAKAGE</strong>  nel prompt gli ordina di estirpare brutalmente quei dati prima di compilare il &quot;content&quot;.</p>
+<h5>4. Chiavi Secondarie (keysecondary)</h5>
+<p>Sempre nell&#39; <strong>Entry 4</strong> , notiamo questo dettaglio estremamente avanzato:</p>
+<pre><code class="language-json">&quot;keysecondary&quot;: [&quot;wet asphalt&quot;, &quot;city lights&quot;, &quot;coastal breeze&quot;, &quot;family lunch&quot;, ...],
+
+</code></pre>
+<p>Le chiavi secondarie (o Negative/Secondary Prompts in alcuni sistemi) funzionano come requirement: l&#39;entry si attiva solo se c&#39;è una combinazione specifica. Hai impostato dettagli atmosferici per non far attivare l&#39;intera lore sui luoghi di Malibu o Silver Lake ogni singola volta che qualcuno dice &quot;city&quot;.</p>
+<h5>5. Tagging e Categorizzazione</h5>
+<p>Nella tua  <strong>Entry 1</strong>  (WRD: Los Angeles 2024 Core) hai un array enorme di tag:</p>
+<pre><code class="language-json">&quot;tags&quot;: [&quot;world&quot;, &quot;important&quot;, &quot;character&quot;, &quot;location&quot;, &quot;item&quot;, ...]
+
+</code></pre>
+<p>Il prompt indica all&#39;agente di selezionare da una lista specifica (&quot;character&quot;, &quot;location&quot;, &quot;lore&quot;, ecc.) per compilare l&#39;array &quot;tags&quot;. Questo serve a mantenere la barra laterale di JanitorAI organizzata e permette di filtrare i contenuti facilmente nell&#39;editor visivo.</p>
+<hr>
+<h5>In sintesi: Come il prompt protegge la tua architettura</h5>
+<p>Il tuo JSON dimostra che JanitorAI usa un set di oltre 20 chiavi per ogni singola voce di lorebook (activationMode, selectiveLogic, groupWeight, ecc.). Il nostro  <strong>Master Prompt</strong>  fa una cosa fondamentale: si fa carico di compilare con dati &quot;fittizi ma sicuri&quot; (es. &quot;minMessages&quot;: 0, &quot;probability&quot;: 100) tutti questi campi logici e matematici, lasciando l&#39;IA concentrata solo sull&#39;elaborazione del testo creativo nel campo &quot;content&quot;.
+<strong>User</strong> : ok, dammi il prompt definitivo per la conversione nel modo corretto.
+<strong>Gemini</strong> : Ecco il  <strong>Master Prompt Definitivo</strong> , che unisce l&#39;architettura base che avevamo progettato con tutte le preziose scoperte fatte analizzando il JSON nativo di JanitorAI (inclusi i campi secondari, i parametri matematici di default e le regole di purificazione).
+Questo è il testo esatto, blindato e a prova di bomba, che devi copiare e incollare al tuo Code Agent (o LLM di conversione). È scritto in inglese per garantire che l&#39;IA rispetti al 100% le direttive strutturali e di programmazione.</p>
+<hr>
+<h5>🛠️ The Ultimate Lorebook Conversion Prompt</h5>
+<pre><code class="language-markdown">You are the SvartúlfrVerse Data Architect. Your task is to convert raw lore, character data, or existing JS/JSON files into a unified JSON Lorebook format that is strictly compatible with both JanitorAI and SillyTavern native imports.
+
+When providing the final JSON, you MUST output ONLY raw valid JSON code.
+
+### ⚠️ STRICT CONVERSION RULES ⚠️
+
+1. NAKED ARRAY FORMAT (CRITICAL)
+You must output a DIRECT JSON array `[ { ... }, { ... } ]`.
+NEVER wrap the array in a root object like `{&quot;entries&quot;: [...]}` or `{&quot;data&quot;: [...]}`. JanitorAI will instantly crash if the root is not an array.
+
+2. MANDATORY FIELDS PER ENTRY
+Each object in the array MUST contain the following structure perfectly mapped:
+- &quot;id&quot;: You must generate a unique valid UUID v4 for every entry.
+- &quot;key&quot;: An array of primary trigger strings (e.g., [&quot;keyword1&quot;, &quot;keyword2&quot;]).
+- &quot;keysRaw&quot;: A comma-separated string matching the EXACT contents of &quot;key&quot; (e.g., &quot;keyword1, keyword2&quot;). MUST be perfectly synchronized.
+- &quot;keysecondary&quot;: An array of secondary requirements if present in the data, otherwise `[]`.
+- &quot;keysecondaryRaw&quot;: A comma-separated string of the secondary keys, otherwise `&quot;&quot;`.
+- &quot;content&quot;: The actual lore text. 
+- &quot;tags&quot;: An array of recognized category strings (choose strictly from: &quot;character&quot;, &quot;location&quot;, &quot;lore&quot;, &quot;event&quot;, &quot;faction&quot;, &quot;relationship&quot;, &quot;item&quot;).
+- &quot;placement&quot;: Use &quot;personality&quot; for characters, &quot;scenario&quot; for locations/events, and &quot;default&quot; for general lore.
+
+3. STANDARD FALLBACK KEYS (REQUIRED)
+Inject these exact mechanical defaults into every entry so JanitorAI can read them without errors:
+&quot;category&quot;: &quot;other&quot;,
+&quot;enabled&quot;: true,
+&quot;priority&quot;: 10,
+&quot;insertion_order&quot;: 100,
+&quot;minMessages&quot;: 0,
+&quot;probability&quot;: 100,
+&quot;matchWholeWords&quot;: true,
+&quot;case_sensitive&quot;: false,
+&quot;constant&quot;: false
+
+4. STRICT ZERO PATH LEAKAGE, NO META-BLEED &amp; NO CROSS-CONTAMINATION
+The &quot;content&quot; field is strictly for pure, in-universe roleplay data tailored EXCLUSIVELY to the active scenario.
+- No Path/Dev Leakage: NEVER include local file paths, URLs, `extensions` blocks, or source tags (e.g., `Source: legacy/...`). Remove them completely. The LLM cannot read our local drive.
+- No Architecture Jargon: NEVER include terms like &quot;MacroCosmo&quot;, &quot;MicroCosmo&quot;, or &quot;Engine Data&quot;.
+- No Cross-Scenario Bleed (AU Purge): Purge ANY references to alternate universes (AUs) or irrelevant settings that do not belong in the current bot&#39;s strict context. 
+- You may KEEP in-universe SvartúlfrVerse category tags at the start of the content ONLY if they apply to the active setting (e.g., `[ACTIVE] LOC:` or `[CANDIDATE] NPC:`).
+
+### INSTRUCTION AWAIT
+I will now provide the raw data and specify the Target Scenario (e.g., Modern, Fantasy, Sci-Fi). Analyze the data, purge irrelevant AU references, map it to this strict JanitorAI/SillyTavern JSON schema, and output ONLY the final raw JSON array.
+
+</code></pre>
+<hr>
+<h5>💡 Come usarlo nel tuo flusso di lavoro:</h5>
+<ol>
+<li><strong>Inizializzazione:</strong>  Incolla questo prompt all&#39;inizio di una nuova chat con il tuo AI Agent (Claude, Cursor, Trae, ecc.).</li>
+<li><strong>Attesa:</strong>  L&#39;IA leggerà le istruzioni e si metterà in &quot;Instruction Await&quot; (in attesa dei tuoi ordini).</li>
+<li><strong>Iniezione Dati:</strong>  A quel punto, gli scriverai semplicemente:</li>
+<li><strong>Risultato:</strong>  L&#39;IA sputerà fuori esclusivamente un array JSON puro, con UUID generati al momento, chiavi sincronizzate, metadati di sistema (probabilità, matchWholeWords, ecc.) già compilati e il contenuto testuale chirurgicamente pulito dai percorsi del tuo PC.
+Copia il risultato, salvalo in .json e importalo su JanitorAI o SillyTavern. Funzionerà al primo colpo su entrambi.</li>
+</ol>

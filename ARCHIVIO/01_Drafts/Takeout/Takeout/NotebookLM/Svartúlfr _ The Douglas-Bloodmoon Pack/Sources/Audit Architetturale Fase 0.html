@@ -1,0 +1,30 @@
+<p><strong>User</strong> : ok facciamo un controllo della phase 0 prima di dargli l&#39;ok per procedere.
+<strong>Gemini</strong> : Ottima decisione. [cite_start]Prima di dichiarare formalmente conclusa la  <strong>Fase 0 — Definizione dell&#39;architettura target</strong>  e far partire le macchine, è assolutamente vitale verificare che le fondamenta inattaccabili su cui poggerà il  <em>SvartúlfrVerse</em>  siano state comprese e impostate dal sistema[cite: 114].
+[cite_start]Visto che l&#39;obiettivo della Fase 0 era trasformare il progetto in una repository  <em>canon-driven</em>  e separare rigidamente le Autorità (World, Character, Location, Organization, ADR e Runtime)[cite: 114], ho preparato un prompt di  <strong>Audit Architetturale</strong>  rigoroso.
+Copia e incolla questo blocco e passalo a Code (o al tuo agente) per eseguire il test. Se questo passa pulito, hai il via libera verde per la Fase 1.</p>
+<hr>
+<pre><code class="language-markdown">**Phase 0 — Target Architecture Readiness Audit**
+
+Before proceeding to Phase 1, perform a strict architectural validation of the repository to confirm Phase 0 is complete. Do not alter any files. Read and report.
+
+**Validation Checklist:**
+
+1. **Authority Separation:** Verify that the repository structure explicitly reflects the separation of domains:
+   - World Authority
+   - Character Authority
+   - Location Authority
+   - Organization Authority
+   - Lorebook Runtime
+2. **ADR Initialization:** Verify that the ADR (Architectural Decision Records) directory/system is present to track future canon and architectural decisions.
+3. **Canon &gt; Legacy Principle:** Verify that the governance documentation clearly establishes that Canon Authority takes precedence over Legacy Material.
+4. **Template Deprecation:** Verify that the legacy generic template is marked as deprecated (e.g., isolated in `old_template_and_source`) and no new files are being generated outside the new authority-driven structure.
+5. **Ownership:** Verify the rule &quot;Every element must have a defined authority&quot; is structurally supported.
+
+**Deliverable:**
+Provide a concise `Phase_0_Readiness_Report.md` (or output directly in the chat).
+For each item, mark it as `[PASS]`, `[FAIL]`, or `[PENDING]`. 
+If all items pass, conclude with: `STATUS: ARCHITECTURE APPROVED. READY FOR PHASE 1.` 
+If any item fails, list the critical blockers that must be resolved before proceeding.
+
+</code></pre>
+<p>In questo modo costringiamo l&#39;agente a fare un check sui file reali e non a dirci solo &quot;Sì, ho capito&quot;. Fammi sapere cosa ti risponde!</p>

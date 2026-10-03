@@ -1,0 +1,602 @@
+<p><strong>User</strong> :</p>
+<h3>AGENTS.md — standing instructions for agentic tools</h3>
+<p><strong>ES6 SANDBOX SCRIPTING CONSTRAINTS</strong> : If your phase involves evaluating, compiling, or interacting with JanitorAI JS logic, you MUST strictly respect the ES6 Sandbox limits:</p>
+<ul>
+<li><strong>Blocked</strong> : async, fetch, Promise, window, document, setTimeout, and all external I/O.</li>
+<li><strong>Allowed</strong> : String methods (.includes), Array methods (.map, .filter), Math, and Regex.</li>
+<li><strong>Editable context</strong> : Only context.character.personality and context.character.scenario can be mutated.</li>
+<li><strong>Memory Scanning</strong> : Always use context.chat.last_messages.slice(-X) for multi-message progression rather than just last_message.</li>
+</ul>
+<h4>JanitorAI Integration &amp; Separation of Concerns</h4>
+<p>This fork by  <strong>Lys_5</strong>  (JanitorAI Profile: https://janitorai.com/profiles/df1f0279-2607-4c9b-9b4e-ee02438d70a2_profile-of-lys-5) introduces a highly specialized architecture to bypass JanitorAI&#39;s context limitations:</p>
+<ol>
+<li><strong>The Compiler (JSON Surface):</strong>  Extracts only the core identity, physical appearance, and personality, outputting a lightweight JSON profile (~1,500 tokens).</li>
+<li><strong>The Converter (ES6 Backend):</strong>  Translates deep logic (L_LORE_SECRET, L_LORE_RELATIONSHIP, Trigger Matrix) into an executable, minified JavaScript payload.</li>
+<li><strong>Red-Team Auditors:</strong>  The Voice, Intimacy, and Arc Auditors proactively stress-test the draft against extreme inputs, relational boundaries, and logic transitions before export.
+Read this first. It applies to Antigravity, Cline, and any other agentic IDE tool opening this workspace. It is deliberately short — it routes you to the right document for your session type instead of duplicating them.</li>
+</ol>
+<hr>
+<h4>Directory Structure Rule</h4>
+<p>Per the user&#39;s request, when generating or refining worlds, the active project folder MUST NOT be the root of the World-Forge repository. Instead, all data for a specific world must follow this exact split structure:</p>
+<ul>
+<li><strong>Drafts</strong> : MUST be saved in d:\World-Forge\Drafts[WorldName]\</li>
+<li><strong>Exports &amp; World Seed</strong> : MUST be saved in d:\World-Forge\Export[WorldName]<br>
+Whenever a pipeline phase requires reading or writing files, you MUST use these specific Drafts[WorldName] and Export[WorldName] subdirectories rather than the root project folders.</li>
+</ul>
+<h4>World-Agnostic Toolchain</h4>
+<p>All build tools in tools/ are world-agnostic and accept the world_name as a required CLI argument:</p>
+<ul>
+<li>python tools/wf_build_world.py &lt;world_name&gt; — Full Drafts→Export compilation</li>
+<li>python tools/resync_world.py &lt;world_name&gt; — Regenerate Chat Completion Preset + JanitorAI script</li>
+<li>python tools/compile_cards.py &lt;world_name&gt; — Compile character cards</li>
+<li>python tools/compile_lorebooks.py &lt;world_name&gt; — Compile lorebooks</li>
+<li>python tools/build_janitor.py &lt;world_name&gt; — Build ES6 JanitorAI script</li>
+<li>python tools/validate_export.py &lt;Export_dir&gt; — Read-only Export/ JSON validator</li>
+<li>python tools/init_export_generic.py &lt;world_name&gt; — Initialize Export/ from templates
+Isolated parsing utilities live in tools/project_parsers/.</li>
+</ul>
+<h4>Antigravity Subagent Execution</h4>
+<p>The legacy subagents have been converted to Antigravity Skills in d:\World-Forge.agents\skills. When following the orchestration workflow (workflows/world-forge.md) and instructed to dispatch to a subagent (e.g., WorldForge-Interviewer or WorldForge-Refiner), do not attempt to use legacy task delegation. Instead, rely on the Antigravity Skill matching engine. As Antigravity, you can natively adopt these personas because the Skills will automatically trigger and provide you with the correct agent_roles/*.md specification file for the requested phase.</p>
+<hr>
+<ul>
+<li><strong>Read</strong>  <strong>CLAUDE.md</strong>  <strong>completely before any edit.</strong>  It holds the load-bearing architectural principles, the cross-file consistency table (most pipeline files have paired files that must change together), and the editing protocol.</li>
+<li>Never edit pipeline files while a /worldforge run is in progress — the runtime agent is reading them.</li>
+</ul>
+<hr>
+<h4>Hard invariants (one line each — full rationale in CLAUDE.md)</h4>
+<ol>
+<li><strong>Three-tier lorebook architecture.</strong>  Tier 1 world (position 0), Tier 2 character (position 1), Tier 3 arc/sandbox (modular). Every piece of content belongs to exactly one tier.</li>
+<li><strong>The</strong>  <strong>{{original}}</strong>  <strong>mandate.</strong>  Every card&#39;s system_prompt and post_history_instructions begins with {{original}} on its own line. Engine rules live in the preset; character specifics live in cards/lorebooks. Never mix the two.</li>
+<li><strong>Audit/apply separation.</strong>  Editor, Voice/Arc/Intimacy Auditors, and Prompt Engineer are read-only on the files they audit. Only the Architects write drafts; only the Compiler writes Export/ JSON (narrow preset-only exceptions documented in CLAUDE.md #3).</li>
+<li><strong>Position values come from the table</strong> , not from memory — Notes_Quick_Reference.md has the enum (0–7); Notes_On_functionality.md is the authority behind it.</li>
+<li><strong>Every lorebook entry carries a</strong>  <strong>Position Rationale:</strong>  — DEFAULT or a one-sentence justification.</li>
+<li><strong>ARC_STATE / SANDBOX_STATE entries use the two-subsection structure</strong>  — descriptive situation + binding Tonal Mandate with imperative directives.</li>
+<li><strong>Export JSON is written as UTF-8, never through PowerShell.</strong>  After Phase 4, the read-only check python tools/validate_export.py Export/[WorldName] verifies parse validity, mojibake, {{original}} presence, and position enums. It never modifies files.</li>
+<li><strong>Export Directory Structure.</strong>  All generated drafts and final exports MUST be placed in their respective Drafts/[WorldName]/ and Export/[WorldName]/ subdirectories, never in the root Drafts/ or Export/ folder.</li>
+</ol>
+<hr>
+<h4>Context discipline (all models — not a hard window limit)</h4>
+<p>This pipeline was sized against 200K-context frontier models. Nominal windows vary widely (DeepSeek 4 Pro: 1M; GLM 5: 200K; others differ) — do not treat any fixed number as the constraint. The real constraint is that  <strong>effective recall and instruction</strong>  <strong>adherence degrade well before nominal limits on every current model</strong> , and what degrades first is exactly what this pipeline depends on: hard-fail rules mid-spec, position tables, sign-off checklists. So:</p>
+<ul>
+<li><strong>Use per-phase custom agents</strong>  — strongly recommended on any model (clean window per phase + persona isolation so the Editor stays strict), and effectively mandatory on 200K-and-below windows for large worlds, where inline runs genuinely overflow by Phase 3.</li>
+<li>The shipped .gitignore keeps Samples/ and maintenance docs out of auto-included context. Do not remove entries from it to &quot;be thorough.&quot;</li>
+<li>The 📂 CONTEXT MANIFEST blocks exist primarily for you. When a manifest says &quot;load on demand,&quot; that means  <em>do not preload</em>  — open the file at the step that needs it. A bigger window is headroom for the  <em>world&#39;s</em>  drafts and history, not an invitation to preload reference material the phase does not need.</li>
+</ul>
+<hr>
+<h3>CLAUDE.md</h3>
+<p><strong>ES6 SANDBOX SCRIPTING CONSTRAINTS</strong> : If your phase involves evaluating, compiling, or interacting with JanitorAI JS logic, you MUST strictly respect the ES6 Sandbox limits:</p>
+<ul>
+<li><strong>Blocked</strong> : async, fetch, Promise, window, document, setTimeout, and all external I/O.</li>
+<li><strong>Allowed</strong> : String methods (.includes), Array methods (.map, .filter), Math, and Regex.</li>
+<li><strong>Editable context</strong> : Only context.character.personality and context.character.scenario can be mutated.</li>
+<li><strong>Memory Scanning</strong> : Always use context.chat.last_messages.slice(-X) for multi-message progression rather than just last_message.
+Standing context for AI coding agents (Claude Code, Antigravity, similar) working on this repository. This file is read first on every session start. It tells you what this project is, what the load-bearing architectural decisions are, and what rules govern safe modification of the pipeline files.</li>
+</ul>
+<hr>
+<h4>What this repository is</h4>
+<p>World Forge is a  <strong>multi-agent pipeline for building immersive roleplay worlds for SillyTavern</strong> . It is not application code in the traditional sense — it is a curated collection of agent specifications (markdown), templates (markdown and JSON), and orchestration logic (markdown) that together define a structured creative writing pipeline.
+The pipeline is designed to run inside an agentic IDE extension (typically Antigravity). When invoked, it walks a user from a raw idea through 6 phases of structured drafting and validation, producing a complete SillyTavern-ready world package.
+<strong>The repository is the pipeline itself.</strong>  Editing files here changes how the pipeline behaves on its next run. There is no compilation step, no test suite, no deployment — files are read directly by the runtime agent.</p>
+<hr>
+<h4>What this repository is NOT</h4>
+<ul>
+<li><strong>Not a SillyTavern fork or extension.</strong>  SillyTavern is the runtime environment that consumes the pipeline&#39;s outputs. This repo produces files for SillyTavern; it does not modify SillyTavern itself.</li>
+<li><strong>Not a runtime engine.</strong>  The pipeline does not execute — it is consumed by an agentic IDE extension (Antigravity) that orchestrates LLM calls. Do not add execution logic, build steps, or deployment configuration.</li>
+<li><strong>Not a code project.</strong>  The &quot;code&quot; here is markdown agent specifications. Treat them as you would treat carefully-versioned prose documents, not as source code.</li>
+<li><strong>Not for editing during pipeline runs.</strong>  When a user is actively running /worldforge start, the pipeline files are being read by the runtime agent. Editing them mid-run produces undefined behavior.</li>
+</ul>
+<hr>
+<h4>Repository structure (authoritative)</h4>
+<pre><code>World-Forge/
+├── README.md                         ← Human-facing project description
+├── tutorial.md                       ← Usage tutorial
+├── AGENTS.md                         ← Standing instructions for agentic tools (Antigravity); routes run-vs-maintenance sessions
+├── Notes_On_functionality.md         ← Authoritative reference: how SillyTavern works internally
+├── Notes_Quick_Reference.md          ← DERIVED ~5KB distillation of Notes (position enum, flags, assembly); agents consult it first
+├── LICENSE
+├── .gitignore
+├── .antigravityignore                ← Keeps Samples/ + maintenance docs out of runtime agent context
+├── .agents/                          ← Antigravity configurations
+│   └── skills/                       ← Antigravity Skills for each per-phase subagent (auto-discovered)
+├── contracts/                        ← CANONICAL source of truth for the design contracts shared with the SillyTavern fork&#39;s world-forge + npc-memory extensions (the fork mirrors these read-only and CI-checks byte-equality)
+│   ├── README.md                     ← What lives here + the canonical/mirror relationship
+│   ├── MEMORY_CONTRACT.md            ← npc-memory data channel ([[NPC_MANIFEST]], facets, stable ids, turn tag, scenes)
+│   └── WORLD_FORGE_SYNC.md           ← Runtime seams: Director-card tag (§2), narration-surface aliases (§3), &lt;/style_contract&gt; marker (§4), [[WORLD_CALENDAR]] Scene Tracker date seed (§5), style_override runtime
+├── tools/
+│   └── validate_export.py            ← Read-only Export/ JSON validator (explicit exception to the no-code rule; see Out of scope)
+├── agent_roles/                      ← Phase-specific agent specifications (each opens with a 📂 CONTEXT MANIFEST)
+│   ├── 00_The_Interviewer.md
+│   ├── 01_The_Refiner.md
+│   ├── 02_The_Architect.md
+│   ├── 02b_The_Intimacy_Architect.md
+│   ├── 03_The_Editor.md
+│   ├── 03b_The_Voice_Auditor.md
+│   ├── 03c_The_Arc_Transition_Auditor.md
+│   ├── 03d_The_Intimacy_Auditor.md
+│   ├── 04_The_Compiler.md
+│   ├── 05_The_Prompt_Engineer.md
+│   ├── 05a_Block_Library.md          ← Preset block library (split from 05; loaded only for preset authoring/resync)
+│   ├── 06_The_Janitor_Builder.md     ← Phase 6 agent for generating JanitorAI bot profiles and bios
+│   ├── SHARED_Style_Contract_Reference.md
+│   ├── Brainstormer/                 ← Optional ideation agent (upstream of Phase 0; divergent premise-finding, writes informal Brainstorm_Notes.md, never a World Seed)
+│   │   └── 00_The_Brainstormer.md
+│   ├── Converter/                    ← Convert-pipeline agent (reframe a shipped world into a new build)
+│   │   └── 00_The_Converter.md
+│   ├── Auditioner/                    ← On-demand behavioral probe (post-launch, read-only; single-scenario cousin of the Voice Auditor)
+│   │   └── 00_The_Auditioner.md
+│   └── revise/                       ← Revision-pipeline mini-agents (surgical post-launch edits)
+│       ├── 00_The_Reviser.md
+│       ├── 01_The_Refiner_mini.md
+│       ├── 02_The_Architect_mini.md
+│       ├── 02b_The_Intimacy_Architect_mini.md
+│       ├── 03_The_Editor_mini.md
+│       ├── 03b_The_Voice_Auditor_mini.md
+│       ├── 03c_The_Arc_Transition_Auditor_mini.md
+│       ├── 03d_The_Intimacy_Auditor_mini.md
+│       ├── 04_The_Compiler_mini.md
+│       ├── 05_The_Prompt_Engineer_mini.md
+│       └── 06_The_Janitor_Builder_mini.md
+├── templates/                        ← Structural references the pipeline produces output against
+│   ├── World_Seed_Template.md        ← Phase 0 authoring guide
+│   ├── Char_Card_creation.md         ← Card field-by-field authoring guide
+│   ├── Lorebook_creation.md          ← Lorebook entry authoring guide
+│   ├── User_Persona_template.md      ← {{user}} persona description (User.md) authoring guide
+│   ├── Convert_Brief_Template.md     ← Convert pipeline input (preservation matrix as a fillable brief)
+│   ├── char_template.json            ← Raw V3 character-card JSON schema exemplar
+│   ├── Lorebook_Template.json        ← Raw lorebook JSON schema exemplar
+│   └── Chat_Completion_Preset_template.json   ← Preset JSON structure (Prompt Engineer target)
+├── workflows/                        ← Pipeline orchestration
+│   ├── world-forge.md                ← Main pipeline (initial build, Phase 0–5.5; also PRESET RESYNC and CONVERT pointers)
+│   ├── world-forge-revise.md         ← Revision fork (surgical post-launch edits, Phase R0–R5.5)
+│   └── world-forge-convert.md        ← Convert fork (reframe a shipped world into a new build, Phase C0)
+├── wiki/                             ← Setup &amp; tooling guides (linked from README/tutorial)
+│   ├── README.md                     ← Wiki index
+│   ├── Agentic-Tools-and-Models.md   ← Antigravity + model comparison
+│   └── Antigravity-Setup.md          ← Dedicated Antigravity setup walkthrough
+└── Samples/                          ← Example world outputs for reference
+
+</code></pre>
+<p><strong>File authority levels:</strong></p>
+<ul>
+<li><strong>READ-ONLY for the user&#39;s project work</strong>  but writable here in the pipeline repo: all agent_roles/, templates/, workflows/, tools/, Notes_On_functionality.md, and Notes_Quick_Reference.md. These are the pipeline definition.</li>
+<li><strong>Generated at runtime</strong>  in the user&#39;s project folder (NOT in this repo): Drafts/, Export/, World_Seed.md, audit reports. These never appear in this repo unless they are explicit samples in Samples/.</li>
+</ul>
+<hr>
+<h4>Core architectural principles (load-bearing — DO NOT VIOLATE without explicit instruction)</h4>
+<p>These principles took multiple iterations to converge on. Each one has a specific failure mode it prevents. Changes that violate them will produce subtle bugs that surface only at runtime in roleplay sessions.</p>
+<h5>1. The Three-Tier Lorebook Architecture</h5>
+<p>Every piece of world information belongs to exactly one tier:</p>
+<ul>
+<li><strong>Tier 1 — World Lorebook</strong>  (permanent, arc-agnostic): world rules, factions, species, mechanics, standing locations. Position 0 (Before Char Def). Never replaced or disabled.</li>
+<li><strong>Tier 2 — Character Lorebooks</strong>  (permanent, arc-agnostic, one per major character): physical description, psychological dimensions, relationships, history. Position 1 (After Char Def). Never replaced.</li>
+<li><strong>Tier 3 — Arc Lorebooks</strong>  (modular, one per arc, swapped in/out): ARC_STATE, CHARACTER_STATE, NPC_SHIFT, DRAMATIC_BEAT, TENSION, hidden information rules. Only one arc lorebook active at a time.
+If you find content that would fit in multiple tiers, this is a design smell. Surface it for review — the right home is usually the most modular tier (Tier 3 if it changes per-arc, Tier 2 if it changes per-character, Tier 1 only if it&#39;s truly universal).</li>
+</ul>
+<h5>2. The Override Architecture (paired contract)</h5>
+<p>Character cards&#39; system_prompt and post_history_instructions fields override the SillyTavern Chat Completion Preset&#39;s Main Prompt and Jailbreak blocks at runtime, UNLESS the card uses the {{original}} macro to splice the preset&#39;s content back in.
+<strong>Mandate:</strong>  Every character card&#39;s system_prompt and post_history_instructions MUST begin with {{original}} on its own line, followed by character-specific content.
+<strong>The division of labor:</strong></p>
+<ul>
+<li><strong>Preset Main Prompt</strong>  = engine-only (world-agnostic, character-agnostic): prose style, narration discipline, perspective rules, formatting rules, generic creative framework</li>
+<li><strong>Card</strong>  <strong>system_prompt</strong>  = character-specific only: identity, behavioral mandates, prohibitions, trigger-response pairs
+<strong>Forbidden in cards (Editor will hard-fail):</strong>  narration rules, formatting rules, perspective rules, style guidelines, generic creative framework statements, generic character embodiment principles. These are engine-level and live in the preset.
+<strong>Forbidden in preset Main Prompt (Prompt Engineer Pass 1 will hard-fail):</strong>  character names, arc names, faction names, location names, character-specific psychology language. These are character/world-specific and live in cards/lorebooks.
+If you find yourself moving content between cards and preset, verify which side of the contract it belongs on first.</li>
+</ul>
+<h5>3. Audit-vs-Apply Separation</h5>
+<p>The Editor (Phase 3), Voice Auditor (3.5), Arc Transition Auditor (3.6), Intimacy Auditor (3.7), and Prompt Engineer (5) are  <strong>read-only on draft and export files</strong> . They produce critique reports, audit reports, and recommendations — they do not modify the files they audit.
+The Architect (Phase 2) and Intimacy Architect (Phase 2.5) are the  <strong>only agents with write authority on drafts</strong> . The Compiler (Phase 4) is the only agent with write authority on Export/ JSON files — with one narrow, post-launch exception: the Prompt Engineer gains write authority on the single Export/[WorldName]_ChatPreset.json file (and only that file) under Preset Resync Mode, and the mini-Prompt-Engineer may apply three narrow preset toggles under the revise pipeline (Multi-Character Dynamics, NSFW, and the Style Contract&#39;s conditional ACTIVE-SPEAKER / DIRECTOR-CARD RULE lines). See principle #8. Both exceptions are preset-only; neither touches lorebook or card JSON.
+The Prompt Engineer&#39;s audit recommendations (Sections 7 and 8 of Prompt_Engineer_Audit.md) require  <strong>manual user application</strong>  — see Phase 5.5 in workflows/world-forge.md. This is intentional: it preserves audit reviewability and prevents self-validating corrections.
+When modifying any agent spec, do not change its read/write authority without explicit instruction. The asymmetry is load-bearing.</p>
+<h5>4. Position Rationale Requirement</h5>
+<p>Every lorebook entry produced by the pipeline must include a Position Rationale: field. Default positions (per tier and entry type, documented in agent_roles/02_The_Architect.md Section 6) get the literal value &quot;DEFAULT&quot;. Non-default positions require a one-sentence justification referencing Notes_On_functionality.md and explaining why the default fails.
+The Editor (Step 4.5) hard-fails entries with missing or shallow rationales. When editing entry templates, preserve the Position Rationale field.</p>
+<h5>5. ARC_STATE Two-Subsection Structure</h5>
+<p>ARC_STATE entries (one per arc, fires constantly during the active arc) MUST contain two clearly-labeled subsections:</p>
+<ul>
+<li><strong>Dramatic Situation:</strong> — descriptive scene-setting, world-fact register</li>
+<li><strong>Tonal Mandate (binding behavioral directive — applies to every response in this arc):</strong> — directive bullets using imperative language (resist, dominates, never default to, dwells on, elides, do not, must, never, always)
+The Tonal Mandate must contain 4-8 bullets covering active register, prose dwells on, prose elides, live scene types, activity cadence (when the arc has active principal NPCs), and hard prohibitions (where relevant). The Editor (Step 4a) hard-fails entries missing the structure or with insufficient directive language. The  <strong>activity cadence</strong>  directive (Editor Step 4a-3b) is what mechanizes NPC agency: principal NPCs have a Tier 2 §7.D  <strong>Standing Goal</strong>  (an active objective + pursuit moves), and the cadence directive instructs the model to have a present or off-screen NPC advance its goal when a scene lulls rather than freezing to wait on {{user}}. A subplot-shaped Standing Goal may optionally be staged as an  <strong>Escalation Ladder</strong>  (§7.D): 2–4 ordered stages with in-fiction observable advance conditions, a stated endpoint, and a stated {{user}} collision; the ladder&#39;s stages are permanent Tier 2 content, the  <em>active stage</em>  is Tier 3 state (named per-arc in the NPC_SHIFT stage line and by the cadence bullet, which also binds the progression discipline — advance only on stated condition, never skip, never self-resolve). The Editor&#39;s Step 4a-3c hard-fails malformed ladders and stage-less cadence bullets. The Voice Auditor&#39;s Step 3J tests that NPCs actually take that initiative and that their moves trace to a stated goal (for laddered NPCs, to the named active stage, with a stage-discipline probe). This is the arc-mode counterpart of the sandbox aliveness contract (#9); the generic engine half lives preset-side in the npc_ensemble block, the world-specific goals in Tier 3.
+This structure exists because un-split ARC_STATE entries get interpreted as world-description rather than as binding directives, causing the model to default to its own tonal disposition rather than the arc&#39;s specified register.</li>
+</ul>
+<h5>6. Revision Pipeline (Post-Launch Surgical Edits)</h5>
+<p>Once a world has shipped (Phase 5.5 complete), surgical changes use the  <strong>revision pipeline</strong>  in workflows/world-forge-revise.md — a parallel fork running mini-agents under agent_roles/revise/. The minis are smaller, scope-locked counterparts of their initial-build parents.
+<strong>The bright line:</strong>  any revision that requires changes to Master Design Section 1 (Core Concept &amp; Tone) or Section 11a (Style Contract world defaults) is  <strong>out of scope for the revision pipeline</strong> . The Reviser (Phase R0) classifies and bounces these to a full pipeline re-run via /worldforge skip phase0, reusing the existing World_Seed.md. Per-card overrides in Section 11b stay in revision scope; only world-default changes bounce.  <strong>World Mode</strong>  <strong>(arc | sandbox) lives in Section 1, so flipping it is a bright-line bounce</strong>  — the revise pipeline edits a world  <em>within</em>  its mode; converting arc↔sandbox is a full rebuild. When a world&#39;s  <em>accumulated</em>  revisions outgrow surgical editing (markers everywhere, seed badly stale, structural changes coming), the consolidation path is the Convert pipeline&#39;s  <strong>Rebaseline mode</strong>  (#10), not another revision. When the user can&#39;t even  <em>name</em>  the concern — something feels off in play but they can&#39;t point at it — /worldforge revise --brainstorm runs the Brainstormer&#39;s  <strong>revision-diagnostic posture</strong>  (#11) upstream of the Reviser to locate it divergently (reading Master_Design.md read-only, offering to fold in parked ideas from a standing Big_Brain_Storm.md if one exists, and writing a primary concern to Brainstorm_Notes.md); the Reviser then classifies that concern as normal. The Brainstormer enforces the same bright line and flags an out-of-scope diagnosis as a bounce, never a revision.
+<strong>Sandbox-aware.</strong>  The revise pipeline handles World Mode: sandbox worlds through the same minis. The Reviser reads World Mode and uses three sandbox_* scope types (sandbox_state_recalibration, sandbox_entry_modify, sandbox_entry_add) in place of the tier3_arc_* types; the NPC and intimacy scopes are mode-aware (principal/roster NPCs, the single standing Sandbox_Intimacy_Register). The Arc Transition Auditor (R3.6) never fires on a sandbox world. Because every parent agent is already sandbox-aware (#9), the minis inherit it — they document only thin sandbox deltas.
+<strong>Load-bearing properties of the revise pipeline:</strong></p>
+<ul>
+<li><strong>Cascade scope.</strong>  Mini-agents touch only files listed in the Revision Log entry&#39;s confirmed cascade. Silent scope expansion is forbidden — cross-references the user did not flag are surfaced for confirmation, not silently widened.</li>
+<li><strong>UID preservation.</strong>  The mini-Compiler reads existing Export/ JSON before rewriting, preserves UIDs on unchanged entries, assigns next-free UIDs to new entries, and never deletes unless cascade explicitly says so. This keeps running SillyTavern chat states viable across revisions.</li>
+<li><strong>Inline revision markers.</strong>  Every change site in Master_Design.md and Drafts/ gets a  or  marker. These are the canonical audit trail at the change site; the per-revision report in Drafts/Revision_R[N]_Report.md is the durable detail.  <strong>A marker annotates the single current version of a passage — it is not a license to stack.</strong>  An in-place *_modify / *_calibration edit  <em>replaces</em>  its target where it sits (mini-Refiner R1.5, mini-Architect Foundational Rule 8); leaving the old text and adding a reworded copy beneath it produces near-duplicate &quot;stacks&quot; that compound across revisions and reach the runtime prompt as conflicting copies. The mini-Editor&#39;s  <strong>Step R3.1b</strong>  hard-fails stacked/duplicated content; append mode is reserved for genuinely new content, never a reworded version of existing material. On the Export/ side, where filenames can&#39;t be renamed and JSON can&#39;t carry extra fields, the mini-Compiler maintains Export/REVISED_FILES.md — a cumulative manifest of every export file ever touched by a revision (file, latest revision, date, summary). It is the sole revision marker on the Export side; the markers themselves are stripped on the Drafts→Export transcription (mini-Compiler Foundational Rule 9, backstopped by tools/validate_export.py).</li>
+<li><strong>Audit/apply separation preserved.</strong>  The mini-Editor and mini-auditors are read-only on drafts; the mini-Prompt-Engineer is read-only on Export/ JSON except for the Chat Completion Preset, which it may modify only under narrow triggers (Multi-Character Dynamics block toggle, NSFW block toggle, Style Contract conditional-line toggles — ACTIVE-SPEAKER RULE / DIRECTOR-CARD RULE).</li>
+<li><strong>Single revision at a time.</strong>  A revise invocation captures one logical concern. Multiple unrelated changes run as separate sequential revisions; overlapping PENDING entries are forbidden.
+When editing any agent_roles/revise/* file, the parent agent&#39;s foundational rules still apply — the mini documents only the deltas. Cross-reference the parent before adding rules that should already inherit.</li>
+</ul>
+<h5>7. Notes_On_functionality.md is the SillyTavern source of truth</h5>
+<p>This file is the authoritative reference for SillyTavern&#39;s runtime behavior — prompt assembly, world info scanning, position values, lorebook flag effects, group chat field combination. When editing pipeline files, if you need to reference SillyTavern behavior, consult this file. If a position value, flag effect, or runtime mechanic appears to be wrong in this file, verify against the official SillyTavern source (https://github.com/SillyTavern/SillyTavern) before editing — this file has been corrected before for outdated content, and getting it right matters because every agent consults it.
+<strong>Authoritative position enum (line ~661 of Notes_On_functionality.md):</strong></p>
+<ul>
+<li>0: before (Before Char)</li>
+<li>1: after (After Char)</li>
+<li>2: ANTop (Author&#39;s Note Top)</li>
+<li>3: ANBottom (Author&#39;s Note Bottom)</li>
+<li>4: atDepth</li>
+<li>5: EMTop (Example Messages Top — prepended to dialogueExamples)</li>
+<li>6: EMBottom (Example Messages Bottom — appended to dialogueExamples)</li>
+<li>7: outlet</li>
+</ul>
+<h5>8. Preset Resync (Post-Launch Preset Refresh)</h5>
+<p>There are three distinct operating modes, not two: the  <strong>initial build</strong>  (/worldforge start, Phases 0–5.5), the  <strong>revision pipeline</strong>  (/worldforge revise, principle #6), and  <strong>preset resync</strong>  (/worldforge resync-preset). Resync exists because a shipped world&#39;s Export/[WorldName]_ChatPreset.json can fall behind in two independent ways: the pipeline&#39;s preset spec evolves (a reframed core block, a new optional block, a changed template flag), and/or the world&#39;s content changes through the revise pipeline in ways that surface inside preset blocks (Deep Think names the arcs, the multi-character lattice names characters) but that the revise mini-Prompt-Engineer never writes.
+It invokes the Prompt Engineer in  <strong>Preset Resync Mode</strong>  (agent_roles/05_The_Prompt_Engineer.md Section 8). The agent re-derives each block&#39;s content from the current templates/Chat_Completion_Preset_template.json + block library (agent_roles/05a_Block_Library.md) + the post-revision Drafts/Master_Design.md; writes only the blocks whose content has drifted and adds newly-warranted optional blocks;  <strong>preserves</strong>  block identifiers, prompt_order, revision-applied toggles, and the user&#39;s field-level customizations; re-runs the Section 5f Pass 1 + Pass 2 self-validation; and writes Export/Preset_Resync_Report.md.
+<strong>Load-bearing properties:</strong></p>
+<ul>
+<li><strong>Preset-only write authority.</strong>  This is the one place the Prompt Engineer writes to Export/ (see principle #3). It touches the Chat Completion Preset and nothing else — no lorebook or card JSON.</li>
+<li><strong>Makes no content changes.</strong>  Resync reflects already-applied content and spec changes into the preset. The revise pipeline  <em>makes</em>  surgical content changes; resync makes none. A world can be resynced without ever entering revise, and revised worlds can be resynced afterward.</li>
+<li><strong>Distinct from</strong>  <strong>resume phase5</strong>  <strong>.</strong>  resume phase5 re-runs the full Phase-5 audit during an in-progress build; resync is a maintenance op on an already-shipped world that only refreshes the preset.</li>
+<li><strong>Low risk.</strong>  A Chat Completion Preset is a global SillyTavern settings profile, not UID-bearing world info, so re-importing a resynced preset does not disturb running chat states. Git is the rollback path.
+See the  <strong>PRESET RESYNC</strong>  section of workflows/world-forge.md for the full operation.</li>
+</ul>
+<h5>9. World Mode: Arc vs. Sandbox</h5>
+<p>A world is built in one of two  <strong>modes</strong> , declared in World Seed Section 1 (World Mode: arc | sandbox) and recorded by the Refiner. arc is the default and the legacy behavior — every existing world is an arc world, and nothing about arc worlds changes. sandbox exists for worlds that have  <strong>no narrative arc</strong> : open-ended power-fantasy / world-director / life-sim worlds where the experience is anchored by a standing world-state rather than a progression of arcs with entry/exit triggers and dramatic beats.
+The mode is a branch  <em>through</em>  the existing pipeline,  <strong>not a parallel fork.</strong>  The same Interviewer, Refiner, Architect, Editor, Voice Auditor, Compiler, and Prompt Engineer run; sandbox mode swaps the Tier 3 spine and the large-cast NPC format. /worldforge start --sandbox is a convenience that pre-sets the Interviewer; the World Seed field is the source of truth (so a hand-written seed or a skip phase0 run carries the signal).
+<strong>What sandbox mode changes (load-bearing):</strong></p>
+<ul>
+<li><strong>Tier 3 becomes one always-active Sandbox lorebook</strong> , not  <em>N</em>  swappable arc lorebooks. It contains a SANDBOX_STATE entry (the ARC_STATE analog — same constant / ignoreBudget / position-1 mechanics and the same mandatory two-subsection structure from principle #5, with <strong>Standing Situation:</strong> replacing <strong>Dramatic Situation:</strong>) and at least one WORLD_PULSE entry (the TENSION analog at position 4 — a sustained &quot;the world is alive and reactive&quot; directive rather than a stakes countdown). Standing LOCATION entries as needed. There are no CHARACTER_STATE, NPC_SHIFT, DRAMATIC_BEAT, or arc-trigger entries, because there is no arc.</li>
+<li><strong>The SANDBOX_STATE Tonal Mandate carries the aliveness contract</strong> : NPCs pursue their own agendas, initiate scenes, and carry off-screen continuity; the world reacts to and remembers {{user}}&#39;s actions; it never freezes waiting for {{user}}. This is what anchors tone when no arc is carrying it. The contract is made concrete by per-NPC  <strong>Standing Goals</strong>  (Architect §7.D): each principal NPC carries an active objective + pursuit moves, and the aliveness directive instructs the model to have an NPC advance its goal when a scene lulls. Laddered goals (the optional §7.D Escalation Ladder, #5) work in sandbox too — but with soft state: the active stage is named in the SANDBOX_STATE aliveness bullet and anchored by WORLD_PULSE&#39;s depth-2–4 recency injection (there is no swappable arc state to carry it), with the revise pipeline&#39;s sandbox_state_recalibration as the manual ratchet when play moves past the named stage. The Voice Auditor&#39;s Step 3J tests this (initiative + goal-trace, plus stage-trace/discipline for laddered NPCs) in both modes. The same mechanic runs in arc mode via the ARC_STATE activity-cadence directive (#5) — it is mode-agnostic because NPCs exist in both modes.</li>
+<li><strong>Large casts use a two-tier NPC model</strong>  (Architect §7): a few  <strong>principal NPCs</strong>  keep the full §7.D profile; the rest are  <strong>roster NPCs</strong>  authored as a compact, fixed-schema stat block engineered for differentiation at scale. The binding rule: every roster NPC&#39;s  <strong>voice fingerprint must be unique across the roster.</strong>  This is the structural defense against the homogenization that swallows large NPC casts in sandbox play.</li>
+<li><strong>The Voice Auditor adds a distinctiveness lens</strong>  (sandbox-only Step 3I): a blind-line test across the roster that flags any two NPCs whose voices could be swapped. The arc-register checks reframe to &quot;standing register vs. SANDBOX_STATE.&quot;</li>
+<li><strong>Phase 3.6 (Arc Transition Auditor) is skipped</strong>  in sandbox mode — there are no arc seams to audit, exactly as Phase 3.7 is skipped without intimacy. Cross-arc consistency qualifiers and the ≥8-entries-per-arc floor do not apply.</li>
+<li><strong>The Prompt Engineer defaults sandbox presets</strong>  to enabling Multi-Character Dynamics, including the optional  <strong>NPC Ensemble &amp; Enrichment</strong>  block (npc_ensemble: NPC-to-NPC dialogue, ensemble prose scaling, and organic NPC enrichment within guardrails — the NPC-roster analogue of the enhanceDefinitions enhancer), and weighting Sensory Embodiment high. These are runtime engine directives in the preset, so they live on the preset side of the override contract (#2) — never in cards.
+<strong>Boundaries:</strong>  Sandbox mode does not touch SillyTavern, the override architecture (#2), audit/apply separation (#3), Position Rationale (#4), or the preset contract — it only repoints what Tier 3 contains and how a large NPC cast is authored. Intimacy (Section 8) stays orthogonal but is mode- and cast-aware: a sandbox world folds its INTIMACY_FUNCTION register into a single standing Sandbox_Intimacy_Register (no per-arc registers), and  <strong>NPC intimacy follows the principal/roster split</strong>  — principal NPCs get full Tier 2 Intimacy Profiles, roster NPCs get compact §6.5 intimate stat blocks with the same uniqueness rule (no two NPCs interchangeable in an intimate scene). The Intimacy Auditor checks NPC intimate coverage and distinctiveness (Step 3H). The  <strong>revise pipeline is sandbox-aware</strong>  (see #6): sandbox worlds are revised through the same minis using the sandbox_* scope types, with R3.6 never firing.  <em>Flipping</em>  a world between arc and sandbox is a Section 1 World Mode change and bounces out of the revise pipeline — but this is one of the canonical cases the  <strong>Convert pipeline</strong>  (#10) is built for, alongside protagonist swaps and Style Contract changes.
+See the  <strong>SANDBOX MODE</strong>  section of workflows/world-forge.md for the full operation.</li>
+</ul>
+<h5>10. Convert Pipeline (Reframe + Rebaseline)</h5>
+<p>There is a fourth operating mode alongside initial-build / revise / preset-resync:  <strong>/worldforge convert</strong>  (workflows/world-forge-convert.md). It reframes a shipped world into a new build with a different protagonist, World Mode, Core Concept, or Style Contract world defaults — exactly the change-categories principle #6 explicitly bounces out of revise. The Converter (agent_roles/Converter/00_The_Converter.md) is a single phase (C0): it reads the source&#39;s Master_Design.md (read-only), captures the user&#39;s keep/modify/regenerate decisions per source section (interview or pre-authored Convert Brief), and writes a new World_Seed.md to a target project folder. The user then runs /worldforge skip phase0 against the target; the standard pipeline (Phases 1–5.5) builds the new world end-to-end.
+The Converter has two operating modes.  <strong>Reframe</strong>  (default) is the above — something structural changes.  <strong>Rebaseline</strong>  (--rebaseline; Converter spec Section 9) is the zero-axes-replaced conversion: same world, same protagonist, rebuilt clean at its  <em>post-revision</em>  state — the consolidation path for a world whose accumulated revisions (#6) have outgrown surgical editing, optionally folding in new mechanics at seed level. The consolidation is  <strong>seed-anchored</strong>  (Step D): the source World_Seed.md carries  <strong>1:1</strong>  as the base (untouched sections keep the user&#39;s original wording verbatim, unmarked), each applied revision is written into the affected seed passage in place (replace-not-stack, at seed grade), a  <strong>divergence scan</strong>  surfaces post-seed content no revision explains (Phase 1+ elicitations) for ask-first fold-in — never silent in either direction — and the structure upgrades to the current seed template without re-wording carried content; distillation from the Master Design runs only on the explicit  <strong>--distill</strong>  flag (deliberate opt-out when the original seed is thin or outgrown) or as the announced fallback for a source with no seed file (confirming that announcement counts as passing the flag) — never as a silent default while a source seed exists. Rebaseline inverts the always-regenerate rules below (their premise — a changed protagonist — is absent): Sections 3 / 5 / 7b, intimate functions, per-card overrides, relationship-to-{{user}} content, and the four Section 4 strip rules all flip to keep/carry. Revision content carries;  markers do not (provenance moves to  comments at change sites + a manifest high-water mark). Drafts/Revision_R*.md + Export/REVISED_FILES.md become required reading with a source-integrity check (every reported revision must be visible in the Master Design — halt on drift). The honest cost is stated explicitly: the rebuild compiles  <strong>fresh UIDs, so running SillyTavern chats do not migrate</strong>  — revise preserves UIDs precisely to avoid this; rebaseline trades it for cleanliness. When the consolidation is a staging step for bigger changes,  <strong>--then-interview</strong>  (Converter Section 9 Step H) chains the hand-off into Phase 0 instead of skip phase0: the Interviewer&#39;s  <strong>seed-revision posture</strong>  (agent_roles/00_The_Interviewer.md Section 9) interviews only the user&#39;s changes against the consolidated seed — full Phase 0 depth on the delta, cascade re-elicited on coupled fields, untouched sections left alone — then signs off and hands to Phase 1 as normal.  <strong>--then-brainstorm</strong>  (same Step H) inserts the  <strong>Brainstormer&#39;s improvement posture</strong>  (agent_roles/Brainstormer/00_The_Brainstormer.md Section 8, #11) ahead of that Interviewer — for when the user wants to change the consolidated world but hasn&#39;t decided what: the Brainstormer diverges on improvement directions, writes informal Brainstorm_Notes.md (never the seed), and the seed-revision Interviewer reads those notes as proposals. It requires --rebaseline and supersedes --then-interview. The chain is also the rebaseline-side pickup point for the standing Big_Brain_Storm.md idea file (#11): the chained Brainstormer offers the source&#39;s parked ideas ask-first (its Section 8 step 1a) and, when brought in, carries the curated file forward to the target project; a plain --rebaseline (Converter Section 9 Step F) surfaces the file&#39;s existence — never reading it — and routes (fold via the chain, state an idea directly as new mechanics, or leave it parked), recording the disposition in the manifest.
+<strong>Load-bearing properties:</strong></p>
+<ul>
+<li><strong>Read-only on the source project.</strong>  The Converter never modifies any file in the source folder. Period.</li>
+<li><strong>Write-only on the target&#39;s</strong>  <strong>World_Seed.md</strong>  <strong>.</strong>  Does not write Drafts/, Export/, Master_Design.md, or any other target file. The standard pipeline produces those. Convert is upstream of the standard pipeline, not parallel to it — no downstream agent needs special handling for a converted world; the new seed and Master Design are first-class Phase 0/1 outputs.</li>
+<li><strong>Overlap floor refusal (the reskin refusal).</strong>  If the conversion replaces three or four of (setting, protagonist, factions, tone), the Converter refuses with an explicit bounce to /worldforge start. Borderline (two replaced) gets surfaced for explicit user confirmation.  <strong>Pure reskin is intentionally out of scope</strong>  — at three-axes-replaced, the source is creative reference, not a structural source. In Rebaseline mode the floor inverts into the  <strong>zero-axes gate</strong> : any replaced axis reclassifies the run as a reframe conversion (announced, not refused).</li>
+<li><strong>Always-regenerated content (reframe mode).</strong>  Section 3 ({{user}}), Section 5 (arcs / Sandbox Charter), Section 7b (test scenarios), per-arc / standing intimate functions, and per-card style overrides are always regenerated downstream — they are protagonist-shaped or downstream-derived. The Converter does not let the user mark them keep — except in Rebaseline mode, where they default to keep.</li>
+<li><strong>Role reassignment surfacing.</strong>  Five canonical cases (old protagonist → NPC; source NPC → new protagonist; power-tier shift on {{user}}; character dropped; role shift not involving the protagonist) are surfaced explicitly to the user and confirmed before the seed is written. Source content carries forward where it can; relationship-to-{{user}} content is always reauthored downstream and gets a marker comment in the seed.</li>
+<li><strong>Single source.</strong>  No mashups. The Converter accepts exactly one source world per conversion.</li>
+<li><strong>Conversion Manifest at top of seed.</strong>  Records source, intent (verbatim), overlap floor classification, per-section preservation decisions, role reassignments, and cross-references the user should be aware of. The Refiner reads this at Phase 1 to route accordingly.
+<strong>Boundaries:</strong>  Convert does not touch SillyTavern, the override architecture (#2), audit/apply separation (#3), Position Rationale (#4), or any other architectural principle. It is purely an upstream seed-production operation. It is  <em>the</em>  legitimate path for the change-categories revise bounces (Section 1, Section 11a, World Mode flips), preserving structural world-building that /worldforge start from scratch would discard.
+See the  <strong>CONVERT</strong>  section of workflows/world-forge.md and the full operation in workflows/world-forge-convert.md.</li>
+</ul>
+<h5>11. The Brainstormer (optional upstream ideation)</h5>
+<p>There is an optional step upstream of even Phase 0:  <strong>/worldforge brainstorm</strong>  (agent_roles/Brainstormer/00_The_Brainstormer.md). It is the  <strong>divergent</strong>  counterpart to the convergent Interviewer — for a user who arrives with only a vibe (an image, a mood, a single character) and nothing solid enough for the Interviewer&#39;s structured, specificity-demanding questions to land. It generates premise directions, yes-ands the user&#39;s instincts, and converges only when an idea has a pulse, then hands off to /worldforge start.
+<strong>Load-bearing properties:</strong></p>
+<ul>
+<li><strong>Writes only its notes files</strong>  — informal, unstructured ideation notes in the project folder, explicitly  <em>not</em>  a World Seed: the run-scoped Brainstorm_Notes.md (overwritten fresh every run, posture-stamped), plus the standing Big_Brain_Storm.md idea file — written on the standalone improvement door, and carried forward (curated) to the target project by the chained improvement door when the user folds it in. The Brainstormer never authors or edits World_Seed.md, never writes Drafts//Export/, never classifies tiers, and touches none of #1–#5. Seed authorship belongs to the Interviewer alone — this bright line is the whole point.</li>
+<li><strong>Optional and skippable.</strong>  A user with a developed concept skips it. Nothing downstream depends on a brainstorm having happened; the Interviewer reads Brainstorm_Notes.md only  <em>if present</em>  (its Context Manifest lists it under &quot;Load if present&quot;) and still runs the full interview, pushing for the specificity the Brainstormer deliberately left open and confirming (not inheriting) any World Mode leaning.</li>
+<li><strong>Four postures.</strong>  The default (spec Sections 1–7) is the fresh-fragment start. The  <strong>improvement posture</strong>  (spec Section 8) brainstorms  <em>changes to an existing world</em> , diverging on what to add, rework, or deepen — respecting the world&#39;s spine (an idea that flips World Mode, swaps the protagonist, or overturns the core concept is flagged as reframe-conversion territory, not an improvement). It has two doors.  <strong>Chained</strong> , via the Converter&#39;s  <strong>--then-brainstorm</strong>  flag (#10): after a rebaseline consolidates a revised world, the Brainstormer reads the consolidated World_Seed.md + Conversion Manifest, explores improvements — offering the source&#39;s parked Big_Brain_Storm.md ideas ask-first (spec Section 8 step 1a) and carrying the curated file forward to the target when brought in — writes its notes, and the chain continues into the Interviewer&#39;s seed-revision posture, which reads those notes as  <em>proposals</em> .  <strong>Standalone</strong> , via  <strong>/worldforge brainstorm --improve</strong> : no-commitment idea ping-pong against any existing world (&quot;would this fit? should something be added?&quot;) — it reads the world&#39;s current state read-only (Drafts/Master_Design.md when built, World_Seed.md otherwise) plus any prior Big_Brain_Storm.md, writes/refreshes the standing  <strong>Big_Brain_Storm.md</strong>  idea file (curated fresh each session, still-open ideas carried forward; Brainstorm_Notes.md untouched), and dispatches nothing. The organic pickup has two points: a later revise --brainstorm run  <em>asks</em>  the user whether to fold the parked ideas into its diagnosis and adapts a chosen one into the revision-diagnostic notes — the Reviser itself never reads Big_Brain_Storm.md — and a rebaseline picks them up on the convert side: the --then-brainstorm chain&#39;s Brainstormer asks the same question and carries the curated file forward to the target, while a plain --rebaseline (Converter Section 9 Step F) surfaces the file&#39;s existence without reading it and routes. The user can equally take a landed idea straight through a normal door (/worldforge revise as fresh intent, seed edits, or /worldforge convert), or leave it parked. The  <strong>revision-diagnostic posture</strong>  (spec Section 9) serves the post-launch  <em>pre-articulation</em>  case — something feels off in a shipped world but the user can&#39;t name what to revise. Invoked by /worldforge revise --brainstorm (#6), it reads Drafts/Master_Design.md read-only, diagnoses divergently (the six domain lenses as its diagnostic vocabulary, the &quot;where does it sag&quot; move as its primary instrument), and writes one primary concern (+ candidate future concerns) to Brainstorm_Notes.md; the Reviser reads that as captured intent. It enforces the same Section 1 / 11a / World Mode bright line and bounces an out-of-scope diagnosis rather than dressing it as a revision. The  <strong>adaptation posture</strong>  (spec Section 10) serves the user who arrives with an  <em>existing narrative document</em>  (a story, a fanfiction, a roleplay log) instead of a fragment. Invoked by /worldforge brainstorm --adapt &lt;document_path&gt;, it reads the document read-only and extracts the world latent in it (cast — including each character&#39;s  <strong>dialogue voice</strong>  captured with verbatim sample lines; setting; tone; the  <strong>prose style and pacing</strong>  as a sample for the Style Contract; and any  <strong>intimate register</strong>  the source shows — dynamics/explicitness/kinks — as raw material for the Intimacy Architect, Phase 2.5), then diverges on the gap between a story-to-read and a world-to-play-in — above all the  <strong>{{user}}</strong>  <strong>slot</strong>  the document&#39;s fixed POV cannot supply, which it  <em>recommends from the document&#39;s POV and confirms</em>  rather than picking blind or silently (play as the source&#39;s protagonist / a new insert / a promoted side character). It writes an adaptation-stamped Brainstorm_Notes.md — extracted world + prose sample + intimate register + the {{user}} decision + an explicit list of gaps the document didn&#39;t fill — that the Interviewer reads exactly like a fresh-start file, attributing extracted material to the source and never inventing over a gap (the bright line still holds: it extracts material, it does not author a seed or intimate structures).
+<strong>Boundaries:</strong>  the Brainstormer is upstream of the pipeline (and, in the revision-diagnostic posture, upstream of the Reviser), not a phase of it — it does not advance the Pipeline State Ledger, invoke downstream agents, or produce any first-class pipeline artifact (Brainstorm_Notes.md stays informal in all four postures). It is a front porch. Its one downstream coupling is the revision-diagnostic posture feeding the Reviser a located concern (#6); beyond that it touches no other architectural principle.
+See the  <strong>BRAINSTORM</strong>  section of workflows/world-forge.md.</li>
+</ul>
+<h5>12. NPC Memory Manifest (producer contract with the npc-memory extension)</h5>
+<p>World Forge is the  <strong>producer</strong>  side of an external  <strong>NPC Memory Contract</strong>  (schema: 1) shared with the npc-memory SillyTavern extension (which lives in the ST fork, not this repo). The extension attaches per-NPC memory keyed by a  <strong>stable id</strong>  instead of a volatile UID. World Forge&#39;s only obligation is to emit a machine-readable index — the  <strong>manifest</strong>  — as an inert World Info entry embedded in the lorebooks the Compiler already builds.</p>
+<ul>
+<li><strong>Carrier.</strong>  A normal World Info entry whose comment begins with the literal token [[NPC_MANIFEST]] and that has disable: true, key: []. disable: true keeps it out of every prompt while leaving it in the loaded world-info data, where the extension reads it. At most one per lorebook. Its content is a single JSON object: schema, optional lorebook/personas/scenes, and npcs[] (each with a stable slug id, displayName, aliases, a facets map of reserved durable keys → source entry uid, and relationships[]).</li>
+<li><strong>Stable ids are the load-bearing element.</strong>  Memory is keyed by the slug id (lowercase, non-alphanumerics → _, collapsed, trimmed — Anna Larsson → anna_larsson), derived deterministically from the canonical name and  <strong>never from the UID</strong>  (UIDs renumber on re-export; ids must not). The protagonist ({{user}}) is a persona, not an npc.</li>
+<li><strong>Identity discipline is enforced, not assumed.</strong>  The whole contract rests on naming conventions, so they are pinned at the chokepoints rather than left to chance: the Architect&#39;s  <strong>NPC/Character Identity Convention</strong>  (§7) mandates one canonical name per character used verbatim in every comment, unique across the cast, em-dash form, a controlled facet vocabulary, and one character per entry (interchangeable extras marked Shared roster entry = one shared id). The Editor&#39;s  <strong>Step 4.6</strong>  hard-fails deviations (bad comment form, name inconsistency, slug collision, unmarked multi-person entry, {{user}} as an npc). The Compiler  <strong>halts</strong>  rather than emit a colliding manifest, and tools/validate_export.py re-checks slug validity + uniqueness deterministically.  <strong>Renames are the one unfixed gap</strong>  (a changed name re-slugs and orphans memory; ids are not persisted across renames — contract §4); the revise mini-Compiler flags any rename loudly for confirmation instead of shipping it silently.</li>
+<li><strong>Purely additive, never mandatory.</strong>  The manifest changes no existing entry and emits no new file. A world without it still works — the extension degrades to prose parsing. (Note: two comment conventions exist — aggregated NPC lorebooks use NPC — Name (Facet), per-character Tier 2 lorebooks may use Name — Aspect. The extension&#39;s ^NPC — prose fallback catches the former but not the latter, so the manifest is what makes every character discoverable. The Compiler normalizes both to one npc per character — Step 7.7d.)</li>
+<li><strong>The Compiler is the only writer</strong>  (principle #3 is unchanged — manifest emission is part of normal Export JSON authoring). Each manifest is a  <strong>per-file</strong>  carrier whose facets/scenes uids resolve within its own lorebook. The revise pipeline&#39;s mini-Compiler regenerates a touched lorebook&#39;s manifest against preserved + new UIDs, keeping slug ids stable. tools/validate_export.py is the deterministic backstop (carrier flags, JSON-parse, slug validity, uid resolution).</li>
+<li><strong>Boundaries.</strong>  The manifest does not touch SillyTavern itself, the override architecture (#2), audit/apply separation (#3), Position Rationale (#4), or the preset. The contract also defines a per-message &quot;turn tag&quot; runtime lever (; fields v/actors/present/withUser/scene/location/src, with src ∈ model|card|inferred). As of MEMORY_CONTRACT.md §7 the turn tag is  <strong>consumer-owned</strong> : the npc-memory extension injects the emit-instruction (authoritative ids + scene candidates), the model supplies the per-turn judgment, and the extension parses/strips/stores it and synthesizes an inferred fallback when absent. Producer-baked emission is explicitly  <em>optional redundancy</em> , so World Forge has  <strong>no turn-tag obligation</strong>  — it stays a possible future preset/card-level enhancement, never a requirement. (Verified against the contract: World Forge&#39;s manifest payload — carrier flags, lorebook.kind enum, personas.user, npc id/displayName/aliases/facets/relationships{to,kind,note}/tags, scene {id,uid,arc,seq,title}, the slug rule, and scene-id form — matches schema 1 field-for-field; no producer change warranted.)
+See  <strong>Step 7.7</strong>  of agent_roles/04_The_Compiler.md for the full operation.</li>
+</ul>
+<hr>
+<h4>Cross-file consistency requirements</h4>
+<p>These pairs of files must stay in sync. When editing one, check the other.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>If you edit</th><th>Also check</th></tr></thead><tbody><tr><td>agent_roles/02_The_Architect.md (entry templates)</td><td>agent_roles/03_The_Editor.md (validation rules) — they validate what the Architect produces</td></tr><tr><td>agent_roles/02_The_Architect.md (card structure)</td><td>templates/Char_Card_creation.md — both define card field requirements</td></tr><tr><td>agent_roles/02_The_Architect.md / agent_roles/03_The_Editor.md (User.md persona)</td><td>templates/User_Persona_template.md — both define the {{user}} persona-description structure</td></tr><tr><td>agent_roles/05a_Block_Library.md (block library, split from 05)</td><td>agent_roles/05_The_Prompt_Engineer.md (Sections 5b–5f reference §5a/§5a-detail; Resync Mode re-derives from it) and templates/Chat_Completion_Preset_template.json — agent must produce against template structure</td></tr><tr><td>Director-card style handling (principle #2/#9 seam): agent_roles/SHARED_Style_Contract_Reference.md §3a-D Director-variant NARRATIVE PERSPECTIVE templates + §3d DIRECTOR-CARD RULE verbatim line</td><td>agent_roles/01_The_Refiner.md (Step 1.5 Pass 4 Director scan runs regardless of world default; Section 11c has_director_card + Director-flagged list; Section 11d advisory covers all focal-anchored effective perspectives), agent_roles/02_The_Architect.md (§3a-D selection for Director-flagged overrides + worked example), agent_roles/03_The_Editor.md (Step 5.6 Pass 2 hard-fails §3a prose on a Director card and §3a-D prose on a non-Director card), agent_roles/05_The_Prompt_Engineer.md + agent_roles/05a_Block_Library.md (conditional DIRECTOR-CARD RULE line in the world &lt;style_contract&gt;, Pass 1 presence/absence hard checks, resync adds a missing-but-warranted line), agent_roles/revise/05_The_Prompt_Engineer_mini.md (Trigger C has_director_card flip) — the Director criteria, the variant prose, and the verbatim rule line must read identically across all of them. The rule exists because {{char}} resolves to the Director card&#39;s  <em>name</em>  at runtime; it is the stock-ST-safe correction for &quot;focal on [Director name]&quot;</td></tr><tr><td>Notes_On_functionality.md (any correction or content change)</td><td>Notes_Quick_Reference.md — it is a DERIVED distillation (position enum, flags, assembly order, gotchas); regenerate the affected fact, never let the two disagree</td></tr><tr><td>agent_roles/04_The_Compiler.md (pre-save guards)</td><td>tools/validate_export.py — the validator deterministically re-checks the same failure modes (UTF-8/mojibake, parse, {{original}}, position enum, UID uniqueness, entry-key/UID parity, snake_case alias fields, leaked inline revision markers); changing a guard may require updating the script and vice versa</td></tr><tr><td>NPC Memory Manifest (principle #12): agent_roles/04_The_Compiler.md Step 7.7</td><td>agent_roles/revise/04_The_Compiler_mini.md (regenerates a touched lorebook&#39;s manifest against preserved/new UIDs; rename flag) and tools/validate_export.py (check_manifest: carrier flags, JSON parse, slug validity + uniqueness, facet/scene uid resolution) — the carrier format, payload shape, and slug rule must read identically across all three; the external contract lives in the ST fork (npc-memory extension), so changing the payload shape is a cross-repo change</td></tr><tr><td>NPC identity discipline the manifest depends on (principle #12): agent_roles/02_The_Architect.md §7  <strong>NPC/Character Identity Convention</strong>  (canonical name, em-dash comment form, facet vocabulary, one-character-per-entry / Shared roster entry)</td><td>agent_roles/03_The_Editor.md Step 4.6 (hard-fails comment form, name inconsistency, slug collision, multi-person entries, {{user}}-as-npc) and agent_roles/04_The_Compiler.md Step 7.7d–7.7j (derives ids/facets/aliases against it, halts on collision) and tools/validate_export.py (slug validity + uniqueness) — the canonical-name rule, comment form, and facet labels must read identically across the authoring spec, the validation gate, the emitter, and the backstop</td></tr><tr><td>Any agent spec&#39;s INPUT section</td><td>The same spec&#39;s 📂 CONTEXT MANIFEST block at the top — the manifest is the load-discipline restatement of the inputs; they must list the same files</td></tr><tr><td>agent_roles/05_The_Prompt_Engineer.md Section 8 (Preset Resync Mode)</td><td>workflows/world-forge.md PRESET RESYNC section — both define the /worldforge resync-preset operation</td></tr><tr><td>Notes_On_functionality.md (position table)</td><td>All agent files referencing positions — they cite this table</td></tr><tr><td>Any agent spec (sign-off block)</td><td>workflows/world-forge.md (phase descriptions) — phase outputs feed handoffs</td></tr><tr><td>agent_roles/02b_The_Intimacy_Architect.md</td><td>agent_roles/03d_The_Intimacy_Auditor.md — auditor validates what architect produces</td></tr><tr><td>agent_roles/03b_The_Voice_Auditor.md (Step 3 check taxonomy: register match, trigger-response, reflex misfire, NPC goal-trace, &quot;would the model invent this&quot;) and agent_roles/03d_The_Intimacy_Auditor.md (intimacy lens)</td><td>agent_roles/Auditioner/00_The_Auditioner.md — the on-demand probe  <strong>reuses these checks by reference</strong>  rather than duplicating them (Section 4 Step 3); if a check&#39;s name or semantics change, update the Auditioner&#39;s citation. Also workflows/world-forge.md AUDITION section + .agents/skills/WorldForge-Auditioner skill</td></tr><tr><td>Any parent agent in agent_roles/*.md</td><td>Its mini counterpart in agent_roles/revise/*_mini.md — the mini inherits parent&#39;s foundational rules, so changing the parent may require updating the mini&#39;s delta list</td></tr><tr><td>Revision replace-not-stack contract (principle #6 &quot;Inline revision markers&quot;): agent_roles/revise/01_The_Refiner_mini.md (R1.5 in-place merge), agent_roles/revise/02_The_Architect_mini.md (Foundational Rule 8 + R2.5/R2.6), agent_roles/revise/02b_The_Intimacy_Architect_mini.md (R2.5.x)</td><td>agent_roles/revise/03_The_Editor_mini.md (Step R3.1b no-stacking hard-fail gate) and agent_roles/revise/04_The_Compiler_mini.md (Foundational Rule 9 marker strip) and tools/validate_export.py (leaked-marker backstop) — the producers must replace in situ, the Editor must catch any residual stack, the Compiler strips the annotation; the &quot;replace, don&#39;t stack / one current version per passage&quot; rule must read identically across all of them</td></tr><tr><td>workflows/world-forge-revise.md (routing matrix)</td><td>agent_roles/revise/00_The_Reviser.md (scope types) — both must enumerate the same fourteen scope types (incl. the three sandbox_* types)</td></tr><tr><td>agent_roles/02_The_Architect.md (sandbox lorebook + Roster NPC §7.E)</td><td>agent_roles/03_The_Editor.md (sandbox validation) and agent_roles/03b_The_Voice_Auditor.md (distinctiveness lens) — Editor validates SANDBOX_STATE/WORLD_PULSE/roster format; Voice Auditor tests roster fingerprint uniqueness</td></tr><tr><td>NPC agency: Architect §7.D principal  <strong>Standing Goal</strong>  (+ optional  <strong>Escalation Ladder</strong>  — stages/conditions/endpoint/collision in Tier 2, active stage in Tier 3 via the NPC_SHIFT stage line / SANDBOX_STATE-WORLD_PULSE naming) + ARC_STATE/SANDBOX_STATE  <strong>activity cadence</strong>  directive</td><td>agent_roles/03_The_Editor.md (Step 4a-3b cadence + goal-coverage hard checks; Step 4a-3c ladder integrity + stage-named cadence), agent_roles/03b_The_Voice_Auditor.md (Step 3J initiative + goal-trace; stage-trace + stage-discipline probe for laddered NPCs), agent_roles/03c_The_Arc_Transition_Auditor.md (Check 3b ladder-stage continuity — monotonic, condition-satisfying, no off-page endpoint), agent_roles/00_The_Interviewer.md + 01_The_Refiner.md (elicit/record the goal and the ladder), templates/World_Seed_Template.md (NPC Standing Goal + Escalation Ladder fields), agent_roles/05a_Block_Library.md (npc_ensemble guardrail&#39;s ladder-execution clarification), agent_roles/05_The_Prompt_Engineer.md (Section 5.0b ladder-aware npc_ensemble selection hint for arc worlds + checklist line) — the goal/ladder is authored once and pointed at by the cadence directive; all must stay in sync across arc and sandbox</td></tr><tr><td>Relationship/belief state: Architect CHARACTER_STATE item 6 + NPC_SHIFT relational-stance delta (arc); standing accumulation via SANDBOX_STATE aliveness (sandbox)</td><td>agent_roles/03c_The_Arc_Transition_Auditor.md (Check 3b — continuity teeth: no teleporting bonds, un-caused belief flips, or silent memory resets), agent_roles/03_The_Editor.md (relational-stance delta-integrity + coverage soft-flag), agent_roles/00_The_Interviewer.md + 01_The_Refiner.md (elicit/record the drift trajectory + operative belief), templates/World_Seed_Template.md (§4 &quot;How it drifts&quot;/&quot;Operative belief&quot; + arc &quot;Relationship shifts this arc&quot;) — drift is authored per-arc as delta only, and Check 3b verifies it is earned; arc-mode only (sandbox has no seam)</td></tr><tr><td>Trauma de-escalation: Architect CHARACTER_STATE item 7 (trauma trajectory delta, arc)</td><td>agent_roles/03c_The_Arc_Transition_Auditor.md (Check 2 trauma-response continuity — fades shown, never sudden vanishings/un-caused re-activations), agent_roles/03b_The_Voice_Auditor.md (Step 3A active-vs-dormant match against item 7), agent_roles/03_The_Editor.md (trauma-trajectory delta-integrity + coverage soft-flag), agent_roles/00_The_Interviewer.md + 01_The_Refiner.md (elicit/record which trigger fades in which arc), templates/World_Seed_Template.md (§4 &quot;Trauma trajectory&quot; + arc &quot;Trauma shifts this arc&quot;) — authored per-arc as delta; intimate-context trauma rides the per-arc Intimacy Register instead; arc-mode only (sandbox trauma is static Tier 2 substrate)</td></tr><tr><td>World Mode handling in any one of Interviewer / Refiner / Architect / Editor / Voice Auditor / Intimacy Architect / Intimacy Auditor / Compiler / Prompt Engineer</td><td>The others + workflows/world-forge.md SANDBOX MODE section + templates/World_Seed_Template.md (§1 World Mode, §5 conditional, §4 NPC intimacy) — the arc/sandbox branch (incl. the standing Sandbox Intimacy Register and NPC principal/roster intimacy) must read consistently end-to-end</td></tr><tr><td>agent_roles/Converter/00_The_Converter.md (preservation matrix, Conversion Manifest format, Section 9 Rebaseline mode)</td><td>templates/Convert_Brief_Template.md (Sections 4a–4h mirror the matrix row-for-row;  <em>Rebaseline:</em>  notes mirror the Section 9 inversions) + workflows/world-forge-convert.md (operating modes incl. REBASELINE MODE, overlap floor / zero-axes gate, role reassignment cases) + templates/World_Seed_Template.md (the seed structure the Converter writes against — section numbering, required fields, conventions) — Convert is a three-file contract; changing any one requires checking the others</td></tr><tr><td>NPC agency / relationship-belief state / trauma-trajectory machinery (Architect §7.D Standing Goal + Escalation Ladder, World Seed §4 How it drifts + Operative belief + Trauma trajectory, Refiner/Architect/Editor/Voice-Auditor/Arc-Transition-Auditor rules)</td><td>agent_roles/Converter/00_The_Converter.md (Section 4 carry-across rules + preservation matrix) and templates/Convert_Brief_Template.md (Section 4e reminders) — these Section 4 fields couple to the regenerated parts of a converted seed (Section 3 protagonist + Section 5 arcs). The Converter&#39;s carry-across rules (preserve / strip / mark-for-reauthor; the ladder rides the Standing Goal rule with per-stage and collision audits, active stage never carries) must stay consistent with how the parents author the fields; if the field set changes, update the Converter&#39;s Section 4 handling at the same time</td></tr><tr><td>agent_roles/00_The_Interviewer.md (Section 3 protagonist questioning; Section 9 seed-revision posture)</td><td>agent_roles/Converter/00_The_Converter.md (Step 4 question 7 reuses the Interviewer&#39;s Section 3 depth standard; Section 9 Step H dispatches the Interviewer&#39;s seed-revision posture for --then-interview / --then-brainstorm) — Convert authors a new protagonist with Interviewer-grade depth and chains rebaseline into the posture; if either side&#39;s contract evolves, the other inherits</td></tr><tr><td>agent_roles/Brainstormer/00_The_Brainstormer.md (optional ideation, #11)</td><td>agent_roles/00_The_Interviewer.md (Context Manifest &quot;Load if present&quot; + Section 4 interview-open note read Brainstorm_Notes.md as starting material; Section 9 reads improvement-posture notes as  <em>proposals</em> ), agent_roles/revise/00_The_Reviser.md (--brainstorm invocation + INPUT reads revision-diagnostic Brainstorm_Notes.md as captured intent + Step 2 off-ramp), agent_roles/Converter/00_The_Converter.md (Section 9 Step H --then-brainstorm dispatches the Brainstormer&#39;s improvement posture ahead of the seed-revision Interviewer), workflows/world-forge.md + workflows/world-forge-convert.md + workflows/world-forge-revise.md (BRAINSTORM section, trigger rows, --then-brainstorm chain, revise --brainstorm diagnostic front door), .agents/skills/WorldForge-Brainstormer skill — the Brainstormer&#39;s four postures (incl. the --adapt adaptation posture, which the Interviewer reads as a fresh-start-equivalent stamp, and the improvement posture&#39;s two doors: the --then-brainstorm chain writing run-scoped Brainstorm_Notes.md and the standalone no-commitment brainstorm --improve writing the standing Big_Brain_Storm.md), the --then-brainstorm chain, the revise --brainstorm diagnostic, and the Big_Brain_Storm.md pickup contract (revision-diagnostic step 1a and the chained improvement door&#39;s step 1a  <em>offer</em>  to adapt a parked idea, the chained door carrying the curated file forward to the target; the Converter&#39;s rebaseline Step F surfaces the file&#39;s existence only, never reading it; the Reviser and Interviewer never read the standing file itself) must read consistently across the spec, the Interviewer and Reviser that consume its notes, the Converter that invokes it, the orchestrators, and the Antigravity Skills</td></tr><tr><td>World Calendar seam (contracts/WORLD_FORGE_SYNC.md §5 — the [[WORLD_CALENDAR]] Scene Tracker date seed): templates/World_Seed_Template.md (§2g calendar fields)</td><td>agent_roles/00_The_Interviewer.md (Section 2 optional elicitation) + agent_roles/01_The_Refiner.md (Master Design Section 1 World Calendar (Scene Tracker seed) line, 0-indexed months / 0–6 weekday) + agent_roles/02_The_Architect.md (§6 [[WORLD_CALENDAR]] carrier block) + agent_roles/03_The_Editor.md (Step 4.7 carrier validation) + agent_roles/04_The_Compiler.md (Step 7.8 emission into the World Lorebook) + tools/validate_export.py (check_world_calendar, WARN-only) — the carrier is  <strong>enabled</strong>  (disable: false, the one flag that differs from the [[NPC_MANIFEST]] carrier so the Scene Tracker&#39;s !disable read sees it), inert (key: [], constant: false), months  <strong>0-indexed</strong>  (0 = January); the marker, the flag, and the indexing must read identically across the seed field, the four agents, the validator, and the canonical contract. Cascades: agent_roles/revise/04_The_Compiler_mini.md  <strong>preserves</strong>  an existing calendar carrier through a World-lorebook rewrite (never drops it, never adds one; editing the calendar is an ordinary tier1_world_rule_modify whose minis inherit the parent §6/Step 4.7), and the Converter three-file contract (agent_roles/Converter/00_The_Converter.md preservation matrix + Section 2 seed-writing, templates/Convert_Brief_Template.md §4d) carries it across a reframe when the era is unchanged / regenerates it when the setting&#39;s time period differs / keeps it by default in rebaseline. The external consumer is the world-forge extension in the ST fork, so changing the payload shape is a cross-repo change</td></tr><tr><td>Dice Oracle seam (contracts/DICE_ORACLE.md — the [[DICE_TABLES]] Scene Tracker roll-table seed, schema 2): templates/World_Seed_Template.md (§2h pools / outcome scales / branches / tense / duration)</td><td>agent_roles/Brainstormer/00_The_Brainstormer.md (Section 4 + Cast &amp; Voice lens float the dice oracle as a  <strong>leaning-only</strong>  suggestion when the premise leans on recounted off-screen pasts / a conjured temp cast — across default / improvement / adaptation, and as a diagnostic hook in the revision-diagnostic posture; never authors — the Interviewer/Architect do) + agent_roles/00_The_Interviewer.md (Section 2 optional elicitation, incl. recount-vs-event tense + duration) + agent_roles/01_The_Refiner.md (Master Design Section 1 Dice Oracle Tables (Scene Tracker seed) line, carrying tense/duration) + agent_roles/02_The_Architect.md (§6 [[DICE_TABLES]] carrier block: schema: 2, pools/procedures/gated steps, optional per-procedure mode recount/event + turns) + agent_roles/03_The_Editor.md (Step 4.8 carrier validation) + agent_roles/04_The_Compiler.md (Step 7.9 emission into the World Lorebook) + tools/validate_export.py (check_dice_tables, WARN-only) — the carrier is  <strong>enabled</strong>  (disable: false, same convention as [[WORLD_CALENDAR]] so the Scene Tracker&#39;s !disable read sees it), inert (key: [], constant: false); schema: 2, the [[DICE_TABLES]] marker, the enabled flag, and the mode/turns fields must read identically across the seed field, the four agents, the validator, and the canonical contract. The  <strong>&quot;roll the shape, not the choreography&quot;</strong>  authoring guidance (one situation = one procedure with gated participant  <em>trait</em>  steps, never per-participant procedures/rolls or per-participant choreography/finishes; count &gt; 1 states simultaneity in text + an encounter-level configuration + one joint outcome; framing fixes register not order) is likewise a set-piece: it must read consistently across templates/World_Seed_Template.md §2h (author callout), agent_roles/00_The_Interviewer.md (elicitation steer), agent_roles/02_The_Architect.md §6 (&quot;Roll the shape, not the choreography&quot;), agent_roles/03_The_Editor.md Step 4.8 (soft-flags), and contracts/DICE_ORACLE.md §6.1.  <strong>Runtime interpretation (the engine half of the what/how split) lives in a preset block:</strong>  the optional dice_oracle block — agent_roles/05a_Block_Library.md (menu entry + §5a-detail content requirements: skeleton-not-script, never recite, multi-participant = one continuous scene, honor tense, defer the  <em>how</em>  to the world; engine-level, no world specifics) selected by agent_roles/05_The_Prompt_Engineer.md (5.0b dice-oracle block hint: default-include iff the world declares a [[DICE_TABLES]] oracle; Pass 1 presence-iff-oracle + no-specifics check; sign-off checklist; resync ADD) and toggled on by agent_roles/revise/05_The_Prompt_Engineer_mini.md (Trigger F, when a revision adds the world&#39;s first dice oracle). It is the &lt;dice_oracle&gt;-channel sibling of Block 4 Lore Integration&#39;s anti-recitation rule and sits on the preset (engine) side of the override contract (#2) — never in cards. Cascades: editing/correcting the tables is an ordinary tier1_world_rule_modify — the  <strong>remediation path</strong>  for a shipped oracle that serializes or over-rolls choreography is documented across agent_roles/revise/00_The_Reviser.md (the tier1_world_rule_modify row names the dice-carrier target + possible paired intimacy_register_modify), agent_roles/revise/02_The_Architect_mini.md (Step R2.5 inert-carrier edit: rewrite the payload in place applying parent §6, incl. shape-not-choreography), and agent_roles/revise/03_The_Editor_mini.md (Step R3.1 revalidates per parent Step 4.8 + the shape-not-choreography soft-flags); agent_roles/revise/04_The_Compiler_mini.md  <strong>preserves</strong>  an existing dice carrier&#39;s UID through a World-lorebook rewrite (never drops it, never adds one). The Converter three-file contract (agent_roles/Converter/00_The_Converter.md preservation-matrix §2h row, templates/Convert_Brief_Template.md §4d) carries it across a reframe when the conjured-fact situations still apply / regenerates or drops it when the protagonist or setting change makes them irrelevant / keeps it by default in rebaseline. The external consumer is the world-forge extension in the ST fork, so changing the payload shape is a cross-repo change</td></tr><tr><td>Runtime Directives channel (World Seed §9 → Master Design §12 → preset blocks): templates/World_Seed_Template.md (§9 directive format: behavior + wrong-response example + scope; routing guardrails)</td><td>agent_roles/00_The_Interviewer.md (interview-structure SECTION 9 elicitation + reroute rules + sign-off line — not the spec&#39;s own Section 9, which is the seed-revision posture) + agent_roles/01_The_Refiner.md (Step 1.6 classification, Master Design Section 12 RD-N record format, sign-off) + agent_roles/05_The_Prompt_Engineer.md (5.0b Step 2b intake, Runtime Directive Coverage table, Pass 2 check, resync Step 2 re-derivation) + agent_roles/05a_Block_Library.md (directives as a custom-block source) + workflows/world-forge.md (Phase 0/1/5 descriptions) + the Converter three-file contract (agent_roles/Converter/00_The_Converter.md matrix row + Step 6 Section 9 authoring, templates/Convert_Brief_Template.md §4i) — the directive record shape (behavior/wrong_response/scope), the ~6-directive ceiling, and the  <strong>forbidden-target rule</strong>  (directives never land in Main, Jailbreak, Formatting, or inside &lt;style_contract&gt; — those are the world-agnostic engine surfaces of principle #2) must read identically across the seed field, the three agents, the block library, the orchestrator, and the Convert contract</td></tr></tbody></table>
+<hr>
+<h4>Editing protocol</h4>
+<p>When making changes to pipeline files, follow this order:</p>
+<ol>
+<li><strong>Read the file you&#39;re about to edit completely.</strong>  Pipeline files have load-bearing structural conventions (sign-off blocks, step numbering, sub-section headers). Don&#39;t edit blindly.</li>
+<li><strong>Check the cross-file consistency table above.</strong>  If your change touches a paired file, plan the edit for both at once.</li>
+<li><strong>Preserve sign-off blocks.</strong>  Each agent ends with a ## ✅ [AGENT] SIGN-OFF block listing certification items. When adding new validation requirements, add corresponding sign-off items.</li>
+<li><strong>Preserve step numbering.</strong>  The Editor uses step numbers like 1, 2, 3, 4, 4a, 4.5, 5, 6, 7. New steps insert with sub-numbering (e.g., 4a) rather than renumbering existing steps.</li>
+<li><strong>For markdown documents, validate code fence balance after editing</strong>  (every must have a closing).</li>
+<li><strong>Keep each agent&#39;s</strong>  <strong>📂 CONTEXT MANIFEST</strong>  <strong>in sync with its INPUT section.</strong>  Every main agent spec opens with a manifest telling the runtime agent exactly what to load (small-context models depend on it). If your edit changes what an agent reads — a new input file, a new template, a section moved to another file — update the manifest in the same edit.</li>
+<li><strong>Use git aggressively.</strong>  Commit before architectural changes. Branch for experiments. The pipeline has gotten complex enough that &quot;what did we decide three weeks ago and why&quot; is a real question; git history is the answer.</li>
+<li><strong>Record the change in</strong>  <strong>CHANGELOG.md</strong>  <strong>— always, in the same change.</strong>  Every new feature, new agent/posture/mode, behavior change, or bug fix to the pipeline gets a CHANGELOG.md entry. Add it as part of the same edit/commit (and PR) that makes the change — never as an afterthought, and never leave it for &quot;later.&quot; Use the existing format: newest entry first, ## YYYY-MM-DD — short title (#PR if there is one), a short context paragraph, then ### Added / ### Changed / ### Fixed / ### Removed sections naming the files touched. Pure typo or wording fixes that don&#39;t change how the pipeline behaves don&#39;t need an entry; anything that changes behavior, structure, or an agent&#39;s contract does. When in doubt, add one.</li>
+</ol>
+<hr>
+<h4>Common failure modes to avoid</h4>
+<p>These are mistakes that have been made before and produce subtle bugs:</p>
+<ul>
+<li><strong>Adding engine instructions to a card template.</strong>  The override architecture forbids this. Engine instructions live in the preset Main Prompt.</li>
+<li><strong>Adding character/world specifics to the preset Main Prompt.</strong>  Same architecture, inverse direction. Specifics live in cards and lorebooks.</li>
+<li><strong>Using lorebook position values without consulting Notes_On_functionality.md.</strong>  Position 5 is EMTop (prepended), not &quot;Before Example Messages&quot; or &quot;After Example Dialogue&quot; — verify before writing.</li>
+<li><strong>Marking an entry &quot;DEFAULT&quot; in Position Rationale when it isn&#39;t actually using defaults.</strong>  The Editor&#39;s 4.5b check catches this; produce honest rationales.</li>
+<li><strong>Writing audit/recommendation content as if the auditor will apply it.</strong>  Auditor agents are read-only on the files they audit. Use &quot;recommend&quot; language consistently.</li>
+<li><strong>Conflating ARC_STATE descriptive content with directive content.</strong>  Use the two-subsection structure; don&#39;t merge them. The sandbox SANDBOX_STATE entry inherits the same rule (<strong>Standing Situation:</strong> descriptive, <strong>Tonal Mandate:</strong> directive).</li>
+<li><strong>Authoring a sandbox NPC roster with overlapping voice fingerprints.</strong>  At sandbox scale the failure mode is cross-NPC homogenization, not per-NPC infidelity. Every roster NPC&#39;s voice fingerprint must be distinct enough that the Voice Auditor&#39;s blind-line test (Step 3I) can tell them apart.</li>
+<li><strong>Forcing a sandbox world through arc machinery.</strong>  Don&#39;t author CHARACTER_STATE/NPC_SHIFT/DRAMATIC_BEAT/arc triggers for a World Mode: sandbox world — Tier 3 is the single Sandbox lorebook (SANDBOX_STATE + WORLD_PULSE). Conversely, don&#39;t apply the sandbox format to an arc world.</li>
+<li><strong>Keying lorebook entries by sequential position instead of by UID.</strong>  ST stores and looks up world-info entries as entries[uid]; an entry keyed &quot;1&quot; with &quot;uid&quot;: 20 imports without error and then never renders in the World Info editor (GitHub issue #31). Every entry&#39;s object key must equal String(uid) — Compiler Foundational Rule 9, deterministically re-checked by tools/validate_export.py. The same issue covered the snake_case alias fields (case_sensitive, match_whole_words, use_regex, characterFilterNames/characterFilterExclude) — those belong to the embedded character_book card format, not standalone lorebooks (Rule 10).</li>
+<li><strong>Keying the NPC Memory Manifest by UID instead of by stable slug.</strong>  Memory persistence depends on slug ids derived from the canonical name (principle #12), not UIDs — UIDs renumber on re-export. Each manifest is per-file: its facets/scenes uids must resolve within its own lorebook (Compiler Step 7.7h), and a lorebook&#39;s manifest is regenerated against that file&#39;s preserved + new UIDs whenever it is recompiled.</li>
+<li><strong>Editing</strong>  <strong>Notes_On_functionality.md</strong>  <strong>based on memory of how SillyTavern works.</strong>  Always verify against the official ST source if changing this file.</li>
+<li><strong>Adding a new pipeline phase or agent without updating</strong>  <strong>workflows/world-forge.md</strong>  <strong>.</strong>  Orchestration is the source of truth for what runs when.</li>
+<li><strong>Writing Export JSON through PowerShell (Compiler / mini-Compiler).</strong>  Windows PowerShell Out-File / Set-Content / &gt; re-encode to UTF-16 / Windows-1252 and corrupt the em-dashes (—), curly quotes, and accented names that fill lorebook and card content into mojibake (— → â€&quot;). The mangled file still passes JSON.parse, so the &quot;JSON parses&quot; guard never catches it. Write JSON as UTF-8 via the file-write tool directly or a  <strong>Python / Node</strong>  script, and after writing grep for â€ / Ã (expect zero). See the Compiler&#39;s FILE-WRITING &amp; ENCODING guard. python tools/validate_export.py Export/ checks for exactly this corruption (plus parse, {{original}}, and position-enum failures) read-only — run it after every compile.</li>
+</ul>
+<hr>
+<h4>Working style notes for AI agents</h4>
+<p>The project owner (Andrei) has a specific working style that produces good outcomes:</p>
+<ul>
+<li><strong>Decisions before implementation.</strong>  When proposing changes, present options with tradeoffs and wait for explicit approval before writing patches. Multi-file changes especially benefit from a &quot;final scope confirmed?&quot; gate.</li>
+<li><strong>Push back honestly.</strong>  When a proposed change would harm the architecture or solve a non-existent problem, say so directly. Several improvements to this pipeline came from agents pushing back on requests that would have introduced complexity without value.</li>
+<li><strong>Solve actual problems, not anticipated ones.</strong>  &quot;Build one manually first, then come back if I find friction points&quot; is the preferred pattern over speculative documentation.</li>
+<li><strong>Surface latent bugs you notice during other work.</strong>  When fixing one thing, if you notice another thing that&#39;s wrong, flag it separately rather than fixing it silently or ignoring it.</li>
+<li><strong>Verify against authoritative sources.</strong>  Memory of how SillyTavern works is unreliable; the official source and Notes_On_functionality.md are the references.</li>
+</ul>
+<hr>
+<h4>Out of scope for this repo</h4>
+<p>Do not, without explicit instruction:</p>
+<ul>
+<li>Modify SillyTavern itself (this repo produces inputs for ST, not changes to ST)</li>
+<li>Add language-specific code (Python, JavaScript, etc.) — the pipeline is pure markdown/JSON.  <strong>One standing exception, explicitly approved 2026-06-10:</strong>  tools/validate_export.py, a stdlib-only, strictly read-only validator for Export/ JSON (UTF-8/mojibake, parse, {{original}}, position enum, UID uniqueness, entry-key/UID parity, snake_case alias fields, leaked inline revision markers). It is a deterministic backstop for the Compiler&#39;s guards, not a replacement for them. Do not extend it into anything that modifies files, and do not add further scripts without the same explicit approval.</li>
+<li>Add CI/CD, test frameworks, or build configuration — there is nothing to compile or deploy</li>
+<li>Add dependencies of any kind</li>
+<li>Refactor file paths or folder structure (every agent references specific paths)</li>
+<li>Generate world content (worlds are produced by running the pipeline against a user&#39;s World Seed; this repo defines the pipeline, not specific worlds — except for Samples/)</li>
+<li>Add automated linting that modifies files (validation logic belongs in agent specs, not as separate tooling; the read-only tools/validate_export.py is the one sanctioned exception precisely because it modifies nothing)</li>
+</ul>
+<hr>
+<h4>Where to learn more</h4>
+<ul>
+<li><strong>Pipeline overview:</strong>  README.md (human-facing) and workflows/world-forge.md (agent-facing orchestrator)</li>
+<li><strong>SillyTavern runtime mechanics:</strong>  Notes_On_functionality.md</li>
+<li><strong>Per-phase agent specs:</strong>  agent_roles/*.md</li>
+<li><strong>Output structural targets:</strong>  templates/<em>.md and templates/</em>.json</li>
+<li><strong>Sample world outputs:</strong>  Samples/
+Idea: una sorta di giuramento per i nuovi membri di un pack che consiste nel ripetere le 10 leggi e per ogni legge eseguire un tocco/sfioramento/bacio all&#39;alpha a cui si sta giurando
+ᛚ. Eðli er eigi ørlög. (Biology is not Destiny) ᛖ. Vargflokkar eru ættir. (Packs are Families) ᚦ. Forysta er unnin ok haldin. (Leadership is earned) ᚨ. Hverr ulfr hefir sinn stað. (Every Wolf has a Niche) ᚱ. Siðr breytisk. (Culture evolves) ᚲ. Trú ok saga eru skilin. (Faith &amp; History separate) ᚷ. Flokkrinn lifir framar hinum eina. (Pack before Individual)
+<strong>Gemini</strong> : Ecco una struttura completa e suggestiva per il  <strong>Rituale di Giuramento delle Leggi LSE (Eiða-Siðr)</strong> , pensata per essere inserita come elemento di Lore / Tradizione nel  <em>SvartúlfrVerse</em> .
+Può essere integrata nei profili dei personaggi, nelle guide al world-building o nei file di Lorebook.</li>
+</ul>
+<hr>
+<h3>🐺 EÍÐA-SIÐR: Il Giuramento del Branco Svartúlfr</h3>
+<p>L&#39; <strong>Eíða-Siðr</strong>  (o  <em>Rituale del Legame Tattile</em> ) è l&#39;antico rito sociale e biologico con cui un lupo (Beta, Omega o Alpha aggregato) entra a far parte del branco di un Alpha Dominante.
+Non è una semplice recitazione formale: è un  <strong>atto somatico e sensoriale</strong> . Il neofita recita ciascuna delle sette leggi tradizionali in Lingua Madre ( <em>Forn-Tunga</em> ), e per ogni enunciato offre o riceve un preciso contatto fisico con l&#39;Alpha. Questo contatto stimola l&#39;emissione dei feromoni di sottomissione/appartenenza e fissa l&#39;imprinting biologico del branco.</p>
+<hr>
+<h5>Il Rituale Passaggio per Passaggio</h5>
+<h6>1. ᛚ —  <em>Eðli er eigi ørlög.</em></h6>
+<ul>
+<li><strong>Significato:</strong>   <em>La Biologia non è Destino.</em></li>
+<li><strong>Gesto Tattile:</strong>   <strong>Il Tocco della Fronte (Pressione dei Teschi).</strong></li>
+<li><strong>Azione:</strong>  Il giurante appoggia la propria fronte contro la fronte dell&#39;Alpha. Rappresenta la priorità della mente, della volontà e della scelta consapevole rispetto alle sole pulsioni biologiche e di rango.</li>
+</ul>
+<h6>2. ᛖ —  <em>Vargflokkar eru ættir.</em></h6>
+<ul>
+<li><strong>Significato:</strong>   <em>I Branchi sono Famiglie.</em></li>
+<li><strong>Gesto Tattile:</strong>   <strong>Sfrego della Guancia e della Mandibola (Scambio del Profumo).</strong></li>
+<li><strong>Azione:</strong>  Il giurante strofina lentamente la guancia e l&#39;incavo del collo contro la mandibola dell&#39;Alpha, depositando il proprio profumo naturale sull&#39;arteria carotide dell&#39;Alpha per mescolare le fragranze di appartenenza.</li>
+</ul>
+<h6>3. ᚦ —  <em>Forysta er unnin ok haldin.</em></h6>
+<ul>
+<li><strong>Significato:</strong>   <em>La Leadership si guadagna e si mantiene.</em></li>
+<li><strong>Gesto Tattile:</strong>   <strong>La Presa del Polso/Avambraccio (Il Stringere della Forza).</strong></li>
+<li><strong>Azione:</strong>  L&#39;Alpha afferra saldamente l&#39;avambraccio del giurante, e il giurante ricambia la presa. Un test fisico di tensione muscolare e fiducia reciproca: il potere è riconosciuto, non regalato.</li>
+</ul>
+<h6>4. ᚨ —  <em>Hverr ulfr hefir sinn stað.</em></h6>
+<ul>
+<li><strong>Significato:</strong>   <em>Ogni Lupo ha una Nicchia.</em></li>
+<li><strong>Gesto Tattile:</strong>   <strong>Il Tocco delle Mani sul Torace (Il Palpito del Cuore).</strong></li>
+<li><strong>Azione:</strong>  Il giurante posa il palmo piatto sul centro del petto dell&#39;Alpha (sopra lo sterno), sentendone il battito e riconoscendo lo spazio biologico e il ruolo che gli viene assegnato all&#39;interno del branco.</li>
+</ul>
+<h6>5. ᚱ —  <em>Siðr breytisk.</em></h6>
+<ul>
+<li><strong>Significato:</strong>   <em>La Cultura evolve.</em></li>
+<li><strong>Gesto Tattile:</strong>   <strong>Lo Sfioramento delle Spalle (Il Passo Affiancato).</strong></li>
+<li><strong>Azione:</strong>  Il giurante si sposta leggermente di lato e sfiora con la propria spalla quella dell&#39;Alpha. Simboleggia il camminare insieme verso il futuro, pronti al cambiamento delle stagioni e dei tempi.</li>
+</ul>
+<h6>6. ᚲ —  <em>Trú ok saga eru skilin.</em></h6>
+<ul>
+<li><strong>Significato:</strong>   <em>Fede e Storia sono separate.</em></li>
+<li><strong>Gesto Tattile:</strong>   <strong>Il Tocco delle Tempie o degli Occhi (La Visione Chiara).</strong></li>
+<li><strong>Azione:</strong>  L&#39;Alpha sfiora leggermente con due dita il lato degli occhi o la tempia del giurante. Rappresenta la lucidità di giudizio, la verità dei fatti e la separazione dei miti dalla realtà storica del branco.</li>
+</ul>
+<h6>7. ᚷ —  <em>Flokkrinn lifir framar hinum eina.</em></h6>
+<ul>
+<li><strong>Significato:</strong>   <em>Il Branco viene prima dell&#39;Individuo.</em></li>
+<li><strong>Gesto Tattile:</strong>   <strong>Il Bacio sulla Gola / Esposizione della Giugulare (Sottomissione Finale).</strong></li>
+<li><strong>Azione:</strong>  Il giurante reclina completamente il capo verso l&#39;alto ed espone la gola, consentendo all&#39;Alpha di posarvi le labbra o un leggero respiro caldo (un bacio rituale sulla vena giugulare). È la massima prova di fiducia: affidare la propria vita e la propria vulnerabilità alla protezione del gruppo.</li>
+</ul>
+<hr>
+<h5>Integrazione per i File di Roleplay / Lorebook</h5>
+<p>Se vuoi inserire questo rituale all&#39;interno del tuo progetto, puoi riassumerlo in una scheda di lore con le seguenti keyword e tag:</p>
+<pre><code class="language-markdown">[LORE: Eíða-Siðr / Oath of the Ten Laws]
+- Type: Cultural &amp; Biological Ritual (LSE Social Structure)
+- Triggers: Pack initiation, Oath-taking, Alpha submission, Svartúlfr tradition
+- Summary: The solemn rite of joining the Douglas-Bloodmoon pack. The recruit recites the ancient Scandinavian laws of the pack while executing seven tactile contacts with the dominant Alpha to bind scents, establish hierarchy, and exchange pheromonal acceptance.
+
+</code></pre>
+<p><strong>User</strong> : Ci sta ma preferirei che tutti i gesti venissero fatti mentre si é di fronte all&#39;alpha
+<strong>Gemini</strong> : Ecco la versione revisionata dell&#39; <strong>Eíða-Siðr</strong> , modificata per garantire che il giurante mantenga una  <strong>postura rigorosamente frontale (petto a petto / viso a viso)</strong>  di fronte all&#39;Alpha per l&#39;intera durata del rito, senza spostamenti laterali o cambio di angolazione.</p>
+<hr>
+<h3>🐺 EÍÐA-SIÐR: Il Giuramento Frontale del Branco Svartúlfr</h3>
+<p>L&#39; <strong>Eíða-Siðr</strong>  è il rito di sottomissione, alleanza e imprinting biologico con cui un nuovo membro entra a far parte del branco.
+Il giurante rimane  <strong>faccia a faccia</strong>  con l&#39;Alpha durante tutte e sette le leggi. Il contatto fisico frontale costante stimola l&#39;interscambio feromonale e stabilisce visivamente la gerarchia, la fiducia e il rispetto reciproco.</p>
+<hr>
+<h5>Il Rituale Passaggio per Passaggio (Postura Frontale)</h5>
+<h6>1. ᛚ —  <em>Eðli er eigi ørlög.</em></h6>
+<ul>
+<li><strong>Significato:</strong>   <em>La Biologia non è Destino.</em></li>
+<li><strong>Gesto Tattile:</strong>   <strong>Pressione delle Fronti (Contatto Visivo e Mentale).</strong></li>
+<li><strong>Azione:</strong>  Il giurante, di fronte all&#39;Alpha, inclina la testa in avanti fino ad appoggiare la propria fronte contro quella dell&#39;Alpha. Gli occhi si incrociano a distanza ravvicinata prima che il contatto avvenga, simboleggiando la scelta e la volontà libera rispetto al mero istinto.</li>
+</ul>
+<h6>2. ᛖ —  <em>Vargflokkar eru ættir.</em></h6>
+<ul>
+<li><strong>Significato:</strong>   <em>I Branchi sono Famiglie.</em></li>
+<li><strong>Gesto Tattile:</strong>   <strong>Inclinazione del Capo e Sfrego della Guancia (Incrocio dei Profumi).</strong></li>
+<li><strong>Azione:</strong>  Rimanendo esattamente di fronte all&#39;Alpha, il giurante inclina la testa di lato e strofina delicatamente la propria guancia contro la guancia e la mandibola dell&#39;Alpha. I profumi primari delle ghiandole facciali si mescolano frontalmente.</li>
+</ul>
+<h6>3. ᚦ —  <em>Forysta er unnin ok haldin.</em></h6>
+<ul>
+<li><strong>Significato:</strong>   <em>La Leadership si guadagna e si mantiene.</em></li>
+<li><strong>Gesto Tattile:</strong>   <strong>Presa Frontale degli Avambracci.</strong></li>
+<li><strong>Azione:</strong>  Entrambi sollevano le braccia: l&#39;Alpha afferra l&#39;avambraccio del giurante e il giurante afferra l&#39;avambraccio dell&#39;Alpha in una salda presa guerriera frontale. Una stretta di tensione e misurazione muscolare diretta.</li>
+</ul>
+<h6>4. ᚨ —  <em>Hverr ulfr hefir sinn stað.</em></h6>
+<ul>
+<li><strong>Significato:</strong>   <em>Ogni Lupo ha una Nicchia.</em></li>
+<li><strong>Gesto Tattile:</strong>   <strong>Palmo Piatto sul Petto (Riconoscimento del Cuore).</strong></li>
+<li><strong>Azione:</strong>  Il giurante posa la mano destra aperta al centro del petto dell&#39;Alpha (sullo sterno), avvertendone il battito. Riconosce l&#39;autorità dell&#39;Alpha e il proprio posto all&#39;interno dell&#39;architettura del branco.</li>
+</ul>
+<h6>5. ᚱ —  <em>Siðr breytisk.</em></h6>
+<ul>
+<li><strong>Significato:</strong>   <em>La Cultura evolve.</em></li>
+<li><strong>Gesto Tattile:</strong>   <strong>Mani sulle Spalle (L&#39;Alleanza Diretta).</strong></li>
+<li><strong>Azione:</strong>  Senza spostarsi di lato, il giurante posa entrambe le mani sulle spalle dell&#39;Alpha (o l&#39;Alpha sulle spalle del giurante), mantenendo la posizione frontale a braccia tese o semi-flesse. Simboleggia il sostenersi a vicenda di fronte alle sfide del futuro.</li>
+</ul>
+<h6>6. ᚲ —  <em>Trú ok saga eru skilin.</em></h6>
+<ul>
+<li><strong>Significato:</strong>   <em>Fede e Storia sono separate.</em></li>
+<li><strong>Gesto Tattile:</strong>   <strong>Tocco delle Tempie / Sguardo Diretto.</strong></li>
+<li><strong>Azione:</strong>  L&#39;Alpha allunga le mani di fronte a sé e sfiora con i polpastrelli le tempie del giurante, mantenendo uno sguardo fisso e penetrante nei suoi occhi. Rappresenta la chiarezza di visione e la verità storica priva di inganni.</li>
+</ul>
+<h6>7. ᚷ —  <em>Flokkrinn lifir framar hinum eina.</em></h6>
+<ul>
+<li><strong>Significato:</strong>   <em>Il Branco viene prima dell&#39;Individuo.</em></li>
+<li><strong>Gesto Tattile:</strong>   <strong>Reclinazione del Capo ed Esposizione Frontale della Gola.</strong></li>
+<li><strong>Azione:</strong>  Rimanendo al centro, di fronte all&#39;Alpha, il giurante reclina il capo all&#39;indietro ed espone la giugulare. L&#39;Alpha si sporge leggermente in avanti e posa le labbra o un respiro caldo direttamente sull&#39;incavo della gola/collo del giurante. È l&#39;atto finale di resa e protezione assoluta.</li>
+</ul>
+<hr>
+<h5>Scheda Sintetica per Lorebook / Bot Context</h5>
+<pre><code class="language-markdown">[LORE: Eíða-Siðr / Oath of the Seven Laws]
+- Type: Cultural &amp; Biological Ritual (LSE Social Structure)
+- Triggers: Pack initiation, Oath-taking, Alpha submission, Svartúlfr tradition
+- Summary: The solemn rite of joining the Douglas-Bloodmoon pack. Performed strictly face-to-face in front of the Alpha. The recruit recites the seven Scandinavian laws in Forn-Tunga while executing seven front-facing tactile gestures (forehead touch, cheek-rub scenting, forearm grip, chest/sternum touch, shoulder placement, temple touch, and frontal neck exposure) to bind scents and confirm pack entry.
+
+</code></pre>

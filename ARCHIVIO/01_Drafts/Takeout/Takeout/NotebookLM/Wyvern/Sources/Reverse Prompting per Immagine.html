@@ -1,0 +1,73 @@
+<p><strong>User</strong> : dammi il prompt dell&#39;immagine allegata
+<strong>Gemini</strong> : Non posso estrarre direttamente i metadati o il prompt originale incorporato nel file Alyssa_urban_def.jpg, ma posso fare un&#39;accurata operazione di  <em>reverse prompting</em> .
+Ecco un prompt strutturato a tag, con i relativi pesi, ottimizzato per ottenere un risultato quasi identico su engine grafici o modelli di generazione che supportano questo formato (come Stable Diffusion o Niji):
+<strong>Prompt Positivo:</strong>
+(masterpiece, best quality, ultra-detailed:1.2), 1girl, solo, portrait, close up, beautiful detailed face, glowing emerald green eyes, cute freckles, soft smile, light brown hair, messy hair, half updo, bangs, kemonomimi, fluffy fox ears, ear piercings, hand on chin, delicate sunflower necklace, gold bracelet, off-shoulder dark blue jacket, white lace camisole, cleavage, golden hour lighting, warm sunset light, hazy background, palm trees silhouettes, tropical vibe, high quality anime art style, digital painting, soft shading, intricate lighting
+<strong>Negative Prompt (consigliato per bilanciare i dettagli):</strong>
+(worst quality, low quality, normal quality:1.4), bad anatomy, extra digits, missing fingers, poorly drawn hands, poorly drawn face, deformed, ugly, blurry, watermark, text, out of frame
+Puoi ovviamente tarare i pesi dei singoli tag (ad esempio forzando di più il sunflower necklace se l&#39;engine tende a perderlo) o adattare il formato se usi altri framework.
+C&#39;è un dettaglio specifico in questa reference, come la palette di colori o l&#39;illuminazione, su cui vorresti concentrarti maggiormente per le tue generazioni?
+<strong>User</strong> : dammelo versione perchange
+<strong>Gemini</strong> : Certo! Se utilizzi il generatore di immagini di Perchance (che si basa spesso su modelli text-to-image standard senza supportare sempre la sintassi complessa dei pesi con parentesi tonde e due punti), è meglio usare una struttura di tag pulita e separata da virgole, o una descrizione più discorsiva.
+Ecco la versione ottimizzata e ripulita appositamente per il motore di  <strong>Perchance</strong> :
+<strong>Prompt (Shape: Portrait / 3:4):</strong></p>
+<pre><code class="language-text">masterpiece, best quality, ultra-detailed, 1girl, solo, close-up portrait, beautiful highly detailed face, glowing emerald green eyes, cute freckles, soft smile, light brown hair, messy half updo, bangs, kemonomimi, fluffy fox ears, multiple ear piercings, hand resting on chin, delicate sunflower necklace, gold bracelet, off-shoulder dark blue jacket, white lace camisole, cleavage, golden hour lighting, warm sunset light, hazy tropical background, palm trees silhouettes, high quality anime art style, digital painting, soft shading, intricate lighting
+
+</code></pre>
+<p><strong>Negative Prompt (se il modulo Perchance che stai usando lo supporta):</strong></p>
+<pre><code class="language-text">worst quality, low quality, bad anatomy, extra digits, missing fingers, poorly drawn hands, poorly drawn face, deformed, ugly, blurry, watermark, text
+
+</code></pre>
+<p>In Perchance, l&#39;ordine dei tag conta molto: assicurati di mantenere i dettagli del viso (occhi, lentiggini, espressione) all&#39;inizio subito dopo la definizione del soggetto, per garantire che l&#39;algoritmo vi dedichi la massima priorità.
+<strong>User</strong> : ok ora aggiorna il prompt inserendo questi dettagli:
+155cm (5&#39;1&quot;). Petite, delicate hourglass frame (bust 95cm, waist 55cm, hips 95cm). Soft, totally shaved, flawlessly groomed skin. Caramel-brown hair, silky waves falling to tailbone. Mint-green doe eyes. Fair, luminous skin and open doe-eyed face. Crescent moon birthmark on left hip. Magical protection tattoo on left wrist (Gebo). Pierced belly button and wolf ears. wolf Tail and ears caramel-brown with black tips and underfur white
+<strong>Gemini</strong> : Ecco il prompt aggiornato per Perchance, integrato con tutti i nuovi e specifici dettagli fisici, dei capelli e degli accessori:
+<strong>Prompt (Shape: Portrait / 3:4 o Full Body per mostrare fianchi/ombelico):</strong></p>
+<pre><code class="language-text">masterpiece, best quality, ultra-detailed, 1girl, solo, mid-shot to show torso and hips, hand on chin, petite and slender hourglass build, delicate frame, 155cm tall, soft flawless groomed skin, fair luminous skin, beautiful highly detailed open doe-eyed face, large mint-green doe eyes, cute freckles, soft smile, caramel-brown hair, silky waves, very long hair falling to tailbone, messy half updo, bangs, kemonomimi, fluffy wolf ears, caramel-brown wolf ears with black tips and white underfur, multiple ear piercings, fluffy wolf tail visible with matching colors, off-shoulder dark blue jacket, white lace camisole, cleavage, delicate sunflower necklace, gold bracelet on right wrist, pierced belly button, magical protection tattoo (Gebo) on left wrist, crescent moon birthmark on left hip, golden hour lighting, warm sunset light, hazy tropical background, palm trees silhouettes, high quality anime art style, digital painting, soft shading, intricate lighting
+
+</code></pre>
+<p>In questo prompt:</p>
+<ul>
+<li>Ho aggiornato i dettagli fisici generali (corporatura a clessidra esile, pelle chiara e luminosa, viso a cerbiatto).</li>
+<li>I capelli sono diventati castano caramello e molto più lunghi, fino al coccige.</li>
+<li>Gli occhi sono diventati verde menta a cerbiatto.</li>
+<li>Le orecchie e la coda sono ora da lupo con la colorazione specificata.</li>
+<li>L&#39;inquadratura è stata allargata a &quot;mid-shot&quot; (piano medio) per poter mostrare i nuovi dettagli corporei.</li>
+<li>Ho aggiunto i tatuaggi (Gebo sul polso sinistro) e i segni specifici (voglia a mezzaluna sul fianco sinistro).</li>
+<li>Il piercing all&#39;ombelico è stato inserito.
+Assicurati di impostare l&#39;inquadratura su &quot;Portrait&quot; o &quot;Full Body&quot; in Perchance per garantire che tutti i dettagli corperei inferiori (come ombelico e fianchi) siano visibili.
+<strong>User</strong> : e per il negativo?
+<strong>Gemini</strong> : Ecco il prompt negativo aggiornato, strutturato per bilanciare l&#39;elevata quantità di dettagli fisici e accessori che abbiamo inserito nel positivo.
+Quando si descrivono corporature specifiche, tatuaggi e tratti animali (kemonomimi), i modelli text-to-image tendono ad andare in confusione anatomica se non vengono ben limitati.
+<strong>Negative Prompt:</strong></li>
+</ul>
+<pre><code class="language-text">worst quality, low quality, bad anatomy, deformed, mutated, poorly drawn hands, missing fingers, extra digits, extra arms, extra legs, poorly drawn face, poorly drawn eyes, cross-eyed, bad proportions, gross proportions, multiple tails, extra ears, human ears, wrong tattoo, missing navel, floating clothing, blurry, watermark, text, signature, jpeg artifacts
+
+</code></pre>
+<p><strong>Tre accorgimenti utili su questi tag:</strong></p>
+<ul>
+<li><strong>human ears</strong>  <strong>ed</strong>  <strong>extra ears</strong> : Sono essenziali. Spesso l&#39;AI, leggendo tag relativi ai gioielli e vedendo un volto umanoide, disegna sia le orecchie da lupo in testa, sia un paio di orecchie umane ai lati del viso.</li>
+<li><strong>Anatomia delle mani</strong> : Essendoci un focus sulle braccia (tatuaggio sul polso sinistro, bracciale sul destro, mano sul mento), tag come poorly drawn hands ed extra digits sono fondamentali per non rovinare la resa finale.</li>
+<li><strong>wrong tattoo</strong> : Aiuta a mantenere il tatuaggio della runa Gebo circoscritto al polso, evitando che l&#39;algoritmo generi ghirigori magici casuali su tutto il corpo.
+Vuoi fare un test con questi parametri e vedere se l&#39;engine di Perchance riesce a cogliere bene la runa Gebo o se dobbiamo forzarla ulteriormente?
+<strong>User</strong> : sistemiamo questa parte &quot;magical protection tattoo (Gebo) on left wrist, crescent moon birthmark on left hip&quot;
+vorrei che il gebo fosse sul polso nella parte sotto verso il palmo
+e il birdmark dovrebbe essere più pallido della pelle come una cicatrice e trovarsi sull&#39;anca sinistra, ma sotto l&#39;orlo delle mutantine
+<strong>Gemini</strong> : Ecco il prompt aggiornato per Perchance, ottimizzato per inserire i dettagli specifici del tatuaggio e del segno di nascita come richiesto, mantenendo la pulizia necessaria per il motore di generazione:
+<strong>Prompt (Shape: Portrait-to-Mid Shot / 3:4 o Full Body per mostrare fianchi/ombelico):</strong></li>
+</ul>
+<pre><code class="language-text">masterpiece, best quality, ultra-detailed, 1girl, solo, portrait to mid-shot, hand resting on chin, petite slender hourglass build, delicate features, fair luminous skin, flawlessly groomed, detailed doe-eyed face, large mint-green doe eyes, cute freckles, soft smile, caramel-brown hair, silky waves, tailbone length, messy half updo, bangs, kemonomimi, fluffy wolf ears, caramel-brown wolf ears with black tips and white underfur, multiple ear piercings, fluffy wolf tail with matching colors, dark blue off-shoulder jacket, white lace camisole, cleavage, pierced navel, delicate sunflower necklace, gold bracelet on right wrist, small Gebo rune tattoo on the inner left wrist near the palm, subtle pale hypopigmented crescent moon birthmark on the lower left hip, visible just below the waistband edge, golden hour lighting, warm sunset light, hazy tropical background, palm trees silhouettes, high quality anime art style, digital painting, soft shading, intricate lighting
+
+</code></pre>
+<p>In questo prompt:</p>
+<ul>
+<li>Ho specificato che il tatuaggio Gebo è sulla &quot;inner left wrist near the palm&quot; (polso interno vicino al palmo).</li>
+<li>Ho descritto il segno di nascita come &quot;subtle pale hypopigmented&quot; (sottile, pallido e ipopigmentato) per catturare l&#39;aspetto &quot;più pallido della pelle come una cicatrice&quot;.</li>
+<li>Ho posizionato il segno di nascita &quot;visible just below the waistband edge&quot; (visibile appena sotto l&#39;orlo), che è una formulazione che l&#39;AI capisce meglio per una visibilità parziale o coperta.
+<strong>Negative Prompt (se il modulo lo supporta):</strong></li>
+</ul>
+<pre><code class="language-text">worst quality, low quality, bad anatomy, deformed, mutated, poorly drawn hands, missing fingers, extra digits, extra arms, extra legs, poorly drawn face, poorly drawn eyes, cross-eyed, bad proportions, gross proportions, multiple tails, extra ears, human ears, wrong tattoo, missing navel, floating clothing, blurry, watermark, text, signature, jpeg artifacts, wrong tattoo location, missing birthmark, birthmark clutter
+
+</code></pre>
+<p>Ho aggiunto wrong tattoo location, missing birthmark e birthmark clutter nel negativo per aiutare l&#39;AI a non generare troppi o male posizionati questi dettagli specifici.
+Vuoi fare una prova con questo prompt e vedere come viene reso?</p>
