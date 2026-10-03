@@ -93,8 +93,10 @@ def sync_world(world_id='_CgYT8fHXpDC4crjmegQF7'):
                 export_payload[table_name] = items
                 print(f"  - {table_name:25}: {len(items)} items")
         except Exception as e:
-            print(f"  - {table_name:25}: Error ({e}), setting to []")
-            export_payload[table_name] = []
+            fallback_items = old_data.get(table_name, []) if 'old_data' in locals() and old_data else []
+            print(f"  - {table_name:25}: Error ({e}), retaining {len(fallback_items)} items from existing export")
+            export_payload[table_name] = fallback_items
+
 
     # Write master export
     with open(master_export_path, 'w', encoding='utf-8') as f:

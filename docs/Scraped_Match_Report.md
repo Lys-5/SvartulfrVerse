@@ -1,0 +1,58 @@
+### ALREADY IN WYVERN (To Merge)
+- Oskar (Matches: Oskar)
+- Fade Greymoor (Matches: Fade Greymoor)
+- Vincent Campbell (Matches: Vincent Campbell)
+- Casey Williams (Matches: Casey Williams)
+- Barkley Rover (Matches: Barkley Rover)
+- Tate (Matches: Tate)
+- Siebren Dijkstra (Matches: Ren)
+- Nikolaj Jökull (Matches: Nikolaj Jökull)
+- Casey Williams (Matches: Casey Williams)
+- Janice Thompson (Matches: Janice Thompson)
+- Vincent Campbell (Matches: Vincent Campbell)
+- Jared Thompson (Matches: Jared Thompson)
+- Fade Greymoor (Matches: Fade Greymoor)
+- Roland Vickers (Matches: Roland Vickers)
+- Casey Williams and Nikolaj Jökull (Matches: Nikolaj Jökull)
+- Dragonknight Harren Alcuin (Matches: Ren)
+
+### NEW CHARACTERS (To Create Ex Novo)
+- Accidently Summoned My First Familiar
+- Rozalia Tănase
+- How Long Can She Keep Smiling
+- Insectoid Insecurity | Bellweather Boys
+- Arturo | Ⅱ E-sex
+- 🌹 "Banished from Olympus" 🌹
+- Bound by the Night Moon
+- Brownie Bureaucracy | Bellweather Babe
+- Grimoires and Gravity | Bellweather Babes
+- Lilith | Cobra Lamia
+- Fond Fangs | Bellweather Babe
+- Veiled Vixen | Bellweather Babe
+- Bands and Bargains | Bellweather Boys
+- Kade & Zorr | Bully Monsters
+- 🌹 "A She-Wolf in Heat" 🌹
+- Couture Creature | Bellweather Babe
+- She sided with your killers
+- Ruby Valerius
+- Cosmic Courtship | Bellweather Boys
+- Vesna | A long day
+- Mikan | Runaway Catgirl raids your fridge
+- The Haunted Manor
+- Ginger | Sniper Situation
+- Orion and Sigrid Valois || Pack Enforcer & Strategic Guard , Pack Sentinel & Lore-Keeper of The Triune Moon Pack
+- Baby Bat
+- Fairy Ecologist — Henrey Cote
+- How Are You Supposed To Stay Sane Around Them
+- Little Kohai Mermaid
+- Aria Xenthon
+- Your Elf Streamer Roommate Hit Her Sub Goal
+- World of Animal Girls (Who Pee and Poop Everywhere)
+- Tori
+- Grand Providence: City of Abundance
+- River | Daddy Wolf
+- Finnegan "Finn" Novak
+- Andrew "Andy" Campbell
+- Mackenzie Mac Sanchez-Rogers
+- Stan Davies Jr
+- Andrew "Andy" Campbell
