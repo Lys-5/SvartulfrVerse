@@ -600,7 +600,6 @@ const unifiedSmartphoneCode = `export default function Panel({ engine }) {
                 placeholder="Scrivi messaggio al branco..."
                 value={chatInput}
                 onChange={e => setChatInput(e.target.value)}
-                onKeyDown={e => e.key === 'Enter' && handleSendMessage()}
                 className="flex-1 bg-zinc-900 border border-zinc-800 rounded-xl px-2.5 py-1.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-sky-500"
               />
               <button

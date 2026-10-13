@@ -35,11 +35,12 @@ Il roster dei personaggi nativi del World di Svartúlfr (`_CgYT8fHXpDC4crjmegQF7
 * Rimossi dall'inventario personale dei segnalibri (`/api/inventory/characters/:id`) tutti i 14 segnalibri originali convertiti e integrati nel World.
 * Conteggio residuo dei segnalibri personaggi in `/mine`: ridotto da 41 a **27** (preservando solo le schede di terze parti off-world come Dartalia di StatuoTW e altri universi indipendenti).
 
-### 4. Allineamento Story Engine & Rilascio Pannello Unificato: Svartulfr Smartphone OS (`engine_HCTPXhL8xr89wUY9r9dYU` — v73)
+### 4. Allineamento Story Engine & Rilascio Pannello Unificato: Svartulfr Smartphone OS (`engine_HCTPXhL8xr89wUY9r9dYU` — v74)
+* **Risoluzione Bug Runtime Sandbox Wyvern (v74):** Rimossa la proprietà `onKeyDown` (bloccata e non supportata dal JSX sanitizer di Wyvern); l'invio dei messaggi nella chat di Telegram è ora delegato al pulsante interattivo `onClick={handleSendMessage}` compatibile al 100%.
 * **Unificazione dei Pannelli in un Unico Smartphone OS Realistico:** I 3 precedenti pannelli sparsi della sidebar sono stati condensati in un unico, immersivo pannello interattivo in stile smartphone moderno (**Svartulfr Smartphone OS** — `panel_smartphone_os`, icon `layout`, ~51 KB di logica React):
   * **Scocca & Status Bar Reattiva:** Top bar stile iOS/Android con orologio di sistema, connessione *DCC 5G*, Dynamic Island con fase lunare live (🌙/🌕), indicatore e alert per i soppressori ferormonali (🧪 x3) e barre segnale/batteria (98%).
   * **Schermata Home Dashboard:** Widget data e ora del World (5 Aprile 2024, Solarton & Blackwood), allerta Rift attiva, widget ormonale LSE (Heat/Rut peak) con pulsante rapido per inalare inibitori, widget Reputazione Branco Douglas (progress bar interattiva), mini widget player audio Echo e griglia di 8 applicazioni con badge notifiche dinamici.
-  * **App 💬 Telegram (Douglas Pack Chat):** Chat criptata della famiglia Douglas con messaggi differenziati per ruolo e colore (Papà Erik, Noah, Jasper, Echo, Malachia) e casella di testo interattiva per comporre e inviare risposte istantanee nel feed.
+  * **App 💬 Telegram (Douglas Pack Chat):** Chat criptata della famiglia Douglas con messaggi differenziati per ruolo e colore (Papà Erik, Noah, Jasper, Echo, Malachia) e casella di testo interattiva per comporre e inviare risposte istantanee nel feed tramite il pulsante Invia.
   * **App 🎓 Portale Universitario (SUCC & C.U.M.S.):** Sistema unificato con selettore dinamico per studenti (Alyssa Pre-Med, Jasper Ingegneria, Noah PR, Malachia Tattica, e CUMS Duellanti Arcani come Amerian, Ashton, Caien, Aeril, Lestat). Monitora CFU (barra su 180 crediti), GPA/Media, stage curriculare e schede dei singoli corsi con voti ufficiali.
   * **App ⚔️ Registro Gilda DMHA (Hunter Registry):** Selettore cacciatori (Alyssa, Jasper, Malachia Apex Berserker, Team Ukiyo d'élite [Radek, Goran, Kian], Noah). Visualizza crediti gilda, specialità e una bacheca missioni interattiva con pulsante *"Accetta / In Corso"* per incarichi a Blackwood, Cable District, Hex Valley e Apex Trials.
   * **App 🐾 BioTrack LSE & Monitoraggio Branco:** Quadro biologico dettagliato per il ciclo ferormonale, scorte di soppressori con pulsante *"Inala Dose"* (decremento e feedback olfattivo live per 8 ore) e scheda con le regole d'impatto della Luna Piena (+2 MGT/RES, +1 AGI).
@@ -47,11 +48,11 @@ Il roster dei personaggi nativi del World di Svartúlfr (`_CgYT8fHXpDC4crjmegQF7
   * **App 🎵 Echo Music Mood Speaker:** Terminale multimediale magitech del famiglio digitale Echo con riproduzione/pausa e 4 preset di atmosfera sonora (Dungeon Synth, Relax & Intimacy, High Adrenaline Combat, Campus Coffeehouse).
   * **Bottom Navigation Dock:** Docking bar inferiore permanente per navigare all'istante tra *Home*, *Chat*, *Studio*, *Gilda* e *LSE*.
 * **Connessione World & 4 Lorebook di Svartúlfr Preservata al 100%:** World `_CgYT8fHXpDC4crjmegQF7` e tutti e 4 i Lorebooks (`NPC Primary`, `NPC Secondary`, `Lorebook`, `Location`) connessi deterministicamente con condizione `always`.
-* **Prompt Directive Espansa (v73):** Integrati C.U.M.S., Team Ukiyo, Ironhorn Nomads, Arcadia demi-umana e Branco Crimsonmaw.
+* **Prompt Directive Espansa (v74):** Integrati C.U.M.S., Team Ukiyo, Ironhorn Nomads, Arcadia demi-umana e Branco Crimsonmaw.
 
 ### 5. Esportazioni Locali Sincronizzate
 * [exports/Svartulfr_Export.json](file:///e:/repository/SvartulfrVerse/exports/Svartulfr_Export.json): aggiornato a **108 World Characters**.
-* [exports/Story_Engines_Export.json](file:///e:/repository/SvartulfrVerse/exports/Story_Engines_Export.json): aggiornato con la versione 73 di Svartulfr OS.
+* [exports/Story_Engines_Export.json](file:///e:/repository/SvartulfrVerse/exports/Story_Engines_Export.json): aggiornato con la versione 74 di Svartulfr OS.
 * [mine_inventory.json](file:///e:/repository/SvartulfrVerse/mine_inventory.json): aggiornato a 0 lorebook bookmarked e 27 character bookmarked.
 
 ---
