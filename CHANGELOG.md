@@ -2,6 +2,32 @@
 
 Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy dello StoryEngine e gli interventi sulle entità del World (World, Lexicon, Locations, NPC, Rules) sono tracciati cronologicamente in questo documento per garantire persistenza e coerenza storica tra le sessioni.
 
+## [13 Ottobre 2026] - Ottimizzazione Travel Routes del World (118 Rotte Complete, Distanze Flavor e Free Travel OFF)
+
+### 1. Conservazione Tassativa di Free Travel = OFF
+* **Regola di Simulazione Temporale**: Confermato `free_travel: false` a livello di World per impedire il teletrasporto istantaneo tra macro-regioni e consentire il calcolo dinamico e veritiero del trascorrere del tempo (ore di viaggio, alternanza giorno/notte, consumi e fatica).
+
+### 2. Calibrazione Distance (Flavor) su Tutte le Rotte
+* **Compilazione Completa del Campo `distance`**: Tutte le rotte (sia quelle storiche che quelle di nuova introduzione) dispongono ora di valori numerici di distanza flavor coerenti e realistici (0 rotte con distanza mancante):
+  * **Tratte Lunghe e Marittime (Traghetti)**: 50 miglia nautiche per le traversate tra Dockside, Hex Valley e Solarton (24 ore ciascuna).
+  * **Autostrade e Interurbane**: 85 miglia tra Solarton e Blackwood City (2 ore via Route 101 / Pacific Coast Highway), 110 miglia tra Solarton e Bakersfield (3 ore), 25 miglia tra Solarton e Ventura (1 ora), 28-32 miglia verso Camp Mystic (1 ora).
+  * **Spostamenti Urbani e Distrettuali**: 2-5 miglia tra i distretti di Blackwood City (Seven Hills, Oldtown, Paradise, Dockside, Arcadia, Bluemoon, The Cable District) e di Solarton.
+  * **Percorsi di Campus e Locali**: 1 miglio tra il Lunar Quad e i singoli dipartimenti di SUCC (Basilica Library, Archer Wolfwood Hall, Bulls Stadium, dormitori, laboratori).
+
+### 3. Integrazione Rotte Mancanti (55 Nuove Tratte, Totale 118 Rotte)
+* **Correzione Riferimenti Eredità**: Risolti 5 puntamenti orfani della configurazione legacy (riallineati ID corretti di Solarton Ferry Terminal, Hex Valley, Indoor Pool & Sauna e Wyrm Dormitories).
+* **Nuove Connessioni Create**:
+  * **Blackwood City**: Aggiunti collegamenti diretti verso The Cable District, St. Brugge Private Academy, Blackwood Forest, The Otherworld (varco nascosto), Bluemoon, Sugar Moon Bakery in Arcadia, Braceria McKay, The Horns e Apartment C.
+  * **Solarton**: Aggiunti collegamenti verso Clinica Ortus, Le Refuge des Chats (La Dimora del Rifugio), Static & Ink, Dullahan's Condo, Solarton High School, The Open Casket, Rogers' Bargain Motors, e dai poli centrali (Square e Mall) verso Directions & Dragons, Flat sopra il negozio, The Lunar Pharmacy, Full Moon Market, Kerrigan Butchers, Claws Steel & Ink e Tidewrack Surf.
+  * **SUCC Campus**: Collegamenti da Lunar Quad ad Archer Wolfwood Hall, Helsing Chapel, Unicorn Hall e accesso diretto dalla Basilica Library a The Roasted Bean.
+  * **Hex Valley**: Rete completa tra fermata traghetto, valle, Hex Valley Estates e campus di CUMS.
+  * **Zone di Transito**: Collegamenti per Ventura Square, The Halfway House, Simi Valley Grid e Trial Dungeon Hive Apex Rift.
+  * **Bakersfield**: Connessioni da Bakersfield Square a The Dusty Coyote Diner, Rhodes Farm, Parco Roulotte di Oildale, Campi Petroliferi di Kern River, Kern River Canyon e Mercato Contadino.
+  * **Los Angeles**: Rete da Pershing Square a Hollywood, Beverly Hills, Rory's Estate, Skid Row, Osservatorio Griffith, Fort MacArthur, Molo 42 e The Neon Mirage.
+  * **Camp Mystic**: Raggiungibile via strada panoramica sia da Blackwood City (1h, 28 mi) sia da Solarton (1h, 32 mi).
+  * **DDM Inc. // Voidspace**: Varco dimensionale riservato ed occultato (`hidden: true`, medium `omniversal`) da Dead Dog Motel Stanza 00 verso Voidspace e corridoi del QG DDM.
+* **Verifica via Fresh GET**: Persistenza convalidata al 100% con 118 rotte attive e `free_travel: false`.
+
 ## [13 Ottobre 2026] - Configurazione Simulation Overrides su tutte le 188 Location del World (Property, Marketplace con 40 Item Iconici, 16 Job)
 
 ### 1. Creazione Item Iconici nel Lexicon (40 Nuovi Oggetti Tematici Registrati)
