@@ -35,8 +35,24 @@ Il roster dei personaggi nativi del World di Svartúlfr (`_CgYT8fHXpDC4crjmegQF7
 * Rimossi dall'inventario personale dei segnalibri (`/api/inventory/characters/:id`) tutti i 14 segnalibri originali convertiti e integrati nel World.
 * Conteggio residuo dei segnalibri personaggi in `/mine`: ridotto da 41 a **27** (preservando solo le schede di terze parti off-world come Dartalia di StatuoTW e altri universi indipendenti).
 
-### 4. Esportazioni Locali Sincronizzate
+### 4. Allineamento Story Engine Svartulfr OS (`engine_HCTPXhL8xr89wUY9r9dYU` — v72)
+* **Collegamento World Determinismo Assoluto:** Connesso univocamente a `_CgYT8fHXpDC4crjmegQF7` (`definition.worlds`) con condizione attiva `always`.
+* **Integrazione Totale dei 4 Lorebook di Svartúlfr:** Connessi in `definition.lorebooks`:
+  * `_kPzhnGxaRgCMdmgrwWjbY` (*Svartúlfr - NPC Primary*, 101 voci);
+  * `_b6ezzLBynKkdLCKqN8M1U` (*Svartúlfr - NPC Secondary*, 313 voci);
+  * `_J8x7fwRrpa9C6Wct6hb7p` (*Svartúlfr - Lorebook*, 348 voci);
+  * `_V6jT3gPWDCPdxT2bCedeG` (*Svartúlfr - Location*, 190 voci).
+* **Prompt Directive Espansa (Tutti i Nuovi Gruppi & Fazioni):** Il `prompt_template` è stato aggiornato ed espanso a 3.962 caratteri (senza em-dash), includendo le direttive canoniche per:
+  * Polo accademico **C.U.M.S.** di Solarton (Rettore Zaire Ziisis, Prof. Xaiden Nershatar e corsi di duello arcano);
+  * **Team Ukiyo** del Cable District (Radek Vanguard, Goran Defender, Kian Arcane Sniper);
+  * **Ironhorn Nomads** & Cable District Garages (Marek, Barrow, officine di manutenzione e dungeon logistics);
+  * **Arcadia** & enclave demi-umana (Jaelyn e Neve con orecchie animali singole);
+  * **Branco Crimsonmaw & Casata O'Connor** (Liam e Hugh).
+* **UI Panels Interattivi Preservati & Reattivi:** Conservati i 3 pannelli React integrati (Smartphone Svartulfr con feed social e chat Telegram, Libretto Accademico SUCC/CUMS, Registro Gilda DMHA per Alyssa, Jasper, Malachia e Noah).
+
+### 5. Esportazioni Locali Sincronizzate
 * [exports/Svartulfr_Export.json](file:///e:/repository/SvartulfrVerse/exports/Svartulfr_Export.json): aggiornato a **108 World Characters**.
+* [exports/Story_Engines_Export.json](file:///e:/repository/SvartulfrVerse/exports/Story_Engines_Export.json): aggiornato con la versione 72 di Svartulfr OS.
 * [mine_inventory.json](file:///e:/repository/SvartulfrVerse/mine_inventory.json): aggiornato a 0 lorebook bookmarked e 27 character bookmarked.
 
 ---
