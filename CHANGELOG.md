@@ -2,7 +2,41 @@
 
 Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy dello StoryEngine e gli interventi sulle entità del World (World, Lexicon, Locations, NPC, Rules) sono tracciati cronologicamente in questo documento per garantire persistenza e coerenza storica tra le sessioni.
 
-## [13 Ottobre 2026] — Risoluzione Globale Voci Lexicon/Items Unnamed (90/90 Ripristinate) & Configurazione Modificatori Tratti RPG (5/5 Applicati)
+## [13 Ottobre 2026] - Configurazione Simulation Overrides su tutte le 188 Location del World (Property, Marketplace con 40 Item Iconici, 16 Job)
+
+### 1. Creazione Item Iconici nel Lexicon (40 Nuovi Oggetti Tematici Registrati)
+* **Creazione e Registrazione**: Eseguito `scripts/create_iconic_shop_items.js` per popolare il Lexicon con 40 oggetti iconici e tematici suddivisi per categoria (Consumable, Equipment, Material, Trade Good, Key Item) e prezzi calibrati in dollari ($ USD):
+  * **Sugar Moon Bakery**: Pasticceria al miele di luna, filoni a crosta d'argento, infusi distensivi camomilla e erbe lunari, ciambelle glassate luna piena.
+  * **The Roasted Bean**: Espresso doppio al mana, frullato iperproteico per therianthropi, cold brew nitro per concentrazione.
+  * **The Lunar Pharmacy**: Flaconi spray soppressori feromonici LSE, pomate dermiche per ustioni da argento, fiale neutralizzanti per aconito, ampolle rigenerative cellulari.
+  * **Directions & Dragons**: Set dadi poliedrici in ossidiana bilanciati, schermi del master fonoisolanti, miniature in peltro del signore dei lupi.
+  * **The Dusty Coyote Diner**: Burger mostro deluxe del coyote, caffe americano nero a rabbocco continuo, fette calde di torta pecan.
+  * **Kerrigan & Sons Butchers**: Costate ribeye con osso da 2 libbre per therianthropi, salsicce affumicate di cinghiale selvatico, confezioni di midollo osseo crudo.
+  * **Claws Steel & Ink**: Burri lenitivi all'aloe e vitamina E per cura post-tatuaggio, piercing industrial in titanio chirurgico nero.
+  * **Tidewrack Surf & Rental**: Tavole corte in fibra di carbonio ad alto impatto, mute oceaniche termiche in neoprene (4/3mm), paraffina biologica al cocco.
+  * **Full Moon Market**: Bracciali talismanici in filo d'argento intrecciato, barattoli di muschio lunare luminescente di Hex Valley, borse artigianali da cintura in cuoio invecchiato.
+  * **Rhodes Farm Stand**: Galloni di latte intero crudo di pascolo, forme di formaggio affumicato alla quercia, burro montato a mano.
+  * **Cable District Garages**: Lubrificante catene al grafene ad alte prestazioni, chiavi inglesi runiche rinforzate, toppe da gilet in pelle Ironhorn Nomads.
+  * **La Dimora del Rifugio (Le Refuge des Chats)**: Latti caldi all'erba gatta speziata, biscotti empatici curativi per famigli.
+  * **The Verve & Sidewinders**: Riserva Douglas bourbon 18 anni, champagne millesimato crystal noir, shot di tequila agave oro e cocktail neon ad alto voltaggio.
+
+### 2. Creazione ed Allineamento Job Offerti (16 Contratti Lavorativi nel Lexicon)
+* **Profili di Impiego Registrati**: Eseguito `scripts/create_iconic_jobs.js` per creare 16 contratti con stipendio settimanale bilanciato, requisiti e descrizioni contestuali:
+  * Apprendista pasticciere e banco (Sugar Moon), barista monitor campus (The Roasted Bean), assistente famigli (Le Refuge des Chats), tecnico dispensario (The Lunar Pharmacy), meccanico moto pesanti (Cable District), commesso e master giochi da tavolo (Directions & Dragons), bracciante mungitore (Rhodes Farm), garzone macellaio e affumicatore (Kerrigan Butchers), cuoco di linea short-order (Dusty Coyote), bartender notturno (Sidewinders), cameriere lounge VIP (The Verve), apprendista tatuatore (Claws Steel & Ink), addetto noleggio surf (Tidewrack), catalogatore grimoire (Basilica Library), facchino di caveau (Team Ukiyo), caposquadra sentieri e istruttore (Camp Mystic).
+
+### 3. Configurazione Simulation Overrides su tutte le 188 Location (45 Aggiornate, 143 Convalidate)
+* **Esecuzione Batch Mirata**: Eseguito `scripts/update_all_locations_sim.js` via API Wyvern (`PUT /api/worlds/locations/:id`).
+* **Property (Alloggi, Dormitori, Appartamenti e Residenze)**:
+  * Configurati affitti settimanali e opzioni di acquisto su 24 alloggi canonici: Wyrm Dormitories (e ali Ovest/Est, Sud, Nord a $380-$450/settimana), Additional Student Housing ($350), Confraternite e Sorellanze del Greek Row ($460-$530), Dormitori CUMS Artemis e Apollo ($600), Nocturnal e Nightwine Hall ($650), Apartment C ($550/settimana o acquisto a $180,000), Flat sopra Directions & Dragons ($600), Coastal Residential ($1,200/settimana o acquisto a $350,000), Hex Valley Estates ($2,500/settimana o $1,200,000), Parco Roulotte di Oildale ($120/settimana o $25,000), Eidolon Suites ($1,800), Dead Dog Motel ($150), Villa Douglas Guest Wing ($1), Dullahan's Condo ($800 o $280,000), Rory's Estate ($5,000 o $3,500,000).
+* **Marketplace (Botteghe e Negozi Attivi)**:
+  * Attivati 14 shop con inventari tematici, prezzi override e margini di riacquisto bilanciati (buy rate 0.4 - 0.65).
+* **Jobs Offered Here**:
+  * Assegnati i 16 ID contrattuali alle rispettive location di impiego.
+* **Pulizia Location Pubbliche**:
+  * Per tutte le restanti 143 location di transito, studio, aule universitarie, laboratori, parchi e foreste, i moduli di proprietà e mercato sono stati impostati esplicitamente su `enabled: false`.
+* **Verifica Empirica**: Rilettura campionaria via fresh GET ha confermato persistenza al 100% senza alcuna anomalia o errore.
+
+## [13 Ottobre 2026] - Risoluzione Globale Voci Lexicon/Items Unnamed (90/90 Ripristinate) & Configurazione Modificatori Tratti RPG (5/5 Applicati)
 
 ### 1. Risoluzione Voci Lexicon & Items Unnamed (90/90 Riparate via API)
 * **Causa dell'Anomalia**: Durante i precedenti batch upload dei blocchi di Lexicon (Famigli SUCC, Magia Urbana, Dottrina DMHA e Fisiologia Mutaforma), le voci erano state trasmesse con la chiave `title:` invece del campo canonico dello schema Wyvern `name:`. Questo generava un valore `name: ""` che nell'interfaccia web provocava il rendering fallback di `Untitled memory`, `Untitled lore/concept` e `Unnamed` nella tabella `Game/RPG Systems > Items` (tutti i 10 item del World sono voci di Lexicon con `type: 'item'`).
