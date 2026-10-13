@@ -2,7 +2,7 @@
 
 Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy dello StoryEngine e gli interventi sulle entità del World (World, Lexicon, Locations, NPC, Rules) sono tracciati cronologicamente in questo documento per garantire persistenza e coerenza storica tra le sessioni.
 
-## [13 Ottobre 2026] - Ottimizzazione Travel Routes del World (118 Rotte Complete, Distanze Flavor e Free Travel OFF)
+## [13 Ottobre 2026] - Ottimizzazione Travel Routes del World (119 Rotte Complete, Distanze Flavor, Allineamento Seven Hills-Foresta e Free Travel OFF)
 
 ### 1. Conservazione Tassativa di Free Travel = OFF
 * **Regola di Simulazione Temporale**: Confermato `free_travel: false` a livello di World per impedire il teletrasporto istantaneo tra macro-regioni e consentire il calcolo dinamico e veritiero del trascorrere del tempo (ore di viaggio, alternanza giorno/notte, consumi e fatica).
@@ -14,11 +14,15 @@ Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy
   * **Spostamenti Urbani e Distrettuali**: 2-5 miglia tra i distretti di Blackwood City (Seven Hills, Oldtown, Paradise, Dockside, Arcadia, Bluemoon, The Cable District) e di Solarton.
   * **Percorsi di Campus e Locali**: 1 miglio tra il Lunar Quad e i singoli dipartimenti di SUCC (Basilica Library, Archer Wolfwood Hall, Bulls Stadium, dormitori, laboratori).
 
-### 3. Integrazione Rotte Mancanti (55 Nuove Tratte, Totale 118 Rotte)
+### 3. Allineamento Topologico Mappa Ufficiale Blackwood City & Nuove Rotte (119 Rotte Totali)
+* **Allineamento Seven Hills con Foresta e Branco Bloodmoon**: Come confermato dalla cartografia ufficiale, le connessioni verso l'entroterra montuoso e selvaggio partono direttamente da **Seven Hills** (e non da Oldtown):
+  * `Seven Hills` <-> `Blackwood Forest` (1 ora, 6 miglia, strada panoramica dei crinali).
+  * `Seven Hills` <-> `Bloodmoon Pack Territory` (1 ora, 8 miglia, sentiero dei crinali a nord verso i boschi oscuri).
+  * `Seven Hills` <-> `Arcadia` (0 ore, 3 miglia, strada pedemontana che unisce direttamente le tenute di Seven Hills e il distretto residenziale di Arcadia).
 * **Correzione Riferimenti Eredità**: Risolti 5 puntamenti orfani della configurazione legacy (riallineati ID corretti di Solarton Ferry Terminal, Hex Valley, Indoor Pool & Sauna e Wyrm Dormitories).
 * **Nuove Connessioni Create**:
-  * **Blackwood City**: Aggiunti collegamenti diretti verso The Cable District, St. Brugge Private Academy, Blackwood Forest, The Otherworld (varco nascosto), Bluemoon, Sugar Moon Bakery in Arcadia, Braceria McKay, The Horns e Apartment C.
-  * **Solarton**: Aggiunti collegamenti verso Clinica Ortus, Le Refuge des Chats (La Dimora del Rifugio), Static & Ink, Dullahan's Condo, Solarton High School, The Open Casket, Rogers' Bargain Motors, e dai poli centrali (Square e Mall) verso Directions & Dragons, Flat sopra il negozio, The Lunar Pharmacy, Full Moon Market, Kerrigan Butchers, Claws Steel & Ink e Tidewrack Surf.
+  * **Blackwood City**: Collegamenti diretti verso The Cable District, St. Brugge Private Academy, The Otherworld (varco nascosto da Blackwood Forest), Bluemoon, Sugar Moon Bakery in Arcadia, Braceria McKay, The Horns e Apartment C.
+  * **Solarton**: Collegamenti verso Clinica Ortus, Le Refuge des Chats (La Dimora del Rifugio), Static & Ink, Dullahan's Condo, Solarton High School, The Open Casket, Rogers' Bargain Motors, e dai poli centrali (Square e Mall) verso Directions & Dragons, Flat sopra il negozio, The Lunar Pharmacy, Full Moon Market, Kerrigan Butchers, Claws Steel & Ink e Tidewrack Surf.
   * **SUCC Campus**: Collegamenti da Lunar Quad ad Archer Wolfwood Hall, Helsing Chapel, Unicorn Hall e accesso diretto dalla Basilica Library a The Roasted Bean.
   * **Hex Valley**: Rete completa tra fermata traghetto, valle, Hex Valley Estates e campus di CUMS.
   * **Zone di Transito**: Collegamenti per Ventura Square, The Halfway House, Simi Valley Grid e Trial Dungeon Hive Apex Rift.
@@ -26,7 +30,7 @@ Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy
   * **Los Angeles**: Rete da Pershing Square a Hollywood, Beverly Hills, Rory's Estate, Skid Row, Osservatorio Griffith, Fort MacArthur, Molo 42 e The Neon Mirage.
   * **Camp Mystic**: Raggiungibile via strada panoramica sia da Blackwood City (1h, 28 mi) sia da Solarton (1h, 32 mi).
   * **DDM Inc. // Voidspace**: Varco dimensionale riservato ed occultato (`hidden: true`, medium `omniversal`) da Dead Dog Motel Stanza 00 verso Voidspace e corridoi del QG DDM.
-* **Verifica via Fresh GET**: Persistenza convalidata al 100% con 118 rotte attive e `free_travel: false`.
+* **Verifica via Fresh GET**: Persistenza convalidata al 100% con 119 rotte attive e `free_travel: false`.
 
 ## [13 Ottobre 2026] - Configurazione Simulation Overrides su tutte le 188 Location del World (Property, Marketplace con 40 Item Iconici, 16 Job)
 
