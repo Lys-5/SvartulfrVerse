@@ -44,7 +44,7 @@ export default function Panel({ engine }: { engine: any }) {
       sender: 'Papà (Erik)',
       role: 'Prime Alpha · DCC',
       color: 'text-amber-400',
-      badgeClass: 'bg-amber-950/90 text-amber-300 border-amber-700/80',
+      badgeClass: 'bg-amber-950 text-amber-300 border border-amber-700',
       text: "Ragazzi, siete arrivati a Solarton? Kaladin ha predisposto la scorta discreta attorno all'ingresso est del campus. Non dimenticate i soppressori.",
       time: '08:02'
     },
@@ -53,7 +53,7 @@ export default function Panel({ engine }: { engine: any }) {
       sender: 'Noah',
       role: 'Beta · PR',
       color: 'text-sky-400',
-      badgeClass: 'bg-sky-950/90 text-sky-300 border-sky-700/80',
+      badgeClass: 'bg-sky-950 text-sky-300 border border-sky-700',
       text: 'Tranquillo Boss, sono già al banchetto matricole SUCC. Se Alyssa ritarda è perché doveva abbinare le scarpe alla borsa medica 💅',
       time: '08:05'
     },
@@ -62,7 +62,7 @@ export default function Panel({ engine }: { engine: any }) {
       sender: 'Jasper',
       role: 'Technomancer',
       color: 'text-emerald-400',
-      badgeClass: 'bg-emerald-950/90 text-emerald-300 border-emerald-700/80',
+      badgeClass: 'bg-emerald-950 text-emerald-300 border border-emerald-700',
       text: 'Siamo arrivati. Sto accompagnando Alyssa verso la segreteria di Medicina e Botanica. Noah piantala o ti blocco il Wi-Fi di Villa Douglas.',
       time: '08:08'
     },
@@ -71,7 +71,7 @@ export default function Panel({ engine }: { engine: any }) {
       sender: 'Echo',
       role: 'Digital Familiar',
       color: 'text-cyan-300',
-      badgeClass: 'bg-cyan-950/90 text-cyan-300 border-cyan-700/80',
+      badgeClass: 'bg-cyan-950 text-cyan-300 border border-cyan-700',
       text: "[Audio Mood Speaker: Avviata playlist 'Subterranean Bass Drive']. Parametri vitali del Fireteam nella norma. Nessuna anomalia miasmatica nel raggio di 800m.",
       time: '08:09'
     },
@@ -80,7 +80,7 @@ export default function Panel({ engine }: { engine: any }) {
       sender: 'Malachia',
       role: 'Berserker Strike',
       color: 'text-rose-400',
-      badgeClass: 'bg-rose-950/90 text-rose-300 border-rose-700/80',
+      badgeClass: 'bg-rose-950 text-rose-300 border border-rose-700',
       text: 'Ho finito la sessione pesi al campo Bulls. Chiunque si avvicini con cattive intenzioni se la vede con me. Mandatemi la posizione.',
       time: '08:12'
     }
@@ -94,7 +94,7 @@ export default function Panel({ engine }: { engine: any }) {
       sender: 'Tu (Operativo)',
       role: 'Player',
       color: 'text-purple-300',
-      badgeClass: 'bg-purple-950/90 text-purple-300 border-purple-700/80',
+      badgeClass: 'bg-purple-950 text-purple-300 border border-purple-700',
       text: textToSend,
       time: 'Adesso'
     };
@@ -192,7 +192,7 @@ export default function Panel({ engine }: { engine: any }) {
     alyssa: {
       name: 'Alyssa Douglas',
       rank: 'Rango A',
-      rankClass: 'bg-blue-950/90 text-sky-300 border-blue-700/80',
+      rankClass: 'bg-blue-950 text-sky-300 border border-blue-700',
       role: 'Healer & Supporto di Campo',
       squad: 'Douglas Vanguard / Seven Hills Fireteam',
       credits: 4850,
@@ -201,7 +201,7 @@ export default function Panel({ engine }: { engine: any }) {
     jasper: {
       name: 'Jasper Douglas',
       rank: 'Rango A',
-      rankClass: 'bg-blue-950/90 text-sky-300 border-blue-700/80',
+      rankClass: 'bg-blue-950 text-sky-300 border border-blue-700',
       role: 'Technomancer & Netrunner Tattico',
       squad: 'Douglas Vanguard / Seven Hills Fireteam',
       credits: 5200,
@@ -210,7 +210,7 @@ export default function Panel({ engine }: { engine: any }) {
     malachia: {
       name: 'Malachia Douglas',
       rank: 'Rango S',
-      rankClass: 'bg-rose-950/90 text-rose-300 border-rose-700/80',
+      rankClass: 'bg-rose-950 text-rose-300 border border-rose-700',
       role: 'Apex Berserker / Vanguard Strike',
       squad: 'Douglas First Strike Squad',
       credits: 8900,
@@ -219,7 +219,7 @@ export default function Panel({ engine }: { engine: any }) {
     ukiyo: {
       name: 'Distaccamento Ukiyo (Radek, Goran, Marek)',
       rank: 'Rango B+',
-      rankClass: 'bg-amber-950/90 text-amber-300 border-amber-700/80',
+      rankClass: 'bg-amber-950 text-amber-300 border border-amber-700',
       role: 'Operazioni Clandestine & Caccia Notturna',
       squad: 'Ukiyo Specialist Syndicate',
       credits: 3400,
@@ -236,7 +236,7 @@ export default function Panel({ engine }: { engine: any }) {
       title: 'Anomalia Miasmatica nei Sotterranei CUMS',
       zone: 'Solarton · Distretto Accademico Ovest',
       rank: 'Rango A',
-      rankClass: 'text-sky-400 bg-sky-950/80 border-sky-700/80',
+      rankClass: 'text-sky-400 bg-sky-950 border border-sky-700',
       reward: "850 Crediti · Catalizzatore d'Ombra",
       desc: 'Segnalato rift minore nella biblioteca proibita del CUMS. Richiesto team di contenimento con healer e technomancer per stabilizzazione runica.'
     },
@@ -245,7 +245,7 @@ export default function Panel({ engine }: { engine: any }) {
       title: 'Pattugliamento Notturno: Baia di Blackwood',
       zone: 'Blackwood City · Docks Industriali',
       rank: 'Rango B',
-      rankClass: 'text-amber-400 bg-amber-950/80 border-amber-700/80',
+      rankClass: 'text-amber-400 bg-amber-950 border border-amber-700',
       reward: "500 Crediti · Runa d'Argento",
       desc: 'Avvistamento creature anfibie attirate dai rifornimenti navali DCC. Bonificare il molo 4 prima delle ore 05:00.'
     },
@@ -254,7 +254,7 @@ export default function Panel({ engine }: { engine: any }) {
       title: 'Bonifica Condotto Fognario Settore 4',
       zone: 'Solarton · Cable District',
       rank: 'Rango C',
-      rankClass: 'text-emerald-400 bg-emerald-950/80 border-emerald-700/80',
+      rankClass: 'text-emerald-400 bg-emerald-950 border border-emerald-700',
       reward: '300 Crediti · 2x Cilindri Soppressori',
       desc: 'Nido di ratti miasmatici di classe 1 nelle condotte di scolo adiacenti al campus SUCC. Intervento rapido richiesto.'
     }
@@ -315,47 +315,47 @@ export default function Panel({ engine }: { engine: any }) {
   ];
 
   return (
-    <div className="w-full max-w-md mx-auto my-1 bg-zinc-950 text-zinc-100 rounded-3xl border border-zinc-800/90 shadow-2xl p-3 flex flex-col gap-2.5 font-sans select-none">
+    <div className="w-full max-w-md mx-auto my-1 bg-zinc-950 text-zinc-100 rounded-3xl border border-zinc-800 shadow-2xl p-4 flex flex-col gap-3 font-sans select-none">
       
       {/* ========================================================================= */}
       {/* 1. TOP STATUS BAR / NOTCH SMARTPHONE                                      */}
       {/* ========================================================================= */}
-      <div className="bg-zinc-900/90 rounded-2xl px-3.5 py-2 border border-zinc-800 flex items-center justify-between text-xs">
+      <div className="bg-zinc-900 rounded-2xl px-4 py-2 border border-zinc-800 flex items-center justify-between text-xs">
         <div className="flex items-center gap-2">
           <span className="font-bold text-zinc-100 font-mono">08:14</span>
           <span className="text-[10px] text-zinc-400 font-mono">DCC-5G ●●●</span>
         </div>
 
         {/* Dynamic Island: LSE & Moon status */}
-        <div className="flex items-center gap-1.5 bg-black/70 px-3 py-1 rounded-full border border-zinc-700/80">
+        <div className="flex items-center gap-2 bg-black px-3 py-1 rounded-full border border-zinc-700">
           <span className="text-xs">{isFullMoon ? '🌕' : '🌙'}</span>
           <span className="text-[10px] font-semibold text-amber-300 truncate max-w-[110px]">
             {isFullMoon ? 'Piena Luna' : moonPhase}
           </span>
           {isFullMoon && (
-            <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
           )}
         </div>
 
-        <div className="flex items-center gap-1.5">
-          <span className="text-[10px] text-emerald-400 font-mono font-semibold">98% ⚡</span>
+        <div className="flex items-center gap-2">
+          <span className="text-[10px] text-emerald-400 font-mono font-bold">98% ⚡</span>
         </div>
       </div>
 
       {/* ========================================================================= */}
       {/* 2. BARRA DI STATO RAPIDA: SOPPRESSORI FERORMONALI & RIFT THREAT           */}
       {/* ========================================================================= */}
-      <div className="bg-zinc-900/80 rounded-xl px-3.5 py-2.5 border border-zinc-800 flex items-center justify-between gap-3">
-        <div className="flex items-center gap-2.5">
-          <span className="text-lg">🩺</span>
+      <div className="bg-zinc-900 rounded-2xl px-4 py-3 border border-zinc-800 flex items-center justify-between gap-3">
+        <div className="flex items-center gap-3">
+          <span className="text-xl">🩺</span>
           <div>
-            <div className="text-xs font-bold text-zinc-100 flex items-center gap-1.5">
+            <div className="text-xs font-bold text-zinc-100 flex items-center gap-2">
               <span>Soppressori:</span>
               <span className={suppressors > 0 ? 'text-emerald-400' : 'text-red-400'}>
                 {suppressors} Dosi
               </span>
             </div>
-            <div className="text-[10px] text-zinc-400">
+            <div className="text-[11px] text-zinc-400 pt-1">
               LSE: <span className="text-amber-300 font-semibold">{lseStatus}</span> (~{daysLeft}gg picco)
             </div>
           </div>
@@ -363,7 +363,7 @@ export default function Panel({ engine }: { engine: any }) {
 
         <button
           onClick={handleUseSuppressor}
-          className="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3.5 py-1.5 rounded-lg border border-emerald-500 shadow-sm transition active:scale-95 shrink-0"
+          className="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-2 rounded-xl border border-emerald-500 shadow-sm transition active:scale-95 shrink-0"
         >
           Inala Dose
         </button>
@@ -372,23 +372,22 @@ export default function Panel({ engine }: { engine: any }) {
       {/* ========================================================================= */}
       {/* 3. SCHERMATE DELL'OS (VISTE INTERATTIVE)                                   */}
       {/* ========================================================================= */}
-      <div className="min-h-[380px] flex flex-col justify-between">
+      <div className="min-h-[390px] flex flex-col justify-between">
 
         {/* ----------------------------------------------------------------------- */}
         {/* APP 1: HOME DASHBOARD                                                   */}
         {/* ----------------------------------------------------------------------- */}
         {activeApp === 'home' && (
-          <div className="flex flex-col gap-2.5">
-            {/* Widget Benvenuto Operativo (PADDING RIFINITO - SCREENSHOT 1) */}
-            <div className="bg-gradient-to-r from-zinc-900 to-zinc-800/80 rounded-2xl px-4 py-3.5 border border-zinc-700/60 shadow-md flex flex-col gap-2">
+          <div className="flex flex-col gap-3">
+            {/* Widget Benvenuto Operativo */}
+            <div className="bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-2">
               <div className="flex items-center justify-between gap-3">
-                <span className="text-xs font-bold text-zinc-200">Svartúlfr OS · Mobile Net</span>
-                {/* Badge Reputazione con padding generoso e senza bordi compressi */}
-                <span className="text-[11px] font-mono font-semibold bg-purple-950/90 text-purple-200 border border-purple-700/80 px-2.5 py-1 rounded-lg shrink-0 shadow-sm">
+                <span className="text-xs font-bold text-zinc-100">Svartúlfr OS · Mobile Net</span>
+                <span className="text-xs font-mono font-semibold bg-purple-950 text-purple-200 border border-purple-700 px-3 py-1 rounded-lg shrink-0">
                   Rep. Branco: {packRep}%
                 </span>
               </div>
-              <p className="text-xs text-zinc-300 leading-relaxed pr-1">
+              <p className="text-xs text-zinc-300 leading-relaxed pr-1 pt-1">
                 Benvenuto nel terminale crittografato del Branco Douglas e del polo accademico SUCC/CUMS.
               </p>
             </div>
@@ -397,13 +396,13 @@ export default function Panel({ engine }: { engine: any }) {
             <div className="grid grid-cols-3 gap-2">
               <button
                 onClick={() => { setActiveApp('telegram'); setTelegramUnread(0); }}
-                className="bg-zinc-900/90 hover:bg-zinc-800/90 p-3.5 rounded-2xl border border-zinc-800 flex flex-col items-center justify-center gap-1.5 transition active:scale-95 text-center relative"
+                className="bg-zinc-900 hover:bg-zinc-850 p-4 rounded-2xl border border-zinc-800 flex flex-col items-center justify-center gap-2 transition active:scale-95 text-center relative"
               >
-                <span className="text-2xl">💬</span>
-                <span className="text-[11px] font-bold text-sky-400">Telegram</span>
-                <span className="text-[9px] text-zinc-400">Branco Douglas</span>
+                <span className="text-3xl">💬</span>
+                <span className="text-xs font-bold text-sky-400">Telegram</span>
+                <span className="text-[10px] text-zinc-400">Branco Douglas</span>
                 {telegramUnread > 0 && (
-                  <span className="absolute top-2 right-2 bg-sky-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px]">
+                  <span className="absolute top-2 right-2 bg-sky-500 text-white text-[10px] font-bold px-2 py-1 rounded-full min-w-[20px]">
                     {telegramUnread}
                   </span>
                 )}
@@ -411,40 +410,40 @@ export default function Panel({ engine }: { engine: any }) {
 
               <button
                 onClick={() => setActiveApp('academics')}
-                className="bg-zinc-900/90 hover:bg-zinc-800/90 p-3.5 rounded-2xl border border-zinc-800 flex flex-col items-center justify-center gap-1.5 transition active:scale-95 text-center"
+                className="bg-zinc-900 hover:bg-zinc-850 p-4 rounded-2xl border border-zinc-800 flex flex-col items-center justify-center gap-2 transition active:scale-95 text-center"
               >
-                <span className="text-2xl">🎓</span>
-                <span className="text-[11px] font-bold text-indigo-400">SUCC & CUMS</span>
-                <span className="text-[9px] text-zinc-400">Libretto Corsi</span>
+                <span className="text-3xl">🎓</span>
+                <span className="text-xs font-bold text-indigo-400">SUCC & CUMS</span>
+                <span className="text-[10px] text-zinc-400">Libretto Corsi</span>
               </button>
 
               <button
                 onClick={() => setActiveApp('guild')}
-                className="bg-zinc-900/90 hover:bg-zinc-800/90 p-3.5 rounded-2xl border border-zinc-800 flex flex-col items-center justify-center gap-1.5 transition active:scale-95 text-center"
+                className="bg-zinc-900 hover:bg-zinc-850 p-4 rounded-2xl border border-zinc-800 flex flex-col items-center justify-center gap-2 transition active:scale-95 text-center"
               >
-                <span className="text-2xl">⚔️</span>
-                <span className="text-[11px] font-bold text-red-400">Gilda DMHA</span>
-                <span className="text-[9px] text-zinc-400">Bacheca Caccia</span>
+                <span className="text-3xl">⚔️</span>
+                <span className="text-xs font-bold text-red-400">Gilda DMHA</span>
+                <span className="text-[10px] text-zinc-400">Bacheca Caccia</span>
               </button>
 
               <button
                 onClick={() => setActiveApp('biotrack')}
-                className="bg-zinc-900/90 hover:bg-zinc-800/90 p-3.5 rounded-2xl border border-zinc-800 flex flex-col items-center justify-center gap-1.5 transition active:scale-95 text-center"
+                className="bg-zinc-900 hover:bg-zinc-850 p-4 rounded-2xl border border-zinc-800 flex flex-col items-center justify-center gap-2 transition active:scale-95 text-center"
               >
-                <span className="text-2xl">🐾</span>
-                <span className="text-[11px] font-bold text-emerald-400">BioTrack LSE</span>
-                <span className="text-[9px] text-zinc-400">Ferormoni & Luna</span>
+                <span className="text-3xl">🐾</span>
+                <span className="text-xs font-bold text-emerald-400">BioTrack LSE</span>
+                <span className="text-[10px] text-zinc-400">Ferormoni & Luna</span>
               </button>
 
               <button
                 onClick={() => { setActiveApp('succbook'); setSuccbookUnread(0); }}
-                className="bg-zinc-900/90 hover:bg-zinc-800/90 p-3.5 rounded-2xl border border-zinc-800 flex flex-col items-center justify-center gap-1.5 transition active:scale-95 text-center relative"
+                className="bg-zinc-900 hover:bg-zinc-850 p-4 rounded-2xl border border-zinc-800 flex flex-col items-center justify-center gap-2 transition active:scale-95 text-center relative"
               >
-                <span className="text-2xl">📸</span>
-                <span className="text-[11px] font-bold text-yellow-400">SuccBook</span>
-                <span className="text-[9px] text-zinc-400">Social Campus</span>
+                <span className="text-3xl">📸</span>
+                <span className="text-xs font-bold text-yellow-400">SuccBook</span>
+                <span className="text-[10px] text-zinc-400">Social Campus</span>
                 {succbookUnread > 0 && (
-                  <span className="absolute top-2 right-2 bg-yellow-500 text-black text-[9px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px]">
+                  <span className="absolute top-2 right-2 bg-yellow-500 text-black text-[10px] font-bold px-2 py-1 rounded-full min-w-[20px]">
                     {succbookUnread}
                   </span>
                 )}
@@ -452,61 +451,59 @@ export default function Panel({ engine }: { engine: any }) {
 
               <button
                 onClick={() => setActiveApp('music')}
-                className="bg-zinc-900/90 hover:bg-zinc-800/90 p-3.5 rounded-2xl border border-zinc-800 flex flex-col items-center justify-center gap-1.5 transition active:scale-95 text-center"
+                className="bg-zinc-900 hover:bg-zinc-850 p-4 rounded-2xl border border-zinc-800 flex flex-col items-center justify-center gap-2 transition active:scale-95 text-center"
               >
-                <span className="text-2xl">🎵</span>
-                <span className="text-[11px] font-bold text-cyan-300">Audio Mood</span>
-                <span className="text-[9px] text-zinc-400">Echo Speaker</span>
+                <span className="text-3xl">🎵</span>
+                <span className="text-xs font-bold text-cyan-300">Audio Mood</span>
+                <span className="text-[10px] text-zinc-400">Echo Speaker</span>
               </button>
             </div>
 
             {/* Quick Banner: Allerta Minaccia Rift */}
-            <div className="bg-zinc-900/70 rounded-xl px-3.5 py-2.5 border border-zinc-800 flex items-center justify-between text-xs">
+            <div className="bg-zinc-900 rounded-2xl px-4 py-3 border border-zinc-800 flex items-center justify-between text-xs">
               <div className="flex items-center gap-2">
                 <span className="text-amber-400 font-bold">⚠️ Allerta Rift:</span>
-                <span className="text-zinc-300 font-mono text-[11px]">{riftAlert}</span>
+                <span className="text-zinc-200 font-mono">{riftAlert}</span>
               </div>
-              <span className="text-[10px] text-zinc-500 font-mono">Frequenza DCC OK</span>
+              <span className="text-[10px] text-zinc-500 font-mono">DCC SEC OK</span>
             </div>
           </div>
         )}
 
         {/* ----------------------------------------------------------------------- */}
-        {/* APP 2: TELEGRAM DOUGLAS (PADDING & BADGE RIFINITI - SCREENSHOT 2)       */}
+        {/* APP 2: TELEGRAM DOUGLAS (CHAT DI BRANCO)                                */}
         {/* ----------------------------------------------------------------------- */}
         {activeApp === 'telegram' && (
-          <div className="flex flex-col gap-2.5">
+          <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
               <div className="flex items-center gap-2">
-                <span className="text-sky-400 font-bold text-xs">💬 Branco Douglas</span>
+                <span className="text-sky-400 font-bold text-sm">💬 Branco Douglas</span>
                 <span className="text-[10px] text-emerald-400 font-medium">● 5 online</span>
               </div>
               <button
                 onClick={() => setActiveApp('home')}
-                className="text-[10px] text-zinc-400 hover:text-white px-2.5 py-1 rounded-md bg-zinc-800 border border-zinc-700/60"
+                className="text-xs text-zinc-300 hover:text-white px-3 py-1 rounded-lg bg-zinc-800 border border-zinc-700"
               >
                 Chiudi
               </button>
             </div>
 
-            <div className="flex flex-col gap-2.5 max-h-[290px] overflow-y-auto pr-1">
+            <div className="flex flex-col gap-2 max-h-[290px] overflow-y-auto pr-1">
               {messages.map((m: any) => (
                 <div
                   key={m.id}
-                  className="bg-zinc-900/95 rounded-2xl px-4 py-3 border border-zinc-800 flex flex-col gap-1.5 shadow-sm"
+                  className="bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-2 shadow-sm"
                 >
                   <div className="flex items-center justify-between gap-3">
                     <span className={'text-xs font-bold ' + m.color}>{m.sender}</span>
                     <div className="flex items-center gap-2">
-                      {/* Badge ruolo rifinito con px-2.5 py-0.5 e border curato */}
-                      <span className={'text-[10px] px-2.5 py-0.5 rounded-md font-semibold border shrink-0 ' + m.badgeClass}>
+                      <span className={'text-[10px] px-3 py-1 rounded-md font-semibold shrink-0 ' + m.badgeClass}>
                         {m.role}
                       </span>
-                      <span className="text-[10px] text-zinc-500 font-mono shrink-0">{m.time}</span>
+                      <span className="text-xs text-zinc-500 font-mono shrink-0">{m.time}</span>
                     </div>
                   </div>
-                  {/* Testo con spaziatura e padding ottimali a sinistra */}
-                  <p className="text-xs text-zinc-200 leading-relaxed pt-0.5 pr-1">{m.text}</p>
+                  <p className="text-xs text-zinc-200 leading-relaxed pr-1 pt-1">{m.text}</p>
                 </div>
               ))}
             </div>
@@ -517,11 +514,11 @@ export default function Panel({ engine }: { engine: any }) {
                 placeholder="Scrivi messaggio al branco..."
                 value={chatInput}
                 onChange={(e: any) => setChatInput(String(e?.target?.value ?? e ?? ''))}
-                className="flex-1 bg-zinc-900 text-zinc-100 placeholder-zinc-500 text-xs px-3.5 py-2 rounded-xl border border-zinc-800 focus:outline-none focus:border-sky-500"
+                className="flex-1 bg-zinc-900 text-zinc-100 placeholder-zinc-500 text-xs px-4 py-3 rounded-xl border border-zinc-800 focus:outline-none focus:border-sky-500"
               />
               <button
                 onClick={handleSendMessage}
-                className="bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs px-4 py-2 rounded-xl transition shadow-sm"
+                className="bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs px-4 py-3 rounded-xl transition shadow-sm"
               >
                 Invia
               </button>
@@ -530,22 +527,22 @@ export default function Panel({ engine }: { engine: any }) {
         )}
 
         {/* ----------------------------------------------------------------------- */}
-        {/* APP 3: SUCC & CUMS ACADEMICS (BADGE VOTI RIFINITI - SCREENSHOT 3)       */}
+        {/* APP 3: SUCC & CUMS ACADEMICS (RIDEFINITO CON SPAZIATURA ECCELLENTE)     */}
         {/* ----------------------------------------------------------------------- */}
         {activeApp === 'academics' && (
-          <div className="flex flex-col gap-2.5">
+          <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
-              <span className="text-indigo-400 font-bold text-xs">🎓 Libretto Accademico SUCC & CUMS</span>
+              <span className="text-indigo-400 font-bold text-sm">🎓 Libretto Accademico SUCC & CUMS</span>
               <button
                 onClick={() => setActiveApp('home')}
-                className="text-[10px] text-zinc-400 hover:text-white px-2.5 py-1 rounded-md bg-zinc-800 border border-zinc-700/60"
+                className="text-xs text-zinc-300 hover:text-white px-3 py-1 rounded-lg bg-zinc-800 border border-zinc-700"
               >
                 Chiudi
               </button>
             </div>
 
-            {/* Selettore Studente */}
-            <div className="flex gap-1.5 overflow-x-auto pb-1 text-xs">
+            {/* Selettore Studente con respiro verticale in modo da non essere MAI clippato */}
+            <div className="flex gap-2 overflow-x-auto py-1 text-xs">
               {[
                 { id: 'alyssa', label: 'Alyssa' },
                 { id: 'jasper', label: 'Jasper' },
@@ -556,7 +553,7 @@ export default function Panel({ engine }: { engine: any }) {
                 <button
                   key={s.id}
                   onClick={() => setSelectedStudent(s.id)}
-                  className={'px-3 py-1.5 rounded-lg font-semibold whitespace-nowrap transition ' + (selectedStudent === s.id ? 'bg-indigo-600 text-white shadow-sm' : 'bg-zinc-900 text-zinc-400 hover:text-zinc-200 border border-zinc-800')}
+                  className={'px-3 py-2 rounded-xl font-semibold whitespace-nowrap transition ' + (selectedStudent === s.id ? 'bg-indigo-600 text-white shadow-sm' : 'bg-zinc-900 text-zinc-400 hover:text-zinc-200 border border-zinc-800')}
                 >
                   {s.label}
                 </button>
@@ -564,41 +561,41 @@ export default function Panel({ engine }: { engine: any }) {
             </div>
 
             {/* Scheda Dati Studente */}
-            <div className="bg-zinc-900/90 rounded-2xl px-4 py-3 border border-zinc-800 flex flex-col gap-2">
-              <div className="flex items-center justify-between gap-2">
+            <div className="bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-2">
+              <div className="flex items-center justify-between gap-3">
                 <div>
                   <div className="text-xs font-bold text-zinc-100">{studentData.name}</div>
-                  <div className="text-[10px] text-zinc-400">{studentData.school}</div>
+                  <div className="text-[11px] text-zinc-400">{studentData.school}</div>
                 </div>
-                <span className="text-[10px] bg-indigo-950/90 text-indigo-300 border border-indigo-700/80 px-2.5 py-1 rounded-lg font-mono font-semibold shrink-0">
+                <span className="text-xs bg-indigo-950 text-indigo-300 border border-indigo-700 px-3 py-1 rounded-lg font-mono font-semibold shrink-0">
                   GPA {studentData.gpa} · {studentData.credits} CFU
                 </span>
               </div>
-              <div className="text-[11px] text-zinc-300">
+              <div className="text-xs text-zinc-300 pt-1 border-t border-zinc-800">
                 <span className="font-semibold text-zinc-400">Indirizzo:</span> {studentData.major}
               </div>
-              <div className="text-[10px] text-zinc-400">
+              <div className="text-[11px] text-zinc-400">
                 <span className="font-semibold text-zinc-400">Tirocinio:</span> {studentData.internship}
               </div>
             </div>
 
-            {/* Lista Corsi (BADGE VOTI ELEGANTI, MAI PIÙ PILLOLE COMPRESSE) */}
-            <div className="flex flex-col gap-2 max-h-[175px] overflow-y-auto pr-1">
+            {/* Lista Corsi: layout senza bordi interni rigidi e con badge voto a blocco fisso (w-10 h-8) */}
+            <div className="flex flex-col gap-2 max-h-[180px] overflow-y-auto pr-1">
               {studentData.courses.map((c: any, i: number) => (
                 <div
                   key={i}
-                  className="bg-zinc-900/70 rounded-xl px-3.5 py-2.5 border border-zinc-800 flex items-center justify-between gap-3 text-xs"
+                  className="bg-zinc-900 hover:bg-zinc-850 rounded-2xl p-4 border border-zinc-800 flex items-center justify-between gap-4 text-xs"
                 >
                   <div className="flex-1 min-w-0 pr-1">
-                    <div className="text-xs font-medium text-zinc-200 truncate">{c.name}</div>
-                    <div className="text-[10px] text-zinc-400 font-mono pt-0.5">
+                    <div className="text-xs font-semibold text-zinc-100 truncate">{c.name}</div>
+                    <div className="text-[10px] text-zinc-400 font-mono pt-1">
                       {c.code} · Prof. {c.prof} · {c.cfu} CFU
                     </div>
                   </div>
-                  {/* Badge voto con dimensioni minime definite (min-w-[36px] h-7) e centratura perfetta */}
-                  <span className="min-w-[38px] h-7 px-2 flex items-center justify-center rounded-lg font-mono font-bold text-xs bg-emerald-950/90 text-emerald-300 border border-emerald-600/80 shrink-0 shadow-sm">
+                  {/* Badge voto: larghezza 40px, altezza 32px, flex center per perfetto allineamento del voto */}
+                  <div className="w-10 h-8 rounded-xl flex items-center justify-center font-mono font-bold text-xs bg-emerald-950 text-emerald-300 border border-emerald-600 shrink-0 shadow-sm">
                     {c.grade}
-                  </span>
+                  </div>
                 </div>
               ))}
             </div>
@@ -609,19 +606,19 @@ export default function Panel({ engine }: { engine: any }) {
         {/* APP 4: GILDA DMHA (BACHECA CACCIATORI)                                  */}
         {/* ----------------------------------------------------------------------- */}
         {activeApp === 'guild' && (
-          <div className="flex flex-col gap-2.5">
+          <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
-              <span className="text-red-400 font-bold text-xs">⚔️ Gilda dei Cacciatori DMHA</span>
+              <span className="text-red-400 font-bold text-sm">⚔️ Gilda dei Cacciatori DMHA</span>
               <button
                 onClick={() => setActiveApp('home')}
-                className="text-[10px] text-zinc-400 hover:text-white px-2.5 py-1 rounded-md bg-zinc-800 border border-zinc-700/60"
+                className="text-xs text-zinc-300 hover:text-white px-3 py-1 rounded-lg bg-zinc-800 border border-zinc-700"
               >
                 Chiudi
               </button>
             </div>
 
             {/* Selettore Cacciatore */}
-            <div className="flex gap-1.5 overflow-x-auto pb-1 text-xs">
+            <div className="flex gap-2 overflow-x-auto py-1 text-xs">
               {[
                 { id: 'alyssa', label: 'Alyssa' },
                 { id: 'jasper', label: 'Jasper' },
@@ -631,7 +628,7 @@ export default function Panel({ engine }: { engine: any }) {
                 <button
                   key={h.id}
                   onClick={() => setSelectedHunter(h.id)}
-                  className={'px-3 py-1.5 rounded-lg font-semibold whitespace-nowrap transition ' + (selectedHunter === h.id ? 'bg-red-600 text-white shadow-sm' : 'bg-zinc-900 text-zinc-400 hover:text-zinc-200 border border-zinc-800')}
+                  className={'px-3 py-2 rounded-xl font-semibold whitespace-nowrap transition ' + (selectedHunter === h.id ? 'bg-red-600 text-white shadow-sm' : 'bg-zinc-900 text-zinc-400 hover:text-zinc-200 border border-zinc-800')}
                 >
                   {h.label}
                 </button>
@@ -639,33 +636,33 @@ export default function Panel({ engine }: { engine: any }) {
             </div>
 
             {/* Badge Rango Cacciatore */}
-            <div className="bg-zinc-900/90 rounded-2xl px-4 py-3 border border-zinc-800 flex items-center justify-between gap-3">
+            <div className="bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex items-center justify-between gap-3">
               <div>
                 <div className="text-xs font-bold text-zinc-100">{hunterData.name}</div>
-                <div className="text-[10px] text-zinc-400">{hunterData.role}</div>
-                <div className="text-[10px] text-zinc-400 font-mono pt-0.5">Crediti Caccia: {hunterData.credits} CR</div>
+                <div className="text-[11px] text-zinc-400">{hunterData.role}</div>
+                <div className="text-[10px] text-zinc-400 font-mono pt-1">Crediti Caccia: {hunterData.credits} CR</div>
               </div>
-              <span className={'text-xs font-bold px-3 py-1 rounded-lg border font-mono shrink-0 shadow-sm ' + hunterData.rankClass}>
+              <span className={'text-xs font-bold px-3 py-2 rounded-xl border font-mono shrink-0 shadow-sm ' + hunterData.rankClass}>
                 {hunterData.rank}
               </span>
             </div>
 
             {/* Missioni DMHA */}
-            <div className="flex flex-col gap-2 max-h-[165px] overflow-y-auto pr-1">
+            <div className="flex flex-col gap-2 max-h-[170px] overflow-y-auto pr-1">
               {MISSIONS.map((m: any) => (
-                <div key={m.id} className="bg-zinc-900/70 rounded-xl px-3.5 py-2.5 border border-zinc-800 flex flex-col gap-1.5">
+                <div key={m.id} className="bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-2">
                   <div className="flex items-center justify-between gap-2">
-                    <span className="text-xs font-bold text-zinc-200">{m.title}</span>
-                    <span className={'text-[10px] font-bold px-2 py-0.5 rounded-md border font-mono shrink-0 ' + m.rankClass}>
+                    <span className="text-xs font-bold text-zinc-100">{m.title}</span>
+                    <span className={'text-[10px] font-bold px-2 py-1 rounded-md border font-mono shrink-0 ' + m.rankClass}>
                       {m.rank}
                     </span>
                   </div>
-                  <p className="text-[11px] text-zinc-300 leading-relaxed">{m.desc}</p>
-                  <div className="flex items-center justify-between pt-1 text-[10px]">
+                  <p className="text-xs text-zinc-300 leading-relaxed">{m.desc}</p>
+                  <div className="flex items-center justify-between pt-1 text-xs">
                     <span className="text-amber-400 font-mono font-semibold">Ricompensa: {m.reward}</span>
                     <button
                       onClick={() => setAcceptedMissionId(m.id)}
-                      className={'px-3 py-1 rounded-lg font-bold transition shadow-sm ' + (acceptedMissionId === m.id ? 'bg-emerald-600 text-white' : 'bg-zinc-800 text-zinc-200 hover:bg-zinc-700 border border-zinc-700/60')}
+                      className={'px-3 py-2 rounded-xl font-bold transition shadow-sm ' + (acceptedMissionId === m.id ? 'bg-emerald-600 text-white' : 'bg-zinc-800 text-zinc-200 hover:bg-zinc-700 border border-zinc-700')}
                     >
                       {acceptedMissionId === m.id ? 'Accettata ✓' : 'Accetta Incarico'}
                     </button>
@@ -680,26 +677,26 @@ export default function Panel({ engine }: { engine: any }) {
         {/* APP 5: BIOTRACK LSE (FERORMONI & FASI LUNARI)                           */}
         {/* ----------------------------------------------------------------------- */}
         {activeApp === 'biotrack' && (
-          <div className="flex flex-col gap-2.5">
+          <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
-              <span className="text-emerald-400 font-bold text-xs">🐾 BioTrack LSE & Monitor Ferormonale</span>
+              <span className="text-emerald-400 font-bold text-sm">🐾 BioTrack LSE & Monitor Ferormonale</span>
               <button
                 onClick={() => setActiveApp('home')}
-                className="text-[10px] text-zinc-400 hover:text-white px-2.5 py-1 rounded-md bg-zinc-800 border border-zinc-700/60"
+                className="text-xs text-zinc-300 hover:text-white px-3 py-1 rounded-lg bg-zinc-800 border border-zinc-700"
               >
                 Chiudi
               </button>
             </div>
 
             {/* Pannello Biologico Licantropo */}
-            <div className="bg-zinc-900/90 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-2.5 shadow-sm">
+            <div className="bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-3 shadow-sm">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-bold text-zinc-200">Stato Fisiologico LSE:</span>
-                <span className="text-xs font-bold text-amber-400 bg-amber-950/90 px-3 py-1 rounded-lg border border-amber-700/80">
+                <span className="text-xs font-bold text-amber-400 bg-amber-950 px-3 py-1 rounded-lg border border-amber-700">
                   {lseStatus}
                 </span>
               </div>
-              <div className="flex items-center justify-between text-xs pt-1 border-t border-zinc-800/60">
+              <div className="flex items-center justify-between text-xs pt-1 border-t border-zinc-800">
                 <span className="text-zinc-400">Giorni al Picco Stagionale:</span>
                 <span className="font-mono font-bold text-zinc-100">{daysLeft} giorni</span>
               </div>
@@ -712,10 +709,10 @@ export default function Panel({ engine }: { engine: any }) {
             </div>
 
             {/* Influsso Lunare */}
-            <div className="bg-zinc-900/90 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-2 shadow-sm">
+            <div className="bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-2 shadow-sm">
               <div className="flex items-center justify-between gap-2">
                 <span className="text-xs font-bold text-amber-300">🌙 Influsso Lunare Attuale</span>
-                <span className={'text-[10px] font-bold px-2.5 py-1 rounded-lg border shrink-0 ' + (isFullMoon ? 'bg-red-950/90 text-red-300 border-red-700/80' : 'bg-zinc-800 text-zinc-400 border-zinc-700')}>
+                <span className={'text-xs font-bold px-3 py-1 rounded-lg border shrink-0 ' + (isFullMoon ? 'bg-red-950 text-red-300 border-red-700' : 'bg-zinc-800 text-zinc-400 border-zinc-700')}>
                   {isFullMoon ? 'BUFF ATTIVO (+2 MGT/RES, +1 AGI)' : 'Influsso Standard'}
                 </span>
               </div>
@@ -730,37 +727,37 @@ export default function Panel({ engine }: { engine: any }) {
         {/* APP 6: SUCCBOOK (SOCIAL CAMPUS)                                         */}
         {/* ----------------------------------------------------------------------- */}
         {activeApp === 'succbook' && (
-          <div className="flex flex-col gap-2.5">
+          <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
-              <span className="text-yellow-400 font-bold text-xs">📸 SuccBook · Campus Solarton</span>
+              <span className="text-yellow-400 font-bold text-sm">📸 SuccBook · Campus Solarton</span>
               <button
                 onClick={() => setActiveApp('home')}
-                className="text-[10px] text-zinc-400 hover:text-white px-2.5 py-1 rounded-md bg-zinc-800 border border-zinc-700/60"
+                className="text-xs text-zinc-300 hover:text-white px-3 py-1 rounded-lg bg-zinc-800 border border-zinc-700"
               >
                 Chiudi
               </button>
             </div>
 
-            <div className="flex flex-col gap-2.5 max-h-[300px] overflow-y-auto pr-1">
+            <div className="flex flex-col gap-2 max-h-[300px] overflow-y-auto pr-1">
               {feedPosts.map((p: any) => (
-                <div key={p.id} className="bg-zinc-900/90 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-2 shadow-sm">
+                <div key={p.id} className="bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-2 shadow-sm">
                   <div className="flex items-center justify-between gap-2">
                     <div className="flex items-center gap-2">
-                      <span className="text-lg">{p.avatar}</span>
+                      <span className="text-xl">{p.avatar}</span>
                       <div>
                         <div className="text-xs font-bold text-zinc-100">{p.author}</div>
                         <div className="text-[10px] text-zinc-400 font-mono">{p.handle} · {p.time}</div>
                       </div>
                     </div>
-                    <span className="text-[10px] bg-zinc-800/90 text-zinc-300 px-2.5 py-0.5 rounded-md border border-zinc-700/60 font-medium shrink-0">
+                    <span className="text-[10px] bg-zinc-800 text-zinc-300 px-3 py-1 rounded-md border border-zinc-700 font-medium shrink-0">
                       {p.badge}
                     </span>
                   </div>
-                  <p className="text-xs text-zinc-200 leading-relaxed pr-1">{p.text}</p>
-                  <div className="flex items-center justify-between pt-1.5 border-t border-zinc-800/80 text-xs">
+                  <p className="text-xs text-zinc-200 leading-relaxed pr-1 pt-1">{p.text}</p>
+                  <div className="flex items-center justify-between pt-2 border-t border-zinc-800 text-xs">
                     <button
                       onClick={() => toggleLike(p.id)}
-                      className={'flex items-center gap-1.5 px-3 py-1 rounded-lg transition ' + (p.liked ? 'text-red-400 bg-red-950/80 border border-red-700/80 font-bold' : 'text-zinc-400 hover:text-red-400 bg-zinc-800/60 border border-zinc-700/40')}
+                      className={'flex items-center gap-2 px-3 py-2 rounded-lg transition ' + (p.liked ? 'text-red-400 bg-red-950 border border-red-700 font-bold' : 'text-zinc-400 hover:text-red-400 bg-zinc-800 border border-zinc-700')}
                     >
                       <span>{p.liked ? '❤️' : '🤍'}</span>
                       <span>{p.likes} Like</span>
@@ -777,37 +774,37 @@ export default function Panel({ engine }: { engine: any }) {
         {/* APP 7: AUDIO MOOD SPEAKER                                               */}
         {/* ----------------------------------------------------------------------- */}
         {activeApp === 'music' && (
-          <div className="flex flex-col gap-2.5">
+          <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
-              <span className="text-cyan-300 font-bold text-xs">🎵 Echo Mood Audio Player</span>
+              <span className="text-cyan-300 font-bold text-sm">🎵 Echo Mood Audio Player</span>
               <button
                 onClick={() => setActiveApp('home')}
-                className="text-[10px] text-zinc-400 hover:text-white px-2.5 py-1 rounded-md bg-zinc-800 border border-zinc-700/60"
+                className="text-xs text-zinc-300 hover:text-white px-3 py-1 rounded-lg bg-zinc-800 border border-zinc-700"
               >
                 Chiudi
               </button>
             </div>
 
             {/* Now Playing Card */}
-            <div className="bg-gradient-to-r from-zinc-900 to-cyan-950/50 rounded-2xl p-4 border border-cyan-800/50 flex flex-col gap-3 shadow-md">
+            <div className="bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-3 shadow-md">
               <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-xl bg-cyan-950 flex items-center justify-center text-2xl border border-cyan-700/80 shrink-0 shadow-inner">
+                <div className="w-12 h-12 rounded-xl bg-cyan-950 flex items-center justify-center text-2xl border border-cyan-700 shrink-0 shadow-inner">
                   🎧
                 </div>
                 <div>
                   <div className="text-xs font-bold text-zinc-100">{activeTrack.title}</div>
-                  <div className="text-[11px] text-cyan-300 font-medium">{activeTrack.artist}</div>
+                  <div className="text-xs text-cyan-300 font-medium">{activeTrack.artist}</div>
                   <div className="text-[10px] text-zinc-400 font-mono">{activeTrack.mood}</div>
                 </div>
               </div>
               <div className="flex items-center justify-between pt-1">
                 <button
                   onClick={() => setMusicPlaying(!musicPlaying)}
-                  className="bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs px-4 py-1.5 rounded-lg transition shadow-sm"
+                  className="bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs px-4 py-2 rounded-xl transition shadow-sm"
                 >
                   {musicPlaying ? 'Pause ⏸' : 'Play ▶'}
                 </button>
-                <span className="text-[10px] text-cyan-400 font-mono font-semibold">
+                <span className="text-xs text-cyan-400 font-mono font-semibold">
                   {musicPlaying ? 'Status: In Riproduzione ●' : 'Status: In Pausa ○'}
                 </span>
               </div>
@@ -822,7 +819,7 @@ export default function Panel({ engine }: { engine: any }) {
                 <button
                   key={i}
                   onClick={() => { setActiveTrack(t); setMusicPlaying(true); }}
-                  className={'w-full px-3.5 py-2.5 rounded-xl border flex items-center justify-between text-left transition text-xs ' + (activeTrack.title === t.title ? 'bg-cyan-950/60 border-cyan-700 text-white shadow-sm' : 'bg-zinc-900/60 border-zinc-800 text-zinc-300 hover:bg-zinc-800')}
+                  className={'w-full p-3 rounded-2xl border flex items-center justify-between text-left transition text-xs ' + (activeTrack.title === t.title ? 'bg-cyan-950 border-cyan-700 text-white shadow-sm' : 'bg-zinc-900 border-zinc-800 text-zinc-300 hover:bg-zinc-850')}
                 >
                   <div>
                     <div className="font-semibold text-xs">{t.title}</div>
@@ -838,9 +835,9 @@ export default function Panel({ engine }: { engine: any }) {
       </div>
 
       {/* ========================================================================= */}
-      {/* 4. BOTTOM DOCK SMARTPHONE: 5 TASTI RAPIDI CON PADDING PERFETTO            */}
+      {/* 4. BOTTOM DOCK SMARTPHONE: CON BADGE RELATIVO PERFETTO                     */}
       {/* ========================================================================= */}
-      <div className="bg-zinc-900/90 rounded-2xl p-2 border border-zinc-800 flex items-center justify-around text-xs mt-1 shadow-inner">
+      <div className="bg-zinc-900 rounded-2xl p-2 border border-zinc-800 flex items-center justify-around text-xs mt-1 shadow-inner">
         {[
           { id: 'home', label: 'Home', icon: '🏠' },
           { id: 'telegram', label: 'Chat', icon: '💬', badge: telegramUnread },
@@ -856,15 +853,17 @@ export default function Panel({ engine }: { engine: any }) {
                 setActiveApp(tab.id);
                 if (tab.id === 'telegram') setTelegramUnread(0);
               }}
-              className={'relative flex flex-col items-center justify-center py-1.5 px-3 rounded-xl transition ' + (isActive ? 'bg-zinc-800 text-white font-bold shadow-sm' : 'text-zinc-400 hover:text-zinc-200')}
+              className={'relative flex flex-col items-center justify-center py-2 px-3 rounded-xl transition ' + (isActive ? 'bg-zinc-800 text-white font-bold shadow-sm' : 'text-zinc-400 hover:text-zinc-200')}
             >
-              <span className="text-base leading-none mb-1">{tab.icon}</span>
-              <span className="text-[10px] font-medium">{tab.label}</span>
-              {tab.badge && tab.badge > 0 && (
-                <span className="absolute top-1 right-2 bg-sky-500 text-white text-[9px] font-bold px-1.5 py-0.2 rounded-full min-w-[16px] text-center">
-                  {tab.badge}
-                </span>
-              )}
+              <div className="relative flex items-center justify-center">
+                <span className="text-xl leading-none">{tab.icon}</span>
+                {tab.badge && tab.badge > 0 && (
+                  <span className="absolute -top-1 -right-3 bg-sky-500 text-white text-[9px] font-bold px-2 py-1 rounded-full min-w-[16px] text-center leading-none">
+                    {tab.badge}
+                  </span>
+                )}
+              </div>
+              <span className="text-[10px] font-medium mt-1">{tab.label}</span>
             </button>
           );
         })}
