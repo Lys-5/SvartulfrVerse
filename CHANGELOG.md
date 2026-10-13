@@ -2,6 +2,24 @@
 
 Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy dello StoryEngine e gli interventi sulle entità del World (World, Lexicon, Locations, NPC, Rules) sono tracciati cronologicamente in questo documento per garantire persistenza e coerenza storica tra le sessioni.
 
+## [14 Ottobre 2026] - Integrazione 4 Scenari SUCC nel World & StoryEngine Dynamic Campus Life Rules (v92)
+
+### 1. Registrazione dei 4 Nuovi Scenari Ufficiali di SUCC nel World
+* **Creazione e Configurazione via API**: Creati 4 nuovi Scenari sul World `_CgYT8fHXpDC4crjmegQF7` (`POST /api/worlds/scenarios`), con ambientazione geografica precisa, `premade_scenes` narrative pulite (disciplina dialoghi e divieto em-dash `—` / asterischi) e istruzioni Game Master:
+  * **`SUCC: Fall Semester - Open Campus (Third Person)`** (ID `_631nnhRfdhBcG4d12rkrJ`): Seconda settimana d'autunno, mattina al Lunar Quad, vista corale di studenti demiumani, fae e atleti.
+  * **`SUCC: Fall Semester - Open Campus (Second Person)`** (ID `_mtXQEnhUh8nXN6fq2Vj6D`): Variante d'apertura in seconda persona ("You") per immersione diretta.
+  * **`SUCC: Move-in Day at Wyrm Dormitories`** (ID `_X1gtPxULeEV9Mj1prnzCr`): Giorno dei traslochi alle residenze Wyrm tra scatoloni, minotauri facchini, studenti arpie e controlli anti-argento.
+  * **`Solarton: Full Moon Festival in Town Square`** (ID `_g8BB1wgRrEYXpKawY43BE`): Serata di plenilunio a Solarton Square tra carnevale, bancarelle carnivore di street food, luci e soundcheck punk.
+
+### 2. StoryEngine (v92) — Regola Dinamica di Campus & Direttive Roster
+* **Regola Nativa di StoryEngine**: Registrata `rule_succ_random_event_trigger` (*SUCC Dynamic Campus Life & Random Encounters*) per stimolare organicamente durante le sessioni a Solarton:
+  * Comunicazioni improvvise (chiamate dei genitori, messaggi di coach o compagni di corso);
+  * Incidenti fisici di campus (mana-coffee rovesciato su appunti, collisioni d'ali/code nei corridoi affollati);
+  * Incontri casuali d'atleti (Bulls, Bears), musicisti (Grave Mistake) o membri dei club;
+  * Comportamenti e peculiarità di specie (rettili al sole, movimenti d'orecchie e code sotto stress).
+* **Integrazione Prompt Template GM**: Aggiornato `prompt_template` dello StoryEngine con le direttive del roster campus (studenti, atleti, band, docenti e adulti di Solarton).
+* **Nuova Revisione Pubblicata**: StoryEngine aggiornato alla versione `v92` e revisione ufficialmente pubblicata su Wyvern.
+
 ## [13 Ottobre 2026] - Integrazione Massima Lore SUCC (Triage 60 Voci, Nuovi Lexicon, Ripopolamento Voci Vuote, Epurazione Formattazione)
 
 ### 1. Triage Completo Blocco SUCC (60 Voci)
