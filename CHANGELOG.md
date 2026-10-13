@@ -2,6 +2,22 @@
 
 Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy dello StoryEngine e gli interventi sulle entità del World (World, Lexicon, Locations, NPC, Rules) sono tracciati cronologicamente in questo documento per garantire persistenza e coerenza storica tra le sessioni.
 
+## [13 Ottobre 2026] — Risoluzione Globale Voci Lexicon/Items Unnamed (90/90 Ripristinate) & Configurazione Modificatori Tratti RPG (5/5 Applicati)
+
+### 1. Risoluzione Voci Lexicon & Items Unnamed (90/90 Riparate via API)
+* **Causa dell'Anomalia**: Durante i precedenti batch upload dei blocchi di Lexicon (Famigli SUCC, Magia Urbana, Dottrina DMHA e Fisiologia Mutaforma), le voci erano state trasmesse con la chiave `title:` invece del campo canonico dello schema Wyvern `name:`. Questo generava un valore `name: ""` che nell'interfaccia web provocava il rendering fallback di `Untitled memory`, `Untitled lore/concept` e `Unnamed` nella tabella `Game/RPG Systems > Items` (tutti i 10 item del World sono voci di Lexicon con `type: 'item'`).
+* **Risoluzione Automatica**: Eseguito script dedicato (`scripts/fix_all_unnamed_lexicons.js`) con mappatura esatta 1-a-1 tra ID entità e titoli ufficiali registrati. Tutti i 90 record (inclusi i 10 Item DMHA e SUCC) sono stati aggiornati via `PUT /api/worlds/lexicon/:id`.
+* **Verifica**: Scansione post-intervento su tutte le 631 voci del Lexicon del World ha confermato **0 voci unnamed rimanenti**.
+
+### 2. Configurazione Modificatori Statistici Tratti RPG (5 Tratti Senza Modificatori Risolti)
+* **Identificazione**: Ispezione su tutti i 45 tratti del World (`/api/worlds/rpg/traits/_CgYT8fHXpDC4crjmegQF7`) ha rilevato 5 tratti registrati con `stat_modifiers: {}` ("No modifiers"):
+  1. `Apex Predator Divine Core` (`_NL4ANGp2gjKtbAgRTFxbD`): Applicati `{ strength: 3, endurance: 3, perception: 2, charisma: 2 }` (Tratto dei Nove Firstborn).
+  2. `Berserker Internal Furnace` (`_L2xQk9j8RnMKUgGnCVWRR`): Applicati `{ strength: 3, endurance: 3, agility: 1, intelligence: -1 }` (Tratto Berserker di Malachia Douglas).
+  3. `Familiar Soulbound Synergy` (`_kUV13hFp2R2a4aYEXq3c4`): Applicati `{ perception: 2, intelligence: 2, charisma: 1 }` (Tratto custodi e famigli SUCC).
+  4. `Puppeteer Mana Strings` (`_C8XXTwLd1mmF33EkQMUyD`): Applicati `{ agility: 2, intelligence: 2, perception: 1, strength: -1 }` (Tratto burattinaio di Angelo Moreno).
+  5. `Technomantic Data Resonance` (`_AQ6Qy4KHMDgFWKPHDJeqb`): Applicati `{ intelligence: 3, perception: 2, strength: -1 }` (Tratto tecnomante di Jasper Douglas).
+* **Verifica**: Tutti i 45 tratti del World dispongono ora di modificatori statistici bilanciati coerenti con le 7 caratteristiche RPG del sistema.
+
 ## [13 Ottobre 2026] — Story Engine Svartulfr OS (`engine_HCTPXhL8xr89wUY9r9dYU` — v90): Riscrittura Integrale in Inglese, Risoluzione Dipendenze e Pubblicazione Revisione Ufficiale Conforme alla Documentazione Wyvern
 
 ### 1. Riscrittura Completa in Lingua Inglese (Allineamento Moderatori Wyvern)
