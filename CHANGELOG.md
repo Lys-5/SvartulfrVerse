@@ -2,7 +2,46 @@
 
 Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy dello StoryEngine e gli interventi sulle entità del World (World, Lexicon, Locations, NPC, Rules) sono tracciati cronologicamente in questo documento per garantire persistenza e coerenza storica tra le sessioni.
 
-## [13 Ottobre 2026] — Sincronizzazione Bidirezionale Totale: Personas (Alyssa ed Echo), Stand-Alone Characters in /mine, Story Engine Svartulfr OS & I 4 Lorebook Portabili
+## [13 Ottobre 2026] — Importazione Canonica di 16 Character Cards nel World Svartúlfr (Ukiyo, Crimsonmaw, C.U.M.S.) & Epurazione Segnalibri Wyvern
+
+### 1. Importazione & Conversione Canonica (16/16 Character Cards Native Create nel World)
+Il roster dei personaggi nativi del World di Svartúlfr (`_CgYT8fHXpDC4crjmegQF7`) è stato ampliato da 92 a **108 personaggi**, completando la conversione integrale secondo gli standard JED+, LSE, RPG stats bilanciate (81 pt totali, cap Lv 99) e World Clock:
+* **Ukiyo Series (Kakihara):**
+  * **Radek (`_B1zMtdnV7qaJRBK9WEL3d`):** Orco, Leader del Team Ukiyo & Guild Vanguard DPS (Lv 8, 81 pt stats, tratti `Apex Core Resonance`, `Dungeon Veteran`, `Tactical Insight`, home location: Cable District).
+  * **Goran (`_ktBmqzxz61EF6rb3AN483`):** Minotauro, Heavy Frontline Defender del Team Ukiyo (Lv 6, 81 pt stats, tratti `Gentle Giant`, `Dungeon Veteran`, `Unbreakable Guard`, home location: Cable District).
+  * **Kian (`_nePY987DCPUFXyDWeUNaj`):** Mezzelfo, Scout & Long-Range Mana Sniper del Team Ukiyo (Lv 5, 81 pt stats, tratti `Lupine Senses`, `Dungeon Veteran`, `Trickster Mentor`, home location: Cable District). Separato con successo dalla vecchia composite card.
+  * **Marek (`_DNaUEjdBpeYph6pMYAkrt`):** Minotauro, Enforcer degli Ironhorn Nomads & Master Mechanic (Lv 7, 81 pt stats, tratti `Gentle Giant`, `Apex Core Resonance`, `Dungeon Veteran`, home location: Cable District Garages).
+  * **Jaelyn (`_U7VT178yyRfe1cp4enCcw`):** Demi-umana Gatta (singolo paio di orecchie feline), Barista presso Le Refuge des Chats & Sugar Moon Bakery (Lv 4, 81 pt stats, tratti `Empathic Resonance`, `Moonflower Bloom`, home location: Arcadia).
+  * **Neve (`_1KnH8wwhgrJnLwN2kHUUx`):** Demi-umana Gatta (singolo paio di orecchie feline), Commessa e Pasticciera presso Sugar Moon Bakery (Lv 4, 81 pt stats, tratti `Empathic Resonance`, `Moonflower Bloom`, home location: Arcadia).
+  * **Bessie May (`_PjHFLQMac61EK6cKLe1pK`):** Demi-umana Mucca (singolo paio di orecchie bovine e corna ricurve), Artigiana lattiero-casearia alla Solarton Valley Dairy Farm (Lv 4, 81 pt stats, tratti `Gentle Giant`, `Moonflower Bloom`, home location: Solarton Valley Farm).
+* **Crimsonmaw Pack (ℙ𝕙𝕒𝕟𝕥𝕒𝕩𝕞):**
+  * **Liam O’Connor (`_LmqU1jwEmNQfaYEAyMr4r`):** Lupo Mannaro dell'antica Pureblood House O’Connor, Enforcer alleato del Branco Douglas a Blackwood City (Lv 6, 81 pt stats, tratti `Lupine Senses`, `Feral Blood`, `Apex Core Resonance`, home location: Villa Douglas).
+  * **Hugh Rivers (`_eAbjAhEaYr8PftMBb7dHY`):** Lupo Mannaro, Street Scrapper e Sentinel del Branco Crimsonmaw al confine tra Solarton e Blackwood (Lv 5, 81 pt stats, tratti `Feral Blood`, `Night Stalker`, `Lupine Senses`, home location: Industrial Outskirts).
+* **California University of Magical Studies — C.U.M.S. (Nairene - Academy of Magic):**
+  * **Amerian de Vian (`_3rnaj38dFAxEhr97mAWVq`):** Drow Elf, Studente SUCC/CUMS di Duello Arcano e Magia Notturna (Lv 5, 81 pt stats, tratti `Night Stalker`, `Arcane Resonance`, home location: CUMS Solarton `_Caw9nRwKf4Gx9VzW21QJj`).
+  * **Ashton Crowley (`_e8FEAfCdNTDhgzbEgbHCB`):** Umano, Studente CUMS di Illusione e Infiltrazione (Lv 4, 81 pt stats, tratti `Trickster Mentor`, `Arcane Resonance`, home location: CUMS Solarton).
+  * **Aeril Royen (`_nQcTbkw3et4TEBeq9C7pB`):** Tritone / Merfolk, Studente CUMS di Idromanzia e Manipolazione dei Fluidi (Lv 4, 81 pt stats, tratti `Symbiotic Feeder`, `Arcane Resonance`, home location: CUMS Solarton).
+  * **Caien Vaelion (`_Jd6y7d8c33Dkbxz3PHER8`):** Elfo della Luce, Studente CUMS di Evocazione Solare e Barriere Divine (Lv 5, 81 pt stats, tratti `Empathic Resonance`, `Arcane Resonance`, home location: CUMS Solarton).
+  * **Lestat Oreven (`_Rj9yqTj19KHGNaqrcGf6r`):** Umano, Nobile Aristocratico & Studente CUMS di Magia del Sangue ed Ombra (Lv 5, 81 pt stats, tratti `Aristocratic Presence`, `Apex Core Resonance`, home location: CUMS Solarton).
+  * **Xaiden Nershatar (`_dhPb7ngYawDLXFTnDqMmw`):** Demone Infernale, Professore Associato di Combattimento Tattico e Duelli Magici presso CUMS (Lv 9, 81 pt stats, tratti `Apex Core Resonance`, `Dungeon Veteran`, `Tactical Insight`, home location: CUMS Solarton).
+  * **Zaire Ziisis (`_6aDV48T1fekTFVzLxjJDR`):** Drago Antico, Rettore e Preside della California University of Magical Sciences (Lv 99 [cap Wyvern per età millenaria 1184 anni], 81 pt stats, tratti `Apex Core Resonance`, `Aristocratic Presence`, `Tactical Insight`, home location: CUMS Solarton).
+
+### 2. Rispetto delle Direttive e Disciplina di Formattazione
+* **Zero Macro `{{age}}`:** Ogni scheda include età anagrafica corrente e data di nascita esplicita (es. `AGE: 26 (Born 14 May 1998);`), garantendo funzionamento perfetto anche nelle chat stand-alone fuori dal World.
+* **Fisionomia Demi-Umani (Orecchie Singole):** Per Jaelyn, Neve e Bessie May è stato sancito esplicitamente il divieto di orecchie umane: possiedono un solo paio di orecchie animali.
+* **Disciplina Tipografica:** Dialoghi racchiusi tra virgolette inglesi doppie `"..."`, azioni e narrazioni in testo semplice senza asterischi, asterischi riservati ai soli pensieri interni, divieto assoluto dell'em-dash (`—`).
+
+### 3. Epurazione Segnalibri Wyvern `/mine` (14/14 Rimossi con Successo)
+* Rimossi dall'inventario personale dei segnalibri (`/api/inventory/characters/:id`) tutti i 14 segnalibri originali convertiti e integrati nel World.
+* Conteggio residuo dei segnalibri personaggi in `/mine`: ridotto da 41 a **27** (preservando solo le schede di terze parti off-world come Dartalia di StatuoTW e altri universi indipendenti).
+
+### 4. Esportazioni Locali Sincronizzate
+* [exports/Svartulfr_Export.json](file:///e:/repository/SvartulfrVerse/exports/Svartulfr_Export.json): aggiornato a **108 World Characters**.
+* [mine_inventory.json](file:///e:/repository/SvartulfrVerse/mine_inventory.json): aggiornato a 0 lorebook bookmarked e 27 character bookmarked.
+
+---
+
+
 
 ### 1. Epurazione Lorebook & Character Bookmarked Già Integrati (Wyvern /mine Inventory)
 * **Pulizia Inventario Segnalibri Lorebooks (19/19 Rimossi):** Rimosse dall'inventario personale dei segnalibri (`/api/inventory/lorebooks/:id`) tutte le 19 raccolte tematiche esterne assimilate nel World di Svartúlfr e nei 4 Lorebook Portabili (`Camp Mystic`, `Mystics`, `Mystics Extras`, `Technomancer`, `Sculpter`, `Druid`, `The Warper`, `Shadow Lord`, `Puppet Master`, `Dreamwalker`, `Shapeshifter`, `Graviton`, `Aegis City Hunters`, `Berserker Bloodline`, `Cybers And Cyberspace`, `The Familiar Species`, `Spell Compendium`, `Apex Predator`, `LA: New Moon Compendiu`).
