@@ -2,23 +2,31 @@
 
 Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy dello StoryEngine e gli interventi sulle entità del World (World, Lexicon, Locations, NPC, Rules) sono tracciati cronologicamente in questo documento per garantire persistenza e coerenza storica tra le sessioni.
 
-## [13 Ottobre 2026] - Ottimizzazione Travel Routes del World (119 Rotte Complete, Distanze Flavor, Allineamento Seven Hills-Foresta e Free Travel OFF)
+## [13 Ottobre 2026] - Copertura Totale Travel Routes (188/188 Location Connesse, 192 Rotte Attive, Distanze Flavor e Free Travel OFF)
 
-### 1. Conservazione Tassativa di Free Travel = OFF
+### 1. Copertura 100% di tutte le 188 Location del World
+* **Audit e Risoluzione Connettività**: Eseguito audit approfondito (`scripts/find_zero_route_locations.js`) che ha rilevato 73 sotto-location prive di una rotta esplicita registrata in `travel_routes` (poiché affidate all'implicita relazione gerarchica genitore-figlio). Con `free_travel: false`, l'assenza di rotte esplicite per le sotto-location poteva impedire lo scorrimento del tempo durante gli spostamenti locali.
+* **Creazione di 73 Nuove Rotte di Connessione Locale**: Eseguito `scripts/ensure_all_locations_have_routes.js` per dotare ogni singola struttura, ala di dormitorio, confraternita, laboratorio didattico, camera e sotto-distretto di almeno una rotta esplicita bidirezionale:
+  * **Wyrm Dormitories**: Tutte le ali (North Wing Human, South Wing Supernatural, West & East Wings Mixed, Sun/Moon Rooms, Blood Bank) collegate all'atrio centrale dei dormitori.
+  * **Greek Row**: Tutte le 9 sedi di confraternita/sorellanza (ARO, ASS, BEE, BRO, DOE, KSA, MAN, MOO, TIT, FOX) collegate all'arteria principale del Greek Row.
+  * **Bricklane Mall**: Tutti i negozi e gallerie (Yeti Shack, The Long Table, Suds & Such, Medusa, La Segunda Luna, A&Co.) collegati alla galleria coperta del centro commerciale.
+  * **SUCC Campus & Dipartimenti**: Science Quarter (Bio Labs, Specimen Containment, Greenhouse), Basilica Library (Trophy Room, Magical Sections, Study Rooms, Anime Club), Archer Wolfwood Hall (Classrooms, Lecture Hall), Bulls Stadium (Football Field, Ice Rink) e tutti gli edifici didattici (Building A, B, C, Law Theatres, Administration, Gallery, The Pack, SSC, club) collegati con rotte dedicate.
+  * **CUMS**: Connessioni interne per Evirein Academy of Magic, Magick Research Labs, Nocturnal Hall e Nightwine Hall.
+  * **Blackwood City**: Strutture collegate ai rispettivi distretti (The Nursery a Villa Douglas, Old Cedar Clearing e Market-Zone a Oldtown, Hospital e School ad Arcadia, Aetheris Clinic ad Uptown, L'Iris d'Oro ed Eidolon Creative Suites a Paradise, Club House e Fighting Ring a Ironworks, The Void a Cable District, The Horns e Diner del Sud a Dockside, Yarrow River a Blackwood Forest, Crystal Caves, Dragonide Sanctum e Silver Marshes a The Otherworld).
+  * **DDM Inc. // Voidspace**: Connessioni omniversali dedicate per The Lower Levels, The Euclidean Division e Dullahan's Quarters all'interno del QG DDM.
+* **Risultato Finale**: **188 location connesse su 188 (0 location con zero rotte)**, per un totale di **192 rotte attive**.
+
+### 2. Conservazione Tassativa di Free Travel = OFF
 * **Regola di Simulazione Temporale**: Confermato `free_travel: false` a livello di World per impedire il teletrasporto istantaneo tra macro-regioni e consentire il calcolo dinamico e veritiero del trascorrere del tempo (ore di viaggio, alternanza giorno/notte, consumi e fatica).
 
-### 2. Calibrazione Distance (Flavor) su Tutte le Rotte
-* **Compilazione Completa del Campo `distance`**: Tutte le rotte (sia quelle storiche che quelle di nuova introduzione) dispongono ora di valori numerici di distanza flavor coerenti e realistici (0 rotte con distanza mancante):
-  * **Tratte Lunghe e Marittime (Traghetti)**: 50 miglia nautiche per le traversate tra Dockside, Hex Valley e Solarton (24 ore ciascuna).
-  * **Autostrade e Interurbane**: 85 miglia tra Solarton e Blackwood City (2 ore via Route 101 / Pacific Coast Highway), 110 miglia tra Solarton e Bakersfield (3 ore), 25 miglia tra Solarton e Ventura (1 ora), 28-32 miglia verso Camp Mystic (1 ora).
-  * **Spostamenti Urbani e Distrettuali**: 2-5 miglia tra i distretti di Blackwood City (Seven Hills, Oldtown, Paradise, Dockside, Arcadia, Bluemoon, The Cable District) e di Solarton.
-  * **Percorsi di Campus e Locali**: 1 miglio tra il Lunar Quad e i singoli dipartimenti di SUCC (Basilica Library, Archer Wolfwood Hall, Bulls Stadium, dormitori, laboratori).
+### 3. Calibrazione Distance (Flavor) su Tutte le Rotte
+* **Compilazione Completa del Campo `distance`**: Tutte le 192 rotte dispongono ora di valori numerici di distanza flavor coerenti e realistici (0 rotte con distanza mancante).
 
-### 3. Allineamento Topologico Mappa Ufficiale Blackwood City & Nuove Rotte (119 Rotte Totali)
-* **Allineamento Seven Hills con Foresta e Branco Bloodmoon**: Come confermato dalla cartografia ufficiale, le connessioni verso l'entroterra montuoso e selvaggio partono direttamente da **Seven Hills** (e non da Oldtown):
-  * `Seven Hills` <-> `Blackwood Forest` (1 ora, 6 miglia, strada panoramica dei crinali).
-  * `Seven Hills` <-> `Bloodmoon Pack Territory` (1 ora, 8 miglia, sentiero dei crinali a nord verso i boschi oscuri).
-  * `Seven Hills` <-> `Arcadia` (0 ore, 3 miglia, strada pedemontana che unisce direttamente le tenute di Seven Hills e il distretto residenziale di Arcadia).
+### 4. Allineamento Topologico Mappa Ufficiale Blackwood City (Seven Hills Hub per la Foresta)
+* **Allineamento Seven Hills con Foresta e Branco Bloodmoon**: Confermato che le connessioni montane e selvagge partono direttamente da **Seven Hills**:
+  * `Seven Hills` <-> `Blackwood Forest` (1 ora, 6 miglia).
+  * `Seven Hills` <-> `Bloodmoon Pack Territory` (1 ora, 8 miglia).
+  * `Seven Hills` <-> `Arcadia` (0 ore, 3 miglia).
 * **Correzione Riferimenti Eredità**: Risolti 5 puntamenti orfani della configurazione legacy (riallineati ID corretti di Solarton Ferry Terminal, Hex Valley, Indoor Pool & Sauna e Wyrm Dormitories).
 * **Nuove Connessioni Create**:
   * **Blackwood City**: Collegamenti diretti verso The Cable District, St. Brugge Private Academy, The Otherworld (varco nascosto da Blackwood Forest), Bluemoon, Sugar Moon Bakery in Arcadia, Braceria McKay, The Horns e Apartment C.
