@@ -2,6 +2,33 @@
 
 Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy dello StoryEngine e gli interventi sulle entità del World (World, Lexicon, Locations, NPC, Rules) sono tracciati cronologicamente in questo documento per garantire persistenza e coerenza storica tra le sessioni.
 
+## [14 Ottobre 2026] - Sincronizzazione Totale /mine (8 Schede Stand-Alone, Lorebook a 498 Voci) & Armonizzazione Prompt & AI > Advanced
+
+### 1. Sincronizzazione Lorebook Esterno in `/mine` (Svartúlfr - Lorebook)
+* **Espansione da 348 a 498 Voci Attive**: Aggiornato il Lorebook standalone `_J8x7fwRrpa9C6Wct6hb7p` su `/api/lorebooks/_J8x7fwRrpa9C6Wct6hb7p`:
+  * Aggiornate 348 voci storiche esistenti sovrascrivendo i contenuti corretti dal World Lexicon (inclusi i dormitori Wyrm, le regole sulla nutrizione, le confraternite e la rivalità CUMS);
+  * Integrate 150 nuove voci mancanti create nel World Lexicon (job tematici, negozi, item iconici, SUCC Master Calendar, Luisa Sanchez-Rogers, Nurse Ariadne Cirillo).
+  * Epurazione totale di em-dash (`—` sostituito da `, `) e rispetto delle regole di formattazione.
+
+### 2. Allineamento 8 Schede Stand-Alone in `/mine` al World
+* **Sincronizzazione Completa (Single Source of Truth)**: Eseguito `scripts/sync_all_mine_cards_fresh.js` sulle 8 character card stand-alone dell'utente:
+  * *Jasper Douglas Bloodmoon* (`_t4J9aQNJM36cUKAP4wB4U`)
+  * *Erik Douglas* (`_EWqmxx3Q1fdK97AVBRqEW`)
+  * *Noah Douglas Bloodmoon* (`_AjphrWj2BMT9KJTx4KETE`)
+  * *Malachia Douglas Bloodmoon* (`_yQeae3DnARft2RH4gaFNx`)
+  * *Logan Douglas* (`_BQ4THBW3BKL2RN9Xy4YHb`)
+  * *Zeera Darkfire* (`_tJ8zaBLAb6n7XAyd8qhHQ`)
+  * *Jared Thompson* (`_G4126zBQhWEtFkKCG3Dw3`)
+  * *Mackenzie "Mac" Sanchez-Rogers* (`_HqzMU3zVrgHaHBFKw4nQA`)
+* **Parametri Sincronizzati**: Campi `description` JED+, `personality` PList compatto, `first_mes`, `mes_example`, `scenario`, `outfits` arricchiti, `post_history_instructions`, aggancio tassativo ai 3 Lorebook ufficiali (Lorebook `_J8x7fwRrpa9C6Wct6hb7p`, NPC Primary `_kPzhnGxaRgCMdmgrwWjbY`, Location `_V6jT3gPWDCPdxT2bCedeG`) e collegamento diretto a `story_engine_id: 'engine_HCTPXhL8xr89wUY9r9dYU'` (v92).
+
+### 3. Allineamento Prompts del World in "Prompt & AI > Advanced"
+* **Sinergia Totale con lo StoryEngine v92**: Eseguito `scripts/update_world_advanced_prompts.js` per aggiornare i campi del World (`_CgYT8fHXpDC4crjmegQF7`):
+  * **`base_instructions`**: Aggiunta la sezione `<story_engine_integration>` per coordinare i log dello smartphone, i buff lunari, il monitoraggio LSE (feromoni, calore/rut, soppressori), il registro voti e le missioni DMHA con la narrazione della scena. Regola esplicita sulle orecchie singole dei demiumani (solo orecchie animali).
+  * **`final_instructions`**: Rafforzata la sezione `<digital_communications>` esplicitando che notifiche Telegram, post di SUCCbook e taglie del Guild Board sono renderizzati dinamicamente dai pannelli UI senza inquinare la narrazione con ASCII fittizi.
+  * **`system_prompt_override`**: Aggiunta la sezione `<story_engine_synergy>` per garantire che l'LLM reagisca attivamente agli alert automatici (Full Moon Buff, avviso fuga feromonica, tensione da esami).
+  * **`context_description`**: Convalidata la lore integrata tra Blackwood City, la contea e Solarton con SUCC e CUMS.
+
 ## [14 Ottobre 2026] - Integrazione 4 Scenari SUCC nel World & StoryEngine Dynamic Campus Life Rules (v92)
 
 ### 1. Registrazione dei 4 Nuovi Scenari Ufficiali di SUCC nel World
