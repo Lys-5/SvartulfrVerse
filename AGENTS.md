@@ -20,3 +20,4 @@ Tutti gli agenti che operano in questo workspace devono seguire le 17 direttive 
 12. [12. Lavoro in Locale su Database SQLite Wyldfire (Sospeso)](file:///d:/SvartulfrVerse/.agents/rules/12_lavoro_locale_sqlite_wyldfire.md)
 
 Per la documentazione consolidata completa in un unico file, fare riferimento direttamente a [GEMINI.md](file:///d:/SvartulfrVerse/GEMINI.md).
+Per lo storico cronologico di tutte le modifiche, consultare e aggiornare puntualmente [CHANGELOG.md](file:///e:/repository/SvartulfrVerse/CHANGELOG.md).

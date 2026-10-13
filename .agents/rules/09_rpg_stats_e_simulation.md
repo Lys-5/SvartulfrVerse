@@ -1,10 +1,16 @@
 # Regola 09 — RPG Stats e Sistemi di Simulazione
 
-## 1. Stato Attuale: Sistema in Pausa
-
-- **Stato del Mondo:** Il flag `world_features.rpg_stats` è impostato su `false` a livello globale del World (l'intero modulo Simulation, tranne *Relationships/Attitudes*, è disattivato dall'utente in seguito a test empirici approfonditi).
-- **Conseguenza Operativa Standard:** Il passaggio relativo alle RPG Stats è **in pausa di default su ogni nuova character card**. Non abilitare le statistiche, non distribuire punti, né forzare Livello/Specie/Occupazione su nuove schede a meno di esplicita richiesta per quella specifica sessione.
-- *Preservazione Dati Esistenti:* Se una card ha già le RPG Stats valorizzate, i dati possono essere conservati: resteranno latenti e inattivi nel gioco finché il modulo rimarrà disattivato a livello World, pronti per un eventuale ripristino.
+- **Stato del Mondo:** In seguito alla ristrutturazione dell'editor a Workspace modulari di Wyvern, le feature del World (`world_features`) sono state riattivate a livello globale:
+  - `inventory: true`
+  - `currency: true`
+  - `rpg_stats: true`
+  - `combat: true`
+  - `show_party_stats: true`
+  - `show_species_info: true`
+  - `relationships: true`
+  - `ships: false` (Disattivato: cross-world ships non pertinenti al canone)
+  - `creature_catcher: false` (Disattivato: meccanica capture/evolve in stile monster-tamer disattivata)
+- **Conseguenza Operativa:** Con il modulo attivo, le schede native e i sistemi di calcolo/simulazione rispettano i parametri di budget e blueprint definiti al punto 2. I dati RPG latenti tornano operativi nel gioco.
 
 ---
 

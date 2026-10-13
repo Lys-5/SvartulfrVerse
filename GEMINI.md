@@ -67,7 +67,7 @@ VOICE & BEHAVIOR: ...
 - **Personaggi senza legame di branco:** Per figure aziendali, indipendenti o civili, la sezione `FAMILY & PACK:` si sostituisce con l'omologo pertinente (es. `CLAN AND COMPANY:` per Zeera), conservando la sequenza a quattro blocchi più chiusura tematica.
 - **Campo `personality` (`summary` nella UI di Wyvern):** Va compilato con un blocco compatto di soli tratti tra parentesi quadre (stile PList puro), come riepilogo rapido separato dalla `description` estesa.
 - **Import Grezzi:** Una scheda importata grezza col blocco `<nome_personaggio>` incollato tale e quale dalla fonte **NON è una scheda lavorata**. Va riscritta integralmente in JED+, non semplicemente ritoccata.
-- **Età e Macro `{{age}}`:** Usare la macro `{{age}}` nel campo `AGE` del blocco JED+ per ogni personaggio con data di nascita formalizzata, al posto del numero fisso in chiaro (che invecchia a ogni avanzamento del World Clock). `summary` e `display_description` mantengono l'età in chiaro per convenzione (coda aperta).
+- **Età e Data di Nascita:** Per garantire piena compatibilità sia nelle chat stand-alone 1-on-1 (dove la timeline del World non è attiva e la macro `{{age}}` non viene valutata) sia all'interno del World, **non usare la macro `{{age}}`**. Indicare sempre nel campo `AGE` del blocco JED+ l'età anagrafica corrente e la data di nascita esplicita con la sintassi: `AGE: <età> (Born <Data>);` (o `BIRTHDAY: <Data>;`). Questo evita che il bot rimanga privo di età calcolata o mostri la macro non espansa quando utilizzato fuori dal World.
 
 ---
 
@@ -137,16 +137,17 @@ const oreDaData = iso => (Date.parse(iso) - EP) / 3600000;
 
 ## 7. Triage Import Lorebook ed Architettura Lexicon World
 
-- **Personaggi Vivi:** Entrano come **Character** con **Start Position**.
+- **Personaggi Vivi Nativi:** Entrano come **Character** con **Start Position**.
+- **Personaggi Stand-Alone (`/mine`):** Vengono collegati al World tramite **Linked Characters** (`linked_characters`, in `ws=library&tab=linked-characters`), fungendo da Single Source of Truth condivisa tra 1-on-1 e World.
 - **Personaggi Deceduti:** Entrano come **Character** con **Start Position** ed **End Position** (modello Nixara; non vanno più nel Lexicon).
-- **Placement dei Character:** Impostare sempre **Global Character = ON** su tutte le schede (l'uso dei Character Pool locali per Location/Environment è deprecato per motivi di performance e ridondanza).
+- **Placement dei Character:** Impostare sempre **Global Character = ON** su tutte le schede native.
 
 ### Matrice di Triage
 
 | Tipologia Sorgente | Azione nel World |
 |---|---|
 | **Species Details / Intimacy Profile** | Non importare nella description; creare Lexicon separata `memory` con `party_conditions` (§13). |
-| **Personaggio vivo ricorrente in più file** | Creare una sola volta come Character con Start Position; linkare senza duplicare. |
+| **Personaggio vivo ricorrente in più file** | Creare una sola volta come Character con Start Position o collegare da Linked Characters. |
 | **Personaggio deceduto** | Creare come Character con Start ed End Position. |
 | **Luogo già mappato come Location** | Non importare il duplicato. |
 | **Attività o concetto astratto** | Importare come voce di **Lexicon**. |
@@ -175,13 +176,14 @@ Ogni voce di Lexicon focalizzata su un singolo personaggio (Intimacy Profiles, D
 
 ## 8. RPG Stats e Sistemi di Simulazione
 
-- **Stato del Modulo:** `world_features.rpg_stats` è impostato su **`false`** a livello World (sistema Simulation disattivato tranne *Relationships*).
-- **Regola di Default:** Il passo RPG Stats è **in pausa su ogni nuova scheda**. Non abilitare, non distribuire punti, non forzare Livello/Specie/Occupazione a meno di esplicita richiesta per la sessione. I dati già presenti su schede esistenti rimangono latenti senza creare conflitti.
-- **Convenzioni in Caso di Riattivazione:**
+- **Stato del Modulo:** In seguito all'aggiornamento modulare a Workspace di Wyvern, le `world_features` sono state riattivate a livello globale:
+  - `inventory: true`, `currency: true`, `rpg_stats: true`, `combat: true`, `show_party_stats: true`, `show_species_info: true`, `relationships: true`.
+  - Disattivati perché estranei al canone del World: `ships: false` (Cross-World Ships) e `creature_catcher: false` (Creature Catcher).
+- **Convenzioni RPG e Parametri di Bilanciamento:**
   - Budget fisso a **25 punti** (somma finale delle 6 stat uguale a **31** con base 1).
   - Statistiche: `stat_1` (MGT), `stat_2` (RES), `stat_3` (AGI), `stat_4` (WIT), `stat_5` (PRS), `stat_6` (SCT).
   - Livello = Età anagrafica (fino a 99).
-- **Bug Critico del Livello & Tetto a 99:** Un Livello $\ge 100$ (testato a 300) blocca silenziosamente il salvataggio dell'intero blocco RPG. Per tutti i personaggi ultracentenari impostare tassativamente **Livello = 99**, riportando l'età reale nel blocco JED+.
+- **Bug Critico del Livello & Tetto a 99:** Un Livello $\ge 100$ blocca silenziosamente il salvataggio dell'intero blocco RPG. Per tutti i personaggi ultracentenari impostare tassativamente **Livello = 99**, riportando l'età reale nel blocco JED+.
 - **Species e Occupation via API:** I selettori web non salvano Species e Occupation (tornano a None). Vanno scritti via API dentro `rpg_stats` (`rpg_stats.species_id` e `rpg_stats.occupation_id`). Selezionare l'Occupation concettualmente più vicina tra i 18 blueprint disponibili.
 
 ---

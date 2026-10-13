@@ -3,10 +3,11 @@
 ## 1. Triage delle Entità da Importare
 
 I personaggi (anche deceduti) non vanno più archiviati come semplici voci di dizionario:
-- **Personaggi Vivi:** Vanno importati come **Character**, impostando **Start Position** (calcolata dal World Clock).
-- **Personaggi Deceduti:** Vanno importati come **Character**, configurando sia **Start Position** che **End Position** (modello Nixara).
+- **Personaggi Stand-Alone Creati (`/mine`):** Vengono collegati direttamente al World tramite il modulo **Linked Characters** (`linked_characters`, visibile in `ws=library&tab=linked-characters`). Questa architettura garantisce che le modifiche apportate alla scheda dell'autore in `/mine` (o nelle sessioni 1-on-1) si riflettano istantaneamente nel World senza duplicazione di dati né disallineamenti.
+- **Personaggi Nativi del World:** Rimangono interni all'istanza World (`ws=library&tab=characters`), con la loro Start Position definita dal World Clock.
+- **Personaggi Deceduti:** Vanno inseriti come **Character**, configurando sia **Start Position** che **End Position** (modello Nixara; non vanno nel Lexicon).
 
-*Obbligo della Start Position:* La Start Position va impostata **sempre e senza eccezioni** per ogni personaggio, anche contemporaneo, per prevenire la comparsa anacronistica negli scenari storici o futuri (es. la nave vichinga di Wulfnic, lo scenario pirata di Cornelius o l'anno 2499). La `End Position` per i personaggi vivi sarà inserita solo quando lo scenario futuristico 2499 verrà finalizzato.
+*Obbligo della Start Position:* La Start Position va impostata **sempre e senza eccezioni** per ogni personaggio nativo o storico, per prevenire la comparsa anacronistica negli scenari storici o futuri.
 
 ### Tabella di Triage per l'Importazione
 
