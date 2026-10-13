@@ -35,12 +35,19 @@ Il roster dei personaggi nativi del World di Svartúlfr (`_CgYT8fHXpDC4crjmegQF7
 * Rimossi dall'inventario personale dei segnalibri (`/api/inventory/characters/:id`) tutti i 14 segnalibri originali convertiti e integrati nel World.
 * Conteggio residuo dei segnalibri personaggi in `/mine`: ridotto da 41 a **27** (preservando solo le schede di terze parti off-world come Dartalia di StatuoTW e altri universi indipendenti).
 
-### 4. Allineamento Story Engine & Rilascio Pannello Unificato: Svartulfr Smartphone OS (`engine_HCTPXhL8xr89wUY9r9dYU` — v76)
-* **Refactoring Stilistico & Armonizzazione Visiva OLED (v76):**
-  * **Risoluzione Bug della Bottom Dock:** Assegnati stili inline rigidi con `flexDirection: 'column'`, `alignItems: 'center'`, `flex: 1` e spaziatura uniforme, impedendo che i testi delle tab collassassero nella stringa continua `HomeChatStudioGildaLSE`.
-  * **Ammorbidimento Bordi & Palette Scura:** Sostituiti i contorni bianchi ad alto contrasto con rifiniture scure OLED a bassa saturazione (`#27272a` e `rgba(255,255,255,0.08)`), donando al pannello l'aspetto elegante di uno smartphone premium.
-  * **Dynamic Island su Singola Riga:** Ottimizzata la formattazione della fase lunare per impedire il wrap verticale del testo nella pillola superiore (`🌙 Calante · 🧪 x3`).
-  * **Spaziature, Padding & Pulsanti d'Azione:** Aumentati i margini interni delle card e rifiniti i pulsanti (`Invia`, `Inala Soppressore`, `Accetta Incarico`, pillole degli studenti e cacciatori) con angoli arrotondati e feedback di stato.
+### 4. Allineamento Story Engine & Rilascio Pannello Unificato: Svartulfr Smartphone OS (`engine_HCTPXhL8xr89wUY9r9dYU` — v76 → v81)
+* **Risoluzione Errori Linter Monaco & Piena Conformità TypeScript (v77-v78):**
+  * Risolto l'errore Monaco `Cannot find name 'useState'` con l'import esplicito consentito dalla sandbox: `import React, { useState } from 'react';`.
+  * Risolto il blocco rosso di parse errors eliminando tutti gli escape errati (`\'ingresso`, `\'Subterranean...`) convertiti in stringhe pulite a doppi apici (`"..."`).
+  * Risolti gli errori TypeScript strict `TS7053` e `TS2345` tipizzando `STUDENTS_DATA` e `HUNTERS_DATA` come `Record<string, any>`, e tipizzando `acceptedMissionId` come `useState<string | null>(null)`.
+* **Risoluzione "Unsupported panel style" & Migrazione a Tailwind Universale (v79-v80):**
+  * La sandbox di Wyvern rigetta le proprietà CSS avanzate o non sicure negli oggetti `style={{ ... }}` inline (`gridTemplateColumns`, `outline`, `boxShadow`, `textTransform`, ecc.).
+  * Convertito interamente lo stile grafico nei componenti nativi e classi **Tailwind CSS (`className="..."`)**, azzerando qualsiasi oggetto `style={{ ... }}` non conforme.
+* **Perfezionamento Spaziature, Padding e Badge Voti (v81):**
+  * **Eliminazione Classi Decimali:** Identificato che il bundle Tailwind di Wyvern non compila valori frazionari (`px-3.5`, `py-2.5`, `p-2.5`, `py-0.5`, `px-1.5`, `pt-0.5`), che causavano padding a `0px`. Sostituite al 100% con classi a numeri interi universali (`p-3`, `p-4`, `px-4`, `py-2`, `py-3`, `gap-2`, `gap-3`).
+  * **Badge Voti Accademici:** Trasformati i badge dei voti (`A+`, `A`) da pillole ovali schiacciate a riquadri stabili da 40x32px (`w-10 h-8 rounded-xl flex items-center justify-center font-bold text-xs bg-emerald-950 text-emerald-300 border border-emerald-600`), con testo centrato e arioso.
+  * **Selettore Studente:** Aggiunto padding verticale (`py-1` e `px-3 py-2 rounded-xl`), impedendo il clipping in altezza dei pulsanti in cima.
+  * **Bottom Dock:** Posizionata la bolla del badge notifica `3` in coordinate relative corrette (`-top-1 -right-3`) sopra l'icona `💬`, separata dall'etichetta `Chat`.
 * **Piena Conformità alla Sandbox Ufficiale Wyvern React TSX:**
   * Rimosse tutte le API browser non permesse (`document`, `window`, `Date.now`, `setTimeout`, `setInterval`);
   * Rimossi tutti i listener ed hook non supportati (`useEffect`, `onKeyDown`);
