@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 
 export default function Panel({ engine }: { engine: any }) {
-  // Navigazione app: 'home' | 'telegram' | 'academics' | 'guild' | 'biotrack' | 'succbook' | 'music'
+  // Navigation: 'home' | 'telegram' | 'academics' | 'guild' | 'biotrack' | 'succbook' | 'music'
   const [activeApp, setActiveApp] = useState<string>('home');
 
-  // Valori del motore live
+  // Live engine values
   const values = engine.values || {};
-  const moonPhase = String(values.moon_phase || 'Ultimo Quarto Calante');
+  const moonPhase = String(values.moon_phase || 'Waning Crescent');
   const isFullMoon = Boolean(values.moon_full_active);
   const isNight = Boolean(values.night_active);
   const lseStatus = String(values.lse_biology_status || 'Dormant');
   const daysLeft = Number(values.lse_cycle_days_left ?? 20);
   const suppressors = Number(values.scent_suppressors_count ?? 3);
   const packRep = Number(values.pack_reputation ?? 25);
-  const riftAlert = String(values.rift_threat_level || 'Classe 1 - Stabile');
+  const riftAlert = String(values.rift_threat_level || 'Class 1 - Stable');
 
-  // Stati interattivi
+  // Local interactive states
   const [telegramUnread, setTelegramUnread] = useState<number>(3);
   const [succbookUnread, setSuccbookUnread] = useState<number>(5);
   const [selectedStudent, setSelectedStudent] = useState<string>('alyssa');
@@ -30,22 +30,22 @@ export default function Panel({ engine }: { engine: any }) {
     mood: 'Dungeon Synth / Focus'
   });
 
-  // Chiamata comando nativo Wyvern
+  // Native Wyvern command trigger
   const handleUseSuppressor = async () => {
     try {
       await engine.runCommand('cmd_use_suppressor');
     } catch (e) {}
   };
 
-  // Chat Telegram del Branco Douglas
+  // Douglas Pack Telegram Chat
   const [messages, setMessages] = useState<any[]>([
     {
       id: 1,
-      sender: 'Papà (Erik)',
+      sender: 'Dad (Erik)',
       role: 'Prime Alpha · DCC',
       color: 'text-amber-400',
       badgeClass: 'bg-amber-950 text-amber-300 border border-amber-700',
-      text: "Ragazzi, siete arrivati a Solarton? Kaladin ha predisposto la scorta discreta attorno all'ingresso est del campus. Non dimenticate i soppressori.",
+      text: "Kids, have you arrived in Solarton? Kaladin has discrete escorts stationed near the east campus gate. Do not forget your scent suppressors.",
       time: '08:02'
     },
     {
@@ -54,7 +54,7 @@ export default function Panel({ engine }: { engine: any }) {
       role: 'Beta · PR',
       color: 'text-sky-400',
       badgeClass: 'bg-sky-950 text-sky-300 border border-sky-700',
-      text: 'Tranquillo Boss, sono già al banchetto matricole SUCC. Se Alyssa ritarda è perché doveva abbinare le scarpe alla borsa medica 💅',
+      text: "Relax Boss, I'm already at the SUCC freshman welcome booth. If Alyssa is late it's only because she needed her shoes to match her medical bag 💅",
       time: '08:05'
     },
     {
@@ -63,7 +63,7 @@ export default function Panel({ engine }: { engine: any }) {
       role: 'Technomancer',
       color: 'text-emerald-400',
       badgeClass: 'bg-emerald-950 text-emerald-300 border border-emerald-700',
-      text: 'Siamo arrivati. Sto accompagnando Alyssa verso la segreteria di Medicina e Botanica. Noah piantala o ti blocco il Wi-Fi di Villa Douglas.',
+      text: "We're here. Walking Alyssa to the Medicine and Arcane Botany department office. Noah cut it out or I'm blocking the Douglas Manor Wi-Fi.",
       time: '08:08'
     },
     {
@@ -72,7 +72,7 @@ export default function Panel({ engine }: { engine: any }) {
       role: 'Digital Familiar',
       color: 'text-cyan-300',
       badgeClass: 'bg-cyan-950 text-cyan-300 border border-cyan-700',
-      text: "[Audio Mood Speaker: Avviata playlist 'Subterranean Bass Drive']. Parametri vitali del Fireteam nella norma. Nessuna anomalia miasmatica nel raggio di 800m.",
+      text: "[Audio Mood Speaker: Track 'Subterranean Bass Drive' active]. Fireteam vital telemetry optimal. Zero miasmic anomalies within an 800m perimeter.",
       time: '08:09'
     },
     {
@@ -81,7 +81,7 @@ export default function Panel({ engine }: { engine: any }) {
       role: 'Berserker Strike',
       color: 'text-rose-400',
       badgeClass: 'bg-rose-950 text-rose-300 border border-rose-700',
-      text: 'Ho finito la sessione pesi al campo Bulls. Chiunque si avvicini con cattive intenzioni se la vede con me. Mandatemi la posizione.',
+      text: 'Finished morning lifting at the Bulls field. Anyone who approaches our people with bad intentions answers to me. Send coordinates.',
       time: '08:12'
     }
   ]);
@@ -91,185 +91,185 @@ export default function Panel({ engine }: { engine: any }) {
     if (!textToSend) return;
     const newMsg = {
       id: nextMsgId,
-      sender: 'Tu (Operativo)',
+      sender: 'You (Operative)',
       role: 'Player',
       color: 'text-purple-300',
       badgeClass: 'bg-purple-950 text-purple-300 border border-purple-700',
       text: textToSend,
-      time: 'Adesso'
+      time: 'Just now'
     };
     setNextMsgId((id: number) => id + 1);
     setMessages((prev: any[]) => [...prev, newMsg]);
     setChatInput('');
   };
 
-  // Database Studenti SUCC & CUMS
+  // SUCC & CUMS Student Academic Database
   const STUDENTS_DATA: Record<string, any> = {
     alyssa: {
       name: 'Alyssa Douglas',
-      badge: 'Matricola · Pre-Med',
+      badge: 'Freshman · Pre-Med',
       school: 'SUCC (Solarton University)',
-      major: 'Scienze Mediche & Botanica Arcana',
-      dept: 'Facoltà di Medicina e Fisiologia Demi-Umani',
+      major: 'Medical Sciences & Arcane Botany',
+      dept: 'Faculty of Medicine and Demi-Human Physiology',
       gpa: '3.92',
       credits: 28,
-      internship: 'Infermeria SUCC & Laboratori Medici DCC (Dr.ssa Duskwood)',
+      internship: 'SUCC Infirmary & DCC Medical Labs (Dr. Elizabeth Duskwood)',
       courses: [
-        { code: 'MED-101', name: 'Anatomia Comparata Demi-Umani', prof: 'H. Vance', cfu: 8, grade: 'A+' },
-        { code: 'BOT-104', name: 'Botanica Arcana & Proprietà Lunari', prof: 'M. Willow', cfu: 6, grade: 'A' },
-        { code: 'FAR-202', name: 'Farmacologia & Inibitori Ferormonali', prof: 'E. Duskwood', cfu: 8, grade: 'A' },
-        { code: 'EMR-108', name: 'Primo Soccorso & Traumi da Argento', prof: 'G. Vance', cfu: 6, grade: 'A+' }
+        { code: 'MED-101', name: 'Comparative Demi-Human Anatomy', prof: 'H. Vance', cfu: 8, grade: 'A+' },
+        { code: 'BOT-104', name: 'Arcane Botany & Lunar Properties', prof: 'M. Willow', cfu: 6, grade: 'A' },
+        { code: 'FAR-202', name: 'Pharmacology & Pheromone Inhibitors', prof: 'E. Duskwood', cfu: 8, grade: 'A' },
+        { code: 'EMR-108', name: 'Emergency Trauma & Silver Toxicity', prof: 'G. Vance', cfu: 6, grade: 'A+' }
       ]
     },
     jasper: {
       name: 'Jasper Douglas',
-      badge: '1° Anno · Ingegneria',
+      badge: '1st Year · Engineering',
       school: 'SUCC (Solarton University)',
-      major: 'Ingegneria Arcana & Meccanica Avanzata',
-      dept: 'Dipartimento di Tecnologie Silver-Tech e Magitech',
+      major: 'Arcane Engineering & Advanced Magitech',
+      dept: 'Department of Silver-Tech & Cyber-Enchantment',
       gpa: '3.78',
       credits: 30,
-      internship: 'R&D Tecnologico & Droni Tattici DCC (Laboratorio Ovest)',
+      internship: 'DCC Tactical R&D & Drone Reconnaissance (West Lab)',
       courses: [
-        { code: 'ENG-102', name: 'Balistica Silver-Tech & Armi Magiche', prof: 'K. Rourke', cfu: 8, grade: 'A' },
-        { code: 'RIF-201', name: 'Geometria Non-Euclidea & Teoria dei Rift', prof: 'V. Aris', cfu: 6, grade: 'A-' },
-        { code: 'MAT-105', name: 'Ingegneria dei Materiali Anti-Miasma', prof: 'L. Sterling', cfu: 8, grade: 'B+' },
-        { code: 'RUN-110', name: 'Fabbricazione Runica & Magitech', prof: 'T. Stone', cfu: 8, grade: 'A+' }
+        { code: 'ENG-102', name: 'Silver-Tech Ballistics & Enchanted Arms', prof: 'K. Rourke', cfu: 8, grade: 'A' },
+        { code: 'RIF-201', name: 'Non-Euclidean Geometry & Rift Theory', prof: 'V. Aris', cfu: 6, grade: 'A-' },
+        { code: 'MAT-105', name: 'Anti-Miasma Materials Engineering', prof: 'L. Sterling', cfu: 8, grade: 'B+' },
+        { code: 'RUN-110', name: 'Runic Hardware & Magitech Crafting', prof: 'T. Stone', cfu: 8, grade: 'A+' }
       ]
     },
     noah: {
       name: 'Noah Douglas',
-      badge: '2° Anno · Public Relations',
+      badge: '2nd Year · Public Relations',
       school: 'SUCC (Solarton University)',
-      major: 'Scienze Politiche, PR & Management Sportivo',
-      dept: 'Scuola di Relazioni Istituzionali e Diplomazia',
+      major: 'Political Science, PR & Sports Management',
+      dept: 'School of Institutional Affairs & Diplomacy',
       gpa: '3.55',
       credits: 54,
-      internship: 'Ufficio Stampa DCC & Relazioni SUCC Bulls Athletics',
+      internship: 'DCC Press Office & SUCC Bulls Athletics Liaison',
       courses: [
-        { code: 'COM-201', name: 'Comunicazione Istituzionale & Crisi di Branco', prof: 'D. Sterling', cfu: 8, grade: 'A' },
-        { code: 'DIR-204', name: 'Diritto Commerciale Fazioni Supernatural', prof: 'E. Thornton', cfu: 8, grade: 'B+' },
-        { code: 'MKT-208', name: 'Marketing & Sponsorizzazioni DMHA Bulls', prof: 'G. Hayes', cfu: 6, grade: 'A' }
+        { code: 'COM-201', name: 'Crisis Communication & Pack Public Relations', prof: 'D. Sterling', cfu: 8, grade: 'A' },
+        { code: 'DIR-204', name: 'Supernatural Factions Commercial Law', prof: 'E. Thornton', cfu: 8, grade: 'B+' },
+        { code: 'MKT-208', name: 'Athletics Marketing & DMHA Bulls Sponsorship', prof: 'G. Hayes', cfu: 6, grade: 'A' }
       ]
     },
     malachia: {
       name: 'Malachia Douglas',
-      badge: 'Atleta · Berserker Strike',
+      badge: 'Athlete · Berserker Strike',
       school: 'SUCC Athletics (DMHA Bulls)',
-      major: 'Scienze Motorie & Combattimento Tattico',
-      dept: 'Accademia Atletica e Difesa Territoriale',
+      major: 'Exercise Science & Tactical Combat',
+      dept: 'Athletic Academy and Territorial Defense',
       gpa: '3.10',
       credits: 45,
-      internship: 'Seven Hills Security & Pattuglie Notturne DCC',
+      internship: 'Seven Hills Security & DCC Night Patrols',
       courses: [
-        { code: 'CMB-101', name: 'Combattimento Pesante & Fornace Interna', prof: 'Coach D', cfu: 8, grade: 'A+' },
-        { code: 'TAC-203', name: 'Tattiche d Ingaggio Demoniaco & Miasma', prof: 'K. O Connor', cfu: 8, grade: 'A' },
-        { code: 'NUT-105', name: 'Metabolismo dei Predatori & Apporto Ferroso', prof: 'Dr. Thorne', cfu: 6, grade: 'B' }
+        { code: 'CMB-101', name: 'Heavy Combat & Internal Furnace Mastery', prof: 'Coach D', cfu: 8, grade: 'A+' },
+        { code: 'TAC-203', name: 'Demonic Engagement Tactics & Miasma Resistance', prof: 'K. O Connor', cfu: 8, grade: 'A' },
+        { code: 'NUT-105', name: 'Predator Metabolism & Iron Intake Regulation', prof: 'Dr. Thorne', cfu: 6, grade: 'B' }
       ]
     },
     cums_students: {
-      name: 'Accademia C.U.M.S. (Studenti di Magia)',
-      badge: 'Classe Incantatori',
+      name: 'C.U.M.S. Academy (Magic Scholars)',
+      badge: 'Arcane Caster Class',
       school: 'C.U.M.S. (Collegiate Unified Magic Scholars)',
-      major: 'Alta Stregoneria, Rituali Lunari & Illusione',
-      dept: 'Polo Magico e Arcano di Solarton',
+      major: 'High Sorcery, Lunar Rites & Illusion',
+      dept: 'Solarton Arcane and Mystical Institute',
       gpa: '3.85',
       credits: 60,
-      internship: 'Laboratori Arcani & Gilda dei Maghi di Solarton',
+      internship: 'Solarton Arcane Research Labs & Mages Guild',
       courses: [
-        { code: 'MAG-101', name: 'Fondamenti di Tessitura del Mana (Lestat, Zaire)', prof: 'A. Nairene', cfu: 8, grade: 'A' },
-        { code: 'ABJ-205', name: 'Barriere Abbiurative & Difesa da Miasma (Caien, Aeril)', prof: 'M. Vance', cfu: 8, grade: 'A+' },
-        { code: 'DUE-101', name: "Combattimento Tattico e Duello d'Ombra (Amerian)", prof: 'X. Nershatar', cfu: 10, grade: 'A+' },
-        { code: 'NEC-301', name: 'Controllo delle Anime & Anatomia Spettrale (Xaiden, Ashton)', prof: 'V. Raven', cfu: 8, grade: 'A' }
+        { code: 'MAG-101', name: 'Mana Weaving Fundamentals (Lestat, Zaire)', prof: 'A. Nairene', cfu: 8, grade: 'A' },
+        { code: 'ABJ-205', name: 'Abjuration Wards & Miasma Defense (Caien, Aeril)', prof: 'M. Vance', cfu: 8, grade: 'A+' },
+        { code: 'DUE-101', name: 'Tactical Combat & Shadow Dueling (Amerian)', prof: 'X. Nershatar', cfu: 10, grade: 'A+' },
+        { code: 'NEC-301', name: 'Soul Binding & Spectral Anatomy (Xaiden, Ashton)', prof: 'V. Raven', cfu: 8, grade: 'A' }
       ]
     }
   };
 
   const studentData = STUDENTS_DATA[selectedStudent] || STUDENTS_DATA.alyssa;
 
-  // Database Cacciatori DMHA
+  // DMHA Hunter Guild Registry
   const HUNTERS_DATA: Record<string, any> = {
     alyssa: {
       name: 'Alyssa Douglas',
-      rank: 'Rango A',
+      rank: 'Rank A',
       rankClass: 'bg-blue-950 text-sky-300 border border-blue-700',
-      role: 'Healer & Supporto di Campo',
+      role: 'Combat Healer & Field Support',
       squad: 'Douglas Vanguard / Seven Hills Fireteam',
       credits: 4850,
-      specialty: 'Medicina da Campo, Terapie Anti-Miasma & Incanti Rigenerativi'
+      specialty: 'Field Medicine, Anti-Miasma Cleansing & Regenerative Incantations'
     },
     jasper: {
       name: 'Jasper Douglas',
-      rank: 'Rango A',
+      rank: 'Rank A',
       rankClass: 'bg-blue-950 text-sky-300 border border-blue-700',
-      role: 'Technomancer & Netrunner Tattico',
+      role: 'Technomancer & Tactical Netrunner',
       squad: 'Douglas Vanguard / Seven Hills Fireteam',
       credits: 5200,
-      specialty: 'Silver-Tech, Droni da Ricognizione & Sovraccarico Runico'
+      specialty: 'Silver-Tech Hardware, Reconnaissance Drones & Runic Overload'
     },
     malachia: {
       name: 'Malachia Douglas',
-      rank: 'Rango S',
+      rank: 'Rank S',
       rankClass: 'bg-rose-950 text-rose-300 border border-rose-700',
       role: 'Apex Berserker / Vanguard Strike',
       squad: 'Douglas First Strike Squad',
       credits: 8900,
-      specialty: 'Fornace Interna, Rottura Linee Mostro & Caccia Alpha'
+      specialty: 'Internal Furnace, Frontline Destruction & Apex Alpha Hunts'
     },
     ukiyo: {
-      name: 'Distaccamento Ukiyo (Radek, Goran, Marek)',
-      rank: 'Rango B+',
+      name: 'Ukiyo Syndicate (Radek, Goran, Marek)',
+      rank: 'Rank B+',
       rankClass: 'bg-amber-950 text-amber-300 border border-amber-700',
-      role: 'Operazioni Clandestine & Caccia Notturna',
+      role: 'Black Ops & Nocturnal Hunting Syndicate',
       squad: 'Ukiyo Specialist Syndicate',
       credits: 3400,
-      specialty: 'Infiltrazione Bassifondi, Neutralizzazione Bersagli & Controllo Territorio'
+      specialty: 'Underworld Infiltration, Target Neutralization & District Control'
     }
   };
 
   const hunterData = HUNTERS_DATA[selectedHunter] || HUNTERS_DATA.alyssa;
 
-  // Missioni DMHA in bacheca
+  // DMHA Guild Bulletin Missions
   const MISSIONS = [
     {
       id: 'miss_cums_anomaly',
-      title: 'Anomalia Miasmatica nei Sotterranei CUMS',
-      zone: 'Solarton · Distretto Accademico Ovest',
-      rank: 'Rango A',
+      title: 'Miasmic Anomaly in CUMS Catacombs',
+      zone: 'Solarton · West Academic District',
+      rank: 'Rank A',
       rankClass: 'text-sky-400 bg-sky-950 border border-sky-700',
-      reward: "850 Crediti · Catalizzatore d'Ombra",
-      desc: 'Segnalato rift minore nella biblioteca proibita del CUMS. Richiesto team di contenimento con healer e technomancer per stabilizzazione runica.'
+      reward: '850 Credits · Shadow Catalyst',
+      desc: 'Minor rift detected in the restricted CUMS archives. Certified team required with combat healer and technomancer for runic containment.'
     },
     {
       id: 'miss_bay_patrol',
-      title: 'Pattugliamento Notturno: Baia di Blackwood',
-      zone: 'Blackwood City · Docks Industriali',
-      rank: 'Rango B',
+      title: 'Night Harbor Patrol: Blackwood Bay',
+      zone: 'Blackwood City · Industrial Waterfront',
+      rank: 'Rank B',
       rankClass: 'text-amber-400 bg-amber-950 border border-amber-700',
-      reward: "500 Crediti · Runa d'Argento",
-      desc: 'Avvistamento creature anfibie attirate dai rifornimenti navali DCC. Bonificare il molo 4 prima delle ore 05:00.'
+      reward: '500 Credits · Pure Silver Rune',
+      desc: 'Amphibious void creatures sighted near DCC cargo supply ships. Secure Pier 4 before 05:00 hours.'
     },
     {
       id: 'miss_sewer_sweep',
-      title: 'Bonifica Condotto Fognario Settore 4',
+      title: 'Sector 4 Sewer Line Cleansing',
       zone: 'Solarton · Cable District',
-      rank: 'Rango C',
+      rank: 'Rank C',
       rankClass: 'text-emerald-400 bg-emerald-950 border border-emerald-700',
-      reward: '300 Crediti · 2x Cilindri Soppressori',
-      desc: 'Nido di ratti miasmatici di classe 1 nelle condotte di scolo adiacenti al campus SUCC. Intervento rapido richiesto.'
+      reward: '300 Credits · 2x Suppressor Cylinders',
+      desc: 'Class 1 miasmic rat swarm nesting in wastewater conduits adjacent to SUCC campus. Rapid sanitation dispatch requested.'
     }
   ];
 
-  // Feed SuccBook
+  // SuccBook Campus Social Feed
   const [feedPosts, setFeedPosts] = useState<any[]>([
     {
       id: 1,
       author: 'SUCC Athletics (DMHA Bulls)',
       handle: '@succ_bulls',
-      badge: 'Ufficiale · Campus',
+      badge: 'Official · Campus',
       avatar: '🏈',
-      time: '32m fa',
-      text: 'Vittoria schiacciante dei Bulls contro la Hex Valley League (42-14)! Malachia Douglas e Wulfric dominano la linea di mischia. Prossimo match venerdì!',
+      time: '32m ago',
+      text: 'Decisive victory for the Bulls against Hex Valley League (42-14)! Malachia Douglas and Wulfric crushed the scrimmage line. Next game on Friday!',
       likes: 342,
       liked: false
     },
@@ -277,10 +277,10 @@ export default function Panel({ engine }: { engine: any }) {
       id: 2,
       author: 'Elizabeth Duskwood (DCC Health)',
       handle: '@dr_duskwood',
-      badge: 'Medicina Demi-Umani',
+      badge: 'Demi-Human Health',
       avatar: '🩺',
-      time: '1h fa',
-      text: 'Bollettino LSE: con la luna calante e il cambio di stagione i livelli ormonali mostrano picchi improvvisi. Si ricorda agli studenti demi-umani di ritirare i soppressori in infermeria.',
+      time: '1h ago',
+      text: 'LSE Advisory: With the waning moon and seasonal temperature shifts, baseline hormone levels are fluctuating. Demi-human students should pick up fresh suppressor cylinders at the clinic.',
       likes: 128,
       liked: false
     },
@@ -288,10 +288,10 @@ export default function Panel({ engine }: { engine: any }) {
       id: 3,
       author: 'Underground Frequency',
       handle: '@solarton_underground',
-      badge: 'Eventi & Nightlife',
+      badge: 'Events & Nightlife',
       avatar: '🔊',
-      time: '2h fa',
-      text: "Venerdì notte rave underground nei vecchi magazzini industriali al confine tra Solarton e Blackwood. Sound system magitech curato dai netrunner della DCC. Ingresso riservato a studenti e licantropi con controllo odore all'ingresso.",
+      time: '2h ago',
+      text: "Underground warehouse rave this Friday night on the border between Solarton and Blackwood. Magitech sound system curated by DCC netrunners. Scent suppressors strictly checked at the door.",
       likes: 215,
       liked: false
     }
@@ -306,12 +306,12 @@ export default function Panel({ engine }: { engine: any }) {
     }));
   };
 
-  // Tracce Audio Mood Speaker
+  // Echo Audio Mood Speaker Tracks
   const TRACKS = [
     { title: 'Subterranean Bass Drive', artist: 'Echo (Digital Familiar) · DCC Net', mood: 'Dungeon Synth / Focus' },
     { title: 'Solarton Nightwave 104.2', artist: 'Netrunner Collective', mood: 'Lo-Fi Chill & Silver Beat' },
     { title: 'Bloodline Resonance (Erik Theme)', artist: 'Blackwood Orchestral', mood: 'Heavy Dark Ambience' },
-    { title: 'Vanguard Alpha Strike', artist: 'Seven Hills Tactical Unit', mood: 'Combat High BPM' }
+    { title: 'Vanguard Alpha Strike', artist: 'Seven Hills Tactical Unit', mood: 'High BPM Combat Pulse' }
   ];
 
   return (
@@ -330,7 +330,7 @@ export default function Panel({ engine }: { engine: any }) {
         <div className="flex items-center gap-2 bg-black px-3 py-1 rounded-full border border-zinc-700">
           <span className="text-xs">{isFullMoon ? '🌕' : '🌙'}</span>
           <span className="text-[10px] font-semibold text-amber-300 truncate max-w-[110px]">
-            {isFullMoon ? 'Piena Luna' : moonPhase}
+            {isFullMoon ? 'Full Moon' : moonPhase}
           </span>
           {isFullMoon && (
             <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
@@ -343,20 +343,20 @@ export default function Panel({ engine }: { engine: any }) {
       </div>
 
       {/* ========================================================================= */}
-      {/* 2. BARRA DI STATO RAPIDA: SOPPRESSORI FERORMONALI & RIFT THREAT           */}
+      {/* 2. RAPID STATUS BAR: PHEROMONE SUPPRESSORS & RIFT THREAT                  */}
       {/* ========================================================================= */}
       <div className="bg-zinc-900 rounded-2xl px-4 py-3 border border-zinc-800 flex items-center justify-between gap-3">
         <div className="flex items-center gap-3">
           <span className="text-xl">🩺</span>
           <div>
             <div className="text-xs font-bold text-zinc-100 flex items-center gap-2">
-              <span>Soppressori:</span>
+              <span>Suppressors:</span>
               <span className={suppressors > 0 ? 'text-emerald-400' : 'text-red-400'}>
-                {suppressors} Dosi
+                {suppressors} Doses
               </span>
             </div>
             <div className="text-[11px] text-zinc-400 pt-1">
-              LSE: <span className="text-amber-300 font-semibold">{lseStatus}</span> (~{daysLeft}gg picco)
+              LSE: <span className="text-amber-300 font-semibold">{lseStatus}</span> (~{daysLeft}d to peak)
             </div>
           </div>
         </div>
@@ -365,12 +365,12 @@ export default function Panel({ engine }: { engine: any }) {
           onClick={handleUseSuppressor}
           className="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-2 rounded-xl border border-emerald-500 shadow-sm transition active:scale-95 shrink-0"
         >
-          Inala Dose
+          Inhale Dose
         </button>
       </div>
 
       {/* ========================================================================= */}
-      {/* 3. SCHERMATE DELL'OS (VISTE INTERATTIVE)                                   */}
+      {/* 3. OPERATING SYSTEM APPS (INTERACTIVE SUB-VIEWS)                          */}
       {/* ========================================================================= */}
       <div className="min-h-[390px] flex flex-col justify-between">
 
@@ -379,20 +379,20 @@ export default function Panel({ engine }: { engine: any }) {
         {/* ----------------------------------------------------------------------- */}
         {activeApp === 'home' && (
           <div className="flex flex-col gap-3">
-            {/* Widget Benvenuto Operativo */}
+            {/* Welcome Operative Widget */}
             <div className="bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-2">
               <div className="flex items-center justify-between gap-3">
                 <span className="text-xs font-bold text-zinc-100">Svartúlfr OS · Mobile Net</span>
                 <span className="text-xs font-mono font-semibold bg-purple-950 text-purple-200 border border-purple-700 px-3 py-1 rounded-lg shrink-0">
-                  Rep. Branco: {packRep}%
+                  Pack Rep: {packRep}%
                 </span>
               </div>
               <p className="text-xs text-zinc-300 leading-relaxed pr-1 pt-1">
-                Benvenuto nel terminale crittografato del Branco Douglas e del polo accademico SUCC/CUMS.
+                Encrypted terminal of the Douglas Pack and Solarton / C.U.M.S. academic network.
               </p>
             </div>
 
-            {/* Griglia Icone Applicazioni Smartphone */}
+            {/* Smartphone Application Grid */}
             <div className="grid grid-cols-3 gap-2">
               <button
                 onClick={() => { setActiveApp('telegram'); setTelegramUnread(0); }}
@@ -400,7 +400,7 @@ export default function Panel({ engine }: { engine: any }) {
               >
                 <span className="text-3xl">💬</span>
                 <span className="text-xs font-bold text-sky-400">Telegram</span>
-                <span className="text-[10px] text-zinc-400">Branco Douglas</span>
+                <span className="text-[10px] text-zinc-400">Douglas Pack</span>
                 {telegramUnread > 0 && (
                   <span className="absolute top-2 right-2 bg-sky-500 text-white text-[10px] font-bold px-2 py-1 rounded-full min-w-[20px]">
                     {telegramUnread}
@@ -414,7 +414,7 @@ export default function Panel({ engine }: { engine: any }) {
               >
                 <span className="text-3xl">🎓</span>
                 <span className="text-xs font-bold text-indigo-400">SUCC & CUMS</span>
-                <span className="text-[10px] text-zinc-400">Libretto Corsi</span>
+                <span className="text-[10px] text-zinc-400">Courses & GPA</span>
               </button>
 
               <button
@@ -422,8 +422,8 @@ export default function Panel({ engine }: { engine: any }) {
                 className="bg-zinc-900 hover:bg-zinc-850 p-4 rounded-2xl border border-zinc-800 flex flex-col items-center justify-center gap-2 transition active:scale-95 text-center"
               >
                 <span className="text-3xl">⚔️</span>
-                <span className="text-xs font-bold text-red-400">Gilda DMHA</span>
-                <span className="text-[10px] text-zinc-400">Bacheca Caccia</span>
+                <span className="text-xs font-bold text-red-400">DMHA Guild</span>
+                <span className="text-[10px] text-zinc-400">Hunter Bounties</span>
               </button>
 
               <button
@@ -432,7 +432,7 @@ export default function Panel({ engine }: { engine: any }) {
               >
                 <span className="text-3xl">🐾</span>
                 <span className="text-xs font-bold text-emerald-400">BioTrack LSE</span>
-                <span className="text-[10px] text-zinc-400">Ferormoni & Luna</span>
+                <span className="text-[10px] text-zinc-400">Pheromones & Moon</span>
               </button>
 
               <button
@@ -441,7 +441,7 @@ export default function Panel({ engine }: { engine: any }) {
               >
                 <span className="text-3xl">📸</span>
                 <span className="text-xs font-bold text-yellow-400">SuccBook</span>
-                <span className="text-[10px] text-zinc-400">Social Campus</span>
+                <span className="text-[10px] text-zinc-400">Campus Social</span>
                 {succbookUnread > 0 && (
                   <span className="absolute top-2 right-2 bg-yellow-500 text-black text-[10px] font-bold px-2 py-1 rounded-full min-w-[20px]">
                     {succbookUnread}
@@ -459,10 +459,10 @@ export default function Panel({ engine }: { engine: any }) {
               </button>
             </div>
 
-            {/* Quick Banner: Allerta Minaccia Rift */}
+            {/* Quick Banner: Rift Threat Alert */}
             <div className="bg-zinc-900 rounded-2xl px-4 py-3 border border-zinc-800 flex items-center justify-between text-xs">
               <div className="flex items-center gap-2">
-                <span className="text-amber-400 font-bold">⚠️ Allerta Rift:</span>
+                <span className="text-amber-400 font-bold">⚠️ Rift Alert:</span>
                 <span className="text-zinc-200 font-mono">{riftAlert}</span>
               </div>
               <span className="text-[10px] text-zinc-500 font-mono">DCC SEC OK</span>
@@ -471,20 +471,20 @@ export default function Panel({ engine }: { engine: any }) {
         )}
 
         {/* ----------------------------------------------------------------------- */}
-        {/* APP 2: TELEGRAM DOUGLAS (CHAT DI BRANCO)                                */}
+        {/* APP 2: TELEGRAM DOUGLAS (PACK ENCRYPTED CHAT)                           */}
         {/* ----------------------------------------------------------------------- */}
         {activeApp === 'telegram' && (
           <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
               <div className="flex items-center gap-2">
-                <span className="text-sky-400 font-bold text-sm">💬 Branco Douglas</span>
+                <span className="text-sky-400 font-bold text-sm">💬 Douglas Pack Chat</span>
                 <span className="text-[10px] text-emerald-400 font-medium">● 5 online</span>
               </div>
               <button
                 onClick={() => setActiveApp('home')}
                 className="text-xs text-zinc-300 hover:text-white px-3 py-1 rounded-lg bg-zinc-800 border border-zinc-700"
               >
-                Chiudi
+                Close
               </button>
             </div>
 
@@ -511,7 +511,7 @@ export default function Panel({ engine }: { engine: any }) {
             <div className="flex items-center gap-2 pt-1">
               <input
                 type="text"
-                placeholder="Scrivi messaggio al branco..."
+                placeholder="Write a message to the pack..."
                 value={chatInput}
                 onChange={(e: any) => setChatInput(String(e?.target?.value ?? e ?? ''))}
                 className="flex-1 bg-zinc-900 text-zinc-100 placeholder-zinc-500 text-xs px-4 py-3 rounded-xl border border-zinc-800 focus:outline-none focus:border-sky-500"
@@ -520,28 +520,28 @@ export default function Panel({ engine }: { engine: any }) {
                 onClick={handleSendMessage}
                 className="bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs px-4 py-3 rounded-xl transition shadow-sm"
               >
-                Invia
+                Send
               </button>
             </div>
           </div>
         )}
 
         {/* ----------------------------------------------------------------------- */}
-        {/* APP 3: SUCC & CUMS ACADEMICS (RIDEFINITO CON SPAZIATURA ECCELLENTE)     */}
+        {/* APP 3: SUCC & CUMS ACADEMICS                                            */}
         {/* ----------------------------------------------------------------------- */}
         {activeApp === 'academics' && (
           <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
-              <span className="text-indigo-400 font-bold text-sm">🎓 Libretto Accademico SUCC & CUMS</span>
+              <span className="text-indigo-400 font-bold text-sm">🎓 Academic Portal SUCC & CUMS</span>
               <button
                 onClick={() => setActiveApp('home')}
                 className="text-xs text-zinc-300 hover:text-white px-3 py-1 rounded-lg bg-zinc-800 border border-zinc-700"
               >
-                Chiudi
+                Close
               </button>
             </div>
 
-            {/* Selettore Studente con respiro verticale in modo da non essere MAI clippato */}
+            {/* Student Selector */}
             <div className="flex gap-2 overflow-x-auto py-1 text-xs">
               {[
                 { id: 'alyssa', label: 'Alyssa' },
@@ -560,7 +560,7 @@ export default function Panel({ engine }: { engine: any }) {
               ))}
             </div>
 
-            {/* Scheda Dati Studente */}
+            {/* Student Details Card */}
             <div className="bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-2">
               <div className="flex items-center justify-between gap-3">
                 <div>
@@ -572,14 +572,14 @@ export default function Panel({ engine }: { engine: any }) {
                 </span>
               </div>
               <div className="text-xs text-zinc-300 pt-1 border-t border-zinc-800">
-                <span className="font-semibold text-zinc-400">Indirizzo:</span> {studentData.major}
+                <span className="font-semibold text-zinc-400">Major:</span> {studentData.major}
               </div>
               <div className="text-[11px] text-zinc-400">
-                <span className="font-semibold text-zinc-400">Tirocinio:</span> {studentData.internship}
+                <span className="font-semibold text-zinc-400">Internship:</span> {studentData.internship}
               </div>
             </div>
 
-            {/* Lista Corsi: layout senza bordi interni rigidi e con badge voto a blocco fisso (w-10 h-8) */}
+            {/* Courses List */}
             <div className="flex flex-col gap-2 max-h-[180px] overflow-y-auto pr-1">
               {studentData.courses.map((c: any, i: number) => (
                 <div
@@ -592,7 +592,6 @@ export default function Panel({ engine }: { engine: any }) {
                       {c.code} · Prof. {c.prof} · {c.cfu} CFU
                     </div>
                   </div>
-                  {/* Badge voto: larghezza 40px, altezza 32px, flex center per perfetto allineamento del voto */}
                   <div className="w-10 h-8 rounded-xl flex items-center justify-center font-mono font-bold text-xs bg-emerald-950 text-emerald-300 border border-emerald-600 shrink-0 shadow-sm">
                     {c.grade}
                   </div>
@@ -603,21 +602,21 @@ export default function Panel({ engine }: { engine: any }) {
         )}
 
         {/* ----------------------------------------------------------------------- */}
-        {/* APP 4: GILDA DMHA (BACHECA CACCIATORI)                                  */}
+        {/* APP 4: DMHA HUNTER GUILD (BOUNTY BULLETIN)                              */}
         {/* ----------------------------------------------------------------------- */}
         {activeApp === 'guild' && (
           <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
-              <span className="text-red-400 font-bold text-sm">⚔️ Gilda dei Cacciatori DMHA</span>
+              <span className="text-red-400 font-bold text-sm">⚔️ DMHA Hunter Guild Board</span>
               <button
                 onClick={() => setActiveApp('home')}
                 className="text-xs text-zinc-300 hover:text-white px-3 py-1 rounded-lg bg-zinc-800 border border-zinc-700"
               >
-                Chiudi
+                Close
               </button>
             </div>
 
-            {/* Selettore Cacciatore */}
+            {/* Hunter Selector */}
             <div className="flex gap-2 overflow-x-auto py-1 text-xs">
               {[
                 { id: 'alyssa', label: 'Alyssa' },
@@ -635,19 +634,19 @@ export default function Panel({ engine }: { engine: any }) {
               ))}
             </div>
 
-            {/* Badge Rango Cacciatore */}
+            {/* Hunter Rank Card */}
             <div className="bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex items-center justify-between gap-3">
               <div>
                 <div className="text-xs font-bold text-zinc-100">{hunterData.name}</div>
                 <div className="text-[11px] text-zinc-400">{hunterData.role}</div>
-                <div className="text-[10px] text-zinc-400 font-mono pt-1">Crediti Caccia: {hunterData.credits} CR</div>
+                <div className="text-[10px] text-zinc-400 font-mono pt-1">Hunter Credits: {hunterData.credits} CR</div>
               </div>
               <span className={'text-xs font-bold px-3 py-2 rounded-xl border font-mono shrink-0 shadow-sm ' + hunterData.rankClass}>
                 {hunterData.rank}
               </span>
             </div>
 
-            {/* Missioni DMHA */}
+            {/* Guild Missions */}
             <div className="flex flex-col gap-2 max-h-[170px] overflow-y-auto pr-1">
               {MISSIONS.map((m: any) => (
                 <div key={m.id} className="bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-2">
@@ -659,12 +658,12 @@ export default function Panel({ engine }: { engine: any }) {
                   </div>
                   <p className="text-xs text-zinc-300 leading-relaxed">{m.desc}</p>
                   <div className="flex items-center justify-between pt-1 text-xs">
-                    <span className="text-amber-400 font-mono font-semibold">Ricompensa: {m.reward}</span>
+                    <span className="text-amber-400 font-mono font-semibold">Reward: {m.reward}</span>
                     <button
                       onClick={() => setAcceptedMissionId(m.id)}
                       className={'px-3 py-2 rounded-xl font-bold transition shadow-sm ' + (acceptedMissionId === m.id ? 'bg-emerald-600 text-white' : 'bg-zinc-800 text-zinc-200 hover:bg-zinc-700 border border-zinc-700')}
                     >
-                      {acceptedMissionId === m.id ? 'Accettata ✓' : 'Accetta Incarico'}
+                      {acceptedMissionId === m.id ? 'Accepted ✓' : 'Accept Contract'}
                     </button>
                   </div>
                 </div>
@@ -674,67 +673,67 @@ export default function Panel({ engine }: { engine: any }) {
         )}
 
         {/* ----------------------------------------------------------------------- */}
-        {/* APP 5: BIOTRACK LSE (FERORMONI & FASI LUNARI)                           */}
+        {/* APP 5: BIOTRACK LSE (PHEROMONES & LUNAR STATUS)                         */}
         {/* ----------------------------------------------------------------------- */}
         {activeApp === 'biotrack' && (
           <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
-              <span className="text-emerald-400 font-bold text-sm">🐾 BioTrack LSE & Monitor Ferormonale</span>
+              <span className="text-emerald-400 font-bold text-sm">🐾 BioTrack LSE & Pheromone Monitor</span>
               <button
                 onClick={() => setActiveApp('home')}
                 className="text-xs text-zinc-300 hover:text-white px-3 py-1 rounded-lg bg-zinc-800 border border-zinc-700"
               >
-                Chiudi
+                Close
               </button>
             </div>
 
-            {/* Pannello Biologico Licantropo */}
+            {/* Physiological Pack Panel */}
             <div className="bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-3 shadow-sm">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-zinc-200">Stato Fisiologico LSE:</span>
+                <span className="text-xs font-bold text-zinc-200">Physiological LSE Status:</span>
                 <span className="text-xs font-bold text-amber-400 bg-amber-950 px-3 py-1 rounded-lg border border-amber-700">
                   {lseStatus}
                 </span>
               </div>
               <div className="flex items-center justify-between text-xs pt-1 border-t border-zinc-800">
-                <span className="text-zinc-400">Giorni al Picco Stagionale:</span>
-                <span className="font-mono font-bold text-zinc-100">{daysLeft} giorni</span>
+                <span className="text-zinc-400">Days to Seasonal Peak:</span>
+                <span className="font-mono font-bold text-zinc-100">{daysLeft} days</span>
               </div>
               <div className="flex items-center justify-between text-xs">
-                <span className="text-zinc-400">Scorta Soppressori Odore:</span>
+                <span className="text-zinc-400">Scent Suppressors Stock:</span>
                 <span className={'font-mono font-bold ' + (suppressors > 0 ? 'text-emerald-400' : 'text-red-400')}>
-                  {suppressors} cilindri attivi
+                  {suppressors} cylinders active
                 </span>
               </div>
             </div>
 
-            {/* Influsso Lunare */}
+            {/* Lunar Influence */}
             <div className="bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-2 shadow-sm">
               <div className="flex items-center justify-between gap-2">
-                <span className="text-xs font-bold text-amber-300">🌙 Influsso Lunare Attuale</span>
+                <span className="text-xs font-bold text-amber-300">🌙 Current Lunar Influence</span>
                 <span className={'text-xs font-bold px-3 py-1 rounded-lg border shrink-0 ' + (isFullMoon ? 'bg-red-950 text-red-300 border-red-700' : 'bg-zinc-800 text-zinc-400 border-zinc-700')}>
-                  {isFullMoon ? 'BUFF ATTIVO (+2 MGT/RES, +1 AGI)' : 'Influsso Standard'}
+                  {isFullMoon ? 'BUFF ACTIVE (+2 MGT/RES, +1 AGI)' : 'Standard Influence'}
                 </span>
               </div>
               <p className="text-xs text-zinc-300 leading-relaxed pt-1">
-                Fase corrente: <span className="font-semibold text-zinc-100">{moonPhase}</span>. {isNight ? 'Notte attiva in California (sensi acuiti, visibilità notturna attiva).' : 'Giorno standard nel campus di Solarton.'}
+                Current Phase: <span className="font-semibold text-zinc-100">{moonPhase}</span>. {isNight ? 'Night time active in California (enhanced predator senses, nocturnal vision active).' : 'Standard daylight on Solarton campus.'}
               </p>
             </div>
           </div>
         )}
 
         {/* ----------------------------------------------------------------------- */}
-        {/* APP 6: SUCCBOOK (SOCIAL CAMPUS)                                         */}
+        {/* APP 6: SUCCBOOK (CAMPUS SOCIAL FEED)                                    */}
         {/* ----------------------------------------------------------------------- */}
         {activeApp === 'succbook' && (
           <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
-              <span className="text-yellow-400 font-bold text-sm">📸 SuccBook · Campus Solarton</span>
+              <span className="text-yellow-400 font-bold text-sm">📸 SuccBook · Solarton Campus</span>
               <button
                 onClick={() => setActiveApp('home')}
                 className="text-xs text-zinc-300 hover:text-white px-3 py-1 rounded-lg bg-zinc-800 border border-zinc-700"
               >
-                Chiudi
+                Close
               </button>
             </div>
 
@@ -760,7 +759,7 @@ export default function Panel({ engine }: { engine: any }) {
                       className={'flex items-center gap-2 px-3 py-2 rounded-lg transition ' + (p.liked ? 'text-red-400 bg-red-950 border border-red-700 font-bold' : 'text-zinc-400 hover:text-red-400 bg-zinc-800 border border-zinc-700')}
                     >
                       <span>{p.liked ? '❤️' : '🤍'}</span>
-                      <span>{p.likes} Like</span>
+                      <span>{p.likes} Likes</span>
                     </button>
                     <span className="text-[10px] text-zinc-500 font-mono">DCC Social Net</span>
                   </div>
@@ -781,7 +780,7 @@ export default function Panel({ engine }: { engine: any }) {
                 onClick={() => setActiveApp('home')}
                 className="text-xs text-zinc-300 hover:text-white px-3 py-1 rounded-lg bg-zinc-800 border border-zinc-700"
               >
-                Chiudi
+                Close
               </button>
             </div>
 
@@ -805,15 +804,15 @@ export default function Panel({ engine }: { engine: any }) {
                   {musicPlaying ? 'Pause ⏸' : 'Play ▶'}
                 </button>
                 <span className="text-xs text-cyan-400 font-mono font-semibold">
-                  {musicPlaying ? 'Status: In Riproduzione ●' : 'Status: In Pausa ○'}
+                  {musicPlaying ? 'Status: Playing ●' : 'Status: Paused ○'}
                 </span>
               </div>
             </div>
 
-            {/* Playlist Selettore */}
+            {/* Playlist Selector */}
             <div className="flex flex-col gap-2">
               <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider px-1">
-                Playlist Consigliate da Echo
+                Playlists Curated by Echo
               </span>
               {TRACKS.map((t: any, i: number) => (
                 <button
@@ -835,14 +834,14 @@ export default function Panel({ engine }: { engine: any }) {
       </div>
 
       {/* ========================================================================= */}
-      {/* 4. BOTTOM DOCK SMARTPHONE: CON BADGE RELATIVO PERFETTO                     */}
+      {/* 4. BOTTOM DOCK SMARTPHONE: RELATIVE POSITIONING & CLEAN BADGES             */}
       {/* ========================================================================= */}
       <div className="bg-zinc-900 rounded-2xl p-2 border border-zinc-800 flex items-center justify-around text-xs mt-1 shadow-inner">
         {[
           { id: 'home', label: 'Home', icon: '🏠' },
           { id: 'telegram', label: 'Chat', icon: '💬', badge: telegramUnread },
-          { id: 'academics', label: 'Studio', icon: '🎓' },
-          { id: 'guild', label: 'Gilda', icon: '⚔️' },
+          { id: 'academics', label: 'Academics', icon: '🎓' },
+          { id: 'guild', label: 'Guild', icon: '⚔️' },
           { id: 'biotrack', label: 'LSE', icon: '🐾' }
         ].map((tab: any) => {
           const isActive = activeApp === tab.id;

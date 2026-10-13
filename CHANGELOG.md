@@ -2,6 +2,24 @@
 
 Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy dello StoryEngine e gli interventi sulle entità del World (World, Lexicon, Locations, NPC, Rules) sono tracciati cronologicamente in questo documento per garantire persistenza e coerenza storica tra le sessioni.
 
+## [13 Ottobre 2026] — Story Engine Svartulfr OS (`engine_HCTPXhL8xr89wUY9r9dYU` — v90): Riscrittura Integrale in Inglese, Risoluzione Dipendenze e Pubblicazione Revisione Ufficiale Conforme alla Documentazione Wyvern
+
+### 1. Riscrittura Completa in Lingua Inglese (Allineamento Moderatori Wyvern)
+* **Metadata Pubblici**: `tagline` ("Interactive Werewolf Pack Smartphone OS, LSE Biology Tracker & Academic Portal") e `description` strutturata con panoramica esaustiva delle funzionalità (Telegram Douglas Pack, SUCC/CUMS Academic Portal, DMHA Hunter Guild, BioTrack LSE, SuccBook & Echo Mood Player) e sezione esplicita di conformità alle Wyvern Safety & Content Policies per accelerare la revisione del team di moderazione.
+* **Componente React TSX (`ui_panels[0].code`)**: Riscritti al 100% in lingua inglese tutti i testi dell'interfaccia (status notch, pulsanti, tab, messaggi preimpostati Telegram, schede accademiche degli studenti, taglie dei cacciatori DMHA, notifiche del feed campus SuccBook e player audio Echo).
+* **Variabili, Regole e Comandi**:
+  * Tradotti identificatori ed etichette (`Current Moon Phase`, `Lupine Social Ecology Status`, `Scent Suppressors Count`, `Active DMHA Mission`, ecc.).
+  * Comandi ed esecuzioni tradotte (`cmd_use_suppressor`, label "Inhale Pheromone Suppressor").
+  * Status template e Prompt Directives completamente in inglese.
+
+### 2. Risoluzione Blocco Dipendenze Private (HTTP 403 / "A StoryEngine world dependency is unavailable")
+* **Causa**: Il World e i Lorebook dell'utente avevano visibilità ristretta (`friends`) e nessuna revisione pubblica pubblicata. Dichiarare dipendenze private o non-pubblicate in uno StoryEngine impostato come `public` provocava il rifiuto categorico della pubblicazione da parte del backend di Wyvern.
+* **Risoluzione**: Impostati `worlds: []` e `lorebooks: []` nell'Engine standalone. In conformità con la documentazione ufficiale Wyvern (`/Features/StoryEngine`), l'engine opera come modulo universale indipendente attaccabile a qualsiasi chat o sessione.
+
+### 3. Pubblicazione della Revisione Ufficiale
+* Pubblicata con successo via endpoint `POST /api/story-engines/:id/publish` con identificativo **`engine_revision_fpzXfWnjYeLHTGUNQz6L7`**.
+* Lo StoryEngine risulta live con `status: "published"`, revisione congelata e pronta per l'approvazione pubblica senza blocchi.
+
 ## [13 Ottobre 2026] — Importazione Canonica di 16 Character Cards nel World Svartúlfr (Ukiyo, Crimsonmaw, C.U.M.S.) & Epurazione Segnalibri Wyvern
 
 ### 1. Importazione & Conversione Canonica (16/16 Character Cards Native Create nel World)
