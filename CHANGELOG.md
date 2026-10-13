@@ -35,14 +35,19 @@ Il roster dei personaggi nativi del World di Svartúlfr (`_CgYT8fHXpDC4crjmegQF7
 * Rimossi dall'inventario personale dei segnalibri (`/api/inventory/characters/:id`) tutti i 14 segnalibri originali convertiti e integrati nel World.
 * Conteggio residuo dei segnalibri personaggi in `/mine`: ridotto da 41 a **27** (preservando solo le schede di terze parti off-world come Dartalia di StatuoTW e altri universi indipendenti).
 
-### 4. Allineamento Story Engine & Rilascio Pannello Unificato: Svartulfr Smartphone OS (`engine_HCTPXhL8xr89wUY9r9dYU` — v75)
-* **Piena Conformità alla Sandbox Ufficiale Wyvern React TSX (v75):**
-  * Rimosse tassativamente tutte le API browser non permesse (`document`, `window`, `Date.now`, `setTimeout`, `setInterval`);
+### 4. Allineamento Story Engine & Rilascio Pannello Unificato: Svartulfr Smartphone OS (`engine_HCTPXhL8xr89wUY9r9dYU` — v76)
+* **Refactoring Stilistico & Armonizzazione Visiva OLED (v76):**
+  * **Risoluzione Bug della Bottom Dock:** Assegnati stili inline rigidi con `flexDirection: 'column'`, `alignItems: 'center'`, `flex: 1` e spaziatura uniforme, impedendo che i testi delle tab collassassero nella stringa continua `HomeChatStudioGildaLSE`.
+  * **Ammorbidimento Bordi & Palette Scura:** Sostituiti i contorni bianchi ad alto contrasto con rifiniture scure OLED a bassa saturazione (`#27272a` e `rgba(255,255,255,0.08)`), donando al pannello l'aspetto elegante di uno smartphone premium.
+  * **Dynamic Island su Singola Riga:** Ottimizzata la formattazione della fase lunare per impedire il wrap verticale del testo nella pillola superiore (`🌙 Calante · 🧪 x3`).
+  * **Spaziature, Padding & Pulsanti d'Azione:** Aumentati i margini interni delle card e rifiniti i pulsanti (`Invia`, `Inala Soppressore`, `Accetta Incarico`, pillole degli studenti e cacciatori) con angoli arrotondati e feedback di stato.
+* **Piena Conformità alla Sandbox Ufficiale Wyvern React TSX:**
+  * Rimosse tutte le API browser non permesse (`document`, `window`, `Date.now`, `setTimeout`, `setInterval`);
   * Rimossi tutti i listener ed hook non supportati (`useEffect`, `onKeyDown`);
-  * Gli input handler ora ricevono direttamente il valore tipizzato senza dipendere da eventi DOM sintetici (`onChange={val => ...}`);
-  * Integrata l'invocazione ufficiale dei comandi del motore tramite `await engine.runCommand('cmd_use_suppressor')` per l'inalazione dei soppressori ferormonali con conferma in chat e auto-refresh delle statistiche live;
-  * Resa e layout reattivi pilotati nativamente da `engine.values` e `engine.mode` ('world' / 'character').
-* **Unificazione dei Pannelli in un Unico Smartphone OS Realistico:** I 3 precedenti pannelli sparsi della sidebar sono stati condensati in un unico, immersivo pannello interattivo in stile smartphone moderno (**Svartulfr Smartphone OS** — `panel_smartphone_os`, icon `layout`, ~51 KB di logica React):
+  * Gli input handler ricevono direttamente il valore tipizzato senza dipendere da eventi DOM sintetici (`onChange={val => ...}`);
+  * Invocazione ufficiale dei comandi del motore tramite `await engine.runCommand('cmd_use_suppressor')` con auto-refresh delle statistiche live;
+  * Layout pilotato da `engine.values` ed `engine.mode`.
+* **Unificazione dei Pannelli in un Unico Smartphone OS Realistico:** I 3 precedenti pannelli sparsi della sidebar sono stati condensati in un unico, immersivo pannello interattivo in stile smartphone moderno (**Svartulfr Smartphone OS** — `panel_smartphone_os`, icon `layout`, ~60 KB di logica React):
   * **Scocca & Status Bar Reattiva:** Top bar stile iOS/Android con orologio di sistema, connessione *DCC 5G*, Dynamic Island con fase lunare live (🌙/🌕), indicatore e alert per i soppressori ferormonali (🧪 x3) e barre segnale/batteria (98%).
   * **Schermata Home Dashboard:** Widget data e ora del World (5 Aprile 2024, Solarton & Blackwood), allerta Rift attiva, widget ormonale LSE (Heat/Rut peak) con pulsante rapido per inalare inibitori via comando motore, widget Reputazione Branco Douglas (progress bar), mini widget player audio Echo e griglia di 8 applicazioni con badge notifiche dinamici.
   * **App 💬 Telegram (Douglas Pack Chat):** Chat criptata della famiglia Douglas con messaggi differenziati per ruolo e colore (Papà Erik, Noah, Jasper, Echo, Malachia) e casella di testo interattiva per comporre e inviare risposte istantanee nel feed tramite il pulsante Invia.
@@ -53,11 +58,11 @@ Il roster dei personaggi nativi del World di Svartúlfr (`_CgYT8fHXpDC4crjmegQF7
   * **App 🎵 Echo Music Mood Speaker:** Terminale multimediale magitech del famiglio digitale Echo con riproduzione/pausa e 4 preset di atmosfera sonora (Dungeon Synth, Relax & Intimacy, High Adrenaline Combat, Campus Coffeehouse).
   * **Bottom Navigation Dock:** Docking bar inferiore permanente per navigare all'istante tra *Home*, *Chat*, *Studio*, *Gilda* e *LSE*.
 * **Connessione World & 4 Lorebook di Svartúlfr Preservata al 100%:** World `_CgYT8fHXpDC4crjmegQF7` e tutti e 4 i Lorebooks (`NPC Primary`, `NPC Secondary`, `Lorebook`, `Location`) connessi deterministicamente con condizione `always`.
-* **Prompt Directive Espansa (v75):** Integrati C.U.M.S., Team Ukiyo, Ironhorn Nomads, Arcadia demi-umana e Branco Crimsonmaw.
+* **Prompt Directive Espansa (v76):** Integrati C.U.M.S., Team Ukiyo, Ironhorn Nomads, Arcadia demi-umana e Branco Crimsonmaw.
 
 ### 5. Esportazioni Locali Sincronizzate
 * [exports/Svartulfr_Export.json](file:///e:/repository/SvartulfrVerse/exports/Svartulfr_Export.json): aggiornato a **108 World Characters**.
-* [exports/Story_Engines_Export.json](file:///e:/repository/SvartulfrVerse/exports/Story_Engines_Export.json): aggiornato con la versione 75 di Svartulfr OS.
+* [exports/Story_Engines_Export.json](file:///e:/repository/SvartulfrVerse/exports/Story_Engines_Export.json): aggiornato con la versione 76 di Svartulfr OS.
 * [mine_inventory.json](file:///e:/repository/SvartulfrVerse/mine_inventory.json): aggiornato a 0 lorebook bookmarked e 27 character bookmarked.
 
 ---
