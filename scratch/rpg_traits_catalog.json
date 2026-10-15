@@ -1,0 +1,723 @@
+[
+  {
+    "id": "_MRxrtF9paJmcB13fAnE9g",
+    "_id": "_MRxrtF9paJmcB13fAnE9g",
+    "created_at": "2026-10-03T22:47:21.596Z",
+    "updated_at": "2026-10-03T22:47:21.596Z",
+    "player_selectable": true,
+    "name": "Alpha Command",
+    "description": "Inherent vocal and pheromonal dominance compelling immediate biological obedience from pack subordinates.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 3,
+      "intelligence": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_CBcWYUneXXPwpyEq2Mjcm",
+    "_id": "_CBcWYUneXXPwpyEq2Mjcm",
+    "created_at": "2026-10-03T22:05:59.849Z",
+    "updated_at": "2026-10-03T22:05:59.849Z",
+    "player_selectable": true,
+    "name": "Ancient Heritage",
+    "description": "Accumulated wisdom and dynastic wealth spanning centuries.",
+    "tags": [],
+    "stat_modifiers": {
+      "intelligence": 1,
+      "charisma": 1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_DgLQ22bMWpBnP3nnUK7nf",
+    "_id": "_DgLQ22bMWpBnP3nnUK7nf",
+    "created_at": "2026-10-03T22:47:24.896Z",
+    "updated_at": "2026-10-03T22:47:24.896Z",
+    "player_selectable": true,
+    "name": "Apex Core Resonance",
+    "description": "Sacred harmonic resonance with the primordial Wolf God Fenris, channeling transcended spiritual presence.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 2,
+      "charisma": 2
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_NL4ANGp2gjKtbAgRTFxbD",
+    "_id": "_NL4ANGp2gjKtbAgRTFxbD",
+    "created_at": "2026-10-13T16:04:18.291Z",
+    "updated_at": "2026-10-13T20:05:44.607Z",
+    "player_selectable": true,
+    "name": "Apex Predator Divine Core",
+    "description": "Consacrato dal Dio Lupo Fenris. Immunità biologica totale, sensi onnidirezionali e aura che proietta la supremazia fisica e carismatica dei Firstborn.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 3,
+      "endurance": 3,
+      "perception": 2,
+      "charisma": 2
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_L2xQk9j8RnMKUgGnCVWRR",
+    "_id": "_L2xQk9j8RnMKUgGnCVWRR",
+    "created_at": "2026-10-13T16:04:20.127Z",
+    "updated_at": "2026-10-13T20:05:45.752Z",
+    "player_selectable": true,
+    "name": "Berserker Internal Furnace",
+    "description": "Metabolismo ipertermico a consumo di ferro. La forza e la rigenerazione scalano in modo colossale in battaglia a scapito di un consumo metabolico e di ferro accelerato.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 3,
+      "endurance": 3,
+      "agility": 1,
+      "intelligence": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_3GMDq621yFa7ewyfrd4Pg",
+    "_id": "_3GMDq621yFa7ewyfrd4Pg",
+    "created_at": "2026-10-03T22:05:58.116Z",
+    "updated_at": "2026-10-03T22:05:58.116Z",
+    "player_selectable": true,
+    "name": "Blood Craze",
+    "description": "Berserker rage when smelling fresh blood in prolonged warfare.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 2,
+      "endurance": -1,
+      "agility": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_hF64363acKFAJCc77xXjE",
+    "_id": "_hF64363acKFAJCc77xXjE",
+    "created_at": "2026-10-03T22:05:59.027Z",
+    "updated_at": "2026-10-03T22:05:59.027Z",
+    "player_selectable": true,
+    "name": "Cyber-Augmented",
+    "description": "Subdermal wiring, cybernetic prosthetics, and combat cyberware.",
+    "tags": [],
+    "stat_modifiers": {
+      "endurance": 2,
+      "strength": 1,
+      "charisma": -2
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_VrgTBJR3aEyW3FBD1zLkR",
+    "_id": "_VrgTBJR3aEyW3FBD1zLkR",
+    "created_at": "2026-10-03T22:05:55.944Z",
+    "updated_at": "2026-10-03T22:05:55.944Z",
+    "player_selectable": true,
+    "name": "Dungeon Veteran",
+    "description": "Hardened survivor of reality tears, dungeons, and spatial breaches.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 1,
+      "intelligence": 1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_LNe6dhHnxx7BCfXeMERzc",
+    "_id": "_LNe6dhHnxx7BCfXeMERzc",
+    "created_at": "2026-10-03T22:47:20.513Z",
+    "updated_at": "2026-10-03T22:47:20.513Z",
+    "player_selectable": true,
+    "name": "Eternal Optimist",
+    "description": "Unshakable sunny disposition and emotional resilience that brightens morale even under intense adversity.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 1,
+      "luck": 2,
+      "strength": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_kUV13hFp2R2a4aYEXq3c4",
+    "_id": "_kUV13hFp2R2a4aYEXq3c4",
+    "created_at": "2026-10-13T16:04:22.725Z",
+    "updated_at": "2026-10-13T20:05:46.582Z",
+    "player_selectable": true,
+    "name": "Familiar Soulbound Synergy",
+    "description": "Legame simbiotico profondo con un compagno animale sovrannaturale, con condivisione di percezione sensoriale e risonanza aurica.",
+    "tags": [],
+    "stat_modifiers": {
+      "perception": 2,
+      "intelligence": 2,
+      "charisma": 1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_YbYKU6fNwTJgP6x4DPhDT",
+    "_id": "_YbYKU6fNwTJgP6x4DPhDT",
+    "created_at": "2026-10-03T22:05:56.358Z",
+    "updated_at": "2026-10-03T22:05:56.358Z",
+    "player_selectable": true,
+    "name": "Feral Blood",
+    "description": "Overpowering bestial impulse yielding immense brute power but wild instability.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 2,
+      "charisma": -2
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_8AYDaJ2xJaP7Vhe26M1jA",
+    "_id": "_8AYDaJ2xJaP7Vhe26M1jA",
+    "created_at": "2026-10-03T22:47:24.254Z",
+    "updated_at": "2026-10-03T22:47:24.254Z",
+    "player_selectable": true,
+    "name": "Gentle Giant",
+    "description": "Towering, imposing physical stature paired with deep tenderness, protective patience, and mild demeanor.",
+    "tags": [],
+    "stat_modifiers": {
+      "endurance": 2,
+      "strength": 1,
+      "charisma": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_ycHNkaW9aEjTxppUe6Wtg",
+    "_id": "_ycHNkaW9aEjTxppUe6Wtg",
+    "created_at": "2026-10-03T22:47:25.391Z",
+    "updated_at": "2026-10-03T22:47:25.391Z",
+    "player_selectable": true,
+    "name": "Knight in Sour Armor",
+    "description": "Cynical, gruff, and reluctant protector whose hardened exterior conceals fierce family loyalty.",
+    "tags": [],
+    "stat_modifiers": {
+      "endurance": 2,
+      "charisma": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_VVnrtkB9fn9gr1zMwFRyM",
+    "_id": "_VVnrtkB9fn9gr1zMwFRyM",
+    "created_at": "2026-10-03T22:05:54.997Z",
+    "updated_at": "2026-10-03T22:05:54.997Z",
+    "player_selectable": true,
+    "name": "Lupine Senses",
+    "description": "Acute scent tracking and predatory hearing.",
+    "tags": [],
+    "stat_modifiers": {
+      "perception": 2
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_CKqQUUkAh31KTLDkVK96E",
+    "_id": "_CKqQUUkAh31KTLDkVK96E",
+    "created_at": "2026-10-03T22:47:22.655Z",
+    "updated_at": "2026-10-03T22:47:22.655Z",
+    "player_selectable": true,
+    "name": "Mastermind",
+    "description": "Superior strategic planning, legal and corporate cunning, and long-range tactical foresight.",
+    "tags": [],
+    "stat_modifiers": {
+      "intelligence": 2,
+      "perception": 1,
+      "charisma": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_pxQ16JrPDh2H6qAQKgKyx",
+    "_id": "_pxQ16JrPDh2H6qAQKgKyx",
+    "created_at": "2026-10-03T22:47:18.984Z",
+    "updated_at": "2026-10-03T22:47:18.984Z",
+    "player_selectable": true,
+    "name": "Nerdy / Bookworm",
+    "description": "Insatiable curiosity, academic dedication, scientific interest, and deep study habits.",
+    "tags": [],
+    "stat_modifiers": {
+      "intelligence": 2,
+      "strength": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_4nTUFT2tfNAjdTKXHfgUc",
+    "_id": "_4nTUFT2tfNAjdTKXHfgUc",
+    "created_at": "2026-10-03T22:05:57.283Z",
+    "updated_at": "2026-10-03T22:05:57.283Z",
+    "player_selectable": true,
+    "name": "Night Stalker",
+    "description": "Nocturnal ambush predator operating with stealth and dark vision.",
+    "tags": [],
+    "stat_modifiers": {
+      "agility": 1,
+      "perception": 1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_JLKHrB9AFqkb1BhT6G3tj",
+    "_id": "_JLKHrB9AFqkb1BhT6G3tj",
+    "created_at": "2026-10-03T22:47:19.946Z",
+    "updated_at": "2026-10-03T22:47:19.946Z",
+    "player_selectable": true,
+    "name": "Old Money / Aristocrat",
+    "description": "Descendant of high-status wealth, dynastic prestige, vast social influence, and generational resources.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 2,
+      "luck": 1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_mJezfhzrdYDq8k7GWaGzm",
+    "_id": "_mJezfhzrdYDq8k7GWaGzm",
+    "created_at": "2026-10-14T14:18:52.286Z",
+    "updated_at": "2026-10-14T14:18:52.286Z",
+    "player_selectable": true,
+    "name": "Pack Leader",
+    "description": "Guida sovrana indiscussa del branco; emana carisma dominante supremo, incrollabile risolutezza tattica e totale responsabilità per la salvaguardia e la prosperità del clan.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 2,
+      "endurance": 2,
+      "strength": 1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_8B9wFbE8xag2a2dWTVE9b",
+    "_id": "_8B9wFbE8xag2a2dWTVE9b",
+    "created_at": "2026-10-03T22:47:19.535Z",
+    "updated_at": "2026-10-03T22:47:19.535Z",
+    "player_selectable": true,
+    "name": "Partial Shift Mastery",
+    "description": "Flawless daily command over lupine partial transformations (ears, tail, claws, scent tracking) without losing emotional composure.",
+    "tags": [],
+    "stat_modifiers": {
+      "perception": 1,
+      "agility": 1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_B8TxmbNBqgwRVAem6qAUr",
+    "_id": "_B8TxmbNBqgwRVAem6qAUr",
+    "created_at": "2026-10-03T21:57:44.216Z",
+    "updated_at": "2026-10-03T21:57:44.216Z",
+    "player_selectable": true,
+    "name": "Pre-First Shift (Gamma)",
+    "description": "An unawakened young wolf prior to their initial transformation. Possesses light, agile instincts and raw latent fortune, but lacks mature physical power.",
+    "tags": [],
+    "stat_modifiers": {
+      "agility": 2,
+      "luck": 2,
+      "strength": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_QT6N7KhahqwqkJVaMXhY9",
+    "_id": "_QT6N7KhahqwqkJVaMXhY9",
+    "created_at": "2026-10-03T22:47:21.055Z",
+    "updated_at": "2026-10-03T22:47:21.056Z",
+    "player_selectable": true,
+    "name": "Pre-Med / Healer",
+    "description": "Specialized knowledge in clinical medicine, biological anatomy, triage trauma care, and soothing vitals.",
+    "tags": [],
+    "stat_modifiers": {
+      "intelligence": 2,
+      "charisma": 1,
+      "strength": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_C8XXTwLd1mmF33EkQMUyD",
+    "_id": "_C8XXTwLd1mmF33EkQMUyD",
+    "created_at": "2026-10-13T16:04:21.177Z",
+    "updated_at": "2026-10-13T20:05:47.336Z",
+    "player_selectable": true,
+    "name": "Puppeteer Mana Strings",
+    "description": "Capacita di tessere fili di mana invisibili per controllare burattini, simulacri o guidare traiettorie con precisione millimetrica.",
+    "tags": [],
+    "stat_modifiers": {
+      "agility": 2,
+      "intelligence": 2,
+      "perception": 1,
+      "strength": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_URpa2cwkJQgVYt9j966JW",
+    "_id": "_URpa2cwkJQgVYt9j966JW",
+    "created_at": "2026-10-03T22:47:23.716Z",
+    "updated_at": "2026-10-03T22:47:23.716Z",
+    "player_selectable": true,
+    "name": "Rebel Heart / Underground",
+    "description": "Defiance of high-society pretenses, affinity for grease, bikes, counter-culture, and subterranean music.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 1,
+      "agility": 1,
+      "charisma": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_nKtryaNUjK1edMnBNjL9K",
+    "_id": "_nKtryaNUjK1edMnBNjL9K",
+    "created_at": "2026-10-03T22:05:56.785Z",
+    "updated_at": "2026-10-03T22:05:56.785Z",
+    "player_selectable": true,
+    "name": "Regenerative Factor",
+    "description": "Cellular rapid healing closing lacerations and physical wounds in minutes.",
+    "tags": [],
+    "stat_modifiers": {
+      "endurance": 2
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_7a2b7jHqJ7MdbNXQCxG34",
+    "_id": "_7a2b7jHqJ7MdbNXQCxG34",
+    "created_at": "2026-10-03T22:05:58.543Z",
+    "updated_at": "2026-10-03T22:05:58.543Z",
+    "player_selectable": true,
+    "name": "S.R.F. Veteran",
+    "description": "Surviving veteran of the Supernatural Rehabilitation Facility; cold discipline.",
+    "tags": [],
+    "stat_modifiers": {
+      "endurance": 1,
+      "intelligence": 1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_EG7K3mQqJhgaUr7KkYxJR",
+    "_id": "_EG7K3mQqJhgaUr7KkYxJR",
+    "created_at": "2026-10-03T22:05:55.403Z",
+    "updated_at": "2026-10-03T22:05:55.403Z",
+    "player_selectable": true,
+    "name": "Silver Allergy",
+    "description": "Severe physiological vulnerability and tissue rejection to refined silver.",
+    "tags": [],
+    "stat_modifiers": {
+      "endurance": -2
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_QY3tTm1fT9DYXmaqcpwrF",
+    "_id": "_QY3tTm1fT9DYXmaqcpwrF",
+    "created_at": "2026-10-03T22:05:59.444Z",
+    "updated_at": "2026-10-03T22:05:59.444Z",
+    "player_selectable": true,
+    "name": "Symbiotic Feeder",
+    "description": "Sustains physical vigor through emotional resonance, pleasure, and vital essence.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 2,
+      "endurance": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_F3Y6PeGWJKq2rk7HKGr9y",
+    "_id": "_F3Y6PeGWJKq2rk7HKGr9y",
+    "created_at": "2026-10-03T22:05:57.695Z",
+    "updated_at": "2026-10-03T22:05:57.695Z",
+    "player_selectable": true,
+    "name": "Tech Savvy",
+    "description": "Digital expertise, drone piloting, systems intrusion, and DCC tech.",
+    "tags": [],
+    "stat_modifiers": {
+      "intelligence": 2
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_AQ6Qy4KHMDgFWKPHDJeqb",
+    "_id": "_AQ6Qy4KHMDgFWKPHDJeqb",
+    "created_at": "2026-10-13T16:04:21.802Z",
+    "updated_at": "2026-10-13T20:05:48.259Z",
+    "player_selectable": true,
+    "name": "Technomantic Data Resonance",
+    "description": "Capacita di percepire il flusso di bit e la fibra ottica come tessuto eterico vivo, canalizzando incantesimi attraverso circuiti elettronici e reti digitali.",
+    "tags": [],
+    "stat_modifiers": {
+      "intelligence": 3,
+      "perception": 2,
+      "strength": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_AMT6xk8rnrT9E9Vx8mhdq",
+    "_id": "_AMT6xk8rnrT9E9Vx8mhdq",
+    "created_at": "2026-10-03T22:47:27.304Z",
+    "updated_at": "2026-10-03T22:47:27.304Z",
+    "player_selectable": true,
+    "name": "The Weight He Carries",
+    "description": "Haunted by solemn secrets, profound grief, or the heavy burden of duty that hardens internal resolve.",
+    "tags": [],
+    "stat_modifiers": {
+      "endurance": 1,
+      "intelligence": 1,
+      "charisma": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_gHdqdc2R8U9GLBxmBLcUV",
+    "_id": "_gHdqdc2R8U9GLBxmBLcUV",
+    "created_at": "2026-10-03T22:47:23.167Z",
+    "updated_at": "2026-10-03T22:47:23.167Z",
+    "player_selectable": true,
+    "name": "Trickster Mentor",
+    "description": "Sharp wit, creative problem-solving, and cheeky guidance cloaked in irony and sarcasm.",
+    "tags": [],
+    "stat_modifiers": {
+      "agility": 1,
+      "intelligence": 1,
+      "charisma": 1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_aReYAkFDzYfFHwBWqQbyU",
+    "_id": "_aReYAkFDzYfFHwBWqQbyU",
+    "created_at": "2026-10-03T21:57:44.690Z",
+    "updated_at": "2026-10-03T21:57:44.690Z",
+    "player_selectable": true,
+    "name": "LSE Beta Biology",
+    "description": "Balanced, steady lupine physiology adapted for endurance, work ethic, and community cohesion without volatile scent drives.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 1,
+      "endurance": 1
+    },
+    "display_order": 1
+  },
+  {
+    "id": "_f8kfz4eJLh6br4fgGXyc6",
+    "_id": "_f8kfz4eJLh6br4fgGXyc6",
+    "created_at": "2026-10-03T21:57:45.118Z",
+    "updated_at": "2026-10-03T21:57:45.118Z",
+    "player_selectable": true,
+    "name": "LSE Delta Biology",
+    "description": "Specialized sensory and tactical disposition, characterized by acute spatial awareness and hyper-focused vigilance at the cost of social charm.",
+    "tags": [],
+    "stat_modifiers": {
+      "perception": 2,
+      "charisma": -1
+    },
+    "display_order": 2
+  },
+  {
+    "id": "_jyDzgjNM8BmbrNC3AxcfB",
+    "_id": "_jyDzgjNM8BmbrNC3AxcfB",
+    "created_at": "2026-10-03T21:57:45.538Z",
+    "updated_at": "2026-10-03T21:57:45.539Z",
+    "player_selectable": true,
+    "name": "Dominant Alpha",
+    "description": "Apex commanding aura, heavy pheromones, and natural leadership instincts. Imposing presence backed by brute force and unwavering authority.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 3,
+      "strength": 1,
+      "intelligence": -2
+    },
+    "display_order": 3
+  },
+  {
+    "id": "_y7reXmHRcYLyErXzpktVK",
+    "_id": "_y7reXmHRcYLyErXzpktVK",
+    "created_at": "2026-10-03T21:57:45.970Z",
+    "updated_at": "2026-10-03T21:57:45.970Z",
+    "player_selectable": true,
+    "name": "Submissive Alpha",
+    "description": "Protective alpha physiology geared towards stalwart guardianship, pack sanctuary defense, and selfless physical endurance.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 1,
+      "endurance": 2,
+      "strength": -1
+    },
+    "display_order": 4
+  },
+  {
+    "id": "_hgNaenaG3qkHjaHgJFreB",
+    "_id": "_hgNaenaG3qkHjaHgJFreB",
+    "created_at": "2026-10-03T21:57:46.402Z",
+    "updated_at": "2026-10-03T21:57:46.402Z",
+    "player_selectable": true,
+    "name": "Dominant Omega",
+    "description": "Magnetic, assertive omega bearing intoxicating pheromones, keen intuition, and natural authority that commands fierce pack devotion.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 3,
+      "perception": 1,
+      "strength": -2
+    },
+    "display_order": 5
+  },
+  {
+    "id": "_DMMAzBKW3b8wPd9rq6TWp",
+    "_id": "_DMMAzBKW3b8wPd9rq6TWp",
+    "created_at": "2026-10-03T21:57:46.962Z",
+    "updated_at": "2026-10-03T21:57:46.962Z",
+    "player_selectable": true,
+    "name": "The White Moon (Omega)",
+    "description": "Legendary lunar-attuned omega biology. Radiates profound ethereal magnetism, intellectual clarity, and uncanny destiny, acting as the spiritual anchor of the pack.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 3,
+      "intelligence": 1,
+      "luck": 2,
+      "strength": -2
+    },
+    "display_order": 6
+  },
+  {
+    "id": "_ypmH6A8FdrPa18FHrYjxQ",
+    "_id": "_ypmH6A8FdrPa18FHrYjxQ",
+    "created_at": "2026-10-03T21:57:47.387Z",
+    "updated_at": "2026-10-03T21:57:47.387Z",
+    "player_selectable": true,
+    "name": "Submissive Omega",
+    "description": "Nurturing, highly receptive omega physiology. Graceful, swift, and resilient, deeply attuned to comforting pack bonds and emotional harmony.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 2,
+      "endurance": 1,
+      "agility": 1,
+      "strength": -3
+    },
+    "display_order": 7
+  },
+  {
+    "id": "_HwqVPTYtptM1Cwz1aCaaJ",
+    "_id": "_HwqVPTYtptM1Cwz1aCaaJ",
+    "created_at": "2026-10-03T21:57:47.822Z",
+    "updated_at": "2026-10-03T21:57:47.822Z",
+    "player_selectable": true,
+    "name": "Primordial Enigma",
+    "description": "Ancient, unbridled predatory anomaly. Radiates overpowering physical supremacy, indomitable vitality, and untamed primal dominance.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 3,
+      "endurance": 3,
+      "charisma": 3
+    },
+    "display_order": 8
+  },
+  {
+    "id": "_yQj1axBPPjLBp79cCD3JG",
+    "_id": "_yQj1axBPPjLBp79cCD3JG",
+    "created_at": "2026-10-03T21:57:48.231Z",
+    "updated_at": "2026-10-03T21:57:48.231Z",
+    "player_selectable": true,
+    "name": "Ascended Enigma",
+    "description": "Evolved apex predator blending transcendent pheromonal magnetism, tireless endurance, and lethal sensory precision.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 4,
+      "endurance": 2,
+      "perception": 2,
+      "intelligence": -1
+    },
+    "display_order": 9
+  },
+  {
+    "id": "_1QQ982MmT1fzehNRxq4WU",
+    "_id": "_1QQ982MmT1fzehNRxq4WU",
+    "created_at": "2026-10-03T21:57:48.726Z",
+    "updated_at": "2026-10-03T21:57:48.726Z",
+    "player_selectable": true,
+    "name": "Divine Blood (Firstborn)",
+    "description": "Direct lineage tracing back to Fenris and the ancient Firstborn of the 9th century. Consecrated with primordial power, majesty, and divine fortune.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 2,
+      "endurance": 2,
+      "charisma": 2,
+      "luck": 1
+    },
+    "display_order": 10
+  },
+  {
+    "id": "_8YMa2gRKXFMBrWYzx2jqD",
+    "_id": "_8YMa2gRKXFMBrWYzx2jqD",
+    "created_at": "2026-10-03T21:57:49.208Z",
+    "updated_at": "2026-10-03T21:57:49.208Z",
+    "player_selectable": true,
+    "name": "Founding Bloodline",
+    "description": "Direct lineage of the historic founding families. Exemplifies generational leadership, formidable vitality, and undisputed ancestral authority.",
+    "tags": [],
+    "stat_modifiers": {
+      "endurance": 2,
+      "charisma": 2,
+      "strength": 1
+    },
+    "display_order": 11
+  },
+  {
+    "id": "_an1zbcGY7MYWA2qHeCzba",
+    "_id": "_an1zbcGY7MYWA2qHeCzba",
+    "created_at": "2026-10-03T21:57:49.779Z",
+    "updated_at": "2026-10-03T21:57:49.779Z",
+    "player_selectable": true,
+    "name": "Pureblood Lineage",
+    "description": "Unbroken aristocratic heritage preserving refined lupine senses, noble poise, and genetic consistency across centuries.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 1,
+      "endurance": 1,
+      "perception": 1
+    },
+    "display_order": 12
+  },
+  {
+    "id": "_fYMTrnz7V4Vd7DECCxLMm",
+    "_id": "_fYMTrnz7V4Vd7DECCxLMm",
+    "created_at": "2026-10-03T21:57:50.196Z",
+    "updated_at": "2026-10-03T21:57:50.196Z",
+    "player_selectable": true,
+    "name": "Common Lupine Blood",
+    "description": "Honest, hearty pack heritage providing dependable physical vigor and resilient muscle tone.",
+    "tags": [],
+    "stat_modifiers": {
+      "endurance": 1,
+      "strength": 1
+    },
+    "display_order": 13
+  },
+  {
+    "id": "_YT36NBpQWKPTwqwRNeGzp",
+    "_id": "_YT36NBpQWKPTwqwRNeGzp",
+    "created_at": "2026-10-03T21:57:50.688Z",
+    "updated_at": "2026-10-03T21:57:50.688Z",
+    "player_selectable": true,
+    "name": "Modified / Lab Lineage",
+    "description": "Engineered or augmented lupine biology enhanced for synthetic muscle density and reflex speed, trading natural pack scent chemistry and luck.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 2,
+      "agility": 1,
+      "charisma": -2,
+      "luck": -1
+    },
+    "display_order": 14
+  }
+]

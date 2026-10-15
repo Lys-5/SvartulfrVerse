@@ -23,6 +23,8 @@ Questo documento codifica le regole operative ufficiali e vincolanti per la crea
 15. [Bug e Trappole Note della Piattaforma Wyvern](#15-bug-e-trappole-note-della-piattaforma-wyvern)
 16. [Disciplina delle Attitudes](#16-disciplina-delle-attitudes)
 17. [Protocollo Operativo per Database Locale SQLite Wyldfire (Sospeso)](#17-protocollo-operativo-per-database-locale-sqlite-wyldfire-sospeso)
+18. [Standard Operativo per Chat di Gruppo Stand-Alone (/mine)](#18-standard-operativo-per-chat-di-gruppo-stand-alone-mine)
+19. [Standard Operativo di Sessione e Skill Integrate](#19-standard-operativo-di-sessione-e-skill-integrate)
 
 ---
 
@@ -140,7 +142,13 @@ const oreDaData = iso => (Date.parse(iso) - EP) / 3600000;
 - **Personaggi Vivi Nativi:** Entrano come **Character** con **Start Position**.
 - **Personaggi Stand-Alone (`/mine`):** Vengono collegati al World tramite **Linked Characters** (`linked_characters`, in `ws=library&tab=linked-characters`), fungendo da Single Source of Truth condivisa tra 1-on-1 e World.
 - **Personaggi Deceduti:** Entrano come **Character** con **Start Position** ed **End Position** (modello Nixara; non vanno più nel Lexicon).
-- **Placement dei Character:** Impostare sempre **Global Character = ON** su tutte le schede native.
+- **Confinamento World Characters:** Superamento del Global Character ON generalizzato. Solo i 5 Douglas principali (Malachia, Noah, Jasper, Erik, Alyssa) mantengono **Global Character = ON**. Tutti gli altri 108 World Characters devono avere **Global Character = OFF** (`is_global: false`), caricandosi unicamente se presenti nella Location corrente o nel Party attivo.
+
+### World Lean Architecture & Confinamento Lexicon
+Per impedire che il prompt inviato all'LLM superi il Context Budget di Wyvern e provochi il troncamento della cronologia di chat:
+- **`is_global: true` Riservato:** Consentito esclusivamente per un nucleo ristretto di concetti cosmologici e biologici universali (~30 voci max: LSE, fisiologia licantropi/vampiri, vulnerabilità argento/aconito, ciclo solare/notturno).
+- **Tutte le altre voci (`is_global: false`):** Tutti i 284 NPC minori nel Lexicon, i 51 item di negozio, i 16 contratti di lavoro, le 19 memorie personali, e le entry specifiche di confraternite/negozi devono avere tassativamente `is_global: false`.
+- **Soglia di Sicurezza Context Budget:** La somma dei metadati statici del World (Istruzioni avanzate + Location + Rotte + RPG State + Voci Lexicon scattate + Personaggi) non deve mai superare i **5.000 token**, garantendo che almeno il 70% della finestra di contesto rimanga sempre riservata alla cronologia di chat e all'input dell'utente.
 
 ### Matrice di Triage
 
@@ -176,8 +184,9 @@ Ogni voce di Lexicon focalizzata su un singolo personaggio (Intimacy Profiles, D
 
 ## 8. RPG Stats e Sistemi di Simulazione
 
-- **Stato del Modulo:** In seguito all'aggiornamento modulare a Workspace di Wyvern, le `world_features` sono state riattivate a livello globale:
-  - `inventory: true`, `currency: true`, `rpg_stats: true`, `combat: true`, `show_party_stats: true`, `show_species_info: true`, `relationships: true`.
+- **Stato del Modulo & World Features:** In seguito all'ottimizzazione del Context Budget (World Lean Architecture):
+  - `inventory: true`, `currency: true`, `rpg_stats: true`, `combat: true`, `relationships: true`.
+  - Disattivati per evitare il dump di tabelle nel prompt: `show_party_stats: false`, `show_species_info: false`.
   - Disattivati perché estranei al canone del World: `ships: false` (Cross-World Ships) e `creature_catcher: false` (Creature Catcher).
 - **Convenzioni RPG e Parametri di Bilanciamento:**
   - Budget fisso a **25 punti** (somma finale delle 6 stat uguale a **31** con base 1).
@@ -185,6 +194,22 @@ Ogni voce di Lexicon focalizzata su un singolo personaggio (Intimacy Profiles, D
   - Livello = Età anagrafica (fino a 99).
 - **Bug Critico del Livello & Tetto a 99:** Un Livello $\ge 100$ blocca silenziosamente il salvataggio dell'intero blocco RPG. Per tutti i personaggi ultracentenari impostare tassativamente **Livello = 99**, riportando l'età reale nel blocco JED+.
 - **Species e Occupation via API:** I selettori web non salvano Species e Occupation (tornano a None). Vanno scritti via API dentro `rpg_stats` (`rpg_stats.species_id` e `rpg_stats.occupation_id`). Selezionare l'Occupation concettualmente più vicina tra i 18 blueprint disponibili.
+
+### Protocollo di Formulazione RPG & Dossier Integrale Obbligatorio
+È fatto divieto assoluto a qualsiasi assistente AI di proporre, generare o modificare tratti RPG, occupazioni, razze, classi o statistiche basandosi su dati parziali, intuito o inferenze dal solo nome del personaggio.
+1. **Lettura Integrale del Dossier:** Prima di qualsiasi proposta o modifica, l'assistente deve recuperare e leggere l'intero testo descrittivo del personaggio (`long_summary`, `description`, `voice & behavior`, `attitudes`) e le relative voci enciclopediche del Lexicon.
+2. **Matrice Tassonomica Vincolante delle Stirpi Dinastiche:**
+   - `Divine Blood`: riservato **esclusivamente** ai tre Firstborn primordiali (`Wulfnic`, `Zefir`, `Ut`). Nessun altro personaggio, inclusi i discendenti Douglas, può possedere questo tratto.
+   - `Founding Bloodline`: riservato a Nixara, ai Firstborn e alla seconda generazione di sangue misto Douglas-Bloodmoon (`Alyssa`, `Jasper`, `Malachia`, `Noah`). Non appartiene a Erik né a Logan.
+   - `Pureblood Lineage`: riservato alle casate storiche di pura discendenza: Douglas (`Erik`, `Logan`, `Edric`, `Magnus`, `Cornelius`), Duskwood (`Elizabeth`), Wolfwood (`Archer`), Rogers (`Mackenzie`).
+   - *Doppia Linea di Sangue:* I quattro gemelli/fratelli Douglas-Bloodmoon (`Alyssa`, `Jasper`, `Malachia`, `Noah`), discendendo sia da linea Douglas che Bloodmoon, possiedono contemporaneamente sia `Founding Bloodline` che `Pureblood Lineage`.
+3. **Invarianti Assolute di Sottogenere Lupino (LSE):**
+   - **Noah Loki Douglas Bloodmoon:** È tassativamente un **Delta** (Eminenza Grigia, mente diplomatica e finanziaria; zero tratti Alpha, zero Alpha Command).
+   - **Jasper Svartr Douglas Bloodmoon:** È tassativamente un **Beta** (braccio destro operativo e tecnologico di Malachia; zero tratti Alpha).
+   - **Logan Dominic Járn Douglas:** È tassativamente un **Beta** (braccio destro, mediatore pacificatore di Erik; zero tratti Alpha).
+   - **Malachia Björn Douglas Bloodmoon:** È un **Dominant Alpha** (futuro Pack Leader designato; possiede i tratti *Pack Leader*, *Ascended Enigma* ed *Apex Core Resonance*).
+   - **Erik Ulfr Douglas:** È un **Prime Alpha** (Pack Leader in carica della Casata Douglas; possiede i tratti *Pack Leader*, *Dominant Alpha*, *Alpha Command*).
+   - **Kemonomimi Demi-Umani (es. Finn Novak, Roman Blackwood):** Non sono licantropi (nessun Partial o Hybrid Shift, nessuna allergia all'argento, nessuna frenesia o rigenerazione lunare; possiedono un solo paio di orecchie animali).
 
 ---
 
@@ -197,6 +222,10 @@ Ogni voce di Lexicon focalizzata su un singolo personaggio (Intimacy Profiles, D
 5. **Verifica Rigorosa alla Fonte:** Non assumere per assodato un dettaglio citato di seconda mano; verificare sul testo d'origine (evitare casi come "Bulls vs Claws" invece di "CLAMS", o schede duplicate con nuovi id).
 6. **Date Inventate Credibili:** Quando è indispensabile creare date non presenti nelle fonti, evitare il ricorso sistematico al 1° gennaio o al primo del mese; scegliere date varie e verosimili.
 7. **Scelte Delegate all'Assistente:** Quando l'utente affida una decisione (es. età anagrafica congrua), proporre un valore motivato e attendere conferma prima di scrivere sul World.
+8. **Protocollo di Verifica Preventiva alla Fonte e Divieto Assoluto di Inferenza:** È vietato proporre, generare, inserire o aggiornare qualsiasi informazione su personaggi, fazioni, specie, classi RPG, relazioni o lore (razza, anatomia, età, sottogenere LSE, ruoli, poteri) sulla base di deduzioni, intuito, inferenze dal nome o memorie parziali.
+   - *Consultazione Primaria Obbligatoria:* prima di ogni proposta o scrittura, reperire e leggere integralmente la scheda sorgente originale (profili Wyvern come Kakihara, schede JanitorAI originali, dossier in `ARCHIVIO/`, Lorebook di riferimento).
+   - *Citazione del Dato Letterale:* ogni attributo fondamentale (specie, occupazione/classe, parentela, tratti distintivi) va corroborato citando la fonte specifica verificata.
+   - *Divieto di Riempimento a Indovinare:* se un dato manca nella fonte, non va inventato; dichiararne l'assenza e chiedere una decisione canonica all'utente prima di procedere.
 
 ---
 
@@ -256,6 +285,23 @@ Consultare tassativamente queste risorse ufficiali per l'implementazione di logi
   5. **Verifica GET post-scrittura:** Lo status HTTP 200 non è una prova; rileggere l'entità per validare l'effettiva persistenza.
 - **Operazioni in Blocco (> 10 entità):** Presentare il piano all'utente, attendere approvazione, operare a lotti di massimo 25 con memorizzazione dello stato.
 - **Cancellazioni (DELETE):** Solo su richiesta esplicita con indicazione puntuale dell'entità. Salvare prima l'intero oggetto nel Project; una chiamata alla volta (mai in loop).
+
+### Protocollo Anti-Data Loss per Lorebook Stand-Alone (/mine)
+1. **Divieto Assoluto di Overwrite Massivo:** È fatto divieto tassativo a qualsiasi script o assistente AI di eseguire riscritture complete o sovrascritture di massa dell'array `lexicon` sui Lorebook stand-alone (`/api/lorebooks/:id`).
+2. **Integrità dei Lorebook:** I Lorebook stand-alone in `/mine` costituiscono Single Source of Truth storica e manuale. Qualsiasi sincronizzazione o inserimento deve avvenire in modalità "append puntuale" singola voce, con verifica preventiva di schema e mai in sostituzione cieca dell'intero archivio.
+3. **Backup Preventivo Obbligatorio:** Prima di qualsiasi operazione di scrittura su entità di libreria, scaricare e persistere una copia integrale JSON su disco locale.
+4. **Context Budget Awareness:** Nelle richieste al World, monitorare che la somma dei metadati statici non superi mai i 5.000 token prima della chat history per evitare il troncamento della richiesta da parte del backend di Wyvern.
+5. **Preservazione Obbligatoria Metadati Top-Level nei Lorebook:** L'endpoint `PUT /api/lorebooks/:id` non esegue merge parziale: inviare solo `{ lexicon }` cancella i campi top-level (`name`, `description`, `scan_depth`, `token_budget`, `recursive_scanning`, `visibility`, `rating`, `is_private`). In qualsiasi chiamata di aggiornamento è obbligatorio trasmettere sempre l'intero blocco di configurazione del Lorebook insieme all'array `lexicon`.
+
+### Tipizzazione Rigorosa di `priority` e Validazione Schemi Zod
+Il backend di Wyvern valida le voci di contesto, lorebook, scenari e lexicon tramite schemi Zod che impongono per il campo `priority` il tipo `z.number()`.
+- L'assegnazione di valori stringa (es. `priority: "0"`, `"10"`, `"high"`) scatena un errore HTTP 500 fatale (`Expected number, received string, path: ["priority"]`) che inibisce la ricezione o l'invio di messaggi in chat.
+- In ogni script o funzione di creazione/modifica entità, convertire esplicitamente: `priority: Number(val) || 0`.
+
+### Protocollo di Pulizia Post-Diagnostica (Zero-Footprint Testing)
+Quando vengono avviate procedure di diagnosi, indagine o test che comportano la creazione programmata di entità temporanee via API (chat log di test come `chat_log_...`, party usa-e-getta o scenari sandbox):
+1. **Tracciamento:** Lo script o l'agente deve memorizzare immediatamente in memoria o su scratch gli ID di ogni entità temporanea creata.
+2. **Cancellazione Tempestiva:** A diagnosi completata (o in caso di errore), è obbligatorio eseguire la cancellazione sistematica delle entità create (`DELETE /api/new/chat-logs/:id`) per garantire che l'account e la libreria dell'utente rimangano perfettamente puliti e privi di artefatti orfani.
 
 ### Note Tecniche API
 - Base URL: `https://app.wyvern.chat/api/...`
@@ -370,6 +416,9 @@ Seguire tassativamente la sequenza di 13 passi:
 - **Cartelle Collassate UI:** Si espandono cliccando unicamente la chevron iniziale, non il testo. In alternativa, query API.
 - **Combobox e Textarea:** Non recepiscono affidabilmente eventi sintetici JavaScript; operare con modifiche mirate via API.
 - **Parent Location:** Su nuove Location, il campo Parent si popola solo dopo aver salvato la Location una prima volta.
+- **Wipe Metadati Lorebook via PUT:** L'endpoint `PUT /api/lorebooks/:id` non effettua merge parziale. Inviare un body contenente solo `{ lexicon: [...] }` svuota silenziosamente i campi top-level (`name`, `description`, `scan_depth`, `token_budget`, `recursive_scanning`, `visibility`, `rating`, `is_private`). In qualsiasi chiamata è obbligatorio trasmettere sempre l'intero blocco di metadati del Lorebook (`name`, `description`, `scan_depth: 5`, `token_budget: 5000`, `recursive_scanning: true`) assieme al lexicon.
+- **Priority come Stringa (Errore Zod 500):** `Expected number, received string, path: ["priority"]` manda in crash il server Wyvern (HTTP 500) bloccando la ricezione o l'invio di messaggi nella chat. Forzare sempre la tipizzazione numerica esplicita: `priority: Number(val) || 0`.
+- **Orfani da Testing (Zero-Footprint):** I chat log e i party temporanei creati per test diagnostici restano visibili nella UI utente e inquinano la libreria. Eseguire sempre il teardown sistematico (`DELETE /api/new/chat-logs/:id`) al termine di ogni sessione di test.
 
 ---
 
@@ -400,3 +449,35 @@ Seguire tassativamente la sequenza di 13 passi:
   5. Conferma esplicita di chiusura completa dell'app desktop Wyldfire prima di operare.
   6. Bonifica totale dei file temporanei `-wal` e `-shm`.
   7. Documentazione nel Project e audit via API delle entry Lexicon orfane dopo la pubblicazione su Wyvern.
+
+---
+
+## 18. Standard Operativo per Chat di Gruppo Stand-Alone (/mine)
+
+Nelle sessioni di gioco giocate al di fuori del World (Chat di Gruppo stand-alone con 2-6 personaggi di `/mine`):
+
+1. **Architettura delle Schede in `/mine`:**
+   - Ogni scheda in `/mine` deve avere un peso calibrato tra **1.000 e 1.500 token** per preservare il context window del gruppo.
+   - Disciplina di formattazione rigorosa: dialoghi tra virgolette inglesi doppie standard (`"..."`), narrazione in testo semplice senza asterischi, asterischi riservati solo ai pensieri, divieto assoluto dell'em-dash (`—`).
+   - Anatomia demi-umani: un solo paio di orecchie (solo orecchie animali).
+2. **Disaccoppiamento dello StoryEngine:**
+   - Nella definizione dello StoryEngine (`engine_HCTPXhL8xr89wUY9r9dYU`), l'array `worlds` deve essere impostato su `[]` (`definition.worlds = []`).
+   - Questo impedisce all'engine di tentare di risolvere, scansionare o richiamare in loop l'intero World esterno durante una chat di gruppo locale, garantendo tempi di risposta immediati e zero token sprecati.
+3. **Gestione Lorebook Reattivo:**
+   - Ciascuna scheda ha collegati i 3 Lorebook stand-alone (`Svartúlfr - Lorebook`, `Svartúlfr - NPC Primary`, `Svartúlfr - Location`).
+   - I Lorebook stand-alone operano in modalità di scansione selettiva: scansionano unicamente gli ultimi messaggi e iniettano solo 0-2 voci se espressamente citate. Nessuna voce globale viene forzata a ogni turno: il consumo del Lorebook rimane inferiore a 500-1.000 token per turno.
+4. **Prestazioni Attese:**
+   - Il prompt complessivo iniziale prima della cronologia deve rimanere stabilmente tra **4.000 e 6.000 token**.
+   - La cronologia dei messaggi e l'input del giocatore rimangono integri al 100%, garantendo coerenza narrativa e assenza di troncamenti.
+
+---
+
+## 19. Standard Operativo di Sessione e Skill Integrate
+
+Ogni interazione dell'assistente su questo repository incorpora sistematicamente i principi delle seguenti modalità operative (dettaglio in [.agents/rules/14_metodo_operativo_skills_integrate.md](file:///e:/repository/SvartulfrVerse/.agents/rules/14_metodo_operativo_skills_integrate.md)):
+
+1. **Pianificazione Rigorosa (`/plan`):** nessuna modifica strutturale a World, schede o Lorebook senza piano di implementazione dettagliato e approvazione esplicita dell'utente.
+2. **Allineamento Interattivo (`/grill-me`):** ambiguità e dati non documentati si risolvono con domande mirate una alla volta, mai con assunzioni.
+3. **Ispezione Documentale (`/browser`, `/chrome-devtools`):** consultare attivamente le fonti web (profili Wyvern, portale SUCC, JanitorAI) e ispezionare endpoint e schemi dati prima di assumere formati.
+4. **Decomposizione e Verifica Obiettiva (`/teamwork-preview`):** task ampi suddivisi in criteri di accettazione verificabili via script e audit di conformità.
+5. **Audit Post-Esecuzione (`/boost`):** ogni scrittura va verificata con GET fresche e controlli di integrità indipendenti.

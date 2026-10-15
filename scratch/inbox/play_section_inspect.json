@@ -1,0 +1,190 @@
+{
+  "playerStart": {
+    "custom_introduction": true,
+    "introduction_pages": [
+      {
+        "id": "p_lore_guide",
+        "type": "info",
+        "title": "Guida al Mondo: Licantropi, LSE & Modern Fantasy",
+        "body": "# Guida al Mondo: Licantropi, LSE & Modern Fantasy\n\nBenvenuto nel bacino costiero della California del sud, un crocevia urbano dove i grattacieli bagnati dalla nebbia dell'oceano incontrano l'attività sismica dei **Rift**, le incursioni mostruose della **DMHA** (Dungeon & Monster Hazard Administration) e il dominio secolare dei branchi di licantropi.\n\n---\n\n### La Biologia dei Licantropi e dei Demi-Umani\nIn questo mondo, i licantropi e i demi-umani non sono mostri della luna piena hollywoodiani, ma una specie senziente con fisiologia avanzata:\n* **Unico Paio di Orecchie**: Possiedono **esclusivamente orecchie animali** sulla sommità del capo. Non esiste un secondo paio di orecchie umane.\n* **Fisiologia a Doppio Cuore**: Il sistema circolatorio possiede un secondo cuore che pompa sangue iper-ossigenato sotto sforzo e durante il *Partial Shift*.\n* **Rigenerazione Cellulare Lunare**: Le ferite guariscono a velocità prodigiosa, accelerata dalla luce lunare.\n* **Vulnerabilità all'Argento**: Il contatto con l'argento puro inibisce la rigenerazione, provoca ustioni chimiche istantanee e paralizza la trasformazione.\n* **Olfatto e Ferormoni**: L'olfatto legge lo stato d'animo, la menzogna, la paura, l'eccitazione e l'intenzione altrui con precisione scientifica.\n\n---\n\n### Il Sistema LSE (Caratteristiche Secondarie Lupine)\nAll'interno della società e del branco, la biologia si articola in ranghi istintivi profondi:\n* **Alpha**: Leader naturali e protettori d'impatto. Emettono ferormoni imponenti e padroneggiano il *Command* vocale, capace di piegare all'obbedienza istintiva.\n* **Beta**: La spina dorsale tattica ed esecutiva. Mente salda, mediatori leali e combattenti disciplinati.\n* **Omega**: Il nucleo empatico ed emotivo del branco. Sensi olfattivi ipersensibili, cicli di calore periodici e potenti istinti protettivi e di legame.\n* **Delta**: Esploratori, sentinelle agili e osservatori indipendenti che colmano il divario sociale tra Alpha e Omega.\n* **Enigma**: L'apice sacro e rarissimo (~1 per generazione). Natura duale Alpha/Omega con autorità assoluta e immunità totale a qualsiasi condizionamento esterno.\n\n---\n\n### Come Iniziare la Tua Avventura\n* **Consiglio per la Massima Immersione**: Creare un personaggio **Licantropo** (o Demi-umano) ti permetterà di vivere appieno le dinamiche viscerali del branco, l'olfatto ferormonale, il legame dei nodi e le tensioni territoriali di Blackwood City.\n* **Piena Libertà**: Puoi comunque scegliere liberamente qualunque altra razza (Umano, Elfo, Nano, Orco, Minotauro, Vampiro, Demone, ecc.) per vivere la storia come specialista della gilda DMHA, agente delle corporazioni o investigatore esterno!",
+        "visible_when": []
+      },
+      {
+        "id": "p_1790742409994",
+        "type": "select",
+        "title": "Qual e la tua biologia o rango secondario?",
+        "field_id": "field-secondary-sex"
+      },
+      {
+        "id": "p_1790742318091",
+        "type": "select",
+        "title": "Qual e la tua appartenenza o fazione di partenza?",
+        "field_id": "field-origin",
+        "visible_when": []
+      },
+      {
+        "id": "p_1791097589512",
+        "type": "select",
+        "title": "Qual e il tuo ruolo tattico sul campo?",
+        "field_id": "field-role"
+      }
+    ],
+    "intro_fields": {
+      "field-origin": {
+        "type": "select",
+        "label": "Qual e la tua appartenenza o fazione di partenza?",
+        "required": true,
+        "bindings": [
+          {
+            "kind": "remember",
+            "key": "player_origin"
+          },
+          {
+            "kind": "activate"
+          },
+          {
+            "kind": "set_location"
+          },
+          {
+            "kind": "grant_currency",
+            "currency_id": "fbecc738-f9f7-4426-b8a1-a237b8ad922c",
+            "amount": 500
+          }
+        ],
+        "options": [
+          {
+            "value": "pack_douglas",
+            "label": "Branco Douglas (Blackwood City)"
+          },
+          {
+            "value": "dmha_hunter",
+            "label": "Cacciatore con Licenza DMHA (Divisione Rift)"
+          },
+          {
+            "value": "succ_academic",
+            "label": "Studente o Ricercatore alla SUCC (Solarton)"
+          },
+          {
+            "value": "underworld_independent",
+            "label": "Operatore Indipendente / Fixer dei Bassifondi"
+          }
+        ],
+        "location_map": {
+          "pack_douglas": "_9H2EmzRm92QxBpkmJUR1z",
+          "dmha_hunter": "_82cNpDwVJwVd8qGRUgFw8",
+          "succ_academic": "_j67Dp2PVwFCpdrfWRYV2M",
+          "underworld_independent": "_X4A8gWVr43a7dRr9TbJ4m"
+        },
+        "title": "Qual e la tua appartenenza o fazione di partenza?"
+      },
+      "field-secondary-sex": {
+        "type": "select",
+        "label": "Qual e la tua biologia o rango secondario?",
+        "required": true,
+        "bindings": [
+          {
+            "kind": "remember",
+            "key": "player_secondary_sex"
+          },
+          {
+            "kind": "activate"
+          }
+        ],
+        "options": [
+          {
+            "value": "alpha",
+            "label": "Alpha (Dominante, autorevole, presenza imponente e ferormoni forti)"
+          },
+          {
+            "value": "beta",
+            "label": "Beta (Pragmatico, affidabile, colonna portante tattica)"
+          },
+          {
+            "value": "omega",
+            "label": "Omega (Empatico, intuitivo, olfatto finissimo e profondo senso di connessione)"
+          },
+          {
+            "value": "delta",
+            "label": "Delta (Adattabile, vigile, esploratore indipendente)"
+          },
+          {
+            "value": "standard",
+            "label": "Non-Lupino (Fisiologia e psicologia ordinaria / Altra specie)"
+          }
+        ],
+        "title": "Qual e la tua biologia o rango secondario?"
+      },
+      "field-role": {
+        "type": "select",
+        "label": "Qual e il tuo ruolo tattico sul campo?",
+        "required": false,
+        "bindings": [
+          {
+            "kind": "remember",
+            "key": "player_role"
+          },
+          {
+            "kind": "activate"
+          },
+          {
+            "kind": "grant_currency",
+            "currency_id": "8c7bca5a-5d3f-4780-93cb-5cb63dc2cf0a",
+            "amount": 10000
+          }
+        ],
+        "options": [
+          {
+            "value": "vanguard",
+            "label": "Vanguard (Prima linea pesante, assorbimento danni e difesa alleati)"
+          },
+          {
+            "value": "striker",
+            "label": "Striker (Assaltatore agile, colpi mirati sui punti deboli dei mostri)"
+          },
+          {
+            "value": "infiltrator",
+            "label": "Infiltrator / Scout (Rilevamento anomalie, trappole e furtivita)"
+          },
+          {
+            "value": "combat_medic",
+            "label": "Combat Medic (Soccorso traumi da squarcio e neutralizzazione miasma)"
+          },
+          {
+            "value": "specialist",
+            "label": "Specialista Civile / Intel (Netrunner, investigatore o diplomatico)"
+          }
+        ],
+        "title": "Qual e il tuo ruolo tattico sul campo?"
+      }
+    },
+    "intro_include_character_select": true,
+    "intro_include_rpg_build": false,
+    "intro_playable_character_ids": [
+      "_x3VY2kcbaDbKyCqywGeET",
+      "_MXcEC8Y6B3BNm3b1ttHj6"
+    ],
+    "intro_greeting": "",
+    "hide_world_intro_entry": false
+  },
+  "automation": {
+    "scripts": {},
+    "commands": [],
+    "inline_command_config": {
+      "sections": {
+        "item_use": {
+          "instructions": "- >use <item> [on <target>] : use a consumable or tactical item (healing cylinders, mana elixirs, abyssal cores, scent suppressors, silver-burn balm, triage kits)\n"
+        },
+        "basic_combat": {
+          "instructions": "- >attack <target> [with <weapon_or_spell>] : attack a target with equipped weapon (katana, cleaver, daggers, warhammer), claws, or combat magic\n- >defend : take a fortified defensive stance, raise vanguard wards, or shield allies\n- >run : attempt to disengage or retreat from battle\n"
+        },
+        "character_battle": {
+          "instructions": "- >fight <enemy1>, <enemy2> [with <ally1>, <ally2>] : start combat against dungeon monsters, beasts, rivals, or hostile squads (party allies join automatically if no allies specified)\n"
+        },
+        "relationship": {
+          "instructions": "- >like <target> <reason> : a character warms slightly toward the target\n- >love <target> <reason> : a character warms strongly toward the target\n- >dislike <target> <reason> : a character cools slightly toward the target\n- >hate <target> <reason> : a character cools strongly toward the target\n- >mood <name> <moodlet> : a character enters a specific biological, pack, or emotional state\n\nTarget can be a party member, another character, or a faction (e.g. House Douglas, Team Ukiyo, Council). Emit these after emotionally meaningful moments between characters or towards the player.\nScale: a shared joke, scent-mark, or tactical assistance is a >like. Intercepting a lethal strike in a dungeon, shielding someone from trauma, or defying an Alpha Command is a >love. A hostile dominance display or reckless endangerment is a >dislike. Betraying pack trust or attacking family is a >hate.\nCanon moodlets: protective, scent-marked, pack-anxious, enraged, rut, heat, unsubmitted, traumatized.\nNever state scores or numbers.\n"
+        }
+      }
+    },
+    "regex_scripts": []
+  }
+}

@@ -1,0 +1,836 @@
+{
+  "world_age": 10489952,
+  "human_start_date": "0827-12-21T00:00:00.000Z",
+  "calendar": {
+    "name": "Gregorian Calendar",
+    "epoch_label": "CE",
+    "day_length": 24,
+    "days_per_week": 7,
+    "day_names": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "start_year": 827,
+    "display_format": "{day_name}, {month} {day}, Year {year} {epoch}",
+    "leap_year": {
+      "every": 4,
+      "except": 100,
+      "unless": 400,
+      "extra_days": 1,
+      "month_id": "feb"
+    },
+    "months": [
+      {
+        "id": "jan",
+        "name": "January",
+        "days": 31
+      },
+      {
+        "id": "feb",
+        "name": "February",
+        "days": 28
+      },
+      {
+        "id": "mar",
+        "name": "March",
+        "days": 31
+      },
+      {
+        "id": "apr",
+        "name": "April",
+        "days": 30
+      },
+      {
+        "id": "may",
+        "name": "May",
+        "days": 31
+      },
+      {
+        "id": "jun",
+        "name": "June",
+        "days": 30
+      },
+      {
+        "id": "jul",
+        "name": "July",
+        "days": 31
+      },
+      {
+        "id": "aug",
+        "name": "August",
+        "days": 31
+      },
+      {
+        "id": "sep",
+        "name": "September",
+        "days": 30
+      },
+      {
+        "id": "oct",
+        "name": "October",
+        "days": 31
+      },
+      {
+        "id": "nov",
+        "name": "November",
+        "days": 30
+      },
+      {
+        "id": "dec",
+        "name": "December",
+        "days": 31
+      }
+    ],
+    "start_month_id": "dec",
+    "start_day_of_month": 21
+  },
+  "time_of_day_config": {
+    "day_length": 24,
+    "default_time": 12,
+    "periods": [
+      {
+        "id": "6cad6df4-6e69-44ce-a175-2d5fb8de3955",
+        "name": "Dawn",
+        "description": "La sottile nebbia costiera dell'alba si dirada sulla baia di Blackwood. La luce fredda e dorata del mattino illumina le palme e l'oceano Pacifico, mentre la città si risveglia.",
+        "start": 5,
+        "end": 7
+      },
+      {
+        "id": "67e111ad-5eaf-4d07-8d53-69f1f15a3593",
+        "name": "Morning",
+        "description": "Il sole luminoso della California splende alto. Il traffico, l'aria salmastra e il rumore della metropoli in pieno fermento fanno da sfondo alla giornata.",
+        "start": 7,
+        "end": 12
+      },
+      {
+        "id": "6525dfec-f2c0-4f51-b591-39efd1fd17fd",
+        "name": "Afternoon",
+        "description": "Un caldo pomeriggio californiano. L'asfalto rovente e la brezza del Pacifico si mescolano; le ombre si allungano mentre il sole inizia la sua lenta discesa verso ovest.",
+        "start": 12,
+        "end": 17
+      },
+      {
+        "id": "e994880c-0f4b-4a58-9fd4-a119dbb21fca",
+        "name": "Dusk",
+        "description": "Il tramonto infiamma il cielo sopra l'oceano con intense sfumature di ambra e viola. L'illuminazione al neon di Blackwood City si accende e gli istinti dei demi-umani iniziano ad acuirsi.",
+        "start": 17,
+        "end": 20
+      },
+      {
+        "id": "fbe34cb2-43c1-4a8f-bcdc-11b241ff59f2",
+        "name": "Nightfall",
+        "description": "La notte avvolge la costa. Blackwood City pulsa di vita notturna, locali e luci metropolitane. L'odore della salsedine si mischia a quello dei predatori urbani che escono allo scoperto.",
+        "start": 20,
+        "end": 0
+      },
+      {
+        "id": "827e1bc8-131d-4996-920b-4468dcac7b01",
+        "name": "Witching Hour",
+        "description": "Il cuore della notte. Il silenzio cala sulla città addormentata. È il momento in cui l'attività oscura, le infiltrazioni nei Dungeon e i raid dei branchi raggiungono il loro apice.",
+        "start": 0,
+        "end": 3
+      },
+      {
+        "id": "893985be-882d-4e94-8d28-a0eb299d8153",
+        "name": "Dead of Night",
+        "description": "Le ore più fredde e buie prima dell'alba. Una spessa coltre di umidità e foschia avvolge la costa. La città è deserta, territorio esclusivo di chi prospera nell'oscurità.",
+        "start": 3,
+        "end": 5
+      }
+    ]
+  },
+  "travel_routes": [
+    {
+      "id": "174be6fc-f8ee-4c35-9625-308c768dcc04",
+      "from_location_id": "_AWyPeCP8QWhD4D1M6hfzT",
+      "to_location_id": "_C7Nj1emPcrhDQb1gFYMDr",
+      "bidirectional": true,
+      "travel_time": 24,
+      "required_mediums": [
+        "water"
+      ],
+      "description": "Passenger Ferry Solarton Line, first leg. Flat-bottomed boat, one full day per leg. Slower than the 101, taken for what it crosses, the only line touching three jurisdictions without a road."
+    },
+    {
+      "id": "b5656d93-85de-4a90-beb1-aff43b26f985",
+      "from_location_id": "_C7Nj1emPcrhDQb1gFYMDr",
+      "to_location_id": "_NVALjebTDk1kPC9AjWhWt",
+      "bidirectional": true,
+      "travel_time": 24,
+      "required_mediums": [
+        "water"
+      ],
+      "description": "Passenger Ferry Solarton Line, second leg, ending at the Bay Area terminal near the Yarrow's mouth. Same boat, one full day per leg."
+    },
+    {
+      "id": "5f4ee591-3507-4e22-a696-97a683a10f3c",
+      "from_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "to_location_id": "_D8B9QAfHPn3NfD4mAnJen",
+      "bidirectional": true,
+      "travel_time": 2,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "A short drive connecting Blackwood City and Solarton, much faster than the three-stop ferry."
+    },
+    {
+      "id": "b87a719d-927d-485a-96f0-43c1c79973a5",
+      "from_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "to_location_id": "_FrXnp2CALTP44CP3KVAhb",
+      "bidirectional": true,
+      "travel_time": 1,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Solarton's stretch of the 101 corridor south toward Los Angeles."
+    },
+    {
+      "id": "91a74083-677d-4abd-852d-a9748d5a1bac",
+      "from_location_id": "_FrXnp2CALTP44CP3KVAhb",
+      "to_location_id": "_X4A8gWVr43a7dRr9TbJ4m",
+      "bidirectional": true,
+      "travel_time": 2,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "The Route 101 corridor stretch south into the Los Angeles metro, past Ventura and the Halfway House rest stop."
+    },
+    {
+      "id": "41a46a23-97e8-4169-85b4-b40ee27ca970",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_EwMMJ7KEg9ATJ3mTXBaha",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": []
+    },
+    {
+      "id": "696f2dfa-bdfd-43f7-bd3d-5fac05234dfc",
+      "from_location_id": "_EwMMJ7KEg9ATJ3mTXBaha",
+      "to_location_id": "_Gnm9WMQNjhUWJLhrkpqQk",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": []
+    },
+    {
+      "id": "a0863089-2f7e-4ade-a08d-630f865528f7",
+      "from_location_id": "_Gnm9WMQNjhUWJLhrkpqQk",
+      "to_location_id": "_B7Eq8K8CUXrCe9NKATXGE",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": []
+    },
+    {
+      "id": "4d65831e-9057-4602-ae50-856305844e6c",
+      "from_location_id": "_EwMMJ7KEg9ATJ3mTXBaha",
+      "to_location_id": "_8fRJTJVkd7VjkQ3jfJWQ1",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Seven Hills ridge drive into financial Uptown district."
+    },
+    {
+      "id": "1ee3f4d8-7492-486b-9326-30a81cec114c",
+      "from_location_id": "_EwMMJ7KEg9ATJ3mTXBaha",
+      "to_location_id": "_hfm1W4nYnXfQEqcNGwNxr",
+      "bidirectional": true,
+      "travel_time": 1,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Seven Hills bypass road down to Bluemoon and The Verve."
+    },
+    {
+      "id": "97742efd-4efc-4591-9f66-0d8b79ae8dcf",
+      "from_location_id": "_EwMMJ7KEg9ATJ3mTXBaha",
+      "to_location_id": "_H6PUHPMMUEmM2wJbfd8et",
+      "bidirectional": true,
+      "travel_time": 1,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Boulevard connection to Paradise nightlife district."
+    },
+    {
+      "id": "417dac5f-7327-4162-9b69-177f143be415",
+      "from_location_id": "_Gnm9WMQNjhUWJLhrkpqQk",
+      "to_location_id": "_H6PUHPMMUEmM2wJbfd8et",
+      "bidirectional": true,
+      "travel_time": 1,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Avenue connecting Oldtown to Paradise District."
+    },
+    {
+      "id": "a093cde6-0dfd-4784-a443-af4c2284b4ca",
+      "from_location_id": "_Gnm9WMQNjhUWJLhrkpqQk",
+      "to_location_id": "_fyC1LJ8CAK8rP7k8Dr2a2",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Transit line between colonial Oldtown and industrial Ironworks."
+    },
+    {
+      "id": "727ed6a8-fb1d-4c80-bf12-7ec5f7186f22",
+      "from_location_id": "_Gnm9WMQNjhUWJLhrkpqQk",
+      "to_location_id": "_X6R6dKTzkjdFk6cqdt2we",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Oldtown boulevard leading into quiet residential Arcadia."
+    },
+    {
+      "id": "d8f59ee3-c277-4b10-a388-c9728a15fd66",
+      "from_location_id": "_Gnm9WMQNjhUWJLhrkpqQk",
+      "to_location_id": "_xEB9X8wUGwQrELYzKX7gt",
+      "bidirectional": true,
+      "travel_time": 1,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Forest highway into Bloodmoon Pack Territory."
+    },
+    {
+      "id": "1a38fbf3-a23c-4641-b916-db276059fdfb",
+      "from_location_id": "_xEB9X8wUGwQrELYzKX7gt",
+      "to_location_id": "_RXULtwFjxCBUcxBbTfWrh",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Sacred pine trail leading to Bloodmoon Longhouse."
+    },
+    {
+      "id": "4dbad483-04f2-4991-803e-e437e2d72b16",
+      "from_location_id": "_RXULtwFjxCBUcxBbTfWrh",
+      "to_location_id": "_qUkFeCX37Agez4XtPhtqp",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Stone path to natural geothermal Longhouse Baths."
+    },
+    {
+      "id": "e8137dcf-ab2e-4d80-9e9e-da53b2e6d6b6",
+      "from_location_id": "_Gnm9WMQNjhUWJLhrkpqQk",
+      "to_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "bidirectional": true,
+      "travel_time": 2,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Route 101 corridor connecting Blackwood and Solarton."
+    },
+    {
+      "id": "55bf5b19-05b7-41fb-88cc-2164b0440769",
+      "from_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "to_location_id": "_Mq1DYmKdnkR83YBjNRyXr",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Central thoroughfare to Solarton Square."
+    },
+    {
+      "id": "ef5dbac4-b826-49dd-926e-a7b25de8e0f1",
+      "from_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "to_location_id": "_hGpPMY77NaH4j6AxNGLVe",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Shopping avenue to Bricklane Mall."
+    },
+    {
+      "id": "857f438c-8bd8-461d-8866-c01dd31c97f2",
+      "from_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "to_location_id": "_VbjcwqJnc7BaED9A9t2Dq",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Entertainment strip to Sidewinders Bar."
+    },
+    {
+      "id": "07588787-3c3c-478e-80f3-658af4e2e4db",
+      "from_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "to_location_id": "_UeKEhHTnCP6yQk7mhMVU1",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Coastal road to Coastal Residential apartments."
+    },
+    {
+      "id": "adbc7d7f-b9ed-48a2-971b-cf22cd887210",
+      "from_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "to_location_id": "_rnNnjzcmDkgg2xbHYFftH",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Pier drive to Solarton Pier and ferry terminal."
+    },
+    {
+      "id": "3253989b-c1f3-4168-b33a-85a65a0dbb88",
+      "from_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "to_location_id": "_a2pRKBjYnQ1Q1LaN6xdeh",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Boardwalk down to Solarton Public Beach."
+    },
+    {
+      "id": "ba9d21a1-d202-4c40-87f6-fef66370d263",
+      "from_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "to_location_id": "_j67Dp2PVwFCpdrfWRYV2M",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "University Avenue into SUCC Campus Academic Core."
+    },
+    {
+      "id": "2623bc6c-7dd3-454e-a5cb-e714e0765cd0",
+      "from_location_id": "_j67Dp2PVwFCpdrfWRYV2M",
+      "to_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Main promenade opening into Lunar Quad."
+    },
+    {
+      "id": "1ca3f0ef-e47d-4fdd-9d1f-a314fcd09b89",
+      "from_location_id": "_FrXnp2CALTP44CP3KVAhb",
+      "to_location_id": "_qBt3jf1kppwrmMwTBbYJB",
+      "bidirectional": true,
+      "travel_time": 1,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Highway pull-off to The Dead Dog Motel."
+    },
+    {
+      "id": "41e64d9e-ab40-4cf6-8ddb-58c6297052a9",
+      "from_location_id": "_FrXnp2CALTP44CP3KVAhb",
+      "to_location_id": "_82cNpDwVJwVd8qGRUgFw8",
+      "bidirectional": true,
+      "travel_time": 1,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Inland route to Simi Valley Infopoint."
+    },
+    {
+      "id": "916c8adc-b5af-4589-9d76-8d2ad8848592",
+      "from_location_id": "_FrXnp2CALTP44CP3KVAhb",
+      "to_location_id": "_6JEr2rqCjJa9tWzgbDcrb",
+      "bidirectional": true,
+      "travel_time": 1,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Mountain pass connecting Ventura to Hex Valley."
+    },
+    {
+      "id": "3ab3a0fd-e5d2-40ef-85fe-725a9340d242",
+      "from_location_id": "_X4A8gWVr43a7dRr9TbJ4m",
+      "to_location_id": "_XD2gWgyhTYmDEXWkxMLer",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Financial district street leading to DCC Tower."
+    },
+    {
+      "id": "d4a5e463-ec75-4945-903f-f922382ac0f1",
+      "from_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "to_location_id": "_Caw9nRwKf4Gx9VzW21QJj",
+      "bidirectional": true,
+      "travel_time": 2,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Interstate route connecting Solarton to CUMS."
+    },
+    {
+      "id": "a2410256-573f-4d7f-8e43-dc8e70008fca",
+      "from_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "to_location_id": "_fekTA9NRygQ49q7cxRz8A",
+      "bidirectional": true,
+      "travel_time": 3,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Highway 99 northeast across the valley to Bakersfield."
+    },
+    {
+      "id": "833315f8-ae64-4fab-add9-6edd2a672abd",
+      "from_location_id": "_fyC1LJ8CAK8rP7k8Dr2a2",
+      "to_location_id": "_erHMcydnPVEyk7NY3K9wf",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Industrial alleyway to Team Ukiyo Operational Base."
+    },
+    {
+      "id": "e348c7d9-489f-46ce-8e25-9f78be4dfd53",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_jYJxF7fte2Gz1F2HGXpUR",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Gothic archway path to Basilica Library."
+    },
+    {
+      "id": "7c5f3b86-77a0-4f11-bf4f-47c6edd98e7c",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_ptpGD1VeVep7YknRmhFXM",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Brick walkway to Griffin Clocktower."
+    },
+    {
+      "id": "2f4d637b-cc1a-49b2-b6d8-5835b9472b05",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_Bx2U1xzg1D3wpFRe39L7y",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Athletic concourse to Bulls Stadium."
+    },
+    {
+      "id": "a401d2f2-b0de-4129-9434-24b0b0bff221",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_ndMkLAHyKgBDyeMpjwhBt",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Promenade to St. Neptune Aquatic Complex."
+    },
+    {
+      "id": "2920d50d-0457-495f-94de-fb0ade8ed497",
+      "from_location_id": "_ndMkLAHyKgBDyeMpjwhBt",
+      "to_location_id": "_GnNYqapde8TGQtemCwJHT",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Locker room breezeway to Main Pool."
+    },
+    {
+      "id": "5482a295-1097-4e77-979e-bbbbcbec115a",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_WRBThTNK3wJawVdLRhA1e",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Pathway to outdoor Sports Fields."
+    },
+    {
+      "id": "c1b853ed-d43e-444a-9500-f20231c4fbf2",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_EmJg3zdjTT8kwteJJkyUR",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Fitness corridor to Gym and Changing Facilities."
+    },
+    {
+      "id": "99b3d2e3-acd7-4ad0-9fad-bdb91dbf7fe1",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_xfz8yrt2RjqHyTa8MXG3W",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Residential quad path to Wyrm Dormitories."
+    },
+    {
+      "id": "c8218a58-8c3f-46b3-995c-195a8df30a13",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_wEkzHgpxfetQr16bTWNUP",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Walkway to Apollo Dorms."
+    },
+    {
+      "id": "c04426c5-e524-4552-ab24-3832eccb005c",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_9YKj9HxFkRWnNJUJk84Tr",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Tree-lined path to Artemis Dorms."
+    },
+    {
+      "id": "cb9add75-5ae3-4ddd-a076-0b8920cb43d5",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_xLd2GzGayGJXUhjAdTPye",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Perimeter sidewalk to Additional Student Housing."
+    },
+    {
+      "id": "aaf10529-be10-4bb0-92ba-a7b8ff608ae8",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_yXApVAkzqLrFkLkhW7fdU",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Greek Row avenue to Fraternity and Sorority Row."
+    },
+    {
+      "id": "e4a3cbd3-8b6f-4eeb-bfce-86f96a917021",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_DA14L9eU8wdcfFR1acpbn",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Laboratory promenade into Science Quarter."
+    },
+    {
+      "id": "37dbf659-ba17-46c4-9684-d91bd48af132",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_Dw9VQxmgEDGTyQdJzwJgG",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Sculpture garden path to Arts Building."
+    },
+    {
+      "id": "76ed3681-bb01-48c3-853c-d4f896ea4dff",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_aLqMW6UHHj1D9M4xxENF7",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Central concourse to Student Association Building."
+    },
+    {
+      "id": "11dafc08-3563-4844-9ef0-b6c4ff4171fd",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_G33ABhpFceN7HanHwp8rr",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Wellness lane to Supernatural Support Center."
+    },
+    {
+      "id": "351d4df5-2a5b-4716-b94c-d656f27d25a0",
+      "from_location_id": "_jYJxF7fte2Gz1F2HGXpUR",
+      "to_location_id": "_4FMaQm3xQCUVHeRf3AWYk",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Wrought-iron spiral stairs down to Basement Meeting Room 005."
+    },
+    {
+      "id": "a4e7e844-26de-4e2c-a59d-1e54319c6abd",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_cU3JC9R4VJJrcEJ8GtAFt",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Heavy oak entrance into Main Atrium."
+    },
+    {
+      "id": "a047a66a-c4a5-47c7-a906-a5e59ae7e916",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_xDrAxmgeq3tfgwxYKJwkq",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Executive corridor to Council Room."
+    },
+    {
+      "id": "9b191f03-61ad-4755-83ac-05447b94c699",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_gKQqD84T3ymHd3XKVBjFF",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Arched formal hall to Throne Room."
+    },
+    {
+      "id": "a8824b30-4afa-41aa-95b7-f882c2b4df6b",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_kfXfwkXrzPTRetcBmUt9T",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Private guarded hallway to Alyssa Sanctuary and Omega Nest."
+    },
+    {
+      "id": "b24b05cd-0182-4f40-99e1-0af069a01c55",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_hcmcH3jKtU82P8Bh11mF1",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "West wing basement stair to Jasper Cavern."
+    },
+    {
+      "id": "96d43fc0-0ae1-48cc-8005-846fedb02a4b",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_P78yNW43E1fayK9cXzGpd",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Ground floor passage to Noah Gourmet Kitchen."
+    },
+    {
+      "id": "1f63ae61-b8a0-41b0-9e33-e05e3442c14a",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_Uqpphc8B1L86DVjRAaJxR",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Reinforced security wing to Malachia East Wing and Den."
+    },
+    {
+      "id": "7f87078a-3594-4305-98ff-6bb76c333bb7",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_rpBxnqzbc2EPg4eUdhrhx",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Private upper gallery to Erik Alpha Sanctuary."
+    },
+    {
+      "id": "761f2a53-c8dc-49c5-b850-6a0add5f5fc2",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_EYXqbQkgmU98JBfc8agjF",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Marble corridor to Pack Bathhouse."
+    },
+    {
+      "id": "623fc54f-3785-45b9-946a-6cdceb690617",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_mUHCbXLjDAy8YqraaR7jf",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "East corridor to Guest Wing."
+    },
+    {
+      "id": "6073add9-b749-4209-9a76-caf19cb40982",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_4X1A2UgJkcjhYHMXcL4Xh",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "French terrace doors to Gardens and Pools."
+    },
+    {
+      "id": "537f159f-d4cc-4460-8624-1a1c56455cde",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_gUjcJKTyq3K3LFF3BbVzd",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Concealed spiral steps to The Attic Sanctuary."
+    },
+    {
+      "id": "6ed2bc54-2c26-4133-ab73-0949e99d69f8",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_LVkMH48tkbdC41T7kCFFV",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Subterranean ramp to Garage and Security Perimeter."
+    }
+  ],
+  "free_travel": true,
+  "mapsCount": 4,
+  "mapsList": []
+}

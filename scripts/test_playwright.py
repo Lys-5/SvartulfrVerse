@@ -5,7 +5,7 @@ import json
 import os
 
 def main():
-    with open('janitor_links.txt', 'r') as f:
+    with open('scratch/scraping/janitor_links.txt', 'r') as f:
         urls = [line.strip() for line in f if line.strip()]
         
     print(f"Total urls: {len(urls)}")

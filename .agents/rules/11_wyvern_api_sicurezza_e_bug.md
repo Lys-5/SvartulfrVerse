@@ -58,7 +58,33 @@ Consentite **esclusivamente su richiesta esplicita dell'utente** con specifica i
 
 ---
 
-## 3. Specifiche Tecniche dell'API
+## 3. Protocollo Anti-Data Loss per Lorebook Stand-Alone (/mine)
+
+1. **Divieto Assoluto di Overwrite Massivo:** È fatto divieto tassativo a qualsiasi script o assistente AI di eseguire riscritture complete o sovrascritture di massa dell'array `lexicon` sui Lorebook stand-alone (`/api/lorebooks/:id`).
+2. **Integrità dei Lorebook:** I Lorebook stand-alone in `/mine` costituiscono Single Source of Truth storica e manuale. Qualsiasi sincronizzazione o inserimento deve avvenire in modalità "append puntuale" singola voce, con verifica preventiva di schema e mai in sostituzione cieca dell'intero archivio.
+3. **Backup Preventivo Obbligatorio:** Prima di qualsiasi operazione di scrittura su entità di libreria, scaricare e persistere una copia integrale JSON su disco locale.
+4. **Context Budget Awareness:** Nelle richieste al World, monitorare che la somma dei metadati statici non superi mai i 5.000 token prima della chat history per evitare il troncamento della richiesta da parte del backend di Wyvern.
+5. **Preservazione Obbligatoria Metadati Top-Level nei Lorebook:** L'endpoint `PUT /api/lorebooks/:id` non effettua merge parziale dei metadati. L'invio di un payload contenente solo `{ lexicon: [...] }` cancella silenziosamente i campi top-level (`name`, `description`, `scan_depth`, `token_budget`, `recursive_scanning`, `visibility`, `rating`, `is_private`). In qualsiasi operazione di aggiornamento di un Lorebook stand-alone è obbligatorio trasmettere l'intero payload di configurazione (recuperato con GET preventiva fresca o da snapshot locale) unitamente all'array `lexicon`.
+
+---
+
+## 4. Tipizzazione Rigorosa di `priority` e Validazione Schemi Zod
+
+Il backend di Wyvern valida le voci di contesto, lorebook, scenari e lexicon tramite schemi Zod che impongono per il campo `priority` il tipo `z.number()`.
+- L'assegnazione di valori stringa (es. `priority: "0"`, `"10"`, `"high"`) scatena un errore HTTP 500 fatale (`Expected number, received string, path: ["priority"]`) che inibisce la ricezione o l'invio di messaggi in chat.
+- In ogni script o funzione di creazione/modifica entità, convertire esplicitamente: `priority: Number(val) || 0`.
+
+---
+
+## 5. Protocollo di Pulizia Post-Diagnostica (Zero-Footprint Testing)
+
+Quando vengono avviate procedure di diagnosi, indagine o test che comportano la creazione programmata di entità temporanee via API (chat log di test come `chat_log_...`, party usa-e-getta o scenari sandbox):
+1. **Tracciamento:** Lo script o l'agente deve memorizzare immediatamente in memoria o su scratch gli ID di ogni entità temporanea creata.
+2. **Cancellazione Tempestiva:** A diagnosi completata (o in caso di errore), è obbligatorio eseguire la cancellazione sistematica delle entità create (`DELETE /api/new/chat-logs/:id`) per garantire che l'account e la libreria dell'utente rimangano perfettamente puliti e privi di artefatti orfani.
+
+---
+
+## 6. Specifiche Tecniche dell'API
 
 - **Base URL:** `https://app.wyvern.chat/api/...` (non utilizzare sottodomini non instanziati come `api.wyvern.chat`).
 - **Autenticazione e Refresh Token:** Il token memorizzato in IndexedDB ha validità di 1 ora: l'uso di un token scaduto produce risposte ingannevoli (**404 su GET e 401 su PUT**). Rinfrescare periodicamente il token leggendo il refresh token dalla chiave `firebase:authUser:<apikey>:[DEFAULT]` in `firebaseLocalStorageDb` ed effettuando la richiesta all'endpoint `securetoken.googleapis.com`.
@@ -70,7 +96,7 @@ Consentite **esclusivamente su richiesta esplicita dell'utente** con specifica i
 
 ---
 
-## 4. Registro dei Bug Noti e Relative Soluzioni
+## 7. Registro dei Bug Noti e Relative Soluzioni
 
 | Comportamento Anomalo | Sintomo Riscontrato | Soluzione Operativa / Mitigazione |
 |---|---|---|
@@ -84,3 +110,6 @@ Consentite **esclusivamente su richiesta esplicita dell'utente** con specifica i
 | **Falsi Negativi Ricerca UI** | La ricerca nel pannello laterale chat segnala "No elements match" | Utilizzare l'editor a pagina intera del World oppure eseguire una query GET via API. |
 | **Cartelle Collassate UI** | Cliccare sul testo della cartella non la apre | Cliccare esclusivamente sulla freccetta/chevron (primo elemento button della riga), oppure usare l'API. |
 | **Parent Location Vuota** | Creando una nuova Location il menu Parent non mostra opzioni | Salvare la location una prima volta come bozza, riaprirla e associare il parent. |
+| **Wipe Metadati Lorebook PUT** | Inviare un PUT su `/api/lorebooks/:id` con solo `{ lexicon }` svuota `name`, `scan_depth` e `token_budget` | Trasmettere sempre i metadati completi del Lorebook (`name`, `description`, `scan_depth: 5`, `token_budget: 5000`, `recursive_scanning: true`) assieme al lexicon. |
+| **Priority come Stringa (Errore Zod 500)** | `Expected number, received string, path: ["priority"]` blocca l'invio/ricezione di messaggi in chat | Forzare sempre la tipizzazione numerica `priority: Number(val) || 0` in tutte le entità e nei lexicon. |
+| **Orfani da Testing (Zero-Footprint)** | Le chat e i party creati per test diagnostici restano visibili nella UI utente | Eseguire sempre il teardown sistematico (`DELETE /api/new/chat-logs/:id`) al termine di ogni sessione di test. |

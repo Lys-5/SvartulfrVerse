@@ -40,15 +40,25 @@ Ogni entry Lexicon che gravita attorno a un singolo personaggio (Intimacy Profil
 
 ---
 
-## 3. Placement e Logiche di Attivazione
+## 3. World Lean Architecture, Placement e Logiche di Attivazione
 
-### Character Placement
-Tutti i Character devono essere impostati con **Global Character = ON**. L'assegnazione selettiva ai singoli Character Pool di Location o Environment è sconsigliata: appesantisce il sistema senza benefici concreti.
+Per impedire che il prompt inviato all'LLM superi il Context Budget di Wyvern e provochi il troncamento della cronologia di chat:
 
-### Meccanica di Attivazione delle Entry Lexicon
-- **Significato di `is_global: false`:** Non confina l'entry, ma la **spegne completamente** dalla scansione automatica a parole chiave del World. Rimarrà attiva solo se inserita esplicitamente in `included_lexicon_entries` di una specifica Location, Environment o Scenario, e necessiterà comunque di un match di chiave o di `constant: true`.
+### Confinamento Roster dei World Characters
+- **Superamento del Global Character ON generalizzato:** L'impostazione `is_global: true` a tappeto su tutti i personaggi satura il context window.
+- **Regola di Confinamento:** Solo i protagonisti principali (il nucleo ristretto dei 5 Douglas: Malachia, Noah, Jasper, Erik, Alyssa) mantengono `is_global: true`.
+- **Tutti gli altri 108 World Characters:** Devono avere tassativamente `is_global: false`.
+- **Meccanica di Caricamento:** Gli NPC secondari (docenti CUMS, residenti di Solarton, bande criminali, Firstborn e antenati storici) entrano in contesto unicamente quando il giocatore si trova fisicamente nella loro Location o se vengono aggiunti esplicitamente al Party attivo.
+
+### Triage Rigoroso del Lexicon Globale (`is_global: false` come Default)
+- **`is_global: true` Riservato:** È consentito esclusivamente a un nucleo ristretto di concetti cosmologici e biologici universali (~30 voci max: LSE, fisiologia licantropi/vampiri, vulnerabilità argento/aconito, ciclo solare/notturno).
+- **Tutte le altre voci (`is_global: false`):** Tutti i 284 NPC minori nel Lexicon, i 51 item di negozio, i 16 contratti di lavoro, le 19 memorie personali, e le entry specifiche di confraternite/negozi devono avere tassativamente `is_global: false`.
+- **Significato di `is_global: false`:** Spegne l'entry dalla scansione globale del World. Voci locali e commerciali si caricano unicamente tramite associazione a specifiche Location (`included_lexicon_entries`) o Scenari.
 - **Il campo `attached_world_character_id` NON è un trigger di iniezione:** serve per metadati e legami logici, non inietta il testo da solo.
-- **Strumenti Corretti di Attivazione e Filtraggio:**
-  1. **Chiavi Primarie e Secondarie:** Impostare sempre `key_logic: "AND_ANY"` dove le **chiavi primarie** sono identificatori specifici (es. nome del personaggio) e le **chiavi secondarie** parole tematiche (`dating`, `romance`). Evitare termini generici tra le primarie per non far sparare l'entry a sproposito.
-  2. **`party_conditions`:** È il filtro elettivo per i contenuti personali (es. `has_any [id_personaggio]`), assicurando che l'informazione entri in contesto solo se il soggetto è nel party attuale.
-- *Nota di diagnostica:* La macro `{{lexiconEntryNames}}` visualizza solo le entry candidate all'inclusione nella scena, non quelle che hanno effettivamente matchato le keyword.
+
+### Strumenti Corretti di Attivazione e Filtraggio
+1. **Chiavi Primarie e Secondarie:** Impostare sempre `key_logic: "AND_ANY"` dove le **chiavi primarie** sono identificatori specifici (es. nome del personaggio) e le **chiavi secondarie** parole tematiche (`dating`, `romance`). Evitare termini generici tra le primarie per non far sparare l'entry a sproposito.
+2. **`party_conditions`:** È il filtro elettivo per i contenuti personali (es. `has_any [id_personaggio]`), assicurando che l'informazione entri in contesto solo se il soggetto è nel party attuale.
+
+### Soglia di Sicurezza Context Budget
+La somma dei metadati statici del World (Istruzioni avanzate + Location + Rotte + RPG State + Voci Lexicon scattate + Personaggi) non deve mai superare i **5.000 token**, garantendo che almeno il 70% della finestra di contesto rimanga sempre riservata alla cronologia di chat e all'input dell'utente.

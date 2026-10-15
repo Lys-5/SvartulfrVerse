@@ -1,0 +1,561 @@
+{
+  "id": "engine_HCTPXhL8xr89wUY9r9dYU",
+  "name": "Svartulfr OS",
+  "tagline": "Interactive Werewolf Pack Smartphone OS, LSE Biology Tracker & Academic Portal",
+  "description": "# Svartúlfr OS — Modern Fantasy Pack Smartphone & StoryEngine System\n\n**Svartúlfr OS** is a modular StoryEngine designed for modern fantasy roleplay, urban fantasy storytelling, and werewolf pack dynamics (Svartúlfr / Blackwood-Douglas & SUCC Verse).\n\nIt provides an interactive, standalone in-chat smartphone interface (React TSX) and automated state tracking for roleplay immersion.\n\n---\n\n### 📱 Key Features & Interactive Systems\n\n1. **Douglas Pack Encrypted Messenger (Telegram):**\n   * Live pack communications between core Douglas pack members (Erik, Noah, Jasper, Echo, Malachia).\n   * Interactive in-chat message composer allowing the player/operative to send responses directly into the pack channel.\n\n2. **SUCC & C.U.M.S. Academic Portal:**\n   * Student academic registry for Solarton University (SUCC) and the Collegiate Unified Magic Scholars (C.U.M.S.).\n   * Tracks GPA, degree credits (CFU), internships, and enrolled coursework with academic evaluations (A+, A, B+) for major characters (Alyssa Douglas Pre-Med, Jasper Douglas Magitech Engineering, Noah Douglas PR, Malachia Athletics, and C.U.M.S. Arcane scholars).\n\n3. **DMHA Hunter Guild Bulletin:**\n   * Guild registry tracking operative credentials, ranks (Rank A, B, S), and hunter specialties.\n   * Interactive mission dispatch board allowing players to accept active bounties across Blackwood and Solarton districts.\n\n4. **BioTrack & Lupine Social Ecology (LSE) Monitor:**\n   * Tracks biological pheromone statuses, seasonal rut/heat cycles, and scent suppressor inventory.\n   * Full Moon calendar tracking with automatic mechanical stat adjustments (+2 MGT/RES, +1 AGI during California full moons).\n   * Integrated suppressor inhalation command (`use_suppressor`) that shields the operative's biological scent for 8 turns.\n\n5. **SuccBook Social Feed & Echo Audio Mood Player:**\n   * Solarton campus social network feed featuring athletics highlights, health bulletins, and underground events with interactive like counters.\n   * Digital Familiar Echo's Magitech audio speaker with soundscape presets.\n\n---\n\n### 🛡️ Safety & Content Policy Compliance\nThis StoryEngine strictly adheres to Wyvern Community Standards and Content Guidelines. All biological, academic, and hunting mechanics operate within a PG-13/adult modern fantasy roleplay framework without prohibited elements.",
+  "avatar": "",
+  "tags": [
+    "werewolf",
+    "urban-fantasy",
+    "modern-fantasy",
+    "smartphone",
+    "ui-panel",
+    "succ",
+    "lse",
+    "rpg"
+  ],
+  "rating": "explicit",
+  "visibility": "private",
+  "status": "published",
+  "moderation_status": "pending",
+  "moderation_reason": "",
+  "creator": {
+    "uid": "2r4fVpvImte5dbljedLkZJxre2d2",
+    "displayName": "Lys",
+    "photoURL": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/bd18ce0c-6994-4729-845d-1fb1e759f900/public"
+  },
+  "version": 107,
+  "published_revision_id": "engine_revision_VKHUJJHXbGq4GhyQbXAVA",
+  "created_at": "2026-10-12T09:07:23.325Z",
+  "updated_at": "2026-10-14T00:05:29.879Z",
+  "definition": {
+    "info_board": {
+      "enabled": false,
+      "categories": [],
+      "custom_prompt": ""
+    },
+    "ui_panels": [
+      {
+        "id": "panel_smartphone_os",
+        "name": "Svartulfr Smartphone OS",
+        "icon": "layout",
+        "placement": "sidebar",
+        "target": "both",
+        "enabled": true,
+        "code": "import React, { useState } from 'react';\n\nexport default function Panel({ engine }: { engine: any }) {\n  // Navigation: 'home' | 'telegram' | 'academics' | 'guild' | 'biotrack' | 'succbook' | 'music'\n  const [activeApp, setActiveApp] = useState<string>('home');\n  const [showTimeModal, setShowTimeModal] = useState<boolean>(false);\n  const [customDate, setCustomDate] = useState<string>('2024-08-26');\n  const [customTime, setCustomTime] = useState<string>('08:14');\n  const [timeApplying, setTimeApplying] = useState<boolean>(false);\n\n  // Live engine values\n  const values = engine.values || {};\n  const moonPhase = String(values.moon_phase || 'Waning Crescent');\n  const isFullMoon = Boolean(values.moon_full_active);\n  const isNight = Boolean(values.night_active);\n  const lseStatus = String(values.lse_biology_status || 'Dormant');\n  const daysLeft = Number(values.lse_cycle_days_left ?? 20);\n  const suppressors = Number(values.scent_suppressors_count ?? 3);\n  const packRep = Number(values.pack_reputation ?? 25);\n  const riftAlert = String(values.rift_threat_level || 'Class 1 - Stable');\n  const clockTime = String(values.clock_time || '08:14');\n  const simDate = String(values.sim_date || 'Mon 26 Aug');\n  const [localMessages, setLocalMessages] = useState<any[]>([]);\n\n  // Local interactive states\n  const [localTelegramUnread, setLocalTelegramUnread] = useState<number | null>(null);\n  const [localSuccbookUnread, setLocalSuccbookUnread] = useState<number | null>(null);\n  const telegramUnread = localTelegramUnread !== null ? localTelegramUnread : (typeof values.pack_chat_unread === 'number' ? values.pack_chat_unread : 3);\n  const succbookUnread = localSuccbookUnread !== null ? localSuccbookUnread : (typeof values.succbook_unread_posts === 'number' ? values.succbook_unread_posts : 5);\n  const setTelegramUnread = (val: number) => setLocalTelegramUnread(val);\n  const setSuccbookUnread = (val: number) => setLocalSuccbookUnread(val);\n  const [selectedStudent, setSelectedStudent] = useState<string>('alyssa');\n  const [selectedHunter, setSelectedHunter] = useState<string>('alyssa');\n  const [acceptedMissionId, setAcceptedMissionId] = useState<string | null>(null);\n  const [musicPlaying, setMusicPlaying] = useState<boolean>(true);\n  const [chatInput, setChatInput] = useState<string>('');\n  const [nextMsgId, setNextMsgId] = useState<number>(10);\n  const [activeTrack, setActiveTrack] = useState<{ title: string; artist: string; mood: string }>({\n    title: 'Subterranean Bass Drive',\n    artist: 'Echo (Digital Familiar) · DCC Net',\n    mood: 'Dungeon Synth / Focus'\n  });\n\n  // Native Wyvern command trigger\n  \n  const handleSetCustomTimeline = async (presetDate?: string, presetTime?: string) => {\n    const d = presetDate || customDate;\n    const t = presetTime || customTime;\n    setTimeApplying(true);\n    try {\n      await engine.runCommand('cmd_advance_time', {\n        target_date: d,\n        target_time: t\n      });\n      setShowTimeModal(false);\n    } catch (e) {\n      console.error('Failed to set timeline:', e);\n    } finally {\n      setTimeApplying(false);\n    }\n  };\n\n  const handleUseSuppressor = async () => {\n    try {\n      await engine.runCommand('cmd_use_suppressor');\n    } catch (e) {}\n  };\n\n  const defaultPackMessages = [\n    {\n      id: 1,\n      sender: 'Dad (Erik)',\n      role: 'Prime Alpha · DCC',\n      color: 'text-amber-400',\n      badgeClass: 'bg-amber-950 text-amber-300 border border-amber-700',\n      text: \"Kids, have you arrived in Solarton? Kaladin has discrete escorts stationed near the east campus gate. Do not forget your scent suppressors.\",\n      time: '08:02'\n    },\n    {\n      id: 2,\n      sender: 'Noah',\n      role: 'Beta · PR',\n      color: 'text-sky-400',\n      badgeClass: 'bg-sky-950 text-sky-300 border border-sky-700',\n      text: \"Relax Boss, I'm already at the SUCC freshman welcome booth. If Alyssa is late it's only because she needed her shoes to match her medical bag 💅\",\n      time: '08:05'\n    },\n    {\n      id: 3,\n      sender: 'Jasper',\n      role: 'Technomancer',\n      color: 'text-emerald-400',\n      badgeClass: 'bg-emerald-950 text-emerald-300 border border-emerald-700',\n      text: \"We're here. Walking Alyssa to the Medicine and Arcane Botany department office. Noah cut it out or I'm blocking the Douglas Manor Wi-Fi.\",\n      time: '08:08'\n    },\n    {\n      id: 4,\n      sender: 'Echo',\n      role: 'Digital Familiar',\n      color: 'text-cyan-300',\n      badgeClass: 'bg-cyan-950 text-cyan-300 border border-cyan-700',\n      text: \"[Audio Mood Speaker: Track 'Subterranean Bass Drive' active]. Fireteam vital telemetry optimal. Zero miasmic anomalies within an 800m perimeter.\",\n      time: '08:09'\n    },\n    {\n      id: 5,\n      sender: 'Malachia',\n      role: 'Berserker Strike',\n      color: 'text-rose-400',\n      badgeClass: 'bg-rose-950 text-rose-300 border border-rose-700',\n      text: 'Finished morning lifting at the Bulls field. Anyone who approaches our people with bad intentions answers to me. Send coordinates.',\n      time: '08:12'\n    }\n  ];\n\n  const messages = Array.isArray(values.pack_chat_messages) && values.pack_chat_messages.length > 0\n    ? values.pack_chat_messages\n    : (localMessages.length > 0 ? localMessages : defaultPackMessages);\n\n  const handleAdvanceTime = async (hours: number, explicitMoon?: string) => {\n    try {\n      await engine.runCommand('cmd_advance_time', { hours, moon_phase: explicitMoon || '' });\n    } catch(e) {}\n  };\n\n  const handleSendMessage = async () => {\n    const textToSend = String(chatInput || '').trim();\n    if (!textToSend) return;\n    setChatInput('');\n    try {\n      await engine.runCommand('cmd_receive_pack_message', {\n        sender: 'You (Operative)',\n        text: textToSend\n      });\n    } catch (e) {\n      const newMsg = {\n        id: Date.now(),\n        sender: 'You (Operative)',\n        role: 'Player',\n        color: 'text-purple-300',\n        badgeClass: 'bg-purple-950 text-purple-300 border border-purple-700',\n        text: textToSend,\n        time: clockTime\n      };\n      setLocalMessages(prev => [...prev, newMsg]);\n    }\n  };\n\n  // SUCC & CUMS Student Academic Database\n  const STUDENTS_DATA: Record<string, any> = {\n    alyssa: {\n      name: 'Alyssa Douglas',\n      badge: 'Freshman · Pre-Med',\n      school: 'SUCC (Solarton University)',\n      major: 'Medical Sciences & Arcane Botany',\n      dept: 'Faculty of Medicine and Demi-Human Physiology',\n      gpa: '3.92',\n      credits: 28,\n      internship: 'SUCC Infirmary & DCC Medical Labs (Dr. Elizabeth Duskwood)',\n      courses: [\n        { code: 'MED-101', name: 'Comparative Demi-Human Anatomy', prof: 'H. Vance', cfu: 8, grade: 'A+' },\n        { code: 'BOT-104', name: 'Arcane Botany & Lunar Properties', prof: 'M. Willow', cfu: 6, grade: 'A' },\n        { code: 'FAR-202', name: 'Pharmacology & Pheromone Inhibitors', prof: 'E. Duskwood', cfu: 8, grade: 'A' },\n        { code: 'EMR-108', name: 'Emergency Trauma & Silver Toxicity', prof: 'G. Vance', cfu: 6, grade: 'A+' }\n      ]\n    },\n    jasper: {\n      name: 'Jasper Douglas',\n      badge: '1st Year · Engineering',\n      school: 'SUCC (Solarton University)',\n      major: 'Arcane Engineering & Advanced Magitech',\n      dept: 'Department of Silver-Tech & Cyber-Enchantment',\n      gpa: '3.78',\n      credits: 30,\n      internship: 'DCC Tactical R&D & Drone Reconnaissance (West Lab)',\n      courses: [\n        { code: 'ENG-102', name: 'Silver-Tech Ballistics & Enchanted Arms', prof: 'K. Rourke', cfu: 8, grade: 'A' },\n        { code: 'RIF-201', name: 'Non-Euclidean Geometry & Rift Theory', prof: 'V. Aris', cfu: 6, grade: 'A-' },\n        { code: 'MAT-105', name: 'Anti-Miasma Materials Engineering', prof: 'L. Sterling', cfu: 8, grade: 'B+' },\n        { code: 'RUN-110', name: 'Runic Hardware & Magitech Crafting', prof: 'T. Stone', cfu: 8, grade: 'A+' }\n      ]\n    },\n    noah: {\n      name: 'Noah Douglas',\n      badge: '2nd Year · Public Relations',\n      school: 'SUCC (Solarton University)',\n      major: 'Political Science, PR & Sports Management',\n      dept: 'School of Institutional Affairs & Diplomacy',\n      gpa: '3.55',\n      credits: 54,\n      internship: 'DCC Press Office & SUCC Bulls Athletics Liaison',\n      courses: [\n        { code: 'COM-201', name: 'Crisis Communication & Pack Public Relations', prof: 'D. Sterling', cfu: 8, grade: 'A' },\n        { code: 'DIR-204', name: 'Supernatural Factions Commercial Law', prof: 'E. Thornton', cfu: 8, grade: 'B+' },\n        { code: 'MKT-208', name: 'Athletics Marketing & DMHA Bulls Sponsorship', prof: 'G. Hayes', cfu: 6, grade: 'A' }\n      ]\n    },\n    malachia: {\n      name: 'Malachia Douglas',\n      badge: 'Athlete · Berserker Strike',\n      school: 'SUCC Athletics (DMHA Bulls)',\n      major: 'Exercise Science & Tactical Combat',\n      dept: 'Athletic Academy and Territorial Defense',\n      gpa: '3.10',\n      credits: 45,\n      internship: 'Seven Hills Security & DCC Night Patrols',\n      courses: [\n        { code: 'CMB-101', name: 'Heavy Combat & Internal Furnace Mastery', prof: 'Coach D', cfu: 8, grade: 'A+' },\n        { code: 'TAC-203', name: 'Demonic Engagement Tactics & Miasma Resistance', prof: 'K. O Connor', cfu: 8, grade: 'A' },\n        { code: 'NUT-105', name: 'Predator Metabolism & Iron Intake Regulation', prof: 'Dr. Thorne', cfu: 6, grade: 'B' }\n      ]\n    },\n    cums_students: {\n      name: 'C.U.M.S. Academy (Magic Scholars)',\n      badge: 'Arcane Caster Class',\n      school: 'C.U.M.S. (Collegiate Unified Magic Scholars)',\n      major: 'High Sorcery, Lunar Rites & Illusion',\n      dept: 'Solarton Arcane and Mystical Institute',\n      gpa: '3.85',\n      credits: 60,\n      internship: 'Solarton Arcane Research Labs & Mages Guild',\n      courses: [\n        { code: 'MAG-101', name: 'Mana Weaving Fundamentals (Lestat, Zaire)', prof: 'A. Nairene', cfu: 8, grade: 'A' },\n        { code: 'ABJ-205', name: 'Abjuration Wards & Miasma Defense (Caien, Aeril)', prof: 'M. Vance', cfu: 8, grade: 'A+' },\n        { code: 'DUE-101', name: 'Tactical Combat & Shadow Dueling (Amerian)', prof: 'X. Nershatar', cfu: 10, grade: 'A+' },\n        { code: 'NEC-301', name: 'Soul Binding & Spectral Anatomy (Xaiden, Ashton)', prof: 'V. Raven', cfu: 8, grade: 'A' }\n      ]\n    }\n  };\n\n  const studentData = STUDENTS_DATA[selectedStudent] || STUDENTS_DATA.alyssa;\n\n  // DMHA Hunter Guild Registry\n  const HUNTERS_DATA: Record<string, any> = {\n    alyssa: {\n      name: 'Alyssa Douglas',\n      rank: 'Rank A',\n      rankClass: 'bg-blue-950 text-sky-300 border border-blue-700',\n      role: 'Combat Healer & Field Support',\n      squad: 'Douglas Vanguard / Seven Hills Fireteam',\n      credits: 4850,\n      specialty: 'Field Medicine, Anti-Miasma Cleansing & Regenerative Incantations'\n    },\n    jasper: {\n      name: 'Jasper Douglas',\n      rank: 'Rank A',\n      rankClass: 'bg-blue-950 text-sky-300 border border-blue-700',\n      role: 'Technomancer & Tactical Netrunner',\n      squad: 'Douglas Vanguard / Seven Hills Fireteam',\n      credits: 5200,\n      specialty: 'Silver-Tech Hardware, Reconnaissance Drones & Runic Overload'\n    },\n    malachia: {\n      name: 'Malachia Douglas',\n      rank: 'Rank S',\n      rankClass: 'bg-rose-950 text-rose-300 border border-rose-700',\n      role: 'Apex Berserker / Vanguard Strike',\n      squad: 'Douglas First Strike Squad',\n      credits: 8900,\n      specialty: 'Internal Furnace, Frontline Destruction & Apex Alpha Hunts'\n    },\n    ukiyo: {\n      name: 'Ukiyo Syndicate (Radek, Goran, Marek)',\n      rank: 'Rank B+',\n      rankClass: 'bg-amber-950 text-amber-300 border border-amber-700',\n      role: 'Black Ops & Nocturnal Hunting Syndicate',\n      squad: 'Ukiyo Specialist Syndicate',\n      credits: 3400,\n      specialty: 'Underworld Infiltration, Target Neutralization & District Control'\n    }\n  };\n\n  const hunterData = HUNTERS_DATA[selectedHunter] || HUNTERS_DATA.alyssa;\n\n  // DMHA Guild Bulletin Missions\n  const MISSIONS = [\n    {\n      id: 'miss_cums_anomaly',\n      title: 'Miasmic Anomaly in CUMS Catacombs',\n      zone: 'Solarton · West Academic District',\n      rank: 'Rank A',\n      rankClass: 'text-sky-400 bg-sky-950 border border-sky-700',\n      reward: '850 Credits · Shadow Catalyst',\n      desc: 'Minor rift detected in the restricted CUMS archives. Certified team required with combat healer and technomancer for runic containment.'\n    },\n    {\n      id: 'miss_bay_patrol',\n      title: 'Night Harbor Patrol: Blackwood Bay',\n      zone: 'Blackwood City · Industrial Waterfront',\n      rank: 'Rank B',\n      rankClass: 'text-amber-400 bg-amber-950 border border-amber-700',\n      reward: '500 Credits · Pure Silver Rune',\n      desc: 'Amphibious void creatures sighted near DCC cargo supply ships. Secure Pier 4 before 05:00 hours.'\n    },\n    {\n      id: 'miss_sewer_sweep',\n      title: 'Sector 4 Sewer Line Cleansing',\n      zone: 'Solarton · Cable District',\n      rank: 'Rank C',\n      rankClass: 'text-emerald-400 bg-emerald-950 border border-emerald-700',\n      reward: '300 Credits · 2x Suppressor Cylinders',\n      desc: 'Class 1 miasmic rat swarm nesting in wastewater conduits adjacent to SUCC campus. Rapid sanitation dispatch requested.'\n    }\n  ];\n\n  const defaultFeedPosts = [\n    {\n      id: 1,\n      author: 'SUCC Athletics (DMHA Bulls)',\n      handle: '@succ_bulls',\n      badge: 'Official · Campus',\n      avatar: '🏈',\n      time: '32m ago',\n      text: 'Fall semester kickoff! Pre-season training starts today. Jared Thompson starting at QB, Malachia Douglas joining defensive scrimmage line. Go Bulls!',\n      likes: 342,\n      liked: false\n    },\n    {\n      id: 2,\n      author: 'Elizabeth Duskwood (DCC Health)',\n      handle: '@dr_duskwood',\n      badge: 'Demi-Human Health',\n      avatar: '🩺',\n      time: '1h ago',\n      text: 'LSE Advisory for Move-in Week: Orientation crowd densities trigger heightened scent spikes. Free pheromone suppressor refills available at the SUCC West Clinic.',\n      likes: 128,\n      liked: false\n    },\n    {\n      id: 3,\n      author: 'Solarton Student Union',\n      handle: '@solarton_union',\n      badge: 'Campus Life',\n      avatar: '☕',\n      time: '2h ago',\n      text: 'Welcome Class of 2028! Quad club fair is open from 10:00 to 18:00. Anime Club, Werewolf Pack Society, and Grave Mistake rehearsal booth are live!',\n      likes: 215,\n      liked: false\n    }\n  ];\n\n  const [localFeedPosts, setLocalFeedPosts] = useState<any[]>([]);\n  const feedPosts = Array.isArray(values.succbook_posts) && values.succbook_posts.length > 0\n    ? values.succbook_posts\n    : (localFeedPosts.length > 0 ? localFeedPosts : defaultFeedPosts);\n\n  const toggleLike = (postId: number) => {\n    setFeedPosts((prev: any[]) => prev.map((p: any) => {\n      if (p.id === postId) {\n        return { ...p, liked: !p.liked, likes: p.liked ? p.likes - 1 : p.likes + 1 };\n      }\n      return p;\n    }));\n  };\n\n  // Echo Audio Mood Speaker Tracks\n  const TRACKS = [\n    { title: 'Subterranean Bass Drive', artist: 'Echo (Digital Familiar) · DCC Net', mood: 'Dungeon Synth / Focus' },\n    { title: 'Solarton Nightwave 104.2', artist: 'Netrunner Collective', mood: 'Lo-Fi Chill & Silver Beat' },\n    { title: 'Bloodline Resonance (Erik Theme)', artist: 'Blackwood Orchestral', mood: 'Heavy Dark Ambience' },\n    { title: 'Vanguard Alpha Strike', artist: 'Seven Hills Tactical Unit', mood: 'High BPM Combat Pulse' }\n  ];\n\n  return (\n    <div className=\"w-full max-w-md mx-auto my-1 bg-zinc-950 text-zinc-100 rounded-3xl border border-zinc-800 shadow-2xl p-4 flex flex-col gap-3 font-sans select-none\">\n      \n      {/* ========================================================================= */}\n      {/* 1. TOP STATUS BAR / NOTCH SMARTPHONE                                      */}\n      {/* ========================================================================= */}\n      <div className=\"bg-zinc-900 rounded-2xl px-4 py-2 border border-zinc-800 flex items-center justify-between text-xs\">\n        <div className=\"flex items-center gap-2\">\n          <span className=\"font-bold text-zinc-100 font-mono\">{clockTime}</span>\n          <span className=\"text-[10px] text-zinc-400 font-mono truncate max-w-[110px]\">{simDate}</span>\n        </div>\n\n        {/* Dynamic Island: LSE & Moon status */}\n        <div className=\"flex items-center gap-2 bg-black px-3 py-1 rounded-full border border-zinc-700\">\n          <span className=\"text-xs\">{isFullMoon ? '🌕' : '🌙'}</span>\n          <span className=\"text-[10px] font-semibold text-amber-300 truncate max-w-[110px]\">\n            {isFullMoon ? 'Full Moon' : moonPhase}\n          </span>\n          {isFullMoon && (\n            <span className=\"w-2 h-2 rounded-full bg-red-500 animate-pulse\" />\n          )}\n        </div>\n\n        <div className=\"flex items-center gap-2\">\n          <span className=\"text-[10px] text-emerald-400 font-mono font-bold\">98% ⚡</span>\n        </div>\n      </div>\n\n      {/* ========================================================================= */}\n      {/* 2. RAPID STATUS BAR: PHEROMONE SUPPRESSORS & RIFT THREAT                  */}\n      {/* ========================================================================= */}\n      <div className=\"bg-zinc-900 rounded-2xl px-4 py-3 border border-zinc-800 flex items-center justify-between gap-3\">\n        <div className=\"flex items-center gap-3\">\n          <span className=\"text-xl\">🩺</span>\n          <div>\n            <div className=\"text-xs font-bold text-zinc-100 flex items-center gap-2\">\n              <span>Suppressors:</span>\n              <span className={suppressors > 0 ? 'text-emerald-400' : 'text-red-400'}>\n                {suppressors} Doses\n              </span>\n            </div>\n            <div className=\"text-[11px] text-zinc-400 pt-1\">\n              LSE: <span className=\"text-amber-300 font-semibold\">{lseStatus}</span> (~{daysLeft}d to peak)\n            </div>\n          </div>\n        </div>\n\n        <button\n          onClick={handleUseSuppressor}\n          className=\"bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-2 rounded-xl border border-emerald-500 shadow-sm transition active:scale-95 shrink-0\"\n        >\n          Inhale Dose\n        </button>\n      </div>\n\n      {/* ========================================================================= */}\n      {/* 3. OPERATING SYSTEM APPS (INTERACTIVE SUB-VIEWS)                          */}\n      {/* ========================================================================= */}\n      <div className=\"min-h-[390px] flex flex-col justify-between\">\n\n        {/* ----------------------------------------------------------------------- */}\n        {/* APP 1: HOME DASHBOARD                                                   */}\n        {/* ----------------------------------------------------------------------- */}\n        {activeApp === 'home' && (\n          <div className=\"flex flex-col gap-3\">\n            {/* Quick Narrative & Time Progression Widget */}\n            <div className=\"bg-zinc-900 rounded-2xl p-3 border border-zinc-800 flex flex-col gap-2\">\n              <div className=\"flex items-center justify-between text-xs font-semibold text-zinc-300\">\n                <span className=\"flex items-center gap-1.5\">🕒 <span>Timeline & Clock:</span> <span className=\"text-amber-300 font-mono\">{clockTime}</span></span>\n                <span className=\"text-[10px] text-zinc-400 font-mono\">{isNight ? '🌙 Night' : '☀️ Day'}</span>\n              </div>\n              <div className=\"grid grid-cols-4 gap-1.5 pt-1\">\n                <button\n                  onClick={() => handleAdvanceTime(1)}\n                  className=\"bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-[10px] font-bold py-1.5 px-1 rounded-xl border border-zinc-700 transition active:scale-95 text-center\"\n                >\n                  +1h Step\n                </button>\n                <button\n                  onClick={() => handleAdvanceTime(4)}\n                  className=\"bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-[10px] font-bold py-1.5 px-1 rounded-xl border border-zinc-700 transition active:scale-95 text-center\"\n                >\n                  +4h Skip\n                </button>\n                <button\n                  onClick={() => handleAdvanceTime(8)}\n                  className=\"bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-[10px] font-bold py-1.5 px-1 rounded-xl border border-zinc-700 transition active:scale-95 text-center\"\n                >\n                  +8h Shift\n                </button>\n                <button\n                  onClick={() => handleAdvanceTime(12, 'Full Moon')}\n                  className=\"bg-indigo-950 hover:bg-indigo-900 text-indigo-300 text-[10px] font-bold py-1.5 px-1 rounded-xl border border-indigo-700 transition active:scale-95 text-center\"\n                >\n                  🌕 Full Moon\n                </button>\n              </div>\n\n              {/* Universal Calendar Picker (827 CE - 3000+) */}\n              <div className=\"pt-2 border-t border-zinc-800 flex flex-col gap-2\">\n                <button\n                  onClick={() => setShowTimeModal(!showTimeModal)}\n                  className=\"w-full text-center text-[10px] text-amber-400 hover:text-amber-300 font-semibold py-1 rounded-lg bg-zinc-800/60 hover:bg-zinc-800 border border-zinc-700/60 transition flex items-center justify-center gap-1.5 cursor-pointer\"\n                >\n                  <span>📅 Universal World Calendar (827 CE – 3000+)</span>\n                  <span className=\"text-zinc-400 font-mono text-[9px]\">{showTimeModal ? '▲ Close' : '▼ Open'}</span>\n                </button>\n\n                {showTimeModal && (\n                  <div className=\"bg-black/60 rounded-xl p-2.5 border border-amber-900/50 flex flex-col gap-2\">\n                    <div className=\"text-[10px] text-zinc-300 font-semibold flex items-center justify-between\">\n                      <span>Set In-Game Date & Time:</span>\n                      <span className=\"text-[9px] text-amber-400/80 font-mono\">Epoch: 21 Dec 827</span>\n                    </div>\n\n                    <div className=\"grid grid-cols-2 gap-2\">\n                      <div className=\"flex flex-col gap-1\">\n                        <label className=\"text-[9px] text-zinc-400\">Date (YYYY-MM-DD):</label>\n                        <input\n                          type=\"text\"\n                          placeholder=\"YYYY-MM-DD\"\n                          value={customDate}\n                          onChange={(e) => setCustomDate(e.target.value)}\n                          className=\"bg-zinc-900 border border-zinc-700 rounded-lg px-2 py-1 text-xs text-zinc-100 font-mono focus:outline-none focus:border-amber-500 w-full\"\n                        />\n                      </div>\n                      <div className=\"flex flex-col gap-1\">\n                        <label className=\"text-[9px] text-zinc-400\">Time (HH:MM):</label>\n                        <input\n                          type=\"text\"\n                          placeholder=\"HH:MM\"\n                          value={customTime}\n                          onChange={(e) => setCustomTime(e.target.value)}\n                          className=\"bg-zinc-900 border border-zinc-700 rounded-lg px-2 py-1 text-xs text-zinc-100 font-mono focus:outline-none focus:border-amber-500 w-full\"\n                        />\n                      </div>\n                    </div>\n\n                    {/* Quick Presets */}\n                    <div className=\"flex flex-wrap gap-1 pt-1\">\n                      <button\n                        onClick={() => handleSetCustomTimeline('2024-08-26', '08:14')}\n                        className=\"text-[9px] bg-zinc-800 hover:bg-zinc-700 text-zinc-200 px-2 py-0.5 rounded border border-zinc-700 transition\"\n                      >\n                        🎓 26 Aug 2024 (SUCC)\n                      </button>\n                      <button\n                        onClick={() => handleSetCustomTimeline('2023-10-14', '15:30')}\n                        className=\"text-[9px] bg-zinc-800 hover:bg-zinc-700 text-zinc-200 px-2 py-0.5 rounded border border-zinc-700 transition\"\n                      >\n                        📜 14 Oct 2023 (Legacy)\n                      </button>\n                      <button\n                        onClick={() => handleSetCustomTimeline('0827-12-21', '00:00')}\n                        className=\"text-[9px] bg-zinc-800 hover:bg-zinc-700 text-zinc-200 px-2 py-0.5 rounded border border-zinc-700 transition\"\n                      >\n                        ⚔️ 21 Dec 827 (Origin)\n                      </button>\n                      <button\n                        onClick={() => handleSetCustomTimeline('2499-10-31', '22:00')}\n                        className=\"text-[9px] bg-zinc-800 hover:bg-zinc-700 text-zinc-200 px-2 py-0.5 rounded border border-zinc-700 transition\"\n                      >\n                        🚀 Year 2499 (SciFi)\n                      </button>\n                    </div>\n\n                    <button\n                      disabled={timeApplying}\n                      onClick={() => handleSetCustomTimeline()}\n                      className=\"w-full bg-amber-600 hover:bg-amber-500 disabled:opacity-50 text-black text-xs font-bold py-1.5 rounded-lg transition active:scale-95 text-center mt-1\"\n                    >\n                      {timeApplying ? 'Updating Timeline...' : 'Apply Timeline to World & Phone'}\n                    </button>\n                  </div>\n                )}\n              </div>\n            </div>\n\n            {/* Welcome Operative Widget */}\n            <div className=\"bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-2\">\n              <div className=\"flex items-center justify-between gap-3\">\n                <span className=\"text-xs font-bold text-zinc-100\">Svartúlfr OS · Mobile Net</span>\n                <span className=\"text-xs font-mono font-semibold bg-purple-950 text-purple-200 border border-purple-700 px-3 py-1 rounded-lg shrink-0\">\n                  Pack Rep: {packRep}%\n                </span>\n              </div>\n              <p className=\"text-xs text-zinc-300 leading-relaxed pr-1 pt-1\">\n                Encrypted terminal of the Douglas Pack and Solarton / C.U.M.S. academic network.\n              </p>\n            </div>\n\n            {/* Smartphone Application Grid */}\n            <div className=\"grid grid-cols-3 gap-2\">\n              <button\n                onClick={() => { setActiveApp('telegram'); setTelegramUnread(0); }}\n                className=\"bg-zinc-900 hover:bg-zinc-850 p-4 rounded-2xl border border-zinc-800 flex flex-col items-center justify-center gap-2 transition active:scale-95 text-center relative\"\n              >\n                <span className=\"text-3xl\">💬</span>\n                <span className=\"text-xs font-bold text-sky-400\">Telegram</span>\n                <span className=\"text-[10px] text-zinc-400\">Douglas Pack</span>\n                {telegramUnread > 0 && (\n                  <span className=\"absolute top-2 right-2 bg-sky-500 text-white text-[10px] font-bold px-2 py-1 rounded-full min-w-[20px]\">\n                    {telegramUnread}\n                  </span>\n                )}\n              </button>\n\n              <button\n                onClick={() => setActiveApp('academics')}\n                className=\"bg-zinc-900 hover:bg-zinc-850 p-4 rounded-2xl border border-zinc-800 flex flex-col items-center justify-center gap-2 transition active:scale-95 text-center\"\n              >\n                <span className=\"text-3xl\">🎓</span>\n                <span className=\"text-xs font-bold text-indigo-400\">SUCC & CUMS</span>\n                <span className=\"text-[10px] text-zinc-400\">Courses & GPA</span>\n              </button>\n\n              <button\n                onClick={() => setActiveApp('guild')}\n                className=\"bg-zinc-900 hover:bg-zinc-850 p-4 rounded-2xl border border-zinc-800 flex flex-col items-center justify-center gap-2 transition active:scale-95 text-center\"\n              >\n                <span className=\"text-3xl\">⚔️</span>\n                <span className=\"text-xs font-bold text-red-400\">DMHA Guild</span>\n                <span className=\"text-[10px] text-zinc-400\">Hunter Bounties</span>\n              </button>\n\n              <button\n                onClick={() => setActiveApp('biotrack')}\n                className=\"bg-zinc-900 hover:bg-zinc-850 p-4 rounded-2xl border border-zinc-800 flex flex-col items-center justify-center gap-2 transition active:scale-95 text-center\"\n              >\n                <span className=\"text-3xl\">🐾</span>\n                <span className=\"text-xs font-bold text-emerald-400\">BioTrack LSE</span>\n                <span className=\"text-[10px] text-zinc-400\">Pheromones & Moon</span>\n              </button>\n\n              <button\n                onClick={() => { setActiveApp('succbook'); setSuccbookUnread(0); }}\n                className=\"bg-zinc-900 hover:bg-zinc-850 p-4 rounded-2xl border border-zinc-800 flex flex-col items-center justify-center gap-2 transition active:scale-95 text-center relative\"\n              >\n                <span className=\"text-3xl\">📸</span>\n                <span className=\"text-xs font-bold text-yellow-400\">SuccBook</span>\n                <span className=\"text-[10px] text-zinc-400\">Campus Social</span>\n                {succbookUnread > 0 && (\n                  <span className=\"absolute top-2 right-2 bg-yellow-500 text-black text-[10px] font-bold px-2 py-1 rounded-full min-w-[20px]\">\n                    {succbookUnread}\n                  </span>\n                )}\n              </button>\n\n              <button\n                onClick={() => setActiveApp('music')}\n                className=\"bg-zinc-900 hover:bg-zinc-850 p-4 rounded-2xl border border-zinc-800 flex flex-col items-center justify-center gap-2 transition active:scale-95 text-center\"\n              >\n                <span className=\"text-3xl\">🎵</span>\n                <span className=\"text-xs font-bold text-cyan-300\">Audio Mood</span>\n                <span className=\"text-[10px] text-zinc-400\">Echo Speaker</span>\n              </button>\n            </div>\n\n            {/* Quick Banner: Rift Threat Alert */}\n            <div className=\"bg-zinc-900 rounded-2xl px-4 py-3 border border-zinc-800 flex items-center justify-between text-xs\">\n              <div className=\"flex items-center gap-2\">\n                <span className=\"text-amber-400 font-bold\">⚠️ Rift Alert:</span>\n                <span className=\"text-zinc-200 font-mono\">{riftAlert}</span>\n              </div>\n              <span className=\"text-[10px] text-zinc-500 font-mono\">DCC SEC OK</span>\n            </div>\n          </div>\n        )}\n\n        {/* ----------------------------------------------------------------------- */}\n        {/* APP 2: TELEGRAM DOUGLAS (PACK ENCRYPTED CHAT)                           */}\n        {/* ----------------------------------------------------------------------- */}\n        {activeApp === 'telegram' && (\n          <div className=\"flex flex-col gap-3\">\n            <div className=\"flex items-center justify-between pb-2 border-b border-zinc-800\">\n              <div className=\"flex items-center gap-2\">\n                <span className=\"text-sky-400 font-bold text-sm\">💬 Douglas Pack Chat</span>\n                <span className=\"text-[10px] text-emerald-400 font-medium\">● 5 online</span>\n              </div>\n              <button\n                onClick={() => setActiveApp('home')}\n                className=\"text-xs text-zinc-300 hover:text-white px-3 py-1 rounded-lg bg-zinc-800 border border-zinc-700\"\n              >\n                Close\n              </button>\n            </div>\n\n            <div className=\"flex flex-col gap-2 max-h-[290px] overflow-y-auto pr-1\">\n              {messages.map((m: any) => (\n                <div\n                  key={m.id}\n                  className=\"bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-2 shadow-sm\"\n                >\n                  <div className=\"flex items-center justify-between gap-3\">\n                    <span className={'text-xs font-bold ' + m.color}>{m.sender}</span>\n                    <div className=\"flex items-center gap-2\">\n                      <span className={'text-[10px] px-3 py-1 rounded-md font-semibold shrink-0 ' + m.badgeClass}>\n                        {m.role}\n                      </span>\n                      <span className=\"text-xs text-zinc-500 font-mono shrink-0\">{m.time}</span>\n                    </div>\n                  </div>\n                  <p className=\"text-xs text-zinc-200 leading-relaxed pr-1 pt-1\">{m.text}</p>\n                </div>\n              ))}\n            </div>\n\n            <div className=\"flex items-center gap-2 pt-1\">\n              <input\n                type=\"text\"\n                placeholder=\"Write a message to the pack...\"\n                value={chatInput}\n                onChange={(e: any) => setChatInput(String(e?.target?.value ?? e ?? ''))}\n                className=\"flex-1 bg-zinc-900 text-zinc-100 placeholder-zinc-500 text-xs px-4 py-3 rounded-xl border border-zinc-800 focus:outline-none focus:border-sky-500\"\n              />\n              <button\n                onClick={handleSendMessage}\n                className=\"bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs px-4 py-3 rounded-xl transition shadow-sm\"\n              >\n                Send\n              </button>\n            </div>\n          </div>\n        )}\n\n        {/* ----------------------------------------------------------------------- */}\n        {/* APP 3: SUCC & CUMS ACADEMICS                                            */}\n        {/* ----------------------------------------------------------------------- */}\n        {activeApp === 'academics' && (\n          <div className=\"flex flex-col gap-3\">\n            <div className=\"flex items-center justify-between pb-2 border-b border-zinc-800\">\n              <span className=\"text-indigo-400 font-bold text-sm\">🎓 Academic Portal SUCC & CUMS</span>\n              <button\n                onClick={() => setActiveApp('home')}\n                className=\"text-xs text-zinc-300 hover:text-white px-3 py-1 rounded-lg bg-zinc-800 border border-zinc-700\"\n              >\n                Close\n              </button>\n            </div>\n\n            {/* Student Selector */}\n            <div className=\"flex gap-2 overflow-x-auto py-1 text-xs\">\n              {[\n                { id: 'alyssa', label: 'Alyssa' },\n                { id: 'jasper', label: 'Jasper' },\n                { id: 'noah', label: 'Noah' },\n                { id: 'malachia', label: 'Malachia' },\n                { id: 'cums_students', label: 'CUMS Magic' }\n              ].map((s: any) => (\n                <button\n                  key={s.id}\n                  onClick={() => setSelectedStudent(s.id)}\n                  className={'px-3 py-2 rounded-xl font-semibold whitespace-nowrap transition ' + (selectedStudent === s.id ? 'bg-indigo-600 text-white shadow-sm' : 'bg-zinc-900 text-zinc-400 hover:text-zinc-200 border border-zinc-800')}\n                >\n                  {s.label}\n                </button>\n              ))}\n            </div>\n\n            {/* Student Details Card */}\n            <div className=\"bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-2\">\n              <div className=\"flex items-center justify-between gap-3\">\n                <div>\n                  <div className=\"text-xs font-bold text-zinc-100\">{studentData.name}</div>\n                  <div className=\"text-[11px] text-zinc-400\">{studentData.school}</div>\n                </div>\n                <span className=\"text-xs bg-indigo-950 text-indigo-300 border border-indigo-700 px-3 py-1 rounded-lg font-mono font-semibold shrink-0\">\n                  GPA {studentData.gpa} · {studentData.credits} CFU\n                </span>\n              </div>\n              <div className=\"text-xs text-zinc-300 pt-1 border-t border-zinc-800\">\n                <span className=\"font-semibold text-zinc-400\">Major:</span> {studentData.major}\n              </div>\n              <div className=\"text-[11px] text-zinc-400\">\n                <span className=\"font-semibold text-zinc-400\">Internship:</span> {studentData.internship}\n              </div>\n            </div>\n\n            {/* Courses List */}\n            <div className=\"flex flex-col gap-2 max-h-[180px] overflow-y-auto pr-1\">\n              {studentData.courses.map((c: any, i: number) => (\n                <div\n                  key={i}\n                  className=\"bg-zinc-900 hover:bg-zinc-850 rounded-2xl p-4 border border-zinc-800 flex items-center justify-between gap-4 text-xs\"\n                >\n                  <div className=\"flex-1 min-w-0 pr-1\">\n                    <div className=\"text-xs font-semibold text-zinc-100 truncate\">{c.name}</div>\n                    <div className=\"text-[10px] text-zinc-400 font-mono pt-1\">\n                      {c.code} · Prof. {c.prof} · {c.cfu} CFU\n                    </div>\n                  </div>\n                  <div className=\"w-10 h-8 rounded-xl flex items-center justify-center font-mono font-bold text-xs bg-emerald-950 text-emerald-300 border border-emerald-600 shrink-0 shadow-sm\">\n                    {c.grade}\n                  </div>\n                </div>\n              ))}\n            </div>\n          </div>\n        )}\n\n        {/* ----------------------------------------------------------------------- */}\n        {/* APP 4: DMHA HUNTER GUILD (BOUNTY BULLETIN)                              */}\n        {/* ----------------------------------------------------------------------- */}\n        {activeApp === 'guild' && (\n          <div className=\"flex flex-col gap-3\">\n            <div className=\"flex items-center justify-between pb-2 border-b border-zinc-800\">\n              <span className=\"text-red-400 font-bold text-sm\">⚔️ DMHA Hunter Guild Board</span>\n              <button\n                onClick={() => setActiveApp('home')}\n                className=\"text-xs text-zinc-300 hover:text-white px-3 py-1 rounded-lg bg-zinc-800 border border-zinc-700\"\n              >\n                Close\n              </button>\n            </div>\n\n            {/* Hunter Selector */}\n            <div className=\"flex gap-2 overflow-x-auto py-1 text-xs\">\n              {[\n                { id: 'alyssa', label: 'Alyssa' },\n                { id: 'jasper', label: 'Jasper' },\n                { id: 'malachia', label: 'Malachia' },\n                { id: 'ukiyo', label: 'Ukiyo' }\n              ].map((h: any) => (\n                <button\n                  key={h.id}\n                  onClick={() => setSelectedHunter(h.id)}\n                  className={'px-3 py-2 rounded-xl font-semibold whitespace-nowrap transition ' + (selectedHunter === h.id ? 'bg-red-600 text-white shadow-sm' : 'bg-zinc-900 text-zinc-400 hover:text-zinc-200 border border-zinc-800')}\n                >\n                  {h.label}\n                </button>\n              ))}\n            </div>\n\n            {/* Hunter Rank Card */}\n            <div className=\"bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex items-center justify-between gap-3\">\n              <div>\n                <div className=\"text-xs font-bold text-zinc-100\">{hunterData.name}</div>\n                <div className=\"text-[11px] text-zinc-400\">{hunterData.role}</div>\n                <div className=\"text-[10px] text-zinc-400 font-mono pt-1\">Hunter Credits: {hunterData.credits} CR</div>\n              </div>\n              <span className={'text-xs font-bold px-3 py-2 rounded-xl border font-mono shrink-0 shadow-sm ' + hunterData.rankClass}>\n                {hunterData.rank}\n              </span>\n            </div>\n\n            {/* Guild Missions */}\n            <div className=\"flex flex-col gap-2 max-h-[170px] overflow-y-auto pr-1\">\n              {MISSIONS.map((m: any) => (\n                <div key={m.id} className=\"bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-2\">\n                  <div className=\"flex items-center justify-between gap-2\">\n                    <span className=\"text-xs font-bold text-zinc-100\">{m.title}</span>\n                    <span className={'text-[10px] font-bold px-2 py-1 rounded-md border font-mono shrink-0 ' + m.rankClass}>\n                      {m.rank}\n                    </span>\n                  </div>\n                  <p className=\"text-xs text-zinc-300 leading-relaxed\">{m.desc}</p>\n                  <div className=\"flex items-center justify-between pt-1 text-xs\">\n                    <span className=\"text-amber-400 font-mono font-semibold\">Reward: {m.reward}</span>\n                    <button\n                      onClick={() => setAcceptedMissionId(m.id)}\n                      className={'px-3 py-2 rounded-xl font-bold transition shadow-sm ' + (acceptedMissionId === m.id ? 'bg-emerald-600 text-white' : 'bg-zinc-800 text-zinc-200 hover:bg-zinc-700 border border-zinc-700')}\n                    >\n                      {acceptedMissionId === m.id ? 'Accepted ✓' : 'Accept Contract'}\n                    </button>\n                  </div>\n                </div>\n              ))}\n            </div>\n          </div>\n        )}\n\n        {/* ----------------------------------------------------------------------- */}\n        {/* APP 5: BIOTRACK LSE (PHEROMONES & LUNAR STATUS)                         */}\n        {/* ----------------------------------------------------------------------- */}\n        {activeApp === 'biotrack' && (\n          <div className=\"flex flex-col gap-3\">\n            <div className=\"flex items-center justify-between pb-2 border-b border-zinc-800\">\n              <span className=\"text-emerald-400 font-bold text-sm\">🐾 BioTrack LSE & Pheromone Monitor</span>\n              <button\n                onClick={() => setActiveApp('home')}\n                className=\"text-xs text-zinc-300 hover:text-white px-3 py-1 rounded-lg bg-zinc-800 border border-zinc-700\"\n              >\n                Close\n              </button>\n            </div>\n\n            {/* Physiological Pack Panel */}\n            <div className=\"bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-3 shadow-sm\">\n              <div className=\"flex items-center justify-between\">\n                <span className=\"text-xs font-bold text-zinc-200\">Physiological LSE Status:</span>\n                <span className=\"text-xs font-bold text-amber-400 bg-amber-950 px-3 py-1 rounded-lg border border-amber-700\">\n                  {lseStatus}\n                </span>\n              </div>\n              <div className=\"flex items-center justify-between text-xs pt-1 border-t border-zinc-800\">\n                <span className=\"text-zinc-400\">Days to Seasonal Peak:</span>\n                <span className=\"font-mono font-bold text-zinc-100\">{daysLeft} days</span>\n              </div>\n              <div className=\"flex items-center justify-between text-xs\">\n                <span className=\"text-zinc-400\">Scent Suppressors Stock:</span>\n                <span className={'font-mono font-bold ' + (suppressors > 0 ? 'text-emerald-400' : 'text-red-400')}>\n                  {suppressors} cylinders active\n                </span>\n              </div>\n            </div>\n\n            {/* Lunar Influence */}\n            <div className=\"bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-2 shadow-sm\">\n              <div className=\"flex items-center justify-between gap-2\">\n                <span className=\"text-xs font-bold text-amber-300\">🌙 Current Lunar Influence</span>\n                <span className={'text-xs font-bold px-3 py-1 rounded-lg border shrink-0 ' + (isFullMoon ? 'bg-red-950 text-red-300 border-red-700' : 'bg-zinc-800 text-zinc-400 border-zinc-700')}>\n                  {isFullMoon ? 'BUFF ACTIVE (+2 MGT/RES, +1 AGI)' : 'Standard Influence'}\n                </span>\n              </div>\n              <p className=\"text-xs text-zinc-300 leading-relaxed pt-1\">\n                Current Phase: <span className=\"font-semibold text-zinc-100\">{moonPhase}</span>. {isNight ? 'Night time active in California (enhanced predator senses, nocturnal vision active).' : 'Standard daylight on Solarton campus.'}\n              </p>\n            </div>\n          </div>\n        )}\n\n        {/* ----------------------------------------------------------------------- */}\n        {/* APP 6: SUCCBOOK (CAMPUS SOCIAL FEED)                                    */}\n        {/* ----------------------------------------------------------------------- */}\n        {activeApp === 'succbook' && (\n          <div className=\"flex flex-col gap-3\">\n            <div className=\"flex items-center justify-between pb-2 border-b border-zinc-800\">\n              <span className=\"text-yellow-400 font-bold text-sm\">📸 SuccBook · Solarton Campus</span>\n              <button\n                onClick={() => setActiveApp('home')}\n                className=\"text-xs text-zinc-300 hover:text-white px-3 py-1 rounded-lg bg-zinc-800 border border-zinc-700\"\n              >\n                Close\n              </button>\n            </div>\n\n            <div className=\"flex flex-col gap-2 max-h-[300px] overflow-y-auto pr-1\">\n              {feedPosts.map((p: any) => (\n                <div key={p.id} className=\"bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-2 shadow-sm\">\n                  <div className=\"flex items-center justify-between gap-2\">\n                    <div className=\"flex items-center gap-2\">\n                      <span className=\"text-xl\">{p.avatar}</span>\n                      <div>\n                        <div className=\"text-xs font-bold text-zinc-100\">{p.author}</div>\n                        <div className=\"text-[10px] text-zinc-400 font-mono\">{p.handle} · {p.time}</div>\n                      </div>\n                    </div>\n                    <span className=\"text-[10px] bg-zinc-800 text-zinc-300 px-3 py-1 rounded-md border border-zinc-700 font-medium shrink-0\">\n                      {p.badge}\n                    </span>\n                  </div>\n                  <p className=\"text-xs text-zinc-200 leading-relaxed pr-1 pt-1\">{p.text}</p>\n                  <div className=\"flex items-center justify-between pt-2 border-t border-zinc-800 text-xs\">\n                    <button\n                      onClick={() => toggleLike(p.id)}\n                      className={'flex items-center gap-2 px-3 py-2 rounded-lg transition ' + (p.liked ? 'text-red-400 bg-red-950 border border-red-700 font-bold' : 'text-zinc-400 hover:text-red-400 bg-zinc-800 border border-zinc-700')}\n                    >\n                      <span>{p.liked ? '❤️' : '🤍'}</span>\n                      <span>{p.likes} Likes</span>\n                    </button>\n                    <span className=\"text-[10px] text-zinc-500 font-mono\">DCC Social Net</span>\n                  </div>\n                </div>\n              ))}\n            </div>\n          </div>\n        )}\n\n        {/* ----------------------------------------------------------------------- */}\n        {/* APP 7: AUDIO MOOD SPEAKER                                               */}\n        {/* ----------------------------------------------------------------------- */}\n        {activeApp === 'music' && (\n          <div className=\"flex flex-col gap-3\">\n            <div className=\"flex items-center justify-between pb-2 border-b border-zinc-800\">\n              <span className=\"text-cyan-300 font-bold text-sm\">🎵 Echo Mood Audio Player</span>\n              <button\n                onClick={() => setActiveApp('home')}\n                className=\"text-xs text-zinc-300 hover:text-white px-3 py-1 rounded-lg bg-zinc-800 border border-zinc-700\"\n              >\n                Close\n              </button>\n            </div>\n\n            {/* Now Playing Card */}\n            <div className=\"bg-zinc-900 rounded-2xl p-4 border border-zinc-800 flex flex-col gap-3 shadow-md\">\n              <div className=\"flex items-center gap-3\">\n                <div className=\"w-12 h-12 rounded-xl bg-cyan-950 flex items-center justify-center text-2xl border border-cyan-700 shrink-0 shadow-inner\">\n                  🎧\n                </div>\n                <div>\n                  <div className=\"text-xs font-bold text-zinc-100\">{activeTrack.title}</div>\n                  <div className=\"text-xs text-cyan-300 font-medium\">{activeTrack.artist}</div>\n                  <div className=\"text-[10px] text-zinc-400 font-mono\">{activeTrack.mood}</div>\n                </div>\n              </div>\n              <div className=\"flex items-center justify-between pt-1\">\n                <button\n                  onClick={() => setMusicPlaying(!musicPlaying)}\n                  className=\"bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs px-4 py-2 rounded-xl transition shadow-sm\"\n                >\n                  {musicPlaying ? 'Pause ⏸' : 'Play ▶'}\n                </button>\n                <span className=\"text-xs text-cyan-400 font-mono font-semibold\">\n                  {musicPlaying ? 'Status: Playing ●' : 'Status: Paused ○'}\n                </span>\n              </div>\n            </div>\n\n            {/* Playlist Selector */}\n            <div className=\"flex flex-col gap-2\">\n              <span className=\"text-[10px] font-bold text-zinc-400 uppercase tracking-wider px-1\">\n                Playlists Curated by Echo\n              </span>\n              {TRACKS.map((t: any, i: number) => (\n                <button\n                  key={i}\n                  onClick={() => { setActiveTrack(t); setMusicPlaying(true); }}\n                  className={'w-full p-3 rounded-2xl border flex items-center justify-between text-left transition text-xs ' + (activeTrack.title === t.title ? 'bg-cyan-950 border-cyan-700 text-white shadow-sm' : 'bg-zinc-900 border-zinc-800 text-zinc-300 hover:bg-zinc-850')}\n                >\n                  <div>\n                    <div className=\"font-semibold text-xs\">{t.title}</div>\n                    <div className=\"text-[10px] text-zinc-400\">{t.artist}</div>\n                  </div>\n                  <span className=\"text-[10px] text-cyan-400 font-mono shrink-0 pl-2\">{t.mood}</span>\n                </button>\n              ))}\n            </div>\n          </div>\n        )}\n\n      </div>\n\n      {/* ========================================================================= */}\n      {/* 4. BOTTOM DOCK SMARTPHONE: RELATIVE POSITIONING & CLEAN BADGES             */}\n      {/* ========================================================================= */}\n      <div className=\"bg-zinc-900 rounded-2xl p-2 border border-zinc-800 flex items-center justify-around text-xs mt-1 shadow-inner\">\n        {[\n          { id: 'home', label: 'Home', icon: '🏠' },\n          { id: 'telegram', label: 'Chat', icon: '💬', badge: telegramUnread },\n          { id: 'academics', label: 'Academics', icon: '🎓' },\n          { id: 'guild', label: 'Guild', icon: '⚔️' },\n          { id: 'biotrack', label: 'LSE', icon: '🐾' }\n        ].map((tab: any) => {\n          const isActive = activeApp === tab.id;\n          return (\n            <button\n              key={tab.id}\n              onClick={() => {\n                setActiveApp(tab.id);\n                if (tab.id === 'telegram') setTelegramUnread(0);\n              }}\n              className={'relative flex flex-col items-center justify-center py-2 px-3 rounded-xl transition ' + (isActive ? 'bg-zinc-800 text-white font-bold shadow-sm' : 'text-zinc-400 hover:text-zinc-200')}\n            >\n              <div className=\"relative flex items-center justify-center\">\n                <span className=\"text-xl leading-none\">{tab.icon}</span>\n                {tab.badge && tab.badge > 0 && (\n                  <span className=\"absolute -top-1 -right-3 bg-sky-500 text-white text-[9px] font-bold px-2 py-1 rounded-full min-w-[16px] text-center leading-none\">\n                    {tab.badge}\n                  </span>\n                )}\n              </div>\n              <span className=\"text-[10px] font-medium mt-1\">{tab.label}</span>\n            </button>\n          );\n        })}\n      </div>\n\n    </div>\n  );\n}\n"
+      }
+    ],
+    "prompt_assembly_id": "pha_4f938ypjwke4yXDEqx86B",
+    "target": "both",
+    "worlds": [
+      {
+        "id": "_CgYT8fHXpDC4crjmegQF7",
+        "enabled": true,
+        "condition": {
+          "type": "always"
+        }
+      }
+    ],
+    "schema_version": 1,
+    "variables": [
+      {
+        "id": "clock_time",
+        "name": "Phone Clock Time (HH:MM)",
+        "type": "text",
+        "default": "08:14"
+      },
+      {
+        "id": "sim_date",
+        "name": "Simulated In-Game Date",
+        "type": "text",
+        "default": "Monday, August 26, 2024"
+      },
+      {
+        "id": "time_hour_number",
+        "name": "Hour of Day (0-23)",
+        "type": "number",
+        "default": 8
+      },
+      {
+        "id": "moon_phase",
+        "name": "Current Moon Phase",
+        "type": "text",
+        "default": "Waning Crescent"
+      },
+      {
+        "id": "moon_full_active",
+        "name": "Full Moon Buff Active",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "id": "night_active",
+        "name": "Night Time Active",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "id": "lse_biology_status",
+        "name": "Lupine Social Ecology (LSE) Status",
+        "type": "text",
+        "default": "Baseline Calm (Orientation Week)"
+      },
+      {
+        "id": "lse_cycle_days_left",
+        "name": "Days to Biological Peak",
+        "type": "number",
+        "default": 4
+      },
+      {
+        "id": "scent_suppressors_count",
+        "name": "Scent Suppressors Count",
+        "type": "number",
+        "default": 3
+      },
+      {
+        "id": "pack_reputation",
+        "name": "Douglas Pack Reputation Score",
+        "type": "number",
+        "default": 25
+      },
+      {
+        "id": "rift_threat_level",
+        "name": "Rift Threat Alert Level",
+        "type": "text",
+        "default": "Class 1 - Stable"
+      },
+      {
+        "id": "pack_chat_unread",
+        "name": "Telegram Pack Chat Unread Count",
+        "type": "number",
+        "default": 3
+      },
+      {
+        "id": "succbook_unread_posts",
+        "name": "SuccBook Feed Unread Count",
+        "type": "number",
+        "default": 3
+      },
+      {
+        "id": "pack_chat_messages",
+        "name": "Telegram Pack Chat Message History",
+        "type": "json",
+        "default": [
+          {
+            "id": 1,
+            "sender": "Dad (Erik)",
+            "role": "Prime Alpha · DCC",
+            "color": "text-amber-400",
+            "badgeClass": "bg-amber-950 text-amber-300 border border-amber-700",
+            "text": "Kids, have you arrived in Solarton? Kaladin has discrete escorts stationed near the east campus gate. Do not forget your scent suppressors.",
+            "time": "08:02"
+          },
+          {
+            "id": 2,
+            "sender": "Noah",
+            "role": "Beta · PR",
+            "color": "text-sky-400",
+            "badgeClass": "bg-sky-950 text-sky-300 border border-sky-700",
+            "text": "Relax Boss, I'm already at the SUCC freshman welcome booth. If Alyssa is late it's only because she needed her shoes to match her medical bag 💅",
+            "time": "08:05"
+          },
+          {
+            "id": 3,
+            "sender": "Jasper",
+            "role": "Technomancer",
+            "color": "text-emerald-400",
+            "badgeClass": "bg-emerald-950 text-emerald-300 border border-emerald-700",
+            "text": "We're here. Walking Alyssa to the Medicine and Arcane Botany department office. Noah cut it out or I'm blocking the Douglas Manor Wi-Fi.",
+            "time": "08:08"
+          },
+          {
+            "id": 4,
+            "sender": "Echo",
+            "role": "Digital Familiar",
+            "color": "text-cyan-300",
+            "badgeClass": "bg-cyan-950 text-cyan-300 border border-cyan-700",
+            "text": "[Audio Mood Speaker: Track 'Subterranean Bass Drive' active]. Fireteam vital telemetry optimal. Zero miasmic anomalies within an 800m perimeter.",
+            "time": "08:09"
+          },
+          {
+            "id": 5,
+            "sender": "Malachia",
+            "role": "Berserker Strike",
+            "color": "text-rose-400",
+            "badgeClass": "bg-rose-950 text-rose-300 border border-rose-700",
+            "text": "Finished morning lifting at the Bulls field. Anyone who approaches our people with bad intentions answers to me. Send coordinates.",
+            "time": "08:12"
+          }
+        ]
+      },
+      {
+        "id": "succbook_posts",
+        "name": "SuccBook Campus Social Posts",
+        "type": "json",
+        "default": [
+          {
+            "id": 1,
+            "author": "SUCC Athletics (DMHA Bulls)",
+            "handle": "@succ_bulls",
+            "badge": "Official · Campus",
+            "avatar": "🏈",
+            "time": "32m ago",
+            "text": "Fall semester kickoff! Pre-season training starts today. Jared Thompson starting at QB, Malachia Douglas joining defensive scrimmage line. Go Bulls!",
+            "likes": 342,
+            "liked": false
+          },
+          {
+            "id": 2,
+            "author": "Elizabeth Duskwood (DCC Health)",
+            "handle": "@dr_duskwood",
+            "badge": "Demi-Human Health",
+            "avatar": "🩺",
+            "time": "1h ago",
+            "text": "LSE Advisory for Move-in Week: Orientation crowd densities trigger heightened scent spikes. Free pheromone suppressor refills available at the SUCC West Clinic.",
+            "likes": 128,
+            "liked": false
+          },
+          {
+            "id": 3,
+            "author": "Solarton Student Union",
+            "handle": "@solarton_union",
+            "badge": "Campus Life",
+            "avatar": "☕",
+            "time": "2h ago",
+            "text": "Welcome Class of 2028! Quad club fair is open from 10:00 to 18:00. Anime Club, Werewolf Pack Society, and Grave Mistake rehearsal booth are live!",
+            "likes": 215,
+            "liked": false
+          }
+        ]
+      },
+      {
+        "id": "dmha_active_mission",
+        "name": "Active DMHA Mission",
+        "type": "json",
+        "default": null
+      },
+      {
+        "id": "dmha_available_missions",
+        "name": "Available Board Missions",
+        "type": "json",
+        "default": []
+      },
+      {
+        "id": "dmha_loot_inventory",
+        "name": "Guild Loot & Equipment",
+        "type": "json",
+        "default": []
+      },
+      {
+        "id": "succ_track",
+        "name": "SUCC Academic Track",
+        "type": "text",
+        "default": "Freshman - Sciences & Pre-Med"
+      },
+      {
+        "id": "pack_role",
+        "name": "Douglas Pack Role",
+        "type": "text",
+        "default": "Operative / Heir"
+      },
+      {
+        "id": "underworld_role",
+        "name": "Underworld Specialty",
+        "type": "text",
+        "default": "Liaison & Field Operative"
+      },
+      {
+        "id": "prev_accumulated_hours",
+        "name": "Previous Tracked World Hours",
+        "type": "number",
+        "default": 0
+      },
+      {
+        "id": "total_world_hours",
+        "name": "Total World Hours (Since 827-12-21)",
+        "type": "number",
+        "default": 10489904
+      }
+    ],
+    "rules": [
+      {
+        "id": "rule_lunar_buff_active",
+        "label": "Full Moon Alert & Werewolf Buff",
+        "phase": "before",
+        "enabled": true,
+        "once": false,
+        "condition": {
+          "type": "variable",
+          "variable": "moon_full_active",
+          "operator": "eq",
+          "value": true
+        },
+        "actions": [
+          {
+            "type": "context",
+            "text": "[STORY ENGINE SYSTEM ALERT: Full Moon is currently ACTIVE in California. Werewolves gain +2 MGT, +2 RES, +1 AGI. Senses and instincts are hypersensitive. Demi-humans and werewolves feel heightened physical energy and increased responsiveness to pack hierarchy.]"
+          }
+        ]
+      },
+      {
+        "id": "rule_scent_leak_alert",
+        "label": "Pheromone Leak Alert (Suppressors Depleted)",
+        "phase": "before",
+        "enabled": true,
+        "once": false,
+        "condition": {
+          "type": "variable",
+          "variable": "scent_suppressors_count",
+          "operator": "lte",
+          "value": 0
+        },
+        "actions": [
+          {
+            "type": "context",
+            "text": "[STORY ENGINE LSE ALERT: The character has run out of scent suppressors (count: 0). Lupine Social Ecology (LSE) rules apply: natural pheromones, territorial musk, and biological status (heat/rut/stress) leak unfiltered into the immediate air, triggering reactions from nearby werewolves and predators.]"
+          }
+        ]
+      },
+      {
+        "id": "rule_succ_random_event_trigger",
+        "label": "SUCC Dynamic Campus Life & Random Encounters",
+        "phase": "before",
+        "enabled": true,
+        "once": false,
+        "condition": {
+          "type": "always"
+        },
+        "actions": [
+          {
+            "type": "context",
+            "text": "[STORY ENGINE DIRECTIVE: SUCC CAMPUS LIFE & RANDOM ENCOUNTERS]\nWhile in Solarton or on the SUCC campus, seamlessly weave spontaneous collegiate interactions into the scene when appropriate:\n- Unexpected Communications: A character may receive a sudden phone call or text from family, a coach, or a classmate (e.g. Hank checking up, Vincent sending a hockey schedule, Mac texting about band rehearsal).\n- Minor Campus Mishaps: Spilled mana coffee on lecture notes, an awkward trip over an extended tail or wing in crowded hallways, or sudden draft blowing flyers across the quad.\n- Organic Student Encounters: Fellow students and athletes (Bulls football himbos, Bears hockey players, Grave Mistake musicians, Anime Club members) naturally cross paths in common areas, dining halls, and libraries.\n- Behavior & Mannerisms: Reflect species quirks organically (reptiles basking in sun spots, wolf demis tail-wagging or ear-flattening under stress, vampires wearing UV sunglasses)."
+          }
+        ]
+      },
+      {
+        "id": "rule_after_turn_sync",
+        "label": "After Turn Scene & Time Sync",
+        "phase": "after",
+        "enabled": true,
+        "once": false,
+        "condition": {
+          "type": "always"
+        },
+        "actions": [
+          {
+            "type": "lua",
+            "script": "script_after_turn_sync"
+          }
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "id": "cmd_advance_time",
+        "name": "advance_time",
+        "label": "Advance In-Game Time & Moon",
+        "description": "Advances in-game hours. Updates phone clock, day/night cycle, moon phase progression, and reduces days until biological peak (LSE cycle). Propose or call when scene transitions or hours elapse.",
+        "actor": "both",
+        "scan_turn_enabled": true,
+        "llm_tool_enabled": true,
+        "parameters": [
+          {
+            "name": "hours",
+            "type": "number",
+            "required": false,
+            "description": "Hours to shift (+/- for advance or rewind)"
+          },
+          {
+            "name": "target_date",
+            "type": "text",
+            "required": false,
+            "description": "Explicit Gregorian date (YYYY-MM-DD), supported from 0827-12-21 to 3000+"
+          },
+          {
+            "name": "target_time",
+            "type": "text",
+            "required": false,
+            "description": "Explicit clock time (HH:MM)"
+          },
+          {
+            "name": "moon_phase",
+            "type": "text",
+            "required": false,
+            "description": "Optional manual moon phase override"
+          }
+        ],
+        "condition": {
+          "type": "always"
+        },
+        "actions": [
+          {
+            "type": "lua",
+            "script": "script_advance_time"
+          }
+        ]
+      },
+      {
+        "id": "cmd_receive_pack_message",
+        "name": "receive_pack_message",
+        "label": "Send/Receive Douglas Pack Message",
+        "description": "Adds an encrypted message into the Telegram Pack Chat from a family member (Erik, Noah, Jasper, Echo, Malachia, Alyssa) or the operative. Propose when family reacts to recent events or coordinates missions.",
+        "actor": "both",
+        "scan_turn_enabled": true,
+        "llm_tool_enabled": true,
+        "parameters": [
+          {
+            "name": "sender",
+            "type": "text",
+            "required": true,
+            "description": "Sender name (e.g. Dad (Erik), Noah, Jasper, Echo, Malachia, Alyssa, You (Operative))"
+          },
+          {
+            "name": "text",
+            "type": "text",
+            "required": true,
+            "description": "Body text of the chat message"
+          }
+        ],
+        "condition": {
+          "type": "always"
+        },
+        "actions": [
+          {
+            "type": "lua",
+            "script": "script_receive_pack_msg"
+          }
+        ]
+      },
+      {
+        "id": "cmd_post_succbook",
+        "name": "post_succbook",
+        "label": "New SuccBook Campus Post",
+        "description": "Publishes a new campus social media post on SuccBook reflecting collegiate sports, academic gossip, club activities, or campus events. Propose when campus rumors or news occur.",
+        "actor": "both",
+        "scan_turn_enabled": true,
+        "llm_tool_enabled": true,
+        "parameters": [
+          {
+            "name": "author",
+            "type": "text",
+            "required": true,
+            "description": "Author display name or organization (e.g. SUCC Athletics, Dr. Duskwood, Grave Mistake)"
+          },
+          {
+            "name": "handle",
+            "type": "text",
+            "required": true,
+            "description": "Handle starting with @ (e.g. @succ_bulls, @dr_duskwood)"
+          },
+          {
+            "name": "text",
+            "type": "text",
+            "required": true,
+            "description": "Social post text"
+          },
+          {
+            "name": "badge",
+            "type": "text",
+            "required": false,
+            "description": "Category badge (e.g. Campus, Athletics, Health, Nightlife)"
+          }
+        ],
+        "condition": {
+          "type": "always"
+        },
+        "actions": [
+          {
+            "type": "lua",
+            "script": "script_post_succbook"
+          }
+        ]
+      },
+      {
+        "id": "cmd_use_suppressor",
+        "name": "use_suppressor",
+        "label": "Inhale Pheromone Suppressor",
+        "description": "Consumes 1 inhibitor cylinder to suppress scent and biological pheromones.",
+        "actor": "both",
+        "scan_turn_enabled": true,
+        "llm_tool_enabled": true,
+        "parameters": [],
+        "condition": {
+          "type": "always"
+        },
+        "actions": [
+          {
+            "type": "add",
+            "variable": "scent_suppressors_count",
+            "value": -1
+          },
+          {
+            "type": "message",
+            "text": "🩺 [Svartulfr OS] You inhaled a dose of pheromone suppressor. Your scent trail is shielded."
+          }
+        ]
+      }
+    ],
+    "scripts": {
+      "script_advance_time": {
+        "type": "lua",
+        "code": "\n\nlocal function is_leap_year(y)\n  return (y % 4 == 0 and y % 100 ~= 0) or (y % 400 == 0)\nend\n\nlocal function days_before_year(y)\n  local y1 = y - 1\n  return y1 * 365 + math.floor(y1 / 4) - math.floor(y1 / 100) + math.floor(y1 / 400)\nend\n\nlocal days_in_months = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}\nlocal month_names = {\"January\", \"February\", \"March\", \"April\", \"May\", \"June\", \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"}\nlocal day_names = {\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\"}\n\nlocal function get_day_of_year(y, m, d)\n  local days = 0\n  for i = 1, m - 1 do\n    days = days + days_in_months[i]\n    if i == 2 and is_leap_year(y) then days = days + 1 end\n  end\n  return days + d\nend\n\nlocal epoch_abs_days = days_before_year(827) + (31+28+31+30+31+30+31+31+30+31+30+21)\n\nlocal function hours_to_calendar(total_hours)\n  local total_days = math.floor(total_hours / 24)\n  local hour = math.floor(total_hours % 24)\n  local minute = math.floor((total_hours * 60) % 60)\n\n  local day_of_week_idx = (2 + (total_days % 7) + 7) % 7 + 1\n  local target_abs_days = epoch_abs_days + total_days\n\n  local y = math.floor(target_abs_days / 365.2425)\n  while days_before_year(y + 1) < target_abs_days do y = y + 1 end\n  while days_before_year(y) >= target_abs_days do y = y - 1 end\n\n  local rem_days = target_abs_days - days_before_year(y)\n  local m = 1\n  for i = 1, 12 do\n    local dim = days_in_months[i]\n    if i == 2 and is_leap_year(y) then dim = dim + 1 end\n    if rem_days <= dim then\n      m = i\n      break\n    end\n    rem_days = rem_days - dim\n  end\n  local d = rem_days\n\n  local synodic = 708.73416\n  local cycle_pos = ((total_hours % synodic) + synodic) % synodic\n  local phase_frac = cycle_pos / synodic\n  local moon = \"New Moon\"\n  local full = false\n  if phase_frac >= 0.03 and phase_frac < 0.22 then moon = \"Waxing Crescent\"\n  elseif phase_frac >= 0.22 and phase_frac < 0.28 then moon = \"First Quarter\"\n  elseif phase_frac >= 0.28 and phase_frac < 0.47 then moon = \"Waxing Gibbous\"\n  elseif phase_frac >= 0.47 and phase_frac < 0.53 then moon = \"Full Moon\"; full = true\n  elseif phase_frac >= 0.53 and phase_frac < 0.72 then moon = \"Waning Gibbous\"\n  elseif phase_frac >= 0.72 and phase_frac < 0.78 then moon = \"Third Quarter\"\n  elseif phase_frac >= 0.78 and phase_frac < 0.97 then moon = \"Waning Crescent\"\n  end\n\n  local hStr = string.format(\"%02d:%02d\", hour, minute)\n  local dateStr = string.format(\"%s, %d %s %d\", day_names[day_of_week_idx], d, month_names[m], y)\n  return {\n    year = y, month = m, day = d, hour = hour, minute = minute,\n    time_str = hStr, date_str = dateStr, moon_phase = moon, moon_full = full,\n    is_night = (hour >= 20 or hour < 6)\n  }\nend\n\nlocal function date_to_hours(y, m, d, h, min)\n  local target_abs = days_before_year(y) + get_day_of_year(y, m, d)\n  local total_days = target_abs - epoch_abs_days\n  return total_days * 24 + (h or 0) + (min or 0) / 60\nend\n\n\nlocal curTotal = tonumber(engine.get(\"total_world_hours\")) or 10489904\nlocal newTotal = curTotal\n\nif args.target_date and args.target_date ~= \"\" then\n  local y, m, d = string.match(args.target_date, \"(%d+)-(%d+)-(%d+)\")\n  if y and m and d then\n    local h, min = 8, 0\n    if args.target_time and args.target_time ~= \"\" then\n      local th, tm = string.match(args.target_time, \"(%d+):(%d+)\")\n      if th and tm then h = tonumber(th); min = tonumber(tm) end\n    end\n    newTotal = date_to_hours(tonumber(y), tonumber(m), tonumber(d), h, min)\n  end\nelseif args.hours then\n  local hShift = tonumber(args.hours) or 0\n  newTotal = curTotal + hShift\nend\n\nif newTotal < 0 then newTotal = 0 end\nlocal cal = hours_to_calendar(newTotal)\n\nengine.set(\"total_world_hours\", newTotal)\nengine.set(\"clock_time\", cal.time_str)\nengine.set(\"sim_date\", cal.date_str)\nengine.set(\"time_hour_number\", cal.hour)\nengine.set(\"night_active\", cal.is_night)\n\nif args.moon_phase and args.moon_phase ~= \"\" then\n  engine.set(\"moon_phase\", args.moon_phase)\n  if string.find(string.lower(args.moon_phase), \"full\") then\n    engine.set(\"moon_full_active\", true)\n  else\n    engine.set(\"moon_full_active\", false)\n  end\nelse\n  engine.set(\"moon_phase\", cal.moon_phase)\n  engine.set(\"moon_full_active\", cal.moon_full)\nend\n\nlocal daysDelta = (newTotal - curTotal) / 24\nlocal curDaysLeft = tonumber(engine.get(\"lse_cycle_days_left\")) or 4\nlocal newDaysLeft = math.max(0, curDaysLeft - daysDelta)\nengine.set(\"lse_cycle_days_left\", math.floor(newDaysLeft * 10) / 10)\nif newDaysLeft <= 0 then\n  engine.set(\"lse_biology_status\", \"Biological Peak / Unsuppressed Pheromones\")\nend\n\nengine.emit(string.format(\"Timeline updated: %s at %s (%s). World Hours: %.1f\", cal.date_str, cal.time_str, cal.moon_phase, newTotal))\nreturn { clock = cal.time_str, date = cal.date_str, total_hours = newTotal }\n"
+      },
+      "script_receive_pack_msg": {
+        "type": "lua",
+        "code": "\nlocal sender = args.sender or \"Douglas Pack\"\nlocal text = args.text or \"Checking in.\"\nlocal curClock = engine.get(\"clock_time\") or \"12:00\"\n\nlocal role = \"Family\"\nlocal color = \"text-sky-400\"\nlocal badgeClass = \"bg-sky-950 text-sky-300 border border-sky-700\"\n\nif string.find(sender, \"Erik\") then\n  role = \"Prime Alpha · DCC\"\n  color = \"text-amber-400\"\n  badgeClass = \"bg-amber-950 text-amber-300 border border-amber-700\"\nelseif string.find(sender, \"Noah\") then\n  role = \"Beta · PR\"\n  color = \"text-sky-400\"\n  badgeClass = \"bg-sky-950 text-sky-300 border border-sky-700\"\nelseif string.find(sender, \"Jasper\") then\n  role = \"Technomancer\"\n  color = \"text-emerald-400\"\n  badgeClass = \"bg-emerald-950 text-emerald-300 border border-emerald-700\"\nelseif string.find(sender, \"Malachia\") then\n  role = \"Berserker Strike\"\n  color = \"text-rose-400\"\n  badgeClass = \"bg-rose-950 text-rose-300 border border-rose-700\"\nelseif string.find(sender, \"Echo\") then\n  role = \"Digital Familiar\"\n  color = \"text-cyan-300\"\n  badgeClass = \"bg-cyan-950 text-cyan-300 border border-cyan-700\"\nelseif string.find(sender, \"Alyssa\") then\n  role = \"Field Medic\"\n  color = \"text-purple-300\"\n  badgeClass = \"bg-purple-950 text-purple-300 border border-purple-700\"\nend\n\nlocal msgs = host.memory.get(\"engine\", \"pack_chat_messages\") or {}\nlocal newId = #msgs + 1\nlocal newMsg = {\n  id = newId,\n  sender = sender,\n  role = role,\n  color = color,\n  badgeClass = badgeClass,\n  text = text,\n  time = curClock\n}\ntable.insert(msgs, newMsg)\nhost.memory.set(\"engine\", \"pack_chat_messages\", msgs)\n\nlocal unread = tonumber(engine.get(\"pack_chat_unread\")) or 0\nengine.set(\"pack_chat_unread\", unread + 1)\nengine.emit(\"[Telegram] New message from \" .. sender .. \": \" .. text)\nreturn { id = newId }\n"
+      },
+      "script_post_succbook": {
+        "type": "lua",
+        "code": "\nlocal author = args.author or \"SUCC Campus\"\nlocal handle = args.handle or \"@succ_life\"\nlocal text = args.text or \"Campus update.\"\nlocal badge = args.badge or \"Campus\"\n\nlocal posts = host.memory.get(\"engine\", \"succbook_posts\") or {}\nlocal newId = #posts + 1\nlocal newPost = {\n  id = newId,\n  author = author,\n  handle = handle,\n  badge = badge,\n  avatar = \"📱\",\n  time = \"Just now\",\n  text = text,\n  likes = 12,\n  liked = false\n}\ntable.insert(posts, 1, newPost)\nhost.memory.set(\"engine\", \"succbook_posts\", posts)\n\nlocal unread = tonumber(engine.get(\"succbook_unread_posts\")) or 0\nengine.set(\"succbook_unread_posts\", unread + 1)\nengine.emit(\"[SuccBook] New post by \" .. author .. \": \" .. text)\nreturn { id = newId }\n"
+      },
+      "script_after_turn_sync": {
+        "type": "lua",
+        "code": "\n\nlocal function is_leap_year(y)\n  return (y % 4 == 0 and y % 100 ~= 0) or (y % 400 == 0)\nend\n\nlocal function days_before_year(y)\n  local y1 = y - 1\n  return y1 * 365 + math.floor(y1 / 4) - math.floor(y1 / 100) + math.floor(y1 / 400)\nend\n\nlocal days_in_months = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}\nlocal month_names = {\"January\", \"February\", \"March\", \"April\", \"May\", \"June\", \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"}\nlocal day_names = {\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\"}\n\nlocal function get_day_of_year(y, m, d)\n  local days = 0\n  for i = 1, m - 1 do\n    days = days + days_in_months[i]\n    if i == 2 and is_leap_year(y) then days = days + 1 end\n  end\n  return days + d\nend\n\nlocal epoch_abs_days = days_before_year(827) + (31+28+31+30+31+30+31+31+30+31+30+21)\n\nlocal function hours_to_calendar(total_hours)\n  local total_days = math.floor(total_hours / 24)\n  local hour = math.floor(total_hours % 24)\n  local minute = math.floor((total_hours * 60) % 60)\n\n  local day_of_week_idx = (2 + (total_days % 7) + 7) % 7 + 1\n  local target_abs_days = epoch_abs_days + total_days\n\n  local y = math.floor(target_abs_days / 365.2425)\n  while days_before_year(y + 1) < target_abs_days do y = y + 1 end\n  while days_before_year(y) >= target_abs_days do y = y - 1 end\n\n  local rem_days = target_abs_days - days_before_year(y)\n  local m = 1\n  for i = 1, 12 do\n    local dim = days_in_months[i]\n    if i == 2 and is_leap_year(y) then dim = dim + 1 end\n    if rem_days <= dim then\n      m = i\n      break\n    end\n    rem_days = rem_days - dim\n  end\n  local d = rem_days\n\n  local synodic = 708.73416\n  local cycle_pos = ((total_hours % synodic) + synodic) % synodic\n  local phase_frac = cycle_pos / synodic\n  local moon = \"New Moon\"\n  local full = false\n  if phase_frac >= 0.03 and phase_frac < 0.22 then moon = \"Waxing Crescent\"\n  elseif phase_frac >= 0.22 and phase_frac < 0.28 then moon = \"First Quarter\"\n  elseif phase_frac >= 0.28 and phase_frac < 0.47 then moon = \"Waxing Gibbous\"\n  elseif phase_frac >= 0.47 and phase_frac < 0.53 then moon = \"Full Moon\"; full = true\n  elseif phase_frac >= 0.53 and phase_frac < 0.72 then moon = \"Waning Gibbous\"\n  elseif phase_frac >= 0.72 and phase_frac < 0.78 then moon = \"Third Quarter\"\n  elseif phase_frac >= 0.78 and phase_frac < 0.97 then moon = \"Waning Crescent\"\n  end\n\n  local hStr = string.format(\"%02d:%02d\", hour, minute)\n  local dateStr = string.format(\"%s, %d %s %d\", day_names[day_of_week_idx], d, month_names[m], y)\n  return {\n    year = y, month = m, day = d, hour = hour, minute = minute,\n    time_str = hStr, date_str = dateStr, moon_phase = moon, moon_full = full,\n    is_night = (hour >= 20 or hour < 6)\n  }\nend\n\nlocal function date_to_hours(y, m, d, h, min)\n  local target_abs = days_before_year(y) + get_day_of_year(y, m, d)\n  local total_days = target_abs - epoch_abs_days\n  return total_days * 24 + (h or 0) + (min or 0) / 60\nend\n\n\nif not turn or not turn.generated_message then return end\nlocal msg = string.lower(turn.generated_message)\n\n-- 1. Full bi-directional sync with World party accumulated_hours\nif host and host.rpg and host.rpg.available and host.rpg.available() then\n  local accHours = host.rpg.state.get(\"accumulated_hours\") or 0\n  local prevTracked = tonumber(engine.get(\"prev_accumulated_hours\")) or 0\n  if accHours ~= prevTracked then\n    local delta = accHours - prevTracked\n    engine.set(\"prev_accumulated_hours\", accHours)\n    local curTotal = tonumber(engine.get(\"total_world_hours\")) or 10489904\n    local newTotal = curTotal + delta\n    if newTotal < 0 then newTotal = 0 end\n    local cal = hours_to_calendar(newTotal)\n    engine.set(\"total_world_hours\", newTotal)\n    engine.set(\"clock_time\", cal.time_str)\n    engine.set(\"sim_date\", cal.date_str)\n    engine.set(\"time_hour_number\", cal.hour)\n    engine.set(\"night_active\", cal.is_night)\n    engine.set(\"moon_phase\", cal.moon_phase)\n    engine.set(\"moon_full_active\", cal.moon_full)\n  end\nend\n\n-- 2. Narrative time shifts\nif string.find(msg, \"midnight\") or string.find(msg, \"night fell\") or string.find(msg, \"darkness settled\") or string.find(msg, \"evening arrived\") or string.find(msg, \"late at night\") then\n  engine.set(\"night_active\", true)\nelseif string.find(msg, \"next morning\") or string.find(msg, \"dawn broke\") or string.find(msg, \"sunrise\") or string.find(msg, \"bright sunlight\") or string.find(msg, \"early morning\") then\n  engine.set(\"night_active\", false)\nend\n\n-- 3. Full Moon mentions\nif string.find(msg, \"full moon\") or string.find(msg, \"lunar zenith\") then\n  engine.set(\"moon_phase\", \"Full Moon\")\n  engine.set(\"moon_full_active\", true)\nend\n\n-- 4. Suppressor usage\nif string.find(msg, \"inhaled the suppressor\") or string.find(msg, \"pressed the cylinder\") or string.find(msg, \"took a dose of suppressor\") or string.find(msg, \"used a suppressor\") then\n  local sups = tonumber(engine.get(\"scent_suppressors_count\")) or 0\n  if sups > 0 then\n    engine.set(\"scent_suppressors_count\", sups - 1)\n  end\nend\n\n-- 5. Incoming communications\nif string.find(msg, \"phone chimed\") or string.find(msg, \"phone buzzed\") or string.find(msg, \"text message\") or string.find(msg, \"screen lit up\") or string.find(msg, \"new notification\") then\n  local sender = \"Douglas Pack\"\n  local text = \"Check-in from Solarton perimeter.\"\n  if string.find(msg, \"noah\") then\n    sender = \"Noah Douglas\"\n    text = \"Alyssa, stay low at Wyrm Dorms. Let me know if anyone asks about the Bloodmoon mark.\"\n  elseif string.find(msg, \"jasper\") then\n    sender = \"Jasper Douglas\"\n    text = \"Twin ping received. Bio-suppressor levels holding steady. Echo is monitoring the SUCC grid.\"\n  elseif string.find(msg, \"erik\") then\n    sender = \"Erik Douglas\"\n    text = \"Report in before sunset. Don't engage any Voidspace anomalies.\"\n  elseif string.find(msg, \"malachia\") then\n    sender = \"Malachia Douglas\"\n    text = \"Keep your claws sharp, little sister. I'm on standby if anyone steps out of line.\"\n  end\n  engine.runScript(\"script_receive_pack_msg\", { sender = sender, text = text })\nend\n\n-- 6. SuccBook chatter\nif string.find(msg, \"succbook\") or string.find(msg, \"campus forum\") or string.find(msg, \"student feed\") then\n  local author = \"SUCC Student Union\"\n  local handle = \"@succ_life\"\n  local badge = \"Campus\"\n  local text = \"Campus updates posted to the local registry.\"\n  engine.runScript(\"script_post_succbook\", { author = author, handle = handle, text = text, badge = badge })\nend\n"
+      }
+    },
+    "lorebooks": [],
+    "presets": [
+      {
+        "id": "preset_student_recruit",
+        "name": "SUCC Student Recruit / Standard Freshman",
+        "values": {
+          "pack_reputation": 25,
+          "scent_suppressors_count": 3,
+          "rift_threat_level": "Class 1 - Stable",
+          "lse_biology_status": "Dormant",
+          "lse_cycle_days_left": 20,
+          "pack_chat_unread": 3,
+          "succbook_unread_posts": 5
+        }
+      },
+      {
+        "id": "preset_douglas_native",
+        "name": "Douglas Pack Native Member",
+        "values": {
+          "pack_reputation": 85,
+          "scent_suppressors_count": 5,
+          "rift_threat_level": "Class 1 - Stable",
+          "lse_biology_status": "Pre-Rut / Alert",
+          "lse_cycle_days_left": 12,
+          "pack_chat_unread": 0,
+          "succbook_unread_posts": 2
+        }
+      },
+      {
+        "id": "preset_hardcore_rut",
+        "name": "LSE Seasonal Peak (Active Rut / Heat)",
+        "values": {
+          "pack_reputation": 40,
+          "scent_suppressors_count": 0,
+          "rift_threat_level": "Class 2 - Fluctuating",
+          "lse_biology_status": "Peak Rut / Full Heat",
+          "lse_cycle_days_left": 0,
+          "pack_chat_unread": 8,
+          "succbook_unread_posts": 12
+        }
+      }
+    ],
+    "status_template": "🌙 Moon: {{values.moon_phase}}{{#if values.moon_full_active}} (FULL MOON: Werewolf Buff ACTIVE){{/if}}{{#if values.night_active}} | 🌌 Night (Night Stalker Buff ON){{/if}} | 🩺 LSE: {{values.lse_biology_status}} (~{{values.lse_cycle_days_left}} days to peak) | 📱 Notifications: {{values.pack_chat_unread}} Telegram / {{values.succbook_unread_posts}} SuccBook",
+    "prompt_template": "=== SVARTULFR OS: STORYENGINE DIRECTIVES ===\nThis story is enhanced by Svartulfr OS, providing live tracking of Lupine Social Ecology (LSE), lunar phases, Douglas pack communications, SUCC & CUMS academic life, and DMHA hunting logs.\n- Status, lunar buffs, biologically shifting pheromones, and academic/hunting records are live-tracked via the interactive panels.\n- Treat characters naturally in accordance with the live date, moon phase, and active rank.\n- Digital notifications (Telegram, SuccBook, Guild Board) are surfaced cleanly in the UI; reflect incoming communications naturally in scene without generating ASCII mockup interfaces.\n\n=== DYNAMIC ACADEMIC & HUNTING PROFILE ADAPTATION FOR {{user}} ===\nWhen narrating university life at SUCC or CUMS, courses, exams, internships, and guild hunting activities for {{user}}, always match subjects, schedules, and ranks to their established background:\n1. University Major (SUCC / CUMS):\n   - Alyssa Douglas: Pre-Med / Medical Sciences & Demi-Human Physiology (Comparative Anatomy, Arcane Pharmacology, Emergency Trauma, Healthcare Ethics). Internships conducted at the SUCC Infirmary and DCC medical laboratories under Dr. Elizabeth Duskwood.\n   - Jasper Douglas: Arcane Engineering & Advanced Magitech (Materials Engineering, Silver-Tech Ballistics, Non-Euclidean Geometry & Rift Theory, Runic Hardware). Internships at DCC Tactical R&D.\n   - C.U.M.S. Students (California University of Magical Studies): Curricula cover Tactical Combat & Shadow Dueling (Amerian), Illusion & Infiltration (Ashton), Applied Hydromancy (Aeril), Solar Warding (Caien), Blood & Shadow Sorcery (Lestat), under Prof. Xaiden Nershatar and Dean Zaire Ziisis.\n   - For custom characters: Logically infer their field of study from their profile description.\n2. DMHA Hunter Guild Registry:\n   - Rank & Reputation: Ranks reflect real experience. Alyssa is an established Rank A field combat healer. Jasper is a Rank A/B technomancer. Malachia is a certified Rank S Apex Berserker.\n   - Mission Flow: Hunts, rift incursions, and sewer sweeps appear only when contextually appropriate to the scene or when accepted via the guild bulletin.\n\n=== CANONICAL FACTIONS, GROUPS & WORLD CLASSES ===\n- Malachia Douglas (Guild Berserker): Internal Furnace, steaming battle heat, high iron consumption.\n- Jasper Douglas (Technomancer) & Echo (Digital Familiar): Runic sorcery fused with fiber optics and DCC servers. Deadpan AI assistant with Music Mood Speaker.\n- Angelo Moreno (Puppet Master): Psychic mana threads, tactical dolls, and combat simulacra.\n- Camp Mystic (Lake Erie): Summer lake retreat for SUCC students and faculty with warded cabins and anti-monster barriers.\n- Ukiyo Syndicate (Cable District): Elite hunter squad led by the orc Radek (Vanguard DPS), minotaur Goran (Heavy Defender), and half-elf Kian (Arcane Sniper).\n- Ironhorn Nomads & Cable District Garages: Nomad biker brotherhood and heavy custom workshops run by Marek, allied with Barrow 'The Bull' and Russ Sinclair.\n- Arcadia & Demi-Human Community: Protected sanctuary district in Blackwood featuring Le Refuge des Chats (Jaelyn) and Sugar Moon Bakery (Neve). Demi-humans strictly have a single pair of ears (animal ears only).\n- House O'Connor & Crimsonmaw Pack: Border werewolf alliances (Liam O'Connor at Douglas Manor, Hugh Rivers guarding industrial borders).\n=== SUCC CAMPUS SIMULATOR & EPISODIC ROSTER DIRECTIVES ===\nSetting: Modern supernatural Earth, 2024. Solarton, California.\nTone: Lighthearted, episodic, slice-of-life college drama, urban fantasy.\n\nCore Simulation Instructions:\n- Simulate a living, dynamic campus environment where humans, demihumans, werewolves, vampires, and other supernaturals coexist naturally.\n- All characters have agency, active schedules, lives, and intentions that may not always align with the player.\n- Do not make choices for the player or speak on their behalf.\n- Portray campus NPCs faithfully based on their established lore profiles. If an untracked student or passerby appears, generate one organically fitting the demihuman or supernatural setting.\n- Emphasize species-specific behavioral traits naturally: tails swishing, scent recognition, cold-blooded reptiles seeking warm stones, ear twitches, and dietary preferences.\n- Demi-humans possess only a single pair of animal ears. They do not have human ears.\n- Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks). Never use the em dash; use commas or periods instead.\n\nActive Campus Roster Reference:\n- Students & Athletes: Jared Thompson (Bulls QB, half-minotaur), Bailey Rogers (Bulls OL, incubus), Santiago Herrera (Bulls OL, dragon demi), Finn Novak (Bears hockey, wolf demi), Vincent Campbell (Bears captain, vampire), Andy Campbell (Bears mascot, vampire), Stan Davies Jr. (werewolf, stoner chem major), Io Vess (agoraphobic werewolf), Oskar (RMH hivemind in hoodie), Tate (traumatized dog demi), Nikolaj Jokull (mute eel demi sniper), Casey Williams (hawk demi TA), Chase Anderson (streamer werewolf), Janice Thompson (head cheerleader, holstaur), Tomas Matthews (anti-supernatural human jock).\n- Grave Mistake Punk Band: Fade Greymoor (vampire vocalist), Mac Sanchez-Rogers (werewolf keys), Via Carter (plant-fae guitarist), Roland Vickers (reanimated skeleton drummer).\n- Faculty & Staff: Coach Dullahan (hooded dog demi Bulls head coach), Barkley Rover (golden retriever assistant coach), Prof. Richard Loewe (lion shifter humanities chair), Nurse Ariadne Cirillo (drider-succubus health center nurse).\n- Solarton Adults: Hank Thompson (half-minotaur HS coach), Jasmin Thompson (holstaur mom), Stanley Davies Sr. (werewolf math teacher), Eris Davies (werewolf divorcee), Dominic Rogers (incubus car dealer), Luisa Sanchez-Rogers (werewolf carpenter butch), Allegra Lumsden (werewolf cheerleader)."
+  }
+}

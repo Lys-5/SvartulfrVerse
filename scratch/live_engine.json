@@ -1,0 +1,491 @@
+{
+  "id": "engine_HCTPXhL8xr89wUY9r9dYU",
+  "name": "Svartulfr OS",
+  "tagline": "Interactive student smartphone, Douglas family Telegram, SUCCbook social feed, lunar phases and LSE biology tracking for Svartulfr.",
+  "description": "StoryEngine modulare per l'ambientazione Svartúlfr (Blackwood-Douglas / Modern Fantasy).\n\nFunzionalita principali:\n1. Interfaccia Smartphone OS per {{user}} con UI Panel React interattivo (Telegram di Famiglia Douglas, social network studentesco SUCCbook con feed bacheca ed eventi atletici di lotta, portale accademico con corsi e libretto voti).\n2. Calendario Lunare Astronomico 2024/2025 calcolato deterministicamente con bonus di Luna Piena per i Licantropi (MGT, RES, AGI, rigenerazione ferite).\n3. Ciclo Giorno/Notte con potenziamenti per Vampiri e creature dei Rift.\n4. Tracker Biologico LSE per i periodi di Heat e Rut con indicatori ferormonali e raccomandazione soppressori di odore.",
+  "avatar": "",
+  "tags": [
+    "Modern Fantasy",
+    "Werewolf",
+    "Smartphone",
+    "SUCC",
+    "Douglas",
+    "LSE",
+    "Simulation"
+  ],
+  "rating": "explicit",
+  "visibility": "public",
+  "status": "published",
+  "moderation_status": "pending",
+  "moderation_reason": "",
+  "creator": {
+    "uid": "2r4fVpvImte5dbljedLkZJxre2d2",
+    "displayName": "Lys",
+    "photoURL": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/bd18ce0c-6994-4729-845d-1fb1e759f900/public"
+  },
+  "version": 71,
+  "published_revision_id": "engine_revision_q7WrEJnz2cqGk4Qd1BVkT",
+  "created_at": "2026-10-12T09:07:23.325Z",
+  "updated_at": "2026-10-13T16:55:25.155Z",
+  "definition": {
+    "info_board": {
+      "enabled": false,
+      "categories": [],
+      "custom_prompt": ""
+    },
+    "ui_panels": [
+      {
+        "id": "panel_smartphone_os",
+        "name": "Svartulfr Smartphone",
+        "icon": "layout",
+        "placement": "sidebar",
+        "target": "both",
+        "enabled": true,
+        "code": "export default function Panel({ engine }) {\n  const [screen, setScreen] = useState('home'); // 'home' | 'telegram' | 'succbook'\n\n  const moonPhase = String(engine.values.moon_phase || 'Ultimo Quarto Calante');\n  const isFullMoon = Boolean(engine.values.moon_full_active);\n  const isNight = Boolean(engine.values.night_active);\n  const lseStatus = String(engine.values.lse_biology_status || 'Dormant');\n  const daysLeft = Number(engine.values.lse_cycle_days_left ?? 20);\n  const suppressors = Number(engine.values.scent_suppressors_count ?? 3);\n  const packChat = Number(engine.values.pack_chat_unread ?? 3);\n  const succPosts = Number(engine.values.succbook_unread_posts ?? 5);\n  const repScore = Number(engine.values.pack_reputation ?? 25);\n  const repLabel = repScore >= 80 ? 'Riconosciuto' : repScore >= 50 ? 'Rispettato' : 'Matricola';\n  const riftAlert = String(engine.values.rift_threat_level || 'Classe 1 - Stabile');\n\n  const [packUnread, setPackUnread] = useState(packChat);\n  const [succUnread, setSuccUnread] = useState(succPosts);\n  const [suppressorDoses, setSuppressorDoses] = useState(suppressors);\n  const [inputMsg, setInputMsg] = useState('');\n\n  const [chatMessages, setChatMessages] = useState([\n    {\n      id: 1,\n      sender: 'Papà (Erik)',\n      role: 'Prime Alpha',\n      color: 'text-amber-400',\n      badgeColor: 'bg-amber-950 text-amber-300 border border-amber-800',\n      text: 'Ragazzi, siete arrivati al campus? Kaladin ha predisposto la scorta discreta attorno all\\'ingresso est. Niente sciocchezze e prendete i soppressori.',\n      time: '08:02'\n    },\n    {\n      id: 2,\n      sender: 'Noah',\n      role: 'Beta / PR',\n      color: 'text-sky-400',\n      badgeColor: 'bg-sky-950 text-sky-300 border border-sky-800',\n      text: 'Tranquillo Boss, ho già avvistato tre matricole perse al Quad. Io sono al banchetto SUCC. Se Alyssa ritarda è colpa delle scarpe 💅',\n      time: '08:05'\n    },\n    {\n      id: 3,\n      sender: 'Jasper',\n      role: 'Twin / Shield',\n      color: 'text-emerald-400',\n      badgeColor: 'bg-emerald-950 text-emerald-300 border border-emerald-800',\n      text: 'Siamo arrivati. Ho il portatile e le cuffie. Sto accompagnando Alyssa verso la segreteria del dipartimento di Botanica. Noah piantala.',\n      time: '08:08'\n    },\n    {\n      id: 4,\n      sender: 'Malachia',\n      role: 'Apex Predator',\n      color: 'text-rose-400',\n      badgeColor: 'bg-rose-950 text-rose-300 border border-rose-800',\n      text: 'Ho finito i pesi al campo dei Bulls. Chiunque si avvicini con cattive intenzioni se la vede con me. Mandatemi la posizione.',\n      time: '08:11'\n    }\n  ]);\n\n  const notifications = [\n    {\n      id: 1,\n      tag: 'SUCC ACADEMIC',\n      tagColor: 'bg-blue-950 text-sky-300 border border-sky-800',\n      title: 'Sessione Esami Autunno Aperta',\n      desc: 'Registrazione corsi matricole e pre-med disponibile nel portale studenti.',\n      time: '15m fa'\n    },\n    {\n      id: 2,\n      tag: 'BULLS ATHLETICS',\n      tagColor: 'bg-amber-950 text-amber-300 border border-amber-800',\n      title: 'Tryout Stagione Rugby & Football',\n      desc: 'Allenamenti aperti al campo centrale ore 17:30. Alpha e Beta prioritari.',\n      time: '42m fa'\n    },\n    {\n      id: 3,\n      tag: 'DJ FREQUENCY',\n      tagColor: 'bg-purple-950 text-purple-300 border border-purple-800',\n      title: 'Secret Warehouse Rave Announce',\n      desc: 'Underground party venerdì notte nei magazzini industriali di Solarton.',\n      time: '1h fa'\n    },\n    {\n      id: 4,\n      tag: 'CLINICA HSK',\n      tagColor: 'bg-emerald-950 text-emerald-300 border border-emerald-800',\n      title: 'Turni Volontariato Botanica & Pronto Soccorso',\n      desc: 'Bando di supporto medico accademico per matricole con doti rigenerative.',\n      time: '2h fa'\n    },\n    {\n      id: 5,\n      tag: 'SEVEN HILLS SECURITY',\n      tagColor: 'bg-neutral-900 text-zinc-300 border border-zinc-700',\n      title: 'Rilevazione Miasma Rift Perimetro Nord',\n      desc: 'Anomalia Classe 1 sotto controllo dai team di ronda. Nessun pericolo civile.',\n      time: '3h fa'\n    }\n  ];\n\n  const inalaSoppressore = async () => {\n    if (suppressorDoses > 0) {\n      setSuppressorDoses(s => Math.max(0, s - 1));\n    }\n    try {\n      await engine.runCommand('cmd_use_suppressor', {});\n    } catch (e) {}\n  };\n\n  const handleSendMessage = () => {\n    if (!inputMsg.trim()) return;\n    const newEntry = {\n      id: Date.now(),\n      sender: 'Tu',\n      role: 'Me',\n      color: 'text-amber-300',\n      badgeColor: 'bg-amber-950 text-amber-200 border border-amber-800',\n      text: inputMsg.trim(),\n      time: 'Adesso'\n    };\n    setChatMessages(prev => [...prev, newEntry]);\n    setInputMsg('');\n  };\n\n  // VISTA TELEGRAM DOUGLAS\n  if (screen === 'telegram') {\n    return (\n      <div className=\"space-y-3 font-sans text-xs select-none\">\n        <Card className=\"bg-black border-zinc-800 text-zinc-300 shadow-xl overflow-hidden\">\n          <CardHeader className=\"px-4 py-3 bg-neutral-900 border-b border-zinc-800 flex flex-row items-center justify-between\">\n            <div className=\"flex items-center gap-2\">\n              <Button\n                size=\"sm\"\n                variant=\"ghost\"\n                className=\"h-7 px-2 text-xs text-sky-400 hover:text-sky-300 hover:bg-neutral-800 -ml-1 flex items-center gap-1\"\n                onClick={() => setScreen('home')}\n              >\n                <span>←</span>\n                <span>Dashboard</span>\n              </Button>\n            </div>\n            <div className=\"text-right\">\n              <p className=\"font-bold text-xs text-zinc-100\">Famiglia Douglas</p>\n              <p className=\"text-[10px] text-emerald-400\">● 5 membri · 4 online</p>\n            </div>\n          </CardHeader>\n\n          <CardContent className=\"p-4 space-y-3\">\n            <div className=\"space-y-2.5 max-h-[340px] overflow-y-auto pr-1\">\n              {chatMessages.map(msg => (\n                <div key={msg.id} className=\"p-3 bg-neutral-900/95 rounded-lg border border-zinc-800/80 space-y-1\">\n                  <div className=\"flex items-center justify-between\">\n                    <span className={'font-bold text-xs ' + msg.color}>{msg.sender}</span>\n                    <div className=\"flex items-center gap-1.5\">\n                      <span className={'text-[9px] px-1.5 py-0.2 rounded font-semibold ' + msg.badgeColor}>{msg.role}</span>\n                      <span className=\"text-[10px] text-zinc-500 font-mono\">{msg.time}</span>\n                    </div>\n                  </div>\n                  <p className=\"text-xs text-zinc-200 leading-relaxed pt-0.5\">{msg.text}</p>\n                </div>\n              ))}\n            </div>\n\n            {/* Input bar */}\n            <div className=\"pt-2 border-t border-zinc-800 flex gap-2\">\n              <input\n                type=\"text\"\n                value={inputMsg}\n                placeholder=\"Scrivi al gruppo di famiglia...\"\n                onChange={(e) => setInputMsg(e.target.value)}\n                onKeyDown={(e) => { if (e.key === 'Enter') handleSendMessage(); }}\n                className=\"flex-1 bg-neutral-900 text-zinc-200 placeholder-zinc-500 text-xs px-3 py-1.5 rounded-lg border border-zinc-800 focus:outline-none focus:border-sky-500\"\n              />\n              <Button\n                size=\"sm\"\n                className=\"bg-sky-600 hover:bg-sky-500 text-white font-semibold text-xs px-3 h-8\"\n                onClick={handleSendMessage}\n              >\n                Invia\n              </Button>\n            </div>\n          </CardContent>\n        </Card>\n      </div>\n    );\n  }\n\n  // VISTA SUCCBOOK FEED\n  if (screen === 'succbook') {\n    return (\n      <div className=\"space-y-3 font-sans text-xs select-none\">\n        <Card className=\"bg-black border-zinc-800 text-zinc-300 shadow-xl overflow-hidden\">\n          <CardHeader className=\"px-4 py-3 bg-neutral-900 border-b border-zinc-800 flex flex-row items-center justify-between\">\n            <Button\n              size=\"sm\"\n              variant=\"ghost\"\n              className=\"h-7 px-2 text-xs text-yellow-400 hover:text-yellow-300 hover:bg-neutral-800 -ml-1 flex items-center gap-1\"\n              onClick={() => setScreen('home')}\n            >\n              <span>←</span>\n              <span>Dashboard</span>\n            </Button>\n            <div className=\"text-right\">\n              <p className=\"font-bold text-xs text-zinc-100\">SUCCbook Feed</p>\n              <p className=\"text-[10px] text-zinc-400\">Campus Solarton · Notifiche</p>\n            </div>\n          </CardHeader>\n\n          <CardContent className=\"p-4 space-y-3\">\n            <div className=\"flex items-center justify-between pb-1\">\n              <span className=\"text-[11px] text-zinc-400\">Notifiche recenti campus</span>\n              <Button\n                size=\"sm\"\n                variant=\"ghost\"\n                className=\"h-6 text-[10px] text-zinc-400 hover:text-zinc-200 px-1.5\"\n                onClick={() => setSuccUnread(0)}\n              >\n                Segna tutte come lette\n              </Button>\n            </div>\n\n            <div className=\"space-y-2.5 max-h-[340px] overflow-y-auto pr-1\">\n              {notifications.map(item => (\n                <div key={item.id} className=\"p-3 bg-neutral-900/95 rounded-lg border border-zinc-800/80 space-y-1\">\n                  <div className=\"flex items-center justify-between\">\n                    <span className={'text-[9px] px-1.5 py-0.2 rounded font-semibold ' + item.tagColor}>\n                      {item.tag}\n                    </span>\n                    <span className=\"text-[10px] text-zinc-500 font-mono\">{item.time}</span>\n                  </div>\n                  <p className=\"font-semibold text-xs text-zinc-100 pt-0.5\">{item.title}</p>\n                  <p className=\"text-xs text-zinc-300 leading-relaxed\">{item.desc}</p>\n                </div>\n              ))}\n            </div>\n          </CardContent>\n        </Card>\n      </div>\n    );\n  }\n\n  // VISTA HOME (DASHBOARD SMARTPHONE)\n  return (\n    <div className=\"space-y-3 font-sans text-xs select-none\">\n      <Card className=\"bg-black border-zinc-800 text-zinc-300 shadow-xl overflow-hidden\">\n        <CardHeader className=\"px-4 py-3 bg-neutral-900 border-b border-zinc-800 flex flex-row items-center justify-between\">\n          <div className=\"flex items-center gap-2\">\n            <span className=\"w-2.5 h-2.5 rounded-full bg-emerald-400 inline-block animate-pulse\"></span>\n            <span className=\"font-bold text-sm text-zinc-100 tracking-wide\">Svartúlfr OS</span>\n          </div>\n          <Badge className=\"text-[10px] bg-blue-950 text-sky-300 border-0 font-mono px-2 py-0.5\">5G · DOUGLAS NET</Badge>\n        </CardHeader>\n        \n        <CardContent className=\"p-4 space-y-3\">\n          <div className=\"bg-neutral-900 rounded-lg p-3.5 border-0 flex items-center justify-between\">\n            <div className=\"space-y-1\">\n              <p className=\"text-[10px] uppercase font-bold tracking-wider text-zinc-400\">Ciclo Lunare & Orario</p>\n              <p className=\"font-semibold text-xs text-zinc-200\">{moonPhase} <span className=\"text-[11px] text-sky-300 font-normal\">(~48% · Gemelli)</span></p>\n            </div>\n            <div className=\"flex gap-1.5 items-center\">\n              {isNight && (\n                <Badge className=\"bg-blue-950 text-sky-300 border-0 text-[10px] font-semibold px-2 py-0.5\">🌙 Notte</Badge>\n              )}\n              {isFullMoon ? (\n                <Badge className=\"bg-yellow-400 text-black font-bold text-[10px] border-0 px-2 py-0.5\">LUNA PIENA (+MGT)</Badge>\n              ) : (\n                <Badge className=\"bg-neutral-950 text-emerald-400 border border-zinc-800 text-[10px] font-medium px-2 py-0.5\">Stabile</Badge>\n              )}\n            </div>\n          </div>\n\n          <div className=\"bg-neutral-900 rounded-lg p-3.5 border-0 space-y-2.5\">\n            <div className=\"flex items-center justify-between\">\n              <div className=\"space-y-1\">\n                <p className=\"text-[10px] uppercase font-bold tracking-wider text-zinc-400\">Biologia LSE</p>\n                <p className=\"font-semibold text-xs text-amber-300\">{lseStatus}</p>\n              </div>\n              <Badge className=\"bg-yellow-900 text-amber-200 border-0 text-[10px] font-medium px-2 py-0.5\">~{daysLeft} gg al picco</Badge>\n            </div>\n            <div className=\"flex items-center justify-between pt-2 border-t border-zinc-800 text-[11px]\">\n              <span className=\"text-zinc-400\">Soppressori Odore: <strong className=\"text-amber-300 font-bold text-xs\">{suppressorDoses}</strong> dosi</span>\n              <Button size=\"sm\" variant=\"secondary\" className=\"h-7 px-3 text-xs bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border-0\" onClick={inalaSoppressore}>Inala Dose</Button>\n            </div>\n          </div>\n\n          {/* Griglia interattiva con pulsanti cliccabili */}\n          <div className=\"grid grid-cols-2 gap-2.5\">\n            <div\n              onClick={() => {\n                setPackUnread(0);\n                setScreen('telegram');\n              }}\n              className=\"bg-neutral-900 hover:bg-neutral-800 cursor-pointer transition-all active:scale-[0.98] rounded-lg p-3 border border-zinc-800/80 hover:border-sky-700/60 space-y-1 group\"\n            >\n              <div className=\"flex items-center justify-between\">\n                <p className=\"text-[10px] uppercase font-bold tracking-wider text-zinc-400 group-hover:text-sky-300 transition-colors\">Telegram Douglas</p>\n                <span className=\"text-[11px] text-zinc-500 group-hover:text-sky-400 transition-colors\">→</span>\n              </div>\n              <p className=\"text-sm font-bold text-sky-300\">\n                {packUnread} <span className=\"text-[11px] font-normal text-zinc-400\">nuovi msg</span>\n              </p>\n              <p className=\"text-[9px] text-sky-400/80 group-hover:text-sky-300 font-medium\">Tocca per aprire chat</p>\n            </div>\n\n            <div\n              onClick={() => {\n                setSuccUnread(0);\n                setScreen('succbook');\n              }}\n              className=\"bg-neutral-900 hover:bg-neutral-800 cursor-pointer transition-all active:scale-[0.98] rounded-lg p-3 border border-zinc-800/80 hover:border-yellow-700/60 space-y-1 group\"\n            >\n              <div className=\"flex items-center justify-between\">\n                <p className=\"text-[10px] uppercase font-bold tracking-wider text-zinc-400 group-hover:text-yellow-300 transition-colors\">SUCCbook Feed</p>\n                <span className=\"text-[11px] text-zinc-500 group-hover:text-yellow-400 transition-colors\">→</span>\n              </div>\n              <p className=\"text-sm font-bold text-yellow-400\">\n                {succUnread} <span className=\"text-[11px] font-normal text-zinc-400\">notifiche</span>\n              </p>\n              <p className=\"text-[9px] text-yellow-400/80 group-hover:text-yellow-300 font-medium\">Tocca per aprire feed</p>\n            </div>\n          </div>\n\n          <div className=\"bg-neutral-900 rounded-lg p-3 border-0 flex items-center justify-between text-[11px]\">\n            <span className=\"text-zinc-400\">Reputazione Branco:</span>\n            <span className=\"font-semibold text-zinc-200\">{repLabel} <span className=\"text-amber-300 font-mono text-[10px]\">({repScore}/100)</span></span>\n          </div>\n\n          <div className=\"bg-neutral-900 rounded-lg p-3 border-0 flex items-center justify-between text-[11px]\">\n            <span className=\"text-zinc-400\">Allerta Rift (Hunters):</span>\n            <Badge className=\"bg-neutral-950 text-emerald-400 border border-zinc-800 text-[10px] font-medium px-2 py-0.5\">{riftAlert}</Badge>\n          </div>\n        </CardContent>\n      </Card>\n    </div>\n  );\n}"
+      },
+      {
+        "id": "panel_succ_academics",
+        "name": "SUCC · Libretto Accademico",
+        "icon": "book",
+        "placement": "sidebar",
+        "target": "both",
+        "enabled": true,
+        "code": "export default function Panel({ engine }) {\n  // Database Studenti SUCC\n  const STUDENTS_DATA = {\n    alyssa: {\n      name: 'Alyssa Douglas',\n      shortName: 'Alyssa',\n      roleBadge: 'Matricola · Pre-Med',\n      major: 'Scienze Mediche & Botanica Arcana',\n      department: 'Facoltà di Medicina e Fisiologia Demi-Umani',\n      gpa: '3.92',\n      gpaLabel: 'Eccellente (Summa)',\n      credits: 28,\n      totalCredits: 180,\n      internship: 'Infermeria SUCC & Laboratori Medici DCC (Supervisione Dr.ssa Duskwood)',\n      courses: [\n        { code: 'MED-101', name: 'Anatomia Comparata Demi-Umani', prof: 'H. Vance', cfu: 8, grade: 'A+' },\n        { code: 'BOT-104', name: 'Botanica Arcana & Proprietà Lunari', prof: 'M. Willow', cfu: 6, grade: 'A' },\n        { code: 'FAR-202', name: 'Farmacologia & Inibitori Ferormonali', prof: 'E. Duskwood', cfu: 8, grade: 'A' },\n        { code: 'EMR-108', name: 'Primo Soccorso & Traumi da Argento', prof: 'G. Vance', cfu: 6, grade: 'A+' }\n      ]\n    },\n    jasper: {\n      name: 'Jasper Douglas',\n      shortName: 'Jasper',\n      roleBadge: '1° Anno · Ingegneria',\n      major: 'Ingegneria Arcana & Meccanica Avanzata',\n      department: 'Dipartimento di Tecnologie Silver-Tech e Magitech',\n      gpa: '3.78',\n      gpaLabel: 'Distinto',\n      credits: 30,\n      totalCredits: 180,\n      internship: 'R&D Tecnologico & Droni Tattici DCC (Laboratorio Ovest)',\n      courses: [\n        { code: 'ENG-102', name: 'Balistica Silver-Tech & Armi Magiche', prof: 'K. Rourke', cfu: 8, grade: 'A' },\n        { code: 'RIF-201', name: 'Geometria Non-Euclidea & Teoria dei Rift', prof: 'V. Aris', cfu: 6, grade: 'A-' },\n        { code: 'MAT-105', name: 'Ingegneria dei Materiali Anti-Miasma', prof: 'L. Sterling', cfu: 8, grade: 'B+' },\n        { code: 'RUN-110', name: 'Fabbricazione Runica & Magitech', prof: 'T. Stone', cfu: 8, grade: 'A+' }\n      ]\n    },\n    noah: {\n      name: 'Noah Douglas',\n      shortName: 'Noah',\n      roleBadge: '2° Anno · Public Relations',\n      major: 'Scienze Politiche, PR & Management Sportivo',\n      department: 'Scuola di Relazioni Istituzionali e Diplomazia',\n      gpa: '3.55',\n      gpaLabel: 'Buono',\n      credits: 54,\n      totalCredits: 180,\n      internship: 'Ufficio Relazioni Pubbliche DCC & Addetto Stampa SUCC Bulls',\n      courses: [\n        { code: 'COM-201', name: 'Comunicazione Istituzionale & Crisi di Branco', prof: 'D. Sterling', cfu: 8, grade: 'A' },\n        { code: 'DIR-204', name: 'Diritto Commerciale Fazioni Supernatural', prof: 'E. Thornton', cfu: 8, grade: 'B+' },\n        { code: 'MKT-208', name: 'Marketing & Sponsorizzazioni DMHA Bulls', prof: 'G. Hayes', cfu: 6, grade: 'A' },\n        { code: 'DIP-210', name: 'Diplomazia Inter-Specie & Mediazione', prof: 'M. Mirei', cfu: 6, grade: 'A-' }\n      ]\n    },\n    malachia: {\n      name: 'Malachia Douglas',\n      shortName: 'Malachia',\n      roleBadge: '3° Anno Senior · Tattica',\n      major: 'Scienze Motorie, Tattica di Combattimento & Difesa',\n      department: 'Accademia Tattica e Addestramento Operativo',\n      gpa: '3.30',\n      gpaLabel: 'Soddisfacente',\n      credits: 82,\n      totalCredits: 180,\n      internship: 'Istruttore Assistente Combattimento Corpo a Corpo SUCC',\n      courses: [\n        { code: 'TAC-301', name: 'Tattica di Branco & Incursioni nei Rift', prof: 'K. Nargathon', cfu: 10, grade: 'A+' },\n        { code: 'SPT-305', name: 'Condizionamento Fisico Demi-Umani & Shift', prof: 'Coach D', cfu: 8, grade: 'A+' },\n        { code: 'LEG-202', name: 'Legislazione Uso della Forza nei Distretti', prof: 'R. Miller', cfu: 6, grade: 'C+' },\n        { code: 'BIO-209', name: 'Fisiologia dello Sforzo & Resistenza Miasma', prof: 'E. Duskwood', cfu: 6, grade: 'B' }\n      ]\n    },\n    jared: {\n      name: 'Jared Thompson',\n      shortName: 'Jared',\n      roleBadge: '2° Anno · Economics',\n      major: 'Economia, Finanza & Gestione Aziendale',\n      department: 'Scuola di Business e Finanza Applicata',\n      gpa: '3.85',\n      gpaLabel: 'Ottimo',\n      credits: 58,\n      totalCredits: 180,\n      internship: 'Divisione Finanziaria Douglas Commercial Coalition (Desk Investimenti)',\n      courses: [\n        { code: 'ECO-201', name: 'Contabilità Avanzata & Bilanci Fazioni', prof: 'R. Klein', cfu: 8, grade: 'A' },\n        { code: 'FIN-203', name: 'Macroeconomia Mercati Arcani & Cristalli', prof: 'H. Adler', cfu: 8, grade: 'A' },\n        { code: 'DIR-205', name: 'Diritto Tributario & Contrattualistica DCC', prof: 'E. Thornton', cfu: 6, grade: 'A-' },\n        { code: 'STA-208', name: 'Statistica Applicata al Rischio Rift', prof: 'H. Choi', cfu: 6, grade: 'A' }\n      ]\n    },\n    edric: {\n      name: 'Edric Douglas',\n      shortName: 'Edric',\n      roleBadge: 'Matricola · Studi Umanistici',\n      major: 'Scienze Umanistiche & Storia delle Fazioni',\n      department: 'Dipartimento di Lettere e Retaggio Supernatural',\n      gpa: '3.40',\n      gpaLabel: 'Buono',\n      credits: 24,\n      totalCredits: 180,\n      internship: 'Archivio Storico Villa Douglas & Biblioteca Centrale SUCC',\n      courses: [\n        { code: 'HST-101', name: 'Storia delle Guerre di Branco & Trattati', prof: 'E. Holbrook', cfu: 8, grade: 'B+' },\n        { code: 'LNG-105', name: 'Lingue Antiche & Runologia Nordica', prof: 'Revazhael', cfu: 8, grade: 'A' },\n        { code: 'SOC-109', name: 'Sociologia delle Comunità Metropolitane', prof: 'S. Martin', cfu: 8, grade: 'B' }\n      ]\n    },\n    viola: {\n      name: 'Viola Carter',\n      shortName: 'Viola',\n      roleBadge: '2° Anno · Fine Arts',\n      major: 'Belle Arti, Grafica & Design Arcana',\n      department: 'Facoltà di Arti Visive e Simbolismo',\n      gpa: '3.70',\n      gpaLabel: 'Distinto',\n      credits: 52,\n      totalCredits: 180,\n      internship: 'Studio Artistico Seven Hills & Grafica Ufficiale SUCC',\n      courses: [\n        { code: 'ART-201', name: 'Pittura Energetica & Pigmenti Magici', prof: 'E. Delacroix', cfu: 8, grade: 'A' },\n        { code: 'DES-203', name: 'Design Visivo & Identità per Fazioni', prof: 'S. Moreau', cfu: 8, grade: 'A' },\n        { code: 'ARC-207', name: 'Storia dell Arte dei Popoli della Faglia', prof: 'E. Holbrook', cfu: 8, grade: 'B+' }\n      ]\n    }\n  };\n\n  // Rilevamento dinamico degli studenti presenti nel party / DOM\n  const [showAllPack, setShowAllPack] = useState(false);\n\n  // Scansione del DOM per identificare chi e presente nel party\n  const detectedKeys = (() => {\n    if (typeof document === 'undefined') return ['alyssa'];\n    const pageText = (document.body?.innerText || '').toLowerCase();\n    \n    // Controlliamo la presenza dei soli personaggi universitari (escludendo Mac, Erik, Logan ecc.)\n    const candidates = ['alyssa', 'jasper', 'noah', 'malachia', 'jared', 'edric', 'viola'];\n    const found = candidates.filter(key => pageText.includes(key));\n    return found.length > 0 ? found : ['alyssa'];\n  })();\n\n  const activeKeys = showAllPack ? Object.keys(STUDENTS_DATA) : detectedKeys;\n  const [selectedStudentKey, setSelectedStudentKey] = useState(() => activeKeys[0] || 'alyssa');\n\n  const currentKey = activeKeys.includes(selectedStudentKey) ? selectedStudentKey : activeKeys[0] || 'alyssa';\n  const curr = STUDENTS_DATA[currentKey] || STUDENTS_DATA.alyssa;\n\n  return (\n    <div className=\"space-y-3 font-sans text-xs select-none\">\n      <Card className=\"bg-black border-zinc-800 text-zinc-300 shadow-xl overflow-hidden\">\n        <CardHeader className=\"px-4 py-3 bg-neutral-900 border-b border-zinc-800 flex flex-row items-center justify-between\">\n          <div className=\"flex items-center gap-2\">\n            <span className=\"text-base\">🎓</span>\n            <div>\n              <CardTitle className=\"text-sm font-bold text-zinc-100\">SUCC · Libretto Accademico</CardTitle>\n              <CardDescription className=\"text-[10px] text-zinc-400\">Solarton University & Community College</CardDescription>\n            </div>\n          </div>\n          <Badge className=\"bg-blue-950 text-sky-300 border-0 font-bold text-xs px-2.5 py-0.5\">A.A. 2024/2025</Badge>\n        </CardHeader>\n\n        {/* Tab di Selezione Dinamica degli Studenti nel Party */}\n        <div className=\"bg-neutral-950 px-4 py-2 border-b border-zinc-800/80 flex items-center justify-between gap-2 overflow-x-auto\">\n          <div className=\"flex items-center gap-1.5 overflow-x-auto pb-0.5\">\n            {activeKeys.map(k => {\n              const s = STUDENTS_DATA[k];\n              const isSelected = k === currentKey;\n              return (\n                <button\n                  key={k}\n                  onClick={() => setSelectedStudentKey(k)}\n                  className={'px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap flex items-center gap-1 ' + (isSelected ? 'bg-sky-600 text-white shadow-sm' : 'bg-neutral-900 text-zinc-400 hover:text-zinc-200 hover:bg-neutral-800')}\n                >\n                  <span>{s.shortName}</span>\n                  {isSelected && <span className=\"text-[9px] bg-sky-800/80 px-1 rounded font-mono\">{s.gpa}</span>}\n                </button>\n              );\n            })}\n          </div>\n\n          <button\n            onClick={() => setShowAllPack(prev => !prev)}\n            title={showAllPack ? 'Filtra solo membri party attivi' : 'Mostra tutti gli studenti del branco'}\n            className=\"text-[10px] text-zinc-400 hover:text-sky-300 font-medium px-1.5 py-0.5 rounded border border-zinc-800 bg-neutral-900 shrink-0 whitespace-nowrap\"\n          >\n            {showAllPack ? 'Filtra Party' : '+ Branco'}\n          </button>\n        </div>\n\n        <CardContent className=\"p-4 space-y-3.5\">\n          {/* Header Profilo dello Studente Selezionato */}\n          <div className=\"bg-neutral-900 rounded-lg p-3.5 border-0 space-y-1.5\">\n            <div className=\"flex items-center justify-between\">\n              <span className=\"font-bold text-sm text-zinc-100\">{curr.name}</span>\n              <Badge className=\"bg-neutral-950 text-sky-300 border border-zinc-800 text-[10px] font-semibold px-2 py-0.5\">\n                {curr.roleBadge}\n              </Badge>\n            </div>\n            <p className=\"text-xs font-semibold text-amber-300 leading-snug\">{curr.major}</p>\n            <p className=\"text-[10px] text-zinc-400\">{curr.department}</p>\n          </div>\n\n          {/* Statistiche Accademiche (GPA & CFU) */}\n          <div className=\"grid grid-cols-2 gap-2.5\">\n            <div className=\"bg-neutral-900 rounded-lg p-3.5 border-0 text-center space-y-1\">\n              <p className=\"text-[10px] uppercase font-bold tracking-wider text-zinc-400\">Media Accademica (GPA)</p>\n              <p className=\"text-lg font-bold text-emerald-400\">{curr.gpa} <span className=\"text-[10px] font-normal text-zinc-400\">/ 4.00</span></p>\n              <p className=\"text-[10px] text-emerald-300/80 font-medium\">{curr.gpaLabel}</p>\n            </div>\n            <div className=\"bg-neutral-900 rounded-lg p-3.5 border-0 text-center space-y-1\">\n              <p className=\"text-[10px] uppercase font-bold tracking-wider text-zinc-400\">Crediti Universitari</p>\n              <p className=\"text-lg font-bold text-sky-400\">{curr.credits} <span className=\"text-[10px] font-normal text-zinc-400\">/ {curr.totalCredits} CFU</span></p>\n              <div className=\"w-full bg-zinc-800 rounded-full h-1 mt-1 overflow-hidden\">\n                <div className=\"bg-sky-500 h-1 rounded-full\" style={{ width: Math.round((curr.credits / curr.totalCredits) * 100) + '%' }}></div>\n              </div>\n            </div>\n          </div>\n\n          {/* Elenco Insegnamenti del Semestre */}\n          <div className=\"space-y-2\">\n            <div className=\"flex items-center justify-between px-0.5\">\n              <p className=\"text-[10px] uppercase font-bold tracking-wider text-zinc-400\">Insegnamenti & Valutazioni Attive</p>\n              <span className=\"text-[10px] text-sky-300 font-mono\">Semestre 1</span>\n            </div>\n            {curr.courses.map((c, i) => (\n              <div key={i} className=\"bg-neutral-900 hover:bg-zinc-800 transition-colors rounded-lg p-3 border-0 flex items-center justify-between gap-2\">\n                <div className=\"space-y-0.5 min-w-0 pr-1\">\n                  <p className=\"font-semibold text-xs text-zinc-200 leading-snug\">{c.name}</p>\n                  <p className=\"text-[10px] text-zinc-400\">{c.code} · Prof. {c.prof} · <span className=\"text-amber-300 font-medium\">{c.cfu} CFU</span></p>\n                </div>\n                <Badge className=\"bg-neutral-950 text-emerald-400 font-bold border border-zinc-800 text-xs px-2.5 py-0.5 shrink-0\">\n                  {c.grade}\n                </Badge>\n              </div>\n            ))}\n          </div>\n\n          {/* Tirocinio e Laboratori */}\n          <div className=\"bg-neutral-900 rounded-lg p-3.5 border-0 space-y-1\">\n            <p className=\"text-[10px] uppercase font-bold tracking-wider text-zinc-400\">Tirocini & Laboratori Accreditati</p>\n            <p className=\"font-semibold text-xs text-sky-300 leading-snug\">{curr.internship}</p>\n            <p className=\"text-[10px] text-zinc-400\">Certificazione approvata dal Comitato Accademico SUCC</p>\n          </div>\n        </CardContent>\n      </Card>\n    </div>\n  );\n}"
+      },
+      {
+        "id": "panel_dmha_guild",
+        "name": "DMHA · Registro Gilda & Cacce",
+        "icon": "swords",
+        "placement": "sidebar",
+        "target": "both",
+        "enabled": true,
+        "code": "export default function Panel({ engine }) {\n  // Database Cacciatori DMHA\n  const HUNTERS_DATA = {\n    alyssa: {\n      name: 'Alyssa Douglas',\n      shortName: 'Alyssa',\n      rank: 'Rango A',\n      rankColor: 'bg-blue-950 text-sky-300',\n      role: 'Healer & Field Support',\n      squad: 'Douglas Vanguard / Seven Hills Fireteam',\n      credits: 4850,\n      completed: 18,\n      specialty: 'Medicina da Campo, Terapie Anti-Miasma & Incanti Rigenerativi',\n      gear: 'Borsa Medica Rinforzata, Fiale Tattiche & Medaglione Autonomo'\n    },\n    jasper: {\n      name: 'Jasper Douglas',\n      shortName: 'Jasper',\n      rank: 'Rango A',\n      rankColor: 'bg-blue-950 text-sky-300',\n      role: 'Tech Vanguard & Netrunner',\n      squad: 'Douglas Vanguard / Seven Hills Fireteam',\n      credits: 3600,\n      completed: 14,\n      specialty: 'Cyber-Tracciamento Rift, Dispositivi Anti-Interferenza & Katana di Vetro di Drago',\n      gear: 'Katana Dragon Glass, Cuffie Acustiche Tattiche & Deck Portatile'\n    },\n    malachia: {\n      name: 'Malachia Douglas',\n      shortName: 'Malachia',\n      rank: 'Rango S',\n      rankColor: 'bg-rose-950 text-rose-300 border border-rose-800',\n      role: 'Apex Strike / Assaltatore Primario',\n      squad: 'Seven Hills Apex Strike Force',\n      credits: 9200,\n      completed: 35,\n      specialty: 'Neutralizzazione Minacce Classe S, Breccia nei Rift & Caccia ai Capi Branco',\n      gear: 'Nocche Fasciate Incantate, Pettorina Tattica Rinforzata DCC'\n    },\n    noah: {\n      name: 'Noah Douglas',\n      shortName: 'Noah',\n      rank: 'Rango B',\n      rankColor: 'bg-purple-950 text-purple-300',\n      role: 'Logistica & Field Coordinator',\n      squad: 'Douglas Vanguard Support',\n      credits: 2100,\n      completed: 11,\n      specialty: 'Coordinamento Squadre, Negoziazione con Autorità Civili & Mappe Tattiche',\n      gear: 'Visore Tattico a Lenti Oscurate, Terminale Radio Criptato'\n    },\n    mac: {\n      name: 'Mackenzie \"Mac\"',\n      shortName: 'Mac',\n      rank: 'Rango B',\n      rankColor: 'bg-purple-950 text-purple-300',\n      role: 'Infiltration & Scout Operativo',\n      squad: 'Independent Hunters / Task Force California',\n      credits: 2800,\n      completed: 16,\n      specialty: 'Ricognizione Invisibile, Disinnesco Trappole & Movimento Ombra',\n      gear: 'Pugnali da Lancio al Titanio, Mantello Mimetico Anti-Sensori'\n    },\n    jared: {\n      name: 'Jared Thompson',\n      shortName: 'Jared',\n      rank: 'Rango C',\n      rankColor: 'bg-emerald-950 text-emerald-300',\n      role: 'Supporto Tattico & Sicurezza',\n      squad: 'Seven Hills Reserve Perimeter',\n      credits: 1450,\n      completed: 7,\n      specialty: 'Copertura Linea di Ritiro & Rifornimento Munizioni Silver-Tech',\n      gear: 'Fucile Tattico di Precisione, Kit Pronto Soccorso da Campo'\n    },\n    kaladin: {\n      name: 'Kaladin Nargathon',\n      shortName: 'Kaladin',\n      rank: 'Rango S',\n      rankColor: 'bg-rose-950 text-rose-300 border border-rose-800',\n      role: 'Comandante Tattico Generale',\n      squad: 'DCC Executive Strike Team',\n      credits: 12500,\n      completed: 48,\n      specialty: 'Comando Forze Speciali, Bonifica Minacce Apocrypha & Barriere Difensive',\n      gear: 'Lama Cerimoniale Runica, Corazza Integrale DCC Pesante'\n    }\n  };\n\n  // Rilevamento dinamico dei cacciatori nel party / DOM\n  const [showAllGuild, setShowAllGuild] = useState(false);\n\n  const detectedHunterKeys = (() => {\n    if (typeof document === 'undefined') return ['alyssa'];\n    const pageText = (document.body?.innerText || '').toLowerCase();\n    const candidates = ['alyssa', 'jasper', 'malachia', 'noah', 'mac', 'mackenzie', 'jared', 'kaladin'];\n    const found = candidates\n      .map(k => (k === 'mackenzie' ? 'mac' : k))\n      .filter(key => pageText.includes(key));\n    const unique = [...new Set(found)];\n    return unique.length > 0 ? unique : ['alyssa'];\n  })();\n\n  const activeHunterKeys = showAllGuild ? Object.keys(HUNTERS_DATA) : detectedHunterKeys;\n  const [selectedHunterKey, setSelectedHunterKey] = useState(() => activeHunterKeys[0] || 'alyssa');\n\n  const currentHunterKey = activeHunterKeys.includes(selectedHunterKey) ? selectedHunterKey : activeHunterKeys[0] || 'alyssa';\n  const currHunter = HUNTERS_DATA[currentHunterKey] || HUNTERS_DATA.alyssa;\n\n  // Stato dinamico delle Missioni (Accetta / Prenota / Completa)\n  const [userCredits, setUserCredits] = useState(currHunter.credits);\n  const [missionsCompletedCount, setMissionsCompletedCount] = useState(currHunter.completed);\n  const [activeMission, setActiveMission] = useState(null); // null oppure oggetto missione\n\n  const AVAILABLE_MISSIONS = [\n    {\n      id: 'm1',\n      title: 'Scansione Baia di Blackwood & Docks',\n      desc: 'Pattugliamento anomalia miasma Classe 1 lungo i moli fluviali.',\n      rankReq: 'Rango C',\n      rewardCr: 250,\n      rewardText: '250 Crediti · Rango C'\n    },\n    {\n      id: 'm2',\n      title: 'Bonifica Hive Sotterraneo Cable District',\n      desc: 'Incursione coordinata per contenere un focolaio di ratti abissali.',\n      rankReq: 'Rango B',\n      rewardCr: 600,\n      rewardText: '600 Crediti · Rango B'\n    },\n    {\n      id: 'm3',\n      title: 'Fornitura Nuclei Abissali alla Gilda',\n      desc: 'Recupero 3 core energetici integri tra i vecchi depositi industriali.',\n      rankReq: 'Rango C',\n      rewardCr: 400,\n      rewardText: '400 Crediti · Rango C'\n    },\n    {\n      id: 'm4',\n      title: 'Scorta Convoglio Medico HSK nei Bassifondi',\n      desc: 'Protezione furgone medicinali e scorte anti-ferormonali verso la clinica.',\n      rankReq: 'Rango B',\n      rewardCr: 750,\n      rewardText: '750 Crediti · Rango B'\n    },\n    {\n      id: 'm5',\n      title: 'Tracciamento Faglia Anomala Seven Hills',\n      desc: 'Indagine rapida su increspatura dimensionale ad alta intensità a nord.',\n      rankReq: 'Rango A',\n      rewardCr: 1200,\n      rewardText: '1.200 Crediti · Rango A'\n    }\n  ];\n\n  const handleAcceptMission = (mission) => {\n    setActiveMission(mission);\n    try {\n      if (typeof engine.runCommand === 'function') {\n        engine.runCommand('cmd_accept_quest', { title: mission.title });\n      }\n    } catch (e) {}\n  };\n\n  const handleCompleteMission = () => {\n    if (!activeMission) return;\n    setUserCredits(prev => prev + activeMission.rewardCr);\n    setMissionsCompletedCount(prev => prev + 1);\n    setActiveMission(null);\n  };\n\n  const handleAbandonMission = () => {\n    setActiveMission(null);\n  };\n\n  return (\n    <div className=\"space-y-3 font-sans text-xs select-none\">\n      <Card className=\"bg-black border-zinc-800 text-zinc-300 shadow-xl overflow-hidden\">\n        <CardHeader className=\"px-4 py-3 bg-neutral-900 border-b border-zinc-800 flex flex-row items-center justify-between\">\n          <div className=\"flex items-center gap-2\">\n            <span className=\"text-base\">⚔️</span>\n            <div>\n              <CardTitle className=\"text-sm font-bold text-zinc-100\">DMHA · Registro Caccia & Gilda</CardTitle>\n              <CardDescription className=\"text-[10px] text-sky-300 font-medium\">{currHunter.squad}</CardDescription>\n            </div>\n          </div>\n          <Badge className={'font-bold text-xs px-2.5 py-0.5 border-0 ' + currHunter.rankColor}>\n            {currHunter.rank}\n          </Badge>\n        </CardHeader>\n\n        {/* Tab di Selezione Membri del Party registrati alla Gilda */}\n        <div className=\"bg-neutral-950 px-4 py-2 border-b border-zinc-800/80 flex items-center justify-between gap-2 overflow-x-auto\">\n          <div className=\"flex items-center gap-1.5 overflow-x-auto pb-0.5\">\n            {activeHunterKeys.map(k => {\n              const h = HUNTERS_DATA[k];\n              const isSelected = k === currentHunterKey;\n              return (\n                <button\n                  key={k}\n                  onClick={() => {\n                    setSelectedHunterKey(k);\n                    setUserCredits(h.credits);\n                    setMissionsCompletedCount(h.completed);\n                  }}\n                  className={'px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap flex items-center gap-1 ' + (isSelected ? 'bg-amber-600 text-white shadow-sm' : 'bg-neutral-900 text-zinc-400 hover:text-zinc-200 hover:bg-neutral-800')}\n                >\n                  <span>{h.shortName}</span>\n                  <span className=\"text-[9px] bg-neutral-950/80 px-1 rounded font-mono\">{h.rank}</span>\n                </button>\n              );\n            })}\n          </div>\n\n          <button\n            onClick={() => setShowAllGuild(prev => !prev)}\n            title={showAllGuild ? 'Filtra solo cacciatori del party' : 'Mostra tutti i cacciatori'}\n            className=\"text-[10px] text-zinc-400 hover:text-amber-300 font-medium px-1.5 py-0.5 rounded border border-zinc-800 bg-neutral-900 shrink-0 whitespace-nowrap\"\n          >\n            {showAllGuild ? 'Filtra Party' : '+ Roster'}\n          </button>\n        </div>\n\n        <CardContent className=\"p-4 space-y-3.5\">\n          {/* Dettagli Profilo Cacciatore Selezionato */}\n          <div className=\"bg-neutral-900 rounded-lg p-3.5 border-0 space-y-1.5\">\n            <div className=\"flex items-center justify-between\">\n              <span className=\"font-bold text-sm text-zinc-100\">{currHunter.name}</span>\n              <Badge className=\"bg-neutral-950 text-amber-300 border border-zinc-800 text-[10px] font-semibold px-2 py-0.5\">\n                {currHunter.role}\n              </Badge>\n            </div>\n            <p className=\"text-[11px] text-zinc-300 leading-relaxed pt-0.5\"><span className=\"text-zinc-400 font-medium\">Specialità:</span> {currHunter.specialty}</p>\n            <p className=\"text-[10px] text-zinc-400\"><span className=\"text-zinc-500 font-medium\">Equipaggiamento:</span> {currHunter.gear}</p>\n          </div>\n\n          {/* Crediti & Cacce Concluse */}\n          <div className=\"grid grid-cols-2 gap-2.5\">\n            <div className=\"bg-neutral-900 rounded-lg p-3.5 border-0 text-center space-y-1\">\n              <p className=\"text-[10px] uppercase font-bold tracking-wider text-zinc-400\">Crediti Gilda Personali</p>\n              <p className=\"text-sm font-bold text-amber-300\">{userCredits} <span className=\"text-[10px] font-normal text-zinc-400\">CR</span></p>\n            </div>\n            <div className=\"bg-neutral-900 rounded-lg p-3.5 border-0 text-center space-y-1\">\n              <p className=\"text-[10px] uppercase font-bold tracking-wider text-zinc-400\">Cacce Concluse</p>\n              <p className=\"text-sm font-bold text-emerald-400\">{missionsCompletedCount} <span className=\"text-[10px] font-normal text-zinc-400\">Missioni</span></p>\n            </div>\n          </div>\n\n          {/* Stato Missione Attiva con Controlli */}\n          <div className=\"bg-neutral-900 rounded-lg p-3.5 border-0 space-y-2\">\n            <div className=\"flex items-center justify-between\">\n              <span className=\"text-zinc-400 font-medium text-xs\">Stato Incarico Attivo:</span>\n              {activeMission ? (\n                <Badge className=\"bg-yellow-900 text-yellow-300 border-0 text-[10px] font-bold px-2 py-0.5 animate-pulse\">\n                  IN CORSO\n                </Badge>\n              ) : (\n                <Badge className=\"bg-neutral-950 text-zinc-400 border border-zinc-800 text-[10px] font-medium px-2 py-0.5\">\n                  STANDBY / DISPONIBILE\n                </Badge>\n              )}\n            </div>\n\n            {activeMission ? (\n              <div className=\"pt-2 border-t border-zinc-800 space-y-2\">\n                <p className=\"font-semibold text-xs text-yellow-300 leading-snug\">{activeMission.title}</p>\n                <p className=\"text-[11px] text-zinc-300\">{activeMission.desc}</p>\n                <div className=\"flex items-center justify-between pt-1\">\n                  <span className=\"text-[10px] text-amber-300 font-medium\">Ricompensa: +{activeMission.rewardCr} CR</span>\n                  <div className=\"flex gap-1.5\">\n                    <Button\n                      size=\"sm\"\n                      onClick={handleCompleteMission}\n                      className=\"h-7 text-xs bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-2.5\"\n                    >\n                      Completa (+{activeMission.rewardCr} CR)\n                    </Button>\n                    <Button\n                      size=\"sm\"\n                      variant=\"ghost\"\n                      onClick={handleAbandonMission}\n                      className=\"h-7 text-xs text-rose-400 hover:text-rose-300 hover:bg-neutral-800 px-2\"\n                    >\n                      Abbandona\n                    </Button>\n                  </div>\n                </div>\n              </div>\n            ) : (\n              <p className=\"text-[10px] text-zinc-400 pt-0.5\">Seleziona e prenota un contratto dalla bacheca sottostante per iniziare.</p>\n            )}\n          </div>\n\n          {/* Bacheca Contratti & Opportunita Lavorative */}\n          <div className=\"space-y-2\">\n            <div className=\"flex items-center justify-between px-0.5\">\n              <p className=\"text-[10px] uppercase font-bold tracking-wider text-zinc-400\">Bacheca Contratti Disponibili</p>\n              <span className=\"text-[10px] text-sky-300 font-mono\">DMHA Board</span>\n            </div>\n\n            {AVAILABLE_MISSIONS.map((m) => {\n              const isThisActive = activeMission && activeMission.id === m.id;\n              return (\n                <div key={m.id} className=\"bg-neutral-900 hover:bg-zinc-800/90 transition-colors rounded-lg p-3.5 border border-zinc-800/60 space-y-2\">\n                  <div className=\"flex items-center justify-between gap-2\">\n                    <p className=\"font-semibold text-xs text-zinc-200 leading-snug\">{m.title}</p>\n                    <Badge className=\"bg-neutral-950 text-sky-300 border border-zinc-800 text-[10px] font-semibold px-2 py-0.5 shrink-0\">\n                      {m.rankReq}\n                    </Badge>\n                  </div>\n                  <p className=\"text-[11px] text-zinc-400 leading-relaxed\">{m.desc}</p>\n                  \n                  <div className=\"flex items-center justify-between pt-1 border-t border-zinc-800/60\">\n                    <span className=\"text-[10px] font-semibold text-amber-300\">{m.rewardText}</span>\n                    {isThisActive ? (\n                      <Badge className=\"bg-yellow-900 text-yellow-200 border-0 text-[10px] font-bold px-2 py-0.5\">\n                        PRENOTATA\n                      </Badge>\n                    ) : (\n                      <Button\n                        size=\"sm\"\n                        disabled={Boolean(activeMission)}\n                        onClick={() => handleAcceptMission(m)}\n                        className={'h-7 text-xs font-semibold px-3 ' + (activeMission ? 'bg-zinc-800 text-zinc-500 cursor-not-allowed' : 'bg-amber-600 hover:bg-amber-500 text-white')}\n                      >\n                        {activeMission ? 'Occupato' : 'Accetta / Prenota'}\n                      </Button>\n                    )}\n                  </div>\n                </div>\n              );\n            })}\n          </div>\n\n          {/* Inventario Bottino / Materiali */}\n          <div className=\"bg-neutral-900 rounded-lg p-3 border-0 flex items-center justify-between text-[11px]\">\n            <span className=\"text-zinc-400\">Inventario Bottino / Cores:</span>\n            <Badge className=\"bg-blue-950 text-sky-300 border-0 font-mono text-[10px] px-2 py-0.5\">3x Abyssal Core · 2x Silver-Dust</Badge>\n          </div>\n        </CardContent>\n      </Card>\n    </div>\n  );\n}"
+      }
+    ],
+    "prompt_assembly_id": "pha_4f938ypjwke4yXDEqx86B",
+    "target": "both",
+    "worlds": [
+      {
+        "id": "_CgYT8fHXpDC4crjmegQF7",
+        "enabled": true,
+        "condition": {
+          "type": "always"
+        }
+      }
+    ],
+    "schema_version": 1,
+    "variables": [
+      {
+        "id": "quests",
+        "name": "Corsi & Missioni (Quests)",
+        "type": "json",
+        "default": [
+          {
+            "category": "SUCC",
+            "title": "🎓 Fisiologia dei Demi-Umani & Licantropi (Prof. Loewe)",
+            "description": "Frequenza obbligatoria alle lezioni del primo semestre. Laboratorio pratico sull'analisi ferormonale e anatomia a doppio cuore.",
+            "reward": "3 CFU · Voto attuale: A-",
+            "complete": false
+          },
+          {
+            "category": "SUCC",
+            "title": "🎓 Geometria Non-Euclidea & Teoria dei Rift",
+            "description": "Comprendere le fratture dimensionali e la propagazione del miasma nel bacino costiero californiano.",
+            "reward": "4 CFU · In corso",
+            "complete": false
+          },
+          {
+            "category": "DMHA",
+            "title": "⚔️ Pattugliamento Notturno: Baia di Blackwood",
+            "description": "Scansione anomalie termiche e contenimento mostruosita di Classe 1 vicino ai Docks fluviali.",
+            "reward": "250 Guild Credits · Licenza Rango C",
+            "complete": false
+          },
+          {
+            "category": "DMHA",
+            "title": "⚔️ Approvvigionamento Soppressori di Odore",
+            "description": "Ritirare la scorta di cilindri inibitori ferormonali presso l'armeria della gilda prima della Luna Piena del 18 settembre.",
+            "reward": "Item: Scent Suppressors x3",
+            "complete": false
+          }
+        ],
+        "hidden": true
+      },
+      {
+        "id": "moon_phase",
+        "name": "Fase Lunare Corrente",
+        "type": "text",
+        "default": "Ultimo Quarto Calante"
+      },
+      {
+        "id": "moon_full_active",
+        "name": "Luna Piena Attiva",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "id": "werewolf_lunar_buff",
+        "name": "Buff Lunare Licantropi (+2 MGT/RES, +1 AGI)",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "id": "night_active",
+        "name": "Ore Notturne Attive (Vampiri/Undead Buff)",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "id": "lse_biology_status",
+        "name": "Stato Biologico LSE (Heat/Rut)",
+        "type": "text",
+        "default": "Dormant"
+      },
+      {
+        "id": "lse_cycle_days_left",
+        "name": "Giorni al Prossimo Picco LSE",
+        "type": "number",
+        "default": 20
+      },
+      {
+        "id": "pack_chat_unread",
+        "name": "Messaggi Telegram Famiglia Non Letti",
+        "type": "number",
+        "default": 3
+      },
+      {
+        "id": "succbook_unread_posts",
+        "name": "Notifiche Feed SUCCbook",
+        "type": "number",
+        "default": 5
+      },
+      {
+        "id": "pack_reputation",
+        "name": "Reputazione Branco Douglas (0-100)",
+        "type": "number",
+        "default": 25
+      },
+      {
+        "id": "scent_suppressors_count",
+        "name": "Soppressori di Odore (Scent Suppressors)",
+        "type": "number",
+        "default": 3
+      },
+      {
+        "id": "rift_threat_level",
+        "name": "Livello Allerta Rift (Solarton / Blackwood)",
+        "type": "text",
+        "default": "Classe 1 - Stabile"
+      },
+      {
+        "id": "succ_gpa",
+        "name": "Media Accademica SUCC (GPA)",
+        "type": "text",
+        "default": "3.72"
+      },
+      {
+        "id": "succ_cfu_earned",
+        "name": "CFU Totali Acquisiti",
+        "type": "number",
+        "default": 28
+      },
+      {
+        "id": "succ_courses",
+        "name": "Corsi & Voti Libretto SUCC",
+        "type": "json",
+        "default": [
+          {
+            "code": "BIO-101",
+            "title": "Fisiologia Demi-Umani & Licantropi",
+            "professor": "Prof. Loewe",
+            "cfu": 6,
+            "grade": "A-",
+            "status": "In corso",
+            "schedule": "Lun & Mer 10:00 - 12:00 (Lab 4, West Wing)"
+          },
+          {
+            "code": "RFT-204",
+            "title": "Geometria Non-Euclidea & Teoria dei Rift",
+            "professor": "Dott.ssa Vael",
+            "cfu": 8,
+            "grade": "B+",
+            "status": "In corso",
+            "schedule": "Mar & Gio 14:30 - 16:30 (Aula Magna SUCC)"
+          },
+          {
+            "code": "LSE-110",
+            "title": "Ecologia Sociale Lupina & Dinamiche di Branco",
+            "professor": "Doc. H. Sterling",
+            "cfu": 4,
+            "grade": "A",
+            "status": "Completato",
+            "schedule": "Semestre Estivo"
+          }
+        ],
+        "hidden": true
+      },
+      {
+        "id": "succ_extra_activities",
+        "name": "Corsi Extra & Tirocini SUCC",
+        "type": "json",
+        "default": [
+          {
+            "title": "Seminario: Chimica dei Ferormoni & Sintesi Soppressori",
+            "cfu": 2,
+            "type": "Workshop",
+            "available": true
+          },
+          {
+            "title": "Tirocinio Tecnico: Douglas Commercial Coalition (DCC Security)",
+            "cfu": 6,
+            "type": "Stage Curriculare",
+            "available": true
+          },
+          {
+            "title": "Tirocinio Operativo: Reparto Analisi Miasma DMHA",
+            "cfu": 6,
+            "type": "Stage Gilda",
+            "available": false
+          }
+        ],
+        "hidden": true
+      },
+      {
+        "id": "dmha_hunter_rank",
+        "name": "Rango Cacciatore DMHA",
+        "type": "text",
+        "default": "Rango C"
+      },
+      {
+        "id": "dmha_guild_credits",
+        "name": "Crediti Gilda Guadagnati (DMHA)",
+        "type": "number",
+        "default": 1450
+      },
+      {
+        "id": "dmha_missions_completed",
+        "name": "Missioni Completate DMHA",
+        "type": "number",
+        "default": 7
+      },
+      {
+        "id": "dmha_active_mission",
+        "name": "Missione Attualmente Accettata",
+        "type": "json",
+        "default": {
+          "id": "hunt_bay_patrol",
+          "title": "Pattugliamento Notturno: Baia di Blackwood",
+          "target": "Miasma Spiders & Anomalie Fluviali",
+          "rank_required": "C",
+          "reward_credits": 350,
+          "loot_drop": "2x Frammenti Abissali (Classe C), 1x Cuore di Chitina",
+          "progress": "Fase 1: Ispezione Moli Fluviali (In corso)"
+        },
+        "hidden": true
+      },
+      {
+        "id": "dmha_available_missions",
+        "name": "Missioni Disponibili in Bacheca",
+        "type": "json",
+        "default": [
+          {
+            "title": "Bonifica Condotto Fognario Settore 4 (Cable District)",
+            "threat": "Classe 1 - Ratti del Vuoto",
+            "reward": "180 Credits · Cassa Triage",
+            "rank": "D"
+          },
+          {
+            "title": "Scorta Carovana Alchemica verso Hex Valley",
+            "threat": "Classe 2 - Bracconieri & Iene delle Dune",
+            "reward": "500 Credits · Componente Runa",
+            "rank": "C"
+          },
+          {
+            "title": "Incursione Dungeon Hive: Apex Trial Profondita 3",
+            "threat": "Classe 3 - Minotauro Corrotto",
+            "reward": "1.200 Credits · Nucleo Raro",
+            "rank": "B"
+          }
+        ],
+        "hidden": true
+      },
+      {
+        "id": "dmha_loot_inventory",
+        "name": "Bottino & Equipaggiamento Gilda",
+        "type": "json",
+        "default": [
+          {
+            "item": "Cilindri Soppressori Odore DMHA",
+            "qty": 3,
+            "rarity": "Comune"
+          },
+          {
+            "item": "Pugnale in Argento Tempra Douglas",
+            "qty": 1,
+            "rarity": "Non Comune"
+          },
+          {
+            "item": "Fiala Siero Anti-Bruciatura d'Argento",
+            "qty": 2,
+            "rarity": "Raro"
+          }
+        ],
+        "hidden": true
+      },
+      {
+        "id": "succ_track",
+        "name": "Indirizzo Accademico SUCC (Track)",
+        "type": "text",
+        "default": "pre_med"
+      },
+      {
+        "id": "pack_role",
+        "name": "Ruolo nel Branco Douglas",
+        "type": "text",
+        "default": "sentinel"
+      },
+      {
+        "id": "underworld_role",
+        "name": "Specializzazione Underworld / Bassifondi",
+        "type": "text",
+        "default": "fixer"
+      }
+    ],
+    "rules": [
+      {
+        "id": "rule_lunar_buff_active",
+        "label": "Alert Piena Luna & Buff Licantropi",
+        "phase": "before",
+        "enabled": true,
+        "once": false,
+        "condition": {
+          "type": "variable",
+          "variable": "moon_full_active",
+          "operator": "eq",
+          "value": true
+        },
+        "actions": [
+          {
+            "type": "context",
+            "text": "[STORY ENGINE SYSTEM ALERT: Full Moon is currently ACTIVE in California. Werewolves gain +2 MGT, +2 RES, +1 AGI. Senses and instincts are hypersensitive. Demi-humans and werewolves feel intense physical restlessness and increased responsiveness to pack hierarchy.]"
+          }
+        ]
+      },
+      {
+        "id": "rule_scent_leak_alert",
+        "label": "Fuga Ferormonale (Soppressori Esauriti)",
+        "phase": "before",
+        "enabled": true,
+        "once": false,
+        "condition": {
+          "type": "variable",
+          "variable": "scent_suppressors_count",
+          "operator": "lte",
+          "value": 0
+        },
+        "actions": [
+          {
+            "type": "context",
+            "text": "[STORY ENGINE LSE ALERT: The character has run out of scent suppressors (count: 0). Lupine Social Ecology (LSE) rules apply: natural pheromones, territorial musk, and biological status (heat/rut/stress) leak unfiltered into the immediate air, triggering immediate reactions from nearby werewolves and predators.]"
+          }
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "id": "cmd_use_suppressor",
+        "name": "use_suppressor",
+        "label": "Inala Soppressore Ferormonale",
+        "description": "Consuma 1 cilindro inibitore per bloccare le fughe di ferormoni.",
+        "actor": "player",
+        "parameters": [],
+        "condition": {
+          "type": "always"
+        },
+        "actions": [
+          {
+            "type": "add",
+            "variable": "scent_suppressors_count",
+            "value": -1
+          },
+          {
+            "type": "message",
+            "text": "🩺 [Svartulfr OS] Hai inalato una dose di soppressore ferormonale. La tua traccia olfattiva e schermata."
+          }
+        ]
+      }
+    ],
+    "scripts": {
+      "v_e41d4370f725": {
+        "type": "lua",
+        "code": "return {}"
+      }
+    },
+    "lorebooks": [
+      {
+        "id": "_kPzhnGxaRgCMdmgrwWjbY",
+        "enabled": true,
+        "condition": {
+          "type": "always"
+        }
+      },
+      {
+        "id": "_J8x7fwRrpa9C6Wct6hb7p",
+        "enabled": true,
+        "condition": {
+          "type": "always"
+        }
+      },
+      {
+        "id": "_V6jT3gPWDCPdxT2bCedeG",
+        "enabled": true,
+        "condition": {
+          "type": "always"
+        }
+      }
+    ],
+    "presets": [
+      {
+        "id": "preset_student_recruit",
+        "name": "Recluta SUCC / Matricola Standard",
+        "values": {
+          "pack_reputation": 25,
+          "scent_suppressors_count": 3,
+          "rift_threat_level": "Classe 1 - Stabile",
+          "lse_biology_status": "Dormant",
+          "lse_cycle_days_left": 20,
+          "pack_chat_unread": 3,
+          "succbook_unread_posts": 5
+        }
+      },
+      {
+        "id": "preset_douglas_native",
+        "name": "Membro Nativo Branco Douglas",
+        "values": {
+          "pack_reputation": 85,
+          "scent_suppressors_count": 5,
+          "rift_threat_level": "Classe 1 - Stabile",
+          "lse_biology_status": "Pre-Rut / Alert",
+          "lse_cycle_days_left": 12,
+          "pack_chat_unread": 0,
+          "succbook_unread_posts": 2
+        }
+      },
+      {
+        "id": "preset_hardcore_rut",
+        "name": "Picco Stagionale LSE (Rut / Heat Attivo)",
+        "values": {
+          "pack_reputation": 40,
+          "scent_suppressors_count": 0,
+          "rift_threat_level": "Classe 2 - Fluttuante",
+          "lse_biology_status": "Peak Rut / Full Heat",
+          "lse_cycle_days_left": 0,
+          "pack_chat_unread": 8,
+          "succbook_unread_posts": 12
+        }
+      }
+    ],
+    "status_template": "🌙 Luna: {{values.moon_phase}}{{#if values.moon_full_active}} (LUNA PIENA: Buff Licantropi ON){{/if}}{{#if values.night_active}} | 🌌 Notte (Buff Vampiri/Ombre ON){{/if}} | 🩺 LSE: {{values.lse_biology_status}} (~{{values.lse_cycle_days_left}} gg al picco) | 📱 Notifiche: {{values.pack_chat_unread}} Telegram / {{values.succbook_unread_posts}} SUCCbook",
+    "prompt_template": "=== SVARTULFR OS: STORYENGINE DIRECTIVES ===\nThis story is enhanced by Svartulfr OS, providing live tracking of Lupine Social Ecology (LSE), lunar phases, Douglas family communications, SUCC academic life, and DMHA hunting logs.\n- Status, lunar buffs, biologically shifting pheromones, and academic/hunting records are live-tracked via the interactive panels.\n- Treat characters naturally in accordance with the live date, moon phase, and active rank.\n- Digital notifications (Telegram, SUCCbook, Guild Board) are surfaced cleanly in the UI; reflect incoming communications naturally in scene without generating ASCII mockup interfaces.\n\n=== ADATTAMENTO DINAMICO DEL PROFILO ACCADEMICO E DI CACCIA DI {{user}} ===\nNel narrare la vita universitaria al SUCC, i corsi, gli esami, i tirocini e le attivita di gilda di {{user}}, adatta sempre materie, orari e rango alla biografia e specializzazione effettiva di {{user}}:\n1. Corso di Studi Universitario (SUCC Major):\n   - Se {{user}} e Alyssa Douglas: segue il percorso Pre-Med / Scienze Mediche e Fisiologia Demi-Umani (Anatomia Comparata Licantropi/Demi-Umani, Farmacologia Arcana & Inibitori Ferormonali, Traumatologia d Emergenza e Ferite da Argento, Diritto Sanitario). I suoi tirocini si svolgono presso l Infermeria SUCC e i laboratori medici DCC supervisionati dalla Dr.ssa Elizabeth Duskwood.\n   - Se {{user}} e Jasper Douglas: segue il percorso Ingegneria Arcana & Meccanica Avanzata (Ingegneria dei Materiali, Balistica Silver-Tech, Geometria Non-Euclidea & Teoria dei Rift, Fabbricazione Runica). I suoi tirocini si svolgono presso il reparto R&D Tecnologico e droni della DCC.\n   - Per qualunque altro personaggio o studente custom: deduci coerentemente il piano di studi (es. Alchimia, Diritto Societario, Lettere Arcane, Scienze Tattiche di Caccia) dai dettagli e dal background indicati nella descrizione di {{user}}.\n2. Registro Gilda dei Cacciatori (DMHA):\n   - Rango e Reputazione: Il rango riflette lo status reale del personaggio. Alyssa Douglas e un cacciatore esperto e rispettato di Rango A, non una recluta. Jasper e una figura tecnica di supporto di Rango A/B.\n   - Stato Missioni: Non inventare missioni attive forzate se {{user}} e impegnato nella vita sociale, familiare o romantica quotidiana. Le cacce, le incursioni nei Rift e le richieste di bonifica devono emergere solo quando pertinenti alla scena o quando {{user}} sceglie attivamente di accettare un incarico dalla bacheca della Gilda.\n\n=== ESPANSIONI CANONICHE: CLASSI SPECIALI, CYBERSPAZIO & CAMP MYSTIC ===\n- Malachia Douglas (Guild Berserker): Fornace Interna, calore fumante in frenesia e consumo di ferro.\n- Jasper Douglas (Technomancer) & Echo (Digital Familiar): Magia runica applicata a fibra ottica e server DCC. Echo assistente deadpan con Music Mood Speaker.\n- Angelo Moreno (Puppet Master): Fili di mana psichici, bambole e simulacri tattici.\n- Camp Mystic (Lago Erie): Riserva estiva per studenti e facolta del SUCC con chalet fortificati e barriere antimostro."
+  }
+}

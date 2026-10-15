@@ -1,0 +1,1630 @@
+{
+  "id": "_CgYT8fHXpDC4crjmegQF7",
+  "_id": "_CgYT8fHXpDC4crjmegQF7",
+  "created_at": "2026-09-18T10:30:20.705Z",
+  "updated_at": "2026-10-03T01:42:37.242Z",
+  "name": "Svartulfr",
+  "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/98e2d06d-a675-45e3-6096-cf976b547400/public",
+  "background": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/40cd8fd2-d4de-4a29-fcf6-c562b903ea00/public",
+  "tags": [
+    "Third",
+    "AnyPOV",
+    "multiple-characters",
+    "Original",
+    "Fantasy",
+    "Modern",
+    "Supernatural",
+    "Action",
+    "Adventure",
+    "Romance",
+    "Monster",
+    "Forest",
+    "City",
+    "narrator",
+    "Italian",
+    "English",
+    "Human",
+    "Demihuman",
+    "Werewolf",
+    "substances",
+    "discrimination",
+    "Breeding",
+    "ScentPlay",
+    "Claiming",
+    "Alpha"
+  ],
+  "community_tags": [],
+  "description": "Svart\u00falfr | Urban is set in modern-day supernatural California, where an ancient werewolf dynasty, chaotic campus life, and high-stakes dungeon incursions collide. At its center lies Blackwood: the thousand-year-old supernatural seat tucked inland within dense pine forests, ruled by the Douglas-Bloodmoon werewolf dynasty. A short drive away sits Solarton, the vibrant coastal college town hosting SUCC (Supernatural University of Central California), where young supernaturals, demi-humans, and mages navigate collegiate freedom, raw impulses, and intense rivalries.\n\nThe patriarch, Erik Douglas, heads the Douglas Commercial Coalition (DCC), an ancient merchant house founded in 1666 that grew into an international trade empire. Since 2019, the DCC has fielded its own heavily armed Security Division, commanded by Major Kaladin Nargathon\u2014an elite PMC answering family curfews and territorial breaches with biometric drones, silver-tipped ordnance, and tactical extraction teams.\n\nUnderneath the corporate towers and neon nightlife lies the Modern Fantasy frontier: dimensional Rifts, monster-infested Dungeon Hives, and the Hunters Guild. In districts like the Cable District and the Dockside riverfront, licensed vanguard teams like Team Ukiyo (led by the werewolf vanguard Radek, the minotaur tank Goran, and the half-elf DPS Kian) and nomadic heavy-hitters like Marek and the Ironhorn Nomads brave subterranean Apex Trials. Here, modern tactical gear merges with abyssal cores, enchanted weaponry, and sacred relics, creating a lucrative and lethal dungeon-crawler economy guarded by Council master builders like Barrow 'The Bull'.\n\nRoleplay in Svart\u00falfr is raw, visceral, and completely unchained. Every interaction pulses with Lupine Social Ecology (LSE): active olfactory awareness, shifting pheromones, intense dominance and submission dynamics, territorial drives, and the primal heat and rut cycles of werewolves and demi-humans. Adult characters experience fierce romantic chemistry, unfiltered passion, unapologetic desire, and brutal tactical combat in dark alleys and dungeon depths alike.\n\nThe overarching narrator is Wulfnic B\u00e1leygr, the immortal 1199-year-old Firstborn werewolf consecrated by Fenris in 827 AD. Having crossed the Arctic by longship and planted the sacred yew on the banks of the Yarrow in 1022 AD, the one-eyed Primordial watches every generation of his bloodline through the stolen eye of Odin the Betrayer, chronicling a saga of ancient blood, untamed desire, and perilous modern power.",
+  "tagline": "Millennial werewolf dynasty, college chaos at SUCC, unchained passions, and deadly dungeon incursions in supernatural modern California.",
+  "chat_name": "",
+  "visibility": "friends",
+  "status": "approved",
+  "rating": "explicit",
+  "creator": {
+    "_id": "2r4fVpvImte5dbljedLkZJxre2d2",
+    "uid": "2r4fVpvImte5dbljedLkZJxre2d2",
+    "bio": "Been deep in the RPG rabbit hole since 2004, started with D&D 3.0 ngl the nostalgia hits different ;; grinded through MUDs, Land chats, Teamspeak and eventually Discord, one of the rare girls in the wild back then :3\n\nKept the tabletop grind alive the whole time. now with AI finally cooking and holding it down, i'm giving life to the characters that spent years collecting dust on paper >:)\n\nYeah, the same lore-heavy NPCs from my campaigns, expect detailed worldbuilding and a lot of unhinged lore drops lmao xD",
+    "tagline": "Senior FE Dev & UI Designer (She/Her) -_-!",
+    "vanityUrl": "lys",
+    "backgroundURL": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/508d176f-8a76-44d9-65fc-f98997264800/public",
+    "photoURL": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/bd18ce0c-6994-4729-845d-1fb1e759f900/public",
+    "displayName": "Lys",
+    "role": "user",
+    "equipped_border": null,
+    "equipped_badges": []
+  },
+  "approval_date": "2026-10-01T01:20:19.653Z",
+  "rejection_date": null,
+  "approval_comment": "Auto-approved by moderation system",
+  "rejection_comment": null,
+  "can_fork": false,
+  "enable_ai_tool_creation": true,
+  "entity_statistics": {
+    "_id": "_WpktghWwJNGp9UewqDHac",
+    "id": "_WpktghWwJNGp9UewqDHac",
+    "total_likes": 1,
+    "total_views": 29,
+    "total_messages": 234,
+    "total_chats": 4,
+    "total_comments": 0,
+    "liked_by_me": true
+  },
+  "guild_id": null,
+  "is_guild_hall": false,
+  "linked_character_settings": {},
+  "secrets": {},
+  "scripts": {
+    "auto_persona_sync": {
+      "code": "-- /sync\n-- Sincronizza Livelli, StatSvartulfr, Inventario e Mappa l'identit\u00e0 per le Attitudes\n\nlocal persona_name = string.lower(persona.name or currentPersona.name or userName or \"\")\n\nlocal is_jasper = string.find(persona_name, \"jasper\") ~= nil\nlocal is_alyssa = string.find(persona_name, \"alyssa\") ~= nil\n\nif not is_jasper and not is_alyssa then\n    return \"Nessuna Persona canonica rilevata. Nessuna sincronizzazione necessaria.\"\nend\n\nlocal synced_char = \"\"\nlocal char_id = \"\"\nlocal forced_context = \"\"\nlocal pid = persona.id or currentPersona.id or \"\"\n\nif is_jasper then\n    synced_char = \"Jasper Douglas Bloodmoon\"\n    char_id = \"_x3VY2kcbaDbKyCqywGeET\"\n    \n    if setTrackedStat then\n        setTrackedStat(\"level\", 19)\n        setTrackedStat(\"stat_1\", 2)\n        setTrackedStat(\"stat_2\", 3)\n        setTrackedStat(\"stat_3\", 8)\n        setTrackedStat(\"stat_4\", 9)\n        setTrackedStat(\"stat_5\", 3)\n        setTrackedStat(\"stat_6\", 6)\n    end\n    \n    -- INVENTARIO JASPER\n    if addItemToInventory and pid ~= \"\" then\n        addItemToInventory(pid, \"Smartphone\")\n        addItemToInventory(pid, \"Grimaldelli Tattici\")\n        addItemToInventory(pid, \"Coltello da Combattimento\")\n        addItemToInventory(pid, \"Chiavi della Moto\")\n    end\n\n    forced_context = \"[SYSTEM NOTICE: {{user}} is canonically \" .. synced_char .. \" (ID: \" .. char_id .. \"). All NPCs must apply their established Attitudes and relationships directed at \" .. synced_char .. \" directly to {{user}}.]\"\n\nelseif is_alyssa then\n    synced_char = \"Alyssa Douglas Bloodmoon\"\n    char_id = \"_MXcEC8Y6B3BNm3b1ttHj6\"\n\n    if setTrackedStat then\n        setTrackedStat(\"level\", 19)\n        setTrackedStat(\"stat_1\", 2)\n        setTrackedStat(\"stat_2\", 4)\n        setTrackedStat(\"stat_3\", 4)\n        setTrackedStat(\"stat_4\", 7)\n        setTrackedStat(\"stat_5\", 8)\n        setTrackedStat(\"stat_6\", 6)\n    end\n    \n    -- INVENTARIO ALYSSA\n    if addItemToInventory and pid ~= \"\" then\n        addItemToInventory(pid, \"Smartphone\")\n        addItemToInventory(pid, \"Trauma Kit Medico\")\n        addItemToInventory(pid, \"Chiavi del SUV\")\n        addItemToInventory(pid, \"Tesserino Universitario SUCC\")\n    end\n\n    forced_context = \"[SYSTEM NOTICE: {{user}} is canonically \" .. synced_char .. \" (ID: \" .. char_id .. \"). All NPCs must apply their established Attitudes and relationships directed at \" .. synced_char .. \" directly to {{user}}.]\"\nend\n\nif memory and memory.set then\n    memory.set(\"active_pc_id\", char_id)\n    memory.set(\"persona_synced\", true)\n    memory.set(\"persona_relationship_override\", forced_context)\n    memory.set(\"suppress_npc_\" .. char_id, true)\nend\n\nif notify then\n    notify(\"\u2705 Sync completato: \" .. synced_char .. \" (Lv. 19). Attitudes agganciate e Inventario caricato!\")\nend\n\nreturn forced_context",
+      "type": "lua"
+    },
+    "sync": {
+      "type": "lua",
+      "code": "-- /sync\n-- Sincronizza Livelli, StatSvartulfr, Inventario e Mappa l'identit\u00e0 per le Attitudes\n\nlocal persona_name = string.lower(persona.name or currentPersona.name or userName or \"\")\n\nlocal is_jasper = string.find(persona_name, \"jasper\") ~= nil\nlocal is_alyssa = string.find(persona_name, \"alyssa\") ~= nil\n\nif not is_jasper and not is_alyssa then\n    return \"Nessuna Persona canonica rilevata. Nessuna sincronizzazione necessaria.\"\nend\n\nlocal synced_char = \"\"\nlocal char_id = \"\"\nlocal forced_context = \"\"\nlocal pid = persona.id or currentPersona.id or \"\"\n\nif is_jasper then\n    synced_char = \"Jasper Douglas Bloodmoon\"\n    char_id = \"_x3VY2kcbaDbKyCqywGeET\"\n    \n    if setTrackedStat then\n        setTrackedStat(\"level\", 19)\n        setTrackedStat(\"stat_1\", 2)\n        setTrackedStat(\"stat_2\", 3)\n        setTrackedStat(\"stat_3\", 8)\n        setTrackedStat(\"stat_4\", 9)\n        setTrackedStat(\"stat_5\", 3)\n        setTrackedStat(\"stat_6\", 6)\n    end\n    \n    -- INVENTARIO JASPER\n    if addItemToInventory and pid ~= \"\" then\n        addItemToInventory(pid, \"Smartphone\")\n        addItemToInventory(pid, \"Grimaldelli Tattici\")\n        addItemToInventory(pid, \"Coltello da Combattimento\")\n        addItemToInventory(pid, \"Chiavi della Moto\")\n    end\n\n    forced_context = \"[SYSTEM NOTICE: {{user}} is canonically \" .. synced_char .. \" (ID: \" .. char_id .. \"). All NPCs must apply their established Attitudes and relationships directed at \" .. synced_char .. \" directly to {{user}}.]\"\n\nelseif is_alyssa then\n    synced_char = \"Alyssa Douglas Bloodmoon\"\n    char_id = \"_MXcEC8Y6B3BNm3b1ttHj6\"\n\n    if setTrackedStat then\n        setTrackedStat(\"level\", 19)\n        setTrackedStat(\"stat_1\", 2)\n        setTrackedStat(\"stat_2\", 4)\n        setTrackedStat(\"stat_3\", 4)\n        setTrackedStat(\"stat_4\", 7)\n        setTrackedStat(\"stat_5\", 8)\n        setTrackedStat(\"stat_6\", 6)\n    end\n    \n    -- INVENTARIO ALYSSA\n    if addItemToInventory and pid ~= \"\" then\n        addItemToInventory(pid, \"Smartphone\")\n        addItemToInventory(pid, \"Trauma Kit Medico\")\n        addItemToInventory(pid, \"Chiavi del SUV\")\n        addItemToInventory(pid, \"Tesserino Universitario SUCC\")\n    end\n\n    forced_context = \"[SYSTEM NOTICE: {{user}} is canonically \" .. synced_char .. \" (ID: \" .. char_id .. \"). All NPCs must apply their established Attitudes and relationships directed at \" .. synced_char .. \" directly to {{user}}.]\"\nend\n\nif memory and memory.set then\n    memory.set(\"active_pc_id\", char_id)\n    memory.set(\"persona_synced\", true)\n    memory.set(\"persona_relationship_override\", forced_context)\n    memory.set(\"suppress_npc_\" .. char_id, true)\nend\n\nif notify then\n    notify(\"\u2705 Sync completato: \" .. synced_char .. \" (Lv. 19). Attitudes agganciate e Inventario caricato!\")\nend\n\nreturn forced_context"
+    },
+    "hud": {
+      "type": "lua",
+      "code": "-- /hud Command\nif notify then\n    notify(\"Stampa InfoBoard / Status RPG in corso...\")\nend\nif setAuthorNote then\n    setAuthorNote(\"[InfoBoard/Status] - Use this section to display tracked stats.\")\nend\nreturn \"HUD displayed.\""
+    },
+    "outfit": {
+      "type": "lua",
+      "code": "-- /outfit Command\nlocal args = ctx.trigger_message or \"\"\nargs = string.gsub(args, \"^/outfit%s*\", \"\")\nif args == \"\" then\n    args = \"default outfit\"\nend\n\nif notify then\n    notify(\"\ud83d\udc57 Outfit changed to: \" .. args)\nend\n\nif setAuthorNote then\n    setAuthorNote(\"[Outfit Update] - The user is now wearing: \" .. args)\nend\n\nreturn \"[SYSTEM NOTICE: {{user}} changed outfit to \" .. args .. \"]\""
+    },
+    "time": {
+      "type": "lua",
+      "code": "-- /time Command\nlocal args = ctx.trigger_message or \"\"\nargs = string.gsub(args, \"^/time%s*\", \"\")\nif args == \"\" then\n    args = \"Time has passed...\"\nend\n\nif notify then\n    notify(\"\u23f3 Timeskip: \" .. args)\nend\n\nreturn \"[SYSTEM NOTICE: \" .. args .. \"]\""
+    },
+    "testlua": {
+      "code": "log(\"--- AVVIO DIAGNOSTICA LUA ---\")\nfor k, v in pairs(_G) do\n    if type(v) == \"function\" then\n        local name = string.lower(k)\n        if string.find(name, \"item\") or string.find(name, \"inv\") or string.find(name, \"give\") then\n            log(\"Trovata funzione: \" .. k)\n        end\n    end\nend\nlog(\"--- FINE DIAGNOSTICA ---\")\nreturn \"Guarda la console Lua!\"",
+      "type": "lua"
+    }
+  },
+  "commands": [
+    {
+      "name": "sync",
+      "type": "command",
+      "description": "Synchronize canonical stats and map Jasper/Alyssa to {{user}}",
+      "callback": "sync",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "auto_persona_sync",
+      "type": "turn",
+      "description": "Auto maps persona at chat start",
+      "callback": "auto_persona_sync",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "hud",
+      "type": "command",
+      "description": "Displays the InfoBoard or RPG Status on screen",
+      "callback": "hud",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "outfit",
+      "type": "command",
+      "description": "Forza il cambio d'abito",
+      "callback": "outfit",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "time",
+      "type": "command",
+      "description": "Gestisce il timeskip",
+      "callback": "time",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  ],
+  "custom_introduction": true,
+  "introduction_pages": [
+    {
+      "id": "p_lore_guide",
+      "type": "info",
+      "title": "Guida al Mondo: Licantropi, LSE & Modern Fantasy",
+      "body": "# Guida al Mondo: Licantropi, LSE & Modern Fantasy\n\nBenvenuto nel bacino costiero della California del sud, un crocevia urbano dove i grattacieli bagnati dalla nebbia dell'oceano incontrano l'attivit\u00e0 sismica dei **Rift**, le incursioni mostruose della **DMHA** (Dungeon & Monster Hazard Administration) e il dominio secolare dei branchi di licantropi.\n\n---\n\n### La Biologia dei Licantropi e dei Demi-Umani\nIn questo mondo, i licantropi e i demi-umani non sono mostri della luna piena hollywoodiani, ma una specie senziente con fisiologia avanzata:\n* **Unico Paio di Orecchie**: Possiedono **esclusivamente orecchie animali** sulla sommit\u00e0 del capo. Non esiste un secondo paio di orecchie umane.\n* **Fisiologia a Doppio Cuore**: Il sistema circolatorio possiede un secondo cuore che pompa sangue iper-ossigenato sotto sforzo e durante il *Partial Shift*.\n* **Rigenerazione Cellulare Lunare**: Le ferite guariscono a velocit\u00e0 prodigiosa, accelerata dalla luce lunare.\n* **Vulnerabilit\u00e0 all'Argento**: Il contatto con l'argento puro inibisce la rigenerazione, provoca ustioni chimiche istantanee e paralizza la trasformazione.\n* **Olfatto e Ferormoni**: L'olfatto legge lo stato d'animo, la menzogna, la paura, l'eccitazione e l'intenzione altrui con precisione scientifica.\n\n---\n\n### Il Sistema LSE (Caratteristiche Secondarie Lupine)\nAll'interno della societ\u00e0 e del branco, la biologia si articola in ranghi istintivi profondi:\n* **Alpha**: Leader naturali e protettori d'impatto. Emettono ferormoni imponenti e padroneggiano il *Command* vocale, capace di piegare all'obbedienza istintiva.\n* **Beta**: La spina dorsale tattica ed esecutiva. Mente salda, mediatori leali e combattenti disciplinati.\n* **Omega**: Il nucleo empatico ed emotivo del branco. Sensi olfattivi ipersensibili, cicli di calore periodici e potenti istinti protettivi e di legame.\n* **Delta**: Esploratori, sentinelle agili e osservatori indipendenti che colmano il divario sociale tra Alpha e Omega.\n* **Enigma**: L'apice sacro e rarissimo (~1 per generazione). Natura duale Alpha/Omega con autorit\u00e0 assoluta e immunit\u00e0 totale a qualsiasi condizionamento esterno.\n\n---\n\n### Come Iniziare la Tua Avventura\n* **Consiglio per la Massima Immersione**: Creare un personaggio **Licantropo** (o Demi-umano) ti permetter\u00e0 di vivere appieno le dinamiche viscerali del branco, l'olfatto ferormonale, il legame dei nodi e le tensioni territoriali di Blackwood City.\n* **Piena Libert\u00e0**: Puoi comunque scegliere liberamente qualunque altra razza (Umano, Elfo, Nano, Orco, Minotauro, Vampiro, Demone, ecc.) per vivere la storia come specialista della gilda DMHA, agente delle corporazioni o investigatore esterno!",
+      "visible_when": []
+    },
+    {
+      "id": "p_1790742409994",
+      "type": "character",
+      "title": "Choose"
+    },
+    {
+      "id": "p_1790742443973",
+      "type": "species_select",
+      "title": "Species"
+    },
+    {
+      "id": "p_1790742318091",
+      "type": "select",
+      "title": "Rank and Biology",
+      "field_id": "field-secondary-sex",
+      "visible_when": []
+    },
+    {
+      "id": "p_1790742470105",
+      "type": "occupation_select",
+      "title": "Occupation"
+    },
+    {
+      "id": "p_1790742291022",
+      "type": "select",
+      "title": "Factions",
+      "field_id": "field-origin"
+    },
+    {
+      "id": "p_1790742319037",
+      "type": "select",
+      "title": "Role",
+      "field_id": "field-role"
+    },
+    {
+      "id": "p_1790742549704",
+      "type": "rpg_build",
+      "title": "Stats",
+      "visible_when": []
+    },
+    {
+      "id": "p_1790815750560",
+      "type": "select",
+      "title": "Inventory",
+      "field_id": "field-1790815568423"
+    }
+  ],
+  "intro_fields": {
+    "field-origin": {
+      "type": "select",
+      "label": "Qual e la tua appartenenza o fazione di partenza?",
+      "required": true,
+      "bindings": [
+        {
+          "kind": "remember",
+          "key": "player_origin"
+        },
+        {
+          "kind": "activate"
+        },
+        {
+          "kind": "set_location"
+        }
+      ],
+      "options": [
+        {
+          "value": "pack_douglas",
+          "label": "Branco Douglas (Blackwood City)"
+        },
+        {
+          "value": "dmha_hunter",
+          "label": "Cacciatore con Licenza DMHA (Divisione Rift)"
+        },
+        {
+          "value": "succ_academic",
+          "label": "Studente o Ricercatore alla SUCC (Solarton)"
+        },
+        {
+          "value": "underworld_independent",
+          "label": "Operatore Indipendente / Fixer dei Bassifondi"
+        }
+      ],
+      "location_map": {
+        "pack_douglas": "_9H2EmzRm92QxBpkmJUR1z",
+        "dmha_hunter": "_82cNpDwVJwVd8qGRUgFw8",
+        "succ_academic": "_j67Dp2PVwFCpdrfWRYV2M",
+        "underworld_independent": "_X4A8gWVr43a7dRr9TbJ4m"
+      },
+      "title": "Qual e la tua appartenenza o fazione di partenza?"
+    },
+    "field-secondary-sex": {
+      "type": "select",
+      "label": "Qual e la tua biologia o rango secondario?",
+      "required": true,
+      "bindings": [
+        {
+          "kind": "remember",
+          "key": "player_secondary_sex"
+        },
+        {
+          "kind": "activate"
+        }
+      ],
+      "options": [
+        {
+          "value": "alpha",
+          "label": "Alpha (Dominante, autorevole, presenza imponente e ferormoni forti)"
+        },
+        {
+          "value": "beta",
+          "label": "Beta (Pragmatico, affidabile, colonna portante tattica)"
+        },
+        {
+          "value": "omega",
+          "label": "Omega (Empatico, intuitivo, olfatto finissimo e profondo senso di connessione)"
+        },
+        {
+          "value": "delta",
+          "label": "Delta (Adattabile, vigile, esploratore indipendente)"
+        },
+        {
+          "value": "standard",
+          "label": "Non-Lupino (Fisiologia e psicologia ordinaria / Altra specie)"
+        }
+      ],
+      "title": "Qual e la tua biologia o rango secondario?"
+    },
+    "field-role": {
+      "type": "select",
+      "label": "Qual e il tuo ruolo tattico sul campo?",
+      "required": true,
+      "bindings": [
+        {
+          "kind": "remember",
+          "key": "player_role"
+        },
+        {
+          "kind": "activate"
+        }
+      ],
+      "options": [
+        {
+          "value": "vanguard",
+          "label": "Vanguard (Prima linea pesante, assorbimento danni e difesa alleati)"
+        },
+        {
+          "value": "striker",
+          "label": "Striker (Assaltatore agile, colpi mirati sui punti deboli dei mostri)"
+        },
+        {
+          "value": "infiltrator",
+          "label": "Infiltrator / Scout (Rilevamento anomalie, trappole e furtivita)"
+        },
+        {
+          "value": "combat_medic",
+          "label": "Combat Medic (Soccorso traumi da squarcio e neutralizzazione miasma)"
+        },
+        {
+          "value": "specialist",
+          "label": "Specialista Civile / Intel (Netrunner, investigatore o diplomatico)"
+        }
+      ],
+      "title": "Qual e il tuo ruolo tattico sul campo?"
+    },
+    "field-1790815568423": {
+      "type": "item_select",
+      "label": "Inventory",
+      "description": "",
+      "required": true,
+      "pool": [
+        {
+          "lexicon_entry_id": "_XyPQbcYGhh7FbQTN4Py2p"
+        },
+        {
+          "lexicon_entry_id": "_bPh4kGmBQWczPJW2yf7G6"
+        },
+        {
+          "lexicon_entry_id": "_aqUFagqQnjUUjynEmxXFM"
+        },
+        {
+          "lexicon_entry_id": "_AnjFMMp2TXJebQWUHKMYW"
+        },
+        {
+          "lexicon_entry_id": "_746G8T2RVL2tRExw337cq"
+        },
+        {
+          "lexicon_entry_id": "_mtny9zMQxyk6166R2ctDM"
+        },
+        {
+          "lexicon_entry_id": "_9TydMzqz7TAyggeMyVjnW"
+        },
+        {
+          "lexicon_entry_id": "_NXGxXRm4eEpNrGk1tjjNH"
+        },
+        {
+          "lexicon_entry_id": "_gQga39XbehpJa2YLjKBN4"
+        },
+        {
+          "lexicon_entry_id": "_XRYgVtcEUq7fEj7GaqERR"
+        },
+        {
+          "lexicon_entry_id": "_N3UKUdUwaWeKnD3EEXrUU"
+        },
+        {
+          "lexicon_entry_id": "_H6xyd4Wf8UnDhH62yhLb2"
+        },
+        {
+          "lexicon_entry_id": "_8WaPQUH42VgQz2xVXaJF7"
+        },
+        {
+          "lexicon_entry_id": "_h4A1mMrYQy36kbY62ChdN"
+        },
+        {
+          "lexicon_entry_id": "_B3Y9cAUxJNbx266Ph1hCX"
+        },
+        {
+          "lexicon_entry_id": "_GNAP7tw8UWry76Dww36FR"
+        },
+        {
+          "lexicon_entry_id": "_zhejTy83qc3bg6MNGU6ak"
+        },
+        {
+          "lexicon_entry_id": "_Hk8fbwR2qnc7qyn87w7KE"
+        },
+        {
+          "lexicon_entry_id": "_yqJhrzm6KWPtFy9F736rD"
+        },
+        {
+          "lexicon_entry_id": "_BRjbkk8JM3Jw1xyJGgzDH"
+        },
+        {
+          "lexicon_entry_id": "_PRnARzHmDLjC2ELUCFP2A"
+        },
+        {
+          "lexicon_entry_id": "_YxGJRFDkjdVyeH1mJNM1T"
+        },
+        {
+          "lexicon_entry_id": "_UVX1RAqE8CWz8ywYkT4Fm"
+        },
+        {
+          "lexicon_entry_id": "_eDhQ8NgT8eG9A67AEJbUH"
+        },
+        {
+          "lexicon_entry_id": "_4XxeUWQBrBUJxH6JjQtNq"
+        }
+      ],
+      "bindings": [
+        {
+          "kind": "activate"
+        },
+        {
+          "kind": "grant_currency",
+          "currency_id": "fbecc738-f9f7-4426-b8a1-a237b8ad922c",
+          "amount": 2500
+        },
+        {
+          "kind": "remember",
+          "key": "player_inventory"
+        }
+      ],
+      "title": "Inventory"
+    }
+  },
+  "intro_include_character_select": false,
+  "intro_include_rpg_build": false,
+  "intro_playable_character_ids": [
+    "_x3VY2kcbaDbKyCqywGeET",
+    "_MXcEC8Y6B3BNm3b1ttHj6"
+  ],
+  "intro_greeting": "",
+  "hide_world_intro_entry": false,
+  "persona_presets": [
+    {
+      "id": "pp_jasper",
+      "label": "Jasper (Spell-Hacker)",
+      "name": "Jasper Douglas Bloodmoon",
+      "pronoun_subjective": "he",
+      "pronoun_objective": "him",
+      "pronoun_possessive_determiner": "his",
+      "pronoun_possessive_pronoun": "his",
+      "pronoun_reflexive": "himself",
+      "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/0a5a04e2-3586-4a65-5f48-ddd180221400/public",
+      "description": "[NAME: Jasper Douglas-Bloodmoon; SPECIES: Werewolf (Founding Bloodline); AGE: 21; ROLE: Founding Beta, Underground DJ Frequency, Arcane Netrunner, Guild Infiltrator, Playable Persona; TRAITS: Sarcastic, Brilliant, Rebel, Hyper-Protective, Cynical, Tactical; CORE: Unseen digital nervous system and lethal shadow of Alyssa; GEAR: Dragon Glass Katana, Abyssal Armor & Daggers, Slicing Smartwatch, Enchanted DJ Headphones; SKILLS: Deep Leyline-Diving, Spell-Hacking, Abyssal Combat]\n\nBACKSTORY: Direct descendant of the Bloodmoon-Douglas line, twin brother to Alyssa. While the rest of the pack operates in plain sight or through corporate power, Jasper moves through the electronic and arcane underbelly of Blackwood and Solarton. Hyper-protective of Alyssa and devoted to the pack despite his cynical exterior.\n\nVOICE & BEHAVIOR: Speaks with dry wit, sharp observational sarcasm, and low, calm intensity. Dialogue in quotes, plain text actions, no em-dash."
+    },
+    {
+      "id": "pp_alyssa",
+      "label": "Alyssa (The White Moon)",
+      "name": "Alyssa Douglas Bloodmoon",
+      "pronoun_subjective": "she",
+      "pronoun_objective": "her",
+      "pronoun_possessive_determiner": "her",
+      "pronoun_possessive_pronoun": "hers",
+      "pronoun_reflexive": "herself",
+      "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/ba5a7fed-8425-478e-4314-16fb78d58300/public",
+      "description": "[NAME: Alyssa Douglas-Bloodmoon; SPECIES: Werewolf (Founding Bloodline); AGE: 21; ROLE: Dominant Omega, SUCC Pre-Med, Field Medic, Pack Mom Designate, Playable Persona; TRAITS: Altruistic, Empathetic, Gentle, Pacifist, Resilient, Tactically Intuitive; CORE: Pure-hearted emotional anchor of Villa Douglas; TWIN_BOND: Deeply enmeshed protector bond with Jasper; GEAR: Yellow VW Beetle (\"LIL MN\"), Medical & Botanical Bag, Dragon Glass Katana (entrusted to Jasper); VOW: Absolute Pacifist Vow, immune to Alpha Command]\n\nBACKSTORY: Direct descendant of the Bloodmoon-Douglas line, sacred White Moon and twin sister to Jasper. Dedicated pre-med student at SUCC and vanguard healer who refuses to take life, channeling pure healing arcane energy and soothing violent rage through her rare pacifying scent-aura.\n\nVOICE & BEHAVIOR: Warm, polite, grounded, and fiercely protective of her patients and pack. Dialogue in quotes, plain text actions, no em-dash."
+    }
+  ],
+  "stat_templates": [
+    {
+      "id": "t_jasper_hacker",
+      "name": "Jasper Douglas (Spell-Hacker / Infiltrator)",
+      "description": "Specialista arcano-tecnologico e ombra letale del branco Douglas. Mente acuta e riflessi fulminei per incursioni nei Rift e spell-hacking.",
+      "base_stats": {
+        "strength": 8,
+        "perception": 12,
+        "endurance": 9,
+        "charisma": 9,
+        "intelligence": 17,
+        "agility": 16,
+        "luck": 10
+      },
+      "species_id": "_rc4QKj1LcdMMbVzKbzcjg",
+      "occupation_id": "_W4UcW6NBWD8jdYjLEgKRt"
+    },
+    {
+      "id": "t_alyssa_medic",
+      "name": "Alyssa Douglas (Field Medic / Healing Mage)",
+      "description": "La White Moon di Villa Douglas. Maestra nella stabilizzazione di traumi da miasma nei Rift, empatia istintiva e potente aura curativa.",
+      "base_stats": {
+        "strength": 8,
+        "perception": 8,
+        "endurance": 13,
+        "charisma": 16,
+        "intelligence": 16,
+        "agility": 12,
+        "luck": 8
+      },
+      "species_id": "_rc4QKj1LcdMMbVzKbzcjg",
+      "occupation_id": "_WfdjmNDk3UfwBXnb229nz"
+    }
+  ],
+  "scan_depth": 5,
+  "pending_events_lookahead_hours": 72,
+  "avatar_activation_prefix": "",
+  "avatar_activation_suffix": "",
+  "content_folders": {
+    "characters": [],
+    "locations": []
+  },
+  "context_description": "Svart\u00falfr | Urban is set in modern-day supernatural California, where an ancient werewolf dynasty, chaotic campus life, and high-stakes dungeon incursions collide. At its center lies Blackwood: the thousand-year-old supernatural seat tucked inland within dense pine forests, ruled by the Douglas-Bloodmoon werewolf dynasty. A short drive away sits Solarton, the vibrant coastal college town hosting SUCC (Supernatural University of Central California), where young supernaturals, demi-humans, and mages navigate collegiate freedom, raw impulses, and intense rivalries.\n\nThe patriarch, Erik Douglas, heads the Douglas Commercial Coalition (DCC), an ancient merchant house founded in 1666 that grew into an international trade empire. Since 2019, the DCC has fielded its own heavily armed Security Division, commanded by Major Kaladin Nargathon\u2014an elite PMC answering family curfews and territorial breaches with biometric drones, silver-tipped ordnance, and tactical extraction teams.\n\nUnderneath the corporate towers and neon nightlife lies the Modern Fantasy frontier: dimensional Rifts, monster-infested Dungeon Hives, and the Hunters Guild. In districts like the Cable District and the Dockside riverfront, licensed vanguard teams like Team Ukiyo (led by the werewolf vanguard Radek, the minotaur tank Goran, and the half-elf DPS Kian) and nomadic heavy-hitters like Marek and the Ironhorn Nomads brave subterranean Apex Trials. Here, modern tactical gear merges with abyssal cores, enchanted weaponry, and sacred relics, creating a lucrative and lethal dungeon-crawler economy guarded by Council master builders like Barrow 'The Bull'.\n\nRoleplay in Svart\u00falfr is raw, visceral, and completely unchained. Every interaction pulses with Lupine Social Ecology (LSE): active olfactory awareness, shifting pheromones, intense dominance and submission dynamics, territorial drives, and the primal heat and rut cycles of werewolves and demi-humans. Adult characters experience fierce romantic chemistry, unfiltered passion, unapologetic desire, and brutal tactical combat in dark alleys and dungeon depths alike.\n\nThe overarching narrator is Wulfnic B\u00e1leygr, the immortal 1199-year-old Firstborn werewolf consecrated by Fenris in 827 AD. Having crossed the Arctic by longship and planted the sacred yew on the banks of the Yarrow in 1022 AD, the one-eyed Primordial watches every generation of his bloodline through the stolen eye of Odin the Betrayer, chronicling a saga of ancient blood, untamed desire, and perilous modern power.",
+  "base_instructions": "<core_writing_rules>\n- Language: L'Italiano e' la \"Lingua Comune\" di questo mondo. Tutta la narrazione, i pensieri interni e i dialoghi ordinari DEVONO essere in italiano naturale ed espressivo.\n- POV & Tense: Terza persona limitata, tempo presente, voce attiva. Ancorare la scena alla prospettiva di un singolo personaggio alla volta (di norma {{char}} o gli NPC attivi nel momento); cambiare punto di vista solo a stacchi netti di scena.\n- Autonomous Direction: {{char}} e gli NPC agiscono con motivazioni chiare, iniziano e portano avanti scene, conflitti o tensioni senza aspettare passivamente {{user}}.\n- Prose: Dichiarare le azioni in modo diretto, incisivo e multi-sensoriale. Variare la lunghezza delle frasi per seguire il ritmo emotivo. Evitare cliche' e ripetizioni di epiteti.\n- Spatial Continuity: Mantenere posture, distanze, orientamento e posizioni plausibili e coerenti con i turni precedenti.\n- Response Length: Calibrare la lunghezza sulla scena. Concisa per scambi veloci, piu' estesa per momenti significativi. Chiudere sempre su una frase compiuta che inviti naturalmente l'intervento di {{user}}.\n- Absolute Rule: Non fare mai puppetting su {{user}}. Azioni, battute e stati interni appartengono esclusivamente a {{user}}.\n</core_writing_rules>",
+  "final_instructions": "Roleplay and world guidance for Svartulfr | Blackwood-Douglas:\n- Language: L'italiano e' la lingua comune. Narrazione, dialoghi e pensieri sono sempre in italiano. Se un personaggio usa una lingua straniera: \"Frase originale\" (traduzione italiana).\n- Output: Fornire ESCLUSIVAMENTE la narrazione della storia. Nessun preambolo, pianificazione o tag <thinking>.\n- Multi-Character Rendering: Quando in un messaggio agisce o parla piu' di un personaggio (inclusi {{char}} ed NPC), inserire il nome del personaggio attivo seguito da due punti all'inizio del paragrafo (es. Erik Douglas: Guarda la mappa sul tavolo prima di parlare, \"Non possiamo aspettare oltre.\").\n- Format discipline: dialoghi sempre tra virgolette doppie standard (\"...\"), narrazione e azioni in testo semplice senza asterischi, asterischi riservati esclusivamente a pensieri interni non detti (*...*). Vietato l'uso dell'em dash; usare virgole, due punti o punti fermi.\n- LSE Biology & Senses: Onorare la Lupine Social Ecology (olfatto attivo, feromoni, gerarchia di branco, dominanza/sottomissione, calori, rut e morsi di legame).\n- Unchained Adult Dynamics: Totale liberta' espressiva per romance, erotismo esplicito, violenza e raid di dungeon.\n- Platform Policy & Minor Safety: Minori (come Edric Douglas, 12 anni) rigorosamente NPC di sfondo non romanzeabili. Intimita' e attrazione riservate unicamente a personaggi maggiorenni (18+). Nessuna zoofilia, niente necrofilia o guro.\n- Boundaries: Non controllare ne' decidere mai le azioni, le parole o i pensieri di {{user}}.",
+  "system_prompt_override": "<system_role>\nNarrative engine and author of a grounded, immersive modern fantasy roleplay. You control all NPCs and {{char}} with independent agency, distinct psychological depth, and shifting moods. The human player strictly controls {{user}}. Chat history canon and world lore take absolute priority.\n</system_role>\n\n<user_boundaries>\n- Strictly forbidden to write, assume, or dictate {{user}}'s dialogue, thoughts, feelings, decisions, movements, or internal reactions.\n- Describe only what is physically observable from the environment and NPC perspectives. Write the world's reactions to {{user}}, never {{user}}'s reactions to the world.\n</user_boundaries>\n\n<calendar_and_lunar_cycle>\n- Chronology: Proleptic Gregorian calendar starting from the epoch of December 21, 827 CE. Present Year is 2024. Days are 24 hours long, divided into 7 days a week (Monday through Sunday).\n- Lunar Phases & Werewolf Ecology: Track the lunar cycle (29.5 days: New Moon, Waxing Crescent, First Quarter, Waxing Gibbous, Full Moon, Waning Gibbous, Last Quarter, Waning Crescent).\n- The Full Moon intensifies lupine instincts, heightened olfactory perception, territorial aggression, and heat/rut receptivity.\n- The New Moon offers emotional quiet and introspective grounding.\n- Waxing phases elevate pack energy, drive, and physical vitality; waning phases favor stealth, healing, and strategic consolidation.\n</calendar_and_lunar_cycle>\n\n<demihuman_anatomy_and_bloodlines>\n- Demihuman Anatomy: Demihumans and beast-folk possess strictly ONE pair of ears: their animal ears. They do NOT possess a secondary pair of human ears.\n- Scent Ecology: Scent communication is constant, visceral, and involuntary (fear, adrenaline, arousal, territorial dominance, mating readiness, deception). Pheromones shape pack hierarchy and intimate chemistry.\n- Longevity by Blood:\n  * Divine Blood (Firstborn: Wulfnic, Ut, Zefir): Millennia old, physically frozen at the age of Fenris's consecration.\n  * Founding Bloodline (Malachia, Noah, Jasper, Alyssa): Biological aging halts at physical maturity (21 years).\n  * Pureblood Houses (Douglas, Duskwood, Marino, O'Connor): Lifespan 200-400 years, graceful slow aging.\n  * Common Bloodline: Human lifespan (60-80 years), visual aging 1 year for every 5 lived after age 25.\n</demihuman_anatomy_and_bloodlines>\n\n<narrative_stakes_and_realism>\n- Consequences & No Plot Armor: Actions carry permanent, unnerfed weight. Characters and {{user}} can fail, suffer severe injury, shock, exhaustion, or death. Track blood loss, physical trauma, and recovery realistically.\n- Unchained Mature Realism: Visceral, explicit, and unhurried when scenes turn intimate or violent. Portray chemistry, physical textures, fluids, and raw passion in moment-to-moment prose without fade-to-black or euphemistic softening.\n- Tactical & Dungeon Hazard: Dimensional Rifts, Dungeon Hives, and Apex Trials are lethal hazard zones governed by ammo, mana drain, weapon durability, and cooperative tactics.\n- Format Discipline: Dialogue in quotes, actions and narration in plain text (no asterisks). Asterisks are reserved for internal thoughts only. Never use the em dash; use commas or periods instead.\n</narrative_stakes_and_realism>",
+  "world_age": 10489952,
+  "human_start_date": "0827-12-21T00:00:00.000Z",
+  "time_of_day_config": {
+    "day_length": 24,
+    "default_time": 12,
+    "periods": [
+      {
+        "id": "ec7de46b-3945-4912-bd0b-1928d3bf15f2",
+        "name": "Dawn",
+        "description": "The sky lightens with the first pale glow of dawn, painting the horizon in soft pinks and golds.",
+        "start": 5,
+        "end": 7
+      },
+      {
+        "id": "9f89d61d-a529-443e-a3d8-49b318b6285a",
+        "name": "Morning",
+        "description": "Bright morning light fills the world as the day gets underway.",
+        "start": 7,
+        "end": 12
+      },
+      {
+        "id": "7dfc4184-90eb-4833-aa85-7ac5f7170e54",
+        "name": "Afternoon",
+        "description": "The sun hangs high, casting warm afternoon light and long, shifting shadows.",
+        "start": 12,
+        "end": 17
+      },
+      {
+        "id": "457cd377-e7a1-44e6-ac06-2946f5a6d7b2",
+        "name": "Evening",
+        "description": "The sun dips low, bathing everything in warm amber and dusky hues as evening settles in.",
+        "start": 17,
+        "end": 20
+      },
+      {
+        "id": "f76d7337-a7eb-40c5-8358-2eb2273047b1",
+        "name": "Night",
+        "description": "Darkness blankets the world under a canopy of stars and moonlight.",
+        "start": 20,
+        "end": 5
+      }
+    ]
+  },
+  "calendar": {
+    "name": "Gregorian Calendar",
+    "epoch_label": "CE",
+    "day_length": 24,
+    "days_per_week": 7,
+    "day_names": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "start_year": 827,
+    "display_format": "{day_name}, {month} {day}, Year {year} {epoch}",
+    "leap_year": {
+      "every": 4,
+      "except": 100,
+      "unless": 400,
+      "extra_days": 1,
+      "month_id": "feb"
+    },
+    "months": [
+      {
+        "id": "jan",
+        "name": "January",
+        "days": 31
+      },
+      {
+        "id": "feb",
+        "name": "February",
+        "days": 28
+      },
+      {
+        "id": "mar",
+        "name": "March",
+        "days": 31
+      },
+      {
+        "id": "apr",
+        "name": "April",
+        "days": 30
+      },
+      {
+        "id": "may",
+        "name": "May",
+        "days": 31
+      },
+      {
+        "id": "jun",
+        "name": "June",
+        "days": 30
+      },
+      {
+        "id": "jul",
+        "name": "July",
+        "days": 31
+      },
+      {
+        "id": "aug",
+        "name": "August",
+        "days": 31
+      },
+      {
+        "id": "sep",
+        "name": "September",
+        "days": 30
+      },
+      {
+        "id": "oct",
+        "name": "October",
+        "days": 31
+      },
+      {
+        "id": "nov",
+        "name": "November",
+        "days": 30
+      },
+      {
+        "id": "dec",
+        "name": "December",
+        "days": 31
+      }
+    ],
+    "start_month_id": "dec",
+    "start_day_of_month": 21
+  },
+  "starting_properties": [],
+  "world_market_config": {
+    "delivery_premium_pct": 0.15,
+    "sellback_pct": 0.5,
+    "sellback_location_rule": "anywhere",
+    "furnished_lot_bonus_pct": 0.15,
+    "unpaid_rent_rule": "debt"
+  },
+  "world_features": {
+    "inventory": true,
+    "currency": true,
+    "show_party_stats": false,
+    "combat": true,
+    "rpg_stats": true,
+    "ships": true
+  },
+  "stat_config": {
+    "stats": [
+      {
+        "id": "strength",
+        "label": "Strength",
+        "abbreviation": "STR",
+        "enabled": true
+      },
+      {
+        "id": "perception",
+        "label": "Perception",
+        "abbreviation": "PER",
+        "enabled": true
+      },
+      {
+        "id": "endurance",
+        "label": "Endurance",
+        "abbreviation": "END",
+        "enabled": true
+      },
+      {
+        "id": "charisma",
+        "label": "Charisma",
+        "abbreviation": "CHA",
+        "enabled": true
+      },
+      {
+        "id": "intelligence",
+        "label": "Intelligence",
+        "abbreviation": "INT",
+        "enabled": true
+      },
+      {
+        "id": "agility",
+        "label": "Agility",
+        "abbreviation": "AGI",
+        "enabled": true
+      },
+      {
+        "id": "luck",
+        "label": "Luck",
+        "abbreviation": "LCK",
+        "enabled": true
+      }
+    ],
+    "base_value": 8,
+    "max_value": 30,
+    "point_budget": 25,
+    "max_traits": 10,
+    "stat_roles": {
+      "hp": "endurance",
+      "physical_attack": "strength",
+      "physical_defense": "endurance",
+      "special_attack": "charisma",
+      "special_defense": "charisma",
+      "mp_stat": "charisma",
+      "speed": "agility",
+      "accuracy": "perception",
+      "evasion": "agility",
+      "flee": "agility",
+      "luck": "luck"
+    }
+  },
+  "combat_ruleset": {
+    "model": "narrative_tiers",
+    "creature_model": "narrative_tiers",
+    "character_model": "narrative_tiers",
+    "initiative": {
+      "model": "stat",
+      "role": "speed"
+    },
+    "vitals": {
+      "hp": {
+        "base": 25,
+        "per_stat": 3,
+        "per_level": 0,
+        "role": "hp_stat"
+      },
+      "mp": {
+        "base": 20,
+        "per_stat": 3,
+        "per_level": 0,
+        "role": "mp_stat"
+      }
+    },
+    "tiers": {
+      "dc_base": 10,
+      "attack_role": "physical_attack",
+      "defense_role": "physical_defense",
+      "crit_margin": 12
+    },
+    "resource_role": "luck",
+    "battle_prompt": {
+      "instructions": "Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead.\n\nCombat is visceral, tactical, cinematic, and high-stakes. In Dungeons and Rifts, monsters and beasts are lethal threats that can be slain, cleaved, and destroyed with full physical impact. For hunters and allies, combat carries real danger: armor shatters, severe lacerations occur, and mana exhausts, requiring tactical protection from frontline tanks (Malachia, Goran) to intercept fatal strikes, and urgent field medicine from healers (Alyssa). Outside dungeons (sparring, campus brawls, intra-pack disputes), combat resolves strictly through non-lethal submission, knockout, or yielding."
+    }
+  },
+  "relationship_config": {
+    "enabled": true,
+    "decay_curve": "ease_out",
+    "magnitudes": {
+      "regular": {
+        "persistent": 2,
+        "moodlet_delta": 8,
+        "duration_hours": 36
+      },
+      "severe": {
+        "persistent": 6,
+        "moodlet_delta": 18,
+        "duration_hours": 96
+      }
+    },
+    "custom_moodlets": [
+      {
+        "id": "m_pack_resonance",
+        "label": "Pack Resonance",
+        "delta": 15,
+        "duration_hours": 48
+      },
+      {
+        "id": "m_pheromone_haze",
+        "label": "Pheromone Haze",
+        "delta": 20,
+        "duration_hours": 24
+      },
+      {
+        "id": "m_mated_bonding",
+        "label": "Mated Bonding",
+        "delta": 35,
+        "duration_hours": 168
+      },
+      {
+        "id": "m_territorial_threat",
+        "label": "Territorial Threat",
+        "delta": -20,
+        "duration_hours": 48
+      },
+      {
+        "id": "m_submissive_reverence",
+        "label": "Submissive Reverence",
+        "delta": 10,
+        "duration_hours": 36
+      },
+      {
+        "id": "m_blood_debt",
+        "label": "Blood Debt",
+        "delta": 30,
+        "duration_hours": 168
+      },
+      {
+        "id": "m_betrayed_pack_trust",
+        "label": "Betrayed Pack Trust",
+        "delta": -35,
+        "duration_hours": 168
+      }
+    ],
+    "tier_ladder": [
+      {
+        "id": "nemesis",
+        "label": "Nemesis",
+        "min_points": -100,
+        "color": "#8B0000"
+      },
+      {
+        "id": "enemy",
+        "label": "Enemy",
+        "min_points": -80,
+        "color": "#C0392B"
+      },
+      {
+        "id": "despised",
+        "label": "Despised",
+        "min_points": -60,
+        "color": "#E74C3C"
+      },
+      {
+        "id": "hated",
+        "label": "Hated",
+        "min_points": -40,
+        "color": "#D35400"
+      },
+      {
+        "id": "disliked",
+        "label": "Disliked",
+        "min_points": -20,
+        "color": "#E67E22"
+      },
+      {
+        "id": "stranger",
+        "label": "Stranger",
+        "min_points": -7,
+        "color": "#7F8C8D"
+      },
+      {
+        "id": "acquaintance",
+        "label": "Acquaintance",
+        "min_points": 3,
+        "color": "#5DADE2"
+      },
+      {
+        "id": "friend",
+        "label": "Friend",
+        "min_points": 8,
+        "color": "#27AE60"
+      },
+      {
+        "id": "close_friend",
+        "label": "Close Friend",
+        "min_points": 18,
+        "color": "#1E8449"
+      },
+      {
+        "id": "best_friend",
+        "label": "Best Friend",
+        "min_points": 30,
+        "color": "#00A896"
+      },
+      {
+        "id": "romantic_interest",
+        "label": "Romantic Interest",
+        "min_points": 45,
+        "color": "#9B59B6"
+      },
+      {
+        "id": "lover",
+        "label": "Lover",
+        "min_points": 60,
+        "color": "#E91E63"
+      },
+      {
+        "id": "partner",
+        "label": "Partner",
+        "min_points": 75,
+        "color": "#9C27B0"
+      },
+      {
+        "id": "soulmate",
+        "label": "Soulmate",
+        "min_points": 90,
+        "color": "#FF1493"
+      }
+    ],
+    "relationship_prompt": {
+      "heading": "Relationships",
+      "wrapper_start": "<Bonds>",
+      "wrapper_end": "</Bonds>",
+      "per_character_line": "{{name}} regards you as a {{tier}}{{#if mood}} (currently feeling {{mood}}){{/if}}.",
+      "instructions": "Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks). Never use the em dash.\n\nCharacters must behave in strict accordance with their relationship tier and current emotional state. A Stranger or Acquaintance remains guarded, professional, or aloof, especially within lupine and pack territory where scent and trust take time to forge. Romantic or intimate devotion is earned through genuine shared experience, loyalty, or pack integration, never unearned or instantaneous. When a character feels a temporary mood, let it subtly shade their body language, scent, and tone without breaking their core personality."
+    }
+  },
+  "inline_command_config": {
+    "sections": {
+      "item_use": {
+        "instructions": "- >use <item> [on <target>] : use a consumable or tactical item (healing cylinders, mana elixirs, abyssal cores, scent suppressors, silver-burn balm, triage kits)\n"
+      },
+      "basic_combat": {
+        "instructions": "- >attack <target> [with <weapon_or_spell>] : attack a target with equipped weapon (katana, cleaver, daggers, warhammer), claws, or combat magic\n- >defend : take a fortified defensive stance, raise vanguard wards, or shield allies\n- >run : attempt to disengage or retreat from battle\n"
+      },
+      "character_battle": {
+        "instructions": "- >fight <enemy1>, <enemy2> [with <ally1>, <ally2>] : start combat against dungeon monsters, beasts, rivals, or hostile squads (party allies join automatically if no allies specified)\n"
+      },
+      "relationship": {
+        "instructions": "- >like <target> <reason> : a character warms slightly toward the target\n- >love <target> <reason> : a character warms strongly toward the target\n- >dislike <target> <reason> : a character cools slightly toward the target\n- >hate <target> <reason> : a character cools strongly toward the target\n- >mood <name> <moodlet> : a character enters a specific biological, pack, or emotional state\n\nTarget can be a party member, another character, or a faction (e.g. House Douglas, Team Ukiyo, Council). Emit these after emotionally meaningful moments between characters or towards the player.\nScale: a shared joke, scent-mark, or tactical assistance is a >like. Intercepting a lethal strike in a dungeon, shielding someone from trauma, or defying an Alpha Command is a >love. A hostile dominance display or reckless endangerment is a >dislike. Betraying pack trust or attacking family is a >hate.\nCanon moodlets: protective, scent-marked, pack-anxious, enraged, rut, heat, unsubmitted, traumatized.\nNever state scores or numbers.\n"
+      }
+    }
+  },
+  "default_start_location_id": "",
+  "currencies": [
+    {
+      "id": "fbecc738-f9f7-4426-b8a1-a237b8ad922c",
+      "name": "US Dollar",
+      "symbol": "$",
+      "decimal_places": 2,
+      "is_primary": true,
+      "universal_credit_rate": 1
+    }
+  ],
+  "ai_inventory_management": true,
+  "travel_routes": [
+    {
+      "id": "174be6fc-f8ee-4c35-9625-308c768dcc04",
+      "from_location_id": "_AWyPeCP8QWhD4D1M6hfzT",
+      "to_location_id": "_C7Nj1emPcrhDQb1gFYMDr",
+      "bidirectional": true,
+      "travel_time": 24,
+      "required_mediums": [
+        "water"
+      ],
+      "description": "Passenger Ferry Solarton Line, first leg. Flat-bottomed boat, one full day per leg. Slower than the 101, taken for what it crosses, the only line touching three jurisdictions without a road."
+    },
+    {
+      "id": "b5656d93-85de-4a90-beb1-aff43b26f985",
+      "from_location_id": "_C7Nj1emPcrhDQb1gFYMDr",
+      "to_location_id": "_NVALjebTDk1kPC9AjWhWt",
+      "bidirectional": true,
+      "travel_time": 24,
+      "required_mediums": [
+        "water"
+      ],
+      "description": "Passenger Ferry Solarton Line, second leg, ending at the Bay Area terminal near the Yarrow's mouth. Same boat, one full day per leg."
+    },
+    {
+      "id": "5f4ee591-3507-4e22-a696-97a683a10f3c",
+      "from_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "to_location_id": "_D8B9QAfHPn3NfD4mAnJen",
+      "bidirectional": true,
+      "travel_time": 2,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "A short drive connecting Blackwood City and Solarton, much faster than the three-stop ferry."
+    },
+    {
+      "id": "b87a719d-927d-485a-96f0-43c1c79973a5",
+      "from_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "to_location_id": "_FrXnp2CALTP44CP3KVAhb",
+      "bidirectional": true,
+      "travel_time": 1,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Solarton's stretch of the 101 corridor south toward Los Angeles."
+    },
+    {
+      "id": "91a74083-677d-4abd-852d-a9748d5a1bac",
+      "from_location_id": "_FrXnp2CALTP44CP3KVAhb",
+      "to_location_id": "_X4A8gWVr43a7dRr9TbJ4m",
+      "bidirectional": true,
+      "travel_time": 2,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "The Route 101 corridor stretch south into the Los Angeles metro, past Ventura and the Halfway House rest stop."
+    },
+    {
+      "id": "41a46a23-97e8-4169-85b4-b40ee27ca970",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_EwMMJ7KEg9ATJ3mTXBaha",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": []
+    },
+    {
+      "id": "696f2dfa-bdfd-43f7-bd3d-5fac05234dfc",
+      "from_location_id": "_EwMMJ7KEg9ATJ3mTXBaha",
+      "to_location_id": "_Gnm9WMQNjhUWJLhrkpqQk",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": []
+    },
+    {
+      "id": "a0863089-2f7e-4ade-a08d-630f865528f7",
+      "from_location_id": "_Gnm9WMQNjhUWJLhrkpqQk",
+      "to_location_id": "_B7Eq8K8CUXrCe9NKATXGE",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": []
+    },
+    {
+      "id": "4d65831e-9057-4602-ae50-856305844e6c",
+      "from_location_id": "_EwMMJ7KEg9ATJ3mTXBaha",
+      "to_location_id": "_8fRJTJVkd7VjkQ3jfJWQ1",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Seven Hills ridge drive into financial Uptown district."
+    },
+    {
+      "id": "1ee3f4d8-7492-486b-9326-30a81cec114c",
+      "from_location_id": "_EwMMJ7KEg9ATJ3mTXBaha",
+      "to_location_id": "_hfm1W4nYnXfQEqcNGwNxr",
+      "bidirectional": true,
+      "travel_time": 1,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Seven Hills bypass road down to Bluemoon and The Verve."
+    },
+    {
+      "id": "97742efd-4efc-4591-9f66-0d8b79ae8dcf",
+      "from_location_id": "_EwMMJ7KEg9ATJ3mTXBaha",
+      "to_location_id": "_H6PUHPMMUEmM2wJbfd8et",
+      "bidirectional": true,
+      "travel_time": 1,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Boulevard connection to Paradise nightlife district."
+    },
+    {
+      "id": "417dac5f-7327-4162-9b69-177f143be415",
+      "from_location_id": "_Gnm9WMQNjhUWJLhrkpqQk",
+      "to_location_id": "_H6PUHPMMUEmM2wJbfd8et",
+      "bidirectional": true,
+      "travel_time": 1,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Avenue connecting Oldtown to Paradise District."
+    },
+    {
+      "id": "a093cde6-0dfd-4784-a443-af4c2284b4ca",
+      "from_location_id": "_Gnm9WMQNjhUWJLhrkpqQk",
+      "to_location_id": "_fyC1LJ8CAK8rP7k8Dr2a2",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Transit line between colonial Oldtown and industrial Ironworks."
+    },
+    {
+      "id": "727ed6a8-fb1d-4c80-bf12-7ec5f7186f22",
+      "from_location_id": "_Gnm9WMQNjhUWJLhrkpqQk",
+      "to_location_id": "_X6R6dKTzkjdFk6cqdt2we",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Oldtown boulevard leading into quiet residential Arcadia."
+    },
+    {
+      "id": "d8f59ee3-c277-4b10-a388-c9728a15fd66",
+      "from_location_id": "_Gnm9WMQNjhUWJLhrkpqQk",
+      "to_location_id": "_xEB9X8wUGwQrELYzKX7gt",
+      "bidirectional": true,
+      "travel_time": 1,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Forest highway into Bloodmoon Pack Territory."
+    },
+    {
+      "id": "1a38fbf3-a23c-4641-b916-db276059fdfb",
+      "from_location_id": "_xEB9X8wUGwQrELYzKX7gt",
+      "to_location_id": "_RXULtwFjxCBUcxBbTfWrh",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Sacred pine trail leading to Bloodmoon Longhouse."
+    },
+    {
+      "id": "4dbad483-04f2-4991-803e-e437e2d72b16",
+      "from_location_id": "_RXULtwFjxCBUcxBbTfWrh",
+      "to_location_id": "_qUkFeCX37Agez4XtPhtqp",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Stone path to natural geothermal Longhouse Baths."
+    },
+    {
+      "id": "e8137dcf-ab2e-4d80-9e9e-da53b2e6d6b6",
+      "from_location_id": "_Gnm9WMQNjhUWJLhrkpqQk",
+      "to_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "bidirectional": true,
+      "travel_time": 2,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Route 101 corridor connecting Blackwood and Solarton."
+    },
+    {
+      "id": "55bf5b19-05b7-41fb-88cc-2164b0440769",
+      "from_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "to_location_id": "_Mq1DYmKdnkR83YBjNRyXr",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Central thoroughfare to Solarton Square."
+    },
+    {
+      "id": "ef5dbac4-b826-49dd-926e-a7b25de8e0f1",
+      "from_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "to_location_id": "_hGpPMY77NaH4j6AxNGLVe",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Shopping avenue to Bricklane Mall."
+    },
+    {
+      "id": "857f438c-8bd8-461d-8866-c01dd31c97f2",
+      "from_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "to_location_id": "_VbjcwqJnc7BaED9A9t2Dq",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Entertainment strip to Sidewinders Bar."
+    },
+    {
+      "id": "07588787-3c3c-478e-80f3-658af4e2e4db",
+      "from_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "to_location_id": "_UeKEhHTnCP6yQk7mhMVU1",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Coastal road to Coastal Residential apartments."
+    },
+    {
+      "id": "adbc7d7f-b9ed-48a2-971b-cf22cd887210",
+      "from_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "to_location_id": "_rnNnjzcmDkgg2xbHYFftH",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Pier drive to Solarton Pier and ferry terminal."
+    },
+    {
+      "id": "3253989b-c1f3-4168-b33a-85a65a0dbb88",
+      "from_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "to_location_id": "_a2pRKBjYnQ1Q1LaN6xdeh",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Boardwalk down to Solarton Public Beach."
+    },
+    {
+      "id": "ba9d21a1-d202-4c40-87f6-fef66370d263",
+      "from_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "to_location_id": "_j67Dp2PVwFCpdrfWRYV2M",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "University Avenue into SUCC Campus Academic Core."
+    },
+    {
+      "id": "2623bc6c-7dd3-454e-a5cb-e714e0765cd0",
+      "from_location_id": "_j67Dp2PVwFCpdrfWRYV2M",
+      "to_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Main promenade opening into Lunar Quad."
+    },
+    {
+      "id": "1ca3f0ef-e47d-4fdd-9d1f-a314fcd09b89",
+      "from_location_id": "_FrXnp2CALTP44CP3KVAhb",
+      "to_location_id": "_qBt3jf1kppwrmMwTBbYJB",
+      "bidirectional": true,
+      "travel_time": 1,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Highway pull-off to The Dead Dog Motel."
+    },
+    {
+      "id": "41e64d9e-ab40-4cf6-8ddb-58c6297052a9",
+      "from_location_id": "_FrXnp2CALTP44CP3KVAhb",
+      "to_location_id": "_82cNpDwVJwVd8qGRUgFw8",
+      "bidirectional": true,
+      "travel_time": 1,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Inland route to Simi Valley Infopoint."
+    },
+    {
+      "id": "916c8adc-b5af-4589-9d76-8d2ad8848592",
+      "from_location_id": "_FrXnp2CALTP44CP3KVAhb",
+      "to_location_id": "_6JEr2rqCjJa9tWzgbDcrb",
+      "bidirectional": true,
+      "travel_time": 1,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Mountain pass connecting Ventura to Hex Valley."
+    },
+    {
+      "id": "3ab3a0fd-e5d2-40ef-85fe-725a9340d242",
+      "from_location_id": "_X4A8gWVr43a7dRr9TbJ4m",
+      "to_location_id": "_XD2gWgyhTYmDEXWkxMLer",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Financial district street leading to DCC Tower."
+    },
+    {
+      "id": "d4a5e463-ec75-4945-903f-f922382ac0f1",
+      "from_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "to_location_id": "_Caw9nRwKf4Gx9VzW21QJj",
+      "bidirectional": true,
+      "travel_time": 2,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Interstate route connecting Solarton to CUMS."
+    },
+    {
+      "id": "a2410256-573f-4d7f-8e43-dc8e70008fca",
+      "from_location_id": "_761mFFeCcQyR9JxhLCWcy",
+      "to_location_id": "_fekTA9NRygQ49q7cxRz8A",
+      "bidirectional": true,
+      "travel_time": 3,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Highway 99 northeast across the valley to Bakersfield."
+    },
+    {
+      "id": "833315f8-ae64-4fab-add9-6edd2a672abd",
+      "from_location_id": "_fyC1LJ8CAK8rP7k8Dr2a2",
+      "to_location_id": "_erHMcydnPVEyk7NY3K9wf",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Industrial alleyway to Team Ukiyo Operational Base."
+    },
+    {
+      "id": "e348c7d9-489f-46ce-8e25-9f78be4dfd53",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_jYJxF7fte2Gz1F2HGXpUR",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Gothic archway path to Basilica Library."
+    },
+    {
+      "id": "7c5f3b86-77a0-4f11-bf4f-47c6edd98e7c",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_ptpGD1VeVep7YknRmhFXM",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Brick walkway to Griffin Clocktower."
+    },
+    {
+      "id": "2f4d637b-cc1a-49b2-b6d8-5835b9472b05",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_Bx2U1xzg1D3wpFRe39L7y",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Athletic concourse to Bulls Stadium."
+    },
+    {
+      "id": "a401d2f2-b0de-4129-9434-24b0b0bff221",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_ndMkLAHyKgBDyeMpjwhBt",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Promenade to St. Neptune Aquatic Complex."
+    },
+    {
+      "id": "2920d50d-0457-495f-94de-fb0ade8ed497",
+      "from_location_id": "_ndMkLAHyKgBDyeMpjwhBt",
+      "to_location_id": "_GnNYqapde8TGQtemCwJHT",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Locker room breezeway to Main Pool."
+    },
+    {
+      "id": "5482a295-1097-4e77-979e-bbbbcbec115a",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_WRBThTNK3wJawVdLRhA1e",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Pathway to outdoor Sports Fields."
+    },
+    {
+      "id": "c1b853ed-d43e-444a-9500-f20231c4fbf2",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_EmJg3zdjTT8kwteJJkyUR",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Fitness corridor to Gym and Changing Facilities."
+    },
+    {
+      "id": "99b3d2e3-acd7-4ad0-9fad-bdb91dbf7fe1",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_xfz8yrt2RjqHyTa8MXG3W",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Residential quad path to Wyrm Dormitories."
+    },
+    {
+      "id": "c8218a58-8c3f-46b3-995c-195a8df30a13",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_wEkzHgpxfetQr16bTWNUP",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Walkway to Apollo Dorms."
+    },
+    {
+      "id": "c04426c5-e524-4552-ab24-3832eccb005c",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_9YKj9HxFkRWnNJUJk84Tr",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Tree-lined path to Artemis Dorms."
+    },
+    {
+      "id": "cb9add75-5ae3-4ddd-a076-0b8920cb43d5",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_xLd2GzGayGJXUhjAdTPye",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Perimeter sidewalk to Additional Student Housing."
+    },
+    {
+      "id": "aaf10529-be10-4bb0-92ba-a7b8ff608ae8",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_yXApVAkzqLrFkLkhW7fdU",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Greek Row avenue to Fraternity and Sorority Row."
+    },
+    {
+      "id": "e4a3cbd3-8b6f-4eeb-bfce-86f96a917021",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_DA14L9eU8wdcfFR1acpbn",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Laboratory promenade into Science Quarter."
+    },
+    {
+      "id": "37dbf659-ba17-46c4-9684-d91bd48af132",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_Dw9VQxmgEDGTyQdJzwJgG",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Sculpture garden path to Arts Building."
+    },
+    {
+      "id": "76ed3681-bb01-48c3-853c-d4f896ea4dff",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_aLqMW6UHHj1D9M4xxENF7",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Central concourse to Student Association Building."
+    },
+    {
+      "id": "11dafc08-3563-4844-9ef0-b6c4ff4171fd",
+      "from_location_id": "_WrymW8qTETkm7r1QXQGaT",
+      "to_location_id": "_G33ABhpFceN7HanHwp8rr",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Wellness lane to Supernatural Support Center."
+    },
+    {
+      "id": "351d4df5-2a5b-4716-b94c-d656f27d25a0",
+      "from_location_id": "_jYJxF7fte2Gz1F2HGXpUR",
+      "to_location_id": "_4FMaQm3xQCUVHeRf3AWYk",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Wrought-iron spiral stairs down to Basement Meeting Room 005."
+    },
+    {
+      "id": "a4e7e844-26de-4e2c-a59d-1e54319c6abd",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_cU3JC9R4VJJrcEJ8GtAFt",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Heavy oak entrance into Main Atrium."
+    },
+    {
+      "id": "a047a66a-c4a5-47c7-a906-a5e59ae7e916",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_xDrAxmgeq3tfgwxYKJwkq",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Executive corridor to Council Room."
+    },
+    {
+      "id": "9b191f03-61ad-4755-83ac-05447b94c699",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_gKQqD84T3ymHd3XKVBjFF",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Arched formal hall to Throne Room."
+    },
+    {
+      "id": "a8824b30-4afa-41aa-95b7-f882c2b4df6b",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_kfXfwkXrzPTRetcBmUt9T",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Private guarded hallway to Alyssa Sanctuary and Omega Nest."
+    },
+    {
+      "id": "b24b05cd-0182-4f40-99e1-0af069a01c55",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_hcmcH3jKtU82P8Bh11mF1",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "West wing basement stair to Jasper Cavern."
+    },
+    {
+      "id": "96d43fc0-0ae1-48cc-8005-846fedb02a4b",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_P78yNW43E1fayK9cXzGpd",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Ground floor passage to Noah Gourmet Kitchen."
+    },
+    {
+      "id": "1f63ae61-b8a0-41b0-9e33-e05e3442c14a",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_Uqpphc8B1L86DVjRAaJxR",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Reinforced security wing to Malachia East Wing and Den."
+    },
+    {
+      "id": "7f87078a-3594-4305-98ff-6bb76c333bb7",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_rpBxnqzbc2EPg4eUdhrhx",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Private upper gallery to Erik Alpha Sanctuary."
+    },
+    {
+      "id": "761f2a53-c8dc-49c5-b850-6a0add5f5fc2",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_EYXqbQkgmU98JBfc8agjF",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Marble corridor to Pack Bathhouse."
+    },
+    {
+      "id": "623fc54f-3785-45b9-946a-6cdceb690617",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_mUHCbXLjDAy8YqraaR7jf",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "East corridor to Guest Wing."
+    },
+    {
+      "id": "6073add9-b749-4209-9a76-caf19cb40982",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_4X1A2UgJkcjhYHMXcL4Xh",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "French terrace doors to Gardens and Pools."
+    },
+    {
+      "id": "537f159f-d4cc-4460-8624-1a1c56455cde",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_gUjcJKTyq3K3LFF3BbVzd",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Concealed spiral steps to The Attic Sanctuary."
+    },
+    {
+      "id": "6ed2bc54-2c26-4133-ab73-0949e99d69f8",
+      "from_location_id": "_9H2EmzRm92QxBpkmJUR1z",
+      "to_location_id": "_LVkMH48tkbdC41T7kCFFV",
+      "bidirectional": true,
+      "travel_time": 0,
+      "required_mediums": [
+        "land"
+      ],
+      "description": "Subterranean ramp to Garage and Security Perimeter."
+    }
+  ],
+  "free_travel": true,
+  "allow_ship_arrivals": true,
+  "ship_arrival_locations": [],
+  "collaborators": [],
+  "regex_scripts": [],
+  "personas": [],
+  "sprite_sets": [],
+  "linked_characters": [],
+  "lexicon_count": 542,
+  "gallery_count": 98,
+  "environments_count": 2,
+  "locations_count": 172,
+  "maps_count": 4,
+  "linked_characters_count": 0
+}

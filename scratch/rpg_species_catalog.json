@@ -1,0 +1,411 @@
+[
+  {
+    "id": "_wyAYU2Mn7AkQ1hVej7PdW",
+    "_id": "_wyAYU2Mn7AkQ1hVej7PdW",
+    "created_at": "2026-10-12T14:08:31.179Z",
+    "updated_at": "2026-10-12T14:42:07.024Z",
+    "player_selectable": true,
+    "name": "Licantropo (Werewolf)",
+    "description": "Predatore lunare del branco Douglas. Dotato di doppio cuore, sensi olfattivi superiori, artigli retrattili e rigenerazione accelerata.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 2,
+      "endurance": 2,
+      "perception": 1,
+      "intelligence": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_pf9FRybEA1Y7naxw7TDQE",
+    "_id": "_pf9FRybEA1Y7naxw7TDQE",
+    "created_at": "2026-10-12T14:08:31.180Z",
+    "updated_at": "2026-10-12T14:42:07.678Z",
+    "player_selectable": true,
+    "name": "Demi-umano (Demihuman)",
+    "description": "Umanoide con singoli tratti anatomici animali (orecchie e coda singole). Riflessi fulminei, equilibrio perfetto e sensi acuti.",
+    "tags": [],
+    "stat_modifiers": {
+      "agility": 2,
+      "perception": 2,
+      "charisma": 1,
+      "endurance": -1
+    },
+    "display_order": 1
+  },
+  {
+    "id": "_7YEmLbXRMKazP3gKLK8rf",
+    "_id": "_7YEmLbXRMKazP3gKLK8rf",
+    "created_at": "2026-10-12T14:08:31.180Z",
+    "updated_at": "2026-10-12T14:42:08.846Z",
+    "player_selectable": true,
+    "name": "Umano (Human)",
+    "description": "Ingegnoso, versatile e tenace. Spina dorsale della societa civile, della ricerca arcana e delle squadre operative DMHA.",
+    "tags": [],
+    "stat_modifiers": {
+      "intelligence": 1,
+      "luck": 1,
+      "charisma": 1,
+      "endurance": 1
+    },
+    "display_order": 2
+  },
+  {
+    "id": "_jNfcgFJy6CQqReHEqFy81",
+    "_id": "_jNfcgFJy6CQqReHEqFy81",
+    "created_at": "2026-10-12T14:08:31.180Z",
+    "updated_at": "2026-10-12T14:42:09.551Z",
+    "player_selectable": true,
+    "name": "Vampiro (Vampire)",
+    "description": "Predatore notturno immortale sostenuto da sangue sintetico DCC. Carisma aristocratico magnetico, eleganza letale e sensi infallibili.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 2,
+      "agility": 1,
+      "perception": 1,
+      "endurance": -1
+    },
+    "display_order": 3
+  },
+  {
+    "id": "_qW1kxMD6Vw9rc3XjYRKYW",
+    "_id": "_qW1kxMD6Vw9rc3XjYRKYW",
+    "created_at": "2026-10-12T14:08:31.180Z",
+    "updated_at": "2026-10-12T14:42:11.831Z",
+    "player_selectable": true,
+    "name": "Elfo & Sidhe (Elf)",
+    "description": "Umanoide longevo ed eterico con profonda affinita per le correnti di mana della natura e percezione arcana affinata.",
+    "tags": [],
+    "stat_modifiers": {
+      "intelligence": 2,
+      "agility": 1,
+      "perception": 1,
+      "strength": -1
+    },
+    "display_order": 4
+  },
+  {
+    "id": "_FQJetrfXHAA4TyachJqwU",
+    "_id": "_FQJetrfXHAA4TyachJqwU",
+    "created_at": "2026-10-12T14:08:31.180Z",
+    "updated_at": "2026-10-12T14:42:12.692Z",
+    "player_selectable": true,
+    "name": "Demone & Infernale (Demon)",
+    "description": "Essere legato al fuoco abissale e ai patti vincolanti. Presenza imponente, alta resistenza termica e ferrea volonta.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 2,
+      "charisma": 1,
+      "endurance": 1,
+      "luck": -1
+    },
+    "display_order": 5
+  },
+  {
+    "id": "_GAjbNczaLkzTc6xndRTbj",
+    "_id": "_GAjbNczaLkzTc6xndRTbj",
+    "created_at": "2026-10-12T14:08:31.180Z",
+    "updated_at": "2026-10-12T14:42:13.780Z",
+    "player_selectable": true,
+    "name": "Fata & Fae (Fairy)",
+    "description": "Piccolo Popolo dei boschi e delle corti faeriche. Maestri di inganni, illusioni sensoriali, furtivita e fortuna sfuggente.",
+    "tags": [],
+    "stat_modifiers": {
+      "agility": 2,
+      "luck": 2,
+      "charisma": 1,
+      "strength": -2
+    },
+    "display_order": 6
+  },
+  {
+    "id": "_8pcCdjPMbeJRVAgtJfX8n",
+    "_id": "_8pcCdjPMbeJRVAgtJfX8n",
+    "created_at": "2026-10-12T14:08:31.180Z",
+    "updated_at": "2026-10-12T14:42:14.713Z",
+    "player_selectable": true,
+    "name": "Angelo & Celestiale (Angel)",
+    "description": "Essere di emanazione sacra radiante autorita protettiva, magia di risanamento miracolosa e inflessibile giustizia.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 2,
+      "endurance": 1,
+      "strength": 1,
+      "luck": -1
+    },
+    "display_order": 7
+  },
+  {
+    "id": "_eHJ9NMk4zTqzTL3EpPwPq",
+    "_id": "_eHJ9NMk4zTqzTL3EpPwPq",
+    "created_at": "2026-10-12T14:08:31.180Z",
+    "updated_at": "2026-10-12T14:42:15.372Z",
+    "player_selectable": true,
+    "name": "Drago & Drake (Dragon)",
+    "description": "Colosso draconico corazzato da scaglie resistenti. Respiro elementale primordiale, fierezza d'animo e potenza d'impatto sovrumana.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 2,
+      "endurance": 2,
+      "charisma": 1,
+      "agility": -1
+    },
+    "display_order": 8
+  },
+  {
+    "id": "_y1Cc1bJ6d2D3HzFyymDRB",
+    "_id": "_y1Cc1bJ6d2D3HzFyymDRB",
+    "created_at": "2026-10-12T14:08:31.179Z",
+    "updated_at": "2026-10-12T14:42:16.150Z",
+    "player_selectable": true,
+    "name": "Orco & Oni (Orc)",
+    "description": "Guerriero titanico dalla possente massa muscolare e corna cerchiate. Travolgente forza d'urto e incrollabile tempra marziale.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 3,
+      "endurance": 2,
+      "intelligence": -1,
+      "charisma": -1
+    },
+    "display_order": 9
+  },
+  {
+    "id": "_aNMnc8ELREgqgb43JB8YJ",
+    "_id": "_aNMnc8ELREgqgb43JB8YJ",
+    "created_at": "2026-10-12T14:08:31.179Z",
+    "updated_at": "2026-10-12T14:42:16.812Z",
+    "player_selectable": true,
+    "name": "Succube & Incubo (Succubus)",
+    "description": "Maestro empatico dell'attrazione e delle energie sottili. Tesse fili emozionali, dissipa tensioni o soggioga con fascino magnetico.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 3,
+      "agility": 1,
+      "endurance": -1,
+      "strength": -1
+    },
+    "display_order": 10
+  },
+  {
+    "id": "_nUm9xyCztM9UR8HktQneq",
+    "_id": "_nUm9xyCztM9UR8HktQneq",
+    "created_at": "2026-10-12T14:08:31.179Z",
+    "updated_at": "2026-10-12T14:42:17.400Z",
+    "player_selectable": true,
+    "name": "Minotauro & Centauro (Minotaur)",
+    "description": "Pilastro taurino o equino di stazza imponente. Carica cinetica inarrestabile, tenacia da assedio e massiccia stabilita fisica.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 2,
+      "endurance": 3,
+      "agility": -1,
+      "intelligence": -1
+    },
+    "display_order": 11
+  },
+  {
+    "id": "_AGHzAcbd3m61cDFUybFpA",
+    "_id": "_AGHzAcbd3m61cDFUybFpA",
+    "created_at": "2026-10-03T21:57:28.968Z",
+    "updated_at": "2026-10-03T22:15:22.748Z",
+    "player_selectable": true,
+    "name": "Merfolk",
+    "description": "Aquatic humanoid adapted to marine realms with fluid grace and aquatic magic.",
+    "tags": [],
+    "stat_modifiers": {
+      "agility": 1,
+      "endurance": 1,
+      "intelligence": 1,
+      "perception": -1
+    },
+    "display_order": 12
+  },
+  {
+    "id": "_beC3hUmLcEhV71LRMq18g",
+    "_id": "_beC3hUmLcEhV71LRMq18g",
+    "created_at": "2026-10-12T14:08:31.179Z",
+    "updated_at": "2026-10-12T14:42:18.057Z",
+    "player_selectable": true,
+    "name": "Tritone & Sirena (Merfolk)",
+    "description": "Umanoide acquatico dei fondali di Blackwood Bay. Padroneggia l'idromanzia, l'agilita subacquea fluida e il canto delle correnti.",
+    "tags": [],
+    "stat_modifiers": {
+      "agility": 2,
+      "endurance": 1,
+      "intelligence": 1,
+      "perception": -1
+    },
+    "display_order": 12
+  },
+  {
+    "id": "_AzpmdmRG2agmntXRMcTaP",
+    "_id": "_AzpmdmRG2agmntXRMcTaP",
+    "created_at": "2026-10-12T14:08:31.179Z",
+    "updated_at": "2026-10-12T14:42:18.819Z",
+    "player_selectable": true,
+    "name": "Kitsune & Neko (Beast Spirit)",
+    "description": "Spirito volpe o felino dai riflessi acrobatici e molteplici code. Astuzia vivace, fascino naturale e destrezza urbana eccezionale.",
+    "tags": [],
+    "stat_modifiers": {
+      "agility": 2,
+      "charisma": 2,
+      "luck": 1,
+      "strength": -1
+    },
+    "display_order": 13
+  },
+  {
+    "id": "_2tRMQUYL4BhjKEByxpnNF",
+    "_id": "_2tRMQUYL4BhjKEByxpnNF",
+    "created_at": "2026-10-03T21:57:30.093Z",
+    "updated_at": "2026-10-03T22:15:23.999Z",
+    "player_selectable": true,
+    "name": "Arachne / Drider",
+    "description": "Spider-hybrid weaver commanding ambush tactics, venom, and webbing.",
+    "tags": [],
+    "stat_modifiers": {
+      "perception": 2,
+      "agility": 1,
+      "charisma": -1
+    },
+    "display_order": 14
+  },
+  {
+    "id": "_ePn1gynpUtQEwUf7JPU6D",
+    "_id": "_ePn1gynpUtQEwUf7JPU6D",
+    "created_at": "2026-10-12T14:08:31.179Z",
+    "updated_at": "2026-10-12T14:42:19.380Z",
+    "player_selectable": true,
+    "name": "Mutaforma & Antro (Shifter)",
+    "description": "Essere dai contorni biologici plastici capace di adattare forma, densita e attributi animali al contesto operativo.",
+    "tags": [],
+    "stat_modifiers": {
+      "endurance": 2,
+      "agility": 1,
+      "perception": 1,
+      "charisma": -1
+    },
+    "display_order": 14
+  },
+  {
+    "id": "_3zBD3Nng6VKUkGDXFWT42",
+    "_id": "_3zBD3Nng6VKUkGDXFWT42",
+    "created_at": "2026-10-12T14:08:31.179Z",
+    "updated_at": "2026-10-12T14:42:20.051Z",
+    "player_selectable": true,
+    "name": "Non-Morto & Revenant (Undead)",
+    "description": "Corpo rianimato immune alla stanchezza, ai veleni e al dolore fisico. Freddo e calcolatore, animato da pura volonta psichica.",
+    "tags": [],
+    "stat_modifiers": {
+      "endurance": 3,
+      "intelligence": 1,
+      "charisma": -2,
+      "luck": -1
+    },
+    "display_order": 15
+  },
+  {
+    "id": "_KefEdazJ9gDWnTFwM6XV9",
+    "_id": "_KefEdazJ9gDWnTFwM6XV9",
+    "created_at": "2026-10-12T14:08:31.179Z",
+    "updated_at": "2026-10-12T14:42:20.697Z",
+    "player_selectable": true,
+    "name": "Lamia & Naga (Serpentine)",
+    "description": "Fisiologia serpentina sinuosa e ipnotica. Presa costrittiva poderosa, percezione termica e tossine paralizzanti.",
+    "tags": [],
+    "stat_modifiers": {
+      "agility": 2,
+      "perception": 2,
+      "endurance": 1,
+      "strength": -1
+    },
+    "display_order": 16
+  },
+  {
+    "id": "_zEHTMrKEctxkHHB2W3dXq",
+    "_id": "_zEHTMrKEctxkHHB2W3dXq",
+    "created_at": "2026-10-12T14:08:31.179Z",
+    "updated_at": "2026-10-12T14:42:21.484Z",
+    "player_selectable": true,
+    "name": "Aracnide & Drider (Arachne)",
+    "description": "Tessitore ibrido che domina agguati, filamenti di seta arcanamente rinforzati e letali veleni neurotossici.",
+    "tags": [],
+    "stat_modifiers": {
+      "perception": 2,
+      "agility": 1,
+      "endurance": 1,
+      "charisma": -1
+    },
+    "display_order": 17
+  },
+  {
+    "id": "_92MghbhEBRkmnzJCDBAR7",
+    "_id": "_92MghbhEBRkmnzJCDBAR7",
+    "created_at": "2026-10-12T14:08:31.179Z",
+    "updated_at": "2026-10-12T14:42:22.147Z",
+    "player_selectable": true,
+    "name": "Macchina & Sintetico (Machine)",
+    "description": "Costrutto cibernetico o androide runico alimentato da micro-core magici. Logica impeccabile, corazza pesante e totale immunita biologica.",
+    "tags": [],
+    "stat_modifiers": {
+      "intelligence": 2,
+      "endurance": 2,
+      "strength": 1,
+      "charisma": -2
+    },
+    "display_order": 18
+  },
+  {
+    "id": "_dLcTPpd8rQVLCfj8XF7ny",
+    "_id": "_dLcTPpd8rQVLCfj8XF7ny",
+    "created_at": "2026-10-03T21:57:32.868Z",
+    "updated_at": "2026-10-03T22:15:27.783Z",
+    "player_selectable": true,
+    "name": "Machine / Synthetic",
+    "description": "Artificial or clockwork being powered by precise logic and reinforced hulls.",
+    "tags": [],
+    "stat_modifiers": {
+      "intelligence": 2,
+      "endurance": 2,
+      "charisma": -2
+    },
+    "display_order": 19
+  },
+  {
+    "id": "_QALdzzr2fpf8ATHQbRRnF",
+    "_id": "_QALdzzr2fpf8ATHQbRRnF",
+    "created_at": "2026-10-12T14:08:31.179Z",
+    "updated_at": "2026-10-12T14:42:22.846Z",
+    "player_selectable": true,
+    "name": "Mutante & Ibrido (Mutant)",
+    "description": "Creatura esposta ai gradienti di mana instabile dei Rift abissali. Fisiologia adattiva imprevedibile e colpi di fortuna anomali.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 1,
+      "endurance": 2,
+      "perception": 1,
+      "intelligence": -1,
+      "luck": 2,
+      "charisma": -1
+    },
+    "display_order": 19
+  },
+  {
+    "id": "_dHgJt4PfVjTqtMYm6Dfz9",
+    "_id": "_dHgJt4PfVjTqtMYm6Dfz9",
+    "created_at": "2026-10-03T21:57:27.808Z",
+    "updated_at": "2026-10-12T14:42:23.517Z",
+    "player_selectable": true,
+    "name": "Divinita & Primordiale (Demigod)",
+    "description": "Incarnazione terrena di antiche potenze cosmiche. Presenza maestosa che piega la realta e comanda rispetto assoluto.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 2,
+      "endurance": 1,
+      "strength": 1,
+      "luck": -1,
+      "intelligence": 1
+    },
+    "display_order": 20
+  }
+]

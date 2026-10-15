@@ -12,7 +12,7 @@ def get_browser_ws():
     return f"ws://127.0.0.1:{port}{ws_path}"
 
 def main():
-    with open('janitor_links.txt', 'r') as f:
+    with open('scratch/scraping/janitor_links.txt', 'r') as f:
         urls = [line.strip() for line in f if line.strip()]
         
     print(f"Total urls to scrape: {len(urls)}")
@@ -45,9 +45,9 @@ def main():
     session_id = wait_for_result(mid)['sessionId']
     
     results = {}
-    if os.path.exists('scraped_characters_batch.json'):
+    if os.path.exists('scratch/scraping/scraped_characters_batch.json'):
         try:
-            with open('scraped_characters_batch.json', 'r', encoding='utf-8') as f:
+            with open('scratch/scraping/scraped_characters_batch.json', 'r', encoding='utf-8') as f:
                 results = json.load(f)
             print(f"Resuming with {len(results)} already saved.")
         except:
@@ -161,7 +161,7 @@ def main():
             except Exception as e:
                 print(" -> Parse error:", e)
                 
-            with open('scraped_characters_batch.json', 'w', encoding='utf-8') as f:
+            with open('scratch/scraping/scraped_characters_batch.json', 'w', encoding='utf-8') as f:
                 json.dump(results, f, indent=2, ensure_ascii=False)
                 
     finally:

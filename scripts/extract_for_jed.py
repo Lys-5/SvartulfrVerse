@@ -18,7 +18,7 @@ def convert_to_jed(char_data):
 
 def main():
     try:
-        with open('scraped_characters_batch.json', 'r', encoding='utf-8') as f:
+        with open('scratch/scraping/scraped_characters_batch.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
     except Exception as e:
         print("Error loading scraped JSON:", e)
@@ -52,8 +52,8 @@ def main():
             json.dump(found, f, indent=2, ensure_ascii=False)
         print(f"Saved {len(found)} characters to {filename}")
 
-    dump_group(npcs_14, 'docs/14_NPCs_Raw.json')
-    dump_group(group_a, 'docs/GroupA_Raw.json')
+    dump_group(npcs_14, 'docs/data/14_NPCs_Raw.json')
+    dump_group(group_a, 'docs/data/GroupA_Raw.json')
 
 if __name__ == '__main__':
     main()

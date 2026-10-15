@@ -45,3 +45,13 @@ Quando le fonti documentali collidono su un dato (età, altezza, cicatrici, prof
 5. **Verifica Rigorosa alla Fonte:** Un dettaglio letto in un appunto secondario non acquista autorità per inerzia. Va riverificato sul testo sorgente originale prima di costruire su di esso (evitare errori come "Bulls vs Claws" derivato da "Bulls vs CLAMS", o schede ricreate con nuovi id come Ariadne).
 6. **Date Inventate Credibili:** Quando si definiscono date non presenti nelle fonti, evitare il ricorso sistematico al 1° gennaio o al 1° del mese; distribuire date varie e realistiche.
 7. **Scelte a Discrezione dell'Assistente:** Quando l'utente delega una scelta (es. età anagrafica), proporre un valore motivato e **attendere conferma** prima di salvarlo sul World, specialmente per numeri che impattano la continuity temporale futura.
+
+---
+
+## 3. Protocollo di Verifica Preventiva alla Fonte e Divieto Assoluto di Inferenza
+
+È fatto divieto assoluto a qualsiasi assistente AI o collaboratore di proporre, generare, inserire o aggiornare qualsiasi informazione relativa a personaggi, fazioni, specie, classi RPG, relazioni o elementi di lore (incluse razza, anatomia, età, sottogenere LSE, ruoli e poteri) basandosi su deduzioni, assunzioni a intuito, inferenze dal nome o memorie parziali.
+
+1. **Obbligo di Consultazione Primaria:** Prima di formulare qualsiasi proposta di scheda o modifica nel World, l'assistente deve reperire, aprire e leggere integralmente la scheda sorgente originale (profili ufficiali Wyvern come Kakihara, schede JanitorAI originali, dossier in `ARCHIVIO/` o Lorebook di riferimento).
+2. **Estrazione e Citazione del Dato Letterale:** Ogni attributo fondamentale (specie esatta, occupazione/classe, parentela, tratti distintivi) deve essere corroborato dalla citazione della fonte specifica verificata.
+3. **Divieto di Riempimento a Indovinare:** Se un dato non è specificato nella fonte ufficiale, è severamente vietato inventarlo. L'assistente deve dichiarare esplicitamente l'assenza del dato e richiedere una decisione canonica all'utente prima di procedere.

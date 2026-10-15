@@ -1,0 +1,552 @@
+{
+  "stat_config": {
+    "stats": [
+      {
+        "id": "strength",
+        "label": "Strength",
+        "abbreviation": "STR",
+        "enabled": true
+      },
+      {
+        "id": "perception",
+        "label": "Perception",
+        "abbreviation": "PER",
+        "enabled": true
+      },
+      {
+        "id": "endurance",
+        "label": "Endurance",
+        "abbreviation": "END",
+        "enabled": true
+      },
+      {
+        "id": "charisma",
+        "label": "Charisma",
+        "abbreviation": "CHA",
+        "enabled": true
+      },
+      {
+        "id": "intelligence",
+        "label": "Intelligence",
+        "abbreviation": "INT",
+        "enabled": true
+      },
+      {
+        "id": "agility",
+        "label": "Agility",
+        "abbreviation": "AGI",
+        "enabled": true
+      },
+      {
+        "id": "luck",
+        "label": "Luck",
+        "abbreviation": "LCK",
+        "enabled": true
+      }
+    ],
+    "base_value": 8,
+    "max_value": 30,
+    "point_budget": 25,
+    "stat_value_labels": [
+      {
+        "threshold": 0.875,
+        "label": "exceptional"
+      },
+      {
+        "threshold": 0.75,
+        "label": "strong"
+      },
+      {
+        "threshold": 0.5,
+        "label": "above average"
+      },
+      {
+        "threshold": 0.375,
+        "label": "average"
+      },
+      {
+        "threshold": 0.25,
+        "label": "below average"
+      },
+      {
+        "threshold": 0.125,
+        "label": "weak"
+      },
+      {
+        "threshold": 0,
+        "label": "negligible"
+      }
+    ],
+    "vital_labels": [
+      {
+        "threshold": 1,
+        "label": "full"
+      },
+      {
+        "threshold": 0.75,
+        "label": "almost full"
+      },
+      {
+        "threshold": 0.5,
+        "label": "high"
+      },
+      {
+        "threshold": 0.25,
+        "label": "middling"
+      },
+      {
+        "threshold": 0.1,
+        "label": "low"
+      },
+      {
+        "threshold": 0.01,
+        "label": "critical"
+      },
+      {
+        "threshold": 0,
+        "label": "empty"
+      }
+    ],
+    "max_traits": 10
+  },
+  "stat_templates": [],
+  "species": [
+    {
+      "id": "cd77508e-6b3e-4851-a3a9-31682f8b91ad",
+      "_id": "cd77508e-6b3e-4851-a3a9-31682f8b91ad"
+    },
+    {
+      "id": "812431d9-b014-4549-bdb2-37666e0a94e4",
+      "_id": "812431d9-b014-4549-bdb2-37666e0a94e4"
+    },
+    {
+      "id": "4c2ac1e4-4e53-4d30-bb14-77a5df7e401f",
+      "_id": "4c2ac1e4-4e53-4d30-bb14-77a5df7e401f"
+    },
+    {
+      "id": "f65ff9db-c1a3-4a6c-83bf-f33d08d44d9e",
+      "_id": "f65ff9db-c1a3-4a6c-83bf-f33d08d44d9e"
+    },
+    {
+      "id": "1ade87a8-31a9-4b39-a7c7-cbe5bda64ff8",
+      "_id": "1ade87a8-31a9-4b39-a7c7-cbe5bda64ff8"
+    },
+    {
+      "id": "bd42cb76-d8d3-4792-988b-591f596dc188",
+      "_id": "bd42cb76-d8d3-4792-988b-591f596dc188"
+    },
+    {
+      "id": "be21f49e-4f5b-4a2d-902a-8b96a4c145fe",
+      "_id": "be21f49e-4f5b-4a2d-902a-8b96a4c145fe"
+    },
+    {
+      "id": "_JQc1r8BUg99hz3m6EXpVQ",
+      "_id": "_JQc1r8BUg99hz3m6EXpVQ"
+    },
+    {
+      "id": "_m3dxJEjE1jx4L3Kcxfzpp",
+      "_id": "_m3dxJEjE1jx4L3Kcxfzpp"
+    },
+    {
+      "id": "_pgXrUmdMQdUdWfBgpKP1t",
+      "_id": "_pgXrUmdMQdUdWfBgpKP1t"
+    },
+    {
+      "id": "_tRwFTV1yhheLyaAFPnqBt",
+      "_id": "_tRwFTV1yhheLyaAFPnqBt"
+    },
+    {
+      "id": "_LQHdgQcPypmmqaCbW7LdK",
+      "_id": "_LQHdgQcPypmmqaCbW7LdK"
+    },
+    {
+      "id": "_bqkDtCgzcTcDqw8UYNWmm",
+      "_id": "_bqkDtCgzcTcDqw8UYNWmm"
+    },
+    {
+      "id": "_JMPyyDcb312qtdEq1rGpj",
+      "_id": "_JMPyyDcb312qtdEq1rGpj"
+    },
+    {
+      "id": "_CjeqhzaGhJr6KxkexeKMw",
+      "_id": "_CjeqhzaGhJr6KxkexeKMw"
+    },
+    {
+      "id": "_2X4rekkkTgaL2y7htzhUL",
+      "_id": "_2X4rekkkTgaL2y7htzhUL"
+    },
+    {
+      "id": "_jd61Qfm1VXAdGz27TKg66",
+      "_id": "_jd61Qfm1VXAdGz27TKg66"
+    },
+    {
+      "id": "_jWM1tKfALzCeeEmnbc2tB",
+      "_id": "_jWM1tKfALzCeeEmnbc2tB"
+    },
+    {
+      "id": "_XVxQhzTLYMbWkkA3LqNA8",
+      "_id": "_XVxQhzTLYMbWkkA3LqNA8"
+    },
+    {
+      "id": "_AVfAfrJBhryKNfw2qCdca",
+      "_id": "_AVfAfrJBhryKNfw2qCdca"
+    },
+    {
+      "id": "_JmfwkkLtCrgKx3hJVR8yy",
+      "_id": "_JmfwkkLtCrgKx3hJVR8yy"
+    },
+    {
+      "id": "_DfjwH31hhDJdbgjftNXpD",
+      "_id": "_DfjwH31hhDJdbgjftNXpD"
+    },
+    {
+      "id": "_2wnYVXBtDtx6HwgfTrzBU",
+      "_id": "_2wnYVXBtDtx6HwgfTrzBU"
+    },
+    {
+      "id": "_mfQ4w4h7kWbwQaEMVED9z",
+      "_id": "_mfQ4w4h7kWbwQaEMVED9z"
+    }
+  ],
+  "occupations": [
+    {
+      "id": "676d4bc6-250e-4ab9-8bed-8ea6befb2b36",
+      "_id": "676d4bc6-250e-4ab9-8bed-8ea6befb2b36"
+    },
+    {
+      "id": "4cda630a-14e5-4a3b-aa4d-fe5cd922a9ee",
+      "_id": "4cda630a-14e5-4a3b-aa4d-fe5cd922a9ee"
+    },
+    {
+      "id": "7a579dc4-b70b-464f-b8b4-6c8bf1e63047",
+      "_id": "7a579dc4-b70b-464f-b8b4-6c8bf1e63047"
+    },
+    {
+      "id": "5d468ef5-d876-46ea-b6f1-4930dd3e6e07",
+      "_id": "5d468ef5-d876-46ea-b6f1-4930dd3e6e07"
+    },
+    {
+      "id": "4a970227-1556-420d-9aa7-b3e2c5a72290",
+      "_id": "4a970227-1556-420d-9aa7-b3e2c5a72290"
+    },
+    {
+      "id": "fb72faf6-d261-419e-9dc7-8cff8c656e73",
+      "_id": "fb72faf6-d261-419e-9dc7-8cff8c656e73"
+    },
+    {
+      "id": "_zdew8qxchkMDcJf6Ge39t",
+      "_id": "_zdew8qxchkMDcJf6Ge39t"
+    },
+    {
+      "id": "_yCNjpDEBrLGbMK73CrBzR",
+      "_id": "_yCNjpDEBrLGbMK73CrBzR"
+    },
+    {
+      "id": "_fgTDn33yV6eE9HEmm3qec",
+      "_id": "_fgTDn33yV6eE9HEmm3qec"
+    },
+    {
+      "id": "_12YM878yc9tkLC32Lfdhx",
+      "_id": "_12YM878yc9tkLC32Lfdhx"
+    },
+    {
+      "id": "_H6qFqB6BHDYGAXYJHLJFm",
+      "_id": "_H6qFqB6BHDYGAXYJHLJFm"
+    },
+    {
+      "id": "_73GgtJVQaYhaWCyjVeqRM",
+      "_id": "_73GgtJVQaYhaWCyjVeqRM"
+    },
+    {
+      "id": "_mG8DVrPTq8JdL8B2meJRY",
+      "_id": "_mG8DVrPTq8JdL8B2meJRY"
+    },
+    {
+      "id": "_eFTUaaMbVTByeDbbM9cLP",
+      "_id": "_eFTUaaMbVTByeDbbM9cLP"
+    },
+    {
+      "id": "_XdCtVEfpagDkty7je31B8",
+      "_id": "_XdCtVEfpagDkty7je31B8"
+    },
+    {
+      "id": "_qVckBABybAfQMUcYMpTkd",
+      "_id": "_qVckBABybAfQMUcYMpTkd"
+    },
+    {
+      "id": "_aFyU3E3TkK483Kt1GAHmX",
+      "_id": "_aFyU3E3TkK483Kt1GAHmX"
+    },
+    {
+      "id": "_q22RhFdF3H7RRTx2y31GL",
+      "_id": "_q22RhFdF3H7RRTx2y31GL"
+    },
+    {
+      "id": "_AAc7xBcAEttBdFmWTjBTg",
+      "_id": "_AAc7xBcAEttBdFmWTjBTg"
+    },
+    {
+      "id": "_YngWPBkwzfxfd6MbjhQAj",
+      "_id": "_YngWPBkwzfxfd6MbjhQAj"
+    },
+    {
+      "id": "_UqPTxeWDKkGT9R8bpM9U2",
+      "_id": "_UqPTxeWDKkGT9R8bpM9U2"
+    },
+    {
+      "id": "_VgABCMewQQjJVRh7Rc68N",
+      "_id": "_VgABCMewQQjJVRh7Rc68N"
+    },
+    {
+      "id": "_F6WVk1mdhfkxMY3jymHCH",
+      "_id": "_F6WVk1mdhfkxMY3jymHCH"
+    },
+    {
+      "id": "_AceqGK7cL6QkAKdPF9kCT",
+      "_id": "_AceqGK7cL6QkAKdPF9kCT"
+    },
+    {
+      "id": "_GwQBtq3JX8MGjF6QYpVkg",
+      "_id": "_GwQBtq3JX8MGjF6QYpVkg"
+    }
+  ],
+  "combat_ruleset": {
+    "model": "narrative_tiers",
+    "creature_model": "narrative_tiers",
+    "character_model": "narrative_tiers",
+    "initiative": {
+      "model": "stat",
+      "role": "speed"
+    },
+    "vitals": {
+      "hp": {
+        "base": 25,
+        "per_stat": 3,
+        "per_level": 0,
+        "role": "hp_stat"
+      },
+      "mp": {
+        "base": 20,
+        "per_stat": 3,
+        "per_level": 0,
+        "role": "mp_stat"
+      }
+    },
+    "tiers": {
+      "dc_base": 10,
+      "attack_role": "physical_attack",
+      "defense_role": "physical_defense",
+      "crit_margin": 12
+    },
+    "resource_role": "luck",
+    "battle_prompt": {
+      "instructions": "Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead.\n\nCombat is visceral, tactical, cinematic, and high-stakes. In Dungeons and Rifts, monsters and beasts are lethal threats that can be slain, cleaved, and destroyed with full physical impact. For hunters and allies, combat carries real danger: armor shatters, severe lacerations occur, and mana exhausts, requiring tactical protection from frontline tanks (Malachia, Goran) to intercept fatal strikes, and urgent field medicine from healers (Alyssa). Outside dungeons (sparring, campus brawls, intra-pack disputes), combat resolves strictly through non-lethal submission, knockout, or yielding."
+    }
+  },
+  "relationship_config": {
+    "enabled": true,
+    "decay_curve": "ease_out",
+    "magnitudes": {
+      "regular": {
+        "persistent": 2,
+        "moodlet_delta": 8,
+        "duration_hours": 36
+      },
+      "severe": {
+        "persistent": 6,
+        "moodlet_delta": 18,
+        "duration_hours": 96
+      }
+    },
+    "custom_moodlets": [
+      {
+        "id": "m_pack_resonance",
+        "label": "Pack Resonance",
+        "delta": 15,
+        "duration_hours": 48
+      },
+      {
+        "id": "m_pheromone_haze",
+        "label": "Pheromone Haze",
+        "delta": 20,
+        "duration_hours": 24
+      },
+      {
+        "id": "m_mated_bonding",
+        "label": "Mated Bonding",
+        "delta": 35,
+        "duration_hours": 168
+      },
+      {
+        "id": "m_territorial_threat",
+        "label": "Territorial Threat",
+        "delta": -20,
+        "duration_hours": 48
+      },
+      {
+        "id": "m_submissive_reverence",
+        "label": "Submissive Reverence",
+        "delta": 10,
+        "duration_hours": 36
+      },
+      {
+        "id": "m_blood_debt",
+        "label": "Blood Debt",
+        "delta": 30,
+        "duration_hours": 168
+      },
+      {
+        "id": "m_betrayed_pack_trust",
+        "label": "Betrayed Pack Trust",
+        "delta": -35,
+        "duration_hours": 168
+      },
+      {
+        "id": "m_pre_heat",
+        "label": "Pre-Heat",
+        "delta": 15,
+        "duration_hours": 72
+      },
+      {
+        "id": "m_heat",
+        "label": "In Heat",
+        "delta": 40,
+        "duration_hours": 168
+      },
+      {
+        "id": "m_rut",
+        "label": "In Rut",
+        "delta": 40,
+        "duration_hours": 168
+      }
+    ],
+    "tier_ladder": [
+      {
+        "id": "nemesis",
+        "label": "Nemesis",
+        "min_points": -100,
+        "color": "#8B0000"
+      },
+      {
+        "id": "enemy",
+        "label": "Enemy",
+        "min_points": -80,
+        "color": "#C0392B"
+      },
+      {
+        "id": "despised",
+        "label": "Despised",
+        "min_points": -60,
+        "color": "#E74C3C"
+      },
+      {
+        "id": "hated",
+        "label": "Hated",
+        "min_points": -40,
+        "color": "#D35400"
+      },
+      {
+        "id": "disliked",
+        "label": "Disliked",
+        "min_points": -20,
+        "color": "#E67E22"
+      },
+      {
+        "id": "stranger",
+        "label": "Stranger",
+        "min_points": -7,
+        "color": "#7F8C8D"
+      },
+      {
+        "id": "acquaintance",
+        "label": "Acquaintance",
+        "min_points": 3,
+        "color": "#5DADE2"
+      },
+      {
+        "id": "friend",
+        "label": "Friend",
+        "min_points": 8,
+        "color": "#27AE60"
+      },
+      {
+        "id": "close_friend",
+        "label": "Close Friend",
+        "min_points": 18,
+        "color": "#1E8449"
+      },
+      {
+        "id": "best_friend",
+        "label": "Best Friend",
+        "min_points": 30,
+        "color": "#00A896"
+      },
+      {
+        "id": "romantic_interest",
+        "label": "Romantic Interest",
+        "min_points": 45,
+        "color": "#9B59B6"
+      },
+      {
+        "id": "lover",
+        "label": "Lover",
+        "min_points": 60,
+        "color": "#E91E63"
+      },
+      {
+        "id": "partner",
+        "label": "Partner",
+        "min_points": 75,
+        "color": "#9C27B0"
+      },
+      {
+        "id": "soulmate",
+        "label": "Soulmate",
+        "min_points": 90,
+        "color": "#FF1493"
+      }
+    ],
+    "relationship_prompt": {
+      "heading": "Relationships",
+      "wrapper_start": "<Bonds>",
+      "wrapper_end": "</Bonds>",
+      "per_character_line": "{{name}} regards you as a {{tier}}{{#if mood}} (currently feeling {{mood}}){{/if}}.",
+      "instructions": "Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks). Never use the em dash.\n\nCharacters must behave in strict accordance with their relationship tier and current emotional state. A Stranger or Acquaintance remains guarded, professional, or aloof, especially within lupine and pack territory where scent and trust take time to forge. Romantic or intimate devotion is earned through genuine shared experience, loyalty, or pack integration, never unearned or instantaneous. When a character feels a temporary mood, let it subtly shade their body language, scent, and tone without breaking their core personality."
+    }
+  },
+  "currencies": [
+    {
+      "id": "fbecc738-f9f7-4426-b8a1-a237b8ad922c",
+      "name": "US Dollar",
+      "symbol": "$",
+      "decimal_places": 2,
+      "is_primary": true,
+      "universal_credit_rate": 1
+    },
+    {
+      "id": "8c7bca5a-5d3f-4780-93cb-5cb63dc2cf0a",
+      "name": "DMHA Guild Credits",
+      "symbol": "Cr",
+      "decimal_places": 0,
+      "is_primary": false,
+      "universal_credit_rate": 0.01
+    }
+  ],
+  "world_market_config": {
+    "delivery_premium_pct": 0.15,
+    "sellback_pct": 0.5,
+    "sellback_location_rule": "anywhere",
+    "furnished_lot_bonus_pct": 0.15,
+    "unpaid_rent_rule": "debt"
+  },
+  "starting_properties": [],
+  "type_effectiveness": {
+    "matchups": [
+      {
+        "attacking_type": "",
+        "defending_type": "",
+        "multiplier": 2
+      }
+    ]
+  }
+}
