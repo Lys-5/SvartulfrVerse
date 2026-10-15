@@ -2,6 +2,17 @@
 
 Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy dello StoryEngine e gli interventi sulle entità del World (World, Lexicon, Locations, NPC, Rules) sono tracciati cronologicamente in questo documento per garantire persistenza e coerenza storica tra le sessioni.
 
+## [15 Ottobre 2026] - Genericizzazione AnyPOV di FINAL/ (Alyssa → `{{user}}` + Placeholder Pronomi)
+
+- **Obiettivo**: rendere l'intera cartella [FINAL/](FINAL/) compatibile con qualsiasi POV, sostituendo la persona del giocatore **Alyssa Hvit Douglas Bloodmoon** con `{{user}}` e i pronomi a lei riferiti con i placeholder pronome Wyvern.
+- **Nuovo script**: creato [scripts/genericize_alyssa.py](scripts/genericize_alyssa.py), con backup integrale preventivo in `scratch/backup_final_prealyssa/` e log in `scratch/inbox/alyssa_genericize_log.txt`.
+- **Nome (regole utente)**: sostituito solo il token `Alyssa`/`alyssa`/`ALYSSA` → `{{user}}` (più possessivi `Alyssa's` → `{{user}}'s` ed etichette `Alyssa_` → `{{user}}_`); cognome e secondo nome invariati (`Alyssa Hvit Douglas Bloodmoon` → `{{user}} Hvit Douglas Bloodmoon`).
+- **Pronomi**: notazione **flat + Cap automatico** (`{{pronounSubjective}}`/`{{pronounSubjectiveCap}}`, `{{pronounObjective}}`/Cap, `{{pronounPosDet}}`/Cap, `{{pronounPosPro}}`/Cap, `{{pronounReflexive}}`/Cap); `her` disambiguato tra oggettivo e possessivo dal contesto.
+- **Disambiguazione referente**: conversione integrale dei pronomi solo nella entry dedicata di Alyssa; altrove applicate solo **regole curate a mano** (71 conversioni) per non corrompere i pronomi di Nixara, Elizabeth Duskwood, Jasmin e altri NPC. `"You have her eyes."` nella `mes_example` di Erik è rimasto invariato (si riferisce a Nixara).
+- **Ambito coperto**: 5 Character Card V2 (description/attitudes/mes_example), Location, Lorebook I/II/III, NPC Primary e NPC Secondary. In questa passata sono stati chiusi i gap residui in: attitudes `reasoning` delle card, description di Erik/Jasper/Malachia/Noah, `mes_example` di Logan, entry _Barriere a Permeabilità Selettiva_, _Absolute Pacifist Vow_, _LSE Pack Authority_, _White Moon Ceremonial Attire_, _Vélhati e Vélsköll_ (Lorebook II) e scheda _Hank Thompson_ (NPC Primary).
+- **Esito**: 0 residui `Alyssa` in tutti gli 11 file di `FINAL/`; JSON tutti validi.
+- **Documentazione**: aggiornati `README.md` (albero §1 e nuova sottosezione "Genericizzazione AnyPOV di FINAL/" in §3).
+
 ## [15 Ottobre 2026] - Character Card V2 dei Personaggi Principali (Main Cast)
 
 - **Generazione card**: creato `scripts/generate_main_cast_cards.py`, che genera le 5 **Character Card V2** (`spec: chara_card_v2`, lo stesso formato che Wyvern esporta come PNG) dei personaggi principali — Erik Douglas, Logan Douglas, Jasper Douglas Bloodmoon, Malachia Douglas Bloodmoon, Noah Douglas Bloodmoon — e le salva in `FINAL/` (`Erik_Douglas_card.json`, `Logan_Douglas_card.json`, `Jasper_Douglas_Bloodmoon_card.json`, `Malachia_Douglas_Bloodmoon_card.json`, `Noah_Douglas_Bloodmoon_card.json`).

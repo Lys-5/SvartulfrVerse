@@ -63,7 +63,8 @@ e:\repository\SvartulfrVerse\
 │
 ├── scripts/                    # Script e automazioni di progetto (Python/JS)
 │   ├── optimize_lorebooks.py   # Ottimizzatore non-distruttivo dei Lorebook
-│   └── generate_main_cast_cards.py # Genera le 5 Character Card V2 in FINAL/
+│   ├── generate_main_cast_cards.py # Genera le 5 Character Card V2 in FINAL/
+│   └── genericize_alyssa.py    # Genericizzazione AnyPOV di FINAL/ (Alyssa -> {{user}} + placeholder pronomi)
 │
 └── scratch/                    # Area di lavoro temporanea (script e dump ad-hoc)
     ├── inbox/                  # File sciolti pre-esistenti (ex-root)
@@ -139,6 +140,19 @@ Fonte dati: l'export live del World ([exports/Svartulfr_Export.json](exports/Sva
 
 ```powershell
 python scripts/generate_main_cast_cards.py
+```
+
+### Genericizzazione AnyPOV di FINAL/ (Alyssa → `{{user}}`)
+
+[scripts/genericize_alyssa.py](scripts/genericize_alyssa.py) rende l'intera cartella [FINAL/](FINAL/) compatibile con qualsiasi POV sostituendo la persona del giocatore **Alyssa** con il placeholder `{{user}}` e i pronomi a lei riferiti con i placeholder pronome Wyvern.
+
+- **Nome**: il solo token `Alyssa`/`alyssa`/`ALYSSA` → `{{user}}`, incluse le forme possessive (`Alyssa's` → `{{user}}'s`) e le etichette (`Alyssa_` → `{{user}}_`). Cognome e secondo nome restano invariati (`Alyssa Hvit Douglas Bloodmoon` → `{{user}} Hvit Douglas Bloodmoon`).
+- **Pronomi**: notazione **flat + Cap automatico**. `she` → `{{pronounSubjective}}`/`{{pronounSubjectiveCap}}`, `her` → `{{pronounObjective}}` (oggettivo) o `{{pronounPosDet}}` (possessivo) secondo il contesto immediato, `hers` → `{{pronounPosPro}}`, `herself` → `{{pronounReflexive}}`.
+- **Disambiguazione**: la conversione dei pronomi avviene integralmente solo nella entry dedicata di Alyssa (`{{user}} Hvit Douglas Bloodmoon`); altrove vengono applicate esclusivamente **regole curate a mano**, così da non toccare i pronomi di altri referenti femminili (Nixara, Elizabeth Duskwood, Jasmin e altri NPC).
+- **Sicurezza**: backup integrale dei file originali in `scratch/backup_final_prealyssa/`; log delle conversioni in `scratch/inbox/alyssa_genericize_log.txt`.
+
+```powershell
+python scripts/genericize_alyssa.py
 ```
 
 ### Gestione, Sincronizzazione e Generazione dei Lorebook (World)
