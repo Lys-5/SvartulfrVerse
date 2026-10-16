@@ -5,15 +5,18 @@
 Ogni character card deve essere elaborata seguendo rigorosamente questa sequenza ordinata di 13 passaggi. Ogni fase va validata prima di procedere alla successiva.
 
 1. **Raccolta e Audit delle Fonti:** Raccogliere tutte le fonti (lorebook, Q&A autore, entry Lexicon esistenti, legami già scritti in altre schede, documentazione WyvernWiki). Non avviare la scheda se le fonti sono lacunose o parziali; chiedere chiarimenti all'utente prima di ipotizzare dati chiave.
-2. **Controllo Duplicati nel World:** Verificare via API (GET filtrata per nome) se il personaggio esiste già nel World come segnaposto vuoto o import grezzo. Popolare l'entità esistente per evitare duplicati orfani.
+2. **Verifica Preventiva su Wyvern Explore & Controllo Duplicati:**
+   - **Esplora Wyvern (`https://app.wyvern.chat/explore?tab=characters&rating=all`):** Prima di redigere o importare qualsiasi card, verificare se il personaggio è già presente pubblicamente sul portale curato dall'autore originale canonico (es. **Kakihara** per Marek, Barrow, Radek, Goran, Kian del Team Ukiyo; o **io wuvs soap** per personaggi del SUCC Verse). Se presente, **è vietato creare una card duplicata in `/mine`**: si riutilizza la card ufficiale già pubblicata.
+   - **Controllo `/mine`:** Verificare se il personaggio esiste già tra le proprie card private per aggiornarlo anziché ricrearlo.
 3. **Epurazione di `{{user}}` e Bonifica:** Applicare i protocolli di bonifica (Regola 07), rimuovendo ogni traccia di `{{user}}`, dinamiche non consensuali o cotte inappropriate.
 4. **Redazione Campi Testuali Principali:**
-   - `long_summary`: In formato standard JED+ (Regola 01) con macro `{{age}}` nel campo `AGE`.
+   - `long_summary`: In formato standard JED+ (Regola 01) con età anagrafica esplicita nel campo `AGE` (senza macro `{{age}}`).
    - `summary`: Blocco PList puro di soli tratti psicologici/comportamentali.
    - `display_description`: 1-2 frasi incisive su chi è e cosa lo rende memorabile.
    - Nickname, titoli, keys, pronomi.
-5. **Configurazione 5 Outfits Contestuali:** Creare esattamente cinque outfit contestuali (Regola 03).
-   - *Via API:* Inviare l'array completo in un unico payload PUT.
+   - **Invariante Privacy & Rating:** Tassativamente `visibility: "private"` e `rating: "explicit"`.
+5. **Configurazione Minimo 9 Outfits Contestuali:** Creare obbligatoriamente almeno 9 outfit contestuali standardizzati (Regola 03: casual, business/campus, gala/formal, party/club, beach/terme, sleep, nude, hybrid shift/mutation, full shift/other) con apertura lombare rinforzata per la coda.
+   - *Via API:* Inviare l'array completo in un unico payload PUT con nanoid univoci.
    - *Da Interfaccia Web:* Inserire e salvare **un singolo outfit per volta** con salvataggio intermedio (l'interfaccia sovrascrive gli elementi se inviati simultaneamente).
 6. **Impostazione del Default Outfit:** Assegnare obbligatoriamente il Default Outfit (l'abito ordinario di riposo/routine, non il più appariscente). Senza Default Outfit, l'LLM allucina abiti casuali.
 7. **Start Timeline Position:** Calcolata in ore assolute dal World Clock (Regola 04). Inserire la `End Position` solo ed esclusivamente per i personaggi deceduti.

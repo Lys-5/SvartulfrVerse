@@ -255,6 +255,24 @@ def build_card(web_c, cfg):
         f"Synchronized with Wyvern Web World {WORLD_ID}."
     )
 
+    # Blocco nativo WyvernChat: l'importatore UI legge outfits/pronouns/default_outfit
+    # da extensions.wyvern (fallback: root), non da extensions.outfits.
+    wyvern_block = {
+        "pronouns": web_c.get("pronouns"),
+        "outfits": [
+            {
+                "id": o.get("id"),
+                "name": o.get("name"),
+                "description": o.get("description", ""),
+            }
+            for o in outfits
+            if isinstance(o, dict)
+        ],
+        "default_outfit": web_c.get("default_outfit"),
+        "enable_advanced_greetings": False,
+        "greetings": [],
+    }
+
     extensions = {
         "outfits": outfits,
         "attitudes": attitudes,
@@ -266,6 +284,7 @@ def build_card(web_c, cfg):
             "prompt": f"{display_name}. Adhere strictly to LSE mechanics and format discipline.",
             "depth": 4,
         },
+        "wyvern": wyvern_block,
     }
 
     data_block = {
@@ -289,6 +308,7 @@ def build_card(web_c, cfg):
             "birthdate": web_c.get("birthdate"),
             "start_timeline_position": web_c.get("start_timeline_position"),
             "keys": keys,
+            "wyvern": wyvern_block,
         },
     }
 

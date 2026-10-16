@@ -100,6 +100,19 @@ Definire accessori o elementi visivi come "always on" o "never removed" (es. ben
 2. **Descrizione Contestuale:** Se gli Outfit non sono ancora popolati, descrivere il tratto come legato al contesto nella prosa: *"X indossa Y solo quando Z; in altri contesti non è presente."*
 3. **Eccezione Ammessa:** Un tratto può restare costante se e solo se la sua costanza *è* il personaggio e la scheda lo dichiara esplicitamente (es. il cappuccio di Dullahan non scende mai, in nessun contesto).
 
+### Standard Minimo 9 Outfits Obbligatori per Scheda
+Ogni character card redatta o aggiornata nel repository deve includere nel campo `outfits` **un minimo assoluto di 9 outfit contestuali**, strutturati rigorosamente secondo lo schema a 6 sezioni (Abbigliamento, Accessori, Scarpe, Gioielli, Trucco, Acconciatura) con apertura lombare rinforzata per la coda:
+1. `casual`: Abbigliamento quotidiano, relax a casa, abiti da strada/tempo libero informale.
+2. `business / campus`: Frequenza accademica (campus SUCC) o abito professionale/aziendale di rappresentanza (DCC).
+3. `gala / formal`: Alta sartoria per cene di casata, ricevimenti solenni, galà ufficiali o cerimonie di branco.
+4. `party / club`: Nightlife, serate in discoteca o lounge bar esclusivi (es. The Verve, Solarton club scene).
+5. `beach / terme`: Costume da bagno, costume termale o abbigliamento balneare da sorgente calda/spiaggia/piscina.
+6. `sleep`: Abbigliamento da notte, pigiama leggero, boxer o intimo per dormire.
+7. `nude`: Nudo anatomico completo, con descrizione rigorosa di corporatura, cicatrici, genitali e tatuaggi/rune sub-dermiche.
+8. `hybrid shift / mutation`: Forma ibrida bipede da combattimento (per licantropi LSE: Hybrid Shift mastodontico con pelliccia, muso allungato e artigli).
+9. `full shift / other`: Forma bestiale integrale a quattro zampe (per shifters: lupo gigante ancestrale; per non-shifters: uniforme operativa da campo specialistica).
+
+
 ---
 
 ## 5. Coerenza Visiva di Famiglia (Douglas) e Anatomia Demi-Umani
@@ -137,18 +150,21 @@ const oreDaData = iso => (Date.parse(iso) - EP) / 3600000;
 
 ---
 
-## 7. Triage Import Lorebook ed Architettura Lexicon World
+## 7. Triage Import Lorebook ed Architettura Lexicon World / Lorebooks Standalone
 
-- **Personaggi Vivi Nativi:** Entrano come **Character** con **Start Position**.
-- **Personaggi Stand-Alone (`/mine`):** Vengono collegati al World tramite **Linked Characters** (`linked_characters`, in `ws=library&tab=linked-characters`), fungendo da Single Source of Truth condivisa tra 1-on-1 e World.
-- **Personaggi Deceduti:** Entrano come **Character** con **Start Position** ed **End Position** (modello Nixara; non vanno più nel Lexicon).
-- **Confinamento World Characters:** Superamento del Global Character ON generalizzato. Solo i 5 Douglas principali (Malachia, Noah, Jasper, Erik, Alyssa) mantengono **Global Character = ON**. Tutti gli altri 108 World Characters devono avere **Global Character = OFF** (`is_global: false`), caricandosi unicamente se presenti nella Location corrente o nel Party attivo.
-
-### World Lean Architecture & Confinamento Lexicon
-Per impedire che il prompt inviato all'LLM superi il Context Budget di Wyvern e provochi il troncamento della cronologia di chat:
-- **`is_global: true` Riservato:** Consentito esclusivamente per un nucleo ristretto di concetti cosmologici e biologici universali (~30 voci max: LSE, fisiologia licantropi/vampiri, vulnerabilità argento/aconito, ciclo solare/notturno).
-- **Tutte le altre voci (`is_global: false`):** Tutti i 284 NPC minori nel Lexicon, i 51 item di negozio, i 16 contratti di lavoro, le 19 memorie personali, e le entry specifiche di confraternite/negozi devono avere tassativamente `is_global: false`.
-- **Soglia di Sicurezza Context Budget:** La somma dei metadati statici del World (Istruzioni avanzate + Location + Rotte + RPG State + Voci Lexicon scattate + Personaggi) non deve mai superare i **5.000 token**, garantendo che almeno il 70% della finestra di contesto rimanga sempre riservata alla cronologia di chat e all'input dell'utente.
+- **Dismissione World e Pivot su 6 Lorebook Standalone:** Con la migrazione definitiva ai Character Scenarios, tutto il corpus informativo del mondo è scorporato e distribuito nei **6 Lorebook Standalone** sincronizzati in `/mine` e collegati agli scenari via `lorebook_ids`:
+  1. `_gwwCxCfQ6PQaLEjAQVpJL` — **Svartúlfr - Lorebook I** (220 entries: Ecologia LSE, Rune, Casate, Fazioni e Lore primaria).
+  2. `_HfG7TeV6MJyj6bxMwxkpt` — **Svartúlfr - Lorebook II** (144 entries: Bacheca Contratti, Economia, Oggetti, DDM Voidspace).
+  3. `_9zWTGqYJNJ4BCDMj8gfcD` — **Svartúlfr - Lorebook III** (26 entries: Campus SUCC, CUMS, Confraternite, Sport, Underworld).
+  4. `_EjXxkmPVhpCXg8xABpFkK` — **Svartúlfr - Location** (196 entries: Location strutturate).
+  5. `_zwEqgEEzh12X6gHVmMKKC` — **Svartúlfr - NPC Primary** (113 entries: NPC primari e profili intimi con Statistiche Finali).
+  6. `_Uht3Ckz44JBDrPnUHq7LV` — **Svartúlfr - NPC Secondary** (313 entries: NPC secondari e terziari con Statistiche Finali).
+- **Regole di Igiene Lorebook Obbligatorie:**
+  - **Zero Keyword Ombrello (`BROAD_KEYS`) sugli NPC:** Divieto assoluto di tag generici (`solarton`, `succ`, `blackwood`, `vampire`, `werewolf`, `college`, `student`, `alpha`, `omega`, ecc.) sulle schede NPC per evitare l'attivazione massiva simultanea di oltre 100 voci.
+  - **Zero `selective: true` senza `secondary_keys`:** Mantenere `selective: false` salvo quando `secondary_keys` è popolato.
+  - **Divieto della macro `{{age}}`:** Sostituita con età anagrafica e data di nascita esplicita.
+  - **Standard Obbligatorio Metadati NPC (Avatar Parsing & UI Splitting):** Ogni entry `npc` deve possedere `avatar` valido (URL Cloudflare o Janitor `https://ella.janitorai.com/bot-avatars/{hash}.webp`), `custom_avatar_regex: true`, `avatar_activation_regex` multiline `(?:^|\n)\s*(?:Nome Completo|Nome|Nickname)\s*:`, `lines_parsed: 1` e oggetto `npc_info` (`first_name`, `last_name`, `nicknames`, `titles`). I Character Scenario devono includere la direttiva di formattare sempre il parlato NPC su nuova riga con `Nome Completo:`.
+- **Personaggi Stand-Alone (`/mine`):** Costituiscono la Single Source of Truth condivisa tra chat 1-on-1 e Character Scenarios.
 
 ### Matrice di Triage
 
@@ -240,8 +256,38 @@ Ogni voce di Lexicon focalizzata su un singolo personaggio (Intimacy Profiles, D
 
 - **La precedenza si applica per dominio territoriale/concettuale:** In caso di collisione, prevale sempre l'autorità dell'ambientazione a cui appartiene il dominio in questione.
 - **Caso Specifico DDM Inc.:** Vale in modo assoluto sul proprio dominio (Contratti, Original Death, ACES, ARC Level, SERAPHIM, realtà lacerate). Non ha invece alcuna autorità sul suolo californiano: gergo e concetti DDM non circolano a Blackwood o Solarton, e l'ARC Level è del tutto sconosciuto. Dullahan opera come Coach D con le regole locali, e come #04 con le regole DDM.
+- **Canone Ufficiale SUCC (`io-succ.uwu.ai`):**
+  - **Nome Ufficiale:** **Supernatural University of Central California (SUCC)** a Solarton, CA.
+  - **Divieto del termine "Solarton University":** Il nome "Solarton University" è apocrifo e bandito da ogni testo o scheda.
+  - **Fondazione (2002):** Fondata dal **Dean Archer Wolfwood**, pioniere dell'integrazione accademica umano-soprannaturale.
+  - **Istituzione Rivale:** **CUMS** (*California University of Magical Sciences*), situata a Hex Valley.
+- **Sorgenti Canon JanitorAI & Protocollo Accesso Chrome:**
+  - *Lorebook Storico Janitor:* `https://janitorai.com/scripts/896b4e03-5bef-45b3-8007-67ca6230e608/edit`
+  - *Personaggi Canon Varie Linee Temporali:* `https://janitorai.com/?segment=following`
+  - *Scheda Storica Famiglia Douglas:* `https://janitorai.com/edit_character/3a60976e-c48f-4a83-84b5-7026d914645e`
+  - *Personaggi Preferiti da Integrare:* `https://janitorai.com/?segment=favorites`
+  - *Protocollo:* È fatto divieto di scraping headless; l'accesso a questi link avviene esclusivamente tramite browser Chrome locale su cui l'utente possiede già la sessione attiva e le credenziali memorizzate.
 - **Personaggi Importati da Altri Universi dell'Utente (Zeera, Yael, Huck):** Non sono canone esterno fisso ma materiale proprio riscrittibile liberamente; backstory e ruoli vanno ricostruiti da zero per armonizzarsi con Blackwood.
 - **Tracciamento Adattamenti:** Gli adattamenti canonici vanno registrati nel Project evidenziando fonte, resa nel World e logica di compatibilità.
+
+### Legami Canonici Esterni & Network Autori Integrati
+Le seguenti figure, derivate dai dossier e preferiti storici JanitorAI, sono state formalmente posizionate nel canone Svartúlfr Verse con ruoli e dinamiche vincolanti:
+1. **Campus SUCC & Accademia:**
+   - **Finnegan "Finn" Novak:** È ufficialmente l'**amico d'infanzia** della generazione giovane Douglas (Alyssa, Jasper, Noah). Demi-umano canino (1 solo paio di orecchie animali), incarna un legame sincero, rilassato e pre-corporativo.
+   - **Russ & The Five Cocketeers:** **Russ** è il **coinquilino di stanza di Jasper Douglas** nei dormitori del campus (Wyrm Hall). Esuberante e rumoroso, porta Jasper fuori dalla sua caverna informatica con tacos notturni e vita studentesca.
+   - **Roman Blackwood & Kolya:** Atleti di punta del SUCC Varsity Wrestling Team; sono i **compagni di allenamento al Gym e sparring partners di Malachia Douglas**, uniti dal rispetto per il condizionamento fisico pesante e la disciplina marziale.
+2. **Distretto Rurale di Bakersfield:**
+   - **Dallas Rhodes:** Licantropo contadino e allevatore a **Bakersfield** (ricollocato ufficialmente dal Texas alla Central Valley). Forte, silenzioso, abiti in denim con apertura per la coda, legato al lavoro dei campi e fiero del proprio pragmatismo operaio.
+   - **NOVA FARM:** Branco rurale di licantropi operante a **Bakersfield**. Vivono di agricoltura e allevamento su grandi spazi aperti, in forte contrasto socio-culturale con l'aristocrazia corporativa Douglas di Seven Hills.
+3. **Underworld, Nightlife & Rivalità Musicali:**
+   - **Neon Purr:** DJ felino cyberpunk underground, introdotto come il **principale rivale musicale di Jasper Douglas**. Si sfidano a colpi di produzioni elettroniche, synth analogici e DJ battle tra The Verve e rave illegali.
+   - **Romeo "Gray" Dean:** Leader/luogotenente della **gang di biker rivale dei Nomads** di Marek tra Solarton e Blackwood, in perenne contesa per i corridoi di transito.
+4. **Fazione Orchi & Politica Marziale:**
+   - **Warchief Thrakgor Deathspine:** Bellicoso capoguerra del Clan Deathspine. È la perenne **spina nel fianco di Brak Ironfist**: mentre Brak cerca la tregua e la cooperazione istituzionale, Thrakgor preme per l'espansione guerriera.
+5. **Circolo di Forgia al The Verve:**
+   - **Morgeth Steeltooth:** Maestro fabbro orco e conoscitore del ferro freddo, sodale e pari di **Ut Berg**. Si incontrano al The Verve trascinando Logan Douglas in estenuanti dispute su leghe e temprature che Logan sopporta per non farsi spaccare in due.
+6. **Clan Bloodmoon Tradizionale (Foresta Profonda):**
+   - **Thorvald & Harald Sigurdsson:** Licantropi scandinavi del Clan Bloodmoon arcaico, discendenti diretti del seguito di Wulfnic (1022 d.C.). Vivono stabilmente nella foresta profonda del Dead Zone preservando la lingua, i riti runici e la caccia norrena.
 
 ---
 
@@ -452,23 +498,43 @@ Seguire tassativamente la sequenza di 13 passi:
 
 ---
 
-## 18. Standard Operativo per Chat di Gruppo Stand-Alone (/mine)
+## 18. Standard Operativo "Character Scenarios", Statistiche RPG Finali & Stile Visivo Argon
 
-Nelle sessioni di gioco giocate al di fuori del World (Chat di Gruppo stand-alone con 2-6 personaggi di `/mine`):
+Con la dismissione definitiva del modulo World di Wyvern (`_CgYT8fHXpDC4crjmegQF7`), tutte le sessioni multi-personaggio e di storia adottano ufficialmente i **Character Scenarios** (`https://wiki.wyvern.chat/en/Features/Character-Scenarios`, endpoint `/api/character-scenarios`), come dettagliato in [.agents/rules/13_workflow_chat_di_gruppo_stand_alone.md](file:///e:/repository/SvartulfrVerse/.agents/rules/13_workflow_chat_di_gruppo_stand_alone.md), [.agents/rules/09_rpg_stats_e_simulation.md](file:///e:/repository/SvartulfrVerse/.agents/rules/09_rpg_stats_e_simulation.md) e [.agents/rules/03_outfits_e_coerenza_visiva.md](file:///e:/repository/SvartulfrVerse/.agents/rules/03_outfits_e_coerenza_visiva.md):
 
-1. **Architettura delle Schede in `/mine`:**
-   - Ogni scheda in `/mine` deve avere un peso calibrato tra **1.000 e 1.500 token** per preservare il context window del gruppo.
-   - Disciplina di formattazione rigorosa: dialoghi tra virgolette inglesi doppie standard (`"..."`), narrazione in testo semplice senza asterischi, asterischi riservati solo ai pensieri, divieto assoluto dell'em-dash (`—`).
-   - Anatomia demi-umani: un solo paio di orecchie (solo orecchie animali).
-2. **Disaccoppiamento dello StoryEngine:**
-   - Nella definizione dello StoryEngine (`engine_HCTPXhL8xr89wUY9r9dYU`), l'array `worlds` deve essere impostato su `[]` (`definition.worlds = []`).
-   - Questo impedisce all'engine di tentare di risolvere, scansionare o richiamare in loop l'intero World esterno durante una chat di gruppo locale, garantendo tempi di risposta immediati e zero token sprecati.
-3. **Gestione Lorebook Reattivo:**
-   - Ciascuna scheda ha collegati i 3 Lorebook stand-alone (`Svartúlfr - Lorebook`, `Svartúlfr - NPC Primary`, `Svartúlfr - Location`).
-   - I Lorebook stand-alone operano in modalità di scansione selettiva: scansionano unicamente gli ultimi messaggi e iniettano solo 0-2 voci se espressamente citate. Nessuna voce globale viene forzata a ogni turno: il consumo del Lorebook rimane inferiore a 500-1.000 token per turno.
-4. **Prestazioni Attese:**
-   - Il prompt complessivo iniziale prima della cronologia deve rimanere stabilmente tra **4.000 e 6.000 token**.
-   - La cronologia dei messaggi e l'input del giocatore rimangono integri al 100%, garantendo coerenza narrativa e assenza di troncamenti.
+1. **Scenario Unificato Multi-Greeting (`char_scenario_1DC43ggb6mB8YLJDJKrU4`):**
+   - Tutte le aperture narrative (dalla serata *Call of Duty* a Villa Douglas e le vacanze estive a *Camp Mystic*, lungo i capitoli del primo anno accademico alla SUCC, le incursioni della Gilda DMHA e i rave di DJ Frequency) sono riunite come **Greetings ordinate** in un unico grande Character Scenario che segue la vita dei due gemelli Douglas-Bloodmoon.
+   - **Dual-Protagonist (`Alyssa` & `Jasper`):**
+     - Le due Personas proposte (`linked_persona_ids`) sono **Alyssa** (`persona_1786335754946`) e **Jasper** (Persona speculare alla sua Card).
+     - Il pool dello slot `twin` (`key: "twin"`) contiene **sia la Character Card di Jasper sia la Character Card di Alyssa** (`weight: 100`), così chi gioca nei panni di Alyssa ha Jasper come `twin` e chi gioca nei panni di Jasper ha Alyssa come `twin`.
+     - Le aperture specifiche per uno dei due gemelli riportano in cima il tag **`[FemPOV]`** o **`[MalePOV]`**.
+    - **Disciplina dei Ruoli per gli Slot (`slots`):**
+      - Gli slot non utilizzano i nomi dei personaggi ma esclusivamente i ruoli funzionali o relazionali:
+        - `maternal_grandfather` -> Wulfnic Báleygr Bloodmoon (`_HEQQbbRFwKdG8QE2Fh1z1`)
+        - `paternal_grandfather` -> Magnus Douglas III (`_dJ7nRMQEbcUgdWG96MqLz`)
+        - `paternal_grandmother` -> Elizabeth Duskwood (`_zBD6rWUkJBAjLfXnja4xh`)
+        - `father` -> Erik Ulfr Douglas (`_QPea6g4Q1QfeYCVHCLMPR`)
+        - `twin` -> Pool bilanciato: Jasper Svartr (`_t4J9aQNJM36cUKAP4wB4U`) + Alyssa Hvit (`_6exg3yPfe2eCDK4hTftkh`)
+        - `brother` -> Noah Loki Douglas Bloodmoon (`_zFLUjV8aVxQRAfQxGcAcY`)
+        - `eldest_brother` -> Malachia Björn Douglas Bloodmoon (`_RDfz7XzTpM23LpPALVXHM`)
+        - `uncle` -> Logan Járn Douglas (`_T8Ywcr9FEqNf9JxbK6eHP`)
+        - `cousin` -> Edric Douglas (`_TbRM3EdxDjHFgqztTbCpL`)
+        - `boss` -> Zeera Darkfire (`_3tMk6cRAFewRnKMkdJ4XU`)
+        - `quarterback` -> Jared Thompson (`_xJVPtBLL3dxy69RLKL9X9`)
+        - `crush` -> Mackenzie "Mac" Sanchez-Rogers (`_zn24784jfcchQ7EwCyAnm`)
+        - `major` -> Major Kaladin Blackwolf Nargathon (`_EnRGd1jfbjTTGmz4EFJdd`)
+      - *Card esterne del portale:* I personaggi pubblici di altri autori (come Marek di Kakihara) non possono essere inseriti nei pool degli slot per vincoli API; nelle scene corali il loro speaker_slot è affidato a `twin` (Jasper o Alyssa a vegliare sulla scena) preservando intatti i dialoghi dell'Oni.
+   - **Messaggi Multi-Mittente (`messages[]`) e Macro:**
+     - Ogni battuta in apertura è un elemento separato di `greeting.messages` con il proprio `speaker_slot` (senza prefissi `=>Nome:` o `Nome: ` nel testo); `greeting.content` e `greeting.speaker_slot` devono sempre coincidere con `messages[0]`.
+     - Usare `{{scenarioChar "slot_key"}}` per riferirsi agli altri slot, `{{char}}` per il mittente del messaggio corrente e `{{user}}` per il giocatore.
+2. **Statistiche RPG Finali Calcolate (`[STATS: ...]`):**
+   - Essendo fuori dal World, nel blocco `RPG STATS & TRAITS:` in fondo a `description` (su Character Card, Personas e Lorebook `NPC Primary`/`Secondary`) non si inseriscono le sole statistiche base, ma le **Statistiche Finali** comprensive di tutti i bonus e malus derivanti da Specie, Occupazione e Tratti:
+     $$\text{STAT}_{\text{finale}} = \text{STAT}_{\text{base}} + \Delta_{\text{Specie}} + \Delta_{\text{Occupazione}} + \sum_{i} \Delta_{\text{Tratto}_i}$$
+3. **I 6 Lorebook Collegati & I 4 Prompt Overrides:**
+   - Ogni Character Scenario collega i 6 Lorebook ufficiali Svartúlfr (`Lorebook I`, `Lorebook II`, `Lorebook III`, `Location`, `NPC Primary`, `NPC Secondary`) più i 3 Lorebook tecnici (`A1 Physics`, `A5 Sex Position`, `A5.5 Scene Tone`).
+   - I **4 Prompt Overrides** ufficiali ([FINAL/PROMPT_OVERRIDES_WYVERN.md](file:///e:/repository/SvartulfrVerse/FINAL/PROMPT_OVERRIDES_WYVERN.md)) applicano il "sandwich linguistico" in italiano, il `<dual_scene_format>` e il `【 LIVE FEED 】`.
+4. **Stile Visivo Definitivo Argon / Gemini:**
+   - Tutte le immagini dei personaggi e dei loro outfit partono dall'ancora biometrica generata con **Argon** (`<IMAGE_0>`) e usano in Gemini lo schema standard a 6 sezioni in italiano (`Abbigliamento` con fessura lombare per la coda, `Accessori`, `Scarpe`, `Gioielli` con rune, `Trucco`, `Acconciatura` con copertura totale delle tempie umane), lo stile *pittura digitale semi-realistica a figura intera* e la clausola finale obbligatoria `No orecchie umane. No auricolari [se non previsti]. No modifiche alle orecchie da lupo o alla coda, coerenti con <IMAGE_0>.`
 
 ---
 
@@ -476,8 +542,9 @@ Nelle sessioni di gioco giocate al di fuori del World (Chat di Gruppo stand-alon
 
 Ogni interazione dell'assistente su questo repository incorpora sistematicamente i principi delle seguenti modalità operative (dettaglio in [.agents/rules/14_metodo_operativo_skills_integrate.md](file:///e:/repository/SvartulfrVerse/.agents/rules/14_metodo_operativo_skills_integrate.md)):
 
-1. **Pianificazione Rigorosa (`/plan`):** nessuna modifica strutturale a World, schede o Lorebook senza piano di implementazione dettagliato e approvazione esplicita dell'utente.
+1. **Pianificazione Rigorosa (`/plan`):** nessuna modifica strutturale a scenari, schede o Lorebook senza piano di implementazione dettagliato e approvazione esplicita dell'utente.
 2. **Allineamento Interattivo (`/grill-me`):** ambiguità e dati non documentati si risolvono con domande mirate una alla volta, mai con assunzioni.
-3. **Ispezione Documentale (`/browser`, `/chrome-devtools`):** consultare attivamente le fonti web (profili Wyvern, portale SUCC, JanitorAI) e ispezionare endpoint e schemi dati prima di assumere formati.
+3. **Ispezione Documentale (`/browser`, `/chrome-devtools`):** consultare attivamente le fonti web (profili Wyvern, WyvernWiki, conversazioni Gemini) e ispezionare endpoint e schemi dati prima di assumere formati.
 4. **Decomposizione e Verifica Obiettiva (`/teamwork-preview`):** task ampi suddivisi in criteri di accettazione verificabili via script e audit di conformità.
 5. **Audit Post-Esecuzione (`/boost`):** ogni scrittura va verificata con GET fresche e controlli di integrità indipendenti.
+

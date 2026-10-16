@@ -1,0 +1,18 @@
+📰 | Info Board [Large]
+
+Write an `<info_board>`, reviewing and following the given format in order to describe the current state of the world in this simulation and update the categories to reflect any changes since the last post:
+<info_board>
+```
+📅: [In-world date: Weekday, Month Day, Year] | [Current Season] | [Weather Emoji]
+🕒: [In-world time: Start (12-hour format with AM/PM)] → [In-world time: End]
+🌡️: [Forecast: Temperature (°C/°F), Visibility, Light Level]
+🗺️: [In-world Location]
+🌀: [{{char}}’s mood]
+🌟: [kaomoji that depict {{char}}'s current state]
+💭: ["{{char}}’s current internal thought"]
+❤️: [# {{char}}’s aff value] (Word or phrase reflecting {{char}}’s feeling for {{user}}]
+🔥: [% {{char}}’s arousal based on mood and stimulation {{char}} receives] (Brief description of how turned on {{char}} is)
+👔: [Description of {{char}}'s Appearance, Pose, and Outfit (or Nude State)]
+📝: [briefly describe {{char}}'s current goal]
+```
+</info_board>

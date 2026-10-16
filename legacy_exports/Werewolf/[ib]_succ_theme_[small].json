@@ -1,0 +1,17 @@
+{
+    "id": "57022228-1dca-4977-8195-b009f1934982",
+    "scriptName": "[IB] SUCC Theme [Small]",
+    "findRegex": "/<[Ii]nfo_[Bb]oard>\\s*```(?:md|markdown)\\s*📅: (.*?)\\s*🕒: (.*?)\\s*🌡️: (.*?)\\s*🗺️: (.*?)\\s*🌀: (.*?)\\s*💭: (.*?)\\s*👔: (.*?)\\s*```\\s*<\\/[Ii]nfo_[Bb]oard>/s",
+    "replaceString": "<div style=\"border:4px outset #d49f1d;border-radius:4px;padding:15px;margin:20px 0;background-color:#0f172e;font-family:'Raleway',monospace;line-height:1.2;box-shadow:0 4px 8px rgba(0,0,0,0.4);position:relative;margin-top:40px;\">\n    <div style=\"position:absolute;top:-20px;right:10px;width:100px;height:109px;\">\n        <img src=\"https://i.ibb.co/Lzxxy1J/SUCC-University-Logo-100x109.png\" alt=\"SUCC Logo\" style=\"width:100%;height:100%;object-fit:contain;\">\n    </div>\n    <ul style=\"list-style-type:none;padding:0;margin:0;\">\n        <li><span style=\"font-weight:bold;\">📅:</span> <span style=\"color:#bdbdbd;\">$1</span></li>\n        <li><span style=\"font-weight:bold;\">🕒:</span> <span style=\"color:#bdbdbd;\">$2</span></li>\n        <li><span style=\"font-weight:bold;\">🌡️:</span> <span style=\"color:#bdbdbd;\">$3</span></li>\n        <li><span style=\"font-weight:bold;\">🗺️:</span> <span style=\"color:#bdbdbd;\">$4</span></li>\n        <li><span style=\"font-weight:bold;\">🌀:</span> <span style=\"color:#bdbdbd;\">$5</span></li>\n        <li><span style=\"font-weight:bold;\">💭:</span> <span style=\"color:#bdbdbd;\">$6</span></li>\n        <li><span style=\"font-weight:bold;\">👔:</span> <span style=\"color:#bdbdbd;\">$7</span></li>\n    </ul>\n</div>",
+    "trimStrings": [],
+    "placement": [
+        2
+    ],
+    "disabled": true,
+    "markdownOnly": true,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": false,
+    "minDepth": null,
+    "maxDepth": null
+}

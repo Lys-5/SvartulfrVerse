@@ -2,6 +2,313 @@
 
 Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy dello StoryEngine e gli interventi sulle entità del World (World, Lexicon, Locations, NPC, Rules) sono tracciati cronologicamente in questo documento per garantire persistenza e coerenza storica tra le sessioni.
 
+## [17 Ottobre 2026] - Consolidamento Architetturale Cast Fisso (13 Standalone /mine Cards) & World Dossier nei Lorebook
+
+- **Standardizzazione del Cast Fisso Canonico (13 Character Cards in `/mine` e Scenario Slots)**:
+  - Definita formalmente la rosa dei **13 personaggi canonici del cast fisso** che occupano gli slot narrativi dei Character Scenarios e costituiscono le sole Character Cards presenti nella libreria `/mine` di Wyvern:
+    1. **Erik Ulfr Douglas** (`_QPea6g4Q1QfeYCVHCLMPR`) — Father / Prime Alpha
+    2. **Wulfnic Báleygr Bloodmoon** (`_HEQQbbRFwKdG8QE2Fh1z1`) — Maternal Grandfather / Firstborn
+    3. **Jasper Svartr Douglas Bloodmoon** (`_t4J9aQNJM36cUKAP4wB4U`) — Twin Option 1 / Technomancer
+    4. **Noah Loki Douglas Bloodmoon** (`_zFLUjV8aVxQRAfQxGcAcY`) — Brother / Grey Eminence
+    5. **Malachia Björn Douglas Bloodmoon** (`_RDfz7XzTpM23LpPALVXHM`) — Eldest Brother / Berserker
+    6. **Alyssa Hvit Douglas Bloodmoon** (`_6exg3yPfe2eCDK4hTftkh`) — Twin Option 2 / White Moon Omega
+    7. **Jared Thompson** (`_xJVPtBLL3dxy69RLKL9X9`) — Quarterback / SUCC Bulls Star
+    8. **Stanley Davies Jr.** (`_Xd3NhKnRJByMTtdb6PjxJ`) — Friend & Roommate / Chemistry Undergrad
+    9. **Mackenzie Sanchez-Rogers** (`_zn24784jfcchQ7EwCyAnm`) — Crush & Mechanic / Rogers' Motors
+    10. **Logan Dominic Járn Douglas** (`_T8Ywcr9FEqNf9JxbK6eHP`) — Uncle / The Verve Owner
+    11. **Edric Douglas** (`_TbRM3EdxDjHFgqztTbCpL`) — Cousin / Junior Football Running Back
+    12. **Sierra Cruz** (`_pnrXbkWqcgmFAf3meRWFY`) — Roommate / Varsity Track Athlete
+    13. **Scarlett Rose** (`_qXgBMbFYJfc84hbLHhe92`) — Best Friend / Succubus Social Coordinator
+
+- **Archiviazione Sicura delle 7 Card Non-Cast ed Epurazione da Wyvern `/mine`**:
+  - Archiviati i file JSON completi delle 7 card secondarie in `ARCHIVIO/06_Archived_Standalone_Cards/` ed eliminati da `FINAL/`:
+    - Elizabeth Duskwood, Magnus Douglas III, Kaladin Nargathon, Marek, Neon Purr, Russ Sinclair, Zeera Darkfire.
+  - Eseguita l'eliminazione remota autorizzata via Wyvern API (`DELETE /api/characters/{id}` con HTTP 204 No Content) per tutte le 7 card, lasciando la libreria `/mine` di Wyvern perfettamente pulita con i soli 13 membri del cast canonico.
+  - Le 7 figure secondarie vivono e continuano a essere recitate al 100% all'interno dei Lorebook come schede NPC autonome dotate di avatar regex.
+
+- **Implementazione dei World Dossier Sintetici nei Lorebook (-60.000 Token di Context Bloat)**:
+  - Sostituite le monumentali schede dei 13 membri del cast fisso all'interno di `FINAL/Svartulfr_NPC_Primary.json` e `FINAL/Svartulfr_NPC_Secondary.json` con **World Dossier / Concept sintetici (120–150 token ciascuno)**.
+  - Impostato `type: "lore/concept"` con chiavi identificative specifiche, rimuovendo campi di parsing avatar, profili intimi duplicati e descrizioni di outfit.
+  - Aggiunta la voce di World Dossier per Alyssa Hvit Douglas-Bloodmoon in NPC Primary (107 voci totali).
+  - Ridotta la dimensione di `Svartulfr_NPC_Primary.json` di **238,3 KB**, eliminando per sempre il rischio di double-injection e crash di contesto durante il roleplay.
+  - Deployate entrambe le versioni ottimizzate su Wyvern API con HTTP 200 confermato (`_zwEqgEEzh12X6gHVmMKKC` e `_Uht3Ckz44JBDrPnUHq7LV`) e specchiate su `lorebooks/optimized/`.
+
+- **Ripristino Card Standalone di Russell 'Russ' & Riconfigurazione Totale Slot del Master Scenario (Revision 15)**:
+  - **Ripristino Card `/mine` di Russell 'Russ' (`_wn6DkCcg3Xqa2Xpx9ttnT`)**: Ripubblicata con successo via Wyvern API la character card standalone di Russell 'Russ' (apprendista tatuatore, coinquilino di Jasper al Wyrm Hall e membro dei Five Cocketeers) dotata di JED+, 9 outfit contestuali e prompt visivi.
+  - **Epurazione Slot Obsoleti del Master Scenario**: Rimossi definitivamente i 4 slot legacy non più pertinenti come card attive:
+    - `paternal_grandfather` (Magnus Douglas III, gestito ora tramite NPC Primary / Lorebook).
+    - `paternal_grandmother` (Elizabeth Duskwood, gestita ora tramite NPC Primary / Lorebook).
+    - `boss` (Zeera Darkfire, gestita ora tramite NPC Primary / Lorebook).
+    - `major` (Kaladin Nargathon, gestito ora tramite NPC Primary / Lorebook).
+  - **Istituzione dei 13 Slot Canonici (Copertura dei 14 Personaggi del Cast)**:
+    1. `maternal_grandfather` -> Wulfnic Báleygr Bloodmoon (`_HEQQbbRFwKdG8QE2Fh1z1`)
+    2. `father` -> Erik Ulfr Douglas (`_QPea6g4Q1QfeYCVHCLMPR`)
+    3. `eldest_brother` -> Malachia Björn Douglas Bloodmoon (`_RDfz7XzTpM23LpPALVXHM`)
+    4. `brother` -> Noah Loki Douglas Bloodmoon (`_zFLUjV8aVxQRAfQxGcAcY`)
+    5. `twin` -> Jasper Svartr (`_t4J9aQNJM36cUKAP4wB4U`) & Alyssa Hvit (`_6exg3yPfe2eCDK4hTftkh`) [Pool duale a 2 scelte]
+    6. `uncle` -> Logan Dominic Járn Douglas (`_T8Ywcr9FEqNf9JxbK6eHP`)
+    7. `cousin` -> Edric Douglas (`_TbRM3EdxDjHFgqztTbCpL`)
+    8. `quarterback` -> Jared Thompson (`_xJVPtBLL3dxy69RLKL9X9`)
+    9. `friend` -> Stanley Davies Jr. (`_Xd3NhKnRJByMTtdb6PjxJ`)
+    10. `crush` -> Mackenzie 'Mac' Sanchez-Rogers (`_zn24784jfcchQ7EwCyAnm`)
+    11. `female_roommate` -> Sierra Cruz (`_pnrXbkWqcgmFAf3meRWFY`) [Label: **Female Roommate**]
+    12. `best_friend` -> Scarlett Rose (`_qXgBMbFYJfc84hbLHhe92`)
+    13. `male_roommate` -> Russell 'Russ' (`_wn6DkCcg3Xqa2Xpx9ttnT`) [Label: **Male Roommate**]
+  - **Bonifica Speaker Slots nei 29 Greetings & Testo Scenario**: Riconciliati i saluti e la sinossi narrativa (`FINAL/Svartulfr_Master_Scenario.json`) con i tag `{{scenarioChar "female_roommate"}}` e `{{scenarioChar "male_roommate"}}`, ed effettuato il deploy con successo (`PUT /api/character-scenarios/char_scenario_1DC43ggb6mB8YLJDJKrU4` -> **HTTP 200 OK, Revision 15**).
+
+
+
+
+
+## [16 Ottobre 2026] - Audit a 4 Pilastri, Bonifica Strutturale e Deploy Live Wyvern API dei 6 Lorebook Standalone (1.009 Voci)
+
+- **Audit Strutturale e Bonifica a 4 Pilastri sui 6 Lorebook Standalone (Milestones R1, R2, R3)**:
+  - Eseguito snapshot di sicurezza preventivo in `scratch/backup_pre_audit_lorebooks/` prima di qualsiasi manipolazione dei dati (tutti e 6 i file integri e verificati per hash e dimensioni).
+  - **Pilastro 1 — Epurazione Metadati Non-NPC**:
+    - Bonificati 558 record non-NPC: eliminati i campi spuri di parsing avatar (`avatar_activation_regex: ""`, `custom_avatar_regex`, `lines_parsed`, `npc_info`) ed epurate le stringhe vuote `avatar: ""` da 219 voci in Lorebook I, 134 voci in Lorebook II e 187 voci in Location.
+    - Preservati 18 avatar decorativi legittimi per fazioni, concetti e location (9 in Lorebook II e 9 in Location).
+    - Risolta la disparità di schema SillyTavern in Lorebook III: rigenerato l'array `entries` come copia identica di `lexicon` (35 voci in schema nativo Wyvern).
+  - **Pilastro 2 — Bonifica Trigger Ombrello (BROAD_KEYS) ed Epurazione Ruoli Generici**:
+    - Prunati 19 trigger generici multi-parola da 18 schede NPC e rimosso il tag isolato `"Alpha"` da `secondary_keys` di Malachia Björn Douglas Bloodmoon (#60).
+    - Rimosso `"Pack Leader"` da 11 NPC (Vito Marino, Naomi Black, Marcus O'Connor, Isobel Blackwater, Helena Weiss, Eclipse Noir, Dominic Chen, Darius Vale, Cass Harrow, Bianca Rossi, Aurora Night).
+    - Rimosso `"Blackwood Council"` da 4 NPC (Zeera Darkfire, Harlan Beaumont, Brak Ironfist, Barrow).
+    - Rimossi `"Demon Representative"` da Zeera Darkfire e `"Human Representative"` da Harlan Beaumont.
+    - Rimossi `"alligator demihuman"` da Cato (#7) e `"SUCC student"` da Brittany Willow (#18) in NPC Secondary.
+    - Preservati tutti i nomi propri composti (`Roman Blackwood`, `Katarina 'Kat' Blackwood`) e garantita la presenza di almeno 2 chiavi identificative uniche per tutti i profili modificati.
+    - Mantenuta la disciplina selettiva: `selective: false` su tutti i record con `secondary_keys` vuoto.
+  - **Pilastro 3 — Bonifica Integrale Macro `{{age}}`**:
+    - Verificata la presenza di esattamente **0 macro residue `{{age}}`** su tutte le 1.009 voci nei 6 file di `FINAL/` e nei rispettivi speculari in `lorebooks/optimized/`.
+  - **Pilastro 4 — Assegnazione Avatar Fallback Canonico e Parsing Multiline NPC**:
+    - Assegnato l'avatar canonico Cloudflare del Crest Svartúlfr (`https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/98e2d06d-a675-45e3-6096-cf976b547400/public`) a tutti i 302 NPC sprovvisti di ritratto (44 in NPC Primary e 258 in NPC Secondary).
+    - Registrato il tracciamento analitico delle 302 voci in `scratch/missing_npc_avatars.json`.
+    - Garantita la conformità del 100% degli NPC (416/416): avatar HTTP valido (114 URL originali dedicati e 302 Crest di casata), `custom_avatar_regex: true`, `lines_parsed: 1` e pattern regex multiline `(?:^|\n)\s*(?:.+)\s*:`.
+  - **Sincronizzazione Doppia Struttura e Mirroring di Repository**:
+    - Verificata l'identità biunivoca rigorosa `entries == lexicon` su tutti e 6 i file di `FINAL/`.
+    - Eseguito il mirroring speculare da `FINAL/` in `lorebooks/optimized/` con hash MD5 e dimensioni byte identici al 100%.
+
+- **Deploy Live Wyvern Web API & Cloud Verification (Milestone R3)**:
+  - Eseguito script di deploy automatizzato con pacing delay di 2.5s e gestione token Firebase/Wyvern:
+    - `_gwwCxCfQ6PQaLEjAQVpJL` (**Svartúlfr - Lorebook I**): `PUT /api/lorebooks/_gwwCxCfQ6PQaLEjAQVpJL` -> **HTTP 200 OK** (544.041 bytes, 219 voci).
+    - `_HfG7TeV6MJyj6bxMwxkpt` (**Svartúlfr - Lorebook II**): `PUT /api/lorebooks/_HfG7TeV6MJyj6bxMwxkpt` -> **HTTP 200 OK** (714.852 bytes, 143 voci).
+    - `_9zWTGqYJNJ4BCDMj8gfcD` (**Svartúlfr - Lorebook III**): `PUT /api/lorebooks/_9zWTGqYJNJ4BCDMj8gfcD` -> **HTTP 200 OK** (80.823 bytes, 35 voci).
+    - `_EjXxkmPVhpCXg8xABpFkK` (**Svartúlfr - Location**): `PUT /api/lorebooks/_EjXxkmPVhpCXg8xABpFkK` -> **HTTP 200 OK** (549.714 bytes, 196 voci).
+    - `_zwEqgEEzh12X6gHVmMKKC` (**Svartúlfr - NPC Primary**): `PUT /api/lorebooks/_zwEqgEEzh12X6gHVmMKKC` -> **HTTP 200 OK** (742.216 bytes, 106 voci).
+    - `_Uht3Ckz44JBDrPnUHq7LV` (**Svartúlfr - NPC Secondary**): `PUT /api/lorebooks/_Uht3Ckz44JBDrPnUHq7LV` -> **HTTP 200 OK** (738.803 bytes, 310 voci).
+  - **Verifica Post-Deployment Cloud (GET /api/lorebooks/{id})**:
+    - Interrogati tutti i 6 lorebook su endpoint cloud Wyvern (`GET /api/lorebooks/{id}`), confermando **HTTP 200 OK** e il conteggio esatto delle voci salvate nel cloud Wyvern:
+      - Lorebook I: **219** voci cloud confermate.
+      - Lorebook II: **143** voci cloud confermate.
+      - Lorebook III: **35** voci cloud confermate.
+      - Location: **196** voci cloud confermate.
+      - NPC Primary: **106** voci cloud confermate.
+      - NPC Secondary: **310** voci cloud confermate.
+      - **Totale Voci Cloud Verificate**: **1.009 / 1.009** (100% allineamento perfetto).
+  - Registrato il log dettagliato di audit e deploy in `scratch/deployment_log.json`.
+
+## [16 Ottobre 2026] - Allineamento Canonico Fratelli Darkfire: Boros (Fratello Minore) & Varg (Patriarca Millenario)
+
+- **Rettifica Canonica Dinastia Darkfire (Horned Skull Clan)**:
+  - **Boros Darkfire (The Bastion)**: Confermato dall'utente come il **fratello minore** dei Darkfire, nonostante la stazza colossale (244 cm / 8'0", corporatura massiccia a muro di pietra). Età anagrafica rettificata da 45 a **25 anni** sia nella scheda Standalone di Zeera (`FINAL/Zeera_Darkfire_card.json`), sia nel Lorebook Primario degli NPC (`FINAL/Svartulfr_NPC_Primary.json` e `lorebooks/optimized/Svartulfr_NPC_Primary.json`), sia nel profilo anatomico in Lorebook II (`FINAL/Svartulfr_Lorebook_II.json`). Ruolo e backstory aggiornati: guardiano, direttore logistico e pacificatore della famiglia, il più giovane dei fratelli dopo Aras (45), Zeera (34) e Karshin (28).
+  - **Varg Darkfire (The Patriarch)**: Rettificata l'età anagrafica errata di copia-incolla (precedentemente 45, coetaneo del figlio primogenito Aras) impostandola al valore canonico di **800 anni** (fondatore millenario e antico signore della guerra che ha forgiato il clan per otto secoli nelle Caverne dei Sussurri).
+  - **Sincronizzazione Live API Wyvern (HTTP 200)**:
+    - Character Card `Zeera Darkfire` (`_3tMk6cRAFewRnKMkdJ4XU`): aggiornata con successo via `PUT /api/characters/_3tMk6cRAFewRnKMkdJ4XU`.
+    - Lorebook `Svartúlfr - NPC Primary` (`_zwEqgEEzh12X6gHVmMKKC`): sincronizzato con successo via `PUT /api/lorebooks/_zwEqgEEzh12X6gHVmMKKC`.
+    - Lorebook `Svartúlfr - Lorebook II` (`_HfG7TeV6MJyj6bxMwxkpt`): sincronizzato con successo via `PUT /api/lorebooks/_HfG7TeV6MJyj6bxMwxkpt`.
+
+## [16 Ottobre 2026] - Deploy Standalone Stan Davies Jr., Bonifica Macro {{age}} & Standardizzazione Tag Ufficiali Wyvern
+
+- **Creazione e Deploy Live Card Stanley Davies Jr. (`_Xd3NhKnRJByMTtdb6PjxJ`) su Wyvern**:
+  - Personaggio canonico SUCC (Solarton): studente di Chimica con minor in Relazioni Sovrannaturali, gamer e disegnatore NSFW anonimo su commissione, coinquilino di suite di Jared Thompson al Wyrm Hall (Room 302), figlio del veterano Stanley Davies Sr. ed Eris Davies.
+  - Avatar canonico Cloudflare ripristinato (`https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/b7c9c7d1-51e6-4441-82e3-c6ab5f537500/public`).
+  - Formato JED+ completo, inclusi profilo intimo (6.2 pollici, chubby, knotting, timidezza corporea, cosplay fetish) e catalogo completo di tatuaggi videoludici (The Last of Us, League of Legends, FMA, Mario & Luigi).
+  - 9 Outfit contestuali a 6 sezioni (Casual/Gaming Slouch, Campus/SUCC Chemistry, Gala/Rappresentanza Militare, Party/Club, Beach/Terme con Switch e t-shirt, Sleep, Nude, Hybrid Shift mastodontico brindle, Full Shift da grande lupo nero a quattro zampe).
+  - RPG Stats bilanciate su 25 pt (Livello 21, MGT 8, RES 7, AGI 5, WIT 4, PRS 5, SCT 2, somma 31) e 4 tratti canonici (*Forum Cynic / Online Scar Tissue*, *Secret NSFW Illustrator*, *Involuntary Full Moon Shift*, *Heavyweight Sloucher*).
+  - Disciplina di formattazione dialogica applicata a `first_mes`, `mes_example`, `post_history_instructions` e `character_note`.
+
+- **Deploy Live Card Marek (`_K3C7KVy9eddtTF8aWX9gk`) su Wyvern**:
+  - Creato e deployato su Wyvern con successo via API (`POST /characters`), risolvendo il pregresso 404 del placeholder testuale.
+
+- **Bonifica Completa delle Macro `{{age}}` (Compatibilità Standalone 1-on-1 Fuori dal World)**:
+  - Eliminate tutte le occorrenze residue della macro non espansa `{{age}}` su tutte le character card del repository, sostituendole con l'età anagrafica esatta al World-Age 2024 e data di nascita esplicita:
+    - **Elizabeth Duskwood**: `AGE: 76 (Born July 14, 1947);` (Livello RPG 76).
+    - **Jared Thompson**: `AGE: 22 (Born 2002);` (Livello RPG 22).
+    - **Major Kaladin Nargathon**: `AGE: 37 (Born 1987);` (Livello RPG 6).
+    - **Mackenzie Sanchez-Rogers**: `AGE: 19 (Born 2004);` (Livello RPG 4).
+    - **Magnus Douglas III**: `AGE: 355 (Born December 29, 1668);` (Livello RPG 99).
+    - **Zeera Darkfire**: `AGE: 34;` (descrizione) e fratelli nel Lexicon (Aras 45, Boros 45, Karshin 28, Varg 45).
+
+- **Standardizzazione Integrale dei Tag su Tassonomia Ufficiale Wyvern**:
+  - Epurati tutti i tag generati o proprietari non compresi nel catalogo di sistema (`Svartulfr`, `SUCC`, `Douglas`, `Bloodmoon`, `solarton`, `Blackwood`, ecc.) che causavano errori di validazione nell'editor della UI web di Wyvern.
+  - Allineate tutte le 20 schede in `/mine` con i soli tag ammessi dal catalogo ufficiale Wyvern (`https://wiki.wyvern.chat/en/Guides/Tags/All`), inclusi formati, prospettive, identità, generi e specie ammesse (`JED`, `Third Person`, `AnyPOV`, `Male`/`Female`, `Fantasy`, `Modern`, `Supernatural`, `Original`, `Werewolf`, `Minotaur`, `Demon`, `Succubus (Incubus)`, `Naga`, `Alpha`, `Beta`, `Omega`, `Student`, `Artist`, `Musician`, `Mechanic`, `CEO`, `Athlete`, `Bodyguard`, `Military`, `Doctor`, `Himbo`, `Fluff`, `Cyberpunk`, `Monster`, `Demihuman`).
+  - Risolto bug Mongo `E11000 duplicate key` impostando `linked_world: null` nei payload di Jared e Mac.
+  - Sincronizzate con successo con HTTP 200 tutte le 20 schede su Wyvern API.
+
+
+## [16 Ottobre 2026] - Deploy Standalone Character Cards Scarlett Rose & Sierra Cruz su Wyvern (/mine)
+
+- **Creazione e Deploy Live Character Cards su Wyvern (`POST /api/characters`)**:
+  - **Scarlett Rose (`_qXgBMbFYJfc84hbLHhe92`)**:
+    - Succube moderna ed evoluta, studentessa sophomore SUCC, party maven e social coordinator della confraternita Theta Iota Theta (TIT), coinquilina di suite di Alyssa Douglas-Bloodmoon e Sierra Cruz.
+    - Struttura JED+ completa (Attributi PList, Backstory, Dorm Dynamics & Roommates, Voice & Behavior, The Weight She Carries, Intimacy & Dynamics, RPG Stats).
+    - 9 Outfit contestuali a 6 sezioni (Casual, Campus, Gala/Formal, Party/Club, Beach/Terme, Sleep, Nude, Hybrid Shift, Full Shift) con asola lombare rinforzata per la coda rossa a picca.
+    - RPG Stats bilanciate a 25 pt (Livello 20, MGT 2, RES 3, AGI 6, WIT 5, PRS 10, SCT 5) e 4 tratti specifici (*Symbiotic Feeding*, *Hypnotic Radiance*, *Sorority Matriarch*, *Vulnerable Heart*).
+    - Disciplina di formattazione dialogica applicata a `first_mes`, `mes_example`, `post_history_instructions` e `character_note`.
+  - **Sierra Cruz (`_pnrXbkWqcgmFAf3meRWFY`)**:
+    - Lamia (naga demi-umana) con oltre 4 metri di possenti spire ofidiche cangianti arcobaleno, studentessa di Necromanzia Applicata al SUCC, fanatica dei Grave Mistake, coinquilina di suite di Alyssa e Scarlett.
+    - Fisiologia eteroterma (ricerca istintiva di calore corporeo mammifero) e anatomia demi-umana rigorosa (un solo paio di orecchie a punta animali, nessuna orecchia umana).
+    - Struttura JED+ completa (Attributi PList, Backstory, Dorm Dynamics & Roommates, Voice & Behavior, The Secret She Carries, Intimacy & Dynamics, RPG Stats).
+    - 9 Outfit contestuali a 6 sezioni specificamente adattati per metà inferiore serpentina (zero scarpe, spire coperte o libere, aperture e scaldacollo).
+    - RPG Stats bilanciate a 25 pt (Livello 18, MGT 7, RES 4, AGI 5, WIT 7, PRS 3, SCT 5) e 4 tratti specifici (*Serpentine Constriction*, *Ectothermic Slumber*, *Morbid Insight / Necromancy*, *Craving Warmth*).
+    - Disciplina di formattazione dialogica applicata a `first_mes`, `mes_example`, `post_history_instructions` e `character_note`.
+- **Sincronizzazione File Locali e Tracking ID**:
+  - Aggiornati [FINAL/Scarlett_Rose_card.json](file:///e:/repository/SvartulfrVerse/FINAL/Scarlett_Rose_card.json) e [FINAL/Sierra_Cruz_card.json](file:///e:/repository/SvartulfrVerse/FINAL/Sierra_Cruz_card.json) con i rispettivi Wyvern ID assegnati (`id` e `_id`).
+  - Registrati entrambi i personaggi nel registro di sincronizzazione [scratch/synced_wyvern_ids.json](file:///e:/repository/SvartulfrVerse/scratch/synced_wyvern_ids.json).
+
+
+## [16 Ottobre 2026] - Standard Obbligatorio Metadati NPC (Avatar Parsing & UI Splitting) & Apprendimento Regola 08
+
+- **Codifica Permanente `/learn` - Standard Metadati NPC nei Lorebook e Lexicon**:
+  - Aggiornati [GEMINI.md](GEMINI.md) (§7) e [.agents/rules/08_triage_lorebook_e_lexicon.md](.agents/rules/08_triage_lorebook_e_lexicon.md) con lo standard obbligatorio per tutte le entry di tipo `npc`:
+    - `avatar`: URL HTTPS valido pubblico (Cloudflare imagedelivery o CDN Janitor `https://ella.janitorai.com/bot-avatars/{hash}.webp`).
+    - `custom_avatar_regex`: `true`
+    - `avatar_activation_regex`: pattern multiline `(?:^|\n)\s*(?:Nome Completo|Nome|Nickname)\s*:`
+    - `lines_parsed`: `1` (linee successive alla regex accorpate nella bolla NPC).
+    - `npc_info`: oggetto strutturato con `first_name`, `last_name`, `nicknames`, `titles`.
+    - Istruzione obbligatoria nei Character Scenario per formattare sempre il turno di battuta degli NPC su nuova riga con `Nome Completo:`.
+
+## [16 Ottobre 2026] - Ripristino Metadati Lorebook Wyvern, Integrazione 10 Nuove Figure Canoniche & Deploy Master Scenario (29 Greetings)
+
+- **Risoluzione Bug Critico Wipe Metadati Lorebook (HTTP 200 su tutti i 6 Lorebook)**:
+  - Risolto il bug di cancellazione dei campi top-level causato da chiamate PUT prive di metadati: ripristinati con successo su Wyvern live `name`, `description`, `visibility: "private"`, `rating: "explicit"`, `scan_depth: 5`, `token_budget: 5000` e `recursive_scanning: true` per tutti i 6 Lorebook Standalone (`_gwwCxCfQ6PQaLEjAQVpJL`, `_HfG7TeV6MJyj6bxMwxkpt`, `_9zWTGqYJNJ4BCDMj8gfcD`, `_EjXxkmPVhpCXg8xABpFkK`, `_zwEqgEEzh12X6gHVmMKKC`, `_Uht3Ckz44JBDrPnUHq7LV`).
+  - Le card nell'interfaccia web di Wyvern mostrano ora correttamente titoli, descrizioni e conteggi completi.
+
+- **Integrazione Canoniche delle 10 Nuove Figure JanitorAI nei Lorebook Standalone (HTTP 200)**:
+  - **Lorebook III (`_9zWTGqYJNJ4BCDMj8gfcD` - 35 entries / 35 lexicon)**:
+    - `Russ & The Five Cocketeers`: Russ ufficialmente integrato come coinquilino di stanza di Jasper Douglas ai dormitori SUCC (Wyrm Hall).
+    - `Roman Blackwood & Kolya`: Heavyweight del SUCC Wrestling Team, compagni di allenamento al Gym e sparring di Malachia Douglas.
+    - `Finnegan "Finn" Novak`: Amico d'infanzia dei fratelli Douglas (Alyssa, Jasper, Noah).
+    - `Distretto Rurale di Bakersfield & NOVA Farm`: Distretto agricolo inland e branco rurale di licantropi in contrasto di classe con i Seven Hills.
+    - `Dallas Rhodes`: Werewolf contadino e allevatore a Bakersfield.
+  - **Lorebook NPC Secondary (`_Uht3Ckz44JBDrPnUHq7LV` - 318 lexicon)**:
+    - `Neon Purr`: DJ felino cyberpunk underground, principale rivale musicale e nei rave di Jasper Douglas.
+    - `Romeo "Gray" Dean`: Leader della gang biker rivale dei Nomads di Marek.
+    - `Warchief Thrakgor Deathspine`: Capoguerra bellicoso del Clan Deathspine, spina nel fianco del consigliere Brak Ironfist.
+    - `Morgeth Steeltooth`: Maestro fabbro orco e sodale di forgiatura di Ut Berg; dispute metallurgiche al The Verve con Logan.
+    - `Thorvald & Harald Sigurdsson`: Lupi scandinavi del Clan Bloodmoon tradizionale, guardiani della foresta profonda del Dead Zone.
+
+- **Espansione Master Scenario (`char_scenario_1DC43ggb6mB8YLJDJKrU4`, Revision 12 - HTTP 200)**:
+  - Aggiunti 3 nuovi saluti/capitoli cronologici (totale saluti: **29 greetings**):
+    - **Capitolo 27**: *Dormitori SUCC - Jasper e Russ* (speaker_slot: `twin`).
+    - **Capitolo 28**: *Soundclash al Verve - Jasper contro Neon Purr* (speaker_slot: `twin`).
+    - **Capitolo 29**: *Palestra Pesi e Tappeti - Malachia, Roman e Kolya* (speaker_slot: `eldest_brother`).
+
+- **Deploy Nuove Standalone Character Cards in /mine (HTTP 200)**:
+  - **Russell 'Russ' (`_x4F8TKXcU6naKT2CpKdHN`)**:
+    - Formato JED+ completo, 9 outfit contestuali (schema a 6 sezioni), RPG stats bilanciate a 25 pt (Livello 21, Human Artisan), disciplina di formattazione dialogica e post history instructions.
+    - Ruolo: Tattoo apprentice presso Sacred Needle Tattoo, studente SUCC e coinquilino di suite di Jasper Douglas al Wyrm Hall (Room 304). Membro dei Five Cocketeers.
+  - **Neon Purr (`_2EezhhEVdL677DULVdE9h`)**:
+    - Formato JED+ completo, 9 outfit contestuali con grommet e aperture rinforzate per la coda, RPG stats bilanciate a 25 pt (Livello 22, Demi-human Artisan, AGI 8, PRS 7), anatomia demi-umana rigorosa (1 solo paio di orecchie feline).
+    - Ruolo: DJ underground australiano, produttore audio cyber-breakbeat e rivale musicale di Jasper Douglas tra The Verve e rave illegali.
+
+- **Codifica Permanente `/learn`**:
+  - Aggiornati [GEMINI.md](GEMINI.md) (§10) e [.agents/rules/05_precedenza_lore_e_discrepanze.md](.agents/rules/05_precedenza_lore_e_discrepanze.md) con le invarianti narrative e relazionali delle 10 figure integrate.
+
+## [16 Ottobre 2026] - Deploy Master Scenario Rev. 11 (Slot Ruoli), Arricchimento Lorebook III con Canone SUCC & Nuove Sorgenti JanitorAI
+
+- **Deploy Live Master Character Scenario (`char_scenario_1DC43ggb6mB8YLJDJKrU4`, Revision 11 - HTTP 200)**:
+  - **Disciplina dei Ruoli per tutti i 13 Slot del Scenario:**
+    - `maternal_grandfather` $\rightarrow$ Wulfnic Báleygr Bloodmoon (`_HEQQbbRFwKdG8QE2Fh1z1`)
+    - `paternal_grandfather` $\rightarrow$ Magnus Douglas III (`_dJ7nRMQEbcUgdWG96MqLz`)
+    - `paternal_grandmother` $\rightarrow$ Elizabeth Duskwood (`_zBD6rWUkJBAjLfXnja4xh`)
+    - `father` $\rightarrow$ Erik Ulfr Douglas (`_QPea6g4Q1QfeYCVHCLMPR`)
+    - `twin` $\rightarrow$ Pool doppio: Jasper Svartr (`_t4J9aQNJM36cUKAP4wB4U`) + Alyssa Hvit (`_6exg3yPfe2eCDK4hTftkh`)
+    - `brother` $\rightarrow$ Noah Loki Douglas Bloodmoon (`_zFLUjV8aVxQRAfQxGcAcY`)
+    - `eldest_brother` $\rightarrow$ Malachia Björn Douglas Bloodmoon (`_RDfz7XzTpM23LpPALVXHM`)
+    - `uncle` $\rightarrow$ Logan Járn Douglas (`_T8Ywcr9FEqNf9JxbK6eHP`)
+    - `cousin` $\rightarrow$ Edric Douglas (`_TbRM3EdxDjHFgqztTbCpL`)
+    - `boss` $\rightarrow$ Zeera Darkfire (`_3tMk6cRAFewRnKMkdJ4XU`)
+    - `quarterback` $\rightarrow$ Jared Thompson (`_xJVPtBLL3dxy69RLKL9X9`)
+    - `crush` $\rightarrow$ Mackenzie "Mac" Sanchez-Rogers (`_zn24784jfcchQ7EwCyAnm`)
+    - `major` $\rightarrow$ Major Kaladin Blackwolf Nargathon (`_EnRGd1jfbjTTGmz4EFJdd`)
+  - **26 Greetings Aperti & Fruibili con Entrambe le Personas:**
+    - Tutti i 26 greeting collegano simultaneamente entrambe le Personas (`persona_1786335754946` e `1792155173728`), lasciando `[FemPOV]` e `[MalePOV]` come indicatori di stile di gioco.
+    - Speaker slot del Cap. 11 (Club House Nomads con Marek) assegnato a `twin` (Jasper a vegliare su Alyssa/{{user}}), preservando l'intera scena dialogica originale dell'Oni.
+    - Integrate nel prompt dello scenario le linee guida di narrazione con divieto categorico di ventriloquismo (`Never speak, think, emote, or act for {{user}}`) e disciplina di formattazione.
+
+- **Arricchimento e Deploy Live di Lorebook III (`_9zWTGqYJNJ4BCDMj8gfcD` - HTTP 200)**:
+  - Integrate le 30 voci canoniche dell'ateneo da `https://io-succ.uwu.ai/` (Fondazione 2002 di Dean Archer Wolfwood, Corsi di Laurea soprannaturali, Rivalità con CUMS a Hex Valley, Wyrm Dorms, Griffin Clocktower, Lunar Quad, Fraternità BRO e The Clams, Sport, Orari e Popolazione).
+  - Popolati contemporaneamente l'array `entries` e l'array `lexicon` (Wyvern Advanced Lexicon) con tipologie tassonomiche ufficiali (`concept`, `location`, `faction`, `event`, `item`).
+  - Sostituito ovunque il termine apocrifo "Solarton University" con la dicitura ufficiale **Supernatural University of Central California (SUCC)**.
+
+- **Deploy Live Lorebook I (`_gwwCxCfQ6PQaLEjAQVpJL` - HTTP 200)**:
+  - Bonificate 16 occorrenze residue di "Solarton University" con la denominazione ufficiale SUCC.
+
+- **Sincronizzazione Live Card Jared Thompson (`_xJVPtBLL3dxy69RLKL9X9` - HTTP 200)**:
+  - Completata la suite completa degli 11 outfit standardizzati con schema a 6 sezioni e nanoid univoci, con privacy `private` e rating `explicit`.
+
+- **Codifica Permanente `/learn` (Nuove Fonti JanitorAI & Canone SUCC)**:
+  - Aggiornate le regole permanenti ([GEMINI.md](GEMINI.md), [.agents/rules/](.agents/rules/)):
+    - Canone ufficiale SUCC da `io-succ.uwu.ai` e divieto di "Solarton University".
+    - Protocollo di accesso alle sorgenti JanitorAI storiche (Lorebook, Scheda Douglas, Canon e Preferiti) esclusivamente tramite browser Chrome autenticato.
+    - Verifica preventiva su Wyvern Explore (`https://app.wyvern.chat/explore?tab=characters&rating=all`) prima di creare nuove schede.
+    - Standard minimo di 9 outfit obbligatori per ogni character card.
+    - Invariante assoluto di privacy `private` e rating `explicit`.
+
+## [16 Ottobre 2026] - Pivot Architetturale a Character Scenarios, Deploy Master Scenario & Sincronizzazione Live
+
+- **Dismissione Definitiva del World Engine**:
+  - Il modulo World di Wyvern (`_CgYT8fHXpDC4crjmegQF7`) è ufficialmente dismesso a causa di instabilità architetturale e saturazione del prompt budget.
+  - Tutta l'esperienza narrativa e corale di **SvartúlfrVerse** migra ufficialmente su **Character Scenarios** (`https://app.wyvern.chat/character-scenarios/char_scenario_1DC43ggb6mB8YLJDJKrU4`, endpoint `/api/character-scenarios`).
+
+- **Deploy Live Master Character Scenario (`char_scenario_1DC43ggb6mB8YLJDJKrU4`, Revision 9)**:
+  - **14 Slot Totali Configurati** (peso pool 100):
+    - *7 Core Famiglia Douglas-Bloodmoon*: `grandfather` (Wulfnic `_HEQQbbRFwKdG8QE2Fh1z1`), `father` (Erik `_QPea6g4Q1QfeYCVHCLMPR`), `twin` (Pool doppio: Jasper `_t4J9aQNJM36cUKAP4wB4U` + Alyssa `_6exg3yPfe2eCDK4hTftkh`), `brother` (Noah `_zFLUjV8aVxQRAfQxGcAcY`), `eldest_brother` (Malachia `_RDfz7XzTpM23LpPALVXHM`), `uncle` (Logan `_T8Ywcr9FEqNf9JxbK6eHP`), `cousin` (Edric `_TbRM3EdxDjHFgqztTbCpL`).
+    - *7 Co-Protagonisti & Residenti*: `zeera` (`_3tMk6cRAFewRnKMkdJ4XU`), `jared` (`_xJVPtBLL3dxy69RLKL9X9`), `mac` (`_zn24784jfcchQ7EwCyAnm`), `marek` (`_cL86CRDAYABmaBWgdLQNw`), `kaladin` (`_EnRGd1jfbjTTGmz4EFJdd`), `elizabeth` (`_zBD6rWUkJBAjLfXnja4xh`), `magnus` (`_dJ7nRMQEbcUgdWG96MqLz`).
+  - **26 Greetings Cronologici Multi-Mittente**:
+    - Dalla serata *Call of Duty* a Villa Douglas e le vacanze estive a *Camp Mystic*, attraverso tutti gli 11 capitoli del primo anno SUCC, le incursioni della Gilda DMHA, il festival del plenilunio, i concerti al Sidewinders, la veglia di Yule con i Firstborn e il bivio finale.
+    - Ciascun greeting utilizza messaggi multi-mittente (`messages[]`) con speaker assegnati agli slot corrispondenti, parità rigorosa root/primo messaggio (`greeting.content == messages[0].content`), e zero prefissi hardcoded nel testo.
+  - **Supporto Dual-Protagonist (Alyssa & Jasper)**:
+    - Greetings con tag `[FemPOV]` collegati alla Persona di Alyssa (`persona_1786335754946`).
+    - Greetings con tag `[MalePOV]` collegati alla Persona di Jasper (`1792155173728`, impostata a `can_fork: true`).
+    - Greetings condivisi collegati a entrambe le Personas e giocabili liberamente alternando il gemello nello slot `twin`.
+  - **9 Lorebook Collegati**: 6 Lorebook Svartúlfr + 3 moduli tecnici (`A1 Physics`, `A5 Sex Position`, `A5.5 Scene Tone`).
+
+- **Sincronizzazione Live Completa su Wyvern (`PUT` e `POST` -> HTTP 200)**:
+  - **6 Lorebook Svartúlfr Sincronizzati Live**: `_gwwCxCfQ6PQaLEjAQVpJL` (Lorebook I, 220 entries), `_HfG7TeV6MJyj6bxMwxkpt` (Lorebook II, 144 entries), `_9zWTGqYJNJ4BCDMj8gfcD` (Lorebook III, 26 entries), `_EjXxkmPVhpCXg8xABpFkK` (Location, 196 entries), `_zwEqgEEzh12X6gHVmMKKC` (NPC Primary, 113 entries con Marek Blue Oni canonico), `_Uht3Ckz44JBDrPnUHq7LV` (NPC Secondary, 313 entries).
+  - **7 Character Card `/mine` Esistenti Aggiornate**: Wulfnic, Erik, Jasper (11 outfit Argon), Noah, Malachia, Logan, Edric, ripulite dai subdocumenti Mongoose (`creator`, `statistics_record`, `entity_statistics`) per evitare CastError.
+  - **8 Nuove Character Card Create in `/mine`**: Alyssa, Zeera, Jared, Mackenzie, Marek, Kaladin, Elizabeth, Magnus create con `visibility: "unlisted"` per aggirare il tetto giornaliero di pubblicazione e abilitate immediatamente per i Character Scenarios.
+  - **3 User Personas Aggiornate/Create**: Alyssa aggiornata con 18 outfit e 3 appearances; Echo aggiornata; Jasper creata live come nuova User Persona (`1792155173728`, `can_fork: true`) con 11 outfit Argon e Statistiche Finali.
+
+- **Codifica Statistiche RPG Finali & Stile Visivo Argon / Gemini**:
+  - Calcolate e inserite le Statistiche Finali (`Base + Modificatori`) su tutte le 23 schede del progetto ([FINAL/](FINAL/), Lorebook e Personas).
+  - Codificato il workflow visuale Argon / Gemini (`database/worlds/W_Visual_DNA.md`, `database/assets/style_guide.md`, `.agents/rules/03_outfits_e_coerenza_visiva.md`): Visual Anchor `<IMAGE_0>`, schema a 6 sezioni in italiano con asola lombare per la coda, e blindatura anatomica `No orecchie umane`.
+  - Aggiornate tutte le regole di progetto ([GEMINI.md](GEMINI.md), [.agents/rules/](.agents/rules/)).
+
+## [15 Ottobre 2026] - Card di Jasper: aggiornamento entry Lexicon `E.C.H.O.`
+
+- **Intervento**: in [FINAL/Jasper_Douglas_Bloodmoon_card.json](FINAL/Jasper_Douglas_Bloodmoon_card.json) è stato sostituito il `content` della voce Lexicon **E.C.H.O.** (`extensions.lexicon`, id `entry_6oW7Tw1V`) con la **versione aggiornata** fornita dall'utente (nuove sezioni `SPECIES`/`OCCUPATION`/`RPG_CLASS`/`MANIFESTATIONS`/`RESIDENCE`, `CORE FUNCTIONS & CYBERSPACE WARFARE`, `MONITORING SYSTEM & FAMILIAR PROTOCOLS`, `PERSONALITY & HUMOR`, `MUSIC MOOD SPEAKER`, `RPG STATS & TRAITS`).
+- **Pulizia**: ripristinati gli accenti italiani persi nel copia-incolla (`Più`, `è`, `entità`, `Capacità`).
+- **Genericizzazione**: `Alyssa` → `{{user}}`; la frase relativa con pronome femminile è stata resa neutra per l'AnyPOV. 0 residui `Alyssa`. Tutti gli altri campi della voce (`keys`, `secondary_keys`, `entry_id`, `provenance`, ...) invariati.
+
+## [15 Ottobre 2026] - Unificazione della card di Jasper (`Jasper_Douglas_Bloodmoon_card.json`)
+
+- **Problema**: il file conteneva **due blocchi JSON accodati** (JSON non valido: `Extra data: line 282 column 1 (char 63259)`): la Character Card V2 genericizzata (B1) + l'export nativo Wyvern del personaggio (B2) accodato dall'utente come aggiornamenti.
+- **Unificazione** (scelte utente): `name` = **Jasper Svartr Douglas Bloodmoon** (B2); `scenario`, `creator_notes`, `mes_example` = versione card V2 (B1); `first_mes` = B1 (quello di B2 era vuoto, `"."`); **RPG stats = B2**, con `extensions.rpg_stats` aggiornato a `level 3` e `base_stats` `STR 8 / PER 14 / END 10 / CHA 8 / INT 18 / AGI 13 / LCK 10` (id `species_id`/`occupation_id` invariati).
+- **Contenuti importati da B2** (in `extensions`): `outfits` (**10 voci**, incl. `Full Shift` e `Hybrid Shift`), `default_outfit`, blocco `RPG STATS & TRAITS` + intestazione `NAME/FIRST_NAME/MIDDLE_NAME/LAST_NAME` nella `description`, voce Lexicon **E.C.H.O.**, `pronouns`, `shared_info`, `tagline`, `character_note`, `pre_history_instructions`, `avatar`, `backgroundURL`, `rating`, `visibility`, `metadata`; `tags` + `forked`.
+- **Genericizzazione**: tutto il materiale di B2 è stato ripassato con [scripts/genericize_alyssa.py](scripts/genericize_alyssa.py) (`Alyssa` → `{{user}}` + placeholder pronomi) → 0 residui.
+- **Backup**: copia del file originale in `scratch/backup_final_premerge/`.
+- **Esito**: file di nuovo **JSON valido a blocco singolo** (`spec: chara_card_v2`); le altre 4 card invariate.
+
+## [15 Ottobre 2026] - FINAL/ reso importabile in Wyvern (`lexicon` → `entries`)
+
+- **Problema**: l'import in Wyvern dei Lorebook di `FINAL/` falliva con `Lorebook has no original data.` + `Invalid file format, no entries found.`
+- **Causa**: i file esponevano solo il campo `lexicon` (struttura **interna** del sito/API). L'importatore JSON di Wyvern richiede `entries` (array o dict) oppure `originalData`; con il solo `lexicon` cade nel ramo di errore. La Wiki conferma che i lorebook "solo lexicon" non sono importabili in Studio Mode.
+- **Fix**: nei 6 Lorebook di `FINAL/` la chiave top-level `lexicon` è stata rinominata in `entries` (array), mantenendo intatti tutti i campi delle voci (`entry_id`, `keys`, `content`, `enabled`, `priority`, `position`, `type`, `npc_info`, `avatar`, ...) e i metadati di lorebook (`name`, `description`, `scan_depth`, `token_budget`, `recursive_scanning`). Le 5 Character Card V2 non sono state toccate.
+- **Compatibilità**: il normalizzatore `eF()` di Wyvern accetta sia le chiavi stile Lexicon (`enabled`, `insertion_order`, `keys`, `key_logic`) sia quelle stile SillyTavern (`disable`, `order`, `key`, `selectiveLogic`), quindi le voci vengono importate correttamente.
+- **Backup**: copia integrale pre-modifica in `scratch/backup_final_preimport/`.
+- **Esito**: `Lorebook_I` (220), `Lorebook_II` (144), `Lorebook_III` (26), `Location` (196), `NPC_Primary` (113), `NPC_Secondary` (314); 0 residui `Alyssa`; JSON tutti validi.
+- **Documentazione**: aggiornati `README.md` (albero §1 e pipeline §3).
+
 ## [15 Ottobre 2026] - Genericizzazione AnyPOV di FINAL/ (Alyssa → `{{user}}` + Placeholder Pronomi)
 
 - **Obiettivo**: rendere l'intera cartella [FINAL/](FINAL/) compatibile con qualsiasi POV, sostituendo la persona del giocatore **Alyssa Hvit Douglas Bloodmoon** con `{{user}}` e i pronomi a lei riferiti con i placeholder pronome Wyvern.

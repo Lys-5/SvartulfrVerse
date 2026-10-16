@@ -43,7 +43,7 @@ e:\repository\SvartulfrVerse\
 │   └── Story_Engines_Export.json
 │
 ├── FINAL/                      # Deliverable pronti all'import (vedi §3)
-│   ├── Svartulfr_Lorebook_I.json / _II.json / _III.json   # 6 Lorebook (Lexicon)
+│   ├── Svartulfr_Lorebook_I.json / _II.json / _III.json   # 6 Lorebook (formato importabile Wyvern)
 │   ├── Svartulfr_Location.json
 │   ├── Svartulfr_NPC_Primary.json
 │   ├── Svartulfr_NPC_Secondary.json
@@ -126,8 +126,9 @@ Il ciclo di vita dei Lorebook Wyvern segue questi stadi:
    ```powershell
    python scripts/optimize_lorebooks.py
    ```
-3. **Consegna** — [FINAL/](FINAL/) contiene i 6 Lorebook finali pronti all'import (copia conforme degli ottimizzati).
-4. **Conversione in formato Lexicon + estrazione NPC** — [scripts/convert_to_lexicon.py](scripts/convert_to_lexicon.py) converte i 6 file di [FINAL/](FINAL/) dal formato `entries` (SillyTavern) al formato **Lexicon** (oggetto lorebook con array `lexicon`, struttura nativa del sito/API) e sposta tutte le voci `type: npc` dai Lorebook I/II/III nel nuovo `Svartulfr_NPC_Secondary.json`, rimuovendole dalle origini. `NPC_Primary` resta invariato.
+3. **Consegna** — [FINAL/](FINAL/) contiene i 6 Lorebook finali **pronti all'import** su Wyvern: le voci sono esposte nel campo `entries` (array), il solo accettato dall'importatore Lorebook del sito.
+4. **Estrazione NPC + formato di import** — [scripts/convert_to_lexicon.py](scripts/convert_to_lexicon.py) ha estratto le voci `type: npc` dai Lorebook I/II/III in `FINAL/Svartulfr_NPC_Secondary.json`, rimuovendole dalle origini; `NPC_Primary` resta invariato.
+   > **Nota sul formato**: il campo `lexicon` è la struttura **interna** del sito/API e, da solo, **non è importabile** (l'importatore risponde `Invalid file format, no entries found`). Per questo i file di `FINAL/` espongono le voci in `entries`; il normalizzatore `eF()` di Wyvern accetta sia le chiavi stile Lexicon (`enabled`, `insertion_order`, `keys`, `key_logic`) sia quelle stile SillyTavern (`disable`, `order`, `key`, `selectiveLogic`).
    ```powershell
    python scripts/convert_to_lexicon.py
    ```

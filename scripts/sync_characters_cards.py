@@ -273,6 +273,24 @@ def sync_all_characters():
                     mes_example_parts.append(f"<START>\n{clean_resp}")
         mes_example_str = "\n\n".join(mes_example_parts)
 
+        # Blocco nativo WyvernChat: l'importatore UI legge outfits/pronouns/default_outfit
+        # da extensions.wyvern (fallback: root), non da extensions.outfits.
+        wyvern_block = {
+            "pronouns": web_c.get("pronouns"),
+            "outfits": [
+                {
+                    "id": o.get("id"),
+                    "name": o.get("name"),
+                    "description": o.get("description", ""),
+                }
+                for o in outfits
+                if isinstance(o, dict)
+            ],
+            "default_outfit": web_c.get("default_outfit"),
+            "enable_advanced_greetings": False,
+            "greetings": [],
+        }
+
         # 1. Write World JSON
         world_obj = {
             "format": "wyvern_world_character",
@@ -338,7 +356,8 @@ def sync_all_characters():
                 "depth_prompt": {
                     "prompt": f"{display_name}. Adhere strictly to LSE mechanics and format discipline.",
                     "depth": 4
-                }
+                },
+                "wyvern": wyvern_block
             },
             "data": {
                 "name": display_name,
@@ -360,7 +379,8 @@ def sync_all_characters():
                     "rpg_stats": rpg_stats,
                     "birthdate": web_c.get("birthdate"),
                     "start_timeline_position": web_c.get("start_timeline_position"),
-                    "keys": keys
+                    "keys": keys,
+                    "wyvern": wyvern_block
                 }
             }
         }
