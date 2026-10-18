@@ -4,7 +4,8 @@ Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy
 
 ## [18 Ottobre 2026] - Revisione Integrale Master Scenario (Rev 18, 29 Greetings Cronologiche), Unificazione Russ (Demihuman Tiger), Bonifica `{{user}}` -> `Alyssa` & Allineamento Globale Wyvern API
 
-- **Master Character Scenario (`char_scenario_1DC43ggb6mB8YLJDJKrU4` — Revision 18)**:
+- **Master Character Scenario (`char_scenario_1DC43ggb6mB8YLJDJKrU4` — Revision 19)**:
+  - **Integrazione Startup Script Lua (`startup_script`)**: Implementato lo script di avvio Lua che rileva la User Persona attiva (`Alyssa` vs `Jasper`, tramite `user.persona_id` o `user.name`) e risolve automaticamente l'assegnazione dello slot `twin` in `memory._scenario.assignments["twin"]` (forzando la card di Jasper `_t4J9aQNJM36cUKAP4wB4U` quando l'utente gioca come Alyssa, e la card di Alyssa `_6exg3yPfe2eCDK4hTftkh` quando l'utente gioca come Jasper).
   - **Correzione Canonica del Prompt `scenario`**: Allineate le descrizioni di `Edric` (12–13yo Pre-Presentation Gamma pup in middle school), `Stan` (21yo Werewolf Alpha, studente di chimica e artista NSFW digitale segreto), `Mac` (19yo Male Pureblood Werewolf inconsapevole, tastierista dei Grave Mistake e spacciatore d'erba del campus), `Sierra` (18yo Lamia / Serpentine Demihuman iscritta ad Applied Necromancy) e `Russ` (21yo Demihuman Tiger con singolo paio di orecchie da tigre, apprendista al Sacred Needle Tattoo, membro dei Five Cocketeers e coinquilino di Jasper nella Stanza 304 di Wyrm Hall).
   - **29 Greetings Cronologiche, Tradotte in Italiano e Multi-Messaggio (`01.`–`29.`)**:
     - Riordinate cronologicamente tutte le 29 aperture da giugno 2024 a giugno 2025, con inserimento in sequenza temporale delle scene di Russ (`#07`, 29 agosto 2024), Palestra Pesi e Tappeti con Malachia, Roman e Kolya (`#16`, 28 settembre 2024) e Soundclash al Verve contro Neon Purr (`#19`, 11 ottobre 2024).
