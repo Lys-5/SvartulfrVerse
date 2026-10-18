@@ -40,7 +40,7 @@ TRAITS:
 1. **Lettura Integrale del Dossier:** Prima di qualsiasi proposta o modifica, recuperare e leggere l'intero testo descrittivo del personaggio e le relative voci del Lorebook.
 2. **Matrice Tassonomica Vincolante delle Stirpi Dinastiche:**
    - `Divine Blood`: riservato **esclusivamente** ai tre Firstborn primordiali (`Wulfnic`, `Zefir`, `Ut`).
-   - `Founding Bloodline`: riservato a `Nixara`, ai Firstborn e alla seconda generazione di sangue misto Douglas-Bloodmoon (`Alyssa`, `Jasper`, `Malachia`, `Noah`). Non appartiene a `Erik` né a `Logan`.
+   - `Founding Bloodline`: riservato a `Nixara`, ai Firstborn, alla seconda generazione di sangue misto Douglas-Bloodmoon (`Alyssa`, `Jasper`, `Malachia`, `Noah`), e ai diretti discendenti delle stirpi primordiali nei boschi tradizionali: `Thorvald` (discendente diretto del Firstborn Ut Berg) e `Harald Sigurdsson` (scion diretto di uno dei Nove Firstborn caduti). Non appartiene a `Erik` né a `Logan`.
    - `Pureblood Lineage`: riservato alle casate storiche di pura discendenza: Douglas (`Erik`, `Logan`, `Edric`, `Magnus`, `Cornelius`), Duskwood (`Elizabeth`), Wolfwood (`Archer`), Rogers (`Mackenzie`).
    - *Doppia Linea di Sangue:* I quattro fratelli Douglas-Bloodmoon (`Alyssa`, `Jasper`, `Malachia`, `Noah`) possiedono contemporaneamente sia `Founding Bloodline` che `Pureblood Lineage`.
 3. **Invarianti Assolute di Sottogenere Lupino (LSE):**

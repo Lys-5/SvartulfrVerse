@@ -2,6 +2,15 @@
 
 Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy dello StoryEngine e gli interventi sulle entità del World (World, Lexicon, Locations, NPC, Rules) sono tracciati cronologicamente in questo documento per garantire persistenza e coerenza storica tra le sessioni.
 
+## [18 Ottobre 2026] - Consolidamento Canonico: Founding Bloodline per Thorvald (Ut Berg) & Harald (Nove Caduti)
+
+- **Estensione Canonica della Matrice Dinastica `Founding Bloodline`**:
+  - Formalizzato il canone di sangue primordiale per i due guerrieri delle foreste tradizionali:
+    - **`Thorvald`**: Riconosciuto ufficialmente come **discendente diretto per linea di sangue del Firstborn Ut Berg** (*Il Titano di Pietra*), da cui eredita densità titanica e affinità con roccia, ferro e conifere. Aggiornato tratto RPG in `Founding Bloodline (Ut Descendant)` e `Stone Titan Resilience`.
+    - **`Harald Sigurdsson`**: Riconosciuto ufficialmente come **scion diretto di uno dei Nove Firstborn caduti** (i nove originali consacrati da Fenris nell'antichità), conservando il retaggio guerriero puro dell'Età Primordiale nei fiordi e nelle alture. Aggiornato tratto RPG in `Founding Bloodline (Fallen Firstborn Scion)` e `Primordial War Cry`.
+  - **Aggiornamento Matrice Dinastica**: Aggiornate le direttive centrali in [`GEMINI.md`](file:///e:/repository/SvartulfrVerse/GEMINI.md) (Sezione 8) e in [`.agents/rules/09_rpg_stats_e_simulation.md`](file:///e:/repository/SvartulfrVerse/.agents/rules/09_rpg_stats_e_simulation.md).
+  - **Sincronizzazione Lorebook & Wyvern API**: Aggiornate le schede in [`FINAL/Svartulfr_NPC_Secondary.json`](file:///e:/repository/SvartulfrVerse/FINAL/Svartulfr_NPC_Secondary.json) e [`lorebooks/optimized/Svartulfr_NPC_Secondary.json`](file:///e:/repository/SvartulfrVerse/lorebooks/optimized/Svartulfr_NPC_Secondary.json), deployate su Wyvern API (`PUT /api/lorebooks/_Uht3Ckz44JBDrPnUHq7LV`) con HTTP 200 OK e 111 voci confermate.
+
 ## [18 Ottobre 2026] - Bonifica Massiva Voci Disattivate (Purga 223 Voci OFF & -360.548 Caratteri di Context Bloat)
 
 - **Purga e Archiviazione di Tutte le Voci `enabled: false` nei 6 Lorebook Standalone**:
