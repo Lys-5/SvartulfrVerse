@@ -2,6 +2,20 @@
 
 Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy dello StoryEngine e gli interventi sulle entità del World (World, Lexicon, Locations, NPC, Rules) sono tracciati cronologicamente in questo documento per garantire persistenza e coerenza storica tra le sessioni.
 
+## [18 Ottobre 2026] - Iniezione e Deploy dei 5 Personaggi Preferiti JanitorAI in NPC Secondary (315 Voci)
+
+- **Completamento del Secondo Scaglione dei Preferiti JanitorAI in Svartúlfr - NPC Secondary (`_Uht3Ckz44JBDrPnUHq7LV`)**:
+  - Integrate con successo 5 nuove schede NPC canoniche complete di formato JED+, avatar Janitor originali verificati, regex multilinea `(?:^|\n)\s*...:`, `custom_avatar_regex: true`, `lines_parsed: 1`, zero keyword ombrello (`BROAD_KEYS`), età statiche coerenti con il World Clock 2024 e statistiche RPG bilanciate (somma 31, Livello <= 99):
+    1. **`Thrakgor Deathspine`** (`npc_sec_thrakgor_deathspine`): Capoguerra orco del clan Deathspine (Leidenpotato, Bot #20). Bellicoso rivale di Brak Ironfist sulle creste delle montagne sopra Hex Valley; avatar: `https://ella.janitorai.com/bot-avatars/LaX-Azncb7-WOLbt2o-pv.webp`.
+    2. **`Crowe`** (`npc_sec_feral_hound_crowe`): Canid Demihuman Hybrid (Nannikka, Bot #04), letale mercenario da tracciamento e segugio ferino (singolo paio di orecchie canine, nessuna orecchia umana) per la Bacheca Contratti DDM e la sicurezza non ufficiale DCC; avatar: `https://ella.janitorai.com/bot-avatars/92qxyDw3aIGUBYFIzJIyt.webp`.
+    3. **`Morgeth Steeltooth`** (`npc_sec_morgeth_steeltooth`): Maestro fabbro ed arcane metallurgist Half-Orc / Half-Eadra (AnonymousWitch87, Bot #13), compagno di forgia del Firstborn Ut Berg al *The Verve*; avatar: `https://ella.janitorai.com/bot-avatars/EX4pVxCM_N-GkCxAchq2V.webp`.
+    4. **`Thorvald`** (`npc_sec_thorvald_bloodmoon`): Licantropo Pureblood norreno del Clan Bloodmoon arcaico (kiki_exe, Bot #15), guardiano tradizionale delle foreste boreali al servizio diretto di Wulfnic Bloodmoon; avatar: `https://ella.janitorai.com/bot-avatars/pxN-kff_1QI2MT2cldHeT.webp`.
+    5. **`Harald Sigurdsson`** (`npc_sec_harald_sigurdsson`): Jarl e signore della guerra licantropo delle alture tradizionali (pqpavslover, Bot #35), custode delle usanze marziali scandinave e fedele vassallo di Wulfnic; avatar: `https://ella.janitorai.com/bot-avatars/9af59b5e-29f8-4ac7-aed1-bb1332bc2e2e_fff8e1d8-defc-443e-b817-4236a9013b34.webp`.
+- **Mitigazione Dimensionale Cloudflare & Deploy Wyvern API**:
+  - Applicata mitigazione di payload (invio dell'array `lexicon` nativo compresso sotto la soglia di 1 MB di Cloudflare) con successo su Wyvern Web API (`PUT /api/lorebooks/_Uht3Ckz44JBDrPnUHq7LV`).
+  - Eseguita GET di verifica: confermato HTTP 200 con **315 voci remote attive e sincronizzate**.
+  - Sincronizzati sia [`FINAL/Svartulfr_NPC_Secondary.json`](file:///e:/repository/SvartulfrVerse/FINAL/Svartulfr_NPC_Secondary.json) sia [`lorebooks/optimized/Svartulfr_NPC_Secondary.json`](file:///e:/repository/SvartulfrVerse/lorebooks/optimized/Svartulfr_NPC_Secondary.json).
+
 ## [17 Ottobre 2026] - Consolidamento Architetturale Cast Fisso (13 Standalone /mine Cards) & World Dossier nei Lorebook
 
 - **Standardizzazione del Cast Fisso Canonico (13 Character Cards in `/mine` e Scenario Slots)**:
