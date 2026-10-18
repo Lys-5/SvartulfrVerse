@@ -2,6 +2,19 @@
 
 Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy dello StoryEngine e gli interventi sulle entità del World (World, Lexicon, Locations, NPC, Rules) sono tracciati cronologicamente in questo documento per garantire persistenza e coerenza storica tra le sessioni.
 
+## [18 Ottobre 2026] - Bonifica Massiva Voci Disattivate (Purga 223 Voci OFF & -360.548 Caratteri di Context Bloat)
+
+- **Purga e Archiviazione di Tutte le Voci `enabled: false` nei 6 Lorebook Standalone**:
+  - Eseguita bonifica strutturale eliminando 223 voci disattivate (`enabled: false`) che appesantivano la memoria e i payload dei Lorebook:
+    - **`Svartúlfr - Location`** (`_EjXxkmPVhpCXg8xABpFkK`): Rimosse 8 voci OFF (da 196 a **188 voci attive**).
+    - **`Svartúlfr - Lorebook II`** (`_HfG7TeV6MJyj6bxMwxkpt`): Rimosse 4 voci OFF (da 143 a **139 voci attive**).
+    - **`Svartúlfr - NPC Primary`** (`_zwEqgEEzh12X6gHVmMKKC`): Rimosse 7 voci OFF (da 107 a **100 voci attive**).
+    - **`Svartúlfr - NPC Secondary`** (`_Uht3Ckz44JBDrPnUHq7LV`): Rimosse 204 comparse disattivate da vecchi dump (da 315 a **111 voci attive**, conservando tutti i 111 NPC canonicamente attivi).
+    - **`Svartúlfr - Lorebook I`** (`_gwwCxCfQ6PQaLEjAQVpJL`) e **`Svartúlfr - Lorebook III`** (`_9zWTGqYJNJ4BCDMj8gfcD`): Già puliti al 100% (rispettivamente 219 e 35 voci, 0 OFF).
+  - **Archivio Storico di Sicurezza**: Tutte le 223 voci disattivate rimosse sono state integralmente salvate con manifest strutturato in [`ARCHIVIO/07_Purged_Disabled_Entries/purged_disabled_entries_manifest.json`](file:///e:/repository/SvartulfrVerse/ARCHIVIO/07_Purged_Disabled_Entries/purged_disabled_entries_manifest.json) e documentate in [`ARCHIVIO/07_Purged_Disabled_Entries/README.md`](file:///e:/repository/SvartulfrVerse/ARCHIVIO/07_Purged_Disabled_Entries/README.md).
+  - **Deploy Wyvern Web API Confermato**: Tutti i 4 Lorebook bonificati sono stati distribuiti via API con risposta HTTP 200 e conteggi confermati via GET (188, 139, 100, 111).
+  - **Impatto sul Context Budget**: Eliminati oltre **360.548 caratteri di context bloat**, riducendo significativamente la latenza di scansione e i payload Cloudflare.
+
 ## [18 Ottobre 2026] - Iniezione e Deploy dei 5 Personaggi Preferiti JanitorAI in NPC Secondary (315 Voci)
 
 - **Completamento del Secondo Scaglione dei Preferiti JanitorAI in Svartúlfr - NPC Secondary (`_Uht3Ckz44JBDrPnUHq7LV`)**:
