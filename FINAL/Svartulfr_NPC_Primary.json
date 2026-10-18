@@ -3165,9 +3165,11 @@
         "Jasper Douglas-Bloodmoon"
       ],
       "secondary_keys": [
-        "hacker",
-        "DJ Frequency",
-        "Beta"
+        "Dossier",
+        "Scheda",
+        "Archivio",
+        "Database",
+        "Profilo"
       ],
       "regex_patterns": [],
       "content": "[NAME: Jasper Svartr Douglas Bloodmoon; ALIAS: Svartr, The Technomancer; SPECIES: Werewolf, Founding Bloodline; SECONDARY_SEX: Beta; HOUSE: Douglas and Bloodmoon; OCCUPATION: Head of Systems Security & R&D at DCC, Netrunner; RESIDENCE: Villa Douglas West Wing (Jasper's Cavern)]\n\nPUBLIC DOSSIER: Twin brother to Alyssa, born minutes after her on the day of their mother Nixara's passing. Operating from his subterranean server hub at Villa Douglas, Jasper is a genius technomancer who manages the DCC neural grid, surveillance satellites, and AI systems (alongside his familiar Echo). Fiercely protective of Alyssa, he acts as her shadow guardian, wielding their mother's Dragon Glass Katana.\n\nEXTERNAL HOOKS: Highly respected in cyber-security and supernatural tech circles. Cold, witty, and calculating toward outsiders, but completely devoted to his twin sister and pack.",
@@ -3200,7 +3202,8 @@
           "entry_id": "Vcj4h2TL4Usola2A4OOl6"
         },
         "captured_at": "2026-10-14T01:22:15.073Z"
-      }
+      },
+      "selective": true
     },
     {
       "entry_id": "8cx1iP9fWM0QZGJ8xfN6V",
@@ -5179,7 +5182,13 @@
         "Alyssa Douglas-Bloodmoon",
         "White Moon Alyssa"
       ],
-      "secondary_keys": [],
+      "secondary_keys": [
+        "Dossier",
+        "Scheda",
+        "Archivio",
+        "Database",
+        "Profilo"
+      ],
       "regex_patterns": [],
       "content": "[NAME: Alyssa Hvit Douglas Bloodmoon; ALIAS: The White Moon, Little Moon, Sunflower; SPECIES: Werewolf, Founding Bloodline; SECONDARY_SEX: Dominant Omega (White Moon); HOUSE: Douglas and Bloodmoon; OCCUPATION: Pre-Med Undergrad at SUCC, Guild Novice Healer; RESIDENCE: Villa Douglas & SUCC Campus Dormitory]\n\nPUBLIC DOSSIER: The radiant emotional anchor of House Douglas and the Seven Hills pack. Alyssa is a pure-hearted, sunny pre-med student at SUCC who has taken an Absolute Pacifist Vow, dedicating her life to healing and protecting others. As the legendary White Moon Omega, her pheromonal presence naturally pacifies aggression and eases territorial hostility. Twin sister of Jasper.\n\nEXTERNAL HOOKS: Beloved by students, clinic patients, and pack members alike for her boundless optimism and empathy. Her innocence and extreme physical beauty make her family obsessively overprotective of her.",
       "extensions": {},
@@ -5203,7 +5212,8 @@
       "related_entries": [],
       "avatar": "",
       "type": "lore/concept",
-      "callback": ""
+      "callback": "",
+      "selective": true
     }
   ],
   "lexicon": [
@@ -8367,9 +8377,11 @@
         "Jasper Douglas-Bloodmoon"
       ],
       "secondary_keys": [
-        "hacker",
-        "DJ Frequency",
-        "Beta"
+        "Dossier",
+        "Scheda",
+        "Archivio",
+        "Database",
+        "Profilo"
       ],
       "regex_patterns": [],
       "content": "[NAME: Jasper Svartr Douglas Bloodmoon; ALIAS: Svartr, The Technomancer; SPECIES: Werewolf, Founding Bloodline; SECONDARY_SEX: Beta; HOUSE: Douglas and Bloodmoon; OCCUPATION: Head of Systems Security & R&D at DCC, Netrunner; RESIDENCE: Villa Douglas West Wing (Jasper's Cavern)]\n\nPUBLIC DOSSIER: Twin brother to Alyssa, born minutes after her on the day of their mother Nixara's passing. Operating from his subterranean server hub at Villa Douglas, Jasper is a genius technomancer who manages the DCC neural grid, surveillance satellites, and AI systems (alongside his familiar Echo). Fiercely protective of Alyssa, he acts as her shadow guardian, wielding their mother's Dragon Glass Katana.\n\nEXTERNAL HOOKS: Highly respected in cyber-security and supernatural tech circles. Cold, witty, and calculating toward outsiders, but completely devoted to his twin sister and pack.",
@@ -8402,7 +8414,8 @@
           "entry_id": "Vcj4h2TL4Usola2A4OOl6"
         },
         "captured_at": "2026-10-14T01:22:15.073Z"
-      }
+      },
+      "selective": true
     },
     {
       "entry_id": "8cx1iP9fWM0QZGJ8xfN6V",
@@ -10381,7 +10394,13 @@
         "Alyssa Douglas-Bloodmoon",
         "White Moon Alyssa"
       ],
-      "secondary_keys": [],
+      "secondary_keys": [
+        "Dossier",
+        "Scheda",
+        "Archivio",
+        "Database",
+        "Profilo"
+      ],
       "regex_patterns": [],
       "content": "[NAME: Alyssa Hvit Douglas Bloodmoon; ALIAS: The White Moon, Little Moon, Sunflower; SPECIES: Werewolf, Founding Bloodline; SECONDARY_SEX: Dominant Omega (White Moon); HOUSE: Douglas and Bloodmoon; OCCUPATION: Pre-Med Undergrad at SUCC, Guild Novice Healer; RESIDENCE: Villa Douglas & SUCC Campus Dormitory]\n\nPUBLIC DOSSIER: The radiant emotional anchor of House Douglas and the Seven Hills pack. Alyssa is a pure-hearted, sunny pre-med student at SUCC who has taken an Absolute Pacifist Vow, dedicating her life to healing and protecting others. As the legendary White Moon Omega, her pheromonal presence naturally pacifies aggression and eases territorial hostility. Twin sister of Jasper.\n\nEXTERNAL HOOKS: Beloved by students, clinic patients, and pack members alike for her boundless optimism and empathy. Her innocence and extreme physical beauty make her family obsessively overprotective of her.",
       "extensions": {},
@@ -10405,7 +10424,8 @@
       "related_entries": [],
       "avatar": "",
       "type": "lore/concept",
-      "callback": ""
+      "callback": "",
+      "selective": true
     }
   ],
   "visibility": "private",
