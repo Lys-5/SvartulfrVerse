@@ -465,6 +465,9 @@ Seguire tassativamente la sequenza di 13 passi:
 - **Wipe Metadati Lorebook via PUT:** L'endpoint `PUT /api/lorebooks/:id` non effettua merge parziale. Inviare un body contenente solo `{ lexicon: [...] }` svuota silenziosamente i campi top-level (`name`, `description`, `scan_depth`, `token_budget`, `recursive_scanning`, `visibility`, `rating`, `is_private`). In qualsiasi chiamata è obbligatorio trasmettere sempre l'intero blocco di metadati del Lorebook (`name`, `description`, `scan_depth: 5`, `token_budget: 5000`, `recursive_scanning: true`) assieme al lexicon.
 - **Priority come Stringa (Errore Zod 500):** `Expected number, received string, path: ["priority"]` manda in crash il server Wyvern (HTTP 500) bloccando la ricezione o l'invio di messaggi nella chat. Forzare sempre la tipizzazione numerica esplicita: `priority: Number(val) || 0`.
 - **Orfani da Testing (Zero-Footprint):** I chat log e i party temporanei creati per test diagnostici restano visibili nella UI utente e inquinano la libreria. Eseguire sempre il teardown sistematico (`DELETE /api/new/chat-logs/:id`) al termine di ogni sessione di test.
+- **HTTP 413 Payload Too Large su Lorebook PUT:** Non includere nel payload JSON sia l'array legacy `entries` sia l'array canonico `lexicon` (raddoppia la dimensione della richiesta). Inviare solo `lexicon` unitamente ai metadati top-level.
+- **HTTP 409 Conflict su Scenario PUT:** Lo scenario mantiene un contatore `revision` incrementale. Prima di inviare un `PUT`, eseguire sempre una `GET` autenticata fresca per recuperare l'ultimo intero di `revision`, fonderlo nel payload e trasmettere.
+- **Attivazione Involontaria Dossier Lorebook:** Impostare tassativamente `selective: true` sui World Dossier del cast principale con `secondary_keys` dedicate archivistiche (`['Dossier', 'Scheda', 'Archivio', 'Database', 'Profilo']`), e bonificare le chiavi trigger isolate mono-parola (es. `'Alyssa'` -> `'Alyssa Telegram'`).
 
 ---
 
@@ -526,13 +529,17 @@ Con la dismissione definitiva del modulo World di Wyvern (`_CgYT8fHXpDC4crjmegQF
    - **Messaggi Multi-Mittente (`messages[]`) e Macro:**
      - Ogni battuta in apertura è un elemento separato di `greeting.messages` con il proprio `speaker_slot` (senza prefissi `=>Nome:` o `Nome: ` nel testo); `greeting.content` e `greeting.speaker_slot` devono sempre coincidere con `messages[0]`.
      - Usare `{{scenarioChar "slot_key"}}` per riferirsi agli altri slot, `{{char}}` per il mittente del messaggio corrente e `{{user}}` per il giocatore.
-2. **Statistiche RPG Finali Calcolate (`[STATS: ...]`):**
+2. **Startup Script Lua (`startup_script`) & Blindatura Anti-Duplicazione:**
+   - Negli Scenari con slot dinamici o protagonisti alternativi, Wyvern espone il campo radice `startup_script` (eseguito all'inizializzazione della chat prima del salvataggio dei messaggi di apertura).
+   - Lo script verifica a runtime `user.persona_id`, `user.name` e i pronomi (`user.pronoun_subjective`, `user.pronoun_objective`) assegnando dinamicamente la card corrispondente a `memory._scenario.assignments["twin"]` (Jasper se Persona Alyssa o Femmina; Alyssa se Persona Jasper o Maschio; randomizer 50/50 su pronomi neutri con seed temporale).
+   - Nel prompt dello scenario è obbligatorio inserire la clausola `[PERSPECTIVE & LOREBOOK SUPPRESSION INVARIANT]` per impedire che memorie o dossier dei Lorebook collegati generino sdoppiamenti o dialoghi fantasma del gemello dormiente.
+3. **Statistiche RPG Finali Calcolate (`[STATS: ...]`):**
    - Essendo fuori dal World, nel blocco `RPG STATS & TRAITS:` in fondo a `description` (su Character Card, Personas e Lorebook `NPC Primary`/`Secondary`) non si inseriscono le sole statistiche base, ma le **Statistiche Finali** comprensive di tutti i bonus e malus derivanti da Specie, Occupazione e Tratti:
      $$\text{STAT}_{\text{finale}} = \text{STAT}_{\text{base}} + \Delta_{\text{Specie}} + \Delta_{\text{Occupazione}} + \sum_{i} \Delta_{\text{Tratto}_i}$$
-3. **I 6 Lorebook Collegati & I 4 Prompt Overrides:**
+4. **I 6 Lorebook Collegati & I 4 Prompt Overrides:**
    - Ogni Character Scenario collega i 6 Lorebook ufficiali Svartúlfr (`Lorebook I`, `Lorebook II`, `Lorebook III`, `Location`, `NPC Primary`, `NPC Secondary`) più i 3 Lorebook tecnici (`A1 Physics`, `A5 Sex Position`, `A5.5 Scene Tone`).
    - I **4 Prompt Overrides** ufficiali ([FINAL/PROMPT_OVERRIDES_WYVERN.md](file:///e:/repository/SvartulfrVerse/FINAL/PROMPT_OVERRIDES_WYVERN.md)) applicano il "sandwich linguistico" in italiano, il `<dual_scene_format>` e il `【 LIVE FEED 】`.
-4. **Stile Visivo Definitivo Argon / Gemini:**
+5. **Stile Visivo Definitivo Argon / Gemini:**
    - Tutte le immagini dei personaggi e dei loro outfit partono dall'ancora biometrica generata con **Argon** (`<IMAGE_0>`) e usano in Gemini lo schema standard a 6 sezioni in italiano (`Abbigliamento` con fessura lombare per la coda, `Accessori`, `Scarpe`, `Gioielli` con rune, `Trucco`, `Acconciatura` con copertura totale delle tempie umane), lo stile *pittura digitale semi-realistica a figura intera* e la clausola finale obbligatoria `No orecchie umane. No auricolari [se non previsti]. No modifiche alle orecchie da lupo o alla coda, coerenti con <IMAGE_0>.`
 
 ---

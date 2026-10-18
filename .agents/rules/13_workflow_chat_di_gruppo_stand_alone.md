@@ -62,3 +62,55 @@ Negli Scenari Wyvern, gli slot non devono mai usare i nomi propri dei personaggi
    - `Final Instructions Override` (con `<dual_scene_format>`, `<live_feed_mechanic>` e `[ORDINE FINALE ASSOLUTO]` in italiano in chiusura);
    - `Write for Me Prompt Override`;
    - `Improve My Writing Prompt Override`.
+
+---
+
+## 4. Startup Script Lua (`startup_script`) & Blindatura Anti-Duplicazione
+
+Nei Character Scenarios con slot dinamici o protagonisti multipli alternativi (es. lo slot `twin`), Wyvern espone il campo radice `startup_script` (eseguito prima del salvataggio dei messaggi di apertura).
+
+### 1. Pattern Canonico di Risoluzione Slot via Lua
+Lo script verifica a runtime l'identità o i pronomi della User Persona attiva ed assegna la card corrispondente a `memory._scenario.assignments["slot_key"]`:
+
+```lua
+if memory and memory._scenario and memory._scenario.assignments then
+    local p_id = (user and user.persona_id) or (memory._scenario.persona_id) or ''
+    local u_name = string.lower((user and user.name) or '')
+    local sub = string.lower((user and (user.pronoun_subjective or (user.pronouns and user.pronouns.subjective))) or '')
+    local obj = string.lower((user and (user.pronoun_objective or (user.pronouns and user.pronouns.objective))) or '')
+
+    local alyssa_id = '_6exg3yPfe2eCDK4hTftkh'
+    local jasper_id = '_t4J9aQNJM36cUKAP4wB4U'
+
+    -- 1. Risoluzione Diretta per Persona Primaria (Jasper vs Alyssa)
+    if p_id == '1792155173728' or p_id == 'user_persona_bGDFCEtKDzVmgbCmHJWEW' or string.find(u_name, 'jasper') then
+        memory._scenario.assignments['twin'] = alyssa_id
+    elseif p_id == 'persona_1786335754946' or p_id == 'user_persona_VnRF2xGeG1C4xByDF9h9R' or string.find(u_name, 'alyssa') then
+        memory._scenario.assignments['twin'] = jasper_id
+
+    -- 2. Risoluzione per Persona Terza Custom tramite Pronomi
+    elseif sub == 'he' or obj == 'him' or string.find(u_name, 'maschio') or string.find(u_name, 'male') then
+        memory._scenario.assignments['twin'] = alyssa_id
+    elseif sub == 'she' or obj == 'her' or string.find(u_name, 'femmina') or string.find(u_name, 'female') then
+        memory._scenario.assignments['twin'] = jasper_id
+
+    -- 3. Persona Neutra / Non-Binary (they/them, it/its) -> Randomizer 50/50
+    else
+        math.randomseed(os.time())
+        if math.random(1, 2) == 1 then
+            memory._scenario.assignments['twin'] = alyssa_id
+        else
+            memory._scenario.assignments['twin'] = jasper_id
+        end
+    end
+end
+```
+
+### 2. Invariante di Soppressione nei Prompt di Scenario
+Per evitare che richiami enciclopedici o memorie dei Lorebook collegati generino sdoppiamenti o dialoghi fantasma del gemello non attivo, ogni Scenario deve includere nel campo `scenario`:
+
+```text
+[PERSPECTIVE & LOREBOOK SUPPRESSION INVARIANT]:
+The active {{user}} and the active assigned {{scenarioChar "twin"}} are the definitive twin protagonists of this story. Any background lorebook entries or encyclopedic dossiers referring to either Alyssa or Jasper serve exclusively as passive world-building reference and must NEVER create duplicate character personas, third-person ghost dialogue, split-personality narration, or alter the active speaker slot of {{scenarioChar "twin"}}.
+```
+
