@@ -2,6 +2,25 @@
 
 Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy dello StoryEngine e gli interventi sulle entità del World (World, Lexicon, Locations, NPC, Rules) sono tracciati cronologicamente in questo documento per garantire persistenza e coerenza storica tra le sessioni.
 
+## [18 Ottobre 2026] - Codifica Canonica dei Nove Firstborn di Fenris, Falso Ragnarök & Folklore Religioso LSE (221 Voci)
+
+- **Formalizzazione Completa della Fratellanza dei Nove Firstborn di Fenris (I Nove Fratelli di Zanna)**:
+  - Definita la cosmologia e l'onomastica arcaica completa dei nove guerrieri maschi primordiali creati direttamente dal Dio Lupo Fenris, scissi tra i 3 superstiti viventi e i 6 caduti nel Falso Ragnarök:
+    1. **`Wulfnic Bloodmoon`** (*Úlfrikr Báleygr*): Il Primo Zanna, Re Costruttore, Apex Sovereign, capostipite della Casata Bloodmoon (Vivente).
+    2. **`Ut Berg`** (*Il Titano di Pietra*): Invulnerabilità primordiale e mastro forgiatore, antenato diretto di Thorvald (Vivente).
+    3. **`Zefir Hvitskog`** (*Lo Spirito Bianco*): Cacciatore superluminale silente della tundra boreale (Vivente).
+    4. **`Sigvaldi Blóðøx`** (*L'AsciadiSangue*): Primo stratega e berserker supremo di Fenris, antenato diretto di Harald Sigurdsson (Caduto).
+    5. **`Svartr Sólúlf`** (*Il Lupo del Sole Nero*): Figlio divino di Sól (il Sole) e Sköll, controparte solare di Hvit (la Lupa Bianca lunare) e archetipo primordiale del Wolf Name di Jasper Douglas-Bloodmoon (Caduto).
+    6. **`Brandr Eldstigi`** (*Il Passo di Fuoco*): Dominatore del magma, del calore vulcanico e delle ceneri primordiali (Caduto).
+    7. **`Kári Hafgufa`** (*Il Gorgo degli Abissi*): Signore delle tempeste oceaniche e degli abissi marini polari (Caduto).
+    8. **`Rúnólfr Völundr`** (*Lo Sciamano delle Rune*): Custode primordiale del Seiðr, delle visioni sciamaniche e delle Rune Madri (Caduto).
+    9. **`Garmr Kjálki`** (*Mascelladiferro / Il Divoratore*): Incarnazione della fame cosmica inesausta di Fenris e carnefice delle avanguardie nemiche (Caduto).
+- **Nuove Voci Master & Aggiornamenti Enciclopedici in `Svartúlfr - Lorebook I` (`_gwwCxCfQ6PQaLEjAQVpJL`)**:
+  - Creata la voce master **`I Nove Firstborn di Fenris: La Fratellanza di Zanna & Il Falso Ragnarök`**.
+  - Creata la voce master **`LSE Folklore & Tradizione Religiosa: Il Culto di Fenris, dei Nove Fratelli e delle Due Luci`** (approfondimento del rito del Minni, brindisi sacrificale dei Sons of the Fall, culto lunare/solare Hvit e Svartr, e frattura tra boschi tradizionali e metropoli).
+  - Aggiornate e armonizzate le voci preesistenti **`Lycanthrope Naming Tradition`** (sezioni 1, 3 e 7) e **`Species: God & Primordial`**.
+- **Deploy Wyvern API & Local Sync**: Aggiornato [`FINAL/Svartulfr_Lorebook_I.json`](file:///e:/repository/SvartulfrVerse/FINAL/Svartulfr_Lorebook_I.json) e [`lorebooks/optimized/Svartulfr_Lorebook_I.json`](file:///e:/repository/SvartulfrVerse/lorebooks/optimized/Svartulfr_Lorebook_I.json), distribuito via API (`PUT /api/lorebooks/_gwwCxCfQ6PQaLEjAQVpJL`) con **HTTP 200 OK** e 221 voci attive confermate via GET.
+
 ## [18 Ottobre 2026] - Consolidamento Canonico: Founding Bloodline per Thorvald (Ut Berg) & Harald (Nove Caduti)
 
 - **Estensione Canonica della Matrice Dinastica `Founding Bloodline`**:
