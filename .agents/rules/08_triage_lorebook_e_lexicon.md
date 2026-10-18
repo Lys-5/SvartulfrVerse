@@ -67,14 +67,14 @@ La somma dei metadati statici del World (Istruzioni avanzate + Location + Rotte 
 
 ## 4. Architettura dei 6 Lorebook Standalone per Character Scenarios & Igiene Dati
 
-Con la dismissione della modalità World, tutto il patrimonio enciclopedico e demografico di Svartúlfr è riorganizzato nei **6 Lorebook Standalone** sincronizzati live su Wyvern (`ws=library&tab=lorebooks`) e collegati ai Character Scenarios via `lorebook_ids`:
+Con la dismissione della modalità World, tutto il patrimonio enciclopedico e demografico di Svartúlfr è riorganizzato nei **6 Lorebook Standalone** sincronizzati live su Wyvern (`ws=library&tab=lorebooks`) e collegati ai Character Scenarios via `lorebook_ids` (793 voci attive totali, 0 disattivate):
 
-1. `_gwwCxCfQ6PQaLEjAQVpJL` — **Svartúlfr - Lorebook I** (220 entries: Ecologia LSE, Rune, Casate, Fazioni e Lore primaria).
-2. `_HfG7TeV6MJyj6bxMwxkpt` — **Svartúlfr - Lorebook II** (144 entries: Bacheca Contratti, Economia, Oggetti, DDM Voidspace).
-3. `_9zWTGqYJNJ4BCDMj8gfcD` — **Svartúlfr - Lorebook III** (26 entries: Campus SUCC, CUMS, Confraternite, Sport, Underworld).
-4. `_EjXxkmPVhpCXg8xABpFkK` — **Svartúlfr - Location** (196 entries: Location strutturate di Blackwood, Solarton, Riserve e Dungeon).
-5. `_zwEqgEEzh12X6gHVmMKKC` — **Svartúlfr - NPC Primary** (113 entries: NPC primari, memorie intime e profili personali con Statistiche Finali).
-6. `_Uht3Ckz44JBDrPnUHq7LV` — **Svartúlfr - NPC Secondary** (313 entries: NPC secondari e terziari del mondo con Statistiche Finali).
+1. `_gwwCxCfQ6PQaLEjAQVpJL` — **Svartúlfr - Lorebook I** (221 entries: Ecologia LSE, Rune, Casate, Fazioni e Lore primaria).
+2. `_HfG7TeV6MJyj6bxMwxkpt` — **Svartúlfr - Lorebook II** (139 entries: Bacheca Contratti, Economia, Oggetti, DDM Voidspace).
+3. `_9zWTGqYJNJ4BCDMj8gfcD` — **Svartúlfr - Lorebook III** (35 entries: Campus SUCC, CUMS, Confraternite, Sport, Underworld).
+4. `_EjXxkmPVhpCXg8xABpFkK` — **Svartúlfr - Location** (188 entries: Location strutturate di Blackwood, Solarton, Riserve e Dungeon).
+5. `_zwEqgEEzh12X6gHVmMKKC` — **Svartúlfr - NPC Primary** (99 entries: NPC primari, World Dossier del cast fisso, memorie intime e profili personali con Statistiche Finali).
+6. `_Uht3Ckz44JBDrPnUHq7LV` — **Svartúlfr - NPC Secondary** (111 entries: NPC secondari e terziari del mondo con Statistiche Finali).
 
 ### Regole Vincolanti di Igiene Lorebook:
 1. **Zero Keyword Ombrello (`BROAD_KEYS`) sugli NPC:**

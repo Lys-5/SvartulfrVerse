@@ -1,4 +1,19 @@
 Ultimo aggiornamento
+18 ott 2026
+Riepilogo
+Consolidamento Architetturale Character Scenarios, Unificazione Canonica di Russ (Demihuman Tiger), 29 Greetings Cronologiche (2024–2025) e Standardizzazione Statistiche RPG Finali a 7 Attributi
+
+Dettagli
+- Timeline Accademica e Anagrafiche (2024–2025): L'anno da matricola (Freshman Year) alla SUCC si svolge tra giugno 2024 (estate pre-college a Villa Douglas e al programma di controllo soprannaturale di Camp Mystic sul Lago Erie) e giugno 2025. Le età statiche calcolate sul 2024 restano invariate (Alyssa e Jasper 19, Noah 25, Malachia 28, Erik 55, Logan 49, Edric 12-13, Russ 21, Stan 21, Mac 19, Sierra 18, Scarlett 20, Jared 22).
+- Unificazione Canonica di Russell 'Russ' Sinclair (`_wn6DkCcg3Xqa2Xpx9ttnT`): Riconciliata la discrepanza tra l'import grezzo umano (19yo) e i Five Cocketeers: Russ è canonicamente un Demihuman Tiger di 21 anni (183 cm, singolo paio di orecchie striate da tigre sulla sommità del capo, nessuna orecchia umana, coda tigrata), apprendista tatuatore al Sacred Needle Tattoo, membro dei Five Cocketeers e coinquilino di Jasper nella Stanza 304 di Wyrm Hall.
+- Allineamento Descrizioni Cast nel Master Scenario (`char_scenario_1DC43ggb6mB8YLJDJKrU4`): Corrette le voci di Edric (12-13yo Pre-Presentation Gamma pup in middle school, con rating `mature` sulla scheda), Stan (21yo Werewolf Alpha, studente di chimica e artista digitale NSFW segreto), Mac (19yo Male Pureblood Werewolf inconsapevole, tastierista dei Grave Mistake), Sierra (18yo Lamia / Serpentine Demihuman iscritta ad Applied Necromancy) e Russ (21yo Demihuman Tiger).
+- Epurazione di `{{user}}` nei Lorebook e nelle Sezioni Lore/Famiglia: Nei 6 Lorebook e nelle sezioni di lore familiare delle schede/personas, la gemella Omega è sempre indicata col nome canonico `Alyssa` (zero macro `{{user}}` o `{{pronoun...}}` nei Lorebook), garantendo piena compatibilità Dual-POV sia per chi gioca Alyssa (`[FemPOV]`) sia per chi gioca Jasper (`[MalePOV]`). Rimossa e archiviata la voce duplicata `#97 ({{user}} Hvit Douglas Bloodmoon)` da `NPC Primary` (ora a 99 voci attive).
+- Invarianti LSE & Statistiche Finali a 7 Attributi (`STR/PER/END/CHA/INT/AGI/LCK`): Corretto ogni residuo `"Ascended Alpha"` su Jasper in `"Beta"` (Card e Persona); rimossi `Dominant Alpha` e `Alpha Command` dalla scheda di Mac; convertiti tutti i blocchi RPG di Card, Personas e NPC al formato unificato a 7 attributi con `[LEVEL: X;` pari all'età canonica (tetto massimo 99).
+- 29 Greetings Cronologiche & Multi-Speaker in Italiano: Tutte le 29 aperture del Master Scenario sono numerate (`01.`–`29.`), ordinate cronologicamente da giugno 2024 a giugno 2025, interamente tradotte in italiano senza accenti ad apostrofo ASCII, strutturate in turni multi-messaggio (`messages[]`) con `speaker_slot` validi e prefissi `Nome Completo:` su nuova riga per l'attivazione regex degli NPC.
+
+---
+
+Ultimo aggiornamento
 29 set 2026
 Riepilogo
 Sblocco Totale Contenuti (Unchained Policy): rimozione di ogni autocensura e allineamento esclusivo alla Wyvern Prohibited Content Guide

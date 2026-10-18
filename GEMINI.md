@@ -152,13 +152,13 @@ const oreDaData = iso => (Date.parse(iso) - EP) / 3600000;
 
 ## 7. Triage Import Lorebook ed Architettura Lexicon World / Lorebooks Standalone
 
-- **Dismissione World e Pivot su 6 Lorebook Standalone:** Con la migrazione definitiva ai Character Scenarios, tutto il corpus informativo del mondo è scorporato e distribuito nei **6 Lorebook Standalone** sincronizzati in `/mine` e collegati agli scenari via `lorebook_ids`:
-  1. `_gwwCxCfQ6PQaLEjAQVpJL` — **Svartúlfr - Lorebook I** (220 entries: Ecologia LSE, Rune, Casate, Fazioni e Lore primaria).
-  2. `_HfG7TeV6MJyj6bxMwxkpt` — **Svartúlfr - Lorebook II** (144 entries: Bacheca Contratti, Economia, Oggetti, DDM Voidspace).
-  3. `_9zWTGqYJNJ4BCDMj8gfcD` — **Svartúlfr - Lorebook III** (26 entries: Campus SUCC, CUMS, Confraternite, Sport, Underworld).
-  4. `_EjXxkmPVhpCXg8xABpFkK` — **Svartúlfr - Location** (196 entries: Location strutturate).
-  5. `_zwEqgEEzh12X6gHVmMKKC` — **Svartúlfr - NPC Primary** (113 entries: NPC primari e profili intimi con Statistiche Finali).
-  6. `_Uht3Ckz44JBDrPnUHq7LV` — **Svartúlfr - NPC Secondary** (313 entries: NPC secondari e terziari con Statistiche Finali).
+- **Dismissione World e Pivot su 6 Lorebook Standalone:** Con la migrazione definitiva ai Character Scenarios, tutto il corpus informativo del mondo è scorporato e distribuito nei **6 Lorebook Standalone** sincronizzati in `/mine` e collegati agli scenari via `lorebook_ids` (793 voci attive totali, 0 disattivate):
+  1. `_gwwCxCfQ6PQaLEjAQVpJL` — **Svartúlfr - Lorebook I** (221 entries: Ecologia LSE, Rune, Casate, Fazioni e Lore primaria).
+  2. `_HfG7TeV6MJyj6bxMwxkpt` — **Svartúlfr - Lorebook II** (139 entries: Bacheca Contratti, Economia, Oggetti, DDM Voidspace).
+  3. `_9zWTGqYJNJ4BCDMj8gfcD` — **Svartúlfr - Lorebook III** (35 entries: Campus SUCC, CUMS, Confraternite, Sport, Underworld).
+  4. `_EjXxkmPVhpCXg8xABpFkK` — **Svartúlfr - Location** (188 entries: Location strutturate).
+  5. `_zwEqgEEzh12X6gHVmMKKC` — **Svartúlfr - NPC Primary** (99 entries: NPC primari, World Dossier del cast fisso e profili intimi con Statistiche Finali).
+  6. `_Uht3Ckz44JBDrPnUHq7LV` — **Svartúlfr - NPC Secondary** (111 entries: NPC secondari e terziari con Statistiche Finali).
 - **Regole di Igiene Lorebook Obbligatorie:**
   - **Zero Keyword Ombrello (`BROAD_KEYS`) sugli NPC:** Divieto assoluto di tag generici (`solarton`, `succ`, `blackwood`, `vampire`, `werewolf`, `college`, `student`, `alpha`, `omega`, ecc.) sulle schede NPC per evitare l'attivazione massiva simultanea di oltre 100 voci.
   - **Zero `selective: true` senza `secondary_keys`:** Mantenere `selective: false` salvo quando `secondary_keys` è popolato.
@@ -503,27 +503,26 @@ Seguire tassativamente la sequenza di 13 passi:
 Con la dismissione definitiva del modulo World di Wyvern (`_CgYT8fHXpDC4crjmegQF7`), tutte le sessioni multi-personaggio e di storia adottano ufficialmente i **Character Scenarios** (`https://wiki.wyvern.chat/en/Features/Character-Scenarios`, endpoint `/api/character-scenarios`), come dettagliato in [.agents/rules/13_workflow_chat_di_gruppo_stand_alone.md](file:///e:/repository/SvartulfrVerse/.agents/rules/13_workflow_chat_di_gruppo_stand_alone.md), [.agents/rules/09_rpg_stats_e_simulation.md](file:///e:/repository/SvartulfrVerse/.agents/rules/09_rpg_stats_e_simulation.md) e [.agents/rules/03_outfits_e_coerenza_visiva.md](file:///e:/repository/SvartulfrVerse/.agents/rules/03_outfits_e_coerenza_visiva.md):
 
 1. **Scenario Unificato Multi-Greeting (`char_scenario_1DC43ggb6mB8YLJDJKrU4`):**
-   - Tutte le aperture narrative (dalla serata *Call of Duty* a Villa Douglas e le vacanze estive a *Camp Mystic*, lungo i capitoli del primo anno accademico alla SUCC, le incursioni della Gilda DMHA e i rave di DJ Frequency) sono riunite come **Greetings ordinate** in un unico grande Character Scenario che segue la vita dei due gemelli Douglas-Bloodmoon.
+   - Tutte le **29 aperture narrative** ordinate cronologicamente (`01.`–`29.`, da giugno 2024 a giugno 2025: dalla serata *Call of Duty* a Villa Douglas e le vacanze estive a *Camp Mystic*, lungo i capitoli del primo anno accademico alla SUCC, le incursioni della Gilda DMHA e i rave di DJ Frequency) sono riunite in lingua italiana in un unico grande Character Scenario che segue la vita dei due gemelli Douglas-Bloodmoon.
    - **Dual-Protagonist (`Alyssa` & `Jasper`):**
-     - Le due Personas proposte (`linked_persona_ids`) sono **Alyssa** (`persona_1786335754946`) e **Jasper** (Persona speculare alla sua Card).
+     - Le aperture `[FemPOV]` collegano la Persona di **Alyssa** (`["persona_1786335754946"]`), le aperture `[MalePOV]` collegano la Persona di **Jasper** (`["1792155173728"]`), mentre le aperture Dual lasciano `linked_persona_ids: []` per libera scelta del giocatore.
      - Il pool dello slot `twin` (`key: "twin"`) contiene **sia la Character Card di Jasper sia la Character Card di Alyssa** (`weight: 100`), così chi gioca nei panni di Alyssa ha Jasper come `twin` e chi gioca nei panni di Jasper ha Alyssa come `twin`.
-     - Le aperture specifiche per uno dei due gemelli riportano in cima il tag **`[FemPOV]`** o **`[MalePOV]`**.
-    - **Disciplina dei Ruoli per gli Slot (`slots`):**
-      - Gli slot non utilizzano i nomi dei personaggi ma esclusivamente i ruoli funzionali o relazionali:
-        - `maternal_grandfather` -> Wulfnic Báleygr Bloodmoon (`_HEQQbbRFwKdG8QE2Fh1z1`)
-        - `paternal_grandfather` -> Magnus Douglas III (`_dJ7nRMQEbcUgdWG96MqLz`)
-        - `paternal_grandmother` -> Elizabeth Duskwood (`_zBD6rWUkJBAjLfXnja4xh`)
-        - `father` -> Erik Ulfr Douglas (`_QPea6g4Q1QfeYCVHCLMPR`)
-        - `twin` -> Pool bilanciato: Jasper Svartr (`_t4J9aQNJM36cUKAP4wB4U`) + Alyssa Hvit (`_6exg3yPfe2eCDK4hTftkh`)
-        - `brother` -> Noah Loki Douglas Bloodmoon (`_zFLUjV8aVxQRAfQxGcAcY`)
-        - `eldest_brother` -> Malachia Björn Douglas Bloodmoon (`_RDfz7XzTpM23LpPALVXHM`)
-        - `uncle` -> Logan Járn Douglas (`_T8Ywcr9FEqNf9JxbK6eHP`)
-        - `cousin` -> Edric Douglas (`_TbRM3EdxDjHFgqztTbCpL`)
-        - `boss` -> Zeera Darkfire (`_3tMk6cRAFewRnKMkdJ4XU`)
-        - `quarterback` -> Jared Thompson (`_xJVPtBLL3dxy69RLKL9X9`)
-        - `crush` -> Mackenzie "Mac" Sanchez-Rogers (`_zn24784jfcchQ7EwCyAnm`)
-        - `major` -> Major Kaladin Blackwolf Nargathon (`_EnRGd1jfbjTTGmz4EFJdd`)
-      - *Card esterne del portale:* I personaggi pubblici di altri autori (come Marek di Kakihara) non possono essere inseriti nei pool degli slot per vincoli API; nelle scene corali il loro speaker_slot è affidato a `twin` (Jasper o Alyssa a vegliare sulla scena) preservando intatti i dialoghi dell'Oni.
+   - **Disciplina dei Ruoli per i 13 Slot Canonici (14 Character Cards in `/mine`):**
+     - Gli slot non utilizzano i nomi dei personaggi ma esclusivamente i ruoli funzionali o relazionali:
+       - `maternal_grandfather` -> Wulfnic Báleygr Bloodmoon (`_HEQQbbRFwKdG8QE2Fh1z1`)
+       - `father` -> Erik Ulfr Douglas (`_QPea6g4Q1QfeYCVHCLMPR`)
+       - `twin` -> Pool bilanciato: Jasper Svartr (`_t4J9aQNJM36cUKAP4wB4U`) + Alyssa Hvit (`_6exg3yPfe2eCDK4hTftkh`)
+       - `brother` -> Noah Loki Douglas Bloodmoon (`_zFLUjV8aVxQRAfQxGcAcY`)
+       - `eldest_brother` -> Malachia Björn Douglas Bloodmoon (`_RDfz7XzTpM23LpPALVXHM`)
+       - `uncle` -> Logan Járn Douglas (`_T8Ywcr9FEqNf9JxbK6eHP`)
+       - `cousin` -> Edric Douglas (`_TbRM3EdxDjHFgqztTbCpL`)
+       - `quarterback` -> Jared Thompson (`_xJVPtBLL3dxy69RLKL9X9`)
+       - `friend` -> Stanley "Stan" Davies Jr. (`_Xd3NhKnRJByMTtdb6PjxJ`)
+       - `crush` -> Mackenzie "Mac" Sanchez-Rogers (`_zn24784jfcchQ7EwCyAnm`)
+       - `female_roommate` -> Sierra Cruz (`_pnrXbkWqcgmFAf3meRWFY`)
+       - `female_friend` -> Scarlett Rose (`_qXgBMbFYJfc84hbLHhe92`)
+       - `male_roommate` -> Russell "Russ" Sinclair (`_wn6DkCcg3Xqa2Xpx9ttnT`)
+     - *NPC gestiti tramite Lorebook:* Personaggi come Zeera Darkfire, Elizabeth Duskwood, Magnus Douglas III, Kaladin Nargathon, Marek, Santiago Herrera, Coach D, Roman Blackwood, Kolya Varenkov e Neon Purr agiscono tramite le rispettive schede `npc` in `NPC Primary` / `NPC Secondary` con attivazione automatica dell'avatar tramite prefisso su nuova riga (`Nome Completo: "..."`).
    - **Messaggi Multi-Mittente (`messages[]`) e Macro:**
      - Ogni battuta in apertura è un elemento separato di `greeting.messages` con il proprio `speaker_slot` (senza prefissi `=>Nome:` o `Nome: ` nel testo); `greeting.content` e `greeting.speaker_slot` devono sempre coincidere con `messages[0]`.
      - Usare `{{scenarioChar "slot_key"}}` per riferirsi agli altri slot, `{{char}}` per il mittente del messaggio corrente e `{{user}}` per il giocatore.

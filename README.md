@@ -42,29 +42,30 @@ e:\repository\SvartulfrVerse\
 │   ├── Mine_Characters_Export.json / Mine_Lorebooks_Export.json
 │   └── Story_Engines_Export.json
 │
-├── FINAL/                      # Deliverable pronti all'import (vedi §3)
-│   ├── Svartulfr_Lorebook_I.json / _II.json / _III.json   # 6 Lorebook (formato importabile Wyvern)
-│   ├── Svartulfr_Location.json
-│   ├── Svartulfr_NPC_Primary.json
-│   ├── Svartulfr_NPC_Secondary.json
-│   ├── Erik_Douglas_card.json                     # 5 Character Card V2 (Main Cast)
-│   ├── Logan_Douglas_card.json
-│   ├── Jasper_Douglas_Bloodmoon_card.json
-│   ├── Malachia_Douglas_Bloodmoon_card.json
-│   └── Noah_Douglas_Bloodmoon_card.json
+├── FINAL/                      # Deliverable pronti all'import e sincronizzati via API (vedi §3)
+│   ├── Svartulfr_Master_Scenario.json             # Master Character Scenario (13 slot, 29 greetings)
+│   ├── PROMPT_OVERRIDES_WYVERN.md                 # I 4 Prompt Overrides ufficiali Wyvern
+│   ├── Svartulfr_Lorebook_I.json                  # Lorebook I (221 entries)
+│   ├── Svartulfr_Lorebook_II.json                 # Lorebook II (139 entries)
+│   ├── Svartulfr_Lorebook_III.json                # Lorebook III (35 entries)
+│   ├── Svartulfr_Location.json                    # Location (188 entries)
+│   ├── Svartulfr_NPC_Primary.json                 # NPC Primary (99 entries)
+│   ├── Svartulfr_NPC_Secondary.json               # NPC Secondary (111 entries)
+│   ├── *_card.json                                # 14 Character Cards canoniche (/mine)
+│   └── personas/                                  # 3 User Personas (Alyssa, Jasper, Echo)
 │
 ├── logs/                       # Log di sessione
 │   └── chat/                   # Trascrizioni chat + backup/
 │
 ├── lorebooks/                  # Pipeline di ottimizzazione Lorebook
 │   ├── source/                 # 5 export grezzi di partenza (WyvernChat)
-│   ├── optimized/              # 5 output puliti della Fase 1
+│   ├── optimized/              # 6 Lorebook ottimizzati sincronizzati con FINAL/ (793 entries)
 │   └── standalone/             # Lorebook stand-alone (es. Cocketeers.json)
 │
 ├── scripts/                    # Script e automazioni di progetto (Python/JS)
 │   ├── optimize_lorebooks.py   # Ottimizzatore non-distruttivo dei Lorebook
-│   ├── generate_main_cast_cards.py # Genera le 5 Character Card V2 in FINAL/
-│   └── genericize_alyssa.py    # Genericizzazione AnyPOV di FINAL/ (Alyssa -> {{user}} + placeholder pronomi)
+│   ├── generate_main_cast_cards.py # Genera le Character Card V2 in FINAL/
+│   └── genericize_alyssa.py    # Script storico di conversione placeholder
 │
 └── scratch/                    # Area di lavoro temporanea (script e dump ad-hoc)
     ├── inbox/                  # File sciolti pre-esistenti (ex-root)
@@ -79,23 +80,24 @@ Tutti gli agenti AI e i collaboratori che operano in questo workspace devono seg
 
 1. [01. Formato di Consegna e Standard JED+](.agents/rules/01_formato_consegna_e_jed.md) — Testo pronto da incollare (non JSON complessi), struttura in 4 blocchi + chiusura tematica.
 2. [02. Disciplina di Formattazione per Dialoghi ed Esempi](.agents/rules/02_disciplina_formattazione_dialoghi.md) — Virgolette inglesi doppie per il parlato, no asterischi per le azioni, no em-dash (`—`), divieto di markdown nei testi World.
-3. [03. Outfits, Accessori e Coerenza Visiva](.agents/rules/03_outfits_e_coerenza_visiva.md) — Evitare tratti "sempre visibili", usare il sistema nativo di 5 outfit Wyvern.
-4. [04. World Clock e Gestione Timeline](.agents/rules/04_world_clock_e_timeline.md) — Epoca 21/12/827 d.C., Anno 2024, World-Age di riferimento.
+3. [03. Outfits, Accessori e Coerenza Visiva](.agents/rules/03_outfits_e_coerenza_visiva.md) — Evitare tratti "sempre visibili", standard minimo 9 outfit contestuali Wyvern.
+4. [04. World Clock e Gestione Timeline](.agents/rules/04_world_clock_e_timeline.md) — Epoca 21/12/827 d.C., Anno 2024–2025 (Freshman Year alla SUCC).
 5. [05. Precedenza di Lore e Gestione Discrepanze](.agents/rules/05_precedenza_lore_e_discrepanze.md) — Precedenza per dominio territoriale (Underworld, SUCC, Blackwood, DDM).
 6. [06. Invecchiamento, Longevità e Filone SciFi](.agents/rules/06_invecchiamento_e_longevita.md) — Founding, Firstborn millenari, Pureblood (200-400 anni), Common (60-80 anni).
 7. [07. Gestione Contenuti, Policy Wyvern e Piena Libertà Espressiva (Unchained)](.agents/rules/07_epurazione_user_e_intimacy_profiles.md) — Libertà espressiva Explicit vincolata solo alla policy ufficiale Wyvern.
-8. [08. Triage Import Lorebook ed Architettura Lexicon World](.agents/rules/08_triage_lorebook_e_lexicon.md) — Personaggi vivi con Start Position, deceduti con End Position; confinamento Global Character.
-9. [09. RPG Stats e Sistemi di Simulazione](.agents/rules/09_rpg_stats_e_simulation.md) — Modulo RPG Stats; tetto livello a 99 per evitare bug.
+8. [08. Triage Import Lorebook ed Architettura Lexicon World](.agents/rules/08_triage_lorebook_e_lexicon.md) — 6 Lorebook Standalone (793 entries), zero `BROAD_KEYS`, regex avatar NPC obbligatoria.
+9. [09. RPG Stats e Sistemi di Simulazione](.agents/rules/09_rpg_stats_e_simulation.md) — Statistiche Finali a 7 attributi (`STR/PER/END/CHA/INT/AGI/LCK`); tetto livello a 99.
 10. [10. Pipeline Standard delle Card e Configurazione Attitudes](.agents/rules/10_pipeline_standard_e_attitudes.md) — Sequenza obbligatoria per la redazione di schede.
 11. [11. Wyvern Web API: Protocolli di Sicurezza e Risoluzione Bug](.agents/rules/11_wyvern_api_sicurezza_e_bug.md) — Snapshot preventivo, body parziale per PUT, verifica post-scrittura.
 12. [12. Lavoro in Locale su Database SQLite Wyldfire (Sospeso)](.agents/rules/12_lavoro_locale_sqlite_wyldfire.md) — Protocollo di sicurezza e backup numerati.
-13. [13. Standard Operativo Chat di Gruppo Stand-Alone (/mine)](.agents/rules/13_workflow_chat_di_gruppo_stand_alone.md) — Schema `/mine` 1.000-1.500 token, disaccoppiamento StoryEngine.
+13. [13. Standard Operativo Character Scenarios & Architettura Unificata](.agents/rules/13_workflow_chat_di_gruppo_stand_alone.md) — Scenario Unico Multi-Greeting (`char_scenario_1DC43ggb6mB8YLJDJKrU4`), 13 slot, 14 card `/mine`, 29 aperture cronologiche.
 14. [14. Standard Operativo di Sessione e Skill Integrate](.agents/rules/14_metodo_operativo_skills_integrate.md) — Pianificazione, allineamento interattivo, ispezione, verifica.
 
 ### Riferimenti Ufficiali WyvernWiki per Funzionalità Avanzate e Soluzioni Complesse
 
 Consultare tassativamente queste risorse ufficiali per l'implementazione di logiche complesse, scripting, templating e formattazione:
 
+- **Character Scenarios**: [Features/Character-Scenarios](https://wiki.wyvern.chat/en/Features/Character-Scenarios)
 - **World & Architecture Hub**: [Features/Worlds](https://wiki.wyvern.chat/Features/Worlds)
 - **Advanced Lexicon (Categorize Entries & Register NPCs)**: [Advanced/Lexicon](https://wiki.wyvern.chat/en/Advanced/Lexicon)
 - **Pronoun Pruned Prose (PPP) Character Guide**: [Guides/PPP-Character-Format](https://wiki.wyvern.chat/en/Guides/PPP-Character-Format) e [Features/Worlds/Characters](https://wiki.wyvern.chat/en/Features/Worlds/Characters)
@@ -111,60 +113,39 @@ Consultare tassativamente queste risorse ufficiali per l'implementazione di logi
 
 ---
 
-## 3. Pipeline dei Lorebook e Cartella FINAL
+## 3. Architettura Character Scenarios, 6 Lorebook e Cartella FINAL
 
-Il ciclo di vita dei Lorebook Wyvern segue questi stadi:
+Con la migrazione definitiva dal modulo World ai **Character Scenarios**, la cartella [FINAL/](FINAL/) costituisce la Single Source of Truth sincronizzata bidirezionalmente con le API di Wyvern:
 
-1. **Sorgenti grezze** — i 5 export originali di WyvernChat risiedono in [lorebooks/source/](lorebooks/source/):
-   `Svartulfr_Lorebook_I.json`, `_II`, `_III`, `Svartulfr_Location.json`, `Svartulfr_NPC_Primary.json`.
-2. **Ottimizzazione (Fase 1)** — [scripts/optimize_lorebooks.py](scripts/optimize_lorebooks.py) produce le versioni pulite in [lorebooks/optimized/](lorebooks/optimized/) **senza mai modificare gli originali**. Interventi applicati:
-   - Congelamento (`disable: true`) delle schede segnaposto/vuote;
-   - Congelamento delle voci intruse del setting Digitalis / Cuttings / Jun (per uid verificato);
-   - Rimozione delle keyword "ombrello" (`solarton`, `succ`, `blackwood`, `losangeles`, `underworld`) solo dalle schede NPC;
-   - Rimozione del blocco ripetuto `[INSTRUCTIONS: Format discipline ...]`;
-   - Priority di sicurezza `0 → 10`.
-   ```powershell
-   python scripts/optimize_lorebooks.py
-   ```
-3. **Consegna** — [FINAL/](FINAL/) contiene i 6 Lorebook finali **pronti all'import** su Wyvern: le voci sono esposte nel campo `entries` (array), il solo accettato dall'importatore Lorebook del sito.
-4. **Estrazione NPC + formato di import** — [scripts/convert_to_lexicon.py](scripts/convert_to_lexicon.py) ha estratto le voci `type: npc` dai Lorebook I/II/III in `FINAL/Svartulfr_NPC_Secondary.json`, rimuovendole dalle origini; `NPC_Primary` resta invariato.
-   > **Nota sul formato**: il campo `lexicon` è la struttura **interna** del sito/API e, da solo, **non è importabile** (l'importatore risponde `Invalid file format, no entries found`). Per questo i file di `FINAL/` espongono le voci in `entries`; il normalizzatore `eF()` di Wyvern accetta sia le chiavi stile Lexicon (`enabled`, `insertion_order`, `keys`, `key_logic`) sia quelle stile SillyTavern (`disable`, `order`, `key`, `selectiveLogic`).
-   ```powershell
-   python scripts/convert_to_lexicon.py
-   ```
-
-### Character Card V2 (Main Cast)
-
-Le schede dei 5 personaggi principali (Erik, Logan, Jasper, Malachia, Noah) sono generate da [scripts/generate_main_cast_cards.py](scripts/generate_main_cast_cards.py) nel formato **V2 Character Card** (`spec: chara_card_v2`, lo stesso che Wyvern esporta come PNG) e salvate in [FINAL/](FINAL/).
-
-Fonte dati: l'export live del World ([exports/Svartulfr_Export.json](exports/Svartulfr_Export.json) → `world_characters`), arricchito con gli scenari/first_mes/system_prompt autoriali. Regole applicate: tag canonici World, `mes_example` costruito dagli `speech_examples`, nessun Lorebook collegato, outfits inclusi con la correzione dell'anomalia `{{user}}` → nome personaggio.
-
-```powershell
-python scripts/generate_main_cast_cards.py
-```
-
-### Genericizzazione AnyPOV di FINAL/ (Alyssa → `{{user}}`)
-
-[scripts/genericize_alyssa.py](scripts/genericize_alyssa.py) rende l'intera cartella [FINAL/](FINAL/) compatibile con qualsiasi POV sostituendo la persona del giocatore **Alyssa** con il placeholder `{{user}}` e i pronomi a lei riferiti con i placeholder pronome Wyvern.
-
-- **Nome**: il solo token `Alyssa`/`alyssa`/`ALYSSA` → `{{user}}`, incluse le forme possessive (`Alyssa's` → `{{user}}'s`) e le etichette (`Alyssa_` → `{{user}}_`). Cognome e secondo nome restano invariati (`Alyssa Hvit Douglas Bloodmoon` → `{{user}} Hvit Douglas Bloodmoon`).
-- **Pronomi**: notazione **flat + Cap automatico**. `she` → `{{pronounSubjective}}`/`{{pronounSubjectiveCap}}`, `her` → `{{pronounObjective}}` (oggettivo) o `{{pronounPosDet}}` (possessivo) secondo il contesto immediato, `hers` → `{{pronounPosPro}}`, `herself` → `{{pronounReflexive}}`.
-- **Disambiguazione**: la conversione dei pronomi avviene integralmente solo nella entry dedicata di Alyssa (`{{user}} Hvit Douglas Bloodmoon`); altrove vengono applicate esclusivamente **regole curate a mano**, così da non toccare i pronomi di altri referenti femminili (Nixara, Elizabeth Duskwood, Jasmin e altri NPC).
-- **Sicurezza**: backup integrale dei file originali in `scratch/backup_final_prealyssa/`; log delle conversioni in `scratch/inbox/alyssa_genericize_log.txt`.
-
-```powershell
-python scripts/genericize_alyssa.py
-```
-
-### Gestione, Sincronizzazione e Generazione dei Lorebook (World)
-
-La sincronizzazione autorevole del World avviene via Web API Wyvern e produce l'export master [exports/Svartulfr_Export.json](exports/Svartulfr_Export.json), da cui derivano l'Export Master, le partizioni e la documentazione del World ([scripts/archive_obsolete_sources.py](scripts/archive_obsolete_sources.py), [scripts/convert_to_lorebook.py](scripts/convert_to_lorebook.py)).
-
-### Statistiche del World (riferimento, sincronizzazione web)
-
-- **World ID:** `_CgYT8fHXpDC4crjmegQF7`
-- **Anno Corrente:** 2024 (World-Age 0 = 21 dicembre 827 d.C.)
-- Le statistiche puntuali (personaggi, lexicon, location, environment, scenari, mappe, ere) sono quelle riportate in [docs/world/Svartulfr_World_Doc.md](docs/world/Svartulfr_World_Doc.md), generato dalla sincronizzazione live.
+1. **Master Character Scenario (`FINAL/Svartulfr_Master_Scenario.json` — ID `char_scenario_1DC43ggb6mB8YLJDJKrU4`)**:
+   - Riunisce in un unico scenario i **13 slot funzionali** (coperti dalle 14 Character Card in `/mine`, con pool bilanciato su `twin` per Jasper e Alyssa) e **29 Greetings cronologiche** (`01.`–`29.`, da giugno 2024 a giugno 2025) interamente redatte in italiano, con supporto nativo multi-messaggio (`messages[]`) e attivazione regex degli NPC.
+2. **I 6 Lorebook Standalone (`FINAL/` e `lorebooks/optimized/` — 793 voci attive totali, 0 disattivate)**:
+   - `_gwwCxCfQ6PQaLEjAQVpJL` — `Svartulfr_Lorebook_I.json` (221 entries: Ecologia LSE, Rune, Casate, Nove Firstborn e Lore primaria).
+   - `_HfG7TeV6MJyj6bxMwxkpt` — `Svartulfr_Lorebook_II.json` (139 entries: Bacheca Contratti, Economia, Oggetti, DDM Voidspace).
+   - `_9zWTGqYJNJ4BCDMj8gfcD` — `Svartulfr_Lorebook_III.json` (35 entries: Campus SUCC, CUMS, Confraternite, Sport, Underworld).
+   - `_EjXxkmPVhpCXg8xABpFkK` — `Svartulfr_Location.json` (188 entries: Location strutturate).
+   - `_zwEqgEEzh12X6gHVmMKKC` — `Svartulfr_NPC_Primary.json` (99 entries: NPC primari, World Dossier sintetici del cast fisso e memorie intime).
+   - `_Uht3Ckz44JBDrPnUHq7LV` — `Svartulfr_NPC_Secondary.json` (111 entries: NPC secondari e terziari con Statistiche Finali a 7 attributi).
+   - *Nota su `Alyssa` vs `{{user}}`*: Nelle voci di Lorebook e nelle sezioni di lore familiare delle schede, la gemella Omega è sempre indicata col suo nome canonico **Alyssa Hvit Douglas Bloodmoon** (zero macro `{{user}}` o `{{pronoun...}}` nei Lorebook), così da garantire piena coerenza sia quando il giocatore interpreta Alyssa (`[FemPOV]`) sia quando interpreta Jasper (`[MalePOV]`).
+3. **Le 14 Character Card Canoniche in `/mine` (`FINAL/*_card.json`)**:
+   - `Alyssa_Douglas_Bloodmoon_card.json` (`_6exg3yPfe2eCDK4hTftkh`, 19 outfits)
+   - `Edric_Douglas_card.json` (`_TbRM3EdxDjHFgqztTbCpL`, 9 outfits, rating `mature`)
+   - `Erik_Douglas_card.json` (`_QPea6g4Q1QfeYCVHCLMPR`, 10 outfits)
+   - `Jared_Thompson_card.json` (`_xJVPtBLL3dxy69RLKL9X9`, 11 outfits)
+   - `Jasper_Douglas_Bloodmoon_card.json` (`_t4J9aQNJM36cUKAP4wB4U`, 11 outfits, Beta Technomancer)
+   - `Logan_Douglas_card.json` (`_T8Ywcr9FEqNf9JxbK6eHP`, 10 outfits)
+   - `Mackenzie_Sanchez_Rogers_card.json` (`_zn24784jfcchQ7EwCyAnm`, 11 outfits)
+   - `Malachia_Douglas_Bloodmoon_card.json` (`_RDfz7XzTpM23LpPALVXHM`, 11 outfits)
+   - `Noah_Douglas_Bloodmoon_card.json` (`_zFLUjV8aVxQRAfQxGcAcY`, 9 outfits, Delta Strategist)
+   - `Russ_card.json` (`_wn6DkCcg3Xqa2Xpx9ttnT`, 9 outfits, 21yo Demihuman Tiger & Five Cocketeers)
+   - `Scarlett_Rose_card.json` (`_qXgBMbFYJfc84hbLHhe92`, 9 outfits)
+   - `Sierra_Cruz_card.json` (`_pnrXbkWqcgmFAf3meRWFY`, 9 outfits, 18yo Lamia / Applied Necromancy)
+   - `Stan_Davies_Jr_card.json` (`_Xd3NhKnRJByMTtdb6PjxJ`, 9 outfits, 21yo Werewolf Alpha)
+   - `Wulfnic_Bloodmoon_card.json` (`_HEQQbbRFwKdG8QE2Fh1z1`, 12 outfits)
+4. **Le 3 User Personas (`FINAL/personas/`)**:
+   - `Alyssa_Persona.json` (`persona_1786335754946`, 19 outfits)
+   - `Jasper_Persona.json` (`1792155173728`, 11 outfits)
+   - `Echo_Persona.json` (`1791389790053`, 4 outfits)
 
 ---
 
