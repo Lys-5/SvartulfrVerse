@@ -2,6 +2,24 @@
 
 Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy dello StoryEngine e gli interventi sulle entità del World (World, Lexicon, Locations, NPC, Rules) sono tracciati cronologicamente in questo documento per garantire persistenza e coerenza storica tra le sessioni.
 
+## [20 Ottobre 2026] - Canone Edric Douglas (13 Anni Compiuti, Nato 25 Febbraio 2011) & Presentazione di Branco a Yule 2024
+
+- **Definizione Canonica di Edric Douglas & Tradizione della Presentazione a Yule**:
+  - **Età Anagrafica**: Allineata stabilmente a **13 anni** compiuti (nato il **25 febbraio 2011**).
+  - **Tradizione di Branco Solstiziale**: Istituita nel canone la tradizione ancestrale per cui la solenne cerimonia della Presentazione dei giovani licantropi (scoperta del *Wolf Name*, manifestarsi del lupo e passaggio fuori dallo stato di cucciolo Pre-Presentation Gamma) viene celebrata comunitariamente durante la sacra notte di **Yule (Solstizio d'Inverno, 21 dicembre 2024)** insieme a tutti i cuccioli del branco che hanno compiuto 13 anni nel corso dell'anno solare 2024.
+  - **Giocabilità**: Rende immediatamente giocabile la storyline dei preparativi estivi/autunnali e della Presentazione solstiziale di Edric nel 2024 senza richiedere salti temporali pluriennali.
+- **Aggiornamento & Deploy Wyvern Web API delle Entità Coinvolte**:
+  - **Character Card Edric Douglas (`_TbRM3EdxDjHFgqztTbCpL`)**: Aggiornata la `description` (13yo, nato 25 febbraio 2011, peso psicologico della Presentazione a Yule 2024, tutela minori 13yo), `personality` e `scenario`. Deploy completato via API con `HTTP 200 OK`.
+  - **Character Card Logan Douglas (`_T8Ywcr9FEqNf9JxbK6eHP`)**: Aggiornato il riferimento temporale a 13 anni. Deploy completato via API con `HTTP 200 OK`.
+  - **`Svartulfr_Location.json` (`_EjXxkmPVhpCXg8xABpFkK`)**: Aggiornata la voce `B-01 Ironwood Cabin` (Edric 13 anni, Yule 2024, Camp Mystic per preparazione atletica/emotiva). Deploy completato via API con `HTTP 200 OK`.
+  - **`Svartulfr_NPC_Secondary.json` (`_Uht3Ckz44JBDrPnUHq7LV`)**: Aggiornato il World Dossier di Edric Douglas (Entry 1: 13yo, Yule 2024 cohort, wide receiver). Deploy completato via API con `HTTP 200 OK`.
+  - **`Svartulfr_Lorebook_I.json` (`_gwwCxCfQ6PQaLEjAQVpJL`)**: Aggiornata la voce enciclopedica 217 sui *Wolf Names* e la tradizione di Yule per i tredicenni. Deploy completato via API con `HTTP 200 OK`.
+  - **Master Scenario (`char_scenario_1DC43ggb6mB8YLJDJKrU4`)**: Aggiornata la definizione del ruolo `cousin` includendo la coorte dei tredicenni e la presentazione a Yule 2024. Deploy completato via API con `HTTP 200 OK`.
+- **Allineamento Documentale & Regole di Progetto**:
+  - Aggiornati [`CanonDecisions.md`](file:///e:/repository/SvartulfrVerse/CanonDecisions.md), [`GEMINI.md`](file:///e:/repository/SvartulfrVerse/GEMINI.md) e [`.agents/rules/07_epurazione_user_e_intimacy_profiles.md`](file:///e:/repository/SvartulfrVerse/.agents/rules/07_epurazione_user_e_intimacy_profiles.md).
+
+---
+
 ## [20 Ottobre 2026] - Calibrazione Cabine Camp Mystic a 6 Posti (Alyssa in Moonflower, Jasper & Edric in Ironwood) & Riassegnazione Rylan Cade a B-07
 
 - **Aggiornamento e Riorganizzazione Cabine Residenziali (`Svartulfr_Location.json` — `_EjXxkmPVhpCXg8xABpFkK`)**:

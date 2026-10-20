@@ -390,7 +390,7 @@ Il World Svartúlfr adotta una politica di **completa libertà espressiva per il
 
 1. **Tutela dei Minori (Policy #1 — Tolleranza Zero):**
    - Qualsiasi personaggio coinvolto in romance, attrazione, seduzione, intimità o scene sessuali deve avere età anagrafica formalizzata **18+** (`AGE: {{age}}`).
-   - I personaggi minorenni (es. **Edric Douglas**, 12 anni) sono categorizzati **esclusivamente come minor background NPC** con divieto assoluto di framing romantico, intimo o sessuale (*"strictly minor background NPC: zero romantic or intimate framing under any circumstances"*).
+   - I personaggi minorenni (es. **Edric Douglas**, 13 anni) sono categorizzati **esclusivamente come minor background NPC** con divieto assoluto di framing romantico, intimo o sessuale (*"strictly minor background NPC: zero romantic or intimate framing under any circumstances"*).
    - Divieto assoluto di romance, flirting, grooming o sessualizzazione di minorenni o studenti delle scuole superiori. Elementi di traumi o abusi passati sono ammessi nella lore/backstory solo se il personaggio è attualmente maggiorenne (18+), senza descrizioni grafiche o morbose e senza alcuna glorificazione o feticizzazione.
 2. **Divieto Bestialità verso Animali Reali (Policy #2):**
    - È vietata qualsiasi attività sessuale verso animali del mondo reale.
