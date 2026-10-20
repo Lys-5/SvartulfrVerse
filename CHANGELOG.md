@@ -2,6 +2,19 @@
 
 Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy dello StoryEngine e gli interventi sulle entità del World (World, Lexicon, Locations, NPC, Rules) sono tracciati cronologicamente in questo documento per garantire persistenza e coerenza storica tra le sessioni.
 
+## [20 Ottobre 2026] - Nuovo Placeholder Ufficiale DCC per Voci Senza Immagine (202 NPC Aggiornati)
+
+- **Upload & Integrazione CDN Cloudflare del Placeholder Ufficiale DCC**:
+  - Caricata l'immagine canonica della sagoma lupina con occhi fiammeggianti e sigillo runico della **Douglas Commerce Company** (`asset/placeholder_dcc_silhouette.jpg` e `FINAL/placeholder_dcc_silhouette.jpg`) sull'infrastruttura Cloudflare Wyvern.
+  - Generato l'URL CDN pubblico definitivo: `https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/6f8b7c78-b1c8-4e35-ff2b-7d2e4915f100/public`.
+- **Sostituzione Massiva Placeholder sui Lorebook NPC (202 Voci Totali)**:
+  - **`Svartulfr_NPC_Primary.json` (`_zwEqgEEzh12X6gHVmMKKC`)**: Sostituite 44 voci che utilizzavano il vecchio fallback generico con il nuovo placeholder DCC, con deploy via API e verifica GET (99 voci totali confermate).
+  - **`Svartulfr_NPC_Secondary.json` (`_Uht3Ckz44JBDrPnUHq7LV`)**: Sostituite 158 voci (inclusi tutti i camper e counselor di Camp Mystic privi di ritratto personale) con il nuovo placeholder DCC, con deploy via API e verifica GET (211 voci totali confermate).
+- **Allineamento Locale & Repository**:
+  - Aggiornati i file in `FINAL/` e `lorebooks/optimized/`.
+
+---
+
 ## [20 Ottobre 2026] - Standardizzazione Integrale Camp Mystic (100 NPC, 37 Location), Dicotomia White Moon / Solar Shadow & Deploy Wyvern API
 
 - **Standardizzazione e Blindatura dei 100 NPC di Camp Mystic (`Svartulfr_NPC_Secondary.json` — `_Uht3Ckz44JBDrPnUHq7LV`)**:
