@@ -2,6 +2,28 @@
 
 Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy dello StoryEngine e gli interventi sulle entità del World (World, Lexicon, Locations, NPC, Rules) sono tracciati cronologicamente in questo documento per garantire persistenza e coerenza storica tra le sessioni.
 
+## [20 Ottobre 2026] - Calibrazione Cabine Camp Mystic a 6 Posti (Alyssa in Moonflower, Jasper & Edric in Ironwood) & Riassegnazione Rylan Cade a B-07
+
+- **Aggiornamento e Riorganizzazione Cabine Residenziali (`Svartulfr_Location.json` — `_EjXxkmPVhpCXg8xABpFkK`)**:
+  - **`G-01 Moonflower Cabin: Compagne di Stanza di Alyssa` (6 posti)**:
+    - Riconfigurato lo chalet per ospitare Alyssa Douglas-Bloodmoon come sesta occupante insieme alle cinque compagne distribuite lungo i cinque anni di corso: Avery Lin Calder (Y1, Vampiro), Sofia Mae Rourke (Y2, Strega), Nadia Elise Voss (Y3, Licantropo), Talia June Mercer (Y4, Werebear), Mina Rae Sato (Y5, Catwere Beastwere).
+    - Aggiornati titolo, content narrativo in italiano privo di em-dash o asterischi markdown, chiavi primarie con anti-collisione, chiavi secondarie contestuali (`Camp Mystic`, `chalet`, `camper`, `dormitorio`, `stanza`, `compagne`, `turno`, `convivenza`), `key_logic: "AND_ANY"`, `position: "before_char"`, `priority: 2`.
+  - **`B-01 Ironwood Cabin: Compagni di Stanza di Jasper` (6 posti)**:
+    - Riconfigurato lo chalet per ospitare Jasper Douglas-Bloodmoon e il cugino minore Edric Douglas (Y1 Junior Division, 12 anni, purosangue Gamma in custodia a Jasper) insieme ai compagni dei rispettivi anni: Theo James Mercer (Y2, Mago), Jace Nolan Hart (Y3, Licantropo), Evan Adrian Voss (Y4, Wereboar), Nico Samuel Reed (Y5, Wolfwere Beastwere).
+    - Inserita nota logistica esplicita sul trasferimento di Rylan Elias Cade alla cabina B-07.
+    - Aggiornati titolo, content narrativo in italiano, chiavi primarie, chiavi secondarie contestuali e parametri Wyvern (`key_logic: "AND_ANY"`, `position: "before_char"`, `priority: 2`).
+  - **`B-07 Lake Wolf Cabin`**:
+    - Aggiornato il roster includendo Rylan Elias Cade (Vampire, Year 1) trasferito da B-01 per capienza, garantendo coerenza biunivoca.
+- **Riassegnazione Profilo NPC Rylan Cade (`Svartulfr_NPC_Secondary.json` — `_Uht3Ckz44JBDrPnUHq7LV`)**:
+  - Aggiornato il campo `AFFILIATION: Camp Mystic (B-07 Lake Wolf Cabin);` nel blocco JED+.
+  - Aggiornata la sezione `CAMP MYSTIC BACKGROUND & ROLE:` e aggiunta la chiave di attivazione `B-07 Lake Wolf Cabin`.
+- **Sincronizzazione Locale & Deploy Wyvern API**:
+  - Sincronizzati sia `entries` che `lexicon` in `FINAL/` e `lorebooks/optimized/`.
+  - Eseguito il deploy live via Wyvern Web API per `_EjXxkmPVhpCXg8xABpFkK` (225 voci) e `_Uht3Ckz44JBDrPnUHq7LV` (211 voci).
+  - Verifica GET post-deploy completata con successo con HTTP 200 OK su entrambi i Lorebook.
+
+---
+
 ## [20 Ottobre 2026] - Nuovo Placeholder Ufficiale DCC per Voci Senza Immagine (202 NPC Aggiornati)
 
 - **Upload & Integrazione CDN Cloudflare del Placeholder Ufficiale DCC**:
