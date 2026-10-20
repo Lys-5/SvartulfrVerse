@@ -2,6 +2,28 @@
 
 Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy dello StoryEngine e gli interventi sulle entità del World (World, Lexicon, Locations, NPC, Rules) sono tracciati cronologicamente in questo documento per garantire persistenza e coerenza storica tra le sessioni.
 
+## [20 Ottobre 2026] - Standardizzazione Integrale Camp Mystic (100 NPC, 37 Location), Dicotomia White Moon / Solar Shadow & Deploy Wyvern API
+
+- **Standardizzazione e Blindatura dei 100 NPC di Camp Mystic (`Svartulfr_NPC_Secondary.json` — `_Uht3Ckz44JBDrPnUHq7LV`)**:
+  - **Integrazione Totale (211 voci attive)**: Preservati i 111 NPC originali del Lorebook secondario e standardizzati integralmente i 100 nuovi profili di Camp Mystic (40 camper femmine G-01/G-08, 40 camper maschi B-01/B-08, 20 membri dello staff e counselor diretti da Mara Voss).
+  - **Conversione Strutturale in JED+ & RPG Stats**: Convertite le schede grezze in formato canonico JED+ con blocchi `[NAME: ...; ALIASES: ...; SPECIES: ...; AGE: ...; AFFILIATION: Camp Mystic (...); POWERS: ...]`, sezioni `PERSONALITY:`, `STRENGTHS & WEAKNESSES:`, `CAMP MYSTIC BACKGROUND & ROLE:` e statistiche RPG bilanciate con tetto massimo di Livello a 99 per gli immortali (es. Director Mara Voss a Livello 99, camper al loro anno anagrafico).
+  - **Sanificazione Trigger Keys & Protezione Anticollisione Personaggi Principali**:
+    - Bonificate le chiavi isolate collidenti con i protagonisti (`'Jasper Rowan'` privato di `'Jasper'`, `'Noah Grant'` privato di `'Noah'`, `'Miles Black'` privato di `'Miles'`, `'Silas Thorne'` privato di `'Silas'`, `'Marcus Vale'` privato di `'Marcus'`, `'Alistair Grant'` privato di `'Alistair'`, `'Evan Voss'` privato di `'Evan'`, `'Adrian Quinn'` privato di `'Adrian'`).
+    - Eliminate chiavi nickname o mononimi generici che avrebbero scatenato attivazioni fantasma.
+  - **Avatar & Parsing Regex Multiline**: Applicato l'avatar fallback ufficiale Svartúlfr Crest (`https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/98e2d06d-a675-45e3-6096-cf976b547400/public`), `custom_avatar_regex: true`, `lines_parsed: 1`, `avatar_activation_regex` multiline `(?:^|\n)\s*(?:Nome Completo|Nome|Nickname)\s*:` e metadati `npc_info` strutturati (`first_name`, `last_name`, `nicknames`, `titles`).
+  - **Disciplina di Formattazione**: Eliminati tutti gli em-dash (`—`), rimossi gli asterischi markdown dal parlato/narrazione, dialoghi tra virgolette inglesi.
+
+- **Standardizzazione delle 37 Location di Camp Mystic (`Svartulfr_Location.json` — `_EjXxkmPVhpCXg8xABpFkK`)**:
+  - **Integrazione Totale (225 voci attive)**: Preservate le 188 location storiche del mondo e standardizzate le 37 nuove location e strutture di Camp Mystic sul Lago Erie (21 servizi/infrastrutture generali tra cui Arrival Gate, Rec Hall, Training Complex, Clinic, Pier, Bonfire + 16 baite residenziali G-01/G-08 e B-01/B-08).
+  - **Bonifica Nomi & Pulizia Markdown**: Rimossi gli emoji dai titoli (`G-01 Moonflower Cabin (Girls Zone)`, `B-07 Lake Wolf Cabin (Boys Zone)`, `Arrival Gate & Shuttle Loop`), impostato tassativamente `type: "location"`, eliminati gli asterischi markdown (`**`, `*`) e gli em-dash, preservando tutti i 16 roster completi dei 5 occupanti per ciascuna baita.
+
+- **Sincronizzazione Locale & Armonizzazione Dicotomia White Moon / Solar Shadow (Alyssa & Jasper)**:
+  - **Alyssa Hvit Douglas Bloodmoon (`FINAL/` e `FINAL/personas/`)**: Sincronizzata la transizione tematica verso la **White Moon** (*Hvit*, luce lunare calma e serena, superando la designazione "sunny"), aggiunta la **Dimensional Pochette (Bag of Holding)** in cuoio smeraldo con fermagli a testa di lupo, il lupetto di peluche **Wolfy**, la Chiave di Padre Rev (operativa solo nell'Otherworld), le credenziali di Gilda **`ADB-555`** (Rango A, Healer & Support) e il tratto personalizzato *The Weight She Carries*.
+  - **Jasper Svartr Douglas Bloodmoon (`FINAL/` e `FINAL/personas/`)**: Sincronizzata la transizione tematica verso **THE SOLAR SHADOW** (*Svartr*, il fiero sole ardente che fa risaltare la luce lunare di Alyssa e la protegge senza compromessi), formalizzata la classe ufficiale **Tecnomancer, Cyber-Rogue & Arcane Hacker** (specializzato in serrature digitali/arcane e sigilli demoniaci), credenziali di Gilda **`JDB-555`** (Rango A) e il tratto personalizzato *The Weight He Carries*.
+  - **Master Character Scenario (`char_scenario_1DC43ggb6mB8YLJDJKrU4` — Revision 24)**: Aggiornato il prompt dello Scenario per riflettere le definizioni canoniche di Alyssa Hvit (White Moon, Dominant Omega Pre-Med Healer con pochette dimensionale) e Jasper Svartr (Solar Shadow, Beta Tecnomancer, Cyber-Rogue & DJ Frequency), con deploy immediato via API HTTP 200 OK e aggiornamento di `exports/Master_Scenario_Export.json`.
+
+---
+
 ## [18 Ottobre 2026] - Revisione Integrale Master Scenario (Rev 18, 29 Greetings Cronologiche), Unificazione Russ (Demihuman Tiger), Bonifica `{{user}}` -> `Alyssa` & Allineamento Globale Wyvern API
 
 - **Master Character Scenario (`char_scenario_1DC43ggb6mB8YLJDJKrU4` — Revision 21)**:
