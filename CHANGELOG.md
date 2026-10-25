@@ -1,6 +1,300 @@
 # Changelog di Progetto — Svartúlfr Verse
 
+## [2026-10-25] - Creazione e Deployment Live dello Scenario World "SUCC: Welcome Day al Lunar Quad"
+
+- **Creazione Scenario nel World Live (`_YpX47fNraQFw2dD7TdycJ`):** Creato e configurato via Wyvern Web API lo scenario ufficiale di apertura accademica **"SUCC: Welcome Day al Lunar Quad"** (`_2MTWKjxrQPdQVaz9y4Q7H`) all'interno del World "Svartúlfr — Blackwood & Solarton".
+- **Ancoraggio Topologico & Temporale Preciso:**
+  - *Location:* `Lunar Quad` (`_aPqjQX8UBNTC9y2tEUdX3`).
+  - *Environment:* `SUCC campus` (`_38JCUykN4wwRfgGjQyjLr`).
+  - *Insertion Point:* `10489906 Assoluto` (equivalente a Lunedì 26 Agosto 2024, ore 10:00 UTC), perfettamente coerente con la datazione di inizio semestre.
+- **Suite a 3 Premade Scenes & Adattamento Engine World:**
+  - Sostituite le macro dei Character Scenarios (`{{scenarioChar ...}}`) con i nomi canonici espliciti degli 8 personaggi collegati e degli NPC primari per piena compatibilità con l'engine narrativo del World.
+  - *Scena 1:* `scene-succ-welcome-day-alyssa` (Punto di Vista Alyssa — FemPOV / Matricola Pre-Med, 7.227 caratteri).
+  - *Scena 2:* `scene-succ-welcome-day-jasper` (Punto di Vista Jasper — MalePOV / Matricola Ingegneria Arcana, 6.570 caratteri).
+  - *Scena 3:* `scene-succ-welcome-day-corale` (Scena Corale del Branco — AnyPOV / Arrivo sul Campus, 2.404 caratteri).
+- **Rigorosa Disciplina Stilistica & Lore Invariants:**
+  - Zero em-dash (`—`), dialoghi tra virgolette doppie standard (`"..."`), narrazione in testo semplice senza asterischi.
+  - Canone visivo rispettato scrupolosamente: orecchie demi-umane singole (zero orecchie umane), Sierra Cruz con coda color arcobaleno e locomozione a scivolamento/strisciamento (nessun termine bipede), Scarlett Rose con capelli e occhi rosa confetto e corna scarlatte, Zefir Hvitskog in stile punk con cresta moicana bianca e chiodo borchiato iscritto come cugino islandese, Wulfnic in t-shirt gag "Regole per Uscire con Mia Nipote".
+- **Artefatto Locale Sincronizzato:** Salvato il record JSON completo in `FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json`.
+
+
+## [2026-10-25] - Aggiornamento Avatar Base Jasper (Cloudflare, Lorebook Gallery, Character Card e User Persona)
+
+- **Upload Immagine & Cloudflare Integration:** Eseguito upload ad alta risoluzione del nuovo ritratto base di Jasper (764x1024) tramite POST /api/cloudflare/request-upload-url ottenendo l'asset Cloudflare https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/061fed14-373e-44fb-639a-2a5638a47100/public.
+- **Registrazione Asset Gallery Lorebook (_zwEqgEEzh12X6gHVmMKKC):** Registrato il nuovo asset come 'jasperMain' nella Gallery del Lorebook Svartúlfr - NPC Primary (POST /api/gallery/lorebook/_zwEqgEEzh12X6gHVmMKKC), azzerando l'avviso di anomalia Custom Image Unknown source.
+- **Sincronizzazione Web API 1:1 Live:** Aggiornata la Character Card stand-alone in /characters/mine (_t4J9aQNJM36cUKAP4wB4U), la User Persona in /user-personas (1792155173728) e l'entry NPC in Svartúlfr - NPC Primary (Vcj4h2TL4Usola2A4OOl6) con parità entries == lexicon preservata.
+- **Aggiornamento Asset e File Locali:** Backup preventivo delle immagini legacy, salvataggio del nuovo avatar in formato JPEG (jasper.jpg), WebP (Jasper.webp), PNG (jasper.png) e asset/NEW_IMAGE/jasperMain.jpg, e aggiornamento coerente dei file JSON FINAL/* e lorebooks/optimized/*.
+- **Verifica di Conformità Formale:** Eseguito scripts/verify_npc_schema_contract.py con superamento al 100% di tutti i 5 contratti di integrità.
+
+- **Audit e Bonifica Descrittori Ambientali & Location Banners (`PROMPTS_BANNER_LOCATION_E_CAST_ARGON.md`):**
+  - Confrontati tutti i 22 banner ambientali (14 character locations e 8 grandi hub geografici) con le 188 location canoniche del repository e i 7 environment ufficiali.
+  - Risolti i frammenti italiani residui nei prompt inglesi: `Città di Blackwood` uniformato in **`Blackwood City`** (Banner 1: *Alpha Study & Douglas Corp HQ*, e Banner L1: *Tenuta Douglas a Seven Hills*).
+  - Corretta la doppia espansione rotta dell'acronimo accademico in Banner L2: da `Supernatural University of Central California & Arcane (Supernatural University of Central California)` a **`Supernatural University of Central California (SUCC)`**.
+  - Eliminata la presenza spuria di studenti in movimento nel prompt del Gran Quad Lunare (Banner L2), preservando rigorosamente la regola *Empty Scene / No People* con elementi architettonici in pietra, lanterne monumentali e sculture bronzee.
+  - Verificata la piena coerenza di tutte le location chiave (Solarton Waterfront, Sacred Needle Arts District, Camp Mystic Lake Erie Reserve, The Verve Underground, Seven Hills Mountain Spa e St. Brugge Academy).
+- **Audit Globale e Bonifica Canonica Integrale Cataloghi Prompt Argon (`PROMPTS_PERSONAGGI_E_OUTFIT_GEMINI_ARGON.md` & `PROMPTS_BANNER_LOCATION_E_CAST_ARGON.md`):** Eseguita la scansione incrociata automatizzata di tutti i 20 personaggi contro le Character Card canoniche JED+, correggendo incongruenze critiche e inversioni di tratti:
+  - **Russell 'Russ' Sinclair:** Corretta la specie da 'Rooster Demihuman' a **Demihuman Tiger** (Single pair di orecchie da tigre striate argento/bianco/nero, coda da tigre, capelli silver-white rasati ai lati, occhi grigio chiaro, maestro tatuatore del *Sacred Needle*).
+  - **Mackenzie 'Mac' Sanchez-Rogers:** Corretto il genere da femmina/tomboy a **maschio (he/him, 19 anni, 188 cm / 6'2")**, capelli biondo sporco spettinati (`shaggy dirty blond`), occhi ambrati, orecchie dorate da lupo, eliminando outfit femminili spuri incollati per errore.
+  - **Noah Loki Douglas Bloodmoon:** Corretti i capelli da neri a **biondi impeccabili (`impeccably styled blond hair`)**, occhi da nocciola ad **azzurro brillante (`bright blue eyes`)**, altezza a 197 cm (6'6") ed età a 25 anni.
+  - **Malachia Björn Douglas Bloodmoon:** Corretti gli occhi da blu acciaio ad **ambrati intensi e gelidi (`cold intense amber eyes`)**, altezza a 208 cm (6'10"), età a 28 anni e capelli neri lunghi al vento.
+  - **Wulfnic Báleygr Bloodmoon:** Corretti gli occhi da ambra ad **azzurro ghiaccio splendente argento-blu (`piercing ice-blue eyes flaring silver-blue`)**, altezza a 220 cm (7'3") e treccia guerriera norrena.
+  - **Erik Ulfr Douglas:** Allineato ad altezza 213 cm (7'0"), età 55 anni, capelli corvini (`jet black`) e occhi ambra ardente (`piercing amber flaring molten gold`).
+  - **Scarlett Rose:** Corretti gli occhi da rosso rubino a **rosa confetto brillante abbinati ai capelli (`bright candy-pink eyes matching candy-pink hair`)** e due corna scarlatte lucide.
+  - **Elizabeth Duskwood:** Corretti i capelli da biondo platino a **grigio cenere raccolti (`ash grey, worn up`)**, occhi da zaffiro a **grigio tempesta (`storm grey`)** e altezza a 165 cm.
+  - **Magnus Douglas III:** Corretti gli occhi da grigio a **Douglas amber** e capelli neri Douglas pettinati all'indietro argentati solo alle tempie.
+  - **Major Kaladin Blackwolf Nargathon:** Corretti gli occhi da giallo predatorio a **grigio chiaro valutativi (`pale grey, flare red under combat emotion`)** e altezza a 6'3" (190 cm).
+  - **Stanley Davies Jr.:** Allineato ad altezza 187 cm (6'2") e occhi castano caldo (`warm brown eyes`).
+  - **Neon Purr:** Corretti gli occhi da bicolore a **oro iridescente vibrante con pupille verticali (`vibrant iridescent gold`)**, altezza 178 cm ed età 22 anni.
+  - **Edric Douglas:** Allineato a 13 anni (Born 2011), 165 cm (5'5"), capelli neri ricciuti e occhi ambrati.
+  - **Rettifica Banner Location/Cast:** Bonificati i titoli duplicati o con casata errata in `PROMPTS_BANNER_LOCATION_E_CAST_ARGON.md` (*Malachia Björn Douglas Bloodmoon*, *Noah Loki Douglas Bloodmoon*, *Alyssa Hvit Douglas Bloodmoon*, *Wulfnic Báleygr Bloodmoon*).
+- **Correzione Descrittori Canonici Jasper nei Cataloghi Prompt Argon:** Rettificata l'Ancora Visiva e il blocco `SUBJECT` in tutte le 13 sezioni prompt di Jasper in `asset/PROMPTS_PERSONAGGI_E_OUTFIT_GEMINI_ARGON.md`: sostituiti gli occhi blu con **occhi verde menta** (`vivid mint-green eyes illuminated by subtle screen glare`), i capelli scuri/neri con **capelli castano caramello** (`messy caramel-chestnut hair falling into eyes`), orecchie e coda caramello con punta nera, rune nordiche Gebo e Mannaz su polsi e avambracci, età anagrafica a 19 anni e altezza a 193 cm (6'4"). Corretto inoltre il refuso nel cognome in `asset/PROMPTS_BANNER_LOCATION_E_CAST_ARGON.md` (Douglas Douglas -> Douglas Bloodmoon).
+
+## [2026-10-25] - Standard AI Connections, Micro-Proxy di Failover Free Tier (GLM 5.2+, Gemini, Gemma) e Creazione Skill wyvern-ai-proxy-rotator
+
+- **Sviluppo e Avvio Micro-Proxy Locale FastAPI (scripts/free_tier_proxy.py):** Realizzato e deployato in locale come servizio demone su http://127.0.0.1:5005 un proxy OpenAI-compatible (/v1/chat/completions, /v1/models, /health) con supporto dual streaming SSE e non-streaming.
+- **Cascata di Priorità Free Tier Intelligente:** Configurato il routing sequenziale automatico:
+  - *Priority 1:* GLM 5.2 / 5.3 (OpenRouter / Zhipu / NavyAI).
+  - *Priority 2:* Gemini Argon / Flash (Google AI Studio - Free Tier 15 RPM).
+  - *Priority 3:* Gemini 3.1 PRO / 2.5 Pro (Google AI Studio - Free Tier Solo Pro).
+  - *Priority 4:* Gemma 4 / Gemma 2 27B (Groq / OpenRouter Free).
+- **Circuit-Breaker & Quarantena Temporizzata (60s):** Isolamento istantaneo con cooldown automatico a fronte di errori HTTP 429 (Rate limit), HTTP 403 (Free tier in pausa), 5xx o Timeout (>12s), azzerando la latenza delle richieste successive e garantendo chat ininterrotta su Wyvern.
+- **Risoluzione Bug Max Tokens Generazione vs Contesto:** Corretta l'anomalia di configurazione su Wyvern dove parameters.max_tokens era stato impostato a 200.000 anziché sul massimale di output per singolo turno (4.096), preservando la Context Window a 1.000.000.
+- **Abilitazione Flag Browser-Only e CORS:** Mappata la connessione su Wyvern con Local Network / Browser-Only: true e middleware CORS aperto per bypassare il cloud proxy di Wyvern senza incorrere in blocchi di preflight OPTIONS del browser.
+- **Creazione Nuova Skill di Progetto wyvern-ai-proxy-rotator:** Codificata la documentazione tecnica SKILL.md nella directory .agents/skills/wyvern-ai-proxy-rotator/.
+
+## [2026-10-25] - Deployment World Leggero Wyvern (7 Environment, 188 Location, Mirrored Lexicon), Regola attached_world_character_id e Creazione Skill wyvern-world-deployer
+
+- **Deployment World Leggero Wyvern (`_YpX47fNraQFw2dD7TdycJ`):** Progettato, generato e distribuito via Wyvern Web API il nuovo World "Svartúlfr — Blackwood & Solarton" (`visibility: "private"`, `rating: "explicit"`), interoperabile al 100% con la suite di Character Scenario, Standalone Lorebooks e Prompt Assemblies.
+- **World Clock Gregoriano Prolettico su Epoch 827 d.C.:** Ancorata la timeline ufficiale a **Lunedì 26 Agosto 2024, ore 06:00 UTC** (`world_age: 10489902 Assoluto`), azzerando date legacy e garantendo piena compatibilità con l'AI Time Tracking nativo.
+- **Gerarchia a 7 Environment Contestuali:**
+  - `California Coast` (Root Region per Southern California, Simi Valley, Ventura, Los Angeles e Bakersfield).
+  - `SUCC Campus` (Parent: California Coast).
+  - `Solarton` (Parent: California Coast).
+  - `Blackwood` (Parent: California Coast).
+  - `DMHA HQ and Guild District` (Parent: California Coast, localizzato a Simi Valley sul fronte delle faglie dimensionali DDM).
+  - `Seven Hills` (Parent: Blackwood, distretto collinare e tenuta patriarcale Douglas).
+  - `Voidspace & Otherworld` (Parent: California Coast, distorsioni dimensionali e dungeon).
+- **Topologia Completa 188 Location (Zero Orfani, Ingestione per Profondità):** Mappate e distribuite tutte le 188 location canoniche escludendo le 8 entry dismesse del cluster Digitalis. Ingestione algoritmica ordinata per livello di profondità dell'albero (livelli 0 -> 4) per garantire la preesistenza dei parent node.
+- **Riconciliazione Lore Secret Bar (The Verve):** Inserita e posizionata la location del *The Verve* come speakeasy/secret bar accessibile dal retro del *Logan's Custom Garage*.
+- **Mirrored Lexicon (707 Voci Globali):** Ingerite tutte le 707 voci attive derivate dai 6 Lorebook Standalone (ecologia LSE, rune, fazioni, economia DDM, bacheca contratti, lore campus, memorie e profili intimi), con standard flag pair `scan_persona: true` e `whole_words_only: true`.
+- **Risoluzione Vincolo di Integrità Relazionale (`attached_world_character_id: null`):** Identificato e risolto l'errore HTTP 500 generato dal backend di Wyvern quando le memorie del Lexicon referenziano character ID esterni. Nei World che adottano *Linked Characters* da `/mine`, `attached_world_character_id` deve essere tassativamente `null`.
+- **Linked Characters & Anti-Bloat Configuration:** Collegati gli 8 personaggi stand-alone canonici (`Erik`, `Logan`, `Malachia`, `Noah`, `Wulfnic`, `Jasper`, `Edric`, `Mackenzie`). Ottimizzato il Context Budget disattivando tabelle ridondanti (`show_party_stats: false`, `show_species_info: false`, `ships: false`, `creature_catcher: false`) e abilitando il motore Storyteller d20 (`combat: true`, `rpg_stats: true`).
+- **Validazione Chrome DevTools & Certificazione Forensic:** Ispezionato live il DOM e le chiamate di rete tramite Chromium / Playwright; zero errori di parsing Zod, zero eccezioni in console, conformità 100% alle verifiche formali.
+- **Nuova Skill di Progetto `wyvern-world-deployer`:** Codificata la documentazione strutturale `SKILL.md` e i relativi script operativi (`scripts/deploy_world.py`, `scripts/verify_world.py`) nella directory `.agents/skills/wyvern-world-deployer/`.
+
+
+## [2026-10-24] - Riconciliazione Asset Gallery Lorebook, Risoluzione Bug Zod Frontend Wyvern e Apprendimento (/learn)
+
+- **Reverse-Engineering Lorebook Gallery API (`GET /api/gallery/lorebook/{lorebook_id}`):** Identificato l'endpoint ufficiale della Gallery del Lorebook su Wyvern e chiarita la causa del warning `Custom Image ⚠️ Unknown source`. L'editor confronta `entry.avatar` con l'elenco degli `imageURL` restituiti da tale endpoint; abbinando l'URL esatto registrato nella Gallery, il warning scompare istantaneamente.
+- **Riconciliazione Asset dei Personaggi Primari:** Riconciliati e collegati direttamente gli asset della Gallery per gli 11 personaggi primari censiti in `Svartúlfr - NPC Primary` (`_zwEqgEEzh12X6gHVmMKKC`): Erik Ulfr Douglas (`erikMain`), Logan Douglas (`loganMain`), Malachia Douglas (`mailMain`), Noah Douglas (`noahMain`), Wulfnic Bloodmoon (`mainWulfnic`), Nixara Bloodmoon (`nixara`), Scarlett Rose (`scarlettMain`), Sierra Cruz (`sierraMain`), Zefir Hvitskog (`ZefirMain`), Kaladin Nargathon (`Kaladin`) ed Elizabeth Duskwood (`elizabeth`).
+- **Allineamento Avatar delle 5 Character Card Attive & Parità Tripartita 1:1:** Aggiornato il campo `avatar` nei file locali `FINAL/*_card.json` e distribuito live sui server di Wyvern via Web API (`PUT /api/characters/:id`) per le 5 Character Card disallineate (`Erik Ulfr Douglas` -> `erikMain`, `Logan Járn Douglas` -> `loganMain`, `Malachia Björn Douglas Bloodmoon` -> `mailMain`, `Noah Loki Douglas Bloodmoon` -> `noahMain`, `Wulfnic Bóleygr Bloodmoon` -> `mainWulfnic`). Certificata la perfetta parità tripartita (testuale, visiva e di soppressione nativa `ignored_characters`) 1:1 su tutte le 8 Character Card e le rispettive voci nei Lorebook Standalone.
+- **Risoluzione Bug Silenzioso di Salvataggio Frontend Wyvern:** Individuato e risolto il blocco di salvataggio via interfaccia web causato dal resolver Zod di `react-hook-form` (`entries: z.array(...)`). Poiché il server restituisce i dati sotto `lexicon`, il salvataggio UI falliva silenziosamente con `entries: Required`. La parità obbligatoria byte-for-byte tra `entries` e `lexicon` elimina il difetto e permette il salvataggio istantaneo con HTTP 200.
+- **Validazione Live DOM via Chrome DevTools / Playwright:** Verificati gli elementi renderizzati nel browser; confermato `hasUnknownSource: false` e `hasCustomImage: false` su tutte le voci primarie collegate alla Gallery.
+- **Aggiornamento Regole di Progetto e Skill:** Codificata la procedura di riconciliazione e il vincolo di parità Zod in `GEMINI.md`, `.agents/rules/08_triage_lorebook_e_lexicon.md` e `.agents/skills/wyvern-card-lorebook-sync/SKILL.md`.
+
+## [2026-10-24] - Bonifica Integrale NPC Lorebook, Fix Date Reset Game Master e Validazione DevTools
+
+- **Bonifica Completa 310 NPC Lorebook:** Allineati integralmente `Svartúlfr - NPC Primary` (99 voci) e `Svartúlfr - NPC Secondary` (211 voci). Popolato l'oggetto `npc_info` (`first_name`, `middle_names`, `last_name`, `nicknames`, `titles`, `npc_prefix`), associati gli avatar alla Gallery Cloudflare e attivati su tutte le voci `scan_persona: true`, `whole_words_only: true` ed `enableEntryHighlighting: true`.
+- **Risoluzione Definitiva Reset Data Game Master (15 Marzo 2024):** Integrata la direttiva di *Passività Cronologica Assoluta* in `Svartulfr_Game_Master_Assistant.json`, `Svartulfr_Master_TTRPG_Prompt_Assembly.json` e `Svartulfr_Master_Scenario.json`. Il GM non gestisce più attivamente le date e legge passivamente il World Clock nativo di Wyvern.
+- **Grounding Assoluto su Schede JED+:** Integrata la clausola vincolante `<absolute_canon_grounding>` (consultazione preventiva dei tag XML, rispetto dei gradi di branco Alpha/Beta/Delta, anatomia demi-umana a singolo paio di orecchie, Sierra Cruz priva di gambe con scaglie iridescenti, Scarlett Rose con corna scarlatte e capelli rosa). Zero trattini lunghi (`—`).
+- **Validazione Chrome DevTools (CDP):** Ispezione live DOM, console e rete su `app.wyvern.chat` tramite Playwright su `DevToolsActivePort`: 0 errori in console, 0 fallimenti di rete HTTP 4xx/5xx.
+- **Tooling di Progetto:** Codificati e verificati `scripts/verify_npc_schema_contract.py` (100% test passati) e `scripts/remediate_lorebook_npcs.py`.
+- **Aggiornamento Regole e Skill:** Aggiornati `GEMINI.md`, `04_world_clock_e_timeline.md`, `08_triage_lorebook_e_lexicon.md` e `.agents/skills/wyvern-card-lorebook-sync/SKILL.md`.
+
+## [2026-10-24] - Aggiunta Wyvern Blog alle Fonti Documentali Primarie
+
+- **Fonti Ufficiali Wyvern:** Registrato https://app.wyvern.chat/blog come fonte primaria assoluta per release notes, mega-patch, aggiornamenti architetturali (Visual Novel Mode, AI Time Tracking, modali NPC, Lorebook Sprites) e annunci degli sviluppatori in GEMINI.md, 11_wyvern_api_sicurezza_e_bug.md e 14_metodo_operativo_skills_integrate.md.
+
 Tutte le modifiche, gli aggiornamenti di sistema, le revisioni di Lore, i deploy dello StoryEngine e gli interventi sulle entità del World (World, Lexicon, Locations, NPC, Rules) sono tracciati cronologicamente in questo documento per garantire persistenza e coerenza storica tra le sessioni.
+
+## [22 Ottobre 2026] - Normalizzazione Integrale JED+ a 4 Blocchi e PList Personality su 100% Card Attive, User Persona e Card Legacy, Ri-Sincronizzazione 1:1 Lorebook NPC e Deploy Live Wyvern API
+
+- **Normalizzazione 8 Character Card Attive (`FINAL/*_card.json`)**:
+  - Compattato il blocco iniziale `[...]` di `Noah_Douglas_Bloodmoon_card.json` su una singola riga PList canonica, eliminando la doppia chiave ridondante `BIRTH_RUNE: Berkana` e integrando le sezioni annidate (`SPACES:`, `WEAKNESSES:`, maniere e dettagli) nella prosa narrativa delle sezioni successive (`VOICE & BEHAVIOR:`, `THE WEIGHT HE CARRIES:`, `CAMPUS SPACES & KSA PRESIDENT'S SUITE:`).
+  - Uniformato il campo `AGE` nel blocco iniziale `[...]` di tutte le 8 card attive con la sintassi `AGE: <età> (Born <Data completa>)`:
+    * Edric Douglas: `AGE: 13 (Born February 25, 2011)`
+    * Erik Douglas: `AGE: 55 (Born October 31, 1969)`
+    * Jasper Douglas Bloodmoon: `AGE: 19 (Born April 22, 2005)`
+    * Logan Douglas: `AGE: 49 (Born January 12, 1975)`
+    * Mackenzie Sanchez-Rogers: `AGE: 19 (Born November 14, 2004)`
+    * Malachia Douglas Bloodmoon: `AGE: 28 (Born August 10, 1996)`
+    * Noah Douglas Bloodmoon: `AGE: 25 (Born October 5, 1998)`
+    * Wulfnic Bloodmoon: `AGE: 1200 (Born December 21, 824 AD)` (aggiornato su richiesta utente per compiere 1200 anni nel 2024)
+  - Applicata rigorosamente la sequenza canonica a 4 blocchi in `description` (`[NAME: ...]` -> `BACKSTORY:` -> `FAMILY & PACK:` -> `VOICE & BEHAVIOR:` -> sezioni tematiche/veicoli/RPG), spostando in `Malachia_Douglas_Bloodmoon_card.json` la sezione `THE DISTANCE HE HAS ALREADY CLOSED:` subito dopo `VOICE & BEHAVIOR:`.
+  - Omogeneizzato il campo `personality` di tutte le 8 card attive nel formato compatto PList tra parentesi quadre `[NAME: ...; ROLE: ...; SPECIES: ...; AGE: ...; TRAITS: ...; CORE: ...; BEHAVIORAL RULES: ...]`, preservando integralmente tutte le direttive `ALWAYS`/`NEVER`/`REMEMBER` e completando la frase troncata di Wulfnic.
+  - Rimossi gli asterischi da `mes_example` di Malachia (`Too much noise in this city.`), verificando `0` em-dash e `0` asterischi su tutti i campi narrativi e la presenza della Format Discipline in `post_history_instructions`.
+
+- **Normalizzazione 3 User Persona (`FINAL/personas/*.json`)**:
+  - In `Echo_Persona.json` (`1791389790053`): inserito `AGE: 3 (Activated November 15, 2021)` nel blocco iniziale `[...]` e mappate le intestazioni allo schema canonico JED+ a 4 blocchi (`CORE FUNCTIONS & CYBERSPACE WARFARE:` -> `BACKSTORY:`, `MONITORING SYSTEM & FAMILIAR PROTOCOLS:` -> `FAMILY & PACK:`, `PERSONALITY & HUMOR:` -> `VOICE & BEHAVIOR:`).
+  - In `Alyssa_Persona.json` e `Jasper_Persona.json`: confermata conformità a blocco iniziale `[...]` su singola riga, `AGE: 19 (Born April 22, 2005)`, 4 sezioni canoniche JED+, `can_fork: true`, `0` em-dash e `0` asterischi. In fase di adversarial review sono stati rimossi 2 em-dash residui in `Jasper_Persona.json` (`comment` e `appearances[1].name`) sfuggiti al test iniziale che scansionava solo `description`, rimossi i backtick da `appearance[2].description`, rieseguito il deploy live via `PUT /api/user-personas/1792155173728` e blindati i test di collaudo con scansione ricorsiva di tutti i campi.
+
+- **Normalizzazione 6 Character Card Archiviate (`ARCHIVIO/cards_legacy/*_card.json`)**:
+  - In `Russ_card.json`: inserita la sezione `CLAN AND COMPANY:` prima di `VOICE & BEHAVIOR:` scorporando le dinamiche di Wyvern Hall e dei Five Cocketeers, uniformato `personality` in PList `[...]`.
+  - In `Scarlett_Rose_card.json` e `Sierra_Cruz_card.json`: rinominata la sezione `DORM DYNAMICS & ROOMMATES:` in `CLAN AND COMPANY:`, uniformata la data di nascita (`Born November 18, 2003` e `Born September 8, 2005`).
+  - In `Stan_Davies_Jr_card.json`: uniformata la data di nascita a `AGE: 21 (Born September 14, 2002)` e `personality` in PList.
+  - In `Jared_Thompson_card.json`: unificata `FAMILY:` dentro `FAMILY & PACK:`, inserita la data canonica `AGE: 22 (Born March 24, 2002)`, completato e racchiuso il campo `personality` in blocco PList `[...]` sanando il troncamento preesistente.
+
+- **Ri-Sincronizzazione 1:1 con i Lorebook NPC e Deploy Live Wyvern API**:
+  - Sincronizzato al 100% (1:1 byte-for-byte) il campo `content` delle 7 voci core nei Lorebook NPC (`Erik`, `Malachia`, `Noah`, `Logan`, `Wulfnic`, `Mackenzie` in `Svartulfr_NPC_Primary.json` e `Edric` in `Svartulfr_NPC_Secondary.json`, inclusi i mirror in `lorebooks/optimized/`). In sede di Review 2 è stato identificato e sanato il disallineamento critico tra `entries` e `lexicon` (le voci core erano state aggiornate solo in `lexicon` lasciando `entries` con i testi vecchi, incluso il blocco non normalizzato di Noah e il testo legacy di Edric): entrambe le strutture sono state perfettamente riallineate e verificate identiche.
+  - Rimosso l'em-dash residuo in `Marek` (`comment`) in `Svartulfr_NPC_Primary.json`.
+  - Aggiornato l'anno di nascita di Wulfnic all'824 d.C. (`nell'824 d.C.` / `Born circa 824 AD in Iceland.` / `1200 anni nel 2024`) nelle relative voci storiche di `Svartulfr_Lorebook_I.json` (entry `HxdpzBtgY_wSx5ZpIDzGK`) e `Svartulfr_Lorebook_II.json` (entries 51, 80, 91, 93) e rispettivi mirror optimized.
+  - Bonificato `FINAL/Svartulfr_Master_Scenario.json`: rimossi 22 em-dash nei commenti delle `linked_personas`, corretto l'em-dash in `name` e `final_instructions`, e aggiornata l'età di Wulfnic a `1,200-year-old`.
+  - Eseguito il deploy live via Wyvern Web API con token aggiornato e header `User-Agent: AuditorBot/1.0`:
+    * `PUT https://app.wyvern.chat/api/characters/:id` per tutte le 8 Character Card attive (`HTTP 200 OK`).
+    * `PUT https://app.wyvern.chat/api/user-personas/:id` per tutte le 3 User Persona (`HTTP 200 OK`).
+    * `PUT https://app.wyvern.chat/api/lorebooks/:id` per `Svartulfr_NPC_Primary` (`_zwEqgEEzh12X6gHVmMKKC`, 99 entries salvate, `HTTP 200 OK`), `Svartulfr_NPC_Secondary` (`_Uht3Ckz44JBDrPnUHq7LV`, 211 entries salvate, `HTTP 200 OK`), `Svartulfr_Lorebook_I` (`_gwwCxCfQ6PQaLEjAQVpJL`, 221 entries salvate, `HTTP 200 OK`) e `Svartulfr_Lorebook_II` (`_HfG7TeV6MJyj6bxMwxkpt`, 142 entries salvate, `HTTP 200 OK`).
+  - Suite di collaudo approfondita (`scratch/verify_local_suite.py`, `scratch/verify_live_api.py` e `scratch/reviewer2_deep_adversarial_audit.py`) eseguita con successo: 100% delle asserzioni passate sia in locale che via API live.
+
+- **Armonizzazione Cronologia Relativa dei Firstborn (819 / 824 / 848 / 849 / 864 AD), Apparent Age Formula e Rework Zefir Hvitskog ("The North Sea Wind") (Round 4)**:
+  - **Wulfnic Bloodmoon**: Confermato nato il 21 Dicembre 824 d.C. (1200 anni nel 2024); eletto Jarl di Svartulfr a 25 anni nell'849 d.C.; trasformato da Fenris all'età di 40 anni nell'864 d.C. dopo 15 anni da Jarl assieme agli 8 compagni guerrieri (bracket 16–45 anni, da Zefir a Ut); età apparente congelata a 40 anni dell'era vichinga che a causa delle aspre condizioni dimostra ~60 anni a occhi moderni (`presented age: 60`). Aggiornata `description` in `FINAL/Wulfnic_Bloodmoon_card.json`, sincronizzata 1:1 in `FINAL/Svartulfr_NPC_Primary.json` e deployata live via `PUT /api/characters/_HEQQbbRFwKdG8QE2Fh1z1`.
+  - **Ut Berg**: Nascita 5 Maggio 819 d.C. (1205 anni nel 2024); guerriero più anziano della banda trasformato da Fenris all'età di 45 anni nell'864 d.C.; età apparente congelata a 45 anni che dimostra ~60 anni a occhi moderni (`AGE: 1205 (Born May 5, 819 AD); turned at 45 in 864 AD; presented age: 60;`). Aggiornato in `Svartulfr_NPC_Primary.json`, `Svartulfr_Lorebook_I.json` e `Svartulfr_Lorebook_II.json`.
+  - **Zefir Hvitskog**: Nascita 5 Febbraio 848 d.C. (1176 anni nel 2024); il più giovane dei Nove trasformato da Fenris a 16 anni nell'864 d.C. quando il corpo non aveva ancora completato lo sviluppo; guerriero sedicenne del IX secolo temprato dalle intemperie che a occhi moderni dimostra 20–22 anni (`AGE: 1176 (Born February 5, 848 AD); turned at 16 in 864 AD; presented age: 20-22;`), passando inosservato come studente universitario. Rework completo della personalità ("The North Sea Wind"): insolenza spavalda da sedicenne vichingo, brio beffardo, baruffe giocose con Ut e capacità di cadere in un silenzio glaciale istantaneo durante la caccia ("Ut makes the thunder. I bring the gale and the silence after. The Jarl makes the history."). Eliminato ogni riferimento residuo al `1005 AD`.
+  - **Lorebooks I & II**: Aggiornate tutte le voci storiche ed enciclopediche (`Living Sagas: Historical Facts`, `LSE History Timeline`, `La Guerra di Fenris e l'Esilio dei Firstborn`, `LSE Blood Classification` sezione `APPARENT AGE`, `House Genealogies Summary`, `Firstborn Pantheon`) allineando `pre-827 AD` a `pre-864 AD`, inserendo l'anno di trasformazione 864 d.C., la banda 16–45 anni e le formule di conversione età apparente (16 vichingo = 20–22 moderno; 40–45 vichingo = ~60 moderno).
+  - **Invariante `entries == lexicon`**: Garantita la perfetta identità (100% byte-for-byte) tra `entries` e `lexicon` in tutti i file JSON toccati (`FINAL/` e mirror `lorebooks/optimized/`).
+  - **Deploy Live Wyvern API**: Effettuato il deploy live con esito HTTP 200 su card Wulfnic (`_HEQQbbRFwKdG8QE2Fh1z1`), Lorebook NPC Primary (`_zwEqgEEzh12X6gHVmMKKC`, 99 entries), Lorebook I (`_gwwCxCfQ6PQaLEjAQVpJL`, 221 entries) e Lorebook II (`_HfG7TeV6MJyj6bxMwxkpt`, 142 entries). Verificata live la presenza dei nuovi campi con `scratch/verify_live_api.py`.
+
+- **Rework Scena Iniziale "SUCC Welcome Day", Regole Anatomiche/Locomotorie Lamia per Sierra Cruz, Palette Rosa Confetto & Corna Scarlatte per Scarlett Rose e Deploy Live**:
+  - Aggiornati i profili di **Sierra Cruz** e **Scarlett Rose** in `FINAL/Svartulfr_NPC_Primary.json` (e mirror `lorebooks/optimized/Svartulfr_NPC_Primary.json`, `_zwEqgEEzh12X6gHVmMKKC`), nelle card legacy (`ARCHIVIO/cards_legacy/Sierra_Cruz_card.json` e `Scarlett_Rose_card.json`) e negli scenari universitari:
+    * **Sierra Cruz (Lamia)**: Uniformati i capelli e la coda serpentina da 4 metri al colore **arcobaleno con scaglie iridescenti** (`rainbow-colored hair` e `4-meter rainbow-colored serpentine tail covered in shimmering iridescent scales`). Inserita la regola tassativa `LOCOMOTION & ANATOMY RULE` sia nella scheda JED+ sia nelle `NARRATION GUIDELINES` degli scenari: essendo la metà inferiore del suo corpo interamente quella di un serpente (zero gambe, zero piedi), è vietato usare termini come *gambe*, *piedi*, *scarpe*, *camminare* o *fare passi* (`walk`, `step`, `stand on feet`, `legs`, `shoes`); Sierra si muove esclusivamente strisciando, scivolando e avvolgendosi sulle sue spire (`slithers`, `glides`, `coils`). Corrette anche le scene `01. Theta Iota Theta Morning on Greek Row` e `05. Bulls Locker Room and Stadium Tunnel` in cui erano rimasti verbi da bipede (`stood` / `walked past` -> `coiled` / `glided past`).
+    * **Scarlett Rose (Succubus)**: Uniformati i capelli e gli occhi al **rosa confetto** (`candy-pink / rosa confetto hair and matching candy-pink eyes`) con **due corna scarlatte** che spuntano visibilmente tra i capelli sopra le tempie (`two sleek scarlet horns protruding visibly through her candy-pink hair`). Corrette tutte le occorrenze legacy (`red curls`, `auburn hair`, `amber eyes`, `ruby eyes`) nei greeting degli scenari (`SUCC Welcome Day`, `02. Pre-Med Biology Labs`, `05. Beta Rho Omega Halloween Party`).
+  - Aggiornato il greeting iniziale `greetings[0]` (`SUCC Welcome Day`, `scene-alyssa-welcome-day` e `scene-jasper-welcome-day`) in `FINAL/scenarios/Svartulfr_Scenario_SUCC_Route_Alyssa.json` (`char_scenario_CKgwq246DyCj1NNTBV9rt`, rev. 14) e `FINAL/scenarios/Svartulfr_Scenario_SUCC_Route_Jasper.json` (`char_scenario_Kq4mJEBH83j7Q7DdVfFnF`, rev. 8):
+    * **Accompagnamento dell'intera famiglia**: I quattro studenti iscritti alla SUCC (`Noah` e `Malachia` degli anni superiori, più le matricole `Jasper` e `Alyssa`) arrivano sul Lunar Quad accompagnati per i saluti di rito da `Erik`, `Logan` ed `Edric` (con battute formattate su nuova riga `Nome Completo: "..."` per l'attivazione automatica dei ritratti NPC).
+    * **Arrivo di Wulfnic e Zefir**: Wulfnic fa il suo ingresso sul Quad indossando con solenne orgoglio il suo outfit gag (`"The Gag Shirt"`, la t-shirt nera oversize regalatagli da Jasper con la lunga lista di *"Rules for Dating My Granddaughter"* stampata sulla schiena) insieme a **Zefir Hvitskog**, vestito in stile punk con i capelli bianco-neve rasati ai lati in una **cresta alla moicana** (`mohawk`) e un **giubbotto di pelle nera con le borchie** (`studded leather jacket`).
+    * **Iscrizione e Copertura Islandese**: Wulfnic annuncia ridendo di aver iscritto Zefir all'università per proteggere la nipote (*"After all, you have never been to school, and technically you are still a kid!"*), registrandolo con la copertura di un lontano parente appena arrivato dall'Islanda così da giustificare il marcato accento norreno di Zefir e la sua scarsa dimestichezza con l'inglese scritto.
+    * **Presentazione a Scarlett, Sierra e Finn (Messaggio 3)**: La famiglia presenta subito Zefir con la copertura del cugino islandese a `Scarlett Rose`, `Sierra Cruz` e `Finnegan Novak` per evitare che si mettano sul chi vive; pur avendo Zefir completamente azzerato la propria aura divina (apparendo come un comune licantropo qualsiasi), `Finn` si sente istintivamente inferiore a lui e cerca di atteggiarsi a più figo davanti ad Alyssa vantandosi del posto in prima linea nell'hockey, `Sierra` striscia vicino a Zefir sulla sua coda arcobaleno dalle scaglie iridescenti per chiedergli dove abbia comprato a Reykjavik quel giubbotto di pelle borchiato, e `Scarlett` (con i capelli e gli occhi rosa confetto e le corna scarlatte tra i capelli) flirta con Zefir offrendosi per dargli ripetizioni private di inglese scritto.
+  - Aggiornato anche il blocco `ATTIRE` / `CAMPUS COVER` e la sezione `THE ONE WHO WAS NEVER GROWN:` di Zefir in `FINAL/Svartulfr_NPC_Primary.json` (e nel mirror `lorebooks/optimized/Svartulfr_NPC_Primary.json`), mantenendo `entries == lexicon` 100% identici e pubblicando live sia il Lorebook (`_zwEqgEEzh12X6gHVmMKKC`) sia i due Scenari (`HTTP 200 OK`).
+  - **Riallineamento Integrale dei Character Slots alle 8 Card Esistenti (`/characters/mine`)**:
+    * Eliminati dagli scenari tutti gli slot vuoti degli ex-personaggi convertiti in NPC del Lorebook (`best_friend`, `roommate`, `male_roommate`, `childhood_friend`, `quarterback`, `friend`, `sports_rival`, `ai_companion`) e sostituiti con gli slot delle **8 Character Card realmente esistenti** (con `pool` popolato a `weight: 100` e `unavailable_count: 0`):
+      - In `Svartulfr_Scenario_SUCC_Route_Alyssa.json` (`char_scenario_CKgwq246DyCj1NNTBV9rt`, **rev. 15**): 8 slot corrispondenti alle 8 card attive (`twin` Jasper `_t4J9aQNJM36cUKAP4wB4U`, `crush` Mackenzie `_zn24784jfcchQ7EwCyAnm`, `father` Erik `_QPea6g4Q1QfeYCVHCLMPR`, `eldest_brother` Malachia `_RDfz7XzTpM23LpPALVXHM`, `brother` Noah `_zFLUjV8aVxQRAfQxGcAcY`, `uncle` Logan `_T8Ywcr9FEqNf9JxbK6eHP`, `cousin` Edric `_TbRM3EdxDjHFgqztTbCpL`, `maternal_grandfather` Wulfnic `_HEQQbbRFwKdG8QE2Fh1z1`).
+      - In `Svartulfr_Scenario_SUCC_Route_Jasper.json` (`char_scenario_Kq4mJEBH83j7Q7DdVfFnF`, **rev. 9**): 7 slot corrispondenti alle 7 card attive oltre a Jasper protagonista (`father` Erik, `eldest_brother` Malachia, `brother` Noah, `uncle` Logan, `cousin` Edric, `maternal_grandfather` Wulfnic, `band_peer` Mackenzie).
+    * Ricollegati tutti i `speaker_slot` dei messaggi in tutti i greeting agli slot delle card esistenti, lasciando i dialoghi degli NPC del Lorebook (`Scarlett Rose:`, `Sierra Cruz:`, `Finnegan Novak:`, `Zefir Hvitskog:`, `Jared Thompson:`, `Stanley Davies Jr.:`, `Vincent Campbell:`, `Russell Sinclair:`, `Echo:`, `Alyssa Hvit Douglas Bloodmoon:`) formattati su nuova riga per lo splitting automatico del ritratto e del nome da parte del Lorebook.
+  - **Traduzione Integrale in Italiano di Tutti i Greetings degli Scenari SUCC**:
+    * Tradotti integralmente in italiano tutti i 7 greeting dello scenario Alyssa (`SUCC Welcome Day`, `01. Theta Iota Theta Morning on Greek Row`, `02. Pre-Med Biology Labs`, `03. KSA Presidential Suite at Fenris Hall`, `04. Solarton Skatepark & The Verve Backstage`, `05. Beta Rho Omega Halloween Party`, `06. Solarton Civic Ice Arena`) e tutti i 6 greeting dello scenario Jasper (`SUCC Welcome Day`, `01. Wyvern Hall & The Five Cocketeers`, `02. Computer Science Labs & Voidspace Node`, `03. Fenris Hall KSA Lounge & The Quad`, `04. The Verve Soundcheck & Backstage`, `05. Bulls Locker Room and Stadium Tunnel`), preservando rigorosamente `0` em-dash, `0` asterischi, dialoghi tra virgolette inglesi doppie (`"..."`), la regola locomotoria di Sierra Cruz (solo strisciare/scivolare/spire, zero riferimenti a gambe/piedi/scarpe/camminare) e la palette rosa confetto con corna scarlatte di Scarlett Rose.
+    * Deployati live su Wyvern con esito `HTTP 200 OK`: `Svartulfr_Scenario_SUCC_Route_Alyssa.json` (`char_scenario_CKgwq246DyCj1NNTBV9rt`, **rev. 16**) e `Svartulfr_Scenario_SUCC_Route_Jasper.json` (`char_scenario_Kq4mJEBH83j7Q7DdVfFnF`, **rev. 10**).
+
+---
+
+## [21 Ottobre 2026] - Ripristino Integrale JED+ 7 Card Core, Omogeneizzazione Layout 310 Voci, Placeholder Ufficiale DCC e Deploy Wyvern Lorebooks
+
+- **Ripristino Schede Complete JED+ per i 7 Personaggi Core (R1)**:
+  - Completata l'iniezione integrale delle schede canoniche JED+ dalle Character Card ufficiali in `FINAL/` nei rispettivi record dei Lorebook NPC, convertiti a `type: "npc"` e `selective: false` con soppressione nativa anti-duplicato `ignored_characters`:
+    - **Erik Ulfr Douglas** (`C-JisFj8qA1tsFEqZKevk` in Primary): 22.775 caratteri (testo integrale da `FINAL/Erik_Douglas_card.json`), avatar Cloudflare `61648731-7c96...`, `custom_avatar_regex: true`, regex multiline `(?:^|\n)\s*(?:Erik Ulfr Douglas|Erik Douglas|The Prime Alpha|Prime Alpha|Erik)\s*:`, `lines_parsed: 1`, `npc_info` strutturato, `ignored_characters: ["_QPea6g4Q1QfeYCVHCLMPR"]`.
+    - **Malachia Björn Douglas Bloodmoon** (`jDuJtzirlEZC3K_ArIufh` in Primary): 18.520 caratteri (da `FINAL/Malachia_Douglas_Bloodmoon_card.json`), avatar `d77a20fc-49da...`, regex multiline, `lines_parsed: 1`, `npc_info`, `ignored_characters: ["_RDfz7XzTpM23LpPALVXHM"]`.
+    - **Noah Loki Douglas Bloodmoon** (`H2JX-NkHRiJ2FzoekC5ZZ` in Primary): 10.398 caratteri (da `FINAL/Noah_Douglas_Bloodmoon_card.json`), avatar `968cc93e-879d...`, regex multiline, `lines_parsed: 1`, `npc_info`, `ignored_characters: ["_zFLUjV8aVxQRAfQxGcAcY"]`.
+    - **Logan Járn Douglas** (`tAcrWLtWSDGf3xJJRwUOM` in Primary): 13.735 caratteri (da `FINAL/Logan_Douglas_card.json`), avatar `0b5a932b-0a3b...` ripristinato anche su cloud Wyvern, regex multiline, `lines_parsed: 1`, `npc_info`, `ignored_characters: ["_T8Ywcr9FEqNf9JxbK6eHP"]`.
+    - **Wulfnic Báleygr Bloodmoon** (`HhuMluMmIIENUei3bX6ed` in Primary): 14.530 caratteri (da `FINAL/Wulfnic_Bloodmoon_card.json`), avatar `683beb87-8091...`, regex multiline, `lines_parsed: 1`, `npc_info`, `ignored_characters: ["_HEQQbbRFwKdG8QE2Fh1z1"]`.
+    - **Mackenzie Sanchez-Rogers** (`BXi3sENAVYB8OKF80Q9Su` in Primary): 9.618 caratteri (da `FINAL/Mackenzie_Sanchez_Rogers_card.json`), avatar `87f28fb6-557f...`, regex multiline, `lines_parsed: 1`, `npc_info`, `ignored_characters: ["_zn24784jfcchQ7EwCyAnm"]`.
+    - **Edric Douglas** (`h-ttmlgJYeRXqyDvQjSX7` in Secondary): 7.240 caratteri (da `FINAL/Edric_Douglas_card.json`), avatar `ed348ea6-c40c...`, regex multiline, `lines_parsed: 1`, `npc_info`, `ignored_characters: ["_TbRM3EdxDjHFgqztTbCpL"]`.
+  - Volume testuale totale iniettato: 89.576 caratteri in Primary e 7.240 caratteri in Secondary.
+  - Aggiornato il `token_budget` del Lorebook Primary da 5000 a 7500 token per consentire l'attivazione fluida dei dossier estesi senza rischio di troncamento del contesto. Confermato `token_budget: 5000` per il Lorebook Secondary.
+
+- **Omogeneizzazione Layout Standard JED+ a 4 Blocchi su 310 Voci e Bonifica Integrale Camp Mystic (R2)**:
+  - Raggiunta la conformità del 100% (310/310 voci: 99 in Primary, 211 in Secondary) all'apertura con blocco bracket `[...]` e alle 4 sezioni canoniche obbligatorie (`BACKSTORY:`, `FAMILY & PACK:` / `CLAN AND COMPANY:`, `VOICE & BEHAVIOR:`, più chiusure tematiche e RPG).
+  - Rigenerate da zero le 100 schede Camp Mystic in `FINAL/Svartulfr_NPC_Secondary.json` attingendo alla fonte non troncata (`scratch/campmystic_full_card.json`), eliminando tutti i troncamenti a 160 caratteri sulle righe `Supernatural Gifts` e `Innate Resilience`, rimuovendo i doppi punti (`..`), i doppi apici (`""...""`), gli errori grammaticali (`they withdraws` -> `they withdraw`, ecc.) e allineando le date di nascita al World Clock 2024 senza ricorrenze al 1° del mese (Regola 9.6).
+  - Incapsulate nel canone JED+ standard le 3 voci irregolari di Secondary (`Bruce`, `Campus Staff Rat`, `Adrian`) e normalizzate tutte le intestazioni varianti in Primary (11 voci) e Secondary (75 voci non-Camp-Mystic).
+
+- **Adozione Avatar Placeholder Ufficiale DCC su 200 Voci (R3)**:
+  - Aggiornato l'avatar di tutte le 200 voci (42 in Primary, 158 in Secondary) che utilizzavano il vecchio fallback `6f8b7c78...` al nuovo placeholder ufficiale DCC: `https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/99d10d9b-611c-45b7-566a-79c3ed2e9800/public`.
+  - Preservati intatti tutti i 110 ritratti personalizzati (57 in Primary, 53 in Secondary).
+  - Verificato che il 100% delle 310 voci possiede un URL HTTPS valido e attivo, sanando anche l'anomalia di Logan Járn Douglas che risultava con avatar vuoto sul cloud live.
+
+- **Disciplina di Formattazione e Prevenzione Ricorsione (R4)**:
+  - Verificata la totale assenza di em-dash (`\u2014`, 0 occorrenze), asterischi markdown di narrazione (`*`, 0 occorrenze), macro `{{age}}` (0 occorrenze) e keyword ombrello (`BROAD_KEYS`, 0 occorrenze nelle trigger `keys`).
+  - Iniettato il flag `exclude_from_recursion: true` sul 100% delle voci (310/310) per prevenire loop e cascate cicliche di retrieval durante l'inferenza LLM.
+
+- **Emblema Lorebook su Tutti i 6 Lorebook, Mirror Locale, Deploy Live Wyvern Web API e Validazione Chrome DevTools (R5)**:
+  - Impostato l'emblema ufficiale della Casata Svartúlfr (`https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/1e5124b4-f7d0-46cf-fad9-7ecfc801d100/public`) come copertina (`photoURL`) su **tutti i 6 Lorebook Standalone** (`Lorebook I`, `Lorebook II`, `Lorebook III`, `Location`, `NPC Primary`, `NPC Secondary`).
+  - Sincronizzati 1:1 sia l'array `entries` che l'array `lexicon` all'interno dei file locali in `FINAL/` e in `lorebooks/optimized/`.
+  - Eseguito il deploy live via `PUT /api/lorebooks/:id` con payload compatto (`lexicon` + metadati top-level, escludendo il duplicato `entries`).
+  - Validato con successo tramite script API (`scratch/verify_live_deployment.py`) e ispezione Chromium DevTools (`scratch/validate_cdp_browser.py`): `0` errori console, `HTTP 200` su tutti gli endpoint API e sugli asset Cloudflare Images (`naturalWidth: 768`, `naturalHeight: 768`).
+
+---
+
+## [21 Ottobre 2026] - Sincronizzazione Scenari SUCC, Riduzione a 8 Card, Adozione Soppressione Nativa Wyvern ("Don't Activate When Active") e Ripristino Integrale NPC Primary
+
+- **Adozione Meccanismo Nativo Wyvern "Don't Activate When Active" (`ignored_characters` & `ignored_personas`)**:
+  - Superato definitivamente il workaround artificiale basato su `selective: true` e keyword fittizie ('Dossier', 'Scheda', 'Archivio', 'Database', 'Profilo').
+  - Mappati dal runtime client di Wyvern (`wv_chunk.js`) i due array nativi di soppressione attivati dal toggle UI "Don't Activate When Active" ("Skip this entry entirely when one of these characters or personas is already in the chat, to avoid a redundant duplicate"):
+    - `ignored_characters: string[]` (array di ID card personaggio per saltare l'entry se la card è presente nella chat/party)
+    - `ignored_personas: string[]` (array di ID Persona per saltare l'entry se `{{user}}` gioca con quella Persona)
+  - Configurazione applicata con successo a tutte le voci di `FINAL/Svartulfr_NPC_Primary.json` e `FINAL/Svartulfr_NPC_Secondary.json`:
+    - **Alyssa Hvit Douglas Bloodmoon** (`alyssa_world_dossier_2b54a223`): `type: "npc"`, `selective: false`, `secondary_keys: []`, regex multiline, avatar Cloudflare, `npc_info`, descrizione JED+ integrale (16.957 caratteri), `ignored_personas: ["persona_1786335754946"]`, `ignored_characters: ["_6exg3yPfe2eCDK4hTftkh"]`.
+    - **Jasper Svartr Douglas Bloodmoon** (`Vcj4h2TL4Usola2A4OOl6`): `type: "npc"`, `selective: false`, `secondary_keys: []`, regex multiline, avatar, `npc_info`, descrizione JED+ integrale (14.483 caratteri), `ignored_personas: ["1792155173728"]`, `ignored_characters: ["_t4J9aQNJM36cUKAP4wB4U"]`.
+    - **I 5 NPC Convertiti (Scarlett, Sierra, Russ, Stan, Jared)**: `type: "npc"`, `selective: false`, regex multiline, avatar validi, `lines_parsed: 1`, `npc_info`, descrizioni JED+ piene (da 4.777 a 8.696 caratteri), `ignored_characters: [<legacy_card_id>]`, `ignored_personas: []`.
+    - **Le 6 Card Approvate in Primary (Erik, Malachia, Noah, Logan, Wulfnic, Mackenzie)**: configurato `ignored_characters: [<card_id>]` per prevenire duplicati se presenti nel party.
+    - **Edric Douglas (`h-ttmlgJYeRXqyDvQjSX7`) in Secondary**: configurato `ignored_characters: ["_TbRM3EdxDjHFgqztTbCpL"]`.
+  - Deploy completato con successo via PUT su Wyvern API per entrambi i Lorebook (`_zwEqgEEzh12X6gHVmMKKC` e `_Uht3Ckz44JBDrPnUHq7LV`) con risposta `HTTP 200 OK`.
+
+- **Sincronizzazione, Ottimizzazione Macro e Pulizia Slot Scenari SUCC (Alyssa e Jasper)**:
+  - Archiviati i 4 file degli scenari ritirati (`Camp Mystic`, `DMHA Dungeons`, `Underworld Sindacato`, `Villa Douglas`) nella nuova cartella `ARCHIVIO/scenarios/`. In `FINAL/scenarios/` permangono esclusivamente i due scenari SUCC attivi.
+  - Sostituite nei testi di saluti (greetings) e messaggi tutte le macro `{{scenarioChar "..."}}` relative a NPC ritirati (`best_friend`, `roommate`, `male_roommate`, `crush`, `quarterback`, `friend`, `sports_rival`) e alla gemella (`twin`) con i rispettivi nomi letterali.
+  - Puliti i pool inaccessibili: azzerato `pool: []` e impostato `unavailable_count: 0` su tutti gli slot dei personaggi convertiti a NPC per eliminare i blocchi `unavailable_count: 1` di Wyvern.
+  - Preservati tutti gli 8 oggetti slot per ciascuno scenario per garantire la piena validità dei puntatori `speaker_slot` sui messaggi.
+  - Nello scenario Alyssa, mantenuti i pool delle card canoniche approvate `twin` (Jasper `_t4J9aQNJM36cUKAP4wB4U`) e `crush` (Mackenzie `_zn24784jfcchQ7EwCyAnm`).
+  - Deploy via PUT completato con successo su Wyvern API:
+    - Route Alyssa (`char_scenario_CKgwq246DyCj1NNTBV9rt`): revision 11, 7 greetings, 8 slot (tutti con `unavailable_count: 0`), `HTTP 200 OK`.
+    - Route Jasper (`char_scenario_Kq4mJEBH83j7Q7DdVfFnF`): revision 5, 6 greetings, 8 slot (tutti con `unavailable_count: 0`), `HTTP 200 OK`.
+
+- **Riduzione a Esattamente 8 Card Personaggio (`/characters/mine` e `FINAL/`)**:
+  - Salvato snapshot preventivo di Jared Thompson (`_xJVPtBLL3dxy69RLKL9X9`) in `scratch/jared_pre_delete_snapshot__xJVPtBLL3dxy69RLKL9X9.json`.
+  - Eliminata la card Jared Thompson da Wyvern via `DELETE /api/characters/_xJVPtBLL3dxy69RLKL9X9` (`HTTP 204 No Content`).
+  - Verificato che su Wyvern `/characters/mine` rimangano esattamente le 8 card approvate:
+    1. Jasper Svartr Douglas Bloodmoon (`_t4J9aQNJM36cUKAP4wB4U`)
+    2. Erik Ulfr Douglas (`_QPea6g4Q1QfeYCVHCLMPR`)
+    3. Logan Járn Douglas (`_T8Ywcr9FEqNf9JxbK6eHP`)
+    4. Malachia Björn Douglas Bloodmoon (`_RDfz7XzTpM23LpPALVXHM`)
+    5. Noah Loki Douglas Bloodmoon (`_zFLUjV8aVxQRAfQxGcAcY`)
+    6. Edric Douglas (`_TbRM3EdxDjHFgqztTbCpL`)
+    7. Wulfnic Báleygr Bloodmoon (`_HEQQbbRFwKdG8QE2Fh1z1`)
+    8. Mackenzie Sanchez-Rogers (`_zn24784jfcchQ7EwCyAnm`)
+  - Creata la directory `ARCHIVIO/cards_legacy/` e spostati i 6 file JSON delle card dismesse (`Alyssa_Douglas_Bloodmoon_card.json`, `Jared_Thompson_card.json`, `Russ_card.json`, `Scarlett_Rose_card.json`, `Sierra_Cruz_card.json`, `Stan_Davies_Jr_card.json`).
+  - Verificato che in `FINAL/` rimangano esclusivamente i file JSON delle 8 card approvate.
+
+- **Verifica di Regressione Integrale (Suite Automatizzata 100% Passed)**:
+  - Validati con esito positivo tutti i vincoli: 0 em-dash, dialoghi tra virgolette, azioni in plain text, 0 macro orfane, coerenza tra `entries` e `lexicon`, e test di regressione via live GET requests con status HTTP 200/204 su tutti gli endpoint.
+
+- **Creazione e Registrazione Nuova Skill Operativa (`wyvern-card-lorebook-sync`)**:
+  - Distillata e codificata la nuova skill modulare di repository in `.agents/skills/wyvern-card-lorebook-sync/SKILL.md` corredata dallo script di verifica automatizzata `scripts/verify_suppression_and_slots.py`.
+  - Aggiornata la documentazione di governance in `.agents/rules/14_metodo_operativo_skills_integrate.md`, `.agents/rules/08_triage_lorebook_e_lexicon.md` e `GEMINI.md` (Sezioni 7 e 19).
+
+---
+
+## [21 Ottobre 2026] - Integrazione Fonti Esterne RPG Source (D20 / S.P.E.C.I.A.L.) & Sincronizzazione Indice di Risorse
+
+- **Integrazione 8 Fonti Esterne da Gruppo Tab Chrome "RPG Source"**:
+  - Estratte e verificate tramite Chrome LevelDB sync le 8 fonti web primarie per la modellazione e risoluzione delle meccaniche diegetiche:
+    1. Sopakco Sauce Docs (Canonical): documentazione tecnica su prompt engineering, sintassi bot JanitorAI e meccaniche di lancio dadi e statistiche (`https://sopakcosauce.gitbook.io/sopakcosauce-docs`).
+    2. Wyvern Svartúlfr World Editor (Canonical): interfaccia live editor per il mondo Svartúlfr su Wyvern, impostazioni di gioco, lexicon e schemi RPG (`https://app.wyvern.chat/worlds/edit/_CgYT8fHXpDC4crjmegQF7`).
+    3. io's Modern Fantasy Universe Hub (Canonical): hub di riferimento canonico per l'universo Modern Fantasy e coerenza cross-character (`https://io-modernfantasy.uwu.ai/`).
+    4. Mackenzie "Mac" Sanchez-Rogers (Canonical): implementazione di riferimento per personaggi demi-umani, voce e stat block RPG (`https://janitorai.com/characters/1d1ef070-934d-4c11-90e2-b7fb9a4649c4_character-mackenzie-mac-sanchez-rogers`).
+    5. Elite Warrior Tsalu Haoitan (Canonical): riferimento per abilità di combattimento strutturate e logiche di risoluzione scontri (`https://janitorai.com/characters/1e685f63-024f-40f0-a892-a57535760b49_character-elite-warrior-tsalu-haoitan`).
+    6. Don't Look at Me (Community): scenario psicologico a trigger condizionali e gestione della tensione narrativa (`https://janitorai.com/characters/1ff24d14-3dfd-4795-9d49-986eeee711de_character-dont-look-at-me`).
+    7. Neon Purr (Canonical): scheda urban fantasy / cyberpunk demi-human per benchmarking di dialoghi e stili di ruolo (`https://janitorai.com/characters/d67a12e8-a1be-4ec4-95e1-ada90263fee4_character-neon-purr-%F0%9F%87%A6%F0%9F%87%BA`).
+    8. The Omega Breeding Facility (Community): scenario a setting complesso per gestione gerarchie, spazi istituzionali e multi-NPC (`https://janitorai.com/characters/c6a9088f-8b82-402c-8070-8afe22a2781e_character-the-omega-breeding-facility`).
+- **Mappatura al Motore di Risoluzione D20 + S.P.E.C.I.A.L.**:
+  - Classificate e correlate le risorse al motore di gioco D20 + S.P.E.C.I.A.L., arricchendo la base di conoscenza per prompt assembly, Game Master narrator e risoluzione delle azioni nei Character Scenarios.
+- **Aggiornamento EXTERNAL_RESOURCES_INDEX.md**:
+  - Creata la sottosezione 3.10 "RPG & TTRPG Mechanics (D20 / S.P.E.C.I.A.L.)" con i metadati completi e le direttive d'uso per ciascuna risorsa.
+  - Aggiornata la tabella delle statistiche delle risorse (Sezione 2): 8 nuove risorse (6 Canonical, 2 Community, 0 Experimental), portando il totale tracciato da 69 a 77 risorse (27 Canonical, 50 Community, 0 Experimental).
+
+---
+
+## [21 Ottobre 2026] - Razionalizzazione Scenari Wyvern: Dismissione 5 Scenari e Mantenimento Archi Alyssa e Jasper
+
+- **Eliminazione Scenari su Wyvern via API (DELETE /api/character-scenarios/{id})**:
+  - Eliminati i 5 scenari ridondanti/generici:
+    1. char_scenario_1DC43ggb6mB8YLJDJKrU4 (Master Scenario)
+    2. char_scenario_nLC84wrHdrbB6P3DEhwKb (Camp Mystic)
+    3. char_scenario_eqtRNnDpKbxDp7dmJmq6E (DMHA Dungeons)
+    4. char_scenario_rrUCdBPH6WTNyBnQkMAKR (Underworld Sindacato)
+    5. char_scenario_88N1eQXqkbydKX9q9XQzp (Villa Douglas)
+  - Backup preventivo integrale dello stato live salvato in scratch/backup_deleted_scenarios_20261021/.
+  - Verifica post-eliminazione: tutti i 5 scenari restituiscono HTTP 404 (Not Found).
+- **Mantenimento Esclusivo dei 2 Archi Personaggio**:
+  - char_scenario_CKgwq246DyCj1NNTBV9rt (SUCC Route Alyssa) — Attivo (HTTP 200).
+  - char_scenario_Kq4mJEBH83j7Q7DdVfFnF (SUCC Route Jasper) — Attivo (HTTP 200).
+
+---
 
 ## [20 Ottobre 2026] - Canone Edric Douglas (13 Anni Compiuti, Nato 25 Febbraio 2011) & Presentazione di Branco a Yule 2024
 

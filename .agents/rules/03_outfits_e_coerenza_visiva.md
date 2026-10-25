@@ -25,10 +25,16 @@ Scelta stilistica canonica approvata: i maschi della famiglia Douglas condividon
 
 ---
 
-## 3. Anatomia Demi-Umani: Orecchie Singole (`No orecchie umane`)
+## 3. Anatomia Demi-Umani: Orecchie Singole (`No orecchie umane`) e Invarianti Specifiche (Sierra & Scarlett)
 
 **I demi-umani e i licantropi in Partial Shift possiedono un solo paio di orecchie: quelle animali sulla sommità del capo.**
 Non hanno orecchie umane aggiuntive ai lati della testa. Questa regola anatomica è confermata dall'autore dell'ambientazione originale ed è blindata in ogni prompt di generazione immagini.
+
+- **Sierra Cruz (Lamia — Locomozione & Livrea Arcobaleno Iridescente):**
+  - Possiede **capelli color arcobaleno** e, dai fianchi in giù, la parte inferiore del corpo è interamente quella di un serpente di 4 metri **color arcobaleno con scaglie iridescenti** (`rainbow-colored hair` e `4-meter rainbow-colored serpentine tail covered in shimmering iridescent scales`).
+  - **Divieto Assoluto di Termini Bipedi:** Non possiede gambe né piedi. È tassativamente vietato usare per Sierra termini o verbi come *gambe*, *piedi*, *ginocchia*, *scarpe*, *pantaloni*, *camminare* o *fare passi* (`legs`, `feet`, `knees`, `shoes`, `walk`, `step`, `stand on feet`). Sierra si muove esclusivamente strisciando, scivolando e avvolgendosi sulle sue spire (`slithers`, `glides`, `coils`).
+- **Scarlett Rose (Succubus — Palette Rosa Confetto & Corna Scarlatte):**
+  - Possiede **capelli rosa confetto** (`candy-pink`), **occhi rosa confetto** abbinati e **due corna scarlatte** che spuntano visibilmente tra i capelli sopra le tempie, oltre alle ali scure da succubus e alla coda prensile con punta a picca.
 
 ---
 

@@ -70,6 +70,7 @@ VOICE & BEHAVIOR: ...
 - **Campo `personality` (`summary` nella UI di Wyvern):** Va compilato con un blocco compatto di soli tratti tra parentesi quadre (stile PList puro), come riepilogo rapido separato dalla `description` estesa.
 - **Import Grezzi:** Una scheda importata grezza col blocco `<nome_personaggio>` incollato tale e quale dalla fonte **NON è una scheda lavorata**. Va riscritta integralmente in JED+, non semplicemente ritoccata.
 - **Età e Data di Nascita:** Per garantire piena compatibilità sia nelle chat stand-alone 1-on-1 (dove la timeline del World non è attiva e la macro `{{age}}` non viene valutata) sia all'interno del World, **non usare la macro `{{age}}`**. Indicare sempre nel campo `AGE` del blocco JED+ l'età anagrafica corrente e la data di nascita esplicita con la sintassi: `AGE: <età> (Born <Data>);` (o `BIRTHDAY: <Data>;`). Questo evita che il bot rimanga privo di età calcolata o mostri la macro non espansa quando utilizzato fuori dal World.
+- **Blocco PList Iniziale su Singola Riga, User Persona & Parità `entries == lexicon`:** Il blocco iniziale `[...]` deve occupare **una singola riga** senza sezioni annidate dentro le parentesi quadre, e la sequenza a 4 blocchi (`[NAME: ...]` $\to$ `BACKSTORY:` $\to$ `FAMILY & PACK:` / `CLAN AND COMPANY:` $\to$ `VOICE & BEHAVIOR:`) si applica obbligatoriamente a **tutte le Character Card** (`FINAL/*_card.json` e `ARCHIVIO/cards_legacy/*_card.json`), a **tutte le User Persona** (`FINAL/personas/*.json`) e a **tutte le 310 voci NPC dei Lorebook**. Nei file JSON locali dei Lorebook (`FINAL/` e `lorebooks/optimized/`), l'array `entries` e l'array `lexicon` devono essere mantenuti **100% identici byte-for-byte**.
 
 ---
 
@@ -119,6 +120,8 @@ Ogni character card redatta o aggiornata nel repository deve includere nel campo
 
 - **Family Look Douglas:** I maschi della famiglia Douglas condividono un aspetto visivo comune nelle illustrazioni: capelli scuri lunghi e arruffati (per accomodare le orecchie lupine del Partial Shift), palette cromatica calda al tramonto con sfondi di Blackwood City (palme e architettura costiera), e struttura mascellare e facciale simile. Conservare comunque dettagli individuali (stile dei tatuaggi, cicatrici, tonalità degli occhi, accessori).
 - **Anatomia Demi-Umani (Orecchie Singole):** **I demi-umani possiedono un solo paio di orecchie: quelle animali.** Non hanno un secondo paio di orecchie umane. Questa regola è confermata dall'autore originale e va verificata con estrema attenzione su ogni immagine o descrizione prodotta.
+- **Sierra Cruz (Lamia — Locomozione & Livrea Arcobaleno Iridescente):** Possiede **capelli color arcobaleno** e, dai fianchi in giù, la parte inferiore del corpo è interamente quella di un serpente di 4 metri **color arcobaleno con scaglie iridescenti** (zero gambe, zero piedi). È tassativamente vietato usare per Sierra termini o verbi come *gambe*, *piedi*, *ginocchia*, *scarpe*, *pantaloni*, *camminare* o *fare passi* (`legs`, `feet`, `knees`, `shoes`, `walk`, `step`, `stand on feet`): Sierra si muove esclusivamente strisciando, scivolando e avvolgendosi sulle sue spire (`slithers`, `glides`, `coils`).
+- **Scarlett Rose (Succubus — Palette Rosa Confetto & Corna Scarlatte):** Possiede **capelli rosa confetto** (`candy-pink`), **occhi rosa confetto** abbinati e **due corna scarlatte** che spuntano visibilmente tra i capelli sopra le tempie, oltre alle ali scure da succubus e alla coda prensile con punta a picca.
 
 ---
 
@@ -147,6 +150,8 @@ const oreDaData = iso => (Date.parse(iso) - EP) / 3600000;
 1. Per ogni personaggio vivente, `birthdate` e `start_timeline_position` devono **coincidere**.
 2. Nessuna delle due può risultare superiore a `world_age` corrente (10486470).
 3. La `start_timeline_position` va impostata **sempre** per ogni personaggio (evita intrusioni anacronistiche negli scenari storici o futuri).
+4. **Passività Cronologica Assoluta per Game Master e Scenari (Zero Date Reset):**
+   Nelle chat stand-alone, negli Scenari e nei prompt dei Game Master, il modello non deve mai tentare di calcolare, forzare o dichiarare date statiche arbitrarie (inclusa la data ricorrente 15 marzo 2024 o date di avvio scenario). La gestione del calendario e della timeline è demandata all'engine nativo di Wyvern (AI Time Tracking / World Clock) e alla cronologia di chat. Il Game Master deve limitarsi a leggere e riflettere passivamente la data e l'ora ereditate dall'ultimo turno.
 
 ---
 
@@ -163,7 +168,21 @@ const oreDaData = iso => (Date.parse(iso) - EP) / 3600000;
   - **Zero Keyword Ombrello (`BROAD_KEYS`) sugli NPC:** Divieto assoluto di tag generici (`solarton`, `succ`, `blackwood`, `vampire`, `werewolf`, `college`, `student`, `alpha`, `omega`, ecc.) sulle schede NPC per evitare l'attivazione massiva simultanea di oltre 100 voci.
   - **Zero `selective: true` senza `secondary_keys`:** Mantenere `selective: false` salvo quando `secondary_keys` è popolato.
   - **Divieto della macro `{{age}}`:** Sostituita con età anagrafica e data di nascita esplicita.
-  - **Standard Obbligatorio Metadati NPC (Avatar Parsing & UI Splitting):** Ogni entry `npc` deve possedere `avatar` valido (URL Cloudflare o Janitor `https://ella.janitorai.com/bot-avatars/{hash}.webp`), `custom_avatar_regex: true`, `avatar_activation_regex` multiline `(?:^|\n)\s*(?:Nome Completo|Nome|Nickname)\s*:`, `lines_parsed: 1` e oggetto `npc_info` (`first_name`, `last_name`, `nicknames`, `titles`). I Character Scenario devono includere la direttiva di formattare sempre il parlato NPC su nuova riga con `Nome Completo:`.
+    - **Standard Obbligatorio Metadati NPC & Terna di Flag (Wyvern VN Mega Patch):**
+      Ogni entry `npc` deve possedere l'oggetto `npc_info` completo con `first_name` (obbligatorio), `middle_names` (array), `last_name` (opzionale), `nicknames` (array), `titles` (array) e `npc_prefix` (stringa o vuoto), sfruttando la compilazione automatica pesata delle regex del frontend Wyvern (modulo 93312 / WH).
+    - **Terna di Flag Obbligatoria su ON (`true`):**
+      - `scan_persona: true` (Scan Persona: Yes): garantisce la scansione dei trigger anche all'interno della User Persona attiva.
+      - `whole_words_only: true` (Whole Words Only: Yes): previene attivazioni spurie su sottostringhe parziali.
+      - `enableEntryHighlighting: true` / `highlight_keys: true`: attiva l'evidenziazione visiva delle entry attivate nei messaggi della chat.
+    - **Workflow Obbligatorio Gallery & Riconciliazione Asset (`GET /api/gallery/lorebook/{lorebook_id}`):**
+      - L'endpoint ufficiale della Gallery Lorebook su Wyvern è `GET /api/gallery/lorebook/{lorebook_id}` (upload via `POST /api/gallery/lorebook/{lorebook_id}`).
+      - Il campo `entry.avatar` deve contenere esattamente la stringa `imageURL` registrata nella Gallery del Lorebook. Se l'URL non coincide byte-for-byte con un asset censito nella Gallery del Lorebook, il frontend di Wyvern visualizza l'avviso di anomalia `Custom Image ⚠️ Unknown source`.
+      - **Parità di Validazione Zod Frontend (`entries == lexicon`):** Il form editor di Wyvern (`react-hook-form` con schema Zod) richiede tassativamente che la proprietà `entries` sia popolata come array (`entries: z.array(...)`). Poiché il server GET invia le voci sotto la chiave `lexicon`, qualsiasi payload o stato deve mantenere `entries` e `lexicon` identici byte-for-byte per evitare blocchi silenziosi al salvataggio con errore `entries: Required`.
+  - **Soppressione Nativa Wyvern ("Don't Activate When Active"): `ignored_characters` & `ignored_personas`:**
+    Per impedire duplicazioni, allucinazioni e collisioni bot-giocatore (es. quando l'utente gioca nei panni di una Persona corrispondente a un NPC del Lorebook, come Alyssa o Jasper, o quando una Character Card esterna e gia presente nel party o nella chat), Wyvern gestisce a livello di schema due array dedicati:
+    - `ignored_characters: string[]`: Elenco di ID di Character Card. Se una delle card specificate e presente nella sessione attiva, Wyvern ignora e salta integralmente l'entry del Lorebook.
+    - `ignored_personas: string[]`: Elenco di ID di Persona (`{{user}}`). Se il giocatore seleziona una delle Persona specificate, Wyvern ignora e salta integralmente l'entry del Lorebook.
+    - Questo meccanismo nativo elimina la necessita di ricorrere a workaround artificiali (come `selective: true` con keyword fittizie 'Dossier'/'Scheda'), consentendo a ogni entry NPC nei Lorebook di conservare `selective: false`, chiavi di attivazione naturali (nome, cognome, alias) e descrizioni JED+ narrative integrali (>2.000 fino a >16.000 caratteri) in totale sicurezza.
 - **Personaggi Stand-Alone (`/mine`):** Costituiscono la Single Source of Truth condivisa tra chat 1-on-1 e Character Scenarios.
 
 ### Matrice di Triage
@@ -188,7 +207,7 @@ const oreDaData = iso => (Date.parse(iso) - EP) / 3600000;
 ### Regola di Lys per Entry Monopersonaggio
 Ogni voce di Lexicon focalizzata su un singolo personaggio (Intimacy Profiles, Digital Interactions, ricordi personali, note comportamentali):
 1. **Entry Type = Memory** (`type: "memory"`);
-2. Collegata all'id attuale del personaggio tramite **Attached Character** (`attached_world_character_id`).
+2. **Vincolo `attached_world_character_id` nei World con Linked Characters:** Se il World adotta i **Linked Characters** collegati da `/characters/mine` (Single Source of Truth), il campo `attached_world_character_id` deve essere impostato **TASSATIVAMENTE a `null` / `None`**. È vietato inserire ID di Character Card esterne in questo campo, poiché il backend Mongoose di Wyvern accetta esclusivamente ID di `WorldCharacter` embedded nel medesimo World (pena errore `HTTP 500: attached_world_character_id must reference a WorldCharacter in the same world`). La soppressione di collisione bot/giocatore si attua esclusivamente tramite gli array nativi `ignored_characters` e `ignored_personas`. Nei World con personaggi interni embedded, rimane valido il collegamento all'id del `WorldCharacter`.
 3. Le memorie corali (eventi collettivi, log di gruppo) rimangono senza Attached Character.
 
 ### Attivazione delle Entry Lexicon
@@ -301,10 +320,11 @@ Le seguenti figure, derivate dai dossier e preferiti storici JanitorAI, sono sta
   3. Portale ufficiale SUCC (`io-succ.uwu.ai`).
   4. Wiki Fandom e fonti terze.
 - **Gerarchia Fonti Documentali Piattaforma:**
-  1. *WyvernWiki* (`https://wiki.wyvern.chat/`, guide sotto `/en/Features/Worlds/...`).
-  2. Canale `#dev-notes` su Discord per novità in anteprima.
-  3. Reddit (`r/WyvernChat`) e canali di supporto.
-  *Se la wiki diverge dalla piattaforma:* Fa fede il dato empirico verificato tramite GET autenticata fresca.
+  1. *Wyvern Blog & Patch Notes* (`https://app.wyvern.chat/blog`): Fonte primaria e ufficiale per release notes, mega-patch, aggiornamenti architetturali (es. Visual Novel Mode, AI Time Tracking, editor modali NPC, Lorebook Sprites) e annunci degli sviluppatori.
+  2. *WyvernWiki* (`https://wiki.wyvern.chat/`, guide sotto `/en/Features/Worlds/...`).
+  3. Canale `#dev-notes` su Discord per novità in anteprima.
+  4. Reddit (`r/WyvernChat`) e canali di supporto.
+  *Se la wiki o il blog divergono dalla piattaforma:* Fa fede il dato empirico verificato tramite GET autenticata fresca.
 
 ### Riferimenti Ufficiali WyvernWiki per Funzionalità Avanzate e Soluzioni Complesse
 Consultare tassativamente queste risorse ufficiali per l'implementazione di logiche complesse, scripting, templating e formattazione:
@@ -363,9 +383,10 @@ Quando vengono avviate procedure di diagnosi, indagine o test che comportano la 
 ### Founding Bloodline e Divine Blood
 - **Founding Bloodline:** Malachia, Noah, Jasper, Alyssa.
 - **Divine Blood (I Nove Firstborn):** Wulfnic, Ut, Zefir.
-- Maturità completa a 21 anni, poi stop biologico dell'invecchiamento. I Firstborn sono bloccati all'età della consacrazione da parte di Fenris:
-  - *Wulfnic e Ut:* Aspetto di quarantenni del loro secolo (equivalente moderno: circa 60 anni).
-  - *Zefir:* Ha **1019 anni** (nato il 5 febbraio 1005). Consacrato prima della fine dello sviluppo, dimostra 18-19 anni; per il diritto norreno dell'XI secolo era un adulto maggiorenne e guerriero.
+- Maturità completa a 21 anni, poi stop biologico dell'invecchiamento. I Firstborn sono bloccati all'età biologica della consacrazione da parte di Fenris nell'**864 d.C.** (dopo 15 anni di Wulfnic come Jarl di Svartúlfr, eletto a 25 anni nell'**849 d.C.**, con i suoi 8 compagni guerrieri nella fascia vichinga **16–45 anni**):
+  - *Wulfnic Báleygr Bloodmoon:* Nato il **21 dicembre 824 d.C.** (**1200 anni** nel 2024), trasformato a **40 anni** nell'864 d.C. (nel IX secolo a 40 anni si era già anziani con capelli bianchi e rughe; agli occhi moderni dimostra circa **60 anni**).
+  - *Ut Berg:* Nato il **5 maggio 819 d.C.** (**1205 anni** nel 2024), trasformato a **45 anni** nell'864 d.C. (agli occhi moderni dimostra circa **60 anni**).
+  - *Zefir Hvitskog:* Nato il **5 febbraio 848 d.C.** (**1176 anni** nel 2024), il più giovane dei Nove trasformato a **16 anni** nell'864 d.C. prima della fine dello sviluppo. Un guerriero vichingo di 16 anni aveva un aspetto più consumato e maturo di un adolescente odierno, per cui agli occhi moderni dimostra **20–22 anni**. Conserva la spavalderia giovanile e un carattere vivace e capriccioso come il vento dei mari del Nord (*"The North Sea Wind"*), ed è iscritto alla SUCC da Wulfnic per proteggere Alyssa in stile **punk** (cresta alla moicana bianca e giubbotto borchiato) con la copertura di un **lontano parente dall'Islanda**.
 - **Filone SciFi:** Varianti future legacy (Malachia "Vanguard Commander", Jasper/Noah/Malachia con impianti cibernetici pesanti e specie *Cyber-Werewolf* nell'anno 2499) sono canoniche per lo scenario futuro.
 
 ### Pureblood Houses
@@ -466,6 +487,7 @@ Seguire tassativamente la sequenza di 13 passi:
 - **Priority come Stringa (Errore Zod 500):** `Expected number, received string, path: ["priority"]` manda in crash il server Wyvern (HTTP 500) bloccando la ricezione o l'invio di messaggi nella chat. Forzare sempre la tipizzazione numerica esplicita: `priority: Number(val) || 0`.
 - **Orfani da Testing (Zero-Footprint):** I chat log e i party temporanei creati per test diagnostici restano visibili nella UI utente e inquinano la libreria. Eseguire sempre il teardown sistematico (`DELETE /api/new/chat-logs/:id`) al termine di ogni sessione di test.
 - **HTTP 413 Payload Too Large su Lorebook PUT:** Non includere nel payload JSON sia l'array legacy `entries` sia l'array canonico `lexicon` (raddoppia la dimensione della richiesta). Inviare solo `lexicon` unitamente ai metadati top-level.
+- **Errore Caricamento Immagini su Singola Entry Lorebook:** L'upload diretto di file immagine/avatar nei singoli slot delle entry genera errori o fallimenti di persistenza su Wyvern. Seguire il **Workflow Obbligatorio Gallery**: non caricare file direttamente sulle singole entry, ma caricare prima le immagini nella **GALLERY del Lorebook**, e successivamente selezionare l'immagine desiderata dalla Gallery per ciascuna entry (`entry.avatar`).
 - **HTTP 409 Conflict su Scenario PUT:** Lo scenario mantiene un contatore `revision` incrementale. Prima di inviare un `PUT`, eseguire sempre una `GET` autenticata fresca per recuperare l'ultimo intero di `revision`, fonderlo nel payload e trasmettere.
 - **Attivazione Involontaria Dossier Lorebook:** Impostare tassativamente `selective: true` sui World Dossier del cast principale con `secondary_keys` dedicate archivistiche (`['Dossier', 'Scheda', 'Archivio', 'Database', 'Profilo']`), e bonificare le chiavi trigger isolate mono-parola (es. `'Alyssa'` -> `'Alyssa Telegram'`).
 
@@ -554,3 +576,32 @@ Ogni interazione dell'assistente su questo repository incorpora sistematicamente
 4. **Decomposizione e Verifica Obiettiva (`/teamwork-preview`):** task ampi suddivisi in criteri di accettazione verificabili via script e audit di conformità.
 5. **Audit Post-Esecuzione (`/boost`):** ogni scrittura va verificata con GET fresche e controlli di integrità indipendenti.
 
+
+
+### Inventario Ufficiale delle Skill di Progetto (`.agents/skills/`)
+1. **`auto-loop`**: Pipeline evolutiva completa a 4 stadi (Allineamento, Web Research, Plan/Boost, Esecuzione, Debug e Self-Learning).
+2. **`chrome-tabgroup-source-extractor`**: Estrazione diretta e non invasiva di sessioni, tab group e URL da LevelDB Sync di Chrome senza riavvio del browser.
+3. **`wyvern-ttrpg-master-deployer`**: Progettazione, compilazione Handlebars/XML e deploy via Wyvern Web API di AI Game Master, Custom Prompt Assembly e Scenari con motore D20 + S.P.E.C.I.A.L.
+4. **`wyvern-card-lorebook-sync`**: Sincronizzazione Card/Lorebook, conversione di card in NPC con descrizioni JED+ piene, adozione della soppressione nativa anti-collisione (`ignored_characters` & `ignored_personas`), bonifica slot inaccessibili degli Scenari (`unavailable_count: 0`) e deployment via Wyvern Web API.
+5. **`wyvern-world-deployer`**: Progettazione architetturale, topologia gerarchica ad albero (Environment e Location ordinate per profondità), specchiatura completa del Lexicon, configurazione anti-bloat del context budget e deployment sicuro di World su Wyvern via Web API con validazione formale e Chrome DevTools.
+
+
+---
+
+## 20. Standard Operativo AI Connections e Micro-Proxy di Failover
+
+### Parametro Browser-Only per Endpoint Locali
+Quando si utilizzano proxy locali o gateway di rotazione su `127.0.0.1` o host LAN, impostare tassativamente `browser_only: true` (Local Network / Browser-Only) nel Provider di Wyvern. Questa opzione ordina al frontend nel browser di effettuare la chiamata HTTP direttamente dal client all'indirizzo locale, senza passare dai server cloud di Wyvern.
+
+### Supporto CORS Obbligatorio sui Proxy Locali
+I server gateway locali (FastAPI, Express o script dedicati) devono implementare l'abilitazione esplicita di `CORSMiddleware` con `allow_origins=["*"]`, `allow_credentials=True`, `allow_methods=["*"]` e `allow_headers=["*"]`. Cio previene il blocco delle chiamate preflight `OPTIONS` emesse da `https://app.wyvern.chat`.
+
+### Disciplina Rigorosa dei Max Tokens (Generazione vs Contesto)
+Nelle configurazioni di Wyvern (`AI Connections -> Connections`) e categorico distinguere due parametri con ruoli radicalmente diversi:
+1. **Context Window (`max_tokens` a livello top-level):** Definisce l'ampiezza massima della memoria e della cronologia valutata (es. `1000000` per GLM-5 o Gemini).
+2. **Generation Max Tokens (`parameters.max_tokens`):** Definisce il limite massimo di token generabili per singolo turno di risposta dal modello.
+   - *Valore Obbligatorio:* Mantenere rigorosamente tra `2048` e `8192` (valore ottimale di default: `4096`).
+   - *Errore Critico Evitato:* Inserire il valore della context window (es. `200000` o `1000000`) nel parametro `parameters.max_tokens` provoca l'immediato rigetto della chiamata da parte delle API upstream con errori di schema o budget di generazione ecceduto.
+
+### Circuit-Breaker e Quarantena Temporizzata (60s)
+I gateway multiprovider o i proxy di failover devono implementare una quarantena temporizzata automatica (cooldown) di almeno 60 secondi su errori HTTP `429`, `403`, `5xx` o Timeout (`>12s`), saltando a tempo zero i nodi guasti e garantendo continuita ininterrotta alla chat.

@@ -1,0 +1,13 @@
+{
+  "primary": {},
+  "secondary": {},
+  "errors": [
+    "Primary live entries count mismatch: expected 99, got 0",
+    "Primary live entries != lexicon parity failed",
+    "Primary root missing enableEntryHighlighting: true",
+    "Secondary live entries count mismatch: expected 211, got 0",
+    "Secondary live entries != lexicon parity failed",
+    "Secondary root missing enableEntryHighlighting: true"
+  ],
+  "verdict": "REQUEST_CHANGES"
+}

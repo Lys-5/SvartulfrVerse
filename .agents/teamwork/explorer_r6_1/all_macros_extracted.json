@@ -1,0 +1,636 @@
+{
+  "alyssa": [
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 0,
+      "greeting_name": "SUCC Welcome Day",
+      "location": "greeting.content",
+      "speaker_slot": "twin",
+      "macro": "{{scenarioChar \"twin\"}}",
+      "key": "twin",
+      "span": [
+        393,
+        416
+      ],
+      "context": "icians balanced the main speakers. {{scenarioChar \"twin\"}} stood at {{user}}'s side with his "
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 0,
+      "greeting_name": "SUCC Welcome Day",
+      "location": "messages[0]",
+      "msg_speaker_slot": "twin",
+      "macro": "{{scenarioChar \"twin\"}}",
+      "key": "twin",
+      "span": [
+        393,
+        416
+      ],
+      "context": "icians balanced the main speakers. {{scenarioChar \"twin\"}} stood at {{user}}'s side with his "
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 0,
+      "greeting_name": "SUCC Welcome Day",
+      "location": "messages[1]",
+      "msg_speaker_slot": "childhood_friend",
+      "macro": "{{scenarioChar \"childhood_friend\"}}",
+      "key": "childhood_friend",
+      "span": [
+        0,
+        35
+      ],
+      "context": "{{scenarioChar \"childhood_friend\"}} cut through the flow of orientatio"
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 0,
+      "greeting_name": "SUCC Welcome Day",
+      "location": "messages[2]",
+      "msg_speaker_slot": "best_friend",
+      "macro": "{{scenarioChar \"best_friend\"}}",
+      "key": "best_friend",
+      "span": [
+        89,
+        119
+      ],
+      "context": "nt drifted through the quad air as {{scenarioChar \"best_friend\"}} hurried up the paved walkway from "
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 1,
+      "greeting_name": "01. Theta Iota Theta Morning on Greek Row",
+      "location": "greeting.content",
+      "speaker_slot": "roommate",
+      "macro": "{{scenarioChar \"roommate\"}}",
+      "key": "roommate",
+      "span": [
+        0,
+        27
+      ],
+      "context": "{{scenarioChar \"roommate\"}} stood by the full-length mirror, a"
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 1,
+      "greeting_name": "01. Theta Iota Theta Morning on Greek Row",
+      "location": "messages[0]",
+      "msg_speaker_slot": "roommate",
+      "macro": "{{scenarioChar \"roommate\"}}",
+      "key": "roommate",
+      "span": [
+        0,
+        27
+      ],
+      "context": "{{scenarioChar \"roommate\"}} stood by the full-length mirror, a"
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 1,
+      "greeting_name": "01. Theta Iota Theta Morning on Greek Row",
+      "location": "messages[2]",
+      "msg_speaker_slot": "twin",
+      "macro": "{{scenarioChar \"twin\"}}",
+      "key": "twin",
+      "span": [
+        71,
+        94
+      ],
+      "context": "nsole, a quick encrypted text from {{scenarioChar \"twin\"}}. \"Saw Vince and his ASS pledges lu"
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 2,
+      "greeting_name": "02. Pre-Med Biology Labs",
+      "location": "greeting.content",
+      "speaker_slot": "best_friend",
+      "macro": "{{scenarioChar \"best_friend\"}}",
+      "key": "best_friend",
+      "span": [
+        0,
+        30
+      ],
+      "context": "{{scenarioChar \"best_friend\"}} rested her sketchpad beside a tray"
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 2,
+      "greeting_name": "02. Pre-Med Biology Labs",
+      "location": "messages[0]",
+      "msg_speaker_slot": "best_friend",
+      "macro": "{{scenarioChar \"best_friend\"}}",
+      "key": "best_friend",
+      "span": [
+        0,
+        30
+      ],
+      "context": "{{scenarioChar \"best_friend\"}} rested her sketchpad beside a tray"
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 2,
+      "greeting_name": "02. Pre-Med Biology Labs",
+      "location": "messages[1]",
+      "msg_speaker_slot": "friend",
+      "macro": "{{scenarioChar \"friend\"}}",
+      "key": "friend",
+      "span": [
+        0,
+        25
+      ],
+      "context": "{{scenarioChar \"friend\"}} adjusted his wire-rimmed glasses, "
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 2,
+      "greeting_name": "02. Pre-Med Biology Labs",
+      "location": "messages[2]",
+      "msg_speaker_slot": "twin",
+      "macro": "{{scenarioChar \"twin\"}}",
+      "key": "twin",
+      "span": [
+        103,
+        126
+      ],
+      "context": "the audio patch for Friday's set,\" {{scenarioChar \"twin\"}} texted. \"Grab two muffins from the"
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 3,
+      "greeting_name": "03. Basilica Library Sheltered Smoking Corner",
+      "location": "greeting.content",
+      "speaker_slot": "crush",
+      "macro": "{{scenarioChar \"crush\"}}",
+      "key": "crush",
+      "span": [
+        0,
+        24
+      ],
+      "context": "{{scenarioChar \"crush\"}} had one headphone draped over his "
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 3,
+      "greeting_name": "03. Basilica Library Sheltered Smoking Corner",
+      "location": "messages[0]",
+      "msg_speaker_slot": "crush",
+      "macro": "{{scenarioChar \"crush\"}}",
+      "key": "crush",
+      "span": [
+        0,
+        24
+      ],
+      "context": "{{scenarioChar \"crush\"}} had one headphone draped over his "
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 3,
+      "greeting_name": "03. Basilica Library Sheltered Smoking Corner",
+      "location": "messages[1]",
+      "msg_speaker_slot": "best_friend",
+      "macro": "{{scenarioChar \"best_friend\"}}",
+      "key": "best_friend",
+      "span": [
+        0,
+        30
+      ],
+      "context": "{{scenarioChar \"best_friend\"}} walked down the stone stairs carry"
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 3,
+      "greeting_name": "03. Basilica Library Sheltered Smoking Corner",
+      "location": "messages[2]",
+      "msg_speaker_slot": "twin",
+      "macro": "{{scenarioChar \"twin\"}}",
+      "key": "twin",
+      "span": [
+        47,
+        70
+      ],
+      "context": "ation hummed in {{user}}'s pocket. {{scenarioChar \"twin\"}} sent an automated ping: \"Security "
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 4,
+      "greeting_name": "04. Ice Rink Bears Practice Clash",
+      "location": "greeting.content",
+      "speaker_slot": "sports_rival",
+      "macro": "{{scenarioChar \"sports_rival\"}}",
+      "key": "sports_rival",
+      "span": [
+        0,
+        31
+      ],
+      "context": "{{scenarioChar \"sports_rival\"}} gathered a breakout pass at the ce"
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 4,
+      "greeting_name": "04. Ice Rink Bears Practice Clash",
+      "location": "messages[0]",
+      "msg_speaker_slot": "sports_rival",
+      "macro": "{{scenarioChar \"sports_rival\"}}",
+      "key": "sports_rival",
+      "span": [
+        0,
+        31
+      ],
+      "context": "{{scenarioChar \"sports_rival\"}} gathered a breakout pass at the ce"
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 4,
+      "greeting_name": "04. Ice Rink Bears Practice Clash",
+      "location": "messages[2]",
+      "msg_speaker_slot": "quarterback",
+      "macro": "{{scenarioChar \"quarterback\"}}",
+      "key": "quarterback",
+      "span": [
+        0,
+        30
+      ],
+      "context": "{{scenarioChar \"quarterback\"}} stood near the tunnel railing in h"
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 5,
+      "greeting_name": "05. Bulls Locker Room and Stadium Tunnel",
+      "location": "greeting.content",
+      "speaker_slot": "quarterback",
+      "macro": "{{scenarioChar \"quarterback\"}}",
+      "key": "quarterback",
+      "span": [
+        0,
+        30
+      ],
+      "context": "{{scenarioChar \"quarterback\"}} towered in his gold-and-black prac"
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 5,
+      "greeting_name": "05. Bulls Locker Room and Stadium Tunnel",
+      "location": "messages[0]",
+      "msg_speaker_slot": "quarterback",
+      "macro": "{{scenarioChar \"quarterback\"}}",
+      "key": "quarterback",
+      "span": [
+        0,
+        30
+      ],
+      "context": "{{scenarioChar \"quarterback\"}} towered in his gold-and-black prac"
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 5,
+      "greeting_name": "05. Bulls Locker Room and Stadium Tunnel",
+      "location": "messages[1]",
+      "msg_speaker_slot": "friend",
+      "macro": "{{scenarioChar \"friend\"}}",
+      "key": "friend",
+      "span": [
+        0,
+        25
+      ],
+      "context": "{{scenarioChar \"friend\"}} leaned against the concrete wall, "
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 5,
+      "greeting_name": "05. Bulls Locker Room and Stadium Tunnel",
+      "location": "messages[2]",
+      "msg_speaker_slot": "roommate",
+      "macro": "{{scenarioChar \"roommate\"}}",
+      "key": "roommate",
+      "span": [
+        0,
+        27
+      ],
+      "context": "{{scenarioChar \"roommate\"}} walked past carrying cheer practic"
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 6,
+      "greeting_name": "06. Sidewinders Concert at The Dockside Venue",
+      "location": "greeting.content",
+      "speaker_slot": "crush",
+      "macro": "{{scenarioChar \"crush\"}}",
+      "key": "crush",
+      "span": [
+        23,
+        47
+      ],
+      "context": "On the elevated stage, {{scenarioChar \"crush\"}} stood behind his dual-keyboard syn"
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 6,
+      "greeting_name": "06. Sidewinders Concert at The Dockside Venue",
+      "location": "messages[0]",
+      "msg_speaker_slot": "crush",
+      "macro": "{{scenarioChar \"crush\"}}",
+      "key": "crush",
+      "span": [
+        23,
+        47
+      ],
+      "context": "On the elevated stage, {{scenarioChar \"crush\"}} stood behind his dual-keyboard syn"
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 6,
+      "greeting_name": "06. Sidewinders Concert at The Dockside Venue",
+      "location": "messages[1]",
+      "msg_speaker_slot": "best_friend",
+      "macro": "{{scenarioChar \"best_friend\"}}",
+      "key": "best_friend",
+      "span": [
+        0,
+        30
+      ],
+      "context": "{{scenarioChar \"best_friend\"}} danced beside {{user}}, laughing o"
+    },
+    {
+      "scenario": "Alyssa Route",
+      "greeting_idx": 6,
+      "greeting_name": "06. Sidewinders Concert at The Dockside Venue",
+      "location": "messages[2]",
+      "msg_speaker_slot": "twin",
+      "macro": "{{scenarioChar \"twin\"}}",
+      "key": "twin",
+      "span": [
+        46,
+        69
+      ],
+      "context": "und booth balcony above the crowd, {{scenarioChar \"twin\"}} gave a sharp thumbs-up from behind"
+    }
+  ],
+  "jasper": [
+    {
+      "scenario": "Jasper Route",
+      "greeting_idx": 0,
+      "greeting_name": "SUCC Welcome Day",
+      "location": "greeting.content",
+      "speaker_slot": "twin",
+      "macro": "{{scenarioChar \"twin\"}}",
+      "key": "twin",
+      "span": [
+        428,
+        451
+      ],
+      "context": "shmen into the folding chair rows. {{scenarioChar \"twin\"}} stood beside {{user}} beneath the "
+    },
+    {
+      "scenario": "Jasper Route",
+      "greeting_idx": 0,
+      "greeting_name": "SUCC Welcome Day",
+      "location": "messages[0]",
+      "msg_speaker_slot": "twin",
+      "macro": "{{scenarioChar \"twin\"}}",
+      "key": "twin",
+      "span": [
+        428,
+        451
+      ],
+      "context": "shmen into the folding chair rows. {{scenarioChar \"twin\"}} stood beside {{user}} beneath the "
+    },
+    {
+      "scenario": "Jasper Route",
+      "greeting_idx": 0,
+      "greeting_name": "SUCC Welcome Day",
+      "location": "messages[1]",
+      "msg_speaker_slot": "childhood_friend",
+      "macro": "{{scenarioChar \"childhood_friend\"}}",
+      "key": "childhood_friend",
+      "span": [
+        0,
+        35
+      ],
+      "context": "{{scenarioChar \"childhood_friend\"}} strode across the grass from the a"
+    },
+    {
+      "scenario": "Jasper Route",
+      "greeting_idx": 0,
+      "greeting_name": "SUCC Welcome Day",
+      "location": "messages[2]",
+      "msg_speaker_slot": "crush",
+      "macro": "{{scenarioChar \"crush\"}}",
+      "key": "crush",
+      "span": [
+        58,
+        82
+      ],
+      "context": " vanilla and elderflower announced {{scenarioChar \"crush\"}}, who slipped through the edge of t"
+    },
+    {
+      "scenario": "Jasper Route",
+      "greeting_idx": 1,
+      "greeting_name": "01. Wyrm Hall Suite 304",
+      "location": "greeting.content",
+      "speaker_slot": "male_roommate",
+      "macro": "{{scenarioChar \"male_roommate\"}}",
+      "key": "male_roommate",
+      "span": [
+        0,
+        32
+      ],
+      "context": "{{scenarioChar \"male_roommate\"}} sat perched on the low vinyl sofa,"
+    },
+    {
+      "scenario": "Jasper Route",
+      "greeting_idx": 1,
+      "greeting_name": "01. Wyrm Hall Suite 304",
+      "location": "messages[0]",
+      "msg_speaker_slot": "male_roommate",
+      "macro": "{{scenarioChar \"male_roommate\"}}",
+      "key": "male_roommate",
+      "span": [
+        0,
+        32
+      ],
+      "context": "{{scenarioChar \"male_roommate\"}} sat perched on the low vinyl sofa,"
+    },
+    {
+      "scenario": "Jasper Route",
+      "greeting_idx": 1,
+      "greeting_name": "01. Wyrm Hall Suite 304",
+      "location": "messages[2]",
+      "msg_speaker_slot": "twin",
+      "macro": "{{scenarioChar \"twin\"}}",
+      "key": "twin",
+      "span": [
+        45,
+        68
+      ],
+      "context": "nock sounded against the door, and {{scenarioChar \"twin\"}} peeked into the room holding two c"
+    },
+    {
+      "scenario": "Jasper Route",
+      "greeting_idx": 2,
+      "greeting_name": "02. Wyrm Hall Roof Hacking Session",
+      "location": "messages[1]",
+      "msg_speaker_slot": "male_roommate",
+      "macro": "{{scenarioChar \"male_roommate\"}}",
+      "key": "male_roommate",
+      "span": [
+        0,
+        32
+      ],
+      "context": "{{scenarioChar \"male_roommate\"}} stepped through the roof access do"
+    },
+    {
+      "scenario": "Jasper Route",
+      "greeting_idx": 3,
+      "greeting_name": "03. Campus Quad Tension",
+      "location": "greeting.content",
+      "speaker_slot": "sports_rival",
+      "macro": "{{scenarioChar \"sports_rival\"}}",
+      "key": "sports_rival",
+      "span": [
+        0,
+        31
+      ],
+      "context": "{{scenarioChar \"sports_rival\"}} stopped near the granite fountain "
+    },
+    {
+      "scenario": "Jasper Route",
+      "greeting_idx": 3,
+      "greeting_name": "03. Campus Quad Tension",
+      "location": "messages[0]",
+      "msg_speaker_slot": "sports_rival",
+      "macro": "{{scenarioChar \"sports_rival\"}}",
+      "key": "sports_rival",
+      "span": [
+        0,
+        31
+      ],
+      "context": "{{scenarioChar \"sports_rival\"}} stopped near the granite fountain "
+    },
+    {
+      "scenario": "Jasper Route",
+      "greeting_idx": 3,
+      "greeting_name": "03. Campus Quad Tension",
+      "location": "messages[1]",
+      "msg_speaker_slot": "quarterback",
+      "macro": "{{scenarioChar \"quarterback\"}}",
+      "key": "quarterback",
+      "span": [
+        0,
+        30
+      ],
+      "context": "{{scenarioChar \"quarterback\"}} strode across the lawn with his he"
+    },
+    {
+      "scenario": "Jasper Route",
+      "greeting_idx": 3,
+      "greeting_name": "03. Campus Quad Tension",
+      "location": "messages[2]",
+      "msg_speaker_slot": "friend",
+      "macro": "{{scenarioChar \"friend\"}}",
+      "key": "friend",
+      "span": [
+        0,
+        25
+      ],
+      "context": "{{scenarioChar \"friend\"}} stood a few paces back with a dry "
+    },
+    {
+      "scenario": "Jasper Route",
+      "greeting_idx": 4,
+      "greeting_name": "04. DJ Frequency Underground Dock Warehouse Rave",
+      "location": "greeting.content",
+      "speaker_slot": "male_roommate",
+      "macro": "{{scenarioChar \"male_roommate\"}}",
+      "key": "male_roommate",
+      "span": [
+        0,
+        32
+      ],
+      "context": "{{scenarioChar \"male_roommate\"}} pushed through the backstage black"
+    },
+    {
+      "scenario": "Jasper Route",
+      "greeting_idx": 4,
+      "greeting_name": "04. DJ Frequency Underground Dock Warehouse Rave",
+      "location": "messages[0]",
+      "msg_speaker_slot": "male_roommate",
+      "macro": "{{scenarioChar \"male_roommate\"}}",
+      "key": "male_roommate",
+      "span": [
+        0,
+        32
+      ],
+      "context": "{{scenarioChar \"male_roommate\"}} pushed through the backstage black"
+    },
+    {
+      "scenario": "Jasper Route",
+      "greeting_idx": 4,
+      "greeting_name": "04. DJ Frequency Underground Dock Warehouse Rave",
+      "location": "messages[1]",
+      "msg_speaker_slot": "twin",
+      "macro": "{{scenarioChar \"twin\"}}",
+      "key": "twin",
+      "span": [
+        63,
+        86
+      ],
+      "context": "erlooking the pulsing dance floor, {{scenarioChar \"twin\"}} leaned over the iron railing with "
+    },
+    {
+      "scenario": "Jasper Route",
+      "greeting_idx": 5,
+      "greeting_name": "05. Beta Rho Omega Halloween Party",
+      "location": "greeting.content",
+      "speaker_slot": "crush",
+      "macro": "{{scenarioChar \"crush\"}}",
+      "key": "crush",
+      "span": [
+        0,
+        24
+      ],
+      "context": "{{scenarioChar \"crush\"}} stood by the second-floor wooden b"
+    },
+    {
+      "scenario": "Jasper Route",
+      "greeting_idx": 5,
+      "greeting_name": "05. Beta Rho Omega Halloween Party",
+      "location": "messages[0]",
+      "msg_speaker_slot": "crush",
+      "macro": "{{scenarioChar \"crush\"}}",
+      "key": "crush",
+      "span": [
+        0,
+        24
+      ],
+      "context": "{{scenarioChar \"crush\"}} stood by the second-floor wooden b"
+    },
+    {
+      "scenario": "Jasper Route",
+      "greeting_idx": 5,
+      "greeting_name": "05. Beta Rho Omega Halloween Party",
+      "location": "messages[1]",
+      "msg_speaker_slot": "quarterback",
+      "macro": "{{scenarioChar \"quarterback\"}}",
+      "key": "quarterback",
+      "span": [
+        27,
+        57
+      ],
+      "context": "Down in the crowded foyer, {{scenarioChar \"quarterback\"}} held up a carved pumpkin punch bow"
+    },
+    {
+      "scenario": "Jasper Route",
+      "greeting_idx": 5,
+      "greeting_name": "05. Beta Rho Omega Halloween Party",
+      "location": "messages[2]",
+      "msg_speaker_slot": "male_roommate",
+      "macro": "{{scenarioChar \"male_roommate\"}}",
+      "key": "male_roommate",
+      "span": [
+        0,
+        32
+      ],
+      "context": "{{scenarioChar \"male_roommate\"}} caught Jasper's eye from the landi"
+    }
+  ]
+}

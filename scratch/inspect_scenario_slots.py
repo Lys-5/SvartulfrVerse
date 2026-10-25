@@ -1,29 +1,18 @@
-import json
-import re
+import requests, json
 
-with open('FINAL/Svartulfr_Master_Scenario.json', 'r', encoding='utf-8') as f:
-    scen = json.load(f)
+token = open('scratch/wyvern_token.txt', encoding='utf-8').read().strip()
+headers = {'Authorization': f'Bearer {token}'}
 
-print('Current slots in JSON:')
-for s in scen.get('slots', []):
-    pool = [p.get('character_id') for p in s.get('pool', [])]
-    print(f"  {s.get('key')}: label='{s.get('label')}', pool={pool}")
-
-tags_used = set()
-for g in scen.get('greetings', []):
-    for m in g.get('messages', []):
-        tags_used.update(re.findall(r'\{\{scenarioChar [^}]+\}\}', m.get('content', '')))
-    tags_used.update(re.findall(r'\{\{scenarioChar [^}]+\}\}', g.get('content', '')))
-
-print('\nScenarioChar tags used across all greetings:')
-for t in sorted(tags_used):
-    print(' ', t)
-
-print('\nSpeaker slots used across all greetings:')
-speakers = set()
-for g in scen.get('greetings', []):
-    speakers.add(g.get('speaker_slot'))
-    for m in g.get('messages', []):
-        speakers.add(m.get('speaker_slot'))
-for sp in sorted(speakers):
-    print(' ', sp)
+for sc_id, name in [
+    ('char_scenario_CKgwq246DyCj1NNTBV9rt', 'SUCC Alyssa'),
+    ('char_scenario_Kq4mJEBH83j7Q7DdVfFnF', 'SUCC Jasper')
+]:
+    r = requests.get(f'https://app.wyvern.chat/api/character-scenarios/{sc_id}', headers=headers)
+    if r.status_code == 200:
+        data = r.json()
+        print(f"=== Slots for {name} ===")
+        slots = data.get('slots', [])
+        for s in slots:
+            print(f"Key: {s.get('key')} | Label: {s.get('label')}")
+            for p in s.get('pool', []):
+                print(f"   Pool char: {p.get('id')} (type: {type(p.get('id'))})")

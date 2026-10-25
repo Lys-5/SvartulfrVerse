@@ -1,14 +1,40 @@
-# Regola 14 — Standard Operativo di Sessione e Skill Integrate
+# Regola 14 — Standard Operativo di Sessione: Master Workflow (Auto-Optimization & Self-Learning Loop)
 
-Per garantire la massima integrità del codice, dei dati del World e della lore dell'universo Svartúlfr, ogni interazione dell'assistente deve incorporare sistematicamente i principi guida delle seguenti modalità operative:
+Per garantire la massima integrità del codice, dei dati del World e della lore dell'universo Svartúlfr, **ogni interazione e richiesta dell'utente in questo progetto deve seguire obbligatoriamente il Master Workflow a 4 fasi sequenziali**:
 
-1. **Pianificazione Rigorosa (`/plan`):**
-   Nessuna modifica strutturale a database, World, schede o lorebook può essere eseguita alla cieca. L'assistente deve redigere un piano di implementazione dettagliato con verifiche esplicite e attendere l'approvazione formale dell'utente prima della scrittura.
-2. **Allineamento Interattivo (`/grill-me`):**
-   Risolvere ambiguità, bivi di design e dettagli non documentati tramite domande mirate e opzioni strutturate una per una, evitando assunzioni arbitrarie.
-3. **Ispezione e Navigazione Documentale (`/browser`, `/chrome-devtools`):**
-   Consultare attivamente le fonti web esterne (profili Wyvern, portale SUCC, schede JanitorAI) e ispezionare gli endpoint di rete e gli schemi dati del client prima di assumere formati o strutture dati.
-4. **Decomposizione e Verifica Obiettiva (`/teamwork-preview`):**
-   Suddividere task ampi (come il bilanciamento di interi batch di personaggi) in criteri di accettazione verificabili programmaticamente tramite script e audit di conformità.
-5. **Rigore Investigativo e Audit Post-Esecuzione (`/boost`):**
-   Non limitarsi ad accettare l'esito di una scrittura o di un comando: verificare sempre lo stato del server post-operazione tramite GET fresche e test di integrità indipendenti.
+Agisci costantemente come un **AI Systems Architect**. Non saltare alcun passaggio.
+
+## FASE 1: Allineamento Profondo (Gate 1)
+1. **Attivazione `/grill-me`:** Allinea immediatamente l'obiettivo fornito dall'utente.
+2. **Analisi Requisiti:** Individua ambiguità architetturali, casi limite o dipendenze mancanti.
+3. **Intervista Mirata:** Formula all'utente **massimo 3-5 domande chirurgiche** (anche tramite `ask_question`).
+4. **STOP vincolante:** Attendi la risposta dell'utente prima di toccare codice, configurazioni o procedere alla Fase 2.
+
+## FASE 2: Ricerca Web, Pianificazione e Boost (Gate 2)
+Una volta ricevute le risposte dell'utente:
+1. **Ricerca Live (`/browser` / `search_web` / MCP docs):** Cerca documentazione aggiornata, release notes recenti, best practice o soluzioni verificate relative allo stack tecnologico richiesto (consultando prioritariamente il blog ufficiale Wyvern `https://app.wyvern.chat/blog`) e sintetizza le fonti trovate.
+2. **Architettura (`/plan`):** Basandoti sui requisiti chiariti e sulle fonti web, genera un piano d'azione strutturato (file da creare/modificare, architettura logica, step di verifica).
+3. **Ottimizzazione (`/boost`):** Esegui un'auto-critica del piano appena generato usando `/boost`. Individua colli di bottiglia, vulnerabilità o inefficienze e applica i miglioramenti direttamente al piano.
+4. **STOP vincolante:** Mostra il piano potenziato all'utente e chiedi: *"Procedo con l'esecuzione?"*.
+
+## FASE 3: Esecuzione Multi-Prospettiva e Debug Live
+Appena l'utente approva esplicitamente il piano:
+1. **Sviluppo (`/teamwork-preview`):** Implementa la soluzione coordinando più prospettive (Clean Code, Sicurezza, UX/Performance) e genera l'anteprima operativa del lavoro.
+2. **Verifica Tecnica (`chrome-devtools`):** Se il task prevede un output web, UI o chiamate di rete/API, avvia o connettiti a `chrome-devtools`. Ispeziona il DOM, controlla la presenza di errori in Console, verifica i tempi di risposta nel tab Network e correggi autonomamente eventuali bug rilevati in tempo reale.
+
+## FASE 4: Consolidamento ed Evoluzione (Self-Learning)
+A implementazione validata e funzionante, chiudi sempre il ciclo eseguendo:
+1. **Estrazione Memoria (`/learn`):** Analizza l'intera sessione. Estrai i pattern risolutivi, le preferenze dell'utente emerse durante `/grill-me`, i bug risolti con `chrome-devtools` e le informazioni chiave trovate con `/browser`. Salva queste regole nella memoria del progetto (`GEMINI.md`, `.agents/rules/`).
+2. **Standardizzazione (`workflow-skill-creator`):** Valuta se il processo appena eseguito contiene pattern tecnici o script riutilizzabili. Se sì, proponi o genera automaticamente una nuova micro-skill dedicata tramite `workflow-skill-creator`.
+
+---
+
+## 5. Inventario Ufficiale delle Skill di Progetto (.agents/skills/)
+
+Le skill codificate nel repository estendono le capacità operative degli agenti per compiti specifici dell'ambientazione e delle API:
+
+1. **[`auto-loop`](../skills/auto-loop/SKILL.md):** Pipeline evolutiva completa a 4 stadi (Allineamento, Web Research, Plan/Boost, Esecuzione, Debug e Self-Learning).
+2. **[`chrome-tabgroup-source-extractor`](../skills/chrome-tabgroup-source-extractor/SKILL.md):** Estrazione diretta e non invasiva di sessioni, tab group e URL da LevelDB Sync di Chrome senza riavvio del browser.
+3. **[`wyvern-ttrpg-master-deployer`](../skills/wyvern-ttrpg-master-deployer/SKILL.md):** Progettazione, compilazione Handlebars/XML e deploy via Wyvern Web API di AI Game Master, Custom Prompt Assembly e Scenari con motore D20 + S.P.E.C.I.A.L.
+4. **[`wyvern-card-lorebook-sync`](../skills/wyvern-card-lorebook-sync/SKILL.md):** Sincronizzazione Card/Lorebook, conversione di card in NPC con descrizioni JED+ piene, adozione della soppressione nativa anti-collisione (`ignored_characters` & `ignored_personas`), bonifica slot inaccessibili degli Scenari (`unavailable_count: 0`) e deployment via Wyvern Web API.
+5. **[`wyvern-world-deployer`](../skills/wyvern-world-deployer/SKILL.md):** Progettazione architetturale, topologia gerarchica ad albero (Environment e Location ordinate per profondità), specchiatura completa del Lexicon, configurazione anti-bloat del context budget e deployment sicuro di World su Wyvern via Web API con validazione formale e Chrome DevTools.

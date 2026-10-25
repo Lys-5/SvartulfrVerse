@@ -1,0 +1,241 @@
+2026-10-20T17:31:26.193Z mcp:log Starting Chrome DevTools MCP Server v1.11.0
+2026-10-20T17:31:26.243Z mcp:log Chrome DevTools MCP Server connected
+2026-10-20T17:31:26.246Z mcp:log Watchdog started {
+  "pid": 35600,
+  "parentPid": 39992,
+  "version": "1.11.0",
+  "osType": 1
+}
+2026-10-20T17:31:26.249Z mcp:log Enqueing telemetry event {
+  "server_start": {
+    "flag_usage": {
+      "category_input": true,
+      "category_navigation": true,
+      "category_emulation": true,
+      "category_performance": true,
+      "category_network": true,
+      "category_debugging": true,
+      "category_extensions_present": false,
+      "category_experimental_third_party_present": false,
+      "category_memory": true,
+      "category_experimental_webmcp_present": false,
+      "category_pwa_present": false,
+      "auto_connect_present": true,
+      "auto_connect": true,
+      "browser_url_present": false,
+      "ws_endpoint_present": false,
+      "ws_headers_present": false,
+      "headless": false,
+      "executable_path_present": false,
+      "isolated": false,
+      "user_data_dir_present": false,
+      "channel": "CHANNEL_STABLE",
+      "proxy_server_present": false,
+      "chrome_arg_present": false,
+      "ignore_default_chrome_arg_present": false,
+      "viewport_present": false,
+      "accept_insecure_certs": false,
+      "blocked_url_pattern_present": false,
+      "allowed_url_pattern_present": false,
+      "screenshot_format": "SCREENSHOT_FORMAT_PNG",
+      "screenshot_quality_present": false,
+      "screenshot_max_width_present": false,
+      "screenshot_max_height_present": false,
+      "log_file_present": true,
+      "page_id_routing": true,
+      "devtools_comments": false,
+      "experimental_devtools": false,
+      "experimental_vision": false,
+      "memory_debugging": false,
+      "experimental_structured_content": false,
+      "experimental_toon_format": false,
+      "experimental_data_format_present": false,
+      "experimental_include_all_pages": false,
+      "experimental_interop_tools": false,
+      "experimental_screencast": false,
+      "experimental_ffmpeg_path_present": false,
+      "screencast_fps_present": false,
+      "performance_crux": true,
+      "usage_statistics": true,
+      "javascript_evaluation": true,
+      "file_navigations": true,
+      "source_maps": true,
+      "clearcut_endpoint_present": false,
+      "clearcut_force_flush_interval_ms_present": false,
+      "clearcut_include_pid_header": false,
+      "slim": false,
+      "via_cli": false,
+      "redact_network_headers": false,
+      "allow_unrestricted_paths": false,
+      "config_present": false
+    }
+  },
+  "mcp_client": 0,
+  "session_id": "12f3b2e5-af2f-43f0-8b58-009730c3a8c2",
+  "app_version": "1.11.0",
+  "os_type": 1
+}
+2026-10-20T17:31:26.249Z mcp:log Scheduling flush in 900000
+2026-10-20T17:31:26.258Z mcp:log list_pages request: {}
+2026-10-20T17:31:26.259Z mcp:log Connecting Puppeteer to  {"defaultViewport":null,"handleDevToolsAsPage":true,"wsOptions":{"keepAlive":true},"channel":"chrome"}
+2026-10-20T17:31:37.824Z mcp:log Parent death detected (stdin end). Sending shutdown event...
+2026-10-20T17:31:51.788Z mcp:log Starting Chrome DevTools MCP Server v1.11.0
+2026-10-20T17:31:51.834Z mcp:log Chrome DevTools MCP Server connected
+2026-10-20T17:31:51.836Z mcp:log Watchdog started {
+  "pid": 2700,
+  "parentPid": 2380,
+  "version": "1.11.0",
+  "osType": 1
+}
+2026-10-20T17:31:51.839Z mcp:log Enqueing telemetry event {
+  "server_start": {
+    "flag_usage": {
+      "category_input": true,
+      "category_navigation": true,
+      "category_emulation": true,
+      "category_performance": true,
+      "category_network": true,
+      "category_debugging": true,
+      "category_extensions_present": false,
+      "category_experimental_third_party_present": false,
+      "category_memory": true,
+      "category_experimental_webmcp_present": false,
+      "category_pwa_present": false,
+      "auto_connect": false,
+      "browser_url_present": false,
+      "ws_endpoint_present": true,
+      "ws_headers_present": false,
+      "headless": false,
+      "executable_path_present": false,
+      "isolated": false,
+      "user_data_dir_present": false,
+      "channel_present": false,
+      "proxy_server_present": false,
+      "chrome_arg_present": false,
+      "ignore_default_chrome_arg_present": false,
+      "viewport_present": false,
+      "accept_insecure_certs": false,
+      "blocked_url_pattern_present": false,
+      "allowed_url_pattern_present": false,
+      "screenshot_format": "SCREENSHOT_FORMAT_PNG",
+      "screenshot_quality_present": false,
+      "screenshot_max_width_present": false,
+      "screenshot_max_height_present": false,
+      "log_file_present": true,
+      "page_id_routing": true,
+      "devtools_comments": false,
+      "experimental_devtools": false,
+      "experimental_vision": false,
+      "memory_debugging": false,
+      "experimental_structured_content": false,
+      "experimental_toon_format": false,
+      "experimental_data_format_present": false,
+      "experimental_include_all_pages": false,
+      "experimental_interop_tools": false,
+      "experimental_screencast": false,
+      "experimental_ffmpeg_path_present": false,
+      "screencast_fps_present": false,
+      "performance_crux": true,
+      "usage_statistics": true,
+      "javascript_evaluation": true,
+      "file_navigations": true,
+      "source_maps": true,
+      "clearcut_endpoint_present": false,
+      "clearcut_force_flush_interval_ms_present": false,
+      "clearcut_include_pid_header": false,
+      "slim": false,
+      "via_cli": false,
+      "redact_network_headers": false,
+      "allow_unrestricted_paths": false,
+      "config_present": false
+    }
+  },
+  "mcp_client": 0,
+  "session_id": "4f6ae156-2db9-4a01-8289-c9b48b2f48a2",
+  "app_version": "1.11.0",
+  "os_type": 1
+}
+2026-10-20T17:31:51.839Z mcp:log Scheduling flush in 900000
+2026-10-20T17:31:51.848Z mcp:log list_pages request: {}
+2026-10-20T17:31:51.849Z mcp:log Connecting Puppeteer to  {"defaultViewport":null,"handleDevToolsAsPage":true,"wsOptions":{"keepAlive":true},"browserWSEndpoint":"ws://127.0.0.1:9222/devtools/browser/c4078182-22f9-4a63-ae69-a5292e74571b"}
+2026-10-20T17:32:03.451Z mcp:log Parent death detected (stdin end). Sending shutdown event...
+2026-10-20T22:46:08.071Z mcp:log Starting Chrome DevTools MCP Server v1.11.0
+2026-10-20T22:46:08.137Z mcp:log Chrome DevTools MCP Server connected
+2026-10-20T22:46:08.161Z mcp:log list_pages request: {}
+2026-10-20T22:46:08.162Z mcp:log Connecting Puppeteer to  {"defaultViewport":null,"handleDevToolsAsPage":true,"wsOptions":{"keepAlive":true},"browserWSEndpoint":"ws://127.0.0.1:9222/devtools/browser/fca23369-995d-4534-ba8a-ba4a6830582d"}
+2026-10-20T22:46:08.167Z mcp:log Watchdog started {
+  "pid": 39620,
+  "parentPid": 39688,
+  "version": "1.11.0",
+  "osType": 1
+}
+2026-10-20T22:46:08.174Z mcp:log Enqueing telemetry event {
+  "server_start": {
+    "flag_usage": {
+      "category_input": true,
+      "category_navigation": true,
+      "category_emulation": true,
+      "category_performance": true,
+      "category_network": true,
+      "category_debugging": true,
+      "category_extensions_present": false,
+      "category_experimental_third_party_present": false,
+      "category_memory": true,
+      "category_experimental_webmcp_present": false,
+      "category_pwa_present": false,
+      "auto_connect": false,
+      "browser_url_present": false,
+      "ws_endpoint_present": true,
+      "ws_headers_present": false,
+      "headless": false,
+      "executable_path_present": false,
+      "isolated": false,
+      "user_data_dir_present": false,
+      "channel_present": false,
+      "proxy_server_present": false,
+      "chrome_arg_present": false,
+      "ignore_default_chrome_arg_present": false,
+      "viewport_present": false,
+      "accept_insecure_certs": false,
+      "blocked_url_pattern_present": false,
+      "allowed_url_pattern_present": false,
+      "screenshot_format": "SCREENSHOT_FORMAT_PNG",
+      "screenshot_quality_present": false,
+      "screenshot_max_width_present": false,
+      "screenshot_max_height_present": false,
+      "log_file_present": true,
+      "page_id_routing": true,
+      "devtools_comments": false,
+      "experimental_devtools": false,
+      "experimental_vision": false,
+      "memory_debugging": false,
+      "experimental_structured_content": false,
+      "experimental_toon_format": false,
+      "experimental_data_format_present": false,
+      "experimental_include_all_pages": false,
+      "experimental_interop_tools": false,
+      "experimental_screencast": false,
+      "experimental_ffmpeg_path_present": false,
+      "screencast_fps_present": false,
+      "performance_crux": true,
+      "usage_statistics": true,
+      "javascript_evaluation": true,
+      "file_navigations": true,
+      "source_maps": true,
+      "clearcut_endpoint_present": false,
+      "clearcut_force_flush_interval_ms_present": false,
+      "clearcut_include_pid_header": false,
+      "slim": false,
+      "via_cli": false,
+      "redact_network_headers": false,
+      "allow_unrestricted_paths": false,
+      "config_present": false
+    }
+  },
+  "mcp_client": 0,
+  "session_id": "7503d028-fd97-4387-96e9-cb28ec9c2368",
+  "app_version": "1.11.0",
+  "os_type": 1
+}
+2026-10-20T22:46:08.175Z mcp:log Scheduling flush in 900000
+2026-10-20T22:46:18.290Z mcp:log Parent death detected (stdin end). Sending shutdown event...

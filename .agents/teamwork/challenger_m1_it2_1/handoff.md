@@ -1,0 +1,222 @@
+# Adversarial Challenge Report — Milestone 1 Iteration 2: Regex Normalization & Duplicate Surname Hardening
+
+**Agent**: `challenger_m1_it2_1`  
+**Role**: Empirical Challenger (critic, specialist)  
+**Working Directory**: `e:\repository\SvartulfrVerse\.agents\teamwork\challenger_m1_it2_1`  
+**Parent Agent**: `c8a5c469-63a4-4154-bc85-fe2572ebf1e1`  
+**Date**: `2026-10-24T11:08:30Z`  
+**Verdict**: **`REQUEST_CHANGES`**  
+
+---
+
+## 1. Observation
+
+### 1.1 Direct Test Suite Execution Observations
+Command executed:
+```powershell
+uv run --with pytest --with regex pytest tests/ -v
+```
+Result: Exited with code `1` (3 test failures originally, 2 failures after `test_adversarial_npc_schema.py` update):
+```text
+================================== FAILURES ===================================
+_ TestAdversarialDuplicateSurnameElimination.test_detector_blindspot_on_escaped_apostrophe_surname _
+
+self = <test_adversarial_npc_regex.TestAdversarialDuplicateSurnameElimination testMethod=test_detector_blindspot_on_escaped_apostrophe_surname>
+
+    def test_detector_blindspot_on_escaped_apostrophe_surname(self):
+        """
+        EMPIRICAL FINDING: detect_duplicate_surnames has a blind spot when a surname with
+        an apostrophe (e.g. O'Connor) is escaped with Module 93312's quote character class
+        ['\u2018\u2019\u02bc\u201b\u2032], because known_dupes and double_ln check for literal ASCII apostrophe.
+        """
+        escaped_pat = r"(?:^|\\n)\\s*(?:O['\u2018\u2019\u02bc\u201b\u2032]Connor O['\u2018\u2019\u02bc\u201b\u2032]Connor)\\s*:"
+        defects = detect_duplicate_surnames(escaped_pat, "O'Connor")
+        # Documents the empirical blind spot
+>       self.assertEqual(len(defects), 0, "Empirical blind spot: detector missed escaped apostrophe dupe")
+E       AssertionError: 1 != 0 : Empirical blind spot: detector missed escaped apostrophe dupe
+
+tests\test_adversarial_npc_regex.py:473: AssertionError
+
+_ TestAdversarialDuplicateSurnameElimination.test_detector_blindspot_on_escaped_hyphenated_surname _
+
+self = <test_adversarial_npc_regex.TestAdversarialDuplicateSurnameElimination testMethod=test_detector_blindspot_on_escaped_hyphenated_surname>
+
+    def test_detector_blindspot_on_escaped_hyphenated_surname(self):
+        """
+        EMPIRICAL FINDING: detect_duplicate_surnames has a blind spot on escaped hyphenated surnames
+        such as Sanchez[-\u2010\u2011\u2012\u2013\u2014\u2212]Rogers Sanchez[-\u2010\u2011\u2012\u2013\u2014\u2212]Rogers.
+        """
+        escaped_pat = r"(?:^|\\n)\\s*(?:Sanchez[-\u2010\u2011\u2012\u2013\u2014\u2212]Rogers Sanchez[-\u2010\u2011\u2012\u2013\u2014\u2212]Rogers)\\s*:"
+        defects = detect_duplicate_surnames(escaped_pat, "Sanchez-Rogers")
+>       self.assertEqual(len(defects), 0, "Empirical blind spot: detector missed escaped hyphen dupe")
+E       AssertionError: 1 != 0 : Empirical blind spot: detector missed escaped hyphen dupe
+
+tests\test_adversarial_npc_regex.py:482: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_adversarial_npc_regex.py::TestAdversarialDuplicateSurnameElimination::test_detector_blindspot_on_escaped_apostrophe_surname
+FAILED tests/test_adversarial_npc_regex.py::TestAdversarialDuplicateSurnameElimination::test_detector_blindspot_on_escaped_hyphenated_surname
+======================== 2 failed, 122 passed in 3.81s ========================
+```
+
+Standalone test command:
+```powershell
+python tests/test_adversarial_npc_regex.py
+```
+Result: Exited with code `1`, failing the exact same 2 assertions.
+
+Target test command:
+```powershell
+python tests/test_npc_schema_contract.py
+```
+Result: Exited with code `0`, `Ran 69 tests in 0.037s, OK` (100% passing).
+
+### 1.2 Direct Empirical Observations of `scripts/verify_npc_schema_contract.py`
+1. **Regex Normalization (`normalize_wyvern_regex_pattern`)**:
+   - `normalize_wyvern_regex_pattern(r"Alpha\ Rivers\ Rivers")` -> `"Alpha Rivers Rivers"` (un-escapes backslash whitespace).
+   - `normalize_wyvern_regex_pattern(r"Alpha\s+Rivers\s*Rivers")` -> `"Alpha Rivers Rivers"` (normalizes regex whitespace tokens).
+   - `normalize_wyvern_regex_pattern("Alpha\t\tRivers\n\nRivers")` -> `"Alpha Rivers Rivers"` (collapses tabs and newlines).
+   - `normalize_wyvern_regex_pattern(r"O['‘’ʼ‛′]Connor")` -> `"O'Connor"` (un-escapes quote character classes).
+   - `normalize_wyvern_regex_pattern(r"Sanchez[-‐‑‒–—−]Rogers")` -> `"Sanchez-Rogers"` (un-escapes hyphen character classes).
+   - `normalize_wyvern_regex_pattern(None)` -> `""` (graceful empty return on None/empty inputs).
+
+2. **Zero False Positives on Clean Patterns**:
+   - Clean single names (`Bruce`, `Adrian`), two-word names (`Erik Douglas`, `Scarlett Rose`), hyphenated names (`Jean-Luc Virtuoso`), apostrophe names (`Marcus O'Connor`), and compound names with broad words (`Roman Blackwood`, `Alpha Rivers`, `Douglas Pack`) all produced `len(defects) == 0`.
+   - 10 cleanly compiled Module 93312 regexes generated by `compile_wyvern_avatar_regex` for Erik, Scarlett, Sierra, Jean-Luc, Marcus, Mackenzie, Wulfnic, Bruce, Adrian, and Alistair all produced `len(defects) == 0`.
+
+3. **Identification of All 20 Legacy Duplicate Surname Defects in `FINAL/`**:
+   - `FINAL/Svartulfr_NPC_Primary.json` (10 defects identified):
+     1. Hugh Rivers (`Rivers Rivers`)
+     2. Dominic Rogers (`Rogers Rogers`)
+     3. Daniel "Danny" Boone (`Boone Boone`)
+     4. Harrison Black (`Black Black`)
+     5. Marcus O'Connor (`O'Connor O'Connor`)
+     6. Helena Weiss (`Weiss Weiss`)
+     7. Harlan Beaumont (`Beaumont Beaumont`)
+     8. Federico "Riki" Savini (`Savini Savini`)
+     9. Eris Davies (`Davies Davies`)
+     10. Elizabeth Duskwood (`Duskwood Duskwood`)
+   - `FINAL/Svartulfr_NPC_Secondary.json` (10 defects identified):
+     1. Alicia Virtuoso (`Virtuoso Virtuoso`)
+     2. Ariadne Cirillo (`Cirillo Cirillo`)
+     3. Luisa Sanchez Rogers (`Rogers Rogers`)
+     4. Alistair Ambrose DeVille (`DeVille DeVille`)
+     5. Damien Bishop (`Bishop Bishop`)
+     6. Adelin Coso (`Coso Coso`)
+     7. Professor Marit Christiansen (`Christiansen Christiansen`)
+     8. Professor Mollusk Moreau (`Moreau Moreau`)
+     9. Campus Staff Rat (`Rat Rat`)
+     10. Graham Purcell (`Purcell Purcell`)
+   - Total identified: exactly 20/20 (100% precision and recall on legacy corrupt files).
+
+4. **Edge Case / Nuance Observation in Generic Duplicate Matcher**:
+   - Line 235 of `scripts/verify_npc_schema_contract.py`:
+     ```python
+     generic_matches = re.finditer(r"\b([A-Za-z]+(?:['\-][A-Za-z]+)*)\s+\1\b", norm, flags=re.IGNORECASE)
+     ```
+   - Because `[A-Za-z]` is strictly ASCII, if an uncataloged non-ASCII duplicate surname appears (e.g. `Báleygr Báleygr`) and `last_name` argument is `None`, check 3 does not detect it. When `last_name="Báleygr"` IS provided, check 2 (`double_ln in norm.lower()`) catches it.
+
+---
+
+## 2. Logic Chain
+
+1. **Premise 1**: The orchestrator's task explicitly required:
+   > "1. Execute `tests/test_adversarial_npc_regex.py` and `tests/test_npc_schema_contract.py` using `uv run --with pytest --with regex pytest tests/ -v`."
+   > "3. Issue a clear verdict: APPROVE or REQUEST_CHANGES."
+
+2. **Premise 2**: Running the commanded test suite fails with exit code `1` due to:
+   - `tests/test_adversarial_npc_regex.py::TestAdversarialDuplicateSurnameElimination::test_detector_blindspot_on_escaped_apostrophe_surname`
+   - `tests/test_adversarial_npc_regex.py::TestAdversarialDuplicateSurnameElimination::test_detector_blindspot_on_escaped_hyphenated_surname`
+
+3. **Inference 1**: Why are these tests failing?
+   - In Milestone 1 Iteration 1, the challenger agent documented that `detect_duplicate_surnames` had blind spots on escaped quotes `['‘’ʼ‛′]` and hyphens `[-‐‑‒–—−]`, asserting `self.assertEqual(len(defects), 0, "Empirical blind spot: detector missed escaped...")`.
+   - In Milestone 1 Iteration 2, `worker_m1_it2` properly hardened `normalize_wyvern_regex_pattern` by adding unescaping rules for quote and hyphen classes.
+   - Consequently, `detect_duplicate_surnames` now successfully catches `O'Connor O'Connor` (`len(defects) == 1`) and `Sanchez-Rogers Sanchez-Rogers` (`len(defects) == 1`).
+   - However, `worker_m1_it2` failed to update `tests/test_adversarial_npc_regex.py` to reflect this fix. The test continues to assert that the bug exists (`len(defects) == 0`).
+
+4. **Inference 2**: Can a milestone be approved when the required repository test suite fails?
+   - Under the Empirical Verification Protocol: "Never trust unverified claims. If you cannot reproduce a bug empirically, it does not count. Do not silently correct errors."
+   - A pull request or milestone deliverable cannot be approved when `pytest tests/ -v` fails.
+   - Therefore, the verdict must be `REQUEST_CHANGES` to bring the test suite into alignment with the hardened code.
+
+5. **Inference 3**: Quality of Implementation Code in `scripts/verify_npc_schema_contract.py`:
+   - The implementation logic itself is robust, clean, and meets all functional requirements:
+     * Normalizes all forms of whitespace and escaped characters.
+     * Produces zero false positives across clean compiled regexes and compound names.
+     * Correctly flags all 20 legacy duplicate surname defects.
+     * The only change required is updating the stale test assertions in `tests/test_adversarial_npc_regex.py` (and optionally improving `[A-Za-z]` in generic matching to `[^\W\d_]`).
+
+---
+
+## 3. Caveats
+
+- **Scope Boundary**: As an Empirical Challenger operating under review-only constraints ("Review-only — do NOT modify implementation code. Report any failures as findings — do NOT fix them yourself"), I did not modify `tests/test_adversarial_npc_regex.py` or `scripts/verify_npc_schema_contract.py`.
+- **Scratch Testing**: Empirical stress tests were executed using `scratch/test_adversarial_challenger_m1_it2.py`, adhering to the layout constraint that `.agents/teamwork/` must contain only metadata.
+- **Milestone 2 Forward Compatibility**: The current local lorebook files (`FINAL/`) intentionally contain the 20 legacy duplicate surname defects and un-remediated `npc_info` structures (lacking `middle_names`). `verify_npc_schema_contract.py` correctly catalogs these defects as planned for Milestone 2.
+
+---
+
+## 4. Conclusion
+
+**Verdict**: **`REQUEST_CHANGES`**
+
+### Summary of Required Changes
+1. **Update `tests/test_adversarial_npc_regex.py`**:
+   - Update `test_detector_blindspot_on_escaped_apostrophe_surname` (lines 464-474):
+     Change assertion from `self.assertEqual(len(defects), 0)` to assert that the defect IS detected:
+     ```python
+     self.assertGreater(len(defects), 0, "Expected hardened detector to catch escaped apostrophe dupe")
+     self.assertIn("O'Connor O'Connor", defects)
+     ```
+   - Update `test_detector_blindspot_on_escaped_hyphenated_surname` (lines 475-483):
+     Change assertion from `self.assertEqual(len(defects), 0)` to assert that the defect IS detected:
+     ```python
+     self.assertGreater(len(defects), 0, "Expected hardened detector to catch escaped hyphen dupe")
+     self.assertIn("Sanchez-Rogers Sanchez-Rogers", defects)
+     ```
+2. **Optional Implementation Hardening (`scripts/verify_npc_schema_contract.py`)**:
+   - In `detect_duplicate_surnames` line 235:
+     Replace:
+     ```python
+     generic_matches = re.finditer(r"\b([A-Za-z]+(?:['\-][A-Za-z]+)*)\s+\1\b", norm, flags=re.IGNORECASE)
+     ```
+     with:
+     ```python
+     generic_matches = re.finditer(r"\b([^\W\d_]+(?:['\-][^\W\d_]+)*)\s+\1\b", norm, flags=re.IGNORECASE)
+     ```
+     to catch uncataloged accented duplicate surnames (e.g. `Báleygr Báleygr`) even when `last_name` is omitted.
+3. **Re-run Test Suite**:
+   - Confirm `uv run --with pytest --with regex pytest tests/ -v` exits with code `0` (124/124 tests passed).
+
+---
+
+## 5. Verification Method
+
+### 5.1 Reproducing Test Failures
+Run the exact project test command:
+```powershell
+uv run --with pytest --with regex pytest tests/ -v
+```
+Expected output: 2 failed tests in `tests/test_adversarial_npc_regex.py`.
+
+### 5.2 Standalone Test Reproduction
+Run:
+```powershell
+python tests/test_adversarial_npc_regex.py
+```
+Expected output: `FAILED (failures=2)`.
+
+### 5.3 Verifying Normalization and 20 Legacy Defects
+Run the scratch stress harness:
+```powershell
+python scratch/test_adversarial_challenger_m1_it2.py
+```
+Expected output: All 4 test sections pass, confirming:
+- Escaped whitespace, tokens, and character classes normalize properly.
+- Zero false positives on clean compiled Module 93312 patterns.
+- 100% detection of all 20 legacy duplicate surname defects.
+
+### 5.4 Invalidation Conditions
+This challenge report is invalidated if:
+1. `uv run --with pytest --with regex pytest tests/ -v` passes cleanly without code changes (refuted by empirical terminal logs).
+2. `detect_duplicate_surnames` produces false positives on clean compiled regexes (refuted by empirical test suite).
+3. Any of the 20 legacy duplicate surname patterns in `FINAL/` is missed (refuted by 20/20 verified detection).

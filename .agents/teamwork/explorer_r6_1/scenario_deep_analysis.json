@@ -1,0 +1,2337 @@
+{
+  "live_alyssa": {
+    "name": "Alyssa Live (CKgwq246DyCj1NNTBV9rt)",
+    "id": "char_scenario_CKgwq246DyCj1NNTBV9rt",
+    "revision": 10,
+    "visibility": "private",
+    "rating": "explicit",
+    "lorebook_ids_count": 15,
+    "lorebook_ids": [
+      "_gwwCxCfQ6PQaLEjAQVpJL",
+      "_HfG7TeV6MJyj6bxMwxkpt",
+      "_9zWTGqYJNJ4BCDMj8gfcD",
+      "_EjXxkmPVhpCXg8xABpFkK",
+      "_Uht3Ckz44JBDrPnUHq7LV",
+      "_zwEqgEEzh12X6gHVmMKKC",
+      "_GV1KyHVY1RMbCnWgLkzDG",
+      "_GbWJbkhgLzWexMHrjyUUc",
+      "_FaVcHfmrqcaJq8pa3WmRw",
+      "_BbrRgrcdGPMLEbBU2b6xk",
+      "_gchmML4Q478zdFjhXf8rN",
+      "_brNyzEdhzNAyxK8xC8hhm",
+      "_YtKLMTwyMxNf1DNYqBx1t",
+      "_b9HgpUXtAW8VmTy82BPDV",
+      "_c8bEm1bWphwqFBXWRPrV8"
+    ],
+    "slots": [
+      {
+        "key": "twin",
+        "label": "Twin Brother",
+        "unavailable_count": 0,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_t4J9aQNJM36cUKAP4wB4U",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "best_friend",
+        "label": "Best Friend",
+        "unavailable_count": 1,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_qXgBMbFYJfc84hbLHhe92",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "crush",
+        "label": "Crush",
+        "unavailable_count": 0,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_zn24784jfcchQ7EwCyAnm",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "roommate",
+        "label": "Roommate",
+        "unavailable_count": 1,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_pnrXbkWqcgmFAf3meRWFY",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "brother",
+        "label": "Old Brother",
+        "unavailable_count": 0,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_zFLUjV8aVxQRAfQxGcAcY",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "key": "quarterback",
+        "label": "Quarterback",
+        "unavailable_count": 0,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_xJVPtBLL3dxy69RLKL9X9",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "friend",
+        "label": "Friend",
+        "unavailable_count": 1,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_Xd3NhKnRJByMTtdb6PjxJ",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "eldest_brother",
+        "label": "Eldest Brother",
+        "unavailable_count": 0,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_RDfz7XzTpM23LpPALVXHM",
+            "weight": 1
+          }
+        ]
+      }
+    ],
+    "slots_with_unavailable_count_gt_0": [
+      {
+        "key": "best_friend",
+        "label": "Best Friend",
+        "unavailable_count": 1,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_qXgBMbFYJfc84hbLHhe92",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "roommate",
+        "label": "Roommate",
+        "unavailable_count": 1,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_pnrXbkWqcgmFAf3meRWFY",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "friend",
+        "label": "Friend",
+        "unavailable_count": 1,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_Xd3NhKnRJByMTtdb6PjxJ",
+            "weight": 100
+          }
+        ]
+      }
+    ],
+    "macro_occurrences_scenario_text": [],
+    "greetings_analysis": [
+      {
+        "index": 0,
+        "id": "scene-alyssa-welcome-day",
+        "name": "SUCC Welcome Day",
+        "speaker_slot": "twin",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "persona_1786335754946"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"twin\"}}",
+            "key": "twin",
+            "context": "arlanti principali. {{scenarioChar \"twin\"}} era in piedi accanto a {{user}} con le "
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-al-0-1",
+            "speaker_slot": "twin",
+            "speaker_valid_slot": true,
+            "content_len": 1029,
+            "content_preview": "Il sole di tarda mattinata del 26 agosto 2024 picchiava sui prati affollati del ",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"twin\"}}",
+                "key": "twin",
+                "context": "arlanti principali. {{scenarioChar \"twin\"}} era in piedi accanto a {{user}} con le "
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-al-0-2",
+            "speaker_slot": "brother",
+            "speaker_valid_slot": true,
+            "content_len": 886,
+            "content_preview": "{{scenarioChar \"brother\"}} si fece strada tra il flusso di studenti in orientame",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"brother\"}}",
+                "key": "brother",
+                "context": "{{scenarioChar \"brother\"}} si fece strada tra il flusso di student"
+              }
+            ]
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-al-0-3",
+            "speaker_slot": "best_friend",
+            "speaker_valid_slot": true,
+            "content_len": 789,
+            "content_preview": "Un dolce e familiare profumo di tè all'ibisco e menta tritata aleggiava nell'ari",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"best_friend\"}}",
+                "key": "best_friend",
+                "context": " del cortile mentre {{scenarioChar \"best_friend\"}} si affrettava lungo il vialetto lastric"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "id": "scene-alyssa-greek-row",
+        "name": "01. Theta Iota Theta Morning on Greek Row",
+        "speaker_slot": "roommate",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "persona_1786335754946"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"roommate\"}}",
+            "key": "roommate",
+            "context": "{{scenarioChar \"roommate\"}} stood by the full-length mirror, adjust"
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-al-1-1",
+            "speaker_slot": "roommate",
+            "speaker_valid_slot": true,
+            "content_len": 298,
+            "content_preview": "{{scenarioChar \"roommate\"}} stood by the full-length mirror, adjusting the hem o",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"roommate\"}}",
+                "key": "roommate",
+                "context": "{{scenarioChar \"roommate\"}} stood by the full-length mirror, adjust"
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-al-1-2",
+            "speaker_slot": "brother",
+            "speaker_valid_slot": true,
+            "content_len": 352,
+            "content_preview": "Down on the street below, the screen door of the Alpha Rho Omega house creaked o",
+            "macros": []
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-al-1-3",
+            "speaker_slot": "twin",
+            "speaker_valid_slot": true,
+            "content_len": 250,
+            "content_preview": "A notification chimed on the desk console, a quick encrypted text from {{scenari",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"twin\"}}",
+                "key": "twin",
+                "context": "encrypted text from {{scenarioChar \"twin\"}}. \"Saw Vince and his ASS pledges lurking"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "id": "scene-alyssa-labs",
+        "name": "02. Pre-Med Biology Labs",
+        "speaker_slot": "best_friend",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "persona_1786335754946"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"best_friend\"}}",
+            "key": "best_friend",
+            "context": "{{scenarioChar \"best_friend\"}} rested her sketchpad beside a tray of b"
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-al-2-1",
+            "speaker_slot": "best_friend",
+            "speaker_valid_slot": true,
+            "content_len": 400,
+            "content_preview": "{{scenarioChar \"best_friend\"}} rested her sketchpad beside a tray of botanical s",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"best_friend\"}}",
+                "key": "best_friend",
+                "context": "{{scenarioChar \"best_friend\"}} rested her sketchpad beside a tray of b"
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-al-2-2",
+            "speaker_slot": "friend",
+            "speaker_valid_slot": true,
+            "content_len": 292,
+            "content_preview": "{{scenarioChar \"friend\"}} adjusted his wire-rimmed glasses, double-checking the ",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"friend\"}}",
+                "key": "friend",
+                "context": "{{scenarioChar \"friend\"}} adjusted his wire-rimmed glasses, doubl"
+              }
+            ]
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-al-2-3",
+            "speaker_slot": "twin",
+            "speaker_valid_slot": true,
+            "content_len": 235,
+            "content_preview": "An incoming ping lit up the corner of {{user}}'s datapad. \"Finished the audio pa",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"twin\"}}",
+                "key": "twin",
+                "context": " for Friday's set,\" {{scenarioChar \"twin\"}} texted. \"Grab two muffins from the comm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "id": "scene-alyssa-library-corner",
+        "name": "03. Basilica Library Sheltered Smoking Corner",
+        "speaker_slot": "crush",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "persona_1786335754946"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"crush\"}}",
+            "key": "crush",
+            "context": "{{scenarioChar \"crush\"}} had one headphone draped over his colla"
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-al-3-1",
+            "speaker_slot": "crush",
+            "speaker_valid_slot": true,
+            "content_len": 334,
+            "content_preview": "{{scenarioChar \"crush\"}} had one headphone draped over his collar, leaning again",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"crush\"}}",
+                "key": "crush",
+                "context": "{{scenarioChar \"crush\"}} had one headphone draped over his colla"
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-al-3-2",
+            "speaker_slot": "best_friend",
+            "speaker_valid_slot": true,
+            "content_len": 229,
+            "content_preview": "{{scenarioChar \"best_friend\"}} walked down the stone stairs carrying two iced co",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"best_friend\"}}",
+                "key": "best_friend",
+                "context": "{{scenarioChar \"best_friend\"}} walked down the stone stairs carrying t"
+              }
+            ]
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-al-3-3",
+            "speaker_slot": "twin",
+            "speaker_valid_slot": true,
+            "content_len": 240,
+            "content_preview": "A short vibration hummed in {{user}}'s pocket. {{scenarioChar \"twin\"}} sent an a",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"twin\"}}",
+                "key": "twin",
+                "context": " {{user}}'s pocket. {{scenarioChar \"twin\"}} sent an automated ping: \"Security patro"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "id": "scene-alyssa-ice-rink",
+        "name": "04. Ice Rink Bears Practice Clash",
+        "speaker_slot": "eldest_brother",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "persona_1786335754946"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"sports_rival\"}}",
+            "key": "sports_rival",
+            "context": "{{scenarioChar \"sports_rival\"}} gathered a breakout pass at the centre "
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-al-4-1",
+            "speaker_slot": "eldest_brother",
+            "speaker_valid_slot": true,
+            "content_len": 299,
+            "content_preview": "{{scenarioChar \"sports_rival\"}} gathered a breakout pass at the centre circle, h",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"sports_rival\"}}",
+                "key": "sports_rival",
+                "context": "{{scenarioChar \"sports_rival\"}} gathered a breakout pass at the centre "
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-al-4-2",
+            "speaker_slot": "brother",
+            "speaker_valid_slot": true,
+            "content_len": 327,
+            "content_preview": "Finn Novak barrelled into the neutral zone corner with brutal acceleration, slam",
+            "macros": []
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-al-4-3",
+            "speaker_slot": "quarterback",
+            "speaker_valid_slot": true,
+            "content_len": 240,
+            "content_preview": "{{scenarioChar \"quarterback\"}} stood near the tunnel railing in his football war",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"quarterback\"}}",
+                "key": "quarterback",
+                "context": "{{scenarioChar \"quarterback\"}} stood near the tunnel railing in his fo"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "id": "scene-alyssa-bulls-tunnel",
+        "name": "05. Bulls Locker Room and Stadium Tunnel",
+        "speaker_slot": "quarterback",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "persona_1786335754946"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"quarterback\"}}",
+            "key": "quarterback",
+            "context": "{{scenarioChar \"quarterback\"}} towered in his gold-and-black practice "
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-al-5-1",
+            "speaker_slot": "quarterback",
+            "speaker_valid_slot": true,
+            "content_len": 394,
+            "content_preview": "{{scenarioChar \"quarterback\"}} towered in his gold-and-black practice jersey, sh",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"quarterback\"}}",
+                "key": "quarterback",
+                "context": "{{scenarioChar \"quarterback\"}} towered in his gold-and-black practice "
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-al-5-2",
+            "speaker_slot": "friend",
+            "speaker_valid_slot": true,
+            "content_len": 262,
+            "content_preview": "{{scenarioChar \"friend\"}} leaned against the concrete wall, clutching his binder",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"friend\"}}",
+                "key": "friend",
+                "context": "{{scenarioChar \"friend\"}} leaned against the concrete wall, clutc"
+              }
+            ]
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-al-5-3",
+            "speaker_slot": "roommate",
+            "speaker_valid_slot": true,
+            "content_len": 213,
+            "content_preview": "{{scenarioChar \"roommate\"}} walked past carrying cheer practice flags, laughing ",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"roommate\"}}",
+                "key": "roommate",
+                "context": "{{scenarioChar \"roommate\"}} walked past carrying cheer practice fla"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "id": "scene-alyssa-sidewinders",
+        "name": "06. Sidewinders Concert at The Dockside Venue",
+        "speaker_slot": "crush",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "persona_1786335754946"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"crush\"}}",
+            "key": "crush",
+            "context": "the elevated stage, {{scenarioChar \"crush\"}} stood behind his dual-keyboard synthesi"
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-al-6-1",
+            "speaker_slot": "crush",
+            "speaker_valid_slot": true,
+            "content_len": 357,
+            "content_preview": "On the elevated stage, {{scenarioChar \"crush\"}} stood behind his dual-keyboard s",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"crush\"}}",
+                "key": "crush",
+                "context": "the elevated stage, {{scenarioChar \"crush\"}} stood behind his dual-keyboard synthesi"
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-al-6-2",
+            "speaker_slot": "best_friend",
+            "speaker_valid_slot": true,
+            "content_len": 239,
+            "content_preview": "{{scenarioChar \"best_friend\"}} danced beside {{user}}, laughing over the poundin",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"best_friend\"}}",
+                "key": "best_friend",
+                "context": "{{scenarioChar \"best_friend\"}} danced beside {{user}}, laughing over t"
+              }
+            ]
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-al-6-3",
+            "speaker_slot": "twin",
+            "speaker_valid_slot": true,
+            "content_len": 220,
+            "content_preview": "From the sound booth balcony above the crowd, {{scenarioChar \"twin\"}} gave a sha",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"twin\"}}",
+                "key": "twin",
+                "context": "ny above the crowd, {{scenarioChar \"twin\"}} gave a sharp thumbs-up from behind the "
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "live_jasper": {
+    "name": "Jasper Live (Kq4mJEBH83j7Q7DdVfFnF)",
+    "id": "char_scenario_Kq4mJEBH83j7Q7DdVfFnF",
+    "revision": 4,
+    "visibility": "private",
+    "rating": "explicit",
+    "lorebook_ids_count": 15,
+    "lorebook_ids": [
+      "_gwwCxCfQ6PQaLEjAQVpJL",
+      "_HfG7TeV6MJyj6bxMwxkpt",
+      "_9zWTGqYJNJ4BCDMj8gfcD",
+      "_EjXxkmPVhpCXg8xABpFkK",
+      "_Uht3Ckz44JBDrPnUHq7LV",
+      "_zwEqgEEzh12X6gHVmMKKC",
+      "_GV1KyHVY1RMbCnWgLkzDG",
+      "_GbWJbkhgLzWexMHrjyUUc",
+      "_FaVcHfmrqcaJq8pa3WmRw",
+      "_BbrRgrcdGPMLEbBU2b6xk",
+      "_gchmML4Q478zdFjhXf8rN",
+      "_brNyzEdhzNAyxK8xC8hhm",
+      "_YtKLMTwyMxNf1DNYqBx1t",
+      "_b9HgpUXtAW8VmTy82BPDV",
+      "_c8bEm1bWphwqFBXWRPrV8"
+    ],
+    "slots": [
+      {
+        "key": "twin",
+        "label": "Twin Sister (Alyssa Hvit)",
+        "unavailable_count": 1,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_6exg3yPfe2eCDK4hTftkh",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "male_roommate",
+        "label": "Roommate (Russell 'Russ' Sinclair)",
+        "unavailable_count": 1,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_wn6DkCcg3Xqa2Xpx9ttnT",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "crush",
+        "label": "Crush (Scarlett Rose)",
+        "unavailable_count": 1,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_qXgBMbFYJfc84hbLHhe92",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "ai_companion",
+        "label": "AI Companion (Echo)",
+        "unavailable_count": 0,
+        "pool_size": 0,
+        "pool_items": []
+      },
+      {
+        "key": "childhood_friend",
+        "label": "Childhood Friend (Finnegan Novak)",
+        "unavailable_count": 0,
+        "pool_size": 0,
+        "pool_items": []
+      },
+      {
+        "key": "quarterback",
+        "label": "Quarterback (Jared Thompson)",
+        "unavailable_count": 0,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_xJVPtBLL3dxy69RLKL9X9",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "friend",
+        "label": "Friend (Stanley Davies Jr.)",
+        "unavailable_count": 1,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_Xd3NhKnRJByMTtdb6PjxJ",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "sports_rival",
+        "label": "Sports Rival (Vincent Campbell)",
+        "unavailable_count": 0,
+        "pool_size": 0,
+        "pool_items": []
+      }
+    ],
+    "slots_with_unavailable_count_gt_0": [
+      {
+        "key": "twin",
+        "label": "Twin Sister (Alyssa Hvit)",
+        "unavailable_count": 1,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_6exg3yPfe2eCDK4hTftkh",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "male_roommate",
+        "label": "Roommate (Russell 'Russ' Sinclair)",
+        "unavailable_count": 1,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_wn6DkCcg3Xqa2Xpx9ttnT",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "crush",
+        "label": "Crush (Scarlett Rose)",
+        "unavailable_count": 1,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_qXgBMbFYJfc84hbLHhe92",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "friend",
+        "label": "Friend (Stanley Davies Jr.)",
+        "unavailable_count": 1,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_Xd3NhKnRJByMTtdb6PjxJ",
+            "weight": 100
+          }
+        ]
+      }
+    ],
+    "macro_occurrences_scenario_text": [
+      {
+        "macro": "{{scenarioChar \"twin\"}}",
+        "key": "twin",
+        "context": "d cyber sentinel.\n- {{scenarioChar \"twin\"}} (Alyssa Hvit Douglas Bloodmoon): 19yo D"
+      },
+      {
+        "macro": "{{scenarioChar \"male_roommate\"}}",
+        "key": "male_roommate",
+        "context": "ist, twin sister.\n- {{scenarioChar \"male_roommate\"}} (Russell 'Russ' Sinclair): Verified sur"
+      },
+      {
+        "macro": "{{scenarioChar \"crush\"}}",
+        "key": "crush",
+        "context": ", loyal roommate.\n- {{scenarioChar \"crush\"}} (Scarlett Rose): Verified surname Rose,"
+      },
+      {
+        "macro": "{{scenarioChar \"ai_companion\"}}",
+        "key": "ai_companion",
+        "context": "t romantic crush.\n- {{scenarioChar \"ai_companion\"}} (Echo): Sentient digital entity and cyb"
+      },
+      {
+        "macro": "{{scenarioChar \"childhood_friend\"}}",
+        "key": "childhood_friend",
+        "context": "and network rigs.\n- {{scenarioChar \"childhood_friend\"}} (Finnegan 'Finn' Novak): Strictly verif"
+      },
+      {
+        "macro": "{{scenarioChar \"quarterback\"}}",
+        "key": "quarterback",
+        "context": "ter, hockey star.\n- {{scenarioChar \"quarterback\"}} (Jared Thompson): 21yo werewolf quarter"
+      },
+      {
+        "macro": "{{scenarioChar \"friend\"}}",
+        "key": "friend",
+        "context": "le and protector.\n- {{scenarioChar \"friend\"}} (Stanley Davies Jr.): 20yo human pre-me"
+      },
+      {
+        "macro": "{{scenarioChar \"sports_rival\"}}",
+        "key": "sports_rival",
+        "context": "tic science peer.\n- {{scenarioChar \"sports_rival\"}} (Vincent Campbell): 21yo vampire hockey"
+      }
+    ],
+    "greetings_analysis": [
+      {
+        "index": 0,
+        "id": "scene-jasper-welcome-day",
+        "name": "SUCC Welcome Day",
+        "speaker_slot": "twin",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "1792155173728"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"twin\"}}",
+            "key": "twin",
+            "context": "folding chair rows. {{scenarioChar \"twin\"}} stood beside {{user}} beneath the shade"
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-js-0-1",
+            "speaker_slot": "twin",
+            "speaker_valid_slot": true,
+            "content_len": 933,
+            "content_preview": "Bright late-morning sunlight flooded the lawns of the Lunar Quad on August 26, 2",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"twin\"}}",
+                "key": "twin",
+                "context": "folding chair rows. {{scenarioChar \"twin\"}} stood beside {{user}} beneath the shade"
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-js-0-2",
+            "speaker_slot": "childhood_friend",
+            "speaker_valid_slot": true,
+            "content_len": 773,
+            "content_preview": "{{scenarioChar \"childhood_friend\"}} strode across the grass from the athletic co",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"childhood_friend\"}}",
+                "key": "childhood_friend",
+                "context": "{{scenarioChar \"childhood_friend\"}} strode across the grass from the athlet"
+              }
+            ]
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-js-0-3",
+            "speaker_slot": "crush",
+            "speaker_valid_slot": true,
+            "content_len": 783,
+            "content_preview": "A sudden draft of sweet vanilla and elderflower announced {{scenarioChar \"crush\"",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"crush\"}}",
+                "key": "crush",
+                "context": "derflower announced {{scenarioChar \"crush\"}}, who slipped through the edge of the cr"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "id": "scene-jasper-wyrm-304",
+        "name": "01. Wyrm Hall Suite 304",
+        "speaker_slot": "male_roommate",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "1792155173728"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"male_roommate\"}}",
+            "key": "male_roommate",
+            "context": "{{scenarioChar \"male_roommate\"}} sat perched on the low vinyl sofa, his "
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-js-1-1",
+            "speaker_slot": "male_roommate",
+            "speaker_valid_slot": true,
+            "content_len": 443,
+            "content_preview": "{{scenarioChar \"male_roommate\"}} sat perched on the low vinyl sofa, his bare sho",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"male_roommate\"}}",
+                "key": "male_roommate",
+                "context": "{{scenarioChar \"male_roommate\"}} sat perched on the low vinyl sofa, his "
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-js-1-2",
+            "speaker_slot": "ai_companion",
+            "speaker_valid_slot": true,
+            "content_len": 343,
+            "content_preview": "From the dual-monitor workstation beneath the bunk bed, a soft chime chimed thro",
+            "macros": []
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-js-1-3",
+            "speaker_slot": "twin",
+            "speaker_valid_slot": true,
+            "content_len": 281,
+            "content_preview": "A gentle knock sounded against the door, and {{scenarioChar \"twin\"}} peeked into",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"twin\"}}",
+                "key": "twin",
+                "context": "ainst the door, and {{scenarioChar \"twin\"}} peeked into the room holding two cardbo"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "id": "scene-jasper-roof-hack",
+        "name": "02. Wyrm Hall Roof Hacking Session",
+        "speaker_slot": "ai_companion",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "1792155173728"
+        ],
+        "g_macros": [],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-js-2-1",
+            "speaker_slot": "ai_companion",
+            "speaker_valid_slot": true,
+            "content_len": 308,
+            "content_preview": "On the ruggedized terminal resting on the tar-paper blanket, Echo's digital wave",
+            "macros": []
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-js-2-2",
+            "speaker_slot": "male_roommate",
+            "speaker_valid_slot": true,
+            "content_len": 332,
+            "content_preview": "{{scenarioChar \"male_roommate\"}} stepped through the roof access door, carrying ",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"male_roommate\"}}",
+                "key": "male_roommate",
+                "context": "{{scenarioChar \"male_roommate\"}} stepped through the roof access door, c"
+              }
+            ]
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-js-2-3",
+            "speaker_slot": "childhood_friend",
+            "speaker_valid_slot": true,
+            "content_len": 196,
+            "content_preview": "A brief text message flashed on the smartphone screen from Finn Novak: \"Bears ni",
+            "macros": []
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "id": "scene-jasper-quad-tension",
+        "name": "03. Campus Quad Tension",
+        "speaker_slot": "sports_rival",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "1792155173728"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"sports_rival\"}}",
+            "key": "sports_rival",
+            "context": "{{scenarioChar \"sports_rival\"}} stopped near the granite fountain with "
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-js-3-1",
+            "speaker_slot": "sports_rival",
+            "speaker_valid_slot": true,
+            "content_len": 341,
+            "content_preview": "{{scenarioChar \"sports_rival\"}} stopped near the granite fountain with two frate",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"sports_rival\"}}",
+                "key": "sports_rival",
+                "context": "{{scenarioChar \"sports_rival\"}} stopped near the granite fountain with "
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-js-3-2",
+            "speaker_slot": "quarterback",
+            "speaker_valid_slot": true,
+            "content_len": 355,
+            "content_preview": "{{scenarioChar \"quarterback\"}} strode across the lawn with his heavy football du",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"quarterback\"}}",
+                "key": "quarterback",
+                "context": "{{scenarioChar \"quarterback\"}} strode across the lawn with his heavy f"
+              }
+            ]
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-js-3-3",
+            "speaker_slot": "friend",
+            "speaker_valid_slot": true,
+            "content_len": 299,
+            "content_preview": "{{scenarioChar \"friend\"}} stood a few paces back with a dry smirk, tapping his p",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"friend\"}}",
+                "key": "friend",
+                "context": "{{scenarioChar \"friend\"}} stood a few paces back with a dry smirk"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "id": "scene-jasper-warehouse-rave",
+        "name": "04. DJ Frequency Underground Dock Warehouse Rave",
+        "speaker_slot": "male_roommate",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "1792155173728"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"male_roommate\"}}",
+            "key": "male_roommate",
+            "context": "{{scenarioChar \"male_roommate\"}} pushed through the backstage black curt"
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-js-4-1",
+            "speaker_slot": "male_roommate",
+            "speaker_valid_slot": true,
+            "content_len": 304,
+            "content_preview": "{{scenarioChar \"male_roommate\"}} pushed through the backstage black curtain, wip",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"male_roommate\"}}",
+                "key": "male_roommate",
+                "context": "{{scenarioChar \"male_roommate\"}} pushed through the backstage black curt"
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-al-4-2",
+            "speaker_slot": "twin",
+            "speaker_valid_slot": true,
+            "content_len": 232,
+            "content_preview": "From the elevated catwalk overlooking the pulsing dance floor, {{scenarioChar \"t",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"twin\"}}",
+                "key": "twin",
+                "context": "ulsing dance floor, {{scenarioChar \"twin\"}} leaned over the iron railing with a glo"
+              }
+            ]
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-js-4-3",
+            "speaker_slot": "ai_companion",
+            "speaker_valid_slot": true,
+            "content_len": 276,
+            "content_preview": "Echo's voice chimed cleanly through the monitor headphones, perfectly isolated f",
+            "macros": []
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "id": "scene-jasper-bro-halloween",
+        "name": "05. Beta Rho Omega Halloween Party",
+        "speaker_slot": "crush",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "1792155173728"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"crush\"}}",
+            "key": "crush",
+            "context": "{{scenarioChar \"crush\"}} stood by the second-floor wooden balust"
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-js-5-1",
+            "speaker_slot": "crush",
+            "speaker_valid_slot": true,
+            "content_len": 404,
+            "content_preview": "{{scenarioChar \"crush\"}} stood by the second-floor wooden balustrade, dressed in",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"crush\"}}",
+                "key": "crush",
+                "context": "{{scenarioChar \"crush\"}} stood by the second-floor wooden balust"
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-js-5-2",
+            "speaker_slot": "quarterback",
+            "speaker_valid_slot": true,
+            "content_len": 199,
+            "content_preview": "Down in the crowded foyer, {{scenarioChar \"quarterback\"}} held up a carved pumpk",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"quarterback\"}}",
+                "key": "quarterback",
+                "context": " the crowded foyer, {{scenarioChar \"quarterback\"}} held up a carved pumpkin punch bowl dre"
+              }
+            ]
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-js-5-3",
+            "speaker_slot": "male_roommate",
+            "speaker_valid_slot": true,
+            "content_len": 200,
+            "content_preview": "{{scenarioChar \"male_roommate\"}} caught Jasper's eye from the landing below with",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"male_roommate\"}}",
+                "key": "male_roommate",
+                "context": "{{scenarioChar \"male_roommate\"}} caught Jasper's eye from the landing be"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "local_alyssa": {
+    "name": "Alyssa Local",
+    "id": "char_scenario_CKgwq246DyCj1NNTBV9rt",
+    "revision": 8,
+    "visibility": "private",
+    "rating": "explicit",
+    "lorebook_ids_count": 15,
+    "lorebook_ids": [
+      "_gwwCxCfQ6PQaLEjAQVpJL",
+      "_HfG7TeV6MJyj6bxMwxkpt",
+      "_9zWTGqYJNJ4BCDMj8gfcD",
+      "_EjXxkmPVhpCXg8xABpFkK",
+      "_Uht3Ckz44JBDrPnUHq7LV",
+      "_zwEqgEEzh12X6gHVmMKKC",
+      "_GV1KyHVY1RMbCnWgLkzDG",
+      "_GbWJbkhgLzWexMHrjyUUc",
+      "_FaVcHfmrqcaJq8pa3WmRw",
+      "_BbrRgrcdGPMLEbBU2b6xk",
+      "_gchmML4Q478zdFjhXf8rN",
+      "_brNyzEdhzNAyxK8xC8hhm",
+      "_YtKLMTwyMxNf1DNYqBx1t",
+      "_b9HgpUXtAW8VmTy82BPDV",
+      "_c8bEm1bWphwqFBXWRPrV8"
+    ],
+    "slots": [
+      {
+        "key": "twin",
+        "label": "Twin Brother (Jasper Svartr)",
+        "unavailable_count": 0,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_t4J9aQNJM36cUKAP4wB4U",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "best_friend",
+        "label": "Best Friend (Scarlett Rose)",
+        "unavailable_count": 0,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_qXgBMbFYJfc84hbLHhe92",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "crush",
+        "label": "Crush (Mackenzie Sanchez-Rogers)",
+        "unavailable_count": 0,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_zn24784jfcchQ7EwCyAnm",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "roommate",
+        "label": "Roommate (Sierra Cruz)",
+        "unavailable_count": 0,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_pnrXbkWqcgmFAf3meRWFY",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "childhood_friend",
+        "label": "Childhood Friend (Finnegan Novak)",
+        "unavailable_count": 0,
+        "pool_size": 0,
+        "pool_items": []
+      },
+      {
+        "key": "quarterback",
+        "label": "Quarterback (Jared Thompson)",
+        "unavailable_count": 0,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_xJVPtBLL3dxy69RLKL9X9",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "friend",
+        "label": "Pre-Med Friend (Stanley Davies Jr.)",
+        "unavailable_count": 0,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_Xd3NhKnRJByMTtdb6PjxJ",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "sports_rival",
+        "label": "Sports Rival (Vincent Campbell)",
+        "unavailable_count": 0,
+        "pool_size": 0,
+        "pool_items": []
+      }
+    ],
+    "slots_with_unavailable_count_gt_0": [],
+    "macro_occurrences_scenario_text": [
+      {
+        "macro": "{{scenarioChar \"twin\"}}",
+        "key": "twin",
+        "context": "nsional pochette.\n- {{scenarioChar \"twin\"}} (Jasper Svartr Douglas Bloodmoon): 19yo"
+      },
+      {
+        "macro": "{{scenarioChar \"best_friend\"}}",
+        "key": "best_friend",
+        "context": "rotective shadow.\n- {{scenarioChar \"best_friend\"}} (Scarlett Rose): 20yo Succubus demi-hum"
+      },
+      {
+        "macro": "{{scenarioChar \"crush\"}}",
+        "key": "crush",
+        "context": "loyal confidante.\n- {{scenarioChar \"crush\"}} (Mackenzie 'Mac' Sanchez-Rogers): 20yo "
+      },
+      {
+        "macro": "{{scenarioChar \"roommate\"}}",
+        "key": "roommate",
+        "context": "omantic interest.\n- {{scenarioChar \"roommate\"}} (Sierra Cruz): 20yo Lamia demi-human, T"
+      },
+      {
+        "macro": "{{scenarioChar \"childhood_friend\"}}",
+        "key": "childhood_friend",
+        "context": "cialite roommate.\n- {{scenarioChar \"childhood_friend\"}} (Finnegan 'Finn' Novak): Strictly verif"
+      },
+      {
+        "macro": "{{scenarioChar \"quarterback\"}}",
+        "key": "quarterback",
+        "context": "ho Omega brother.\n- {{scenarioChar \"quarterback\"}} (Jared Thompson): 21yo Golden Retriever"
+      },
+      {
+        "macro": "{{scenarioChar \"friend\"}}",
+        "key": "friend",
+        "context": "raternity member.\n- {{scenarioChar \"friend\"}} (Stanley Davies Jr.): 20yo Human pre-me"
+      },
+      {
+        "macro": "{{scenarioChar \"sports_rival\"}}",
+        "key": "sports_rival",
+        "context": " organic chemist.\n- {{scenarioChar \"sports_rival\"}} (Vincent Campbell): Montreal vampire ar"
+      }
+    ],
+    "greetings_analysis": [
+      {
+        "index": 0,
+        "id": "scene-alyssa-welcome-day",
+        "name": "SUCC Welcome Day",
+        "speaker_slot": "twin",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "persona_1786335754946"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"twin\"}}",
+            "key": "twin",
+            "context": " the main speakers. {{scenarioChar \"twin\"}} stood at {{user}}'s side with his hands"
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-al-0-1",
+            "speaker_slot": "twin",
+            "speaker_valid_slot": true,
+            "content_len": 933,
+            "content_preview": "The late morning sun beat down across the crowded lawns of the Lunar Quad on Aug",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"twin\"}}",
+                "key": "twin",
+                "context": " the main speakers. {{scenarioChar \"twin\"}} stood at {{user}}'s side with his hands"
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-al-0-2",
+            "speaker_slot": "childhood_friend",
+            "speaker_valid_slot": true,
+            "content_len": 765,
+            "content_preview": "{{scenarioChar \"childhood_friend\"}} cut through the flow of orientation traffic ",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"childhood_friend\"}}",
+                "key": "childhood_friend",
+                "context": "{{scenarioChar \"childhood_friend\"}} cut through the flow of orientation tra"
+              }
+            ]
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-al-0-3",
+            "speaker_slot": "best_friend",
+            "speaker_valid_slot": true,
+            "content_len": 742,
+            "content_preview": "A sweet, familiar scent of hibiscus tea and crushed mint drifted through the qua",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"best_friend\"}}",
+                "key": "best_friend",
+                "context": "ugh the quad air as {{scenarioChar \"best_friend\"}} hurried up the paved walkway from the c"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "id": "scene-alyssa-greek-row",
+        "name": "01. Theta Iota Theta Morning on Greek Row",
+        "speaker_slot": "roommate",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "persona_1786335754946"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"roommate\"}}",
+            "key": "roommate",
+            "context": "{{scenarioChar \"roommate\"}} stood by the full-length mirror, adjust"
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-al-1-1",
+            "speaker_slot": "roommate",
+            "speaker_valid_slot": true,
+            "content_len": 298,
+            "content_preview": "{{scenarioChar \"roommate\"}} stood by the full-length mirror, adjusting the hem o",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"roommate\"}}",
+                "key": "roommate",
+                "context": "{{scenarioChar \"roommate\"}} stood by the full-length mirror, adjust"
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-al-1-2",
+            "speaker_slot": "childhood_friend",
+            "speaker_valid_slot": true,
+            "content_len": 352,
+            "content_preview": "Down on the street below, the screen door of the Alpha Rho Omega house creaked o",
+            "macros": []
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-al-1-3",
+            "speaker_slot": "twin",
+            "speaker_valid_slot": true,
+            "content_len": 250,
+            "content_preview": "A notification chimed on the desk console, a quick encrypted text from {{scenari",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"twin\"}}",
+                "key": "twin",
+                "context": "encrypted text from {{scenarioChar \"twin\"}}. \"Saw Vince and his ASS pledges lurking"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "id": "scene-alyssa-labs",
+        "name": "02. Pre-Med Biology Labs",
+        "speaker_slot": "best_friend",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "persona_1786335754946"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"best_friend\"}}",
+            "key": "best_friend",
+            "context": "{{scenarioChar \"best_friend\"}} rested her sketchpad beside a tray of b"
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-al-2-1",
+            "speaker_slot": "best_friend",
+            "speaker_valid_slot": true,
+            "content_len": 400,
+            "content_preview": "{{scenarioChar \"best_friend\"}} rested her sketchpad beside a tray of botanical s",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"best_friend\"}}",
+                "key": "best_friend",
+                "context": "{{scenarioChar \"best_friend\"}} rested her sketchpad beside a tray of b"
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-al-2-2",
+            "speaker_slot": "friend",
+            "speaker_valid_slot": true,
+            "content_len": 292,
+            "content_preview": "{{scenarioChar \"friend\"}} adjusted his wire-rimmed glasses, double-checking the ",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"friend\"}}",
+                "key": "friend",
+                "context": "{{scenarioChar \"friend\"}} adjusted his wire-rimmed glasses, doubl"
+              }
+            ]
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-al-2-3",
+            "speaker_slot": "twin",
+            "speaker_valid_slot": true,
+            "content_len": 235,
+            "content_preview": "An incoming ping lit up the corner of {{user}}'s datapad. \"Finished the audio pa",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"twin\"}}",
+                "key": "twin",
+                "context": " for Friday's set,\" {{scenarioChar \"twin\"}} texted. \"Grab two muffins from the comm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "id": "scene-alyssa-library-corner",
+        "name": "03. Basilica Library Sheltered Smoking Corner",
+        "speaker_slot": "crush",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "persona_1786335754946"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"crush\"}}",
+            "key": "crush",
+            "context": "{{scenarioChar \"crush\"}} had one headphone draped over his colla"
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-al-3-1",
+            "speaker_slot": "crush",
+            "speaker_valid_slot": true,
+            "content_len": 334,
+            "content_preview": "{{scenarioChar \"crush\"}} had one headphone draped over his collar, leaning again",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"crush\"}}",
+                "key": "crush",
+                "context": "{{scenarioChar \"crush\"}} had one headphone draped over his colla"
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-al-3-2",
+            "speaker_slot": "best_friend",
+            "speaker_valid_slot": true,
+            "content_len": 229,
+            "content_preview": "{{scenarioChar \"best_friend\"}} walked down the stone stairs carrying two iced co",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"best_friend\"}}",
+                "key": "best_friend",
+                "context": "{{scenarioChar \"best_friend\"}} walked down the stone stairs carrying t"
+              }
+            ]
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-al-3-3",
+            "speaker_slot": "twin",
+            "speaker_valid_slot": true,
+            "content_len": 240,
+            "content_preview": "A short vibration hummed in {{user}}'s pocket. {{scenarioChar \"twin\"}} sent an a",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"twin\"}}",
+                "key": "twin",
+                "context": " {{user}}'s pocket. {{scenarioChar \"twin\"}} sent an automated ping: \"Security patro"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "id": "scene-alyssa-ice-rink",
+        "name": "04. Ice Rink Bears Practice Clash",
+        "speaker_slot": "sports_rival",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "persona_1786335754946"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"sports_rival\"}}",
+            "key": "sports_rival",
+            "context": "{{scenarioChar \"sports_rival\"}} gathered a breakout pass at the centre "
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-al-4-1",
+            "speaker_slot": "sports_rival",
+            "speaker_valid_slot": true,
+            "content_len": 299,
+            "content_preview": "{{scenarioChar \"sports_rival\"}} gathered a breakout pass at the centre circle, h",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"sports_rival\"}}",
+                "key": "sports_rival",
+                "context": "{{scenarioChar \"sports_rival\"}} gathered a breakout pass at the centre "
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-al-4-2",
+            "speaker_slot": "childhood_friend",
+            "speaker_valid_slot": true,
+            "content_len": 327,
+            "content_preview": "Finn Novak barrelled into the neutral zone corner with brutal acceleration, slam",
+            "macros": []
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-al-4-3",
+            "speaker_slot": "quarterback",
+            "speaker_valid_slot": true,
+            "content_len": 240,
+            "content_preview": "{{scenarioChar \"quarterback\"}} stood near the tunnel railing in his football war",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"quarterback\"}}",
+                "key": "quarterback",
+                "context": "{{scenarioChar \"quarterback\"}} stood near the tunnel railing in his fo"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "id": "scene-alyssa-bulls-tunnel",
+        "name": "05. Bulls Locker Room and Stadium Tunnel",
+        "speaker_slot": "quarterback",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "persona_1786335754946"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"quarterback\"}}",
+            "key": "quarterback",
+            "context": "{{scenarioChar \"quarterback\"}} towered in his gold-and-black practice "
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-al-5-1",
+            "speaker_slot": "quarterback",
+            "speaker_valid_slot": true,
+            "content_len": 394,
+            "content_preview": "{{scenarioChar \"quarterback\"}} towered in his gold-and-black practice jersey, sh",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"quarterback\"}}",
+                "key": "quarterback",
+                "context": "{{scenarioChar \"quarterback\"}} towered in his gold-and-black practice "
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-al-5-2",
+            "speaker_slot": "friend",
+            "speaker_valid_slot": true,
+            "content_len": 262,
+            "content_preview": "{{scenarioChar \"friend\"}} leaned against the concrete wall, clutching his binder",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"friend\"}}",
+                "key": "friend",
+                "context": "{{scenarioChar \"friend\"}} leaned against the concrete wall, clutc"
+              }
+            ]
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-al-5-3",
+            "speaker_slot": "roommate",
+            "speaker_valid_slot": true,
+            "content_len": 213,
+            "content_preview": "{{scenarioChar \"roommate\"}} walked past carrying cheer practice flags, laughing ",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"roommate\"}}",
+                "key": "roommate",
+                "context": "{{scenarioChar \"roommate\"}} walked past carrying cheer practice fla"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "id": "scene-alyssa-sidewinders",
+        "name": "06. Sidewinders Concert at The Dockside Venue",
+        "speaker_slot": "crush",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "persona_1786335754946"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"crush\"}}",
+            "key": "crush",
+            "context": "the elevated stage, {{scenarioChar \"crush\"}} stood behind his dual-keyboard synthesi"
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-al-6-1",
+            "speaker_slot": "crush",
+            "speaker_valid_slot": true,
+            "content_len": 357,
+            "content_preview": "On the elevated stage, {{scenarioChar \"crush\"}} stood behind his dual-keyboard s",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"crush\"}}",
+                "key": "crush",
+                "context": "the elevated stage, {{scenarioChar \"crush\"}} stood behind his dual-keyboard synthesi"
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-al-6-2",
+            "speaker_slot": "best_friend",
+            "speaker_valid_slot": true,
+            "content_len": 239,
+            "content_preview": "{{scenarioChar \"best_friend\"}} danced beside {{user}}, laughing over the poundin",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"best_friend\"}}",
+                "key": "best_friend",
+                "context": "{{scenarioChar \"best_friend\"}} danced beside {{user}}, laughing over t"
+              }
+            ]
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-al-6-3",
+            "speaker_slot": "twin",
+            "speaker_valid_slot": true,
+            "content_len": 220,
+            "content_preview": "From the sound booth balcony above the crowd, {{scenarioChar \"twin\"}} gave a sha",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"twin\"}}",
+                "key": "twin",
+                "context": "ny above the crowd, {{scenarioChar \"twin\"}} gave a sharp thumbs-up from behind the "
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "local_jasper": {
+    "name": "Jasper Local",
+    "id": "char_scenario_Kq4mJEBH83j7Q7DdVfFnF",
+    "revision": 4,
+    "visibility": "private",
+    "rating": "explicit",
+    "lorebook_ids_count": 15,
+    "lorebook_ids": [
+      "_gwwCxCfQ6PQaLEjAQVpJL",
+      "_HfG7TeV6MJyj6bxMwxkpt",
+      "_9zWTGqYJNJ4BCDMj8gfcD",
+      "_EjXxkmPVhpCXg8xABpFkK",
+      "_Uht3Ckz44JBDrPnUHq7LV",
+      "_zwEqgEEzh12X6gHVmMKKC",
+      "_GV1KyHVY1RMbCnWgLkzDG",
+      "_GbWJbkhgLzWexMHrjyUUc",
+      "_FaVcHfmrqcaJq8pa3WmRw",
+      "_BbrRgrcdGPMLEbBU2b6xk",
+      "_gchmML4Q478zdFjhXf8rN",
+      "_brNyzEdhzNAyxK8xC8hhm",
+      "_YtKLMTwyMxNf1DNYqBx1t",
+      "_b9HgpUXtAW8VmTy82BPDV",
+      "_c8bEm1bWphwqFBXWRPrV8"
+    ],
+    "slots": [
+      {
+        "key": "twin",
+        "label": "Twin Sister (Alyssa Hvit)",
+        "unavailable_count": 0,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_6exg3yPfe2eCDK4hTftkh",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "male_roommate",
+        "label": "Roommate (Russell 'Russ' Sinclair)",
+        "unavailable_count": 0,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_wn6DkCcg3Xqa2Xpx9ttnT",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "crush",
+        "label": "Crush (Scarlett Rose)",
+        "unavailable_count": 0,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_qXgBMbFYJfc84hbLHhe92",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "ai_companion",
+        "label": "AI Companion (Echo)",
+        "unavailable_count": 0,
+        "pool_size": 0,
+        "pool_items": []
+      },
+      {
+        "key": "childhood_friend",
+        "label": "Childhood Friend (Finnegan Novak)",
+        "unavailable_count": 0,
+        "pool_size": 0,
+        "pool_items": []
+      },
+      {
+        "key": "quarterback",
+        "label": "Quarterback (Jared Thompson)",
+        "unavailable_count": 0,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_xJVPtBLL3dxy69RLKL9X9",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "friend",
+        "label": "Friend (Stanley Davies Jr.)",
+        "unavailable_count": 0,
+        "pool_size": 1,
+        "pool_items": [
+          {
+            "character_id": "_Xd3NhKnRJByMTtdb6PjxJ",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "key": "sports_rival",
+        "label": "Sports Rival (Vincent Campbell)",
+        "unavailable_count": 0,
+        "pool_size": 0,
+        "pool_items": []
+      }
+    ],
+    "slots_with_unavailable_count_gt_0": [],
+    "macro_occurrences_scenario_text": [
+      {
+        "macro": "{{scenarioChar \"twin\"}}",
+        "key": "twin",
+        "context": "d cyber sentinel.\n- {{scenarioChar \"twin\"}} (Alyssa Hvit Douglas Bloodmoon): 19yo D"
+      },
+      {
+        "macro": "{{scenarioChar \"male_roommate\"}}",
+        "key": "male_roommate",
+        "context": "ist, twin sister.\n- {{scenarioChar \"male_roommate\"}} (Russell 'Russ' Sinclair): Verified sur"
+      },
+      {
+        "macro": "{{scenarioChar \"crush\"}}",
+        "key": "crush",
+        "context": ", loyal roommate.\n- {{scenarioChar \"crush\"}} (Scarlett Rose): Verified surname Rose,"
+      },
+      {
+        "macro": "{{scenarioChar \"ai_companion\"}}",
+        "key": "ai_companion",
+        "context": "t romantic crush.\n- {{scenarioChar \"ai_companion\"}} (Echo): Sentient digital entity and cyb"
+      },
+      {
+        "macro": "{{scenarioChar \"childhood_friend\"}}",
+        "key": "childhood_friend",
+        "context": "and network rigs.\n- {{scenarioChar \"childhood_friend\"}} (Finnegan 'Finn' Novak): Strictly verif"
+      },
+      {
+        "macro": "{{scenarioChar \"quarterback\"}}",
+        "key": "quarterback",
+        "context": "ter, hockey star.\n- {{scenarioChar \"quarterback\"}} (Jared Thompson): 21yo werewolf quarter"
+      },
+      {
+        "macro": "{{scenarioChar \"friend\"}}",
+        "key": "friend",
+        "context": "le and protector.\n- {{scenarioChar \"friend\"}} (Stanley Davies Jr.): 20yo human pre-me"
+      },
+      {
+        "macro": "{{scenarioChar \"sports_rival\"}}",
+        "key": "sports_rival",
+        "context": "tic science peer.\n- {{scenarioChar \"sports_rival\"}} (Vincent Campbell): 21yo vampire hockey"
+      }
+    ],
+    "greetings_analysis": [
+      {
+        "index": 0,
+        "id": "scene-jasper-welcome-day",
+        "name": "SUCC Welcome Day",
+        "speaker_slot": "twin",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "1792155173728"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"twin\"}}",
+            "key": "twin",
+            "context": "folding chair rows. {{scenarioChar \"twin\"}} stood beside {{user}} beneath the shade"
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-js-0-1",
+            "speaker_slot": "twin",
+            "speaker_valid_slot": true,
+            "content_len": 933,
+            "content_preview": "Bright late-morning sunlight flooded the lawns of the Lunar Quad on August 26, 2",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"twin\"}}",
+                "key": "twin",
+                "context": "folding chair rows. {{scenarioChar \"twin\"}} stood beside {{user}} beneath the shade"
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-js-0-2",
+            "speaker_slot": "childhood_friend",
+            "speaker_valid_slot": true,
+            "content_len": 773,
+            "content_preview": "{{scenarioChar \"childhood_friend\"}} strode across the grass from the athletic co",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"childhood_friend\"}}",
+                "key": "childhood_friend",
+                "context": "{{scenarioChar \"childhood_friend\"}} strode across the grass from the athlet"
+              }
+            ]
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-js-0-3",
+            "speaker_slot": "crush",
+            "speaker_valid_slot": true,
+            "content_len": 783,
+            "content_preview": "A sudden draft of sweet vanilla and elderflower announced {{scenarioChar \"crush\"",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"crush\"}}",
+                "key": "crush",
+                "context": "derflower announced {{scenarioChar \"crush\"}}, who slipped through the edge of the cr"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "id": "scene-jasper-wyrm-304",
+        "name": "01. Wyrm Hall Suite 304",
+        "speaker_slot": "male_roommate",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "1792155173728"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"male_roommate\"}}",
+            "key": "male_roommate",
+            "context": "{{scenarioChar \"male_roommate\"}} sat perched on the low vinyl sofa, his "
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-js-1-1",
+            "speaker_slot": "male_roommate",
+            "speaker_valid_slot": true,
+            "content_len": 443,
+            "content_preview": "{{scenarioChar \"male_roommate\"}} sat perched on the low vinyl sofa, his bare sho",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"male_roommate\"}}",
+                "key": "male_roommate",
+                "context": "{{scenarioChar \"male_roommate\"}} sat perched on the low vinyl sofa, his "
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-js-1-2",
+            "speaker_slot": "ai_companion",
+            "speaker_valid_slot": true,
+            "content_len": 343,
+            "content_preview": "From the dual-monitor workstation beneath the bunk bed, a soft chime chimed thro",
+            "macros": []
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-js-1-3",
+            "speaker_slot": "twin",
+            "speaker_valid_slot": true,
+            "content_len": 281,
+            "content_preview": "A gentle knock sounded against the door, and {{scenarioChar \"twin\"}} peeked into",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"twin\"}}",
+                "key": "twin",
+                "context": "ainst the door, and {{scenarioChar \"twin\"}} peeked into the room holding two cardbo"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "id": "scene-jasper-roof-hack",
+        "name": "02. Wyrm Hall Roof Hacking Session",
+        "speaker_slot": "ai_companion",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "1792155173728"
+        ],
+        "g_macros": [],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-js-2-1",
+            "speaker_slot": "ai_companion",
+            "speaker_valid_slot": true,
+            "content_len": 308,
+            "content_preview": "On the ruggedized terminal resting on the tar-paper blanket, Echo's digital wave",
+            "macros": []
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-js-2-2",
+            "speaker_slot": "male_roommate",
+            "speaker_valid_slot": true,
+            "content_len": 332,
+            "content_preview": "{{scenarioChar \"male_roommate\"}} stepped through the roof access door, carrying ",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"male_roommate\"}}",
+                "key": "male_roommate",
+                "context": "{{scenarioChar \"male_roommate\"}} stepped through the roof access door, c"
+              }
+            ]
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-js-2-3",
+            "speaker_slot": "childhood_friend",
+            "speaker_valid_slot": true,
+            "content_len": 196,
+            "content_preview": "A brief text message flashed on the smartphone screen from Finn Novak: \"Bears ni",
+            "macros": []
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "id": "scene-jasper-quad-tension",
+        "name": "03. Campus Quad Tension",
+        "speaker_slot": "sports_rival",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "1792155173728"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"sports_rival\"}}",
+            "key": "sports_rival",
+            "context": "{{scenarioChar \"sports_rival\"}} stopped near the granite fountain with "
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-js-3-1",
+            "speaker_slot": "sports_rival",
+            "speaker_valid_slot": true,
+            "content_len": 341,
+            "content_preview": "{{scenarioChar \"sports_rival\"}} stopped near the granite fountain with two frate",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"sports_rival\"}}",
+                "key": "sports_rival",
+                "context": "{{scenarioChar \"sports_rival\"}} stopped near the granite fountain with "
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-js-3-2",
+            "speaker_slot": "quarterback",
+            "speaker_valid_slot": true,
+            "content_len": 355,
+            "content_preview": "{{scenarioChar \"quarterback\"}} strode across the lawn with his heavy football du",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"quarterback\"}}",
+                "key": "quarterback",
+                "context": "{{scenarioChar \"quarterback\"}} strode across the lawn with his heavy f"
+              }
+            ]
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-js-3-3",
+            "speaker_slot": "friend",
+            "speaker_valid_slot": true,
+            "content_len": 299,
+            "content_preview": "{{scenarioChar \"friend\"}} stood a few paces back with a dry smirk, tapping his p",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"friend\"}}",
+                "key": "friend",
+                "context": "{{scenarioChar \"friend\"}} stood a few paces back with a dry smirk"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "id": "scene-jasper-warehouse-rave",
+        "name": "04. DJ Frequency Underground Dock Warehouse Rave",
+        "speaker_slot": "male_roommate",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "1792155173728"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"male_roommate\"}}",
+            "key": "male_roommate",
+            "context": "{{scenarioChar \"male_roommate\"}} pushed through the backstage black curt"
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-js-4-1",
+            "speaker_slot": "male_roommate",
+            "speaker_valid_slot": true,
+            "content_len": 304,
+            "content_preview": "{{scenarioChar \"male_roommate\"}} pushed through the backstage black curtain, wip",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"male_roommate\"}}",
+                "key": "male_roommate",
+                "context": "{{scenarioChar \"male_roommate\"}} pushed through the backstage black curt"
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-al-4-2",
+            "speaker_slot": "twin",
+            "speaker_valid_slot": true,
+            "content_len": 232,
+            "content_preview": "From the elevated catwalk overlooking the pulsing dance floor, {{scenarioChar \"t",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"twin\"}}",
+                "key": "twin",
+                "context": "ulsing dance floor, {{scenarioChar \"twin\"}} leaned over the iron railing with a glo"
+              }
+            ]
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-js-4-3",
+            "speaker_slot": "ai_companion",
+            "speaker_valid_slot": true,
+            "content_len": 276,
+            "content_preview": "Echo's voice chimed cleanly through the monitor headphones, perfectly isolated f",
+            "macros": []
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "id": "scene-jasper-bro-halloween",
+        "name": "05. Beta Rho Omega Halloween Party",
+        "speaker_slot": "crush",
+        "speaker_valid_slot": true,
+        "invariant_speaker_m0": true,
+        "invariant_content_m0": true,
+        "linked_persona_ids": [
+          "1792155173728"
+        ],
+        "g_macros": [
+          {
+            "macro": "{{scenarioChar \"crush\"}}",
+            "key": "crush",
+            "context": "{{scenarioChar \"crush\"}} stood by the second-floor wooden balust"
+          }
+        ],
+        "messages_count": 3,
+        "messages": [
+          {
+            "msg_index": 0,
+            "id": "msg-js-5-1",
+            "speaker_slot": "crush",
+            "speaker_valid_slot": true,
+            "content_len": 404,
+            "content_preview": "{{scenarioChar \"crush\"}} stood by the second-floor wooden balustrade, dressed in",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"crush\"}}",
+                "key": "crush",
+                "context": "{{scenarioChar \"crush\"}} stood by the second-floor wooden balust"
+              }
+            ]
+          },
+          {
+            "msg_index": 1,
+            "id": "msg-js-5-2",
+            "speaker_slot": "quarterback",
+            "speaker_valid_slot": true,
+            "content_len": 199,
+            "content_preview": "Down in the crowded foyer, {{scenarioChar \"quarterback\"}} held up a carved pumpk",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"quarterback\"}}",
+                "key": "quarterback",
+                "context": " the crowded foyer, {{scenarioChar \"quarterback\"}} held up a carved pumpkin punch bowl dre"
+              }
+            ]
+          },
+          {
+            "msg_index": 2,
+            "id": "msg-js-5-3",
+            "speaker_slot": "male_roommate",
+            "speaker_valid_slot": true,
+            "content_len": 200,
+            "content_preview": "{{scenarioChar \"male_roommate\"}} caught Jasper's eye from the landing below with",
+            "macros": [
+              {
+                "macro": "{{scenarioChar \"male_roommate\"}}",
+                "key": "male_roommate",
+                "context": "{{scenarioChar \"male_roommate\"}} caught Jasper's eye from the landing be"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

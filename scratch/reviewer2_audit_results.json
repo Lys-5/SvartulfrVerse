@@ -1,0 +1,384 @@
+{
+  "summary": {},
+  "scenarios": {
+    "Master Scenario": {
+      "name": "Master Scenario",
+      "id": "char_scenario_1DC43ggb6mB8YLJDJKrU4",
+      "checks": {
+        "id_parity": {
+          "pass": true,
+          "local": "char_scenario_1DC43ggb6mB8YLJDJKrU4",
+          "live": "char_scenario_1DC43ggb6mB8YLJDJKrU4"
+        },
+        "revision": {
+          "pass": true,
+          "local": 28,
+          "live": 28,
+          "expected": 28
+        },
+        "visibility_private": {
+          "pass": true,
+          "local": "private",
+          "live": "private"
+        },
+        "lorebook_ids_canonical_15": {
+          "pass": true,
+          "local_len": 15,
+          "live_len": 15,
+          "exact_sequence_match": true
+        },
+        "slots": {
+          "pass": true,
+          "expected_count": 13,
+          "local_count": 13,
+          "live_count": 13,
+          "diffs": []
+        },
+        "startup_script_parity": {
+          "pass": true,
+          "has_script": true,
+          "len_local": 2424,
+          "len_live": 2424
+        },
+        "scenario_text_parity": {
+          "pass": true,
+          "len_local": 4494,
+          "len_live": 4494
+        },
+        "greetings_and_persona_routing": {
+          "pass": true,
+          "expected_count": 29,
+          "local_count": 29,
+          "live_count": 29,
+          "errors": []
+        }
+      },
+      "diffs": []
+    },
+    "Villa Douglas": {
+      "name": "Villa Douglas",
+      "id": "char_scenario_88N1eQXqkbydKX9q9XQzp",
+      "checks": {
+        "id_parity": {
+          "pass": true,
+          "local": "char_scenario_88N1eQXqkbydKX9q9XQzp",
+          "live": "char_scenario_88N1eQXqkbydKX9q9XQzp"
+        },
+        "revision": {
+          "pass": true,
+          "local": 2,
+          "live": 2,
+          "expected": 2
+        },
+        "visibility_private": {
+          "pass": true,
+          "local": "private",
+          "live": "private"
+        },
+        "lorebook_ids_canonical_15": {
+          "pass": true,
+          "local_len": 15,
+          "live_len": 15,
+          "exact_sequence_match": true
+        },
+        "slots": {
+          "pass": true,
+          "expected_count": 7,
+          "local_count": 7,
+          "live_count": 7,
+          "diffs": []
+        },
+        "startup_script_parity": {
+          "pass": true,
+          "has_script": false,
+          "len_local": 0,
+          "len_live": 0
+        },
+        "scenario_text_parity": {
+          "pass": true,
+          "len_local": 2727,
+          "len_live": 2727
+        },
+        "greetings_and_persona_routing": {
+          "pass": true,
+          "expected_count": 5,
+          "local_count": 5,
+          "live_count": 5,
+          "errors": []
+        }
+      },
+      "diffs": []
+    },
+    "Camp Mystic": {
+      "name": "Camp Mystic",
+      "id": "char_scenario_nLC84wrHdrbB6P3DEhwKb",
+      "checks": {
+        "id_parity": {
+          "pass": true,
+          "local": "char_scenario_nLC84wrHdrbB6P3DEhwKb",
+          "live": "char_scenario_nLC84wrHdrbB6P3DEhwKb"
+        },
+        "revision": {
+          "pass": true,
+          "local": 2,
+          "live": 2,
+          "expected": 2
+        },
+        "visibility_private": {
+          "pass": true,
+          "local": "private",
+          "live": "private"
+        },
+        "lorebook_ids_canonical_15": {
+          "pass": true,
+          "local_len": 15,
+          "live_len": 15,
+          "exact_sequence_match": true
+        },
+        "slots": {
+          "pass": true,
+          "expected_count": 8,
+          "local_count": 8,
+          "live_count": 8,
+          "diffs": []
+        },
+        "startup_script_parity": {
+          "pass": true,
+          "has_script": true,
+          "len_local": 1624,
+          "len_live": 1624
+        },
+        "scenario_text_parity": {
+          "pass": true,
+          "len_local": 2992,
+          "len_live": 2992
+        },
+        "greetings_and_persona_routing": {
+          "pass": true,
+          "expected_count": 4,
+          "local_count": 4,
+          "live_count": 4,
+          "errors": []
+        }
+      },
+      "diffs": []
+    },
+    "DMHA Dungeons": {
+      "name": "DMHA Dungeons",
+      "id": "char_scenario_eqtRNnDpKbxDp7dmJmq6E",
+      "checks": {
+        "id_parity": {
+          "pass": true,
+          "local": "char_scenario_eqtRNnDpKbxDp7dmJmq6E",
+          "live": "char_scenario_eqtRNnDpKbxDp7dmJmq6E"
+        },
+        "revision": {
+          "pass": true,
+          "local": 2,
+          "live": 2,
+          "expected": 2
+        },
+        "visibility_private": {
+          "pass": true,
+          "local": "private",
+          "live": "private"
+        },
+        "lorebook_ids_canonical_15": {
+          "pass": true,
+          "local_len": 15,
+          "live_len": 15,
+          "exact_sequence_match": true
+        },
+        "slots": {
+          "pass": true,
+          "expected_count": 9,
+          "local_count": 9,
+          "live_count": 9,
+          "diffs": []
+        },
+        "startup_script_parity": {
+          "pass": true,
+          "has_script": false,
+          "len_local": 0,
+          "len_live": 0
+        },
+        "scenario_text_parity": {
+          "pass": true,
+          "len_local": 3038,
+          "len_live": 3038
+        },
+        "greetings_and_persona_routing": {
+          "pass": true,
+          "expected_count": 4,
+          "local_count": 4,
+          "live_count": 4,
+          "errors": []
+        }
+      },
+      "diffs": []
+    },
+    "Underworld Sindacato": {
+      "name": "Underworld Sindacato",
+      "id": "char_scenario_rrUCdBPH6WTNyBnQkMAKR",
+      "checks": {
+        "id_parity": {
+          "pass": true,
+          "local": "char_scenario_rrUCdBPH6WTNyBnQkMAKR",
+          "live": "char_scenario_rrUCdBPH6WTNyBnQkMAKR"
+        },
+        "revision": {
+          "pass": true,
+          "local": 2,
+          "live": 2,
+          "expected": 2
+        },
+        "visibility_private": {
+          "pass": true,
+          "local": "private",
+          "live": "private"
+        },
+        "lorebook_ids_canonical_15": {
+          "pass": true,
+          "local_len": 15,
+          "live_len": 15,
+          "exact_sequence_match": true
+        },
+        "slots": {
+          "pass": true,
+          "expected_count": 6,
+          "local_count": 6,
+          "live_count": 6,
+          "diffs": []
+        },
+        "startup_script_parity": {
+          "pass": true,
+          "has_script": false,
+          "len_local": 0,
+          "len_live": 0
+        },
+        "scenario_text_parity": {
+          "pass": true,
+          "len_local": 2716,
+          "len_live": 2716
+        },
+        "greetings_and_persona_routing": {
+          "pass": true,
+          "expected_count": 4,
+          "local_count": 4,
+          "live_count": 4,
+          "errors": []
+        }
+      },
+      "diffs": []
+    },
+    "SUCC Route Alyssa": {
+      "name": "SUCC Route Alyssa",
+      "id": "char_scenario_CKgwq246DyCj1NNTBV9rt",
+      "checks": {
+        "id_parity": {
+          "pass": true,
+          "local": "char_scenario_CKgwq246DyCj1NNTBV9rt",
+          "live": "char_scenario_CKgwq246DyCj1NNTBV9rt"
+        },
+        "revision": {
+          "pass": true,
+          "local": 2,
+          "live": 2,
+          "expected": 2
+        },
+        "visibility_private": {
+          "pass": true,
+          "local": "private",
+          "live": "private"
+        },
+        "lorebook_ids_canonical_15": {
+          "pass": true,
+          "local_len": 15,
+          "live_len": 15,
+          "exact_sequence_match": true
+        },
+        "slots": {
+          "pass": true,
+          "expected_count": 8,
+          "local_count": 8,
+          "live_count": 8,
+          "diffs": []
+        },
+        "startup_script_parity": {
+          "pass": true,
+          "has_script": false,
+          "len_local": 0,
+          "len_live": 0
+        },
+        "scenario_text_parity": {
+          "pass": true,
+          "len_local": 3235,
+          "len_live": 3235
+        },
+        "greetings_and_persona_routing": {
+          "pass": true,
+          "expected_count": 6,
+          "local_count": 6,
+          "live_count": 6,
+          "errors": []
+        }
+      },
+      "diffs": []
+    },
+    "SUCC Route Jasper": {
+      "name": "SUCC Route Jasper",
+      "id": "char_scenario_Kq4mJEBH83j7Q7DdVfFnF",
+      "checks": {
+        "id_parity": {
+          "pass": true,
+          "local": "char_scenario_Kq4mJEBH83j7Q7DdVfFnF",
+          "live": "char_scenario_Kq4mJEBH83j7Q7DdVfFnF"
+        },
+        "revision": {
+          "pass": true,
+          "local": 2,
+          "live": 2,
+          "expected": 2
+        },
+        "visibility_private": {
+          "pass": true,
+          "local": "private",
+          "live": "private"
+        },
+        "lorebook_ids_canonical_15": {
+          "pass": true,
+          "local_len": 15,
+          "live_len": 15,
+          "exact_sequence_match": true
+        },
+        "slots": {
+          "pass": true,
+          "expected_count": 8,
+          "local_count": 8,
+          "live_count": 8,
+          "diffs": []
+        },
+        "startup_script_parity": {
+          "pass": true,
+          "has_script": false,
+          "len_local": 0,
+          "len_live": 0
+        },
+        "scenario_text_parity": {
+          "pass": true,
+          "len_local": 2804,
+          "len_live": 2804
+        },
+        "greetings_and_persona_routing": {
+          "pass": true,
+          "expected_count": 5,
+          "local_count": 5,
+          "live_count": 5,
+          "errors": []
+        }
+      },
+      "diffs": []
+    }
+  },
+  "failures": []
+}

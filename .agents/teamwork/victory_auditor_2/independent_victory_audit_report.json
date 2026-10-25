@@ -1,0 +1,1400 @@
+{
+  "timestamp": "2026-10-20T23:32:06Z",
+  "phase_a_timeline": {
+    "Villa Douglas": {
+      "size": 18185,
+      "mtime_utc": "2026-10-20 23:07:30 UTC",
+      "mtime_epoch": 1792537650.6506774
+    },
+    "Camp Mystic": {
+      "size": 17330,
+      "mtime_utc": "2026-10-20 23:07:41 UTC",
+      "mtime_epoch": 1792537661.2669182
+    },
+    "DMHA Dungeons": {
+      "size": 16520,
+      "mtime_utc": "2026-10-20 23:07:50 UTC",
+      "mtime_epoch": 1792537670.9590478
+    },
+    "Underworld Sindacato": {
+      "size": 15049,
+      "mtime_utc": "2026-10-20 23:08:00 UTC",
+      "mtime_epoch": 1792537680.5427558
+    },
+    "SUCC Route Alyssa": {
+      "size": 18531,
+      "mtime_utc": "2026-10-20 23:08:11 UTC",
+      "mtime_epoch": 1792537691.6037252
+    },
+    "SUCC Route Jasper": {
+      "size": 16188,
+      "mtime_utc": "2026-10-20 23:08:22 UTC",
+      "mtime_epoch": 1792537702.0923102
+    },
+    "Master Scenario": {
+      "size": 170117,
+      "mtime_utc": "2026-10-20 23:08:33 UTC",
+      "mtime_epoch": 1792537713.932046
+    },
+    "status": "PASS",
+    "anomalies": []
+  },
+  "phase_b_integrity": {
+    "status": "PASS"
+  },
+  "phase_c_scenarios": [
+    {
+      "name": "Villa Douglas",
+      "id": "char_scenario_88N1eQXqkbydKX9q9XQzp",
+      "mode": "dual",
+      "checks": {
+        "live_http_200": true,
+        "visibility_private": {
+          "status": "PASS",
+          "live": "private",
+          "local": "private"
+        },
+        "revision_match": {
+          "status": "PASS",
+          "live": 2,
+          "local": 2
+        },
+        "lorebook_suite_15": {
+          "status": "PASS",
+          "live_count": 15,
+          "local_count": 15,
+          "canonical_count": 15,
+          "live_matches_canonical": true,
+          "local_matches_canonical": true
+        },
+        "slots_count": {
+          "status": "PASS",
+          "expected": 7,
+          "live": 7,
+          "local": 7
+        },
+        "greetings_count": {
+          "status": "PASS",
+          "expected": 5,
+          "live": 5,
+          "local": 5
+        }
+      },
+      "verdict": "PASS",
+      "greetings_audit": [
+        {
+          "greeting_index": 1,
+          "name": "01. Living Room Gaming (Call of Duty)",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 2,
+          "name": "02. Erik's Study (Sanctuary of Mahogany and Ballistic Steel)",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 3,
+          "name": "03. The Verve Lounge (Motorcycle Garage and Real Advice)",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 4,
+          "name": "04. Sacred Yule Vigil (The Grove of Seven Hills)",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 5,
+          "name": "05. Kitchen Crossroad at Dawn (Before the Summer Dispersal)",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        }
+      ],
+      "em_dashes_count": 0
+    },
+    {
+      "name": "Camp Mystic",
+      "id": "char_scenario_nLC84wrHdrbB6P3DEhwKb",
+      "mode": "dual",
+      "checks": {
+        "live_http_200": true,
+        "visibility_private": {
+          "status": "PASS",
+          "live": "private",
+          "local": "private"
+        },
+        "revision_match": {
+          "status": "PASS",
+          "live": 2,
+          "local": 2
+        },
+        "lorebook_suite_15": {
+          "status": "PASS",
+          "live_count": 15,
+          "local_count": 15,
+          "canonical_count": 15,
+          "live_matches_canonical": true,
+          "local_matches_canonical": true
+        },
+        "slots_count": {
+          "status": "PASS",
+          "expected": 8,
+          "live": 8,
+          "local": 8
+        },
+        "greetings_count": {
+          "status": "PASS",
+          "expected": 4,
+          "live": 4,
+          "local": 4
+        }
+      },
+      "verdict": "PASS",
+      "greetings_audit": [
+        {
+          "greeting_index": 1,
+          "name": "01. The Shuttle Arrival on Lake Erie",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 2,
+          "name": "02. Cabin Assignment and Unpacking",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 3,
+          "name": "03. Afternoon Lake Recreation at the Docks",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 4,
+          "name": "04. Evening Campfire and Lakeside Lore",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        }
+      ],
+      "em_dashes_count": 0
+    },
+    {
+      "name": "DMHA Dungeons",
+      "id": "char_scenario_eqtRNnDpKbxDp7dmJmq6E",
+      "mode": "dual",
+      "checks": {
+        "live_http_200": true,
+        "visibility_private": {
+          "status": "PASS",
+          "live": "private",
+          "local": "private"
+        },
+        "revision_match": {
+          "status": "PASS",
+          "live": 2,
+          "local": 2
+        },
+        "lorebook_suite_15": {
+          "status": "PASS",
+          "live_count": 15,
+          "local_count": 15,
+          "canonical_count": 15,
+          "live_matches_canonical": true,
+          "local_matches_canonical": true
+        },
+        "slots_count": {
+          "status": "PASS",
+          "expected": 9,
+          "live": 9,
+          "local": 9
+        },
+        "greetings_count": {
+          "status": "PASS",
+          "expected": 4,
+          "live": 4,
+          "local": 4
+        }
+      },
+      "verdict": "PASS",
+      "greetings_audit": [
+        {
+          "greeting_index": 1,
+          "name": "01. Hot Zone Briefing at the DMHA Staging Shed",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 2,
+          "name": "02. Floor 10 Sanctuary (Vaulted Safe Zone Hot Pot)",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 3,
+          "name": "03. Deep Incursion and Ironhorn Nomads Flank",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 4,
+          "name": "04. The Horns Debrief at Barrow's Stoop",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        }
+      ],
+      "em_dashes_count": 0
+    },
+    {
+      "name": "Underworld Sindacato",
+      "id": "char_scenario_rrUCdBPH6WTNyBnQkMAKR",
+      "mode": "dual",
+      "checks": {
+        "live_http_200": true,
+        "visibility_private": {
+          "status": "PASS",
+          "live": "private",
+          "local": "private"
+        },
+        "revision_match": {
+          "status": "PASS",
+          "live": 2,
+          "local": 2
+        },
+        "lorebook_suite_15": {
+          "status": "PASS",
+          "live_count": 15,
+          "local_count": 15,
+          "canonical_count": 15,
+          "live_matches_canonical": true,
+          "local_matches_canonical": true
+        },
+        "slots_count": {
+          "status": "PASS",
+          "expected": 6,
+          "live": 6,
+          "local": 6
+        },
+        "greetings_count": {
+          "status": "PASS",
+          "expected": 4,
+          "live": 4,
+          "local": 4
+        }
+      },
+      "verdict": "PASS",
+      "greetings_audit": [
+        {
+          "greeting_index": 1,
+          "name": "01. Rory's Estate Summit (Ballantine Syndicate Briefing)",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 2,
+          "name": "02. Sinners Hideout and Ambrosia Vial (Hollywood Hills)",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 3,
+          "name": "03. Harbor Fog Ambush at Molo 42",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 4,
+          "name": "04. Sinclair's Secret Subterranean Lab",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        }
+      ],
+      "em_dashes_count": 0
+    },
+    {
+      "name": "SUCC Route Alyssa",
+      "id": "char_scenario_CKgwq246DyCj1NNTBV9rt",
+      "mode": "alyssa",
+      "checks": {
+        "live_http_200": true,
+        "visibility_private": {
+          "status": "PASS",
+          "live": "private",
+          "local": "private"
+        },
+        "revision_match": {
+          "status": "PASS",
+          "live": 2,
+          "local": 2
+        },
+        "lorebook_suite_15": {
+          "status": "PASS",
+          "live_count": 15,
+          "local_count": 15,
+          "canonical_count": 15,
+          "live_matches_canonical": true,
+          "local_matches_canonical": true
+        },
+        "slots_count": {
+          "status": "PASS",
+          "expected": 8,
+          "live": 8,
+          "local": 8
+        },
+        "greetings_count": {
+          "status": "PASS",
+          "expected": 6,
+          "live": 6,
+          "local": 6
+        }
+      },
+      "verdict": "PASS",
+      "greetings_audit": [
+        {
+          "greeting_index": 1,
+          "name": "01. Theta Iota Theta Morning on Greek Row",
+          "expected_personas": [
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 2,
+          "name": "02. Pre-Med Biology Labs",
+          "expected_personas": [
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 3,
+          "name": "03. Basilica Library Sheltered Smoking Corner",
+          "expected_personas": [
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 4,
+          "name": "04. Ice Rink Bears Practice Clash",
+          "expected_personas": [
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 5,
+          "name": "05. Bulls Locker Room and Stadium Tunnel",
+          "expected_personas": [
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 6,
+          "name": "06. Sidewinders Concert at The Dockside Venue",
+          "expected_personas": [
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        }
+      ],
+      "em_dashes_count": 0
+    },
+    {
+      "name": "SUCC Route Jasper",
+      "id": "char_scenario_Kq4mJEBH83j7Q7DdVfFnF",
+      "mode": "jasper",
+      "checks": {
+        "live_http_200": true,
+        "visibility_private": {
+          "status": "PASS",
+          "live": "private",
+          "local": "private"
+        },
+        "revision_match": {
+          "status": "PASS",
+          "live": 2,
+          "local": 2
+        },
+        "lorebook_suite_15": {
+          "status": "PASS",
+          "live_count": 15,
+          "local_count": 15,
+          "canonical_count": 15,
+          "live_matches_canonical": true,
+          "local_matches_canonical": true
+        },
+        "slots_count": {
+          "status": "PASS",
+          "expected": 8,
+          "live": 8,
+          "local": 8
+        },
+        "greetings_count": {
+          "status": "PASS",
+          "expected": 5,
+          "live": 5,
+          "local": 5
+        }
+      },
+      "verdict": "PASS",
+      "greetings_audit": [
+        {
+          "greeting_index": 1,
+          "name": "01. Wyrm Hall Suite 304",
+          "expected_personas": [
+            "1792155173728"
+          ],
+          "live_personas": [
+            "1792155173728"
+          ],
+          "local_personas": [
+            "1792155173728"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 2,
+          "name": "02. Wyrm Hall Roof Hacking Session",
+          "expected_personas": [
+            "1792155173728"
+          ],
+          "live_personas": [
+            "1792155173728"
+          ],
+          "local_personas": [
+            "1792155173728"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 3,
+          "name": "03. Campus Quad Tension",
+          "expected_personas": [
+            "1792155173728"
+          ],
+          "live_personas": [
+            "1792155173728"
+          ],
+          "local_personas": [
+            "1792155173728"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 4,
+          "name": "04. DJ Frequency Underground Dock Warehouse Rave",
+          "expected_personas": [
+            "1792155173728"
+          ],
+          "live_personas": [
+            "1792155173728"
+          ],
+          "local_personas": [
+            "1792155173728"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 5,
+          "name": "05. Beta Rho Omega Halloween Party",
+          "expected_personas": [
+            "1792155173728"
+          ],
+          "live_personas": [
+            "1792155173728"
+          ],
+          "local_personas": [
+            "1792155173728"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        }
+      ],
+      "em_dashes_count": 0
+    },
+    {
+      "name": "Master Scenario",
+      "id": "char_scenario_1DC43ggb6mB8YLJDJKrU4",
+      "mode": "master",
+      "checks": {
+        "live_http_200": true,
+        "visibility_private": {
+          "status": "PASS",
+          "live": "private",
+          "local": "private"
+        },
+        "revision_match": {
+          "status": "PASS",
+          "live": 28,
+          "local": 28
+        },
+        "lorebook_suite_15": {
+          "status": "PASS",
+          "live_count": 15,
+          "local_count": 15,
+          "canonical_count": 15,
+          "live_matches_canonical": true,
+          "local_matches_canonical": true
+        },
+        "slots_count": {
+          "status": "PASS",
+          "expected": 13,
+          "live": 13,
+          "local": 13
+        },
+        "greetings_count": {
+          "status": "PASS",
+          "expected": 29,
+          "live": 29,
+          "local": 29
+        }
+      },
+      "verdict": "PASS",
+      "greetings_audit": [
+        {
+          "greeting_index": 1,
+          "name": "01. Estate a Villa Douglas: Serata Call of Duty in Famiglia",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 2,
+          "name": "02. Estate a Camp Mystic: Benvenuti al Lago",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 3,
+          "name": "03. [FemPOV] Cap. 1 (Parte 1): Primo Giorno di College - Partenza da Villa Douglas",
+          "expected_personas": [
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 4,
+          "name": "04. [MalePOV] Cap. 1 (Jasper): Rombo sul Viale e Addii da Villa Douglas",
+          "expected_personas": [
+            "1792155173728"
+          ],
+          "live_personas": [
+            "1792155173728"
+          ],
+          "local_personas": [
+            "1792155173728"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 5,
+          "name": "05. Cap. 1 (Parte 2): Arrivo al Griffin Clocktower sul Campus SUCC",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 6,
+          "name": "06. SUCC Campus: Move-in Day ai Wyrm Dormitories",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 7,
+          "name": "07. [MalePOV] Dormitori Wyrm Hall: Stanza 304 con Russ",
+          "expected_personas": [
+            "1792155173728"
+          ],
+          "live_personas": [
+            "1792155173728"
+          ],
+          "local_personas": [
+            "1792155173728"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 8,
+          "name": "08. [FemPOV] Cap. 2: Stage Formativo HSK - Il Colloquio con Zeera (Aetheris Clinic)",
+          "expected_personas": [
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 9,
+          "name": "09. [FemPOV] Cap. 3 (Parte 1): Impatto sul Campo dei Bulls - Lo Scontro con Jared",
+          "expected_personas": [
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 10,
+          "name": "10. [MalePOV] Cap. 3 (Parte 2): Tunnel e Spogliatoi del Bulls Stadium post-allenamento",
+          "expected_personas": [
+            "1792155173728"
+          ],
+          "live_personas": [
+            "1792155173728"
+          ],
+          "local_personas": [
+            "1792155173728"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 11,
+          "name": "11. SUCC Open Campus: Lunar Quad in Pieno Semestre (3a Persona)",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 12,
+          "name": "12. SUCC Open Campus: Lunar Quad in Pieno Semestre (2a Persona)",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 13,
+          "name": "13. [FemPOV] Cap. 4: Basso Distorto al Sidewinders - Primo Incontro con Mac",
+          "expected_personas": [
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 14,
+          "name": "14. Gilda DMHA (Cap. 1): Ingresso al Desk DMHA e L'Incarico di Coach D",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 15,
+          "name": "15. Gilda DMHA (Cap. 2): Discesa nel Rift Sotterraneo (Hive Apex Rift)",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 16,
+          "name": "16. Palestra SUCC: Pesi e Tappeti con Malachia, Roman e Kolya",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 17,
+          "name": "17. [FemPOV] Cap. 5: Overclock Notturno - Il Rave Clandestino di DJ Frequency",
+          "expected_personas": [
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 18,
+          "name": "18. [MalePOV] Cap. 5 (Jasper): Sul Palco di DJ Frequency al Rave nei Magazzini",
+          "expected_personas": [
+            "1792155173728"
+          ],
+          "live_personas": [
+            "1792155173728"
+          ],
+          "local_personas": [
+            "1792155173728"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 19,
+          "name": "19. [MalePOV] Soundclash al Verve: DJ Frequency contro Neon Purr",
+          "expected_personas": [
+            "1792155173728"
+          ],
+          "live_personas": [
+            "1792155173728"
+          ],
+          "local_personas": [
+            "1792155173728"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 20,
+          "name": "20. Solarton: Festival della Luna Piena in Town Square",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 21,
+          "name": "21. [FemPOV] Cap. 6: Halloween dei BRO - La Festa di Beta Rho Omega",
+          "expected_personas": [
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 22,
+          "name": "22. [MalePOV] Cap. 6 (Jasper): Pattuglia Notturna e Dragon Glass Katana al Riverbank",
+          "expected_personas": [
+            "1792155173728"
+          ],
+          "live_personas": [
+            "1792155173728"
+          ],
+          "local_personas": [
+            "1792155173728"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 23,
+          "name": "23. Cap. 7 (Parte 1): Pausa d'Autunno on the Road - Partenza da The Verve con Zio Logan",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 24,
+          "name": "24. Cap. 7 (Parte 2): Sosta Notturna al Neptune Diner sulla Pacific Coast Highway",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 25,
+          "name": "25. Cap. 8 (Parte 1): Solstizio d'Inverno - La Grande Veglia di Yule con Wulfnic",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 26,
+          "name": "26. Cap. 8 (Parte 2): La Veglia Notturna sotto l'Albero Sacro con i Firstborn",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 27,
+          "name": "27. Cap. 9: Reclute sotto Scorta - Visita Tattica di Erik e Kaladin al Campus SUCC",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 28,
+          "name": "28. Cap. 10: Fine del Primo Anno - Il Bivio in Cucina con Erik a Villa Douglas",
+          "expected_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "1792155173728",
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        },
+        {
+          "greeting_index": 29,
+          "name": "29. [FemPOV] Cap. 11: Fumo di Gomma, Birra e Cloro - Il Branco dei Nomads con Marek",
+          "expected_personas": [
+            "persona_1786335754946"
+          ],
+          "live_personas": [
+            "persona_1786335754946"
+          ],
+          "local_personas": [
+            "persona_1786335754946"
+          ],
+          "personas_pass": true,
+          "em_dashes_found": 0
+        }
+      ],
+      "em_dashes_count": 0
+    }
+  ],
+  "personas_audit": {
+    "persona_1786335754946": {
+      "status": "PASS",
+      "name": "Alyssa",
+      "gender": null,
+      "can_fork": true
+    },
+    "1792155173728": {
+      "status": "PASS",
+      "name": "Jasper",
+      "gender": null,
+      "can_fork": true
+    }
+  },
+  "lorebooks_audit": {
+    "_gwwCxCfQ6PQaLEjAQVpJL": {
+      "status": "PASS",
+      "title": "Svart\u00falfr - Lorebook I",
+      "entries_count": 221
+    },
+    "_HfG7TeV6MJyj6bxMwxkpt": {
+      "status": "PASS",
+      "title": "Svart\u00falfr - Lorebook II",
+      "entries_count": 142
+    },
+    "_9zWTGqYJNJ4BCDMj8gfcD": {
+      "status": "PASS",
+      "title": "Svart\u00falfr - Lorebook III (SUCC & Underworld)",
+      "entries_count": 36
+    },
+    "_EjXxkmPVhpCXg8xABpFkK": {
+      "status": "PASS",
+      "title": "Svart\u00falfr - Location",
+      "entries_count": 225
+    },
+    "_Uht3Ckz44JBDrPnUHq7LV": {
+      "status": "PASS",
+      "title": "Svart\u00falfr - NPC Secondary",
+      "entries_count": 211
+    },
+    "_zwEqgEEzh12X6gHVmMKKC": {
+      "status": "PASS",
+      "title": "Svart\u00falfr - NPC Primary",
+      "entries_count": 99
+    },
+    "_GV1KyHVY1RMbCnWgLkzDG": {
+      "status": "PASS",
+      "title": "A0 Behavioral Realism",
+      "entries_count": 25
+    },
+    "_GbWJbkhgLzWexMHrjyUUc": {
+      "status": "PASS",
+      "title": "A1 Physics",
+      "entries_count": 77
+    },
+    "_FaVcHfmrqcaJq8pa3WmRw": {
+      "status": "PASS",
+      "title": "A2 Social Realism",
+      "entries_count": 23
+    },
+    "_BbrRgrcdGPMLEbBU2b6xk": {
+      "status": "PASS",
+      "title": "A3 Medical Realism",
+      "entries_count": 23
+    },
+    "_gchmML4Q478zdFjhXf8rN": {
+      "status": "PASS",
+      "title": "A4 Cultural Realism",
+      "entries_count": 21
+    },
+    "_brNyzEdhzNAyxK8xC8hhm": {
+      "status": "PASS",
+      "title": "A5 Sex Position",
+      "entries_count": 45
+    },
+    "_YtKLMTwyMxNf1DNYqBx1t": {
+      "status": "PASS",
+      "title": "A5.5 Scene Tone",
+      "entries_count": 11
+    },
+    "_b9HgpUXtAW8VmTy82BPDV": {
+      "status": "PASS",
+      "title": "A6 World Realism",
+      "entries_count": 22
+    },
+    "_c8bEm1bWphwqFBXWRPrV8": {
+      "status": "PASS",
+      "title": "A7 Queer Realism",
+      "entries_count": 21
+    }
+  },
+  "changelog_audit": {
+    "status": "PASS",
+    "has_date_header": true,
+    "has_15_lorebooks": true,
+    "has_persona_config": true
+  },
+  "cdp_audit": {
+    "status": "PASS",
+    "active_port": "9222",
+    "browser_ws_path": "/devtools/browser/a27cc626-3e22-4a6a-a353-bdee66ad4481",
+    "port_verified": true,
+    "details": "Chrome DevTools active port file located; CDP port 9222 active and verified via challenger empirical logs."
+  },
+  "overall_verdict": "VICTORY CONFIRMED"
+}

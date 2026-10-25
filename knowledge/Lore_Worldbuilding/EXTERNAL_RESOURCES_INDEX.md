@@ -31,7 +31,8 @@ This index consolidates all external resources relevant to the SvartúlfrVerse p
 | Image Generation | 5 | 0 | 5 | 0 |
 | LLM Research | 3 | 3 | 0 | 0 |
 | Utility Tools | 13 | 1 | 12 | 0 |
-| **TOTAL** | **69** | **21** | **46** | **0** |
+| RPG & TTRPG Mechanics (D20 / S.P.E.C.I.A.L.) | 8 | 6 | 2 | 0 |
+| **TOTAL** | **77** | **27** | **50** | **0** |
 
 ---
 
@@ -162,6 +163,19 @@ This index consolidates all external resources relevant to the SvartúlfrVerse p
 | **Emoji Combos** | `https://emojicombos.com` | 🔵 Community | Emojis and aesthetic text | Decorative text for bot cards |
 | **HTML Cheat Sheet** | `https://htmlcheatsheet.com/` | 🔵 Community | HTML reference | Formatting and structure reference |
 | **Text Editor Arrows** | `https://texteditor.com/characters/arrows/` | 🔵 Community | Special characters and arrows | Decorative text elements |
+
+## 3.10 RPG & TTRPG Mechanics (D20 / S.P.E.C.I.A.L.)
+
+| Resource | URL | Authority | Description | Usage |
+|----------|-----|-----------|-------------|-------|
+| **Sopakco Sauce Docs** | `https://sopakcosauce.gitbook.io/sopakcosauce-docs` | ✅ Canonical | Comprehensive bot creation and advanced RPG mechanics documentation | Advanced card formatting, dice rolls, and prompt assembly reference |
+| **Wyvern Svartúlfr World Editor** | `https://app.wyvern.chat/worlds/edit/_CgYT8fHXpDC4crjmegQF7` | ✅ Canonical | Official cloud editor for the Svartúlfr World on Wyvern | Live inspection, lexicon configuration, locations, and RPG stat schemas |
+| **io's Modern Fantasy Universe Hub** | `https://io-modernfantasy.uwu.ai/` | ✅ Canonical | Central portal for io's Modern Fantasy universe and character hub | Canon verification, cross-character lore consistency, and universe mapping |
+| **Mackenzie "Mac" Sanchez-Rogers** | `https://janitorai.com/characters/1d1ef070-934d-4c11-90e2-b7fb9a4649c4_character-mackenzie-mac-sanchez-rogers` | ✅ Canonical | Canonical kemonomimi character card with integrated stats and dialogue patterns | Benchmark for demi-human anatomy, voice consistency, and RPG integration |
+| **Elite Warrior Tsalu Haoitan** | `https://janitorai.com/characters/1e685f63-024f-40f0-a892-a57535760b49_character-elite-warrior-tsalu-haoitan` | ✅ Canonical | Canonical combatant character card with structured abilities and combat rules | Reference for high-tier combat stat blocks and combat resolution prompts |
+| **Don't Look at Me** | `https://janitorai.com/characters/1ff24d14-3dfd-4795-9d49-986eeee711de_character-dont-look-at-me` | 🔵 Community | Community scenario card utilizing high-tension conditional scene scripting | Study of conditional trigger logic and reactive roleplay pacing |
+| **Neon Purr** | `https://janitorai.com/characters/d67a12e8-a1be-4ec4-95e1-ada90263fee4_character-neon-purr-%F0%9F%87%A6%F0%9F%87%BA` | ✅ Canonical | Canonical hybrid cyberpunk and urban fantasy character card | Dialogue pacing reference and urban demi-human setting mechanics |
+| **The Omega Breeding Facility** | `https://janitorai.com/characters/c6a9088f-8b82-402c-8070-8afe22a2781e_character-the-omega-breeding-facility` | 🔵 Community | Multi-character institutional environment scenario card | Structural reference for compound locations and multi-NPC tracking |
 
 ---
 

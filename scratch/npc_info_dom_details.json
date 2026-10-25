@@ -1,0 +1,143 @@
+{
+  "containerClass": "space-y-4 p-4 border rounded-md bg-muted/20",
+  "fields": [
+    {
+      "html": "<div class=\"space-y-2\"><label class=\"peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex flex-row items-center justify-between text-sm font-medium\">NPC Information</label><p class=\"text-xs text-muted-foreground\">Provide NPC details to automatically generate avatar activation regex</p></div>",
+      "label": "NPC Information",
+      "helper": "Provide NPC details to automatically generate avatar activation regex",
+      "inputs": []
+    },
+    {
+      "html": "<div class=\"space-y-2\"><label class=\"font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex flex-row items-center justify-between text-sm\">NPC Prefix</label><input autocomplete=\"off\" data-lpignore=\"true\" data-1p-ignore=\"true\" data-bwignore=\"true\" class=\"flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent h-8\" placeholder=\"e.g. =&gt; or leave empty\" value=\"\" style=\"\"><p class=\"text-xs text-muted-foreground\">Optional prefix marker before the NPC name, e.g. \"=&gt;\"</p></div>",
+      "label": "NPC Prefix",
+      "helper": "Optional prefix marker before the NPC name, e.g. \"=>\"",
+      "inputs": [
+        {
+          "tag": "input",
+          "type": "text",
+          "placeholder": "e.g. => or leave empty",
+          "className": "flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent h-8",
+          "value": "",
+          "text": "",
+          "role": null
+        }
+      ]
+    },
+    {
+      "html": "<div class=\"space-y-2\"><label class=\"font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex flex-row items-center justify-between text-sm\">First Name *</label><input autocomplete=\"off\" data-lpignore=\"true\" data-1p-ignore=\"true\" data-bwignore=\"true\" class=\"flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent h-8\" placeholder=\"Enter first name\" value=\"Scarlett\" style=\"\"></div>",
+      "label": "First Name *",
+      "helper": "",
+      "inputs": [
+        {
+          "tag": "input",
+          "type": "text",
+          "placeholder": "Enter first name",
+          "className": "flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent h-8",
+          "value": "Scarlett",
+          "text": "",
+          "role": null
+        }
+      ]
+    },
+    {
+      "html": "<div class=\"space-y-2\"><label class=\"font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex flex-row items-center justify-between text-sm\">Middle Names</label><div class=\"space-y-2\"><div class=\"flex gap-2\"><input autocomplete=\"off\" data-lpignore=\"true\" data-1p-ignore=\"true\" data-bwignore=\"true\" class=\"flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent h-8 flex-1\" placeholder=\"Add middle name and press Enter\" autocapitalize=\"off\" autocorrect=\"off\" spellcheck=\"false\" style=\"\"><button class=\"inline-flex items-center justify-center whitespace-nowrap text-sm shadow-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md h-8 px-3\" data-variant=\"outline\" data-size=\"sm\" type=\"button\" disabled=\"\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-plus h-3 w-3\"><path d=\"M5 12h14\"></path><path d=\"M12 5v14\"></path></svg></button></div></div></div>",
+      "label": "Middle Names",
+      "helper": "",
+      "inputs": [
+        {
+          "tag": "input",
+          "type": "text",
+          "placeholder": "Add middle name and press Enter",
+          "className": "flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent h-8 flex-1",
+          "value": "",
+          "text": "",
+          "role": null
+        },
+        {
+          "tag": "button",
+          "type": "button",
+          "placeholder": null,
+          "className": "inline-flex items-center justify-center whitespace-nowrap text-sm shadow-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md h-8 px-3",
+          "value": "",
+          "text": "",
+          "role": null
+        }
+      ]
+    },
+    {
+      "html": "<div class=\"space-y-2\"><label class=\"font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex flex-row items-center justify-between text-sm\">Last Name</label><input autocomplete=\"off\" data-lpignore=\"true\" data-1p-ignore=\"true\" data-bwignore=\"true\" class=\"flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent h-8\" placeholder=\"Enter last name\" value=\"Rose\" style=\"\"></div>",
+      "label": "Last Name",
+      "helper": "",
+      "inputs": [
+        {
+          "tag": "input",
+          "type": "text",
+          "placeholder": "Enter last name",
+          "className": "flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent h-8",
+          "value": "Rose",
+          "text": "",
+          "role": null
+        }
+      ]
+    },
+    {
+      "html": "<div class=\"space-y-2\"><label class=\"font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex flex-row items-center justify-between text-sm\">Nicknames</label><div class=\"space-y-2\"><div class=\"flex gap-2\"><input autocomplete=\"off\" data-lpignore=\"true\" data-1p-ignore=\"true\" data-bwignore=\"true\" class=\"flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent h-8 flex-1\" placeholder=\"Add nickname and press Enter\" autocapitalize=\"off\" autocorrect=\"off\" spellcheck=\"false\" style=\"\"><button class=\"inline-flex items-center justify-center whitespace-nowrap text-sm shadow-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md h-8 px-3\" data-variant=\"outline\" data-size=\"sm\" type=\"button\" disabled=\"\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-plus h-3 w-3\"><path d=\"M5 12h14\"></path><path d=\"M12 5v14\"></path></svg></button></div><div class=\"flex flex-wrap gap-2\"><div class=\"flex items-center\"><div class=\"rounded-md border px-2.5 py-0.5 font-semibold border-transparent bg-secondary text-secondary-foreground flex items-center gap-1 text-xs cursor-pointer hover:bg-secondary/80 transition-colors pr-1\"><span class=\"px-1\">Scarlett</span><button class=\"inline-flex items-center justify-center whitespace-nowrap text-sm shadow-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-6 w-6 p-0 hover:bg-destructive hover:text-destructive-foreground rounded-sm touch-manipulation\" data-variant=\"ghost\" data-size=\"sm\" type=\"button\" aria-label=\"Remove Scarlett\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-x h-3 w-3\"><path d=\"M18 6 6 18\"></path><path d=\"m6 6 12 12\"></path></svg></button></div></div></div></div></div>",
+      "label": "Nicknames",
+      "helper": "",
+      "inputs": [
+        {
+          "tag": "input",
+          "type": "text",
+          "placeholder": "Add nickname and press Enter",
+          "className": "flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent h-8 flex-1",
+          "value": "",
+          "text": "",
+          "role": null
+        },
+        {
+          "tag": "button",
+          "type": "button",
+          "placeholder": null,
+          "className": "inline-flex items-center justify-center whitespace-nowrap text-sm shadow-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md h-8 px-3",
+          "value": "",
+          "text": "",
+          "role": null
+        },
+        {
+          "tag": "button",
+          "type": "button",
+          "placeholder": null,
+          "className": "inline-flex items-center justify-center whitespace-nowrap text-sm shadow-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-6 w-6 p-0 hover:bg-destructive hover:text-destructive-foreground rounded-sm touch-manipulation",
+          "value": "",
+          "text": "",
+          "role": null
+        }
+      ]
+    },
+    {
+      "html": "<div class=\"space-y-2\"><label class=\"font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex flex-row items-center justify-between text-sm\">Titles</label><div class=\"space-y-2\"><div class=\"flex gap-2\"><input autocomplete=\"off\" data-lpignore=\"true\" data-1p-ignore=\"true\" data-bwignore=\"true\" class=\"flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent h-8 flex-1\" placeholder=\"Add title and press Enter (e.g., Dr., Sir, Lady)\" autocapitalize=\"off\" autocorrect=\"off\" spellcheck=\"false\" style=\"\"><button class=\"inline-flex items-center justify-center whitespace-nowrap text-sm shadow-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md h-8 px-3\" data-variant=\"outline\" data-size=\"sm\" type=\"button\" disabled=\"\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-plus h-3 w-3\"><path d=\"M5 12h14\"></path><path d=\"M12 5v14\"></path></svg></button></div></div></div>",
+      "label": "Titles",
+      "helper": "",
+      "inputs": [
+        {
+          "tag": "input",
+          "type": "text",
+          "placeholder": "Add title and press Enter (e.g., Dr., Sir, Lady)",
+          "className": "flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent h-8 flex-1",
+          "value": "",
+          "text": "",
+          "role": null
+        },
+        {
+          "tag": "button",
+          "type": "button",
+          "placeholder": null,
+          "className": "inline-flex items-center justify-center whitespace-nowrap text-sm shadow-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md h-8 px-3",
+          "value": "",
+          "text": "",
+          "role": null
+        }
+      ]
+    }
+  ]
+}

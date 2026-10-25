@@ -1,0 +1,395 @@
+# Svartúlfr Verse — Master Banners Catalog per Google Imagen 3 (Argon)
+
+Questo catalogo contiene i 22 banner panoramici (14 Cast Fisso + 8 Location Chiave) riscritti e blindati per **Google Imagen 3 (Argon)**.
+
+### Regole di Compliance Applicate:
+1. **Nome Istituzionale SUCC**: Indicato tassativamente per esteso come **`Supernatural University of Central California`** (banditi acronimi e varianti apocrife).
+2. **Zero Falsi Positivi Policy**: Sostituiti termini a rischio (es. `TIT` -> `Tau Iota Theta`, `Necromancy` -> `Applied Esoteric Life Sciences`, `cream-colored` -> `ivory-toned`, `burning` -> `glowing`).
+3. **Pure Architectural Establishing Shots**: Clausola `empty scene, architectural photography, no people, no text, no watermark` inclusa su tutti i prompt.
+
+---
+
+Ecco la riscrittura integrale di **tutti i prompt dei Banner e delle Location**, riforgiati esattamente sullo stesso standard compositivo, strutturato a livelli e lessicalmente sicuro (*filter-safe*) del Master Banner vincente.
+
+Tutti i prompt mantengono il formato panoramico **16:9**, la suddivisione per livelli (primo piano, architettura centrale, sfondo e panorama), il controllo dell'illuminazione volumetrica e dettagli d'arredo o veicoli specifici per ogni personaggio.
+
+---
+
+## PARTE 1: I 14 Banner delle Character Card (16:9)
+
+
+
+### 1. Erik Ulfr Douglas (Alpha Study & Douglas Corp HQ)
+```text
+Wide cinematic banner, 16:9 landscape aspect ratio. Establishing wide-angle shot of the executive penthouse pack study at the Douglas Corporation headquarters in Blackwood City at dusk.
+
+The interior showcases massive architectural authority and centuries of family prestige:
+- A monumental dark walnut executive desk with polished brass hardware, flanked by high-back tufted leather chesterfield armchairs and floor-to-ceiling bookshelves lined with leather-bound pack ledgers and corporate contracts;
+- Heavy architectural timber pillars and dark smoked-steel columns etched with subtle Nordic wolf knotwork;
+- In the foreground lounge area, a low marble coffee table with a crystal scotch decanter, heavy crystal tumblers, and architectural blueprints for urban development;
+- Expansive floor-to-ceiling acoustic glass walls revealing a panoramic view of the dense pine-covered mountain slopes of Blackwood Forest and the historic granite skyline of Blackwood City below.
+
+Atmospheric mountain fog drifting outside the glass, warm amber recessed ceiling lights casting rich golden pools across dark parquet floors. Cinematic lighting, photorealistic 8k, commanding patriarchal presence, ultra-detailed, empty scene, architectural photography, no people, no text, no watermark.
+```
+
+---
+
+
+
+### 2. Logan Dominic Járn Douglas (Douglas Motor Works & Custom Speed Shop)
+```text
+Wide cinematic banner, 16:9 landscape aspect ratio. Establishing wide-angle shot of the main workshop floor of Douglas Motor Works, situated at the forested base of Blackwood Forest at twilight.
+
+The space is a master-tier industrial custom garage and mechanical sanctuary:
+- In the center bay, a lifted matte-black custom heavy-duty pickup truck and customized American heavy cruiser motorcycles resting on hydraulic lifts;
+- Heavy-duty steel industrial tool cabinets, wall-mounted racks of chrome wrenches, engine blocks on stands, and welding stations with clean brass and steel fittings;
+- A comfortable corner lounge with a worn distressed leather sofa, vintage neon clock, and drafting table covered in engine schematics and motorcycle blueprints;
+- Massive open roll-up bay doors in the background framing a serene view of towering redwood and pine trees of the Blackwood Forest shrouded in cool evening mist.
+
+Warm tungsten drop lamps illuminating polished concrete floors with clean metallic reflections, cool blue twilight entering from the open doors. Cinematic lighting, photorealistic 8k, masculine craftsmanship aesthetic, empty scene, architectural photography, no people, no text, no watermark.
+```
+
+---
+
+
+
+### 3. Malachia Björn Douglas Bloodmoon (Solarton Industrial Rooftop & Muscle Car)
+```text
+Wide cinematic banner, 16:9 landscape aspect ratio. Establishing wide-angle shot of a sprawling concrete rooftop overlooking the industrial harbor district of Solarton at blue hour.
+
+The scene captures the gritty apex authority of the city streets:
+- Parked on the damp rooftop concrete, a customized classic American muscle car finished in deep matte black with dark tinted glass and polished chrome exhaust tips;
+- In the foreground, weathered concrete parapets with industrial steel ventilation ducts, weathered brick elevator shafts, and an open fire barrel casting warm amber glows onto the wet pavement;
+- In the midground, a leather jacket draped casually over a metal railing alongside an open metal tool case and a solitary duffel bag;
+- The background reveals a sweeping vista of Solarton's neon-lit commercial skyline, shipping container port cranes, and distant suspension bridges under low storm clouds.
+
+Dusk sky shifting from deep indigo to violet, wet ground reflecting vibrant magenta and amber streetlamps. 35mm cinematic film still, photorealistic 8k, moody urban predator atmosphere, empty scene, architectural photography, no people, no text, no watermark.
+```
+
+---
+
+
+
+### 4. Noah Loki Douglas Bloodmoon (Executive Diplomatic Penthouse Lounge)
+```text
+Wide cinematic banner, 16:9 landscape aspect ratio. Establishing wide-angle shot of an ultra-luxurious private executive lounge and diplomatic observation suite on the top floor of a high-rise in Solarton.
+
+The interior embodies calculating elegance, immense wealth, and understated power:
+- Minimalist polished black marble flooring with subtle golden veins, bespoke charcoal velvet sectional sofas, and a sculptural bronze fireplace with clean ethanol flames;
+- An elevated side alcove featuring a curved dark wood desk with private encrypted multi-monitor financial trading terminals and satellite communication arrays;
+- A discreet wet bar finished in brushed champagne brass with crystal glassware and vintage wine collections;
+- Floor-to-ceiling acoustic glass walls offering a breathtaking panoramic view of Solarton's glittering downtown skyline and the dark harbor waters below at midnight.
+
+Subdued indirect architectural LED lighting, warm amber accents contrasting with the cool blue nocturnal cityscape. Cinematic lighting, photorealistic 8k, refined grey-eminence luxury, empty scene, architectural photography, no people, no text, no watermark.
+```
+
+---
+
+
+
+### 5. Jasper Svartr Douglas Bloodmoon (The Verve Cyber-Arcane DJ Studio & Lab)
+```text
+Wide cinematic banner, 16:9 landscape aspect ratio. Establishing wide-angle shot of the underground private production studio and cyber-arcane workstation backstage at The Verve nightclub.
+
+The subterranean bunker blends cutting-edge music technology with esoteric digital craft:
+- In the center, a custom curved multi-tier producer desk equipped with high-end analog synthesizers, a professional DJ audio mixing console, modular drum machines, and glowing illuminated sound interfaces;
+- A multi-monitor array displaying glowing violet and cyan audio waveforms, sound frequency spectrums, and intricate digital spell-hacking node diagrams;
+- Exposed industrial brick walls layered with soundproofing foam panels, hanging coiled braided cables, and rack-mounted studio preamps with amber VU meters;
+- A side lounge with a low velvet couch, an open laptop displaying live audio feeds, and custom road cases stamped with venue stickers.
+
+Atmospheric stage haze catching sharp laser beams of ultraviolet, neon electric cyan, and deep purple accent lighting. Cinematic lighting, photorealistic 8k, underground electronic sanctuary, empty scene, architectural photography, no people, no text, no watermark.
+```
+
+---
+
+
+
+### 6. Alyssa Hvit Douglas Bloodmoon (Supernatural University of Central California Campus Suite & Moonflower Terrace)
+```text
+Wide cinematic banner, 16:9 landscape aspect ratio. Establishing wide-angle shot of an opulent private collegiate suite and adjoining moonlit terrace inside the premier residential tower at the Supernatural University of Central California.
+
+The space reflects grace, ancient lineage, and pristine White Wolf aesthetics:
+- High vaulted white stone arches with light oak herringbone floors, dressed with thick hand-woven ivory rugs and plush ivory-toned velvet lounge furniture;
+- A grand private library corner with an arched French window, a white lacquer study desk with antique botanical books and leather stationery;
+- Large open glass French doors leading to a stone terrace lined with blooming white moonflower vines, silver ferns, and marble planter boxes;
+- Outside, a panoramic nighttime view over the lantern-lit gardens of the Supernatural University of Central California campus, historic stone clock towers, and the distant dark forested ridges under a bright silver full moon.
+
+Luminous moonlight pouring through the terrace, delicate warm candle lanterns illuminating the interior with soft golden warmth. Cinematic lighting, photorealistic 8k, ethereal regal sanctuary, empty scene, architectural photography, no people, no text, no watermark.
+```
+
+---
+
+
+
+### 7. Wulfnic Báleygr Bloodmoon (Primordial Timber Great Hall & Fenris Sanctuary)
+```text
+Wide cinematic banner, 16:9 landscape aspect ratio. Establishing wide-angle shot of the monumental interior of the Primordial Longhouse Hall deep in the virgin northern pine forests.
+
+The ancient royal seat reflects thousand-year-old warrior majesty:
+- Colossal rough-hewn cedar tree trunks acting as architectural pillars, supporting massive timber roof trusses hung with archaic woven heraldic tapestries;
+- In the center, a deep sunken stone fire trench roaring with glowing birch logs and crackling embers, casting dancing orange firelight across stone flagstone floors;
+- At the far end, an elevated rough stone throne draped in thick wolf furs, flanked by archaic steel broadswords, round wooden shields, and standing runic megaliths;
+- High clerestory windows carved into the timber eaves revealing the green and violet glow of the aurora borealis shimmering across the Arctic night sky.
+
+Atmospheric woodsmoke drifting in warm volumetric light rays, deep velvety shadows, raw archaic primordial power. Cinematic lighting, photorealistic 8k, ancient Firstborn king hall, empty scene, architectural photography, no people, no text, no watermark.
+```
+
+---
+
+
+
+### 8. Edric Douglas (St. Brugge Private Academy Campus & Training Fields)
+```text
+Wide cinematic banner, 16:9 landscape aspect ratio. Establishing wide-angle shot of the historic campus and athletic training quad of St. Brugge Private Academy during a crisp autumn afternoon.
+
+The scene balances elite boarding school prestige with youthful energy:
+- In the midground, majestic gothic revival red-brick school buildings with slate roofs, stone archways, and a classic central clock tower;
+- Wide manicured green lawns and cobblestone pathways covered in golden, amber, and crimson fallen maple leaves;
+- In the foreground, an athletic training field with wooden benches, leather equipment duffels, lacrosse sticks, and hurdles;
+- In the background, rolling forested hills of the Blackwood region glowing with autumn colors under late-afternoon October sunshine.
+
+Warm golden-hour sunlight casting long dramatic shadows across the brick facades, crisp clean autumn atmosphere. 35mm cinematic film still, photorealistic 8k, youthful prep academy heritage, empty scene, architectural photography, no people, no text, no watermark.
+```
+
+---
+
+
+
+### 9. Jared Thompson (Supernatural University of Central California Athletic Stadium & Varsity Locker Tunnel)
+```text
+Wide cinematic banner, 16:9 landscape aspect ratio. Establishing wide-angle shot of the varsity athletic facility and stadium tunnel entrance at the Supernatural University of Central California at night.
+
+The setting embodies high-octane collegiate athletic power:
+- In the foreground, a modern varsity locker corridor with heavy-duty commercial weight racks, chrome dumbbells, athletic benches, and branded varsity gym bags;
+- Polished industrial rubberized flooring, banners displaying collegiate team emblems, and state championship trophy cases;
+- Through the wide stadium tunnel exit, the blazing halogen floodlights illuminate the vibrant emerald-green collegiate football turf and distant tiered grandstands;
+- Subtle atmospheric evening vapor rising from the cooling field outside.
+
+Dramatic rim lighting and lens flares from the high-powered stadium halogen lamps, high contrast athletic energy. Cinematic film still, photorealistic 8k, powerhouse collegiate varsity life, empty scene, architectural photography, no people, no text, no watermark.
+```
+
+---
+
+
+
+### 10. Mackenzie Sanchez-Rogers (Nomad Camper Van at Coastal Sunset)
+```text
+Wide cinematic banner, 16:9 landscape aspect ratio. Establishing wide-angle shot of a vintage customized bohemian camper van parked on the coastal bluff overlooking the Pacific shoreline near Solarton at sunset.
+
+The scene captures a free-spirited, nomadic rock musician lifestyle:
+- The vintage van's rear double doors are swung wide open, revealing an interior packed with analog synthesizers, guitar amplifiers, warm string fairy lights, and colorful woven blankets;
+- On the sandy grass outside, a portable generator, audio cable cases, a classic acoustic guitar on a stand, and a small folding camp table with a warm lantern;
+- In the background, dramatic coastal ocean bluffs with breaking waves along the sandy shore, coastal sea grasses swaying in the ocean breeze;
+- A breathtaking Pacific sunset painting the sky with sweeping gradients of coral pink, gold, and deep violet.
+
+Warm ambient interior van lights contrasting with cool coastal evening shadows, natural ocean spray mist. 35mm cinematic film still, photorealistic 8k, bohemian nomad rock aesthetic, empty scene, architectural photography, no people, no text, no watermark.
+```
+
+---
+
+
+
+### 11. Stanley Davies Jr. (Wyrm Hall Dorm: ROTC & Digital Art Studio)
+```text
+Wide cinematic banner, 16:9 landscape aspect ratio. Establishing wide-angle shot of a lived-in collegiate dorm room inside Wyrm Hall at the Supernatural University of Central California, showcasing an authentic dual life.
+
+The room is divided into two distinct, personal halves:
+- On one side, organized military ROTC parade boots, neatly pressed uniform jackets on hangers, field backpacks, and university chemistry and engineering textbooks stacked on wooden shelves;
+- On the other side, an expansive creative digital art workspace with a large graphics tablet, stylus pens, multi-monitor displays showing colorful fantasy character concept art, and sketchbooks;
+- A cozy dorm bed with flannel blankets, casual sneakers on the floor, and a cork board pinned with campus notices and event wristbands;
+- An open vintage sash window overlooking the campus courtyard at dusk, with warm streetlights turning on below.
+
+Warm ambient desk lamps casting a comforting, relatable collegiate glow across the room. Cinematic film still, photorealistic 8k, authentic student life, empty scene, architectural photography, no people, no text, no watermark.
+```
+
+---
+
+
+
+### 12. Russell 'Russ' Sinclair (Sacred Needle Tattoo Parlor Interior)
+```text
+Wide cinematic banner, 16:9 landscape aspect ratio. Establishing wide-angle shot of the interior of the Sacred Needle Tattoo Parlor in Solarton's arts district late at night.
+
+The parlor is a masterwork of urban street-art culture and craftsmanship:
+- In the center work station, a heavy black leather adjustable tattoo chair with chrome accents, surrounded by stainless steel rolling trays, disinfectant bottles, and rows of colorful tattoo ink bottles;
+- Exposed red-brick walls completely covered in framed vintage tattoo flash sheets, rock concert posters, and hand-painted art canvases;
+- A comfortable client waiting lounge with a distressed chesterfield leather sofa, low wooden coffee table with tattoo portfolios, and acoustic guitars hanging on brick columns;
+- Large front glass storefront windows looking out onto the rain-slicked city pavement, illuminated by a glowing red and gold neon cursive script sign.
+
+Warm amber filament bulbs hanging overhead, glossy reflections on polished dark concrete floors. Cinematic lighting, photorealistic 8k, authentic urban tattoo sanctuary, empty scene, architectural photography, no people, no text, no watermark.
+```
+
+---
+
+
+
+### 13. Scarlett Rose (Tau Iota Theta Sorority Mansion Private Velvet Parlor)
+```text
+Wide cinematic banner, 16:9 landscape aspect ratio. Establishing wide-angle shot of an opulent private parlor suite inside the prestigious Tau Iota Theta Sorority Mansion at the Supernatural University of Central California during evening hours.
+
+The room is designed with sensual, dark romantic collegiate elegance:
+- Deep crimson and black damask wallpapered walls, grand white marble fireplace mantel lined with scented taper candles and fresh bouquets of dark red roses;
+- Luxurious plush red velvet chaise lounges and ornate Victorian armchairs surrounding a low gilded glass table with crystal coupe glasses;
+- An ornate gilded floor-length mirror leaning against the wall, catching warm flickering candlelight;
+- Large arched bay windows draped in heavy burgundy silk curtains, looking out over the manicured private sorority gardens lit by garden lanterns.
+
+Warm golden candlelight and crystal chandelier facets creating soft glowing highlights and deep velvety shadows. Cinematic lighting, photorealistic 8k, dark romantic prestige, empty scene, architectural photography, no people, no text, no watermark.
+```
+
+---
+
+
+
+### 14. Sierra Cruz (Supernatural University of Central California Applied Esoteric Life Sciences Laboratory & Terrarium)
+```text
+Wide cinematic banner, 16:9 landscape aspect ratio. Establishing wide-angle shot of a research laboratory and private botanical terrarium lounge in the Applied Esoteric Life Sciences Department at the Supernatural University of Central California at night.
+
+The space is a specialized botanical and occult science sanctuary:
+- Heavy dark slate laboratory benches equipped with antique glass alembics, condenser coils, brass scales, and jars of luminous preserved specimens;
+- An expansive private terrarium lounge area with large heated flat volcanic basking stones surrounded by lush tropical ferns, climbing ivy, and damp river moss;
+- Floor-to-ceiling glass terrarium walls reflecting soft emerald-green bioluminescent nutrient fluid and pale blue chemical reagents;
+- Tall stone mullioned windows showing the gothic exterior buttresses of the campus building under an overcast night sky.
+
+Low-key cinematic lighting, rich emerald-green and deep slate shadows, atmospheric mist rising from heated stones. Cinematic lighting, photorealistic 8k, occult scientific gothic haven, empty scene, architectural photography, no people, no text, no watermark.
+```
+
+---
+
+## PARTE 2: Le 8 Grandi Location Chiave (Hub del Mondo Svartúlfr)
+
+
+
+### L1. Tenuta Douglas a Seven Hills (Vista Esterna Panoramica Pomeridiana)
+```text
+Wide cinematic banner, 16:9 landscape aspect ratio. Establishing wide-angle shot of the monumental Douglas Ancestral Compound and Citadel atop Seven Hills during late afternoon golden hour.
+
+The sprawling estate reveals its full four-century architectural mastery:
+- The central 17th-century castle-manor core of weathered granite stone towers, crenellated parapets, and steep slate gabled roofs;
+- Expansive wings added across the centuries featuring stone colonnades, grand timber balconies, and modern bronze-glass pavilions;
+- Manicured alpine terraces, stone retaining walls, and a natural stone swimming pool reflecting the towering pine trees of Blackwood Forest;
+- In the midground, the terraced stone estates of the Seven Hills district cascading down the slopes toward the historic Old Town of Blackwood City in the valley;
+- In the foreground cobblestone drive, ancient carved Nordic runic monoliths standing as silent guardians.
+
+Rich golden-hour sunlight bathing the stone facades, mountain ridges stretching into the hazy distance under a clear sky. Cinematic lighting, photorealistic 8k, epic hereditary mountain stronghold, no ocean, empty scene, architectural photography, no people, no text, no watermark.
+```
+
+---
+
+
+
+### L2. Campus Supernatural University of Central California — Il Gran Quad Lunare (Solarton)
+```text
+Wide cinematic banner, 16:9 landscape aspect ratio. Establishing wide-angle shot of the Grand Lunar Quad of the Supernatural University of Central California (SUCC) campus during evening twilight.
+
+The campus blends prestigious collegiate gothic architecture with modern occult design:
+- Monumental limestone academic halls with gothic traceried windows, soaring spires, and copper-trimmed glass atriums;
+- Intricate arcane runic friezes carved into stone archways and porticos, glowing with subtle silver luminescence;
+- Expansive manicured lawns crossed by wide flagstone promenades, lined with ancient oak trees with golden-red autumn leaves;
+- Broad stone staircases leading to vaulted lecture hall porticos, flanked by ornate iron lamp posts and bronze heraldic sculptures;
+- A dramatic evening sky with warm orange sunset fading into deep indigo above the campus clock tower.
+
+Warm exterior lantern light illuminating stone pathways and autumnal foliage. Cinematic lighting, photorealistic 8k, majestic university atmosphere, empty scene, architectural photography, no people, no text, no watermark.
+```
+
+---
+
+
+
+### L3. Dormitori Wyrm Hall — Cortile e Ala Residenziale (Supernatural University of Central California)
+```text
+Wide cinematic banner, 16:9 landscape aspect ratio. Establishing wide-angle shot of the central courtyard and residential wings of Wyrm Hall dormitory on the Supernatural University of Central California campus at blue hour.
+
+The dormitory captures storied, authentic collegiate life with urban fantasy edge:
+- Multi-story historic red-brick residential wings with slate dormer roofs, decorative stone keystones, and exterior black iron fire escapes;
+- An inner stone courtyard with concrete picnic benches, bike racks filled with student bicycles, and mature maple trees dropping autumn leaves;
+- Dozens of dorm room windows glowing with warm interior lamps, string lights, and computer screens, including the corner window of Room 304;
+- Paved walkways lit by traditional black lampposts, connecting the residential wings to the main campus roads.
+
+Cool blue dusk sky with warm golden lights beaming from student rooms and lanterns. Cinematic film still, photorealistic 8k, nostalgic college residence life, empty scene, architectural photography, no people, no text, no watermark.
+```
+
+---
+
+
+
+### L4. The Verve — Il Tempio Underground della Nightlife (Solarton)
+```text
+Wide cinematic banner, 16:9 landscape aspect ratio. Establishing wide-angle shot of the interior main dance floor and stage of The Verve, Solarton's premier underground electronic nightclub.
+
+The venue is a cavernous multi-level cathedral of sound and light:
+- Industrial concrete and exposed steel girder architecture with multi-tiered overhead catwalks and VIP mezzanine balconies with dark leather booths;
+- A colossal main stage equipped with massive concert line-array speaker stacks, professional DJ consoles, and a massive LED visual wall displaying shifting geometric sacred geometry;
+- High-powered laser lighting beams cutting through dense atmospheric stage haze in electric teal, laser violet, and deep ruby red;
+- An energetic crowd dancing on the polished concrete floor, holding drinks, immersed in the bass and soundscape.
+
+Dynamic, high-energy concert lighting, volumetric light cones piercing haze. Cinematic film still, photorealistic 8k, premier underground nightlife, empty scene, architectural photography, no people, no text, no watermark.
+```
+
+---
+
+
+
+### L5. Camp Mystic — Baite e Lago Erie (Camp Mystic, Lake Erie)
+```text
+Wide cinematic banner, 16:9 landscape aspect ratio. Establishing wide-angle shot of Camp Mystic nestled along the forested shoreline of Lake Erie at early morning sunrise.
+
+The summer camp setting balances rustic nostalgia with wilderness tranquility:
+- Along the shoreline, classic dark cedar log cabins named 'Moonflower' and 'Lake Wolf' with screened porches and stone chimneys nestled between towering pines and hemlock trees;
+- A wide wooden canoe dock with weathered planks extending into the glassy, tranquil lake waters, with several wooden canoes moored to the posts;
+- A central open clearing with a stone campfire ring, wooden picnic benches, and winding pine-needle paths through the trees;
+- Golden morning sunlight breaking through the tree canopy, glowing off a light blanket of morning lake mist resting on the water surface.
+
+Serene morning atmosphere, soft warm light reflecting off the still lake. Cinematic lighting, photorealistic 8k, nostalgic lakeside summer camp, empty scene, architectural photography, no people, no text, no watermark.
+```
+
+---
+
+
+
+### L6. Terme e Sorgenti di Casata a Seven Hills (Mountain Geothermal Spa)
+```text
+Wide cinematic banner, 16:9 landscape aspect ratio. Establishing wide-angle shot of the secluded geothermal mineral springs and private spa carved into the granite slopes of Seven Hills in Blackwood Forest at night.
+
+The retreat offers ultimate natural relaxation and seclusion:
+- Multiple stepped natural stone pools carved directly out of dark basalt rock, filled with crystal-clear steaming geothermal mineral water;
+- Smooth river stone walkways, fragrant cedar decking, and low stone retaining walls with discreet iron oil lanterns;
+- Surrounding the pools, a dense perimeter of towering old-growth conifer trees and mossy granite boulders, providing complete wilderness privacy;
+- Soft silver moonlight filtering down through rising vapor clouds, casting shimmering ripples across the warm water.
+
+Tranquil, peaceful, elemental sanctuary, cool night air contrasting with warm rising steam. Cinematic lighting, photorealistic 8k, luxurious natural mountain hot springs, no ocean, empty scene, architectural photography, no people, no text, no watermark.
+```
+
+---
+
+
+
+### L7. Distretto Portuale e Darsena di Solarton (Solarton Waterfront & Docks)
+```text
+Wide cinematic banner, 16:9 landscape aspect ratio. Establishing wide-angle shot of the commercial shipping harbor and industrial waterfront of Solarton at midnight.
+
+The scene captures the raw, atmospheric docks of the Pacific coast:
+- Towering steel container cranes and cargo ships moored along heavy timber pilings and damp cobblestone quays;
+- Heavy industrial warehouses with corrugated metal sidings, elevated steel conveyor walkways, and stacks of shipping containers in muted colors;
+- In the foreground, wet asphalt piers reflecting yellow and orange halogen security floodlights, with coiled mooring ropes and lifebuoys;
+- Dense coastal sea fog rolling in over the dark harbor water, softening the distant city lights across the bay.
+
+Moody maritime atmosphere, rich reflections on wet surfaces, cool deep indigo and industrial amber color grade. 35mm cinematic film still, photorealistic 8k, gritty coastal harbor, empty scene, architectural photography, no people, no text, no watermark.
+```
+
+---
+
+
+
+### L8. Sacred Needle Tattoo Studio — Esterno Notturno (Solarton Arts District)
+```text
+Wide cinematic banner, 16:9 landscape aspect ratio. Establishing wide-angle shot of the street corner exterior of the Sacred Needle Tattoo Parlor in Solarton's bohemian arts district at blue hour.
+
+The urban streetscape is filled with artistic character and street culture:
+- A handsome two-story red-brick corner heritage building with large street-level display windows showcasing framed art and neon signs;
+- A vibrant custom neon sign above the entrance glowing in cursive script with rich red and amber illumination onto the sidewalk;
+- Parked along the curb, customized bobber and chopper motorcycles with polished chrome exhausts and leather saddlebags;
+- An adjacent brick alleyway covered in colorful urban murals and street art, with an old-fashioned green wrought-iron streetlamp;
+- Rain-slicked asphalt street reflecting the neon lights, with warm interior lighting visible inside the cozy tattoo studio.
+
+Cinematic street photography style, warm neon and cool twilight contrast, rich atmospheric depth. Photorealistic 8k, urban arts district nightlife, empty scene, architectural photography, no people, no text, no watermark.
+```

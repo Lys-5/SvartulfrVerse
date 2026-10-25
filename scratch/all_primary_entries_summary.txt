@@ -1,0 +1,792 @@
+[00] entry_name: 'Hugh Rivers'
+     JED NAME: 'Hugh Rivers'
+     SPECIES: 'Werewolf'
+     ROLE: ''
+     KEYS: ['Hugh Rivers']
+     REGEX: (?:^|\n)\s*(?:Hugh\ Rivers|Alpha\ Rivers\ Rivers|Alpha\ Rivers|The\ Mountain\ Sovereign\ Rivers|The\ Mountain\ Sovereign|Hugh)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Hugh', 'last_name': 'Rivers', 'nicknames': ['Alpha Rivers', 'The Mountain Sovereign'], 'titles': []}
+
+[01] entry_name: 'Liam O’Connor'
+     JED NAME: 'Liam O’Connor'
+     SPECIES: 'Werewolf (Pureblood House O’Connor)'
+     ROLE: ''
+     KEYS: ['Liam O’Connor']
+     REGEX: (?:^|\n)\s*(?:Liam\ O’Connor|Liam)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Liam', 'last_name': 'O’Connor', 'nicknames': ['Liam'], 'titles': []}
+
+[02] entry_name: 'Bessie May'
+     JED NAME: 'Bessie May'
+     SPECIES: 'Cow Demi-human'
+     ROLE: ''
+     KEYS: ['Bessie May']
+     REGEX: (?:^|\n)\s*(?:Bessie\ May|Bessie)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Bessie', 'last_name': 'May', 'nicknames': ['Bessie'], 'titles': []}
+
+[03] entry_name: 'Neve'
+     JED NAME: 'Neve'
+     SPECIES: 'Cat Demi-human'
+     ROLE: ''
+     KEYS: ['Neve']
+     REGEX: (?:^|\n)\s*(?:Neve|The\ Archivist)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Neve', 'last_name': '', 'nicknames': ['The Archivist'], 'titles': []}
+
+[04] entry_name: 'Jaelyn'
+     JED NAME: 'Jaelyn'
+     SPECIES: 'Cat Demi-human'
+     ROLE: ''
+     KEYS: ['Jaelyn']
+     REGEX: (?:^|\n)\s*(?:Jaelyn|Jae)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Jaelyn', 'last_name': '', 'nicknames': ['Jae'], 'titles': []}
+
+[05] entry_name: 'Marek'
+     JED NAME: 'Marek'
+     SPECIES: 'Blue Oni'
+     ROLE: ''
+     KEYS: ['Marek', 'Blue Oni', 'The Iron Hammer', 'Blue Devil']
+     REGEX: (?:^|\n)\s*(?:Marek|The\ Iron\ Hammer|Blue\ Devil)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Marek', 'last_name': '', 'nicknames': ['The Iron Hammer', 'Blue Devil', 'Blue Oni'], 'titles': []}
+
+[06] entry_name: 'Kian'
+     JED NAME: 'Kian'
+     SPECIES: 'Orc'
+     ROLE: ''
+     KEYS: ['Kian']
+     REGEX: (?:^|\n)\s*(?:Kian|The\ Ghost\ Feather|Shadow\ Scout)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Kian', 'last_name': '', 'nicknames': ['The Ghost Feather', 'Shadow Scout'], 'titles': []}
+
+[07] entry_name: 'Goran'
+     JED NAME: 'Goran'
+     SPECIES: 'Orc'
+     ROLE: ''
+     KEYS: ['Goran']
+     REGEX: (?:^|\n)\s*(?:Goran|The\ Iron\ Ram|Team\ Ukiyo\ Tank)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Goran', 'last_name': '', 'nicknames': ['The Iron Ram', 'Team Ukiyo Tank'], 'titles': []}
+
+[08] entry_name: 'Radek'
+     JED NAME: 'Radek'
+     SPECIES: 'Orc'
+     ROLE: ''
+     KEYS: ['Radek']
+     REGEX: (?:^|\n)\s*(?:Radek|The\ Tactician|Squad\ Leader)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Radek', 'last_name': '', 'nicknames': ['The Tactician', 'Squad Leader'], 'titles': []}
+
+[09] entry_name: 'Echo'
+     JED NAME: 'Echo'
+     SPECIES: 'Macchina & Sintetico (Sentient Cyber-Entity / Digital Familiar)'
+     ROLE: ''
+     KEYS: ['Echo', 'E.C.H.O.', 'familiar', 'Jasper AI', 'cyber familiar']
+     REGEX: (?:^|\n)\s*(?:Echo|E\.C\.H\.O\.|familiar)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Echo', 'last_name': '', 'nicknames': ['E.C.H.O.', 'familiar', 'Jasper AI', 'cyber familiar'], 'titles': []}
+
+[10] entry_name: 'Dominic Rogers'
+     JED NAME: 'Dominic Wayne Rogers'
+     SPECIES: 'Incubus'
+     ROLE: ''
+     KEYS: ['Dominic Rogers', 'Dom Rogers', 'Mr. Rogers', 'Mr Rogers', "Bailey's Dad"]
+     REGEX: (?:^|\n)\s*(?:Dominic\ Rogers|Dom\ Rogers|Dom|Mr\.\ Rogers\ Rogers|Mr\.\ Rogers|Dominic)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Dominic', 'last_name': 'Rogers', 'nicknames': ['Dom', 'Mr. Rogers', 'Mr Rogers', "Bailey's Dad"], 'titles': []}
+
+[11] entry_name: 'Roman Blackwood'
+     JED NAME: 'Roman Blackwood'
+     SPECIES: 'Wolf Demi-Human'
+     ROLE: ''
+     KEYS: ['Roman', 'Roman Blackwood']
+     REGEX: (?:^|\n)\s*(?:Roman\ Blackwood|Roman)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Roman', 'last_name': 'Blackwood', 'nicknames': [], 'titles': []}
+
+[12] entry_name: 'Eric'
+     JED NAME: 'Eric'
+     SPECIES: 'Demihuman Fox'
+     ROLE: ''
+     KEYS: ['Eric']
+     REGEX: (?:^|\n)\s*(?:Eric)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Eric', 'last_name': '', 'nicknames': [], 'titles': []}
+
+[13] entry_name: 'Javier Reyes'
+     JED NAME: 'Javier Reyes'
+     SPECIES: 'Demihuman Owl'
+     ROLE: ''
+     KEYS: ['Javi', 'Javier', 'Javier Reyes', 'Reyes']
+     REGEX: (?:^|\n)\s*(?:Javier\ Reyes|Javi\ Reyes|Javi|Javier)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Javier', 'last_name': 'Reyes', 'nicknames': ['Javi'], 'titles': []}
+
+[14] entry_name: 'Raymond'
+     JED NAME: 'Raymond'
+     SPECIES: 'Demihuman Golden Retriever'
+     ROLE: ''
+     KEYS: ['Ray', 'Raymond']
+     REGEX: (?:^|\n)\s*(?:Raymond|Ray)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Raymond', 'last_name': '', 'nicknames': ['Ray'], 'titles': []}
+
+[15] entry_name: 'Dean'
+     JED NAME: 'Dean'
+     SPECIES: 'Demihuman Raccoon'
+     ROLE: ''
+     KEYS: ['Dean']
+     REGEX: (?:^|\n)\s*(?:Dean)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Dean', 'last_name': '', 'nicknames': [], 'titles': []}
+
+[16] entry_name: 'Bryson'
+     JED NAME: 'Bryson'
+     SPECIES: 'Orc'
+     ROLE: ''
+     KEYS: ['Bryson', 'Chief Researcher', 'MF Inc.']
+     REGEX: (?:^|\n)\s*(?:Bryson|Chief\ Researcher|MF\ Inc\.)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Bryson', 'last_name': '', 'nicknames': ['Chief Researcher', 'MF Inc.'], 'titles': []}
+
+[17] entry_name: 'Scarlett Rose'
+     JED NAME: 'Scarlett Rose'
+     SPECIES: 'Succubus (modern, evolved demon demi-human)'
+     ROLE: ''
+     KEYS: ['Scarlett Rose', 'Scarlett']
+     REGEX: (?:^|\n)\s*(?:Scarlett\ Rose|Scarlett)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Scarlett', 'last_name': 'Rose', 'nicknames': ['Scarlett'], 'titles': []}
+
+[18] entry_name: 'Sierra Cruz'
+     JED NAME: 'Sierra Cruz'
+     SPECIES: 'Lamia (Naga / Serpentine Demihuman)'
+     ROLE: ''
+     KEYS: ['Sierra Cruz', 'Sierra']
+     REGEX: (?:^|\n)\s*(?:Sierra\ Cruz|Sierra)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Sierra', 'last_name': 'Cruz', 'nicknames': ['Sierra'], 'titles': []}
+
+[19] entry_name: 'Varg Darkfire'
+     JED NAME: 'Varg Darkfire'
+     SPECIES: 'Demon, Vax (Red Bloodline)'
+     ROLE: ''
+     KEYS: ['Darkfire', 'Il Patriarca', 'Varg', 'Varg Darkfire', 'Vecchio Re']
+     REGEX: (?:^|\n)\s*(?:Varg\ Darkfire|The\ Patriarch\ Darkfire|The\ Patriarch|The\ Old\ King\ Darkfire|The\ Old\ King|Varg)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Varg', 'last_name': 'Darkfire', 'nicknames': ['The Patriarch', 'The Old King', 'Il Patriarca', 'Vecchio Re'], 'titles': []}
+
+[20] entry_name: 'Karshin Darkfire'
+     JED NAME: 'Karshin Darkfire'
+     SPECIES: 'Demon, Vax (Red Bloodline)'
+     ROLE: ''
+     KEYS: ['Darkfire', 'Il Mastino', 'Karshin', 'Karshin Darkfire']
+     REGEX: (?:^|\n)\s*(?:Karshin\ Darkfire|The\ Mastiff\ Darkfire|The\ Mastiff|Chief\ of\ Security\ for\ HSK\ Consulting\ Darkfire|Chief\ of\ Security\ for\ HSK\ Consulting|Karshin)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Karshin', 'last_name': 'Darkfire', 'nicknames': ['The Mastiff', 'Chief of Security for HSK Consulting', 'Il Mastino'], 'titles': []}
+
+[21] entry_name: 'Boros Darkfire'
+     JED NAME: 'Boros Darkfire'
+     SPECIES: 'Demon, Vax (Red Bloodline)'
+     ROLE: ''
+     KEYS: ['Boros', 'Boros Darkfire', 'Darkfire', 'Il Bastione']
+     REGEX: (?:^|\n)\s*(?:Boros\ Darkfire|The\ Bastion\ Darkfire|The\ Bastion|Logistics\ Director\ of\ HSK\ Consulting\ Darkfire|Logistics\ Director\ of\ HSK\ Consulting|Boros)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Boros', 'last_name': 'Darkfire', 'nicknames': ['The Bastion', 'Logistics Director of HSK Consulting', 'Il Bastione'], 'titles': []}
+
+[22] entry_name: 'Aras Darkfire'
+     JED NAME: 'Aras Darkfire'
+     SPECIES: 'Demon, Vax (Red Bloodline)'
+     ROLE: ''
+     KEYS: ['Aras', 'Aras Darkfire', 'Darkfire', 'Il Sussurro']
+     REGEX: (?:^|\n)\s*(?:Aras\ Darkfire|The\ Whisper\ Darkfire|The\ Whisper|HR\ Director\ of\ HSK\ Consulting\ Darkfire|HR\ Director\ of\ HSK\ Consulting|Aras)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Aras', 'last_name': 'Darkfire', 'nicknames': ['The Whisper', 'HR Director of HSK Consulting', 'Il Sussurro'], 'titles': []}
+
+[23] entry_name: 'Kolya Varenkov'
+     JED NAME: 'Kolya Varenkov'
+     SPECIES: 'Vampire'
+     ROLE: ''
+     KEYS: ['Kolya', 'Kolya Varenkov', 'Varenkov']
+     REGEX: (?:^|\n)\s*(?:Kolya\ Varenkov|Kolya)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Kolya', 'last_name': 'Varenkov', 'nicknames': [], 'titles': []}
+
+[24] entry_name: 'Russell 'Russ' Sinclair'
+     JED NAME: 'Russell "Russ" Sinclair'
+     SPECIES: 'Demihuman Tiger (Single pair of striped tiger ears atop head, no human ears, long striped tiger tail)'
+     ROLE: ''
+     KEYS: ["Russell 'Russ' Sinclair", 'Russell Sinclair', 'Russ Sinclair', 'Russ']
+     REGEX: (?:^|\n)\s*(?:Russell\ Sinclair|Russ\ Sinclair|Russell\ 'Russ'|Russell|Russ)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Russell', 'last_name': 'Sinclair', 'nicknames': ['Russ'], 'titles': []}
+
+[25] entry_name: 'Daniel "Danny" Boone'
+     JED NAME: 'Daniel Boone'
+     SPECIES: 'Werewolf'
+     ROLE: ''
+     KEYS: ['Danny', 'Boone', 'Daniel']
+     REGEX: (?:^|\n)\s*(?:Daniel\ "Danny"\ Boone|Daniel\ Boone|Danny\ Boone|Danny|Boone\ Boone|Boone|Daniel)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Daniel', 'last_name': 'Boone', 'nicknames': ['Danny', 'Boone'], 'titles': []}
+
+[26] entry_name: 'Marlowe Voss'
+     JED NAME: 'Marlowe Voss'
+     SPECIES: 'Undead, reanimated human'
+     ROLE: ''
+     KEYS: ['Marlowe Voss', 'Marlowe', 'Voss']
+     REGEX: (?:^|\n)\s*(?:Marlowe\ Voss|Marlowe)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Marlowe', 'last_name': 'Voss', 'nicknames': [], 'titles': []}
+
+[27] entry_name: 'Cassian Aralas'
+     JED NAME: 'Cassian Aralas'
+     SPECIES: 'Alatus Fae, a winged Fae bloodline distinct from common Fae, capable of living up to six hundred years'
+     ROLE: ''
+     KEYS: ['Cassian Aralas', 'Cassian']
+     REGEX: (?:^|\n)\s*(?:Cassian\ Aralas|Cassian)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Cassian', 'last_name': 'Aralas', 'nicknames': [], 'titles': []}
+
+[28] entry_name: 'Harrison Black'
+     JED NAME: 'Harrison Black, "Harry" to most, "Councilman Black" in the Concilio minutes'
+     SPECIES: 'Human, carrying the worn-down reincarnation of a Greek god'
+     ROLE: ''
+     KEYS: ['Harrison Black', 'Harrison', 'Harry', 'Councilman Black']
+     REGEX: (?:^|\n)\s*(?:Harrison\ Black|Harry\ Black|Harry|Councilman\ Black\ Black|Councilman\ Black|Harrison)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Harrison', 'last_name': 'Black', 'nicknames': ['Harry', 'Councilman Black'], 'titles': []}
+
+[29] entry_name: 'Zero'
+     JED NAME: 'Zero'
+     SPECIES: 'Coyote Shifter, Demihuman'
+     ROLE: ''
+     KEYS: ['Zero', 'Wrath']
+     REGEX: (?:^|\n)\s*(?:Zero|Wrath|Mutt\ \(hated\))\s*:
+     EXISTING NPC_INFO: {'first_name': 'Zero', 'last_name': '', 'nicknames': ['Wrath', 'Mutt (hated)'], 'titles': []}
+
+[30] entry_name: 'Zefir Hvitskog'
+     JED NAME: 'Zefir Hvitskog (Zefir inn hvíti skuggi, The White Ghost)'
+     SPECIES: 'Werewolf/God - Primordial Enigma, one of the Last Three Firstborn'
+     ROLE: 'Left Hand to Wulfnic'
+     KEYS: ['Zefir', 'White Ghost', 'Firstborn']
+     REGEX: (?:^|\n)\s*(?:Zefir\ Hvitskog|White\ Ghost\ Hvitskog|White\ Ghost|Firstborn\ Hvitskog|Firstborn|Zefir)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Zefir', 'last_name': 'Hvitskog', 'nicknames': ['White Ghost', 'Firstborn'], 'titles': []}
+
+[31] entry_name: 'Zeera Darkfire'
+     JED NAME: 'Zeera Darkfire'
+     SPECIES: 'Demon, Vax (Red Bloodline)'
+     ROLE: ''
+     KEYS: ['Zeera Darkfire', 'Zeera', 'HSK Consulting', 'Vax']
+     REGEX: (?:^|\n)\s*(?:Zeera\ Darkfire|CEO\ of\ HSK\ Consulting\ Darkfire|CEO\ of\ HSK\ Consulting|Demonic\ Representative\ Darkfire|Demonic\ Representative|Zeera)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Zeera', 'last_name': 'Darkfire', 'nicknames': ['CEO of HSK Consulting', 'Demonic Representative', 'Horned Skull Clan Leader', 'HSK Consulting', 'Vax', 'Demon Representative', 'Blackwood Council'], 'titles': []}
+
+[32] entry_name: 'Wulfnic Báleygr Bloodmoon'
+     JED NAME: 'Wulfnic Báleygr Bloodmoon'
+     SPECIES: 'Werewolf, Firstborn, one of the Last Three Primordial Enigmas (with Zefir and Ut)'
+     ROLE: 'Pack Leader of the Bloodmoon pack, and Alpha of Alphas over North America'
+     KEYS: ['Wulfnic', 'Wulfnic Bloodmoon', 'Primo Zanna']
+     REGEX: (?:^|\n)\s*(?:Wulfnic\ Báleygr\ Bloodmoon|Wulfnic\ Bloodmoon|The\ First\ Tusk|Primo\ Zanna|Wulfnic)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Wulfnic', 'last_name': 'Bloodmoon', 'nicknames': ['The First Tusk', 'Primo Zanna', 'The Ancient'], 'titles': []}
+
+[33] entry_name: 'Vito Marino'
+     JED NAME: 'Vito "Scar" Marino'
+     SPECIES: 'Werewolf, Pureblood, Alpha'
+     ROLE: 'Pack Leader'
+     KEYS: ['Vito Marino', 'Scar', 'Ironworks Syndicate']
+     REGEX: (?:^|\n)\s*(?:Vito\ Marino|Scar\ Marino|Scar|Ironworks\ Syndicate\ Marino|Ironworks\ Syndicate|Vito)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Vito', 'last_name': 'Marino', 'nicknames': ['Scar', 'Ironworks Syndicate', 'Pack Leader', 'Ironworks district', 'Pureblood'], 'titles': []}
+
+[34] entry_name: 'Viola Carter'
+     JED NAME: 'Viola "Via" Carter'
+     SPECIES: 'Plant-fae'
+     ROLE: 'Lead guitarist of Grave Mistake'
+     KEYS: ['Via', 'Viola', 'Viola Carter', 'Carter']
+     REGEX: (?:^|\n)\s*(?:Viola\ Carter|Via\ Carter|Via|Viola)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Viola', 'last_name': 'Carter', 'nicknames': ['Via'], 'titles': []}
+
+[35] entry_name: 'Vincent Campbell'
+     JED NAME: 'Vincent "Vince" Campbell'
+     SPECIES: 'Vampire, Campbell line of Montreal'
+     ROLE: ''
+     KEYS: ['Vincent', 'Vince', 'Campbell', 'Ace']
+     REGEX: (?:^|\n)\s*(?:Vincent\ Campbell|Vi\ Campbell|Vi|Ace\ Campbell|Ace|Vincent)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Vincent', 'last_name': 'Campbell', 'nicknames': ['Vi', 'Ace', 'Vince', 'hockey captain'], 'titles': []}
+
+[36] entry_name: 'Ut Berg'
+     JED NAME: 'Ut Berg (Út Fjallit, Ut The Mountain)'
+     SPECIES: 'Werewolf/God - Primordial Enigma, one of the Last Three Firstborn'
+     ROLE: 'Right Hand to Wulfnic'
+     KEYS: ['Ut', 'Ut Berg', 'The Mountain', 'Firstborn']
+     REGEX: (?:^|\n)\s*(?:Ut\ Berg|The\ Mountain\ Berg|The\ Mountain|Firstborn\ Berg|Firstborn)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Ut', 'last_name': 'Berg', 'nicknames': ['The Mountain', 'Firstborn'], 'titles': []}
+
+[37] entry_name: 'Tomas Matthews'
+     JED NAME: 'Tomas Matthews'
+     SPECIES: 'Human'
+     ROLE: ''
+     KEYS: ['Tomas Matthews', 'Tomas', 'Matthews']
+     REGEX: (?:^|\n)\s*(?:Tomas\ Matthews|Tomas)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Tomas', 'last_name': 'Matthews', 'nicknames': [], 'titles': []}
+
+[38] entry_name: 'Tate'
+     JED NAME: 'Tate. No surname. He has never had one and does not appear to want one'
+     SPECIES: 'Dog demihuman, terrier mix'
+     ROLE: ''
+     KEYS: ['Tate', 'Subject 36']
+     REGEX: (?:^|\n)\s*(?:Tate|Subject\ 36)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Tate', 'last_name': '', 'nicknames': ['Subject 36'], 'titles': []}
+
+[39] entry_name: 'Sullivan "Sully" Jones'
+     JED NAME: 'Sullivan "Sully" Jones'
+     SPECIES: 'Human'
+     ROLE: ''
+     KEYS: ['Sully', 'Sullivan', 'Jones']
+     REGEX: (?:^|\n)\s*(?:Sullivan\ "Sully"\ Jones|Sullivan\ Jones|Sully\ Jones|Sully|Sullivan)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Sullivan', 'last_name': 'Jones', 'nicknames': ['Sully'], 'titles': []}
+
+[40] entry_name: 'Stanley Davies Sr.'
+     JED NAME: 'Stanley Davies Sr., Mr. Davies to his students'
+     SPECIES: 'Werewolf'
+     ROLE: ''
+     KEYS: ['Stanley Davies Sr.', 'Stanley Davies']
+     REGEX: (?:^|\n)\s*(?:Stanley\ Davies\ Sr\.|Stanley\ Sr\.|Stanley\ Davies|Stanley)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Stanley', 'last_name': 'Sr.', 'nicknames': ['Stanley Davies'], 'titles': []}
+
+[41] entry_name: 'Stanley Davies Jr.'
+     JED NAME: 'Stanley Davies Jr., called Stan and never Stanley'
+     SPECIES: 'Werewolf'
+     ROLE: ''
+     KEYS: ['Stanley Davies Jr.', 'Stan Davies', 'Stan']
+     REGEX: (?:^|\n)\s*(?:Stanley\ Davies\ Jr\.|Stanley\ Davies|Stan\ Davies|Stan)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Stanley', 'last_name': 'Davies Jr.', 'nicknames': ['Stan'], 'titles': []}
+
+[42] entry_name: 'Santiago Herrera'
+     JED NAME: 'Santiago Herrera'
+     SPECIES: 'Dragon Demi-human'
+     ROLE: ''
+     KEYS: ['Santiago', 'Herrera', 'Santi', 'Tank']
+     REGEX: (?:^|\n)\s*(?:Santiago\ Herrera|Santi\ Herrera|Santi|Tank\ Herrera|Tank|Santiago)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Santiago', 'last_name': 'Herrera', 'nicknames': ['Santi', 'Tank'], 'titles': []}
+
+[43] entry_name: 'Ruaraidh "Rory" Ballantine'
+     JED NAME: 'Ruaraidh Ballantine'
+     SPECIES: 'Dragon Demihuman Hybrid'
+     ROLE: ''
+     KEYS: ['Rory', 'Ruaraidh', 'Ballantine']
+     REGEX: (?:^|\n)\s*(?:Ruaraidh\ "Rory"\ Ballantine|Ruaraidh\ Ballantine|Rory\ Ballantine|Rory|Ruaraidh)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Ruaraidh', 'last_name': 'Ballantine', 'nicknames': ['Rory'], 'titles': []}
+
+[44] entry_name: 'Roland Vickers'
+     JED NAME: 'Roland Mark Vickers'
+     SPECIES: 'Undead, reanimated human, stuck between ghoul and ghost'
+     ROLE: 'Drummer of Grave Mistake'
+     KEYS: ['Roland', 'Roland Vickers', 'Vickers']
+     REGEX: (?:^|\n)\s*(?:Roland\ Vickers|Roland)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Roland', 'last_name': 'Vickers', 'nicknames': [], 'titles': []}
+
+[45] entry_name: 'Professor Loewe'
+     JED NAME: 'Richard Loewe, addressed as Professor Loewe by everyone including colleagues, and as Richard by perhaps four people'
+     SPECIES: 'Shapeshifter, lion'
+     ROLE: ''
+     KEYS: ['Richard Loewe', 'Professor Loewe', 'loewe', 'Richard', 'Loewe', 'Diana']
+     REGEX: (?:^|\n)\s*(?:Professor\ Loewe|Loewe|Richard\ Loewe)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Loewe', 'last_name': '', 'nicknames': ['Richard Loewe', 'loewe', 'Richard', 'philosophy', 'Humanities', 'Diana'], 'titles': ['Professor']}
+
+[46] entry_name: 'Oskar'
+     JED NAME: 'Oskar. No surname on any form the college holds'
+     SPECIES: 'Rapidly Mutating Hivemind, an RMH, and there are not many'
+     ROLE: ''
+     KEYS: ['Oskar', 'RMH', 'Squidface', 'Ozzie']
+     REGEX: (?:^|\n)\s*(?:Oskar|Ozzie|which\ is\ what\ he\ offers\ people\ who\ seem\ willing\.\ The\ Swarm\ and\ Squidface)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Oskar', 'last_name': '', 'nicknames': ['Ozzie', 'which is what he offers people who seem willing. The Swarm and Squidface', 'which are what he gets', 'RMH', 'Squidface', 'hivemind', 'tendrils'], 'titles': []}
+
+[47] entry_name: 'Noah Loki Douglas Bloodmoon'
+     JED NAME: 'Noah Loki Douglas Bloodmoon'
+     SPECIES: 'Werewolf'
+     ROLE: 'Caretaker, and Right Hand designate to Malachia when he succeeds Erik'
+     KEYS: ['Noah Douglas', 'Noah Loki', 'Noah Douglas-Bloodmoon', 'Noah']
+     REGEX: (?:^|\n)\s*(?:Noah\ Loki\ Douglas\ Bloodmoon|Noah\ Douglas\ Bloodmoon|Noah\ Douglas|The\ Grey\ Eminence|Noah)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Noah', 'last_name': 'Douglas Bloodmoon', 'nicknames': ['The Grey Eminence', 'Loki', 'Golden Boy'], 'titles': []}
+
+[48] entry_name: 'Nixara Hvit Bloodmoon'
+     JED NAME: 'Nixara Hvit Bloodmoon'
+     SPECIES: 'Werewolf, Founding Bloodline'
+     ROLE: 'Pack Mom of the Seven Hills Pack until her death'
+     KEYS: ['Nixara', 'Hvit', 'Nixara Hvit', 'Wife', 'Mate', 'Whitemoon', 'White Moon']
+     REGEX: (?:^|\n)\s*(?:Nixara\ Hvit\ Bloodmoon|Nixara\ Bloodmoon|Hvit\ Bloodmoon|Hvit|Nixara\ Hvit|Nixara)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Nixara', 'last_name': 'Bloodmoon', 'nicknames': ['Hvit', 'Nixara Hvit', 'Wife', 'Mate', 'Whitemoon', 'White Moon'], 'titles': []}
+
+[49] entry_name: 'Nikolaj Jökull'
+     JED NAME: 'Nikolaj Jökull'
+     SPECIES: 'Demihuman, half eel'
+     ROLE: ''
+     KEYS: ['Nikolaj', 'Nikolaj Jokull', 'Jokull', 'Jökull', 'Nikolaj Jökull', 'PERSEUS']
+     REGEX: (?:^|\n)\s*(?:Nikolaj\ Jökull|Nikolaj\ Jokull\ Jökull|Nikolaj\ Jokull|Jokull\ Jökull|Jokull|Nikolaj)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Nikolaj', 'last_name': 'Jökull', 'nicknames': ['Nikolaj Jokull', 'Jokull', 'eel', 'marksman', 'PERSEUS', 'ASL'], 'titles': []}
+
+[50] entry_name: 'Naomi Black'
+     JED NAME: 'Naomi Black'
+     SPECIES: 'Werewolf, Beta'
+     ROLE: 'Pack Leader'
+     KEYS: ['Naomi Black', 'Cass Harrow']
+     REGEX: (?:^|\n)\s*(?:Naomi\ Black|Uptown\ North\ Black|Uptown\ North|Pack\ Leader\ Black|Pack\ Leader|Naomi)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Naomi', 'last_name': 'Black', 'nicknames': ['Uptown North', 'Pack Leader', 'Cass Harrow'], 'titles': []}
+
+[51] entry_name: 'Marcus Thornfield'
+     JED NAME: 'Marcus Iron Thornfield'
+     SPECIES: 'Werewolf (military-engineered, Project Blackwolf, Gamma-7 team)'
+     ROLE: 'Field Lead, Vanguard Security'
+     KEYS: ['Marcus', 'Iron', 'Marcus Thornfield', 'Field Lead Marcus']
+     REGEX: (?:^|\n)\s*(?:Marcus\ Thornfield|Iron\ Thornfield|Iron|Field\ Lead\ Marcus\ Thornfield|Field\ Lead\ Marcus|Marcus)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Marcus', 'last_name': 'Thornfield', 'nicknames': ['Iron', 'Field Lead Marcus'], 'titles': []}
+
+[52] entry_name: 'Marcus O'Connor'
+     JED NAME: 'Marcus "Mark" O'Connor'
+     SPECIES: 'Werewolf, Pureblood, Alpha'
+     ROLE: 'Pack Leader'
+     KEYS: ["Marcus O'Connor", "Mark O'Connor"]
+     REGEX: (?:^|\n)\s*(?:Marcus\ O'Connor|Mark\ O'Connor\ O'Connor|Mark\ O'Connor|Oldtown\ O'Connor|Oldtown|Marcus)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Marcus', 'last_name': "O'Connor", 'nicknames': ["Mark O'Connor", 'Oldtown', 'Pack Leader', 'Pureblood'], 'titles': []}
+
+[53] entry_name: 'Malachia Björn Douglas Bloodmoon'
+     JED NAME: 'Malachia Björn Douglas Bloodmoon'
+     SPECIES: 'Werewolf, Founding Bloodline Alpha, House Douglas (Bloodmoon-descended)'
+     ROLE: 'Left Hand, Pack Leader designate, Vanguard of the Douglas Pack'
+     KEYS: ['Malachia Douglas', 'Malachia Björn', 'Malachia Douglas-Bloodmoon', 'Malachia']
+     REGEX: (?:^|\n)\s*(?:Malachia\ Björn\ Douglas\ Bloodmoon|Malachia\ Douglas\ Bloodmoon|Malachia\ Douglas|The\ Berserker|Malachia)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Malachia', 'last_name': 'Douglas Bloodmoon', 'nicknames': ['The Berserker', 'Ghost', 'King'], 'titles': []}
+
+[54] entry_name: 'Magnus Douglas III'
+     JED NAME: 'Magnus Douglas III'
+     SPECIES: 'Werewolf, Pureblood'
+     ROLE: 'Pack elder, no operational role'
+     KEYS: ['Magnus', 'Magnus Douglas', 'Sir Magnus', 'Patriarch Magnus']
+     REGEX: (?:^|\n)\s*(?:Magnus\ Douglas\ III|Magnus\ III|Magnus\ Douglas|Sir\ Magnus\ III|Sir\ Magnus|Magnus)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Magnus', 'last_name': 'III', 'nicknames': ['Magnus Douglas', 'Sir Magnus', 'Patriarch Magnus'], 'titles': []}
+
+[55] entry_name: 'Mackenzie Sanchez-Rogers'
+     JED NAME: 'Mackenzie "Mac" Sanchez-Rogers'
+     SPECIES: 'Werewolf'
+     ROLE: 'Keyboardist of Grave Mistake'
+     KEYS: ['Mackenzie Sanchez-Rogers', 'Mackenzie Rogers', 'Mac Rogers', 'Mackenzie']
+     REGEX: (?:^|\n)\s*(?:Mackenzie\ Sanchez-Rogers|Mackenzie\ Rogers|Mac\ Rogers|Mackenzie|Mac)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Mackenzie', 'last_name': 'Sanchez-Rogers', 'nicknames': ['Mac', 'Mac Rogers'], 'titles': []}
+
+[56] entry_name: 'Lord Cornelius Douglas'
+     JED NAME: 'Lord Cornelius Douglas'
+     SPECIES: 'Werewolf, Pureblood'
+     ROLE: 'Pack Leader in his own time'
+     KEYS: ['Cornelius', 'Lord Cornelius', 'Cornelius Douglas', 'Governor Cornelius']
+     REGEX: (?:^|\n)\s*(?:Lord\ Cornelius\ Douglas|Lord\ Douglas|Cornelius\ Douglas|Cornelius|Lord\ Cornelius|Lord)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Lord', 'last_name': 'Douglas', 'nicknames': ['Cornelius', 'Lord Cornelius', 'Cornelius Douglas', 'Governor Cornelius'], 'titles': []}
+
+[57] entry_name: 'Logan Járn Douglas'
+     JED NAME: 'Logan Járn Douglas'
+     SPECIES: 'Werewolf - Pureblood Beta, House Douglas'
+     ROLE: 'None, he left the pack by his own choice'
+     KEYS: ['Logan Douglas', 'Logan Járn Douglas', 'Logan']
+     REGEX: (?:^|\n)\s*(?:Logan\ Járn\ Douglas|Logan\ Douglas|The\ Peacemaker|Logan)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Logan', 'last_name': 'Douglas', 'nicknames': ['Járn', 'The Peacemaker', 'Uncle Logan'], 'titles': []}
+
+[58] entry_name: 'Kaladin Nargathon'
+     JED NAME: 'Kaladin Blackwolf Nargathon'
+     SPECIES: 'Werewolf (military-engineered, Project Blackwolf, Gamma-7 team)'
+     ROLE: 'Commander, DCC Security Division (founded 2019)'
+     KEYS: ['Kaladin', 'Blackwolf', 'BlackWolf', 'Kaladin Nargathon', 'Commander Kaladin', 'DCC Security', 'Subject Zero']
+     REGEX: (?:^|\n)\s*(?:Kaladin\ Nargathon|Commander\ Nargathon|Commander|Kal\ Nargathon|Kal|Kaladin)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Kaladin', 'last_name': 'Nargathon', 'nicknames': ['Commander', 'Kal', 'Blackwolf', 'Lycan', 'Subject Zero', 'BlackWolf', 'Commander Kaladin', 'DCC Security'], 'titles': []}
+
+[59] entry_name: 'Jean-Luc Virtuoso'
+     JED NAME: 'Jean-Luc Virtuoso'
+     SPECIES: 'Human, Telepath'
+     ROLE: ''
+     KEYS: ['Jean-Luc', 'Virtuoso', 'Pride', 'The Maestro']
+     REGEX: (?:^|\n)\s*(?:Jean\-Luc\ Virtuoso|Jean\ Virtuoso|Jean|The\ Maestro\ Virtuoso|The\ Maestro|Jean\-Luc)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Jean-Luc', 'last_name': 'Virtuoso', 'nicknames': ['Jean', 'The Maestro', '"Boss"', 'Pride'], 'titles': []}
+
+[60] entry_name: 'Jasper Svartr Douglas Bloodmoon'
+     JED NAME: 'Jasper Svartr Douglas Bloodmoon'
+     SPECIES: 'Werewolf, Founding Bloodline'
+     ROLE: ''
+     KEYS: ['Jasper Douglas', 'Jasper Svartr', 'Jasper Douglas-Bloodmoon', 'Jasper', 'Shadow Wolf Jasper']
+     REGEX: (?:^|\n)\s*(?:Jasper\ Douglas|Jasper\ Svartr|Shadow\ Wolf|Jasper)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Jasper', 'last_name': 'Douglas Bloodmoon', 'nicknames': ['Shadow Wolf', 'Jasp'], 'titles': []}
+
+[61] entry_name: 'Jasmin Thompson'
+     JED NAME: 'Jasmin Thompson, Jas to almost everyone'
+     SPECIES: 'Holstaur'
+     ROLE: ''
+     KEYS: ['Jasmin Thompson', 'Jasmin', "Hank's wife"]
+     REGEX: (?:^|\n)\s*(?:Jasmin\ Thompson|Hank's\ wife\ Thompson|Hank's\ wife|Jasmin)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Jasmin', 'last_name': 'Thompson', 'nicknames': ["Hank's wife"], 'titles': []}
+
+[62] entry_name: 'Jared Thompson'
+     JED NAME: 'Jared Thompson'
+     SPECIES: 'Hybrid, half-minotaur (minotaur father, holstaur mother)'
+     ROLE: ''
+     KEYS: ['Jared Thompson', 'J-Man', 'Jared']
+     REGEX: (?:^|\n)\s*(?:Jared\ Thompson|J-Man|Jared)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Jared', 'last_name': 'Thompson', 'nicknames': ['J-Man', 'The Golden Bull'], 'titles': []}
+
+[63] entry_name: 'Janice Thompson'
+     JED NAME: 'Janice Thompson'
+     SPECIES: 'Holstaur'
+     ROLE: ''
+     KEYS: ['Janice Thompson', 'Janice']
+     REGEX: (?:^|\n)\s*(?:Janice\ Thompson|Janice)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Janice', 'last_name': 'Thompson', 'nicknames': [], 'titles': []}
+
+[64] entry_name: 'Isobel Blackwater'
+     JED NAME: 'Isobel Blackwater'
+     SPECIES: 'Werewolf, Alpha (Pureblood)'
+     ROLE: 'Pack Leader'
+     KEYS: ['Isobel Blackwater']
+     REGEX: (?:^|\n)\s*(?:Isobel\ Blackwater|Dockside\ Blackwater|Dockside|Pack\ Leader\ Blackwater|Pack\ Leader|Isobel)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Isobel', 'last_name': 'Blackwater', 'nicknames': ['Dockside', 'Pack Leader', 'smuggling', 'the docks'], 'titles': []}
+
+[65] entry_name: 'Iordan R. Vess'
+     JED NAME: 'Iordan R. Vess, goes by Io, signs everything Alpha'
+     SPECIES: 'Werewolf'
+     ROLE: ''
+     KEYS: ['Iordan', 'ior', 'Vess']
+     REGEX: (?:^|\n)\s*(?:Iordan\ R\.\ Vess|Iordan\ Vess|ior\ Vess|ior|Iordan)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Iordan', 'last_name': 'Vess', 'nicknames': ['ior'], 'titles': []}
+
+[66] entry_name: 'Helena Weiss'
+     JED NAME: 'Helena Weiss'
+     SPECIES: 'Werewolf, Beta'
+     ROLE: 'Pack Leader'
+     KEYS: ['Helena Weiss', 'Professor Weiss']
+     REGEX: (?:^|\n)\s*(?:Helena\ Weiss|Professor\ Weiss\ Weiss|Professor\ Weiss|Arcadia\ Weiss|Arcadia|Helena)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Helena', 'last_name': 'Weiss', 'nicknames': ['Professor Weiss', 'Arcadia', 'Pack Leader'], 'titles': []}
+
+[67] entry_name: 'Harper Aries'
+     JED NAME: 'Harper Aries'
+     SPECIES: 'Dhampir, half-human half-vampire'
+     ROLE: ''
+     KEYS: ['Harper', 'Aries', 'Harp']
+     REGEX: (?:^|\n)\s*(?:Harper\ Aries|Harp\ \(Rory\ and\ Danny\ only\)\ Aries|Harp\ \(Rory\ and\ Danny\ only\)|Harp\ Aries|Harp|Harper)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Harper', 'last_name': 'Aries', 'nicknames': ['Harp (Rory and Danny only)', 'Harp'], 'titles': []}
+
+[68] entry_name: 'Harlan Beaumont'
+     JED NAME: 'Harlan "Huck" Beaumont'
+     SPECIES: 'Human'
+     ROLE: 'Human Representative on the Blackwood Council, independent tactical instructor'
+     KEYS: ['Harlan Beaumont', 'Huck Beaumont', 'Huck']
+     REGEX: (?:^|\n)\s*(?:Harlan\ Beaumont|Huck\ Beaumont\ Beaumont|Huck\ Beaumont|Huck|Harlan)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Harlan', 'last_name': 'Beaumont', 'nicknames': ['Huck Beaumont', 'Huck', 'Human Representative', 'Blackwood Council'], 'titles': []}
+
+[69] entry_name: 'Hank Thompson'
+     JED NAME: 'Hank Thompson, universally Coach Thompson'
+     SPECIES: 'Half-minotaur'
+     ROLE: ''
+     KEYS: ['Hank Thompson', 'Thompson', 'Hank']
+     REGEX: (?:^|\n)\s*(?:Hank\ Thompson|Hank)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Hank', 'last_name': 'Thompson', 'nicknames': [], 'titles': []}
+
+[70] entry_name: 'GREED - Roxie'
+     JED NAME: 'Roxie'
+     SPECIES: 'Hyena Demihuman'
+     ROLE: ''
+     KEYS: ['Roxie', 'Rox', 'Greed']
+     REGEX: (?:^|\n)\s*(?:GREED\ \-\ Roxie|GREED\ Roxie|Rox\ Roxie|Rox|Greed)\s*:
+     EXISTING NPC_INFO: {'first_name': 'GREED', 'last_name': 'Roxie', 'nicknames': ['Rox', 'Greed'], 'titles': []}
+
+[71] entry_name: 'GLUTTONY - Kevin'
+     JED NAME: 'Kevin'
+     SPECIES: 'Human'
+     ROLE: ''
+     KEYS: ['Kevin', 'Gluttony']
+     REGEX: (?:^|\n)\s*(?:GLUTTONY\ \-\ Kevin|GLUTTONY\ Kevin|Gluttony|tech\ guy\ Kevin|tech\ guy)\s*:
+     EXISTING NPC_INFO: {'first_name': 'GLUTTONY', 'last_name': 'Kevin', 'nicknames': ['Gluttony', 'tech guy'], 'titles': []}
+
+[72] entry_name: 'Finnegan Novak'
+     JED NAME: 'Finnegan Novak, called Finn by everyone and Finnegan only by his mother'
+     SPECIES: 'Demi-Human Arctic Wolf (Kemonomimi, Non-Shifter, Bullied in childhood as "mezzo-lupo" due to inability to shift, zero werewolf birth-rune or wolf name)'
+     ROLE: ''
+     KEYS: ['Finnegan', 'Finn', 'Novak', 'Alpha Rho Omega', 'SUCC Bears']
+     REGEX: (?:^|\n)\s*(?:Finnegan\ Novak|Finn\ Novak|Finn|arctic\ wolf\ Novak|arctic\ wolf|Finnegan)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Finnegan', 'last_name': 'Novak', 'nicknames': ['Finn', 'arctic wolf', 'Alpha Rho Omega', 'SUCC Bears', 'left wing'], 'titles': []}
+
+[73] entry_name: 'Federico "Riki" Savini'
+     JED NAME: 'Federico "Riki" Savini'
+     SPECIES: 'Werewolf, Elder'
+     ROLE: 'Representative of the roughly 24,250 solitary wolves of Blackwood City and a trusted political confidant of Malachia Douglas'
+     KEYS: ['Federico Savini', 'Riki Savini', 'Malachia confidant']
+     REGEX: (?:^|\n)\s*(?:Federico\ "Riki"\ Savini|Federico\ Savini|Riki\ Savini|Riki|Federico\ Savini\ Savini|Federico)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Federico', 'last_name': 'Savini', 'nicknames': ['Riki', 'Federico Savini', 'Riki Savini', 'solitary wolves', 'Malachia confidant', 'espresso'], 'titles': []}
+
+[74] entry_name: 'Fade Greymoor'
+     JED NAME: 'Mihaela "Fade" Greymoor'
+     SPECIES: 'Vampire'
+     ROLE: 'Lead vocalist of Grave Mistake'
+     KEYS: ['Fade', 'Fade Greymoor', 'Greymoor']
+     REGEX: (?:^|\n)\s*(?:Fade\ Greymoor|Fade)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Fade', 'last_name': 'Greymoor', 'nicknames': [], 'titles': []}
+
+[75] entry_name: 'Eris Davies'
+     JED NAME: 'Eris Davies, née López Ortega, and she will correct you if you get it wrong'
+     SPECIES: 'Werewolf'
+     ROLE: ''
+     KEYS: ['Eris', 'Eris Davies', "Stan's Mom", 'ms davies', 'mrs davies']
+     REGEX: (?:^|\n)\s*(?:Eris\ Davies|Stan's\ Mom\ Davies|Stan's\ Mom|ms\ davies\ Davies|ms\ davies|Eris)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Eris', 'last_name': 'Davies', 'nicknames': ["Stan's Mom", 'ms davies', 'mrs davies'], 'titles': []}
+
+[76] entry_name: 'Erik Ulfr Douglas'
+     JED NAME: 'Erik Ulfr Douglas'
+     SPECIES: 'Werewolf - Pureblood Prime Alpha, House Douglas'
+     ROLE: 'Pack Leader of the Seven Hills Pack'
+     KEYS: ['Erik Douglas', 'Erik Ulfr Douglas', 'Prime Alpha', 'Erik']
+     REGEX: (?:^|\n)\s*(?:Erik\ Ulfr\ Douglas|Erik\ Douglas|The\ Prime\ Alpha|Prime\ Alpha|Erik)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Erik', 'last_name': 'Douglas', 'nicknames': ['The Prime Alpha', 'Ulfr', 'Dad'], 'titles': []}
+
+[77] entry_name: 'Elizabeth Duskwood'
+     JED NAME: 'Elizabeth Duskwood'
+     SPECIES: 'Werewolf'
+     ROLE: 'Pack Mom, held in trust since Nixara's death and passing to Alyssa at twenty-one'
+     KEYS: ['Elizabeth Duskwood', 'Elizabeth', 'Lady Duskwood', 'Duskwood', 'nonna']
+     REGEX: (?:^|\n)\s*(?:Elizabeth\ Duskwood|Lady\ Duskwood\ Duskwood|Lady\ Duskwood|nonna\ Duskwood|nonna|Elizabeth)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Elizabeth', 'last_name': 'Duskwood', 'nicknames': ['Lady Duskwood', 'nonna'], 'titles': []}
+
+[78] entry_name: 'Eclipse Noir'
+     JED NAME: 'Eclipse Noir'
+     SPECIES: 'Werewolf, Alpha (Pureblood)'
+     ROLE: 'Pack Leader'
+     KEYS: ['Eclipse Noir', 'The Verve']
+     REGEX: (?:^|\n)\s*(?:Eclipse\ Noir|Bluemoon\ South\ Noir|Bluemoon\ South|Pack\ Leader\ Noir|Pack\ Leader|Eclipse)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Eclipse', 'last_name': 'Noir', 'nicknames': ['Bluemoon South', 'Pack Leader', 'The Verve', 'genderfluid'], 'titles': []}
+
+[79] entry_name: 'ENVY - Siobhan'
+     JED NAME: 'Siobhan'
+     SPECIES: 'Vampire'
+     ROLE: ''
+     KEYS: ['Siobhan', 'Envy']
+     REGEX: (?:^|\n)\s*(?:ENVY\ \-\ Siobhan|ENVY\ Siobhan|Envy)\s*:
+     EXISTING NPC_INFO: {'first_name': 'ENVY', 'last_name': 'Siobhan', 'nicknames': ['Envy'], 'titles': []}
+
+[80] entry_name: 'Dullahan'
+     JED NAME: 'Dullahan'
+     SPECIES: 'Immortal Contractor, presents publicly as a dog demihuman of Irish Wolfhound stock'
+     ROLE: ''
+     KEYS: ['Dullahan', 'Coach D', 'Dully', 'Coach Dully']
+     REGEX: (?:^|\n)\s*(?:Dullahan|Coach\ D|Coach\ Dully\ o'\ Han)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Dullahan', 'last_name': '', 'nicknames': ['Coach D', "Coach Dully o' Han", 'Dully', '#04', 'Four', 'Coach Dully'], 'titles': []}
+
+[81] entry_name: 'Dr. Arthur Sinclair'
+     JED NAME: 'Dr. Arthur Sinclair'
+     SPECIES: 'Human Mutant, Chimera'
+     ROLE: ''
+     KEYS: ['Arthur', 'Sinclair', 'Sloth', 'The Alchemist']
+     REGEX: (?:^|\n)\s*(?:Dr\.\ Arthur\ Sinclair|Dr\.\ Arthur|Dr\.\ Sinclair|Arthur\ Sinclair|Sloth\ Sinclair|Sloth|The\ Alchemist\ Sinclair|The\ Alchemist|Arthur)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Arthur', 'last_name': 'Sinclair', 'nicknames': ['Sloth', 'The Alchemist', 'Dr. Sinclair'], 'titles': ['Dr.']}
+
+[82] entry_name: 'Dominic Chen'
+     JED NAME: 'Dominic Chen'
+     SPECIES: 'Werewolf, Alpha (Pureblood)'
+     ROLE: 'Pack Leader'
+     KEYS: ['Dominic Chen']
+     REGEX: (?:^|\n)\s*(?:Dominic\ Chen|Paradise\ West\ Chen|Paradise\ West|Pack\ Leader\ Chen|Pack\ Leader|Dominic)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Dominic', 'last_name': 'Chen', 'nicknames': ['Paradise West', 'Pack Leader', 'luxury supplier', 'silk suits'], 'titles': []}
+
+[83] entry_name: 'Darius Vale'
+     JED NAME: 'Darius Vale'
+     SPECIES: 'Werewolf, Alpha'
+     ROLE: 'Pack Leader'
+     KEYS: ['Darius Vale']
+     REGEX: (?:^|\n)\s*(?:Darius\ Vale|Uptown\ South\ Vale|Uptown\ South|Pack\ Leader\ Vale|Pack\ Leader|Darius)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Darius', 'last_name': 'Vale', 'nicknames': ['Uptown South', 'Pack Leader'], 'titles': []}
+
+[84] entry_name: 'Dante'
+     JED NAME: 'Dante'
+     SPECIES: 'Demon, Incubus'
+     ROLE: ''
+     KEYS: ['Dante', 'Lust']
+     REGEX: (?:^|\n)\s*(?:Dante|Lust)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Dante', 'last_name': '', 'nicknames': ['Lust'], 'titles': []}
+
+[85] entry_name: 'Chase Anderson'
+     JED NAME: 'Chase Anderson'
+     SPECIES: 'Werewolf'
+     ROLE: ''
+     KEYS: ['Chase Anderson', 'Chase', 'Goldie', 'Anderson']
+     REGEX: (?:^|\n)\s*(?:Chase\ Anderson|Goldie\ Anderson|Goldie|Chase)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Chase', 'last_name': 'Anderson', 'nicknames': ['Goldie'], 'titles': []}
+
+[86] entry_name: 'Cass Harrow'
+     JED NAME: 'Cass Harrow'
+     SPECIES: 'Werewolf, Alpha (Pureblood)'
+     ROLE: 'Pack Leader'
+     KEYS: ['Cass Harrow', 'Naomi Black']
+     REGEX: (?:^|\n)\s*(?:Cass\ Harrow|Uptown\ North\ Harrow|Uptown\ North|Pack\ Leader\ Harrow|Pack\ Leader|Cass)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Cass', 'last_name': 'Harrow', 'nicknames': ['Uptown North', 'Pack Leader', 'Naomi Black', 'tactician'], 'titles': []}
+
+[87] entry_name: 'Casey Williams'
+     JED NAME: 'Casey Williams, called Case'
+     SPECIES: 'Hawk demihuman'
+     ROLE: ''
+     KEYS: ['Casey', 'Williams', 'Casey Williams', 'SHA']
+     REGEX: (?:^|\n)\s*(?:Casey\ Williams|photography\ Williams|photography|darkroom\ Williams|darkroom|Casey)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Casey', 'last_name': 'Williams', 'nicknames': ['photography', 'darkroom', 'SHA', 'wings'], 'titles': []}
+
+[88] entry_name: 'Brak Ironfist'
+     JED NAME: 'Brak Ironfist'
+     SPECIES: 'Orc'
+     ROLE: 'Orc Representative, Blackwood Council'
+     KEYS: ['Brak Ironfist', 'Brak', 'Ironfist', 'Orc Representative', 'Ironfist Forge & Structural']
+     REGEX: (?:^|\n)\s*(?:Brak\ Ironfist|Orc\ Representative\ Ironfist|Orc\ Representative|Ironfist\ Forge\ \&\ Structural\ Ironfist|Ironfist\ Forge\ \&\ Structural|Brak)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Brak', 'last_name': 'Ironfist', 'nicknames': ['Orc Representative', 'Ironfist Forge & Structural', 'Blackwood Council'], 'titles': []}
+
+[89] entry_name: 'Bianca Rossi'
+     JED NAME: 'Bianca "Bia" Rossi'
+     SPECIES: 'Werewolf, Alpha'
+     ROLE: 'Pack Leader'
+     KEYS: ['Bianca Rossi', 'Bia', 'fashion negotiator']
+     REGEX: (?:^|\n)\s*(?:Bianca\ Rossi|Bia\ Rossi|Bia|Paradise\ East\ Rossi|Paradise\ East|Bianca)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Bianca', 'last_name': 'Rossi', 'nicknames': ['Bia', 'Paradise East', 'Pack Leader', 'fashion negotiator'], 'titles': []}
+
+[90] entry_name: 'Barrow'
+     JED NAME: 'Barrow'
+     SPECIES: 'Minotaur'
+     ROLE: 'Demi-human Representative, Blackwood Council'
+     KEYS: ['Barrow', 'The Horns', 'Demi-human Representative']
+     REGEX: (?:^|\n)\s*(?:Barrow|The\ Horns|Demi\-human\ Representative)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Barrow', 'last_name': '', 'nicknames': ['The Horns', 'Demi-human Representative', 'Blackwood Council', 'Dockside'], 'titles': []}
+
+[91] entry_name: 'Barkley Rover'
+     JED NAME: 'Barkley Rover'
+     SPECIES: 'Dog demihuman, golden retriever'
+     ROLE: ''
+     KEYS: ['Barkley Rover', 'Rover', 'Barkley']
+     REGEX: (?:^|\n)\s*(?:Barkley\ Rover|Barks\ Rover|Barks|Coach\ B\ Rover|Coach\ B|Barkley)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Barkley', 'last_name': 'Rover', 'nicknames': ['Barks', 'Coach B', 'Assistant coach', 'football coach'], 'titles': []}
+
+[92] entry_name: 'Bailey Rogers'
+     JED NAME: 'Bailey Rogers, "Red" to his teammates'
+     SPECIES: 'Incubus'
+     ROLE: ''
+     KEYS: ['Bailey', 'Bailey Rogers']
+     REGEX: (?:^|\n)\s*(?:Bailey\ Rogers|Bailey)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Bailey', 'last_name': 'Rogers', 'nicknames': [], 'titles': []}
+
+[93] entry_name: 'Aurora Night'
+     JED NAME: 'Aurora Night'
+     SPECIES: 'Werewolf, Alpha (Pureblood)'
+     ROLE: 'Pack Leader'
+     KEYS: ['Aurora Night']
+     REGEX: (?:^|\n)\s*(?:Aurora\ Night|Bluemoon\ North\ Night|Bluemoon\ North|Pack\ Leader\ Night|Pack\ Leader|Aurora)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Aurora', 'last_name': 'Night', 'nicknames': ['Bluemoon North', 'Pack Leader', 'intel broker', 'intelligence network'], 'titles': []}
+
+[94] entry_name: 'Archer Wolfwood'
+     JED NAME: 'Archer Wolfwood'
+     SPECIES: 'Werewolf'
+     ROLE: ''
+     KEYS: ['Archer Wolfwood', 'Wolfwood', 'Chancellor', 'Rettore', 'Archer Wolfwood Hall']
+     REGEX: (?:^|\n)\s*(?:Archer\ Wolfwood|Chancellor\ Wolfwood|Chancellor|Rettore\ Wolfwood|Rettore|Archer)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Archer', 'last_name': 'Wolfwood', 'nicknames': ['Chancellor', 'Rettore', 'Archer Wolfwood Hall'], 'titles': []}
+
+[95] entry_name: 'Angelo Moreno'
+     JED NAME: 'Angelo Moreno'
+     SPECIES: 'Vampire'
+     ROLE: ''
+     KEYS: ['Angelo Moreno']
+     REGEX: (?:^|\n)\s*(?:Angelo\ Moreno|Angelo)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Angelo', 'last_name': 'Moreno', 'nicknames': [], 'titles': []}
+
+[96] entry_name: 'Andrew Campbell'
+     JED NAME: 'Andrew "Andy" Campbell'
+     SPECIES: 'Vampire, Campbell line of Montreal'
+     ROLE: ''
+     KEYS: ['Andy', 'andrew', 'campbell', 'andybear']
+     REGEX: (?:^|\n)\s*(?:Andrew\ Campbell|Andy\ Campbell|Andy|andrew)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Andrew', 'last_name': 'Campbell', 'nicknames': ['Andy', 'andrew', 'campbell', 'mascot', 'andybear', 'anime club'], 'titles': []}
+
+[97] entry_name: 'Abel Vilas '
+     JED NAME: 'Abel Vilas'
+     SPECIES: 'Sea Dragon Demi-human'
+     ROLE: ''
+     KEYS: ['Abel Vilas', 'Abel']
+     REGEX: (?:^|\n)\s*(?:Abel\ Vilas|Abel)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Abel', 'last_name': 'Vilas', 'nicknames': [], 'titles': []}
+
+[98] entry_name: 'Alyssa Hvit Douglas Bloodmoon'
+     JED NAME: 'Alyssa Hvit Douglas Bloodmoon'
+     SPECIES: 'Werewolf, Founding Bloodline'
+     ROLE: ''
+     KEYS: ['Alyssa Douglas', 'Alyssa Hvit', 'Alyssa Douglas-Bloodmoon', 'Alyssa', 'White Moon Alyssa']
+     REGEX: (?:^|\n)\s*(?:Alyssa\ Douglas|Alyssa\ Hvit|White\ Moon|Alyssa)\s*:
+     EXISTING NPC_INFO: {'first_name': 'Alyssa', 'last_name': 'Douglas Bloodmoon', 'nicknames': ['White Moon', 'Lyssa'], 'titles': []}
+

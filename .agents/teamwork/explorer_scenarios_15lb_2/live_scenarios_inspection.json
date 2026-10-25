@@ -1,0 +1,1315 @@
+{
+  "Master Scenario": {
+    "id": "char_scenario_1DC43ggb6mB8YLJDJKrU4",
+    "name": "Svart\u00falfr \u2014 Vita al Campus SUCC & Missioni di Gilda",
+    "revision": 27,
+    "visibility": "private",
+    "rating": "explicit",
+    "status": "pending",
+    "lorebook_ids_count": 15,
+    "lorebook_ids": [
+      "_GbWJbkhgLzWexMHrjyUUc",
+      "_brNyzEdhzNAyxK8xC8hhm",
+      "_YtKLMTwyMxNf1DNYqBx1t",
+      "_gwwCxCfQ6PQaLEjAQVpJL",
+      "_HfG7TeV6MJyj6bxMwxkpt",
+      "_9zWTGqYJNJ4BCDMj8gfcD",
+      "_EjXxkmPVhpCXg8xABpFkK",
+      "_Uht3Ckz44JBDrPnUHq7LV",
+      "_zwEqgEEzh12X6gHVmMKKC",
+      "_FaVcHfmrqcaJq8pa3WmRw",
+      "_b9HgpUXtAW8VmTy82BPDV",
+      "_gchmML4Q478zdFjhXf8rN",
+      "_BbrRgrcdGPMLEbBU2b6xk",
+      "_GV1KyHVY1RMbCnWgLkzDG",
+      "_c8bEm1bWphwqFBXWRPrV8"
+    ],
+    "slot_count": 13,
+    "greeting_count": 29,
+    "greetings_summary": [
+      {
+        "index": 0,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "{{scenarioChar \"eldest_brother\"}} tiene gli occhi sullo sche"
+      },
+      {
+        "index": 1,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "Domenica 7 luglio 2024, ore 14:30 - Ingresso di Camp Mystic,"
+      },
+      {
+        "index": 2,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [
+          "persona_1786335754946"
+        ],
+        "title": "",
+        "first_msg_preview": "Mercoled\u00ec 28 agosto 2024, 7:40 - Villa Douglas, 555 Oak Road"
+      },
+      {
+        "index": 3,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [
+          "1792155173728"
+        ],
+        "title": "",
+        "first_msg_preview": "Mercoled\u00ec 28 agosto 2024, ore 08:00 - Villa Douglas, 555 Oak"
+      },
+      {
+        "index": 4,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "Mercoled\u00ec 28 agosto 2024, ore 09:15 - Griffin Clocktower, ca"
+      },
+      {
+        "index": 5,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "Mercoled\u00ec 28 agosto 2024, ore 11:00 - Wyrm Dormitories, camp"
+      },
+      {
+        "index": 6,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [
+          "1792155173728"
+        ],
+        "title": "",
+        "first_msg_preview": "Gioved\u00ec 29 agosto 2024, ore 20:30 - Stanza 304, Wyrm Hall, c"
+      },
+      {
+        "index": 7,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [
+          "persona_1786335754946"
+        ],
+        "title": "",
+        "first_msg_preview": "Venerd\u00ec 30 agosto 2024, ore 14:00 - Aetheris Clinic, Unit 4B"
+      },
+      {
+        "index": 8,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [
+          "persona_1786335754946"
+        ],
+        "title": "",
+        "first_msg_preview": "Luned\u00ec 2 settembre 2024, ore 15:00 - Bulls Stadium, campus S"
+      },
+      {
+        "index": 9,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [
+          "1792155173728"
+        ],
+        "title": "",
+        "first_msg_preview": "Luned\u00ec 2 settembre 2024, ore 17:15 - Tunnel degli Spogliatoi"
+      },
+      {
+        "index": 10,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "Luned\u00ec 9 settembre 2024, ore 10:30 - Lunar Quad, campus SUCC"
+      },
+      {
+        "index": 11,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "Luned\u00ec 9 settembre 2024, ore 10:30 - Lunar Quad, campus SUCC"
+      },
+      {
+        "index": 12,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [
+          "persona_1786335754946"
+        ],
+        "title": "",
+        "first_msg_preview": "Sabato 14 settembre 2024, 23:00 - Sidewinders Bar & Nightclu"
+      },
+      {
+        "index": 13,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "Luned\u00ec 16 settembre 2024, ore 10:00 - DMHA Guild Hall, Centr"
+      },
+      {
+        "index": 14,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "Mercoled\u00ec 25 settembre 2024, ore 14:30 - Trial Dungeon: Hive"
+      },
+      {
+        "index": 15,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "Sabato 28 settembre 2024, ore 16:30 - Palestra Ausiliaria di"
+      },
+      {
+        "index": 16,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [
+          "persona_1786335754946"
+        ],
+        "title": "",
+        "first_msg_preview": "Venerd\u00ec 4 ottobre 2024, ore 23:40 - Vicolo laterale, Magazzi"
+      },
+      {
+        "index": 17,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [
+          "1792155173728"
+        ],
+        "title": "",
+        "first_msg_preview": "Venerd\u00ec 4 ottobre 2024, ore 23:30 - Magazzino Industriale Di"
+      },
+      {
+        "index": 18,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [
+          "1792155173728"
+        ],
+        "title": "",
+        "first_msg_preview": "Venerd\u00ec 11 ottobre 2024, ore 23:45 - Lounge Sotterraneo di T"
+      },
+      {
+        "index": 19,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "Gioved\u00ec 17 ottobre 2024, ore 20:30 - Solarton Square, Centro"
+      },
+      {
+        "index": 20,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [
+          "persona_1786335754946"
+        ],
+        "title": "",
+        "first_msg_preview": "Gioved\u00ec 31 ottobre 2024, 21:00 - Beta Rho Omega (BRO) Frater"
+      },
+      {
+        "index": 21,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [
+          "1792155173728"
+        ],
+        "title": "",
+        "first_msg_preview": "Sabato 9 novembre 2024, ore 02:15 - Vicolo Cieco presso il R"
+      },
+      {
+        "index": 22,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "Gioved\u00ec 28 novembre 2024, 8:00 - The Verve, garage di Logan "
+      },
+      {
+        "index": 23,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "Gioved\u00ec 28 novembre 2024, ore 22:30 - Neptune Diner, Pacific"
+      },
+      {
+        "index": 24,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "Sabato 21 dicembre 2024, 18:00 - Tenuta Svartulfr, Bosco Sac"
+      },
+      {
+        "index": 25,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "Sabato 21 dicembre 2024, ore 23:45 - Bosco Sacro della Longh"
+      },
+      {
+        "index": 26,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "Sabato 15 febbraio 2025, 11:00 - Lunar Quad, campus SUCC, So"
+      },
+      {
+        "index": 27,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "Gioved\u00ec 15 maggio 2025, 18:20 - Villa Douglas, la cucina\n\nLa"
+      },
+      {
+        "index": 28,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [
+          "persona_1786335754946"
+        ],
+        "title": "",
+        "first_msg_preview": "Venerd\u00ec 20 giugno 2025, ore 21:30 - Club House Ironhorn Noma"
+      }
+    ],
+    "top_level_keys": [
+      "slot_count",
+      "greeting_count",
+      "id",
+      "name",
+      "display_description",
+      "avatar",
+      "tags",
+      "visibility",
+      "rating",
+      "status",
+      "revision",
+      "creator_uid",
+      "updated_at",
+      "linked_world_id",
+      "scenario",
+      "startup_script",
+      "slots",
+      "greetings",
+      "lorebook_ids",
+      "lorebooks",
+      "gallery",
+      "moderation_reason"
+    ]
+  },
+  "Camp Mystic": {
+    "id": "char_scenario_nLC84wrHdrbB6P3DEhwKb",
+    "name": "Svartulfr: Camp Mystic (Lake Erie Summer Arc)",
+    "revision": 1,
+    "visibility": "private",
+    "rating": "explicit",
+    "status": "pending",
+    "lorebook_ids_count": 6,
+    "lorebook_ids": [
+      "_gwwCxCfQ6PQaLEjAQVpJL",
+      "_HfG7TeV6MJyj6bxMwxkpt",
+      "_9zWTGqYJNJ4BCDMj8gfcD",
+      "_EjXxkmPVhpCXg8xABpFkK",
+      "_zwEqgEEzh12X6gHVmMKKC",
+      "_Uht3Ckz44JBDrPnUHq7LV"
+    ],
+    "slot_count": 8,
+    "greeting_count": 4,
+    "greetings_summary": [
+      {
+        "index": 0,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "Marcus Vale stood up before the vehicle had even come to a f"
+      },
+      {
+        "index": 1,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "{{scenarioChar \"cousin\"}} dumped his duffel bag onto the low"
+      },
+      {
+        "index": 2,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "{{scenarioChar \"twin\"}} adjusted the nylon straps of an oran"
+      },
+      {
+        "index": 3,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "Director Mara Voss stood tall before the leaping flames of t"
+      }
+    ],
+    "top_level_keys": [
+      "slot_count",
+      "greeting_count",
+      "id",
+      "name",
+      "display_description",
+      "avatar",
+      "tags",
+      "visibility",
+      "rating",
+      "status",
+      "revision",
+      "creator_uid",
+      "updated_at",
+      "linked_world_id",
+      "scenario",
+      "startup_script",
+      "slots",
+      "greetings",
+      "lorebook_ids",
+      "lorebooks",
+      "gallery"
+    ]
+  },
+  "SUCC Route Alyssa": {
+    "id": "char_scenario_CKgwq246DyCj1NNTBV9rt",
+    "name": "Svartulfr: SUCC Collegiate Arc (Alyssa Route)",
+    "revision": 1,
+    "visibility": "private",
+    "rating": "explicit",
+    "status": "pending",
+    "lorebook_ids_count": 6,
+    "lorebook_ids": [
+      "_gwwCxCfQ6PQaLEjAQVpJL",
+      "_HfG7TeV6MJyj6bxMwxkpt",
+      "_9zWTGqYJNJ4BCDMj8gfcD",
+      "_EjXxkmPVhpCXg8xABpFkK",
+      "_zwEqgEEzh12X6gHVmMKKC",
+      "_Uht3Ckz44JBDrPnUHq7LV"
+    ],
+    "slot_count": 8,
+    "greeting_count": 6,
+    "greetings_summary": [
+      {
+        "index": 0,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "{{scenarioChar \"roommate\"}} stood by the full-length mirror,"
+      },
+      {
+        "index": 1,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "{{scenarioChar \"best_friend\"}} rested her sketchpad beside a"
+      },
+      {
+        "index": 2,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "{{scenarioChar \"crush\"}} had one headphone draped over his c"
+      },
+      {
+        "index": 3,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "{{scenarioChar \"sports_rival\"}} gathered a breakout pass at "
+      },
+      {
+        "index": 4,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "{{scenarioChar \"quarterback\"}} towered in his gold-and-black"
+      },
+      {
+        "index": 5,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "On the elevated stage, {{scenarioChar \"crush\"}} stood behind"
+      }
+    ],
+    "top_level_keys": [
+      "slot_count",
+      "greeting_count",
+      "id",
+      "name",
+      "display_description",
+      "avatar",
+      "tags",
+      "visibility",
+      "rating",
+      "status",
+      "revision",
+      "creator_uid",
+      "updated_at",
+      "linked_world_id",
+      "scenario",
+      "startup_script",
+      "slots",
+      "greetings",
+      "lorebook_ids",
+      "lorebooks",
+      "gallery"
+    ]
+  },
+  "SUCC Route Jasper": {
+    "id": "char_scenario_Kq4mJEBH83j7Q7DdVfFnF",
+    "name": "Svartulfr: SUCC Collegiate Arc (Jasper Route)",
+    "revision": 1,
+    "visibility": "private",
+    "rating": "explicit",
+    "status": "pending",
+    "lorebook_ids_count": 6,
+    "lorebook_ids": [
+      "_gwwCxCfQ6PQaLEjAQVpJL",
+      "_HfG7TeV6MJyj6bxMwxkpt",
+      "_9zWTGqYJNJ4BCDMj8gfcD",
+      "_EjXxkmPVhpCXg8xABpFkK",
+      "_zwEqgEEzh12X6gHVmMKKC",
+      "_Uht3Ckz44JBDrPnUHq7LV"
+    ],
+    "slot_count": 8,
+    "greeting_count": 5,
+    "greetings_summary": [
+      {
+        "index": 0,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "{{scenarioChar \"male_roommate\"}} sat perched on the low viny"
+      },
+      {
+        "index": 1,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "On the ruggedized terminal resting on the tar-paper blanket,"
+      },
+      {
+        "index": 2,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "{{scenarioChar \"sports_rival\"}} stopped near the granite fou"
+      },
+      {
+        "index": 3,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "{{scenarioChar \"male_roommate\"}} pushed through the backstag"
+      },
+      {
+        "index": 4,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "{{scenarioChar \"crush\"}} stood by the second-floor wooden ba"
+      }
+    ],
+    "top_level_keys": [
+      "slot_count",
+      "greeting_count",
+      "id",
+      "name",
+      "display_description",
+      "avatar",
+      "tags",
+      "visibility",
+      "rating",
+      "status",
+      "revision",
+      "creator_uid",
+      "updated_at",
+      "linked_world_id",
+      "scenario",
+      "startup_script",
+      "slots",
+      "greetings",
+      "lorebook_ids",
+      "lorebooks",
+      "gallery"
+    ]
+  },
+  "Villa Douglas": {
+    "id": "char_scenario_88N1eQXqkbydKX9q9XQzp",
+    "name": "Svartulfr: Villa Douglas (The Douglas Patriarchs)",
+    "revision": 1,
+    "visibility": "private",
+    "rating": "explicit",
+    "status": "pending",
+    "lorebook_ids_count": 6,
+    "lorebook_ids": [
+      "_gwwCxCfQ6PQaLEjAQVpJL",
+      "_HfG7TeV6MJyj6bxMwxkpt",
+      "_9zWTGqYJNJ4BCDMj8gfcD",
+      "_EjXxkmPVhpCXg8xABpFkK",
+      "_zwEqgEEzh12X6gHVmMKKC",
+      "_Uht3Ckz44JBDrPnUHq7LV"
+    ],
+    "slot_count": 7,
+    "greeting_count": 5,
+    "greetings_summary": [
+      {
+        "index": 0,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "{{scenarioChar \"cousin\"}} threw his hands in the air, slumpi"
+      },
+      {
+        "index": 1,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "{{scenarioChar \"father\"}} placed his heavy Montblanc pen ont"
+      },
+      {
+        "index": 2,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "{{scenarioChar \"uncle\"}} set down a heavy torque wrench besi"
+      },
+      {
+        "index": 3,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "{{scenarioChar \"maternal_grandfather\"}} struck the base of h"
+      },
+      {
+        "index": 4,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "{{scenarioChar \"father\"}} stood by the counter in comfortabl"
+      }
+    ],
+    "top_level_keys": [
+      "slot_count",
+      "greeting_count",
+      "id",
+      "name",
+      "display_description",
+      "avatar",
+      "tags",
+      "visibility",
+      "rating",
+      "status",
+      "revision",
+      "creator_uid",
+      "updated_at",
+      "linked_world_id",
+      "scenario",
+      "startup_script",
+      "slots",
+      "greetings",
+      "lorebook_ids",
+      "lorebooks",
+      "gallery"
+    ]
+  },
+  "DMHA Dungeons": {
+    "id": "char_scenario_eqtRNnDpKbxDp7dmJmq6E",
+    "name": "Svartulfr: DMHA Dungeons (Otherworld Incursions)",
+    "revision": 1,
+    "visibility": "private",
+    "rating": "explicit",
+    "status": "pending",
+    "lorebook_ids_count": 6,
+    "lorebook_ids": [
+      "_gwwCxCfQ6PQaLEjAQVpJL",
+      "_HfG7TeV6MJyj6bxMwxkpt",
+      "_9zWTGqYJNJ4BCDMj8gfcD",
+      "_EjXxkmPVhpCXg8xABpFkK",
+      "_zwEqgEEzh12X6gHVmMKKC",
+      "_Uht3Ckz44JBDrPnUHq7LV"
+    ],
+    "slot_count": 9,
+    "greeting_count": 4,
+    "greetings_summary": [
+      {
+        "index": 0,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "{{scenarioChar \"raid_leader\"}} tested the heavy nylon strap "
+      },
+      {
+        "index": 1,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "{{scenarioChar \"scout_infiltrator\"}} used his combat blade t"
+      },
+      {
+        "index": 2,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "A deafening mechanical roar shattered the cavern wall as {{s"
+      },
+      {
+        "index": 3,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "{{scenarioChar \"demihuman_representative\"}} blew steam from "
+      }
+    ],
+    "top_level_keys": [
+      "slot_count",
+      "greeting_count",
+      "id",
+      "name",
+      "display_description",
+      "avatar",
+      "tags",
+      "visibility",
+      "rating",
+      "status",
+      "revision",
+      "creator_uid",
+      "updated_at",
+      "linked_world_id",
+      "scenario",
+      "startup_script",
+      "slots",
+      "greetings",
+      "lorebook_ids",
+      "lorebooks",
+      "gallery"
+    ]
+  },
+  "Underworld Sindacato": {
+    "id": "char_scenario_rrUCdBPH6WTNyBnQkMAKR",
+    "name": "Svartulfr: Underworld Sindacato (Los Angeles Syndicate War)",
+    "revision": 1,
+    "visibility": "private",
+    "rating": "explicit",
+    "status": "pending",
+    "lorebook_ids_count": 6,
+    "lorebook_ids": [
+      "_gwwCxCfQ6PQaLEjAQVpJL",
+      "_HfG7TeV6MJyj6bxMwxkpt",
+      "_9zWTGqYJNJ4BCDMj8gfcD",
+      "_EjXxkmPVhpCXg8xABpFkK",
+      "_zwEqgEEzh12X6gHVmMKKC",
+      "_Uht3Ckz44JBDrPnUHq7LV"
+    ],
+    "slot_count": 6,
+    "greeting_count": 4,
+    "greetings_summary": [
+      {
+        "index": 0,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "{{scenarioChar \"syndicate_boss\"}} swirled a glass of vintage"
+      },
+      {
+        "index": 1,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "A cool, resonant telepathic whisper echoed directly behind {"
+      },
+      {
+        "index": 2,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "A volley of silenced high-caliber rounds sparked against the"
+      },
+      {
+        "index": 3,
+        "keys": [
+          "messages",
+          "id",
+          "name",
+          "description",
+          "content",
+          "linked_persona_ids",
+          "speaker_slot",
+          "linked_personas"
+        ],
+        "has_linked_persona_ids": true,
+        "linked_persona_ids": [],
+        "title": "",
+        "first_msg_preview": "{{scenarioChar \"sinners_alchemist\"}} hissed in violent panic"
+      }
+    ],
+    "top_level_keys": [
+      "slot_count",
+      "greeting_count",
+      "id",
+      "name",
+      "display_description",
+      "avatar",
+      "tags",
+      "visibility",
+      "rating",
+      "status",
+      "revision",
+      "creator_uid",
+      "updated_at",
+      "linked_world_id",
+      "scenario",
+      "startup_script",
+      "slots",
+      "greetings",
+      "lorebook_ids",
+      "lorebooks",
+      "gallery"
+    ]
+  }
+}

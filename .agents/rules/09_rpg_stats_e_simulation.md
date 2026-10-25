@@ -51,3 +51,33 @@ TRAITS:
    - **Malachia Björn Douglas Bloodmoon:** **Dominant Alpha** (futuro Pack Leader designato; possiede `Pack Leader`, `Dominant Alpha`, `Alpha Command`, `Ascended Enigma`, `Apex Core Resonance`).
    - **Erik Ulfr Douglas:** **Prime Alpha** (Pack Leader in carica della Casata Douglas; possiede `Pack Leader`, `Dominant Alpha`, `Alpha Command`, `Apex Core Resonance`).
    - **Kemonomimi Demi-Umani (es. Finn Novak, Roman Blackwood):** Non sono licantropi (nessun Partial o Hybrid Shift, nessuna allergia all'argento, nessuna rigenerazione lunare; possiedono un solo paio di orecchie animali).
+
+---
+
+## 4. Motore di Risoluzione D20 + S.P.E.C.I.A.L. per Game Master & Narratori
+
+Per gli Assistant e i Prompt Assembly che operano come Game Master (come `Svartúlfr — Game Master & World Engine`), le azioni rischiose o incerte intraprese da `{{user}}` o dai PNG vengono risolte mediante il motore D20 parametrato sugli attributi S.P.E.C.I.A.L.
+
+### 4.1 Formula di Conversione
+I punteggi S.P.E.C.I.A.L. calcolati (comprensivi di Livello, Specie, Occupazione e Tratti) generano il modificatore al tiro del dado a venti facce (D20):
+$$\text{Mod} = \left\lfloor \frac{\text{Stat} - 10}{2} \right\rfloor$$
+
+### 4.2 Classi di Difficoltà (CD / DC)
+- **CD 10 (Facile / Routine sotto stress):** Azioni standard eseguite sotto pressione moderata.
+- **CD 15 (Media / Professionale):** Azioni che richiedono addestramento specifico.
+- **CD 20 (Difficile / Esperto):** Sfide complesse, hackeraggio sistemi protetti, manovre tattiche avanzate.
+- **CD 25 (Estrema / Master):** Limite delle capacità individuali.
+- **CD 30 (Eroica / Quasi Impossibile):** Imprese leggendarie.
+
+### 4.3 Risoluzione a 4 Livelli (Dice & Outcomes)
+1. **Successo Critico (Nat 20 o Margine $\ge +10$ rispetto alla CD):** Successo con slancio eccezionale, vantaggio tattico o risorsa risparmiata.
+2. **Successo Pieno ($\text{Totale} \ge \text{CD}$):** Obiettivo raggiunto senza imprevisti negativi.
+3. **Successo con Costo / Fallimento Parziale (Margine tra $-1$ e $-4$):** Azione riuscita ma con complicazione narrativa o consumo di risorse, oppure fallimento pulito senza ritorsioni disastrose.
+4. **Fallimento Critico (Nat 1 o Margine $\le -10$ rispetto alla CD):** Conseguenza avversa immediata (inceppamento, danno, innesco allarmi).
+
+### 4.4 Isolamento Diegetico Obbligatorio
+Tutti i calcoli numerici, tiri di dadi e verifiche meccaniche devono essere rigorosamente isolati su riga autonoma all'inizio o alla fine del messaggio in un blocco compatto:
+```markdown
+> [TEST: <Attributo> (D20: <Tiro> + <Mod> = <Totale> vs DC <Target>) -> ESITO: <SUCCESSO / FALLIMENTO / SUCCESSO CRITICO / FALLIMENTO CRITICO>]
+```
+Il corpo narrativo deve rimanere al 100% letterario, viscerale e sensoriale, traducendo l'esito del tiro in conseguenze fisiche e psicologiche concrete senza inquinare la prosa con gergo numerico.

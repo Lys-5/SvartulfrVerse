@@ -12,3 +12,8 @@ __pycache__/
 desktop.ini
 Thumbs.db
 .DS_Store
+
+# Local configs and secrets
+scripts/config_free_proxy.json
+.env
+.env.*

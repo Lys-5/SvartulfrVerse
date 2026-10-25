@@ -1,0 +1,116 @@
+================ INDEPENDENT STRUCTURAL & SCHEMA AUDIT ================
+
+--- Checking File: Svartulfr_Scenario_Camp_Mystic.json ---
+File size: 16765 bytes
+PASS: Zero em-dashes found.
+PASS: Zero en-dashes found.
+PASS: Valid JSON syntax.
+Visibility value: 'private'
+PASS: Visibility is strictly 'private'.
+Rating value: 'explicit'
+PASS: Rating is strictly 'explicit'.
+Lorebook IDs count: 6
+PASS: Exactly the 6 canonical standalone lorebooks are linked.
+Slots count: 8
+PASS: All 8 slots have valid keys, labels, pools, and unavailable_count=0.
+Greetings count: 4
+PASS: All 4 greetings passed schema, parity, and speaker_slot validation.
+Scenario context length: 2992 chars
+Total greeting words: 779 words across 16 messages
+
+--- Checking File: Svartulfr_Scenario_SUCC_Route_Alyssa.json ---
+File size: 17988 bytes
+PASS: Zero em-dashes found.
+PASS: Zero en-dashes found.
+PASS: Valid JSON syntax.
+Visibility value: 'private'
+PASS: Visibility is strictly 'private'.
+Rating value: 'explicit'
+PASS: Rating is strictly 'explicit'.
+Lorebook IDs count: 6
+PASS: Exactly the 6 canonical standalone lorebooks are linked.
+Slots count: 8
+PASS: All 8 slots have valid keys, labels, pools, and unavailable_count=0.
+Greetings count: 6
+PASS: All 6 greetings passed schema, parity, and speaker_slot validation.
+Scenario context length: 3235 chars
+Total greeting words: 833 words across 18 messages
+
+--- Checking File: Svartulfr_Scenario_SUCC_Route_Jasper.json ---
+File size: 15726 bytes
+PASS: Zero em-dashes found.
+PASS: Zero en-dashes found.
+PASS: Valid JSON syntax.
+Visibility value: 'private'
+PASS: Visibility is strictly 'private'.
+Rating value: 'explicit'
+PASS: Rating is strictly 'explicit'.
+Lorebook IDs count: 6
+PASS: Exactly the 6 canonical standalone lorebooks are linked.
+Slots count: 8
+PASS: All 8 slots have valid keys, labels, pools, and unavailable_count=0.
+Greetings count: 5
+PASS: All 5 greetings passed schema, parity, and speaker_slot validation.
+Scenario context length: 2804 chars
+Total greeting words: 688 words across 15 messages
+
+--- Checking File: Svartulfr_Scenario_Villa_Douglas.json ---
+File size: 17553 bytes
+PASS: Zero em-dashes found.
+PASS: Zero en-dashes found.
+PASS: Valid JSON syntax.
+Visibility value: 'private'
+PASS: Visibility is strictly 'private'.
+Rating value: 'explicit'
+PASS: Rating is strictly 'explicit'.
+Lorebook IDs count: 6
+PASS: Exactly the 6 canonical standalone lorebooks are linked.
+Slots count: 7
+PASS: All 7 slots have valid keys, labels, pools, and unavailable_count=0.
+Greetings count: 5
+PASS: All 5 greetings passed schema, parity, and speaker_slot validation.
+Scenario context length: 2727 chars
+Total greeting words: 885 words across 21 messages
+
+--- Checking File: Svartulfr_Scenario_DMHA_Dungeons.json ---
+File size: 15955 bytes
+PASS: Zero em-dashes found.
+PASS: Zero en-dashes found.
+PASS: Valid JSON syntax.
+Visibility value: 'private'
+PASS: Visibility is strictly 'private'.
+Rating value: 'explicit'
+PASS: Rating is strictly 'explicit'.
+Lorebook IDs count: 6
+PASS: Exactly the 6 canonical standalone lorebooks are linked.
+Slots count: 9
+PASS: All 9 slots have valid keys, labels, pools, and unavailable_count=0.
+Greetings count: 4
+PASS: All 4 greetings passed schema, parity, and speaker_slot validation.
+Scenario context length: 3038 chars
+Total greeting words: 738 words across 17 messages
+
+--- Checking File: Svartulfr_Scenario_Underworld_Sindacato.json ---
+File size: 14484 bytes
+PASS: Zero em-dashes found.
+PASS: Zero en-dashes found.
+PASS: Valid JSON syntax.
+Visibility value: 'private'
+PASS: Visibility is strictly 'private'.
+Rating value: 'explicit'
+PASS: Rating is strictly 'explicit'.
+Lorebook IDs count: 6
+PASS: Exactly the 6 canonical standalone lorebooks are linked.
+Slots count: 6
+PASS: All 6 slots have valid keys, labels, pools, and unavailable_count=0.
+Greetings count: 4
+PASS: All 4 greetings passed schema, parity, and speaker_slot validation.
+Scenario context length: 2716 chars
+Total greeting words: 678 words across 13 messages
+
+================ AUDIT SUMMARY ================
+Critical findings: 0
+Major findings: 2
+  ⚠️ MAJOR: Svartulfr_Scenario_SUCC_Route_Jasper.json greeting[1] msg[2] has explicit name prefix in content
+  ⚠️ MAJOR: Svartulfr_Scenario_Villa_Douglas.json greeting[0] msg[6] has explicit name prefix in content
+Minor findings: 0

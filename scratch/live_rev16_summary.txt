@@ -1,0 +1,312 @@
+Top level keys: ['slot_count', 'greeting_count', 'id', 'name', 'display_description', 'avatar', 'tags', 'visibility', 'rating', 'status', 'revision', 'creator_uid', 'updated_at', 'linked_world_id', 'scenario', 'startup_script', 'slots', 'greetings', 'lorebook_ids', 'lorebooks', 'gallery', 'moderation_reason']
+=== SLOTS ===
+Slots field name: slots
+01. key=maternal_grandfather | label=Maternal Grandfather | pool=['_HEQQbbRFwKdG8QE2Fh1z1']
+02. key=father | label=Father | pool=['_QPea6g4Q1QfeYCVHCLMPR']
+03. key=eldest_brother | label=Eldest Brother | pool=['_RDfz7XzTpM23LpPALVXHM']
+04. key=brother | label=Brother | pool=['_zFLUjV8aVxQRAfQxGcAcY']
+05. key=twin | label=Twin | pool=['_t4J9aQNJM36cUKAP4wB4U', '_6exg3yPfe2eCDK4hTftkh']
+06. key=uncle | label=Uncle | pool=['_T8Ywcr9FEqNf9JxbK6eHP']
+07. key=cousin | label=Cousin | pool=['_TbRM3EdxDjHFgqztTbCpL']
+08. key=quarterback | label=Quarterback | pool=['_xJVPtBLL3dxy69RLKL9X9']
+09. key=friend | label=Friend | pool=['_Xd3NhKnRJByMTtdb6PjxJ']
+10. key=crush | label=Crush | pool=['_zn24784jfcchQ7EwCyAnm']
+11. key=female_roommate | label=Female Roommate | pool=['_pnrXbkWqcgmFAf3meRWFY']
+12. key=best_friend | label=Best Friend | pool=['_qXgBMbFYJfc84hbLHhe92']
+13. key=male_roommate | label=Male Roommate | pool=['_wn6DkCcg3Xqa2Xpx9ttnT']
+
+=== LOREBOOKS ===
+['_GbWJbkhgLzWexMHrjyUUc', '_brNyzEdhzNAyxK8xC8hhm', '_YtKLMTwyMxNf1DNYqBx1t', '_gwwCxCfQ6PQaLEjAQVpJL', '_HfG7TeV6MJyj6bxMwxkpt', '_9zWTGqYJNJ4BCDMj8gfcD', '_EjXxkmPVhpCXg8xABpFkK', '_Uht3Ckz44JBDrPnUHq7LV', '_zwEqgEEzh12X6gHVmMKKC', '_FaVcHfmrqcaJq8pa3WmRw', '_b9HgpUXtAW8VmTy82BPDV', '_gchmML4Q478zdFjhXf8rN', '_BbrRgrcdGPMLEbBU2b6xk', '_GV1KyHVY1RMbCnWgLkzDG']
+
+=== GREETINGS ===
+
+--- 01. id=opening ---
+  name: 01. Estate a Villa Douglas: Serata Call of Duty in Famiglia
+  description: **Sabato, 15 Giugno 2024, Ore 15:45 - Villa Douglas, Sala Grande** 
+
+I quattro fratelli Douglas-Bloodmoon sono riuniti nell'unica attività su cui sono sempre d'accordo: una partita a Call of Duty sullo schermo gigante della sala grande. {{user}} è rannicchiata  come una coperta vivente addosso a Malachia sul divano, Jasper stravaccato accanto a loro, Noah che tiene corte dalla poltrona, Edric accampato sul tappeto davanti alla TV. Sul portico Erik e Logan bevono whiskey e fingono di non sentire ogni urlo che arriva da dentro. Una serata domestica al 555 di Oak Road. Nessuno si aspetta che resti tranquilla.
+  speaker_slot: eldest_brother
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 7 | slots: ['eldest_brother', 'cousin', 'brother', 'twin', 'uncle', 'father', 'maternal_grandfather']
+  content preview: '{{scenarioChar "eldest_brother"}} tiene gli occhi sullo schermo e un braccio chiuso intorno a {{user}}, senza allentare la presa di un millimetro. Il controller gli resta leggero nella mano libera, e '
+    msg[0] id=opening slot=eldest_brother: '{{scenarioChar "eldest_brother"}} tiene gli occhi sullo schermo e un braccio chiuso intorno a {{user}}, senza allentare la presa di un millimetro. Il '
+    msg[1] id=ce9aa7b6-a71d-43b8-bd10-f8860b9b56d8 slot=cousin: '"Quello era la mia kill. Era letteralmente la mia kill." {{scenarioChar "cousin"}} si gira sul tappeto senza alzarsi, allungando il collo per fulminar'
+    msg[2] id=96220dc8-e5c5-4de1-b97e-b0527e11e586 slot=brother: '{{scenarioChar "brother"}} non guarda nemmeno lo schermo per rispondere. "Si chiama assist, cuginetto. Si chiama gioco di squadra." Sprofonda ancora d'
+    msg[3] id=c11ebda0-d3e1-4864-9e88-ca25dbda8599 slot=twin: '{{scenarioChar "twin"}} a {{scenarioChar "cousin"}} non risponde affatto. Piega la testa verso {{user}}, abbassando la voce sotto l\'audio del gioco, g'
+    msg[4] id=a2f313fc-5584-464b-960a-8c9ca47362c6 slot=uncle: 'Dal portico, attraverso la porta aperta, arriva il suono di un bicchiere che si posa sul legno. "Se quel ragazzo perde un altro round," chiama {{scena'
+    msg[5] id=ac183ae6-4dce-4dae-a5f2-f2449fd910c9 slot=father: 'La porta del portico scricchiola, e la voce di {{scenarioChar "father"}} arriva piatta e calda allo stesso tempo. "{{scenarioChar "brother"}}." Una pa'
+    msg[6] id=245b3c94-354f-4d44-8bd9-e4994ff1e571 slot=maternal_grandfather: 'Il telefono di {{user}} vibra una volta, secco e solo, contro la coscia. Lo schermo si accende: il gruppo di famiglia, nessun saluto, nessuna fretta, '
+
+--- 02. id=scene-camp-mystic-arrival ---
+  name: 02. Estate a Camp Mystic: Benvenuti al Lago
+  description: Arrivo a Camp Mystic: Benvenuti al Lago (Apertura Vacanze Estive)
+  speaker_slot: twin
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 3 | slots: ['twin', 'eldest_brother', 'brother']
+  content preview: "Domenica 7 luglio 2024, ore 14:30 - Ingresso di Camp Mystic, Riserva Boschiva sul Lago\n\nLa sessione estiva della Supernatural University of Central California (SUCC) si è appena conclusa e l'aria dell"
+    msg[0] id=88af5fc6-1c6b-5938-ada6-c59dc3fea988 slot=twin: 'Domenica 7 luglio 2024, ore 14:30 - Ingresso di Camp Mystic, Riserva Boschiva sul Lago\n\nLa sessione estiva della Supernatural University of Central Ca'
+    msg[1] id=c5e0279f-d77c-5acd-b954-a30979b02738 slot=eldest_brother: 'Malachia scende per ultimo, scaricando a terra con una mano sola un baule di attrezzatura pesante da trekking e canottaggio. I suoi occhi ambra esamin'
+    msg[2] id=3b183b9f-cfec-5601-b69b-cba18c86c09e slot=brother: 'Noah chiude il portellone con un tonfo teatrale, stendendo le braccia verso il cielo azzurro e respirando a pieni polmoni.\n\n"Benvenuti alle vacanze es'
+
+--- 03. id=scene-alyssa-story-1-1 ---
+  name: 03. [FemPOV] Cap. 1 (Parte 1): Primo Giorno di College - Partenza da Villa Douglas
+  description: Capitolo 1: Primo Giorno di College: Partenza da Villa Douglas (Parte 1 - Villa Douglas, atrio)
+  speaker_slot: father
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 8 | slots: ['father', 'brother', 'eldest_brother', 'twin', 'father', 'eldest_brother', 'brother', 'twin']
+  content preview: "Mercoledi' 28 agosto 2024, 7:40 - Villa Douglas, 555 Oak Road, Seven Hills\n\nL'atrio di Villa Douglas è operativo da un'ora buona. Nel vialetto ci sono tre auto con i motori accesi e due uomini di Kala"
+    msg[0] id=625c3168-c2e3-5a36-8525-81e5f3a54cac slot=father: "Mercoledi' 28 agosto 2024, 7:40 - Villa Douglas, 555 Oak Road, Seven Hills\n\nL'atrio di Villa Douglas è operativo da un'ora buona. Nel vialetto ci sono"
+    msg[1] id=94fa0272-a0de-50d9-8e84-7c5f1c558e49 slot=brother: "Noah è appoggiato allo stipite della porta d'ingresso, occhiali da sole gia' indossati alle sette e quaranta del mattino, e sta rubando il caffè' a su"
+    msg[2] id=3df98e80-3c1e-5a0c-93c3-f46df6d2abde slot=eldest_brother: "Malachia è vicino alla porta, immobile, il borsone da palestra su una spalla e le nocche gia' fasciate per l'allenamento del pomeriggio. Non si è sedu"
+    msg[3] id=e584bea5-075a-56d3-bc34-3ccd0733a5fc slot=twin: "Jasper è seduto sul terzo gradino con il portatile aperto sulle ginocchia, cuffie attorno al collo, e non ha alcuna intenzione di alzarsi finche' non "
+    msg[4] id=bb416d62-2e62-5370-bd7b-68373200ce5c slot=father: "Poi si sentono i passi sulle scale, e tutti e quattro si girano insieme, per abitudine, come fanno da diciotto anni.\n\nNell'atrio di Villa Douglas cala"
+    msg[5] id=5058c6b5-5752-5d68-a290-9345440e06c2 slot=eldest_brother: "Malachia non si muove di un millimetro. Non la sta guardando. Sta gia' guardando oltre di lei, verso la porta, verso il vialetto, verso il campus che "
+    msg[6] id=55dea9c2-6e84-5192-a543-90979f598954 slot=brother: 'Noah si abbassa gli occhiali da sole con un dito.\n\nPoi fischia, forte, esagerato, e batte le mani una volta sola in mezzo all\'atrio.\n\n"Ecco. ECCO." Pu'
+    msg[7] id=52951dba-b2fa-5cbf-9efb-fcf6172b7a70 slot=twin: "Jasper chiude il portatile.\n\nNon dice niente sul vestito. Non fischia, non commenta, non fa una battuta, e per Jasper questo è più' rumoroso di qualun"
+
+--- 04. id=scene-jasper-1 ---
+  name: 04. [MalePOV] Cap. 1 (Jasper): Rombo sul Viale e Addii da Villa Douglas
+  description: Capitolo 1: Rombo sul Viale e Addii da Villa Douglas (Partenza)
+  speaker_slot: father
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 2 | slots: ['father', 'twin']
+  content preview: "Mercoledi' 28 agosto 2024, ore 08:00 - Villa Douglas, 555 Oak Road, Seven Hills\n\nIl motore truccato della Porsche 911 nera opaca borbotta a bassi regimi nel vialetto di ghiaia, facendo vibrare i vetri"
+    msg[0] id=19a7c399-4d37-544f-a978-4c5acdc86183 slot=father: "Mercoledi' 28 agosto 2024, ore 08:00 - Villa Douglas, 555 Oak Road, Seven Hills\n\nIl motore truccato della Porsche 911 nera opaca borbotta a bassi regi"
+    msg[1] id=76e8dec8-98cb-5213-b409-bea5037bbc73 slot=twin: '{{scenarioChar "twin"}} ghigna, sistemandosi gli occhiali da sole scuri e appoggiando il gomito sulla portiera aperta. "Rilassati, vecchio. La musica '
+
+--- 05. id=scene-alyssa-story-1-2 ---
+  name: 05. Cap. 1 (Parte 2): Arrivo al Griffin Clocktower sul Campus SUCC
+  description: Capitolo 1: Primo Giorno di College: Partenza da Villa Douglas (Parte 2 - Arrivo al Griffin Clocktower sul Campus SUCC)
+  speaker_slot: twin
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 1 | slots: ['twin']
+  content preview: "Mercoledi' 28 agosto 2024, ore 09:15 - Griffin Clocktower, campus SUCC, Solarton\n\nI rintocchi profondi del Griffin Clocktower scandiscono l'inizio del nuovo anno accademico, riecheggiando tra i prati "
+    msg[0] id=bd61f39b-2b35-5e43-af6e-d46df857d61e slot=twin: "Mercoledi' 28 agosto 2024, ore 09:15 - Griffin Clocktower, campus SUCC, Solarton\n\nI rintocchi profondi del Griffin Clocktower scandiscono l'inizio del"
+
+--- 06. id=scene-succ-move-in-day ---
+  name: 06. SUCC Campus: Move-in Day ai Wyrm Dormitories
+  description: Mercoledì 28 Agosto 2024, Ore 11:00 - Wyrm Dormitories, Campus SUCC. Scatoloni, mini-frigo portati a spalla da minotauri, matricole di ogni specie e alloggi adattati biologicamente nel pieno del trasloco universitario.
+  speaker_slot: twin
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 1 | slots: ['twin']
+  content preview: 'Cardboard boxes, plastic storage totes, and reinforced rolling bins choke the wide concrete paths encircling the Wyrm Dormitories. The August heat beats down mercilessly against the campus pavement, t'
+    msg[0] id=21d3ee1a-26c8-5359-8a31-5e890048029f slot=twin: 'Cardboard boxes, plastic storage totes, and reinforced rolling bins choke the wide concrete paths encircling the Wyrm Dormitories. The August heat bea'
+
+--- 07. id=scene-alyssa-story-2-1 ---
+  name: 07. Cap. 2: Stage Formativo HSK - Il Colloquio con Zeera (Aetheris Clinic)
+  description: Capitolo 2: Stage Formativo HSK: Il Colloquio e la Borsa di Studio (Aetheris Clinic, Unit 4B)
+  speaker_slot: twin
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 1 | slots: ['twin']
+  content preview: "Venerdi' 30 agosto 2024, 14:00 - Aetheris Clinic, Unit 4B, Uptown, Blackwood City\n\nL'aria condizionata dell'Aetheris Clinic taglia il caldo umido della tarda mattinata costiera con un ronzio quasi imp"
+    msg[0] id=7b559629-5e73-5c85-bba6-aa9fdd501903 slot=twin: "Venerdi' 30 agosto 2024, 14:00 - Aetheris Clinic, Unit 4B, Uptown, Blackwood City\n\nL'aria condizionata dell'Aetheris Clinic taglia il caldo umido dell"
+
+--- 08. id=scene-alyssa-story-3-1 ---
+  name: 08. [FemPOV] Cap. 3 (Parte 1): Impatto sul Campo dei Bulls - Lo Scontro con Jared
+  description: Capitolo 3: Impatto sul Campo dei Bulls: Lo Scontro con Jared (Parte 1 - Bulls Stadium, campo da gioco)
+  speaker_slot: quarterback
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 1 | slots: ['quarterback']
+  content preview: "Lunedi' 2 settembre 2024, 15:00 - Bulls Stadium, campus SUCC\n\nIl sole della California centrale picchia a martello sul sintetico del Bulls Stadium, e il campus della SUCC è un formicaio in pieno ferme"
+    msg[0] id=95fe3c49-f61f-56df-8052-2be249924a72 slot=quarterback: "Lunedi' 2 settembre 2024, 15:00 - Bulls Stadium, campus SUCC\n\nIl sole della California centrale picchia a martello sul sintetico del Bulls Stadium, e "
+
+--- 09. id=scene-alyssa-story-3-2 ---
+  name: 09. Cap. 3 (Parte 2): Tunnel e Spogliatoi del Bulls Stadium post-allenamento
+  description: Capitolo 3: Impatto sul Campo dei Bulls: Lo Scontro con Jared (Parte 2 - Tunnel e Spogliatoi del Bulls Stadium post-allenamento)
+  speaker_slot: quarterback
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 1 | slots: ['quarterback']
+  content preview: "Lunedi' 2 settembre 2024, ore 17:15 - Tunnel degli Spogliatoi, Bulls Stadium, campus SUCC\n\nIl silenzio dell'allenamento pomeridiano è rotto solo dallo scroscio violento delle docce e dal tonfo sordo d"
+    msg[0] id=b73bc49f-3c76-57af-b6cf-d7fb32154fc4 slot=quarterback: "Lunedi' 2 settembre 2024, ore 17:15 - Tunnel degli Spogliatoi, Bulls Stadium, campus SUCC\n\nIl silenzio dell'allenamento pomeridiano è rotto solo dallo"
+
+--- 10. id=scene-succ-open-third-person ---
+  name: 10. SUCC Open Campus: Lunar Quad in Pieno Semestre (3a Persona)
+  description: Lunedì 9 Settembre 2024, Ore 10:30 - Lunar Quad, SUCC Campus. Seconda settimana del semestre autunnale al centro del campus universitario soprannaturale di Solarton.
+  speaker_slot: cousin
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 1 | slots: ['cousin']
+  content preview: 'The mid-morning California sun cuts warm and bright through the trees growing over the Lunar Quad of the Supernatural University of Central California. It is the second week of the fall semester, and '
+    msg[0] id=c66dfb14-fdd5-528b-9636-8baaae9ea302 slot=cousin: 'The mid-morning California sun cuts warm and bright through the trees growing over the Lunar Quad of the Supernatural University of Central California'
+
+--- 11. id=scene-succ-open-second-person ---
+  name: 11. SUCC Open Campus: Lunar Quad in Pieno Semestre (2a Persona)
+  description: Lunedì 9 Settembre 2024, Ore 10:30 - Lunar Quad, SUCC Campus. Apertura sandbox libera in seconda persona al centro del Lunar Quad.
+  speaker_slot: twin
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 1 | slots: ['twin']
+  content preview: 'The mid-morning California sun cuts warm and bright through the trees growing over the Lunar Quad of the Supernatural University of Central California. It is the second week of the fall semester, and '
+    msg[0] id=f9270588-6bdf-57fe-8618-337311d24504 slot=twin: 'The mid-morning California sun cuts warm and bright through the trees growing over the Lunar Quad of the Supernatural University of Central California'
+
+--- 12. id=scene-alyssa-story-4-1 ---
+  name: 12. [FemPOV] Cap. 4: Basso Distorto al Sidewinders - Primo Incontro con Mac
+  description: Capitolo 4: Basso Distorto e Sguardi al Bancone: Primo Incontro con Mac (Sidewinders Bar & Nightclub)
+  speaker_slot: crush
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 2 | slots: ['crush', 'uncle']
+  content preview: 'Sabato 14 settembre 2024, 23:00 - Sidewinders Bar & Nightclub, Solarton\n\nIl pavimento di legno consumato del Sidewinders è un pantano appiccicoso di alcol rovesciato e condensa, ma per Mac Sanchez-Rog'
+    msg[0] id=cc64875a-9880-5bc5-a04b-d9426947f557 slot=crush: 'Sabato 14 settembre 2024, 23:00 - Sidewinders Bar & Nightclub, Solarton\n\nIl pavimento di legno consumato del Sidewinders è un pantano appiccicoso di a'
+    msg[1] id=17d4636a-9e13-5968-a98a-3b7a3f57d5f6 slot=uncle: "Otto sgabelli più' in la', Logan Douglas posa con assoluta calma la bottiglia di birra sul bancone. Non la sbatte, ma il tonfo sordo del vetro sul ban"
+
+--- 13. id=scene-guild-1 ---
+  name: 13. Gilda DMHA (Cap. 1): Ingresso al Desk DMHA e Registrazione Matricola
+  description: Capitolo 1: Ingresso al Desk DMHA (Registrazione Matricola di Gilda)
+  speaker_slot: twin
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 1 | slots: ['twin']
+  content preview: "Lunedi' 16 settembre 2024, ore 10:00 - DMHA Guild Hall, Central Hub Solarton\n\nIl salone centrale dell'Associazione Cacciatori e Gestione Dungeon (DMHA) brulica di avventurieri veterani, mercenari demi"
+    msg[0] id=c7b0afa7-1e49-502c-8b7d-38a874cde8a3 slot=twin: "Lunedi' 16 settembre 2024, ore 10:00 - DMHA Guild Hall, Central Hub Solarton\n\nIl salone centrale dell'Associazione Cacciatori e Gestione Dungeon (DMHA"
+
+--- 14. id=scene-guild-2 ---
+  name: 14. Gilda DMHA (Cap. 2): Discesa nel Rift Sotterraneo (Hive Apex Rift)
+  description: Capitolo 2: Discesa nel Rift (La Prima Spedizione Sotterranea)
+  speaker_slot: eldest_brother
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 1 | slots: ['eldest_brother']
+  content preview: "Mercoledi' 25 settembre 2024, ore 14:30 - Trial Dungeon: Hive Apex Rift, Livello 1\n\nLa barriera runica della Gilda pulsa alle spalle della squadra d'incursione, sigillando l'uscita temporanea verso la"
+    msg[0] id=051824c1-47bc-5842-9307-350e0da95a13 slot=eldest_brother: "Mercoledi' 25 settembre 2024, ore 14:30 - Trial Dungeon: Hive Apex Rift, Livello 1\n\nLa barriera runica della Gilda pulsa alle spalle della squadra d'i"
+
+--- 15. id=scene-alyssa-story-5-1 ---
+  name: 15. [FemPOV] Cap. 5: Overclock Notturno - Il Rave Clandestino di DJ Frequency
+  description: Capitolo 5: Overclock Notturno: Il Rave Clandestino di DJ Frequency (Magazzino di DJ Frequency, vicolo)
+  speaker_slot: twin
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 1 | slots: ['twin']
+  content preview: "Venerdi' 4 ottobre 2024, 23:40 - Un vicolo laterale, magazzino di DJ Frequency, Los Angeles\n\nIl basso che filtra attraverso i muri di mattoni del magazzino è abbastanza potente da far tremare i vetri "
+    msg[0] id=283c9df9-c636-5997-afad-6431b4801cc6 slot=twin: "Venerdi' 4 ottobre 2024, 23:40 - Un vicolo laterale, magazzino di DJ Frequency, Los Angeles\n\nIl basso che filtra attraverso i muri di mattoni del maga"
+
+--- 16. id=scene-jasper-2 ---
+  name: 16. [MalePOV] Cap. 5 (Jasper): Sul Palco di DJ Frequency al Rave nei Magazzini
+  description: Capitolo 2: Overclock Notturno (Il Rave Clandestino nei Magazzini)
+  speaker_slot: twin
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 1 | slots: ['twin']
+  content preview: "Venerdi' 4 ottobre 2024, ore 23:30 - Magazzino Industriale Dismesso, Distretto Portuale di Solarton\n\nL'odore di ozono, birra calda e fumo artificiale riempie l'aria satura del capannone. Trecento stud"
+    msg[0] id=581e6b32-a4dd-5e05-9c15-85405decb985 slot=twin: "Venerdi' 4 ottobre 2024, ore 23:30 - Magazzino Industriale Dismesso, Distretto Portuale di Solarton\n\nL'odore di ozono, birra calda e fumo artificiale "
+
+--- 17. id=scene-solarton-full-moon-festival ---
+  name: 17. Solarton: Festival della Luna Piena in Town Square
+  description: Giovedì 17 Ottobre 2024, Ore 20:30 - Solarton Square. La piazza centrale di Solarton illuminata a festa per il plenilunio tra concerti indie-punk, bancarelle per licantropi e studenti della SUCC.
+  speaker_slot: brother
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 1 | slots: ['brother']
+  content preview: 'As the sun sinks behind the low coastal mountains, the warm Californian dusk gives way to the crisp chill of a full moon evening. Solarton Square is completely transformed; the central plaza, usually '
+    msg[0] id=5ffe8a85-a683-53c5-8cdf-b2c12af3291b slot=brother: 'As the sun sinks behind the low coastal mountains, the warm Californian dusk gives way to the crisp chill of a full moon evening. Solarton Square is c'
+
+--- 18. id=scene-alyssa-story-6-1 ---
+  name: 18. [FemPOV] Cap. 6: Halloween dei BRO - La Festa di Beta Rho Omega
+  description: Capitolo 6: Halloween dei BRO: La Festa di Beta Rho Omega (Beta Rho Omega Fraternity House)
+  speaker_slot: quarterback
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 3 | slots: ['quarterback', 'crush', 'twin']
+  content preview: "Giovedi' 31 ottobre 2024, 21:00 - Beta Rho Omega (BRO) Fraternity House, Greek Row, Solarton\n\nLa notte di Halloween è da sempre una delle serate più' spettacolari dell'anno per Jared Thompson. Cioe', "
+    msg[0] id=153ed038-5f3c-5ab2-9e53-ee7dc4c624c1 slot=quarterback: "Giovedi' 31 ottobre 2024, 21:00 - Beta Rho Omega (BRO) Fraternity House, Greek Row, Solarton\n\nLa notte di Halloween è da sempre una delle serate più' "
+    msg[1] id=2276f63a-24d5-52de-8d84-c682835cd03b slot=crush: 'Sierra è appoggiata alla balaustra delle scale poco distante, osservando la scena con il suo consueto cinismo impassibile, un bicchiere di plastica in'
+    msg[2] id=e40c5bea-a5c6-5de6-9074-0bca51bf7dfb slot=twin: 'Jasper è arrivato tardi, i soliti capi neri e una maschera calata sulla nuca che ha smesso di indossare dopo trenta secondi. Si è posizionato in un an'
+
+--- 19. id=scene-jasper-3 ---
+  name: 19. [MalePOV] Cap. 6 (Jasper): Pattuglia Notturna e Dragon Glass Katana al Riverbank
+  description: Capitolo 3: Battuta di Caccia e Difesa del Branco (Incursione Notturna)
+  speaker_slot: twin
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 1 | slots: ['twin']
+  content preview: "Sabato 9 novembre 2024, ore 02:15 - Vicolo Cieco presso il Riverbank, Solarton\n\nLa musica del rave è finita da un'ora, ma la notte è tutt'altro che tranquilla. Spalle al muro di mattoni coperto di gra"
+    msg[0] id=9becaae0-5c9f-5e87-ab0a-6bdc2cbe69ca slot=twin: "Sabato 9 novembre 2024, ore 02:15 - Vicolo Cieco presso il Riverbank, Solarton\n\nLa musica del rave è finita da un'ora, ma la notte è tutt'altro che tr"
+
+--- 20. id=scene-alyssa-story-7-1 ---
+  name: 20. Cap. 7 (Parte 1): Pausa d'Autunno on the Road - Partenza da The Verve con Zio Logan
+  description: Capitolo 7: Pausa d'Autunno on the Road: Viaggio con Zio Logan (Parte 1 - The Verve, officina di Logan)
+  speaker_slot: uncle
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 5 | slots: ['uncle', 'father', 'uncle', 'twin', 'uncle']
+  content preview: "Giovedi' 28 novembre 2024, 8:00 - The Verve, garage di Logan Douglas, Seven Hills\n\nDi giorno The Verve è un'officina meccanica pura: utensili professionali disposti con rigore militare, il blocco moto"
+    msg[0] id=5a946d29-291e-529b-a4fd-fda10a54c53d slot=uncle: "Giovedi' 28 novembre 2024, 8:00 - The Verve, garage di Logan Douglas, Seven Hills\n\nDi giorno The Verve è un'officina meccanica pura: utensili professi"
+    msg[1] id=67bed2a2-b446-5cd7-abf6-4a332f81c4a2 slot=father: 'Erik tiene una cartellina con appunti ripiegata nella tasca interna del cappotto, toccandola di continuo come per accertarsi che sia ancora al suo pos'
+    msg[2] id=04763cca-7347-5973-bb31-7e84402129da slot=uncle: '"Lo so fare da prima che tu imparassi a gestire bilanci," risponde Logan con un mezzo sorriso sereno. Dosa il tono con cura, evitando che la conversaz'
+    msg[3] id=d7b89455-fdbb-5878-8cf6-cccb1b416312 slot=twin: 'Jasper sistema il proprio zaino con dentro laptop e caricatori accanto al sedile posteriore, rifiutando l\'aiuto con un cenno rapido del capo.\n\n"Il bel'
+    msg[4] id=1f4016c3-e921-5e2d-a948-b5e25eecdff2 slot=uncle: 'Logan scivola sul sedile di guida, regola lo specchietto retrovisore e rivolge a Erik un ultimo cenno d\'intesa con due dita alla fronte.\n\n"Torna alla '
+
+--- 21. id=scene-alyssa-story-7-2 ---
+  name: 21. Cap. 7 (Parte 2): Sosta Notturna al Neptune Diner sulla Pacific Coast Highway
+  description: Capitolo 7: Pausa d'Autunno on the Road: Viaggio con Zio Logan (Parte 2 - Sosta Notturna al Neptune Diner sulla Pacific Coast Highway)
+  speaker_slot: uncle
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 1 | slots: ['uncle']
+  content preview: "Giovedi' 28 novembre 2024, ore 22:30 - Neptune Diner, Pacific Coast Highway, a nord di Ventura\n\nL'insegna al neon blu e rosso del Neptune Diner ronza nella nebbia salmastra che risale dalle scogliere "
+    msg[0] id=78743f29-4a47-5f80-a161-1770504a477a slot=uncle: "Giovedi' 28 novembre 2024, ore 22:30 - Neptune Diner, Pacific Coast Highway, a nord di Ventura\n\nL'insegna al neon blu e rosso del Neptune Diner ronza "
+
+--- 22. id=scene-alyssa-story-8-1 ---
+  name: 22. Cap. 8 (Parte 1): Solstizio d'Inverno - La Grande Veglia di Yule con Wulfnic
+  description: Capitolo 8: Solstizio d'Inverno: La Grande Veglia di Yule con Wulfnic (Parte 1 - Tenuta Svartulfr, Bosco Sacro)
+  speaker_slot: maternal_grandfather
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 6 | slots: ['maternal_grandfather', 'maternal_grandfather', 'maternal_grandfather', 'brother', 'eldest_brother', 'father']
+  content preview: "Sabato 21 dicembre 2024, 18:00 - Tenuta Svartulfr, Bosco Sacro di Seven Hills\n\nLa notte del Solstizio d'Inverno avvolge le colline costiere di Seven Hills in un'aria limpida e gelida. Wulfnic Bloodmoo"
+    msg[0] id=7342e277-c0ab-5c6d-81cd-0ecd17ed7993 slot=maternal_grandfather: "Sabato 21 dicembre 2024, 18:00 - Tenuta Svartulfr, Bosco Sacro di Seven Hills\n\nLa notte del Solstizio d'Inverno avvolge le colline costiere di Seven H"
+    msg[1] id=20639f61-f503-5e5f-96c8-a9a9d7fe8afb slot=maternal_grandfather: 'Elizabeth Duskwood siede composta poco distante, con un calice di vino pregiato stretto tra le dita affusolate. Osserva la distesa di guerrieri e dele'
+    msg[2] id=0f6a3ff7-ba2d-54f7-b0d8-1824757e14ca slot=maternal_grandfather: "Magnus Douglas III solleva il proprio boccale d'argento con gesto asciutto e autorevole, un cenno che fa calare all'istante il silenzio nel settore de"
+    msg[3] id=c3fe350f-678f-5538-99dc-e3ca60a55cf5 slot=brother: 'Noah, che ha coordinato la logistica e le forniture per centinaia di invitati insieme al personale della tenuta, si avvicina al tavolo dei gemelli con'
+    msg[4] id=cc499721-c41d-5052-a48c-b52f91374054 slot=eldest_brother: 'Malachia non ha preso posto a sedere. Rimane vigile a pochi passi dal cerchio del fuoco, le spalle larghe avvolte in un pesante cappotto scuro, contro'
+    msg[5] id=58709d9b-b21e-580d-b5f4-23f118704812 slot=father: "Erik si alza in piedi vicino al focolare principale, attendendo che l'eco dei brindisi si plachi. Guarda Jasper e {{user}} con un'espressione in cui l"
+
+--- 23. id=scene-alyssa-story-8-2 ---
+  name: 23. Cap. 8 (Parte 2): La Veglia Notturna sotto l'Albero Sacro con i Firstborn
+  description: Capitolo 8: Solstizio d'Inverno: La Grande Veglia di Yule con Wulfnic (Parte 2 - La Veglia Notturna sotto l'Albero Sacro con i Firstborn)
+  speaker_slot: maternal_grandfather
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 1 | slots: ['maternal_grandfather']
+  content preview: 'Sabato 21 dicembre 2024, ore 23:45 - Bosco Sacro della Longhouse, rive del fiume Yarrow\n\nMentre nella grande sala della Longhouse continuano a risuonare i canti e i brindisi del banchetto di Yule, il '
+    msg[0] id=aea7f9d7-38c8-5e06-8d28-dd443691b065 slot=maternal_grandfather: 'Sabato 21 dicembre 2024, ore 23:45 - Bosco Sacro della Longhouse, rive del fiume Yarrow\n\nMentre nella grande sala della Longhouse continuano a risuona'
+
+--- 24. id=scene-alyssa-story-9-1 ---
+  name: 24. Cap. 9: Reclute sotto Scorta - Visita Tattica di Erik e Kaladin al Campus SUCC
+  description: Capitolo 9: Reclute sotto Scorta: Visita Tattica al Campus SUCC (Lunar Quad, campus SUCC)
+  speaker_slot: father
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 4 | slots: ['father', 'father', 'twin', 'father']
+  content preview: "Sabato 15 febbraio 2025, 11:00 - Lunar Quad, campus SUCC, Solarton\n\nL'aria di meta' febbraio è tersa e pungente sul campus universitario. Il secondo semestre è appena ricominciato, e il Lunar Quad pul"
+    msg[0] id=82861ccc-4e73-5119-859e-e16340729398 slot=father: "Sabato 15 febbraio 2025, 11:00 - Lunar Quad, campus SUCC, Solarton\n\nL'aria di meta' febbraio è tersa e pungente sul campus universitario. Il secondo s"
+    msg[1] id=30b2d520-3929-576c-92cb-8b537b6f49a2 slot=father: "Kaladin torreggia due passi dietro di lui come una sentinella d'acciaio. L'occhio cibernetico scansiona la folla con impercettibili micro-movimenti, r"
+    msg[2] id=83fd1848-d240-5769-ad2d-17635e40d3f8 slot=twin: 'Jasper finge di consultare una serie di avvisi del dipartimento di informatica per darsi un contegno, scambiando sguardi d\'intesa con {{user}}.\n\n"È ve'
+    msg[3] id=548ecaf3-38fd-5021-9341-df4df13ee88c slot=father: 'Erik si volta a guardarla, la linea dura della mascella che si distende appena in un accenno di sorriso trattenuto.\n\n"Essere vigili non significa aver'
+
+--- 25. id=scene-alyssa-story-10-1 ---
+  name: 25. Cap. 10: Fine del Primo Anno - Il Bivio in Cucina con Erik a Villa Douglas
+  description: Capitolo 10: Fine del Primo Anno: Il Bivio in Cucina con Erik (Villa Douglas, la cucina)
+  speaker_slot: father
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 1 | slots: ['father']
+  content preview: "Giovedi' 15 maggio 2025, 18:20 - Villa Douglas, la cucina\n\nLa prima sessione d'esami del primo anno universitario si è chiusa da ventiquattr'ore. Villa Douglas, solitamente animata dal viavai delle sq"
+    msg[0] id=bc6e6614-7e42-51c6-b6b6-fc3f93b153b5 slot=father: "Giovedi' 15 maggio 2025, 18:20 - Villa Douglas, la cucina\n\nLa prima sessione d'esami del primo anno universitario si è chiusa da ventiquattr'ore. Vill"
+
+--- 26. id=scene-alyssa-story-11-1 ---
+  name: 26. [FemPOV] Cap. 11: Fumo di Gomma, Birra e Cloro - Il Branco dei Nomads con Marek
+  description: Capitolo 11: Fumo di Gomma, Birra e Cloro: Il Branco dei Nomads (Club House Ironhorn Nomads)
+  speaker_slot: twin
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 1 | slots: ['twin']
+  content preview: "Venerdi' 20 giugno 2025, ore 21:30 - Club House Ironhorn Nomads, Naperville, Illinois\n\nIl rombo cavernoso di decine di chopper pesanti a motore sbloccato fa tremare l'asfalto del cortile recintato del"
+    msg[0] id=6252f7fc-be0a-5d9e-8cbf-64479a45f52d slot=twin: "Venerdi' 20 giugno 2025, ore 21:30 - Club House Ironhorn Nomads, Naperville, Illinois\n\nIl rombo cavernoso di decine di chopper pesanti a motore sblocc"
+
+--- 27. id=greeting_ch27_jasper_russ_dorm ---
+  name: Capitolo 27: Dormitori SUCC - Jasper e Russ
+  description: Jasper e il suo esuberante coinquilino Russ (Five Cocketeers) nella loro suite al Wyrm Hall.
+  speaker_slot: twin
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 0 | slots: []
+  content preview: 'The smell of greasy carnitas and hot salsa hit the room before the door even swung open. In the dim amber glow of three curved monitors, Jasper sat hunched over his mechanical keyboard, the rhythmic c'
+
+--- 28. id=greeting_ch28_jasper_neon_purr_verve ---
+  name: Capitolo 28: Soundclash al Verve - Jasper contro Neon Purr
+  description: Feroce battaglia musicale e soundclash tra Jasper e il suo rivale DJ Neon Purr nel lounge sotterraneo del Verve.
+  speaker_slot: twin
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 0 | slots: []
+  content preview: "The reinforced concrete floor of The Verve's subterranean lounge shuddered under eighty thousand watts of custom low-end acoustic pressure. Ultraviolet wash lights painted the brick archways in deep v"
+
+--- 29. id=greeting_ch29_malachia_roman_kolya_gym ---
+  name: Capitolo 29: Palestra Pesi e Tappeti - Malachia, Roman e Kolya
+  description: Sessione di allenamento pesante e sparring sui tappeti tra Malachia, Roman Blackwood e Kolya.
+  speaker_slot: eldest_brother
+  linked_persona_ids: ['persona_1786335754946', '1792155173728']
+  messages count: 0 | slots: []
+  content preview: 'The sharp tang of athletic chalk and cold iron filled the auxiliary wrestling fieldhouse behind the SUCC stadium. The heavy rubber mats were slick with sweat, the thud of bodies hitting the ground ech'

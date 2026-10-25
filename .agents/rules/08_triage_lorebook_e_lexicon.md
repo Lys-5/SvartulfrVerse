@@ -35,7 +35,7 @@ La tassonomia valida per il World Lexicon di Wyvern (verificata su `wiki.wyvern.
 ### Regola di Lys (Entry Monopersonaggio)
 Ogni entry Lexicon che gravita attorno a un singolo personaggio (Intimacy Profiles, Digital Interactions, dinamiche personali, memorie biografiche):
 1. Deve avere **Entry Type = Memory** (`type: "memory"`);
-2. Deve essere associata al personaggio tramite il campo **Attached Character** (`attached_world_character_id`).
+2. **Vincolo `attached_world_character_id` nei World con Linked Characters:** Se il World adotta i **Linked Characters** collegati da `/characters/mine` (Single Source of Truth), il campo `attached_world_character_id` deve essere impostato **TASSATIVAMENTE a `null` / `None`**. È vietato inserire ID di Character Card esterne in questo campo, poiché il backend Mongoose di Wyvern accetta esclusivamente ID di `WorldCharacter` embedded nel medesimo World (pena errore `HTTP 500: attached_world_character_id must reference a WorldCharacter in the same world`). La soppressione di collisione bot/giocatore si attua esclusivamente tramite gli array nativi `ignored_characters` e `ignored_personas`. Nei World con personaggi interni embedded, rimane valido il collegamento all'id del `WorldCharacter`.
 3. Le memorie che coinvolgono coralmente più personaggi (eventi collettivi, rituali, log di gruppo) restano senza Attached Character.
 
 ---
@@ -85,6 +85,10 @@ Con la dismissione della modalità World, tutto il patrimonio enciclopedico e de
    Nei Lorebook e nelle Character Card non va mai utilizzata la macro `{{age}}` (attiva solo nel World Clock). Riportare sempre l'età anagrafica calcolata e la data di nascita (`AGE: 19 (Born April 5, 2005)`).
 4. **Rimozione Stringhe Ridondanti e Leak Locali:**
    La riga di formattazione non va duplicata all'interno delle singole entry dei Lorebook (è demandata ai Prompt Overrides globali). Nessun testo deve contenere percorsi file locali (`.md`, `FINAL/`, ecc.).
+- **Workflow Immagini & Avatar tramite Gallery:** È tassativamente vietato tentare l'upload diretto di file immagine all'interno dei singoli record o entry del Lorebook (causa errori e mancata persistenza). La procedura canonica corretta prevede:
+  1. Caricamento preventivo dei file immagine nella **Gallery** del Lorebook (`gallery[]`);
+  2. Assegnazione dell'avatar a ciascuna entry mediante **selezione dalla Gallery** (o URL pubblico registrato nel pool).
+
 5. **Standard Obbligatorio Metadati per Entry NPC (Avatar Parsing & UI Splitting):**
    Ogni entry di tipo `npc` inserita o aggiornata nei Lorebook o nei Lexicon di Wyvern deve includere tassativamente i metadati completi per il parser client:
    - **`avatar`**: URL HTTPS pubblico e valido dell'immagine (Cloudflare imagedelivery o CDN Janitor `https://ella.janitorai.com/bot-avatars/{hash}.webp`).
@@ -94,3 +98,35 @@ Con la dismissione della modalità World, tutto il patrimonio enciclopedico e de
    - **`npc_info`**: Oggetto strutturato con i dati anagrafici dell'NPC (`first_name`, `last_name`, `nicknames`, `titles`).
    - **Istruzione di Formattazione Obbligatoria nei Prompt di Scenario/Card**: Ogni Character Scenario e card che impiega NPC di Lorebook deve includere nelle istruzioni la direttiva:
      > "When secondary NPCs or background characters speak or take action, always output their dialogue on a new line prefixed with their exact full name and a colon (e.g., `Santiago Herrera: [dialogue/action]`). Never blend NPC dialogue anonymously into narration."
+
+6. **Soppressione Nativa Wyvern ("Don't Activate When Active"): `ignored_characters` & `ignored_personas`:**
+   Per impedire duplicazioni, allucinazioni e collisioni bot-giocatore (es. quando l'utente gioca nei panni di una Persona corrispondente a un NPC del Lorebook, come Alyssa o Jasper, o quando una Character Card esterna e gia presente nel party o nella chat), Wyvern gestisce a livello di schema due array dedicati:
+   - **`ignored_characters`: `string[]`**: Elenco di ID di Character Card. Se una delle card specificate e presente nella sessione attiva, Wyvern ignora e salta integralmente l'entry del Lorebook.
+   - **`ignored_personas`: `string[]`**: Elenco di ID di Persona (`{{user}}`). Se il giocatore seleziona una delle Persona specificate, Wyvern ignora e salta integralmente l'entry del Lorebook.
+7. **Standard Ufficiale Avatar Placeholder & Copertina Lorebook (Casata Svartúlfr):**
+   - **Avatar Placeholder NPC (Silhouette DCC):** Tutte le entry `npc` prive di un ritratto dedicato devono utilizzare tassativamente il placeholder ufficiale DCC: `https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/99d10d9b-611c-45b7-566a-79c3ed2e9800/public` (archiviato in `asset/placeholder_npc_avatar.jpg`).
+   - **Copertina Lorebook (`photoURL`):** Tutti i 6 Lorebook Standalone condividono come immagine di copertina (`photoURL`) l'emblema ufficiale della Casata Svartúlfr: `https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/1e5124b4-f7d0-46cf-fad9-7ecfc801d100/public` (archiviato in `asset/emblema_casata_svartulfr.jpg`).
+   - **Omogeneizzazione Canone JED+ a 4 Blocchi Obbligatoria:** Tutte le 310 voci NPC (99 in Primary, 211 in Secondary) devono rispettare la struttura a 4 blocchi: `[NAME: ...; SPECIES: ...; AGE: ...; ...]`, `BACKSTORY:`, `FAMILY & PACK:` (o `CLAN AND COMPANY:`), `VOICE & BEHAVIOR:` più chiusure tematiche/RPG, con `exclude_from_recursion: true` e zero omissioni o troncamenti.
+
+---
+
+## 8. Standard Obbligatorio Entry NPC & Terna di Flag (Wyvern VN Mega Patch)
+
+A seguito della *Visual Novel Mega Patch*, le voci NPC nei Lorebook Standalone adottano il nuovo standard architetturale:
+1. **Oggetto `npc_info` Completo:**
+   - `first_name`: stringa non vuota (obbligatoria).
+   - `middle_names`: array di stringhe.
+   - `last_name`: stringa o vuoto.
+   - `nicknames`: array di stringhe (alias canonici).
+   - `titles`: array di stringhe (es. Dr., Sir, Alpha, Coach).
+   - `npc_prefix`: stringa o vuoto (es. `=>` o vuoto).
+2. **Terna di Flag Obbligatoria su ON (`true`):**
+   - `scan_persona: true` (`Scan Persona: Yes`): attiva la scansione delle keyword all'interno della User Persona.
+   - `whole_words_only: true` (`Whole Words Only: Yes`): impedisce false attivazioni su parole parziali.
+   - `enableEntryHighlighting: true`: attiva il rendering evidenziato delle keyword nella chat.
+3. **Workflow Obbligatorio Gallery & Riconciliazione Asset (`GET /api/gallery/lorebook/{lorebook_id}`):**
+   - L'endpoint ufficiale della Gallery del Lorebook su Wyvern è `GET /api/gallery/lorebook/{lorebook_id}` (upload via `POST /api/gallery/lorebook/{lorebook_id}`).
+   - Associare `entry.avatar` selezionando la thumbnail Cloudflare registrata nella Gallery. L'URL deve coincidere byte-for-byte con l'asset della Gallery per evitare che il frontend lo contrassegni come `Custom Image ⚠️ Unknown source`.
+   - **Parità di Validazione Zod Frontend (`entries == lexicon`):** Il form editor di Wyvern (`react-hook-form` con schema Zod) richiede tassativamente che la proprietà `entries` sia popolata come array (`entries: z.array(...)`). Mantenere sempre `entries` e `lexicon` identici byte-for-byte in ogni salvataggio per evitare il blocco silenzioso con errore `entries: Required`.
+4. **Verifica Contratti Automatizzata:**
+   - Eseguire `python scripts/verify_npc_schema_contract.py` prima di ogni deployment per validare tutti i 5 contratti di integrità (schema `npc_info`, root gallery, Module 93312 compilation, anti-collisione, entries == lexicon parity).

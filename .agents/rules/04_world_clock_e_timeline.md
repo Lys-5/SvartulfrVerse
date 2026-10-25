@@ -40,3 +40,14 @@ Prima di salvare o validare qualunque scheda:
 1. Per ogni personaggio vivente, `birthdate` (ora assoluta di nascita) e `start_timeline_position` (ora di inizio presenza nel mondo) devono **coincidere**.
 2. Né `birthdate` né `start_timeline_position` possono essere maggiori di `world_age` corrente (10486470).
 3. La `start_timeline_position` va inserita **sempre e senza eccezioni** per ogni personaggio (vedi Regola 08 per i dettagli sugli scenari temporali fuori asse).
+
+---
+
+## 4. Passività Cronologica Assoluta per Game Master e Scenari (Zero Date Reset)
+
+Con l'introduzione dell'**AI Time Tracking** nativo su Wyvern, il reset sistematico della data ongame (es. ritorno persistente al "15 marzo 2024" o a date di apertura scenario) è causato dal tentativo del modello di generare attivamente o forzare intestazioni temporali fisse per imitazione di boilerplate (*Example Memorization*).
+
+### Direttiva Vincolante:
+1. **Passività Assoluta:** Il Game Master e i prompt degli Scenari **NON gestiscono né determinano la data del mondo**.
+2. **Ereditarietà Passiva:** Il modello deve unicamente leggere e riflettere la data e l'ora ereditate dall'ultimo turno di gioco o fornite nativamente dal runtime di Wyvern.
+3. **Divieto Date Boilerplate:** È severamente vietato inserire date fisse cablate (es. 15 marzo 2024) in prompt o risposte.

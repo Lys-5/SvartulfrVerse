@@ -10,6 +10,7 @@ Il progetto unisce ambientazioni indipendenti originate da autori diversi:
 | **SUCC / Modern Fantasy** | Autore esterno (*io wuvs soap*) | Solarton, campus SUCC, Hex Valley, CUMS |
 | **Blackwood / Douglas** | Lys | Blackwood City, famiglia e branco Douglas |
 | **DDM Inc.** | Autore esterno (*io wuvs soap*) | Voidspace (universo separato) |
+| **Fabule Urbane / La Frattura** | Groviglio Prinz | Europa continentale, bacino del Mediterraneo, Dungeon europei, agenzia EXO, Le Furie (Teatro europeo dello Squarcio del Velo / Voidspace) |
 
 ### Regola del Dominio
 - **La precedenza si applica per dominio, non per ambientazione.** Ciascuna ambientazione è l'autorità assoluta sul proprio dominio territoriale o tematico.
@@ -58,14 +59,26 @@ Quando le fonti documentali collidono su un dato (età, altezza, cicatrici, prof
 
 ---
 
-## 4. Canone Ufficiale SUCC (`io-succ.uwu.ai`) e Divieto Assoluto di "Solarton University"
+## 4. Canone Ufficiale SUCC (`io-succ.uwu.ai`) e Divieto Assoluto di Varianti Apocrife
 
-Per l'ateneo principale dell'ambientazione universitaria in Solarton, California:
-1. **Nome Istituzionale Corretto:** **Supernatural University of Central California (SUCC)**.
-2. **Divieto Assoluto:** Il termine "Solarton University" (o "Southern Union Monster College") è errato ed apocrifo. È tassativamente vietato impiegarlo in descrizioni, lorebook, scenari, schede o dialoghi.
-3. **Fondazione e Rettorato:** Fondata nel **2002** dal **Dean Archer Wolfwood**, che per la prima volta aprì l'istituto agli studenti umani creando il modello di educazione mista umano-soprannaturale.
-4. **Istituzione Rivale:** **CUMS** (*California University of Magical Sciences*), situata a Hex Valley, strettamente segregata e riservata ai soli esseri soprannaturali.
-5. **Facoltà Canoniche:** Alchemy, Necromancy, Applied Divination, Paranormal Psychology, Astral Studies, Potions, Cryptozoology, Supernatural/Human Relations, Environmental Magic, Vampiric Studies, Lycanthropy Studies.
+1. **Denominazione Istituzionale Unica ed Ufficiale:**
+   - **Nome Completo:** **Supernatural University of Central California**
+   - **Acronimo Ufficiale:** **SUCC**
+   - **Sede:** Solarton, California (Central California / Hex Valley).
+   - **Mascotte & Squadra Atletica:** **Bulls** (SUCC Bulls).
+2. **Divieto Tassativo di Nomi Inventati o Apocrifi:**
+   È rigorosamente vietato utilizzare qualsiasi nome alternativo o surrogato, tra cui:
+   - ❌ *"Solarton University"*
+   - ❌ *"Solarton University of the Occult"*
+   - ❌ *"Solarton Collegiate University"*
+   - ❌ *"Southern Union Monster College"*
+3. **Gestione Prompt Grafici per Argon / Imagen 3:**
+   Poiché l'acronimo isolato `"SUCC"` può attivare falsi positivi nei filtri di moderazione semantica in lingua inglese (in quanto scambiato per slang fonetico lewd), nei prompt di generazione immagine è obbligatorio usare per esteso la dicitura ufficiale:
+   - ✅ `"Supernatural University of Central California"`
+   È fatto esplicito divieto di alterare il nome dell'ateneo per aggirare i filtri: la dicitura per esteso è neutrale, istituzionale e priva di trigger di policy.
+4. **Fondazione e Rettorato:** Fondata nel **2002** dal **Dean Archer Wolfwood**, che per la prima volta aprì l'istituto agli studenti umani creando il modello di educazione mista umano-soprannaturale.
+5. **Istituzione Rivale:** **CUMS** (*California University of Magical Sciences*), situata a Hex Valley, strettamente segregata e riservata ai soli esseri soprannaturali.
+6. **Facoltà Canoniche:** Alchemy, Necromancy, Applied Divination, Paranormal Psychology, Astral Studies, Potions, Cryptozoology, Supernatural/Human Relations, Environmental Magic, Vampiric Studies, Lycanthropy Studies.
 
 ---
 
@@ -86,15 +99,47 @@ Le seguenti sorgenti storiche su JanitorAI costituiscono archivi canonici di rif
 ## 6. Invarianti dei Personaggi Crossover e Preferiti Integrati
 
 A seguito del triage delle sorgenti storiche e delle decisioni autorali dell'utente, le seguenti collocazioni sono canoniche e vincolanti per tutte le card e i lorebook:
-1. **Finnegan "Finn" Novak:** Amico d'infanzia dei fratelli Douglas (Alyssa, Jasper, Noah). Demi-umano canino (1 solo paio di orecchie), figura di calda normalità al campus.
-2. **Russ & The Five Cocketeers:** Russ è il coinquilino di stanza di Jasper Douglas nei dormitori Wyrm Hall alla SUCC.
-3. **Roman Blackwood & Kolya:** Atleti del SUCC Wrestling Team; compagni di allenamento pesante e sparring di Malachia Douglas.
-4. **Dallas Rhodes:** Werewolf contadino/allevatore a Bakersfield (ricollocato dal Texas). Pragmatico, instancabile lavoratore dei campi con tail-slit sui jeans.
-5. **NOVA FARM:** Branco rurale di licantropi a Bakersfield, in netto contrasto di classe con l'élite Douglas dei Seven Hills.
-6. **Neon Purr:** DJ felino australiano, rivale musicale e underground principale di Jasper Douglas tra The Verve e rave illegali.
-7. **Romeo "Gray" Dean:** Leader/biker della gang rivale dei Nomads di Marek nei collegamenti tra Solarton e Blackwood.
-8. **Warchief Thrakgor Deathspine:** Capoguerra bellicoso del Clan Deathspine, spina nel fianco perenne per il consigliere moderatore orco Brak Ironfist.
-9. **Morgeth Steeltooth:** Maestro fabbro orco e pari di forgiatura di Ut Berg; si incontrano al The Verve coinvolgendo Logan in lunghe discussioni sui metalli.
-10. **Thorvald & Harald Sigurdsson:** Licantropi del Clan Bloodmoon tradizionale, discendenti della traversata di Wulfnic (1022 d.C.); vivono nella foresta profonda del Dead Zone secondo i riti norreni.
+1. **Finnegan "Finn" Novak:** Amico d'infanzia leale dei gemelli Douglas (Alyssa, Jasper, Noah). **Demi-Umano Lupo Artico (Kemonomimi)**: corpo umano, singolo paio di orecchie lupine apicali, coda folta bianca, non-shifter, senza secondo genere Alpha/Beta/Omega, ala sinistra del team di hockey dei SUCC Bears. Vietato categoricamente classificarlo come caracal o felino.
+2. **Russell 'Russ' Sinclair & The Five Cocketeers:** **Russ Sinclair** (cognome rigorosamente Sinclair, mai Gallagher) è il coinquilino di stanza di Jasper Douglas nei dormitori Wyrm Hall 304 alla SUCC. Chitarrista rock esuberante, membro dei *Five Cocketeers* (con Dean, Eric, Javier Reyes e Raymond).
+3. **Scarlett Rose:** Succube, migliore amica e compagna di stanza di Alyssa (suite Theta Iota Theta 3B), confidente emotiva, cotta segreta non corrisposta di Jasper. Cognome rigorosamente Rose (mai Vance).
+4. **Roman Blackwood & Kolya:** Atleti del SUCC Wrestling Team; compagni di allenamento pesante e sparring di Malachia Douglas.
+5. **Dallas Rhodes:** Werewolf contadino/allevatore a Bakersfield (ricollocato dal Texas). Pragmatico, instancabile lavoratore dei campi con tail-slit sui jeans.
+6. **NOVA FARM:** Branco rurale di licantropi a Bakersfield, in netto contrasto di classe con l'élite Douglas dei Seven Hills.
+7. **Neon Purr:** DJ felino australiano, rivale musicale e underground principale di Jasper Douglas tra The Verve e rave illegali.
+8. **Romeo "Gray" Dean:** Leader/biker della gang rivale dei Nomads di Marek nei collegamenti tra Solarton e Blackwood.
+9. **Warchief Thrakgor Deathspine:** Capoguerra bellicoso del Clan Deathspine, spina nel fianco perenne per il consigliere moderatore orco Brak Ironfist.
+10. **Morgeth Steeltooth:** Maestro fabbro orco e pari di forgiatura di Ut Berg; si incontrano al The Verve coinvolgendo Logan in lunghe discussioni sui metalli.
+11. **Thorvald & Harald Sigurdsson:** Licantropi del Clan Bloodmoon tradizionale, discendenti della traversata di Wulfnic (1022 d.C.); vivono nella foresta profonda del Dead Zone secondo i riti norreni.
 
+---
 
+## 7. Ponte Canonico: La Frattura, lo Squarcio del Velo e i Dungeon Europei
+
+1. **Identificazione Cosmologica:** Nel canone di Svartúlfr Verse, "La Frattura" (ambientazione *Fabule Urbane* di Groviglio Prinz) corrisponde storicamente all'evento dello **Squarcio del Velo** (classificato dai terminali DDM come *Reality Tear Primaria*) nel teatro continentale europeo e mediterraneo.
+2. **Fenomenologia dei Dungeon Europei:** Il collasso dimensionale del Velo ha inondato catacombe, cripte e reti ipogee di miasma arcanico grezzo, convertendole in Dungeon labirintici governati da distorsioni gravitazionali, nuclei di mana (*Dungeon Cores*) e dando origine alla *Fascia Desolata*. L'evento ha risvegliato il bestiario folkloristico mediterraneo e dantesco (*Alichini, Coblynau, Drakaina, Alseidi Corrotte, Variaghi*).
+3. **Agenzie di Contenimento Continentali:** La *European Xenological Operations (EXO)* e la squadra speciale d'assalto rapido *Le Furie* operano come controparti/partner europee di DDM Inc. e PERSEUS nella bonifica dei Dungeon urbani, nel contenimento di brecce critiche e nella gestione dei civili *Cambiati*.
+
+---
+
+## 8. Quadro Giuridico e Tecnologico Vincolante Modern Fantasy
+
+In tutti gli scenari e testi relativi a Solarton, SUCC e al Modern Fantasy in generale vigono le seguenti invarianti legali e di setting:
+- **Divieto di Matrimonio Misto:** Il matrimonio tra esseri umani e creature soprannaturali è formalmente illegale e privo di validità civile nella quasi totalità dei paesi e delle giurisdizioni.
+- **Registro Obbligatorio dei Demoni:** Le entità infernali, succubi, incubi e specie ematofaghe o a nutrizione energetica umana sono sottoposte a schedatura e monitoraggio periodico obbligatorio federale.
+- **Supernatural Harm Act (2001):** Tutele legali, pensioni compensative e status di non-morto riconosciuto per le vittime di necromanzia, resurrezione forzata o mutazione occulta non consensuale (es. Roland Vickers).
+- **Livello Tecnologico e Divieto Assoluto di Androidi:** Tecnologia ancorata al 2023-2024 con integrazioni magiche; divieto assoluto di robotica avanzata, androidi senzienti o cyborg.
+
+---
+
+## 9. Tabella delle Identità e Invarianti Canoniche Blindate (Prevenzione Regressioni)
+
+| Personaggio / Entità | Ruolo Canonico & Dettagli Chiave | Errore Vietato (Da Evitare) |
+|---|---|---|
+| **Russell 'Russ' Sinclair** | Coinquilino di Jasper in Wyrm Hall 304, chitarrista rock, Five Cocketeers. | ❌ Gallagher, Vance |
+| **Scarlett Rose** | Succube, best friend di Alyssa (Theta Iota Theta 3B), cotta segreta di Jasper. | ❌ Vance, cognomi alternativi |
+| **Finnegan "Finn" Novak** | Demi-Umano Lupo Artico (Kemonomimi: 1 paio di orecchie lupine, coda bianca, non-shifter, ala sinistra SUCC Bears). | ❌ Caracal, felino, licantropo LSE |
+| **Jean-Luc Virtuoso** | Umano Telepate ("The Maestro", "Pride", 39 anni, boss del cartello Ambrosia e fondatore dei Sinners a Los Angeles). | ❌ Minotauro, brute da mischia |
+| **Coach Dullahan** | Contractor #04 in DDM Inc. (Euclidean Division / Voidspace) e Head Coach atletica SUCC. | ❌ Membro della DMHA |
+| **DMHA (Dungeon Management & Hunter Authority)** | Gilda governativa per dungeon urbani. Roster: Barrow (demi-umano orso), Team Ukiyo (*Radek, Goran, Kian*), Marek & Ironhorn Nomads. | ❌ Confusione con DDM Inc. / Voidspace |
+| **Camp Mystic Supervision** | Mara Evelyn Voss (Direttrice); Marcus Dean Vale (Supervisore Maschile, Werewolf); Celeste Amara Nadir (Supervisore Femminile, Gorgon). | ❌ Mara come supervisore di cabina |
+| **Visibilità Character Scenarios** | Impostazione obbligatoria `visibility: "private"` per tutti i deployment di scenari standalone. | ❌ "public", "unlisted" |

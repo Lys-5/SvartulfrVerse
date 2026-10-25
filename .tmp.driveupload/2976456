@@ -1,0 +1,29 @@
+with open('CHANGELOG.md', 'r', encoding='utf-8') as f:
+    text = f.read()
+
+entry_to_add = (
+    "- **Audit Globale e Bonifica Canonica Integrale Cataloghi Prompt Argon (`PROMPTS_PERSONAGGI_E_OUTFIT_GEMINI_ARGON.md` & `PROMPTS_BANNER_LOCATION_E_CAST_ARGON.md`):** "
+    "Eseguita la scansione incrociata automatizzata di tutti i 20 personaggi contro le Character Card canoniche JED+, correggendo incongruenze critiche e inversioni di tratti:\n"
+    "  - **Russell 'Russ' Sinclair:** Corretta la specie da 'Rooster Demihuman' a **Demihuman Tiger** (Single pair di orecchie da tigre striate argento/bianco/nero, coda da tigre, capelli silver-white rasati ai lati, occhi grigio chiaro, maestro tatuatore del *Sacred Needle*).\n"
+    "  - **Mackenzie 'Mac' Sanchez-Rogers:** Corretto il genere da femmina/tomboy a **maschio (he/him, 19 anni, 188 cm / 6'2\")**, capelli biondo sporco spettinati (`shaggy dirty blond`), occhi ambrati, orecchie dorate da lupo, eliminando outfit femminili spuri incollati per errore.\n"
+    "  - **Noah Loki Douglas Bloodmoon:** Corretti i capelli da neri a **biondi impeccabili (`impeccably styled blond hair`)**, occhi da nocciola ad **azzurro brillante (`bright blue eyes`)**, altezza a 197 cm (6'6\") ed età a 25 anni.\n"
+    "  - **Malachia Björn Douglas Bloodmoon:** Corretti gli occhi da blu acciaio ad **ambrati intensi e gelidi (`cold intense amber eyes`)**, altezza a 208 cm (6'10\"), età a 28 anni e capelli neri lunghi al vento.\n"
+    "  - **Wulfnic Báleygr Bloodmoon:** Corretti gli occhi da ambra ad **azzurro ghiaccio splendente argento-blu (`piercing ice-blue eyes flaring silver-blue`)**, altezza a 220 cm (7'3\") e treccia guerriera norrena.\n"
+    "  - **Erik Ulfr Douglas:** Allineato ad altezza 213 cm (7'0\"), età 55 anni, capelli corvini (`jet black`) e occhi ambra ardente (`piercing amber flaring molten gold`).\n"
+    "  - **Scarlett Rose:** Corretti gli occhi da rosso rubino a **rosa confetto brillante abbinati ai capelli (`bright candy-pink eyes matching candy-pink hair`)** e due corna scarlatte lucide.\n"
+    "  - **Elizabeth Duskwood:** Corretti i capelli da biondo platino a **grigio cenere raccolti (`ash grey, worn up`)**, occhi da zaffiro a **grigio tempesta (`storm grey`)** e altezza a 165 cm.\n"
+    "  - **Magnus Douglas III:** Corretti gli occhi da grigio a **Douglas amber** e capelli neri Douglas pettinati all'indietro argentati solo alle tempie.\n"
+    "  - **Major Kaladin Blackwolf Nargathon:** Corretti gli occhi da giallo predatorio a **grigio chiaro valutativi (`pale grey, flare red under combat emotion`)** e altezza a 6'3\" (190 cm).\n"
+    "  - **Stanley Davies Jr.:** Allineato ad altezza 187 cm (6'2\") e occhi castano caldo (`warm brown eyes`).\n"
+    "  - **Neon Purr:** Corretti gli occhi da bicolore a **oro iridescente vibrante con pupille verticali (`vibrant iridescent gold`)**, altezza 178 cm ed età 22 anni.\n"
+    "  - **Edric Douglas:** Allineato a 13 anni (Born 2011), 165 cm (5'5\"), capelli neri ricciuti e occhi ambrati.\n"
+    "  - **Rettifica Banner Location/Cast:** Bonificati i titoli duplicati o con casata errata in `PROMPTS_BANNER_LOCATION_E_CAST_ARGON.md` (*Malachia Björn Douglas Bloodmoon*, *Noah Loki Douglas Bloodmoon*, *Alyssa Hvit Douglas Bloodmoon*, *Wulfnic Báleygr Bloodmoon*).\n"
+)
+
+target = '- **Correzione Descrittori Canonici Jasper nei Cataloghi Prompt Argon:**'
+if target in text:
+    idx = text.find(target)
+    text = text[:idx] + entry_to_add + text[idx:]
+    with open('CHANGELOG.md', 'w', encoding='utf-8') as f:
+        f.write(text)
+    print('CHANGELOG.md updated successfully with full audit report!')
