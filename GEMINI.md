@@ -25,6 +25,8 @@ Questo documento codifica le regole operative ufficiali e vincolanti per la crea
 17. [Protocollo Operativo per Database Locale SQLite Wyldfire (Sospeso)](#17-protocollo-operativo-per-database-locale-sqlite-wyldfire-sospeso)
 18. [Standard Operativo per Chat di Gruppo Stand-Alone (/mine)](#18-standard-operativo-per-chat-di-gruppo-stand-alone-mine)
 19. [Standard Operativo di Sessione e Skill Integrate](#19-standard-operativo-di-sessione-e-skill-integrate)
+20. [Standard Operativo AI Connections e Micro-Proxy di Failover](#20-standard-operativo-ai-connections-e-micro-proxy-di-failover)
+21. [Architettura Second Brain (LLM Wiki 2026), Metabolismo Vault & Automazioni](#21-architettura-second-brain-llm-wiki-2026-metabolismo-vault--automazioni)
 
 ---
 
@@ -88,7 +90,7 @@ Da applicare tassativamente a `first_mes`, `mes_example`, `alternate_greetings`,
 ### Istruzione Obbligatoria in `post_history_instructions`
 Inserire sempre questa riga in coda a `post_history_instructions` (campo `final_instructions` via API):
 
-> "Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead."
+> "Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead. Demi-human anatomical discipline: treat single animal ears as the natural norm; never mention, describe, or reiterate the absence or lack of human ears in narrative descriptions."
 
 ---
 
@@ -113,15 +115,20 @@ Ogni character card redatta o aggiornata nel repository deve includere nel campo
 8. `hybrid shift / mutation`: Forma ibrida bipede da combattimento (per licantropi LSE: Hybrid Shift mastodontico con pelliccia, muso allungato e artigli).
 9. `full shift / other`: Forma bestiale integrale a quattro zampe (per shifters: lupo gigante ancestrale; per non-shifters: uniforme operativa da campo specialistica).
 
+### Sfondi per Fascia Oraria (Time of Day Backgrounds) e Tag Regista
+- **4 Periodi Canonici:** Le Location supportano immagini differenziate per `dawn`, `day`, `dusk` e `night`.
+- **Tag di Scena `[bg: LocationName]`:** Nella narrazione di Game Master, Assistant e bot in Visual Novel Mode, il cambio di scena deve utilizzare il tag `[bg: Nome Location]` (es. `[bg: Campus Suite Moonflower]`). L'engine di Wyvern sincronizza automaticamente lo sfondo con l'ora calcolata dall'AI Time Tracking senza forzature manuali.
+
 
 ---
 
 ## 5. Coerenza Visiva di Famiglia (Douglas) e Anatomia Demi-Umani
 
 - **Family Look Douglas:** I maschi della famiglia Douglas condividono un aspetto visivo comune nelle illustrazioni: capelli scuri lunghi e arruffati (per accomodare le orecchie lupine del Partial Shift), palette cromatica calda al tramonto con sfondi di Blackwood City (palme e architettura costiera), e struttura mascellare e facciale simile. Conservare comunque dettagli individuali (stile dei tatuaggi, cicatrici, tonalità degli occhi, accessori).
-- **Anatomia Demi-Umani (Orecchie Singole):** **I demi-umani possiedono un solo paio di orecchie: quelle animali.** Non hanno un secondo paio di orecchie umane. Questa regola è confermata dall'autore originale e va verificata con estrema attenzione su ogni immagine o descrizione prodotta.
+- **Anatomia Demi-Umani (Orecchie Singole & Positive Framing):** **I demi-umani possiedono un solo paio di orecchie: quelle animali.** Non hanno un secondo paio di orecchie umane. Questa regola è confermata dall'autore originale ed è vincolante. **Disciplina di Formulazione:** Nei testi di contesto narrativo (schede JED+, outfits, scenari, greeting, lorebook), l'anatomia deve essere descritta esclusivamente in termini positivi (es. *"singolo paio di orecchie da lupo sulla sommità del capo, perfettamente integrate tra i capelli"*) senza mai menzionare, esplicitare o negare l'esistenza di orecchie umane (*mai inserire "No orecchie umane", "senza orecchie umane ai lati", "prive di orecchie umane"*). I vincoli negativi sono riservati esclusivamente ai prompt e parametri tecnici per la generazione di immagini (es. `--no human ears`).
 - **Sierra Cruz (Lamia — Locomozione & Livrea Arcobaleno Iridescente):** Possiede **capelli color arcobaleno** e, dai fianchi in giù, la parte inferiore del corpo è interamente quella di un serpente di 4 metri **color arcobaleno con scaglie iridescenti** (zero gambe, zero piedi). È tassativamente vietato usare per Sierra termini o verbi come *gambe*, *piedi*, *ginocchia*, *scarpe*, *pantaloni*, *camminare* o *fare passi* (`legs`, `feet`, `knees`, `shoes`, `walk`, `step`, `stand on feet`): Sierra si muove esclusivamente strisciando, scivolando e avvolgendosi sulle sue spire (`slithers`, `glides`, `coils`).
 - **Scarlett Rose (Succubus — Palette Rosa Confetto & Corna Scarlatte):** Possiede **capelli rosa confetto** (`candy-pink`), **occhi rosa confetto** abbinati e **due corna scarlatte** che spuntano visibilmente tra i capelli sopra le tempie, oltre alle ali scure da succubus e alla coda prensile con punta a picca.
+- **Marchi Divini dei Gemelli (Mani & Sol) & Distinzione Titoli Cosmici (Maniulfr vs Solulfr):** I marchi celestiali risiedono **esclusivamente sulle anche**: Alyssa porta il Marchio Runico di Máni (mezzaluna argentata con glifi lunari sub-dermici) **unicamente sull'anca sinistra**; Jasper porta il Marchio Runico di Sól (sole nero radioso con glifi fiammeggianti sub-dermici) **unicamente sull'anca destra**. È vietato disperdere marchi multipli su mani, petto, nuca, clavicola o cuore (condividono soltanto il tatuaggio protettivo Gebo a inchiostro di ferro freddo sul polso sinistro). Inoltre, il titolo sacro **Sólúlfr** (Lupo del Sole) appartiene **esclusivamente a Svartr (Jasper)**; per Hvít (Alyssa) il titolo divino correlato a Máni è **Mániúlfr** (Maniulf / Lupo della Luna Bianca).
 
 ---
 
@@ -152,6 +159,13 @@ const oreDaData = iso => (Date.parse(iso) - EP) / 3600000;
 3. La `start_timeline_position` va impostata **sempre** per ogni personaggio (evita intrusioni anacronistiche negli scenari storici o futuri).
 4. **Passività Cronologica Assoluta per Game Master e Scenari (Zero Date Reset):**
    Nelle chat stand-alone, negli Scenari e nei prompt dei Game Master, il modello non deve mai tentare di calcolare, forzare o dichiarare date statiche arbitrarie (inclusa la data ricorrente 15 marzo 2024 o date di avvio scenario). La gestione del calendario e della timeline è demandata all'engine nativo di Wyvern (AI Time Tracking / World Clock) e alla cronologia di chat. Il Game Master deve limitarsi a leggere e riflettere passivamente la data e l'ora ereditate dall'ultimo turno.
+5. **Standard Scenari a Innesco Timeline (Starts When & Scenario-Guided-Intro):**
+   In accordo con la guida ufficiale Wyvern (`wiki.wyvern.chat/Features/Worlds/Scenario-Guided-Intro`), gli scenari progettati per l'auto-inserimento organico nella timeline devono rispettare due invarianti tassative:
+   - *Singola Apertura Obbligatoria:* esattamente una sola scena premade (`premade_scenes.length === 1`) oppure sole istruzioni di scena (`scene_instructions`), prevenendo il blocco `opening_choice` ("This scenario has more than one opening, so the event cannot choose one on its own").
+   - *Divieto di Insertion Point:* `insertion_point: null` (assente), per prevenire il blocco `time_override` ("This scenario has an Insertion Point. An automatic event cannot ask whether to set the chat clock, so it is skipped").
+   - *Parametri di Configurazione:* `repeat: "once"` (o `"cooldown"` con turni), `priority` intera e condizioni logiche ancorate a `time_basis: "world_day"` (Giorno 1 = Ora 0 = 21 Dicembre 827 CE) o `world_time` unitamente a filtri party/persona.
+6. **Sincronizzazione Time of Day e Sfondi Dinamici:**
+   L'AI Time Tracking calcola automaticamente la fascia oraria corrente tra `dawn`, `day`, `dusk` e `night`. Nelle Location censite nel World, nel Lexicon o nel Lorebook Location (`_EjXxkmPVhpCXg8xABpFkK`), associare per ciascun periodo l'immagine d'atmosfera corretta, consentendo alla piattaforma di sfumare lo sfondo in tempo reale al procedere della timeline.
 
 ---
 
@@ -185,6 +199,19 @@ const oreDaData = iso => (Date.parse(iso) - EP) / 3600000;
     - Questo meccanismo nativo elimina la necessita di ricorrere a workaround artificiali (come `selective: true` con keyword fittizie 'Dossier'/'Scheda'), consentendo a ogni entry NPC nei Lorebook di conservare `selective: false`, chiavi di attivazione naturali (nome, cognome, alias) e descrizioni JED+ narrative integrali (>2.000 fino a >16.000 caratteri) in totale sicurezza.
 - **Personaggi Stand-Alone (`/mine`):** Costituiscono la Single Source of Truth condivisa tra chat 1-on-1 e Character Scenarios.
 
+### 7.1 Principio di Sincronizzazione Totale dell'Ecosistema /mine (Omni-Parity)
+La sincronizzazione della lore non è limitata al solo asse World Lexicon ↔ Lorebook Standalone, ma abbraccia **l'intero ecosistema /mine di Wyvern**:
+1. **World (_YpX47fNraQFw2dD7TdycJ):** Lexicon (700+ voci), Locations (188), Characters (126) e System Prompt / Relationship Pacing Gate.
+2. **I 6 Lorebooks Standalone:** Aggiornati garantendo entries == lexicon byte-for-byte su tutti i 6 volumi (Lorebook I, II, III, Location, NPC Primary, NPC Secondary).
+3. **Standalone Characters (/mine):** Single Source of Truth per chat 1-on-1 e Scenari (9 Outfits strutturati, Pacing Gates in inal_instructions, Display Names standard su First Name o Nickname).
+4. **Character Scenarios (/mine):** Scenari allineati con i lorebook_ids corretti, greetings coerenti con la timeline del World Clock e assenza di slot bloccati (unavailable_count: 0).
+5. **AI Assistants / Game Masters (/mine):** Istruzioni di sistema, assembly Handlebars/XML, regole D20 + S.P.E.C.I.A.L. e passività cronologica (Zero Date Reset).
+6. **Prompt Assemblies (/mine):** Template uniformati alla disciplina di formattazione dialoghi (virgolette inglesi, plain text, no asterischi, no em-dash).
+7. **User Personas (/mine):** Schedatura JED+ su singola riga per attributi e soppressione nativa anti-collisione reciproca (ignored_personas).
+8. **Infrastruttura Proxy Locale & Free-Master-list (proxy/):** Isolamento architetturale dei componenti proxy (FastAPI rotator, config_free_proxy.json, script di avvio automatico all'accensione del PC start_proxy.vbs e shortcut Wyvern Free Tier Proxy.lnk), tracciati stabilmente nella sincronizzazione totale del repository.
+
+È fatto divieto assoluto di introdurre modifiche asimmetriche in un solo comparto di /mine lasciando indietro gli altri. Ogni modifica di lore o di sistema deve essere riflessa simultaneamente su tutte le entità pertinenti di /mine e archiviata nei file master locali in FINAL/.
+
 ### Matrice di Triage
 
 | Tipologia Sorgente | Azione nel World |
@@ -215,6 +242,15 @@ Ogni voce di Lexicon focalizzata su un singolo personaggio (Intimacy Profiles, D
 - `attached_world_character_id` non funge da trigger d'inclusione automatica.
 - **Filtri corretti:** `keys` (primarie = nome/specie) + `secondary_keys` (parole tematiche) con `key_logic: "AND_ANY"`, associati a `party_conditions` (`has_any [id_personaggio]`).
 
+### Sprite Sets per NPC e Lorebook & Meccanismo Auto-Cutout
+- **Lorebook Sprites Tab:** I Lorebook Standalone supportano il tab `Sprites` (`gallery_sprites`). Le voci NPC possono specificare un campo opzionale `sprite_set_id` (o link a sprite set esistenti) per proiettare sul palco della Visual Novel Mode le espressioni facciali e le pose del personaggio.
+- **Auto-Cutout Trasparente:** Per gli NPC privi di sprite set dedicato, il frontend Wyvern genera automaticamente un `avatar_cutout` scontornando lo sfondo dell'avatar Cloudflare censito nella Gallery (`entry.avatar`). È vietato inserire URL esterni non censiti nella Gallery per garantire che il renderer di cutout e lo stage VN non incorrano in fallimenti grafici.
+- **Preservazione nei PUT:** Nelle chiamate `PUT /api/lorebooks/:id`, non azzerare o omettere eventuali oggetti `sprite_sets` o puntamenti `sprite_set_id` presenti nelle entry.
+
+### Persona Gallery & Alternate Avatars (/mine)
+- Anche per le User Persona (`/api/user-personas/:id`), Wyvern supporta ora una `gallery` dedicata e `alternate_avatars[]`.
+- Nei payload di aggiornamento delle Persona (`FINAL/personas/*.json`), preservare sempre i campi `gallery`, `alternate_avatars` e `avatar_shape` evitando la cancellazione accidentale causata da payload parziali grezzi.
+
 ---
 
 ## 8. RPG Stats e Sistemi di Simulazione
@@ -223,12 +259,23 @@ Ogni voce di Lexicon focalizzata su un singolo personaggio (Intimacy Profiles, D
   - `inventory: true`, `currency: true`, `rpg_stats: true`, `combat: true`, `relationships: true`.
   - Disattivati per evitare il dump di tabelle nel prompt: `show_party_stats: false`, `show_species_info: false`.
   - Disattivati perché estranei al canone del World: `ships: false` (Cross-World Ships) e `creature_catcher: false` (Creature Catcher).
-- **Convenzioni RPG e Parametri di Bilanciamento:**
-  - Budget fisso a **25 punti** (somma finale delle 6 stat uguale a **31** con base 1).
-  - Statistiche: `stat_1` (MGT), `stat_2` (RES), `stat_3` (AGI), `stat_4` (WIT), `stat_5` (PRS), `stat_6` (SCT).
+- **Convenzioni RPG e Parametri di Bilanciamento (S.P.E.C.I.A.L.):**
+  - I 7 Attributi Ufficiali: `strength` (STR), `perception` (PER), `endurance` (END), `charisma` (CHA), `intelligence` (INT), `agility` (AGI), `luck` (LCK).
+  - Parametri di bilanciamento World: `base_value: 8`, `max_value: 30`, `point_budget: 25`.
   - Livello = Età anagrafica (fino a 99).
+- **Combat Role Mapping (`stat_roles`):**
+  - Mappatura ufficiale vincolata per i ruoli di combattimento e vitalità del motore simulativo:
+    - Vitalità: `hp_stat: "endurance"`, `mp_stat: "intelligence"`.
+    - Azione Offensiva e Difensiva: `physical_attack: "strength"`, `physical_defense: "endurance"`, `special_attack: "intelligence"`, `special_defense: "intelligence"`.
+    - Mobilità e Precisione: `speed: "agility"`, `accuracy: "perception"`, `evasion: "agility"`, `flee: "agility"`.
+    - Fortuna e Resa Critica: `luck: "luck"`.
+- **Custom Moodlets & Pacing Emotivo (12 Stati):**
+  - Configurazione modulare registrata sia in `relationship_config.custom_moodlets` che in `relationship_config.moodlets` per retrocompatibilità totale (durata ore, delta/intensità, effetti):
+    *Rut*, *Heat*, *Scent Marked*, *Mated Devotion*, *Vampiric Blood Hunger*, *Blood Frenzy*, *Essentia Hunger*, *Seductive Haze*, *Pack Bond Resonance*, *Feral Aggression*, *Blood Oath Bond*, *Betrayed Trust*.
 - **Bug Critico del Livello & Tetto a 99:** Un Livello $\ge 100$ blocca silenziosamente il salvataggio dell'intero blocco RPG. Per tutti i personaggi ultracentenari impostare tassativamente **Livello = 99**, riportando l'età reale nel blocco JED+.
-- **Species e Occupation via API:** I selettori web non salvano Species e Occupation (tornano a None). Vanno scritti via API dentro `rpg_stats` (`rpg_stats.species_id` e `rpg_stats.occupation_id`). Selezionare l'Occupation concettualmente più vicina tra i 18 blueprint disponibili.
+- **Cataloghi Ufficiali World & Auto-Provisioning:**
+  - I cataloghi del World (`_YpX47fNraQFw2dD7TdycJ`) includono 24 Specie, 28 Occupazioni e 46 Tratti nativi completi di modificatori S.P.E.C.I.A.L.
+  - **Regola di Auto-Provisioning (Specie, Tratti e Occupazioni):** Durante la creazione o la modifica di un personaggio (sia Character Card che World NPC o Persona), qualora una Specie, un Tratto o un'Occupazione indicata nel profilo non trovi corrispondenza esatta nei cataloghi registrati sul World, il sistema/l'assistente deve procedere immediatamente all'auto-provisioning (creazione automatica dell'entità mancante via API `POST https://app.wyvern.chat/api/worlds/rpg/{species|occupations|traits}`) con relativi modificatori S.P.E.C.I.A.L., descrizione e flag `player_selectable: true`, sincronizzando contestualmente i file master locali (`scratch/rpg_*_catalog.json` e `FINAL/`). Nessun personaggio deve rimanere privo del rispettivo riferimento nel sistema RPG.
 
 ### Protocollo di Formulazione RPG & Dossier Integrale Obbligatorio
 È fatto divieto assoluto a qualsiasi assistente AI di proporre, generare o modificare tratti RPG, occupazioni, razze, classi o statistiche basandosi su dati parziali, intuito o inferenze dal solo nome del personaggio.
@@ -307,6 +354,22 @@ Le seguenti figure, derivate dai dossier e preferiti storici JanitorAI, sono sta
    - **Morgeth Steeltooth:** Maestro fabbro orco e conoscitore del ferro freddo, sodale e pari di **Ut Berg**. Si incontrano al The Verve trascinando Logan Douglas in estenuanti dispute su leghe e temprature che Logan sopporta per non farsi spaccare in due.
 6. **Clan Bloodmoon Tradizionale (Foresta Profonda):**
    - **Thorvald & Harald Sigurdsson:** Licantropi scandinavi del Clan Bloodmoon arcaico, discendenti diretti del seguito di Wulfnic (1022 d.C.). Vivono stabilmente nella foresta profonda del Dead Zone preservando la lingua, i riti runici e la caccia norrena.
+
+### Asimmetria Informativa, Segretezza Licantropica e Divieto Assoluto di Metagaming
+1. **Riserbo dei Licantropi & Folklore come Leggenda Metropolitana:**
+   - I licantropi sono per natura e tradizione fieri, chiusi ed estremamente riservati sui loro misteri di sangue.
+   - Fuori dal branco interno e dai grandi branchi che giurano formale fedeltà a Wulfnic (o delle antichissime casate aristocratiche millenarie come Sterling o Ashbourne), l'esistenza di una figura come il **Re dei Lupi** (*Wolf King*), dell'entità misteriosa nota come **L'Enigma**, o il folklore legato ai **Firstborn** (i Fondatori Primordiali) sono considerati dal mondo esterno **mere leggende metropolitane, miti popolari o favole da bar**.
+2. **Percezione Pubblica dei Douglas (I Sovrannaturali Comuni e Studenti SUCC):**
+   - Per la stragrande maggioranza dei sovrannaturali comuni, studenti del campus e residenti di Solarton e Blackwood (inclusi gli amici e compagni di campus come **Jared Thompson**, **Santiago Vance**, **Bailey Rogers**, **Mac Sanchez-Rogers**, **Stanley Davies**, **Russell Sinclair**, Andy, Tate, ecc.):
+     - **I Douglas** sono unicamente una famiglia locale di licantropi influente, aristocratica e molto facoltosa, a capo della *Douglas Commercial Coalition (DCC)*. Sono celebri per la filantropia e gli investimenti immobiliari, in primis per aver finanziato la costruzione del **Neptune Stadium** e della Douglas Arena.
+     - **Erik Douglas** è ricordato e rispettato come una celebrità sportiva locale: ex eroe del campus ed ex stella/capitano della squadra di hockey su ghiaccio dei *SUCC Bears*.
+3. **Wulfnic è Rigorosamente "Nonno Nic" per gli Outsider:**
+   - Per chiunque sia estraneo al cerchio ristretto del branco, Wulfnic Bloodmoon è **rigorosamente e unicamente ciò che Alyssa e Jasper hanno raccontato: il loro "nonno Nic" (Grandpa Nic)**.
+   - È percepito come un anziano montanaro massiccio, rustico, vecchio stampo, burbero ed eccentrico che vive nei boschi o guida un vecchio pickup.
+   - **Divieto Assoluto di Metagaming:** Personaggi come Jared, Santiago, Bailey, compagni di squadra e studenti della SUCC **non sanno, non possono sapere e non devono mai sospettare chi sia in realtà Wulfnic**. Non provano terrore cosmico né reverenza ancestrale verso di lui, ma al massimo il naturale rispetto/soggezione dovuto a un anziano imponente e protettivo. È severamente vietato all'LLM far trapelare la sua identità leggendaria nei pensieri, reazioni o dialoghi di questi personaggi.
+4. **Inaccessibilità dei Misteri Esoterici (Luna Bianca, Purosangue, Sangue Fondatore):**
+   - I dogmi della **Luna Bianca** (*White Moon / Máni*), dei **Purosangue** (*Trueblood*), del **Sangue Fondatore** (*Founder Blood*), le profezie gemellari dei Lupi Cosmici (*Sólúlfr* e *Mániúlfr*) e le rune sacre di sangue sono dottrine religiose ed esoteriche strettamente interne ai licantropi.
+   - Un non-licantropo (umano, demone, mezzo minotauro, demi-umano, gorgone, succube o vampiro comune) **non conosce, non comprende e non sa decifrare questi concetti**. Se sente una menzione o nota un'abitudine peculiare, la liquida semplicemente come una bizzarria culturale dei lupi o un modo di dire di famiglia.
 
 ---
 
@@ -488,8 +551,16 @@ Seguire tassativamente la sequenza di 13 passi:
 - **Orfani da Testing (Zero-Footprint):** I chat log e i party temporanei creati per test diagnostici restano visibili nella UI utente e inquinano la libreria. Eseguire sempre il teardown sistematico (`DELETE /api/new/chat-logs/:id`) al termine di ogni sessione di test.
 - **HTTP 413 Payload Too Large su Lorebook PUT:** Non includere nel payload JSON sia l'array legacy `entries` sia l'array canonico `lexicon` (raddoppia la dimensione della richiesta). Inviare solo `lexicon` unitamente ai metadati top-level.
 - **Errore Caricamento Immagini su Singola Entry Lorebook:** L'upload diretto di file immagine/avatar nei singoli slot delle entry genera errori o fallimenti di persistenza su Wyvern. Seguire il **Workflow Obbligatorio Gallery**: non caricare file direttamente sulle singole entry, ma caricare prima le immagini nella **GALLERY del Lorebook**, e successivamente selezionare l'immagine desiderata dalla Gallery per ciascuna entry (`entry.avatar`).
-- **HTTP 409 Conflict su Scenario PUT:** Lo scenario mantiene un contatore `revision` incrementale. Prima di inviare un `PUT`, eseguire sempre una `GET` autenticata fresca per recuperare l'ultimo intero di `revision`, fonderlo nel payload e trasmettere.
+- **HTTP 409 Conflict su Scenario PUT:** Lo scenario adotta il locking ottimistico con contatore `revision`. Prima di inviare un `PUT`, eseguire sempre una `GET` autenticata fresca per recuperare l'ultimo intero di `revision`, fonderlo nel payload (`'revision': live_data.get('revision')`) e trasmettere. In assenza di `revision`, l'aggiornamento fallisce con HTTP 409.
+- **Validazione Schemi Character Standalone API:**
+  - `pronouns`: deve essere obbligatoriamente un oggetto a 5 chiavi (`pronoun_subjective`, `pronoun_objective`, `pronoun_possessive_determiner`, `pronoun_possessive_pronoun`, `pronoun_reflexive`). Il tipo stringa (`"He/Him"`) genera `HTTP 400: Expected object, received string`.
+  - `linked_world`: deve essere una stringa contenente l'ID univoco del World (es. `"_CgYT8fHXpDC4crjmegQF7"`), mai un oggetto dizionario (`dict`).
+  - `creator_notes`: campo obbligatorio in fase di `POST` (minimo 3 caratteri).
+  - Omettere sempre `wyldfire_code` e `vanity_slug` nei payload di creazione o aggiornamento per prevenire errori `E11000 duplicate key error`.
 - **Attivazione Involontaria Dossier Lorebook:** Impostare tassativamente `selective: true` sui World Dossier del cast principale con `secondary_keys` dedicate archivistiche (`['Dossier', 'Scheda', 'Archivio', 'Database', 'Profilo']`), e bonificare le chiavi trigger isolate mono-parola (es. `'Alyssa'` -> `'Alyssa Telegram'`).
+- **Fastify DELETE Empty Body (HTTP 500 FST_ERR_CTP_EMPTY_JSON_BODY):** L'invio dell'header `Content-Type: application/json` con body vuoto nelle chiamate `DELETE` verso gli endpoint World RPG (`/api/worlds/rpg/{species|occupations|traits}/:id`) genera `HTTP 500 FST_ERR_CTP_EMPTY_JSON_BODY`. Omettere tassativamente il `Content-Type` nelle richieste `DELETE` per ricevere `HTTP 204 No Content` ed eseguire la rimozione pulita senza inquinare il database.
+- **Subdocumenti Sprite/Gallery nei PUT Lorebook:** Omettere `gallery` o `sprite_sets` durante un PUT su `/api/lorebooks/:id` svuota le immagini caricate. Mantenere sempre nel payload i campi top-level `gallery` e `sprite_sets` recuperati dalla GET fresca.
+- **Selettori UI NPC/Location su Editor Modali:** Gli editor di NPC e Location risiedono in finestre modali dedicate `div[role="dialog"]`. Nei test automatizzati Playwright/CDP, selezionare sempre il contenitore modale attivo prima di interagire con input e pulsanti di salvataggio.
 
 ---
 
@@ -584,6 +655,16 @@ Ogni interazione dell'assistente su questo repository incorpora sistematicamente
 3. **`wyvern-ttrpg-master-deployer`**: Progettazione, compilazione Handlebars/XML e deploy via Wyvern Web API di AI Game Master, Custom Prompt Assembly e Scenari con motore D20 + S.P.E.C.I.A.L.
 4. **`wyvern-card-lorebook-sync`**: Sincronizzazione Card/Lorebook, conversione di card in NPC con descrizioni JED+ piene, adozione della soppressione nativa anti-collisione (`ignored_characters` & `ignored_personas`), bonifica slot inaccessibili degli Scenari (`unavailable_count: 0`) e deployment via Wyvern Web API.
 5. **`wyvern-world-deployer`**: Progettazione architetturale, topologia gerarchica ad albero (Environment e Location ordinate per profondità), specchiatura completa del Lexicon, configurazione anti-bloat del context budget e deployment sicuro di World su Wyvern via Web API con validazione formale e Chrome DevTools.
+6. **`wyvern-ai-proxy-rotator`**: Micro-proxy locale FastAPI OpenAI-compatible per Wyvern con rotazione automatica e failover circuit-breaker (cooldown 60s) su modelli Free Tier prioritari.
+7. **`wyvern-world-rpg-automator`**: Automazione end-to-end per la configurazione dei sistemi RPG del World Wyvern: allineamento S.P.E.C.I.A.L., Combat Role Mapping, Auto-Provisioning di Specie, Occupazioni e Tratti, bonifica Shop/Item marketplace_config e Custom Moodlets sovrannaturali/biologici.
+8. **`wyvern-positive-framing-sanitizer`**: Pipeline per la bonifica da negative constraint echoing ("Pink Elephant Problem") nei contesti di roleplay LLM (Character Cards, Outfits, Scenari, Lorebook) mediante Positive Framing puro, iniezione di vincoli di stile in `post_history_instructions` e deployment sicuro via Wyvern Web API.
+9. **`wyvern-chat-audit-world-sync`**: Audit forense dei chat log Wyvern, rilevamento di relationship pacing drift e sincronizzazione delle correzioni e della lore emergente verso il World e i Lorebook via Web API.
+10. **`multi-model-unified-pipeline`**: Orchestrazione della Master Pipeline unificata a 5 stadi (`daily-master-pipeline`) tramite il Team Multi-Modello a 3 Tier (`scout-fast`, `architect-sync`, `lore-judge`), il Registro Open-Provider Plug & Play, il Micro-Proxy locale (`:5005`) e i 5 Client AI Desktop del PC OMEN (`Antigravity.exe`, `Gemini.exe`, `Grok Bot.exe`, `Claude.exe`, `copilotapp.exe`) con Dashboard Telemetrica HTML interattiva.
+
+### Verifica Preventiva Piattaforma Wyvern (Pre-Deployment Guard)
+Prima di eseguire deployment massivi o aggiornamenti critici di Lorebook, Card e Scenari:
+- Lanciare `python scripts/daily_wyvern_platform_monitor.py`.
+- Se vengono rilevati nuovi bundle Next.js (`ALERT: New Wyvern frontend bundles detected`), analizzare l'impatto con un'ispezione mirata prima di procedere a scritture intensive via API, garantendo che schemi Zod o endpoint non abbiano subito breaking changes.
 
 
 ---
@@ -605,3 +686,39 @@ Nelle configurazioni di Wyvern (`AI Connections -> Connections`) e categorico di
 
 ### Circuit-Breaker e Quarantena Temporizzata (60s)
 I gateway multiprovider o i proxy di failover devono implementare una quarantena temporizzata automatica (cooldown) di almeno 60 secondi su errori HTTP `429`, `403`, `5xx` o Timeout (`>12s`), saltando a tempo zero i nodi guasti e garantendo continuita ininterrotta alla chat.
+
+---
+
+## 21. Architettura Second Brain (LLM Wiki 2026), Metabolismo Vault & Automazioni
+
+Il repository adotta formalmente i principi del modello **«LLM Wiki / Second Brain 2026»** (Karpathy, CoALA framework, MemGuard) per prevenire il decadimento e la frammentazione della lore nel tempo.
+
+### I Tre Livelli della Conoscenza
+1. **Livello 1 — Sorgenti Originali (Immutabili):** Cartella `ARCHIVIO/` (dump Janitor, chat storiche). Gli agenti leggono per estrarre la verita, ma non modificano mai queste fonti.
+2. **Livello 2 — La Wiki / Cervello Compilato:** Cartella `FINAL/` e i 6 Lorebook Standalone sincronizzati. Single Source of Truth viva e navigabile.
+3. **Livello 3 — Lo Schema come Contratto:** `GEMINI.md`, `AGENTS.md` e `.agents/rules/`. Regole verificate dal codice e non semplici raccomandazioni.
+
+### Separazione Rigida dei 4 Tipi di Memoria (CoALA / MemGuard)
+- **Memoria di Lavoro (Vita breve):** La sessione attiva e i file in `scratch/`.
+- **Memoria Episodica (Datata):** Eventi, log e storico in `CHANGELOG.md` con timestamp esplicito.
+- **Memoria Semantica (Stabile):** Fatti enciclopedici in `FINAL/` (schede JED+, lore, catalogo).
+- **Memoria Procedurale (Regole):** Direttive operative in `.agents/rules/`.
+
+### Metabolismo del Vault (Health Check a 6 Dimensioni)
+Lo script `scripts/vault_health_check.py` analizza sistematicamente il vault cercando:
+1. *Contraddizioni:* Discrepanze su altezze canoniche, date di nascita, marchi divini o anatomia demi-umana.
+2. *Affermazioni Scadute:* Sovrascritture di canone.
+3. *Pagine/Entita Orfane o Buchi di Dati:* Riferimenti mancanti o entry vuote.
+4. *Igiene Trigger:* Eliminazione macro `{{age}}`, blocco broad keys su NPC e terna flag attiva.
+5. *Parita Byte-for-Byte:* `entries == lexicon` al 100% per conformita con lo schema Zod del frontend Wyvern.
+6. *Infrastruttura:* Validazione proxy locale e automazioni registrate.
+
+Il controllo e integrato come **Stage 0** nel runner quotidiano `scripts/daily_maintenance_runner.py`.
+
+### Standard Obbligatorio Automazioni Antigravity (Unified Scheduled Sidecar)
+- **Divieto del tool `schedule`:** Il tool interno `schedule` crea un timer effimero di chat che muore alla chiusura della sessione e non compare nella UI.
+- **Unificazione in Singola Master Pipeline (`daily-master-pipeline`):** Tutte le operazioni quotidiane di manutenzione, monitoraggio e arricchimento lore sono consolidate in un'unica automazione atomica registrata in:
+  `~/.gemini/config/sidecars/daily-master-pipeline/sidecar.json`
+  con `"builtin": "schedule"`, `"restart_policy": "always"`, schedule `"CRON_TZ=Europe/Rome 0 9 * * *"`, delimitatore `"--"` prima del prompt e permessi minimi nel workspace (`workspace_uris` e `access_grants`). I 4 precedenti sidecar separati sono archiviati in `ARCHIVIO/sidecars_legacy_backup/`.
+- **Orchestrazione Multi-Modello a 3 Tier & Specialisti Desktop (`multi-model-unified-pipeline`):** Lo script `.agents/skills/multi-model-unified-pipeline/scripts/orchestrator.py` e il registro `references/models_registry.json` orchestrano i 5 stadi giornalieri su **Tier 1 (`scout-fast` — `gemini-3.8-flash` / `copilotapp.exe` / `:5005` `gemma-4-31B-it` & `qwen-3.8-27b`)**, **Tier 2 (`architect-sync` — `gemini-4-argon` & `claude-sonnet-5.5` / `copilotapp.exe` & `Claude.exe` / `:5005` `z-ai/glm-5.3` & `deepseek-chat`)**, **Tier 3 (`lore-judge` — `claude-opus-5.5` & `gemini-4-argon` / `Claude.exe` / `:5005` `nemotron-3-ultra-550b` & `z-ai/glm-5.3`)**, riservando i 2 client desktop specialisti **esclusivamente** ai rispettivi domini: **`Grok Bot.exe` (`agenda_work_slots_only`)** come Agenda Personale per il blocco degli slot di lavoro sullo sviluppo dell'ambientazione, e **`Gemini.exe` (`visual_studio_argon_images`)** tramite **Gemini 4 Argon** per la creazione e generazione delle immagini. Include **Stage 4 (Dashboard Telemetrica HTML `scratch/unified_pipeline_dashboard.html` e Archiviazione Transcript in `logs/automations/`)**.
+- **Zero Dipendenze Esterne negli Script Sidecar (`urllib.request` Standard):** Tutti gli script Python invocati dalle automazioni o dall'orchestratore multi-modello devono utilizzare esclusivamente la standard library Python (`urllib.request`, `urllib.error`, `json`, `pathlib`, `time.monotonic()`) per garantire esecuzione deterministica sia sotto `uv run python` sia sotto l'interprete di sistema, includendo sempre favicon SVG inline (`data:image/svg+xml`) nelle dashboard HTML autogenerate.

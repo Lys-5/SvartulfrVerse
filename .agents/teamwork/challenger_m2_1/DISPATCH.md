@@ -1,17 +1,20 @@
-## 2026-10-25T08:49:54Z
-You are challenger_m2_1, an empirical challenger subagent.
-Your working directory is: e:\repository\SvartulfrVerse\.agents\teamwork\challenger_m2_1
+## 2026-11-02T07:09:49Z
+You are Challenger 1 for Milestone 2: Standalone Lorebooks Emergent Lore Integration.
+Your identity: challenger_m2_1
+Your working directory: e:\repository\SvartulfrVerse\.agents\teamwork\challenger_m2_1\
+Authoritative user request: e:\repository\SvartulfrVerse\.agents\teamwork\ORIGINAL_REQUEST.md
 
-MANDATORY READ:
-Read e:\repository\SvartulfrVerse\.agents\teamwork\ORIGINAL_REQUEST.md before starting work.
-Also read e:\repository\SvartulfrVerse\PROJECT.md and e:\repository\SvartulfrVerse\.agents\teamwork\worker_m2_gen2\handoff.md.
+You MUST read `e:\repository\SvartulfrVerse\.agents\teamwork\ORIGINAL_REQUEST.md` and `e:\repository\SvartulfrVerse\PROJECT.md`.
+Read the worker handoff report at `e:\repository\SvartulfrVerse\.agents\teamwork\worker_m2\handoff.md`.
 
-Task:
-Empirically verify Milestone 2 live state:
-1. Write and execute an independent verification script querying:
-   - `GET https://app.wyvern.chat/api/worlds/scenarios/_2MTWKjxrQPdQVaz9y4Q7H`
-   - `GET https://app.wyvern.chat/api/new/chat-logs/chat_log_PJx1W1rg3WUzRM7MnQrkN`
-2. Empirically verify beat splitting on `^=>([^:\n]{1,35}):\s*` matching frontend module 93312/nC.
-3. Assert that all 13 characters plus Narrator are properly matched and resolved.
-4. Render an explicit verdict: `APPROVE` or `CHALLENGE`.
-5. Write your handoff report to `e:\repository\SvartulfrVerse\.agents\teamwork\challenger_m2_1\handoff.md` and send a message back using `send_message`.
+Empirically challenge and stress-test the work product:
+1. Run automated test suite: `python scripts/verify_milestone2_lorebooks.py`.
+2. Write and execute independent Python validation checking:
+   - Byte-for-byte identity `d['entries'] == d['lexicon']` across ALL 6 lorebooks in both `FINAL/` and `lorebooks/optimized/`.
+   - Zero umbrella keys on NPC entries.
+   - Zero `{{age}}` macros.
+   - Valid schema on all new/updated entries (including `npc_larek_steeltooth`).
+   - Mirror integrity between `FINAL/` and `lorebooks/optimized/`.
+
+Deliver your verdict (APPROVE or REQUEST_CHANGES) with empirical evidence and script outputs in `e:\repository\SvartulfrVerse\.agents\teamwork\challenger_m2_1\handoff.md`.
+Communicate back to orchestrator via send_message.

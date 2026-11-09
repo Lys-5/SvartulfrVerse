@@ -42,7 +42,7 @@
 |-----------|-------|--------|
 | Hair | Black with silver streaks | Visual Authority |
 | Eyes | Amber | Visual Authority |
-| Height | 205 cm | Visual Authority |
+| Height | 213 cm (6' 11.9") | Visual Authority |
 | Build | Massive, muscular | Visual Authority |
 | Aesthetic | Corporate monarch | Visual Authority |
 

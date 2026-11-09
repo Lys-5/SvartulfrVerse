@@ -1,5 +1,536 @@
 # Changelog di Progetto — Svartúlfr Verse
 
+### 09/11/2026 - Unificazione Master Pipeline (`daily-master-pipeline`), Team Multi-Modello a 3 Tier, Audit Forense 5 Chat Log Wyvern e Bonifica 46/46 Vault Health
+
+- **Consolidamento Automazioni in Singolo Sidecar (`~/.gemini/config/sidecars/daily-master-pipeline/sidecar.json`)**:
+  - Unificate le 4 precedenti automazioni mattutine (`daily-character-enrichment`, `daily-wyvern-monitor`, `daily-proxy-free-models`, `daily-omnisync-archive-mining`, archiviate in `ARCHIVIO/sidecars_legacy_backup/`) in un'unica sessione atomica alle `09:00 Europe/Rome` (`CRON_TZ=Europe/Rome 0 9 * * *`), eliminando 3 cold-start giornalieri ridondanti.
+- **Nuova Skill e CLI Multi-Modello (`.agents/skills/multi-model-unified-pipeline/`)**:
+  - `references/models_registry.json`: Definizione della matrice a 3 Tier (`tier_1_scout_fast`, `tier_2_architect_sync`, `tier_3_lore_judge`), dei 5 modelli IDE (`gemini-4-argon`, `gemini-3.8-flash`, `claude-opus-5.5`, `claude-sonnet-5.5`, `gpt-oss-120b`) con normalizzazione effort (`low`, `medium`, `high`), dei 5 client AI Desktop sul PC OMEN (`Antigravity.exe`, `Gemini.exe` riservato alle immagini via Argon, `Grok Bot.exe` / ecosistema *Groky* + *Code Groky* riservato esclusivamente al blocco slot di lavoro in Agenda previo OK dell'utente, `Claude.exe`, `copilotapp.exe`) e dei 5 gateway Open-Provider Plug & Play (`local_proxy` su `:5005`, `xai_grok`, `openrouter`, `ollama_local`, `lm_studio_local`).
+  - `scripts/orchestrator.py`: CLI conforme a `workflow-skill-creator` con sottocomandi `detect-clients`, `route-model`, `run-tier`, `run-all` e `dashboard`, rate limiter cross-processo con `time.monotonic()`, gestione `RateLimitError` (HTTP 429), backoff esponenziale su 5xx e generazione della Dashboard Telemetrica HTML interattiva (`scratch/unified_pipeline_dashboard.html`).
+- **Task 1 — Bonifica Completa Vault Health Check (46/46 Check Superati, 0 Avvisi, 0 Errori)**:
+  - `FINAL/Svartulfr_NPC_Primary.json` (+ specchio ottimizzato): Sincronizzati `content` e `description` e applicato il Positive Framing puro su `Scarlett Rose` (`candy-pink`, due corna scarlatte, rimosso `(no human ears)`) e `Sierra Cruz` (rimossi tutti i riferimenti negativi a `legs/feet/shoes/steps/pants/walks`).
+  - `FINAL/Logan_Douglas_card.json` & `scripts/vault_health_check.py`: Allineata l'altezza canonica di Logan (`198 cm (6' 6") human form, 228 cm (7' 6") hybrid shift`) e distinta da quella di Wulfnic (`220 cm`).
+  - `FINAL/Larek_Steeltooth_card.json`: Popolati i `9/9` outfit contestuali obbligatori e `default_outfit` anche a livello top-level della card.
+- **Task 2 — Character Lore Enrichment (Progresso `75/310`)**:
+  - Arricchite e bonificate in JED+ le 5 schede di `GREED - Roxie`, `GLUTTONY - Kevin` (rimosso il template errato Level 99 Succubus Firstborn e ripristinato come Human Black-Hat Hacker Lv. 23), `Finnegan Novak` (ripristinato il profilo intimo Arctic Wolf `190 cm` e il blocco sul rimorso verso Alyssa/Jasper/Noah), `Federico "Riki" Savini` (ripristinato come Elder Solitary Wolf 65enne e confidente politico di Malachia) e `Fade Greymoor` (ripristinato il blocco RPG Vampire Lead Vocalist di *Grave Mistake*), associando i rispettivi `ignored_characters`.
+- **Task 3 & Task 4 — Audit Forense delle 5 Nuove Chat Log Wyvern (`sidebar-recents?kind=worlds`) & Promozione Archive Mining (`22/2.930`)**:
+  - Scaricate e sottoposte ad audit forense completo le 5 sessioni di test di World: `chat_log_Tc4xL33mLdVCgr8fQJnkr` (*"Cylinders, Cookies, and a Feral Garden"*, 140 turni), `chat_log_VamEmDLQa1h8rWeQLeX9N` (1 turno), `chat_log_TMAa1k3AWLLFd476R2jrp` (*"Svartúlfr"*, 29 turni), `chat_log_6a2nQtKMKpHjn7xG4Abxa` (*"Neon Yellow and Digital Chaos"*, 127 turni) e `chat_log_ftrtAD79eddk9Ue9Jr2WJ` (225 turni).
+  - Bonificati live via `PUT /api/new/chat-logs/{id}` i summaries contaminati su `chat_log_6a2nQtKMKpHjn7xG4Abxa` (rimosso il summary dummy vuoto #6), `chat_log_TMAa1k3AWLLFd476R2jrp` (corretto *"loup de rue"* preservando il Summary 0 di continuità) e `chat_log_ftrtAD79eddk9Ue9Jr2WJ` (ricalibrato il Relationship Pacing nei Summaries 8 e 10).
+  - Consolidata la nuova lore emergente nei Lorebook (`Lorebook I`: `241` entries con *Stanza di Hvit*, *Tri-Condition Enigma Succession*, *Mutazione Delta-to-Alpha*, *Minn snarvinda*, *Silver Bullets*, *Nove Precetti di Fenris*, *Caccia di Dicembre*, *Asse Gamma LSE*, limite di 7 sigilli dei cilindri e *Sigillazione Cutanea Anti-Miasma*; `Lorebook II`: `145` entries con *Famiglio Abissale Echo*, *Cookie Diplomacy*, *Jasper's Pocket Jammer*, *Yellow VW Beetle Keys*, *Douglas Signet Ring* e *1666 Douglas Ledger*; `Lorebook III`: `48` entries con *Professor Mollusk*, *Diffusori di Feromoni* e *Scommessa Mu Alpha Nu*; `NPC Primary`: disambiguazione esplicita *Marcus Thornfield vs Marcus O'Connor*) e nelle Character Card di `Wulfnic` (*Gamli*), `Erik` (confine paterno granitico e metafora dei *Cuccioli d'Inverno*), `Malachia` (*Vígit / Il Bastione*) e `Jasper` (moneta d'argento tra le nocche e ponte technomantico con Larek), con deployment live via API Wyvern (`HTTP 200`).
+
+### 03/11/2026 - Micro-Proxy Free Tier: Diagnosi "Network Error" e Rimozione Modelli Inesistenti
+
+- **Diagnosi `AxiosError: Network Error` da Wyvern**: Proxy operativo (health OK, preflight CORS + Private Network e POST verificati con origin `https://app.wyvern.chat`); nessuna richiesta Wyvern presente in `proxy/uvicorn.log` dopo l'avvio delle 00:23. Causa individuata lato browser (permesso Chrome "Accesso alla rete locale" o blocco client), non lato proxy.
+- **`proxy/config_free_proxy.json`** (backup: `config_free_proxy.json.bak_20261103`): Rimossi solo i modelli che restituivano 404 / `model_not_found` nel log, senza alterare né rinumerare le priorità:
+  - P3: rimosso `gemini-2.5-pro` (resta `gemini-4-argon`).
+  - P4: rimosso `gemini-3.8-flash-thinking` (resta `gemini-3.8-flash`).
+  - P5 `p5-gemini-pro-creative` eliminato (`gemini-2.0-pro-exp-02-05`, `gemini-exp-1206`).
+  - P11 `p11-claude-3.5-openrouter` eliminato (`anthropic/claude-3.5-sonnet`, `anthropic/claude-3.5-haiku`).
+  - P12 `p12-qwen-sambanova` eliminato (`Qwen2.5-72B-Instruct`).
+  - Upstream totali: 32 -> 29. Hot-reload confermato e test di completamento 200 OK.
+- **Esposizione LAN del proxy**: `host` portato da `127.0.0.1` a `0.0.0.0` in `config_free_proxy.json` su richiesta dell'utente (LAN privata con soli dispositivi personali, nessuna autenticazione). Proxy riavviato (`Uvicorn running on http://0.0.0.0:5005`), raggiungibile su `http://192.168.1.5:5005/v1`; health, `/v1/models` e preflight CORS + Private Network verificati. Firewall: regola inbound `python.exe` attiva solo sul profilo Pubblico. Avvio automatico confermato via `shell:startup` (`start_proxy.vbs - collegamento.lnk`).
+
+### 02/11/2026 - Integrazione Completa della Lore Emergente: St. Brugge, Padre Revazhael, Cristallografia Runica e Allineamento Multi-Tier
+
+- **Tier 2 Knowledge Vault / Second Brain (`knowledge/Lore_Worldbuilding/` & `docs/world/`)**:
+  - *Sei Nuovi Articoli Enciclopedici Modulari*:
+    1. `ACADEMIC_INSTITUTIONS_ST_BRUGGE_AND_SUCC.md`: St. Brugge Private Academy (architettura gotica, biblioteche con interdizioni runiche, curriculum esoterico avanzato di magia, alchimia, demonologia e rune, lezioni private con Padre Revazhael, frequenza di Alyssa e Jasper) e geografia della SUCC (Welcome Day 2024, percorsi accademici, governance sportiva).
+    2. `APPLIED_RUNIC_CRYSTALLOGRAPHY_AND_MAGITECH.md`: Cristallografia runica applicata, fusione di Elder Futhark e reticoli cristallini per congelare incantesimi senza perdita energetica; specifiche dei cilindri incantati a risonanza individuale (formato torcia tascabile, attivazione istantanea a scatto "snap", zero mana draw durante l'uso, taratura armonica su misura vs fragilita intrinseca e tempi di ricarica dei cilindri commerciali DMHA).
+    3. `PLANAR_COSMOLOGY_ABYSSAL_VS_VOID_MAGIC.md`: Divergenza ontologica ed energetica tra Magia Abissale (Abisso Infernale Profondo, matrice esotermica vivente, autorita sovrana, demoni superiori come Padre Revazhael) e Magia del Vuoto / Necromanzia Applicata (Vuoto Interstiziale, matrice endotermica, entropia fredda e frammenti d'anima residui), matrice comparativa e osservazione accademica di Sierra Cruz.
+    4. `FATHER_REVAZHAEL_AND_SUPERIOR_DEMONS.md`: Demone Superiore millenario, Greater Incubus / Demone del Desiderio, segreto del Vero Nome ("Revazhael") e vulnerabilita alla sottomissione, etica ferrea del consenso assoluto, presenza e risonanza vocale, mentore dei gemelli a St. Brugge, doni sacri (Armatura Abissale, Chiave della Dimora del Rifugio con il maggiordomo Kobal), ruolo nel Greek Row della SUCC (residente ad ARO, tuttofare di fiducia per TIT).
+    5. `ALYSSA_AND_JASPER_FIELD_AND_HUNTER_BACKGROUND.md`: Credenziali sul campo e reputazione dei gemelli; Alyssa (Pre-Med alla SUCC, Guaritrice Certificata di Gilda Rank A, Hunter ID ADB-555, nulla osta SR3S, Voto di Pacifismo Assoluto, pochette dimensionale con vetreria alchemica distillatoria, nido di pelliccia in Suite 3 con peluche Wolfy); Jasper (Ingegneria Acustica e del Suono, Hunter di Gilda Registrato Rank A, Hunter ID JDB-555, nulla osta SR3S, Katana in Vetro di Drago ancestrale, Armatura Abissale, intimidazione della confraternita KSA al Welcome Fest).
+    6. `DCC_SECURITY_CAMPUS_INTEGRATION_AND_ATHLETICS.md`: Accordo esecutivo tra il Rettore Archer Wolfwood ed Erik Douglas (Erik capo allenatore degli Ice Hockey Bears con allenamenti alle 05:30 in cambio dell'integrazione di sicurezza DCC nel campus SUCC), Maggiore Kaladin Nargathon in coordinamento con Chief Warg, copertura droni biometrici ad alta quota, Barkley Rover (assistente allenatore SUCC Bulls) e dinamiche Greek Row.
+  - *Aggiornamento dell'Indice Globale*: `EXTERNAL_RESOURCES_INDEX.md` aggiornato alla Versione 1.1 con Sezione 3.11 dedicata al Second Brain Knowledge Vault, censimento completo dei 6 nuovi articoli e metrica totale risorse portata da 77 a 83.
+  - *Sincronizzazione Documento di Mondo*: `docs/world/Svartulfr_World_Doc.md` sincronizzato alle linee 291, 870, 873 e 1042-1045 con la presenza di Padre Revazhael ad ARO/TIT, il curriculum St. Brugge, l'accordo hockey Bears al St. Neptune Stadium e l'ambiente di Suite 3 a Theta Iota Theta.
+
+- **Tier 2 Standalone Lorebooks (`FINAL/` & `lorebooks/optimized/`)**:
+  - *Lorebook I (`_gwwCxCfQ6PQaLEjAQVpJL`)*: Inclusi 2 concetti di teoria magica (`lb1_concept_applied_runic_crystallography` e `lb1_magic_abyssal_magic_distinction`), portando il totale a 239 entries.
+  - *Lorebook II (`_HfG7TeV6MJyj6bxMwxkpt`)*: Incluso l'item tattico `lb2_item_enchanted_resonant_cylinders` (tipo item, matrice di attivazione istantanea senza cast delay), portando il totale a 143 entries.
+  - *Lorebook III (`_9zWTGqYJNJ4BCDMj8gfcD`)*: Incluso il concetto accademico `succ_lb3_st_brugge_academy`, portando il totale a 47 entries; risolta l'omofonia dell'ID dell'entry #40 (`event_partita_di_campionato_hockey` per la partita di hockey Bears, differenziata da `event_partita_di_campionato_` dei Bulls).
+  - *Location Lorebook (`_EjXxkmPVhpCXg8xABpFkK`)*: Bonificate le chiavi di attivazione dell'entry #51 St. Brugge Private Academy (epurate le broad keys "Seven Hills", "Douglas", "Blackwood", "private academy") e aggiunta la sub-location `loc_theta_iota_theta_suite_3` (Suite 3 di TIT, 1.570 caratteri con nido di pelliccia, poster Grave Mistake e living space condiviso), portando il totale a 226 entries.
+  - *NPC Secondary (`_Uht3Ckz44JBDrPnUHq7LV`)*: Riconciliata l'entry #23 per Father Revazhael (Rev) con chiavi complete ed estensione narrativa; normalizzata l'entry #211 per Larek Steeltooth con schema canonico, avatar DCC, regex multilinea e flag di esclusione.
+  - *NPC Primary (`_zwEqgEEzh12X6gHVmMKKC`)*: Arricchite le schede dossier di Alyssa Douglas (eliminata la dicitura obsoleta "Novice Healing Mage", integrate credenziali ADB-555, vetreria alchemica e nido in Suite 3) e Jasper Douglas (integrate credenziali Hunter JDB-555, accordatura acustica dei cilindri, intimidazione KSA e rimossi i marchi obsoleti alla clavicola).
+  - *Parita Assoluta e Mirroring*: Tutti gli 11 file dei lorebook mantengono una parita byte-for-byte `entries == lexicon` perfetta, zero macro `{{age}}`, zero broad keys sulle voci NPC e sincronizzazione speculare tra `FINAL/` e `lorebooks/optimized/`.
+
+- **Tier 2 Character Cards & User Personas (`FINAL/` & `ARCHIVIO/cards_legacy/`)**:
+  - `FINAL/Jasper_Douglas_Bloodmoon_card.json`: Blocco PList riga 1 su singola riga con credenziali complete (alumnus St. Brugge, Registered Hunter JDB-555, Mark of Sol su anca destra, positive framing orecchie animali); allineamento del livello RPG da Level 3 a Level 19 coerente con l'eta anagrafica (19 anni); aggiornamento di Backstory, Family & Pack e Voice & Behavior con l'apprendistato congiunto, accordatura acustica e reputazione SUCC.
+  - `FINAL/personas/Jasper_Persona.json`: Sincronizzazione perfetta con la character card di Jasper; applicato il positive framing per l'orecchio lupino singolo ed eliminato ogni riferimento al marchio alla clavicola.
+  - `FINAL/personas/Alyssa_Persona.json`: Blocco PList riga 1 su singola riga con credenziali complete (alumnus St. Brugge, Certified Guild Healer ADB-555); eliminata ogni occorrenza di "Novice Healing Mage"; arricchite Backstory e dinamiche Suite 3 con Voto di Pacifismo Assoluto e vetreria alchemica.
+  - `ARCHIVIO/cards_legacy/Alyssa_Douglas_Bloodmoon_card.json`: Sincronizzazione del blocco PList e di personality; arricchimento di `SIGNATURE ITEMS & VEHICLE` con i cilindri risonanti tascabili e vetreria distillatoria; applicato il positive framing in `visual_description` e `post_history_instructions`.
+
+- **Tier 3 Verifica Rigorosa, Regression Testing & Schema Parity**:
+  - Risolta l'omofonia ID residua in `FINAL/Svartulfr_Lorebook_III.json` ed ottimizzato speculare, rinominando l'entry #40 in `event_partita_di_campionato_hockey` con 47 ID univoci su 47 entries e perfetta identita `entries == lexicon`.
+  - Sviluppato ed eseguito il test runner esaustivo `scripts/verify_milestone4_full_regression.py` a copertura dell'intera suite di verifica:
+    - `scripts/verify_milestone_1.py` (6/6 verifiche passate al 100%).
+    - `scripts/test_milestone_1_adversarial.py` (76/76 verifiche passate al 100%).
+    - `scripts/verify_milestone2_lorebooks.py` (6/6 batterie passate al 100%).
+    - `scripts/verify_milestone3_cards_personas.py` (10/10 test passati al 100%).
+    - `scripts/verify_npc_schema_contract.py --all` (100% pass rate su tutti i contratti).
+    - `scripts/verify_marks_and_images.py` (8/8 immagini e 12/12 invarianti passate al 100%).
+    - `scripts/vault_health_check.py` (42/46 check passati, 0 errori critici bloccanti).
+  - Rispetto rigoroso di zero em-dashes (`\u2014`), positive framing su demi-umani e coerenza cronologica con l'Anno 2024 del World Clock.
+
+### 01/11/2026 - Riorganizzazione Cascata Proxy Free Tier con Pilastri Fiat e Ranking RPG
+- **Aggiornamento Cascata Failover Proxy (`proxy/config_free_proxy.json` & `proxy/free_tier_proxy.py`)**:
+  - *Pilastri Fiat Primari (Priorità 1–8)*: Consolidati i 4 pilastri irrinunciabili: GLM 5.2/5.3 (BigModel Direct & OpenRouter), Gemini 4 Argon, Gemini 3.8 Flash & 2.0 Pro Creative, e Gemma 4 (SambaNova Cloud, OpenRouter, Chutes).
+  - *Epurazione Modelli Lite*: Escluso tassativamente Gemini Flash-Lite dall'ecosistema di generazione RPG, sostituito da Gemini 2.0 Pro / Exp Creative.
+  - *Ranking Qualitativo RPG (Priorità 9–22)*: Ordinamento decrescente basato su coerenza e profondità narrativa TTRPG: DeepSeek V3/V3.2 $\to$ Claude 3.5 Sonnet & Haiku $\to$ Qwen 2.5 72B & 3.8 27B $\to$ Llama 3.3 70B $\to$ Mistral Large 2 $\to$ NVIDIA Nemotron 3 Ultra 550B $\to$ GitHub Models.
+  - *Safety Net (Priorità 23–30)*: Rete di salvataggio a fallback su OpenRouter Free (`liquid/lfm-2.5`, `flint`, `xing4`, `dots-3`, `laguna-s`).
+  - *Supporto PNA e Risoluzione Network Error*: Introdotto `allow_private_network=True` e middleware ASGI per abilitare `Access-Control-Allow-Private-Network: true` per le chiamate cross-origin da Wyvern (`https://app.wyvern.chat`).
+  - *Sanitizzazione Parametri & Loading .env*: Supporto automatico a `python-dotenv`, mappatura alias di chiavi ambientali e rimozione automatica di penalty non supportate dai provider.
+- **Audit Completo API Key e Guida Ufficiale (`proxy/API_KEY_ACQUISITION_GUIDE.md`)**:
+  - Pubblicata matrice esaustiva di tutte le 15 API Key supportate, con quote gratuite (RPM/TPM/RPD), procedure di registrazione zero-cost e console URL ufficiali per Zhipu, DeepSeek, Google AI Studio, Groq, SambaNova, Cerebras, SiliconFlow e Mistral.
+- **Allineamento Script e Scheduled Automation (`daily-proxy-free-models`)**:
+  - Aggiornato `proxy/update_free_models.py` con blacklist rigorosa per modelli lite/utility e protezione dei 4 pilastri fiat.
+  - Aggiornato `sidecar.json` in `~/.gemini/config/sidecars/daily-proxy-free-models/` con le nuove direttive di presidio della gerarchia RPG.
+- **Validazione Indipendente Victory Auditor**: 40/40 test superati con successo (`pytest tests/`).
+
+### 01/11/2026 - Risoluzione Definitiva Leakage Narrativo Orecchie Demi-Umani & Positive Framing
+
+- **Bonifica Anti-Echoing Anatomia Demi-Umani ("Pink Elephant Problem")**:
+  - *Diagnosi del Problema*: Frasi negative presenti nelle schede e negli outfit (`"No orecchie umane"`, `"(nessun orecchio umano visibile)"`, `"senza orecchie umane ai lati"`) provocavano l'attivazione spuria dei token negativi nella matrice di attenzione dell'LLM, inducendo il bot a rigurgitare e ripetere continuamente in narrativa la formula *"prive di qualsiasi orecchio umano ai lati del volto"*.
+  - *Adozione della Disciplina di Positive Framing Puro*:
+    - Riformulate tutte le descrizioni di fisionomia e acconciatura nelle character card, outfit, scenari e greeting per descrivere esclusivamente ciò che è presente in modo affermativo (es. *"singolo paio di orecchie da lupo sulla sommità del capo, perfettamente integrate tra i capelli"*).
+    - Relegazione formale dei vincoli negativi (`--no human ears`) esclusivamente ai parametri tecnici dei generatori visivi (Argon / Gemini Imagen), con divieto categorico di inserimento nei testi del contesto chat per l'LLM.
+  - *Aggiornamento Obbligatorio in `post_history_instructions`*:
+    - Integrata la nuova direttiva di stile in coda alle istruzioni finali:
+      `"Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead. Demi-human anatomical discipline: treat single animal ears as the natural norm; never mention, describe, or reiterate the absence or lack of human ears in narrative descriptions."`
+  - *Bonifica File Locali (FINAL/)*:
+    - 10 Character Cards (`FINAL/*_card.json`): outfits, descrizioni e `post_history_instructions` aggiornati.
+    - 64 Scenari (`FINAL/scenarios/*.json`): rimossi tutti gli incisi negativi da premade scenes e scene instructions.
+    - 3 User Personas (`FINAL/personas/*.json`): rimosso `(nessun orecchio umano laterale)` in `Alyssa_Persona.json`.
+    - Regole di Progetto: aggiornati `.agents/rules/03_outfits_e_coerenza_visiva.md` e `GEMINI.md` (Sezioni 3 e 5).
+  - *Deployment e Validazione Live su Wyvern Web API*:
+    - Tutte le 9 Character Cards standalone in `/mine` aggiornate con payload flat (`PUT /api/characters/{cid}`), verificate con HTTP 200 e 0 clausole negative residue.
+    - Tutti i 44 Scenari del World `_YpX47fNraQFw2dD7TdycJ` verificati e bonificati via API (`PUT /api/worlds/scenarios/{sid}`) con ID stringa, verificati con 0 clausole negative residue.
+    - Collaudo headless Chrome DevTools / Playwright su WyvernChat completato con successo (zero errori console, zero errori di rete, zero leakage nel DOM).
+
+### 01/11/2026 - Creazione e Deployment Live di Larek Steeltooth & Omni-Sync Wyvern
+- **Integrazione Canone Larek Steeltooth (World Character #127 & Lorebook NPC Secondary)**:
+  - *Identita e Adattamento Lore*: Recuperato il personaggio ancestrale Larek (secondogenito di Nahgigoth, fratello di Ikkath e nipote di Morgeth Steeltooth) e ricollocato nella SUCC contemporanea come studente del terzo anno di Ingegneria Informatica, membro della confraternita Alpha Rho Omega (ARO), e amministratore IT/tuttofare di fiducia della sororita Theta Iota Theta (TIT).
+  - *Standard JED+ e SPECIAL D20*: Schedatura JED+ completa con blocco attributi PList a riga singola, 4 sezioni narrative (BACKSTORY, FAMILY & CLAN, VOICE & BEHAVIOR, THE HANDYMAN'S HONOR), 9 outfit contestuali con ID univoci (casual, business / campus, gala / formal, party / club, beach / terme, sleep, nude, hybrid shift / mutation, full shift / other), allineamento World Clock (birthdate: 10301784, 12 Marzo 2003, eta 21) e statistiche S.P.E.C.I.A.L. D20 bilanciate (Might 6, Resilience 6, Agility 4, Wit 7, Presence 4, Scouting 4, Somma 31, Livello 21).
+  - *Deployment Live via Web API (POST /api/worlds/characters)*: Creato con successo nel World autoritativo _YpX47fNraQFw2dD7TdycJ con ID live _PqRVec7Aa42KGUhK2J8GQ (totale World Characters portato da 126 a 127).
+  - *Omni-Sync dei 6 Lorebook Standalone (PUT /api/lorebooks/{id})*:
+    - Lorebook I (_gwwCxCfQ6PQaLEjAQVpJL): 237 entries distribuite (HTTP 200).
+    - Lorebook II (_HfG7TeV6MJyj6bxMwxkpt): 142 entries distribuite (HTTP 200).
+    - Lorebook III (_9zWTGqYJNJ4BCDMj8gfcD): 46 entries distribuite (HTTP 200).
+    - Location (_EjXxkmPVhpCXg8xABpFkK): 225 entries distribuite (HTTP 200).
+    - NPC Primary (_zwEqgEEzh12X6gHVmMKKC): 99 entries distribuite (HTTP 200).
+    - NPC Secondary (_Uht3Ckz44JBDrPnUHq7LV): 212 entries distribuite (HTTP 200), con Larek registrato e soppressione nativa ignored_characters: ["_PqRVec7Aa42KGUhK2J8GQ"].
+  - *Sincronizzazione File Locali*: Aggiornati FINAL/Larek_Steeltooth_card.json, FINAL/Svartulfr_Characters.json, FINAL/Svartulfr_NPC_Secondary.json e lorebooks/optimized/Svartulfr_NPC_Secondary.json con parita byte-for-byte entries == lexicon.
+
+
+### 01/11/2026 - Salvataggio Automatico Chat e Transcript delle Automazioni in SvartulfrVerse
+- **Pipeline di Archiviazione Chat Automazioni (`logs/automations/`)**:
+  - *Script Autoritativo `scripts/archive_automation_chat.py`*: Sviluppato e collaudato lo script dedicato che estrae il transcript grezzo della sessione da Antigravity, lo archivia in `logs/automations/transcripts/YYYY-MM-DD_HHmm_<automation>.jsonl` e genera un documento Markdown formattato e immediatamente leggibile in `logs/automations/YYYY-MM-DD_HHmm_<automation>.md`, aggiornando un indice cronologico in `logs/automations/README.md`.
+  - *Aggiornamento Sidecar delle 3 Automazioni*: Integrata nei prompt di `daily-character-enrichment`, `daily-wyvern-monitor` e `daily-proxy-free-models` l'istruzione vincolante di esecuzione di `archive_automation_chat.py` a chiusura sessione, garantendo i relativi permessi di esecuzione in `agent_permissions`.
+  - *Persistenza Report nel Daily Runner*: Aggiornato `scripts/daily_maintenance_runner.py` per salvare copie storiche timestamped dei report di manutenzione direttamente in `logs/automations/`.
+
+### 01/11/2026 - Blindatura System Prompt & Regole Lore: Asimmetria Informativa, Segretezza Licantropica e Wulfnic 'Nonno Nic'
+- **Risoluzione Definitiva Drift Metagaming (OOC Wulfnic / Famiglia Douglas / Lore Esoterica)**:
+  - *Diagnosi del Problema*: Nelle chat di gruppo e negli scenari collegati alla SUCC, l'inclusione di voci di Lorebook e schede descrittive su Wulfnic (Wolf King / 1,200yo Firstborn), sulla Casata Douglas e sui misteri della Luna Bianca provocava metagaming/leak informativo: gli NPC non-licantropi (Jared Thompson, Santiago Vance, Bailey Rogers, Mac Sanchez-Rogers, Stanley Davies, ecc.) reagivano come se conoscessero i titoli sacri e l'identità ancestrale di Wulfnic.
+  - *Codifica dell'Asimmetria Informativa (`<information_asymmetry_and_werewolf_secrecy>`)*:
+    1. *Segretezza dei Licantropi & Folklore come Leggenda Metropolitana*: I lupi sono fieri ed ermetici; al di fuori dei licantropi e dei branchi legati dal giuramento a Wulfnic, il "Re dei Lupi", l'"Enigma" e i miti dei Firstborn sono considerati pure leggende metropolitane o chiacchiere da bar.
+    2. *Percezione Pubblica dei Douglas*: Per i sovrannaturali comuni e studenti della SUCC, i Douglas sono solo una ricca famiglia locale di costruttori (DCC) nota per la filantropia e il finanziamento del Neptune Stadium / Douglas Arena; Erik Douglas è ricordato come ex capitano ed eroe dell'hockey universitario (SUCC Bears).
+    3. *Wulfnic è Rigorosamente "Nonno Nic"*: Agli occhi di studenti, amici e compagni di squadra (Jared, Santiago, Bailey, ecc.), Wulfnic è unicamente ciò che Alyssa e Jasper hanno raccontato: il loro "nonno Nic", un anziano montanaro massiccio, rustico, burbero ed eccentrico che vive nei boschi con un vecchio pickup. Zero conoscenza o sospetto dell'identità millenaria.
+    4. *Dottrina Esoterica Inaccessibile*: La Luna Bianca (Máni), i Purosangue (Truebloods), il Sangue Fondatore e le rune sacre sono dogmi religiosi ed esoterici interni ai licantropi; i non-licantropi non li conoscono né li sanno decifrare.
+  - *Deployment File di Configurazione Aggiornati*:
+    - `FINAL/PROMPT_OVERRIDES_WYVERN.md`: Inserito `<information_asymmetry_and_werewolf_secrecy>` nella Sezione 1 (`<system>`) e rinforzato in `<formatting_and_rules>` nella Sezione 2 (`post_history_instructions`).
+    - `FINAL/prompts/Svartulfr_Master_TTRPG_Prompt_Assembly.json`: Inserito nel `main_prompt_template`, `main_prompt_sections`, nel blocco `svartulfr_grounding_and_chronology` e nei guardrail del `floating_prompt_template`.
+    - `FINAL/assistants/Svartulfr_Game_Master_Assistant.json`: Aggiornato `system_prompt` (`<character_knowledge_and_thought_privacy>`) e `final_instructions`.
+    - `FINAL/Svartulfr_Master_Scenario.json`: Aggiornato `scenario`, `system_prompt` e `final_instructions`.
+    - `.agents/rules/05_precedenza_lore_e_discrepanze.md` & `GEMINI.md`: Formalizzata la Sezione 10 / sottosezione vincolante sulle invarianti di conoscenza e asimmetria informativa.
+
+### 01/11/2026 - Adozione Architettura "Second Brain / LLM Wiki 2026" & Motore Vault Health Check
+- **Integrazione Metodologia LLM Wiki (Karpathy / CoALA / MemGuard)**:
+  - *Standardizzazione Metabolismo Vault*: Sviluppato e implementato il motore autoritativo `scripts/vault_health_check.py` per il monitoraggio rigoroso delle 6 dimensioni di salute (Contraddizioni di canone, Struttura JED+, Igiene trigger anti-collisione, Unicità Johnny.Decimal, Parità byte-for-byte `entries == lexicon` ed Efficienza infrastruttura/proxy).
+  - *Integrazione Task 0 nel Daily Maintenance Runner*: Aggiornato `scripts/daily_maintenance_runner.py` per eseguire preliminarmente il Vault Health Check prima dei batch di arricchimento lore, monitoraggio Wyvern e rotazione proxy free.
+  - *Collaudo con Successo*: 44 verifiche eseguite, 41 check superati a pieni voti, 0 errori critici bloccanti e salvataggio automatico del report in `scratch/vault_health_report.md`.
+- **Risoluzione & Deployment 3 Automazioni Native Antigravity Sidecar**:
+  - *Diagnosi e Bonifica*: Risolto il disallineamento per cui le automazioni giornaliere erano rimaste relegate a un timer di sessione effimero (`schedule`) non visibile nella dashboard UI.
+  - *Creazione 3 Sidecar Scheduled*: Registrate in `~/.gemini/config/sidecars/` con timezone `Europe/Rome` e permessi granulari per workspace:
+    - `daily-character-enrichment`: ogni giorno alle 09:00 (`python scripts/daily_character_enrichment.py`).
+    - `daily-wyvern-monitor`: ogni giorno alle 09:15 (`python scripts/daily_wyvern_platform_monitor.py`).
+    - `daily-proxy-free-models`: ogni giorno alle 09:30 (`python proxy/update_free_models.py`).
+  - *Test Run Esecutivo*: Validati i comandi da riga di comando con exit code 0 e piena operatività.
+
+### 31/10/2026 - Conclusione Sessione: Esecuzione Omni-Sync Totale con 100% Health
+- **Esecuzione Pipeline di Sincronizzazione Totale (Omni-Parity)**:
+  - *Token Auth*: Rigenerato e verificato il token Firebase Auth via LevelDB Chrome.
+  - *World Metadata & Snapshot*: Sincronizzati 126 World Characters (`FINAL/Svartulfr_Characters.json`), 188 World Locations (`FINAL/Svartulfr_Location.json`), 731 voci World Lexicon e tutti i 44 Scenari in `FINAL/scenarios/`.
+  - *Cataloghi RPG*: Sincronizzate 24 Specie, 37 Occupazioni e 74 Tratti in `FINAL/rpg_*_catalog.json` e aggiornato `FINAL/Svartulfr_World_RPG_Config.json`.
+  - *Lorebooks Standalone*: Verificata al 100% la parità `entries == lexicon` byte-for-byte su tutti i volumi (`Lorebook I`: 237, `II`: 142, `III`: 46, `NPC Primary`: 99, `NPC Secondary`: 211).
+  - *Audit Scenari & Attitudes*: 44/44 scenari superati a pieni voti (zero refusi cremisi, colori ufficiali giallo/blu SUCC confermati, singola scena premade, zero warning auto-trigger, startup script de-duplicazione attivo e zero anomalie 'someone' nelle attitudes).
+
+### 31/10/2026 - Risoluzione Anomalie Attitudes 'Erik -> someone' & Correzione Colori Ufficiali SUCC (Giallo e Blu)
+- **Risoluzione Bug Attitudes 'Erik -> someone' (_qfaywY2yfrGWcxPBdmURD)**:
+  - *Diagnosi*: Erik presentava 8 attitudes con `target_id` obsoleti (riferiti a una vecchia istanza di card cancellate) e campo `target: ""` vuoto. Il frontend di Wyvern, non riuscendo a risolvere gli ID nel World corrente e trovando stringa vuota, ricorreva al fallback predefinito `"someone"`.
+  - *Risoluzione*: Aggiornati via API (`PUT /api/worlds/characters/_qfaywY2yfrGWcxPBdmURD`) tutti gli 8 target con gli ID reali del World corrente ed etichetta testuale esplicita `target`:
+    - Alyssa (`_FGeNBqjrt9fJJJyXTDgxM`, target: "Alyssa", intensity: 95)
+    - Jasper (`_mUEUDfmTG4m7wNyQ7WQKx`, target: "Jasper", intensity: 90)
+    - Malachia (`_QQXte9xWjMeMtqEJfwrc3`, target: "Malachia", intensity: 95)
+    - Noah (`_YzcPc7dRLkttzR2jKX93z`, target: "Noah", intensity: 90)
+    - Logan (`_KW6aNaRYTengVR4NBmG7J`, target: "Logan", intensity: 88)
+    - Edric (`_4QWHxwHBpNnfjmNYm3tNr`, target: "Edric", intensity: 90)
+    - Kaladin (`_9YcrRj1BTHCL2e1Up3exz`, target: "Kaladin", intensity: 95)
+    - Wulfnic (`_P1HrVjkY9TGnymNaAWX1j`, target: "Wulfnic", intensity: 99)
+- **Correzione Colori Istituzionali SUCC (Giallo e Blu / Gold & Navy Blue)**:
+  - Eliminato il riferimento errato *"cremisi e oro"* sostituendolo con i colori ufficiali dell'ateneo **giallo e blu** come da canone SUCC (`io-succ.uwu.ai` e wiki).
+  - Rettificati sia i testi di scena (`premade_scenes`) sia le premesse di scenario (`scenario_premise` e `description`) sui 3 scenari del Welcome Day (`_JPdqckWQBPDwdbxhEJLNK` Alyssa POV, `_hWre7H8xQRbWjkN2bAk4e` Jasper POV, `_r7hdYkNzVH8Ub3TnyqDJP` Scena Corale) e in tutti i rispettivi file JSON in `FINAL/scenarios/`.
+
+### 31/10/2026 - Dotazione Definitiva Signature Items dei Gemelli (Alyssa & Jasper)
+- **Risoluzione Totale Alyssa POV (_JPdqckWQBPDwdbxhEJLNK)**:
+  - *Maggiolino Giallo*: Capote in tela beige coordinata agli interni beige, ammaccatura sul parafango posteriore conservata per carattere, targa LIL MN e adesivo Jasper: CAUTION: OMEGA DRIVING. If you ride my ass, my Alpha is gonna ride yours.
+  - *Dimensional Pochette (Bag of Holding)*: Cuoio verde smeraldo scuro, fibbie in argento a testa di lupo e ricamo girasole. Contiene l'intero kit medico/botanico, tomi, sopravvivenza, guardaroba rotante, coperte/lenzuola per il nesting, saponi profumati e biscotti caldi.
+  - *Signature Keepsakes & Reliquie*: Alyssa's Plush Wolf (Wolfy da Wulfnic), Enchanted Cylinders tattici, Emergency Fail-Safe Medallion cinetico, Dimensional Refuge Key (Father Revazhael per l'Otherworld), SR3S Guild Pass & Tessera Hunter ID ADB-555 (Rank A, Healer & Support Mage).
+  - *Risoluzione Contraddizione*: Rimosso il bracciale in filo d'argento (incompatibile con la severa Silver Allergy lupina).
+  - *Conversione Economica*: Allineati i crediti al tasso reale (1 Cr = 1 cent US) impostando .00 USD + 50.000 DMHA Guild Credits (.00 eq.).
+- **Registrazione & Dotazione Jasper POV (_hWre7H8xQRbWjkN2bAk4e)**:
+  - *Custom Porsche GTS (DJ-FRQ)*: Nero opaco, murale verde acido fluorescente, lupo ululante sul cofano, targa DJ-FRQ, assetto da corsa/fuga e impianto sound DJ.
+  - *Dragon Glass Katana*: Lama ancestrale in vetro di drago nero ereditata da Nixara Bloodmoon e affidata a Jasper.
+  - *The Abyssal Armor & Twin Daggers*: Armatura leggera e pugnali gemelli in acciaio demoniaco nero di Father Revazhael (St. Brugge).
+  - *SR3S Guild Credentials (Pass & Tessera JDB-555)*: Rank A Tecnomancer / Cyber-Rogue & Recon Support.
+  - *Dotazione Tecnomanzia*: Smartphone & Slicing Cyberdeck, Keychain Porsche & Wyrm Hall 304, portafoglio ID SUCC, Clan Signet Ring, spray soppressore LSE, auricolari e accendino (.00 USD + 50.000 Cr).
+
+### 31/10/2026 - Allineamento Filologico Dotazione Alyssa (Maggiolino Giallo & Cover Gialla Rugged Noah)
+- **Smartphone con Cover Gialla Rugged**: Aggiornato Alyssa's Smartphone (Yellow Rugged Case) (_f7fEWMRBJrk2ybRqDGTYf), inserendo la cover ultra-protettiva rugged color giallo brillante regalata e montata da Noah perché ad Alyssa cade continuamente il telefono a terra.
+- **Maggiolino Giallo & Chiavi**:
+  - Creato nel Lexicon World il veicolo Alyssa's Yellow VW Beetle (LIL🌙MN) (_XXF3g1rMjFpEk1q6rMg64) — cabriolet 4 posti giallo acceso con capote in tela nera, interni beige, targa personalizzata LIL🌙MN e adesivo posteriore CAUTION: OMEGA ON BOARD.
+  - Aggiornato Alyssa's Keychain (Yellow VW Beetle & Dorm Keys) (_r8DLnJp6ApqE7NJaYCBgU) con le chiavi del Maggiolino e della stanza campus.
+- **Douglas Clan Signet Ring**: Creato nel Lexicon World l'anello sigillo sacro della casata (_3KUmFBfBEk8qDJMwJU6x4), portato da Alyssa su catenina al collo.
+- **Starting Inventory Alyssa POV Sincronizzato**: Aggiornato _JPdqckWQBPDwdbxhEJLNK con tutti gli 11 oggetti canonici rigorosamente estratti dalla lore.
+
+### 31/10/2026 - Dotazione Oggetti Iconici & Starting Loadout Alyssa POV
+- **Creazione Nuovi Oggetti nel Lexicon World**: Creati e registrati via API su _YpX47fNraQFw2dD7TdycJ:
+  1. NextGen Arcane-Shielded Smartphone (_f7fEWMRBJrk2ybRqDGTYf)
+  2. Leather Wallet & SUCC Student ID (_tzTRjXDrez96xTXNnkqzr)
+  3. Seven Hills Keychain (Car & Dorm Keys) (_r8DLnJp6ApqE7NJaYCBgU)
+  4. Pre-Med Emergency Trauma & Field Healer Kit (_Xz3d8YUkGXXKGYeUhM1H2)
+- **Configurazione Starting Inventory Completo per Alyssa POV**: Assegnati a SUCC: Welcome Day (Alyssa POV) tutti i 9 oggetti di dotazione canonica (Smartphone schermato, Portafoglio & ID SUCC, Portachiavi Auto & Stanza, Kit Medico/Trauma Pre-Med, Spray Soppressore Odori LSE, Pomata Cicatrizzante Anti-Argento, Bracciale Talismano in Filo d'Argento, Auricolari Wireless, Accendino).
+
+### 31/10/2026 - Pivot su User Persona Puro (Disattivazione 'Choose Your Character' & Spegnimento 'Starts When')
+- **Disattivazione 'Choose Your Character'**: Impostato include_character_select: false su tutti i 14 scenari del World. Il giocatore utilizza esclusivamente la propria User Persona Wyvern ({{user}}).
+- **De-duplicazione via Startup Script**: Il controllo dell'identità è demandato allo script Lua nti_duplicate_user_persona e alle scene_instructions, che disattivano l'NPC corrispondente dal party per azzerare collisioni bot-giocatore.
+- **Risoluzione Warning 'Starts When'**: Impostato event_trigger.enabled: false su tutti i 14 scenari di avvio simulazione. Disattivando l'innesco automatico di metà chat per gli scenari iniziali, vengono azzerati all'istante i 3 warning rossi (opening_choice, 	ime_override, character_slots).
+
+### 31/10/2026 - Correzione Slot Finn Novak (Ala / Childhood Friend) e Vincent Campbell (Hockey Captain)
+- **Allineamento Lore Sportiva SUCC Bears**: Corretta l'etichetta dello slot per Finnegan Novak (_Yk9aK6X9WHzrWPCT7mzEK) da hockey_captain a childhood_friend con label Childhood Friend (Finn Novak), riflettendo il suo vero ruolo di ala (varsity wing) e amico d'infanzia di Alyssa.
+- **Assegnazione Capitano a Vincent Campbell**: Inserito lo slot hockey_captain assegnato al vero capitano della squadra dei Bears, Vincent Campbell (_t88VU9ngKrNW6kGf14nJV), con inserimento automatico nel pool personaggi di tutti i 14 scenari.
+
+### 31/10/2026 - Fix Totale Scenari World: Data, World Character Pool, Character Slots, Player Setup & Startup Script Anti-Duplicazione
+- **Risoluzione Data Errata (When This Begins)**: Ripristinato insertion_point: 10489906 su tutti i 14 scenari del World, allineando la data del Welcome Day al **26 agosto 2024, ore 10:00 UTC** (eliminato il fallback anacronistico al 1 gennaio 827 CE).
+- **Risoluzione Char Unknown**: Sostituiti tutti gli ID delle card standalone con i reali **World Character IDs** del World (_mUEUDfmTG4m7wNyQ7WQKx, _qfaywY2yfrGWcxPBdmURD, _KW6aNaRYTengVR4NBmG7J, _QQXte9xWjMeMtqEJfwrc3, _YzcPc7dRLkttzR2jKX93z, _4QWHxwHBpNnfjmNYm3tNr, _P1HrVjkY9TGnymNaAWX1j, _yAYpmxxnP1gmntXDQPYmG, _Yk9aK6X9WHzrWPCT7mzEK, _EHx1dbCMHbXhNyhNzmPQg, _d9f2AfTWG8V9aBMyabGLy), ripristinando avatar e nomi corretti.
+- **Configurazione Character Slots (Named Roles)**: Popolati gli 11 slot con schema corretto pool: [{character_id, participation_weight}] per Twin, Father, Uncle, Eldest Brother, Brother, Cousin, Grandfather, Enigma Bodyguard, Hockey Captain, Lamia Senior, Succubus Senior.
+- **Player Setup Completo**:
+  - Attivato toggle include_character_select: true (Include 'Choose Your Character' page);
+  - Attivato toggle include_rpg_build: true (Include 'Build Your Stats' page);
+  - Assegnato Starting Currency: .00 USD e 100 DMHA Guild Credits (Cr);
+  - Assegnato Starting Inventory: Student Keys, Wireless Earbuds, Lighter.
+- **WyvernScript Anti-Duplicazione & Runtime Setup**: Registrato lo script Lua nti_duplicate_user_persona su world.scripts e agganciato a startup_script_id su tutti i 14 scenari, prevenendo la duplicazione di Alyssa/Jasper quando il giocatore usa la User Persona corrispondente e gestendo l'erogazione di fondi ed equipaggiamento.
+
+## [2026-10-31] - Modularizzazione Suite Scenari World Wyvern (14 Scenari Singoli), Bonifica Compositi e Importazione JanitorAI
+
+- **Deploy Suite Completa Scenari Singoli sul World (`_YpX47fNraQFw2dD7TdycJ`):**
+  - Implementata e validata l'architettura a **singola premade scene (`premade_scenes.length === 1`)** e **`insertion_point: null`**, eliminando strutturalmente i blocchi `opening_choice` e `time_override` di Wyvern.
+  - Deployati con **HTTP 200** 14 scenari World dedicati al campus SUCC:
+    1. `SUCC: Welcome Day (Alyssa POV)` (`_JPdqckWQBPDwdbxhEJLNK`)
+    2. `SUCC: Welcome Day (Jasper POV)` (`_hWre7H8xQRbWjkN2bAk4e`)
+    3. `SUCC: Welcome Day (Scena Corale)` (`_r7hdYkNzVH8Ub3TnyqDJP`)
+    4. `SUCC: Mattina alla Theta Iota Theta su Greek Row (Alyssa Route)` (`_JJykQPGLKGzAD8qKfcFKt`)
+    5. `SUCC: Laboratori di Biologia Pre-Med (Alyssa Route)` (`_CxyCfanQdnzy9ACd8bqQf`)
+    6. `SUCC: Angolo Riparato dietro la Basilica Library (Alyssa Route)` (`_rFCYCyKTLT1wrD79QCbgb`)
+    7. `SUCC: Scontro sul Ghiaccio all'Allenamento dei Bears (Alyssa Route)` (`_TYKyFbtyHh2xhMtNFe4rL`)
+    8. `SUCC: Spogliatoi dei Bulls e Tunnel dello Stadio (Alyssa Route)` (`_QxnBtfjgdNeUrmJjMMT6p`)
+    9. `SUCC: Concerto al Locale di Dockside (Alyssa Route)` (`_UEbjKnNEaMBjz6qhEAVUk`)
+    10. `SUCC: Wyrm Hall Suite 304 (Jasper Route)` (`_F7gNRyMGL1MWK4F4zpJhR`)
+    11. `SUCC: Sessione di Hacking sul Tetto di Wyrm Hall (Jasper Route)` (`_1H9YEMh94gBrQW4ry9YRE`)
+    12. `SUCC: Tensione alla Fontana del Quad (Jasper Route)` (`_XpGpjpKUQLeA77tdX6LN2`)
+    13. `SUCC: Overclock Notturno nel Magazzino Industriale (Jasper Route)` (`_L4BqghPzYMzyyj1BpXNPj`)
+    14. `SUCC: Festa di Halloween alla Villa dei BRO (Jasper Route)` (`_7Yad19x6GQV4ATb2PPEBm`)
+- **Eliminazione 4 Vecchi Scenari Compositi (HTTP 204 No Content):**
+  - Rimossi definitivamente dal World gli scenari obsoleti multi-scena:
+    - `_FKzLEPnqWX1yXKLpcyCmc` (Svartúlfr: Vita al Campus SUCC & Missioni di Gilda)
+    - `_9bH6m8PMYLWFKNgdmpB4H` (SUCC: Collegiate Arc - Jasper Route)
+    - `_DnNNPzUpDcYRQxLhQnrHY` (SUCC: Collegiate Arc - Alyssa Route)
+    - `_2MTWKjxrQPdQVaz9y4Q7H` (SUCC: Welcome Day al Lunar Quad)
+- **Importazione ed Integrazione Scenari JanitorAI (`/mine`):**
+  - Strutturati ed importati con **HTTP 200** come Standalone Character Scenarios con slot e 6 lorebook collegati:
+    1. `Svartulfr: SUCC-U-VERSE Open World RPG` (`char_scenario_wVPkLYYymzwUKVFmKcfzC`)
+    2. `Svartulfr: The Five Cocketeers (Suite 304)` (`char_scenario_Gkcc1q6b7fLq9qkqAex1r`)
+    3. `Svartulfr: Dean || Wrong Number` (`char_scenario_nYcRx8m9AGrc796dFPwLT`)
+- **Verifica e Persistenza Locale:**
+  - Tutti i file sorgente master allineati e salvati in `FINAL/scenarios/`.
+
+## [2026-10-31] - Apprendimento e Integrazione Wiki Wyvern Worlds & Scenario-Guided-Intro (/learn)
+
+- **Integrazione Standard Scenari a Innesco Timeline (Starts When):**
+  - Integrata la documentazione ufficiale Wyvern ([`wiki.wyvern.chat/en/Features/Worlds`](https://wiki.wyvern.chat/en/Features/Worlds) e [`Scenario-Guided-Intro`](https://wiki.wyvern.chat/Features/Worlds/Scenario-Guided-Intro)):
+    - Codificata l'**Invariante Single Opening** (1 sola premade scene per scenario per eliminare il blocco `opening_choice`).
+    - Codificata l'**Invariante No Insertion Point** (`insertion_point: null` obbligatorio per eliminare il blocco `time_override`).
+    - Parametrizzate le condizioni di innesco `Starts when`: `repeat: "once"` (o `"cooldown"` con turni), `priority` intera e condizioni logiche ancorate a `world_day` (Giorno 1 = Ora 0 = 21 Dicembre 827 CE) con filtri party/persona.
+  - Aggiornate le regole di progetto in [Regola 04](.agents/rules/04_world_clock_e_timeline.md) (§5) e [GEMINI.md](GEMINI.md) (§6).
+  - Aggiornata la skill [wyvern-world-deployer](.agents/skills/wyvern-world-deployer/SKILL.md) (§2.7).
+
+## [2026-10-31] - Apprendimento e Formalizzazione Skill (/learn & /workflow-skill-creator)
+
+- **Codifica Nuova Skill Ufficiale ([`.agents/skills/wyvern-world-rpg-automator/SKILL.md`](.agents/skills/wyvern-world-rpg-automator/SKILL.md)):**
+  - Standardizzata la toolchain automatica per la gestione dei Game/RPG Systems di Wyvern:
+    - Allineamento S.P.E.C.I.A.L. (`STR`, `PER`, `END`, `CHA`, `INT`, `AGI`, `LCK`), base 8, max 30, budget 25.
+    - Combat Role Mapping (`stat_roles`) completo su 11 ruoli.
+    - Motore di Auto-Provisioning dinamico per Specie, Occupazioni e Tratti con persistenza atomica in `FINAL/`.
+    - Risoluzione dell'eccezione Fastify DELETE (`FST_ERR_CTP_EMPTY_JSON_BODY`) tramite omissione dell'header `Content-Type`.
+    - Configurazione dei 12 Custom Moodlets sovrannaturali/biologici sotto `relationship_config.custom_moodlets`.
+    - Bonifica di 54 item con prezzi e 5 shop tematici con `marketplace_config`, azzerando il warning *"items players can never get"*.
+- **Integrazione nelle Regole di Progetto:**
+  - Registrata la nuova skill nell'Inventario Ufficiale di [Regola 14](.agents/rules/14_metodo_operativo_skills_integrate.md) (§5).
+  - Codificata la regola di Auto-Provisioning in [Regola 09](.agents/rules/09_rpg_stats_e_simulation.md) (§5) e in [GEMINI.md](GEMINI.md).
+  - Documentato il bug Fastify DELETE Empty Body in [Regola 11](.agents/rules/11_wyvern_api_sicurezza_e_bug.md) (§11.13) e in [GEMINI.md](GEMINI.md).
+
+## [2026-10-31] - Deep Reconciliation & Fix: 100% S.P.E.C.I.A.L. Coverage (310/310 NPC Lorebooks), Auto-Provisioning (37 Occupazioni / 74 Tratti), e Anti-Collisione Scenari World
+
+- **Fase 1: Risoluzione Deficit S.P.E.C.I.A.L. Lorebook NPC (108 Secondari + 24 Primari):**
+  - Identificato e risolto il bug in `sync_all_characters_rpg.py` (lo skip precoce su stub privi di statistiche effettive):
+    - **108 voci in `Svartulfr_NPC_Secondary.json`** (inclusi 101 personaggi Camp Mystic come Julian Mercer, Kellan Novak, Micah Cross, Adrian Quinn, ecc.) erano prive di riga `[STATS: STR ...; PER ...; END ...; CHA ...; INT ...; AGI ...; LCK ...]`. Calcolate e iniettate tutte le statistiche finali S.P.E.C.I.A.L., associando specie catalogo (`Demi-umano`, `Mutaforma & Antro`, `Non-Morto & Revenant`, ecc.) e classi narrative contestuali.
+    - **24 voci in `Svartulfr_NPC_Primary.json`** bonificate sostituendo sottostringhe non canoniche nel campo `SPECIES:` (es. `Werewolf (...)` $\to$ `Licantropo (Werewolf)`, `Succubus Demihuman` $\to$ `Succube & Incubo (Succubus)`, `Lamia Demihuman` $\to$ `Lamia & Naga (Serpentine)`, `Demihuman Tiger` $\to$ `Demi-umano (Demihuman)`) preservando la stirpe dettagliata nel campo `CLASS:`.
+    - Garantita la parità byte-for-byte `entries == lexicon` su entrambi i Lorebook.
+    - Ottimizzato il payload compatto (< 1MB) eliminando campi ridondanti di metadati (`provenance`, `comment`, `extensions`, `labels`) sincronizzando con **HTTP 200 OK** su API Wyvern (`_zwEqgEEzh12X6gHVmMKKC` e `_Uht3Ckz44JBDrPnUHq7LV`).
+
+- **Fase 2: Auto-Provisioning RPG su World API (9 Nuove Occupazioni, 28 Nuovi Tratti):**
+  - Risolto il token expiry in `scripts/auto_provision_rpg.py` tramite integrazione con `get_auth_token()`.
+  - Auto-provisionate con successo via API `POST /api/worlds/rpg/{occupations|traits}` sul World `_YpX47fNraQFw2dD7TdycJ`:
+    - **Nuove Occupazioni (totale 37 sul World):** `Camp Mystic Camper`, `Camp Mystic Counselor / Staff`, `Sorority Social Coordinator & Aesthetic Influencer`, `Applied Necromancy Scholar`, `Artisan / Tattoo Apprentice`, `Chemistry Student & Secret NSFW Illustrator`, `Logistics Director & Master Cook`, `Chief of Security`, `Clan Patriarch`.
+    - **Nuovi Tratti (totale 74 sul World):** `Symbiotic Feeding`, `Hypnotic Radiance`, `Sorority Matriarch`, `Vulnerable Heart`, `Serpentine Constriction`, `Ectothermic Slumber`, `Morbid Insight / Applied Necromancy`, `Craving Warmth`, `Tiger Demihuman Physiology`, `Master Apprentice Ink Hand`, `Deadpan Pack Immunity`, `Five Cocketeers Anchor`, `Forum Cynic / Online Scar Tissue`, `Secret NSFW Illustrator`, `Involuntary Full Moon Shift`, `Heavyweight Sloucher`, tratti Darkfire (`Sovereign of the Whispering Caves`, `Century-Hardened Sinew`, `Indomitable Will`, `Pain Tolerance`, `Apex Tracker`, `Close-Quarters Bruiser`, `Mountain Bastion`, `Hearthmaster`, `Unyielding Grip`, `Master of Illusions`, `Empathic Diplomat`, `Sinuous Grace`).
+
+- **Fase 3: Correzione Anti-Collisione & Runtime Setup negli Scenari World:**
+  - Corretta l'incongruenza critica nel character pool dello scenario World `SUCC: Collegiate Arc (Jasper Route)` (`_9bH6m8PMYLWFKNgdmpB4H`): eliminato Jasper dal companion pool per evitare lo sdoppiamento dell'utente e inserita Alyssa (`_6exg3yPfe2eCDK4hTftkh`) come gemella companion attiva.
+  - Inserite in `scene_instructions` per tutti e 4 i World Scenarios le istruzioni esplicite per il runtime:
+    - Soppressione dell'entità gemella corrispondente a `{{user}}` se giocata da Alyssa o Jasper.
+    - Iniezione fondi (500 USD, 250 DMHA Credits) ed equipaggiamento iniziale tematico.
+    - Configurazione iniziale di lealtà di branco (100) e cameratesco accademico (70).
+  - Sincronizzati tutti i 4 World Scenarios via API `PUT /api/worlds/scenarios/{id}` con esito **HTTP 200 OK** e salvati i file master in `FINAL/scenarios/`.
+
+- **Fase 4: Verifica Forense Finale (439 Entità Controllate):**
+  - Eseguito `scratch/audit_full_rpg_entities.py`:
+    - Standalone Cards: **9/9 PASS** (0 fallimenti)
+    - User Personas: **3/3 PASS** (0 fallimenti)
+    - Lorebook NPC Primary: **99/99 PASS** (0 fallimenti)
+    - Lorebook NPC Secondary: **211/211 PASS** (0 fallimenti)
+    - World Characters: **126/126 PASS** (0 fallimenti)
+  - Eseguito `scripts/audit_full_omni_sync.py`: 100% compliance su Scenari Standalone, Scenari World, Lorebook e parità file.
+  - Eseguito `scripts/verify_scenarios_playwright.py`: 0 errori e 0 crash client.
+
+- **Fase 1: Revisione RPG Stats & S.P.E.C.I.A.L. Review Omni-Parity:**
+  - Revisionati tutti i 126 World Characters su `_YpX47fNraQFw2dD7TdycJ`, assegnando a ciascuno `species_id`, `occupation_id`, `character_traits` validi dai cataloghi master, statistiche S.P.E.C.I.A.L. coerenti in `base_stats` e blocco `RPG STATS & TRAITS:` in `long_summary` (0 errori di salvataggio via API `PUT /api/worlds/characters/{id}`).
+  - Aggiornate e sincronizzate live via API tutte le 9 Character Card Standalone in `/mine` (`FINAL/*_card.json`), le 3 User Persona (`FINAL/personas/*.json`) e tutte le 99 schede del Lorebook NPC Primary (`_zwEqgEEzh12X6gHVmMKKC`).
+  - Bonificata e ripristinata integralmente la voce di *Ariadne Cirillo* (`CyZknaH7OmYQi5S3ESpNJ`) in `FINAL/Svartulfr_NPC_Secondary.json` e su Wyvern Web API (`_Uht3Ckz44JBDrPnUHq7LV`): ripristinati 9.735 caratteri di contenuto JED+ completo, risolto il troncamento a 555 caratteri, iniettato il blocco S.P.E.C.I.A.L., garantita la piena parità byte-for-byte `entries == lexicon`, ed eseguito il push payload compatto (< 1MB) con esito **HTTP 200 OK** (211/211 voci verificate su API).
+- **Fase 2: Script di Setup Anti-Collisione & Iniezione Risorse Utente (`startup_script`):**
+  - Implementato lo `startup_script` Lua avanzato per gli scenari standalone e Master (`FINAL/scenarios/Svartulfr_Scenario_SUCC_Route_Alyssa.json`, `FINAL/scenarios/Svartulfr_Scenario_SUCC_Route_Jasper.json`, `FINAL/Svartulfr_Master_Scenario.json`):
+    - **Anti-Collisione Dinamica:** Rileva la Persona attiva dell'utente (`user.persona_id` o `user.name`), sopprime la duplicazione del gemello corrispondente come companion/NPC, e assegna automaticamente il gemello opposto allo slot `twin`.
+    - **Iniezione Valute:** Inietta automaticamente in `world_party.currency_balances` (e `party.currency_balances` / `memory._scenario.currency_balances`) 500 USD (`fbecc738-f9f7-4426-b8a1-a237b8ad922c`) e 250 DMHA Guild Credits (`8c7bca5a-5d3f-4780-93cb-5cb63dc2cf0a`).
+    - **Iniezione Inventario Iniziale:** Inietta in `world_party.inventory` e `party.inventory` l'equipaggiamento tematico iniziale (per Alyssa: Pochette Medica Dimensionale, SUCC Student Smart Card, Comm-Link DCC crittografato; per Jasper: Cyberdeck HUD neurale, SUCC Smart Card Wyrm 304, Smartphone DCC con scanner RF).
+    - **Inizializzazione Attitudes & Pacing di Branco:** Configura i legami iniziali di lealtà incrollabile di branco per la famiglia Douglas-Bloodmoon e le relazioni universitarie calde per i compagni di corso.
+  - Sincronizzati via API con gestione concurrency `revision`: Alyssa Route (`char_scenario_CKgwq246DyCj1NNTBV9rt`, rev. 22) e Jasper Route (`char_scenario_Kq4mJEBH83j7Q7DdVfFnF`, rev. 13) con esito **HTTP 200 OK**.
+- **Fase 3: Trasporto Scenari nel World & Creazione 4 World Scenarios:**
+  - Collegati tutti gli scenari standalone al World via `linked_world_id: "_YpX47fNraQFw2dD7TdycJ"`, con `unavailable_count: 0` su tutti gli slot e i 6 Lorebook Standalone collegati (`lorebook_ids`).
+  - Trasportati e sincronizzati sul World `_YpX47fNraQFw2dD7TdycJ` via `POST /api/worlds/scenarios` (e `PUT`) tutti e 4 i World Scenarios tematici con location `_aPqjQX8UBNTC9y2tEUdX3` (Lunar Quad) ed environment `_38JCUykN4wwRfgGjQyjLr` (SUCC campus):
+    1. *SUCC: Welcome Day al Lunar Quad* (`_2MTWKjxrQPdQVaz9y4Q7H`, 3 scene premade)
+    2. *SUCC: Collegiate Arc (Alyssa Route)* (`_DnNNPzUpDcYRQxLhQnrHY`, 7 scene premade)
+    3. *SUCC: Collegiate Arc (Jasper Route)* (`_9bH6m8PMYLWFKNgdmpB4H`, 6 scene premade)
+    4. *Svartúlfr: Vita al Campus SUCC & Missioni di Gilda* (`_FKzLEPnqWX1yXKLpcyCmc`, 5 scene premade)
+  - Archiviati e sincronizzati in locale in `FINAL/scenarios/` per la garanzia al 100% dell'Omni-Parity architetturale.
+- **Fase 4: Validazione Finale & Playwright Headless Verification:**
+  - Eseguita la suite di verifica audit `scripts/audit_full_omni_sync.py`: 4/4 World Scenarios conformi, 2/2 Standalone Scenarios conformi, 211/211 Secondary Lorebook conformi (Ariadne Cirillo verificata con 9.735 caratteri e blocco RPG), parità `entries == lexicon` rispettata.
+  - Eseguito il test headless Playwright (`scripts/verify_scenarios_playwright.py`) con canale Chrome locale: 0 errori critici, 0 boundary exception crash.
+
+## [2026-10-31] - World RPG Systems: S.P.E.C.I.A.L. & Combat Mapping, 98 Entità RPG, 12 Custom Moods, Bonifica 54 Item nei Negozi e Regola di Auto-Provisioning
+
+- **Fase 1: Configurazione S.P.E.C.I.A.L. & Combat Role Mapping (`stat_config`):**
+  - Aggiornato `stat_config` sul World attivo (`_YpX47fNraQFw2dD7TdycJ`) con i 7 attributi S.P.E.C.I.A.L. (`strength`, `perception`, `endurance`, `charisma`, `intelligence`, `agility`, `luck`) con parametri di bilanciamento `base_value: 8`, `max_value: 30`, `point_budget: 25`.
+  - Configurato il blocco ufficiale `stat_roles` per il calcolo delle vitalità e delle azioni di combattimento:
+    - Vitalità: `hp_stat: "endurance"`, `mp_stat: "intelligence"`.
+    - Attacco & Difesa: `physical_attack: "strength"`, `physical_defense: "endurance"`, `special_attack: "intelligence"`, `special_defense: "intelligence"`.
+    - Mobilità & Precisione: `speed: "agility"`, `accuracy: "perception"`, `evasion: "agility"`, `flee: "agility"`.
+    - Fortuna & Resa Critica: `luck: "luck"`.
+- **Fase 2: Popolamento Cataloghi Master RPG (98 Entità Create su World API):**
+  - Eseguito il caricamento massivo via API (`POST https://app.wyvern.chat/api/worlds/rpg/{species|occupations|traits}`) dai cataloghi master in `scratch/`:
+    - **24 Specie** attive con modificatori S.P.E.C.I.A.L., descrizioni diegetiche e `player_selectable: true`.
+    - **28 Occupazioni** attive (classi accademiche, gilda cacciatori DMHA, ruoli di branco e professioni cittadine).
+    - **46 Tratti** attivi (biologia LSE, stirpi dinastiche Firstborn/Founding/Pureblood, risonanze sensoriali, veterani di dungeon e innesti).
+- **Fase 3: Relationship Config & 12 Custom Moodlets di Pacing Emotivo:**
+  - Configurato `relationship_config.custom_moodlets` (e specchiato in `moodlets` per retrocompatibilità totale con i vecchi motori di chat) con i 12 Custom Moods completi di `id`, `label`, `delta`, `duration_hours` ed `effect/description`:
+    1. *Rut* (72h, +15 delta / intensità 5, knotting & dominant urge)
+    2. *Heat* (72h, +15 delta / intensità 5, estro e nesting)
+    3. *Scent Marked* (168h, +10 delta / intensità 3, marcatura olfattiva di legame)
+    4. *Mated Devotion* (720h, +25 delta / intensità 5, devozione psichica indissolubile)
+    5. *Vampiric Blood Hunger* (24h, -5 delta / intensità 4, sete di sangue e zanne affilate)
+    6. *Blood Frenzy* (12h, -15 delta / intensità 5, frenesia sanguinaria di combattimento)
+    7. *Essentia Hunger* (24h, -5 delta / intensità 4, fame di essenza vitale per succubi/incubi)
+    8. *Seductive Haze* (24h, +10 delta / intensità 3, ebbrezza feromonica e seduzione)
+    9. *Pack Bond Resonance* (48h, +15 delta / intensità 2, risonanza empatica di branco)
+    10. *Feral Aggression* (12h, -10 delta / intensità 4, regressione bestiale e ipervigilanza)
+    11. *Blood Oath Bond* (168h, +20 delta / intensità 4, giuramento vincolante di sangue)
+    12. *Betrayed Trust* (72h, -25 delta / intensità 5, lutto e ostilità da fiducia infranta)
+- **Fase 4: Bonifica dei 54 Item del World Lexicon & Configurazione 5 Negozi:**
+  - Aggiornati via `PUT /api/worlds/lexicon/{id}` tutti i 54 item con `item_config` completo (valore bidirezionale in USD `$` e Guild Credits `Cr`, pesi, rarità, flag `tradeable: true`, stackability, equip slot).
+  - Configurati via `PUT /api/worlds/locations/{id}` i marketplace (`marketplace_config`) su 5 location canoniche in Blackwood e Solarton, distribuendo l'intero catalogo dei 54 item:
+    1. *Solarton Market-Zone & Tactical Surplus* (`_H7PpzWXrQ228RgBw1Rqh9`, 19 items)
+    2. *Full Moon Night Market* (`_QHaW3bG49Dx1QW4Ugg8xn`, 15 items)
+    3. *Tidewrack Surf & Coastal Outfitters* (`_PjVjY62CtnLbhrEE69GbK`, 9 items)
+    4. *The Dusty Coyote Roadhouse Kitchen & Pantry* (`_CAAHGnM3BGKpUb7JXYWm7`, 12 items)
+    5. *The Verve Private Cellar & Lounge* (`_HPnYePHbmCVM9tMp69Hrg`, 8 items)
+  - Azzerato al 100% il warning di sistema *"54 items players can never get"* e garantito zero warning *"sold with no price"*.
+- **Fase 5: Codifica della Regola di Auto-Provisioning RPG:**
+  - Codificata la nuova direttiva vincolante in [GEMINI.md](GEMINI.md) (Sezione 8) e [.agents/rules/09_rpg_stats_e_simulation.md](.agents/rules/09_rpg_stats_e_simulation.md) (Sezione 5): in fase di creazione o modifica di personaggi, se una Specie, Occupazione o Tratto non trova corrispondenza esatta nei cataloghi registrati, il sistema/l'assistente deve procedere immediatamente all'auto-provisioning (creazione automatica via API `POST /api/worlds/rpg/{species|occupations|traits}`) con modificatori S.P.E.C.I.A.L. coerenti e sincronizzare i cataloghi master locali.
+- **Fase 6: Validazione & Test Suite Automatizzata (6/6 End-to-End Checks):**
+  - Creata ed eseguita con successo la suite di test end-to-end `scripts/test_world_rpg_full_audit.py` (6/6 check superati con successo, incluso il collaudo live dell'engine `scripts/auto_provision_rpg.py` con creazione e cancellazione pulita di probe senza residui sul server).
+  - Archiviati i cataloghi master definitivi in `FINAL/` (`FINAL/rpg_species_catalog.json`, `FINAL/rpg_occupations_catalog.json`, `FINAL/rpg_traits_catalog.json`, `FINAL/Svartulfr_World_RPG_Config.json`) e sincronizzati tutti gli snapshot locali (`scratch/live_world_*.json`) garantendo al 100% l'Omni-Parity architetturale.
+  - Riscritto lo script di validazione Playwright (`scripts/validate_world_editor_headless.py`) con navigazione effettiva nei sub-pannelli del World Editor (`Game/RPG Systems` -> `Stats & Species`, `Combat`, `Library 1100`), verificando via `input_value()` i 7 campi form S.P.E.C.I.A.L., la presenza di Licantropo nel catalogo specie e l'assenza totale di warning di unobtainable items, con **0 errori di console e 0 errori di rete (HTTP >= 400)**.
+  - Isolato e codificato il bug Fastify `FST_ERR_CTP_EMPTY_JSON_BODY` (HTTP 500 se si invia `Content-Type: application/json` con body vuoto nelle chiamate `DELETE /api/worlds/rpg/.../:id`), risolto omettendo l'header Content-Type per ottenere `HTTP 204 No Content`.
+
+## [2026-10-31] - Unificazione Asset Grafici, Middleware Compattazione Proxy (-44.7%), Deployment Zeera Darkfire Standalone & Propagazione Scenari HSK
+
+- **Riorganizzazione e Unificazione Struttura Directory `assets/`:**
+  - Eliminate le cartelle frammentate e ridondanti (`asset/`, `visual_assets/`) unificando tutto il corpus grafico sotto la cartella canonica `assets/`.
+  - Integrata la suite di prompt master e proporzioni in `assets/divine_marks_and_heights.md` (specifiche canoniche Máni anca sx, Sól anca dx, Gebo polso sx; proporzioni centimetriche e prompt Midjourney v6, SDXL/Pony XL e NovelAI V3 con vincoli anti-bleeding).
+  - Creato l'indice ufficiale [assets/README.md](assets/README.md) con la mappatura esaustiva di `characters/`, `environments/`, `lore_and_gods/`, `NEW_IMAGE/`, `references/` e delle suite di prompt Argon.
+  - Aggiornato l'albero di directory e le descrizioni nel [README.md](README.md) radice.
+- **Ottimizzazione Middleware Proxy Locale `proxy/free_tier_proxy.py` (Compattazione Deterministica -44.7%):**
+  - Implementata la Phase 4a in `PayloadCompactor`: rimozione di commenti HTML/XML `<!-- ... -->`, normalizzazione deterministica Windows CRLF `\r\n` -> Unix LF `\n`, collasso degli spazi superflui tra delimitatori XML (`>\s{2,}<` -> `>\n<`).
+  - Ottimizzata la Phase 5 con compattazione della spaziatura PList nei blocchi JED+ (`;\s{2,}` -> `; `), garantendo la preservazione al 100% dei dialoghi tra virgolette inglesi `"..."` e della struttura semantica narrativa.
+  - Test su payload reali ha confermato una **riduzione del 44.7% dei caratteri/token** sul payload di sistema e una netta riduzione del Time-To-First-Token (TTFT) sui modelli free tier.
+- **Deployment Character Standalone Zeera Darkfire su Wyvern (`/mine`):**
+  - Isolati e risolti i vincoli di validazione dello schema Wyvern (formato oggetto a 5 chiavi per `pronouns`, stringa ID per `linked_world`, obbligatorietà `creator_notes`, esclusione server-side di `wyldfire_code` e `vanity_slug`).
+  - Eseguito il deployment su Wyvern con status **HTTP 200 OK** assegnando l'ID canonico live `_CmkCDzCn36CyYUzfPp2UY` con 9 outfit contestuali bonificati e JED+ puro.
+  - Sincronizzati i master locali [FINAL/Zeera_Darkfire_card.json](FINAL/Zeera_Darkfire_card.json) e [scratch/synced_wyvern_ids.json](scratch/synced_wyvern_ids.json).
+- **Propagazione del Mordente Darkfire negli Scenari Attivi (HSK Consulting):**
+  - Integrata la presenza operativa del network HSK Consulting (Aras per reclutamento accademico/stage con clausole predatorie; Karshin per sicurezza e recupero crediti violento a The Verve e Dockside; Boros per logistica e depositi al porto; Yael e Asag Beast Griven per pattugliamento delle faglie dimensionali e gole montane).
+  - Aggiornati i master locali in `FINAL/scenarios/` e `FINAL/Svartulfr_Master_Scenario.json`.
+  - Aggiornati con successo via API (**HTTP 200 OK**) con gestione corretta dell'optimistic concurrency control (`revision`) i due scenari live:
+    - *Alyssa Route:* `char_scenario_CKgwq246DyCj1NNTBV9rt`
+    - *Jasper Route:* `char_scenario_Kq4mJEBH83j7Q7DdVfFnF`
+- **Consolidamento Regole di Progetto & Apprendimento (/learn):**
+  - Aggiornate le sezioni 15 in [GEMINI.md](GEMINI.md) e 7.1 in [.agents/rules/11_wyvern_api_sicurezza_e_bug.md](.agents/rules/11_wyvern_api_sicurezza_e_bug.md) codificando i requisiti di locking `revision` negli Scenari e la tipizzazione rigorosa di `pronouns` e `linked_world` nei Character.
+  - Aggiornata la skill [.agents/skills/wyvern-ai-proxy-rotator/SKILL.md](.agents/skills/wyvern-ai-proxy-rotator/SKILL.md) con la specifica tecnica del modulo di compattazione v1.6.0.
+
+## [2026-10-31] - Audit Chat Live, Blindatura Pacing Anti-Insta-Love (Mac & Jared) e Integrazione Canone SUCC (Five Cocketeers & Bulls)
+
+- **Audit Forense Chat Live (`chat_log_EG2dpGaMQ4DaEd4g287pE`) & Bonifica Summaries:**
+  - Analizzati i 305 messaggi (index 0-304) e i 12 summaries della sessione live, individuando e neutralizzando il drift narrativo di "insta-love" su Mac Sanchez-Rogers e riallineando le allucinazioni descrittive.
+  - Bonificati e riscritti via `PUT /api/new/chat-logs/chat_log_EG2dpGaMQ4DaEd4g287pE` i summaries contaminati: rimossi gli avanzamenti forzati di legame eterno per Mac, confermato il canone di Jared Half-Minotauro, ed epurate le violazioni fisiche su Sierra (0 gambe/0 piedi) e Scarlett (capelli rosa confetto, non biondi).
+- **Riconciliazione Canonica Ufficiale Jared Thompson (Canone SUCC / iorveths):**
+  - Confermato che Jared Thompson è ufficialmente un **Half-Minotaur / Half-Human** (7'1", corna ricurve, biondo, blue eyes, QB titolare dei SUCC Bulls).
+  - Blindato il comportamento in `final_instructions` e Lorebook con l'archetipo **Himbo Frat-Bro**: festaiolo, pigro, cocky, flirt sfacciato e disimpegnato, con **zero devozione solenne o atteggiamento da fidanzato istantaneo**.
+- **Integrazione Canonica dei The Five Cocketeers (Wyrm Dormitory, Suite 404):**
+  - Creati nel World Lexicon (`_keeeFDnKfxnxn78P2atFh`) e nel Lorebook primario locale `FINAL/Svartulfr_Lorebook_I.json` come rumorosi e caotici coinquilini di **Jasper Douglas** al Wyrm Dormitory del SUCC Campus:
+    - *Dean (21):* Half-Demon / Tiefling stoner con corna corte, anello al labbro, spacciatore e cuoco notturno.
+    - *Russ (Russell Sinclair, 22):* Demihuman Tiger con orecchie e coda striate argento/nero, maestro tatuatore al Sacred Needle.
+    - *Raymond (21):* Demihuman Golden Retriever con orecchie e coda dorate, abbracci soffocanti, caciacione rumoroso.
+    - *Eric (20):* Siren / Half-Incubus rocker con chitarra elettrica acustica a tutte le ore, caotico e romantico.
+    - *Javier (21):* Vampiro puro elegante con zanne retrattili, synth-blood in calice e video social virali.
+- **Blindatura Mac Sanchez-Rogers (Anti-Insta-Love & Hookup-First):**
+  - Inserita in `final_instructions` del World Character (`_RXHKfwRXwhRkBHttHVgqt`), nella card stand-alone (`_zn24784jfcchQ7EwCyAnm` / `FINAL/Mackenzie_Sanchez_Rogers_card.json`) e nel Lorebook la clausola **Hookup First / Zero Instant Love**: priorità assoluta al divertimento fisico e al sesso senza impegno; rigetto dei vincoli e dei mate bond come una truffa familiare; divieto tassativo di correre nella Grande Caccia come compagno per una ragazza conosciuta da poche ore; reazione difensiva se si parla di legami eterni.
+- **Regola Globale `<relationship_pacing_gate>` su World, GM e Prompt Assembly:**
+  - Aggiunta in `base_instructions` e `system_prompt_override` del World (`_YpX47fNraQFw2dD7TdycJ`), nel Game Master (`FINAL/assistants/Svartulfr_Game_Master_Assistant.json`) e nel Prompt Assembly (`FINAL/prompts/Svartulfr_Master_TTRPG_Prompt_Assembly.json`) la direttiva vincolante di slow-burn, divieto di insta-love e fedeltà biologica.
+- **Nuove Voci World Lexicon & Locations:**
+  - *La Grande Caccia (15 Dicembre 2024)* (`_dDjnWM2QQdUMfBhK6CE4C`), *SUCC Bulls Football Team* (`_qwkd2NhX4dtPgQztX43bV`), *Baia Nascosta* (`_D67wUQGXLX4MD9wddf62q`).
+- **Completamento Esecuzione Multi-Agente Teamwork (Altezze, Reference Visive Marchi, Proxy Compactor v1.6.0):**
+  - *Allineamento Altezze Canoniche & Proporzioni Visive (R1):* Allineate le altezze su tutti i file FINAL/ e Lorebook NPC (Alyssa 155 cm, Jasper 193 cm, Noah 197 cm, Malachia 208 cm, Erik 213 cm, Wulfnic 220 cm) e inserite le formule di confronto proporzionale diretto (Alyssa alla spalla di Jasper a -38 cm; Malachia +53 cm con testa a meta torace; Erik/Wulfnic a +58-65 cm al basso petto/sterno). Preservata la parita byte-for-byte entries == lexicon.
+  - *Generazione Reference Visive Marchi Runici & Specifiche (R2):* Generate 8 immagini PNG ad alta risoluzione in ssets/references/ (Gebo, Mani anca sx, Sol anca dx, polarita gemellare, marchi Logan, Malachia, Erik, Wulfnic) e redatta la specifica completa in docs/references/RUNIC_AND_DIVINE_MARKS_SPECIFICATION.md (23.740 caratteri, 0 em-dash).
+  - *Ottimizzazione Non Distruttiva Micro-Proxy v1.6.0 (R3):* Integrato il PayloadCompactor in proxy/free_tier_proxy.py con deep-copying, deduplicazione tag XML, pulizia whitespace e -26.17% di riduzione token senza perdita semantica; host vincolato a 127.0.0.1:5005 in proxy/config_free_proxy.json.
+  - *Victory Audit Formale:* Certificato dall'auditor indipendente ictory_auditor_7 con verdetto **VICTORY CONFIRMED** (13/13 test proxy passed, 15/15 adversarial fuzzing passed, 14/14 challenger checks passed).
+- **Unificazione Marchi Sacri sulle Anche & Canone Titoli Cosmici (Maniulfr vs Solulfr):**
+  - *Unificazione Posizione Marchi (Anche Esclusive):* Eliminata la dispersione di marchi multipli su mani, petto, nuca, clavicola o cuore:
+    - **Alyssa:** Marchio Runico di Mani (voglia sacra a mezzaluna argentata con glifi lunari sub-dermici) localizzato **esclusivamente sull'anca sinistra**.
+    - **Jasper:** Marchio Runico di Sol (sole nero radioso con rune solari fiammeggianti sub-dermiche) localizzato **esclusivamente sull'anca destra**.
+    - Entrambi condividono soltanto il tatuaggio protettivo Gebo a inchiostro di ferro freddo sul polso sinistro.
+  - *Canone Titoli Divini (Solulfr Esclusivo di Svartr / Maniulfr per Hvit):*
+    - Stabilito rigorosamente che il titolo **Solulfr** (Lupo del Sole) appartiene esclusivamente a **Svartr (Jasper)**.
+    - Per **Hvit (Alyssa)** il titolo divino sacro correlato alla Luna e **Maniulfr** (Maniulf / Lupo della Luna Bianca).
+    - Aggiornate e sincronizzate live tutte le entita pertinenti: LSE: La Profezia dei Lupi Gemelli (Hvit Maniulf & Svartr Solulf), LSE: Il Marchio Solare & I Poteri Risvegliati di Jasper (Svartr Solulf), LSE: Il Marchio Lunare & L'Aura Pacificatrice di Alyssa (Hvit Maniulf), Lorebook I (_gwwCxCfQ6PQaLEjAQVpJL), World Lexicon (_YpX47fNraQFw2dD7TdycJ), Jasper Standalone Card (_t4J9aQNJM36cUKAP4wB4U) e World Character (_mUEUDfmTG4m7wNyQ7WQKx).
+- **Scorporo Teologia/Profezia LSE, Alleggerimento Globale Personas/Card & Isolamento Proxy (proxy/):**
+  - *Scorporo e Propagazione Mitologia & Religione LSE (12 Nuove Voci Lexicon):* Create e propagate via Web API nel World Lexicon (_YpX47fNraQFw2dD7TdycJ, 712 voci live) e in Lorebook I (_gwwCxCfQ6PQaLEjAQVpJL, 237 voci live):
+    - LSE: Teologia Fenririana & Il Ciclo Millenario della Luna Bianca (lore/concept).
+    - LSE: La Profezia dei Lupi Gemelli (Hvit Solulf & Svartr Solulf) (lore/concept).
+    - LSE: Il Marchio Solare & I Poteri Risvegliati di Jasper (Svartr) (ability).
+    - LSE: Il Marchio Lunare & L'Aura Pacificatrice di Alyssa (Hvit) (ability).
+    - 8 Profili Intimi e Dinamiche Sessuali di Casata come 	ype: memory (Alyssa, Jasper, Erik, Malachia, Logan, Noah, Mackenzie, Wulfnic) in piena aderenza alla Regola §13.
+  - *Alleggerimento e Snellezza JED+ per Personas e Character Card (-50% / -80% Token Bloat):*
+    - Alyssa_Persona.json: 21.679 -> 8.624 caratteri (ridotti ~13.000 caratteri di bloat, rimossi trattati teologici, items e sessualita).
+    - Jasper_Persona.json & Standalone Card: 20.199 -> 9.207 caratteri.
+    - Erik_Douglas_card.json: 22.778 -> 16.150 caratteri.
+    - Malachia_Douglas_Bloodmoon_card.json: 18.523 -> 13.009 caratteri.
+    - Logan_Douglas_card.json: 13.738 -> 9.157 caratteri.
+    - Noah_Douglas_Bloodmoon_card.json: 8.797 -> 4.996 caratteri.
+    - Mackenzie_Sanchez_Rogers_card.json: 9.631 -> 6.677 caratteri.
+    - Wulfnic_Bloodmoon_card.json: 14.863 -> 10.547 caratteri.
+    - Edric_Douglas_card.json: 7.265 -> 5.847 caratteri.
+    - Tutte le modifiche sono state applicate simultaneamente ai file locali (FINAL/ e FINAL/personas/), ai World Characters e alle card standalone su Wyvern /mine (Revision 2).
+  - *Isolamento Modulo Proxy (proxy/) & Aggiornamento Avvio Automatico PC:*
+    - Creata la directory dedicata proxy/ e trasferiti: ree_tier_proxy.py, config_free_proxy.json, start_proxy.vbs, proxy_debug.log, dump_navy_free_chat_models.py e ilter_free_navy_models.py.
+    - Aggiornati i percorsi interni di proxy/start_proxy.vbs e il collegamento di avvio automatico di Windows (%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\Wyvern Free Tier Proxy.lnk) con TargetPath e WorkingDirectory su proxy/.
+    - Riavviato con successo il proxy sulla porta 5005 (HTTP 200) e integrata la cartella proxy/ nello standard di sincronizzazione totale.
+- **Estensione Omni-Parity /learn: Sincronizzazione Totale dell'Ecosistema /mine:**
+  - Formalizzata ed estesa la parità di lore a **tutte le 7 entità native di /mine** in Wyvern: World (_YpX47fNraQFw2dD7TdycJ), i 6 Lorebooks Standalone (entries == lexicon), Standalone Characters (FINAL/*_card.json), Character Scenarios (FINAL/scenarios/), AI Assistants / Game Masters (FINAL/assistants/), Custom Prompt Assemblies (FINAL/prompts/) e User Personas (FINAL/personas/).
+  - Aggiornati GEMINI.md (§7.1), .agents/rules/08_triage_lorebook_e_lexicon.md (§5) e .agents/skills/wyvern-card-lorebook-sync/SKILL.md con la matrice di controllo Omni-Parity.
+- **Codificazione Standard di Parità Assoluta 1:1 (World ↔ Lorebooks Standalone):**
+  - Formalizzato in `GEMINI.md` (§7) e `.agents/rules/08_triage_lorebook_e_lexicon.md` (§5) il principio vincolante di sincronizzazione continua: qualsiasi voce aggiunta o aggiornata nei Lorebook Standalone deve essere contestualmente specchiata nel World (`World Lexicon`, `World Locations` o `World Characters`), e viceversa, azzerando le asimmetrie di lore.
+- **Implementazione Eventi Ricorrenti SUCC (Club, Associazioni e Partite di Campionato):**
+  - Creati 10 eventi canonici di tipo `event` nel World Lexicon (`_YpX47fNraQFw2dD7TdycJ`) e nel Lorebook locale `FINAL/Svartulfr_Lorebook_III.json` con datazioni, giorni della settimana, orari e location fisiche esatte:
+    - *Riunione Settimanale SUCC Anime & Manga Club:* Venerdì ore 18:00 presso Library Basement Meeting Room 005 (Stan Davies Jr., Andrew Campbell, Oskar).
+    - *The Pack (Cerchio Notturno Mannari SUCC):* Martedì ore 19:00 - 21:00 presso Nocturnal Hall o Gran Quad Lunare.
+    - *Assemblea Plenaria Supernatural & Human Alliance (SHA):* Primo Giovedì del mese ore 17:00 presso Student Association Building.
+    - *Partita di Campionato SUCC Bulls Football (Friday Night Lights):* Venerdì sera kickoff ore 19:00 presso St. Neptune & Bulls Stadium (Jared Thompson QB, Santiago Herrera, tailgate Hank Thompson).
+    - *Partita di Ice Hockey SUCC Bears:* Sabato sera ore 20:00 presso St. Neptune Ice Arena (Capitano Vincent Campbell).
+    - *Veglia Notturna Vampire & Undead Association (VUA):* Domenica notte ore 23:00 presso Helsing Chapel.
+    - *Escursione del Bigfeet Hiking Club:* Sabato mattina ore 09:00 a weekend alterni con ritrovo a Unicorn Hall verso Hex Valley.
+    - *Full Moon Market a Solarton Square:* Notte di ogni Luna Piena dalle ore 20:00 alle 02:00.
+    - *Late-Night Kitchen Raid & Gaming dei Five Cocketeers:* Tutte le notti dalle 00:30 alle 03:00 presso Wyrm Dormitory Suite 404.
+    - *Fiera Semestrale dei Club e Cultural Day SUCC:* 12 Ottobre / Terzo weekend di semestre dalle 10:00 alle 15:00 al Lunar Quad.
+- **Bonifica Integrale del World Live e Allineamenti Strutturali:**
+  - *Default Outfits (126/126):* Assegnato `default_outfit = outfits[0].id` a tutti i 126 World Characters, azzerando le allucinazioni di abiti casuali.
+  - *Descrizione Rogers' Bargain Motors:* Inserita descrizione canonica integrale (1080 caratteri) per il lotto e concessionario di Dominic Wayne Rogers.
+  - *Epurazione Broad Keys nel World Lexicon:* Rimossi i tag generici (`vampire`, `werewolf`, `succ`, `student`, `alpha`, `omega`) da tutte le 287 voci NPC terziarie (portando `broad_keys_count` a 0).
+  - *Normalizzazione Tassonomia Lexicon:* Convertite 29 voci `faction` in `organization/faction` e 25 `concept` in `lore/concept`.
+- **Standardizzazione Display Name in Chat (Solo Firstname / Nickname / Risoluzione Omonimie):**
+  - Aggiornati tutti i 126 World Characters del World live (`_YpX47fNraQFw2dD7TdycJ`) impostando `display_name` sul solo **Firstname** (es. `Alyssa`, `Jasper`, `Noah`, `Jared`, `Sierra`, `Scarlett`, `Erik`, `Logan`, `Edric`, `Wulfnic`).
+  - Applicati i nickname canonici prioritari: **`Mac`** (Mackenzie Sanchez-Rogers) e **`Fade`** (Fade Greymoor).
+  - Risolte le omonimie aggiungendo l'iniziale del cognome: `Dominic C.` (Dominic Chen) vs `Dominic R.` (Dominic Rogers), `Marcus O.` (Marcus O'Connor) vs `Marcus T.` (Marcus Thornfield), e `Stan` (Stanley Davies Jr.) vs `Stanley Sr.` (Stanley Davies Sr.).
+- **Validazione DevTools & Pytest:**
+  - Creata ed eseguita test suite formale (`tests/test_chat_audit_sync.py`, 4/4 passed) e validazione live via Chromium headless su Wyvern (DOM ready, zero eccezioni applicative).
+
+## [2026-10-30] - Sincronizzazione Integrale Nuovi Profili Alyssa & Jasper (Hvit & Svartr Solulf / Norse Prophecy) e Consolidamento Modifiche Test World
+
+- **Audit e Consolidamento Modifiche Test World (`_YpX47fNraQFw2dD7TdycJ`):**
+  - Verificate e preservate integralmente tutte le 24 modifiche ai World Characters effettuate tra il 25 e il 30 ottobre (blocco *Darkfire*, *Magnus Douglas III*, *Echo*, *Elizabeth Duskwood*, *Ut Berg*, *Morgeth Steeltooth*, *Brittany Willow*, *Vincent & Andrew Campbell*, *Bailey Rogers*, *Chase Anderson*, *Santiago Herrera*, *Jared Thompson*, *Jun*, *Dante*, *Fade Greymoor*, *Mac Sanchez-Rogers*, *Russell 'Russ' Sinclair*, *Erik Ulfr Douglas*) e i 13 *Linked Characters*.
+  - Creato snapshot di sicurezza completo in `scratch/backup_alyssa_jasper_20261030/`.
+- **Integrazione Canonica Nuovi Profili JED+ (Hvit & Svartr Solulf Reborn):**
+  - **Alyssa Hvit Douglas Bloodmoon (`21.679` caratteri):** Integrati *Boundless Vital Conduit*, cambio iride da verde menta a bianco-argenteo luminoso di Hvit, *THE WHITE MOON, SVARTR & THE NORSE PROPHECY* (quarta Luna Bianca in un millennio dopo Hvit, Arianne e Nixara), *Dimensional Pochette*, 17 *Traits* e *Attitudes*.
+  - **Jasper Svartr Douglas Bloodmoon (`20.199` caratteri, 0 em-dash):** Integrati *Svartr Solulf Reborn ("The Black Sun Wolf")* (prima reincarnazione del quinto Primogenito di Fenris, figlio di Sól e Sköll), cambio iride da verde menta a oro fuso, *THE SOLAR SHADOW, SVARTR SOLULF & THE NORSE PROPHECY*, *The Abyssal Armor & Twin Daggers*, 15 *Traits* e *Attitudes*.
+- **Propagazione Multi-Target 1:1 (Wyvern Web API & Repository Locale):**
+  - **User Personas (`/api/user-personas` & `FINAL/personas/`):** Aggiornate live e in locale `Alyssa` (`persona_1786335754946` / `user_persona_VnRF2xGeG1C4xByDF9h9R`, 20 outfit) e `Jasper` (`1792155173728` / `user_persona_bGDFCEtKDzVmgbCmHJWEW`, 11 outfit).
+  - **Character Cards (`/api/characters/_t4J9aQNJM36cUKAP4wB4U`, `FINAL/` & `ARCHIVIO/cards_legacy/`):** Aggiornata la card live e locale di Jasper (inclusa la bonifica di un residuo `{{user}}` in `info_board_config` sostituito con `Alyssa's Safety Level` / `alyssa_safety`) e aggiornata la card locale di Alyssa (`ARCHIVIO/cards_legacy/Alyssa_Douglas_Bloodmoon_card.json`, inclusi i 5 `<START>` dialogue examples).
+  - **World Characters (`_YpX47fNraQFw2dD7TdycJ`):**
+    - Riparato con `PUT` parziale il World Character di **Jasper** (`_mUEUDfmTG4m7wNyQ7WQKx`): allineati `summary` (822 caratteri PList + sintesi) e `long_summary` (20.199 caratteri), ripristinati `birthdate == start_timeline_position == 10320312` e `rpg_stats` (`level: 19`, somma 6 stat = 31: `4/3/8/9/3/4`), preservando gli 11 outfit.
+    - Ripristinato il World Character di **Alyssa** (`_FGeNBqjrt9fJJJyXTDgxM`, portando i World Characters a 126): configurati `summary` (870 caratteri), `long_summary` (21.679 caratteri), `birthdate == start_timeline_position == 10320312`, `rpg_stats` (`level: 19`, somma 6 stat = 31: `2/4/4/7/8/6`), 20 outfit, 5 `speech_examples`, `visibility: "private"` e `rating: "explicit"`.
+  - **Lorebook `Svartúlfr - NPC Primary` (`_zwEqgEEzh12X6gHVmMKKC`, `FINAL/` & `lorebooks/optimized/`):** Aggiornate le voci `Vcj4h2TL4Usola2A4OOl6` (Jasper) e `alyssa_world_dossier_2b54a223` (Alyssa), ricompilata `avatar_activation_regex` tramite compilatore Modulo 93312 per includere i nuovi alias (`The Black Sun Wolf`, `DJ Frequency`, `The White Moon`, `The Anchor`, `Svartr`, `Hvit`) e verificata la parità byte-for-byte `entries == lexicon`.
+- **Regola `Length & Pacing` (Max 2 Paragrafi per NPC Attivo) in World, Game Master e Prompt Assembly:**
+  - Aggiunta la direttiva `- Length & Pacing: Strictly 2 paragraphs maximum for EACH active NPC present in the scene. Weave with physical actions, spoken dialogue, and *internal thoughts* naturally within this 2-paragraph limit.` a:
+    1. **World Live (`_YpX47fNraQFw2dD7TdycJ`):** `base_instructions` (`<formatting_and_rules>`) e `system_prompt_override` (`<core_writing_rules>`).
+    2. **Simple Assistant / Game Master (`simple_assistant_xRfBnV7wq48QppqbPPpTM` & `FINAL/assistants/Svartulfr_Game_Master_Assistant.json`):** `system_prompt` (`<core_writing_rules>`).
+    3. **Prompt Assembly per Chat Singole (`pha_kWkWUAfTJTF9q72c2bC98`, `FINAL/prompts/Svartulfr_Master_TTRPG_Prompt_Assembly.json` & `FINAL/PROMPT_OVERRIDES_WYVERN.md`):** `main_prompt_template`, `main_prompt_sections[0]` (`<core_writing_rules>`), `floating_prompt_template` (`<anti_drift_guardrails>`) e blocco `svartulfr_multi_char` (`<multi_character_rendering>`).
+- **Completamento Integrale dei 126 World Characters e Bonifica del World Lexicon (`_YpX47fNraQFw2dD7TdycJ`):**
+  - **100% Copertura `Svartúlfr - NPC Primary`:** Verificata la presenza integrale di tutti i **99 / 99** personaggi del Lorebook `Svartúlfr - NPC Primary` all'interno dei **126 World Characters** (affiancati da 27 personaggi da `Svartúlfr - NPC Secondary` / Famiglie / Branco).
+  - **Completamento 126 / 126 World Characters via Partial `PUT /api/worlds/characters/<id>`:**
+    - **RPG Stats a 6 Statistiche (Budget 25 punti = Somma 31):** Popolati `rpg_stats` (`enabled: true`, `level` = età anagrafica con tetto a `99`, `base_stats` con chiavi doppie `stat_1..stat_6` e `might, resilience, agility, wit, presence, scouting` con somma esatta `31`).
+    - **Allineamento Timeline in Ore-Mondo Intere:** Impostati `birthdate == start_timeline_position` come interi compresi tra `0` e `10486470` (Epoch `827-12-21 00:00:00 UTC`) su tutti i 126 personaggi; bonificati gli artefatti legacy `{{age}}` nella famiglia Thompson (*Hank* 51, *Jasmin* 48, *Jake* 20, *Jaiden* 18, *Jason* 18, *Jeremy* 16, *Jet* 13, *Jerry* 10, *Julie* 6).
+    - **Separazione `summary` / `long_summary` e Conversione JED+:** Separato su tutti i 126 personaggi il blocco PList iniziale su singola riga in `summary` dal profilo completo JED+ in `long_summary`; convertita la scheda di **Jun Lau** (`_Pt7dhpcM13yzJ3qyGRmV3`) dal formato parentesi grezzo allo standard JED+ canonico a 4 blocchi (`[NAME: Jun Lau; ...]` $\to$ `BACKSTORY:` $\to$ `CLAN AND COMPANY:` $\to$ `VOICE & BEHAVIOR:`).
+    - **Standard Minimo $\ge 9$ Outfits Contestuali a 6 Sezioni:** Integrati gli outfit completi dalle Character Card locali (*Erik Ulfr Douglas* 10, *Jared Thompson* 11, *Scarlett Rose* 9, *Sierra Cruz* 9, *Russell 'Russ' Sinclair* 9, *Stanley Davies Jr.* 9) e completati tutti i 126 World Characters con almeno 9 outfit contestuali strutturati nelle 6 sezioni canoniche (`Abbigliamento`, `Accessori`, `Scarpe`, `Gioielli`, `Trucco`, `Acconciatura`) con apertura lombare per la coda e orecchie animali singole ove previsto.
+    - **Igiene Chiavi & Testo:** Rimossi tutti i tag ombrello (`solarton`, `succ`, `blackwood`, `werewolf`, `vampire`, `alpha`, `omega`, `losangeles`, `underworld`, ecc.), popolati `pronouns` e `final_instructions`, ed eliminati `100%` di em-dash (`—`), grassetti markdown (`**`) e macro `{{age}}`.
+  - **Bonifica Duplicati NPC nel World Lexicon (`/api/worlds/lexicon/world/_YpX47fNraQFw2dD7TdycJ`):**
+    - Eliminate le **26** voci `type: "npc"` duplicate di un World Character attivo (*Jaiden, Jeremy, Jason, Jerry, Julie, Jet e Jake Thompson*, *Coach Mack*, *Kian*, *Goran*, *Professor Mollusk Moreau*, *Radek*, *Fenris*, *Professor Marit Christiansen*, *Hideo Reid*, *Coach Mithers*, *Adelin Coso*, *Brittany Willow*, *Rev*, *Allegra Lumsden*, *Luisa Sanchez Rogers*, *Marek*, *Rifle Maddox*, *Romeo "Gray" Dean*, *Professor Dryden Kiwetin*, *Neon Purr*).
+    - Preservate le **287** voci NPC terziarie prive di World Character dedicato (censite in `scratch/missing_data.md`), portando il World Lexicon da `706` a **`680`** voci attive prive di collisioni.
+  - **Verifica Indipendente (`scratch/verify_126_world_completion.py`):** Superati al 100% tutti i controlli su 126 World Characters, 680 voci World Lexicon e integrità intoccata dei 6 Lorebook Standalone.
+
 ## [2026-10-25] - Creazione e Deployment Live dello Scenario World "SUCC: Welcome Day al Lunar Quad"
 
 - **Creazione Scenario nel World Live (`_YpX47fNraQFw2dD7TdycJ`):** Creato e configurato via Wyvern Web API lo scenario ufficiale di apertura accademica **"SUCC: Welcome Day al Lunar Quad"** (`_2MTWKjxrQPdQVaz9y4Q7H`) all'interno del World "Svartúlfr — Blackwood & Solarton".

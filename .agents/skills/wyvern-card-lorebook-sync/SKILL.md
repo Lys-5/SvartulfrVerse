@@ -59,6 +59,19 @@ Quando una delle entità indicate è attiva nella chat corrente, il compiler di 
 
 ---
 
+## 1.3 Matrice di Omni-Parity: Sincronizzazione Totale dell'Ecosistema /mine
+
+Ogni operazione di sincronizzazione o bonifica lore non deve mai limitarsi a un singolo componente, ma deve validare e allineare l'intero ecosistema di **7 entità native /mine**:
+1. **World (_YpX47fNraQFw2dD7TdycJ):** World Lexicon, Locations, Characters e System Prompt.
+2. **I 6 Lorebooks Standalone:** Parità assoluta entries == lexicon byte-for-byte su tutti i 6 volumi.
+3. **Standalone Characters (/mine):** Single Source of Truth per 1-on-1 e Scenari (9 Outfits strutturati, pacing gate in inal_instructions, display name standard).
+4. **Character Scenarios (/mine):** Allineamento lorebook_ids, consistenza cronologica dei greetings e assenza di slot bloccati (unavailable_count: 0).
+5. **AI Assistants / Game Masters (/mine):** Template e assembly di sistema coerenti con la lore emergente, passività cronologica (Zero Date Reset) e motore D20 + S.P.E.C.I.A.L.
+6. **Prompt Assemblies (/mine):** Regole di formattazione dialoghi (virgolette inglesi, testo semplice, no asterischi, no em-dash).
+7. **User Personas (/mine):** Schedatura JED+ su singola riga e associazione biunivoca in ignored_personas nei Lorebook per azzerare collisioni.
+
+---
+
 ## 2. Pipeline Operativa in 4 Fasi
 
 ```mermaid
@@ -206,3 +219,23 @@ La skill include e standardizza due script di produzione:
 * **Endpoint Ufficiale**: Le immagini registrate nella Gallery del Lorebook risiedono su `GET /api/gallery/lorebook/{lorebook_id}`.
 * **Binding URL Diretto**: Assegnare a ciascuna entry l'esatto `imageURL` del corrispondente record di Gallery (es. `erikMain` -> `https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/29a667f2-7846-474e-eff4-4dd81d3caf00/public`). Questo elimina l'avviso `Custom Image ⚠️ Unknown source`.
 * **Zod Schema Parity**: Mantenere sempre `entries` e `lexicon` identici byte-for-byte in ogni payload di salvataggio per evitare l'errore silenzioso di validazione frontend `entries: Required`.
+
+
+---
+
+## 7. Pipeline di Sincronizzazione Quatrilaterale (Persona + Card + World Character + Lorebook NPC)
+
+Quando viene aggiornato il profilo canonico di un protagonista o co-protagonista presente su più livelli (es. Alyssa o Jasper), eseguire tassativamente l'allineamento coordinato sui **4 Target**:
+
+1. **Target 1 — User Persona (`PUT /api/user-personas/:persona_id` + `FINAL/personas/<Name>_Persona.json`)**:
+   - Aggiornare `description` con il profilo JED+ integrale (0 em-dash, 0 `**`, 0 `{{age}}`), preservando `outfits` e `can_fork: true`.
+2. **Target 2 — Character Card (`PUT /api/characters/:id` + `FINAL/<Name>_card.json` / `ARCHIVIO/cards_legacy/`)**:
+   - Aggiornare `description` e `personality` (blocco PList).
+   - Eseguire una scansione ricorsiva sull'intero albero JSON della Card (incluso `info_board_config.categories[].keys[]`) per rimuovere qualsiasi occorrenza residua di `{{user}}`.
+3. **Target 3 — World Character (`POST/PUT /api/worlds/characters/:id`)**:
+   - Inviare un `PUT` parziale applicando l'architettura **Dual-Summary** (`summary` = blocco PList + sintesi breve; `long_summary` = profilo JED+ integrale).
+   - Verificare e ripristinare sempre `birthdate == start_timeline_position` (interi BigInt), `rpg_stats` (`enabled: true`, `level <= 99`, somma 6 stat = 31), `visibility: "private"` e `rating: "explicit"`.
+4. **Target 4 — Lorebook NPC (`PUT /api/lorebooks/:id` + `lorebooks/optimized/` + `FINAL/`)**:
+   - Aggiornare `content` e `npc_info` (`first_name`, `middle_names`, `last_name`, `nicknames`, `titles`).
+   - Ricalcolare obbligatoriamente `avatar_activation_regex` tramite `compile_wyvern_avatar_regex(entry["npc_info"], "")` (Modulo 93312) in modo che tutti i nuovi alias attivino l'avatar in modalità Visual Novel.
+   - Mantenere la parità byte-for-byte `entries == lexicon` e validare con `python scripts/verify_npc_schema_contract.py --all`.

@@ -956,3 +956,132 @@ Validate with Chrome DevTools via CDP (port and ws path in %LOCALAPPDATA%\Google
 - [ ] scratch/missing_data.md lists every blocked character; final report lists remaining unmatched NPC lexicon entries
 - [ ] Standalone Lorebooks unchanged (verify updated_at before/after)
 - [ ] /sim Stats tab populated, 0 console errors
+
+## Follow-up — 2026-10-31T06:31:22Z
+
+Allineamento delle altezze canoniche nelle schede, nei prompt visivi e nelle descrizioni di gruppo dell'universo Svartúlfr, progettazione e generazione delle reference visive dei marchi runici e divini del branco, e ottimizzazione non distruttiva del micro-proxy locale per la sanitizzazione e compattazione dei payload di contesto inviati ai modelli LLM per l'integrazione stabile in produzione nel repository.
+
+Integrity mode: development
+
+## Requirements
+
+### R1. Allineamento altezze canoniche e riferimenti proporzionali
+Allineare le altezze nei file locali del repository (Character Card in `FINAL/`, Personas, Lorebooks/NPC e prompt visivi/descrizioni di gruppo) ai valori canonici accertati:
+- Alyssa: 155 cm (5' 1")
+- Jasper: 193 cm (6' 4")
+- Noah: 197 cm (6' 5.6")
+- Malachia: 208 cm (6' 9.9")
+- Erik: 213 cm (6' 11.9")
+- Wulfnic: 220 cm (7' 2.6")
+
+Includere esplicitamente nelle descrizioni di gruppo e nei prompt visivi le seguenti reference proporzionali dirette:
+- Alyssa (155 cm) arriva all'altezza della spalla di Jasper (193 cm, -38 cm).
+- Malachia (208 cm) supera Alyssa di oltre mezzo metro (+53 cm) e la testa di lei gli arriva a malapena a metà del torace mastodontico.
+- Erik (213 cm) e Wulfnic (220 cm) sovrastano Alyssa di 58-65 cm (lei arriva alla parte bassa del petto / sterno).
+
+Preservare rigorosamente la parità byte-for-byte (`entries == lexicon`) nei Lorebook, la formattazione JED+ e la coerenza delle schede.
+
+### R2. Generazione e progettazione reference visive marchi runici e divini
+Progettare e generare le immagini di reference e i prompt per i marchi runici e divini del branco, salvando i file immagine generati e le specifiche documentali in una cartella dedicata del repository (es. `assets/references/` o `docs/references/`):
+- Tatuaggio Gebo al polso sinistro dei gemelli (inchiostro di ferro freddo)
+- Marchio runico di Máni (mezzaluna argentata con glifi lunari sub-dermici) unicamente sull'anca sinistra di Alyssa (Hvít Mániúlfr)
+- Marchio runico di Sól (sole nero radioso con glifi fiammeggianti sub-dermici) unicamente sull'anca destra di Jasper (Svartr Sólúlfr)
+- Marchi e tatuaggi degli altri membri del branco come Logan, Malachia, Erik, Wulfnic)
+
+### R3. Ottimizzazione non distruttiva del micro-proxy
+Ottimizzare `proxy/free_tier_proxy.py` e `proxy/config_free_proxy.json` per intercettare, sanitizzare e compattare i payload di sistema e i dati di lexicon/lorebook inviati ai modelli LLM, riducendo l'overhead di token e ottimizzando il flusso verso il provider. L'ottimizzazione deve essere non distruttiva, preservando l'integrità dei contenuti semantici (eliminazione di spaziature e newline ridondanti, deduplicazione entry e pulizia di campi o commenti non necessari). L'ambiente di esecuzione locale è standard su `127.0.0.1`.
+
+## Acceptance Criteria
+
+### Allineamento altezze canoniche e proporzioni
+- [ ] Tutte le occorrenze delle altezze dei sei personaggi nei file target locali in `FINAL/` (Character Card, Personas, Lorebook NPC) e nei prompt/descrizioni visive corrispondono esattamente ai valori canonici accertati in cm e piedi/pollici.
+- [ ] Le descrizioni di gruppo e i prompt visivi contengono le reference proporzionali dirette specificate (Alyssa alla spalla di Jasper; Malachia che supera Alyssa di oltre 50 cm con la testa di lei a metà torace; Erik e Wulfnic che sovrastano Alyssa di 58-65 cm con altezza al basso petto/sterno).
+- [ ] Uno script di verifica programmatico convalida la correttezza di tutte le altezze aggiornate e conferma la parità `entries == lexicon` nei file Lorebook modificati senza errori.
+
+### Reference visive marchi runici e divini
+- [ ] I file immagine generati per ciascun marchio (Gebo polso sx, Máni anca sx Alyssa, Sól anca dx Jasper, e marchi di Logan, Malachia, Erik, Wulfnic) sono presenti nel repository nel percorso designato.
+- [ ] È presente un documento di specifica contenente i prompt visivi completi, il posizionamento anatomico e le descrizioni estetiche canoniche di ciascun marchio.
+
+### Ottimizzazione micro-proxy
+- [ ] `proxy/free_tier_proxy.py` e `proxy/config_free_proxy.json` implementano la logica di compattazione e sanitizzazione non distruttiva dei payload JSON.
+- [ ] Una suite di test automatizzata verifica che il micro-proxy si avvii su `127.0.0.1`, esegua la compattazione riducendo il conteggio token/lunghezza dei payload di test rispetto all'input grezzo, e preservi inalterato il contenuto informativo essenziale.
+
+## Follow-up — 2026-11-01T20:41:46Z
+
+Update the Wyvern local failover micro-proxy model cascade in `proxy/config_free_proxy.json` and `proxy/free_tier_proxy.py` for daily production roleplay with Wyvern, prioritizing GLM 5.2, Gemini Argon, Gemini 3.8, and Gemma 4 as top fiat pillars, with all remaining models ordered by RPG roleplay quality, and audit missing API keys with acquisition URLs.
+
+Integrity mode: development
+
+## Requirements
+
+### R1. Failover Proxy Model Cascade Update
+Configure the proxy cascade in `proxy/config_free_proxy.json` and `proxy/free_tier_proxy.py` for Wyvern roleplay. Set GLM 5.2, Gemini Argon, Gemini 3.8, and Gemma 4 as primary fiat models, and arrange the remaining proposed models ordered by RPG roleplay quality.
+
+### R2. API Key Audit and Acquisition Guide
+Perform a static audit of local configuration files (`.env`, `proxy/config_free_proxy.json`) to identify missing or unconfigured API keys for the cascade providers. Provide documentation detailing the exact console and signup URLs where the user can obtain each missing key at zero or minimal cost.
+
+## Acceptance Criteria
+
+### Model Cascade Configuration
+- [ ] `proxy/config_free_proxy.json` defines the failover cascade prioritizing the primary fiat models: GLM 5.2, Gemini Argon, Gemini 3.8, and Gemma 4.
+- [ ] Subsequent models in the cascade are ranked and ordered by RPG roleplay quality.
+- [ ] `proxy/config_free_proxy.json` contains valid JSON with all required provider fields.
+
+### API Key Audit and Guide
+- [ ] A documented report lists all API keys required by the configured models that are missing or blank in local configuration files.
+- [ ] Direct provider console URLs and acquisition instructions for zero/minimal cost are documented for each missing key.
+
+### Verification
+- [ ] Existing repository tests run successfully.
+- [ ] The proxy configuration loads and parses without errors.
+
+## Follow-up — 2026-11-02T06:09:32Z
+
+Approfondire la lore di Svartúlfr Verse integrando le nuove informazioni emerse dalla sessione di playtest su St. Brugge Private Academy, il demone superiore Padre Revazhael, la cristallografia runica applicata (cilindri incantati a risonanza individuale), la magia abissale e il background accademico/dungeon di Alyssa e Jasper.
+
+Integrity mode: development
+
+## Requirements
+
+### R1. Integrazione della Lore Emergente
+Integrare le nuove informazioni di lore emerse dalla sessione di playtest (la scuola St. Brugge Private Academy, il demone superiore Padre Revazhael, la cristallografia runica applicata e i cilindri incantati a risonanza individuale, la magia abissale e la sua distinzione dalla magia del vuoto/necromanzia, la certificazione Gilda ed esperienza dungeon di Alyssa, e lo status hunter/reputazione di Jasper) all'interno dell'ecosistema del repository. Il team determina la distribuzione ottimale tra documentazione Vault/Second Brain, Lorebook pertinenti e schede personaggio/dossier.
+
+### R2. Rispetto delle Convenzioni e Standard di Progetto
+Mantenere la conformità alle regole canoniche di Svartúlfr Verse (documentate in GEMINI.md e AGENTS.md), inclusi il formato JED+, il divieto dell'em-dash, l'uso delle virgolette per i dialoghi, il positive framing per l'anatomia dei demi-umani (singolo paio di orecchie animali senza menzionare l'assenza di orecchie umane), l'assenza di keyword ombrello generiche e la corretta sincronizzazione delle entry.
+
+## Acceptance Criteria
+
+### Lore Coverage
+- [ ] Le nozioni su St. Brugge Private Academy (natura dell'istituto, corsi avanzati, frequentazione di Alyssa e Jasper) sono formalmente integrate nella lore di progetto.
+- [ ] Il profilo di Padre Revazhael (demone superiore, mentore di Alyssa e Jasper a St. Brugge, insegnante di cristallografia e magia abissale, tollerato dal Jarl) è documentato nel corpus di lore o dossier.
+- [ ] Il sistema dei cilindri incantati a risonanza individuale e la cristallografia runica applicata (differenza rispetto ai cilindri standard gilda/DMHA fragili, matrice cristallina con incantesimi congelati) sono integrati nelle voci lore/oggetti/teoria magica pertinenti.
+- [ ] I dettagli sul background di Alyssa (guaritrice certificata della Gilda, supporto dungeon, pre-Med a SUCC) e di Jasper (hunter registrato, traduttore di rune, intimidazione della KSA) sono riflessi coerentemente nei rispettivi contesti/schede.
+- [ ] La distinzione tra magia abissale (demoni superiori) e magia del vuoto/necromanzia è documentata.
+
+### Consistency and Formatting
+- [ ] Tutti i testi e le voci aggiornate o create rispettano la disciplina di formattazione del repository (nessun em-dash, dialoghi tra virgolette, formato JED+ per schede e voci NPC, anatomia demi-umani formulata in positivo).
+- [ ] Nessuna regressione o contraddizione con la timeline del World (anno 2024, World-Age coerente) e con i canoni preesistenti.
+
+## Follow-up — 2026-11-02T06:12:45Z
+
+Nota aggiuntiva dall'utente:
+L'utente richiede di monitorare la chat di test attiva su Wyvern:
+URL: https://app.wyvern.chat/sim/chat_log_ftrtAD79eddk9Ue9Jr2WJ
+Chat ID: chat_log_ftrtAD79eddk9Ue9Jr2WJ
+
+Il log completo di 46 turni è già stato estratto con successo ed è consultabile in locale in:
+`scratch/chat_export_ftrtAD79eddk9Ue9Jr2WJ.json`
+
+Oltre ai punti già emersi (St. Brugge, Padre Revazhael, cilindri a matrice cristallina, magia abissale, Alyssa healer dungeon, Jasper hunter/KSA), la chat contiene altri importanti dettagli di lore emergente da analizzare e integrare:
+1. Interazione con il Rettore Archer Wolfwood e menzione del "Maggiore Narghaton" (Msg 13-17).
+2. Interazioni alla Welcome Fest con Jared, Edric, Wulfnic, Santiago, Bailey, Barkley.
+3. Incontro con Marcus T. e Roxy verso la sede Theta Iota Theta (TIT / ΘΙΘ) (Msg 24-31).
+4. Dettagli ambientali e relazionali della Suite 3 Theta Iota Theta con Sierra Cruz (poster Grave Mistake, reazione alle pelli di Nonno Logan, locomozione su spire senza arti) e Zefir (scout shroud, sonno protettivo con lupo di pezza).
+
+Utilizzate questo file JSON come fonte primaria di analisi.
+
+## Follow-up — 2026-11-02T06:13:26Z
+
+È stato inoltre implementato lo script di monitoraggio dedicato:
+`scripts/monitor_active_test_chat.py`
+Questo script scarica i messaggi live da Wyvern per la chat `chat_log_ftrtAD79eddk9Ue9Jr2WJ`, calcola i delta, verifica i vincoli di audit e traccia le parole chiave di lore emergente (St. Brugge, Revazhael, cilindri, cristallografia, abissale, dungeon, Gilda, Hunter, Narghaton, Archer, Marcus, Roxy, Grave Mistake, Theta Iota Theta). Potete eseguirlo in qualsiasi momento per aggiornare il dump `scratch/chat_export_chat_log_ftrtAD79eddk9Ue9Jr2WJ.json`.

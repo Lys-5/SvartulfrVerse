@@ -33,7 +33,7 @@
 | Hair | Caramel-brown | Fusion-visual |
 | Eyes | Mint green | Fusion-visual |
 | Build | Petite hourglass | Maternal resemblance |
-| Height | 165 cm | — |
+| Height | 155 cm (5' 1") | Canonical |
 
 **Note:** Fusion-visual with strongest Nixara resemblance.
 

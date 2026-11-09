@@ -288,7 +288,7 @@ Alpha Rho Omega sits at the very top of the campus side of the Row, first house 
 
 It is the least theatrical of the five fraternities. No columns, no painted letters three feet high, just a wide porch that always has somebody on it and a lawn that gets mowed roughly when somebody remembers. The house reads as a place people live in rather than a place people perform in.
 
-Finnegan Novak lives here. The ARO porch looks straight down onto the Theta Iota Theta front steps, so whoever ends up living in that sorority in a given year is his immediate neighbour and neither of them can leave the house without the possibility of running into the other. Revazhael lives here too, and does the handyman work for the sorority next door, which is less a job than a consequence of geography.
+Finnegan Novak lives here. The ARO porch looks straight down onto the Theta Iota Theta front steps, so whoever ends up living in that sorority in a given year is his immediate neighbour and neither of them can leave the house without the possibility of running into the other. Revazhael (Father Rev, an ancient Superior Demon living incognito under a strict personal ethos of consent and former mentor to Alyssa and Jasper at St. Brugge) lives here too, doing electrical and plumbing handyman work for the sorority next door, which is less a job than a quiet consequence of geography and protective oversight.
 
 The practical effect of the position is that ARO is the crossing point of the Row. Everyone walking to campus from any of the ten houses passes this porch.
 
@@ -867,10 +867,10 @@ The bustling town plaza at the commercial heart of Solarton, situated within eas
 Campi sportivi all'aperto del SUCC per baseball, calcio, lacrosse e allenamenti liberi.
 
 ### St. Brugge Private Academy (`_4wJ11ttfz78gfH2cqdx4R`)
-An exclusive private academy tucked on the wooded outskirts between Blackwood and Solarton, catering strictly to the scions of high-society supernatural families. Features Gothic stone architecture, shielded courtyards, and ward-locked libraries. Alyssa and Jasper attended St. Brugge from preschool through middle school, where Father Revazhael secretly mentored them in mystic arts and arcane slicing.
+An exclusive private academy tucked on the wooded outskirts between Blackwood and Solarton, catering strictly to the scions of high-society supernatural families. Features Gothic stone architecture, shielded courtyards, subterranean alchemy laboratories, and ward-locked esoteric libraries. Curricula combine classical subjects with magic theory, history of planar rifts, potion making, ancient runic translation, and arcane slicing. Alyssa and Jasper attended St. Brugge from preschool through middle school, where Father Revazhael secretly provided advanced private tutorials in applied runic crystallography, spell-freezing cylinders, and the safe grounding of abyssal currents.
 
 ### St. Neptune Stadium (`_ndMkLAHyKgBDyeMpjwhBt`)
-Sede delle partite dei Bears (hockey) e di allenamenti e competizioni della squadra di Nuoto & Tuffi (i Kelpies). La pista di ghiaccio e la piscina coperta condividono lo stesso impianto di controllo termico, mentre le saune, particolarmente amate dai licantropi dopo gli allenamenti, restano aperte fino a tarda sera.
+Sede delle partite dei Bears (hockey) e di allenamenti e competizioni della squadra di Nuoto & Tuffi (i Kelpies). La pista di ghiaccio e la piscina coperta condividono lo stesso impianto di controllo termico, mentre le saune, particolarmente amate dai licantropi dopo gli allenamenti, restano aperte fino a tarda sera. Dal 26 agosto 2024, in seguito all'accordo istituzionale tra il Cancelliere Archer Wolfwood ed Erik Douglas per l'integrazione della DCC Security sul campus, Erik ha assunto il ruolo di capo allenatore dei Bears, imponendo una rigida disciplina atletica con allenamenti all'alba alle 05:30 (con Noah Douglas all'ala destra).
 
 ### Static & Ink (`_CKkP1PfqRJDQLBPQeFyWF`)
 Static & Ink is one wide unit with a beam down the middle, and the two halves have never fully merged. Vinyl, tapes and a listening deck on the left; comics, singles boxes, trades and a small shelf of local zines on the right.
@@ -1041,7 +1041,7 @@ E' popolare fra le succubi, e fra le fraternity, il che e' la stessa frase detta
 
 La posizione e' la sua particolarita': la TIT e' l'unica casa della Row con una fraternity sopra, una sotto e una di fronte, quindi e' il punto in cui l'alternanza maschile-femminile della strada isola chi ci abita. Chiunque ci viva ha tre porticati di ragazzi entro trenta metri e nessuna sorority a portata di voce.
 
-Sierra e Scarlett Rose ci abitano e sono coinquiline.
+Al secondo piano nell'ala est si trova la Suite 3, condivisa da Alyssa Douglas, Scarlett Rose e Sierra Cruz. La stanza combina l'angolo riscaldato in cui Sierra riposa le sue quattro metri di spire da serpente arcobaleno iridescente (strisciando sinuosamente sul parquet), la postazione di Scarlett decorata in stile punk-chic, e il nido di pellicce di lupo di Alyssa con il peluche Wolfy e la sua vetreria da distillazione runica.
 
 ### Tidewrack Surf & Rental (`_Vhqnmrg3YAdWMTfPcGGxP`)
 Tidewrack is the closest Bricklane unit to the beach road, and the front of it is more rack than shop: boards standing in rows, bikes chained in a line down the frontage, and a wall of wetsuits that smell exactly like a wall of wetsuits.

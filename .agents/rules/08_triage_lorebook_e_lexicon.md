@@ -130,3 +130,38 @@ A seguito della *Visual Novel Mega Patch*, le voci NPC nei Lorebook Standalone a
    - **Parità di Validazione Zod Frontend (`entries == lexicon`):** Il form editor di Wyvern (`react-hook-form` con schema Zod) richiede tassativamente che la proprietà `entries` sia popolata come array (`entries: z.array(...)`). Mantenere sempre `entries` e `lexicon` identici byte-for-byte in ogni salvataggio per evitare il blocco silenzioso con errore `entries: Required`.
 4. **Verifica Contratti Automatizzata:**
    - Eseguire `python scripts/verify_npc_schema_contract.py` prima di ogni deployment per validare tutti i 5 contratti di integrità (schema `npc_info`, root gallery, Module 93312 compilation, anti-collisione, entries == lexicon parity).
+
+### 8.1 Sprite Sets per NPC e Lorebook & Meccanismo Auto-Cutout
+- **Lorebook Sprites Tab:** I Lorebook Standalone supportano il tab `Sprites` (`gallery_sprites`). Le voci NPC possono specificare un campo opzionale `sprite_set_id` (o link a sprite set esistenti) per proiettare sul palco della Visual Novel Mode le espressioni facciali e le pose del personaggio.
+- **Auto-Cutout Trasparente:** Per gli NPC privi di sprite set dedicato, il frontend Wyvern genera automaticamente un `avatar_cutout` scontornando lo sfondo dell'avatar Cloudflare censito nella Gallery (`entry.avatar`). È vietato inserire URL esterni non censiti nella Gallery per garantire che il renderer di cutout e lo stage VN non incorrano in fallimenti grafici.
+- **Preservazione nei PUT:** Nelle chiamate `PUT /api/lorebooks/:id`, non azzerare o omettere eventuali oggetti `sprite_sets` o puntamenti `sprite_set_id` presenti nelle entry.
+
+### 8.2 Persona Gallery & Alternate Avatars (/mine)
+- Anche per le User Persona (`/api/user-personas/:id`), Wyvern supporta ora una `gallery` dedicata e `alternate_avatars[]`.
+- Nei payload di aggiornamento delle Persona (`FINAL/personas/*.json`), preservare sempre i campi `gallery`, `alternate_avatars` e `avatar_shape` evitando la cancellazione accidentale causata da payload parziali grezzi.
+
+---
+
+## 5. Principio Vincolante di Parità e Sincronizzazione 1:1 dell'Ecosistema /mine (Omni-Parity)
+
+A partire dal 31 Ottobre 2026, è codificato come standard di progetto vincolante il **Principio di Parità Assoluta di Lore su Tutto l'Ecosistema /mine**:
+
+1. **Sincronizzazione Totale dell'Ecosistema /mine (Zero Asimmetria):**
+   La sincronizzazione non si esaurisce nell'interscambio tra World Lexicon e Lorebook, ma vincola **tutte le 7 entità native di Wyvern /mine** e i rispettivi file master in FINAL/:
+   - **World (_YpX47fNraQFw2dD7TdycJ):** World Lexicon (700+ voci), Locations (188), Characters (126) e System Prompt / Relationship Pacing Gate.
+   - **I 6 Lorebooks Standalone:** Aggiornati con parità assoluta entries == lexicon byte-for-byte su tutti i volumi (Lorebook I, II, III, Location, NPC Primary, NPC Secondary).
+   - **Standalone Characters (/mine):** Single Source of Truth per 1-on-1 e Scenari (9 Outfits strutturati, pacing gate in inal_instructions, display name standard).
+   - **Character Scenarios (/mine):** Allineamento lorebook_ids, consistenza cronologica dei greetings e assenza di slot bloccati (unavailable_count: 0).
+   - **AI Assistants / Game Masters (/mine):** Template e assembly di sistema coerenti con la lore emergente, passività cronologica (Zero Date Reset) e motore D20 + S.P.E.C.I.A.L.
+   - **Prompt Assemblies (/mine):** Regole di formattazione dialoghi (virgolette inglesi, testo semplice, no asterischi, no em-dash).
+   - **User Personas (/mine):** Schedatura JED+ su singola riga e associazione biunivoca in ignored_personas nei Lorebook per azzerare collisioni.
+   - **Infrastruttura Proxy Locale & Free-Master-list (proxy/):** Isolamento architetturale dei componenti proxy (FastAPI rotator, config_free_proxy.json, script di avvio automatico all'accensione del PC start_proxy.vbs e shortcut Wyvern Free Tier Proxy.lnk), tracciati stabilmente nella sincronizzazione totale del repository.
+
+2. **Propagazione Immediata Bidirezionale:**
+   Ogni qualvolta viene aggiunta o aggiornata una voce, entità o evento in uno dei comparti (es. nuove fazioni, club, eventi SUCC, location o regole comportamentali), la modifica **DEVE essere contestualmente propagata a cascata su tutte le altre entità coinvolte** e archiviata nei file master locali in FINAL/.
+
+3. **Parità Byte-for-Byte entries == lexicon:**
+   Nei file JSON dei Lorebook (FINAL/ e lorebooks/optimized/), gli array entries e lexicon devono essere mantenuti identici byte-for-byte ad ogni operazione di sync per prevenire errori di validazione dello schema frontend Zod di Wyvern.
+
+4. **Divieto Assoluto di Isole di Lore:**
+   È vietato mantenere elementi di lore o modifiche di sistema confinate a un singolo comparto di /mine (es. solo nel World, o solo in uno scenario, o solo nei Lorebook) lasciando disallineati gli altri asset.

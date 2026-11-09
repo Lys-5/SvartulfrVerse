@@ -1,42 +1,55 @@
-## 2026-10-25T08:32:44Z
+## 2026-11-02T06:56:57Z
+You are the implementation Worker subagent for Milestone 2: Standalone Lorebooks Emergent Lore Integration.
+Your identity: worker_m2
+Your working directory: e:\repository\SvartulfrVerse\.agents\teamwork\worker_m2\
+Authoritative user request: e:\repository\SvartulfrVerse\.agents\teamwork\ORIGINAL_REQUEST.md
 
-[Message] timestamp=2026-10-25T08:32:44Z sender=eff09782-a727-440d-b9eb-2a9ad121b795 priority=MESSAGE_PRIORITY_HIGH content=You are worker_m2, an implementation worker agent.
-Your working directory is: e:\repository\SvartulfrVerse\.agents\teamwork\worker_m2
-
-MANDATORY READ:
-Read e:\repository\SvartulfrVerse\.agents\teamwork\ORIGINAL_REQUEST.md before starting work.
-Also read e:\repository\SvartulfrVerse\PROJECT.md and e:\repository\SvartulfrVerse\.agents\teamwork\explorer_survey_2\handoff.md.
+You MUST read `e:\repository\SvartulfrVerse\.agents\teamwork\ORIGINAL_REQUEST.md` and `e:\repository\SvartulfrVerse\PROJECT.md`.
+Read `e:\repository\SvartulfrVerse\.agents\teamwork\explorer_survey_2\handoff.md` (which contains exact JSON payloads, entry IDs, and schemas for all Lorebook updates) and `e:\repository\SvartulfrVerse\.agents\teamwork\explorer_survey_3\handoff.md` (for Alyssa and Jasper dossier text).
+Also consult the canonical articles in `knowledge/Lore_Worldbuilding/`.
 
 MANDATORY INTEGRITY WARNING:
-DO NOT CHEAT. All implementations must be genuine. DO NOT hardcode test results, create dummy/facade implementations, or circumvent the intended task. A teamwork_preview_auditor will independently verify your work. Integrity violations WILL be detected and your work WILL be rejected.
+DO NOT CHEAT. All implementations must be genuine. DO NOT hardcode test results, create dummy/facade implementations, or circumvent the intended task. A teamwork_auditor will independently verify your work. Integrity violations WILL be detected and your work WILL be rejected.
 
-File Ownership:
-You exclusively own:
-- `FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json`
-- `scripts/patch_welcome_day_scenario_and_chat.py` (and any related test/verification scripts in `scripts/` or `tests/`)
+Your exclusive write ownership for this milestone:
+- `FINAL/Svartulfr_Lorebook_I.json` and `lorebooks/optimized/Svartulfr_Lorebook_I.json`
+- `FINAL/Svartulfr_Lorebook_II.json` and `lorebooks/optimized/Svartulfr_Lorebook_II.json`
+- `FINAL/Svartulfr_Lorebook_III.json` and `lorebooks/optimized/Svartulfr_Lorebook_III.json`
+- `lorebooks/optimized/Svartulfr_Location.json`
+- `FINAL/Svartulfr_NPC_Primary.json` and `lorebooks/optimized/Svartulfr_NPC_Primary.json`
+- `FINAL/Svartulfr_NPC_Secondary.json` and `lorebooks/optimized/Svartulfr_NPC_Secondary.json`
 
-Objective:
-Execute Milestone 2 of PROJECT.md:
-Standardize Scenario syntax to `=>Speaker:` in `_2MTWKjxrQPdQVaz9y4Q7H`, update `FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json`, and patch message #0 in active chat `chat_log_PJx1W1rg3WUzRM7MnQrkN`.
+Specific Requirements:
+1. `Svartulfr_Lorebook_I.json`:
+   - Add `lb1_concept_applied_runic_crystallography` (type: `concept`)
+   - Add `lb1_magic_abyssal_magic_distinction` (type: `concept`)
+2. `Svartulfr_Lorebook_II.json`:
+   - Add `lb2_item_enchanted_resonant_cylinders` (type: `item`)
+3. `Svartulfr_Lorebook_III.json`:
+   - Add `succ_lb3_st_brugge_academy` (type: `concept`)
+4. `lorebooks/optimized/Svartulfr_Location.json`:
+   - Clean entry #51 (`ulTwlYo2jqObA7l_bFoa5`, St. Brugge Private Academy): purge broad keys (`Seven Hills`, `Douglas`, `Blackwood`, `private academy`), keep specific keys, expand description.
+   - Add entry `loc_theta_iota_theta_suite_3` (Theta Iota Theta: Suite 3).
+5. `Svartulfr_NPC_Secondary.json`:
+   - Update entry #23 (`jmh0MajEsRwrm4UYU14mY`): rename to `Father Revazhael (Rev)`, update keys to `['Father Revazhael', 'Padre Revazhael', 'Father Rev', 'Padre Rev', 'Revazhael', 'Rev']`, reconcile JED+ profile (Ancient Superior Demon, St. Brugge mentor, ARO resident/TIT handyman).
+   - Fix schema on entry #211 (`npc_larek_steeltooth`): set `entry_id: "npc_larek_steeltooth"`, `name: "Larek Steeltooth"`, `type: "npc"`, valid DCC placeholder avatar, etc.
+6. `Svartulfr_NPC_Primary.json`:
+   - Enrich Alyssa dossier (`alyssa_world_dossier_2b54a223`): Certified Guild Healer (Rank A, ADB-555), crystal glassware crafting, Suite 3 fur nest and Wolfy plush, while strictly maintaining `selective: true`, `secondary_keys: ['Dossier', 'Scheda', 'Archivio', 'Database', 'Profilo']`, `ignored_characters`, and `ignored_personas`.
+   - Enrich Jasper dossier (`Vcj4h2TL4Usola2A4OOl6`): Sound and Acoustic Engineering, Registered Guild Hunter (Rank A, JDB-555), runic translation for Revazhael, Welcome Fest KSA intimidation, while strictly maintaining `selective: true`, `secondary_keys`, `ignored_characters`, and `ignored_personas`.
+7. Non-Negotiable Invariants:
+   - On EVERY modified JSON file, the `entries` and `lexicon` arrays MUST be 100% byte-for-byte identical (`assert d['entries'] == d['lexicon']`).
+   - 0 em-dashes (`—`), use commas or periods.
+   - 0 broad keys on NPC entries.
+   - Positive framing for demi-humans.
+   - Mirror all modified files between `FINAL/` and `lorebooks/optimized/`.
 
-Detailed Requirements:
-1. Standardize `FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json`:
-   - Scene 0 (`scene-succ-welcome-day-alyssa`) and Scene 1 (`scene-succ-welcome-day-jasper`) must be updated with the certified standardized text from `explorer_survey_2/handoff.md` Section 4.1 and Section 4.2.
-   - All character dialogue and turns must be prefixed with `=>Speaker:` using clean short names (`=>Erik:`, `=>Logan:`, `=>Edric:`, `=>Noah:`, `=>Malachia:`, `=>Jasper:`, `=>Alyssa:`, `=>Wulfnic:`, `=>Zefir:`, `=>Finn:`, `=>Sierra:`, `=>Scarlett:`) and `=>Narrator:`.
-   - Disentangle embedded Jasper, Alyssa, and Wulfnic lines from narration.
-   - Formatting discipline: exactly 0 em-dashes (`—`), dialogue in quotes (`"..."`), plain text action (no asterisks).
-2. Deploy scenario `_2MTWKjxrQPdQVaz9y4Q7H` to Wyvern Web API:
-   - Endpoint: `PUT https://app.wyvern.chat/api/worlds/scenarios/_2MTWKjxrQPdQVaz9y4Q7H`
-   - Use token from `scratch/wyvern_token.txt` (refresh if needed using `scratch/refresh_token.py`). Ensure HTTP 200.
-3. Patch active chat message #0 in `chat_log_PJx1W1rg3WUzRM7MnQrkN`:
-   - Target swipe ID: `message_swipe_99mmMgEEQjk2pkJN3hXkQ` on message `chat_message_tcXGCpV2W4CY84gKLdXha`.
-   - Endpoint: `PUT https://app.wyvern.chat/api/new/chat-logs/swipe/message_swipe_99mmMgEEQjk2pkJN3hXkQ`
-   - Body: `{"content": "<msg0_standardized_text>"}` with certified text from `explorer_survey_2/handoff.md` Section 4.3 (replacing oversized formal names with canonical short tags, 0 em-dashes, 0 asterisks). Ensure HTTP 200.
-4. Verify live deployment:
-   - Query `GET https://app.wyvern.chat/api/worlds/scenarios/_2MTWKjxrQPdQVaz9y4Q7H` and assert that all scenes start with `=>Narrator:` and contain all expected `=>Speaker:` tags.
-   - Query `GET https://app.wyvern.chat/api/new/chat-logs/chat_log_PJx1W1rg3WUzRM7MnQrkN` and assert that `messages[0].swipes[0].content` contains standardized `=>Speaker:` tags and 0 em-dashes.
-5. Create/update unit tests in `tests/test_milestone2_scenario_syntax.py` and run tests.
+Verification Requirements:
+Write and run a Python verification script checking:
+1. `entries == lexicon` parity on all modified lorebooks.
+2. 0 em-dashes and 0 `{{age}}` macros.
+3. 0 broad keys on NPC entries.
+4. Correct presence of all new/updated entry IDs.
+Document script commands and outputs in your handoff report.
 
-Deliverables:
-- Write a comprehensive handoff report to `e:\repository\SvartulfrVerse\.agents\teamwork\worker_m2\handoff.md`.
-- Send a completion message back using `send_message`.
+Write your complete handoff report to `e:\repository\SvartulfrVerse\.agents\teamwork\worker_m2\handoff.md`.
+Communicate back to orchestrator via send_message when complete.

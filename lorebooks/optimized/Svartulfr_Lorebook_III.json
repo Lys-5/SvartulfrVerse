@@ -739,6 +739,364 @@
       "priority": 2,
       "position": "before_char",
       "enabled": true
+    },
+    {
+      "entry_id": "event_riunione_settimanale_s",
+      "name": "Riunione Settimanale SUCC Anime & Manga Club",
+      "keys": [
+        "Anime Club",
+        "Riunione Anime Club",
+        "Anime Club Meeting",
+        "Anime e Manga"
+      ],
+      "secondary_keys": [
+        "venerdì",
+        "Basement Room 005",
+        "Basilisk Library",
+        "Stan",
+        "Andrew"
+      ],
+      "content": "[EVENTO RICORRENTE: Riunione Settimanale SUCC Anime & Manga Club]\n\n- QUANDO: Ogni Venerdì alle ore 18:00 (Fridays at 6:00 PM).\n- DOVE: Basilica Library > Seminterrato > Meeting Room 005 (Library Basement Room 005).\n- PARTECIPANTI NOTI: Stan Davies Jr., Andrew Campbell, Oskar, e studenti otaku sia umani che demi-umani.\n\nDINAMICHE DELL'EVENTO:\nGli otaku del campus si riuniscono per proiezioni su maxischermo di serie anime stagionali, discussioni appassionate di capitoli manga, e tornei informali di picchiaduro. L'atmosfera e accogliente, pervasa da risate, confezioni di Pocky, bibite gassate e dibattiti accesi sui migliori archi narrativi (memorabile la discussione su Rengoku e Demon Slayer con Andrew Campbell).",
+      "type": "event",
+      "enabled": true,
+      "constant": false,
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "highlight_keys": true,
+      "enable_highlighting": true
+    },
+    {
+      "entry_id": "event_the_pack:_cerchio_nott",
+      "name": "The Pack: Cerchio Notturno dei Mannari SUCC",
+      "keys": [
+        "The Pack",
+        "Cerchio dei Mannari",
+        "Riunione The Pack",
+        "Werewolf Society"
+      ],
+      "secondary_keys": [
+        "martedì",
+        "Nocturnal Hall",
+        "Lunar Quad",
+        "plenilunio",
+        "istinti"
+      ],
+      "content": "[EVENTO RICORRENTE: The Pack (Cerchio Notturno dei Mannari e Canidi SUCC)]\n\n- QUANDO: Ogni Martedì sera dalle 19:00 alle 21:00 (Tuesdays 7:00 PM - 9:00 PM).\n- DOVE: Nocturnal Hall (in inverno/maltempo) o al centro del Gran Quad Lunare (Lunar Quad, durante le serate limpide).\n- PARTECIPANTI NOTI: Studenti licantropi (Common e Pureblood), demi-umani lupini, volpini e canidi del campus.\n\nDINAMICHE DELL'EVENTO:\nLa societa studentesca ufficiale per canidi e lupi della SUCC si incontra come rete di supporto fraterna e accademica. Si affrontano la gestione dell'aggressivita pre-plenilunio, consigli per conciliare le notti di luna piena con gli esami di facolta, e si conclude con corse liberatorie o sessioni di ringhio controllato all'aperto.",
+      "type": "event",
+      "enabled": true,
+      "constant": false,
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "highlight_keys": true,
+      "enable_highlighting": true
+    },
+    {
+      "entry_id": "event_assemblea_plenaria_sup",
+      "name": "Assemblea Plenaria Supernatural & Human Alliance (SHA)",
+      "keys": [
+        "Supernatural and Human Alliance",
+        "S.H.A",
+        "SHA Meeting",
+        "Assemblea SHA"
+      ],
+      "secondary_keys": [
+        "primo giovedì",
+        "Student Association Building",
+        "integrazione",
+        "dialogo"
+      ],
+      "content": "[EVENTO RICORRENTE: Assemblea Plenaria Supernatural & Human Alliance (SHA)]\n\n- QUANDO: Primo Giovedì di ogni mese alle ore 17:00 (First Thursday of each month, 5:00 PM).\n- DOVE: Student Association Building > Main Hall.\n- PARTECIPANTI: Rappresentanti studenteschi umani, demoni, vampiri, fae e demi-umani, con docenti delegati del rettorato.\n\nDINAMICHE DELL'EVENTO:\nIl piu grande club di dialogo interspecie del campus si riunisce per mediare attriti culturali tra umani e creature magiche, presentare mozioni per i servizi universitari (es. distributori di sangue sintetico o sale termiche), e organizzare tutoraggi accademici misti. L'incontro e sempre seguito da un rinfresco multiculturale aperto a tutti.",
+      "type": "event",
+      "enabled": true,
+      "constant": false,
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "highlight_keys": true,
+      "enable_highlighting": true
+    },
+    {
+      "entry_id": "event_partita_di_campionato_",
+      "name": "Partita di Campionato Football: SUCC Bulls (Friday Night Lights)",
+      "keys": [
+        "Partita dei Bulls",
+        "Bulls Game",
+        "Friday Night Lights",
+        "SUCC Bulls Football"
+      ],
+      "secondary_keys": [
+        "venerdì",
+        "St. Neptune Stadium",
+        "kickoff",
+        "Jared",
+        "Santiago"
+      ],
+      "content": "[EVENTO RICORRENTE: Partita di Campionato SUCC Bulls Football]\n\n- QUANDO: Ogni Venerdì sera durante il semestre autunnale, Kickoff ore 19:00 (Friday Night Lights, 7:00 PM).\n- DOVE: St. Neptune & Bulls Stadium (St. Neptune Stadium Field).\n- PROTAGONISTI: Star Quarterback Jared Thompson (Half-Minotaur), Lineman Anchor Santiago Herrera (Dragon Demihuman), Coach Dullahan, Assistant Coach Barkley Rover.\n\nDINAMICHE DELL'EVENTO:\nL'evento sportivo piu atteso e rumoroso della settimana studentesca. Lo stadio si riempie di migliaia di tifosi con i colori blu scuro e oro (#GoBulls), con il leggendario pre-game tailgate cookout organizzato dai genitori di Jared (Hank e Jasmin Thompson con il loro barbecue affumicato). Sul campo, la forza bruta dei supernatural athletes si scatena contro le squadre rivali della California (Clams, Bears, Bruins).",
+      "type": "event",
+      "enabled": true,
+      "constant": false,
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "highlight_keys": true,
+      "enable_highlighting": true
+    },
+    {
+      "entry_id": "event_partita_di_campionato_hockey",
+      "name": "Partita di Campionato Ice Hockey: SUCC Bears",
+      "keys": [
+        "Partita dei Bears",
+        "Bears Hockey",
+        "SUCC Bears Match",
+        "Ice Hockey SUCC"
+      ],
+      "secondary_keys": [
+        "sabato",
+        "St. Neptune Ice Arena",
+        "pista",
+        "Vincent Campbell",
+        "disco"
+      ],
+      "content": "[EVENTO RICORRENTE: Partita di Ice Hockey SUCC Bears]\n\n- QUANDO: Ogni Sabato sera alle ore 20:00 (Saturdays at 8:00 PM).\n- DOVE: St. Neptune Ice Arena (Pista olimpionica climatizzata).\n- PROTAGONISTI: Capitano Vincent Campbell (Vampiro, attaccante di punta), Andrew Campbell (Mascotte e assistente pista), e la linea d'attacco demi-umana.\n\nDINAMICHE DELL'EVENTO:\nGare ad altissima velocita su ghiaccio magico compatto. La squadra sfrutta i riflessi supersonici e la visione termica per manovre spettacolari contro i difensori avversari. Gli spalti riscaldati ospitano il tifo organizzato delle confraternite, con bevande calde speziate e una forte presenza della comunita vampirica cittadina.",
+      "type": "event",
+      "enabled": true,
+      "constant": false,
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "highlight_keys": true,
+      "enable_highlighting": true
+    },
+    {
+      "entry_id": "event_veglia_notturna_vampir",
+      "name": "Veglia Notturna Vampire & Undead Association (VUA)",
+      "keys": [
+        "VUA Meeting",
+        "Riunione VUA",
+        "Veglia Vampirica",
+        "Vampire Association"
+      ],
+      "secondary_keys": [
+        "domenica",
+        "Helsing Chapel",
+        "notte",
+        "synth-blood",
+        "non-morti"
+      ],
+      "content": "[EVENTO RICORRENTE: Veglia Notturna Vampire & Undead Association (VUA)]\n\n- QUANDO: Ogni Domenica notte alle ore 23:00 (Sundays at 11:00 PM).\n- DOVE: Helsing Chapel > Cripta Sotterranea schermata UV.\n- PARTECIPANTI: Studenti e docenti vampiri purosangue, spettri e non-morti registrati.\n\nDINAMICHE DELL'EVENTO:\nRiunione esclusiva ed elegante a porte chiuse. Si discute di politica studentesca, etichetta di corte notturna, e si degusta synth-blood d'annata importato. Nota per il rigido formalismo, l'associazione valuta le ammissioni con severita, guardando con sufficienza i mezzosangue o i vampiri modernizzati.",
+      "type": "event",
+      "enabled": true,
+      "constant": false,
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "highlight_keys": true,
+      "enable_highlighting": true
+    },
+    {
+      "entry_id": "event_escursione_del_bigfeet",
+      "name": "Escursione del Bigfeet Hiking Club",
+      "keys": [
+        "Bigfeet Hiking",
+        "Escursione Bigfeet",
+        "Hiking Club SUCC",
+        "Bigfeet Club"
+      ],
+      "secondary_keys": [
+        "sabato",
+        "Unicorn Hall",
+        "sentieri",
+        "montagna",
+        "campeggio"
+      ],
+      "content": "[EVENTO RICORRENTE: Escursione Settimanale Bigfeet Hiking Club]\n\n- QUANDO: Sabato mattina a weekend alterni, Ritrovo ore 09:00 (Alternate Saturdays, 9:00 AM).\n- DOVE: Partenza da Unicorn Hall > Spostamento verso i sentieri di Hex Valley e delle Coastal Mountains.\n- PARTECIPANTI: Criptidi, mezzosangue, orchi, yetoidi e studenti di ogni specie amanti della natura selvaggia.\n\nDINAMICHE DELL'EVENTO:\nSpedizioni montane all'insegna dell'avventura, panorami mozzafiato e cameratismo. Si organizzano trekking impegnativi, arrampicata libera e nottate in tenda attorno al fuoco con birra artigianale, racconti di folklore locale e sessioni di barbecue all'aperto.",
+      "type": "event",
+      "enabled": true,
+      "constant": false,
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "highlight_keys": true,
+      "enable_highlighting": true
+    },
+    {
+      "entry_id": "event_full_moon_market_a_sol",
+      "name": "Full Moon Market a Solarton Square",
+      "keys": [
+        "Full Moon Market",
+        "Mercato del Plenilunio",
+        "Solarton Market",
+        "Plenilunio Square"
+      ],
+      "secondary_keys": [
+        "luna piena",
+        "Solarton Square",
+        "bancarelle",
+        "notte",
+        "mercato"
+      ],
+      "content": "[EVENTO RICORRENTE: Full Moon Market a Solarton Square]\n\n- QUANDO: La notte di ogni Plenilunio, dalle ore 20:00 alle 02:00 (Every Full Moon Night).\n- DOVE: Solarton Square (Piazza Centrale di Solarton).\n- PARTECIPANTI: L'intera comunita soprannaturale cittadina, branchi di Seven Hills, studenti SUCC, mercanti e artigiani.\n\nDINAMICHE DELL'EVENTO:\nLa piazza principale si trasforma in un vivace bazar notturno illuminato da lanterne magiche e bracieri. Bancarelle gastronomiche ad alto contenuto proteico per lupi, venditori di rune protettive incise a mano, tinture per code e criniere, abiti resistenti allo Shift e musica dal vivo eseguita da band emergenti.",
+      "type": "event",
+      "enabled": true,
+      "constant": false,
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "highlight_keys": true,
+      "enable_highlighting": true
+    },
+    {
+      "entry_id": "event_late-night_kitchen_rai",
+      "name": "Late-Night Kitchen Raid & Gaming dei Five Cocketeers",
+      "keys": [
+        "Cocketeers Gaming",
+        "Kitchen Raid",
+        "Wyrm Suite 404 Night",
+        "Cocketeers Late Night"
+      ],
+      "secondary_keys": [
+        "notte",
+        "Wyrm Dormitory",
+        "Suite 404",
+        "Dean",
+        "Raymond",
+        "Jasper"
+      ],
+      "content": "[EVENTO RICORRENTE: Late-Night Gaming & Kitchen Raid dei Five Cocketeers]\n\n- QUANDO: Tutte le notti tra mezzanotte e le 03:00 (Nightly, 00:30 - 03:00 AM).\n- DOVE: Wyrm Dormitories > Suite 404 (Salotto e Kitchenette).\n- PARTECIPANTI: Dean (chef notturno), Raymond, Eric, Javier, Russ (e Jasper Douglas asserragliato dietro tre monitor con le cuffie).\n\nDINAMICHE DELL'EVENTO:\nLa routine notturna piu rumorosa del dormitorio Wyrm. Dean sforna manicaretti stoner alle due del mattino riempiendo la stanza di profumo speziato, Raymond sfata i record di push-up sul tappeto rovesciando snack, Eric prova accordi urlanti alla chitarra e Javier fa livestream. Jasper cerca disperatamente di concentrarsi sui codici di rete mentre volano cuscini e insulti fraterni.",
+      "type": "event",
+      "enabled": true,
+      "constant": false,
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "highlight_keys": true,
+      "enable_highlighting": true
+    },
+    {
+      "entry_id": "event_fiera_dei_club_e_cultu",
+      "name": "Fiera dei Club e Cultural Day SUCC",
+      "keys": [
+        "Cultural Day SUCC",
+        "Fiera dei Club",
+        "Club Fair SUCC",
+        "SUCC Cultural Day"
+      ],
+      "secondary_keys": [
+        "ottobre",
+        "semestre",
+        "Lunar Quad",
+        "gazebo",
+        "stand"
+      ],
+      "content": "[EVENTO RICORRENTE: Fiera Semestrale dei Club & Cultural Day SUCC]\n\n- QUANDO: 12 Ottobre (o terzo Sabato di inizio semestre), dalle 10:00 alle 15:00.\n- DOVE: Gran Quad Lunare (Lunar Quad).\n- PARTECIPANTI: Tutti i club studenteschi, le confraternite greche (ARO, ASS, BRO), squadre sportive e l'intero corpo docenti e matricole.\n\nDINAMICHE DELL'EVENTO:\nIl Lunar Quad si riempie di decine di gazebo colorati per il reclutamento delle matricole. L'Anime Club allestisce il maid cafe con dolci casalinghi, i Bulls organizzano sfide di lancio del pallone, la SHA offre assaggi gastronomici etnici, e le confraternite montano fusti di birra e dj-set improvvisati.",
+      "type": "event",
+      "enabled": true,
+      "constant": false,
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "highlight_keys": true,
+      "enable_highlighting": true
+    },
+    {
+      "entry_id": "succ_lb3_st_brugge_academy",
+      "name": "St. Brugge Private Academy (Accademia Privata St. Brugge)",
+      "type": "concept",
+      "keys": [
+        "St. Brugge",
+        "St. Brugge Private Academy",
+        "St Brugge",
+        "Accademia St. Brugge",
+        "St. Brugge Academy"
+      ],
+      "secondary_keys": [],
+      "regex_patterns": [],
+      "content": "St. Brugge Private Academy e un esclusivo istituto privato situato nei boschi periferici tra Blackwood City e Solarton, celebre per accogliere quasi esclusivamente la prole delle dinastie soprannaturali piu abbienti e influenti della West Coast. Le rette astronomiche e l'estrema riservatezza dell'ateneo sono leggendarie nel campus: l'ambiente e noto per uniformi sartoriali di altissimo costo e menu accademici d'elite.\n\nA differenza delle accademie ordinarie, il piano di studi di St. Brugge fonde la rigorosa eccellenza preparatoria pre-universitaria con percorsi avanzati di magia formale, storia dell'arcano, alchimia sperimentale, demonologia e scienze runiche. L'istituto funge da principale bacino di reclutamento per atenei selettivi come la SUCC e la CUMS.\n\nAlyssa e Jasper Douglas Bloodmoon hanno frequentato St. Brugge fin dall'infanzia, completando l'intero ciclo scolastico fino all'ammissione universitaria. Durante gli anni accademici, i gemelli sono stati seguiti con corsi privati avanzati da Padre Revazhael, enigmatico docente di magia e storia, che ha addestrato Alyssa nella cristallografia runica e nell'incantamento dei cilindri risonanti, e Jasper nella traduzione di rune arcaiche, forgiando le basi delle loro attuali competenze da dungeon hunter.",
+      "extensions": {},
+      "enabled": true,
+      "case_sensitive": false,
+      "insertion_order": 10,
+      "priority": 10,
+      "comment": "St. Brugge Private Academy academic institution entry",
+      "constant": false,
+      "position": "before_char",
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "activation_chance": 100,
+      "labels": [
+        "academy",
+        "school",
+        "education",
+        "st_brugge"
+      ],
+      "custom_fields": {},
+      "related_entries": [],
+      "callback": "",
+      "provenance": {
+        "source": {
+          "kind": "lorebook",
+          "container_id": "_9zWTGqYJNJ4BCDMj8gfcD",
+          "entry_id": "succ_lb3_st_brugge_academy"
+        },
+        "captured_at": "2026-11-02T06:00:00.000Z"
+      },
+      "highlight_keys": true,
+      "enable_highlighting": true
+    },
+    {
+      "entry_id": "succ_lb3_exobiology_prof_mollusk_and_man_bet",
+      "name": "SUCC Exobiology Chair (Prof. Mollusk), Pheromone Diffusers & Mu Alpha Nu Bet",
+      "type": "concept",
+      "keys": [
+        "Professor Mollusk",
+        "Prof. Mollusk",
+        "Anatomia Comparata Esobiologica",
+        "Mu Alpha Nu",
+        "soppressori di feromoni"
+      ],
+      "secondary_keys": [],
+      "regex_patterns": [],
+      "content": "Presso l'Aula Magna dell'Edificio C della SUCC, il corso fondamentale di Anatomia Comparata Esobiologica per gli studenti Pre-Med e tenuto dal Professor Mollusk, un severo accademico molluscoide armato di bacchetta d'ottone e occhiali tondi, specializzato nella microstruttura scheletrica dei mutaforma, nei canali di Havers modificati dal mana lunare e nella vascolarizzazione dei vampiri. Per regolamento d'ateneo, tutte le aule ad alta densita della SUCC sono dotate di diffusori aerei di soppressori di feromoni per prevenire risse territoriali tra studenti predatori.\n\nSul fronte delle confraternite del campus, la casa umana conservatrice ed elitaria Mu Alpha Nu (MAN), capeggiata da studenti come Tomas Matthews, alimenta una forte ostilita classista verso i demi-umani e i mutaforma, arrivando a organizzare scommesse clandestine per tentare di avvicinare o umiliare le matricole di alto profilo.",
+      "extensions": {},
+      "enabled": true,
+      "case_sensitive": false,
+      "insertion_order": 10,
+      "priority": 10,
+      "comment": "St. Brugge Private Academy academic institution entry",
+      "constant": false,
+      "position": "before_char",
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "activation_chance": 100,
+      "labels": [
+        "academy",
+        "school",
+        "education",
+        "st_brugge"
+      ],
+      "custom_fields": {},
+      "related_entries": [],
+      "callback": "",
+      "provenance": {
+        "source": {
+          "kind": "lorebook",
+          "container_id": "_9zWTGqYJNJ4BCDMj8gfcD",
+          "entry_id": "succ_lb3_st_brugge_academy"
+        },
+        "captured_at": "2026-11-02T06:00:00.000Z"
+      },
+      "highlight_keys": true,
+      "enable_highlighting": true
     }
   ],
   "lexicon": [
@@ -1476,6 +1834,364 @@
       "priority": 2,
       "position": "before_char",
       "enabled": true
+    },
+    {
+      "entry_id": "event_riunione_settimanale_s",
+      "name": "Riunione Settimanale SUCC Anime & Manga Club",
+      "keys": [
+        "Anime Club",
+        "Riunione Anime Club",
+        "Anime Club Meeting",
+        "Anime e Manga"
+      ],
+      "secondary_keys": [
+        "venerdì",
+        "Basement Room 005",
+        "Basilisk Library",
+        "Stan",
+        "Andrew"
+      ],
+      "content": "[EVENTO RICORRENTE: Riunione Settimanale SUCC Anime & Manga Club]\n\n- QUANDO: Ogni Venerdì alle ore 18:00 (Fridays at 6:00 PM).\n- DOVE: Basilica Library > Seminterrato > Meeting Room 005 (Library Basement Room 005).\n- PARTECIPANTI NOTI: Stan Davies Jr., Andrew Campbell, Oskar, e studenti otaku sia umani che demi-umani.\n\nDINAMICHE DELL'EVENTO:\nGli otaku del campus si riuniscono per proiezioni su maxischermo di serie anime stagionali, discussioni appassionate di capitoli manga, e tornei informali di picchiaduro. L'atmosfera e accogliente, pervasa da risate, confezioni di Pocky, bibite gassate e dibattiti accesi sui migliori archi narrativi (memorabile la discussione su Rengoku e Demon Slayer con Andrew Campbell).",
+      "type": "event",
+      "enabled": true,
+      "constant": false,
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "highlight_keys": true,
+      "enable_highlighting": true
+    },
+    {
+      "entry_id": "event_the_pack:_cerchio_nott",
+      "name": "The Pack: Cerchio Notturno dei Mannari SUCC",
+      "keys": [
+        "The Pack",
+        "Cerchio dei Mannari",
+        "Riunione The Pack",
+        "Werewolf Society"
+      ],
+      "secondary_keys": [
+        "martedì",
+        "Nocturnal Hall",
+        "Lunar Quad",
+        "plenilunio",
+        "istinti"
+      ],
+      "content": "[EVENTO RICORRENTE: The Pack (Cerchio Notturno dei Mannari e Canidi SUCC)]\n\n- QUANDO: Ogni Martedì sera dalle 19:00 alle 21:00 (Tuesdays 7:00 PM - 9:00 PM).\n- DOVE: Nocturnal Hall (in inverno/maltempo) o al centro del Gran Quad Lunare (Lunar Quad, durante le serate limpide).\n- PARTECIPANTI NOTI: Studenti licantropi (Common e Pureblood), demi-umani lupini, volpini e canidi del campus.\n\nDINAMICHE DELL'EVENTO:\nLa societa studentesca ufficiale per canidi e lupi della SUCC si incontra come rete di supporto fraterna e accademica. Si affrontano la gestione dell'aggressivita pre-plenilunio, consigli per conciliare le notti di luna piena con gli esami di facolta, e si conclude con corse liberatorie o sessioni di ringhio controllato all'aperto.",
+      "type": "event",
+      "enabled": true,
+      "constant": false,
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "highlight_keys": true,
+      "enable_highlighting": true
+    },
+    {
+      "entry_id": "event_assemblea_plenaria_sup",
+      "name": "Assemblea Plenaria Supernatural & Human Alliance (SHA)",
+      "keys": [
+        "Supernatural and Human Alliance",
+        "S.H.A",
+        "SHA Meeting",
+        "Assemblea SHA"
+      ],
+      "secondary_keys": [
+        "primo giovedì",
+        "Student Association Building",
+        "integrazione",
+        "dialogo"
+      ],
+      "content": "[EVENTO RICORRENTE: Assemblea Plenaria Supernatural & Human Alliance (SHA)]\n\n- QUANDO: Primo Giovedì di ogni mese alle ore 17:00 (First Thursday of each month, 5:00 PM).\n- DOVE: Student Association Building > Main Hall.\n- PARTECIPANTI: Rappresentanti studenteschi umani, demoni, vampiri, fae e demi-umani, con docenti delegati del rettorato.\n\nDINAMICHE DELL'EVENTO:\nIl piu grande club di dialogo interspecie del campus si riunisce per mediare attriti culturali tra umani e creature magiche, presentare mozioni per i servizi universitari (es. distributori di sangue sintetico o sale termiche), e organizzare tutoraggi accademici misti. L'incontro e sempre seguito da un rinfresco multiculturale aperto a tutti.",
+      "type": "event",
+      "enabled": true,
+      "constant": false,
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "highlight_keys": true,
+      "enable_highlighting": true
+    },
+    {
+      "entry_id": "event_partita_di_campionato_",
+      "name": "Partita di Campionato Football: SUCC Bulls (Friday Night Lights)",
+      "keys": [
+        "Partita dei Bulls",
+        "Bulls Game",
+        "Friday Night Lights",
+        "SUCC Bulls Football"
+      ],
+      "secondary_keys": [
+        "venerdì",
+        "St. Neptune Stadium",
+        "kickoff",
+        "Jared",
+        "Santiago"
+      ],
+      "content": "[EVENTO RICORRENTE: Partita di Campionato SUCC Bulls Football]\n\n- QUANDO: Ogni Venerdì sera durante il semestre autunnale, Kickoff ore 19:00 (Friday Night Lights, 7:00 PM).\n- DOVE: St. Neptune & Bulls Stadium (St. Neptune Stadium Field).\n- PROTAGONISTI: Star Quarterback Jared Thompson (Half-Minotaur), Lineman Anchor Santiago Herrera (Dragon Demihuman), Coach Dullahan, Assistant Coach Barkley Rover.\n\nDINAMICHE DELL'EVENTO:\nL'evento sportivo piu atteso e rumoroso della settimana studentesca. Lo stadio si riempie di migliaia di tifosi con i colori blu scuro e oro (#GoBulls), con il leggendario pre-game tailgate cookout organizzato dai genitori di Jared (Hank e Jasmin Thompson con il loro barbecue affumicato). Sul campo, la forza bruta dei supernatural athletes si scatena contro le squadre rivali della California (Clams, Bears, Bruins).",
+      "type": "event",
+      "enabled": true,
+      "constant": false,
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "highlight_keys": true,
+      "enable_highlighting": true
+    },
+    {
+      "entry_id": "event_partita_di_campionato_hockey",
+      "name": "Partita di Campionato Ice Hockey: SUCC Bears",
+      "keys": [
+        "Partita dei Bears",
+        "Bears Hockey",
+        "SUCC Bears Match",
+        "Ice Hockey SUCC"
+      ],
+      "secondary_keys": [
+        "sabato",
+        "St. Neptune Ice Arena",
+        "pista",
+        "Vincent Campbell",
+        "disco"
+      ],
+      "content": "[EVENTO RICORRENTE: Partita di Ice Hockey SUCC Bears]\n\n- QUANDO: Ogni Sabato sera alle ore 20:00 (Saturdays at 8:00 PM).\n- DOVE: St. Neptune Ice Arena (Pista olimpionica climatizzata).\n- PROTAGONISTI: Capitano Vincent Campbell (Vampiro, attaccante di punta), Andrew Campbell (Mascotte e assistente pista), e la linea d'attacco demi-umana.\n\nDINAMICHE DELL'EVENTO:\nGare ad altissima velocita su ghiaccio magico compatto. La squadra sfrutta i riflessi supersonici e la visione termica per manovre spettacolari contro i difensori avversari. Gli spalti riscaldati ospitano il tifo organizzato delle confraternite, con bevande calde speziate e una forte presenza della comunita vampirica cittadina.",
+      "type": "event",
+      "enabled": true,
+      "constant": false,
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "highlight_keys": true,
+      "enable_highlighting": true
+    },
+    {
+      "entry_id": "event_veglia_notturna_vampir",
+      "name": "Veglia Notturna Vampire & Undead Association (VUA)",
+      "keys": [
+        "VUA Meeting",
+        "Riunione VUA",
+        "Veglia Vampirica",
+        "Vampire Association"
+      ],
+      "secondary_keys": [
+        "domenica",
+        "Helsing Chapel",
+        "notte",
+        "synth-blood",
+        "non-morti"
+      ],
+      "content": "[EVENTO RICORRENTE: Veglia Notturna Vampire & Undead Association (VUA)]\n\n- QUANDO: Ogni Domenica notte alle ore 23:00 (Sundays at 11:00 PM).\n- DOVE: Helsing Chapel > Cripta Sotterranea schermata UV.\n- PARTECIPANTI: Studenti e docenti vampiri purosangue, spettri e non-morti registrati.\n\nDINAMICHE DELL'EVENTO:\nRiunione esclusiva ed elegante a porte chiuse. Si discute di politica studentesca, etichetta di corte notturna, e si degusta synth-blood d'annata importato. Nota per il rigido formalismo, l'associazione valuta le ammissioni con severita, guardando con sufficienza i mezzosangue o i vampiri modernizzati.",
+      "type": "event",
+      "enabled": true,
+      "constant": false,
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "highlight_keys": true,
+      "enable_highlighting": true
+    },
+    {
+      "entry_id": "event_escursione_del_bigfeet",
+      "name": "Escursione del Bigfeet Hiking Club",
+      "keys": [
+        "Bigfeet Hiking",
+        "Escursione Bigfeet",
+        "Hiking Club SUCC",
+        "Bigfeet Club"
+      ],
+      "secondary_keys": [
+        "sabato",
+        "Unicorn Hall",
+        "sentieri",
+        "montagna",
+        "campeggio"
+      ],
+      "content": "[EVENTO RICORRENTE: Escursione Settimanale Bigfeet Hiking Club]\n\n- QUANDO: Sabato mattina a weekend alterni, Ritrovo ore 09:00 (Alternate Saturdays, 9:00 AM).\n- DOVE: Partenza da Unicorn Hall > Spostamento verso i sentieri di Hex Valley e delle Coastal Mountains.\n- PARTECIPANTI: Criptidi, mezzosangue, orchi, yetoidi e studenti di ogni specie amanti della natura selvaggia.\n\nDINAMICHE DELL'EVENTO:\nSpedizioni montane all'insegna dell'avventura, panorami mozzafiato e cameratismo. Si organizzano trekking impegnativi, arrampicata libera e nottate in tenda attorno al fuoco con birra artigianale, racconti di folklore locale e sessioni di barbecue all'aperto.",
+      "type": "event",
+      "enabled": true,
+      "constant": false,
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "highlight_keys": true,
+      "enable_highlighting": true
+    },
+    {
+      "entry_id": "event_full_moon_market_a_sol",
+      "name": "Full Moon Market a Solarton Square",
+      "keys": [
+        "Full Moon Market",
+        "Mercato del Plenilunio",
+        "Solarton Market",
+        "Plenilunio Square"
+      ],
+      "secondary_keys": [
+        "luna piena",
+        "Solarton Square",
+        "bancarelle",
+        "notte",
+        "mercato"
+      ],
+      "content": "[EVENTO RICORRENTE: Full Moon Market a Solarton Square]\n\n- QUANDO: La notte di ogni Plenilunio, dalle ore 20:00 alle 02:00 (Every Full Moon Night).\n- DOVE: Solarton Square (Piazza Centrale di Solarton).\n- PARTECIPANTI: L'intera comunita soprannaturale cittadina, branchi di Seven Hills, studenti SUCC, mercanti e artigiani.\n\nDINAMICHE DELL'EVENTO:\nLa piazza principale si trasforma in un vivace bazar notturno illuminato da lanterne magiche e bracieri. Bancarelle gastronomiche ad alto contenuto proteico per lupi, venditori di rune protettive incise a mano, tinture per code e criniere, abiti resistenti allo Shift e musica dal vivo eseguita da band emergenti.",
+      "type": "event",
+      "enabled": true,
+      "constant": false,
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "highlight_keys": true,
+      "enable_highlighting": true
+    },
+    {
+      "entry_id": "event_late-night_kitchen_rai",
+      "name": "Late-Night Kitchen Raid & Gaming dei Five Cocketeers",
+      "keys": [
+        "Cocketeers Gaming",
+        "Kitchen Raid",
+        "Wyrm Suite 404 Night",
+        "Cocketeers Late Night"
+      ],
+      "secondary_keys": [
+        "notte",
+        "Wyrm Dormitory",
+        "Suite 404",
+        "Dean",
+        "Raymond",
+        "Jasper"
+      ],
+      "content": "[EVENTO RICORRENTE: Late-Night Gaming & Kitchen Raid dei Five Cocketeers]\n\n- QUANDO: Tutte le notti tra mezzanotte e le 03:00 (Nightly, 00:30 - 03:00 AM).\n- DOVE: Wyrm Dormitories > Suite 404 (Salotto e Kitchenette).\n- PARTECIPANTI: Dean (chef notturno), Raymond, Eric, Javier, Russ (e Jasper Douglas asserragliato dietro tre monitor con le cuffie).\n\nDINAMICHE DELL'EVENTO:\nLa routine notturna piu rumorosa del dormitorio Wyrm. Dean sforna manicaretti stoner alle due del mattino riempiendo la stanza di profumo speziato, Raymond sfata i record di push-up sul tappeto rovesciando snack, Eric prova accordi urlanti alla chitarra e Javier fa livestream. Jasper cerca disperatamente di concentrarsi sui codici di rete mentre volano cuscini e insulti fraterni.",
+      "type": "event",
+      "enabled": true,
+      "constant": false,
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "highlight_keys": true,
+      "enable_highlighting": true
+    },
+    {
+      "entry_id": "event_fiera_dei_club_e_cultu",
+      "name": "Fiera dei Club e Cultural Day SUCC",
+      "keys": [
+        "Cultural Day SUCC",
+        "Fiera dei Club",
+        "Club Fair SUCC",
+        "SUCC Cultural Day"
+      ],
+      "secondary_keys": [
+        "ottobre",
+        "semestre",
+        "Lunar Quad",
+        "gazebo",
+        "stand"
+      ],
+      "content": "[EVENTO RICORRENTE: Fiera Semestrale dei Club & Cultural Day SUCC]\n\n- QUANDO: 12 Ottobre (o terzo Sabato di inizio semestre), dalle 10:00 alle 15:00.\n- DOVE: Gran Quad Lunare (Lunar Quad).\n- PARTECIPANTI: Tutti i club studenteschi, le confraternite greche (ARO, ASS, BRO), squadre sportive e l'intero corpo docenti e matricole.\n\nDINAMICHE DELL'EVENTO:\nIl Lunar Quad si riempie di decine di gazebo colorati per il reclutamento delle matricole. L'Anime Club allestisce il maid cafe con dolci casalinghi, i Bulls organizzano sfide di lancio del pallone, la SHA offre assaggi gastronomici etnici, e le confraternite montano fusti di birra e dj-set improvvisati.",
+      "type": "event",
+      "enabled": true,
+      "constant": false,
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "highlight_keys": true,
+      "enable_highlighting": true
+    },
+    {
+      "entry_id": "succ_lb3_st_brugge_academy",
+      "name": "St. Brugge Private Academy (Accademia Privata St. Brugge)",
+      "type": "concept",
+      "keys": [
+        "St. Brugge",
+        "St. Brugge Private Academy",
+        "St Brugge",
+        "Accademia St. Brugge",
+        "St. Brugge Academy"
+      ],
+      "secondary_keys": [],
+      "regex_patterns": [],
+      "content": "St. Brugge Private Academy e un esclusivo istituto privato situato nei boschi periferici tra Blackwood City e Solarton, celebre per accogliere quasi esclusivamente la prole delle dinastie soprannaturali piu abbienti e influenti della West Coast. Le rette astronomiche e l'estrema riservatezza dell'ateneo sono leggendarie nel campus: l'ambiente e noto per uniformi sartoriali di altissimo costo e menu accademici d'elite.\n\nA differenza delle accademie ordinarie, il piano di studi di St. Brugge fonde la rigorosa eccellenza preparatoria pre-universitaria con percorsi avanzati di magia formale, storia dell'arcano, alchimia sperimentale, demonologia e scienze runiche. L'istituto funge da principale bacino di reclutamento per atenei selettivi come la SUCC e la CUMS.\n\nAlyssa e Jasper Douglas Bloodmoon hanno frequentato St. Brugge fin dall'infanzia, completando l'intero ciclo scolastico fino all'ammissione universitaria. Durante gli anni accademici, i gemelli sono stati seguiti con corsi privati avanzati da Padre Revazhael, enigmatico docente di magia e storia, che ha addestrato Alyssa nella cristallografia runica e nell'incantamento dei cilindri risonanti, e Jasper nella traduzione di rune arcaiche, forgiando le basi delle loro attuali competenze da dungeon hunter.",
+      "extensions": {},
+      "enabled": true,
+      "case_sensitive": false,
+      "insertion_order": 10,
+      "priority": 10,
+      "comment": "St. Brugge Private Academy academic institution entry",
+      "constant": false,
+      "position": "before_char",
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "activation_chance": 100,
+      "labels": [
+        "academy",
+        "school",
+        "education",
+        "st_brugge"
+      ],
+      "custom_fields": {},
+      "related_entries": [],
+      "callback": "",
+      "provenance": {
+        "source": {
+          "kind": "lorebook",
+          "container_id": "_9zWTGqYJNJ4BCDMj8gfcD",
+          "entry_id": "succ_lb3_st_brugge_academy"
+        },
+        "captured_at": "2026-11-02T06:00:00.000Z"
+      },
+      "highlight_keys": true,
+      "enable_highlighting": true
+    },
+    {
+      "entry_id": "succ_lb3_exobiology_prof_mollusk_and_man_bet",
+      "name": "SUCC Exobiology Chair (Prof. Mollusk), Pheromone Diffusers & Mu Alpha Nu Bet",
+      "type": "concept",
+      "keys": [
+        "Professor Mollusk",
+        "Prof. Mollusk",
+        "Anatomia Comparata Esobiologica",
+        "Mu Alpha Nu",
+        "soppressori di feromoni"
+      ],
+      "secondary_keys": [],
+      "regex_patterns": [],
+      "content": "Presso l'Aula Magna dell'Edificio C della SUCC, il corso fondamentale di Anatomia Comparata Esobiologica per gli studenti Pre-Med e tenuto dal Professor Mollusk, un severo accademico molluscoide armato di bacchetta d'ottone e occhiali tondi, specializzato nella microstruttura scheletrica dei mutaforma, nei canali di Havers modificati dal mana lunare e nella vascolarizzazione dei vampiri. Per regolamento d'ateneo, tutte le aule ad alta densita della SUCC sono dotate di diffusori aerei di soppressori di feromoni per prevenire risse territoriali tra studenti predatori.\n\nSul fronte delle confraternite del campus, la casa umana conservatrice ed elitaria Mu Alpha Nu (MAN), capeggiata da studenti come Tomas Matthews, alimenta una forte ostilita classista verso i demi-umani e i mutaforma, arrivando a organizzare scommesse clandestine per tentare di avvicinare o umiliare le matricole di alto profilo.",
+      "extensions": {},
+      "enabled": true,
+      "case_sensitive": false,
+      "insertion_order": 10,
+      "priority": 10,
+      "comment": "St. Brugge Private Academy academic institution entry",
+      "constant": false,
+      "position": "before_char",
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "activation_chance": 100,
+      "labels": [
+        "academy",
+        "school",
+        "education",
+        "st_brugge"
+      ],
+      "custom_fields": {},
+      "related_entries": [],
+      "callback": "",
+      "provenance": {
+        "source": {
+          "kind": "lorebook",
+          "container_id": "_9zWTGqYJNJ4BCDMj8gfcD",
+          "entry_id": "succ_lb3_st_brugge_academy"
+        },
+        "captured_at": "2026-11-02T06:00:00.000Z"
+      },
+      "highlight_keys": true,
+      "enable_highlighting": true
     }
   ],
   "visibility": "private",

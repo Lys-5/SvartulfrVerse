@@ -1,0 +1,158 @@
+{
+  "id": "_HxKC8TzF9BDMR1cmY1mkL",
+  "_id": "_HxKC8TzF9BDMR1cmY1mkL",
+  "created_at": "2026-10-31T14:28:42.863Z",
+  "updated_at": "2026-10-31T14:28:42.863Z",
+  "world": {
+    "_id": "_YpX47fNraQFw2dD7TdycJ",
+    "id": "_YpX47fNraQFw2dD7TdycJ",
+    "name": "Svartúlfr — Blackwood & Solarton",
+    "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/1e5124b4-f7d0-46cf-fad9-7ecfc801d100/public",
+    "visibility": "private",
+    "status": "pending",
+    "rating": "explicit",
+    "created_at": "2026-10-24T22:59:17.779Z",
+    "updated_at": "2026-10-31T14:05:08.467Z"
+  },
+  "visibility": "private",
+  "status": "pending",
+  "rating": "explicit",
+  "approval_date": null,
+  "rejection_date": null,
+  "approval_comment": null,
+  "rejection_comment": null,
+  "entity_statistics": null,
+  "name": "SUCC: Open World RPG (Campus Sandbox)",
+  "description": "Esplorazione libera e interattiva della Supernatural University of Central California tra lezioni di magia applicata, confraternite, rivalità sportive e vita notturna a Solarton.",
+  "scenario_premise": "Sandbox universitario aperto nel cuore del campus SUCC, dal Lunar Quad alle aule della Basilica Library fino a Greek Row e Dockside.",
+  "tags": [
+    "succ",
+    "open-world",
+    "rpg",
+    "campus",
+    "solarton"
+  ],
+  "community_tags": [],
+  "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/ba5a7fed-8425-478e-4314-16fb78d58300/public",
+  "environment": {
+    "_id": "_38JCUykN4wwRfgGjQyjLr",
+    "id": "_38JCUykN4wwRfgGjQyjLr",
+    "name": "SUCC campus",
+    "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/24dfae81-a1d0-4d08-3979-83dbf110b600/public",
+    "description": "[ENVIRONMENT INFO:\nName: SUCC campus (Supernatural University of Central California);\nDomain: Collegiate Supernatural Sanctuary & Academic Domain;\nCoordinates & Span: 129 Hocus Way, coastal Solarton, California;\nSetting & Metaphysics: Historic premier higher-education campus founded in 1887; balanced human-supernatural integration;\nDominant Presence: University Board of Regents, Student Body (8,000 students, 60/40 supernatural/human), Greek Row (10 houses), Faculty, DCC Fellows]\n\n[LORE & ENVIRONMENT:\nAtmosphere & Senses: Salty sea breeze mingled with coffee from The Roasted Bean, old parchment, ozone from arcane labs, freshly cut athletic turf;\nSpatial Architecture: Collegiate gothic stone halls, arched cloisters, modern bioengineering glass cubes, Greek Row mansions, St. Neptune athletic complex;\nRifts & Dimensional Drift: Heavily anchored runic boundary wards preventing unauthorized dimensional tears on campus grounds;\nHazards & Rules: Strict scent suppressor compliance in lecture halls, mandatory neutral truce across rival houses and packs, no lethal dueling]\n\n[CONTEXT & SECRETS:\nCosmology & Origins: Established to foster peaceful co-existence and academic mastery between supernatural lineages and mortals;\nSecrets: The subterranean Basilica library basement (Room 005) hides forgotten pre-treaty pact archives and covert summoning circles]",
+    "created_at": "2026-10-24T22:59:33.595Z",
+    "updated_at": "2026-10-25T06:57:26.839Z"
+  },
+  "location": {
+    "_id": "_aPqjQX8UBNTC9y2tEUdX3",
+    "id": "_aPqjQX8UBNTC9y2tEUdX3",
+    "name": "Lunar Quad",
+    "avatar": "",
+    "description": "[LOCATION INFO:\nEra: 2024 (Modern Fantasy / Post-Gate Era);\nLocation: Lunar Quad (Central Campus Green, SUCC);\nSetting: Sprawling emerald lawn and central outdoor pedestrian crossroad of the university;\nFactions: General Student Body, Campus Tabling Clubs, Frisbee Players, Sunbathers;\nConflicts: Turf wars between club tabling tents during rush week, managing heavy foot traffic between lectures;\nSociety: Open collegiate outdoor social life, sunny California relaxation, public student assemblies]\n\n[LORE & ENVIRONMENT:\nEnvironment: Warm California sunshine, fragrant eucalyptus trees, fresh cut grass, laughter, acoustic guitar music, sea breeze;\nArchitecture: Wide landscaped emerald lawns crossed by diagonal red-brick footpaths, shaded benches beneath mature oaks, central plaza;\nSecurity & Wards: Open green space, patrolled by campus safety bicycles, perimeter emergency call boxes;\nDemographics: Thousands of students relaxing between classes, study circles, athletic shifters throwing footballs;\nRules & Restrictions: Pick up personal trash, motorized vehicles barred from pedestrian pathways]\n\n[CONTEXT & SECRETS:\nHistory: The physical and social heart of campus since 1887, hosting generations of commencement ceremonies;\nSecrets: The ancient stone sundial in the center of the quad is subtly aligned with celestial ley lines, casting lunar shadows on full moons]",
+    "created_at": "2026-10-24T23:01:15.082Z",
+    "updated_at": "2026-10-25T06:37:24.454Z"
+  },
+  "linked_character_pool": [],
+  "included_character_pool": [
+    {
+      "character_id": "_FGeNBqjrt9fJJJyXTDgxM",
+      "participation_weight": 80
+    },
+    {
+      "character_id": "_mUEUDfmTG4m7wNyQ7WQKx",
+      "participation_weight": 80
+    }
+  ],
+  "min_number_of_characters": 1,
+  "max_number_of_characters": 3,
+  "insertion_point": 10489910,
+  "scene_instructions": "[RUNTIME SCENARIO DIRECTIVE: SUCC CAMPUS SANDBOX]\n1. Setting: Lunar Quad and the vibrant campus grounds of SUCC during the academic semester.\n2. Tone: Collegiate freedom, diverse supernatural species, academic hustle, sports culture, and secret underground factions.\nFormat discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead.",
+  "premade_scenes": [
+    {
+      "id": "scene-succ-open-world-sandbox",
+      "description": "Open World RPG Campus Sandbox",
+      "scene_text": "Il sole del primo pomeriggio bagnava di luce calda i prati all'inglese del Lunar Quad, gremito di studenti di ogni razza e lignaggio. Demi-umani con code e orecchie animalesche passeggiavano chiacchierando tra i viali acciottolati, giovani vampiri con lenti scure sfogliavano tomi all'ombra dei porticati gotici della Basilica Library, e atleti licantropi in giacche varsity lanciavano palloni da football attraverso il prato.\n\nDai chioschi vicini arrivava il profumo intenso di caffè tostato e cannella proveniente dal The Roasted Bean, mescolato alla brezza salmastra che saliva dalla costa di Solarton. I volantini colorati delle confraternite e dei club studenteschi svolazzavano sulle bacheche di quercia accanto alla fontana centrale.\n\nUn gruppo di matricole si fermò a osservare la mappa monumentale del campus, discutendo animatamente sulla direzione da prendere per raggiungere i laboratori di scienze occulte o gli alloggi di Wyrm Hall. La vita universitaria a Central California offriva infinite strade da percorrere, e ogni scelta spalancava nuove porte."
+    }
+  ],
+  "character_slots": {},
+  "starting_inventory": [
+    {
+      "lexicon_entry_id": "_TxgwtYLc7Ydzkx2g9W3Nw",
+      "quantity": 1
+    },
+    {
+      "lexicon_entry_id": "_nzgBYYwNnXRT8HVwhYCPY",
+      "quantity": 1
+    },
+    {
+      "lexicon_entry_id": "_qBqG7zznDRJmg8n7qyY4h",
+      "quantity": 1
+    },
+    {
+      "lexicon_entry_id": "_DjzLWQfByHMN3VDqQC6R6",
+      "quantity": 1
+    },
+    {
+      "lexicon_entry_id": "_AGNJ2P6hpj9PjY8rCFypX",
+      "quantity": 1
+    },
+    {
+      "lexicon_entry_id": "_23EG8KEWcQMDfY6C2NEEt",
+      "quantity": 1
+    },
+    {
+      "lexicon_entry_id": "_RCKee7MrcKUfxbzTYm8xn",
+      "quantity": 1
+    },
+    {
+      "lexicon_entry_id": "_3KUmFBfBEk8qDJMwJU6x4",
+      "quantity": 1
+    },
+    {
+      "lexicon_entry_id": "_KyAh8ymQBwP9kzn4nezU3",
+      "quantity": 1
+    },
+    {
+      "lexicon_entry_id": "_FrLpFaULBEUrM1EnkYfUY",
+      "quantity": 1
+    },
+    {
+      "lexicon_entry_id": "_1cVjGdFd8V3Q7pkad3Dt1",
+      "quantity": 1
+    }
+  ],
+  "starting_currency": {
+    "fbecc738-f9f7-4426-b8a1-a237b8ad922c": 500,
+    "8c7bca5a-5d3f-4780-93cb-5cb63dc2cf0a": 50000
+  },
+  "startup_script_id": "anti_duplicate_user_persona",
+  "world_only": false,
+  "scenario_type": "any",
+  "event_trigger": {
+    "enabled": false,
+    "conditions": [],
+    "condition_logic": "AND",
+    "repeat": "once",
+    "priority": 0
+  },
+  "include_character_select": false,
+  "include_rpg_build": true,
+  "playable_character_ids": [
+    "_FGeNBqjrt9fJJJyXTDgxM",
+    "_mUEUDfmTG4m7wNyQ7WQKx"
+  ],
+  "resolved_characters": [
+    {
+      "id": "_FGeNBqjrt9fJJJyXTDgxM",
+      "display_name": "Alyssa",
+      "first_name": "Alyssa",
+      "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/ba5a7fed-8425-478e-4314-16fb78d58300/public"
+    },
+    {
+      "id": "_mUEUDfmTG4m7wNyQ7WQKx",
+      "display_name": "Jasper",
+      "first_name": "Jasper",
+      "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/061fed14-373e-44fb-639a-2a5638a47100/public"
+    }
+  ]
+}

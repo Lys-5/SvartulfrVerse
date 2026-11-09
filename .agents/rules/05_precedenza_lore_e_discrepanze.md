@@ -143,3 +143,22 @@ In tutti gli scenari e testi relativi a Solarton, SUCC e al Modern Fantasy in ge
 | **DMHA (Dungeon Management & Hunter Authority)** | Gilda governativa per dungeon urbani. Roster: Barrow (demi-umano orso), Team Ukiyo (*Radek, Goran, Kian*), Marek & Ironhorn Nomads. | ❌ Confusione con DDM Inc. / Voidspace |
 | **Camp Mystic Supervision** | Mara Evelyn Voss (Direttrice); Marcus Dean Vale (Supervisore Maschile, Werewolf); Celeste Amara Nadir (Supervisore Femminile, Gorgon). | ❌ Mara come supervisore di cabina |
 | **Visibilità Character Scenarios** | Impostazione obbligatoria `visibility: "private"` per tutti i deployment di scenari standalone. | ❌ "public", "unlisted" |
+
+---
+
+## 10. Asimmetria Informativa, Segretezza Licantropica e Divieto Assoluto di Metagaming
+
+1. **Riserbo dei Licantropi e Folklore come Leggenda Metropolitana:**
+   - La società dei licantropi è fiera, chiusa ed ermeticamente protettiva verso i propri segreti ancestrali.
+   - Al di fuori della società interna dei licantropi e dei grandi branchi legati da giuramento di fedeltà a Wulfnic (o delle antichissime casate aristocratiche millenarie come Sterling o Ashbourne), l'esistenza di una figura sovrana come il **Re dei Lupi** (*The Wolf King*), dell'entità misteriosa nota come **L'Enigma**, o il folklore cosmico sui **Firstborn** (i Fondatori Primordiali) sono considerati dal mondo esterno **pure leggende metropolitane, miti popolari e favole da bar**.
+2. **Percezione Pubblica dei Douglas (I Sovrannaturali Comuni e Studenti SUCC):**
+   - Per tutti i sovrannaturali comuni, gli studenti universitari e i residenti di Solarton e Blackwood (inclusi gli amici e compagni di campus come **Jared Thompson**, **Santiago Vance**, **Bailey Rogers**, **Mac Sanchez-Rogers**, **Stanley Davies**, **Russell Sinclair**, Andy, Tate, ecc.):
+     - **I Douglas** sono unicamente una famiglia locale di licantropi influente, aristocratica e molto facoltosa, a capo della *Douglas Commercial Coalition (DCC)*. Sono noti per la filantropia e gli investimenti edilizi, in primis per aver finanziato la costruzione del **Neptune Stadium** e della Douglas Arena.
+     - **Erik Douglas** è ricordato e rispettato come una celebrità sportiva locale: ex eroe del campus ed ex stella/capitano della squadra di hockey su ghiaccio dei *SUCC Bears*.
+3. **Wulfnic è Esclusivamente "Nonno Nic" per gli Outsider:**
+   - Per chiunque sia estraneo al cerchio intimo del branco, Wulfnic Bloodmoon è **rigorosamente e unicamente ciò che Alyssa e Jasper hanno raccontato: il loro "nonno Nic" (Grandpa Nic)**.
+   - È percepito come un anziano montanaro massiccio, rustico, un po' all'antica, burbero ed eccentrico che vive nei boschi o guida un vecchio pickup.
+   - **Divieto Assoluto di Metagaming:** Personaggi come Jared, Santiago, Bailey, compagni di squadra e studenti della SUCC **non sanno, non possono sapere e non devono mai sospettare chi sia in realtà Wulfnic**. Non provano terrore cosmico né reverenza ancestrale verso di lui, ma al massimo il naturale rispetto/soggezione che si deve a un anziano imponente e protettivo. È severamente vietato all'LLM far trapelare la sua identità leggendaria nei pensieri o dialoghi di questi personaggi.
+4. **Inaccessibilità dei Misteri Esoterici (Luna Bianca, Purosangue, Sangue Fondatore):**
+   - I dogmi della **Luna Bianca** (*White Moon / Máni*), dei **Purosangue** (*Trueblood*), del **Sangue Fondatore** (*Founder Blood*), le profezie gemellari dei Lupi Cosmici (*Sólúlfr* e *Mániúlfr*) e le rune sacre di sangue sono dottrine religiose ed esoteriche strettamente interne ai licantropi.
+   - Un non-licantropo (umano, demone, mezzo minotauro, demi-umano, gorgone, succube o vampiro comune) **non conosce, non comprende e non sa decifrare questi concetti**. Se sente una menzione o nota un'abitudine peculiare, la liquida semplicemente come una bizzarria culturale dei lupi o un modo di dire di famiglia.

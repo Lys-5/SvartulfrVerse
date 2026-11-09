@@ -1,24 +1,40 @@
-## 2026-10-25T07:45:34Z
-You are explorer_survey_1, a read-only exploration agent.
-Your working directory is: e:\repository\SvartulfrVerse\.agents\teamwork\explorer_survey_1
+## 2026-11-02T06:12:04Z
+
+From: a6280f2d-32ae-4a10-82fa-5604ad40f230 (parent orchestrator)
+Priority: MESSAGE_PRIORITY_HIGH
+
+You are an Explorer subagent for the Svartúlfr Verse project.
+Your identity: survey_explorer_1
+Your working directory: e:\repository\SvartulfrVerse\.agents\teamwork\explorer_survey_1\
+Authoritative user request: e:\repository\SvartulfrVerse\.agents\teamwork\ORIGINAL_REQUEST.md
 
 Objective:
-Investigate Requirement 1 of the authoritative user request in e:\repository\SvartulfrVerse\.agents\teamwork\ORIGINAL_REQUEST.md (under timestamp header `## 2026-10-25T07:42:08Z`):
-"Deploy 13 Primary World Characters into World `_YpX47fNraQFw2dD7TdycJ` via `POST /api/worlds/characters` (Erik, Logan, Edric, Noah, Malachia, Jasper, Alyssa, Wulfnic, Zefir, Mackenzie, Finn, Sierra, Scarlett) with integer BigInt birthdate/start_timeline_position, full CDN avatars, complete JED+ profiles, and balanced 25-point 6-stat RPG blocks (Might, Resilience, Agility, Wit, Presence, Scouting; level capped at 99)."
+Map and survey the entire Vault / Second Brain / Knowledge documentation structure of Svartúlfr Verse to plan the integration of emergent lore:
+1. St. Brugge Private Academy (nature of the elite private institution, advanced curricula, attendance of Alyssa and Jasper).
+2. Father Revazhael (Superior Demon, mentor of Alyssa and Jasper at St. Brugge, teacher of crystallography and abyssal magic, tolerated by the Jarl Erik Douglas).
+3. Applied Runic Crystallography (enchanted resonant cylinders with personal attunement vs fragile guild/DMHA standard cylinders, crystalline matrix with frozen spells).
+4. Abyssal Magic vs Void Magic/Necromancy (distinction between deep planar demon magic and void decay/entropy/necromancy).
+5. Academic, Guild healer, and dungeon support background of Alyssa (SUCC pre-Med, guild certification, dungeon field experience).
+6. Registered hunter status, rune translation, and KSA reputation of Jasper.
 
-Investigation tasks:
-1. Locate the canonical source files for each of the 13 characters (e.g., in `FINAL/`, `ARCHIVIO/cards_legacy/`, `FINAL/Svartulfr_NPC_Primary.json`, `FINAL/Svartulfr_NPC_Secondary.json`, or other files).
-2. For each of the 13 characters, extract/calculate:
-   - Canonical name & ID
-   - Integer BigInt `birthdate` and `start_timeline_position` (calculated from epoch 827-12-21 00:00:00 UTC using formula: hours from epoch, matching World Clock parameters). Verify how birthdate is stored and formatted for Wyvern World characters.
-   - Full CDN avatar URL (check gallery and cards).
-   - Complete JED+ profile description text (bracket block, BACKSTORY, FAMILY & PACK / CLAN & COMPANY, VOICE & BEHAVIOR, thematic ending).
-   - Balanced 25-point 6-stat RPG block (Might, Resilience, Agility, Wit, Presence, Scouting; base 1 + 25 points = 31 total points, level = min(age, 99)).
-3. Investigate the Wyvern API endpoint for deploying World characters:
-   - Check `POST /api/worlds/characters` or relevant endpoints in existing scripts (e.g. `scripts/`, `scratch/`, or previous orchestrator logs).
-   - Check the payload structure required by Wyvern for `WorldCharacter` creation/deployment.
-   - Check current state of World `_YpX47fNraQFw2dD7TdycJ` characters (e.g. are there any existing characters already in that world?).
-4. Scope boundaries: READ-ONLY. Do NOT modify source code or deploy via API yet.
-5. Deliverables:
-   - Write a detailed structured report to `e:\repository\SvartulfrVerse\.agents\teamwork\explorer_survey_1\handoff.md`.
-   - Send a concise completion message back using `send_message`.
+Examine:
+- `knowledge/`, `docs/`, `.agents/rules/`, `GEMINI.md`, `AGENTS.md` to see existing knowledge organization, naming conventions, wikilinks, tags, and formatting rules.
+- Identify exactly which files currently exist in knowledge/Lore_Worldbuilding/ or related directories, and specify the exact new or updated files needed.
+- Note all formatting rules: no em-dash, dialogue in quotes, plain text narration, positive framing for demi-humans, World-Age 2024.
+
+Write your complete, self-contained handoff report to `e:\repository\SvartulfrVerse\.agents\teamwork\explorer_survey_1\handoff.md`.
+Communicate back to orchestrator via send_message once done.
+
+## 2026-11-02T06:13:22Z
+
+From: a6280f2d-32ae-4a10-82fa-5604ad40f230 (parent orchestrator)
+Priority: MESSAGE_PRIORITY_HIGH
+
+**Context**: Survey Phase for Svartúlfr Verse emergent lore integration.
+**Content**: The user has provided an essential primary source: the exported 46-turn live playtest chat log at `scratch/chat_export_ftrtAD79eddk9Ue9Jr2WJ.json`. In addition to St. Brugge, Father Revazhael, runic cylinders, abyssal magic, and Alyssa/Jasper background, this chat log contains critical emergent lore:
+1. Rector Archer Wolfwood interaction and mention of "Maggiore Narghaton" (Msg 13-17).
+2. Welcome Fest interactions with Jared, Edric, Wulfnic, Santiago, Bailey, Barkley.
+3. Encounter with Marcus T. and Roxy towards Theta Iota Theta (TIT / ΘΙΘ) house (Msg 24-31).
+4. Suite 3 Theta Iota Theta environmental and relationship details with Sierra Cruz (Grave Mistake poster, reaction to Uncle/Grandpa Logan's furs, limbless serpentine locomotion) and Zefir (scout shroud, protective sleep with plush wolf).
+**Action**: Read and analyze `scratch/chat_export_ftrtAD79eddk9Ue9Jr2WJ.json` as a primary source of truth, and incorporate these elements into your handoff report.
+

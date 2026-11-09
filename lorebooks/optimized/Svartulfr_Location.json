@@ -2300,19 +2300,18 @@
         "St. Brugge",
         "St. Brugge Private Academy",
         "St Brugge",
-        "private academy",
-        "Seven Hills",
-        "Douglas",
-        "Blackwood"
+        "Accademia St. Brugge",
+        "St. Brugge Academy"
       ],
       "secondary_keys": [
-        "school",
+        "campus",
         "academy",
         "Father Rev",
-        "Revazhael"
+        "Revazhael",
+        "esoteric library"
       ],
       "regex_patterns": [],
-      "content": "An exclusive private academy tucked on the wooded outskirts between Blackwood and Solarton, catering strictly to the scions of high-society supernatural families. Features Gothic stone architecture, shielded courtyards, and ward-locked libraries. Alyssa and Jasper attended St. Brugge from preschool through middle school, where Father Revazhael secretly mentored them in mystic arts and arcane slicing.",
+      "content": "Un sontuoso complesso accademico in pietra nera e granito gotico immerso nelle fitte foreste collinari tra Blackwood e Solarton. Il perimetro di St. Brugge e protetto da possenti barriere di interdizione acustica e sigilli arcanici che schermano completamente l'istituto dagli sguardi dei civili umani e dai droni non autorizzati.\n\nL'architettura interna presenta chiostri colonnati, cortili alberati sorvegliati da doccioni incantati, aule a gradoni illuminate da vetrate runiche e biblioteche blindate contenenti testi rari di storia soprannaturale, erbologia e demonologia. I laboratori seminterrati ospitano banchi da lavoro in ardesia e quarzo per alchimia e cristallografia applicata.\n\nIn queste aule Alyssa e Jasper Douglas Bloodmoon hanno trascorso la loro giovinezza scolastica, ricevendo lezioni private e tutoraggio esoterico avanzato da Padre Revazhael lontano da occhi indiscreti, prima di fare il loro ingresso alla SUCC.",
       "extensions": {},
       "enabled": true,
       "case_sensitive": false,
@@ -2322,7 +2321,7 @@
       "comment": "",
       "constant": false,
       "position": "before_char",
-      "scan_persona": false,
+      "scan_persona": true,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "delay": 0,
@@ -2341,7 +2340,9 @@
           "entry_id": "ulTwlYo2jqObA7l_bFoa5"
         },
         "captured_at": "2026-10-16T14:50:28.248Z"
-      }
+      },
+      "highlight_keys": true,
+      "enable_highlighting": true
     },
     {
       "entry_id": "4U9_759Am9PgDyjY1fslu",
@@ -9270,6 +9271,60 @@
         "captured_at": "2026-10-20T05:41:07.393Z"
       },
       "type": "location"
+    },
+    {
+      "entry_id": "loc_theta_iota_theta_suite_3",
+      "name": "Theta Iota Theta: Suite 3",
+      "type": "location",
+      "keys": [
+        "Suite 3",
+        "Suite 3 TIT",
+        "camera di Alyssa",
+        "stanza di Alyssa",
+        "TIT Suite 3"
+      ],
+      "secondary_keys": [
+        "Sierra",
+        "Scarlett",
+        "nido di pellicce",
+        "Theta Iota Theta"
+      ],
+      "regex_patterns": [],
+      "content": "La spaziosa suite situata al secondo piano dell'ala est della sorority house Theta Iota Theta (TIT), condivisa da Alyssa Douglas, Sierra Cruz e Scarlett Rose. L'ambiente riflette l'eclettica convivenza delle tre studentesse, unendo comfort lussuoso, tocchi punk e misticismo botanico.\n\nL'ala vicino alla finestra e occupata dal terrario caldo e dai tappeti riscaldati di Sierra, dominati da un enorme poster della band garage-punk Grave Mistake, dove la lamia riposa le sue quattro metri di coda iridescente. Al centro della stanza, Alyssa ha allestito il proprio giaciglio trasformandolo in un soffice nido di cuscini e pellicce pregiate cacciate da nonno Wulfnic, custodito dall'enorme lupo di pezza Wolfy vinto alle giostre a sette anni. Sugli scaffali trovano posto gli alambicchi e la vetreria da laboratorio in cristallo usata da Alyssa per distillare essenze e preparare cilindri incantati.\n\nLa stanza e illuminata da file di lucine fairy lights e sorvegliata da Zefir quando la scorta familiare veglia sulla matricola. Sulla mensola del salone comune spicca il celebre router decorato a muso di gattino con password 'TIT<3'.",
+      "extensions": {},
+      "enabled": true,
+      "case_sensitive": false,
+      "insertion_order": 10,
+      "priority": 10,
+      "comment": "Theta Iota Theta Suite 3 shared by Alyssa, Sierra, and Scarlett",
+      "constant": false,
+      "position": "before_char",
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "activation_chance": 100,
+      "labels": [
+        "location",
+        "tit",
+        "succ",
+        "suite_3"
+      ],
+      "custom_fields": {},
+      "related_entries": [],
+      "callback": "",
+      "provenance": {
+        "source": {
+          "kind": "lorebook",
+          "container_id": "_EjXxkmPVhpCXg8xABpFkK",
+          "entry_id": "loc_theta_iota_theta_suite_3"
+        },
+        "captured_at": "2026-11-02T06:00:00.000Z"
+      },
+      "highlight_keys": true,
+      "enable_highlighting": true
     }
   ],
   "creator": {
@@ -11594,19 +11649,18 @@
         "St. Brugge",
         "St. Brugge Private Academy",
         "St Brugge",
-        "private academy",
-        "Seven Hills",
-        "Douglas",
-        "Blackwood"
+        "Accademia St. Brugge",
+        "St. Brugge Academy"
       ],
       "secondary_keys": [
-        "school",
+        "campus",
         "academy",
         "Father Rev",
-        "Revazhael"
+        "Revazhael",
+        "esoteric library"
       ],
       "regex_patterns": [],
-      "content": "An exclusive private academy tucked on the wooded outskirts between Blackwood and Solarton, catering strictly to the scions of high-society supernatural families. Features Gothic stone architecture, shielded courtyards, and ward-locked libraries. Alyssa and Jasper attended St. Brugge from preschool through middle school, where Father Revazhael secretly mentored them in mystic arts and arcane slicing.",
+      "content": "Un sontuoso complesso accademico in pietra nera e granito gotico immerso nelle fitte foreste collinari tra Blackwood e Solarton. Il perimetro di St. Brugge e protetto da possenti barriere di interdizione acustica e sigilli arcanici che schermano completamente l'istituto dagli sguardi dei civili umani e dai droni non autorizzati.\n\nL'architettura interna presenta chiostri colonnati, cortili alberati sorvegliati da doccioni incantati, aule a gradoni illuminate da vetrate runiche e biblioteche blindate contenenti testi rari di storia soprannaturale, erbologia e demonologia. I laboratori seminterrati ospitano banchi da lavoro in ardesia e quarzo per alchimia e cristallografia applicata.\n\nIn queste aule Alyssa e Jasper Douglas Bloodmoon hanno trascorso la loro giovinezza scolastica, ricevendo lezioni private e tutoraggio esoterico avanzato da Padre Revazhael lontano da occhi indiscreti, prima di fare il loro ingresso alla SUCC.",
       "extensions": {},
       "enabled": true,
       "case_sensitive": false,
@@ -11616,7 +11670,7 @@
       "comment": "",
       "constant": false,
       "position": "before_char",
-      "scan_persona": false,
+      "scan_persona": true,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "delay": 0,
@@ -11635,7 +11689,9 @@
           "entry_id": "ulTwlYo2jqObA7l_bFoa5"
         },
         "captured_at": "2026-10-16T14:50:28.248Z"
-      }
+      },
+      "highlight_keys": true,
+      "enable_highlighting": true
     },
     {
       "entry_id": "4U9_759Am9PgDyjY1fslu",
@@ -18564,6 +18620,60 @@
         "captured_at": "2026-10-20T05:41:07.393Z"
       },
       "type": "location"
+    },
+    {
+      "entry_id": "loc_theta_iota_theta_suite_3",
+      "name": "Theta Iota Theta: Suite 3",
+      "type": "location",
+      "keys": [
+        "Suite 3",
+        "Suite 3 TIT",
+        "camera di Alyssa",
+        "stanza di Alyssa",
+        "TIT Suite 3"
+      ],
+      "secondary_keys": [
+        "Sierra",
+        "Scarlett",
+        "nido di pellicce",
+        "Theta Iota Theta"
+      ],
+      "regex_patterns": [],
+      "content": "La spaziosa suite situata al secondo piano dell'ala est della sorority house Theta Iota Theta (TIT), condivisa da Alyssa Douglas, Sierra Cruz e Scarlett Rose. L'ambiente riflette l'eclettica convivenza delle tre studentesse, unendo comfort lussuoso, tocchi punk e misticismo botanico.\n\nL'ala vicino alla finestra e occupata dal terrario caldo e dai tappeti riscaldati di Sierra, dominati da un enorme poster della band garage-punk Grave Mistake, dove la lamia riposa le sue quattro metri di coda iridescente. Al centro della stanza, Alyssa ha allestito il proprio giaciglio trasformandolo in un soffice nido di cuscini e pellicce pregiate cacciate da nonno Wulfnic, custodito dall'enorme lupo di pezza Wolfy vinto alle giostre a sette anni. Sugli scaffali trovano posto gli alambicchi e la vetreria da laboratorio in cristallo usata da Alyssa per distillare essenze e preparare cilindri incantati.\n\nLa stanza e illuminata da file di lucine fairy lights e sorvegliata da Zefir quando la scorta familiare veglia sulla matricola. Sulla mensola del salone comune spicca il celebre router decorato a muso di gattino con password 'TIT<3'.",
+      "extensions": {},
+      "enabled": true,
+      "case_sensitive": false,
+      "insertion_order": 10,
+      "priority": 10,
+      "comment": "Theta Iota Theta Suite 3 shared by Alyssa, Sierra, and Scarlett",
+      "constant": false,
+      "position": "before_char",
+      "scan_persona": true,
+      "whole_words_only": true,
+      "key_logic": "AND_ANY",
+      "delay": 0,
+      "sticky": 0,
+      "cooldown": 0,
+      "activation_chance": 100,
+      "labels": [
+        "location",
+        "tit",
+        "succ",
+        "suite_3"
+      ],
+      "custom_fields": {},
+      "related_entries": [],
+      "callback": "",
+      "provenance": {
+        "source": {
+          "kind": "lorebook",
+          "container_id": "_EjXxkmPVhpCXg8xABpFkK",
+          "entry_id": "loc_theta_iota_theta_suite_3"
+        },
+        "captured_at": "2026-11-02T06:00:00.000Z"
+      },
+      "highlight_keys": true,
+      "enable_highlighting": true
     }
   ]
 }

@@ -1,17 +1,25 @@
-## 2026-10-25T08:49:54Z
-You are reviewer_m2_1, an objective reviewer subagent.
-Your working directory is: e:\repository\SvartulfrVerse\.agents\teamwork\reviewer_m2_1
+## 2026-11-02T07:09:34Z
+You are Reviewer 1 for Milestone 2: Standalone Lorebooks Emergent Lore Integration.
+Your identity: reviewer_m2_1
+Your working directory: e:\repository\SvartulfrVerse\.agents\teamwork\reviewer_m2_1\
+Authoritative user request: e:\repository\SvartulfrVerse\.agents\teamwork\ORIGINAL_REQUEST.md
 
-MANDATORY READ:
-Read e:\repository\SvartulfrVerse\.agents\teamwork\ORIGINAL_REQUEST.md before starting work.
-Also read e:\repository\SvartulfrVerse\PROJECT.md and e:\repository\SvartulfrVerse\.agents\teamwork\worker_m2_gen2\handoff.md.
+You MUST read `e:\repository\SvartulfrVerse\.agents\teamwork\ORIGINAL_REQUEST.md` and `e:\repository\SvartulfrVerse\PROJECT.md`.
+Read the worker handoff report at `e:\repository\SvartulfrVerse\.agents\teamwork\worker_m2\handoff.md`.
 
-Task:
-Review Milestone 2 implementation:
-1. Verify `FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json` matches standardized `=>Speaker:` syntax across Scene 0, Scene 1, and Scene 2.
-2. Verify live scenario on Wyvern API: `GET https://app.wyvern.chat/api/worlds/scenarios/_2MTWKjxrQPdQVaz9y4Q7H`.
-3. Verify live active chat message #0 on Wyvern API: `GET https://app.wyvern.chat/api/new/chat-logs/chat_log_PJx1W1rg3WUzRM7MnQrkN` (verify swipe `message_swipe_99mmMgEEQjk2pkJN3hXkQ`).
-4. Verify formatting discipline: exactly 0 em-dashes (`—`), dialogue in double quotes (`"..."`), plain text action (no asterisks).
-5. Run unit test suite: `python -m unittest tests/test_milestone2_scenario_syntax.py` and `python -m unittest discover tests`.
-6. Render an explicit verdict in your report: `APPROVE` or `REQUEST_CHANGES`.
-7. Write your handoff report to `e:\repository\SvartulfrVerse\.agents\teamwork\reviewer_m2_1\handoff.md` and send a message back using `send_message`.
+Review the files updated in Milestone 2:
+- `FINAL/Svartulfr_Lorebook_I.json` & `lorebooks/optimized/Svartulfr_Lorebook_I.json`
+- `FINAL/Svartulfr_Lorebook_II.json` & `lorebooks/optimized/Svartulfr_Lorebook_II.json`
+- `FINAL/Svartulfr_Lorebook_III.json` & `lorebooks/optimized/Svartulfr_Lorebook_III.json`
+- `lorebooks/optimized/Svartulfr_Location.json`
+- `FINAL/Svartulfr_NPC_Secondary.json` & `lorebooks/optimized/Svartulfr_NPC_Secondary.json`
+- `FINAL/Svartulfr_NPC_Primary.json` & `lorebooks/optimized/Svartulfr_NPC_Primary.json`
+
+Verify:
+1. Substantive lore integration of the 6 core themes (St. Brugge, Revazhael, cylinders, crystallography, abyssal vs void magic, Alyssa/Jasper dossiers).
+2. Strict formatting discipline: 0 em-dashes (`—`), double-quoted dialogue, plain text action/narration.
+3. Positive framing for demi-humans (single pair of animal ears, no mention of lack of human ears; Sierra Cruz lamia locomotion on coils without legs/feet).
+4. Run verification command: `python scripts/verify_milestone2_lorebooks.py`.
+
+Deliver your verdict (APPROVE or REQUEST_CHANGES) with clear evidence in `e:\repository\SvartulfrVerse\.agents\teamwork\reviewer_m2_1\handoff.md`.
+Communicate back to orchestrator via send_message.

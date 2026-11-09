@@ -1,0 +1,569 @@
+[
+  {
+    "id": "_kNMa88BcJA86aNg9zfaTa",
+    "_id": "_kNMa88BcJA86aNg9zfaTa",
+    "created_at": "2026-10-31T10:07:15.668Z",
+    "updated_at": "2026-10-31T10:07:15.669Z",
+    "player_selectable": true,
+    "name": "Academic / PhD Candidate",
+    "description": "Higher education researcher and magical scholar.",
+    "tags": [],
+    "stat_modifiers": {
+      "intelligence": 2
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_6Db9HPrNYd9LmxwBE3aHw",
+    "_id": "_6Db9HPrNYd9LmxwBE3aHw",
+    "created_at": "2026-10-31T10:07:17.408Z",
+    "updated_at": "2026-10-31T10:07:17.408Z",
+    "player_selectable": true,
+    "name": "Builder",
+    "description": "Craftsman maintaining pack infrastructure, tech, and physical assets.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 1,
+      "intelligence": 1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_kffYDeGkbGzrV6GhErwbC",
+    "_id": "_kffYDeGkbGzrV6GhErwbC",
+    "created_at": "2026-10-31T10:07:18.227Z",
+    "updated_at": "2026-10-31T10:07:18.227Z",
+    "player_selectable": true,
+    "name": "Caretaker / Breeder",
+    "description": "Guardian of the nesting grounds, maternal care, and next generation.",
+    "tags": [],
+    "stat_modifiers": {
+      "endurance": 2,
+      "charisma": 1,
+      "strength": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_rqa998z8FL8mTc9gU4UEd",
+    "_id": "_rqa998z8FL8mTc9gU4UEd",
+    "created_at": "2026-10-31T10:07:18.978Z",
+    "updated_at": "2026-10-31T10:07:18.978Z",
+    "player_selectable": true,
+    "name": "Citizen",
+    "description": "Recognized and protected civilian member of the Great House.",
+    "tags": [],
+    "stat_modifiers": {},
+    "display_order": 0
+  },
+  {
+    "id": "_fBY8371AfGJGfWbNADPtY",
+    "_id": "_fBY8371AfGJGfWbNADPtY",
+    "created_at": "2026-10-31T10:07:19.619Z",
+    "updated_at": "2026-10-31T10:07:19.619Z",
+    "player_selectable": true,
+    "name": "DCC Security / PMC",
+    "description": "Paramilitary tactical contractor or DCC operative.",
+    "tags": [],
+    "stat_modifiers": {
+      "perception": 2,
+      "agility": 1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_CBHYzUPAEd7gjCNHXxJL2",
+    "_id": "_CBHYzUPAEd7gjCNHXxJL2",
+    "created_at": "2026-10-31T10:07:20.273Z",
+    "updated_at": "2026-10-31T10:07:20.273Z",
+    "player_selectable": true,
+    "name": "Defender",
+    "description": "Territorial sentinel and pack guardian protecting physical borders.",
+    "tags": [],
+    "stat_modifiers": {
+      "endurance": 2
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_XjPYEEt9E8NarUCkkmF9j",
+    "_id": "_XjPYEEt9E8NarUCkkmF9j",
+    "created_at": "2026-10-31T10:07:20.913Z",
+    "updated_at": "2026-10-31T10:07:20.914Z",
+    "player_selectable": true,
+    "name": "Diplomat",
+    "description": "Inter-pack envoy and external political mediator.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 2
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_68wFFPTpP28ccXHfzE2Aj",
+    "_id": "_68wFFPTpP28ccXHfzE2Aj",
+    "created_at": "2026-10-31T10:07:21.539Z",
+    "updated_at": "2026-10-31T10:07:21.539Z",
+    "player_selectable": true,
+    "name": "Event Organizer / Fixer",
+    "description": "Social liaison, underground contact, and logistical problem solver.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 1,
+      "intelligence": 1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_bdaqrXc3RUzXj9z1eC4c7",
+    "_id": "_bdaqrXc3RUzXj9z1eC4c7",
+    "created_at": "2026-10-31T10:07:22.237Z",
+    "updated_at": "2026-10-31T10:07:22.237Z",
+    "player_selectable": true,
+    "name": "Firstborn Apex Sovereign",
+    "description": "Entita primordiale millenaria consacrata da Fenris, dotata di attributi divini e invulnerabilita assoluta.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 5,
+      "endurance": 5,
+      "agility": 4,
+      "perception": 4,
+      "luck": 2
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_TEWPzWPQbRHXWDmqPHyY2",
+    "_id": "_TEWPzWPQbRHXWDmqPHyY2",
+    "created_at": "2026-10-31T10:07:22.870Z",
+    "updated_at": "2026-10-31T10:07:22.870Z",
+    "player_selectable": true,
+    "name": "Guild Berserker (Vanguard)",
+    "description": "Combattente d assalto e prima linea dotato di iper-metabolismo termico e furia scalare.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 4,
+      "endurance": 3,
+      "agility": 1,
+      "luck": -1,
+      "intelligence": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_tFjJKnw3hqcqWmRkQJEqP",
+    "_id": "_tFjJKnw3hqcqWmRkQJEqP",
+    "created_at": "2026-10-31T10:07:23.546Z",
+    "updated_at": "2026-10-31T10:07:23.546Z",
+    "player_selectable": true,
+    "name": "Guild Support (Healer/Mage)",
+    "description": "Backline mystic providing tactical heals, buffs, and crowd control.",
+    "tags": [],
+    "stat_modifiers": {
+      "intelligence": 2,
+      "charisma": 1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_qXC4C6m2EgYwFrMMcPj14",
+    "_id": "_qXC4C6m2EgYwFrMMcPj14",
+    "created_at": "2026-10-31T10:07:24.473Z",
+    "updated_at": "2026-10-31T10:07:24.473Z",
+    "player_selectable": true,
+    "name": "Guild Tank",
+    "description": "Heavy frontline defender holding aggro and mitigating damage.",
+    "tags": [],
+    "stat_modifiers": {
+      "endurance": 2,
+      "strength": 1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_mCGJbYhBPbJDKJxwLr9y9",
+    "_id": "_mCGJbYhBPbJDKJxwLr9y9",
+    "created_at": "2026-10-31T10:07:25.101Z",
+    "updated_at": "2026-10-31T10:07:25.101Z",
+    "player_selectable": true,
+    "name": "Guild Vanguard (DPS)",
+    "description": "Frontline striker specializing in aggressive physical assault.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 1,
+      "agility": 1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_nTbbm8NpAeRjnNEPVUhCb",
+    "_id": "_nTbbm8NpAeRjnNEPVUhCb",
+    "created_at": "2026-10-31T10:07:25.740Z",
+    "updated_at": "2026-10-31T10:07:25.740Z",
+    "player_selectable": true,
+    "name": "House Head (Lord/Patriarch)",
+    "description": "High noble ruling over multiple packs, bloodlines, and territory.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 2,
+      "intelligence": 1,
+      "agility": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_Tn9f9fr8XcqG17WGrayXT",
+    "_id": "_Tn9f9fr8XcqG17WGrayXT",
+    "created_at": "2026-10-31T10:07:26.519Z",
+    "updated_at": "2026-10-31T10:07:26.519Z",
+    "player_selectable": true,
+    "name": "Hunter / Provider",
+    "description": "Resource gatherer, outdoor hunter, supply coordinator.",
+    "tags": [],
+    "stat_modifiers": {
+      "agility": 1,
+      "perception": 1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_kLYXHTNJjf2JLDV18aq6R",
+    "_id": "_kLYXHTNJjf2JLDV18aq6R",
+    "created_at": "2026-10-31T10:07:27.221Z",
+    "updated_at": "2026-10-31T10:07:27.221Z",
+    "player_selectable": true,
+    "name": "Knight (Sworn Warrior)",
+    "description": "Sworn vassal, chivalric combatant, and house officer.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 1,
+      "endurance": 1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_Ygx2D8GWHVBcD4PDAdfbL",
+    "_id": "_Ygx2D8GWHVBcD4PDAdfbL",
+    "created_at": "2026-10-31T10:07:27.839Z",
+    "updated_at": "2026-10-31T10:07:27.839Z",
+    "player_selectable": true,
+    "name": "Leader's Mate / Pack Mom",
+    "description": "Co-sovereign and emotional anchor; nurtures the pack core and internal harmony.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 2,
+      "endurance": 1,
+      "strength": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_bAg3cdtXdUjpFW1zgY4Aq",
+    "_id": "_bAg3cdtXdUjpFW1zgY4Aq",
+    "created_at": "2026-10-31T10:07:28.450Z",
+    "updated_at": "2026-10-31T10:07:28.450Z",
+    "player_selectable": true,
+    "name": "Left Hand (Enforcer)",
+    "description": "Physical enforcer carrying out disciplinary duties and frontline defense.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 2,
+      "agility": 1,
+      "charisma": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_fxrHf367xgFkLRwy1bttH",
+    "_id": "_fxrHf367xgFkLRwy1bttH",
+    "created_at": "2026-10-31T10:07:29.075Z",
+    "updated_at": "2026-10-31T10:07:29.075Z",
+    "player_selectable": true,
+    "name": "Pack Leader",
+    "description": "Sovereign leader of the pack; strategist, voice of command and ultimate authority.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 2,
+      "intelligence": 1,
+      "perception": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_rnLJE9NPm9EYe4eXxDKAB",
+    "_id": "_rnLJE9NPm9EYe4eXxDKAB",
+    "created_at": "2026-10-31T10:07:31.250Z",
+    "updated_at": "2026-10-31T10:07:31.250Z",
+    "player_selectable": true,
+    "name": "Patriarch / Coven Leader",
+    "description": "Equivalent of Pack Leader for Vampires, covens, or elder factions.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 2,
+      "intelligence": 1,
+      "strength": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_PrJXr8ET8Q8JJ444EqLb6",
+    "_id": "_PrJXr8ET8Q8JJ444EqLb6",
+    "created_at": "2026-10-31T10:07:31.874Z",
+    "updated_at": "2026-10-31T10:07:31.874Z",
+    "player_selectable": true,
+    "name": "Pro Athlete / Fighter",
+    "description": "Combat sports professional (MMA, boxing) at peak physical conditioning.",
+    "tags": [],
+    "stat_modifiers": {
+      "strength": 1,
+      "agility": 1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_9UyJpddCCewpFWMBHPgUx",
+    "_id": "_9UyJpddCCewpFWMBHPgUx",
+    "created_at": "2026-10-31T10:07:32.506Z",
+    "updated_at": "2026-10-31T10:07:32.506Z",
+    "player_selectable": true,
+    "name": "Puppet Master (Mind Weaver)",
+    "description": "Burattinaio arcano specializzato in fili di mana, controllo di simulacri e manipolazione psionica.",
+    "tags": [],
+    "stat_modifiers": {
+      "intelligence": 4,
+      "charisma": 2,
+      "perception": 2,
+      "strength": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_xLAYbqtejwDPLBDb4MWaK",
+    "_id": "_xLAYbqtejwDPLBDb4MWaK",
+    "created_at": "2026-10-31T10:07:33.117Z",
+    "updated_at": "2026-10-31T10:07:33.117Z",
+    "player_selectable": true,
+    "name": "Right Hand (Advisor/Peacekeeper)",
+    "description": "Strategic mastermind, financial administrator, and pack diplomat.",
+    "tags": [],
+    "stat_modifiers": {
+      "intelligence": 2,
+      "charisma": 1,
+      "strength": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_kJdDxUnTgyKzDx7xUmeba",
+    "_id": "_kJdDxUnTgyKzDx7xUmeba",
+    "created_at": "2026-10-31T10:07:34.838Z",
+    "updated_at": "2026-10-31T10:07:34.838Z",
+    "player_selectable": true,
+    "name": "SUCC Student / Civilian",
+    "description": "Student or ordinary civilian in the supernatural society.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 1,
+      "intelligence": 1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_zmTn76HDHm61CzyLtAfrn",
+    "_id": "_zmTn76HDHm61CzyLtAfrn",
+    "created_at": "2026-10-31T10:07:35.444Z",
+    "updated_at": "2026-10-31T10:07:35.444Z",
+    "player_selectable": true,
+    "name": "Scout",
+    "description": "Reconnaissance runner tracking scent trails and early warnings.",
+    "tags": [],
+    "stat_modifiers": {
+      "perception": 2
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_K7zRUtmcCh27FWk4UXUPG",
+    "_id": "_K7zRUtmcCh27FWk4UXUPG",
+    "created_at": "2026-10-31T10:07:36.064Z",
+    "updated_at": "2026-10-31T10:07:36.064Z",
+    "player_selectable": true,
+    "name": "Street Scrapper / Rogue",
+    "description": "Underworld survivor, scrapper, agile infiltrator.",
+    "tags": [],
+    "stat_modifiers": {
+      "agility": 2,
+      "perception": 1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_3dNMC4XaG6g3VHLY2FmWH",
+    "_id": "_3dNMC4XaG6g3VHLY2FmWH",
+    "created_at": "2026-10-31T10:07:37.850Z",
+    "updated_at": "2026-10-31T10:07:37.850Z",
+    "player_selectable": true,
+    "name": "Teacher",
+    "description": "Scholar passing down history, law, rituals, and combat lore.",
+    "tags": [],
+    "stat_modifiers": {
+      "intelligence": 2
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_kAbcRj8d6hJJzQe8wMaDd",
+    "_id": "_kAbcRj8d6hJJzQe8wMaDd",
+    "created_at": "2026-10-31T10:07:38.536Z",
+    "updated_at": "2026-10-31T10:07:38.536Z",
+    "player_selectable": true,
+    "name": "Technomancer / Cyber-Mage",
+    "description": "Specialista nell integrazione tra sistemi hardware, flusso di dati e canalizzazione runica.",
+    "tags": [],
+    "stat_modifiers": {
+      "intelligence": 4,
+      "perception": 3,
+      "agility": 1,
+      "endurance": -1
+    },
+    "display_order": 0
+  },
+  {
+    "id": "_LFKmF98yLMUHQtDXax7xf",
+    "_id": "_LFKmF98yLMUHQtDXax7xf",
+    "created_at": "2026-10-31T11:17:30.154Z",
+    "updated_at": "2026-10-31T11:17:30.154Z",
+    "player_selectable": true,
+    "name": "Camp Mystic Camper",
+    "description": "Supernatural camper enrolled in summer magical control drills at Camp Mystic.",
+    "tags": [],
+    "stat_modifiers": {
+      "endurance": 1,
+      "luck": 1
+    },
+    "display_order": 28
+  },
+  {
+    "id": "_HEtD3FMH2dQdgnW3gEedb",
+    "_id": "_HEtD3FMH2dQdgnW3gEedb",
+    "created_at": "2026-10-31T11:17:31.455Z",
+    "updated_at": "2026-10-31T11:17:31.455Z",
+    "player_selectable": true,
+    "name": "Camp Mystic Counselor / Staff",
+    "description": "Senior supernatural staff counselor directing training and camp safety protocols.",
+    "tags": [],
+    "stat_modifiers": {
+      "perception": 1,
+      "charisma": 1
+    },
+    "display_order": 29
+  },
+  {
+    "id": "_eQG8r9bMGLLB2X1AhYmca",
+    "_id": "_eQG8r9bMGLLB2X1AhYmca",
+    "created_at": "2026-10-31T11:18:00.903Z",
+    "updated_at": "2026-10-31T11:18:00.903Z",
+    "player_selectable": true,
+    "name": "Sorority Social Coordinator & Aesthetic Influencer",
+    "description": "Greek life coordinator curating high-profile social galas, influencer aesthetics, and sisterhood networking.",
+    "tags": [],
+    "stat_modifiers": {
+      "charisma": 3,
+      "perception": 1,
+      "luck": 1
+    },
+    "display_order": 30
+  },
+  {
+    "id": "_K8tGV6rdyhbQ4Dgn6qgq8",
+    "_id": "_K8tGV6rdyhbQ4Dgn6qgq8",
+    "created_at": "2026-10-31T11:18:01.609Z",
+    "updated_at": "2026-10-31T11:18:01.609Z",
+    "player_selectable": true,
+    "name": "Applied Necromancy Scholar",
+    "description": "Academic researcher specializing in forensic soul-weaving, spirit taxonomy, and biological preservation.",
+    "tags": [],
+    "stat_modifiers": {
+      "perception": 2,
+      "intelligence": 3
+    },
+    "display_order": 31
+  },
+  {
+    "id": "_ErFGXRwAE9V1yF8g4Lx49",
+    "_id": "_ErFGXRwAE9V1yF8g4Lx49",
+    "created_at": "2026-10-31T11:18:02.890Z",
+    "updated_at": "2026-10-31T11:18:02.890Z",
+    "player_selectable": true,
+    "name": "Artisan / Tattoo Apprentice",
+    "description": "Master artisan specializing in runic sub-dermal inking, magical wards, and steady needle craftsmanship.",
+    "tags": [],
+    "stat_modifiers": {
+      "perception": 2,
+      "agility": 2,
+      "charisma": 1
+    },
+    "display_order": 32
+  },
+  {
+    "id": "_p7cy3939mAME7wzT8xfRw",
+    "_id": "_p7cy3939mAME7wzT8xfRw",
+    "created_at": "2026-10-31T11:18:03.681Z",
+    "updated_at": "2026-10-31T11:18:03.681Z",
+    "player_selectable": true,
+    "name": "Chemistry Student & Secret NSFW Illustrator",
+    "description": "Pre-med biochemistry major managing complex clandestine freelance commissions and illicit digital ink.",
+    "tags": [],
+    "stat_modifiers": {
+      "perception": 2,
+      "intelligence": 2,
+      "agility": 1
+    },
+    "display_order": 33
+  },
+  {
+    "id": "_EL6rk9GrMz8cctFgNyD1H",
+    "_id": "_EL6rk9GrMz8cctFgNyD1H",
+    "created_at": "2026-10-31T11:18:05.472Z",
+    "updated_at": "2026-10-31T11:18:05.472Z",
+    "player_selectable": true,
+    "name": "Logistics Director & Master Cook",
+    "description": "Subterranean clan culinary master and supply chain overseer provisioning heavy banquets and raw resources.",
+    "tags": [],
+    "stat_modifiers": {
+      "endurance": 2,
+      "strength": 1
+    },
+    "display_order": 34
+  },
+  {
+    "id": "_jPAn4bKVLgTH4eqMrEEUE",
+    "_id": "_jPAn4bKVLgTH4eqMrEEUE",
+    "created_at": "2026-10-31T11:18:06.308Z",
+    "updated_at": "2026-10-31T11:18:06.308Z",
+    "player_selectable": true,
+    "name": "Chief of Security",
+    "description": "Elite tactical coordinator commanding perimeter checkpoints, guard contingents, and physical containment.",
+    "tags": [],
+    "stat_modifiers": {
+      "endurance": 2,
+      "strength": 1
+    },
+    "display_order": 35
+  },
+  {
+    "id": "_4jYFtqcVcyYKnG3ymqR6H",
+    "_id": "_4jYFtqcVcyYKnG3ymqR6H",
+    "created_at": "2026-10-31T11:18:07.049Z",
+    "updated_at": "2026-10-31T11:18:07.049Z",
+    "player_selectable": true,
+    "name": "Clan Patriarch",
+    "description": "Venerable high-bloodline clan sovereign exercising uncontested dynastic command.",
+    "tags": [],
+    "stat_modifiers": {
+      "endurance": 2,
+      "charisma": 1
+    },
+    "display_order": 36
+  }
+]

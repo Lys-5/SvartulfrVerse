@@ -95,6 +95,24 @@ $$\text{ore} = \frac{\text{Date.parse}(\text{Target ISO}) - \text{Date.UTC}(827,
 - Esempio di riferimento (26 Agosto 2024, ore 06:00 UTC):
   `world_age: 10489902 Assoluto`.
 
+### 2.5 Invarianti S.P.E.C.I.A.L., Combat Role Mapping & Custom Moodlets
+1. **Configurazione Statistiche (`stat_config`):** 7 attributi S.P.E.C.I.A.L. (`strength`, `perception`, `endurance`, `charisma`, `intelligence`, `agility`, `luck`) con `base_value: 8`, `max_value: 30`, `point_budget: 25`.
+2. **Combat Role Mapping (`stat_roles`):**
+   `hp_stat: "endurance"`, `mp_stat: "intelligence"`, `physical_attack: "strength"`, `physical_defense: "endurance"`, `special_attack: "intelligence"`, `special_defense: "intelligence"`, `speed: "agility"`, `accuracy: "perception"`, `evasion: "agility"`, `flee: "agility"`, `luck: "luck"`.
+3. **Pacing Emotivo (`relationship_config.custom_moodlets` & `moodlets`):** 12 Custom Moodlets configurati con delta, duration_hours ed effetti (*Rut*, *Heat*, *Scent Marked*, *Mated Devotion*, *Vampiric Blood Hunger*, *Blood Frenzy*, *Essentia Hunger*, *Seductive Haze*, *Pack Bond Resonance*, *Feral Aggression*, *Blood Oath Bond*, *Betrayed Trust*).
+4. **Marketplace Sharding:** Tutti i 54 item del Lexicon devono essere distribuiti su shop attivi (`marketplace_config.enabled: true` con `stock: -1`) per eliminare l'errore "unobtainable items".
+
+### 2.6 Auto-Provisioning RPG e Trappola Fastify DELETE
+1. **Auto-Provisioning:** Quando un personaggio introduce Specie, Occupazioni o Tratti non presenti a catalogo, invocare `check_and_provision_entity()` (`scripts/auto_provision_rpg.py`) per crearli via `POST /api/worlds/rpg/{species|occupations|traits}` e sincronizzare `FINAL/` e `scratch/`.
+2. **Fastify DELETE Empty Body:** Su tutte le chiamate `DELETE /api/worlds/rpg/.../:id`, omettere tassativamente `Content-Type: application/json` per prevenire l'errore Fastify 500 `FST_ERR_CTP_EMPTY_JSON_BODY` e ottenere `HTTP 204 No Content`.
+
+### 2.7 Progettazione Scenari a Innesco Timeline (Starts When & Scenario-Guided-Intro)
+In conformità con la guida ufficiale Wyvern (`wiki.wyvern.chat/Features/Worlds/Scenario-Guided-Intro`):
+1. **Invariante Single Opening:** Ogni scenario ad innesco temporale deve possedere **esattamente 1 sola scena premade** (`premade_scenes.length === 1`) o sole `scene_instructions`. La presenza di aperture multiple scatena il blocco `opening_choice`.
+2. **Invariante No Insertion Point:** Il campo `insertion_point` deve essere `null` (assente) negli scenari automatici per evitare il blocco `time_override`.
+3. **Parametri Trigger:** Configurare `repeat: "once"` (o `"cooldown"` con intervallo turni), `priority` numerica intera, e `conditions` ancorate a `world_day` (Giorno 1 = Ora 0 = 21 Dicembre 827 CE), `world_time` e filtri party/persona (`party_has_character` o `persona`).
+
+
 ---
 
 ## 3. Workflow Operativo di Deployment

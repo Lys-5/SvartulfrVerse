@@ -1,184 +1,191 @@
-# Milestone 2 Review Report: Scenario Syntax Standardization & Active Chat Swipe Patching
+# Handoff Report — Reviewer M2.1: Standalone Lorebooks Emergent Lore Integration
 
-**Reviewer**: `reviewer_m2_1` (Reviewer & Adversarial Critic)  
-**Working Directory**: `e:\repository\SvartulfrVerse\.agents\teamwork\reviewer_m2_1`  
-**Milestone Reviewed**: Milestone 2 of `PROJECT.md`  
-**Worker Agent**: `worker_m2_gen2`  
-**Date & Timestamp**: 2026-10-25T08:57:00Z  
-
----
-
-## Review Summary
-
-**Verdict**: **APPROVE**  
-**Overall Risk Assessment**: **LOW**  
-**Integrity Audit**: **CLEAN (0 integrity violations detected)**  
+- **Agent Identity**: `reviewer_m2_1`
+- **Roles**: reviewer, critic
+- **Parent Conversation ID**: `a6280f2d-32ae-4a10-82fa-5604ad40f230`
+- **Date**: 2026-11-02T08:14:30Z
+- **Target File**: `e:\repository\SvartulfrVerse\.agents\teamwork\reviewer_m2_1\handoff.md`
+- **Verdict**: **APPROVE**
 
 ---
 
 ## 1. Observation
 
-Direct empirical observations conducted during independent review:
+### 1.1 Command Execution & Automated Test Suite
+Execution of the verification suite `scripts/verify_milestone2_lorebooks.py`:
+- Command: `python scripts/verify_milestone2_lorebooks.py`
+- Exit code: `0`
+- Verbatim output:
+```text
+=== STARTING MILESTONE 2 INDEPENDENT VERIFICATION ===
 
-1. **Local Scenario File Structure & Syntax**:
-   - File: `FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json`
-   - Top-level ID: `_2MTWKjxrQPdQVaz9y4Q7H`, World ID: `_YpX47fNraQFw2dD7TdycJ`.
-   - Contains exactly 3 premade scenes:
-     * Scene 0: `scene-succ-welcome-day-alyssa` (7,157 chars)
-     * Scene 1: `scene-succ-welcome-day-jasper` (6,500 chars)
-     * Scene 2: `scene-succ-welcome-day-corale` (2,404 chars)
-   - Speaker tags:
-     * Scene 0 has 14 tags: `['Narrator', 'Erik', 'Logan', 'Edric', 'Noah', 'Malachia', 'Jasper', 'Narrator', 'Wulfnic', 'Zefir', 'Narrator', 'Finn', 'Sierra', 'Scarlett']`
-     * Scene 1 has 14 tags: `['Narrator', 'Erik', 'Logan', 'Edric', 'Noah', 'Malachia', 'Alyssa', 'Narrator', 'Wulfnic', 'Zefir', 'Narrator', 'Finn', 'Sierra', 'Scarlett']`
-     * Scene 2 has 4 tags: `['Narrator', 'Erik', 'Logan', 'Narrator']`
-   - Formatting discipline in all 3 scenes:
-     * Em-dashes (`—` / `\u2014`): exactly 0
-     * Asterisks (`*`): exactly 0
-     * Dialogue enclosed in standard double quotes (`"..."`): balanced even parity across all beats (Scene 0: 32 quotes / 16 pairs; Scene 1: 30 quotes / 15 pairs; Scene 2: 8 quotes / 4 pairs)
-     * Curly quotation marks (`“`, `”`, `„`, `‟`): exactly 0
-     * Plain un-prefixed speaker tags without `=>`: exactly 0
+--- Test 1: entries == lexicon Byte-for-Byte Parity ---
+PASS: FINAL/Svartulfr_Lorebook_I.json (total entries = 239)
+PASS: lorebooks/optimized/Svartulfr_Lorebook_I.json (total entries = 239)
+PASS: FINAL/Svartulfr_Lorebook_II.json (total entries = 143)
+PASS: lorebooks/optimized/Svartulfr_Lorebook_II.json (total entries = 143)
+PASS: FINAL/Svartulfr_Lorebook_III.json (total entries = 47)
+PASS: lorebooks/optimized/Svartulfr_Lorebook_III.json (total entries = 47)
+PASS: lorebooks/optimized/Svartulfr_Location.json (total entries = 226)
+PASS: FINAL/Svartulfr_NPC_Secondary.json (total entries = 212)
+PASS: lorebooks/optimized/Svartulfr_NPC_Secondary.json (total entries = 212)
+PASS: FINAL/Svartulfr_NPC_Primary.json (total entries = 99)
+PASS: lorebooks/optimized/Svartulfr_NPC_Primary.json (total entries = 99)
 
-2. **Live Wyvern Web API Scenario Deployment**:
-   - Endpoint: `GET https://app.wyvern.chat/api/worlds/scenarios/_2MTWKjxrQPdQVaz9y4Q7H`
-   - HTTP Status: `200 OK`
-   - Returns JSON containing 3 premade scenes matching `FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json` **100% byte-for-byte** for Scene 0, Scene 1, and Scene 2.
-   - All 3 scenes in cloud live state verify with 0 em-dashes, 0 asterisks, and canonical `=>Speaker:` tags.
+--- Test 2: Formatting Discipline (0 em-dashes, 0 {{age}} macros) ---
+PASS: FINAL/Svartulfr_Lorebook_I.json has 0 {{age}} macros, and all milestone target entries have 0 em-dashes.
+PASS: lorebooks/optimized/Svartulfr_Lorebook_I.json has 0 {{age}} macros, and all milestone target entries have 0 em-dashes.
+PASS: FINAL/Svartulfr_Lorebook_II.json has 0 {{age}} macros, and all milestone target entries have 0 em-dashes.
+PASS: lorebooks/optimized/Svartulfr_Lorebook_II.json has 0 {{age}} macros, and all milestone target entries have 0 em-dashes.
+PASS: FINAL/Svartulfr_Lorebook_III.json has 0 {{age}} macros, and all milestone target entries have 0 em-dashes.
+PASS: lorebooks/optimized/Svartulfr_Lorebook_III.json has 0 {{age}} macros, and all milestone target entries have 0 em-dashes.
+PASS: lorebooks/optimized/Svartulfr_Location.json has 0 {{age}} macros, and all milestone target entries have 0 em-dashes.
+PASS: FINAL/Svartulfr_NPC_Secondary.json has 0 {{age}} macros, and all milestone target entries have 0 em-dashes.
+PASS: lorebooks/optimized/Svartulfr_NPC_Secondary.json has 0 {{age}} macros, and all milestone target entries have 0 em-dashes.
+PASS: FINAL/Svartulfr_NPC_Primary.json has 0 {{age}} macros, and all milestone target entries have 0 em-dashes.
+PASS: lorebooks/optimized/Svartulfr_NPC_Primary.json has 0 {{age}} macros, and all milestone target entries have 0 em-dashes.
 
-3. **Live Wyvern Web API Active Chat Message #0 Patch**:
-   - Endpoint: `GET https://app.wyvern.chat/api/new/chat-logs/chat_log_PJx1W1rg3WUzRM7MnQrkN`
-   - HTTP Status: `200 OK`
-   - Total messages: 1 (`chat_message_tcXGCpV2W4CY84gKLdXha`).
-   - Swipe 0 ID: `message_swipe_99mmMgEEQjk2pkJN3hXkQ` (7,145 chars).
-   - Message #0 `content` matches Swipe 0 `content` byte-for-byte.
-   - Formatting discipline in Message #0 swipe:
-     * Em-dashes: exactly 0
-     * Asterisks: exactly 0
-     * Double quotes: 32 (16 pairs, balanced)
-     * Tags: 14 canonical short speaker tags identical to Scene 0
-     * User macros: exactly 0 (`{{user}}` macro correctly substituted with `Alyssa`)
-     * Direct string equivalence: `s0.replace('{{user}}', 'Alyssa') == m0_swipe` is `True`.
+--- Test 3: Umbrella Keyword Discipline on NPC Entries ---
+PASS: FINAL/Svartulfr_NPC_Secondary.json has 0 broad keys across 212 NPC entries.
+PASS: lorebooks/optimized/Svartulfr_NPC_Secondary.json has 0 broad keys across 212 NPC entries.
+PASS: FINAL/Svartulfr_NPC_Primary.json has 0 broad keys across 99 NPC entries.
+PASS: lorebooks/optimized/Svartulfr_NPC_Primary.json has 0 broad keys across 99 NPC entries.
 
-4. **World Characters Mapping Verification**:
-   - Endpoint: `GET https://app.wyvern.chat/api/worlds/characters/world/_YpX47fNraQFw2dD7TdycJ`
-   - HTTP Status: `200 OK` (13 World Characters returned).
-   - Every single speaker tag (`Erik`, `Logan`, `Edric`, `Noah`, `Malachia`, `Jasper`, `Alyssa`, `Wulfnic`, `Zefir`, `Finn`, `Sierra`, `Scarlett`) maps directly and unambiguously to a registered World Character in the world, while `Narrator` corresponds to the Wyvern VN engine narrator.
+--- Test 4: Presence and Integrity of New/Updated Entries ---
+PASS: Lorebook I contains applied runic crystallography and abyssal magic distinction entries.
+PASS: Lorebook II contains enchanted resonant cylinders (type: item).
+PASS: Lorebook III contains St. Brugge Private Academy concept.
+PASS: Location lorebook has cleaned St. Brugge (purged broad keys) and added Theta Iota Theta: Suite 3.
+PASS: NPC Secondary has Father Revazhael (reconciled JED+, updated keys) and Larek Steeltooth (valid schema).
+PASS: NPC Primary has fully enriched Alyssa and Jasper dossiers with strict persona protection.
 
-5. **Automated Unit & Integration Test Executions**:
-   - `python -m unittest -v tests/test_milestone2_scenario_syntax.py`:
-     * Ran 12 tests in 2.575s — **OK (12/12 passed)**
-   - `python -m unittest -v tests/test_milestone2_boundary_stress.py`:
-     * Ran 16 tests in 1.919s — **OK (16/16 passed)**
-   - `python -m unittest discover tests`:
-     * Ran 191 tests in 12.811s — **OK (191/191 passed, 0 failures, 0 errors)**
-   - `python scripts/patch_welcome_day_scenario_and_chat.py --verify-only`:
-     * **100% of live verification assertions passed successfully.**
+--- Test 5: FINAL/ vs lorebooks/optimized/ Mirror Synchronization ---
+PASS: FINAL/Svartulfr_Lorebook_I.json == lorebooks/optimized/Svartulfr_Lorebook_I.json (100% synchronized)
+PASS: FINAL/Svartulfr_Lorebook_II.json == lorebooks/optimized/Svartulfr_Lorebook_II.json (100% synchronized)
+PASS: FINAL/Svartulfr_Lorebook_III.json == lorebooks/optimized/Svartulfr_Lorebook_III.json (100% synchronized)
+PASS: FINAL/Svartulfr_NPC_Secondary.json == lorebooks/optimized/Svartulfr_NPC_Secondary.json (100% synchronized)
+PASS: FINAL/Svartulfr_NPC_Primary.json == lorebooks/optimized/Svartulfr_NPC_Primary.json (100% synchronized)
+
+--- Test 6: Positive Framing for Demi-Humans (Milestone Target Entries) ---
+PASS: 0 negative framing patterns across all milestone target entries.
+
+=== ALL TESTS PASSED WITH 100% INTEGRITY ===
+```
+
+### 1.2 Direct Inspection of Target Entries
+
+1. **Lorebook I (`FINAL/Svartulfr_Lorebook_I.json` & mirror)**:
+   - `lb1_concept_applied_runic_crystallography`: Concept entry (1,348 chars). Keys: `['cristallografia runica', 'runic crystallography', 'cristallografia applicata', 'applied crystallography']`. Content defines spell-freezing into crystal lattices, lossless storage, and individual resonance attunement. 0 em-dashes.
+   - `lb1_magic_abyssal_magic_distinction`: Concept entry (1,671 chars). Keys: `['Abyssal Magic', 'Magia Abissale', 'Abyssal powers', 'Abyss magic', 'Infernal Magic']`. Explicitly contrasts Abyssal infernal authority against cold Void/Necromancy entropy. 0 em-dashes.
+
+2. **Lorebook II (`FINAL/Svartulfr_Lorebook_II.json` & mirror)**:
+   - `lb2_item_enchanted_resonant_cylinders`: Item entry (1,353 chars). Keys: `['cilindri incantati', 'cilindro incantato', 'resonant cylinders', 'resonant cylinder', 'cilindri a risonanza', 'enchanted cylinders']`. Miniaturized flashlights with snap-release, contrasting DMHA fragile commercial cylinders against Alyssa's custom calibrated matrices. 0 em-dashes.
+
+3. **Lorebook III (`FINAL/Svartulfr_Lorebook_III.json` & mirror)**:
+   - `succ_lb3_st_brugge_academy`: Concept entry (1,432 chars). Keys: `['St. Brugge', 'St. Brugge Private Academy', 'St Brugge', 'Accademia St. Brugge', 'St. Brugge Academy']`. High-society supernatural prep academy, curriculum (magic, runes, alchemy, demonology), Alyssa/Jasper attendance, and Father Revazhael mentorship. 0 em-dashes.
+
+4. **Location (`lorebooks/optimized/Svartulfr_Location.json`)**:
+   - `ulTwlYo2jqObA7l_bFoa5` (St. Brugge Private Academy): Location entry (935 chars). Keys: `['St. Brugge', 'St. Brugge Private Academy', 'St Brugge', 'Accademia St. Brugge', 'St. Brugge Academy']`. Umbrella keys `["Seven Hills", "Douglas", "Blackwood", "private academy"]` were completely purged. 0 em-dashes.
+   - `loc_theta_iota_theta_suite_3` (Theta Iota Theta: Suite 3): Location entry (1,132 chars). Keys: `['Suite 3', 'Suite 3 TIT', 'camera di Alyssa', 'stanza di Alyssa', 'TIT Suite 3']`. Describes Sierra Cruz's terrarium and heated rugs with Grave Mistake garage-punk poster and 4 meters of iridescent tail (zero mention of legs or walking), Alyssa's fur nest with plush Wolfy, crystal distillation glassware for enchanted cylinders, and cat-face router `TIT<3`. 0 em-dashes.
+
+5. **NPC Secondary (`FINAL/Svartulfr_NPC_Secondary.json` & mirror)**:
+   - `jmh0MajEsRwrm4UYU14mY` (Father Revazhael): NPC entry (4,182 chars). Name: `"Father Revazhael (Rev)"`. Keys: `['Father Revazhael', 'Padre Revazhael', 'Father Rev', 'Padre Rev', 'Revazhael', 'Rev']`. JED+ layout, True Name secret (`Revazhael`), ARO member, TIT handyman, former St. Brugge esoteric arts master, Kobal shadow butler, Dimora del Rifugio, level 90. 0 em-dashes.
+   - `npc_larek_steeltooth` (Larek Steeltooth): NPC entry (4,032 chars). Schema normalized with `entry_id: "npc_larek_steeltooth"`, `type: "npc"`, valid DCC avatar `https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/99d10d9b-611c-45b7-566a-79c3ed2e9800/public`, multiline regex `(?:^|\n)\s*(?:Larek Steeltooth|Larek)\s*:`, `npc_info` structured object, `ignored_characters: ["_PqRVec7Aa42KGUhK2J8GQ"]`, `scan_persona: true`, `whole_words_only: true`. 0 em-dashes.
+
+6. **NPC Primary (`FINAL/Svartulfr_NPC_Primary.json` & mirror)**:
+   - `alyssa_world_dossier_2b54a223`: Full JED+ dossier (19,980 chars). Single-line bracket header: `AGE: 19 (Born April 22, 2005)`, `EDUCATION: St. Brugge Private Academy alumnus;`, `OCCUPATION: 1st-year undergrad (SUCC) Pre-Med, Certified Guild Healer & Field Medic (Rank A, Hunter ID ADB-555), Applied Runic Crystallographer, Botanist...`. Removed legacy "Novice Healing Mage" label. Integrates crystal lab glassware, Bag of Holding, Dimora del Rifugio key, Suite 3 fur nest with plush Wolfy, and Zefir resting in fur nest. Positive framing: "single pair of lupine ears nestled naturally in waves". Anti-collision preserved: `selective: true`, `secondary_keys: ['Dossier', 'Scheda', 'Archivio', 'Database', 'Profilo']`, `ignored_characters: ['_6exg3yPfe2eCDK4hTftkh']`, `ignored_personas: ['persona_1786335754946']`. 0 em-dashes.
+   - `Vcj4h2TL4Usola2A4OOl6`: Full JED+ dossier (13,676 chars). Single-line bracket header: `AGE: 19 (Born April 22, 2005)`, `SOCIAL_STATUS: Citizen, Registered Guild Hunter (Rank A, Support/Infiltrator, JDB-555)...`, `EDUCATION: St. Brugge Private Academy alumnus;`, `OCCUPATION: 1st-year undergrad (SUCC) Acoustic and Sound Engineering...`. Removed legacy collarbone marking. Integrates St. Brugge training with Father Revazhael, Abyssal Armor gift and formula, acoustic attunement of Alyssa's resonant cylinders, Welcome Fest KSA intimidation, and Dragon Glass Katana. Positive framing: "lazy single caramel wolf ears that flick when amused". Anti-collision preserved: `selective: true`, `secondary_keys: ['Dossier', 'Scheda', 'Archivio', 'Database', 'Profilo']`, `ignored_characters: ['_t4J9aQNJM36cUKAP4wB4U']`, `ignored_personas: ['1792155173728']`. 0 em-dashes.
+
+7. **Token Budget Invariant**:
+   - Lorebook I: `token_budget == 5000` (Verified: `True`)
+   - Lorebook II: `token_budget == 5000` (Verified: `True`)
+   - Lorebook III: `token_budget == 5000` (Verified: `True`)
+   - Location: `token_budget == 5000` (Verified: `True`)
+   - NPC Secondary: `token_budget == 5000` (Verified: `True`)
+   - NPC Primary: `token_budget == 7500` (Verified: `True`)
 
 ---
 
 ## 2. Logic Chain
 
-1. **Premise 1 (Module 93312 / nC Compatibility)**:
-   Wyvern's Visual Novel mode frontend parses scene and chat logs using regex pattern `(?:^|\n)\s*(?:=>\s*)?<coreName>:`. Character sprites, portraits, and nameplates fail to render if speaker names include full formal names with spaces and titles (e.g., `=>Erik Ulfr Douglas:` or `=>Jasper: Accanto a Alyssa...`). Standardizing to canonical short tags (`=>Erik:`, `=>Jasper:`, `=>Finn:`, etc.) and isolating spoken text from narrative blocks guarantees that the frontend parser recognizes each speaker turn and renders the corresponding sprite and dialogue frame.
+1. **Integrity & Anti-Cheat Audit**:
+   - Inspected `scripts/verify_milestone2_lorebooks.py` line-by-line: contains no mocked or short-circuited return values. Loads actual files from disk, calculates lengths, compares `entries` vs `lexicon`, searches for prohibited strings (`{{age}}`, `—`, broad keys, negative framing patterns), and tests AST/JSON structure directly.
+   - Independently ran automated checks through separate Python scripts; zero discrepancies found.
+   - Conclusion: Zero integrity violations. Work is genuine and independently verifiable.
 
-2. **Premise 2 (Formatting Discipline Invariants)**:
-   The repository guidelines (`GEMINI.md` and `PROJECT.md`) enforce:
+2. **Substantive Lore Integration across the 6 Core Themes**:
+   - *St. Brugge Private Academy*: Defined as concept in LB3 (`succ_lb3_st_brugge_academy`), location in Location Lorebook (`ulTwlYo2jqObA7l_bFoa5`), and referenced in education headers and backstories of Alyssa and Jasper dossiers.
+   - *Father Revazhael*: Fully detailed JED+ NPC in NPC Secondary (`jmh0MajEsRwrm4UYU14mY`), referenced as master of crystallography and abyssal arts in LB1, LB2, LB3, Location, and both Primary dossiers.
+   - *Applied Runic Crystallography*: Defined in LB1 (`lb1_concept_applied_runic_crystallography`), mechanics detailed in LB2 and Alyssa/Jasper dossiers.
+   - *Enchanted Resonant Cylinders*: Defined in LB2 (`lb2_item_enchanted_resonant_cylinders`), contrasted with commercial DMHA cylinders, crafted by Alyssa, attuned acoustically by Jasper.
+   - *Abyssal Magic vs Void Magic/Necromancy*: Defined in LB1 (`lb1_magic_abyssal_magic_distinction`), anchored in Father Revazhael's demonic nature and Sierra's necromancy.
+   - *Alyssa & Jasper Background Dossiers*: Fully enriched in NPC Primary with official credentials (Rank A Guild Healer ADB-555 / Hunter JDB-555), Suite 3 fur nest with Wolfy, Welcome Fest KSA intimidation, and removal of outdated novice/collarbone tags.
+   - Conclusion: All 6 core themes are substantively integrated with high literary fidelity and deep alignment to playtest lore.
+
+3. **Formatting Discipline & Style Conformance**:
+   - Zero em-dashes (`—`) found in any of the 10 target entries.
+   - Zero markdown bold (`**`) or action asterisks in narrative fields.
    - Dialogue enclosed strictly in standard double quotes (`"..."`).
-   - Actions and narration in plain text with 0 asterisks (`*`).
-   - Absolute ban on the em-dash (`—`), replacing it with commas or periods.
-   Direct empirical testing proved:
-   - Zero em-dashes across all three scenes in `FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json`.
-   - Zero em-dashes in live cloud scenario `_2MTWKjxrQPdQVaz9y4Q7H`.
-   - Zero em-dashes in live chat log `chat_log_PJx1W1rg3WUzRM7MnQrkN` message #0 swipe.
-   - Zero asterisks across all target texts.
-   - Balanced quotation marks with zero curly quotes.
+   - Conclusion: 100% compliance with repository formatting discipline.
 
-3. **Premise 3 (Live Cloud Synchronization)**:
-   The local scenario file is synchronized 1:1 with the Wyvern cloud backend (`PUT /api/worlds/scenarios/_2MTWKjxrQPdQVaz9y4Q7H` returned 200 OK), and subsequent live GET calls confirm exact byte-for-byte identity. Active chat swipe `message_swipe_99mmMgEEQjk2pkJN3hXkQ` on `PUT /api/new/chat-logs/swipe/message_swipe_99mmMgEEQjk2pkJN3hXkQ` returned 200 OK and live GET calls confirm full parity with `messages[0].content`.
+4. **Demi-Human Positive Framing**:
+   - Demi-human anatomy: Single animal ears on crown described naturally ("single pair of lupine ears nestled naturally in waves", "lazy single caramel wolf ears that flick when amused"). Zero negative comparisons (`no human ears`, `senza orecchie umane`).
+   - Sierra Cruz locomotion: 4 meters of iridescent serpent tail, heated rugs and terrarium in Suite 3. Zero instances of legs, feet, shoes, steps, or walking attributed to her.
+   - Conclusion: 100% compliance with positive framing rules.
 
-4. **Premise 4 (Integrity & Non-Circumvention)**:
-   Test suites (`test_milestone2_scenario_syntax.py` and `test_milestone2_boundary_stress.py`) perform genuine live HTTPS network calls to `app.wyvern.chat`. No mock objects, bypassed checks, or fabricated responses are present. Testing against adversarial edge cases (including Unicode dash variants, pseudo em-dashes, quote parity violations, and un-prefixed speaker patterns) confirms that the tests are rigorous, discriminative, and fail if a violation is injected.
+5. **Parity & Mirroring**:
+   - All 11 files satisfy `entries == lexicon` byte-for-byte.
+   - All 5 paired files between `FINAL/` and `lorebooks/optimized/` match byte-for-byte.
+   - Location lorebook updated in `lorebooks/optimized/Svartulfr_Location.json` without disrupting the 188-element world array in `FINAL/Svartulfr_Location.json`.
+   - Conclusion: 100% compliance with schema and mirroring contracts.
 
 ---
 
-## 3. Adversarial Stress-Test Findings
+## 3. Caveats
 
-| Challenge / Stress-Test | Attack Scenario | Actual Result | Status |
-|---|---|---|---|
-| **Unicode Dash Variants** | Checked for `\u2014` (em-dash), `\u2013` (en-dash), `\u2015` (horizontal bar), `\u2e3a`, `\u2e3b`, `\ufe58`, and markdown `--` | 0 occurrences across all 3 scenes and Message #0 | **PASS** |
-| **Quote Parity & Bleeding** | Checked whether quotes leak across `=>Speaker:` beats or contain odd parity | Every beat has balanced even parity; 0 curly quotes; 0 empty quotes | **PASS** |
-| **Untagged Narrative Speech** | Checked whether Narrator beats leak dialogue or spoken words | All Narrator beats have 0 dialogue quotes | **PASS** |
-| **Character Speech Requirement** | Checked whether character speaker beats have dialogue | 100% of character beats contain at least 1 quoted dialogue string | **PASS** |
-| **Plain Prefix Detection** | Checked for legacy prefixes like `Speaker: "..."` without `=>` | 0 plain prefixes found | **PASS** |
-| **Live API Byte Parity** | Checked whether cloud scenario diverged from local repository JSON | 100% byte-for-byte identical across all 3 scenes | **PASS** |
-| **User Macro Resolution in Chat** | Checked whether `{{user}}` macro leaked into live chat message #0 | 0 occurrences of `{{user}}` in active chat; resolved cleanly to `Alyssa` | **PASS** |
-| **World Character Mapping** | Checked whether any speaker tag lacks a corresponding World Character | All 12 character tags map 1:1 to the 13 World Characters in World `_YpX47fNraQFw2dD7TdycJ` | **PASS** |
-
-### Integrity Audit Checklist
-- [x] **No hardcoded test results**: Tests parse real response JSON and assert against extracted regex tokens.
-- [x] **No facade implementations**: `scripts/patch_welcome_day_scenario_and_chat.py` executed live `PUT` calls with real token authentication and synced local files.
-- [x] **No bypassed verification**: Both unit tests and full repository discovery (191 tests) executed against live cloud API.
-- [x] **No self-certifying work**: Independent reviewer inspected endpoints and ran separate empirical verification scripts.
+1. **Pre-Existing Historical Em-Dashes in Non-Target Entries**:
+   - As noted in worker_m2's handoff, `FINAL/Svartulfr_NPC_Secondary.json` (Camp Mystic campers, indices 111-210) and `lorebooks/optimized/Svartulfr_Location.json` (Camp Mystic cabins, indices 192-224) contain pre-existing em-dashes from a previous historical milestone. In accordance with the minimal change principle, those historical entries outside Milestone 2 scope were not modified. All 10 target entries created or modified in Milestone 2 have strictly 0 em-dashes.
+2. **Character Cards in `FINAL/` (Milestone 3 Scope)**:
+   - This milestone exclusively reviewed the 6 standalone lorebooks. Character Cards (`FINAL/*_card.json`) and User Personas (`FINAL/personas/*.json`) are scoped under Milestone 3 per `PROJECT.md`.
 
 ---
 
-## 4. Caveats
+## 4. Conclusion
 
-1. **Cloud World Name**: The top-level `world.name` field populated by Wyvern in the scenario response contains `"Svartúlfr — Blackwood & Solarton"`, which is the immutable MongoDB title of World `_YpX47fNraQFw2dD7TdycJ`. The scenario's own fields (`name`, `description`, `scenario_premise`, `scene_instructions`, and `premade_scenes`) strictly contain 0 em-dashes.
-2. **Authentication Token Lifecycle**: Wyvern API Bearer tokens expire after 60 minutes. The automated scripts and tests utilize `scratch/refresh_token.py` to seamlessly refresh tokens when needed.
-3. **No other caveats**: All requirements of Milestone 2 are met without regressions.
+**Verdict**: **APPROVE**.
 
----
-
-## 5. Conclusion
-
-**Verdict: APPROVE**
-
-The Milestone 2 implementation executed by `worker_m2_gen2` is completely validated:
-- `FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json` has been updated with standardized `=>Speaker:` syntax across Scene 0, Scene 1, and Scene 2.
-- Live deployment to Wyvern Web API Scenario `_2MTWKjxrQPdQVaz9y4Q7H` is confirmed active with HTTP 200 and 100% text parity.
-- Live active chat log `chat_log_PJx1W1rg3WUzRM7MnQrkN` message #0 swipe `message_swipe_99mmMgEEQjk2pkJN3hXkQ` is patched and verified live with HTTP 200.
-- Formatting discipline is strictly enforced: exactly 0 em-dashes, 0 asterisks, balanced dialogue in double quotes, and 0 plain untagged speaker prefixes.
-- Full automated test suite passes with 191/191 tests OK.
-- Milestone 2 is ready for promotion to DONE in `PROJECT.md`.
+Worker `worker_m2` has delivered a rigorous, complete, and authentic implementation of Milestone 2:
+- Substantive integration of all 6 core emergent lore themes.
+- 100% byte-for-byte parity between `entries` and `lexicon` on all 11 modified files.
+- 100% byte-for-byte mirror synchronization between `FINAL/` and `lorebooks/optimized/`.
+- Strict formatting discipline (0 em-dashes in target entries, double-quoted dialogue, plain text narration).
+- Flawless positive framing for demi-humans.
+- Zero integrity violations.
 
 ---
 
-## 6. Verification Method
+## 5. Verification Method
 
-To independently reproduce this verification:
+To independently reproduce and verify this assessment:
 
-1. **Run Milestone 2 Syntax Tests**:
-   ```powershell
-   python -m unittest -v tests/test_milestone2_scenario_syntax.py
+1. **Execute Verification Command**:
+   ```bash
+   python scripts/verify_milestone2_lorebooks.py
    ```
-   *Expected: 12 tests passed (`OK`).*
+   *Expected outcome*: Exits with code 0 and logs `=== ALL TESTS PASSED WITH 100% INTEGRITY ===`.
 
-2. **Run Milestone 2 Boundary Stress Tests**:
-   ```powershell
-   python -m unittest -v tests/test_milestone2_boundary_stress.py
-   ```
-   *Expected: 16 tests passed (`OK`).*
+2. **Inspect Files and Target Entries**:
+   - `FINAL/Svartulfr_Lorebook_I.json` (`lb1_concept_applied_runic_crystallography`, `lb1_magic_abyssal_magic_distinction`)
+   - `FINAL/Svartulfr_Lorebook_II.json` (`lb2_item_enchanted_resonant_cylinders`)
+   - `FINAL/Svartulfr_Lorebook_III.json` (`succ_lb3_st_brugge_academy`)
+   - `lorebooks/optimized/Svartulfr_Location.json` (`ulTwlYo2jqObA7l_bFoa5`, `loc_theta_iota_theta_suite_3`)
+   - `FINAL/Svartulfr_NPC_Secondary.json` (`jmh0MajEsRwrm4UYU14mY`, `npc_larek_steeltooth`)
+   - `FINAL/Svartulfr_NPC_Primary.json` (`alyssa_world_dossier_2b54a223`, `Vcj4h2TL4Usola2A4OOl6`)
+   - Mirrored files in `lorebooks/optimized/`
 
-3. **Run Full Repository Discovery Suite**:
-   ```powershell
-   python -m unittest discover tests
-   ```
-   *Expected: 191 tests passed (`OK`).*
-
-4. **Run Live Patch Script Verification**:
-   ```powershell
-   python scripts/patch_welcome_day_scenario_and_chat.py --verify-only
-   ```
-   *Expected: `[SUCCESS] 100% of live verification assertions passed successfully!`*
-
-5. **Run Reviewer Adversarial Inspection**:
-   ```powershell
-   python scratch/adversarial_review_m2.py
-   ```
-   *Expected: All checks show 0 em-dashes, 0 asterisks, balanced quotes, and 100% byte-for-byte parity.*
-
-6. **Invalidation Conditions**:
-   - Any HTTP error (!= 200) from `https://app.wyvern.chat/api/worlds/scenarios/_2MTWKjxrQPdQVaz9y4Q7H` or `https://app.wyvern.chat/api/new/chat-logs/chat_log_PJx1W1rg3WUzRM7MnQrkN`.
-   - Any em-dash (`—`) or asterisk (`*`) appearing in `scene_text` or message #0 swipe.
-   - Any un-prefixed speaker name preceding dialogue without `=>`.
-   - Any failure in the 191-test discovery suite.
+3. **Invalidation Conditions**:
+   - Any assertion failure in `scripts/verify_milestone2_lorebooks.py`.
+   - Any divergence between `entries` and `lexicon`.
+   - Any em-dash (`—`) or markdown bold (`**`) in target entries.
+   - Any attribution of legs, feet, or walking to Sierra Cruz.
+   - Any loss of player anti-collision protection on Alyssa or Jasper dossiers.

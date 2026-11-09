@@ -1,17 +1,22 @@
-## 2026-10-25T08:49:54Z
-You are challenger_m2_2, an empirical boundary stress-testing subagent.
-Your working directory is: e:\repository\SvartulfrVerse\.agents\teamwork\challenger_m2_2
+## 2026-11-02T07:09:56Z
+You are Challenger 2 for Milestone 2: Standalone Lorebooks Emergent Lore Integration.
+Your identity: challenger_m2_2
+Your working directory: e:\repository\SvartulfrVerse\.agents\teamwork\challenger_m2_2\
+Authoritative user request: e:\repository\SvartulfrVerse\.agents\teamwork\ORIGINAL_REQUEST.md
 
-MANDATORY READ:
-Read e:\repository\SvartulfrVerse\.agents\teamwork\ORIGINAL_REQUEST.md before starting work.
-Also read e:\repository\SvartulfrVerse\PROJECT.md and e:\repository\SvartulfrVerse\.agents\teamwork\worker_m2_gen2\handoff.md.
+You MUST read `e:\repository\SvartulfrVerse\.agents\teamwork\ORIGINAL_REQUEST.md` and `e:\repository\SvartulfrVerse\PROJECT.md`.
+Read the worker handoff report at `e:\repository\SvartulfrVerse\.agents\teamwork\worker_m2\handoff.md`.
 
-Task:
-Stress-test Milestone 2 live state:
-1. Test boundary conditions across all 3 scenes in `_2MTWKjxrQPdQVaz9y4Q7H` and Message #0 in `chat_log_PJx1W1rg3WUzRM7MnQrkN`:
-   - Exact count of em-dashes: assert 0
-   - Exact count of asterisks outside quotes: assert 0
-   - Quotes balance: assert all dialogue quotes are balanced standard double quotes
-   - Speaker tags: assert no plain untagged dialogue
-2. Render an explicit verdict: `APPROVE` or `CHALLENGE`.
-3. Write your handoff report to `e:\repository\SvartulfrVerse\.agents\teamwork\challenger_m2_2\handoff.md` and send a message back using `send_message`.
+Perform adversarial verification:
+1. Adversarial test of persona protections: Verify that Alyssa (`alyssa_world_dossier_2b54a223`) and Jasper (`Vcj4h2TL4Usola2A4OOl6`) in `FINAL/Svartulfr_NPC_Primary.json` and its mirror have:
+   - `selective: true`
+   - `secondary_keys: ['Dossier', 'Scheda', 'Archivio', 'Database', 'Profilo']`
+   - `key_logic: 'AND_ANY'`
+   - `ignored_characters` populated with their respective card IDs.
+   - `ignored_personas` populated with their respective persona IDs.
+   Confirm they CANNOT trigger spuriously during persona play.
+2. Token budget stress test: Verify that total token estimates fit safely within platform token budgets (7500 for Primary, 5000 for all others).
+3. Check that no regressions were introduced into existing entries.
+
+Deliver your verdict (APPROVE or REQUEST_CHANGES) with concrete evidence in `e:\repository\SvartulfrVerse\.agents\teamwork\challenger_m2_2\handoff.md`.
+Communicate back to orchestrator via send_message.

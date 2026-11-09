@@ -1,11 +1,20 @@
-# Progress — worker_m3
-Last visited: 2026-10-25T10:19:55Z
-- [x] Read ORIGINAL_REQUEST.md, PROJECT.md, and explorer_survey_3/handoff.md
-- [x] Investigate existing scripts, token management, and chat API
-- [x] Implement scripts/configure_display_settings_and_flags.py
-- [x] Execute configuration script and verify live persistence
-- [x] Enforce sidebar flags (party_tied: true, auto_approve: false)
-- [x] Verify Stats tab loading character sheets for the 13 World Characters
-- [x] Write tests in tests/test_milestone3_display_settings.py
-- [x] Run tests and full test discovery (207 passed)
-- [x] Document in handoff.md and send completion message
+# Progress Heartbeat — worker_m3
+
+**Last visited**: 2026-11-02T07:32:00Z
+**Current status**: Task completed. All 4 target character cards and personas updated and verified with 100% pass rate in scripts/verify_milestone3_cards_personas.py. Writing handoff.md.
+
+## Tasks
+- [x] Initial setup: DISPATCH.md, BRIEFING.md, progress.md
+- [x] Review mandatory documents (ORIGINAL_REQUEST.md, PROJECT.md, survey analysis handoff Sections 4.2 & 4.3)
+- [x] Inspect existing `FINAL/Jasper_Douglas_Bloodmoon_card.json`
+- [x] Inspect existing `FINAL/personas/Jasper_Persona.json`
+- [x] Inspect existing `FINAL/personas/Alyssa_Persona.json`
+- [x] Inspect existing `ARCHIVIO/cards_legacy/Alyssa_Douglas_Bloodmoon_card.json`
+- [x] Implement updates to `FINAL/Jasper_Douglas_Bloodmoon_card.json`
+- [x] Implement updates to `FINAL/personas/Jasper_Persona.json`
+- [x] Implement updates to `FINAL/personas/Alyssa_Persona.json`
+- [x] Implement updates to `ARCHIVIO/cards_legacy/Alyssa_Douglas_Bloodmoon_card.json`
+- [x] Create `scripts/verify_milestone3_cards_personas.py`
+- [x] Run verification script and ensure 100% pass rate (10/10 tests passed)
+- [x] Update BRIEFING.md and write `handoff.md`
+- [ ] Notify orchestrator via `send_message`

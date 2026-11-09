@@ -1,155 +1,191 @@
-# Empirical Challenger Report — Milestone 1: Primary World Characters Deployment
+# Adversarial Handoff Report — Milestone 1: Vault Second Brain Knowledge Documentation
 
-**Agent**: `challenger_m1_1` (critic, specialist)  
-**Target Milestone**: Milestone 1 (M1) — Deployment & Verification of 13 Primary World Characters into World `_YpX47fNraQFw2dD7TdycJ`  
-**Target Endpoint**: `GET https://app.wyvern.chat/api/worlds/characters/world/_YpX47fNraQFw2dD7TdycJ`  
-**Verdict**: **`APPROVE`**  
-**Timestamp**: `2026-10-25T08:32:00Z`  
+- **Agent**: `challenger_m1_1`
+- **Archetype / Roles**: Empirical Challenger (critic, specialist)
+- **Target Subagent**: `worker_m1`
+- **Parent Conversation ID**: `a6280f2d-32ae-4a10-82fa-5604ad40f230`
+- **Working Directory**: `e:\repository\SvartulfrVerse\.agents\teamwork\challenger_m1_1\`
+- **Date**: 2026-11-02T06:47:00Z
+- **Verdict**: **REQUEST_CHANGES**
 
 ---
 
 ## 1. Observation
 
-### 1.1 Independent Empirical Test Execution
-An independent, zero-trust verification test harness was authored at `tests/test_empirical_challenger_m1.py` containing 16 unit tests. The suite does not rely on local snapshots or worker claims, but queries the live Wyvern API cloud endpoint directly over HTTPS with Bearer token authentication, and executes live HTTP requests against Cloudflare CDN image endpoints.
+### 1.1 Existing Automated Test Runs
+The standard repository test scripts were executed directly via command line:
 
-Execution command:
+1. `python scripts/verify_milestone_1.py`:
+   - Output: All 4 checks reported `[PASS]`, exited with code 0.
+   - Files verified: 6 new markdown files, 0 em-dashes detected by the standard script, positive ear framing confirmed, cross-references confirmed.
+
+2. `python scripts/vault_health_check.py`:
+   - Output: `ZERO ERRORI CRITICI! Il Vault e in perfetta salute operativa.` (42 passed checks, 4 warnings on pre-existing legacy entities, exited with code 0).
+
+### 1.2 Custom Adversarial Stress-Test Suite (`scripts/test_milestone_1_adversarial.py`)
+A custom empirical verification harness was created and executed across all new vault articles and references.
+
+Command:
 ```powershell
-python -m unittest tests/test_empirical_challenger_m1.py -v
+python scripts/test_milestone_1_adversarial.py
 ```
 
-Output:
-```text
-test_01_exact_character_count_and_uniqueness (tests.test_empirical_challenger_m1.EmpiricalChallengerMilestone1Test.test_01_exact_character_count_and_uniqueness)
-Assert exactly 13 characters, no more, no less, and strictly unique IDs. ... ok
-test_02_canonical_identity_coverage (tests.test_empirical_challenger_m1.EmpiricalChallengerMilestone1Test.test_02_canonical_identity_coverage)
-Assert 100% of the 13 canonical characters are present in the world. ... ok
-test_03_world_id_association (tests.test_empirical_challenger_m1.EmpiricalChallengerMilestone1Test.test_03_world_id_association)
-Assert every character record is explicitly bound to TARGET_WORLD_ID. ... ok
-test_04_timeline_bigint_integrity (tests.test_empirical_challenger_m1.EmpiricalChallengerMilestone1Test.test_04_timeline_bigint_integrity)
-Assert birthdate and start_timeline_position are exact non-negative BigInt integers. ... ok
-test_05_avatar_cloudflare_cdn_format (tests.test_empirical_challenger_m1.EmpiricalChallengerMilestone1Test.test_05_avatar_cloudflare_cdn_format)
-Assert avatars use the canonical Cloudflare CDN format and certified asset keys. ... ok
-test_06_avatar_cdn_liveness_http (tests.test_empirical_challenger_m1.EmpiricalChallengerMilestone1Test.test_06_avatar_cdn_liveness_http)
-Adversarially probe Cloudflare CDN for every avatar to ensure images are live (HTTP 200). ... ok
-test_07_rpg_stats_structure_and_level_cap (tests.test_empirical_challenger_m1.EmpiricalChallengerMilestone1Test.test_07_rpg_stats_structure_and_level_cap)
-Assert rpg_stats enabled, level capped at 99, and level matches canonical age. ... ok
-test_08_rpg_stats_balance_25pt_sum31 (tests.test_empirical_challenger_m1.EmpiricalChallengerMilestone1Test.test_08_rpg_stats_balance_25pt_sum31)
-Assert balanced 25-point 6-stat RPG blocks (base 1 per stat, sum must be exactly 31). ... ok
-test_09_jed_plus_formatting_rules (tests.test_empirical_challenger_m1.EmpiricalChallengerMilestone1Test.test_09_jed_plus_formatting_rules)
-Assert JED+ format compliance across summary and long_summary. ... ok
-test_10_formatting_discipline_and_em_dash_ban (tests.test_empirical_challenger_m1.EmpiricalChallengerMilestone1Test.test_10_formatting_discipline_and_em_dash_ban)
-Assert ZERO em-dashes (\u2014) across all fields and presence of format discipline instruction. ... ok
-test_11_anti_loop_and_umbrella_keys_hygiene (tests.test_empirical_challenger_m1.EmpiricalChallengerMilestone1Test.test_11_anti_loop_and_umbrella_keys_hygiene)
-Assert keys have zero broad umbrella keywords and whole_words_only is True. ... ok
-test_12_canon_lore_edge_cases (tests.test_empirical_challenger_m1.EmpiricalChallengerMilestone1Test.test_12_canon_lore_edge_cases)
-Assert domain-specific canon lore invariants. ... ok
-test_13_macro_residual_hygiene (tests.test_empirical_challenger_m1.EmpiricalChallengerMilestone1Test.test_13_macro_residual_hygiene)
-Assert zero unexpanded template macros (e.g. {{age}}, {{scenarioChar}}) in all character descriptions. ... ok
-test_14_lorebook_canonical_parity (tests.test_empirical_challenger_m1.EmpiricalChallengerMilestone1Test.test_14_lorebook_canonical_parity)
-Assert live character descriptions match authoritative lorebook entries byte-for-byte. ... ok
-test_15_erik_preexisting_id_retention (tests.test_empirical_challenger_m1.EmpiricalChallengerMilestone1Test.test_15_erik_preexisting_id_retention)
-Assert Erik Ulfr Douglas retained his preexisting MongoDB ID _qfaywY2yfrGWcxPBdmURD. ... ok
-test_16_rpg_stats_non_zero_remediation (tests.test_empirical_challenger_m1.EmpiricalChallengerMilestone1Test.test_16_rpg_stats_non_zero_remediation)
-Assert Erik's prior defect (stat_6: 0) is resolved and every stat across all characters is >= 1. ... ok
+Result:
+```
+======================================================================
+EMPIRICAL CHALLENGER AUDIT: MILESTONE 1
+======================================================================
 
-----------------------------------------------------------------------
-Ran 16 tests in 4.402s
+--- TEST 1: Rigorous Unicode Dash Scan ---
+[PASS] Dash scan in ACADEMIC_INSTITUTIONS_ST_BRUGGE_AND_SUCC.md
+[PASS] Dash scan in APPLIED_RUNIC_CRYSTALLOGRAPHY_AND_MAGITECH.md
+[PASS] Dash scan in PLANAR_COSMOLOGY_ABYSSAL_VS_VOID_MAGIC.md
+[PASS] Dash scan in FATHER_REVAZHAEL_AND_SUPERIOR_DEMONS.md
+[PASS] Dash scan in ALISSA_AND_JASPER_FIELD_AND_HUNTER_BACKGROUND.md
+[PASS] Dash scan in DCC_SECURITY_CAMPUS_INTEGRATION_AND_ATHLETICS.md
+[PASS] Dash scan in EXTERNAL_RESOURCES_INDEX.md
+[PASS] Dash scan in Svartulfr_World_Doc synchronized lines
 
-OK
+--- TEST 2: Negative Framing & Anatomical Invariants ---
+[PASS] Positive ear framing in ACADEMIC_INSTITUTIONS_ST_BRUGGE_AND_SUCC.md
+[PASS] Positive ear framing in APPLIED_RUNIC_CRYSTALLOGRAPHY_AND_MAGITECH.md
+[PASS] Positive ear framing in PLANAR_COSMOLOGY_ABYSSAL_VS_VOID_MAGIC.md
+[PASS] Positive ear framing in FATHER_REVAZHAEL_AND_SUPERIOR_DEMONS.md
+[PASS] Positive ear framing in ALISSA_AND_JASPER_FIELD_AND_HUNTER_BACKGROUND.md
+[PASS] Positive ear framing in DCC_SECURITY_CAMPUS_INTEGRATION_AND_ATHLETICS.md
+[PASS] Sierra Cruz anatomy in ACADEMIC_INSTITUTIONS_ST_BRUGGE_AND_SUCC.md
+[PASS] Sierra Cruz anatomy in APPLIED_RUNIC_CRYSTALLOGRAPHY_AND_MAGITECH.md
+[PASS] Sierra Cruz anatomy in PLANAR_COSMOLOGY_ABYSSAL_VS_VOID_MAGIC.md
+[FAIL] Sierra Cruz anatomy in DCC_SECURITY_CAMPUS_INTEGRATION_AND_ATHLETICS.md
+       Details: Suspicious word '\bfeet\b' in sentence: 'Sierra Cruz rests her 4-meter rainbow iridescent snake tail in a heated corner, slithering fluidly without feet'
+[PASS] Scarlett Rose attributes in ACADEMIC_INSTITUTIONS_ST_BRUGGE_AND_SUCC.md
+[FAIL] Canonical Filename Orthography (Alyssa vs Alissa)
+       Details: File named ALISSA_... instead of canonical ALYSSA_... (inside content uses Alyssa throughout).
+[PASS] Mani mark location in ALISSA_AND_JASPER_FIELD_AND_HUNTER_BACKGROUND.md
+[PASS] Sol mark location in ALISSA_AND_JASPER_FIELD_AND_HUNTER_BACKGROUND.md
+
+--- TEST 3: Link Graph & Cross-Reference Resolution ---
+[PASS] Internal Link Graph: All 18 links resolved cleanly to existing files.
+[PASS] Index references ACADEMIC_INSTITUTIONS_ST_BRUGGE_AND_SUCC.md
+[PASS] Index references APPLIED_RUNIC_CRYSTALLOGRAPHY_AND_MAGITECH.md
+[PASS] Index references PLANAR_COSMOLOGY_ABYSSAL_VS_VOID_MAGIC.md
+[PASS] Index references FATHER_REVAZHAEL_AND_SUPERIOR_DEMONS.md
+[PASS] Index references ALISSA_AND_JASPER_FIELD_AND_HUNTER_BACKGROUND.md
+[PASS] Index references DCC_SECURITY_CAMPUS_INTEGRATION_AND_ATHLETICS.md
+
+--- TEST 4: Metadata Header Schema Validation ---
+[PASS] Metadata header schema for all 6 articles.
+
+--- TEST 5: 6 Core Themes Comprehensive Coverage Oracle ---
+[PASS] Theme 1 (St. Brugge): All 5 sub-checks passed.
+[PASS] Theme 2 (Father Revazhael): All 7 sub-checks passed.
+[PASS] Theme 3 (Crystallography & Cylinders): All 6 sub-checks passed.
+[PASS] Theme 4 (Abyssal vs Void Magic): All 5 sub-checks passed.
+[PASS] Theme 5 (Alyssa Credentials): All 6 sub-checks passed.
+[PASS] Theme 6 (Jasper Credentials): All 6 sub-checks passed.
+[PASS] Additional Theme (DCC & Athletics): All 6 sub-checks passed.
+
+======================================================================
+VERDICT: FAILURES DETECTED IN SUITE (2 Deficiencies)
+======================================================================
 ```
 
-### 1.2 Live Inventory Audit
-Querying `GET https://app.wyvern.chat/api/worlds/characters/world/_YpX47fNraQFw2dD7TdycJ` directly returned exactly 13 records:
+### 1.3 Verbatim Findings and Specific Code References
 
-| Character Name | MongoDB ID | Lv | Birthdate | Timeline Pos | RPG Stats (M/R/A/W/P/S) | Sum | CDN Avatar Hash | Parity vs Lorebook |
-|---|---|---|---|---|---|---|---|---|
-| **Erik Ulfr Douglas** | `_qfaywY2yfrGWcxPBdmURD` | 55 | 10009344 | 10009344 | 7 / 7 / 4 / 5 / 7 / 1 | 31 | `29a667f2-7846-474e-eff4-4dd81d3caf00` | 100% (22,778 B) |
-| **Logan Járn Douglas** | `_KW6aNaRYTengVR4NBmG7J` | 49 | 10054920 | 10054920 | 7 / 6 / 6 / 4 / 5 / 3 | 31 | `c90b110f-cebf-4223-1007-dec047b78400` | 100% (13,738 B) |
-| **Edric Douglas** | `_4QWHxwHBpNnfjmNYm3tNr` | 13 | 10371552 | 10371552 | 3 / 3 / 7 / 5 / 5 / 8 | 31 | `ed348ea6-c40c-461c-f90e-d09e742c3400` | 100% (7,265 B) |
-| **Noah Loki Douglas Bloodmoon** | `_YzcPc7dRLkttzR2jKX93z` | 25 | 10262928 | 10262928 | 6 / 6 / 5 / 6 / 6 / 2 | 31 | `469a5f2b-f56e-4925-b9aa-cea58fa25c00` | 100% (8,797 B) |
-| **Malachia Björn Douglas Bloodmoon** | `_QQXte9xWjMeMtqEJfwrc3` | 28 | 10244064 | 10244064 | 8 / 7 / 5 / 4 / 5 / 2 | 31 | `b43869a0-d59a-4074-e99e-726ea2939b00` | 100% (18,523 B) |
-| **Jasper Svartr Douglas Bloodmoon** | `_kzHEV16B2ygx1XNfxKVaa` | 19 | 10320312 | 10320312 | 4 / 3 / 8 / 9 / 3 / 4 | 31 | `061fed14-373e-44fb-639a-2a5638a47100` | 100% (14,483 B) |
-| **Alyssa Hvit Douglas Bloodmoon** | `_RWDGdWgx1eEwwfUb81eqF` | 19 | 10320312 | 10320312 | 2 / 4 / 4 / 7 / 8 / 6 | 31 | `ba5a7fed-8425-478e-4314-16fb78d58300` | 100% (16,957 B) |
-| **Wulfnic Báleygr Bloodmoon** | `_P1HrVjkY9TGnymNaAWX1j` | 99 | 0 | 0 | 8 / 8 / 5 / 3 / 5 / 2 | 31 | `aa836754-29c6-4cd2-2655-2dce65ce2a00` | 100% (14,863 B) |
-| **Zefir Hvitskog** | `_yAYpmxxnP1gmntXDQPYmG` | 99 | 176424 | 176424 | 5 / 4 / 9 / 6 / 3 / 4 | 31 | `bdd8961e-a68a-4c6b-b4e1-29a26db37e00` | 100% (14,222 B) |
-| **Mackenzie Sanchez-Rogers** | `_RXHKfwRXwhRkBHttHVgqt` | 19 | 10316496 | 10316496 | 8 / 7 / 7 / 3 / 3 / 3 | 31 | `87f28fb6-557f-4eaf-9c7c-0cddfbe5c300` | 100% (9,631 B) |
-| **Finnegan Novak** | `_Yk9aK6X9WHzrWPCT7mzEK` | 19 | 10317984 | 10317984 | 6 / 6 / 8 / 3 / 4 / 4 | 31 | `75456c02-dddc-4879-7822-ab7c4628f600` | 100% (12,399 B) |
-| **Sierra Cruz** | `_EHx1dbCMHbXhNyhNzmPQg` | 18 | 10323648 | 10323648 | 7 / 6 / 3 / 8 / 3 / 4 | 31 | `d27bf63b-2b8b-4dda-5554-72b32ac60b00` | 100% (5,443 B) |
-| **Scarlett Rose** | `_d9f2AfTWG8V9aBMyabGLy` | 20 | 10307808 | 10307808 | 2 / 3 / 6 / 6 / 9 / 5 | 31 | `e96d176a-47e4-4829-2af4-7cd6ae239100` | 100% (4,798 B) |
+#### Finding 1 (Critical: Negative Constraint Echoing / Rule Violation)
+- **File**: `knowledge/Lore_Worldbuilding/DCC_SECURITY_CAMPUS_INTEGRATION_AND_ATHLETICS.md`
+- **Line 49**:
+  ```markdown
+  - **Theta Iota Theta (TIT / ΘΙΘ)**: Bohemian-chic sorority house. Home to Suite 3 (Alyssa, Scarlett, Sierra). Sierra Cruz rests her 4-meter rainbow iridescent snake tail in a heated corner, slithering fluidly without feet. Front porch faces ARO.
+  ```
+- **Violation**: The phrase `"slithering fluidly without feet"` explicitly uses the forbidden word `feet`.
+- **Repository Rule (GEMINI.md Rule 5 & AGENTS.md Rule 5)**:
+  > *"Sierra Cruz (Lamia — Locomozione & Livrea Arcobaleno Iridescente): Possiede capelli color arcobaleno e, dai fianchi in giù, la parte inferiore del corpo è interamente quella di un serpente di 4 metri color arcobaleno con scaglie iridescenti (zero gambe, zero piedi). È tassativamente vietato usare per Sierra termini o verbi come gambe, piedi, ginocchia, scarpe, pantaloni, camminare o fare passi (legs, feet, knees, shoes, walk, step, stand on feet): Sierra si muove esclusivamente strisciando, scivolando e avvolgendosi sulle sue spire (slithers, glides, coils)."*
+- **Mechanism**: Stating `"without feet"` commits the negative constraint echoing anti-pattern ("Pink Elephant Problem"). In contrast, `docs/world/Svartulfr_World_Doc.md` line 1044 formulated this correctly without mentioning feet: `"(strisciando sinuosamente sul parquet)"`.
 
-### 1.3 Full Repository Test Discovery
-Running full discovery across all unit and integration tests in the repository:
-```powershell
-python -m unittest discover tests
-```
-Result: `Ran 163 tests in 7.213s ... OK`. Zero failures, zero errors, zero regressions.
+#### Finding 2 (Quality: Canonical Filename Inconsistency)
+- **File on Disk**: `knowledge/Lore_Worldbuilding/ALISSA_AND_JASPER_FIELD_AND_HUNTER_BACKGROUND.md`
+- **Header Line 1 of the File**:
+  ```markdown
+  # ALYSSA & JASPER: FIELD CREDENTIALS & HUNTER BACKGROUND
+  ```
+- **File Body**: Uses `Alyssa` 19 times, `Alissa` 0 times.
+- **Repository Canon**: Across all Character Cards (`FINAL/personas/Alyssa_Persona.json`, `ARCHIVIO/cards_legacy/Alyssa_Douglas_Bloodmoon_card.json`), Scenarios (`FINAL/scenarios/Svartulfr_Scenario_SUCC_Route_Alyssa.json`), and World Documentation (`docs/world/Svartulfr_World_Doc.md`), the character name is canonically `Alyssa`.
+- **Impact**: Naming the file `ALISSA_...` creates an orthographic dissonance in the Vault index. While current cross-references resolve, downstream milestones (M2, M3, M4) relying on `Alyssa` will encounter linking or indexing confusion if this is not aligned now.
 
 ---
 
 ## 2. Logic Chain
 
-1. **Assertion 1 — Exact 13 Character Cardinality & ID Integrity**:
-   - *Observation*: Live query returned 13 items with 13 unique IDs and 13 unique names. Erik Ulfr Douglas's preexisting ID `_qfaywY2yfrGWcxPBdmURD` was successfully preserved.
-   - *Inference*: No duplicate records or orphaned characters exist in World `_YpX47fNraQFw2dD7TdycJ`.
-2. **Assertion 2 — BigInt Timeline Integrity**:
-   - *Observation*: `birthdate` and `start_timeline_position` are Python `int` (JSON integer numbers), strictly matching each other, and bounded between 0 and 10489902 (the current World Age, Aug 26, 2024). Wulfnic is anchored at 0 to prevent negative BigInt indexing bugs in MongoDB.
-   - *Inference*: Timeline positions prevent anachronistic character appearances in prior historical epochs or future scenarios.
-3. **Assertion 3 — Cloudflare CDN Gallery Assets & Image Liveness**:
-   - *Observation*: All 13 avatar URLs begin with `https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/` and terminate in `/public`. Live HTTP HEAD requests confirmed that 13/13 assets return HTTP 200 with valid `image/*` content headers.
-   - *Inference*: No broken image links, 404s, or external unauthenticated image hosting.
-4. **Assertion 4 — Balanced 25-Point 6-Stat RPG Blocks**:
-   - *Observation*: Every character has `rpg_stats.enabled = true`, dual-key notation (`stat_1`..`stat_6` and `might`..`scouting`), base stats $\ge 1$, and both named and indexed sums equal exactly 31 ($6 \times 1 + 25$). Erik's previous defect (`stat_6: 0`) is remediated to 1. Levels for immortals Wulfnic and Zefir are strictly capped at 99 per Rule 8, preventing Mongoose schema save failures.
-   - *Inference*: Full compatibility with both legacy frontend modules (93312 / WH) and modern simulation engines.
-5. **Assertion 5 — JED+ Formatting, 0 Em-Dashes & Lore Invariants**:
-   - *Observation*: `summary` uses bracketed PList. `long_summary` starts with a single-line bracketed header, contains `BACKSTORY:`, `FAMILY & PACK:`, `VOICE & BEHAVIOR:`, and thematic closing sections. Zero em-dashes (`\u2014`) exist across all descriptions, titles, summaries, and instructions. Sierra Cruz explicitly mandates "She NEVER walks, steps, stands on feet..." with zero human locomotion violations in narrative prose.
-   - *Inference*: Output strictly adheres to GEMINI.md Rules 1, 2, 3, 5, 8, and 10.
-6. **Assertion 6 — Byte-for-Byte Authoritative Parity**:
-   - *Observation*: `test_14_lorebook_canonical_parity` performed an exact byte-for-byte diff between live `long_summary` on Wyvern and `content` in `FINAL/Svartulfr_NPC_Primary.json` and `FINAL/Svartulfr_NPC_Secondary.json`. Result: 0 mismatches across all 13 characters.
+1. **Rule Baseline**:
+   - GEMINI.md Rule 5 explicitly forbids using words like `feet` or `legs` when describing Sierra Cruz, mandating positive description of her locomotion as slithering/coiling.
+   - GEMINI.md Rule 15 and PROJECT.md mandate canonical accuracy and clean Second Brain indexing.
+2. **Empirical Observation**:
+   - `DCC_SECURITY_CAMPUS_INTEGRATION_AND_ATHLETICS.md:49` literally states `"slithering fluidly without feet"`, triggering the forbidden token `feet`.
+   - The article `ALISSA_AND_JASPER_FIELD_AND_HUNTER_BACKGROUND.md` uses `Alyssa` internally throughout, but has `ALISSA_` in its disk filename.
+3. **Synthesis & Blast Radius**:
+   - Finding 1 directly violates the negative framing prohibition and risks inducing LLMs into generating human feet on Sierra Cruz during context retrieval.
+   - Finding 2 is an orthographic anomaly that can be cleanly unified prior to Milestone 2 (Lorebook updates) and Milestone 3 (Card synchronization).
+4. **Conclusion**:
+   - Although the substantive content of all 6 themes is exceptionally rich, complete, and thoroughly researched, the repository formatting rules require zero violations.
+   - Therefore, the verdict must be **REQUEST_CHANGES** with exact remediation instructions.
 
 ---
 
 ## 3. Caveats
 
-1. **Client-Side Visual Novel Rendering**:
-   This milestone verified data persistence and API schema compliance on `app.wyvern.chat`. End-to-end browser DOM sprite rendering and nameplate display under Visual Novel mode are tested under Milestone 4 via Chrome DevTools Protocol.
-2. **Wulfnic Birthdate Anchoring**:
-   Wulfnic's true birthdate is 824 AD (-3 years relative to Epoch 827 AD). Setting `birthdate: 0` is an established, approved platform constraint to prevent unsigned BigInt database underflow.
+- **Scope Boundary**: No implementation files were modified by the Challenger. All tests were executed non-destructively.
+- **Legacy Entities**: The 4 warnings reported by `vault_health_check.py` (`Scarlett Rose` candy-pink in `Svartulfr_NPC_Primary.json`, `Logan` height phrasing, and `Larek Steeltooth` outfits) pre-existed in legacy lorebook files and are explicitly assigned to Milestone 2 and Milestone 4 in `PROJECT.md`. They do not block Milestone 1.
 
 ---
 
 ## 4. Conclusion
 
-**Verdict: `APPROVE`**
+**Verdict: REQUEST_CHANGES**
 
-Milestone 1 satisfies 100% of the prompt requirements and project standards:
-- Exactly 13 Primary World Characters are live in World `_YpX47fNraQFw2dD7TdycJ`.
-- All BigInt timeline timestamps are valid, non-negative integers.
-- All 13 avatars are live, verified Cloudflare CDN gallery assets.
-- All 13 RPG stat blocks are balanced with the 25-point budget (sum = 31), levels capped at 99.
-- JED+ formatting, 0 em-dash ban, and lore invariants are verified.
-- Preexisting Erik record ID `_qfaywY2yfrGWcxPBdmURD` was preserved and remediated.
+The work product delivered by `worker_m1` for Milestone 1 is 98% complete and exceptionally well-crafted in terms of lore depth, em-dash sanitation, and link resolution. However, approval is conditioned on applying two surgical fixes:
+
+### Required Action Items for Worker:
+
+1. **Fix Negative Framing in `DCC_SECURITY_CAMPUS_INTEGRATION_AND_ATHLETICS.md:49`**:
+   - Target line 49:
+     ```markdown
+     - **Theta Iota Theta (TIT / ΘΙΘ)**: Bohemian-chic sorority house. Home to Suite 3 (Alyssa, Scarlett, Sierra). Sierra Cruz rests her 4-meter rainbow iridescent snake tail in a heated corner, slithering fluidly without feet. Front porch faces ARO.
+     ```
+   - Replace with:
+     ```markdown
+     - **Theta Iota Theta (TIT / ΘΙΘ)**: Bohemian-chic sorority house. Home to Suite 3 (Alyssa, Scarlett, Sierra). Sierra Cruz rests her 4-meter rainbow iridescent snake tail in a heated corner, slithering fluidly across the polished floorboards. Front porch faces ARO.
+     ```
+
+2. **Standardize Canonical Filename Orthography**:
+   - Rename:
+     `knowledge/Lore_Worldbuilding/ALISSA_AND_JASPER_FIELD_AND_HUNTER_BACKGROUND.md`  
+     $\to$  
+     `knowledge/Lore_Worldbuilding/ALYSSA_AND_JASPER_FIELD_AND_HUNTER_BACKGROUND.md`
+   - Update the 4 cross-references to match the new filename:
+     * `knowledge/Lore_Worldbuilding/EXTERNAL_RESOURCES_INDEX.md` (lines 188, 250)
+     * `knowledge/Lore_Worldbuilding/APPLIED_RUNIC_CRYSTALLOGRAPHY_AND_MAGITECH.md` (line 64)
+     * `knowledge/Lore_Worldbuilding/DCC_SECURITY_CAMPUS_INTEGRATION_AND_ATHLETICS.md` (line 59)
+     * `scripts/verify_milestone_1.py` (line 14)
 
 ---
 
 ## 5. Verification Method
 
-To reproduce and verify these findings independently:
+Once the worker applies these 2 surgical changes, verify independently using:
 
-1. **Execute the Empirical Challenger Suite**:
-   ```powershell
-   python -m unittest tests/test_empirical_challenger_m1.py -v
-   ```
-   *Expected result*: `Ran 16 tests in ~4.4s ... OK`.
+```powershell
+# 1. Run empirical challenger test suite (must exit 0 with all checks PASS)
+python scripts/test_milestone_1_adversarial.py
 
-2. **Execute Full Repository Test Discovery**:
-   ```powershell
-   python -m unittest discover tests
-   ```
-   *Expected result*: `Ran 163 tests ... OK`.
+# 2. Run repository milestone 1 audit (must exit 0 with 100% OK)
+python scripts/verify_milestone_1.py
 
-3. **Execute Live Wyvern API Verification CLI**:
-   ```powershell
-   python scripts/deploy_13_world_characters.py --verify-only
-   ```
-   *Expected result*: Table displaying `[PASS]` for all 13 characters and status code `0`.
+# 3. Run repository-wide vault metabolism check (must report 0 critical errors)
+python scripts/vault_health_check.py
+```
+
+### Invalidation Conditions
+- Any occurrence of `feet`, `foot`, `legs`, or `shoes` associated with Sierra Cruz.
+- Any unresolved link pointing to the old `ALISSA_...` filename.
+- Any regression reintroducing an em-dash (`\u2014`).

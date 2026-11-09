@@ -32,7 +32,7 @@
 | Hair | Black | Douglas-dominant |
 | Eyes | Amber | Douglas-dominant |
 | Build | Tank-like, scarred | Douglas-dominant |
-| Height | 210 cm | — |
+| Height | 208 cm (6' 9.9") | Canonical |
 
 ---
 

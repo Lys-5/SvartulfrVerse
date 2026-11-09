@@ -32,7 +32,7 @@
 | Hair | Blonde | Bloodmoon-dominant |
 | Eyes | Blue | Bloodmoon-dominant |
 | Build | Lithe, elegant swimmer | Bloodmoon-refined |
-| Height | 196 cm | — |
+| Height | 197 cm (6' 5.6") | Canonical |
 
 ---
 

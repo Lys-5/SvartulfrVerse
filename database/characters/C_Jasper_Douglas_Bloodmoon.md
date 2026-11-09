@@ -32,7 +32,7 @@
 | Hair | Caramel-brown | Fusion-visual |
 | Eyes | Mint green | Fusion-visual |
 | Build | Lean athletic | Fusion blend |
-| Height | 191 cm | — |
+| Height | 193 cm (6' 4") | Canonical |
 
 **Note:** Twin fusion inheritance — matches Alyssa's visual pattern.
 

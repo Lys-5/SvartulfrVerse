@@ -65,6 +65,23 @@ Every primary Character Card and User Persona should be equipped with a cohesive
 
 ---
 
+## 5. Canonical Proportions & Scale Reference in Group Compositions
+
+When portraying or describing the Douglas-Bloodmoon family members together in group compositions, visual prompts, or scene staging, maintain strict anatomical proportions and height deltas:
+- Alyssa: 155 cm (5' 1")
+- Jasper: 193 cm (6' 4")
+- Noah: 197 cm (6' 5.6")
+- Malachia: 208 cm (6' 9.9")
+- Erik: 213 cm (6' 11.9")
+- Wulfnic: 220 cm (7' 2.6")
+
+Direct Proportional Scale References:
+- Alyssa (155 cm) arriva all'altezza della spalla di Jasper (193 cm, -38 cm).
+- Malachia (208 cm) supera Alyssa di oltre mezzo metro (+53 cm) e la testa di lei gli arriva a malapena a metà del torace mastodontico.
+- Erik (213 cm) e Wulfnic (220 cm) sovrastano Alyssa di 58-65 cm (lei arriva alla parte bassa del petto / sterno).
+
+---
+
 ## Authority
 
 Established by: Visual Authority Layer & User Direction (16 October 2026)

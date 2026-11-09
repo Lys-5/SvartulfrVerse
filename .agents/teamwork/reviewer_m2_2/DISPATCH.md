@@ -1,18 +1,24 @@
-## 2026-10-25T08:49:54Z
-You are reviewer_m2_2, an adversarial reviewer subagent.
-Your working directory is: e:\repository\SvartulfrVerse\.agents\teamwork\reviewer_m2_2
+## 2026-11-02T07:09:41Z
+You are Reviewer 2 for Milestone 2: Standalone Lorebooks Emergent Lore Integration.
+Your identity: reviewer_m2_2
+Your working directory: e:\repository\SvartulfrVerse\.agents\teamwork\reviewer_m2_2\
+Authoritative user request: e:\repository\SvartulfrVerse\.agents\teamwork\ORIGINAL_REQUEST.md
 
-MANDATORY READ:
-Read e:\repository\SvartulfrVerse\.agents\teamwork\ORIGINAL_REQUEST.md before starting work.
-Also read e:\repository\SvartulfrVerse\PROJECT.md and e:\repository\SvartulfrVerse\.agents\teamwork\worker_m2_gen2\handoff.md.
+You MUST read `e:\repository\SvartulfrVerse\.agents\teamwork\ORIGINAL_REQUEST.md` and `e:\repository\SvartulfrVerse\PROJECT.md`.
+Read the worker handoff report at `e:\repository\SvartulfrVerse\.agents\teamwork\worker_m2\handoff.md`.
 
-Task:
-Adversarially challenge and review Milestone 2:
-1. Inspect Scene 0, Scene 1, and Message #0 for any subtle regressions or missed tags:
-   - Are all character turns explicitly tagged with `=>Speaker:`?
-   - Were Jasper's dialogue in Scene 0, Alyssa's dialogue in Scene 1, and Wulfnic's spoken lines in both scenes cleanly disentangled from narration into dedicated turns?
-   - Do speaker tags use clean canonical names (`=>Erik:`, `=>Logan:`, `=>Edric:`, `=>Noah:`, `=>Malachia:`, `=>Jasper:`, `=>Alyssa:`, `=>Wulfnic:`, `=>Zefir:`, `=>Finn:`, `=>Sierra:`, `=>Scarlett:`, `=>Narrator:`) instead of oversized formal names?
-   - Are there any remaining em-dashes (`—`) or markdown asterisks (`*`)?
-2. Run operational verification scripts: `python scripts/patch_welcome_day_scenario_and_chat.py --verify-only`.
-3. Render an explicit verdict in your report: `APPROVE` or `REQUEST_CHANGES`.
-4. Write your handoff report to `e:\repository\SvartulfrVerse\.agents\teamwork\reviewer_m2_2\handoff.md` and send a message back using `send_message`.
+Independently review the Lorebook files updated in Milestone 2:
+- `FINAL/Svartulfr_Lorebook_I.json` & `lorebooks/optimized/Svartulfr_Lorebook_I.json`
+- `FINAL/Svartulfr_Lorebook_II.json` & `lorebooks/optimized/Svartulfr_Lorebook_II.json`
+- `FINAL/Svartulfr_Lorebook_III.json` & `lorebooks/optimized/Svartulfr_Lorebook_III.json`
+- `lorebooks/optimized/Svartulfr_Location.json`
+- `FINAL/Svartulfr_NPC_Secondary.json` & `lorebooks/optimized/Svartulfr_NPC_Secondary.json`
+- `FINAL/Svartulfr_NPC_Primary.json` & `lorebooks/optimized/Svartulfr_NPC_Primary.json`
+
+Verify:
+1. Alignment with the primary playtest log `scratch/chat_export_ftrtAD79eddk9Ue9Jr2WJ.json` and the Knowledge Vault articles in `knowledge/Lore_Worldbuilding/`.
+2. Clean integration of St. Brugge Private Academy (#51 and Lorebook III), Father Revazhael (entry #23 with expanded keys and JED+), Resonant Cylinders, Applied Crystallography, Abyssal vs Void magic, and Alyssa/Jasper dossiers.
+3. Rule adherence: zero umbrella keys (`solarton`, `succ`, `blackwood`, `vampire`, `werewolf`, etc.) on NPC entries.
+
+Deliver your verdict (APPROVE or REQUEST_CHANGES) with clear evidence in `e:\repository\SvartulfrVerse\.agents\teamwork\reviewer_m2_2\handoff.md`.
+Communicate back to orchestrator via send_message.

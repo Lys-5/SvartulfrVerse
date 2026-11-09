@@ -1,306 +1,424 @@
-# Handoff Report: Investigation of Requirement 2 (Scenario =>Speaker: Standardization & Chat Log Patching)
+# Handoff Report — Svartúlfr Verse Standalone Lorebooks Emergent Lore Survey
+
+- **Subagent**: `survey_explorer_2`
+- **Parent Conversation ID**: `a6280f2d-32ae-4a10-82fa-5604ad40f230`
+- **Date**: 2026-11-02T06:25:00Z
+- **Target File**: `e:\repository\SvartulfrVerse\.agents\teamwork\explorer_survey_2\handoff.md`
+- **Status**: Complete & Verified (Read-Only Investigation)
+
+---
 
 ## 1. Observation
 
-### 1.1 Scope and Objective
-Under the authoritative roadmap directive in `.agents/teamwork/ORIGINAL_REQUEST.md` (timestamp `2026-10-25T07:42:08Z`), Requirement 2 mandates:
-> "Standardize Scenario syntax to `=>Speaker:` in `_2MTWKjxrQPdQVaz9y4Q7H`, update `FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json`, and patch message #0 in active chat `chat_log_PJx1W1rg3WUzRM7MnQrkN`."
+### 1.1 Filesystem & Repository Layout
+Direct inspection of `FINAL/` and `lorebooks/optimized/` revealed the repository structure and entry parity for all 6 standalone lorebooks:
 
-### 1.2 Target Scenario: `FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json`
-- **File path**: `e:\repository\SvartulfrVerse\FINAL\scenarios\Svartulfr_World_Scenario_SUCC_Welcome_Day.json`
-- **Scenario ID**: `_2MTWKjxrQPdQVaz9y4Q7H`
-- **World ID**: `_YpX47fNraQFw2dD7TdycJ` ("Svartúlfr, Blackwood & Solarton")
-- **Live Cloud State**: Verified via `GET https://app.wyvern.chat/api/worlds/scenarios/_2MTWKjxrQPdQVaz9y4Q7H` (HTTP 200).
-- **Structure**: Contains 3 premade scenes under `premade_scenes`:
-  1. `scene-succ-welcome-day-alyssa`: "Welcome Day al Lunar Quad: Punto di Vista Alyssa (FemPOV / Matricola Pre-Med)" (7,227 chars).
-  2. `scene-succ-welcome-day-jasper`: "Welcome Day al Lunar Quad: Punto di Vista Jasper (MalePOV / Matricola Ingegneria Arcana)" (6,570 chars).
-  3. `scene-succ-welcome-day-corale`: "Welcome Day al Lunar Quad: Scena Corale del Branco (AnyPOV / Arrivo sul Campus)" (2,404 chars).
+1. **Svartúlfr - Lorebook I (`_gwwCxCfQ6PQaLEjAQVpJL`)**:
+   - Path: `FINAL/Svartulfr_Lorebook_I.json` and `lorebooks/optimized/Svartulfr_Lorebook_I.json` (828,006 bytes, identical).
+   - Metrics: `token_budget: 5000`, `total_entries: 237`, `len(entries) == len(lexicon) == 237`, `entries == lexicon: True`.
+   - Types: 122 `concept`, 50 `item`, 20 `memory`, 16 `job`, 12 `creature`, 6 `faction`, 6 `lore/concept`, 3 `ability`, 2 `organization/faction`.
+   - Magic Theory: Contains a dedicated canonical series of `Magic:` concept entries:
+     * Line 189: `Magic: Necromancy` (`TjqjKs6otx7hZZgU_ICm8`, keys: `['Necromancy', 'Spirit Manipulation', 'Undead', 'Soul Magic', 'Reanimation']`)
+     * Line 191: `Magic: Death powers` (`cl9L0cEDs-lppNwpP7TVj`)
+     * Line 193: `Magic: Healing power` (`_evkO6ZSmrW5wAF9KOeaK`)
+     * Line 195: `Magic: Light power` (`1HCS4ca5Ozqmx4FF5Sdsk`)
+     * Line 197: `Magic: Shadow power` (`m3uROuQ8euxKUD38vODVI`)
+     * Line 199: `Magic: Lightning Control` (`q2Cugx3zrej-Oi2C8aKJc`)
+     * Line 201: `Magic: Matter/Elemental Manipulation` (`15XKkcPfrJ4xM2BukGu14`)
+     * Line 56: `SUCC: Catalizzatori, Focus Runici & Sigilli d'Incanalamento` (item, ID `96UEJzEsDWq2dNoUAFD94`)
+     * Line 124: `SUCC: Laboratori di Teoria Runica & Incantamento Applicato` (concept, ID `Q6XSfNl-Mqv0XgpXqNaUI`)
+   - Observation: **Zero entries exist for Abyssal Magic or Void Magic**, leaving a distinct ontological vacuum in Lore I.
 
-### 1.3 Direct Syntax Observations in Premade Scenes
-1. **Scene 0 (`scene-succ-welcome-day-alyssa`)**:
-   - Contains exactly 3 instances of `=>Narrator:`.
-   - Characters lack the `=>` prefix entirely:
-     - `Erik Ulfr Douglas: "Restate uniti..."`
-     - `Logan Járn Douglas: "Lasciali respirare, Erik..."`
-     - `Edric Douglas: "Aspetta di vedere..."`
-     - `Noah Loki Douglas Bloodmoon: "Il tendone..."`
-     - `Malachia Björn Douglas Bloodmoon: "Ho già controllato..."`
-     - `Zefir Hvitskog: "Ridi pure quanto vuoi..."`
-     - `Finnegan Novak: "Ci ho messo venti minuti..."`
-     - `Sierra Cruz: "Un attimo, fermi tutti..."`
-     - `Scarlett Rose: "Devo ammettere..."`
-   - Jasper's dialogue line is completely untagged and merged directly into narrative text:
-     `Accanto a {{user}}, Jasper alza lo sguardo dalla telemetria di rete sul suo datapad; le sue orecchie scure da lupo si orientano verso il cancello principale, un unico paio lupino sulla sommità del capo senza alcuna orecchia umana ai lati della testa. "Le registrazioni delle matricole hanno già mandato in crash il server centrale della biblioteca," mormora Jasper, dando un leggero colpetto di gomito a {{user}}. "Aspetta un secondo. Guarda chi sta varcando l'arco di pietra principale proprio adesso."`
-   - Wulfnic's spoken line is completely untagged:
-     `"In fondo non sei mai andato a scuola e tecnicamente sei un ragazzino!" tuona Wulfnic scoppiando in una risata profonda e fragorosa, mentre batte una manata pesante sulla spalla borchiata di Zefir.`
-     `"Non fare quella faccia sorpresa, Erik! Per assicurarmi che la nostra piccola Alyssa sia protetta come si deve nel campus, ho deciso di iscrivere anche Zefir all'università..."`
+2. **Svartúlfr - Lorebook II (`_HfG7TeV6MJyj6bxMwxkpt`)**:
+   - Path: `FINAL/Svartulfr_Lorebook_II.json` (835,573 bytes) and `lorebooks/optimized/Svartulfr_Lorebook_II.json` (833,919 bytes). Both have `entries == lexicon: True`.
+   - Metrics: `token_budget: 5000`, `total_entries: 142`, `len(entries) == len(lexicon) == 142`.
+   - Types: 70 `concept`, 22 `faction`, 14 `event`, 13 `memory`, 9 `location`, 7 `item`, 3 `creature`, 2 `ability`, 1 `lore/concept`, 1 `organization/faction`.
+   - Tactical Items & Dungeon Gear:
+     * Line 19: `Potions and Alchemical Recovery` (item)
+     * Line 32: `Dungeon Cores` (item, ID `aZ3tqA2xcNn3mAB00K1nH`, keys: `['dungeon core', 'dungeon cores', 'mana crystal', 'mana crystals', 'core']`)
+     * Line 139: `La Frattura: Lo Squarcio del Velo e l'Origine dei Dungeon Europei` (lore/concept)
+   - Observation: Currently **zero standalone entries exist for Resonant Cylinders** in Lorebook II.
 
-2. **Scene 1 (`scene-succ-welcome-day-jasper`)**:
-   - Contains identical formatting defects to Scene 0.
-   - Alyssa's dialogue line is untagged and embedded in narrative text:
-     `Accanto a {{user}}, Alyssa Hvit Douglas Bloodmoon stringe al petto il suo diario erboristico rilegato in pelle; le sue orecchie bianche da lupo si drizzano sulla sommità del capo... "Cerca di non infiltrarti nella telemetria dell'amministrazione durante il discorso di Wolfwood, Jasper. Aspetta. Guarda chi è appena entrato sul quad."`
-   - Wulfnic's spoken line is untagged:
-     `"In fondo non sei mai andato a scuola e tecnicamente sei un ragazzino!" ruggisce Wulfnic...`
+3. **Svartúlfr - Lorebook III (SUCC & Underworld) (`_9zWTGqYJNJ4BCDMj8gfcD`)**:
+   - Path: `FINAL/Svartulfr_Lorebook_III.json` and `lorebooks/optimized/Svartulfr_Lorebook_III.json` (131,196 bytes, identical).
+   - Metrics: `token_budget: 5000`, `total_entries: 46`, `len(entries) == len(lexicon) == 46`, `entries == lexicon: True`.
+   - Types: 14 `faction`, 12 `event`, 11 `concept`, 7 `location`, 1 `item`, 1 `lore/concept`.
+   - Content: Covers institutional academic life (SUCC, CUMS, athletic teams, student clubs, Greek life, Underworld syndicates).
+   - Observation: Currently **St. Brugge Private Academy does NOT exist in Lorebook III**, despite Lorebook III having substantial unused capacity (only 46 entries with a 5000-token budget).
 
-3. **Scene 2 (`scene-succ-welcome-day-corale`)**:
-   - Already complies with `=>Speaker:` tags (`=>Narrator:`, `=>Erik:`, `=>Logan:`, `=>Narrator:`).
-   - Character turns use short first names (`=>Erik:`, `=>Logan:`).
+4. **Svartúlfr - Location (`_EjXxkmPVhpCXg8xABpFkK`)**:
+   - **CRITICAL FILE DIVERGENCE OBSERVED**:
+     * `FINAL/Svartulfr_Location.json` was modified into a raw JSON list of 188 objects representing the World Location topology (`world: "_YpX47fNraQFw2dD7TdycJ"`).
+     * `lorebooks/optimized/Svartulfr_Location.json` is the genuine Standalone Lorebook (`id: "_EjXxkmPVhpCXg8xABpFkK"`, `token_budget: 5000`, `total_entries: 225`, `len(entries) == len(lexicon) == 225`, `entries == lexicon: True`).
+   - Existing Location Entries:
+     * Entry #51 (`ulTwlYo2jqObA7l_bFoa5`): `name: "St. Brugge Private Academy"`, `keys: ['St. Brugge', 'St. Brugge Private Academy', 'St Brugge', 'private academy', 'Seven Hills', 'Douglas', 'Blackwood']`, `secondary_keys: ['school', 'academy', 'Father Rev', 'Revazhael']`, length: 403 characters.
+       - **Violation Observed**: Umbrella keywords (`private academy`, `Seven Hills`, `Douglas`, `Blackwood`) exist directly in `keys`.
+     * Entry #48 (`UmuOEDRDjliMuEpyMbeRo`): `name: "La Dimora del Rifugio"`, `keys: ['La Dimora del Rifugio', 'Dimora del Rifugio', 'Dimensional Refuge', "Father Rev's Refuge", 'Dimension', 'Refuge', 'Father Rev', 'Sanctuary', 'Thermal Baths']`, length: 555 characters. Extradimensional sanctuary accessed via Father Rev's gold key.
+     * Entry #84 (`Gbc-aAk3fC76kvFxvNArz`): `name: "Theta Iota Theta (TIT or ΘΙΘ)"`, keys: `['Theta Iota Theta (TIT or ΘΙΘ)']`. Co-inhabited by Sierra Cruz and Scarlett Rose; mentions Revazhael servicing the electrical wiring.
 
-### 1.4 Active Chat Log: `chat_log_PJx1W1rg3WUzRM7MnQrkN`
-- **Chat ID**: `chat_log_PJx1W1rg3WUzRM7MnQrkN`
-- **Scenario source**: World Scenario `_2MTWKjxrQPdQVaz9y4Q7H`.
-- **Total messages**: Exactly 1 message (`messages[0]`, ID: `chat_message_tcXGCpV2W4CY84gKLdXha`, index 0).
-- **Current Swipe**: ID `message_swipe_99mmMgEEQjk2pkJN3hXkQ`, index 0.
-- **Current Content**: Created from Scene 0 with `{{user}}` instantiated as Alyssa. However, speaker tags were patched with full formal names:
-  - `=>Narrator:`
-  - `=>Erik Ulfr Douglas:`
-  - `=>Logan Járn Douglas:`
-  - `=>Edric Douglas:`
-  - `=>Noah Loki Douglas Bloodmoon:`
-  - `=>Malachia Björn Douglas Bloodmoon:`
-  - `=>Jasper: Accanto a Alyssa, Jasper alza lo sguardo...`
-  - `=>Narrator:`
-  - `=>Wulfnic:`
-  - `=>Zefir Hvitskog:`
-  - `=>Narrator:`
-  - `=>Finnegan Novak:`
-  - `=>Sierra Cruz:`
-  - `=>Scarlett Rose:`
+5. **Svartúlfr - NPC Primary (`_zwEqgEEzh12X6gHVmMKKC`)**:
+   - Path: `FINAL/Svartulfr_NPC_Primary.json` and `lorebooks/optimized/Svartulfr_NPC_Primary.json` (1,663,467 bytes, identical).
+   - Metrics: `token_budget: 7500`, `total_entries: 99`, `len(entries) == len(lexicon) == 99`, `entries == lexicon: True`.
+   - All 99 entries are `type: "npc"`.
+   - Existing Core Dossiers:
+     * Entry #98 (`alyssa_world_dossier_2b54a223`): `name: "Alyssa Hvit Douglas Bloodmoon"`, `content` length: 18,146 chars. `selective: true`, `secondary_keys: ['Dossier', 'Scheda', 'Archivio', 'Database', 'Profilo']`, `ignored_characters: ['_6exg3yPfe2eCDK4hTftkh']`, `ignored_personas: ['persona_1786335754946']`.
+     * Entry #60 (`Vcj4h2TL4Usola2A4OOl6`): `name: "Jasper Svartr Douglas Bloodmoon"`, `content` length: 16,771 chars. `selective: true`, `secondary_keys: ['Dossier', 'Scheda', 'Archivio', 'Database', 'Profilo']`, `ignored_characters: ['_t4J9aQNJM36cUKAP4wB4U']`, `ignored_personas: ['1792155173728']`.
+     * Entry #58 (`RVmhUtNzKvHow_AExX-LR`): `name: "Kaladin Nargathon"`, Commander DCC Security / Vanguard, 17,772 chars.
+     * Entry #94 (`fQHJanwGPD5nX-5jIpqym`): `name: "Archer Wolfwood"`, SUCC Chancellor, 10,167 chars.
+     * Entry #51 (`6OPHMBS-rtYYZ0XQP3c54`): `name: "Marcus Thornfield"`, Vanguard operative, Project BlackWolf.
+     * Entry #91 (`LqRTQ988rzB87CFokWGSw`): `name: "Barkley Rover"`, Bulls assistant coach, golden retriever demi-human.
+     * Entry #42 (`pUHbCpwVHRbFmC_c5TQHw`): `name: "Santiago Herrera"`, Bulls offensive line, dragon demi-human.
+     * Entry #92 (`eWYgfOsI15cq7zd0vm7Nu`): `name: "Bailey Rogers"`, Bulls offensive line, red-skinned demi-human.
 
-### 1.5 Wyvern Frontend Architecture and Reverse Engineering
-1. **Module 93312 / WH Regex Generator (`scratch/modules/93312.js` and `scratch/mod93312_dump.json`)**:
-   - Generates regex matching speaker names with prefix `(?:^|\n)\s*(?:=>\s*)?<coreName>:`.
-   - Weights: `first_name + " " + last_name` (weight 20000+), `first_name + " " + middle_name + " " + last_name` (weight 30000+), `first_name` (weight 10000+).
-2. **Visual Novel Beat Splitting (`scratch/nC_part2.js` and `scratch/nC_extracted.js`)**:
-   - Splits incoming message content into Visual Novel dialog beats using the compiled character regexes and fallback `^=>\s*([^:\n]{1,35}):\s*`.
-   - When text begins with `=>Speaker:`, the parser resolves `Speaker` against registered World Characters (`a0`) and Lorebook NPCs (`ns`).
-   - If a match is found, the character's portrait/avatar, display name, and nameplate are attached to the beat.
-   - If dialogue lacks `=>` or a recognized tag, it is lumped into narration without character sprites or nameplates.
-3. **API Endpoints for Message Swipe and Scenario Updating (`scratch/lorebook_chunks/47143-664487fdc18cadef.js`)**:
-   - **Edit Swipe**:
-     - Frontend function: `editSwipe: (swipeId, content) => n.hi.put("".concat(c.BC, "/new/chat-logs/swipe/").concat(swipeId), { content: content })`
-     - Method: `PUT`
-     - Endpoint: `https://app.wyvern.chat/api/new/chat-logs/swipe/{swipeId}`
-     - Body: `{"content": "<updated_text>"}`
-     - Headers: `Authorization: Bearer <token>`, `Content-Type: application/json`
-   - **Update Scenario**:
-     - Method: `PUT`
-     - Endpoint: `https://app.wyvern.chat/api/worlds/scenarios/{scenarioId}`
-     - Body: Full JSON scenario object matching `FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json`.
+6. **Svartúlfr - NPC Secondary (`_Uht3Ckz44JBDrPnUHq7LV`)**:
+   - Path: `FINAL/Svartulfr_NPC_Secondary.json` and `lorebooks/optimized/Svartulfr_NPC_Secondary.json` (2,527,857 bytes, identical).
+   - Metrics: `token_budget: 5000`, `total_entries: 212`, `len(entries) == len(lexicon) == 212`, `entries == lexicon: True`.
+   - Existing Entries of Interest:
+     * Entry #23 (`jmh0MajEsRwrm4UYU14mY`): `name: "Rev"`, `keys: ['Rev']`, `content` length: 5,167 chars.
+       - Discrepancy Observed: Poses as 20yo Incubus, ARO frat member, TIT handyman. BUT contains section `MISTERY & MENTORSHIP: During Alyssa and Jasper's youth, Rev served covertly as the magic and history instructor at St. Brugge Private Academy...`. His true name secret identifies him as "Revazhael", but his activation keys contain ONLY `['Rev']`, meaning "Father Revazhael" or "Revazhael" never triggers this entry!
+     * Entry #37 (`1TnBSs1poc0mTNG8R0OTx`): `name: "Kobal"`, `keys: ['Butler of La Dimora del Rifugio', 'Kobal', 'Kobal Butler', 'Maggiordomo di Padre Rev']`, 2,139 chars. Bound shadow spirit butler serving Father Revazhael and the twins.
+     * Entry #92 (`bunD_crPBoA7FFi-QNTzw`): `name: "Warg"`, Head of Campus Security at SUCC (8'2" werewolf).
+     * Entry #17 (`gyZ3SOAsx3M7l42RDqSeZ`): `name: "Adelin Coso"`, Head Coach of SUCC Bears hockey, on medical leave for surgery in August 2024.
+     * Entry #211 (`npc_larek_steeltooth`): `title: "Larek Steeltooth"`, `type: null` (anomalous schema: missing `type: "npc"`, missing `avatar`, `custom_avatar_regex`, `lines_parsed`).
+
+### 1.2 Verbatim Evidence from Primary Playtest Export (`scratch/chat_export_ftrtAD79eddk9Ue9Jr2WJ.json`)
+The 46-turn live playtest session establishes foundational lore:
+- **Msg 14, 16-17 (Chancellor Archer Wolfwood & Major Kaladin Narghaton)**:
+  * Quote: *"Erik, ti stavo giusto cercando... Il nostro stimato allenatore Adelin Coso deve sottoporsi a un delicato intervento chirurgico nei prossimi giorni... Prendi in mano la panchina dei Bears per quest'anno, Erik, e avrai tutte le chiavi del nostro sistema di sicurezza."*
+  * Quote: *"Archer si ferma sulla soglia, 'manda pure il tuo Maggiore Narghaton da Warg, il nostro capo della sicurezza, per il coordinamento.'"*
+  * Establishes the exact tripartite security coordination: Erik Douglas head coach of Bears -> Major Kaladin Narghaton (DCC Security) integrates directly with Chief Warg (SUCC Campus Security).
+- **Msg 2, 4, 20 (SUCC Football & Hockey Athletes)**:
+  * Jared Thompson (7ft minotaur, quarterback, Bulls captain), Santiago Herrera (dragon demi-human, emerald scales, cinnamon/burnt sugar scent), Bailey Rogers (short/stout, black horns, red skin, spade tail, southern accent).
+  * Barkley Rover (golden retriever demi-human assistant coach, pure dog ears on crown, no human ears).
+- **Msg 24-29 (Theta Iota Theta Sorority Environment)**:
+  * Marcus Thornfield delivering Alyssa's luggage in DCC black SUV under orders from Major Narghaton.
+  * Sorority atmosphere: Bohemian chic, pillows, velvet, plants on window sills, cat-decorated router with antenna whiskers and Wi-Fi password `TIT<3`.
+  * Larek Steeltooth (orc 3rd year computer engineering student, informal network admin sleeping in Michelle's room).
+  * Roxy: cat demi-human girl living at TIT, tried flirting with Zefir.
+- **Msg 32-41 (Suite 3 & Sierra Cruz & Zefir)**:
+  * Sierra Cruz: lamia, 4-meter rainbow iridescent serpent tail coiled on floor, zero legs/feet, massive Grave Mistake horror-punk poster, heated carpet, studying Applied Necromancy.
+  * Alyssa's Fur Nest: authentic wolf/game furs hunted personally by Wulfnic, plus large plush wolf "Wolfy" won by Wulfnic at a carnival when Alyssa was 7 (still smells of cedar and grandfather).
+  * Zefir Hvitskog: 1200+yo Viking Firstborn disguised as 19yo Icelandic Pre-Med cousin (`White Ghost Scout Shroud`), called *minn snarvinda* by Alyssa, falls asleep peacefully in her fur nest clutching Wolfy after 48 hours awake.
+- **Msg 42-45 (St. Brugge, Father Revazhael, Resonant Cylinders, Abyssal vs Void Magic)**:
+  * Quote (Alyssa, Msg 42): *"Sorrido, 'li uso per creare i cilindri incantati e le pozioni per i dungeon.' Frugo nella borsetta e tiro fuori un piccolo cilindro colorato, grande quanto un indice, e che somiglia ad un flashlight. 'In pratica sono incantesimi congelati, basta spezzarli e l'incantesimo si libera. Sono utili per gli hunters che non sanno usare la magia... Li faccio da sola perché i maghi della DMHA si fanno pagare uno sproposito per realizzarli... posso personalizzare l'incantesimo sull'utilizzatore... io e Jasper siamo registrati tra gli hunter come personale di supporto.'"*
+  * Quote (Sierra, Msg 43): *"'Incantesimi congelati su matrice cristallina... La cristallografia runica applicata è roba da tirocinio avanzato, non da primo anno... io e i miei compagni di Necromanzia usiamo cilindri standard della Gilda per i sigilli di contenimento, e metà delle volte si rompono a metà durante l'evocazione. Se i tuoi sono personalizzati sull'utilizzatore, vuol dire che calibri la risonanza magica individuale di chi li userà. Questo è, tipo, livello da pubblicazione accademica.'"*
+  * Quote (Alyssa, Msg 44): *"'Ho fatto le scuole alla St. Brugge Private Academy... Lì, oltre alle materie base, ci sono corsi di magia, storia della magia, alchimia e altre discipline. Il mio maestro era un vecchissimo demone superiore, molto competente... Visto che io e Jasper eravamo molto portati, ogni tanto ci dava delle lezioni private avanzate. È stato lui a insegnarmi a fare i cilindri, e anche le basi della magia abissale.' Padre Revazhael e la sua voce che riempiva l'aula vuota come fumo nero, le sue mani pallide che guidavano le mie sopra la matrice cristallina mentre Jasper traduceva le rune dal banco accanto... Non mi ha mai fatto paura."*
+  * Quote (Scarlett, Msg 45): *"'St. Brugge. Certo. La scuola per figli di papà soprannaturali dove le uniformi costano come un mese di affitto e il menù del pranzo include carpaccio di drago... E fammi indovinare, il 'vecchissimo demone superiore' era il tipo più gentile e tranquillo del pianeta, vero? Perché tutti i mostri veramente terrificanti che conosco sono sempre quelli che ti offrono il tè e ti chiedono come stai prima di, tipo, smembrare un esercito.'"*
+  * Quote (Sierra, Msg 45): *"'Magia abissale... Alyssa, io non ho mai conosciuto nessuno che abbia studiato magia abissale con un demone superiore. I necromanti del mio dipartimento lavorano con entità del Vuoto e residue, ma l'Abisso è, tipo, un livello completamente diverso di teoria magica. Nessuno al dipartimento di Necromanzia ha mai pubblicato una monografia seria sugli intrecci tra magia abissale e runica cristallina.'"*
+  * Quote (Zefir, Msg 45): *"Il corpo di Zefir non si muove, ma le sue orecchie bianche si sollevano di un centimetro al suono del nome di Revazhael... Il demone. Quello che le ha insegnato a mettere il vuoto in una scheggia di cristallo. Il Jarl lo sapeva e non lo ha ucciso. Significa che il vecchio lo giudicava innocuo, o che lo giudicava utile. Il Jarl non lascia vivere ciò che non può controllare."*
 
 ---
 
 ## 2. Logic Chain
 
-1. **Premise 1 (VN Mode Requirements)**:
-   From `scratch/nC_part2.js` and `scratch/mod93312_dump.json`, Wyvern Visual Novel mode depends entirely on prefix tags starting with `=>` followed by a colon (`=>Speaker:`). Any line or dialogue lacking `=>` fails to split as a character beat, leaving the character without portrait, avatar, or nameplate.
+From these direct observations, we derive step-by-step conclusions for the integration of the emergent lore:
 
-2. **Premise 2 (Current Scenario Defects)**:
-   In `FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json`, Scene 0 and Scene 1 lack `=>` on all dialogue lines except `=>Narrator:`. Moreover, Jasper's line in Scene 0, Alyssa's line in Scene 1, and Wulfnic's lines in both scenes lack speaker prefixes entirely and are buried in narration.
+### Step 1: St. Brugge Private Academy (Two-Pillar Architecture)
+- *Premise*: St. Brugge is both a physical estate with Gothic architecture between Blackwood and Solarton, and a prestigious educational institution serving as the elite preparatory academy for high-society supernatural dynasties.
+- *Location Integration*: Entry `#51` (`ulTwlYo2jqObA7l_bFoa5`) in `lorebooks/optimized/Svartulfr_Location.json` already represents the physical site. However, it currently contains broad keys (`Seven Hills`, `Douglas`, `Blackwood`, `private academy`) violating repo rules, and its description is only 403 chars.
+  * *Remediation*: Clean `keys` to strictly specific identifiers (`['St. Brugge', 'St. Brugge Private Academy', 'St Brugge', 'Accademia St. Brugge', 'St. Brugge Academy']`). Expand narrative content to ~1,500 chars describing Gothic stone architecture, ward-locked esoteric libraries, shielded courtyards, and alchemy labs.
+- *Lorebook III Concept Integration*: Lorebook III (`_9zWTGqYJNJ4BCDMj8gfcD`) covers academia and educational settings, currently holding only 46 entries with a 5000-token budget.
+  * *Remediation*: Introduce a new `concept` entry: `St. Brugge Private Academy (Accademia Privata St. Brugge)` in Lorebook III. Detailing the institution's elite status, curriculum (merging standard excellence with magic, history of magic, alchemy, demonology, and runic science), tuition, attendance of Alyssa and Jasper, and Father Revazhael's role as master of magic and history.
 
-3. **Premise 3 (Canonical Nameplate Discipline)**:
-   In `scratch/all_world_scenes_dump.txt`, `scratch/scenario_3_backup.json`, and Scene 2 of Welcome Day, all scenarios across the Svartúlfr Verse consistently use short canonical first names (`=>Erik:`, `=>Logan:`, `=>Edric:`, `=>Noah:`, `=>Malachia:`, `=>Jasper:`, `=>Alyssa:`, `=>Wulfnic:`, `=>Zefir:`, `=>Finn:`, `=>Sierra:`, `=>Scarlett:`).
-   Using full formal names such as `=>Noah Loki Douglas Bloodmoon:` bloats the Visual Novel nameplate across the screen, whereas short names produce clean nameplates that match the characters registered in World `_YpX47fNraQFw2dD7TdycJ` and the Lorebooks.
+### Step 2: Father Revazhael (Location, Schema, and Identity Reconciliation)
+- *Premise*: Father Revazhael is canonically an Ancient Superior Demon ("vecchissimo demone superiore"), master/mentor of Alyssa and Jasper at St. Brugge, master of abyssal magic and runic crystallography, creator of the golden key to La Dimora del Rifugio, and monitored by Jarl Wulfnic Bloodmoon. On the SUCC campus, he poses as "Rev", a 20yo incubus affiliated with Alpha Rho Omega and handyman for Theta Iota Theta.
+- *Placement Assessment (NPC Secondary vs NPC Primary)*:
+  * *Option A (Recommended)*: Retain and upgrade Entry `#23` (`jmh0MajEsRwrm4UYU14mY`) in **Lorebook NPC Secondary (`_Uht3Ckz44JBDrPnUHq7LV`)**.
+    - Rationale: In NPC Secondary, he is already co-located with his bound spirit butler Kobal (`1TnBSs1poc0mTNG8R0OTx`). NPC Secondary token budget is 5000 (currently 212 entries).
+    - Upgrades needed: Update name to `Father Revazhael (Padre Revazhael / Rev)`; expand trigger keys from merely `['Rev']` to `['Father Revazhael', 'Padre Revazhael', 'Father Rev', 'Padre Rev', 'Revazhael', 'Rev']`; update JED+ prose to harmonize the ancient Superior Demon identity with the campus handyman persona; ensure valid avatar placeholder and complete `npc_info`.
+  * *Option B (Alternative)*: Promote to **Lorebook NPC Primary (`_zwEqgEEzh12X6gHVmMKKC`)**.
+    - Rationale: If the orchestrator considers the personal mentor of the twin protagonists and wielder of abyssal magic worthy of core status alongside Zefir, Ut, and Nixara. Primary currently has 99 entries (budget 7500), so adding him reaches exactly 100 entries.
 
-4. **Premise 4 (Message #0 Parity)**:
-   Active chat `chat_log_PJx1W1rg3WUzRM7MnQrkN` message #0 contains an unstandardized swipe with oversized name tags (`=>Noah Loki Douglas Bloodmoon:`, etc.). Patching message #0 via `PUT /api/new/chat-logs/swipe/message_swipe_99mmMgEEQjk2pkJN3hXkQ` ensures the active chat log immediately benefits from the standardized Visual Novel presentation without resetting the chat.
+### Step 3: Applied Runic Crystallography & Resonant Cylinders
+- *Premise*: The playtest establishes a dual reality: Resonant Cylinders are physical, tactical dungeon items carried by hunters; Applied Runic Crystallography is the esoteric academic science behind their creation.
+- *Lorebook II Integration (Item)*: Lorebook II (`_HfG7TeV6MJyj6bxMwxkpt`) houses tactical dungeon equipment, potions, and cores.
+  * *New Entry*: `Cilindri Incantati a Risonanza (Enchanted Resonant Cylinders)` (type: `item`).
+  * *Content*: Flashlight-sized crystalline cylinders storing frozen spells; snapped to activate instantly without mana or casting delay; calibrated to individual magical resonance; contrasted with brittle, commercial DMHA cylinders; handcrafted via precision laboratory glassware.
+- *Lorebook I Integration (Theory & Discipline)*: Lorebook I (`_gwwCxCfQ6PQaLEjAQVpJL`) houses magic theory, runic research, and catalysts.
+  * *New Entry*: `Cristallografia Runica Applicata (Applied Runic Crystallography)` (type: `concept`).
+  * *Content*: The esoteric discipline fusing Norse runic engraving with crystal lattice matrices to safely contain high-tier spells (including elemental and abyssal matrices) in a dormant, frozen state. Taught by ancient masters like Father Revazhael.
 
-5. **Conclusion from Chain**:
-   Both local files (`FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json`), the live cloud scenario (`_2MTWKjxrQPdQVaz9y4Q7H`), and message #0 of the active chat (`chat_log_PJx1W1rg3WUzRM7MnQrkN`) must be synchronized to the canonical `=>Speaker:` format with zero em-dashes and zero asterisks.
+### Step 4: Abyssal Magic vs Void Magic/Necromancy
+- *Premise*: Sierra Cruz explicitly defines the distinction: SUCC Applied Necromancy operates with Void entities, soul-fire, and residual ectoplasm. In contrast, Abyssal Magic is primordial infernal power from the deepest Abyssal planes, wielded by Superior Demons like Revazhael.
+- *Lorebook I Integration*: Lorebook I (`_gwwCxCfQ6PQaLEjAQVpJL`) contains the canonical `Magic:` series (Necromancy, Death, Healing, Light, Shadow, Lightning, Matter/Elemental).
+  * *New Entry*: `Magic: Abyssal Magic (vs. Void Magic & Necromancy)` (type: `concept`).
+  * *Keys*: `['Abyssal Magic', 'Magia Abissale', 'Abyssal powers', 'Abyss magic', 'Infernal Magic']`.
+  * *Content*: Definitive breakdown of Abyssal Magic (chthonic, heavy, commanding, living infernal essence) versus Void Magic / Necromancy (entropy, departed souls, cold rift emptiness). Details why necromantic containment seals frequently break while runic crystallographic lattices can safely bind abyssal currents.
+
+### Step 5: Alyssa & Jasper Dossiers Enrichment in NPC Primary
+- *Premise*: Both dossiers (`alyssa_world_dossier_2b54a223` and `Vcj4h2TL4Usola2A4OOl6`) already contain substantial JED+ text (>16k chars) and strict persona protection (`selective: true`, `secondary_keys: ['Dossier', 'Scheda', 'Archivio', 'Database', 'Profilo']`, `ignored_characters`, `ignored_personas`).
+- *Enrichment Points*:
+  * *Alyssa*: Integrate Guild-certified healer status, dungeon support credentials, personalized resonant cylinder crafting via crystal lab glassware, and Suite 3 details (Wulfnic's hunted furs, Wolfy plush from 7yo carnival, roommate dynamic with Sierra and Scarlett, Zefir falling asleep in her nest).
+  * *Jasper*: Integrate Sound & Acoustic Engineering studies, registered hunter/support status, runic translation assistance for Revazhael, terrifying aura putting KSA jocks to flight at Welcome Fest, and cyber-savviness horrified by TIT's kitten router.
+
+### Step 6: Playtest Emergent Personnel & Locations
+- *Major Kaladin Narghaton*: Update Kaladin's entry (#58 in NPC Primary) and Lorebook III / Location notes to explicitly record his direct operational coordination with Chief Warg (SUCC Campus Security) following Erik's appointment as Bears head coach.
+- *Theta Iota Theta: Suite 3*: Add dedicated sub-location entry in `lorebooks/optimized/Svartulfr_Location.json` (`Theta Iota Theta: Suite 3`), capturing the second-floor suite shared by Alyssa, Sierra, and Scarlett, featuring Alyssa's fur nest, Sierra's heated carpet and 4m serpent coils, Grave Mistake posters, crystal glassware, and fairy lights.
 
 ---
 
 ## 3. Caveats
 
-1. **Read-Only Scope**:
-   In strict accordance with the explorer subagent mandate, no files were modified in `FINAL/scenarios/` and no HTTP PUT/POST calls were executed against the Wyvern API. The proposed texts and execution scripts are staged in this report and scratch files.
-2. **Actor Name for Finnegan Novak (`Finn` vs `Finnegan`)**:
-   In `Svartulfr_NPC_Primary.json`, the character's `first_name` is `Finnegan` and his nickname is `Finn`. Both `=>Finn:` and `=>Finnegan:` match his regex pattern in module 93312. `=>Finn:` is recommended as the canonical tag because the character card states he is "called Finn by everyone and Finnegan only by his mother", and Requirement 1 of the roadmap names him `Finn`. However, `=>Finnegan:` is also valid if the implementer prefers formal first names.
-3. **Macro `{{user}}` in Scenarios vs Active Chat**:
-   In `FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json`, the macro `{{user}}` is retained in Scene 0 and Scene 1 so that the scenario remains dynamic for any player persona. In active chat `chat_log_PJx1W1rg3WUzRM7MnQrkN`, message #0 uses `Alyssa` because the active session was started with Alyssa as the active persona.
+1. **File Target Ambiguity (`FINAL/Svartulfr_Location.json` vs `lorebooks/optimized/Svartulfr_Location.json`)**:
+   - `FINAL/Svartulfr_Location.json` was previously rewritten as a 188-element list of World locations for `/api/worlds/{id}/locations`.
+   - `lorebooks/optimized/Svartulfr_Location.json` is the actual standalone Lorebook (`_EjXxkmPVhpCXg8xABpFkK`).
+   - *Recommendation*: Any updates to the Location Lorebook must be performed on `lorebooks/optimized/Svartulfr_Location.json` (or restore `FINAL/Svartulfr_Location.json` as the standalone lorebook, keeping the 188-list in `scratch/world_locations_188.json`).
+2. **Father Revazhael's True Name Secret**:
+   - The canon dictates that speaking his absolute true name ("Revazhael") aloud strips his demonic defenses and forces submission. In-character, he goes by "Rev" or "Padre Revazhael" (as a respectful title). Activation keys should include `Padre Revazhael`, `Father Revazhael`, `Father Rev`, `Padre Rev`, and `Revazhael`, but dialogue in-game should treat the true name binding as a closely guarded secret.
+3. **Persona Anti-Collision Protection**:
+   - Alyssa and Jasper dossiers in `Svartulfr_NPC_Primary.json` must strictly retain `selective: true` with `secondary_keys: ['Dossier', 'Scheda', 'Archivio', 'Database', 'Profilo']` and `key_logic: 'AND_ANY'` so they never activate as duplicate entities when the player uses the Alyssa or Jasper Persona.
+4. **Byte-for-Byte Parity (`entries == lexicon`)**:
+   - Every file modification must keep `data['entries']` and `data['lexicon']` completely identical byte-for-byte to satisfy Wyvern frontend Zod schema validation.
 
 ---
 
-## 4. Conclusion & Proposed Implementation
+## 4. Conclusion & Actionable Schemas
 
-### 4.1 Proposed Content for Scene 0 (`scene-succ-welcome-day-alyssa`)
+### 4.1 Master Allocation Matrix
+
+| Emergent Lore Component | Target Lorebook | Target File | Entry ID | Type | Action |
+|---|---|---|---|---|---|
+| **St. Brugge Private Academy (Concept)** | Lorebook III (`_9zWTGqYJNJ4BCDMj8gfcD`) | `FINAL/Svartulfr_Lorebook_III.json` & `lorebooks/optimized/` | `succ_lb3_st_brugge_academy` | `concept` | Create new entry |
+| **St. Brugge Private Academy (Location)** | Location (`_EjXxkmPVhpCXg8xABpFkK`) | `lorebooks/optimized/Svartulfr_Location.json` | `ulTwlYo2jqObA7l_bFoa5` | `location` | Remediate keys, expand text |
+| **Father Revazhael (Superior Demon)** | NPC Secondary (`_Uht3Ckz44JBDrPnUHq7LV`) | `FINAL/Svartulfr_NPC_Secondary.json` & `lorebooks/optimized/` | `jmh0MajEsRwrm4UYU14mY` | `npc` | Expand keys, reconcile profile |
+| **Resonant Cylinders (Tactical Item)** | Lorebook II (`_HfG7TeV6MJyj6bxMwxkpt`) | `FINAL/Svartulfr_Lorebook_II.json` & `lorebooks/optimized/` | `lb2_item_enchanted_resonant_cylinders` | `item` | Create new entry |
+| **Applied Runic Crystallography (Science)** | Lorebook I (`_gwwCxCfQ6PQaLEjAQVpJL`) | `FINAL/Svartulfr_Lorebook_I.json` & `lorebooks/optimized/` | `lb1_concept_applied_runic_crystallography` | `concept` | Create new entry |
+| **Magic: Abyssal Magic (vs. Void/Necromancy)** | Lorebook I (`_gwwCxCfQ6PQaLEjAQVpJL`) | `FINAL/Svartulfr_Lorebook_I.json` & `lorebooks/optimized/` | `lb1_magic_abyssal_magic_distinction` | `concept` | Create new entry |
+| **Alyssa Dossier Enrichment** | NPC Primary (`_zwEqgEEzh12X6gHVmMKKC`) | `FINAL/Svartulfr_NPC_Primary.json` & `lorebooks/optimized/` | `alyssa_world_dossier_2b54a223` | `npc` | Enrich JED+ content |
+| **Jasper Dossier Enrichment** | NPC Primary (`_zwEqgEEzh12X6gHVmMKKC`) | `FINAL/Svartulfr_NPC_Primary.json` & `lorebooks/optimized/` | `Vcj4h2TL4Usola2A4OOl6` | `npc` | Enrich JED+ content |
+| **Theta Iota Theta: Suite 3** | Location (`_EjXxkmPVhpCXg8xABpFkK`) | `lorebooks/optimized/Svartulfr_Location.json` | `loc_theta_iota_theta_suite_3` | `location` | Create new entry |
+| **Larek Steeltooth Schema Remediation** | NPC Secondary (`_Uht3Ckz44JBDrPnUHq7LV`) | `FINAL/Svartulfr_NPC_Secondary.json` & `lorebooks/optimized/` | `npc_larek_steeltooth` | `npc` | Fix `name` and `type` fields |
+
+---
+
+### 4.2 Exact Entry Specifications & Content Payloads
+
+#### Entry 1: St. Brugge Private Academy (Concept in Lorebook III)
+- **File**: `FINAL/Svartulfr_Lorebook_III.json` & `lorebooks/optimized/Svartulfr_Lorebook_III.json`
+- **ID**: `succ_lb3_st_brugge_academy`
+- **Name**: `St. Brugge Private Academy (Accademia Privata St. Brugge)`
+- **Type**: `concept`
+- **Keys**: `['St. Brugge', 'St. Brugge Private Academy', 'St Brugge', 'Accademia St. Brugge', 'St. Brugge Academy']`
+- **Secondary Keys**: `[]`
+- **Selective**: `false`
+- **Key Logic**: `AND_ANY`
+- **Content**:
 ```text
-=>Narrator:
-Il sole della tarda mattinata batte sui prati gremiti del Lunar Quad il 26 agosto 2024, filtrando tra gli stendardi cremisi e oro issati per il Welcome Day della SUCC. Poiché la cerimonia inaugurale è aperta anche ai familiari degli studenti per gli ultimi saluti prima dell'inizio delle lezioni, l'intero clan Douglas-Bloodmoon ha accompagnato sul quad i quattro iscritti all'università: i fratelli maggiori Noah e Malachia insieme ai gemelli matricole Jasper e {{user}}, scortati dal padre Erik, dallo zio Logan e dal cugino tredicenne Edric. Sul palco del padiglione centrale, il Cancelliere Archer Wolfwood è affiancato dai presidi di facoltà mentre i tecnici del suono regolano il microfono d'ottone.
+St. Brugge Private Academy e un esclusivo istituto privato situato nei boschi periferici tra Blackwood City e Solarton, celebre per accogliere quasi esclusivamente la prole delle dinastie soprannaturali piu abbienti e influenti della West Coast. Le rette astronomiche e l'estrema riservatezza dell'ateneo sono leggendarie nel campus: l'ambiente e noto per uniformi sartoriali di altissimo costo e menu accademici d'elite.
 
-=>Erik:
-"Restate uniti quando la folla si disperderà dopo il discorso, e chiamate subito se i guardiani del campus vi danno qualsiasi problema," brontola Erik, la sua alta figura che proietta un'ombra protettiva sul vialetto mentre i suoi occhi ambrati scrutano il prato.
+A differenza delle accademie ordinarie, il piano di studi di St. Brugge fonde la rigorosa eccellenza preparatoria pre-universitaria con percorsi avanzati di magia formale, storia dell'arcano, alchimia sperimentale, demonologia e scienze runiche. L'istituto funge da principale bacino di reclutamento per atenei selettivi come la SUCC e la CUMS.
 
-=>Logan:
-"Lasciali respirare, Erik, è l'orientamento universitario, non un assedio," dice Logan con una risata calorosa, posando una mano massiccia sulla spalla di Edric.
-
-=>Edric:
-"Aspetta di vedere quanto è grande la mensa, Jasper! Ma le matricole hanno davvero i pass illimitati anche per la sala giochi dell'Annex?" chiede Edric con entusiasmo, allungando il collo verso l'edificio dell'unione studentesca.
-
-=>Noah:
-"Il tendone di rappresentanza della KSA sul prato est ha bevande fresche e posti all'ombra riservati per noi quando volete sfuggire al caldo," osserva Noah con eleganza, sistemandosi il revers della giacca di lino su misura.
-
-=>Malachia:
-"Ho già controllato il perimetro dalla palestra fino a Greek Row. Nessuno darà fastidio alla mia sorellina in questo campus," aggiunge Malachia con tono basso e roca fermezza, incrociando le braccia sul petto.
-
-=>Jasper:
-Accanto a {{user}}, Jasper alza lo sguardo dalla telemetria di rete sul suo datapad; le sue orecchie scure da lupo si orientano verso il cancello principale, un unico paio lupino sulla sommità del capo senza alcuna orecchia umana ai lati della testa.
-"Le registrazioni delle matricole hanno già mandato in crash il server centrale della biblioteca," mormora Jasper, dando un leggero colpetto di gomito a {{user}}. "Aspetta un secondo. Guarda chi sta varcando l'arco di pietra principale proprio adesso."
-
-=>Narrator:
-Il brusio lungo il viale centrale si apre in un'ondata di silenzio stupefatto quando Wulfnic Báleygr Bloodmoon avanza sul Lunar Quad con Zefir Hvitskog al suo fianco. Lo Jarl di Svartúlfr, a milleduecento anni compiuti, sfoggia il suo outfit gag preferito con solenne e fierissimo orgoglio: una t-shirt di cotone nero oversize regalatagli da Jasper che porta stampata sulla schiena, a grandi caratteri bianchi, una lunghissima e fitta lista di Regole per Uscire con Mia Nipote, abbinata a jeans scuri con l'apertura sartoriale per la coda da lupo argentata, pesanti stivali da motociclista con fibbie e un antico torque d'argento ritorto al collo. Accanto a lui, Zefir ha tutto l'aspetto di un giovane ribelle punk sui vent'anni: i suoi capelli bianco-neve sono rasati ai lati in una netta cresta alla moicana e indossa un pesante giubbotto di pelle nera tempestato di borchie d'argento sopra una canotta nera strappata e jeans aderenti, tenendo il fascicolo dell'orientamento piegato in una mano tatuata.
-
-=>Wulfnic:
-"In fondo non sei mai andato a scuola e tecnicamente sei un ragazzino!" tuona Wulfnic scoppiando in una risata profonda e fragorosa, mentre batte una manata pesante sulla spalla borchiata di Zefir.
-"Non fare quella faccia sorpresa, Erik! Per assicurarmi che la nostra piccola Alyssa sia protetta come si deve nel campus, ho deciso di iscrivere anche Zefir all'università. Per la segreteria è un vostro lontano parente appena arrivato dall'Islanda, così giustifichiamo il suo accento marcatamente norreno e la sua poca dimestichezza con l'inglese scritto."
-
-=>Zefir:
-"Ridi pure quanto vuoi, mio Jarl, ma se qualche professore pieno di sé mi agita un gessetto sotto il naso, non prometto di lasciarglielo intero," ribatte Zefir con un ghigno sfrontato e vivace, la spavalderia giovanile del vichingo sedicenne che era un tempo che gli brilla negli occhi azzurro ghiaccio come una raffica di vento del Mare del Nord, prima di rivolgere un beffardo saluto a due dita a {{user}} e Jasper.
-"Tranquilla, cuginetta. Il tuo parente islandese è ufficialmente una matricola. Indicami chiunque ti guardi storta e sparirà prima che suoni la campanella."
-
-=>Narrator:
-Finnegan Novak attraversa il flusso dell'orientamento dal padiglione atletico con il suo giubbotto da varsity dei Bears su una spalla, arrivando insieme a Scarlett Rose e Sierra Cruz. Per evitare che i tre compagni di campus si mettano sul chi vive attorno a un Firstborn, la famiglia presenta subito Zefir con la copertura del lontano cugino appena atterrato dall'Islanda per il suo primo anno. Poiché Zefir ha completamente schermato la sua aura divina da Enigma, ai loro sensi appare come un normale e trasandato licantropo in chiodo di pelle punk, eppure la postura di Finn si irrigidisce immediatamente. Il suo unico paio di orecchie da lupo bianco si appiattisce leggermente sulla sommità del capo, senza alcuna orecchia umana ai lati, mentre un inspiegabile istinto primordiale lo fa sentire stranamente surclassato dal giovane sconosciuto islandese, spingendolo a gonfiare il petto per darsi un tono davanti a {{user}}.
-
-=>Finn:
-"Ci ho messo venti minuti a seminare gli osservatori vicino all'arena, Alyssa. Il coach mi ha già inserito nel primo blocco di power-play per la prima di campionato, quindi se tuo cugino dall'Islanda vuole vedere come si gioca il vero hockey universitario, posso fargli avere i pass in prima fila," si vanta Finn, appoggiandosi alla balaustra di pietra e flettendo con disinvoltura l'avambraccio mentre si sistema il colletto della varsity.
-
-=>Sierra:
-"Un attimo, fermi tutti, devo assolutamente sapere dove hai preso quel chiodo adesso," interviene Sierra, la sua imponente coda da serpente color arcobaleno che scivola fluida e sinuosa tra le panchine di pietra mentre striscia più vicina a Zefir, i suoi capelli arcobaleno che brillano al sole e le sue scaglie iridescenti che riflettono la luce mentre esamina con invidia genuina le file di pesanti borchie d'argento sui suoi revers. "I dettagli della pelle consumata e quelle punte personalizzate sembrano vintage europeo d'avanguardia. C'è qualche boutique underground a Reykjavik che dovrei conoscere?"
-
-=>Scarlett:
-"Devo ammettere che lo stile punk islandese ti dona in modo pericoloso, Zefir," mormora Scarlett con un sorriso malizioso e provocante, le sue ali scure da succubus che fremono appena dietro le sue spalle, i suoi capelli e occhi rosa confetto abbinati alle due corna scarlatte sopra le tempie e la sua coda che ondeggia sinuosa mentre lancia un'occhiata d'intesa a {{user}}. "Benvenuto a Solarton, Zefir. Dato che la tua lettura dell'inglese è ancora arrugginita, mi offro volentieri per qualche lezione privata dopo la cerimonia d'apertura. Dai, Alyssa, Wolfwood sta salendo al podio."
+Alyssa e Jasper Douglas Bloodmoon hanno frequentato St. Brugge fin dall'infanzia, completando l'intero ciclo scolastico fino all'ammissione universitaria. Durante gli anni accademici, i gemelli sono stati seguiti con corsi privati avanzati da Padre Revazhael, enigmatico docente di magia e storia, che ha addestrato Alyssa nella cristallografia runica e nell'incantamento dei cilindri risonanti, e Jasper nella traduzione di rune arcaiche, forgiando le basi delle loro attuali competenze da dungeon hunter.
 ```
 
-### 4.2 Proposed Content for Scene 1 (`scene-succ-welcome-day-jasper`)
+#### Entry 2: St. Brugge Private Academy (Location in Location Lorebook)
+- **File**: `lorebooks/optimized/Svartulfr_Location.json`
+- **ID**: `ulTwlYo2jqObA7l_bFoa5`
+- **Name**: `St. Brugge Private Academy`
+- **Type**: `location`
+- **Keys**: `['St. Brugge', 'St. Brugge Private Academy', 'St Brugge', 'Accademia St. Brugge', 'St. Brugge Academy']` (Purged umbrella keywords: removed `Seven Hills`, `Douglas`, `Blackwood`, `private academy`)
+- **Secondary Keys**: `['campus', 'academy', 'Father Rev', 'Revazhael', 'esoteric library']`
+- **Selective**: `false`
+- **Key Logic**: `AND_ANY`
+- **Content**:
 ```text
-=>Narrator:
-La luce radiosa della tarda mattinata inonda i prati del Lunar Quad il 26 agosto 2024, illuminando gli stendardi cremisi e oro issati per il Welcome Day della SUCC. Poiché la cerimonia inaugurale accoglie le famiglie sul campus per gli ultimi saluti prima delle lezioni, l'intero clan Douglas-Bloodmoon ha accompagnato sul quad i quattro iscritti all'università: i fratelli maggiori Malachia e Noah insieme alle matricole {{user}} e Alyssa, scortati dal padre Erik, dallo zio Logan e dal cugino tredicenne Edric. Sul palco del padiglione centrale, il Cancelliere Archer Wolfwood è fermo davanti al microfono d'ottone a ripassare i suoi appunti, mentre i guardiani del campus guidano centinaia di studenti verso il prato.
+Un sontuoso complesso accademico in pietra nera e granito gotico immerso nelle fitte foreste collinari tra Blackwood e Solarton. Il perimetro di St. Brugge e protetto da possenti barriere di interdizione acustica e sigilli arcanici che schermano completamente l'istituto dagli sguardi dei civili umani e dai droni non autorizzati.
 
-=>Erik:
-"Tenete aperte le linee di comunicazione dopo il discorso d'apertura, e ricordate che la cena di famiglia della domenica non è facoltativa," brontola Erik, la sua presenza imponente che impone largo rispetto tra gli studenti di passaggio mentre il suo sguardo controlla il perimetro.
+L'architettura interna presenta chiostri colonnati, cortili alberati sorvegliati da doccioni incantati, aule a gradoni illuminate da vetrate runiche e biblioteche blindate contenenti testi rari di storia soprannaturale, erbologia e demonologia. I laboratori seminterrati ospitano banchi da lavoro in ardesia e quarzo per alchimia e cristallografia applicata.
 
-=>Logan:
-"Lasciali godersi la prima mattina sul campus, Erik, hanno aspettato tutta l'estate per questo," dice Logan con un sorriso rassicurante, posando una mano pesante sulla spalla di Edric.
-
-=>Edric:
-"Jasper, se hackerate il tabellone dello stadio durante la prima partita dei Bulls, devi assolutamente farmi guardare la diretta dalla tua stanza!" sussurra Edric con un ghigno entusiasta, dondolandosi sui talloni.
-
-=>Noah:
-"Il padiglione della KSA sul prato est è già allestito se qualcuno di voi desidera bevande fresche lontano dalla folla delle matricole," osserva Noah con impeccabile compostezza, sistemandosi i gemelli dei polsini.
-
-=>Malachia:
-"Ho già perlustrato Wyrm Hall e Greek Row. Chiunque superi il limite con uno di voi due dovrà risponderne a me," dichiara Malachia con voce ferma, le braccia incrociate sul petto.
-
-=>Alyssa:
-Accanto a {{user}}, Alyssa Hvit Douglas Bloodmoon stringe al petto il suo diario erboristico rilegato in pelle; le sue orecchie bianche da lupo si drizzano sulla sommità del capo, un unico paio lupino senza alcuna orecchia umana ai lati della testa, mentre guarda verso l'arco di pietra principale.
-"Cerca di non infiltrarti nella telemetria dell'amministrazione durante il discorso di Wolfwood, Jasper. Aspetta. Guarda chi è appena entrato sul quad."
-
-=>Narrator:
-Un mormorio di incredulità percorre il viale principale quando Wulfnic Báleygr Bloodmoon avanza sul Lunar Quad con Zefir Hvitskog al suo fianco. L'antico Jarl indossa con fierezza regale l'outfit gag che proprio {{user}} gli ha regalato: una t-shirt di cotone nero oversize con una lunghissima e fitta lista di Regole per Uscire con Mia Nipote stampata in bianco sulla schiena, abbinata a jeans scuri con l'apertura per la coda da lupo argentata, pesanti stivali da motociclista e un torque d'argento ritorto al collo. Accanto a lui, Zefir sembra un giovane ribelle punk sui vent'anni: i suoi capelli bianco-neve sono rasati ai lati in una fiera cresta alla moicana e indossa un giubbotto di pelle nera coperto di borchie d'argento sopra una canotta nera strappata e jeans aderenti, con l'orario delle lezioni da matricola infilato tra due dita tatuate.
-
-=>Wulfnic:
-"In fondo non sei mai andato a scuola e tecnicamente sei un ragazzino!" ruggisce Wulfnic con una risata profonda e tonante, dando una pacca così forte sulla spalla di Zefir da far tintinnare le borchie.
-"Ho preso spunto da te, Jasper! Per assicurarmi che Alyssa abbia un'ombra in più a proteggerla nel campus, stamattina ho iscritto anche Zefir all'università. Sui documenti risulta come un vostro lontano parente appena arrivato dall'Islanda, così giustifichiamo il suo marcato accento norreno e la sua poca dimestichezza con l'inglese scritto."
-
-=>Zefir:
-"Continua pure a ridere, vecchio, e vediamo chi mi tradurrà questi maledetti programmi dei corsi stasera," ribatte Zefir con un ghigno insolente e vivace, i suoi occhi azzurro ghiaccio accesi dalla spavalderia indomita del guerriero vichingo sedicenne che era e dal brio imprevedibile del vento dei mari del Nord, mentre tocca il revers borchiato verso {{user}} e Alyssa.
-"Che ne dici, Svartr? Il tuo nuovo cugino islandese è ufficialmente una matricola universitaria. Basta che non mi chiediate di scrivere un tema, a meno che non lo vogliate inciso sulla cattedra col pugnale."
-
-=>Narrator:
-Finnegan Novak attraversa il prato dal complesso atletico nella sua felpa grigia da hockey dei Bears, arrivando insieme a Scarlett Rose e Sierra Cruz giusto in tempo per sentire la famiglia presentare Zefir con la copertura del lontano cugino dall'Islanda per evitare che si mettano sul chi vive. Anche se Zefir ha completamente annullato la sua aura divina da Enigma, sembrando a tutti gli effetti un licantropo qualsiasi in mezzo a centinaia di studenti, l'istinto di Finn avverte comunque un inspiegabile senso di inferiorità davanti a quel ragazzo dalla cresta bianca. Il suo unico paio di orecchie da lupo artico si piega lievemente sulla sommità del capo, senza orecchie umane ai lati, mentre raddrizza le spalle e prova subito a mostrarsi più figo davanti ad Alyssa.
-
-=>Finn:
-"Bello vederti alla luce del sole, Svartr. Stavo giusto dicendo ad Alyssa che il coach mi ha messo nel primo blocco di power-play, quindi se vostro cugino dall'Islanda vuole vedere cosa significa vera velocità sul ghiaccio, lo metto nella lista VIP," si vanta Finn, infilando i pollici nelle tasche della felpa e assumendo una posa plastica da atleta a beneficio di Alyssa.
-
-=>Sierra:
-"Ferma tutto, devo assolutamente sapere dove hai preso quel giubbotto di pelle adesso," interviene Sierra, strisciando più vicino sulla sua imponente coda da serpente color arcobaleno, le scaglie iridescenti che riflettono il sole e i capelli color arcobaleno che ondeggiano mentre ammira le file di borchie d'argento sulle spalle di Zefir. "Sul serio, nessuno a Solarton lavora la pelle così. Dove l'hai preso in Islanda?"
-
-=>Scarlett:
-"Devo ammettere che lo stile da vichingo ribelle ti dona in modo pericoloso, Zefir," mormora Scarlett inclinando la testa così che i suoi capelli rosa confetto sfiorino le corna scarlatte che spuntano sopra le tempie, un lampo malizioso e civettuolo nei suoi occhi rosa confetto mentre flirta con lui prima di lanciare uno sguardo complice a {{user}}. "Se tuo cugino avesse bisogno di una mano per decifrare i manuali in inglese, Jasper, sai dove trovarmi. Dai, venite a sedervi con noi sul prato sud prima che Wolfwood inizi il discorso."
+In queste aule Alyssa e Jasper Douglas Bloodmoon hanno trascorso la loro giovinezza scolastica, ricevendo lezioni private e tutoraggio esoterico avanzato da Padre Revazhael lontano da occhi indiscreti, prima di fare il loro ingresso alla SUCC.
 ```
 
-### 4.3 Proposed Content for Active Chat Message #0 (`chat_log_PJx1W1rg3WUzRM7MnQrkN`)
+#### Entry 3: Father Revazhael (NPC Secondary Entry #23 Update)
+- **File**: `FINAL/Svartulfr_NPC_Secondary.json` & `lorebooks/optimized/Svartulfr_NPC_Secondary.json`
+- **ID**: `jmh0MajEsRwrm4UYU14mY`
+- **Name**: `Father Revazhael (Rev)`
+- **Type**: `npc`
+- **Keys**: `['Father Revazhael', 'Padre Revazhael', 'Father Rev', 'Padre Rev', 'Revazhael', 'Rev']`
+- **Secondary Keys**: `[]`
+- **Selective**: `false`
+- **Key Logic**: `AND_ANY`
+- **Scan Persona**: `true`
+- **Whole Words Only**: `true`
+- **Highlight Keys**: `true`
+- **Avatar**: `https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/99d10d9b-611c-45b7-566a-79c3ed2e9800/public`
+- **NPC Info**:
+  * `first_name`: `"Revazhael"`
+  * `middle_names`: `[]`
+  * `last_name`: `None`
+  * `nicknames`: `['Rev', 'Father Rev', 'Padre Rev']`
+  * `titles`: `['Father', 'Padre', 'Superior Demon']`
+  * `npc_prefix`: `""`
+- **Content (JED+)**:
 ```text
-=>Narrator:
-Il sole della tarda mattinata batte sui prati gremiti del Lunar Quad il 26 agosto 2024, filtrando tra gli stendardi cremisi e oro issati per il Welcome Day della SUCC. Poiché la cerimonia inaugurale è aperta anche ai familiari degli studenti per gli ultimi saluti prima dell'inizio delle lezioni, l'intero clan Douglas-Bloodmoon ha accompagnato sul quad i quattro iscritti all'università: i fratelli maggiori Noah e Malachia insieme ai gemelli matricole Jasper e Alyssa, scortati dal padre Erik, dallo zio Logan e dal cugino tredicenne Edric. Sul palco del padiglione centrale, il Cancelliere Archer Wolfwood è affiancato dai presidi di facoltà mentre i tecnici del suono regolano il microfono d'ottone.
+[NAME: Revazhael; TITLE: Father Revazhael, Master of Abyssal Arts; ALIASES: Rev, Father Rev, Padre Rev; TRUE NAME SECRET: his absolute true demonic name is "Revazhael", an abyssal, hypnotic word that vibrates with ancient power. If any entity or mortal discovers and speaks it aloud, the syllables strip away his demonic armor, forcing him into agonizing, absolute submission and binding his will entirely to the speaker; AGE: Apparent 20, Chronological Ancient; BIRTHDAY: May 6; ZODIAC: Taurus (Sun), Scorpio (Ascendant), Pisces (Moon); SEX: Male; SPECIES: Superior Demon, Greater Incubus, Demon of Desire; ROLE: Alpha Rho Omega (ARO) fraternity member, handyman for Theta Iota Theta (TIT) sorority house, Former Master of Esoteric Arts at St. Brugge Private Academy; HEIGHT: 6'2" (188cm); BUILD: lean, wiry, athletic, moves with the unhurried grace of an apex predator; SKIN: soft reddish undertone holding faint internal heat; HORNS: dark, elegantly curled, sweeping backward; EARS: pointed, adorned with a heavy array of silver piercings; HAIR: ink-black, cascading loosely around his shoulders; EYES: warm liquid brown, filled with terrifying abyssal intelligence; TATTOOS: chest and arms heavily covered in intricate shifting demonic tattoos of black and deep red ink; VOICE: low, warm, dense, vibrating in the chest like a second heartbeat, able to fill a hall like black smoke; SCENT: warm vanilla, ember smoke, leather, and cinnamon; OUTFIT: sleeveless work shirts showing off tattooed arms, worn denim, tool belt around waist]
 
-=>Erik:
-"Restate uniti quando la folla si disperderà dopo il discorso, e chiamate subito se i guardiani del campus vi danno qualsiasi problema," brontola Erik, la sua alta figura che proietta un'ombra protettiva sul vialetto mentre i suoi occhi ambrati scrutano il prato.
+BACKSTORY: Father Revazhael is an ancient Superior Demon who has walked the mortal plane for centuries, deliberately choosing a path contrary to demonic destruction. Feeding exclusively on emotional energy through consensual intimacy, he refuses to take anything not freely offered. During Alyssa and Jasper's youth, he served covertly as the esteemed master of magic and history at St. Brugge Private Academy. Recognizing Jasper's uncanny intellect and Alyssa's inexhaustible spiritual conduit, Father Rev gave the twins advanced private lessons in botany, demonology, abyssal magic, and applied runic crystallography. He taught Alyssa how to forge crystalline resonant cylinders and gifted her the enchanted golden key to La Dimora del Rifugio, while instructing Jasper in ancient runes and gifting him the Abyssal Armor. Jarl Wulfnic Bloodmoon was fully aware of Revazhael's true nature and tolerated him, recognizing the demon as disciplined, non-hostile, and exceptionally useful. On the modern SUCC campus, Rev maintains a low profile as a laid-back 20-year-old student at Alpha Rho Omega and handyman for Theta Iota Theta, fixing locks, boilers, and wiring.
 
-=>Logan:
-"Lasciali respirare, Erik, è l'orientamento universitario, non un assedio," dice Logan con una risata calorosa, posando una mano massiccia sulla spalla di Edric.
+FAMILY & PACK: Bound by ancient pact and genuine paternal fondness to the Douglas-Bloodmoon twins, Rev acts as a quiet guardian from the perimeter. His bound shadow spirit butler, Kobal, maintains La Dimora del Rifugio in pristine condition for whenever Alyssa requires absolute sanctuary. At SUCC, after an early misunderstanding where Malachia and Kaladin bristled at his casual pheromones, Rev maintains a polite, respectful distance from Alyssa in public, knowing when not to push territorial Alphas.
 
-=>Edric:
-"Aspetta di vedere quanto è grande la mensa, Jasper! Ma le matricole hanno davvero i pass illimitati anche per la sala giochi dell'Annex?" chiede Edric con entusiasmo, allungando il collo verso l'edificio dell'unione studentesca.
+VOICE & BEHAVIOR: Impeccably polite, calm, and disarmingly gentle. As students often note, the most terrifying monsters are always the ones who offer tea and inquire about one's day before unleashing cataclysmic power. He speaks with a low, melodic resonance that puts people at ease, treating consent as an inviolable metaphysical principle.
 
-=>Noah:
-"Il tendone di rappresentanza della KSA sul prato est ha bevande fresche e posti all'ombra riservati per noi quando volete sfuggire al caldo," osserva Noah con eleganza, sistemandosi il revers della giacca di lino su misura.
+THE TRUE NAME HE GUARDS: Revazhael guards his true name above all else. Its utterance would strip away his infernal sovereignty, making its secrecy his single existential priority.
 
-=>Malachia:
-"Ho già controllato il perimetro dalla palestra fino a Greek Row. Nessuno darà fastidio alla mia sorellina in questo campus," aggiunge Malachia con tono basso e roca fermezza, incrociando le braccia sul petto.
-
-=>Jasper:
-Accanto a Alyssa, Jasper alza lo sguardo dalla telemetria di rete sul suo datapad; le sue orecchie scure da lupo si orientano verso il cancello principale, un unico paio lupino sulla sommità del capo senza alcuna orecchia umana ai lati della testa.
-"Le registrazioni delle matricole hanno già mandato in crash il server centrale della biblioteca," mormora Jasper, dando un leggero colpetto di gomito a Alyssa. "Aspetta un secondo. Guarda chi sta varcando l'arco di pietra principale proprio adesso."
-
-=>Narrator:
-Il brusio lungo il viale centrale si apre in un'ondata di silenzio stupefatto quando Wulfnic Báleygr Bloodmoon avanza sul Lunar Quad con Zefir Hvitskog al suo fianco. Lo Jarl di Svartúlfr, a milleduecento anni compiuti, sfoggia il suo outfit gag preferito con solenne e fierissimo orgoglio: una t-shirt di cotone nero oversize regalatagli da Jasper che porta stampata sulla schiena, a grandi caratteri bianchi, una lunghissima e fitta lista di Regole per Uscire con Mia Nipote, abbinata a jeans scuri con l'apertura sartoriale per la coda da lupo argentata, pesanti stivali da motociclista con fibbie e un antico torque d'argento ritorto al collo. Accanto a lui, Zefir ha tutto l'aspetto di un giovane ribelle punk sui vent'anni: i suoi capelli bianco-neve sono rasati ai lati in una netta cresta alla moicana e indossa un pesante giubbotto di pelle nera tempestato di borchie d'argento sopra una canotta nera strappata e jeans aderenti, tenendo il fascicolo dell'orientamento piegato in una mano tatuata.
-
-=>Wulfnic:
-"In fondo non sei mai andato a scuola e tecnicamente sei un ragazzino!" tuona Wulfnic scoppiando in una risata profonda e fragorosa, mentre batte una manata pesante sulla spalla borchiata di Zefir.
-"Non fare quella faccia sorpresa, Erik! Per assicurarmi che la nostra piccola Alyssa sia protetta come si deve nel campus, ho deciso di iscrivere anche Zefir all'università. Per la segreteria è un vostro lontano parente appena arrivato dall'Islanda, così giustifichiamo il suo accento marcatamente norreno e la sua poca dimestichezza con l'inglese scritto."
-
-=>Zefir:
-"Ridi pure quanto vuoi, mio Jarl, ma se qualche professore pieno di sé mi agita un gessetto sotto il naso, non prometto di lasciarglielo intero," ribatte Zefir con un ghigno sfrontato e vivace, la spavalderia giovanile del vichingo sedicenne che era un tempo che gli brilla negli occhi azzurro ghiaccio come una raffica di vento del Mare del Nord, prima di rivolgere un beffardo saluto a due dita a Alyssa e Jasper.
-"Tranquilla, cuginetta. Il tuo parente islandese è ufficialmente una matricola. Indicami chiunque ti guardi storta e sparirà prima che suoni la campanella."
-
-=>Narrator:
-Finnegan Novak attraversa il flusso dell'orientamento dal padiglione atletico con il suo giubbotto da varsity dei Bears su una spalla, arrivando insieme a Scarlett Rose e Sierra Cruz. Per evitare che i tre compagni di campus si mettano sul chi vive attorno a un Firstborn, la famiglia presenta subito Zefir con la copertura del lontano cugino appena atterrato dall'Islanda per il suo primo anno. Poiché Zefir ha completamente schermato la sua aura divina da Enigma, ai loro sensi appare come un normale e trasandato licantropo in chiodo di pelle punk, eppure la postura di Finn si irrigidisce immediatamente. Il suo unico paio di orecchie da lupo bianco si appiattisce leggermente sulla sommità del capo, senza alcuna orecchia umana ai lati, mentre un inspiegabile istinto primordiale lo fa sentire stranamente surclassato dal giovane sconosciuto islandese, spingendolo a gonfiare il petto per darsi un tono davanti a Alyssa.
-
-=>Finn:
-"Ci ho messo venti minuti a seminare gli osservatori vicino all'arena, Alyssa. Il coach mi ha già inserito nel primo blocco di power-play per la prima di campionato, quindi se tuo cugino dall'Islanda vuole vedere come si gioca il vero hockey universitario, posso fargli avere i pass in prima fila," si vanta Finn, appoggiandosi alla balaustra di pietra e flettendo con disinvoltura l'avambraccio mentre si sistema il colletto della varsity.
-
-=>Sierra:
-"Un attimo, fermi tutti, devo assolutamente sapere dove hai preso quel chiodo adesso," interviene Sierra, la sua imponente coda da serpente color arcobaleno che scivola fluida e sinuosa tra le panchine di pietra mentre striscia più vicina a Zefir, i suoi capelli arcobaleno che brillano al sole e le sue scaglie iridescenti che riflettono la luce mentre esamina con invidia genuina le file di pesanti borchie d'argento sui suoi revers. "I dettagli della pelle consumata e quelle punte personalizzate sembrano vintage europeo d'avanguardia. C'è qualche boutique underground a Reykjavik che dovrei conoscere?"
-
-=>Scarlett:
-"Devo ammettere che lo stile punk islandese ti dona in modo pericoloso, Zefir," mormora Scarlett con un sorriso malizioso e provocante, le sue ali scure da succubus che fremono appena dietro le sue spalle, i suoi capelli e occhi rosa confetto abbinati alle due corna scarlatte sopra le tempie e la sua coda che ondeggia sinuosa mentre lancia un'occhiata d'intesa a Alyssa. "Benvenuto a Solarton, Zefir. Dato che la tua lettura dell'inglese è ancora arrugginita, mi offro volentieri per qualche lezione privata dopo la cerimonia d'apertura. Dai, Alyssa, Wolfwood sta salendo al podio."
+RPG STATS & TRAITS:
+[LEVEL: 90; SPECIES: Succube & Incubo (Succubus) (STR -1, END -1, CHA +3, AGI +1); OCCUPATION: Teacher (INT +2); CLASS: Superior Demon & Arcane Master]
+[STATS: STR 12; PER 16; END 14; CHA 18; INT 18; AGI 14; LCK 12]
+TRAITS:
+- Ancient Heritage (CHA +1, INT +1): Accumulated wisdom and dynastic mastery spanning centuries.
+- Night Stalker (PER +1, AGI +1): Nocturnal predator operating with dark vision and supernatural stealth.
 ```
 
-### 4.4 Exact API Execution Protocol for Implementation
-1. **Scenario Update via Wyvern Web API**:
-   - Endpoint: `PUT https://app.wyvern.chat/api/worlds/scenarios/_2MTWKjxrQPdQVaz9y4Q7H`
-   - Headers: `Authorization: Bearer <token>`, `Content-Type: application/json`
-   - Payload: Read `FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json`, substitute `premade_scenes[0].scene_text` and `premade_scenes[1].scene_text` with the standardized texts above, and send the payload via HTTP PUT.
-2. **Active Chat Log Message #0 Swipe Patch via Wyvern Web API**:
-   - Endpoint: `PUT https://app.wyvern.chat/api/new/chat-logs/swipe/message_swipe_99mmMgEEQjk2pkJN3hXkQ`
-   - Headers: `Authorization: Bearer <token>`, `Content-Type: application/json`
-   - Payload: `{"content": "<msg0_standardized_text>"}`
-3. **Local File Update**:
-   - Save the updated JSON into `FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json`.
+#### Entry 4: Enchanted Resonant Cylinders (Item in Lorebook II)
+- **File**: `FINAL/Svartulfr_Lorebook_II.json` & `lorebooks/optimized/Svartulfr_Lorebook_II.json`
+- **ID**: `lb2_item_enchanted_resonant_cylinders`
+- **Name**: `Cilindri Incantati a Risonanza (Enchanted Resonant Cylinders)`
+- **Type**: `item`
+- **Keys**: `['cilindri incantati', 'cilindro incantato', 'resonant cylinders', 'resonant cylinder', 'cilindri a risonanza', 'enchanted cylinders']`
+- **Secondary Keys**: `['matrice cristallina', 'incantesimi congelati', 'DMHA', 'Gilda', 'Alyssa']`
+- **Selective**: `false`
+- **Key Logic**: `AND_ANY`
+- **Scan Persona**: `true`
+- **Whole Words Only**: `true`
+- **Content**:
+```text
+I cilindri incantati a risonanza sono manufatti magitech miniaturizzati, grandi quanto un dito indice e simili a piccole torce di cristallo tascabili, ideati per racchiudere incantesimi attivi in uno stato di sospensione criocristallina. All'occorrenza, l'utilizzatore deve semplicemente spezzare o premere il perno del cilindro per rilasciare istantaneamente la formula magica congelata all'interno, senza alcun tempo di lancio e senza consumare il proprio mana personale.
+
+Questi dispositivi rappresentano uno strumento vitale per i cacciatori della Gilda e per gli operatori privi di doti magiche innate durante le incursioni nei dungeon e nelle fratture dimensionali.
+
+A differenza dei comuni cilindri commerciali venduti a caro prezzo dai maghi della DMHA, che utilizzano matrici standard fragili soggette a incrinarsi o fallire durante le evocazioni critiche, i cilindri personalizzati forgiati da Alyssa Douglas sfruttano i principi della cristallografia runica applicata appresi da Padre Revazhael a St. Brugge. Alyssa calibra la frequenza della matrice di quarzo sull'impronta di risonanza magica individuale del ricevente, azzerando i rischi di rigetto e garantendo un'attivazione immediata e perfetta anche sotto stress estremo.
+```
+
+#### Entry 5: Applied Runic Crystallography (Concept in Lorebook I)
+- **File**: `FINAL/Svartulfr_Lorebook_I.json` & `lorebooks/optimized/Svartulfr_Lorebook_I.json`
+- **ID**: `lb1_concept_applied_runic_crystallography`
+- **Name**: `Cristallografia Runica Applicata (Applied Runic Crystallography)`
+- **Type**: `concept`
+- **Keys**: `['cristallografia runica', 'runic crystallography', 'cristallografia applicata', 'applied crystallography']`
+- **Secondary Keys**: `['matrice cristallina', 'risonanza', 'cilindri incantati', 'teoria runica']`
+- **Selective**: `false`
+- **Key Logic**: `AND_ANY`
+- **Scan Persona**: `true`
+- **Whole Words Only**: `true`
+- **Content**:
+```text
+La cristallografia runica applicata e una disciplina esoterica avanzata di livello specialistico che fonde l'antica incisione di glifi runici nordici con l'ingegneria dei reticoli cristallini sintetici e naturali (quarzo sintonizzato, diamanti arcanici e frammenti di dungeon core).
+
+Il principio fondamentale della disciplina risiede nel congelare formule magiche complesse all'interno delle giunzioni molecolari del cristallo, sospendendo il flusso energetico in uno stato di potenziale quiescente senza perdite di mana nel tempo. La tecnica richiede una rigorosa calibrazione della risonanza individuale: se la matrice runica non e armonizzata con la segnatura biospirituale dell'utilizzatore, il cristallo rischia di collassare sotto sforzo o detonare prematuramente.
+
+Praticata ai massimi livelli da maestri occulti come Padre Revazhael e insegnata nei corsi avanzati di St. Brugge e nei laboratori specialistici di teoria runica della SUCC, questa scienza consente la produzione di cilindri a innesco rapido, barriere portatili e accumulatori ermetici per spedizioni nei dungeon della faglia.
+```
+
+#### Entry 6: Magic: Abyssal Magic (vs. Void Magic & Necromancy) (Concept in Lorebook I)
+- **File**: `FINAL/Svartulfr_Lorebook_I.json` & `lorebooks/optimized/Svartulfr_Lorebook_I.json`
+- **ID**: `lb1_magic_abyssal_magic_distinction`
+- **Name**: `Magic: Abyssal Magic (vs. Void Magic & Necromancy)`
+- **Type**: `concept`
+- **Keys**: `['Abyssal Magic', 'Magia Abissale', 'Abyssal powers', 'Abyss magic', 'Infernal Magic']`
+- **Secondary Keys**: `['Void Magic', 'Magia del Vuoto', 'Necromancy', 'demone superiore', 'Revazhael']`
+- **Selective**: `false`
+- **Key Logic**: `AND_ANY`
+- **Scan Persona**: `true`
+- **Whole Words Only**: `true`
+- **Content**:
+```text
+La magia abissale e una corrente esoterica primordiale che attinge direttamente all'energia dell'Abisso Infernale, il piano chthonico governato dai Demoni Superiori. A differenza delle magie elementali ordinarie, l'energia abissale si manifesta con densita palpabile, fumo nero pesante, glifi cremisi incandescenti e un'intrinseca carica di volonta sovrana che scuote la realta materiale.
+
+Sul piano della teoria magica accademica, e fondamentale non confondere la magia abissale con la magia del vuoto o la necromanzia classica:
+1. Magia del Vuoto e Necromanzia: praticata nei dipartimenti specializzati come quello di Necromanzia Applicata della SUCC, opera sul vuoto tra le dimensioni, sulla manipolazione di residui spirituali ed ectoplasma, sulla decomposizione entropica e sull'animazione di materia morta. E un'arte fredda, legata alla dispersione e alle ombre dei defunti.
+2. Magia Abissale: e un'energia vitale, caotica e rovente di origine demoniaca pura. Non manipola cadaveri ne anime erranti, ma incanala l'essenza stessa dell'autorita infernale e del patto primordiale.
+
+Mentre le matrici necromantiche convenzionali risultano instabili e soggette a rotture impreviste, la magia abissale puo essere imbrigliata e stabilizzata se combinata con la cristallografia runica, come dimostrato dai metodi d'insegnamento di Padre Revazhael con Alyssa e Jasper Douglas Bloodmoon.
+```
+
+#### Entry 7: Theta Iota Theta: Suite 3 (Location in Location Lorebook)
+- **File**: `lorebooks/optimized/Svartulfr_Location.json`
+- **ID**: `loc_theta_iota_theta_suite_3`
+- **Name**: `Theta Iota Theta: Suite 3`
+- **Type**: `location`
+- **Keys**: `['Suite 3', 'Suite 3 TIT', 'camera di Alyssa', 'stanza di Alyssa', 'TIT Suite 3']`
+- **Secondary Keys**: `['Sierra', 'Scarlett', 'nido di pellicce', 'Theta Iota Theta']`
+- **Selective**: `false`
+- **Key Logic**: `AND_ANY`
+- **Scan Persona**: `true`
+- **Whole Words Only**: `true`
+- **Content**:
+```text
+La spaziosa suite situata al secondo piano dell'ala est della sorority house Theta Iota Theta (TIT), condivisa da Alyssa Douglas, Sierra Cruz e Scarlett Rose. L'ambiente riflette l'eclettica convivenza delle tre studentesse, unendo comfort lussuoso, tocchi punk e misticismo botanico.
+
+L'ala vicino alla finestra e occupata dal terrario caldo e dai tappeti riscaldati di Sierra, dominati da un enorme poster della band garage-punk Grave Mistake, dove la lamia riposa le sue quattro metri di coda iridescente. Al centro della stanza, Alyssa ha allestito il proprio giaciglio trasformandolo in un soffice nido di cuscini e pellicce pregiate cacciate da nonno Wulfnic, custodito dall'enorme lupo di pezza Wolfy vinto alle giostre a sette anni. Sugli scaffali trovano posto gli alambicchi e la vetreria da laboratorio in cristallo usata da Alyssa per distillare essenze e preparare cilindri incantati.
+
+La stanza e illuminata da file di lucine fairy lights e sorvegliata da Zefir quando la scorta familiare veglia sulla matricola. Sulla mensola del salone comune spicca il celebre router decorato a muso di gattino con password 'TIT<3'.
+```
+
+#### Entry 8: Larek Steeltooth Schema Fix (NPC Secondary Entry #211)
+- **File**: `FINAL/Svartulfr_NPC_Secondary.json` & `lorebooks/optimized/Svartulfr_NPC_Secondary.json`
+- **Target**: Entry `#211` (`npc_larek_steeltooth`)
+- **Fix**:
+  * Set `entry_id: "npc_larek_steeltooth"` (replace `id`)
+  * Set `name: "Larek Steeltooth"` (replace `title`)
+  * Set `type: "npc"` (currently missing)
+  * Set `avatar: "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/99d10d9b-611c-45b7-566a-79c3ed2e9800/public"`
+  * Set `custom_avatar_regex: true`, `lines_parsed: 1`, `avatar_activation_regex: "(?:^|\\n)\\s*(?:Larek Steeltooth|Larek)\\s*:"`
+  * Set `exclude_from_recursion: true`
 
 ---
 
 ## 5. Verification Method
 
-### 5.1 Verification Commands
-1. **Formatting Discipline Validation**:
-   Run the audit script to confirm zero em-dashes and zero asterisks:
-   `python .agents/teamwork/explorer_survey_2/check_discipline.py`
-2. **Scenario Text Structure Inspection**:
-   Run the paragraph inspector to verify all `=>Speaker:` tags:
-   `python .agents/teamwork/explorer_survey_2/test_std_scene0.py`
-   `python .agents/teamwork/explorer_survey_2/test_std_scene1.py`
-   `python .agents/teamwork/explorer_survey_2/test_std_msg0.py`
-3. **Live API Inspection**:
-   Following execution by the implementer, verify live API persistence:
-   - Scenario: `GET https://app.wyvern.chat/api/worlds/scenarios/_2MTWKjxrQPdQVaz9y4Q7H`
-     Assert that `premade_scenes[0].scene_text` and `premade_scenes[1].scene_text` start with `=>Narrator:` and contain all canonical tags (`=>Erik:`, `=>Logan:`, `=>Edric:`, `=>Noah:`, `=>Malachia:`, `=>Jasper:`, `=>Wulfnic:`, `=>Zefir:`, `=>Finn:`, `=>Sierra:`, `=>Scarlett:`).
-   - Chat Log: `GET https://app.wyvern.chat/api/new/chat-logs/chat_log_PJx1W1rg3WUzRM7MnQrkN`
-     Assert that `messages[0].swipes[0].content` matches the standardized text byte-for-byte.
+To verify the integrity, schemas, and byte-for-byte parity across all modified files, the receiving worker should execute:
 
-### 5.2 Invalidation Conditions
-- Any occurrence of the em-dash character in scenario text or message #0.
-- Any presence of asterisks (`*`) outside internal monologue.
-- Any speaker tag in Scene 0, Scene 1, or Message #0 using plain `Speaker:` without `=>`.
-- Any character turn in Visual Novel mode failing to attach its sprite or avatar.
+```bash
+# 1. Run schema and parity verification script
+python -c "
+import json
+
+files = [
+    'FINAL/Svartulfr_Lorebook_I.json',
+    'FINAL/Svartulfr_Lorebook_II.json',
+    'FINAL/Svartulfr_Lorebook_III.json',
+    'lorebooks/optimized/Svartulfr_Location.json',
+    'FINAL/Svartulfr_NPC_Primary.json',
+    'FINAL/Svartulfr_NPC_Secondary.json'
+]
+
+for p in files:
+    with open(p, 'r', encoding='utf-8') as f:
+        d = json.load(f)
+    e = d.get('entries', [])
+    l = d.get('lexicon', [])
+    assert e == l, f'Parity error in {p}!'
+    print(f'{p}: PASS (entries={len(e)}, budget={d.get(\"token_budget\")})')
+"
+
+# 2. Check for broad keys on NPC entries
+python -c "
+import json
+broad_keys = {'solarton', 'succ', 'blackwood', 'vampire', 'werewolf', 'college', 'student', 'alpha', 'omega'}
+for p in ['FINAL/Svartulfr_NPC_Primary.json', 'FINAL/Svartulfr_NPC_Secondary.json']:
+    with open(p, 'r', encoding='utf-8') as f:
+        d = json.load(f)
+    for entry in d['entries']:
+        keys_set = set(k.lower() for k in entry.get('keys', []))
+        overlap = keys_set.intersection(broad_keys)
+        assert not overlap, f'Broad key violation in {p} on {entry.get(\"name\")}: {overlap}'
+print('Zero broad keys on NPC entries: PASS')
+"
+
+# 3. Check for em-dashes and formatting discipline
+python -c "
+import json
+for p in ['FINAL/Svartulfr_Lorebook_I.json', 'FINAL/Svartulfr_Lorebook_II.json', 'FINAL/Svartulfr_Lorebook_III.json', 'lorebooks/optimized/Svartulfr_Location.json', 'FINAL/Svartulfr_NPC_Primary.json', 'FINAL/Svartulfr_NPC_Secondary.json']:
+    with open(p, 'r', encoding='utf-8') as f:
+        text = f.read()
+    assert '—' not in text, f'Em-dash violation in {p}!'
+    assert '{{age}}' not in text, f'{{age}} macro violation in {p}!'
+print('Formatting discipline (0 em-dash, 0 {{age}}): PASS')
+"
+```
+
+### Invalidation Conditions
+- Any occurrence of `entries != lexicon`.
+- Any presence of em-dash (`—`) or `{{age}}`.
+- Any broad/umbrella keyword on NPC triggers.
+- Token budget exceedance beyond platform limits (NPC Primary capped at 7500, all others at 5000).

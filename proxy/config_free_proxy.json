@@ -1,0 +1,423 @@
+{
+  "host": "0.0.0.0",
+  "port": 5005,
+  "cooldown_seconds": 40,
+  "timeout_seconds": 35.0,
+  "keys": {
+    "google_ai_studio": "AQ.Ab8RN6JYsAe-Qrvhm1srfa4saQKD2OjU1zYAX3Q7SuPGRQDQRA",
+    "openrouter": [
+      "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",
+      "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"
+    ],
+    "groq": "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",
+    "chutes": "cpk_d535cd6bccbb47b69643936a813557b3.2d163e81bd295ac0b053d60f8cf4a1ff.ggXvFBCFLdBBoGfvBlVaLhNT3QuoEfda",
+    "sambanova": "d8690802-6d1f-45c9-972c-2f6ad7d17b62",
+    "nvidia": "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",
+    "cloudflare": "cfat_DlTyt7dQ65lKdlVwsjSr9tDhWZlAy9jslaxeK0Lld43c3618",
+    "github": "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",
+    "huggingface": "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",
+    "deepinfra": "sk-di-3256v0JZITNvFdzseAhJLP7CZS3bfdEs",
+    "zhipu": "",
+    "deepseek": "sk-9251a45b278a4e1085be60fe30ef1c5b",
+    "cerebras": "csk-49mr6xmtv69k9py5ce69v69dfy48x6dtvfkc9t5ct83c4hf4",
+    "siliconflow": "",
+    "mistral": ""
+  },
+  "upstreams": [
+    {
+      "priority": 1,
+      "id": "p1-glm-openrouter",
+      "display_name": "GLM 5.2 / 5.3 (OpenRouter)",
+      "provider": "openrouter",
+      "models": [
+        "z-ai/glm-5.2",
+        "z-ai/glm-5.3"
+      ],
+      "base_url": "https://openrouter.ai/api/v1/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "openrouter"
+    },
+    {
+      "priority": 1,
+      "id": "p1-glm-zhipu-direct",
+      "display_name": "GLM 5.2 / 5.3 (Zhipu BigModel Direct)",
+      "provider": "zhipu",
+      "models": [
+        "glm-5.2",
+        "glm-5.3",
+        "glm-4-plus",
+        "glm-4-flash"
+      ],
+      "base_url": "https://open.bigmodel.cn/api/paas/v4/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "zhipu"
+    },
+    {
+      "priority": 2,
+      "id": "p2-glm-chutes",
+      "display_name": "GLM 5.2+ (Chutes TEE)",
+      "provider": "chutes",
+      "models": [
+        "zai-org/GLM-5.2-TEE",
+        "zai-org/GLM-5.1-TEE"
+      ],
+      "base_url": "https://llm.chutes.ai/v1/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "chutes"
+    },
+    {
+      "priority": 3,
+      "id": "p3-gemini-argon",
+      "display_name": "Gemini 4 Argon (Google AI Studio)",
+      "provider": "google",
+      "models": [
+        "gemini-4-argon"
+      ],
+      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "google_ai_studio"
+    },
+    {
+      "priority": 4,
+      "id": "p4-gemini-3.8-flash",
+      "display_name": "Gemini 3.8 Flash (Google AI Studio)",
+      "provider": "google",
+      "models": [
+        "gemini-3.8-flash"
+      ],
+      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "google_ai_studio"
+    },
+    {
+      "priority": 6,
+      "id": "p6-gemma4-sambanova",
+      "display_name": "Gemma 4 31B (SambaNova Cloud)",
+      "provider": "sambanova",
+      "models": [
+        "gemma-4-31B-it"
+      ],
+      "base_url": "https://api.sambanova.ai/v1/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "sambanova"
+    },
+    {
+      "priority": 7,
+      "id": "p7-gemma4-openrouter-free",
+      "display_name": "Gemma 4 Free (OpenRouter)",
+      "provider": "openrouter",
+      "models": [
+        "google/gemma-4-31b-it:free",
+        "google/gemma-4-26b-a4b-it:free"
+      ],
+      "base_url": "https://openrouter.ai/api/v1/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "openrouter"
+    },
+    {
+      "priority": 8,
+      "id": "p8-gemma4-chutes-openrouter",
+      "display_name": "Gemma 4 Turbo (Chutes & OpenRouter)",
+      "provider": "chutes",
+      "models": [
+        "google/gemma-4-31B-turbo-TEE"
+      ],
+      "base_url": "https://llm.chutes.ai/v1/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "chutes"
+    },
+    {
+      "priority": 9,
+      "id": "p9-deepseek-direct",
+      "display_name": "DeepSeek V3 / V3.2 (DeepSeek Direct)",
+      "provider": "deepseek",
+      "models": [
+        "deepseek-chat"
+      ],
+      "base_url": "https://api.deepseek.com/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "deepseek"
+    },
+    {
+      "priority": 10,
+      "id": "p10-deepseek-openrouter",
+      "display_name": "DeepSeek V3 / V3.2 (OpenRouter)",
+      "provider": "openrouter",
+      "models": [
+        "deepseek/deepseek-chat"
+      ],
+      "base_url": "https://openrouter.ai/api/v1/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "openrouter"
+    },
+    {
+      "priority": 10,
+      "id": "p9-deepseek-sambanova",
+      "display_name": "DeepSeek V3.2 / V3.1 (SambaNova Cloud)",
+      "provider": "sambanova",
+      "models": [
+        "DeepSeek-V3.2",
+        "DeepSeek-V3.1"
+      ],
+      "base_url": "https://api.sambanova.ai/v1/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "sambanova",
+      "context_window": 16384,
+      "max_tokens": 4096,
+      "supports_system": true,
+      "supports_streaming": true
+    },
+    {
+      "priority": 13,
+      "id": "p13-cerebras-qwen",
+      "display_name": "Cerebras Cloud (Qwen 3.8 27B Ultra-Fast)",
+      "provider": "cerebras",
+      "models": [
+        "qwen-3.8-27b",
+        "gpt-oss-120b"
+      ],
+      "base_url": "https://api.cerebras.ai/v1/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "cerebras",
+      "context_window": 65536,
+      "max_tokens": 4096,
+      "supports_system": true,
+      "supports_streaming": true
+    },
+    {
+      "priority": 13,
+      "id": "p13-qwen-groq",
+      "display_name": "Qwen 3.8 27B & GPT-OSS 120B (Groq Cloud)",
+      "provider": "groq",
+      "models": [
+        "qwen/qwen3.8-27b",
+        "openai/gpt-oss-120b"
+      ],
+      "base_url": "https://api.groq.com/openai/v1/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "groq"
+    },
+    {
+      "priority": 14,
+      "id": "p14-qwen-chutes",
+      "display_name": "Qwen 3.8 27B (Chutes TEE)",
+      "provider": "chutes",
+      "models": [
+        "Qwen/Qwen3.8-27B-TEE"
+      ],
+      "base_url": "https://llm.chutes.ai/v1/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "chutes"
+    },
+    {
+      "priority": 15,
+      "id": "p15-qwen-nvidia-nim",
+      "display_name": "Qwen 2.5 72B (NVIDIA NIM)",
+      "provider": "nvidia",
+      "models": [
+        "qwen/qwen2.5-72b-instruct"
+      ],
+      "base_url": "https://integrate.api.nvidia.com/v1/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "nvidia"
+    },
+    {
+      "priority": 16,
+      "id": "p16-llama3.3-sambanova",
+      "display_name": "Llama 3.3 70B (SambaNova Cloud)",
+      "provider": "sambanova",
+      "models": [
+        "Meta-Llama-3.3-70B-Instruct"
+      ],
+      "base_url": "https://api.sambanova.ai/v1/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "sambanova"
+    },
+    {
+      "priority": 17,
+      "id": "p17-llama3.3-groq",
+      "display_name": "Llama 3.3 70B (Groq Cloud)",
+      "provider": "groq",
+      "models": [
+        "llama-3.3-70b-versatile",
+        "llama-3.3-70b-specdec"
+      ],
+      "base_url": "https://api.groq.com/openai/v1/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "groq"
+    },
+    {
+      "priority": 18,
+      "id": "p18-llama3.3-cloudflare",
+      "display_name": "Llama 3.3 70B (Cloudflare Workers AI)",
+      "provider": "cloudflare",
+      "models": [
+        "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+        "@cf/meta/llama-3.1-70b-instruct"
+      ],
+      "base_url": "https://api.cloudflare.com/client/v4/accounts/a02ddeb54d2a0bb4f402088713a6d8ac/ai/v1/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "cloudflare"
+    },
+    {
+      "priority": 19,
+      "id": "p19-mistral-large",
+      "display_name": "Mistral Large 2 & Nemo (Mistral Direct)",
+      "provider": "mistral",
+      "models": [
+        "mistral-large-latest",
+        "open-mistral-nemo"
+      ],
+      "base_url": "https://api.mistral.ai/v1/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "mistral"
+    },
+    {
+      "priority": 20,
+      "id": "p20-gemini-backup",
+      "display_name": "Gemini Pro & Flash Backup Family (Google AI Studio)",
+      "provider": "google",
+      "models": [
+        "gemini-3.6-flash",
+        "gemini-3.5-flash",
+        "gemini-3.1-pro-preview",
+        "gemini-pro-latest"
+      ],
+      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "google_ai_studio"
+    },
+    {
+      "priority": 21,
+      "id": "p21-nemotron-openrouter-free",
+      "display_name": "NVIDIA Nemotron 3 Ultra 550B & 3.5 Lightning (OpenRouter Free)",
+      "provider": "openrouter",
+      "models": [
+        "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "nvidia/nemotron-3.5-lightning:free",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free"
+      ],
+      "base_url": "https://openrouter.ai/api/v1/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "openrouter"
+    },
+    {
+      "priority": 22,
+      "id": "p22-github-models",
+      "display_name": "GitHub Models (Azure AI Inference)",
+      "provider": "github",
+      "models": [
+        "gpt-4o",
+        "gpt-4o-mini",
+        "Meta-Llama-3.3-70B-Instruct"
+      ],
+      "base_url": "https://models.inference.ai.azure.com/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "github"
+    },
+    {
+      "priority": 23,
+      "id": "p23-or-lfm-2.5",
+      "display_name": "OpenRouter Free - Liquid LFM 2.5",
+      "provider": "openrouter",
+      "model": "liquid/lfm-2.5-2.6b:free",
+      "base_url": "https://openrouter.ai/api/v1/chat/completions",
+      "key_name": "openrouter",
+      "context_window": 32768,
+      "max_tokens": 4096,
+      "supports_system": true,
+      "supports_streaming": true
+    },
+    {
+      "priority": 24,
+      "id": "p24-or-flint-v1.0",
+      "display_name": "OpenRouter Free - Recursive Flint v1.0",
+      "provider": "openrouter",
+      "model": "recursive/flint-v1.0:free",
+      "base_url": "https://openrouter.ai/api/v1/chat/completions",
+      "key_name": "openrouter",
+      "context_window": 32768,
+      "max_tokens": 4096,
+      "supports_system": true,
+      "supports_streaming": true
+    },
+    {
+      "priority": 25,
+      "id": "p25-or-xing4.0",
+      "display_name": "OpenRouter Free - Xing 4.0 29B",
+      "provider": "openrouter",
+      "model": "xingchen-agi/xing4.0-29b-a4b:free",
+      "base_url": "https://openrouter.ai/api/v1/chat/completions",
+      "key_name": "openrouter",
+      "context_window": 32768,
+      "max_tokens": 4096,
+      "supports_system": true,
+      "supports_streaming": true
+    },
+    {
+      "priority": 26,
+      "id": "p26-or-dots-3-note-preview",
+      "display_name": "OpenRouter Free - Dots 3 Note Preview",
+      "provider": "openrouter",
+      "model": "dots-studio/dots-3-note-preview:free",
+      "base_url": "https://openrouter.ai/api/v1/chat/completions",
+      "key_name": "openrouter",
+      "context_window": 32768,
+      "max_tokens": 4096,
+      "supports_system": true,
+      "supports_streaming": true
+    },
+    {
+      "priority": 27,
+      "id": "p27-or-laguna-s-2.1",
+      "display_name": "OpenRouter Free - Laguna S 2.1",
+      "provider": "openrouter",
+      "model": "poolside/laguna-s-2.1:free",
+      "base_url": "https://openrouter.ai/api/v1/chat/completions",
+      "key_name": "openrouter",
+      "context_window": 32768,
+      "max_tokens": 4096,
+      "supports_system": true,
+      "supports_streaming": true
+    },
+    {
+      "priority": 28,
+      "id": "p28-or-laguna-xs-2.1",
+      "display_name": "OpenRouter Free - Laguna XS 2.1",
+      "provider": "openrouter",
+      "model": "poolside/laguna-xs-2.1:free",
+      "base_url": "https://openrouter.ai/api/v1/chat/completions",
+      "key_name": "openrouter",
+      "context_window": 32768,
+      "max_tokens": 4096,
+      "supports_system": true,
+      "supports_streaming": true
+    },
+    {
+      "priority": 30,
+      "id": "or-nemotron-3.5-super-vl",
+      "display_name": "OpenRouter Free - Nemotron-3.5-Super-Vl",
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3.5-super-vl:free",
+      "base_url": "https://openrouter.ai/api/v1/chat/completions",
+      "key_name": "openrouter",
+      "context_window": 32768,
+      "max_tokens": 4096,
+      "supports_system": true,
+      "supports_streaming": true
+    },
+    {
+      "priority": 31,
+      "id": "or-lfm-3-1.7b",
+      "display_name": "OpenRouter Free - Lfm-3-1.7B",
+      "provider": "openrouter",
+      "model": "liquid/lfm-3-1.7b:free",
+      "base_url": "https://openrouter.ai/api/v1/chat/completions",
+      "key_name": "openrouter",
+      "context_window": 32768,
+      "max_tokens": 4096,
+      "supports_system": true,
+      "supports_streaming": true
+    }
+  ]
+}

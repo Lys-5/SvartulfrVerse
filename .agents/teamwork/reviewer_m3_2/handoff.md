@@ -1,232 +1,168 @@
-# Adversarial Review & Handoff Report: Milestone 3
+# Independent Review & Adversarial Challenge Handoff Report — Milestone 3 (Playtest Lore & Content Alignment)
 
-**Reviewer**: reviewer_m3_2 (Adversarial Critic & Quality Reviewer)  
-**Milestone**: Milestone 3 — Display Settings & Right Sidebar Flags  
-**Final Verdict**: `REQUEST_CHANGES`
+**Agent Identity**: `reviewer_m3_2`  
+**Roles**: Reviewer, Adversarial Critic  
+**Working Directory**: `e:\repository\SvartulfrVerse\.agents\teamwork\reviewer_m3_2\`  
+**Target Milestone**: Milestone 3 — Character Cards & Personas Synchronization  
+**Date**: 2026-11-02T07:45:00Z  
+**Recipient**: Orchestrator (`a6280f2d-32ae-4a10-82fa-5604ad40f230`)  
+
+---
+
+## Review Summary
+
+**Verdict**: **APPROVE**  
+**Overall Risk Assessment**: **LOW**  
+**Integrity Finding**: **NO INTEGRITY VIOLATIONS DETECTED**. Implementation contains genuine, high-fidelity narrative writing and deep substantive alignment with the playtest transcript. Verification test suites perform actual live JSON parsing and stringent assertion logic with zero hardcoded shortcuts or facades.
 
 ---
 
 ## 1. Observation
 
-### 1.1 Chunk 14685 Schema `$` vs Deployed `chat_overrides`
-1. In `scratch/14685-a6f37bf36e7cf713.js` (lines 60195–60600), the Display Settings schema `$` is defined as:
-   ```javascript
-   $ = V.z.object({
-     version: V.z.literal(1),
-     values: V.z.object({
-       use_reply_options: V.z.boolean(),
-       reply_options_instructions: V.z.string(),
-       use_impersonate_override: V.z.boolean(),
-       impersonate_prompt: V.z.string(),
-       immersiveMode: V.z.boolean(),
-       vnMode: V.z.boolean(),
-       spriteLocation: V.z.enum(["left", "right", "center"]),
-       spriteSize: V.z.number().finite(),
-       disableSprites: V.z.boolean(),
-       useSpriteAsAvatar: V.z.boolean(),
-       showBackgroundOverlay: V.z.boolean(),
-       backgroundOverlayColor: V.z.string(),
-       disableBlur: V.z.boolean(),
-       hideThinkBlocks: V.z.boolean(),
-       showLiveReasoning: V.z.boolean(),
-       reasoningAutoScroll: V.z.boolean(),
-       reasoningPosition: V.z.enum(Y.ch),
-       musicPlayerEnabled: V.z.boolean(),
-       musicPlayerAutoplay: V.z.boolean(),
-       messageLayout: V.z.enum(Y.Yj),
-       experimentalVariant: V.z.enum(Y.qv),
-       experimentalAvatarPosition: V.z.enum(Y.YX),
-       experimentalInlineAvatar: V.z.boolean(),
-       experimentalDisableAvatarFade: V.z.boolean(),
-       showAvatars: V.z.boolean(),
-       avatarShape: V.z.enum(Y.Vi),
-       avatarSize: V.z.enum(Y.DV),
-       hideAvatarBorder: V.z.boolean(),
-       borderStyle: V.z.string(),
-       textAdventureActionPrefix: V.z.string(),
-       textAdventureShowDividers: V.z.boolean(),
-       font: V.z.string(),
-       textAlignment: V.z.enum(Y.aj),
-       showUsernames: V.z.boolean(),
-       showModelName: V.z.boolean(),
-       enableEntryHighlighting: V.z.boolean(),
-       character_final_instructions: V.z.boolean(),
-       theme_id: V.z.string()
-     }).partial(),
-     notes: V.z.record(V.z.string())
-   });
-   ```
-   Schema `$` defines exactly **38 valid keys** in `values`. Under the Visual Novel mode section, the **only** defined property is `vnMode: V.z.boolean()`.
+Direct inspections, AST JSON parsing, independent regex analysis, test executions, and comparison against primary source chat log (`scratch/chat_export_ftrtAD79eddk9Ue9Jr2WJ.json`) established the following factual observations:
 
-2. In `scratch/14685-a6f37bf36e7cf713.js` (lines 155717–156350), the frontend form sanitization logic enforces:
-   ```javascript
-   u = o ? function(e) {
-     var t;
-     let a = {}, s = {};
-     for (let [t, s] of Object.entries(e.values))
-       (0, Y.IM)(t) && Object.assign(a, { [t]: s });
-     for (let [a, r] of Object.entries(null !== (t = e.notes) && void 0 !== t ? t : {}))
-       (0, Y.IM)(a) && Object.assign(s, { [a]: r });
-     return { version: 1, values: a, notes: s };
-   }(o) : void 0;
-   ```
-   The validator `(0, Y.IM)(t)` evaluates keys against the 38 registered schema fields. Any key not in the 38 registered keys is stripped during client-side serialization.
+### 1.1 Playtest Ground Truth Grounding (Chat Log Msg 42-45)
+Inspecting `scratch/chat_export_ftrtAD79eddk9Ue9Jr2WJ.json` confirmed the source playtest dialogue:
+- **Msg 42**: Alyssa displays a *"piccolo cilindro colorato, grande quanto un indice, e che somiglia ad un flashlight"* storing *"incantesimi congelati"* that activate upon breaking. She explains she crafts them herself because DMHA guild mages overcharge and self-crafting allows her to *"personalizzare l'incantesimo sull'utilizzatore"*. She confirms: *"io e Jasper siamo registrati tra gli hunter come personale di supporto."*
+- **Msg 43**: Scarlett acknowledges Alyssa as a pre-Med freshman, certified Guild healer, dungeon support specialist, and custom cylinder crafter. Sierra notes: *"Incantesimi congelati su matrice cristallina... La cristallografia runica applicata è roba da tirocinio avanzato... Se i tuoi sono personalizzati sull'utilizzatore, vuol dire che calibri la risonanza magica individuale di chi li userà."*
+- **Msg 44**: Alyssa details: *"Ho fatto le scuole alla St. Brugge Private Academy... Il mio maestro era un vecchissimo demone superiore, molto competente... lezioni private avanzate. È stato lui a insegnarmi a fare i cilindri, e anche le basi della magia abissale... Padre Revazhael e la sua voce che riempiva l'aula vuota come fumo nero, le sue mani pallide che guidavano le mie sopra la matrice cristallina mentre Jasper traduceva le rune dal banco accanto."*
+- **Msg 45**: Scarlett reacts to St. Brugge, Father Rev, and mentions Jasper putting three KSA fraternity members to flight at Welcome Fest with his gaze alone. Sierra contrasts Abyssal magic with Void/Necromancy: *"I necromanti del mio dipartimento lavorano con entità del Vuoto e residue, ma l'Abisso è, tipo, un livello completamente diverso di teoria magica."*
 
-3. In `scripts/configure_display_settings_and_flags.py` (lines 50–64) and `tests/test_milestone3_display_settings.py` (lines 36–46), `worker_m3` deployed and asserted:
-   ```python
-   EXPECTED_VN_OVERRIDES = {
-       "version": 1,
-       "values": {
-           "vnMode": True,
-           "vnTextSpeed": "normal",
-           "vnDirections": True,
-           "vnAutoAdvance": False,
-           "vnAutoDelayMs": 2500,
-           "vnSkipRead": False,
-           "vnTextboxOpacity": 0.85,
-           "vnSpriteLimit": 3,
-           "vnItalicAsThought": False
-       },
-       "notes": {}
-   }
-   ```
-   Direct comparison confirms:
-   - `vnMode`: Valid in schema `$`.
-   - `vnTextSpeed`: **Extraneous. NOT in schema `$`**.
-   - `vnDirections`: **Extraneous. NOT in schema `$`**.
-   - `vnAutoAdvance`: **Extraneous. NOT in schema `$`**.
-   - `vnAutoDelayMs`: **Extraneous. NOT in schema `$`**.
-   - `vnSkipRead`: **Extraneous. NOT in schema `$`**.
-   - `vnTextboxOpacity`: **Extraneous. NOT in schema `$`**.
-   - `vnSpriteLimit`: **Extraneous. NOT in schema `$`**.
-   - `vnItalicAsThought`: **Extraneous. NOT in schema `$`**.
+### 1.2 Substantive Lore Integration Across Target Files
+1. `FINAL/Jasper_Douglas_Bloodmoon_card.json` & `FINAL/personas/Jasper_Persona.json`:
+   - **Line 1 Bracket Block**: Exact length: 1,793 characters, 0 embedded newlines. Contains:
+     `EDUCATION: St. Brugge Private Academy alumnus;`, `SOCIAL_STATUS: Citizen, Registered Guild Hunter (Rank A, Support/Infiltrator, JDB-555), Black-Market Info-Broker, Outlaw;`, `radiant black sun birthmark on right hip (Mark of Sol)`, and positive-framed `lazy single caramel wolf ears that flick when amused`.
+   - **Backstory**: Deeply integrates St. Brugge Private Academy joint tutelage under Father Revazhael:
+     *"While Revazhael guided Alyssa in shaping crystalline matrices, Jasper sat at the adjoining desk translating ancient abyssal ciphers, elder runic inscriptions, and harmonic frequency nodes."*
+   - **Abyssal Armor & Formula**: Details Rev's gift of demonic black steel and twin daggers summoned instantly with:
+     *"Mor'gath xul vrak'thar, kor'eth zaram"* (*"Phantom of oblivion, hear my call"*).
+   - **Passing of Dragon Glass Katana**: Embeds the passing of Nixara's ancestral blade to Jasper upon Alyssa's Absolute Pacifist Vow at age 16 following the Blackwood massacre.
+   - **Family & Pack Collaboration**: Incorporates Jasper's acoustic engineering role:
+     *"While Alyssa synthesizes botanical reagents and alchemical matrices for her enchanted cylinders, Jasper utilizes his Acoustic and Sound Engineering training to calibrate the harmonic resonance frequencies to the aura of the intended user, preventing matrix fractures."*
+   - **Voice & Behavior / Campus Reputation**:
+     *"...putting three aggressive Kappa Sigma Alpha brothers to flight at the Welcome Fest with nothing more than an icy, unblinking glare and a razor-thin predatory grin."*
+     *"...teasing her affectionately about her sorority's kitten-decorated Wi-Fi router while discreetly auditing its firewall to ensure her security."*
+   - **RPG Stats Fix**: `[LEVEL: 19; SPECIES: Licantropo (Werewolf)...]`, completely eliminating the legacy Level 3 bug.
 
-4. In `scratch/19010-2f567930ecf4f745.js` (module 98043, offset 331900), the 8 extraneous fields originate from the client-side local React UI state array:
-   ```javascript
-   let u = ["vnMode", "vnTextSpeed", "vnAutoAdvance", "vnAutoDelayMs", "vnSkipRead", "vnTextboxOpacity", "vnDirections", "vnSpriteLimit", "vnItalicAsThought"];
-   ```
-   These represent in-browser display preferences for the upcoming VN player, not server-persisted schema `$` fields.
+2. `FINAL/personas/Alyssa_Persona.json` & `ARCHIVIO/cards_legacy/Alyssa_Douglas_Bloodmoon_card.json`:
+   - **Line 1 Bracket Block**: Exact length: 1,446 characters, 0 embedded newlines. Contains:
+     `EDUCATION: St. Brugge Private Academy alumnus;`, `Certified Guild Healer & Field Medic (Rank A, Hunter ID ADB-555)`, `crescent moon birthmark on left hip (Mark of Mani)`, and positive-framed `single pair of lupine ears nestled naturally in waves`.
+   - **Purge of "Novice Healing Mage"**: 100% purged across both files (0 occurrences).
+   - **Backstory**: Details St. Brugge Private Academy joint lessons:
+     *"While Revazhael's shadowy aura filled the empty classroom and Jasper translated ancient runic ciphers from the adjacent desk, Rev's pale hands guided Alyssa's fingers over raw crystalline matrices. Under his master tutelage, Alyssa mastered applied runic crystallography, the intricate crafting of enchanted cylinders, and the theoretical foundations of Abyssal magic, contrasting sharply with ordinary void necromancy."*
+   - **Signature Items & Vehicle (`Alyssa_Douglas_Bloodmoon_card.json`)**:
+     - *Enchanted Cylinders*: *"Sized like an index finger and resembling miniature colored flashlights, each cylinder houses a suspended, frozen spell within a calibrated crystalline matrix. They activate instantly when snapped, liberating the stored spell without requiring magical talent from the user. Alyssa crafts them personally to circumvent exorbitant DMHA guild prices and, crucially, to calibrate the spell matrix to the unique magical resonance of the specific hunter, preventing the catastrophic fractures common in cheap commercial cylinders."*
+     - *Dimensional Pochette (Bag of Holding)*: Includes *"her personal alchemical glassware (distillation flasks, ground-joint condensers, and alembics)"*.
+     - *Dimensional Refuge Key*: Refined to cite Father Revazhael and spirit butler Kobal.
 
-5. In `GET https://app.wyvern.chat/api/new/chat-logs/chat_log_PJx1W1rg3WUzRM7MnQrkN`:
-   - Top-level `chat_overrides` evaluates to `None`.
-   - The overrides payload was persisted solely inside `memory.chat_overrides`.
-   - In `scratch/19010-2f567930ecf4f745.js` line 238653, the client inspects `t.chatLog.chat_overrides` (which is `None`), but Visual Novel mode falls back to `world.world_features.vn_mode: true` via chunk 81904 offset 296305 (`function o(e, t) { return "boolean" == typeof e ? e : (null == t ? void 0 : t.vn_mode) === !0; }`).
+### 1.3 Formatting Invariants & Style Compliance
+- **Zero Em-Dashes**: File-wide raw string scans confirm strictly 0 occurrences of `—` across all 4 files.
+- **Zero Markdown Bold in Narrative**: 0 occurrences of `**` in `description`, `first_mes`, `personality`, and `scenario`.
+- **Positive Framing for Demi-Humans**: 0 occurrences of prohibited negative phrases (`(no human ears)`, `no human ears`, `senza orecchie umane`, `without human ears`) in any narrative description. Both cards include the mandatory positive framing instruction in `post_history_instructions`.
+- **World Clock 2024**: Both twins are age 19, born April 22, 2005 (`AGE: 19 (Born April 22, 2005)`). 0 occurrences of `{{age}}`.
 
-### 1.2 Right Sidebar Flags Audit
-Direct API query on `https://app.wyvern.chat/api/new/chat-logs/chat_log_PJx1W1rg3WUzRM7MnQrkN`:
-- `party_tied`: `True`.
-- `memory.scene_summaries.auto_enabled`: `True`.
-- `memory.scene_summaries.replace_enabled`: `True`.
-- `memory.scene_summaries.dynamic_enabled`: `True`.
-- `memory.scene_summaries.auto_approve`: `False` (CRITICAL: prevents unprompted AI overwrites).
-- `memory.scene_summaries.tail_n`: `12` (preserves the last 12 messages from replacement).
-- `memory.memory_scan.auto_approve`: `False` (AI content creation OFF).
-
-Direct API query on `https://app.wyvern.chat/api/worlds/_YpX47fNraQFw2dD7TdycJ`:
-- `enable_ai_tool_creation`: `False` (AI content creation OFF).
-- `world_features.creature_catcher`: `False`.
-- `world_features.ships`: `False`.
-- `world_features.vn_mode`: `True`.
-- `world_features.rpg_stats`: `True`.
-- `world_features.combat`: `True`.
-- `world_features.show_party_stats`: `True`.
-
-### 1.3 Stats Tab Character Sheets Readiness Audit
-Direct API query on `https://app.wyvern.chat/api/worlds/characters/world/_YpX47fNraQFw2dD7TdycJ`:
-- Exactly 13 Primary World Characters returned.
-- 13/13 have `rpg_stats.enabled: True`.
-- 13/13 have levels between 1 and 99 (Wulfnic: 99, Zefir: 99, Erik: 55, Logan: 49, Malachia: 28, Noah: 25, Scarlett: 20, Alyssa: 19, Jasper: 19, Mackenzie: 19, Finnegan: 19, Sierra: 18, Edric: 13).
-- 13/13 have 25-point 6-stat base stat sums equal to exactly 31.
-- Zero zeroed attributes: every single stat (`might`, `resilience`, `agility`, `wit`, `presence`, `scouting`) has a non-zero positive integer value between 1 and 9.
-- 13/13 have valid Cloudflare CDN avatars (`https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/...`).
-- Live HTTP HEAD requests confirmed **13/13 avatar URLs return HTTP 200 OK**.
-
-### 1.4 Automated Test Suite Execution
-- `python -m unittest tests/test_milestone3_display_settings.py`: 16/16 passed in 2.854s.
-- `python scripts/configure_display_settings_and_flags.py --verify-only`: exited with code 0.
-- `python -m unittest discover tests`: 207/207 passed in 15.834s.
-- Formatting discipline: exactly 0 em-dashes across all files.
+### 1.4 Test Suite Execution
+- `python scripts/verify_milestone3_cards_personas.py`: 10/10 tests passed (exit code 0).
+- `python scripts/verify_milestone2_lorebooks.py`: 6/6 regression tests passed (exit code 0).
+- `python scripts/verify_milestone_1.py`: 4/4 regression checks passed (exit code 0).
+- `python scratch/reviewer_m3_2_substantive_lore_audit.py`: 7/7 independent substantive lore suites passed (exit code 0).
 
 ---
 
 ## 2. Logic Chain
 
-1. **Schema Non-Conformance (Observation 1.1)**:
-   - Chunk 14685 formally defines schema `$` for `chat_overrides`.
-   - Schema `$` allows exactly 38 keys in `values`, of which `vnMode` is the only VN-related key.
-   - `worker_m3` populated `chat_overrides.values` with 8 extraneous keys (`vnTextSpeed`, `vnDirections`, `vnAutoAdvance`, `vnAutoDelayMs`, `vnSkipRead`, `vnTextboxOpacity`, `vnSpriteLimit`, `vnItalicAsThought`).
-   - Although Zod does not fail on unrecognized keys by default when parsing, frontend chunk 14685 applies `(0, Y.IM)(t)` which explicitly filters out any key not registered in the schema.
-   - Therefore, `chat_overrides` does not conform strictly to schema `$` without extraneous unvalidated fields.
-
-2. **Self-Certifying Test Hazard (Observation 1.1, 1.4)**:
-   - In `test_milestone3_display_settings.py`, `test_02_vn_display_settings_values` asserted that `chat_overrides` matched `EXPECTED_VN_VALUES`.
-   - `EXPECTED_VN_VALUES` was hardcoded to mirror the 8 extraneous fields rather than checking against schema `$`.
-   - This represents self-certifying verification where the test certifies the implementation against its own assumptions rather than the actual frontend contract.
-
-3. **Sidebar Flags and Character Sheets (Observations 1.2, 1.3)**:
-   - `scene/party auto-apply` is guaranteed by `party_tied: true` and `scene_summaries.auto_enabled: true`, while unprompted overwrites are strictly blocked by `auto_approve: false` and `tail_n: 12`.
-   - `AI content creation` is guaranteed OFF by `memory_scan.auto_approve: false` and `world.enable_ai_tool_creation: false`.
-   - Character sheets are 100% ready to render in the Stats tab with no missing portraits (13/13 HTTP 200) and no zeroed attributes.
+```
+[Observation 1.1: Primary Playtest Transcript Msg 42-45]
+Examined chat export ground truth: Father Revazhael St. Brugge tutelage, runic ciphers, flashlight-sized crystal cylinders with individual resonance calibration, Abyssal magic distinction, Jasper Welcome Fest KSA intimidation, and TIT router audit.
+    │
+    ▼
+[Verification Step 1: Substantive Playtest Alignment Audit]
+Executed independent audit script `scratch/reviewer_m3_2_substantive_lore_audit.py` querying the 4 target files. Confirmed all 6 primary lore motifs are not merely referenced as keywords, but seamlessly woven into the character backstories, dynamic pack relations, signature items, and voice sections.
+    │
+    ▼
+[Observation 1.2: PList Single-Line & JED+ 4-Block Layout]
+Parsed JSON structures and inspected line 1 block 0. Verified starting `[NAME: ` and ending `]`, exactly 0 embedded newlines, and strict progression through `BACKSTORY:` -> `FAMILY & PACK:` -> `VOICE & BEHAVIOR:`.
+    │
+    ▼
+[Verification Step 2: Architecture & Layout Compliance]
+Confirmed all 4 files adhere to GEMINI.md Rule 2 and PROJECT.md interface contracts. Jasper card and persona share 100% identical 10-block descriptions. Alyssa card and persona share 100% identical core 4-block sequences.
+    │
+    ▼
+[Observation 1.3: Integrity & Absence of Facades]
+Inspected worker's verification script `scripts/verify_milestone3_cards_personas.py` against adversarial check criteria (no hardcoded test returns, genuine file reading, direct string and regex assertions).
+    │
+    ▼
+[Verification Step 3: Anti-Cheat & Integrity Gate Passed]
+No shortcuts, no dummy facades, no hardcoded bypasses. The implementation is authentic, rigorous, and verifiable.
+    │
+    ▼
+[Conclusion]
+Milestone 3 achieves complete narrative fidelity with the playtest lore, satisfies all syntactic and structural invariants, and passes all verification gates.
+```
 
 ---
 
 ## 3. Caveats
 
-1. **VN Mode Runtime Impact**:
-   The presence of the 8 extraneous fields does not break VN mode in the browser because Wyvern falls back to `world.world_features.vn_mode: true` (chunk 81904). However, keeping extraneous unvalidated fields violates the clean contract requirement of Milestone 3 and creates drift between client expectations and backend persistence.
-2. **Top-Level `chat_overrides` Persistence**:
-   The backend MongoDB `ChatLog` model does not expose a schema path for top-level `chat_overrides`. Embedding in `memory.chat_overrides` is currently the only way it persists on `ChatLog`, but this is distinct from Character-level `metadata.chat_overrides`.
+1. **Standalone Lorebook NPC Dossiers**:
+   Standalone lorebook entries in `FINAL/Svartulfr_NPC_Primary.json` (`Vcj4h2TL4Usola2A4OOl6` for Jasper and `alyssa_world_dossier_2b54a223` for Alyssa) were synchronized during Milestone 2. The card and persona files reviewed here maintain 100% consistency with those dossiers.
+2. **Legacy Archived Files Outside Milestone Scope**:
+   While `ARCHIVIO/cards_legacy/Alyssa_Douglas_Bloodmoon_card.json` was within the milestone scope and has been completely remediated, other unassigned legacy files in `ARCHIVIO/cards_legacy/` (`Russ_card.json`, `Scarlett_Rose_card.json`, `Sierra_Cruz_card.json`) contain historical text from older sessions that can be addressed during repository-wide maintenance in Milestone 4.
+3. **Local Scope**:
+   Modifications are strictly localized in `FINAL/`, `FINAL/personas/`, and `ARCHIVIO/cards_legacy/`. Live Wyvern Web API cloud deployment is scheduled under separate deployment milestones.
 
 ---
 
-## 4. Conclusion & Required Actions
+## 4. Conclusion
 
-**Verdict**: `REQUEST_CHANGES`
+The work product delivered by `worker_m3` for Milestone 3 (Character Cards & Personas Synchronization) represents an exemplary implementation. Every playtest lore requirement from `scratch/chat_export_ftrtAD79eddk9Ue9Jr2WJ.json` is substantively integrated, the legacy Level 3 bug and "Novice Healing Mage" labels are eradicated, single-line PList headers are fully intact, and zero style invariants are breached.
 
-### Finding 1: [Major] Extraneous Unvalidated Fields in `chat_overrides`
-- **Location**: `scripts/configure_display_settings_and_flags.py` (lines 50–64), `tests/test_milestone3_display_settings.py` (lines 36–46), and live chat `chat_log_PJx1W1rg3WUzRM7MnQrkN`.
-- **Issue**: `chat_overrides.values` contains 8 extraneous keys (`vnTextSpeed`, `vnDirections`, `vnAutoAdvance`, `vnAutoDelayMs`, `vnSkipRead`, `vnTextboxOpacity`, `vnSpriteLimit`, `vnItalicAsThought`) that are not present in schema `$` of chunk 14685.
-- **Remediation**:
-  1. In `scripts/configure_display_settings_and_flags.py`, update `EXPECTED_VN_OVERRIDES` so that `values` contains strictly validated schema `$` fields:
-     ```python
-     EXPECTED_VN_OVERRIDES = {
-         "version": 1,
-         "values": {
-             "vnMode": True
-         },
-         "notes": {}
-     }
-     ```
-  2. Deploy the cleaned payload to `chat_log_PJx1W1rg3WUzRM7MnQrkN` via PUT.
-  3. In `tests/test_milestone3_display_settings.py`, update `EXPECTED_VN_VALUES` to `{"vnMode": True}` and add a test asserting that zero extraneous unvalidated keys exist in `chat_overrides.values`.
-  4. Regenerate `scratch/m3_display_settings_and_flags_verified.json`.
+**Final Verdict: APPROVE**
 
 ---
 
 ## 5. Verification Method
 
-1. **Verify Strict Schema Conformance:**
-   ```bash
+To independently verify this evaluation:
+
+1. **Execute Milestone 3 Verification Suite**:
+   ```powershell
+   python scripts/verify_milestone3_cards_personas.py
+   ```
+   *Expected result*: `ALL 10 VERIFICATION TESTS PASSED WITH 0 FAILURES`, exit code 0.
+
+2. **Execute Substantive Playtest Lore Audit**:
+   ```powershell
+   python scratch/reviewer_m3_2_substantive_lore_audit.py
+   ```
+   *Expected result*: `ALL SUBSTANTIVE PLAYTEST LORE AUDIT TESTS PASSED (100% OK)`, exit code 0.
+
+3. **Verify Regression Freedom on Milestone 2 & Milestone 1**:
+   ```powershell
+   python scripts/verify_milestone2_lorebooks.py
+   python scripts/verify_milestone_1.py
+   ```
+   *Expected result*: Both exit with code 0.
+
+4. **Verify Zero Em-Dashes and Single-Line PList Headers Across All 4 Files**:
+   ```powershell
    python -c "
    import json
-   from pathlib import Path
-   snap = json.loads(Path('scratch/m3_display_settings_and_flags_verified.json').read_text(encoding='utf-8'))
-   vals = snap['chat_overrides']['values']
-   # 38 registered keys in chunk 14685 schema $
-   ALLOWED = {'use_reply_options', 'reply_options_instructions', 'use_impersonate_override', 'impersonate_prompt', 'immersiveMode', 'vnMode', 'spriteLocation', 'spriteSize', 'disableSprites', 'useSpriteAsAvatar', 'showBackgroundOverlay', 'backgroundOverlayColor', 'disableBlur', 'hideThinkBlocks', 'showLiveReasoning', 'reasoningAutoScroll', 'reasoningPosition', 'musicPlayerEnabled', 'musicPlayerAutoplay', 'messageLayout', 'experimentalVariant', 'experimentalAvatarPosition', 'experimentalInlineAvatar', 'experimentalDisableAvatarFade', 'showAvatars', 'avatarShape', 'avatarSize', 'hideAvatarBorder', 'borderStyle', 'textAdventureActionPrefix', 'textAdventureShowDividers', 'font', 'textAlignment', 'showUsernames', 'showModelName', 'enableEntryHighlighting', 'character_final_instructions', 'theme_id'}
-   extraneous = set(vals.keys()) - ALLOWED
-   assert not extraneous, f'Extraneous keys found: {extraneous}'
-   print('Strict schema $ conformance: PASS')
+   files = ['FINAL/Jasper_Douglas_Bloodmoon_card.json', 'FINAL/personas/Jasper_Persona.json', 'FINAL/personas/Alyssa_Persona.json', 'ARCHIVIO/cards_legacy/Alyssa_Douglas_Bloodmoon_card.json']
+   for f in files:
+       raw = open(f, encoding='utf-8').read()
+       assert '—' not in raw, f'Em-dash in {f}'
+       desc = json.loads(raw)['description']
+       first_block = desc.split('\n\n')[0]
+       assert first_block.startswith('[') and first_block.endswith(']'), f'Bracket error in {f}'
+       assert '\n' not in first_block, f'Newline in line 1 of {f}'
+   print('Zero em-dashes and single-line PList verified.')
    "
    ```
 
-2. **Verify Live Cloud Flags:**
-   ```bash
-   python scripts/configure_display_settings_and_flags.py --verify-only
-   ```
-
-3. **Verify All Tests:**
-   ```bash
-   python -m unittest tests/test_milestone3_display_settings.py
-   python -m unittest discover tests
-   ```
+5. **Invalidation Conditions**:
+   - Any reintroduction of the em-dash (`—`).
+   - Any recurrence of `[LEVEL: 3;` in Jasper card.
+   - Any occurrence of `Novice Healing Mage` in Alyssa files.
+   - Any line breaks inside the Line 1 bracket block `[...]`.
+   - Any negative constraint text (e.g. `(no human ears)`) in narrative descriptions.

@@ -1,18 +1,18 @@
-# Progress Log — challenger_m2_1
+# Progress — challenger_m2_1
 
-Last visited: 2026-10-25T08:56:30Z
+Last visited: 2026-11-02T08:18:00Z
 
-- [x] Initialized DISPATCH.md, BRIEFING.md, and progress.md
-- [x] Read MANDATORY files: ORIGINAL_REQUEST.md, PROJECT.md, worker_m2_gen2/handoff.md
-- [x] Inspected frontend module 93312/WH and nC reverse-engineered code in scratch/
-- [x] Created and executed independent verification script `scratch/verify_m2_challenger_empirical.py`
-- [x] Verified live Wyvern Web API GET for Scenario `_2MTWKjxrQPdQVaz9y4Q7H` (HTTP 200, 3 scenes)
-- [x] Verified live Wyvern Web API GET for Chat Log `chat_log_PJx1W1rg3WUzRM7MnQrkN` (HTTP 200, Message #0 swipe)
-- [x] Verified live Wyvern Web API GET for World Characters in `_YpX47fNraQFw2dD7TdycJ` (108 total, 13 Primary active)
-- [x] Empirically validated beat splitting on `^=>([^:\n]{1,35}):\s*` matching frontend module 93312/nC
-- [x] Verified 100% resolution of all 13 Primary World Characters plus Narrator with portraits, nameplates, and avatars
-- [x] Verified Node.js V8 execution parity for module 93312 WH regex compilation
-- [ ] Complete full regression suite run
-- [ ] Update BRIEFING.md with findings
-- [ ] Write handoff.md with explicit verdict APPROVE
-- [ ] Send completion message to parent agent
+- [x] Initialized DISPATCH.md and BRIEFING.md
+- [x] Executed worker verification suite: `python scripts/verify_milestone2_lorebooks.py` (ALL PASSED)
+- [x] Executed full contract validation: `python scripts/verify_npc_schema_contract.py --all` (100% PASS RATE)
+- [x] Built independent adversarial stress test harness: `adversarial_m2_test.py`
+- [x] Tested byte-for-byte parity `entries == lexicon` across all 11 files (100% PASS)
+- [x] Tested mirror integrity between `FINAL/` and `lorebooks/optimized/` (100% PASS)
+- [x] Tested zero umbrella keys across all 311 NPC entries (100% PASS)
+- [x] Tested zero `{{age}}` macros across all lorebook contents (100% PASS)
+- [x] Tested schema normalization of Larek Steeltooth #211 and Father Revazhael #23 (100% PASS)
+- [x] Tested Alyssa and Jasper dossier enrichment and anti-collision persona protections (100% PASS)
+- [x] Evaluated and verified JavaScript / V8 regex compatibility for avatar activation patterns (100% PASS)
+- [x] Analyzed pre-existing caveats (historical duplicate ID `event_partita_di_campionato_` in Lorebook III)
+- [x] Final verdict established: APPROVE
+- [x] Writing handoff report and communicating to orchestrator via send_message

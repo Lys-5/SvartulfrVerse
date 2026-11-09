@@ -2,7 +2,7 @@
 
 Questo repository adotta il set unificato di regole operative e standard di progetto descritto in dettaglio in [GEMINI.md](GEMINI.md) e nella directory [.agents/rules/](.agents/rules/).
 
-Tutti gli agenti che operano in questo workspace devono seguire le 14 direttive modulari stabilite per la gestione delle Character Card, delle Location, dei Lexicon e delle API Wyvern.
+Tutti gli agenti che operano in questo workspace devono seguire le 15 direttive modulari stabilite per la gestione delle Character Card, delle Location, dei Lexicon e delle API Wyvern.
 
 ## Indice Rapido delle Regole Modulari
 
@@ -20,6 +20,7 @@ Tutti gli agenti che operano in questo workspace devono seguire le 14 direttive 
 12. [12. Lavoro in Locale su Database SQLite Wyldfire (Sospeso)](.agents/rules/12_lavoro_locale_sqlite_wyldfire.md)
 13. [13. Standard Operativo Chat di Gruppo Stand-Alone (/mine)](.agents/rules/13_workflow_chat_di_gruppo_stand_alone.md)
 14. [14. Standard Operativo di Sessione e Skill Integrate](.agents/rules/14_metodo_operativo_skills_integrate.md)
+15. [15. Architettura Second Brain (LLM Wiki 2026), Metabolismo Vault & Automazioni](.agents/rules/15_second_brain_vault_metabolism.md)
 
 Per la documentazione consolidata completa in un unico file, fare riferimento direttamente a [GEMINI.md](GEMINI.md).
 Per lo storico cronologico di tutte le modifiche, consultare e aggiornare puntualmente [CHANGELOG.md](CHANGELOG.md).

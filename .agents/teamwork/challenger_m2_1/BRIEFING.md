@@ -1,56 +1,65 @@
-# BRIEFING — 2026-10-25T08:58:00Z
+# BRIEFING — 2026-11-02T08:18:00Z
 
 ## Mission
-Empirically stress-test and independently verify Milestone 2 live state: scenario _2MTWKjxrQPdQVaz9y4Q7H, chat log chat_log_PJx1W1rg3WUzRM7MnQrkN, VN beat splitting regex matching module 93312/nC, and 13 characters + Narrator resolution.
+Adversarial empirical testing and validation of Milestone 2 (Standalone Lorebooks Emergent Lore Integration).
 
 ## 🔒 My Identity
-- Archetype: challenger
+- Archetype: empirical challenger
 - Roles: critic, specialist
-- Working directory: e:\repository\SvartulfrVerse\.agents\teamwork\challenger_m2_1
-- Original parent: eff09782-a727-440d-b9eb-2a9ad121b795
-- Milestone: Milestone 2
-- Instance: 1 of 1
+- Working directory: e:\repository\SvartulfrVerse\.agents\teamwork\challenger_m2_1\
+- Original parent: a6280f2d-32ae-4a10-82fa-5604ad40f230
+- Milestone: Milestone 2: Standalone Lorebooks Emergent Lore Integration
+- Instance: 1 of 2
 
 ## 🔒 Key Constraints
 - Review-only — do NOT modify implementation code
-- Must run verification code yourself. Do NOT trust worker claims or logs.
-- Empirical reproducibility required for any bug/challenge.
+- Empirical verification mandatory — must write and run verification code directly
+- Do not trust worker claims or logs without reproduction
+- Strict checking of entries == lexicon byte-for-byte identity, zero umbrella keys, zero {{age}}, valid schemas, mirror integrity
 
 ## Current Parent
-- Conversation ID: eff09782-a727-440d-b9eb-2a9ad121b795
-- Updated: 2026-10-25T08:58:00Z
+- Conversation ID: a6280f2d-32ae-4a10-82fa-5604ad40f230
+- Updated: 2026-11-02T08:18:00Z
 
 ## Review Scope
-- **Files to review**: e:\repository\SvartulfrVerse\.agents\teamwork\ORIGINAL_REQUEST.md, PROJECT.md, e:\repository\SvartulfrVerse\.agents\teamwork\worker_m2_gen2\handoff.md
-- **Interface contracts**: PROJECT.md / GEMINI.md / AGENTS.md
-- **Review criteria**: Independent live verification via HTTP GET against Wyvern API, VN beat parsing simulation against Wyvern frontend module 93312/nC, verification of all 13 characters + Narrator resolution.
+- **Files to review**:
+  - `FINAL/` (Svartulfr_Lorebook_I.json, Svartulfr_Lorebook_II.json, Svartulfr_Lorebook_III.json, Svartulfr_NPC_Primary.json, Svartulfr_NPC_Secondary.json)
+  - `lorebooks/optimized/` (all 6 standalone lorebooks including Svartulfr_Location.json)
+  - `scripts/verify_milestone2_lorebooks.py`
+  - `scripts/milestone2_lorebook_integration.py`
+  - `.agents/teamwork/worker_m2/handoff.md`
+- **Interface contracts**: `PROJECT.md`, `GEMINI.md`, `AGENTS.md`, `ORIGINAL_REQUEST.md`
+- **Review criteria**: schema validity, entry parity byte-for-byte, umbrella keys absence, age macro hygiene, mirror integrity, JED+ compliance
 
 ## Key Decisions Made
-- Implemented independent empirical verification script `scratch/verify_m2_challenger_empirical.py` using Python `regex` and authenticated HTTPS queries.
-- Queried live cloud scenario `_2MTWKjxrQPdQVaz9y4Q7H` and confirmed HTTP 200 with 3 scenes properly standardized.
-- Queried live active chat `chat_log_PJx1W1rg3WUzRM7MnQrkN` swipe `message_swipe_99mmMgEEQjk2pkJN3hXkQ` and confirmed HTTP 200 with 14 standardized beats.
-- Built exact simulation of frontend module 93312 (WH) and nC beat parser. Verified 100% resolution for all 13 Primary World Characters plus Narrator.
-- Verified Node.js V8 execution parity for module 93312 WH regex compilation (`scratch/test_node_nc_parser.js`).
-- Executed full repository test suite (191 tests passed in 13.952s).
-- Verdict: APPROVE.
+- Executed `scripts/verify_milestone2_lorebooks.py` (code 0, all passed).
+- Executed `scripts/verify_npc_schema_contract.py --all` (100% pass across all lorebooks).
+- Developed and executed independent adversarial test harness `.agents/teamwork/challenger_m2_1/adversarial_m2_test.py`.
+- Verified ECMAScript / V8 compatibility of avatar activation regexes (`(?<coreName>...)` and `\p{L}`).
+- Analyzed and documented pre-existing duplicate entry ID caveat in Lorebook III (`event_partita_di_campionato_`).
+- Delivered final verdict: APPROVE.
 
 ## Artifact Index
-- DISPATCH.md — incoming dispatch messages
-- BRIEFING.md — working memory
-- progress.md — liveness heartbeat
-- handoff.md — final handoff report
-- scratch/verify_m2_challenger_empirical.py — independent empirical test script
-- scratch/test_node_nc_parser.js — Node.js V8 parity test script
+- `DISPATCH.md` — Inbound message log
+- `BRIEFING.md` — Situational awareness
+- `progress.md` — Liveness heartbeat
+- `adversarial_m2_test.py` — Challenger independent test harness
+- `handoff.md` — Final 5-component handoff report
 
 ## Attack Surface
 - **Hypotheses tested**:
-  * Hypothesis 1: Does live scenario `_2MTWKjxrQPdQVaz9y4Q7H` conform to `=>Speaker:` beat splitting without em-dashes and asterisks? PASSED (0 em-dashes, 0 asterisks).
-  * Hypothesis 2: Does active chat swipe `message_swipe_99mmMgEEQjk2pkJN3hXkQ` parse cleanly without bleeding narrative? PASSED (14 distinct beats).
-  * Hypothesis 3: Do all 13 World Characters + Narrator resolve with correct nameplate and CDN avatar? PASSED (13/13 characters + Narrator).
-  * Hypothesis 4: Does the fallback regex `^=>([^:\n]{1,35}):\s*` cleanly catch `=>Narrator:` without character collision? PASSED.
-  * Hypothesis 5: Do aliases (`Mac`, `Finn`, full names) resolve to their canonical World Characters? PASSED.
-- **Vulnerabilities found**: None.
-- **Untested angles**: Runtime UI click simulation in active headless browser (deferred to Milestone 4 CDP validation as planned).
+  - Hyp 1: `entries == lexicon` parity might have subtle order or attribute divergence -> REJECTED (Exact 1:1 match across all 11 files).
+  - Hyp 2: Broad/umbrella keys might lurk in newly normalized entries or Secondary/Primary NPCs -> REJECTED (Zero broad keys across 311 entries).
+  - Hyp 3: `{{age}}` macros might persist in newly added or modified entries -> REJECTED (Zero `{{age}}` macros in any file).
+  - Hyp 4: `npc_larek_steeltooth` might retain anomalous schema or missing avatar -> REJECTED (Normalized with full `npc_info`, DCC avatar, `type: "npc"`).
+  - Hyp 5: `FINAL/` vs `lorebooks/optimized/` mirrors might diverge -> REJECTED (Exact byte-for-byte identity on all 5 pairs).
+  - Hyp 6: Avatar activation regexes might fail in Wyvern's V8 engine -> REJECTED (Verified in Node.js / V8 runtime).
+- **Vulnerabilities found**:
+  - Pre-existing historical defect: duplicate entry ID `event_partita_di_campionato_` at index 39 and 40 in `FINAL/Svartulfr_Lorebook_III.json` (unrelated to M2 changes, documented as caveat).
+- **Untested angles**:
+  - Live Wyvern Web API cloud push (scheduled for Milestone 4).
 
 ## Loaded Skills
-- None specified
+- **Source**: `e:\repository\SvartulfrVerse\.agents\skills\wyvern-card-lorebook-sync\SKILL.md`
+- **Local copy**: `e:\repository\SvartulfrVerse\.agents\teamwork\challenger_m2_1\wyvern-card-lorebook-sync_SKILL.md`
+- **Core methodology**: Modular pipeline for lorebook sync, entries == lexicon byte parity, anti-collision suppression, zero umbrella keys, NPC metadata standards.

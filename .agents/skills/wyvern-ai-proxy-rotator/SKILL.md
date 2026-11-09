@@ -94,3 +94,13 @@ python -c "import urllib.request, json; req = urllib.request.Request('http://127
 1. **Mai Connettere Debugger CDP Multipli:** Evitare connessioni parallele non rilasciate sulla porta remota di Chrome (`DevToolsActivePort`) per prevenire blocchi di sessione sotto la regola Single-Client.
 2. **CORS per Chiamate da Browser:** Qualsiasi gateway locale deve dichiarare esplicitamente le intestazioni CORS permissive, poiché il client Wyvern esegue richieste in cross-origin da `https://app.wyvern.chat`.
 3. **Isolamento Automatico 429/403:** I modelli che esauriscono la quota o vengono messi in pausa dal provider devono entrare immediatamente in cooldown per 60 secondi, evitando che le chiamate utente successive subiscano timeout.
+
+## Middleware di Context-Stripping & Compattazione Token (v1.6.0)
+
+Il proxy include un modulo deterministico `PayloadCompactor` (Phase 1-5) che riduce del 40-45% i caratteri e token di input senza alterare la semantica:
+- **Phase 1: Parameter Sanitization:** Rimozione penalty a zero e clamp `max_tokens`.
+- **Phase 2: XML Lore Deduplication:** Deduplica di entità `<npc>`, `<location>`, `<item>`, `<creature>`.
+- **Phase 3: Active Character Cross-Deduplication:** Rimuove dossier di personaggi già attivi nella sessione.
+- **Phase 4a: Stripping Commenti & CRLF:** Rimozione di commenti HTML/XML `<!-- ... -->`, conversione `\r\n` -> `\n`, collasso spazi tra delimitatori tag `>\s{2,}<` -> `>\n<`.
+- **Phase 4b: Empty Tag Pruning:** Rimozione di tag vuoti e attributi non valorizzati.
+- **Phase 5: Whitespace Collapsing & JED+ Spacing:** Collasso newline multiple (`\n{3,}` -> `\n\n`), normalizzazione semicolon nei blocchi JED+ (`;\s{2,}` -> `; `), salvaguardando integralmente le citazioni tra virgolette doppie dei dialoghi.

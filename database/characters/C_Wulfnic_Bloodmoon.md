@@ -149,7 +149,7 @@ As Bloodmoon Patriarch, Wulfnic serves as:
 |-----------|-------|--------|
 | Hair | Blonde → Silver-white with age | Visual Authority |
 | Eyes | Blue | Visual Authority |
-| Height | 195 cm | Visual Authority |
+| Height | 220 cm (7' 2.6") | Visual Authority |
 | Build | Lean, strong, refined | Visual Authority |
 | Aesthetic | Ancestral nobility | Visual Authority |
 

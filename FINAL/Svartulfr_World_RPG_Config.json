@@ -1,0 +1,625 @@
+{
+  "world_id": "_YpX47fNraQFw2dD7TdycJ",
+  "world_name": "Svartúlfr — Blackwood & Solarton",
+  "stat_config": {
+    "stats": [
+      {
+        "id": "strength",
+        "label": "Strength",
+        "abbreviation": "STR",
+        "description": "Physical power. Drives melee damage and physical attack rolls.",
+        "enabled": true
+      },
+      {
+        "id": "perception",
+        "label": "Perception",
+        "abbreviation": "PER",
+        "description": "Awareness and precision. Drives attack accuracy and consumable effectiveness.",
+        "enabled": true
+      },
+      {
+        "id": "endurance",
+        "label": "Endurance",
+        "abbreviation": "END",
+        "description": "Toughness and stamina. Drives max HP and physical defense.",
+        "enabled": true
+      },
+      {
+        "id": "charisma",
+        "label": "Charisma",
+        "abbreviation": "CHA",
+        "description": "Social influence and presence. Affects NPC reactions and persuasion.",
+        "enabled": true
+      },
+      {
+        "id": "intelligence",
+        "label": "Intelligence",
+        "abbreviation": "INT",
+        "description": "Mental acuity and arcane aptitude. Drives max MP, special attack, and special defense.",
+        "enabled": true
+      },
+      {
+        "id": "agility",
+        "label": "Agility",
+        "abbreviation": "AGI",
+        "description": "Speed and reflexes. Drives initiative, evasion, and flee chance.",
+        "enabled": true
+      },
+      {
+        "id": "luck",
+        "label": "Luck",
+        "abbreviation": "LCK",
+        "description": "Fortune and fate. Affects critical hits and initiative tiebreakers.",
+        "enabled": true
+      }
+    ],
+    "base_value": 8,
+    "max_value": 30,
+    "point_budget": 25,
+    "stat_roles": {
+      "hp_stat": "endurance",
+      "mp_stat": "intelligence",
+      "physical_attack": "strength",
+      "physical_defense": "endurance",
+      "special_attack": "intelligence",
+      "special_defense": "intelligence",
+      "speed": "agility",
+      "accuracy": "perception",
+      "evasion": "agility",
+      "flee": "agility",
+      "luck": "luck"
+    }
+  },
+  "relationship_config": {
+    "custom_moodlets": [
+      {
+        "id": "rut",
+        "label": "Rut",
+        "delta": 15,
+        "duration_hours": 72,
+        "description": "Dominant mating urge, territorial possessiveness, knot swelling, protective aggression toward partner."
+      },
+      {
+        "id": "heat",
+        "label": "Heat",
+        "delta": 15,
+        "duration_hours": 72,
+        "description": "Overwhelming primal mating drive, elevated body temperature, knotting receptivity, intense nesting."
+      },
+      {
+        "id": "scent_marked",
+        "label": "Scent Marked",
+        "delta": 10,
+        "duration_hours": 168,
+        "description": "Coated in partner or Alpha primal scent, signaling claim and deterring rival suitors."
+      },
+      {
+        "id": "mated_devotion",
+        "label": "Mated Devotion",
+        "delta": 25,
+        "duration_hours": 720,
+        "description": "Unbreakable psychic, emotional, and territorial devotion to bonded mate."
+      },
+      {
+        "id": "vampiric_blood_hunger",
+        "label": "Vampiric Blood Hunger",
+        "delta": -5,
+        "duration_hours": 24,
+        "description": "Burning predatory thirst for fresh blood, sharpened fangs, diminished restraint, viewing target as vital prey."
+      },
+      {
+        "id": "blood_frenzy",
+        "label": "Blood Frenzy",
+        "delta": -15,
+        "duration_hours": 12,
+        "description": "Uncontrollable sanguinary combat frenzy triggered by spilled arterial blood or severe blood starvation."
+      },
+      {
+        "id": "essentia_hunger",
+        "label": "Essentia Hunger",
+        "delta": -5,
+        "duration_hours": 24,
+        "description": "Starvation for sexual, emotional, or vital life essence (Succubi/Incubi), causing restless predatory focus."
+      },
+      {
+        "id": "seductive_haze",
+        "label": "Seductive Haze",
+        "delta": 10,
+        "duration_hours": 24,
+        "description": "Aura of pheromonal intoxication and heightened lust, blurring rational defenses and inducing compliance."
+      },
+      {
+        "id": "pack_bond_resonance",
+        "label": "Pack Bond Resonance",
+        "delta": 15,
+        "duration_hours": 48,
+        "description": "Harmonious pack telepathic resonance, heightened senses, emotional empathy, and communal safety."
+      },
+      {
+        "id": "feral_aggression",
+        "label": "Feral Aggression",
+        "delta": -10,
+        "duration_hours": 12,
+        "description": "Primal beast instincts overriding civilized thought; bared fangs, low growls, and combat hypervigilance."
+      },
+      {
+        "id": "blood_oath_bond",
+        "label": "Blood Oath Bond",
+        "delta": 20,
+        "duration_hours": 168,
+        "description": "Unshakeable obligation and supernatural fidelity sworn under runic blood oath or life debt."
+      },
+      {
+        "id": "betrayed_trust",
+        "label": "Betrayed Trust",
+        "delta": -25,
+        "duration_hours": 72,
+        "description": "Deep sorrow and bitter hostility from shattered pack loyalty, broken vows, or intimate deception."
+      }
+    ],
+    "moodlets": [
+      {
+        "id": "m_rut",
+        "label": "Rut",
+        "duration": 72,
+        "intensity": 5,
+        "effect": "Dominant mating urge, knot swelling, protective aggression"
+      },
+      {
+        "id": "m_heat",
+        "label": "Heat",
+        "duration": 72,
+        "intensity": 5,
+        "effect": "Overwhelming primal mating drive, knotting receptivity"
+      },
+      {
+        "id": "m_scent_marked",
+        "label": "Scent Marked",
+        "duration": 168,
+        "intensity": 3,
+        "effect": "Coated in primal claiming scent, deterring rivals"
+      },
+      {
+        "id": "m_mated_devotion",
+        "label": "Mated Devotion",
+        "duration": 720,
+        "intensity": 5,
+        "effect": "Unbreakable psychic and territorial devotion"
+      },
+      {
+        "id": "m_vampiric_blood_hunger",
+        "label": "Vampiric Blood Hunger",
+        "duration": 24,
+        "intensity": 4,
+        "effect": "Burning predatory thirst for fresh blood, heightened senses"
+      },
+      {
+        "id": "m_blood_frenzy",
+        "label": "Blood Frenzy",
+        "duration": 12,
+        "intensity": 5,
+        "effect": "Uncontrollable sanguinary frenzy triggered by blood"
+      },
+      {
+        "id": "m_essentia_hunger",
+        "label": "Essentia Hunger",
+        "duration": 24,
+        "intensity": 4,
+        "effect": "Starvation for vital sexual/emotional essence"
+      },
+      {
+        "id": "m_seductive_haze",
+        "label": "Seductive Haze",
+        "duration": 24,
+        "intensity": 3,
+        "effect": "Pheromonal intoxication and blurred rational judgment"
+      },
+      {
+        "id": "m_pack_resonance",
+        "label": "Pack Bond Resonance",
+        "duration": 48,
+        "intensity": 2,
+        "effect": "Harmonious pack empathy and heightened senses"
+      },
+      {
+        "id": "m_feral_aggression",
+        "label": "Feral Aggression",
+        "duration": 12,
+        "intensity": 4,
+        "effect": "Primal beast instincts, bared fangs, defensive posture"
+      },
+      {
+        "id": "m_blood_oath_bond",
+        "label": "Blood Oath Bond",
+        "duration": 168,
+        "intensity": 4,
+        "effect": "Unshakeable supernatural fidelity sworn under blood oath"
+      },
+      {
+        "id": "m_betrayed_trust",
+        "label": "Betrayed Trust",
+        "duration": 72,
+        "intensity": 5,
+        "effect": "Hostile wariness, broken communion, deep sorrow"
+      }
+    ],
+    "enabled": true
+  },
+  "shop_locations": [
+    {
+      "id": "_HPnYePHbmCVM9tMp69Hrg",
+      "name": "The Verve",
+      "marketplace_config": {
+        "enabled": true,
+        "name": "The Verve Private Cellar & Lounge",
+        "description": "High-end speakeasy and private club in Blackwood. Ultra-rare spirits, vintage champagnes, luminescent neon cocktails, and luxury reserves.",
+        "buy_rate": 0.5,
+        "inventory": [
+          {
+            "lexicon_entry_id": "_LVzCYVfahJF7yqdC77gxT",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_gK3VkKXD9QXCd3k8EM42p",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_UxxF3kPAjVb3kkYMLMLDN",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_zFMQb6pcAHLzWYMyN3g6x",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_CVBWaPP37egd4WRRjyj7W",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_rCMq1RdjjeVbFmQ9ycUkQ",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_1cVjGdFd8V3Q7pkad3Dt1",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_QtpdDqq1QQKXwGTJpJgUD",
+            "stock": -1,
+            "restock_cycle": 24
+          }
+        ]
+      }
+    },
+    {
+      "id": "_PjVjY62CtnLbhrEE69GbK",
+      "name": "Tidewrack Surf & Rental",
+      "marketplace_config": {
+        "enabled": true,
+        "name": "Tidewrack Surf & Coastal Outfitters",
+        "description": "Sun-bleached coastal shack in Solarton Bay. High-end carbon-fiber shortboards, wetsuits, cold-water waxes, biker nomad gear, and local leatherwork.",
+        "buy_rate": 0.5,
+        "inventory": [
+          {
+            "lexicon_entry_id": "_b4YjVRQ2hVJLHGJMfgUFp",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_Dp9qtARRc7ahMWHb8KDdh",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_FbQj2cAwYCJbCwtPMgdaX",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_BaFB83w6DGkJdHQFRHWMN",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_1cVjGdFd8V3Q7pkad3Dt1",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_FrLpFaULBEUrM1EnkYfUY",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_fX8FzBcbFFAV6Htmn4TNP",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_drc7r7KPtTDAb3UkBhPrp",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_LMbFnEpxDDTdwyUCAkkmB",
+            "stock": -1,
+            "restock_cycle": 24
+          }
+        ]
+      }
+    },
+    {
+      "id": "_H7PpzWXrQ228RgBw1Rqh9",
+      "name": "Market-Zone",
+      "marketplace_config": {
+        "enabled": true,
+        "name": "Solarton Market-Zone & Tactical Surplus",
+        "description": "Solarton's bustling commercial center. Specialized black-market tech, DMHA surplus equipment, heavy mechanic tools, dice, RPG miniatures, and alchemical field gear.",
+        "buy_rate": 0.5,
+        "inventory": [
+          {
+            "lexicon_entry_id": "_1cVjGdFd8V3Q7pkad3Dt1",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_FrLpFaULBEUrM1EnkYfUY",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_fX8FzBcbFFAV6Htmn4TNP",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_1WTbfahmng63e7qz8RbpA",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_kW81naTxb2Mph9aQgMKbg",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_qacTbKEFgej4ndm8D7YmV",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_7F8f77MwpJnhCXeMmctNe",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_eGrfMqCybMRyChUgNbYCK",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_hUT336WCffkNRrUDNPMre",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_fHc8hEjmLAaz1zXTPrke8",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_fG49qq6LVMApkzpFTyFAD",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_27xnFr6AqqJqN6EyzMAHj",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_kWJK9q3313zYAfR8UT1pc",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_emAUbbxE3WBAAn7rX18BY",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_LbKeWy2Fr2yGQGDYaph29",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_RV9cNGgNkQVNxrRYdzRNg",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_3mrctyEjmxpx4HMB2mG9e",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_a2MtcAwG1QCcd2eJKt1KN",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_LMbFnEpxDDTdwyUCAkkmB",
+            "stock": -1,
+            "restock_cycle": 24
+          }
+        ]
+      }
+    },
+    {
+      "id": "_QHaW3bG49Dx1QW4Ugg8xn",
+      "name": "Full Moon Market",
+      "marketplace_config": {
+        "enabled": true,
+        "name": "Full Moon Night Market",
+        "description": "Open-air nocturnal bazaar tucked along the Blackwood forest perimeter. Lupine apothecary, alchemical salves, wolfsbane remedies, rare biological suppressors, talismans, and fresh hunter game.",
+        "buy_rate": 0.5,
+        "inventory": [
+          {
+            "lexicon_entry_id": "_KyAh8ymQBwP9kzn4nezU3",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_pRJRWmqJeQTM3k19c9xJU",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_BnVPaNjWmhCnCX1b4zDdM",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_bbDzPj28Mrq2L6BxMqzxH",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_wNBn1df9BEc6QjYDHpJNX",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_z3QQXfVnCMzd79y2qjEH4",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_h4ze7HJDCUVGjrRFTf2WQ",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_jwz7Ke4hbQGMgLw36cENt",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_gKLdADmXkpM1XdLC6L6T2",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_yxP6wUGEkwxk7FFH7Br91",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_FA24ewwHf4Y8dhhpKzMhk",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_fnC4RyHggw2dxEXGcCUFP",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_3RFAn7KnBXcxN9p6cDBzf",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_drc7r7KPtTDAb3UkBhPrp",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_QtpdDqq1QQKXwGTJpJgUD",
+            "stock": -1,
+            "restock_cycle": 24
+          }
+        ]
+      }
+    },
+    {
+      "id": "_CAAHGnM3BGKpUb7JXYWm7",
+      "name": "The Dusty Coyote Diner",
+      "marketplace_config": {
+        "enabled": true,
+        "name": "The Dusty Coyote Roadhouse Kitchen & Pantry",
+        "description": "Historic highway diner with greasy chrome counters, bottomless coffee pots, massive monster burgers, homemade pies, and fresh Clover Valley dairy goods.",
+        "buy_rate": 0.5,
+        "inventory": [
+          {
+            "lexicon_entry_id": "_wFXpmhrEnjjDbJ7mV7cVT",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_aM8gyAY28CAreAARhkXLp",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_4RakHM7j2Lm2dNe9XdnwA",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_CVBWaPP37egd4WRRjyj7W",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_FJPqfwwp3zrx1FAXPK7dB",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_6yGybRVDVYF9BmPF6mUPW",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_Tp4p8Pr6KqUjUeY8tDeLb",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_rCMq1RdjjeVbFmQ9ycUkQ",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_VFhHFd4XJ6FYTcmBPLGz2",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_xp9HANz2MeYM7eHDKD8FY",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_RTc7dLgGz7g3qxfrQqEGB",
+            "stock": -1,
+            "restock_cycle": 24
+          },
+          {
+            "lexicon_entry_id": "_YFhALNxgF3V2GLqpXNLVX",
+            "stock": -1,
+            "restock_cycle": 24
+          }
+        ]
+      }
+    }
+  ]
+}

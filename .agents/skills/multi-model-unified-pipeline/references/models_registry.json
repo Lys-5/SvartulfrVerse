@@ -1,0 +1,500 @@
+{
+  "schema_version": "2026.11.1",
+  "registry_name": "Svartulfr Verse Multi-Model Unified Registry & PC OMEN AI Fleet",
+  "updated_at": "2026-11-09T22:08:00Z",
+  "special_routing_policies": {
+    "grok_bot": {
+      "client_id": "grok_bot",
+      "executable": "Grok Bot.exe",
+      "assistant_persona": "Groky (Coordinator of Hubby Groky, Purrky, Game Groky, Code Groky, Hire Me Groky)",
+      "exclusive_role": "Groky Personal Coordinator — Agenda & Code Groky Bridge (Worldbuilding Work-Slot Blocker)",
+      "allowed_task_types": [
+        "agenda_work_slot",
+        "work_slot_blocking",
+        "worldbuilding_schedule",
+        "code_groky_project_sync"
+      ],
+      "groky_ecosystem_map": {
+        "Groky (Main)": "Gmail (riordino lun 08:00, pulizia >3 anni, digest AI/design lun 10:30), Agenda Google Calendar (lavoro, studio, faccende, feste italiane e Asatru, giornate ridotte/libere, legenda colori condivisa con Davide), Casa (Google Home Hub, sveglia 10:00), Pasti/Spesa (ven 18:00).",
+        "Hubby Groky": "Mail e agenda di Davide in italiano, promemoria 20:30, feste cattoliche.",
+        "Purrky": "Casa e gatti (Rocky e Tatina, distributore, umido 19:30, faccende).",
+        "Game Groky": "Serate giochi co-op con Davide e feedback post-prova (fino al 7 dicembre).",
+        "Code Groky": "Progetti di sviluppo/design (incluso Svartulfr Verse) e riordino cartelle PC (spostamento sempre nel Cestino, mai cancellazione definitiva).",
+        "Hire Me Groky": "Aggiornamento CV e ricerca offerte di lavoro."
+      },
+      "invariants": [
+        "Nessuno invia niente o cancella qualcosa senza l'OK esplicito dell'utente.",
+        "Dal progetto Svartulfr Verse, inoltrare a Groky/Code Groky esclusivamente le richieste relative al blocco di slot di lavoro in agenda per lo sviluppo dell'ambientazione."
+      ],
+      "policy_note": "Inoltrare a Groky (e al suo sotto-agente Code Groky / Agenda) ESCLUSIVAMENTE le richieste relative al blocco di slot di lavoro in Google Calendar per lo sviluppo dell'ambientazione, rispettando feste italiane/Asatru, orari di casa (sveglia 10:00, umido gatti 19:30, promemoria Davide 20:30) e la regola aurea: nessuna modifica/invio/cancellazione senza OK esplicito."
+    },
+    "gemini_desktop": {
+      "client_id": "gemini_desktop",
+      "executable": "Gemini.exe",
+      "exclusive_role": "Visual & Image Generation Studio (via Gemini 4 Argon)",
+      "model_engine": "gemini-4-argon",
+      "allowed_task_types": [
+        "image_generation",
+        "visual_asset_creation",
+        "character_portrait",
+        "location_background"
+      ],
+      "policy_note": "Utilizzato tramite modello Gemini 4 Argon esclusivamente per la creazione e generazione delle immagini (avatar, outfit, location dawn/day/dusk/night)."
+    }
+  },
+  "rate_limiting": {
+    "requests_per_second": 2.0,
+    "min_delay_seconds": 0.5,
+    "max_retries": 3,
+    "backoff_base_seconds": 2.0,
+    "lock_file": "scratch/.multi_model_rate_limit.lock"
+  },
+  "tiers": {
+    "tier_1_scout_fast": {
+      "tier_number": 1,
+      "id": "scout-fast",
+      "name": "Tier 1 — Scout & Fast Checks",
+      "role": "Fast verification, health checks, regex scanning, platform bundle monitoring, and proxy model list hygiene.",
+      "primary_ide_models": [
+        "gemini-3.8-flash"
+      ],
+      "default_effort": "low",
+      "allowed_efforts": [
+        "low",
+        "medium"
+      ],
+      "subagent_types": [
+        "flash",
+        "flash_lite"
+      ],
+      "twin_proxy_models": [
+        "gemma-4-31B-it",
+        "qwen-3.8-27b"
+      ],
+      "desktop_clients": [
+        "copilot_desktop"
+      ],
+      "desktop_executables": [
+        "copilotapp.exe"
+      ],
+      "assigned_stages": [
+        {
+          "stage_id": "stage_0",
+          "name": "Stage 0: Vault Health Check & PC OMEN AI Clients Scan",
+          "script": "scripts/vault_health_check.py",
+          "effort": "low"
+        },
+        {
+          "stage_id": "stage_1a",
+          "name": "Stage 1A: Wyvern Platform Bundle Monitor",
+          "script": "scripts/daily_wyvern_platform_monitor.py",
+          "effort": "low"
+        },
+        {
+          "stage_id": "stage_1b",
+          "name": "Stage 1B: Proxy Free Models Hierarchy Update",
+          "script": "proxy/update_free_models.py",
+          "effort": "medium"
+        }
+      ],
+      "task_types": [
+        "health_check",
+        "clients_scan",
+        "platform_monitor",
+        "proxy_models_update",
+        "fast_check",
+        "regex_scan",
+        "scout"
+      ]
+    },
+    "tier_2_architect_sync": {
+      "tier_number": 2,
+      "id": "architect-sync",
+      "name": "Tier 2 — Architect & Sync Coder",
+      "role": "Structural schema verification, byte-for-byte parity (entries == lexicon), API scenario slot validation, and deterministic code refactoring.",
+      "primary_ide_models": [
+        "gemini-4-argon",
+        "claude-sonnet-5.5"
+      ],
+      "default_effort": "medium",
+      "allowed_efforts": [
+        "medium"
+      ],
+      "subagent_types": [
+        "inherit"
+      ],
+      "twin_proxy_models": [
+        "z-ai/glm-5.3",
+        "deepseek-chat"
+      ],
+      "desktop_clients": [
+        "copilot_desktop",
+        "claude_desktop"
+      ],
+      "desktop_executables": [
+        "copilotapp.exe",
+        "Claude.exe"
+      ],
+      "assigned_stages": [
+        {
+          "stage_id": "stage_2",
+          "name": "Stage 2: Omni-Sync Forensic Audit & Byte-for-Byte Parity (entries == lexicon)",
+          "script": "scripts/daily_omnisync_archive_mining.py",
+          "args": [
+            "--skip-mining"
+          ],
+          "effort": "medium"
+        }
+      ],
+      "task_types": [
+        "omnisync_audit",
+        "schema_parity",
+        "api_sync",
+        "code_refactor",
+        "architect_sync"
+      ]
+    },
+    "tier_3_lore_judge": {
+      "tier_number": 3,
+      "id": "lore-judge",
+      "name": "Tier 3 — Deep Lore & Forensic Judge",
+      "role": "Deep narrative JED+ synthesis, active test chat drift forensics, character lore enrichment, and historical archive lore recovery.",
+      "primary_ide_models": [
+        "claude-opus-5.5",
+        "gemini-4-argon"
+      ],
+      "default_effort": "high",
+      "allowed_efforts": [
+        "high"
+      ],
+      "subagent_types": [
+        "pro"
+      ],
+      "twin_proxy_models": [
+        "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "z-ai/glm-5.3",
+        "deepseek-chat"
+      ],
+      "desktop_clients": [
+        "claude_desktop"
+      ],
+      "desktop_executables": [
+        "Claude.exe"
+      ],
+      "assigned_stages": [
+        {
+          "stage_id": "stage_3a",
+          "name": "Stage 3A: Active Chat Monitor & Character Lore Enrichment",
+          "script": "scripts/daily_character_enrichment.py",
+          "effort": "high"
+        },
+        {
+          "stage_id": "stage_3b",
+          "name": "Stage 3B: Archive Lore Mining Engine",
+          "script": "scripts/archive_mining_engine.py",
+          "effort": "high"
+        }
+      ],
+      "task_types": [
+        "character_enrichment",
+        "chat_monitor",
+        "archive_mining",
+        "lore_synthesis",
+        "forensic_judge",
+        "deep_lore"
+      ]
+    }
+  },
+  "ide_models": {
+    "gemini-4-argon": {
+      "display_name": "Gemini 4 Argon",
+      "vendor": "Google DeepMind",
+      "context_window": 2000000,
+      "subagent_mapping": "pro",
+      "effort_stages": {
+        "low": {
+          "thinking_budget": 2048,
+          "reasoning_effort": "low",
+          "payload_adapter": {
+            "thinking_config": {
+              "thinking_budget": 2048
+            }
+          }
+        },
+        "medium": {
+          "thinking_budget": 8192,
+          "reasoning_effort": "medium",
+          "payload_adapter": {
+            "thinking_config": {
+              "thinking_budget": 8192
+            }
+          }
+        },
+        "high": {
+          "thinking_budget": 24576,
+          "reasoning_effort": "high",
+          "payload_adapter": {
+            "thinking_config": {
+              "thinking_budget": 24576
+            }
+          }
+        }
+      }
+    },
+    "gemini-3.8-flash": {
+      "display_name": "Gemini 3.8 Flash",
+      "vendor": "Google DeepMind",
+      "context_window": 1000000,
+      "subagent_mapping": "flash",
+      "effort_stages": {
+        "low": {
+          "thinking_budget": 1024,
+          "reasoning_effort": "low",
+          "payload_adapter": {
+            "thinking_config": {
+              "thinking_budget": 1024
+            }
+          }
+        },
+        "medium": {
+          "thinking_budget": 4096,
+          "reasoning_effort": "medium",
+          "payload_adapter": {
+            "thinking_config": {
+              "thinking_budget": 4096
+            }
+          }
+        },
+        "high": {
+          "thinking_budget": 12288,
+          "reasoning_effort": "high",
+          "payload_adapter": {
+            "thinking_config": {
+              "thinking_budget": 12288
+            }
+          }
+        }
+      }
+    },
+    "claude-opus-5.5": {
+      "display_name": "Claude Opus 5.5",
+      "vendor": "Anthropic",
+      "context_window": 500000,
+      "subagent_mapping": "pro",
+      "effort_stages": {
+        "low": {
+          "thinking_budget": 2048,
+          "reasoning_effort": "low",
+          "payload_adapter": {
+            "thinking": {
+              "type": "enabled",
+              "budget_tokens": 2048
+            }
+          }
+        },
+        "medium": {
+          "thinking_budget": 8192,
+          "reasoning_effort": "medium",
+          "payload_adapter": {
+            "thinking": {
+              "type": "enabled",
+              "budget_tokens": 8192
+            }
+          }
+        },
+        "high": {
+          "thinking_budget": 16384,
+          "reasoning_effort": "high",
+          "payload_adapter": {
+            "thinking": {
+              "type": "enabled",
+              "budget_tokens": 16384
+            }
+          }
+        }
+      }
+    },
+    "claude-sonnet-5.5": {
+      "display_name": "Claude Sonnet 5.5",
+      "vendor": "Anthropic",
+      "context_window": 500000,
+      "subagent_mapping": "inherit",
+      "effort_stages": {
+        "low": {
+          "thinking_budget": 1024,
+          "reasoning_effort": "low",
+          "payload_adapter": {
+            "thinking": {
+              "type": "enabled",
+              "budget_tokens": 1024
+            }
+          }
+        },
+        "medium": {
+          "thinking_budget": 8192,
+          "reasoning_effort": "medium",
+          "payload_adapter": {
+            "thinking": {
+              "type": "enabled",
+              "budget_tokens": 8192
+            }
+          }
+        },
+        "high": {
+          "thinking_budget": 16384,
+          "reasoning_effort": "high",
+          "payload_adapter": {
+            "thinking": {
+              "type": "enabled",
+              "budget_tokens": 16384
+            }
+          }
+        }
+      }
+    },
+    "gpt-oss-120b": {
+      "display_name": "GPT-OSS 120B",
+      "vendor": "OpenAI Open-Weights",
+      "context_window": 128000,
+      "subagent_mapping": "inherit",
+      "effort_stages": {
+        "low": {
+          "thinking_budget": 1024,
+          "reasoning_effort": "low",
+          "payload_adapter": {
+            "reasoning_effort": "low"
+          }
+        },
+        "medium": {
+          "thinking_budget": 4096,
+          "reasoning_effort": "medium",
+          "payload_adapter": {
+            "reasoning_effort": "medium"
+          }
+        },
+        "high": {
+          "thinking_budget": 12288,
+          "reasoning_effort": "high",
+          "payload_adapter": {
+            "reasoning_effort": "high"
+          }
+        }
+      }
+    }
+  },
+  "desktop_clients": {
+    "antigravity": {
+      "id": "antigravity",
+      "display_name": "Google Antigravity IDE",
+      "executable": "Antigravity.exe",
+      "install_path": "C:\\Users\\mande\\AppData\\Local\\Programs\\Antigravity\\Antigravity.exe",
+      "version_hint": "2.0+",
+      "assigned_tier": "orchestrator_core",
+      "cdp_arg": "--remote-debugging-port=9222"
+    },
+    "gemini_desktop": {
+      "id": "gemini_desktop",
+      "display_name": "Google Gemini Desktop (Argon Image Gen)",
+      "executable": "Gemini.exe",
+      "install_path": "C:\\Users\\mande\\AppData\\Local\\Google\\Gemini\\app-1.18.0\\Gemini.exe",
+      "version_hint": "1.18.0",
+      "assigned_tier": "visual_studio_argon_images",
+      "exclusive_scope": "Image & Visual Asset Creation (Gemini 4 Argon)",
+      "cdp_arg": "--remote-debugging-port=9223"
+    },
+    "grok_bot": {
+      "id": "grok_bot",
+      "display_name": "Groky Ecosystem (Grok Bot.exe — Agenda & Code Groky)",
+      "executable": "Grok Bot.exe",
+      "install_path": "C:\\Program Files\\Grok Bot\\Grok Bot.exe",
+      "version_hint": "0.79.3",
+      "assigned_tier": "groky_agenda_work_slots",
+      "exclusive_scope": "Groky Agenda & Code Groky: Worldbuilding Work-Slot Blocking ONLY (Requires User OK)",
+      "cdp_arg": "--remote-debugging-port=9224"
+    },
+    "claude_desktop": {
+      "id": "claude_desktop",
+      "display_name": "Anthropic Claude Desktop",
+      "executable": "Claude.exe",
+      "install_path": "C:\\Program Files\\WindowsApps\\Claude_2.9939.2.0_x64__pzs8sxrjxfjjc\\app\\Claude.exe",
+      "version_hint": "2.9939.2.0",
+      "assigned_tier": "tier_3_lore_judge",
+      "cdp_arg": "--remote-debugging-port=9225"
+    },
+    "copilot_desktop": {
+      "id": "copilot_desktop",
+      "display_name": "Microsoft Copilot Native App",
+      "executable": "copilotapp.exe",
+      "install_path": "C:\\Program Files (x86)\\Microsoft\\Copilot\\Application\\copilotapp.exe",
+      "version_hint": "157.0",
+      "assigned_tier": "tier_2_architect_sync",
+      "cdp_arg": "--remote-debugging-port=9226"
+    }
+  },
+  "external_providers_plug_and_play": {
+    "local_proxy": {
+      "provider_id": "local_proxy",
+      "display_name": "Svartulfr Local AI Proxy Rotator (:5005)",
+      "endpoint": "http://127.0.0.1:5005/v1/chat/completions",
+      "health_endpoint": "http://127.0.0.1:5005/health",
+      "models_endpoint": "http://127.0.0.1:5005/v1/models",
+      "protocol": "openai_compatible",
+      "auth_env": null,
+      "featured_models": [
+        "z-ai/glm-5.3",
+        "z-ai/glm-5.2",
+        "gemini-4-argon",
+        "gemini-3.8-flash",
+        "gemma-4-31B-it",
+        "qwen-3.8-27b",
+        "deepseek-chat",
+        "nvidia/nemotron-3-ultra-550b-a55b:free"
+      ]
+    },
+    "xai_grok": {
+      "provider_id": "xai_grok",
+      "display_name": "xAI Grok API",
+      "endpoint": "https://api.x.ai/v1/chat/completions",
+      "protocol": "openai_compatible",
+      "auth_env": "XAI_API_KEY",
+      "featured_models": [
+        "grok-4",
+        "grok-4-mini-fast"
+      ]
+    },
+    "openrouter": {
+      "provider_id": "openrouter",
+      "display_name": "OpenRouter Unified Gateway",
+      "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+      "models_endpoint": "https://openrouter.ai/api/v1/models",
+      "protocol": "openai_compatible",
+      "auth_env": "OPENROUTER_API_KEY",
+      "featured_models": [
+        "z-ai/glm-5.3",
+        "google/gemma-4-31b-it:free",
+        "nvidia/nemotron-3-ultra-550b-a55b:free"
+      ]
+    },
+    "ollama_local": {
+      "provider_id": "ollama_local",
+      "display_name": "Ollama Local Runtime (:11434)",
+      "endpoint": "http://127.0.0.1:11434/v1/chat/completions",
+      "protocol": "openai_compatible",
+      "auth_env": null,
+      "featured_models": [
+        "gemma4:27b",
+        "qwen3.8:32b"
+      ]
+    },
+    "lm_studio_local": {
+      "provider_id": "lm_studio_local",
+      "display_name": "LM Studio Local Server (:1234)",
+      "endpoint": "http://127.0.0.1:1234/v1/chat/completions",
+      "protocol": "openai_compatible",
+      "auth_env": null,
+      "featured_models": [
+        "local-model"
+      ]
+    }
+  }
+}

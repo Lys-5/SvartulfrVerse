@@ -34,6 +34,7 @@ Non hanno orecchie umane aggiuntive ai lati della testa. Questa regola anatomica
   - Possiede **capelli color arcobaleno** e, dai fianchi in giù, la parte inferiore del corpo è interamente quella di un serpente di 4 metri **color arcobaleno con scaglie iridescenti** (`rainbow-colored hair` e `4-meter rainbow-colored serpentine tail covered in shimmering iridescent scales`).
   - **Divieto Assoluto di Termini Bipedi:** Non possiede gambe né piedi. È tassativamente vietato usare per Sierra termini o verbi come *gambe*, *piedi*, *ginocchia*, *scarpe*, *pantaloni*, *camminare* o *fare passi* (`legs`, `feet`, `knees`, `shoes`, `walk`, `step`, `stand on feet`). Sierra si muove esclusivamente strisciando, scivolando e avvolgendosi sulle sue spire (`slithers`, `glides`, `coils`).
 - **Scarlett Rose (Succubus — Palette Rosa Confetto & Corna Scarlatte):**
+- **Marchi Divini dei Gemelli (Mani & Sol) & Distinzione Titoli Cosmici (Maniulfr vs Solulfr):** I marchi celestiali risiedono **esclusivamente sulle anche**: Alyssa porta il Marchio Runico di Máni (mezzaluna argentata con glifi lunari sub-dermici) **unicamente sull'anca sinistra**; Jasper porta il Marchio Runico di Sól (sole nero radioso con glifi fiammeggianti sub-dermici) **unicamente sull'anca destra**. È vietato disperdere marchi multipli su mani, petto, nuca, clavicola o cuore (condividono soltanto il tatuaggio protettivo Gebo a inchiostro di ferro freddo sul polso sinistro). Inoltre, il titolo sacro **Sólúlfr** (Lupo del Sole) appartiene **esclusivamente a Svartr (Jasper)**; per Hvít (Alyssa) il titolo divino correlato a Máni è **Mániúlfr** (Maniulf / Lupo della Luna Bianca).
   - Possiede **capelli rosa confetto** (`candy-pink`), **occhi rosa confetto** abbinati e **due corna scarlatte** che spuntano visibilmente tra i capelli sopra le tempie, oltre alle ali scure da succubus e alla coda prensile con punta a picca.
 
 ---
@@ -85,3 +86,8 @@ Ogni character card redatta o aggiornata nel repository deve includere nel campo
 8. **`hybrid shift / mutation`**: Forma ibrida bipede da combattimento (per licantropi LSE: Hybrid Shift mastodontico con pelliccia, muso allungato e artigli; per altre razze/mutanti: forma da battaglia o mutazione parziale).
 9. **`full shift / other`**: Forma bestiale integrale a quattro zampe (per shifters: lupo gigante ancestrale; per non-shifters: uniforme operativa da campo specialistica o forma secondaria).
 
+---
+
+## 5. Sfondi per Fascia Oraria (Time of Day Backgrounds) e Tag Regista
+- **4 Periodi Canonici:** Le Location supportano immagini differenziate per `dawn`, `day`, `dusk` e `night`.
+- **Tag di Scena `[bg: LocationName]`:** Nella narrazione di Game Master, Assistant e bot in Visual Novel Mode, il cambio di scena deve utilizzare il tag `[bg: Nome Location]` (es. `[bg: Campus Suite Moonflower]`). L'engine di Wyvern sincronizza automaticamente lo sfondo con l'ora calcolata dall'AI Time Tracking senza forzature manuali.

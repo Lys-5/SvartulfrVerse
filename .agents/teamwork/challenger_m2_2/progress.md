@@ -1,11 +1,14 @@
 # Progress — challenger_m2_2
 
-- Last visited: 2026-10-25T08:56:30Z
-- Status: Verification Complete
-- Current Step: Writing handoff report and sending message to parent
-- Verification Results:
-  - `tests/test_milestone2_boundary_stress.py`: 16/16 PASSED (0.9s)
-  - Full test suite `discover -s tests`: 191/191 PASSED (12.9s)
-  - Live Wyvern Scenario `_2MTWKjxrQPdQVaz9y4Q7H`: 0 em-dashes, 0 asterisks, balanced quotes, 0 untagged dialogue
-  - Live Active Chat `chat_log_PJx1W1rg3WUzRM7MnQrkN`: 0 em-dashes, 0 asterisks, balanced quotes, 0 untagged dialogue
-- Verdict: APPROVE
+Last visited: 2026-11-02T08:19:00Z
+Status: Completed adversarial verification of Milestone 2 (VERDICT: APPROVE)
+
+- [x] Initialized DISPATCH.md and BRIEFING.md
+- [x] Read ORIGINAL_REQUEST.md, PROJECT.md, and worker_m2/handoff.md
+- [x] Created empirical test harness (`tests/test_adversarial_m2_standalone_lorebooks.py` and `scratch/adversarial_verify_m2_challenger2.py`)
+- [x] Test 1: Adversarial verification of persona protections (Alyssa & Jasper dossier entries) - 100% PASS
+- [x] Test 2: Token budget stress test across all 6 lorebooks (7500 Primary, 5000 others) - 100% PASS
+- [x] Test 3: Regression verification across all entries (count, structure, parity, schema, broad keys, em-dashes) - 100% PASS
+- [x] Updated BRIEFING.md
+- [x] Wrote handoff.md with verdict APPROVE
+- [x] Sent completion message to orchestrator

@@ -1,49 +1,50 @@
-# BRIEFING — 2026-10-25T08:08:00Z
+# BRIEFING — 2026-11-02T06:21:00Z
 
 ## Mission
-Investigate Requirement 2: Scenario syntax =>Speaker: standardization in scenario _2MTWKjxrQPdQVaz9y4Q7H (FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json) and active chat_log_PJx1W1rg3WUzRM7MnQrkN message #0.
+Survey the 6 standalone Lorebooks in `FINAL/` and `lorebooks/optimized/` to determine the exact entries, schemas, token budgets, and structural integration points for emergent lore (St. Brugge Private Academy, Father Revazhael, Applied Runic Crystallography & Resonant Cylinders, Abyssal vs Void Magic, and Alyssa/Jasper dossiers).
 
 ## 🔒 My Identity
 - Archetype: explorer
-- Roles: explorer_survey_2, read-only exploration and synthesis
-- Working directory: e:\repository\SvartulfrVerse\.agents\teamwork\explorer_survey_2
-- Original parent: eff09782-a727-440d-b9eb-2a9ad121b795
-- Milestone: Requirement 2 Investigation
+- Roles: survey, lorebook schema audit, synthesis
+- Working directory: e:\repository\SvartulfrVerse\.agents\teamwork\explorer_survey_2\
+- Original parent: a6280f2d-32ae-4a10-82fa-5604ad40f230
+- Milestone: emergent_lore_survey
 
 ## 🔒 Key Constraints
 - Read-only investigation — do NOT implement
-- Do NOT modify source code or deploy via API yet
-- Keep BRIEFING under ~100 lines
+- Analyze standalone Lorebooks in `FINAL/` and `lorebooks/optimized/`
+- Respect all formatting rules (JED+, no em-dash, dialogue in quotes, plain text actions, positive framing for demi-humans, single ear rule)
+- Enforce Lorebook schema invariants: `entries == lexicon` byte-for-byte, no umbrella/broad keys, proper token budgets, appropriate `selective` and `secondary_keys`, `ignored_characters`/`ignored_personas` where applicable.
 
 ## Current Parent
-- Conversation ID: eff09782-a727-440d-b9eb-2a9ad121b795
-- Updated: 2026-10-25T08:08:00Z
+- Conversation ID: a6280f2d-32ae-4a10-82fa-5604ad40f230
+- Updated: 2026-11-02T06:13:29Z
 
 ## Investigation State
 - **Explored paths**:
-  - `FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json`
-  - `scratch/deploy_world_scenario_welcome_day.py`
-  - `scratch/all_world_scenes_dump.txt`, `scratch/scenario_3_backup.json`
-  - `scratch/mod93312_dump.json`, `scratch/nC_extracted.js`, `scratch/nC_part2.js`
-  - `scratch/lorebook_chunks/47143-664487fdc18cadef.js`, `scratch/81904-87bfa0aca229c4ac.js`
-  - Wyvern Web API live endpoints: `GET /api/worlds/scenarios/_2MTWKjxrQPdQVaz9y4Q7H`, `GET /api/new/chat-logs/chat_log_PJx1W1rg3WUzRM7MnQrkN`
+  - `FINAL/` and `lorebooks/optimized/` all 6 standalone lorebooks inspected
+  - `scratch/chat_export_ftrtAD79eddk9Ue9Jr2WJ.json` playtest export analyzed in detail
+  - `FINAL/Svartulfr_Location.json` list (188 world locations) vs `lorebooks/optimized/Svartulfr_Location.json` (225 lorebook entries)
+  - `target_entries_inspection.txt`, `lorebook_search_results.txt`, `schema_survey_results.json`
 - **Key findings**:
-  - Scenario `_2MTWKjxrQPdQVaz9y4Q7H` in Scene 0 and Scene 1 lacks `=>` on character turns, has embedded untagged dialogue for Jasper/Alyssa and Wulfnic, and uses full formal names.
-  - Wyvern Visual Novel beat splitting (`nC_part2.js`) splits on `^=>([^:\n]{1,35}):\s*`. Matching against registered Lorebook/World characters resolves sprites and avatars. Untagged lines fail to render sprites.
-  - In active chat `chat_log_PJx1W1rg3WUzRM7MnQrkN`, message #0 (`chat_message_tcXGCpV2W4CY84gKLdXha`) contains swipe `message_swipe_99mmMgEEQjk2pkJN3hXkQ` with oversized name tags (`=>Noah Loki Douglas Bloodmoon:`, etc.).
-  - Frontend chunk 47143 reveals exact endpoint for editing message swipes: `PUT /api/new/chat-logs/swipe/{swipeId}` with body `{"content": "<content>"}`.
-  - Scenario update endpoint: `PUT /api/worlds/scenarios/{scenarioId}`.
-- **Unexplored areas**: None. All components of Requirement 2 are fully investigated and verified.
+  - St. Brugge is currently in `lorebooks/optimized/Svartulfr_Location.json` (#51, 403 chars) with broad keys (`Douglas`, `Blackwood`, `Seven Hills`). Needs key remediation and content expansion, plus a corresponding concept/institution entry in `Svartulfr_Lorebook_III.json` (46 entries, 5000 budget).
+  - Father Revazhael is currently in `FINAL/Svartulfr_NPC_Secondary.json` (#23, ID `jmh0MajEsRwrm4UYU14mY`) under name "Rev" with only `keys: ['Rev']`. Needs name/keys upgrade (`Father Revazhael`, `Padre Revazhael`, `Revazhael`, `Father Rev`), full JED+ profile aligning ancient Superior Demon status, St. Brugge mentorship, and SUCC campus life. Co-located with Kobal (#37) in Secondary.
+  - Resonant Cylinders (Item) belong in Lorebook II (`_HfG7TeV6MJyj6bxMwxkpt`, 142 entries, 5000 budget), while Applied Runic Crystallography (Concept) belongs in Lorebook I (`_gwwCxCfQ6PQaLEjAQVpJL`, 237 entries, 5000 budget).
+  - Abyssal Magic vs Void Magic/Necromancy belongs in Lorebook I (`_gwwCxCfQ6PQaLEjAQVpJL`) alongside `Magic: Necromancy` (#189).
+  - Alyssa & Jasper dossiers in NPC Primary (`alyssa_world_dossier_2b54a223` and `Vcj4h2TL4Usola2A4OOl6`) need targeted enrichment (Guild healer/support, crystal glassware crafting, Suite 3 fur nest/Wolfy plush, acoustic engineering, runic translation, intimidating aura).
+  - Anomaly found: Entry #211 in `Svartulfr_NPC_Secondary.json` (`npc_larek_steeltooth`) has `title` instead of `name` and missing `type: "npc"`.
+- **Unexplored areas**: None. Complete mapping accomplished.
 
 ## Key Decisions Made
-- Standardize all character turns across Scenes 0, 1 and Message #0 to canonical short first names: `=>Narrator:`, `=>Erik:`, `=>Logan:`, `=>Edric:`, `=>Noah:`, `=>Malachia:`, `=>Jasper:`, `=>Alyssa:`, `=>Wulfnic:`, `=>Zefir:`, `=>Finn:`, `=>Sierra:`, `=>Scarlett:`.
-- Separate embedded untagged dialogue for Jasper/Alyssa and Wulfnic into explicit `=>Speaker:` blocks.
-- Preserved 100% compliance with formatting discipline (0 em-dashes, 0 asterisks, quotes for dialogue, plain text action).
+- Mapped exact placement for all 5 core lore integration points across the 6 standalone lorebooks.
+- Designed comprehensive schemas for both new and modified entries.
 
 ## Artifact Index
-- DISPATCH.md — incoming instructions
-- BRIEFING.md — persistent working memory
-- progress.md — liveness heartbeat
-- chat_msg0.json — snapshot of active chat message #0
-- test_std_scene0.py, test_std_scene1.py, test_std_msg0.py — validation test scripts
-- handoff.md — comprehensive 5-component analysis report
+- `DISPATCH.md` — Inbound instructions log
+- `BRIEFING.md` — Working memory and state tracking
+- `progress.md` — Heartbeat and step tracking
+- `survey_lorebooks.py`, `inspect_deep.py`, `inspect_targets.py`, `survey_schemas.py` — Survey scripts
+- `lorebook_search_results.txt` — 194 keyword hits across lorebooks
+- `target_entries_inspection.txt` — Full dumps of relevant target entries
+- `schema_survey_results.json` — Detailed schema fields and frequencies across all 6 lorebooks
+- `handoff.md` — Final structured report

@@ -1,54 +1,60 @@
-# BRIEFING — 2026-10-25T08:33:00Z
+# BRIEFING — 2026-11-02T08:08:30Z
 
 ## Mission
-Execute Milestone 2 of PROJECT.md: Standardize Scenario syntax to `=>Speaker:` in `_2MTWKjxrQPdQVaz9y4Q7H`, update `FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json`, patch message #0 in active chat `chat_log_PJx1W1rg3WUzRM7MnQrkN`, deploy via Wyvern API, and verify with automated tests.
+Milestone 2: Standalone Lorebooks Emergent Lore Integration across all 6 standalone lorebooks in `FINAL/` and `lorebooks/optimized/`.
 
 ## 🔒 My Identity
 - Archetype: worker
 - Roles: implementer, qa, specialist
-- Working directory: e:\repository\SvartulfrVerse\.agents\teamwork\worker_m2
-- Original parent: eff09782-a727-440d-b9eb-2a9ad121b795
-- Milestone: Milestone 2: Scenario Syntax Standardization & Live Chat Patch
+- Working directory: e:\repository\SvartulfrVerse\.agents\teamwork\worker_m2\
+- Original parent: a6280f2d-32ae-4a10-82fa-5604ad40f230
+- Milestone: Milestone 2: Standalone Lorebooks Emergent Lore Integration
 
 ## 🔒 Key Constraints
-- File Ownership: `FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json`, `scripts/patch_welcome_day_scenario_and_chat.py`, `tests/test_milestone2_scenario_syntax.py`
-- Integrity Mandate: No hardcoding test results, no dummy implementations. Real state and genuine logic.
-- Format Discipline: 0 em-dashes (`—`), dialogue in quotes (`"..."`), plain text action (no asterisks).
-- Standardized syntax: `=>Speaker:` tag with clean short names (`=>Erik:`, `=>Logan:`, `=>Edric:`, `=>Noah:`, `=>Malachia:`, `=>Jasper:`, `=>Alyssa:`, `=>Wulfnic:`, `=>Zefir:`, `=>Finn:`, `=>Sierra:`, `=>Scarlett:`) and `=>Narrator:`.
-- Wyvern Web API endpoints:
-  - Scenario: `PUT https://app.wyvern.chat/api/worlds/scenarios/_2MTWKjxrQPdQVaz9y4Q7H`
-  - Chat swipe: `PUT https://app.wyvern.chat/api/new/chat-logs/swipe/message_swipe_99mmMgEEQjk2pkJN3hXkQ`
-- Communication: Always send results back via `send_message` to parent `eff09782-a727-440d-b9eb-2a9ad121b795`.
+- Strict byte-for-byte parity between `entries` and `lexicon` arrays in all modified JSON files.
+- Zero em-dashes (`—`). Use commas or periods.
+- Zero broad keys on NPC entries (`BROAD_KEYS` rules).
+- Positive framing for demi-human anatomy (never describe absence/lack of human ears).
+- Zero `{{age}}` macros.
+- Preserve `selective: true`, `secondary_keys`, `ignored_characters`, and `ignored_personas` on Alyssa and Jasper dossiers.
+- Mirror changes between `FINAL/` and `lorebooks/optimized/` where applicable.
+- Integrity mandate: genuine implementation, no dummy data, full test verification.
 
 ## Current Parent
-- Conversation ID: eff09782-a727-440d-b9eb-2a9ad121b795
-- Updated: 2026-10-25T08:33:00Z
+- Conversation ID: a6280f2d-32ae-4a10-82fa-5604ad40f230
+- Updated: 2026-11-02T08:08:30Z
 
 ## Task Summary
-- **What to build**: Standardization of Welcome Day scenario scenes (scene 0 & scene 1) and active chat message #0 using `=>Speaker:` tags, Python deployment/patching script, and unit tests verifying live and local integrity.
-- **Success criteria**: Local scenario JSON updated and validated; Wyvern Web API scenario updated (HTTP 200); active chat message swipe updated (HTTP 200); automated tests passing; handoff.md populated.
-- **Interface contracts**: PROJECT.md, GEMINI.md, AGENTS.md, explorer_survey_2/handoff.md
-- **Code layout**: `FINAL/scenarios/`, `scripts/`, `tests/`
+- **What to build**: Integrated 5 emergent lore entries, updated 2 existing entries (St. Brugge location #51, Father Revazhael #23), fixed 1 schema violation (Larek Steeltooth #211), and enriched 2 primary NPC dossiers (Alyssa #98, Jasper #60).
+- **Success criteria**: All modified files pass byte-for-byte parity (`entries == lexicon`), 0 em-dashes, 0 `{{age}}`, valid schemas, clean keys, positive framing.
+- **Interface contracts**: PROJECT.md, GEMINI.md, AGENTS.md, survey 2 and 3 handoffs.
+- **Code layout**: `FINAL/` and `lorebooks/optimized/`.
 
 ## Key Decisions Made
-- [TBD]
+- Created `scripts/milestone2_lorebook_integration.py` for idempotent, byte-for-byte accurate transformation.
+- Created `scripts/verify_milestone2_lorebooks.py` for automated multi-tier verification.
+- Reconciled entry counts: LB I (239 entries), LB II (143 entries), LB III (47 entries), Location (226 entries), NPC Secondary (212 entries), NPC Primary (99 entries).
 
 ## Artifact Index
-- `FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json` — Scenario definition
-- `scripts/patch_welcome_day_scenario_and_chat.py` — Patch and deploy script
-- `tests/test_milestone2_scenario_syntax.py` — Unit test suite
-- `progress.md` — Liveness & step-by-step progress
-- `handoff.md` — 5-component handoff report
+- `DISPATCH.md` — assignment dispatch
+- `BRIEFING.md` — situational awareness and persistent memory
+- `progress.md` — heartbeat and progress tracker
+- `handoff.md` — final 5-component handoff report
+- `scripts/milestone2_lorebook_integration.py` — implementation script
+- `scripts/verify_milestone2_lorebooks.py` — independent verification suite
 
 ## Change Tracker
-- **Files modified**: None yet
-- **Build status**: Untested
+- **Files modified**:
+  * `FINAL/Svartulfr_Lorebook_I.json` & `lorebooks/optimized/Svartulfr_Lorebook_I.json` (Added applied runic crystallography and abyssal magic concepts)
+  * `FINAL/Svartulfr_Lorebook_II.json` & `lorebooks/optimized/Svartulfr_Lorebook_II.json` (Added enchanted resonant cylinders item)
+  * `FINAL/Svartulfr_Lorebook_III.json` & `lorebooks/optimized/Svartulfr_Lorebook_III.json` (Added St. Brugge Private Academy concept)
+  * `lorebooks/optimized/Svartulfr_Location.json` (Cleaned St. Brugge #51 keys/text, added Theta Iota Theta: Suite 3)
+  * `FINAL/Svartulfr_NPC_Secondary.json` & `lorebooks/optimized/Svartulfr_NPC_Secondary.json` (Updated Father Revazhael #23, normalized Larek Steeltooth #211 schema)
+  * `FINAL/Svartulfr_NPC_Primary.json` & `lorebooks/optimized/Svartulfr_NPC_Primary.json` (Enriched Alyssa and Jasper dossiers with full credentials, background, and persona protection)
+- **Build status**: PASS (All 6 test suites passed)
 - **Pending issues**: None
 
 ## Quality Status
-- **Build/test result**: Untested
-- **Lint status**: Untested
-- **Tests added/modified**: `tests/test_milestone2_scenario_syntax.py` (planned)
-
-## Loaded Skills
-- None
+- **Build/test result**: PASS (100% parity, 0 broad keys, 0 em-dashes, 0 age macros)
+- **Lint status**: Clean
+- **Tests added/modified**: `scripts/verify_milestone2_lorebooks.py`

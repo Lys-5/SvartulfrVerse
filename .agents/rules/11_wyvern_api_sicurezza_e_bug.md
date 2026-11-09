@@ -126,6 +126,9 @@ Quando vengono avviate procedure di diagnosi, indagine o test che comportano la 
 | **`can_fork: false` su Persona Proposta (HTTP 400)** | `HTTP 400 Bad Request: Only your own forkable personas can be offered` durante il salvataggio o l'avvio scenario | Verificare che ogni Persona collegata a uno scenario in `linked_persona_ids` abbia tassativamente `can_fork: true` su `/api/user-personas/:id`. Senza questo flag Wyvern inibisce l'assegnazione e il forking della Persona al giocatore. |
 | **ID Persona Non Risolto (HTTP 404 su Persona GET)** | Chiamare `/api/user-personas/:id` con ID interni o hash non canonici restituisce 404 | Utilizzare sempre l'ID canonico numerico/ufficiale della Persona (es. `persona_1786335754946` per Alyssa e `1792155173728` per Jasper) anziché chiavi interne di database. |
 | **Dispersione Persona Proposta (Mancata Offerta in Chat)** | Il banner "Offer a persona to play as" non compare avviando la chat da uno scenario | L'opzione non è un campo globale di scenario ma risiede dentro ciascun greeting: configurare `linked_persona_ids` per ogni singolo greeting in `greetings[]`. |
+| **Fastify DELETE Empty Body (HTTP 500 FST_ERR_CTP_EMPTY_JSON_BODY)** | `HTTP 500: Body cannot be empty when content-type is set to 'application/json'` su chiamate `DELETE` verso `/api/worlds/rpg/{species\|occupations\|traits}/:id` | Omettere tassativamente l'header `Content-Type: application/json` quando si inviano richieste HTTP `DELETE` con body vuoto verso gli endpoint REST di Wyvern. La chiamata senza Content-Type restituisce `HTTP 204 No Content` ed esegue la rimozione pulita. |
+| **Subdocumenti Sprite/Gallery nei PUT Lorebook** | Omettere `gallery` o `sprite_sets` durante un PUT su `/api/lorebooks/:id` svuota le immagini caricate | Mantenere sempre nel payload i campi top-level `gallery` e `sprite_sets` recuperati dalla GET fresca. |
+| **Selettori UI NPC/Location su Editor Modali** | I test automatizzati Playwright/CDP falliscono cercando form inline | Gli editor di NPC e Location risiedono in `div[role="dialog"]`. Selezionare sempre il contenitore modale attivo prima di interagire con input e pulsanti di salvataggio. |
 
 ---
 
@@ -283,3 +286,26 @@ I gateway multiprovider o i proxy di failover devono implementare una quarantena
 - **Trigger:** Errori HTTP `429` (Rate limit esaurito), `403` (Quota esaurita o piano free in pausa temporanea), `5xx` (Server down) o Timeout di connessione (`>12s`).
 - **Comportamento:** Il modello in errore viene posto in cooldown in-memory. Le richieste successive per i 60 secondi successivi saltano istantaneamente l'upstream guasto senza attendere timeout di rete, instradandosi immediatamente sulla priorità successiva della cascata.
 - **Hot-Reload:** Il file di configurazione (`config_free_proxy.json`) deve essere monitorato tramite timestamp `mtime` per ricaricare le chiavi inserite dall'utente senza riavviare il servizio demone.
+
+
+---
+
+## 14. Trappola del Salvataggio UI sui World Characters e Sincronizzazione Quatrilaterale
+
+### 14.1 Wipe Silenzioso di `rpg_stats` e `start_timeline_position` da Web UI
+- **Sintomo:** Salvare un `WorldCharacter` (`/api/worlds/characters/:id`) tramite il form dell'interfaccia web di Wyvern azzera silenziosamente `rpg_stats: null` e `start_timeline_position: null` se i sottopannelli RPG/Timeline non vengono ricalcolati, e la creazione via `POST /api/worlds/characters` imposta di default `rating: "none"`.
+- **Protocollo di Ripristino Obbligatorio:** Dopo qualsiasi modifica da UI o creazione su un `WorldCharacter`, verificare via `GET /api/worlds/characters/:id` e inviare un `PUT` parziale con:
+  - `birthdate` e `start_timeline_position` coincidenti come **interi BigInt** in ore del World (mai stringhe ISO).
+  - `rpg_stats`: `{"enabled": true, "level": <età <= 99>, "species_id": null, "occupation_id": null, "base_stats": {"stat_1": ..., "might": ..., ...}}` (somma dei 6 attributi = 31).
+  - `visibility: "private"` e `rating: "explicit"`.
+  - Architettura **Dual-Summary**: `summary` con blocco PList compatto + sintesi JED+ essenziale, e `long_summary` con il dossier JED+ integrale.
+
+### 7.1 Trappole nei Payload Character e Scenario API (Aggiornamento Ottobre 2026)
+- **Scenari e Concurrency Control (`revision`):** L'endpoint `PUT /api/character-scenarios/{id}` adotta il locking ottimistico. È tassativo includere `'revision': live_data.get('revision')` nel payload; in caso contrario, il server rifiuta l'aggiornamento con `HTTP 409: {"error":"Scenario changed. Reload before saving."}`.
+- **Formato Rigoroso di `pronouns`:** Nelle Character Card, `pronouns` deve essere un oggetto a 5 chiavi (`pronoun_subjective`, `pronoun_objective`, `pronoun_possessive_determiner`, `pronoun_possessive_pronoun`, `pronoun_reflexive`). Il tipo stringa (`"He/Him"`) provoca `HTTP 400: Expected object, received string`.
+- **Riferimento `linked_world`:** Se presente, deve essere una stringa ID (es. `"_CgYT8fHXpDC4crjmegQF7"`), mai un oggetto annidato (`dict`).
+- **Campi Server-Side Esclusivi:** Omettere sempre `wyldfire_code` e `vanity_slug` nei payload di creazione/aggiornamento per prevenire errori `E11000 duplicate key error`.
+
+### 14.2 Gestione Modali NPC/Location e Sprite Sets nei Lorebook
+- **Disaccoppiamento DOM Editor:** L'editor di NPC e Location nel Character Editor apre finestre modali dedicate `div[role="dialog"]`. Nelle automazioni browser, interagire all'interno del modale attivo per evitare fallimenti di selezione.
+- **Integrità Subdocumenti:** Nelle operazioni via API sui Lorebook e sulle Persona, preservare sempre gli array `gallery`, `sprite_sets` e `alternate_avatars`.

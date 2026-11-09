@@ -1,13 +1,19 @@
-# Progress — explorer_survey_2
+# Progress Tracker — survey_explorer_2
 
-Last visited: 2026-10-25T08:10:45Z
-Status: Completed investigation of Requirement 2. Handoff report finalized.
+- Last visited: 2026-11-02T06:22:00Z
+- Status: Investigation Complete, Compiling Final Handoff Report
+- Active Task: Writing structured handoff.md
 
-- [x] Received dispatch and initialized BRIEFING.md
-- [x] Inspect ORIGINAL_REQUEST.md for context on Requirement 2
-- [x] Inspect FINAL/scenarios/Svartulfr_World_Scenario_SUCC_Welcome_Day.json and other files in FINAL/scenarios/
-- [x] Research Wyvern VN =>Speaker: syntax across skills, rules, and codebase
-- [x] Inspect active chat log chat_log_PJx1W1rg3WUzRM7MnQrkN (local files, API endpoints, message format)
-- [x] Determine exact API endpoints and payload formats for scenario update and chat log message #0 patching
-- [x] Draft and validate standardized texts for Scene 0, Scene 1, and Message #0
-- [x] Compile handoff.md following 5-Component Protocol and send completion message
+## Roadmap
+1. [x] Step 1: Initialize directory, DISPATCH.md, BRIEFING.md, progress.md
+2. [x] Step 2: Inspect directory contents and structure of `FINAL/` and `lorebooks/optimized/`
+3. [x] Step 3: Analyze all 6 standalone lorebooks:
+   - Lorebook I (`_gwwCxCfQ6PQaLEjAQVpJL`): 237 entries, 5000 budget
+   - Lorebook II (`_HfG7TeV6MJyj6bxMwxkpt`): 142 entries, 5000 budget
+   - Lorebook III (`_9zWTGqYJNJ4BCDMj8gfcD`): 46 entries, 5000 budget
+   - Lorebook Location (`_EjXxkmPVhpCXg8xABpFkK`): 225 entries, 5000 budget
+   - Lorebook NPC Primary (`_zwEqgEEzh12X6gHVmMKKC`): 99 entries, 7500 budget
+   - Lorebook NPC Secondary (`_Uht3Ckz44JBDrPnUHq7LV`): 212 entries, 5000 budget
+4. [x] Step 4: Examine existing entries related to magic, runes, cylinders, academies, and Alyssa/Jasper
+5. [x] Step 5: Synthesize integration requirements, schemas, exact fields, keys, secondary keys, budget impacts, and format rules
+6. [ ] Step 6: Write handoff report and send message to parent

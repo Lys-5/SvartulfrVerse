@@ -29,3 +29,16 @@ Appena l'utente approva il piano:
 A implementazione validata e funzionante, chiudi sempre il ciclo eseguendo:
 1. **Estrazione Memoria (`/learn`):** Analizza l'intera sessione. Estrai i pattern risolutivi, le preferenze dell'utente emerse durante `/grill-me`, i bug risolti con `chrome-devtools` e le informazioni chiave trovate con `/browser`. Salva queste regole nella memoria del progetto per ottimizzare le sessioni future.
 2. **Standardizzazione (`workflow-skill-creator`):** Valuta se il processo appena eseguito contiene pattern tecnici o script riutilizzabili. Se sì, proponi o genera automaticamente una nuova micro-skill dedicata tramite `workflow-skill-creator`.
+
+---
+
+## Matrice di Orchestrazione Multi-Modello a 3 Tier & Unified Master Pipeline
+
+Quando esegui o pianifichi task complessi o automazioni ricorrenti (`multi-model-unified-pipeline` / sidecar `daily-master-pipeline`), applica il routing gerarchico a 3 Tier registrato in `.agents/skills/multi-model-unified-pipeline/references/models_registry.json`:
+
+| Tier | Ruolo Operativo | Modelli IDE Primari & Effort | Modelli Gemelli (`:5005`) & Client PC OMEN | Stage Unificati Assegnati |
+| :--- | :--- | :--- | :--- | :--- |
+| **Tier 1 (`scout-fast`)** | Health check, regex, monitoraggio bundle e lista modelli | `gemini-3.8-flash` (`low` / `medium`, subagent `flash` / `flash_lite`) | `gemma-4-31B-it`, `qwen-3.8-27b` (`:5005`) • `Gemini.exe` | **Stage 0** (`vault_health_check.py` + Scan PC OMEN Clients)<br>**Stage 1A** (`daily_wyvern_platform_monitor.py`)<br>**Stage 1B** (`proxy/update_free_models.py`) |
+| **Tier 2 (`architect-sync`)** | Parità strutturale `entries == lexicon`, sync API e refactoring | `gemini-4-argon`, `claude-sonnet-5.5` (`medium`, subagent `inherit`) | `z-ai/glm-5.3`, `deepseek-chat` (`:5005`) • `copilotapp.exe` | **Stage 2** (`daily_omnisync_archive_mining.py --skip-mining`) |
+| **Tier 3 (`lore-judge`)** | Sintesi narrativa JED+, audit forense chat e recupero lore | `claude-opus-5.5`, `gemini-4-argon` (`high`, subagent `pro`) | `grok-4`, `nvidia/nemotron-3-ultra-550b-a55b:free`, `z-ai/glm-5.3` (`:5005`) • `Grok Bot.exe`, `Claude.exe` | **Stage 3A** (`daily_character_enrichment.py`)<br>**Stage 3B** (`archive_mining_engine.py`) |
+

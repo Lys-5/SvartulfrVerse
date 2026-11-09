@@ -81,3 +81,28 @@ Tutti i calcoli numerici, tiri di dadi e verifiche meccaniche devono essere rigo
 > [TEST: <Attributo> (D20: <Tiro> + <Mod> = <Totale> vs DC <Target>) -> ESITO: <SUCCESSO / FALLIMENTO / SUCCESSO CRITICO / FALLIMENTO CRITICO>]
 ```
 Il corpo narrativo deve rimanere al 100% letterario, viscerale e sensoriale, traducendo l'esito del tiro in conseguenze fisiche e psicologiche concrete senza inquinare la prosa con gergo numerico.
+
+---
+
+## 5. Regola di Auto-Provisioning RPG (Specie, Occupazioni e Tratti Mancanti)
+
+Durante la fase di creazione o modifica di qualsiasi personaggio (Character Card in `/mine` o `FINAL/`, User Persona o scheda NPC nei Lorebook `_zwEqgEEzh12X6gHVmMKKC` e `_Uht3Ckz44JBDrPnUHq7LV`):
+
+1. **Verifica della Corrispondenza nei Cataloghi:** L'assistente e la pipeline di deploy devono verificare preliminarmente che la `Specie`, l'`Occupazione` e tutti i `Tratti` dichiarati nel blocco RPG del personaggio trovino corrispondenza esatta nei cataloghi registrati sul World attivo (`POST /api/worlds/rpg/species`, `/occupations`, `/traits`) e nei cataloghi master locali (`scratch/rpg_*_catalog.json` e `FINAL/`).
+2. **Auto-Provisioning Immediato:** In caso di mancata corrispondenza (nessun match per nome o identificatore), il sistema o l'assistente **non deve rimuovere il tratto né generare errori bloccanti**, ma deve procedere **immediatamente alla creazione automatica (Auto-Provisioning)** dell'entità mancante sul World via Web API:
+   - **Endpoint:** `POST https://app.wyvern.chat/api/worlds/rpg/{species|occupations|traits}`
+   - **Payload Obbligatorio:**
+     ```json
+     {
+       "world_id": "_YpX47fNraQFw2dD7TdycJ",
+       "name": "<Nome Esatto della Specie / Occupazione / Tratto>",
+       "description": "<Descrizione narrativa diegetica, accurata e contestuale>",
+       "player_selectable": true,
+       "stat_modifiers": { "<stat_special>": <valore_delta> },
+       "tags": [],
+       "display_order": <prossimo_indice>
+     }
+     ```
+3. **Modificatori Coerenti con S.P.E.C.I.A.L.:** I modificatori assegnati (`stat_modifiers`) devono utilizzare tassativamente gli attributi S.P.E.C.I.A.L. ufficiali (`strength`, `perception`, `endurance`, `charisma`, `intelligence`, `agility`, `luck`) e riflettere fedelmente le capacità biologiche, mistiche o professionali descritte nella backstory o nel blocco JED+.
+4. **Sincronizzazione Contestuale dei Cataloghi Master:** Contestualmente alla creazione remota via API, l'assistente deve registrare la nuova entità nei cataloghi JSON master locali per preservare la parità omni-canale (`Omni-Parity`) e impedire drift tra World e archivio locale.
+
