@@ -259,10 +259,15 @@ Ogni voce di Lexicon focalizzata su un singolo personaggio (Intimacy Profiles, D
   - `inventory: true`, `currency: true`, `rpg_stats: true`, `combat: true`, `relationships: true`.
   - Disattivati per evitare il dump di tabelle nel prompt: `show_party_stats: false`, `show_species_info: false`.
   - Disattivati perché estranei al canone del World: `ships: false` (Cross-World Ships) e `creature_catcher: false` (Creature Catcher).
-- **Convenzioni RPG e Parametri di Bilanciamento (S.P.E.C.I.A.L.):**
+- **Convenzioni RPG, Dotazione Tratti (5–15) e Curva dei Livelli (S.P.E.C.I.A.L.):**
   - I 7 Attributi Ufficiali: `strength` (STR), `perception` (PER), `endurance` (END), `charisma` (CHA), `intelligence` (INT), `agility` (AGI), `luck` (LCK).
   - Parametri di bilanciamento World: `base_value: 8`, `max_value: 30`, `point_budget: 25`.
-  - Livello = Età anagrafica (fino a 99).
+  - **Dotazione RPG Obbligatoria (`1 Razza + 1 Occupazione + 5..15 Tratti`):** Tutti i personaggi hanno obbligatoriamente **1 Razza/Specie (`Species`)** + **1 Occupazione (`Occupation`)** + **da un minimo di 5 a un massimo di 15 Tratti (`Traits`)**. I **protagonisti** (`Alyssa`, `Jasper`, `Malachia`, `Noah`, incluse le varianti High Fantasy) e i **personaggi per lore molto potenti** (`Wulfnic`, `Zefir`, `Ut`, `Erik`, `Logan`, `Magnus`, `Cornelius`, `Zeera`, i Contractors DDM, i Demoni Superiori come `Father Revazhael`, ecc.) hanno **il massimo, ovvero esattamente 15 tratti**.
+  - **Curva Canonica dei Livelli (`Max Livello 99`):**
+    - **Da 0 a 13 anni:** `Livello 1`
+    - **Da 14 a 21 anni:** `Livello 2`
+    - **Maggiore `> 21` anni:** **`+1 livello ogni 5 anni`** ($\text{Livello} = \min(99, 2 + \lceil(\text{età} - 21)/5\rceil)$: es. 22–26 anni = Lv 3, 27–31 anni = Lv 4, 47–51 anni = Lv 8, 52–56 anni = Lv 9)
+    - **Max Livello:** `99`.
 - **Combat Role Mapping (`stat_roles`):**
   - Mappatura ufficiale vincolata per i ruoli di combattimento e vitalità del motore simulativo:
     - Vitalità: `hp_stat: "endurance"`, `mp_stat: "intelligence"`.

@@ -24,12 +24,21 @@ TRAITS:
 
 ---
 
-## 2. Convenzioni di Bilanciamento e Tetto al Livello 99
+## 2. Convenzioni di Bilanciamento, Composizione Tratti e Curva dei Livelli (Max 99)
 
 - **I Sette Attributi Ufficiali:**
   - `STR` (Strength), `PER` (Perception), `END` (Endurance), `CHA` (Charisma), `INT` (Intelligence), `AGI` (Agility), `LCK` (Luck).
 - **Budget di Partenza (Base Stats prima dei modificatori):** 81 punti totali (base 8 su tutte e 7 le statistiche = 56, più 25 punti distribuibili).
-- **Tetto al Livello 99 per Personaggi Ultracentenari:** Per tutti i personaggi che superano il secolo di vita (`Wulfnic`, `Zefir`, `Ut`, `Cornelius`, `Magnus`, `Nixara`), il livello RPG rimane fissato a **99**, mentre l'età reale millenaria o secolare è dichiarata nel blocco JED+ (`AGE: ...`).
+- **Regola di Composizione del Profilo RPG (`1 Specie + 1 Occupazione + 5..15 Tratti`):**
+  - Tutti i personaggi (Character Card, User Persona e NPC dei Lorebook) devono avere obbligatoriamente **1 Razza/Specie (`Species`)** + **1 Occupazione (`Occupation`)** + **da un minimo di 5 a un massimo di 15 Tratti (`Traits`)** per il calcolo delle statistiche RPG.
+  - **Massimo di 15 Tratti per Protagonisti e Personaggi Molto Potenti:** I **protagonisti** (`Alyssa`, `Jasper`, `Malachia`, `Noah`, incluse le rispettive varianti High Fantasy) e i **personaggi per lore molto potenti** (es. i Firstborn primordiali `Wulfnic`, `Zefir`, `Ut`, i capifamiglia e veterani d'élite come `Erik`, `Logan`, `Magnus`, `Cornelius`, `Zeera`, i Contractors DDM, i Demoni Superiori come `Father Revazhael`, ecc.) devono possedere **il massimo consentito, ovvero esattamente 15 tratti**.
+- **Curva Canonica dei Livelli per Età Anagrafica (Max Livello 99):**
+  - **Da 0 a 13 anni (`0 <= età <= 13`):** `Livello = 1` (es. Edric a 13 anni $\to$ `LEVEL: 1`).
+  - **Da 14 a 21 anni (`14 <= età <= 21`):** `Livello = 2` (es. Alyssa e Jasper a 19 anni $\to$ `LEVEL: 2`).
+  - **Maggiore di 21 anni (`età > 21`):** **`+1 livello ogni 5 anni`** oltre i 21 anni, secondo la progressione:
+    $$\text{Livello} = \min\!\left(99,\; 2 + \left\lceil \frac{\text{età} - 21}{5} \right\rceil\right)$$
+    *(es. 22–26 anni = Livello 3 [Noah, 25]; 27–31 anni = Livello 4 [Malachia, 28]; 47–51 anni = Livello 8 [Logan, 49]; 52–56 anni = Livello 9 [Erik, 55]; 137 anni = Livello 26 [Zeera]).*
+  - **Tetto Massimo al Livello 99 (`Max Level 99`):** Per tutti i personaggi ultracentenari/millenari il cui calcolo superi 99 (`Wulfnic`, `Zefir`, `Ut`, `Cornelius`, `Magnus`, `Nixara`, `Father Revazhael`), il livello RPG è fissato a **99**, mentre l'età reale millenaria o secolare è dichiarata nel blocco JED+ (`AGE: ...`).
 
 ---
 

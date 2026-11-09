@@ -13,10 +13,53 @@ species, occupations, and traits across:
 import os
 import sys
 import json
+import math
 import re
 import time
 import urllib.request
 import urllib.error
+
+def compute_level_from_age(age: int) -> int:
+    if age <= 13:
+        return 1
+    elif age <= 21:
+        return 2
+    else:
+        return min(99, 2 + math.ceil((age - 21) / 5))
+
+def extract_age_from_text(text: str, name: str = "") -> int:
+    nl = name.lower()
+    if any(k in nl for k in ["wulfnic", "zefir", "ut ", "ut,", "ut berg", "revazhael", "dullahan", "cornelius", "magnus", "nixara"]):
+        return 1000
+    m = re.search(r"AGE:\s*(\d+)", text, flags=re.I)
+    if m:
+        return int(m.group(1))
+    if any(k in text.lower() for k in ["millennia", "centuries", "firstborn", "ancient vampire", "1200", "1,200"]):
+        return 1000
+    if any(k in text.lower() for k in ["freshman", "sophomore", "undergrad", "1st-year", "2nd-year", "matricola"]):
+        return 19
+    if any(k in text.lower() for k in ["junior", "senior", "3rd-year", "4th-year"]):
+        return 21
+    return 25
+
+POWERHOUSE_KEYWORDS = [
+    "alyssa", "jasper", "malachia", "noah", "wulfnic", "zefir", "ut berg",
+    "erik", "logan", "magnus", "cornelius", "nixara", "zeera", "revazhael",
+    "archer wolfwood", "elizabeth duskwood", "dullahan", "luka sutter",
+    "richard whitlock", "fenrir", "johan jakobsen", "hana valencia",
+    "adam valencia", "kaladin", "thorvald", "harald sigurdsson",
+]
+
+def is_protagonist_or_powerhouse(name: str, text: str, age: int) -> bool:
+    nl = name.lower()
+    if any(k in nl for k in POWERHOUSE_KEYWORDS) or nl.strip() == "ut":
+        return True
+    if age >= 100:
+        return True
+    tl = text.lower()
+    if any(k in tl for k in ["firstborn", "prime alpha", "coven leader", "contractor #", "greater demon", "s-rank", "enigma"]):
+        return True
+    return False
 
 sys.stdout.reconfigure(encoding='utf-8')
 
@@ -307,12 +350,38 @@ def select_traits_for_character(name, text, species_obj, occ_obj, catalogs):
         add_tr('trickster mentor')
     if any(k in t for k in ['familiar', 'symbiosis']):
         add_tr('familiar soulbound synergy')
-        
-    # Cap between 2 and 6 traits
-    if len(traits) < 2:
-        add_tr('dungeon veteran')
-        add_tr('the weight he carries')
-    return traits[:6]
+
+    age = extract_age_from_text(text, name)
+    powerhouse = is_protagonist_or_powerhouse(name, text, age)
+    target_min = 15 if powerhouse else 5
+    target_max = 15
+
+    general_pool = [
+        'dungeon veteran', 'the weight he carries', 'knight in sour armor',
+        'mastermind', 'old money / aristocrat', 'ancient heritage',
+        'rebel heart / underground', 'tech savvy', 'nerdy / bookworm',
+        'eternal optimist', 'trickster mentor', 'feral blood',
+        'gentle giant', 'night stalker', 'pre-med / healer', 'familiar soulbound synergy',
+    ]
+    for gname in general_pool:
+        if len(traits) >= target_min:
+            break
+        add_tr(gname)
+
+    forbidden_for_non_firstborn = {'divine blood (firstborn)', 'primordial enigma', 'apex predator divine core'}
+    forbidden_alpha = {'dominant alpha', 'alpha command', 'pack leader', 'ascended enigma'}
+    for tr in catalogs['traits']:
+        if len(traits) >= target_min:
+            break
+        tn = tr['name'].lower()
+        if tn in forbidden_for_non_firstborn and not any(k in n for k in ['wulfnic', 'zefir', 'ut']):
+            continue
+        if tn in forbidden_alpha and any(k in n for k in ['noah', 'jasper', 'logan', 'edric', 'alyssa']):
+            continue
+        if tr not in traits:
+            traits.append(tr)
+
+    return traits[:target_max]
 
 def generate_base_stats_for_char(level, occ_obj, species_obj):
     extra_points = 25 + max(0, (level - 3) * 2)
@@ -800,13 +869,10 @@ def sync_world_characters(catalogs, token):
         occ_obj = find_best_occupation(name + ' ' + summary_text, catalogs)
         tr_objs = select_traits_for_character(name, summary_text, sp_obj, occ_obj, catalogs)
         
-        # Level
+        # Level (Canonical curve: 0-13 -> Lv 1, 14-21 -> Lv 2, >21 -> +1 Lv / 5 yrs, Max 99)
+        age = extract_age_from_text(summary_text, name)
+        level = compute_level_from_age(age)
         current_rpg = detail.get('rpg_stats') or {}
-        level = current_rpg.get('level') or 4
-        if any(k in name.lower() for k in ['wulfnic', 'zefir', 'ut']):
-            level = 99
-        elif any(k in name.lower() for k in ['erik', 'logan', 'warchief']):
-            level = 9
             
         # Stats
         base_stats = current_rpg.get('base_stats') or {}

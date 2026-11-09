@@ -201,6 +201,37 @@ class HealthAuditor:
             else:
                 self.record_pass(cat, f"Card '{char_name}' possiede {len(outfits)} outfits (minimo 9 rispettato)")
 
+            # Check RPG Stats & Traits rule (1 Species + 1 Occupation + 5..15 Traits, 15 for protagonists/powerhouses, canonical Level curve)
+            rpg_m = re.search(r"\[LEVEL:\s*(\d+);\s*SPECIES:\s*([^;]+);\s*OCCUPATION:\s*([^;]+);", desc)
+            age_m = re.search(r"AGE:\s*(\d+)", desc)
+            if not rpg_m:
+                self.record_error(cat, f"Card '{char_name}' manca di header RPG completo [LEVEL; SPECIES; OCCUPATION; CLASS]")
+            else:
+                lvl_val = int(rpg_m.group(1))
+                if age_m:
+                    age_val = int(age_m.group(1))
+                    if age_val <= 13:
+                        exp_lvl = 1
+                    elif age_val <= 21:
+                        exp_lvl = 2
+                    else:
+                        exp_lvl = min(99, 2 + ((age_val - 21 + 4) // 5))
+                    if lvl_val != exp_lvl:
+                        self.record_error(cat, f"Card '{char_name}' (AGE {age_val}) ha LEVEL {lvl_val} invece del canonico {exp_lvl}")
+                    else:
+                        self.record_pass(cat, f"Card '{char_name}' (AGE {age_val}) allineata al LEVEL canonico ({lvl_val})")
+
+                traits_part = desc.split("TRAITS:")[-1] if "TRAITS:" in desc else ""
+                bullet_traits = re.findall(r"^- ", traits_part, flags=re.M)
+                t_count = len(bullet_traits)
+                is_max_char = any(k in char_name.lower() for k in ["alyssa", "jasper", "malachia", "noah", "wulfnic", "erik", "logan", "zeera"])
+                if is_max_char and t_count != 15:
+                    self.record_error(cat, f"Card protagonista/top-lore '{char_name}' ha {t_count} tratti invece del massimo obbligatorio di 15")
+                elif not (5 <= t_count <= 15):
+                    self.record_error(cat, f"Card '{char_name}' ha {t_count} tratti RPG (fuori dal range 5..15)")
+                else:
+                    self.record_pass(cat, f"Card '{char_name}' dotazione RPG conforme (1 Specie + 1 Occupazione + {t_count} Tratti)")
+
     # --------------------------------------------------------------------------
     # 3. Igiene Trigger & Anti-Collisione
     # --------------------------------------------------------------------------

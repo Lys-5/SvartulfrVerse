@@ -30,9 +30,17 @@ graph TD
 
 ## 2. Componenti Chiave e Standard Operativi
 
-### 2.1 S.P.E.C.I.A.L. Stat Config & Combat Mapping
+### 2.1 S.P.E.C.I.A.L. Stat Config, Curva Livelli & Dotazione Tratti (5–15)
 - **Attributi Ufficiali:** `strength`, `perception`, `endurance`, `charisma`, `intelligence`, `agility`, `luck`.
 - **Parametri Base:** `base_value: 8`, `max_value: 30`, `point_budget: 25`.
+- **Dotazione RPG Obbligatoria (`1 Specie + 1 Occupazione + 5..15 Tratti`):**
+  - Ogni personaggio possiede `1 Specie` + `1 Occupazione` + `da 5 a 15 Tratti`.
+  - I **protagonisti** (`Alyssa`, `Jasper`, `Malachia`, `Noah`, incluse le varianti High Fantasy) e i **personaggi per lore molto potenti** (`Wulfnic`, `Zefir`, `Ut`, `Erik`, `Logan`, `Magnus`, `Cornelius`, `Zeera`, Contractors DDM, Demoni Superiori) possiedono **esattamente 15 tratti**.
+- **Curva Canonica dei Livelli (`Max 99`):**
+  - `0–13 anni` = `Livello 1`
+  - `14–21 anni` = `Livello 2`
+  - `> 21 anni` = `+1 livello ogni 5 anni` ($\min(99, 2 + \lceil(\text{età} - 21)/5\rceil)$)
+  - `Max Livello` = `99`.
 - **Mapping Obbligatorio `stat_roles`:**
   - `hp_stat`: `"endurance"`
   - `mp_stat`: `"intelligence"`
