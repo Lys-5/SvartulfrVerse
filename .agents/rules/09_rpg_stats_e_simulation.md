@@ -16,7 +16,7 @@ $$\text{STAT}_{\text{finale}} = \text{STAT}_{\text{base}} + \Delta_{\text{Specie
 ### Formato Standard del Blocco `RPG STATS & TRAITS:`
 ```text
 RPG STATS & TRAITS:
-[LEVEL: <Livello>; SPECIES: <Specie> (<Bonus/Malus Specie>); OCCUPATION: <Occupazione> (<Bonus/Malus Occupazione>); CLASS: <Classe Narrativa>]
+[LEVEL: <Livello>; ARC_LEVEL: <ARC Level DDM>; SPECIES: <Specie> (<Bonus/Malus Specie>); OCCUPATION: <Occupazione> (<Bonus/Malus Occupazione>); CLASS: <Classe Narrativa>]
 [STATS: STR <val>; PER <val>; END <val>; CHA <val>; INT <val>; AGI <val>; LCK <val>]
 TRAITS:
 - <Nome Tratto> (<Bonus/Malus Tratto>): <Descrizione del tratto>
@@ -24,7 +24,7 @@ TRAITS:
 
 ---
 
-## 2. Convenzioni di Bilanciamento, Composizione Tratti e Curva dei Livelli (Max 99)
+## 2. Convenzioni di Bilanciamento, Composizione Tratti, Curva dei Livelli (Max 99) e Classificazione ARC Level DDM
 
 - **I Sette Attributi Ufficiali:**
   - `STR` (Strength), `PER` (Perception), `END` (Endurance), `CHA` (Charisma), `INT` (Intelligence), `AGI` (Agility), `LCK` (Luck).
@@ -39,6 +39,30 @@ TRAITS:
     $$\text{Livello} = \min\!\left(99,\; 2 + \left\lceil \frac{\text{età} - 21}{5} \right\rceil\right)$$
     *(es. 22–26 anni = Livello 3 [Noah, 25]; 27–31 anni = Livello 4 [Malachia, 28]; 47–51 anni = Livello 8 [Logan, 49]; 52–56 anni = Livello 9 [Erik, 55]; 137 anni = Livello 26 [Zeera]).*
   - **Tetto Massimo al Livello 99 (`Max Level 99`):** Per tutti i personaggi ultracentenari/millenari il cui calcolo superi 99 (`Wulfnic`, `Zefir`, `Ut`, `Cornelius`, `Magnus`, `Nixara`, `Father Revazhael`), il livello RPG è fissato a **99**, mentre l'età reale millenaria o secolare è dichiarata nel blocco JED+ (`AGE: ...`).
+- **Classificazione DDM `ARC_LEVEL` (*Active / Alternate Reality Control*, Scala `0.0 – 5.0+` da `https://io-ddm.uwu.ai/`):**
+  - Ogni scheda personaggio, User Persona e voce NPC riporta obbligatoriamente il parametro **`ARC_LEVEL`** sia nel blocco PList iniziale `[...]` sia nell'intestazione `[LEVEL: ...; ARC_LEVEL: ...; ...]` del blocco `RPG STATS & TRAITS:`:
+    - **ARC Level `0.0`:** Non-concetto o oggetto inanimato privo di impatto sulla realtà.
+    - **ARC Level `1.0` (`0.8 – 1.1`):** Mortale umano standard privo di magia; **`1.2+`** è la soglia minima naturale di idoneità per un contratto DDM.
+    - **ARC Level `1.5 – 2.1` (Grado 2 / ACEs & Sovrannaturali Base):** Forza/sensi potenziati, empatia o telepatia minore; fascia tipica degli **ACE DDM** (`Corrin Snow: 1.8`, `Elias Carter: 1.9`, `Orion Kovač: 1.9`, `Aria Xenthon: 2.0`, `Catharsis Eight: 2.1`), dei Gamma pre-shift (`Edric: 1.6`) e degli studenti sovrannaturali SUCC.
+    - **ARC Level `2.2 – 2.9` (Soglia Chiusura Reality Tears):** `2.2` è il requisito minimo per sigillare autonomamente una *Reality Tear*; include operativi tattici e cacciatori di gilda (`Larek: 2.2`, `Echo: 2.3`, `Mackenzie: 2.4`).
+    - **ARC Level `3.0 – 3.9` (Grado 3 / Alta Magia, Mutazione & Contractors Standard):** Controllo elementale/runico avanzato, trasmutazione, manipolazione di portali e squarci:
+      - `Noah`: `3.2 (Pack Delta & Runic Tactician)`
+      - `Logan`: `3.4 (Elder Beta & DCC Commander)`
+      - `Hana & Adam Valencia (Contractor #02)`: `3.5 [medicated] - 4.2 [raw]`
+      - `Alyssa (Modern & High Fantasy)`: `3.6 (Base) / 4.2 (White Moon Hvit Resonance)`
+      - `Jasper (Modern & High Fantasy)`: `3.6 (Base) / 4.2 (Solar Svartr Resonance)`
+      - `Zeera Darkfire`: `3.6 (Horned Skull Clan Leader)`
+      - `Erik Douglas`: `3.7 (Prime Alpha of Seven Hills)`
+      - `Malachia (Modern & High Fantasy)`: `3.8 (Base) / 4.4 (Bastion Enigma Spike)`
+      - `Luka Sutter (Contractor #03)`: `3.8` | `Dr. Johan Jakobsen (Contractor #05)`: `3.9`
+    - **ARC Level `4.0 – 4.9` (Grado 4 / Alterazione della Realtà, Firstborn, Contractors Senior & Re SERAPHIM):**
+      - `Fenrir (Contractor #06)`: `4.0` | `Nixara`: `4.0` | `Cornelius & Magnus`: `4.1`
+      - `Father Revazhael`: `4.3 (Greater Nightmare Demon)`
+      - `Zefir & Ut Berg`: `4.4 (Surviving Firstborn Enigma)` | `Chaos (2nd King)`: `4.4`
+      - `Dullahan (Contractor #04)`: `4.5` | `Chorus (4th King)`: `4.5 [unstable]`
+      - `Richard Whitlock (Contractor #01)`: `4.6` | `Prism (3rd King)`: `4.6`
+      - `Wulfnic Báleygr Bloodmoon`: `4.8 (Primordial Firstborn Enigma)` | `Raphael (#00 / 1st King)`: `4.8`
+    - **ARC Level `5.0+` (Grado 5 / Entità Divina / Cosmica):** Divinità primordiali (`Fenris`, `Máni`, `Sól`, `Hati`, `Sköll`) e `The Council` (`>5.0`).
 
 ---
 

@@ -237,10 +237,16 @@ Ogni voce di Lexicon focalizzata su un singolo personaggio (Intimacy Profiles, D
 2. **Vincolo `attached_world_character_id` nei World con Linked Characters:** Se il World adotta i **Linked Characters** collegati da `/characters/mine` (Single Source of Truth), il campo `attached_world_character_id` deve essere impostato **TASSATIVAMENTE a `null` / `None`**. È vietato inserire ID di Character Card esterne in questo campo, poiché il backend Mongoose di Wyvern accetta esclusivamente ID di `WorldCharacter` embedded nel medesimo World (pena errore `HTTP 500: attached_world_character_id must reference a WorldCharacter in the same world`). La soppressione di collisione bot/giocatore si attua esclusivamente tramite gli array nativi `ignored_characters` e `ignored_personas`. Nei World con personaggi interni embedded, rimane valido il collegamento all'id del `WorldCharacter`.
 3. Le memorie corali (eventi collettivi, log di gruppo) rimangono senza Attached Character.
 
-### Attivazione delle Entry Lexicon
+### Attivazione delle Entry Lexicon e Nuovo Pannello "Lore Budget" di Wyvern
 - `is_global: false` disattiva l'entry dalla scansione a parole chiave: diventa idonea solo se inserita esplicitamente in `included_lexicon_entries` di una Location, Environment o Scenario con match di chiavi o `constant: true`.
 - `attached_world_character_id` non funge da trigger d'inclusione automatica.
 - **Filtri corretti:** `keys` (primarie = nome/specie) + `secondary_keys` (parole tematiche) con `key_logic: "AND_ANY"`, associati a `party_conditions` (`has_any [id_personaggio]`).
+- **Pannello "Lore Budget" nei Settings di Wyvern (World Party Context Allocation):**
+  Wyvern ha introdotto un pannello dedicato **Lore Budget** salvato per singolo *World Party* (`Saved for this world party`), che governa la quota di contesto riservata alle voci attivate da keyword rispetto alla cronologia recente dei messaggi:
+  - **Enable (`ON`):** Attiva i limiti personalizzati del party (se `OFF`, usa il budget di default della piattaforma; uno slider a `0` o un campo vuoto mantiene il default). Le percentuali sono calcolate sul **contesto residuo dopo la risposta** (*context left after the reply*), scalando dinamicamente con ogni AI Connection.
+  - **Lexicon budget (`30% of context` consigliato, oppure esprimibile in token con `Set in tokens instead`):** Tetto massimo complessivo di spazio nel prompt utilizzabile da **tutto ciò che è attivato tramite keyword** messo insieme (*lorebooks + character lexicon + world lexicon*).
+  - **All lorebooks combined (`30% of context` consigliato, oppure esprimibile in token con `Set in tokens instead`):** Tetto massimo complessivo utilizzabile da tutti i Lorebook combinati (all'interno di questo tetto continua ad applicarsi anche il `token_budget` individuale di ciascun Lorebook).
+  - **Always keep at least this many recent messages (`No minimum` di default, o floor numerico intero):** A differenza di *Max Messages Sent* (che è un tetto massimo / *ceiling*), questo parametro agisce come **pavimento minimo garantito (*floor*)**: i messaggi più recenti vengono riservati per primi nel context window, e il sistema Lore Budget utilizza esclusivamente lo spazio rimanente.
 
 ### Sprite Sets per NPC e Lorebook & Meccanismo Auto-Cutout
 - **Lorebook Sprites Tab:** I Lorebook Standalone supportano il tab `Sprites` (`gallery_sprites`). Le voci NPC possono specificare un campo opzionale `sprite_set_id` (o link a sprite set esistenti) per proiettare sul palco della Visual Novel Mode le espressioni facciali e le pose del personaggio.
@@ -268,6 +274,14 @@ Ogni voce di Lexicon focalizzata su un singolo personaggio (Intimacy Profiles, D
     - **Da 14 a 21 anni:** `Livello 2`
     - **Maggiore `> 21` anni:** **`+1 livello ogni 5 anni`** ($\text{Livello} = \min(99, 2 + \lceil(\text{età} - 21)/5\rceil)$: es. 22–26 anni = Lv 3, 27–31 anni = Lv 4, 47–51 anni = Lv 8, 52–56 anni = Lv 9)
     - **Max Livello:** `99`.
+  - **Classificazione DDM `ARC_LEVEL` (*Active / Alternate Reality Control*, Scala `0.0 – 5.0+` da `https://io-ddm.uwu.ai/`):**
+    - Ogni Character Card, User Persona e scheda NPC riporta obbligatoriamente il parametro **`ARC_LEVEL`** sia nel blocco PList iniziale `[...]` sia nell'intestazione `[LEVEL: ...; ARC_LEVEL: ...; ...]` del blocco `RPG STATS & TRAITS:`:
+      - `0.0`: Non-concetto / oggetto inanimato | `1.0`: Mortale umano standard (`1.2+` soglia minima di idoneità Contractor DDM).
+      - `1.5 – 2.1`: Sovrannaturali base, studenti SUCC, Gamma pre-shift (`Edric: 1.6`) e **ACE DDM** (`Corrin Snow: 1.8`, `Elias Carter: 1.9`, `Orion Kovač: 1.9`, `Aria Xenthon: 2.0`, `Catharsis Eight: 2.1`).
+      - `2.2 – 2.9`: Soglia minima per sigillare una *Reality Tear* (`2.2`); operativi e cacciatori di gilda (`Larek: 2.2`, `Echo: 2.3`, `Mackenzie: 2.4`).
+      - `3.0 – 3.9`: Alta magia, mutazione e Contractors standard (`Noah: 3.2`, `Logan: 3.4`, `Hana/Adam #02: 3.5 [medicated] - 4.2 [raw]`, `Alyssa: 3.6 (Base) / 4.2 (White Moon Hvit Resonance)`, `Jasper: 3.6 (Base) / 4.2 (Solar Svartr Resonance)`, `Zeera: 3.6`, `Erik: 3.7`, `Malachia: 3.8 (Base) / 4.4 (Bastion Enigma Spike)`, `Luka Sutter #03: 3.8`, `Johan Jakobsen #05: 3.9`).
+      - `4.0 – 4.9`: Alterazione della realtà, Firstborn Enigmas, Contractors Senior e Re SERAPHIM (`Fenrir #06: 4.0`, `Nixara: 4.0`, `Cornelius/Magnus: 4.1`, `Father Revazhael: 4.3`, `Zefir/Ut: 4.4`, `Chaos: 4.4`, `Dullahan #04: 4.5`, `Chorus: 4.5 [unstable]`, `Richard Whitlock #01: 4.6`, `Prism: 4.6`, `Wulfnic: 4.8`, `Raphael #00: 4.8`).
+      - `5.0+`: Divinità primordiali (`Fenris`, `Máni`, `Sól`, `Hati`, `Sköll`) e `The Council` (`>5.0`).
 - **Combat Role Mapping (`stat_roles`):**
   - Mappatura ufficiale vincolata per i ruoli di combattimento e vitalità del motore simulativo:
     - Vitalità: `hp_stat: "endurance"`, `mp_stat: "intelligence"`.

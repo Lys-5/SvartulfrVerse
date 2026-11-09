@@ -41,6 +41,14 @@ graph TD
   - `14–21 anni` = `Livello 2`
   - `> 21 anni` = `+1 livello ogni 5 anni` ($\min(99, 2 + \lceil(\text{età} - 21)/5\rceil)$)
   - `Max Livello` = `99`.
+- **Classificazione DDM `ARC_LEVEL` (*Active / Alternate Reality Control*, Scala `0.0 – 5.0+`):**
+  - Riportato obbligatoriamente sia nel PList iniziale `[...]` sia in `[LEVEL: <lvl>; ARC_LEVEL: <arc>; ...]` di ogni scheda:
+    - `1.0`: Mortale umano standard (`1.2+` soglia di idoneità Contractor DDM).
+    - `1.5 – 2.1`: Sovrannaturali base, Gamma pre-shift (`Edric: 1.6`) e ACE DDM (`1.8 – 2.1`).
+    - `2.2 – 2.9`: Soglia minima per chiudere una *Reality Tear* (`Larek: 2.2`, `Echo: 2.3`, `Mackenzie: 2.4`).
+    - `3.0 – 3.9`: Alta magia, mutazione e Contractors standard (`Noah: 3.2`, `Logan: 3.4`, `Hana/Adam #02: 3.5 [medicated] - 4.2 [raw]`, `Alyssa: 3.6 (Base) / 4.2 (White Moon Hvit Resonance)`, `Jasper: 3.6 (Base) / 4.2 (Solar Svartr Resonance)`, `Zeera: 3.6`, `Erik: 3.7`, `Malachia: 3.8 (Base) / 4.4 (Bastion Enigma Spike)`, `Luka Sutter #03: 3.8`, `Johan Jakobsen #05: 3.9`).
+    - `4.0 – 4.9`: Alterazione della realtà, Firstborn Enigmas, Contractors Senior e Re SERAPHIM (`Fenrir #06: 4.0`, `Father Revazhael: 4.3`, `Zefir/Ut: 4.4`, `Dullahan #04: 4.5`, `Richard Whitlock #01: 4.6`, `Wulfnic: 4.8`, `Raphael #00: 4.8`).
+    - `5.0+`: Divinità primordiali e `The Council` (`>5.0`).
 - **Mapping Obbligatorio `stat_roles`:**
   - `hp_stat`: `"endurance"`
   - `mp_stat`: `"intelligence"`

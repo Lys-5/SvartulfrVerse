@@ -201,13 +201,14 @@ class HealthAuditor:
             else:
                 self.record_pass(cat, f"Card '{char_name}' possiede {len(outfits)} outfits (minimo 9 rispettato)")
 
-            # Check RPG Stats & Traits rule (1 Species + 1 Occupation + 5..15 Traits, 15 for protagonists/powerhouses, canonical Level curve)
-            rpg_m = re.search(r"\[LEVEL:\s*(\d+);\s*SPECIES:\s*([^;]+);\s*OCCUPATION:\s*([^;]+);", desc)
+            # Check RPG Stats & Traits rule (1 Species + 1 Occupation + 5..15 Traits, 15 for protagonists/powerhouses, canonical Level curve + DDM ARC_LEVEL)
+            rpg_m = re.search(r"\[LEVEL:\s*(\d+);\s*ARC_LEVEL:\s*([^;]+);\s*SPECIES:\s*([^;]+);\s*OCCUPATION:\s*([^;]+);", desc)
             age_m = re.search(r"AGE:\s*(\d+)", desc)
             if not rpg_m:
-                self.record_error(cat, f"Card '{char_name}' manca di header RPG completo [LEVEL; SPECIES; OCCUPATION; CLASS]")
+                self.record_error(cat, f"Card '{char_name}' manca di header RPG completo [LEVEL; ARC_LEVEL; SPECIES; OCCUPATION; CLASS]")
             else:
                 lvl_val = int(rpg_m.group(1))
+                arc_val = rpg_m.group(2).strip()
                 if age_m:
                     age_val = int(age_m.group(1))
                     if age_val <= 13:
@@ -219,7 +220,7 @@ class HealthAuditor:
                     if lvl_val != exp_lvl:
                         self.record_error(cat, f"Card '{char_name}' (AGE {age_val}) ha LEVEL {lvl_val} invece del canonico {exp_lvl}")
                     else:
-                        self.record_pass(cat, f"Card '{char_name}' (AGE {age_val}) allineata al LEVEL canonico ({lvl_val})")
+                        self.record_pass(cat, f"Card '{char_name}' (AGE {age_val}) allineata al LEVEL canonico ({lvl_val}) e DDM ARC_LEVEL ({arc_val})")
 
                 traits_part = desc.split("TRAITS:")[-1] if "TRAITS:" in desc else ""
                 bullet_traits = re.findall(r"^- ", traits_part, flags=re.M)

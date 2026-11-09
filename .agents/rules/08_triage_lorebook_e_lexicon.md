@@ -60,8 +60,15 @@ Per impedire che il prompt inviato all'LLM superi il Context Budget di Wyvern e 
 1. **Chiavi Primarie e Secondarie:** Impostare sempre `key_logic: "AND_ANY"` dove le **chiavi primarie** sono identificatori specifici (es. nome del personaggio) e le **chiavi secondarie** parole tematiche (`dating`, `romance`). Evitare termini generici tra le primarie per non far sparare l'entry a sproposito.
 2. **`party_conditions`:** È il filtro elettivo per i contenuti personali (es. `has_any [id_personaggio]`), assicurando che l'informazione entri in contesto solo se il soggetto è nel party attuale.
 
-### Soglia di Sicurezza Context Budget
+### Soglia di Sicurezza Context Budget e Nuovo Pannello "Lore Budget" di Wyvern
 La somma dei metadati statici del World (Istruzioni avanzate + Location + Rotte + RPG State + Voci Lexicon scattate + Personaggi) non deve mai superare i **5.000 token**, garantendo che almeno il 70% della finestra di contesto rimanga sempre riservata alla cronologia di chat e all'input dell'utente.
+
+#### 3.1 Pannello "Lore Budget" nei Settings di Wyvern (World Party Context Allocation)
+Wyvern dispone di un pannello dedicato **Lore Budget** salvato per singolo *World Party* (`Saved for this world party`), che regola la ripartizione dinamica del context window tra voci di lore attivate da keyword e cronologia recente dei messaggi:
+1. **Enable (`ON`):** Attiva i limiti personalizzati per il party attivo (se `OFF`, applica il budget di default della piattaforma; uno slider a `0` o una casella vuota mantiene il default). Le percentuali sono calcolate sul **contesto residuo dopo la risposta** (*percentages are of the context left after the reply, so they scale with each connection*).
+2. **Lexicon budget (`30% of context` standard, oppure in token via toggle `Set in tokens instead`):** Indica lo spazio massimo complessivo nel prompt che tutto ciò che è attivato da keyword (*lorebooks + character lexicon + world lexicon*) può occupare congiuntamente.
+3. **All lorebooks combined (`30% of context` standard, oppure in token via toggle `Set in tokens instead`):** Indica lo spazio massimo complessivo nel prompt utilizzabile da tutti i Lorebook combinati; il `token_budget` proprio di ciascun singolo Lorebook continua ad applicarsi all'interno di questo tetto.
+4. **Always keep at least this many recent messages (`No minimum` o intero `newest messages`):** A differenza di *Max Messages Sent* (che agisce come tetto massimo / *ceiling*), questo parametro è un **pavimento minimo garantito (*floor*)**: i messaggi più recenti vengono riservati per primi, e il Lore Budget utilizza soltanto lo spazio di contesto che avanza.
 
 ---
 

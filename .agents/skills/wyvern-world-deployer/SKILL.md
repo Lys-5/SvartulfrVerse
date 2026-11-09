@@ -62,10 +62,15 @@ graph TD
    - `scan_persona: true`
    - `whole_words_only: true`
    - `enableEntryHighlighting: true`
-4. **Context Budget Anti-Bloat:**
+4. **Context Budget Anti-Bloat & Pannello "Lore Budget" (World Party Settings):**
    - Disattivare le tabelle statistiche ridondanti nel system prompt: `show_party_stats: false`, `show_species_info: false`.
    - Disattivare moduli estranei al canone: `ships: false`, `creature_catcher: false`.
    - Mantenere attivi i moduli interattivi: `inventory: true`, `currency: true`, `combat: true`, `rpg_stats: true`, `relationships: true`.
+   - **Pannello "Lore Budget" (Saved for this world party):**
+     - `Enable: ON`: Attiva i limiti di allocazione contesto per il party attivo (le percentuali sono calcolate sul contesto residuo dopo la risposta e scalano con ciascuna AI Connection).
+     - `Lexicon budget`: `30% of context` (oppure in token via toggle `Set in tokens instead`) — tetto massimo combinato per tutto ciò che è attivato da keyword (*lorebooks + character lexicon + world lexicon*).
+     - `All lorebooks combined`: `30% of context` (oppure in token via toggle `Set in tokens instead`) — tetto massimo combinato per tutti i Lorebook (il `token_budget` di ciascun singolo Lorebook continua ad applicarsi all'interno di questo tetto).
+     - `Always keep at least this many recent messages`: `No minimum` (o pavimento numerico `newest messages` riservato prima che il Lore Budget consumi il contesto rimanente).
 
 ---
 
