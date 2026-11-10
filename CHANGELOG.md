@@ -1,5 +1,40 @@
 # Changelog di Progetto — Svartúlfr Verse
 
+### 10/11/2026 - Calibrazione Wyvern "Lore Budget" & Floor Messaggi (`min_chat_messages = 15`), Collegamento Lorebook su Single Chat e Character Lore Enrichment (`90/310`)
+
+- **Calibrazione Lore Budget & Floor Messaggi su Wyvern Web API (`PUT /api/chat-state/_78EY7KD86D1VrbQmAQ2Qt`)**:
+  - Individuata via reverse engineering nei chunk client di Wyvern (`13534`, `23422`, `7240`, `60709`) la persistenza delle impostazioni del nuovo pannello *Lore Budget* su `chat-state` (`/api/chat-state`), che governa l'allocazione del contesto per le chat 1-on-1 ("Shared across your character chats") e come default globale.
+  - Applicata e verificata la taratura dei parametri (`HTTP 200`):
+    - `use_lexicon_budget_override: True` (abilitazione override budget)
+    - `lexicon_budget_mode: "percent"`, `lexicon_budget_value: 30` (tetto del 30% del contesto residuo per keyword-activated lore)
+    - `lorebooks_budget_mode: "percent"`, `lorebooks_budget_value: 30` (tetto del 30% per i lorebooks combinati)
+    - `min_chat_messages: 15` (floor garantito: riserva prioritariamente i 15 messaggi più recenti prima dell'allocazione del lore budget, evitando il troncamento della conversazione)
+  - Collegati i 6 Lorebook Standalone (`I`, `II`, `III`, `Location`, `NPC Primary`, `NPC Secondary`) alla chat single di test con Jasper (`chat_log_gBCpCP3fbwA7KdBJWEXRW` via `PUT /api/new/chat-logs/...`, `HTTP 200`), abilitando il monitoraggio empirico dei token di lore.
+- **Character Lore Enrichment Queue (`completed_count: 90/310`)**:
+  - **Bonifica Positive Framing Demi-Umani**: Rimossa la formulazione negativa proibita `zero human ears` dalle schede JED+ di `Bessie May`, `Neve` e `Jaelyn`, sostituendola con descrizioni anatomiche in positivo (es. singolo paio di orecchie bovine/feline perfettamente integrate nella chioma).
+  - **Anti-Collisione Bot-Giocatore su Echo**: Inserito `ignored_personas: ["user_persona_Chhp2NRN1kkVVPXCGQb8C", "1791389790053"]` sulla scheda Lorebook di Echo per sopprimere l'NPC quando il giocatore seleziona la User Persona di Echo.
+  - **Allineamento Razza & Occupazione Corrette**:
+    - `Bessie May`: `Minotauro & Centauro (Demi-Umano Bovino)` + `Lavoratore & Artigiano (Organic Dairy Caretaker)`.
+    - `Neve`: `Umano, Nani & Demi-Umani (Demi-Human Feline)` + `Studioso & Erudito (Head Archivist)`.
+    - `Jaelyn`: `Umano, Nani & Demi-Umani (Demi-Human Feline)` + `Lavoratore & Artigiano (Barista & Pastry Assistant)`.
+    - `Echo`: `Macchina & Sintetico (Abyssal Synthetic Construct)` + `Hacker & Netrunner (Technomantic Familiar)`.
+  - **Arricchimento del Lotto 10 NPC del Roster**:
+    - `Dullahan` (`OoqcG3WQrOui7TMw_vRq7`): `Lv 99`, `ARC 4.5`, 15 tratti completi da DDM Immortal Contractor #04, `Immortale & Spirito` + `Guida & Mentore`.
+    - `Dr. Arthur Sinclair` (`QtL6sDLKGO4jqhoKm4Ia7`): `Lv 11`, `ARC 2.8`, 8 tratti, `Umano, Nani & Demi-Umani (Human Chimera)` + `Alchimista & Medico`.
+    - `Dominic Chen` (`emfVQk85y0BdIxVjmarzN`): `Lv 6`, `ARC 2.4`, 8 tratti, `Licantropo` + `Guerriero & Sentinella (Alpha Pack Leader)`.
+    - `Darius Vale` (`oMjWHHMNlNdJmbuA-6b9p`): `Lv 7`, `ARC 2.4`, 8 tratti, `Licantropo` + `Guerriero & Sentinella (Alpha Pack Leader)`.
+    - `Dante` (`sp4RTi3Przj_-VJx9ZX1R`): `Lv 99`, `ARC 3.5`, 12 tratti, `Succube & Incubo` + `Mago & Arcanista (Arch-Incubus Seducer)`.
+    - `Chase Anderson` (`XeQjWQkyhKD-bosYSMsnr`): `Lv 2`, `ARC 2.2`, 6 tratti, `Licantropo` + `Studente & Accademico`.
+    - `Cass Harrow` (`EWn-4G1WcY-wqW2DGF4nP`): `Lv 7`, `ARC 2.4`, 8 tratti, `Licantropo` + `Guerriero & Sentinella (Alpha Pack Leader)`.
+    - `Casey Williams` (`du0stlXAjWeddvtjpaiej`): `Lv 7`, `ARC 2.4`, 8 tratti, `Umano, Nani & Demi-Umani (Hawk Demi-human)` + `Tecnico & Meccanico`.
+    - `Brak Ironfist` (`Ghg-vKLGtDnqehrkUJs66`): `Lv 8`, `ARC 3.9`, 10 tratti, `Orco & Oni` + `Fabbro & Artigiano`.
+    - `Bianca Rossi` (`JxHI9EY2wNsWuOwH1hNeJ`): `Lv 7`, `ARC 3.9`, 8 tratti, `Licantropo` + `Guerriero & Sentinella (Alpha Pack Leader)`.
+  - Aggiornato `FINAL/Svartulfr_NPC_Primary.json`, specchiato su `lorebooks/optimized/` con parità `entries == lexicon` byte-for-byte, e distribuito live su Wyvern Web API (`PUT /api/lorebooks/_zwEqgEEzh12X6gHVmMKKC`, `803,826` bytes, `HTTP 200`).
+  - Aggiornato [scratch/daily_character_enrichment_state.json](file:///e:/repository/SvartulfrVerse/scratch/daily_character_enrichment_state.json) (`completed_count: 90/310`).
+- **Verifica e Salute Vault (`76/76` Check Superati)**:
+  - Tutti i 76 check di validazione automatica in [scripts/vault_health_check.py](file:///e:/repository/SvartulfrVerse/scripts/vault_health_check.py) confermati superati con 0 avvisi e 0 errori.
+
+
 ### 09/11/2026 - Unificazione Master Pipeline (`daily-master-pipeline`), Team Multi-Modello a 3 Tier, Audit Forense 5 Chat Log Wyvern e Bonifica 46/46 Vault Health
 
 - **Consolidamento Automazioni in Singolo Sidecar (`~/.gemini/config/sidecars/daily-master-pipeline/sidecar.json`)**:
