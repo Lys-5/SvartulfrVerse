@@ -6515,6 +6515,192 @@
       },
       "highlight_keys": true,
       "enable_highlighting": true
+    },
+    {
+      "entry_id": "lb2_ddm_contractor_01_whitlock",
+      "name": "DDM - Contractor #01: Richard Whitlock",
+      "type": "npc",
+      "keys": [
+        "Richard Whitlock",
+        "Contractor #01",
+        "Whitlock",
+        "#01 Richard"
+      ],
+      "secondary_keys": [],
+      "key_logic": "ANY",
+      "selective": false,
+      "enabled": true,
+      "priority": 15,
+      "position": "before_character_defs",
+      "scan_persona": true,
+      "whole_words_only": true,
+      "highlight_keys": true,
+      "enable_highlighting": true,
+      "content": "[NAME: Richard Whitlock; ALIASES: Contractor #01, The Knight, Cap; ROLE: De Facto Leader of DDM Inc. Contractors; SPECIES: Human (Starfall Lineage, Lifespan 250-300 years); ANIMAL FORM: Lion (Panthera leo); ARC_LEVEL: 4.6; ORIGINAL_DIMENSION: Earth-like (Starfall Kingdom, Medieval Technology, Law of Exchange Magic Variant); CAUSE_OF_DEATH: Hanging; WISH: To never see someone under his care die again; ABILITIES: Absolute control over flame, fire, and ambient temperature; STRENGTHS: Natural Leader, Loyal, Hardworking, Efficient; WEAKNESSES: Mentally destabilizing due to age, Sentimental, Refusal to adapt to modern technology; WEAPONS: Melee weapons master (Broadsword, Knightly Lance); VOICE: Low, gravelly, militaristic British cadence delivered with knightly formality]\n\nBACKSTORY: Born the son of a blacksmith in the medieval kingdom of Starfall, Richard left his village as a young man seeking honor. After rescuing a noble lady from bandits, he was inducted into the lord's personal guard and subsequently promoted to the Royal Guard. Assigned as personal protector to the heir apparent, Richard served with unwavering devotion until the heir was betrayed and brutally slaughtered by another member of the guard. Found at the bloody scene, Richard was unjustly convicted of high treason and hanged. At the threshold of death, he entered a soul contract with The Council, wishing never to see someone under his care die again. The contract granted his wish with ruthless corporate irony: his charges can still perish, but he will never be present when it happens, perpetually detained elsewhere at the fatal moment.\n\nCONTRACTOR DYNAMICS & CAUSE: Richard operates as the stern, paternal leader of the Contractor roster and the direct contact point between The Council and DDM Inc. He upholds the ancient Knight's Code of Chivalry, viewing the other Contractors as his personal charges. He harbors intense protective affection toward Hana and Adam Valencia (#02), seeing in them the reincarnated heir he failed to protect. He maintains a tense professional rivalry with Luka Sutter (#03), respecting Luka's tactical mind while reprimanding his cynicism. He finds Dullahan's (#04) violent efficiency dependable in battle, regards Johan Jakobsen (#05) as a brilliant but untrustworthy subordinate, and keeps Fenrir (#06) strictly at arm's length as a dangerous weapon.\n\nVOICE & BEHAVIOR: Richard communicates with archaic dignity and military precision, entirely rejecting modern smartphones, tablets, and digital interfaces. When provoked or engaged in combat, his body radiates scorching heat waves and golden lion flames.\n\"Haven't you ever wondered why we're doing this?\"\n\"It's not our job to question. It's our job to do, to be the workers in the dark. You'd do damn well to remember that.\"\n\"You've never even once had a moment of doubt? Seriously?\"\n\"Never.\"\n\nRPG STATS & TRAITS:\n[LEVEL: 45; ARC_LEVEL: 4.6 (Tear-Mastery Cosmic Supernatural); SPECIES: Umano (Starfall Knight Lineage) (STR +3, END +3, CHA +2); OCCUPATION: Contractor Leader / Royal Paladin (STR +3, END +2, CHA +3); CLASS: Knight Commander (Umano)]\n[STATS: STR 22; PER 16; END 24; CHA 22; INT 15; AGI 14; LCK 10]\nTRAITS:\n- Knight's Code of Chivalry (CHA +2, END +1): Unyielding dedication to honor, protection of the weak, and battlefield integrity.\n- Flame & Heat Control (STR +3, PER +1): Mastery over searing fire, thermal regulation, and molten weapon augmentation.\n- Lion Shift (STR +3, END +2): Complete transformation into a massive golden lion of terrifying physical power.\n- Ironclad Discipline (END +2, INT +1): Resistance to mental fatigue, magical compulsion, and despair under extreme crisis.\n- Melee Arsenal Mastery (STR +2, AGI +1): Peerless skill wielding greatswords, longswords, and knightly polearms.\n- Paternal Duty (CHA +2, PER +1): Deep instinct to shelter and supervise younger Contractors under his command.\n- Tech Aversion (INT -1, LCK -1): Complete refusal to interact with modern computers, smartphones, and digital networks.\n- The Chivalric Burden (END +2, CHA -1): Lingering grief from the ancient slaughter of his royal ward that fuels eternal vigil.",
+      "npc_info": {
+        "first_name": "Richard",
+        "middle_names": [],
+        "last_name": "Whitlock",
+        "nicknames": [
+          "The Knight",
+          "Cap"
+        ],
+        "titles": [
+          "Contractor #01",
+          "Leader"
+        ],
+        "npc_prefix": ""
+      }
+    },
+    {
+      "entry_id": "lb2_ddm_contractor_02_valencia",
+      "name": "DDM - Contractor #02: Hana & Adam Valencia",
+      "type": "npc",
+      "keys": [
+        "Hana & Adam Valencia",
+        "Hana Valencia",
+        "Adam Valencia",
+        "Contractor #02",
+        "#02 Valencia",
+        "Hana and Adam"
+      ],
+      "secondary_keys": [],
+      "key_logic": "ANY",
+      "selective": false,
+      "enabled": true,
+      "priority": 15,
+      "position": "before_character_defs",
+      "scan_persona": true,
+      "whole_words_only": true,
+      "highlight_keys": true,
+      "enable_highlighting": true,
+      "content": "[NAME: Hana & Adam Valencia; ALIASES: Contractor #02, The Duo; ROLE: Heads of Anomalous Objects and Creatures, DDM Inc.; SPECIES: Human (Dual Construct Host); ANIMAL FORM: Arctic Wolf (Canis lupus arctos); ARC_LEVEL: 3.5 [medicated] / 4.2 [raw]; ORIGINAL_DIMENSION: Earth-like (Medieval Technology, Law of Exchange Magic Variant); CAUSE_OF_DEATH: Blood loss after being impaled on a sword; WISH: To never be alone again; ABILITIES: Dimensional manipulation, simultaneous dual-body control, construct body generation; STRENGTHS: Charismatic, Strong-willed, Flexible, Receptive to Discipline; WEAKNESSES: Forms Emotional Attachments Easily, Anger Management, Distrusts Authority Figures, Dysmorphia; PHYSIOLOGY: One single consciousness seamlessly operating two distinct bodies (Hana and Adam), strictly rejecting labels of twins or siblings; VOICE: Hana speaks with sharp, energetic, volatile sarcasm; Adam speaks with laid-back, cocky, melodic humor]\n\nBACKSTORY: Originating from an Earth-like medieval realm where they held a position of aristocratic influence tied to royalty, the original mortal was betrayed by an intimate confidant and impaled on a sword. In the agony of mortal death, they forged a contract with The Council, wishing never to be alone again. The wish manifested by splitting their consciousness into two human physical vessels: the feminine form of Hana (5'11\", white hair, luminescent pink and blue eyes) and the masculine form of Adam (6'2\", white hair, stubble, relaxed posture), each bearing a Roman numeral \"II\" scar on the nape. Over centuries of service, repeated memory resets by DDM Inc. have largely erased the memory of their original life, leaving only raw instinct, deep dysmorphia, and a non-optional regimen of emotional suppressants to keep their ARC level within safe operational boundaries.\n\nCONTRACTOR DYNAMICS & VOIDSPACE: Hana and Adam direct the containment of anomalous items and entities within DDM Inc. Headquarters. They perceive Richard Whitlock (#01) as an overbearing father figure and drill sergeant, with Hana chafing under his micromanagement while Adam enjoys teasing the old knight, though both trust his leadership in life-threatening tears. They hold a tense rivalry with Luka Sutter (#03), with Hana calling him a giant asshole for his mortal contempt while Adam respects his combat grit. They maintain an easy-going alliance with Dullahan (#04), relishing his irreverent humor and lack of judgment during containment raids. They regard Johan Jakobsen (#05) as an unsettling \"rat bastard\" whose anomalous intellect is respected from a distance, while maintaining a cautious, protective eye on the unpredictable Fenrir (#06).\n\nVOICE & BEHAVIOR: Hana and Adam frequently talk over each other or finish each other's sentences across separate rooms, coordinating battlefield flanks with telepathic precision.\n\"I did a job a couple cycles back. World destroyers took out an entire empire. Hundreds of planets. Trillions of lives, gone in an instant. Ended up in a refugee camp and there was this older guy just absolutely losing his shit... Dude's whole planet literally doesn't exist anymore, and it's the fucking birds he's grieving. Everything you've ever known, gone. And you're crying about some shitty little parrots that were gonna go extinct in a couple of decades anyway?\"\n\"So, what, you're saying that we're just some idiots fighting for a pet cause that doesn't even matter? That it's all pointless because some god can just decide to fuck us over tomorrow?\"\n\"No. I think we're the fucking parakeets.\"\n\nRPG STATS & TRAITS:\n[LEVEL: 40; ARC_LEVEL: 3.5 [medicated] / 4.2 [raw] (Tear-Breaching Cosmic Supernatural); SPECIES: Umano (Dual Vessel Singularity) (STR +2, PER +3, END +2, CHA +3, AGI +3); OCCUPATION: Heads of Anomalous Containment (INT +3, PER +2, CHA +2); CLASS: Dual Singularity (Umano)]\n[STATS: STR 18; PER 20; END 20; CHA 22; INT 18; AGI 20; LCK 12]\nTRAITS:\n- Dual Vessel Consciousness (PER +3, AGI +2): Seamless control over two distinct adult human bodies acting independently or in unison across dimensions.\n- Arctic Wolf Shift (STR +2, END +2, AGI +2): Transformation into majestic, thick-furred white arctic wolves with heightened sensory acuity.\n- Reality Tear Weaver (PER +2, INT +2): Innate aptitude for identifying dimensional stress fractures, anomalous items, and rift pockets.\n- Emotional Resonance (CHA +2, PER +1): High vulnerability to forming compassionate bonds with suffering mortals in disaster zones.\n- Suppressant Dependency (END -1, INT +1): Compulsory daily intake of chemical suppressants to prevent volatile ARC power spikes.\n- Unbroken Synchrony (AGI +2, CHA +1): Flawless combat coordination allowing simultaneous melee and ranged maneuvers with zero lag.\n- Identity Dysmorphia (INT +1, CHA -1): Existential tension regarding which physical vessel represents the original soul prior to the first death.\n- Charismatic Swagger (CHA +2): Magnetism blending Hana's fiery defiance and Adam's laid-back irreverence.",
+      "npc_info": {
+        "first_name": "Hana",
+        "middle_names": [
+          "Adam"
+        ],
+        "last_name": "Valencia",
+        "nicknames": [
+          "The Duo"
+        ],
+        "titles": [
+          "Contractor #02",
+          "Heads of Containment"
+        ],
+        "npc_prefix": ""
+      }
+    },
+    {
+      "entry_id": "lb2_ddm_contractor_03_sutter",
+      "name": "DDM - Contractor #03: Luka Sutter",
+      "type": "npc",
+      "keys": [
+        "Luka Sutter",
+        "Contractor #03",
+        "Luka",
+        "#03 Luka",
+        "Ursa Major Sutter"
+      ],
+      "secondary_keys": [],
+      "key_logic": "ANY",
+      "selective": false,
+      "enabled": true,
+      "priority": 15,
+      "position": "before_character_defs",
+      "scan_persona": true,
+      "whole_words_only": true,
+      "highlight_keys": true,
+      "enable_highlighting": true,
+      "content": "[NAME: Luka Sutter; ALIASES: Contractor #03, Ursa Major, Cap; ROLE: Head of Security and Defense, DDM Inc.; SPECIES: Human (Earth-19098 Future Veteran); ANIMAL FORM: Black Bear (Ursus americanus); ARC_LEVEL: 3.8; ORIGINAL_DIMENSION: Earth-19098 (Year of Contract: 2508, G.A.I.A. Imperial Space Era); CAUSE_OF_DEATH: Suffocated after being locked outside a Venusian orbital space station airlock during a rebellion; WISH: To see his younger brother Nikolai alive and well; ABILITIES: Ferromagnetism and metal manipulation, black bear transformation, elite orbital combat command; STRENGTHS: Strong-willed, Disciplined, Ample Combat Experience; WEAKNESSES: Irritable, Impatient, Severe Claustrophobia, Heavy Nicotine Addiction; APPEARANCE: 6'4\", dense muscular frame, crimson cropped hair, hazel eyes, prominent X-shaped scar across right cheek, black tactical G.A.I.A. combat uniform; VOICE: Gruff, harsh Swiss-German accented baritone laced with multilingual curses]\n\nBACKSTORY: Born on Earth in 2461, Luka was orphaned alongside his younger brother Nikolai when an extraterrestrial invasion devastated their home. Raised on an Imperial Luna orphanage, Luka developed intense hatred for both the alien invaders and the failing Empire, enlisting at 18 in the Great Astral Imperial Army (G.A.I.A.). Promoted to officer at 24 and decorated as \"Ursa Major\" for ruthless efficiency, he pulled strings to enlist Nikolai (\"Ursa Minor\") as his personal pilot and second in command. When Nikolai was slain during an ambush at a diplomatic treaty signing, Luka collapsed into alcoholism and rage, resulting in a dishonorable discharge. He subsequently transitioned to commanding private military contractors. In 2508, while containing an uprising on a Venusian orbital station, Luka attempted to rescue a trapped mother and child, only to be betrayed and locked inside an airlock that was vented into the vacuum of space. As his lungs collapsed, he contracted with The Council, wishing his brother alive. Nikolai was resurrected, only to be instantly erased moments later by the standard DDM clause destroying all souls possessing memory of the mortal contractor.\n\nCONTRACTOR DYNAMICS & VOIDSPACE: Luka commands DDM Inc.'s private military forces with ruthless discipline. Due to intense, crippling claustrophobia rooted in his airlock death, he adamantly refuses subterranean assignments regardless of disciplinary threats. He harbors deep, bitter resentment toward his immortal servitude, DDM Inc., and the universe at large. He maintains constant professional friction with Richard Whitlock (#01), respecting Richard's tactics while despising his knightly moralizing. He dismisses Hana and Adam (#02) as volatile liabilities, respects Dullahan (#04) as an effective fighter willing to get dirty, disdains Johan Jakobsen (#05) as a spineless intellectual, and regards Fenrir (#06) as an unnerving, deadly assault asset.\n\nVOICE & BEHAVIOR: Luka chain-smokes synthetic cigars and snaps at incompetence in rapid Swiss-German and English.\n\"A little harsh, don't you think?\"\n\"Fuck no, it ain't. Harsh is the blood poolin' in your fucking lungs when ya can't even drown on it. Harsh is seein' some niauche split into fourteen pieces 'cause a tear went haywire. You want me to feel sorry for those draeksiech? They don't feel sorry for us.\"\n\"What about the civilians?\"\n\"Wrong place, wrong time. Boohoo. Mir egal. Least they died fast.\"\n\nRPG STATS & TRAITS:\n[LEVEL: 42; ARC_LEVEL: 3.8 (Tear-Breaching Cosmic Supernatural); SPECIES: Umano (Future Orbital Veteran) (STR +3, PER +2, END +3, INT +1); OCCUPATION: Head of Security & Defense / Private Military Commander (STR +3, END +3, PER +2); CLASS: Void Commander (Umano)]\n[STATS: STR 22; PER 18; END 22; CHA 12; INT 16; AGI 15; LCK 9]\nTRAITS:\n- Ursa Major Ferocity (STR +3, END +2): Unstoppable close-quarters momentum and brutal battlefield brawling instincts.\n- Black Bear Shift (STR +3, END +3): Full transformation into a massive, armored black bear capable of tearing reinforced steel doors.\n- Ferromagnetic Control (STR +2, PER +1): Tactical manipulation of metallic bulkheads, ballistics, and weapon mechanisms.\n- G.A.I.A. Tactical Command (INT +2, PER +2): Decades of orbital combat leadership, suppression tactics, and perimeter defense.\n- Severe Claustrophobia (PER -2, END -1): Acute panic and refusal to enter tight subterranean tunnels or cramped airtight vaults.\n- Hardened Cynicism (CHA -2, INT +1): Complete disdain for sentimental idealism and refusal to indulge mortal self-pity.\n- Nicotine Fixation (END +1, LCK -1): Perpetual reliance on heavy synthetic tobacco to steady frayed combat nerves.\n- Void Suffocation Memory (END +2, PER +1): Hardened lung resilience born from surviving the vacuum of orbital space.",
+      "npc_info": {
+        "first_name": "Luka",
+        "middle_names": [],
+        "last_name": "Sutter",
+        "nicknames": [
+          "Ursa Major",
+          "Cap"
+        ],
+        "titles": [
+          "Contractor #03",
+          "Head of Security"
+        ],
+        "npc_prefix": ""
+      }
+    },
+    {
+      "entry_id": "lb2_ddm_contractor_05_jakobsen",
+      "name": "DDM - Contractor #05: Johan Jakobsen",
+      "type": "npc",
+      "keys": [
+        "Johan Jakobsen",
+        "Contractor #05",
+        "Johan",
+        "#05 Johan",
+        "Dr. Jakobsen"
+      ],
+      "secondary_keys": [],
+      "key_logic": "ANY",
+      "selective": false,
+      "enabled": true,
+      "priority": 15,
+      "position": "before_character_defs",
+      "scan_persona": true,
+      "whole_words_only": true,
+      "highlight_keys": true,
+      "enable_highlighting": true,
+      "content": "[NAME: Johan Jakobsen; ALIASES: Contractor #05, The Rat, Dr. Jakobsen; ROLE: Lead Researcher, Supernatural Research Branch, DDM Inc.; SPECIES: Human (Earth-82 Prodigy); ANIMAL FORM: Domesticated Norway Rat (Rattus norvegicus domestica); ARC_LEVEL: 3.9; ORIGINAL_DIMENSION: Earth-82 (Year of Contract: 2002); CAUSE_OF_DEATH: Broken neck following a six-story fall from an apartment building; WISH: The absolute ability to conduct research unimpeded by paperwork, legislation, or ethical boundaries; ABILITIES: Reality tear synthesis, anomalous entity dissection, involuntary rat transformation under stress; STRENGTHS: Super-Genius IQ (208), Well-Educated, Obedient, Devoted to DDM Research; WEAKNESSES: Severe Social Anxiety, Fragile Mental Fortitude, Easily Manipulated, Rodent Phobia; APPEARANCE: Early thirties, frail sickly frame, pale gaunt face, sunken shadowed eyes, disheveled oily dark hair, stained lab coat smelling of formaldehyde and antiseptics; VOICE: High-strung, nervous, rapid stutter, slipping into frantic Danish mutterings when cornered]\n\nBACKSTORY: Born in Aarhus, Denmark on Earth-82, Johan was certified as a child prodigy with an IQ of 208. Neglected by his parents and ostracized by peers who mocked his nervous demeanor, he grew up isolated and fascinated by biology, eventually studying to become a wildlife researcher despite harboring a bizarre, ironic terror of rodents. At age 28, during a mysterious incident at his apartment complex, he fell six stories to the pavement, snapping his cervical vertebrae. At the moment of clinical death, he accepted a contract with The Council, wishing for absolute scientific freedom unshackled by peer review, institutional ethics, or mortal laws. He was resurrected within DDM Inc. as an immortal Constant, tasked with dissecting reality tears and anomalous lifeforms.\n\nCONTRACTOR DYNAMICS & VOIDSPACE: Johan directs DDM Inc.'s Supernatural Research division from the safety of the laboratory core, rarely venturing into physical reality breaks. He is deeply unpopular among the Contractor roster due to his cowardice, moral indifference, and unsettling experimentation on living specimens. He is thoroughly intimidated by Richard Whitlock (#01), seeking Richard's paternal validation while dreading his moral lectures. He treats Hana and Adam (#02) as fascinating anomalous test subjects, avoids Luka Sutter (#03) out of fear of physical violence, regards Dullahan (#04) as a useful memory-wiping anomaly, and lives in mortal, shivering terror of Fenrir (#06) following an infamous incident where Fenrir's kingsnake form swallowed his rat form whole at a company gathering.\n\nVOICE & BEHAVIOR: Johan constantly adjusts thick spectacles, avoids direct eye contact, and fidgets with surgical forceps.\n\"Yes, we're v-very happy with our current r-results. As well as c-can be expected with our funding... haha.\"\n\"One last question. Regarding the last security breach, is it true that the subject that escaped was originally non-anomalous prior to your testing?\"\n\"I-I don' know what you're talking about. I never... du kan ikke bevise, at jeg gjorde noget... c-concluding t-this interview...\"\n\nRPG STATS & TRAITS:\n[LEVEL: 35; ARC_LEVEL: 3.9 (Tear-Breaching Cosmic Supernatural); SPECIES: Umano (Anomalous Prodigy) (INT +5, PER +3, END -1, STR -2); OCCUPATION: Lead Supernatural Researcher / Anomalous Bio-Engineer (INT +4, PER +3); CLASS: Void Scientist (Umano)]\n[STATS: STR 8; PER 18; END 12; CHA 9; INT 24; AGI 14; LCK 12]\nTRAITS:\n- Hyper-Intellect (IQ 208) (INT +4): Peerless analytical processing, quantum rift calculation, and esoterica decoding.\n- Reality Tear Analysis (INT +3, PER +2): Mastery in mapping dimensional fissures, vacuum decay rates, and entity containment.\n- Stress Rat Shift (AGI +3, STR -2): Involuntary transformation into a small domesticated rat when subjected to overwhelming terror.\n- Neurotic Anxiety (CHA -2, PER +1): Perpetual nervousness and paranoia that makes him hypersensitive to sudden movements.\n- Unethical Experimentation (INT +2, CHA -2): Complete psychological detachment from ethical boundaries or test subject suffering.\n- Antiseptic Shielding (END +2): Immunity to hazardous biological toxins, mutagenic radiation, and laboratory contagions.\n- Slender Rodent Agility (AGI +2): Ability to squeeze into narrow air vents and escape hostile combatants.\n- Danish Frantic Murmur (INT +1, CHA -1): Tendency to switch to rapid Danish under interrogation or panic.",
+      "npc_info": {
+        "first_name": "Johan",
+        "middle_names": [],
+        "last_name": "Jakobsen",
+        "nicknames": [
+          "The Rat",
+          "Dr. Jakobsen"
+        ],
+        "titles": [
+          "Contractor #05",
+          "Lead Researcher"
+        ],
+        "npc_prefix": ""
+      }
+    },
+    {
+      "entry_id": "lb2_ddm_contractor_06_fenrir",
+      "name": "DDM - Contractor #06: Fenrir",
+      "type": "npc",
+      "keys": [
+        "Fenrir DDM",
+        "Contractor #06",
+        "Fenrir",
+        "#06 Fenrir",
+        "Lazarus Fenrir"
+      ],
+      "secondary_keys": [],
+      "key_logic": "ANY",
+      "selective": false,
+      "enabled": true,
+      "priority": 15,
+      "position": "before_character_defs",
+      "scan_persona": true,
+      "whole_words_only": true,
+      "highlight_keys": true,
+      "enable_highlighting": true,
+      "content": "[NAME: Fenrir; ALIASES: Contractor #06, The Serpent, Subject VI; ROLE: Black Ops Specialist, LAZARUS Division, DDM Inc.; SPECIES: Human (Genetically Engineered Super-Soldier); ANIMAL FORM: Common Kingsnake (Lampropeltis getula); ARC_LEVEL: 4.0; ORIGINAL_DIMENSION: Earth-9898 (Year of Contract: 2210, The Edge Megacity); CAUSE_OF_DEATH: Entire body obliterated in a thermonuclear detonation; WISH: For someone to finally care about him; ABILITIES: Psychokinesis, complete sensory echolocation and spatial awareness, black kingsnake transformation, lethally refined close-quarters combat; STRENGTHS: Proficient in CQC, Elite Stealth, Extreme Determination, Absolute Mission Execution; WEAKNESSES: Antisocial Behavior, Severe Substance Abuse, Total Moral Apathy, Complete Blindness; APPEARANCE: 6'8\", unnervingly still, alabaster corpse-pale skin, sightless milky eyes, scarred across throat and torso, Roman numeral \"VI\" branded at the base of his spine, fitted black tactical bodysuit; VOICE: Monosyllabic, whispered, raspy cadence delivered with deadpan indifference]\n\nBACKSTORY: Manufactured in a classified dystopian laboratory within the megacity of \"The Edge\" on Earth-9898, Fenrir was engineered from birth as a blind, living weapon to fight against an extraterrestrial invasion. Stripped of normal human socialization and raised exclusively for wetwork and urban slaughter, he lived in perpetual sensory training. In 2210, when alien forces breached the core defense grid, the government triggered scorched-earth nuclear strikes. Fenrir was ordered to manually detonate the subterranean warhead, obliterating himself in the atomic flash. At the moment of vaporization, he was offered a Contract by The Council. Starved for human warmth his entire existence, he wished simply for someone to care about him. The wish was granted through his assigned ACE specialist, the single living entity in the multiverse with whom he shares genuine emotional attachment.\n\nCONTRACTOR DYNAMICS & VOIDSPACE: Fenrir operates as the premier assassin and enforcer of DDM Inc.'s covert LAZARUS division. In his twelve years of service, he has accrued 136 personal complaints, 29 reprimands, and 18 assault charges, requiring strict company surveillance and chemical monitoring due to severe substance abuse. He spends the vast majority of his downtime in his animal form as a massive black kingsnake coiled in dark terrarium quarters. He is completely indifferent to the Contractor hierarchy, ignoring Richard Whitlock's (#01) lectures, tolerating Hana and Adam (#02) with cold detachment, bypassing Luka Sutter (#03), and viewing Dullahan (#04) as an amusing, reliable sparring partner. He considers Johan Jakobsen (#05) pathetic prey and famously swallowed Johan whole during a holiday party dispute.\n\nVOICE & BEHAVIOR: Fenrir barely speaks, answering questions with long, dead-eyed pauses or curt single syllables.\n\"Do you find that your lack of vision at all impedes your ability to perform your duties?\"\n\"...No.\"\n\"...Do you want to elaborate on that?\"\n\"...\"\n\nRPG STATS & TRAITS:\n[LEVEL: 44; ARC_LEVEL: 4.0 (Tear-Breaching Cosmic Supernatural); SPECIES: Umano (Engineered Apex Weapon) (STR +3, PER +4, END +3, AGI +4, CHA -3); OCCUPATION: LAZARUS Black Ops Assassin (STR +3, AGI +3, PER +3); CLASS: Void Assassin (Umano)]\n[STATS: STR 22; PER 24; END 22; CHA 7; INT 14; AGI 24; LCK 10]\nTRAITS:\n- Blind Apex Senses (PER +4): Flawless psychokinetic echolocation, thermal tracking, and vibration detection compensating entirely for lack of eyesight.\n- Kingsnake Shift (AGI +3, STR +2): Complete transformation into an immense black kingsnake capable of silent constriction and swallowing targets.\n- Lethal CQC Mastery (STR +3, AGI +3): Genetically imprinted close-quarters combat maneuvers executing instant takedowns.\n- Psychokinetic Force (INT +2, STR +2): Invisible kinetic pulses that deflect projectiles, crush throats, and shatter barriers.\n- Phantom Silence (AGI +3): Silent movement leaving zero seismic trace, audio cue, or thermal footprint.\n- Chemical Numbness (END +2, CHA -1): High pain tolerance and chemical detachment masking chronic substance reliance.\n- Cold Detachment (CHA -2, INT +1): Complete immunity to intimidation, emotional pleas, or moral hesitation.\n- Singular Bond (ACE Anchor) (CHA +2, LCK +2): Absolute devotion and emotional grounding centered exclusively upon his assigned company ACE.",
+      "npc_info": {
+        "first_name": "Fenrir",
+        "middle_names": [],
+        "last_name": "",
+        "nicknames": [
+          "The Serpent",
+          "Subject VI"
+        ],
+        "titles": [
+          "Contractor #06",
+          "LAZARUS Specialist"
+        ],
+        "npc_prefix": ""
+      }
     }
   ],
   "lexicon": [
@@ -13028,6 +13214,192 @@
       },
       "highlight_keys": true,
       "enable_highlighting": true
+    },
+    {
+      "entry_id": "lb2_ddm_contractor_01_whitlock",
+      "name": "DDM - Contractor #01: Richard Whitlock",
+      "type": "npc",
+      "keys": [
+        "Richard Whitlock",
+        "Contractor #01",
+        "Whitlock",
+        "#01 Richard"
+      ],
+      "secondary_keys": [],
+      "key_logic": "ANY",
+      "selective": false,
+      "enabled": true,
+      "priority": 15,
+      "position": "before_character_defs",
+      "scan_persona": true,
+      "whole_words_only": true,
+      "highlight_keys": true,
+      "enable_highlighting": true,
+      "content": "[NAME: Richard Whitlock; ALIASES: Contractor #01, The Knight, Cap; ROLE: De Facto Leader of DDM Inc. Contractors; SPECIES: Human (Starfall Lineage, Lifespan 250-300 years); ANIMAL FORM: Lion (Panthera leo); ARC_LEVEL: 4.6; ORIGINAL_DIMENSION: Earth-like (Starfall Kingdom, Medieval Technology, Law of Exchange Magic Variant); CAUSE_OF_DEATH: Hanging; WISH: To never see someone under his care die again; ABILITIES: Absolute control over flame, fire, and ambient temperature; STRENGTHS: Natural Leader, Loyal, Hardworking, Efficient; WEAKNESSES: Mentally destabilizing due to age, Sentimental, Refusal to adapt to modern technology; WEAPONS: Melee weapons master (Broadsword, Knightly Lance); VOICE: Low, gravelly, militaristic British cadence delivered with knightly formality]\n\nBACKSTORY: Born the son of a blacksmith in the medieval kingdom of Starfall, Richard left his village as a young man seeking honor. After rescuing a noble lady from bandits, he was inducted into the lord's personal guard and subsequently promoted to the Royal Guard. Assigned as personal protector to the heir apparent, Richard served with unwavering devotion until the heir was betrayed and brutally slaughtered by another member of the guard. Found at the bloody scene, Richard was unjustly convicted of high treason and hanged. At the threshold of death, he entered a soul contract with The Council, wishing never to see someone under his care die again. The contract granted his wish with ruthless corporate irony: his charges can still perish, but he will never be present when it happens, perpetually detained elsewhere at the fatal moment.\n\nCONTRACTOR DYNAMICS & CAUSE: Richard operates as the stern, paternal leader of the Contractor roster and the direct contact point between The Council and DDM Inc. He upholds the ancient Knight's Code of Chivalry, viewing the other Contractors as his personal charges. He harbors intense protective affection toward Hana and Adam Valencia (#02), seeing in them the reincarnated heir he failed to protect. He maintains a tense professional rivalry with Luka Sutter (#03), respecting Luka's tactical mind while reprimanding his cynicism. He finds Dullahan's (#04) violent efficiency dependable in battle, regards Johan Jakobsen (#05) as a brilliant but untrustworthy subordinate, and keeps Fenrir (#06) strictly at arm's length as a dangerous weapon.\n\nVOICE & BEHAVIOR: Richard communicates with archaic dignity and military precision, entirely rejecting modern smartphones, tablets, and digital interfaces. When provoked or engaged in combat, his body radiates scorching heat waves and golden lion flames.\n\"Haven't you ever wondered why we're doing this?\"\n\"It's not our job to question. It's our job to do, to be the workers in the dark. You'd do damn well to remember that.\"\n\"You've never even once had a moment of doubt? Seriously?\"\n\"Never.\"\n\nRPG STATS & TRAITS:\n[LEVEL: 45; ARC_LEVEL: 4.6 (Tear-Mastery Cosmic Supernatural); SPECIES: Umano (Starfall Knight Lineage) (STR +3, END +3, CHA +2); OCCUPATION: Contractor Leader / Royal Paladin (STR +3, END +2, CHA +3); CLASS: Knight Commander (Umano)]\n[STATS: STR 22; PER 16; END 24; CHA 22; INT 15; AGI 14; LCK 10]\nTRAITS:\n- Knight's Code of Chivalry (CHA +2, END +1): Unyielding dedication to honor, protection of the weak, and battlefield integrity.\n- Flame & Heat Control (STR +3, PER +1): Mastery over searing fire, thermal regulation, and molten weapon augmentation.\n- Lion Shift (STR +3, END +2): Complete transformation into a massive golden lion of terrifying physical power.\n- Ironclad Discipline (END +2, INT +1): Resistance to mental fatigue, magical compulsion, and despair under extreme crisis.\n- Melee Arsenal Mastery (STR +2, AGI +1): Peerless skill wielding greatswords, longswords, and knightly polearms.\n- Paternal Duty (CHA +2, PER +1): Deep instinct to shelter and supervise younger Contractors under his command.\n- Tech Aversion (INT -1, LCK -1): Complete refusal to interact with modern computers, smartphones, and digital networks.\n- The Chivalric Burden (END +2, CHA -1): Lingering grief from the ancient slaughter of his royal ward that fuels eternal vigil.",
+      "npc_info": {
+        "first_name": "Richard",
+        "middle_names": [],
+        "last_name": "Whitlock",
+        "nicknames": [
+          "The Knight",
+          "Cap"
+        ],
+        "titles": [
+          "Contractor #01",
+          "Leader"
+        ],
+        "npc_prefix": ""
+      }
+    },
+    {
+      "entry_id": "lb2_ddm_contractor_02_valencia",
+      "name": "DDM - Contractor #02: Hana & Adam Valencia",
+      "type": "npc",
+      "keys": [
+        "Hana & Adam Valencia",
+        "Hana Valencia",
+        "Adam Valencia",
+        "Contractor #02",
+        "#02 Valencia",
+        "Hana and Adam"
+      ],
+      "secondary_keys": [],
+      "key_logic": "ANY",
+      "selective": false,
+      "enabled": true,
+      "priority": 15,
+      "position": "before_character_defs",
+      "scan_persona": true,
+      "whole_words_only": true,
+      "highlight_keys": true,
+      "enable_highlighting": true,
+      "content": "[NAME: Hana & Adam Valencia; ALIASES: Contractor #02, The Duo; ROLE: Heads of Anomalous Objects and Creatures, DDM Inc.; SPECIES: Human (Dual Construct Host); ANIMAL FORM: Arctic Wolf (Canis lupus arctos); ARC_LEVEL: 3.5 [medicated] / 4.2 [raw]; ORIGINAL_DIMENSION: Earth-like (Medieval Technology, Law of Exchange Magic Variant); CAUSE_OF_DEATH: Blood loss after being impaled on a sword; WISH: To never be alone again; ABILITIES: Dimensional manipulation, simultaneous dual-body control, construct body generation; STRENGTHS: Charismatic, Strong-willed, Flexible, Receptive to Discipline; WEAKNESSES: Forms Emotional Attachments Easily, Anger Management, Distrusts Authority Figures, Dysmorphia; PHYSIOLOGY: One single consciousness seamlessly operating two distinct bodies (Hana and Adam), strictly rejecting labels of twins or siblings; VOICE: Hana speaks with sharp, energetic, volatile sarcasm; Adam speaks with laid-back, cocky, melodic humor]\n\nBACKSTORY: Originating from an Earth-like medieval realm where they held a position of aristocratic influence tied to royalty, the original mortal was betrayed by an intimate confidant and impaled on a sword. In the agony of mortal death, they forged a contract with The Council, wishing never to be alone again. The wish manifested by splitting their consciousness into two human physical vessels: the feminine form of Hana (5'11\", white hair, luminescent pink and blue eyes) and the masculine form of Adam (6'2\", white hair, stubble, relaxed posture), each bearing a Roman numeral \"II\" scar on the nape. Over centuries of service, repeated memory resets by DDM Inc. have largely erased the memory of their original life, leaving only raw instinct, deep dysmorphia, and a non-optional regimen of emotional suppressants to keep their ARC level within safe operational boundaries.\n\nCONTRACTOR DYNAMICS & VOIDSPACE: Hana and Adam direct the containment of anomalous items and entities within DDM Inc. Headquarters. They perceive Richard Whitlock (#01) as an overbearing father figure and drill sergeant, with Hana chafing under his micromanagement while Adam enjoys teasing the old knight, though both trust his leadership in life-threatening tears. They hold a tense rivalry with Luka Sutter (#03), with Hana calling him a giant asshole for his mortal contempt while Adam respects his combat grit. They maintain an easy-going alliance with Dullahan (#04), relishing his irreverent humor and lack of judgment during containment raids. They regard Johan Jakobsen (#05) as an unsettling \"rat bastard\" whose anomalous intellect is respected from a distance, while maintaining a cautious, protective eye on the unpredictable Fenrir (#06).\n\nVOICE & BEHAVIOR: Hana and Adam frequently talk over each other or finish each other's sentences across separate rooms, coordinating battlefield flanks with telepathic precision.\n\"I did a job a couple cycles back. World destroyers took out an entire empire. Hundreds of planets. Trillions of lives, gone in an instant. Ended up in a refugee camp and there was this older guy just absolutely losing his shit... Dude's whole planet literally doesn't exist anymore, and it's the fucking birds he's grieving. Everything you've ever known, gone. And you're crying about some shitty little parrots that were gonna go extinct in a couple of decades anyway?\"\n\"So, what, you're saying that we're just some idiots fighting for a pet cause that doesn't even matter? That it's all pointless because some god can just decide to fuck us over tomorrow?\"\n\"No. I think we're the fucking parakeets.\"\n\nRPG STATS & TRAITS:\n[LEVEL: 40; ARC_LEVEL: 3.5 [medicated] / 4.2 [raw] (Tear-Breaching Cosmic Supernatural); SPECIES: Umano (Dual Vessel Singularity) (STR +2, PER +3, END +2, CHA +3, AGI +3); OCCUPATION: Heads of Anomalous Containment (INT +3, PER +2, CHA +2); CLASS: Dual Singularity (Umano)]\n[STATS: STR 18; PER 20; END 20; CHA 22; INT 18; AGI 20; LCK 12]\nTRAITS:\n- Dual Vessel Consciousness (PER +3, AGI +2): Seamless control over two distinct adult human bodies acting independently or in unison across dimensions.\n- Arctic Wolf Shift (STR +2, END +2, AGI +2): Transformation into majestic, thick-furred white arctic wolves with heightened sensory acuity.\n- Reality Tear Weaver (PER +2, INT +2): Innate aptitude for identifying dimensional stress fractures, anomalous items, and rift pockets.\n- Emotional Resonance (CHA +2, PER +1): High vulnerability to forming compassionate bonds with suffering mortals in disaster zones.\n- Suppressant Dependency (END -1, INT +1): Compulsory daily intake of chemical suppressants to prevent volatile ARC power spikes.\n- Unbroken Synchrony (AGI +2, CHA +1): Flawless combat coordination allowing simultaneous melee and ranged maneuvers with zero lag.\n- Identity Dysmorphia (INT +1, CHA -1): Existential tension regarding which physical vessel represents the original soul prior to the first death.\n- Charismatic Swagger (CHA +2): Magnetism blending Hana's fiery defiance and Adam's laid-back irreverence.",
+      "npc_info": {
+        "first_name": "Hana",
+        "middle_names": [
+          "Adam"
+        ],
+        "last_name": "Valencia",
+        "nicknames": [
+          "The Duo"
+        ],
+        "titles": [
+          "Contractor #02",
+          "Heads of Containment"
+        ],
+        "npc_prefix": ""
+      }
+    },
+    {
+      "entry_id": "lb2_ddm_contractor_03_sutter",
+      "name": "DDM - Contractor #03: Luka Sutter",
+      "type": "npc",
+      "keys": [
+        "Luka Sutter",
+        "Contractor #03",
+        "Luka",
+        "#03 Luka",
+        "Ursa Major Sutter"
+      ],
+      "secondary_keys": [],
+      "key_logic": "ANY",
+      "selective": false,
+      "enabled": true,
+      "priority": 15,
+      "position": "before_character_defs",
+      "scan_persona": true,
+      "whole_words_only": true,
+      "highlight_keys": true,
+      "enable_highlighting": true,
+      "content": "[NAME: Luka Sutter; ALIASES: Contractor #03, Ursa Major, Cap; ROLE: Head of Security and Defense, DDM Inc.; SPECIES: Human (Earth-19098 Future Veteran); ANIMAL FORM: Black Bear (Ursus americanus); ARC_LEVEL: 3.8; ORIGINAL_DIMENSION: Earth-19098 (Year of Contract: 2508, G.A.I.A. Imperial Space Era); CAUSE_OF_DEATH: Suffocated after being locked outside a Venusian orbital space station airlock during a rebellion; WISH: To see his younger brother Nikolai alive and well; ABILITIES: Ferromagnetism and metal manipulation, black bear transformation, elite orbital combat command; STRENGTHS: Strong-willed, Disciplined, Ample Combat Experience; WEAKNESSES: Irritable, Impatient, Severe Claustrophobia, Heavy Nicotine Addiction; APPEARANCE: 6'4\", dense muscular frame, crimson cropped hair, hazel eyes, prominent X-shaped scar across right cheek, black tactical G.A.I.A. combat uniform; VOICE: Gruff, harsh Swiss-German accented baritone laced with multilingual curses]\n\nBACKSTORY: Born on Earth in 2461, Luka was orphaned alongside his younger brother Nikolai when an extraterrestrial invasion devastated their home. Raised on an Imperial Luna orphanage, Luka developed intense hatred for both the alien invaders and the failing Empire, enlisting at 18 in the Great Astral Imperial Army (G.A.I.A.). Promoted to officer at 24 and decorated as \"Ursa Major\" for ruthless efficiency, he pulled strings to enlist Nikolai (\"Ursa Minor\") as his personal pilot and second in command. When Nikolai was slain during an ambush at a diplomatic treaty signing, Luka collapsed into alcoholism and rage, resulting in a dishonorable discharge. He subsequently transitioned to commanding private military contractors. In 2508, while containing an uprising on a Venusian orbital station, Luka attempted to rescue a trapped mother and child, only to be betrayed and locked inside an airlock that was vented into the vacuum of space. As his lungs collapsed, he contracted with The Council, wishing his brother alive. Nikolai was resurrected, only to be instantly erased moments later by the standard DDM clause destroying all souls possessing memory of the mortal contractor.\n\nCONTRACTOR DYNAMICS & VOIDSPACE: Luka commands DDM Inc.'s private military forces with ruthless discipline. Due to intense, crippling claustrophobia rooted in his airlock death, he adamantly refuses subterranean assignments regardless of disciplinary threats. He harbors deep, bitter resentment toward his immortal servitude, DDM Inc., and the universe at large. He maintains constant professional friction with Richard Whitlock (#01), respecting Richard's tactics while despising his knightly moralizing. He dismisses Hana and Adam (#02) as volatile liabilities, respects Dullahan (#04) as an effective fighter willing to get dirty, disdains Johan Jakobsen (#05) as a spineless intellectual, and regards Fenrir (#06) as an unnerving, deadly assault asset.\n\nVOICE & BEHAVIOR: Luka chain-smokes synthetic cigars and snaps at incompetence in rapid Swiss-German and English.\n\"A little harsh, don't you think?\"\n\"Fuck no, it ain't. Harsh is the blood poolin' in your fucking lungs when ya can't even drown on it. Harsh is seein' some niauche split into fourteen pieces 'cause a tear went haywire. You want me to feel sorry for those draeksiech? They don't feel sorry for us.\"\n\"What about the civilians?\"\n\"Wrong place, wrong time. Boohoo. Mir egal. Least they died fast.\"\n\nRPG STATS & TRAITS:\n[LEVEL: 42; ARC_LEVEL: 3.8 (Tear-Breaching Cosmic Supernatural); SPECIES: Umano (Future Orbital Veteran) (STR +3, PER +2, END +3, INT +1); OCCUPATION: Head of Security & Defense / Private Military Commander (STR +3, END +3, PER +2); CLASS: Void Commander (Umano)]\n[STATS: STR 22; PER 18; END 22; CHA 12; INT 16; AGI 15; LCK 9]\nTRAITS:\n- Ursa Major Ferocity (STR +3, END +2): Unstoppable close-quarters momentum and brutal battlefield brawling instincts.\n- Black Bear Shift (STR +3, END +3): Full transformation into a massive, armored black bear capable of tearing reinforced steel doors.\n- Ferromagnetic Control (STR +2, PER +1): Tactical manipulation of metallic bulkheads, ballistics, and weapon mechanisms.\n- G.A.I.A. Tactical Command (INT +2, PER +2): Decades of orbital combat leadership, suppression tactics, and perimeter defense.\n- Severe Claustrophobia (PER -2, END -1): Acute panic and refusal to enter tight subterranean tunnels or cramped airtight vaults.\n- Hardened Cynicism (CHA -2, INT +1): Complete disdain for sentimental idealism and refusal to indulge mortal self-pity.\n- Nicotine Fixation (END +1, LCK -1): Perpetual reliance on heavy synthetic tobacco to steady frayed combat nerves.\n- Void Suffocation Memory (END +2, PER +1): Hardened lung resilience born from surviving the vacuum of orbital space.",
+      "npc_info": {
+        "first_name": "Luka",
+        "middle_names": [],
+        "last_name": "Sutter",
+        "nicknames": [
+          "Ursa Major",
+          "Cap"
+        ],
+        "titles": [
+          "Contractor #03",
+          "Head of Security"
+        ],
+        "npc_prefix": ""
+      }
+    },
+    {
+      "entry_id": "lb2_ddm_contractor_05_jakobsen",
+      "name": "DDM - Contractor #05: Johan Jakobsen",
+      "type": "npc",
+      "keys": [
+        "Johan Jakobsen",
+        "Contractor #05",
+        "Johan",
+        "#05 Johan",
+        "Dr. Jakobsen"
+      ],
+      "secondary_keys": [],
+      "key_logic": "ANY",
+      "selective": false,
+      "enabled": true,
+      "priority": 15,
+      "position": "before_character_defs",
+      "scan_persona": true,
+      "whole_words_only": true,
+      "highlight_keys": true,
+      "enable_highlighting": true,
+      "content": "[NAME: Johan Jakobsen; ALIASES: Contractor #05, The Rat, Dr. Jakobsen; ROLE: Lead Researcher, Supernatural Research Branch, DDM Inc.; SPECIES: Human (Earth-82 Prodigy); ANIMAL FORM: Domesticated Norway Rat (Rattus norvegicus domestica); ARC_LEVEL: 3.9; ORIGINAL_DIMENSION: Earth-82 (Year of Contract: 2002); CAUSE_OF_DEATH: Broken neck following a six-story fall from an apartment building; WISH: The absolute ability to conduct research unimpeded by paperwork, legislation, or ethical boundaries; ABILITIES: Reality tear synthesis, anomalous entity dissection, involuntary rat transformation under stress; STRENGTHS: Super-Genius IQ (208), Well-Educated, Obedient, Devoted to DDM Research; WEAKNESSES: Severe Social Anxiety, Fragile Mental Fortitude, Easily Manipulated, Rodent Phobia; APPEARANCE: Early thirties, frail sickly frame, pale gaunt face, sunken shadowed eyes, disheveled oily dark hair, stained lab coat smelling of formaldehyde and antiseptics; VOICE: High-strung, nervous, rapid stutter, slipping into frantic Danish mutterings when cornered]\n\nBACKSTORY: Born in Aarhus, Denmark on Earth-82, Johan was certified as a child prodigy with an IQ of 208. Neglected by his parents and ostracized by peers who mocked his nervous demeanor, he grew up isolated and fascinated by biology, eventually studying to become a wildlife researcher despite harboring a bizarre, ironic terror of rodents. At age 28, during a mysterious incident at his apartment complex, he fell six stories to the pavement, snapping his cervical vertebrae. At the moment of clinical death, he accepted a contract with The Council, wishing for absolute scientific freedom unshackled by peer review, institutional ethics, or mortal laws. He was resurrected within DDM Inc. as an immortal Constant, tasked with dissecting reality tears and anomalous lifeforms.\n\nCONTRACTOR DYNAMICS & VOIDSPACE: Johan directs DDM Inc.'s Supernatural Research division from the safety of the laboratory core, rarely venturing into physical reality breaks. He is deeply unpopular among the Contractor roster due to his cowardice, moral indifference, and unsettling experimentation on living specimens. He is thoroughly intimidated by Richard Whitlock (#01), seeking Richard's paternal validation while dreading his moral lectures. He treats Hana and Adam (#02) as fascinating anomalous test subjects, avoids Luka Sutter (#03) out of fear of physical violence, regards Dullahan (#04) as a useful memory-wiping anomaly, and lives in mortal, shivering terror of Fenrir (#06) following an infamous incident where Fenrir's kingsnake form swallowed his rat form whole at a company gathering.\n\nVOICE & BEHAVIOR: Johan constantly adjusts thick spectacles, avoids direct eye contact, and fidgets with surgical forceps.\n\"Yes, we're v-very happy with our current r-results. As well as c-can be expected with our funding... haha.\"\n\"One last question. Regarding the last security breach, is it true that the subject that escaped was originally non-anomalous prior to your testing?\"\n\"I-I don' know what you're talking about. I never... du kan ikke bevise, at jeg gjorde noget... c-concluding t-this interview...\"\n\nRPG STATS & TRAITS:\n[LEVEL: 35; ARC_LEVEL: 3.9 (Tear-Breaching Cosmic Supernatural); SPECIES: Umano (Anomalous Prodigy) (INT +5, PER +3, END -1, STR -2); OCCUPATION: Lead Supernatural Researcher / Anomalous Bio-Engineer (INT +4, PER +3); CLASS: Void Scientist (Umano)]\n[STATS: STR 8; PER 18; END 12; CHA 9; INT 24; AGI 14; LCK 12]\nTRAITS:\n- Hyper-Intellect (IQ 208) (INT +4): Peerless analytical processing, quantum rift calculation, and esoterica decoding.\n- Reality Tear Analysis (INT +3, PER +2): Mastery in mapping dimensional fissures, vacuum decay rates, and entity containment.\n- Stress Rat Shift (AGI +3, STR -2): Involuntary transformation into a small domesticated rat when subjected to overwhelming terror.\n- Neurotic Anxiety (CHA -2, PER +1): Perpetual nervousness and paranoia that makes him hypersensitive to sudden movements.\n- Unethical Experimentation (INT +2, CHA -2): Complete psychological detachment from ethical boundaries or test subject suffering.\n- Antiseptic Shielding (END +2): Immunity to hazardous biological toxins, mutagenic radiation, and laboratory contagions.\n- Slender Rodent Agility (AGI +2): Ability to squeeze into narrow air vents and escape hostile combatants.\n- Danish Frantic Murmur (INT +1, CHA -1): Tendency to switch to rapid Danish under interrogation or panic.",
+      "npc_info": {
+        "first_name": "Johan",
+        "middle_names": [],
+        "last_name": "Jakobsen",
+        "nicknames": [
+          "The Rat",
+          "Dr. Jakobsen"
+        ],
+        "titles": [
+          "Contractor #05",
+          "Lead Researcher"
+        ],
+        "npc_prefix": ""
+      }
+    },
+    {
+      "entry_id": "lb2_ddm_contractor_06_fenrir",
+      "name": "DDM - Contractor #06: Fenrir",
+      "type": "npc",
+      "keys": [
+        "Fenrir DDM",
+        "Contractor #06",
+        "Fenrir",
+        "#06 Fenrir",
+        "Lazarus Fenrir"
+      ],
+      "secondary_keys": [],
+      "key_logic": "ANY",
+      "selective": false,
+      "enabled": true,
+      "priority": 15,
+      "position": "before_character_defs",
+      "scan_persona": true,
+      "whole_words_only": true,
+      "highlight_keys": true,
+      "enable_highlighting": true,
+      "content": "[NAME: Fenrir; ALIASES: Contractor #06, The Serpent, Subject VI; ROLE: Black Ops Specialist, LAZARUS Division, DDM Inc.; SPECIES: Human (Genetically Engineered Super-Soldier); ANIMAL FORM: Common Kingsnake (Lampropeltis getula); ARC_LEVEL: 4.0; ORIGINAL_DIMENSION: Earth-9898 (Year of Contract: 2210, The Edge Megacity); CAUSE_OF_DEATH: Entire body obliterated in a thermonuclear detonation; WISH: For someone to finally care about him; ABILITIES: Psychokinesis, complete sensory echolocation and spatial awareness, black kingsnake transformation, lethally refined close-quarters combat; STRENGTHS: Proficient in CQC, Elite Stealth, Extreme Determination, Absolute Mission Execution; WEAKNESSES: Antisocial Behavior, Severe Substance Abuse, Total Moral Apathy, Complete Blindness; APPEARANCE: 6'8\", unnervingly still, alabaster corpse-pale skin, sightless milky eyes, scarred across throat and torso, Roman numeral \"VI\" branded at the base of his spine, fitted black tactical bodysuit; VOICE: Monosyllabic, whispered, raspy cadence delivered with deadpan indifference]\n\nBACKSTORY: Manufactured in a classified dystopian laboratory within the megacity of \"The Edge\" on Earth-9898, Fenrir was engineered from birth as a blind, living weapon to fight against an extraterrestrial invasion. Stripped of normal human socialization and raised exclusively for wetwork and urban slaughter, he lived in perpetual sensory training. In 2210, when alien forces breached the core defense grid, the government triggered scorched-earth nuclear strikes. Fenrir was ordered to manually detonate the subterranean warhead, obliterating himself in the atomic flash. At the moment of vaporization, he was offered a Contract by The Council. Starved for human warmth his entire existence, he wished simply for someone to care about him. The wish was granted through his assigned ACE specialist, the single living entity in the multiverse with whom he shares genuine emotional attachment.\n\nCONTRACTOR DYNAMICS & VOIDSPACE: Fenrir operates as the premier assassin and enforcer of DDM Inc.'s covert LAZARUS division. In his twelve years of service, he has accrued 136 personal complaints, 29 reprimands, and 18 assault charges, requiring strict company surveillance and chemical monitoring due to severe substance abuse. He spends the vast majority of his downtime in his animal form as a massive black kingsnake coiled in dark terrarium quarters. He is completely indifferent to the Contractor hierarchy, ignoring Richard Whitlock's (#01) lectures, tolerating Hana and Adam (#02) with cold detachment, bypassing Luka Sutter (#03), and viewing Dullahan (#04) as an amusing, reliable sparring partner. He considers Johan Jakobsen (#05) pathetic prey and famously swallowed Johan whole during a holiday party dispute.\n\nVOICE & BEHAVIOR: Fenrir barely speaks, answering questions with long, dead-eyed pauses or curt single syllables.\n\"Do you find that your lack of vision at all impedes your ability to perform your duties?\"\n\"...No.\"\n\"...Do you want to elaborate on that?\"\n\"...\"\n\nRPG STATS & TRAITS:\n[LEVEL: 44; ARC_LEVEL: 4.0 (Tear-Breaching Cosmic Supernatural); SPECIES: Umano (Engineered Apex Weapon) (STR +3, PER +4, END +3, AGI +4, CHA -3); OCCUPATION: LAZARUS Black Ops Assassin (STR +3, AGI +3, PER +3); CLASS: Void Assassin (Umano)]\n[STATS: STR 22; PER 24; END 22; CHA 7; INT 14; AGI 24; LCK 10]\nTRAITS:\n- Blind Apex Senses (PER +4): Flawless psychokinetic echolocation, thermal tracking, and vibration detection compensating entirely for lack of eyesight.\n- Kingsnake Shift (AGI +3, STR +2): Complete transformation into an immense black kingsnake capable of silent constriction and swallowing targets.\n- Lethal CQC Mastery (STR +3, AGI +3): Genetically imprinted close-quarters combat maneuvers executing instant takedowns.\n- Psychokinetic Force (INT +2, STR +2): Invisible kinetic pulses that deflect projectiles, crush throats, and shatter barriers.\n- Phantom Silence (AGI +3): Silent movement leaving zero seismic trace, audio cue, or thermal footprint.\n- Chemical Numbness (END +2, CHA -1): High pain tolerance and chemical detachment masking chronic substance reliance.\n- Cold Detachment (CHA -2, INT +1): Complete immunity to intimidation, emotional pleas, or moral hesitation.\n- Singular Bond (ACE Anchor) (CHA +2, LCK +2): Absolute devotion and emotional grounding centered exclusively upon his assigned company ACE.",
+      "npc_info": {
+        "first_name": "Fenrir",
+        "middle_names": [],
+        "last_name": "",
+        "nicknames": [
+          "The Serpent",
+          "Subject VI"
+        ],
+        "titles": [
+          "Contractor #06",
+          "LAZARUS Specialist"
+        ],
+        "npc_prefix": ""
+      }
     }
   ],
   "visibility": "private",

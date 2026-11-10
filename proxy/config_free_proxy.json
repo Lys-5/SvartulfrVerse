@@ -1,5 +1,5 @@
 {
-  "host": "0.0.0.0",
+  "host": "127.0.0.1",
   "port": 5005,
   "cooldown_seconds": 40,
   "timeout_seconds": 35.0,
@@ -68,10 +68,11 @@
     {
       "priority": 3,
       "id": "p3-gemini-argon",
-      "display_name": "Gemini 4 Argon (Google AI Studio)",
+      "display_name": "Gemini 4 Argon & 2.5 Pro (Google AI Studio)",
       "provider": "google",
       "models": [
-        "gemini-4-argon"
+        "gemini-4-argon",
+        "gemini-2.5-pro"
       ],
       "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
       "auth_type": "bearer",
@@ -80,14 +81,32 @@
     {
       "priority": 4,
       "id": "p4-gemini-3.8-flash",
-      "display_name": "Gemini 3.8 Flash (Google AI Studio)",
+      "display_name": "Gemini 3.8 Flash & Thinking (Google AI Studio)",
       "provider": "google",
       "models": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.8-flash-thinking"
       ],
       "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
       "auth_type": "bearer",
       "key_name": "google_ai_studio"
+    },
+    {
+      "priority": 5,
+      "id": "p5-gemini-pro-creative",
+      "display_name": "Gemini 2.0 Pro / Exp Creative (Google AI Studio)",
+      "provider": "google",
+      "models": [
+        "gemini-2.0-pro-exp-02-05",
+        "gemini-exp-1206"
+      ],
+      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "google_ai_studio",
+      "context_window": 1000000,
+      "max_tokens": 4096,
+      "supports_system": true,
+      "supports_streaming": true
     },
     {
       "priority": 6,
@@ -166,6 +185,31 @@
       "max_tokens": 4096,
       "supports_system": true,
       "supports_streaming": true
+    },
+    {
+      "priority": 11,
+      "id": "p11-claude-3.5-openrouter",
+      "display_name": "Claude 3.5 Sonnet & Haiku (OpenRouter)",
+      "provider": "openrouter",
+      "models": [
+        "anthropic/claude-3.5-sonnet",
+        "anthropic/claude-3.5-haiku"
+      ],
+      "base_url": "https://openrouter.ai/api/v1/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "openrouter"
+    },
+    {
+      "priority": 12,
+      "id": "p12-qwen-sambanova",
+      "display_name": "Qwen 2.5 72B (SambaNova Cloud)",
+      "provider": "sambanova",
+      "models": [
+        "Qwen2.5-72B-Instruct"
+      ],
+      "base_url": "https://api.sambanova.ai/v1/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "sambanova"
     },
     {
       "priority": 13,
@@ -399,19 +443,6 @@
       "display_name": "OpenRouter Free - Nemotron-3.5-Super-Vl",
       "provider": "openrouter",
       "model": "nvidia/nemotron-3.5-super-vl:free",
-      "base_url": "https://openrouter.ai/api/v1/chat/completions",
-      "key_name": "openrouter",
-      "context_window": 32768,
-      "max_tokens": 4096,
-      "supports_system": true,
-      "supports_streaming": true
-    },
-    {
-      "priority": 31,
-      "id": "or-lfm-3-1.7b",
-      "display_name": "OpenRouter Free - Lfm-3-1.7B",
-      "provider": "openrouter",
-      "model": "liquid/lfm-3-1.7b:free",
       "base_url": "https://openrouter.ai/api/v1/chat/completions",
       "key_name": "openrouter",
       "context_window": 32768,

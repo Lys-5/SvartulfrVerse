@@ -1,5 +1,41 @@
 # Changelog di Progetto — Svartúlfr Verse
 
+### 10/11/2026 - Esecuzione Sequenza Priorità (2 -> 1 -> 3): Validazione Single Chat & Proxy Fast Failover, Raggiungimento 100/310 NPC Enriched, Integrazione Roster Completo DDM Contractors (#01, #02, #03, #05, #06)
+
+- **Priorità 2: Test & Ottimizzazione Single Chat con Jasper (`chat_log_gBCpCP3fbwA7KdBJWEXRW`) & Local Proxy (:5005)**:
+  - Ispezionato il log del proxy locale e identificata la causa della latenza di fallback (failover a catena su provider scaduti come OpenRouter 401 e Chutes/DeepSeek 402).
+  - Ottimizzato `proxy/config_free_proxy.json` con rotazione ad alta velocità:
+    - **Priorità 1**: Groq Cloud (`qwen/qwen3.8-27b`, `openai/gpt-oss-120b`) con latenza media ridotta a **0.77 secondi** (`HTTP 200`).
+    - **Priorità 2**: Google AI Studio (`gemini-3.6-flash`, `gemini-3.5-flash`) come failover affidabile.
+    - Ridotto il timeout da 35s a 15s per prevenire blocchi su connessioni sospese.
+  - Verificata la single chat di Jasper Douglas: 6 lorebook collegati attivi, messaggi protetti dal floor di contesto (`min_chat_messages: 15`), formattazione in-character impeccabile (positive framing demi-umano, virgolette per dialoghi, zero em-dash, asterischi riservati ai pensieri interni).
+
+- **Priorità 1: Character Lore Enrichment Lotto a 100/310 NPC Completato**:
+  - Arricchito il lotto successivo di 10 personaggi da `daily_character_enrichment_state.json`:
+    1. `Barrow` (`GqP5j-PoP-426J453cPdi`): `Lv 6`, `ARC 2.4`, 8 tratti, `Demi-Umano (Minotauro)` + `Guild Tank / Heavy Laborer & Carpenter`.
+    2. `Barkley Rover` (`LqRTQ988rzB87CFokWGSw`): `Lv 4`, `ARC 2.4`, 7 tratti, `Demi-Umano (Golden Retriever)` + `Assistant Football Coach`.
+    3. `Bailey Rogers` (`eWYgfOsI15cq7zd0vm7Nu`): `Lv 2`, `ARC 2.2`, 6 tratti, `Demone (Incubus)` + `Student-Athlete / Offensive Lineman`.
+    4. `Aurora Night` (`QJV-XLFhV1HKiayKnQ6In`): `Lv 5`, `ARC 2.4`, 9 tratti, `Licantropo (Pureblood Alpha)` + `Pack Leader / Intelligence Broker`.
+    5. `Archer Wolfwood` (`fQHJanwGPD5nX-5jIpqym`): `Lv 33`, `ARC 3.3`, 12 tratti, `Licantropo (Ancient Werewolf Alpha)` + `Chancellor / Academic Dean`.
+    6. `Angelo Moreno` (`SOBWb6AHgLJaeWQ1gWjpH`): `Lv 99` (lore potente, 540y), `ARC 4.4`, 15 tratti, `Vampiro (Primordial Elder)` + `Firstborn Apex Sovereign / High Patron`.
+    7. `Andrew Campbell` (`wx5Qbfi6nwld9ihJ6tJdx`): `Lv 2`, `ARC 2.2`, 6 tratti, `Vampiro (Modern Day)` + `Fine Arts Student / Illustrator`.
+    8. `Abel Vilas` (`fZlTpIfghxbC50RhpXxQ3`): `Lv 4`, `ARC 2.2`, 8 tratti, `Demi-Umano (Sea Dragon)` + `Corporate Executive / Resort CEO`.
+    9. `Alyssa Hvit Douglas Bloodmoon` (`alyssa_world_dossier_2b54a223`): Protagonista, `Lv 2`, `ARC 3.6 / 4.2 (White Moon)`, 15 tratti dedicati completi, `Licantropo (Founding Line)` + `Pack Anchor / Certified Guild Healer`.
+    10. `Jet Thompson` (`3fVo6SI-iXlO45kThts0C`): `Lv 1` (13 anni), `ARC 1.0`, 5 tratti, `Demi-Umano (Semi-Minotauro)` + `Junior Athlete / 8th Grader`.
+  - Bonificati e distribuiti live su Wyvern Web API con payload ottimizzati sotto il limite di 1MB di Fastify (`PUT /api/lorebooks/_zwEqgEEzh12X6gHVmMKKC` e `PUT /api/lorebooks/_Uht3Ckz44JBDrPnUHq7LV`, entrambi `HTTP 200`).
+  - Stato di avanzamento aggiornato a **100/310** (`32.25%`).
+
+- **Priorità 3: Cross-Referencing & Integrazione Totale DDM Contractors (#01..#06) in Lorebook II**:
+  - Estratti i dati canonici ufficiali da `https://io-ddm-char.uwu.ai/` per l'intero roster di Contractors:
+    - `#01 Richard Whitlock`: Lion (*Panthera leo*), Starfall knight giustiziato ingiustamente, desiderio di non vedere morire mai nessuno sotto la sua custodia, controllo del fuoco e del calore, codice cavalleresco, leader de facto, ARC 4.6.
+    - `#02 Hana & Adam Valencia`: Arctic Wolf (*Canis lupus arctos*), singolarità a due corpi / una coscienza, ferita mortale di spada, desiderio di non restare mai più soli, ARC 3.5 (medicato) / 4.2 (raw), dysmorphia e suppressants.
+    - `#03 Luka Sutter`: Black Bear (*Ursus americanus*), veterano G.A.I.A. orbital imperial space (Earth-19098), airlock vented su Venere, desiderio per il fratello Nikolai, ferromagnetismo, claustrofobia acuta, ARC 3.8.
+    - `#05 Johan Jakobsen`: Domesticated Rat (*Rattus norvegicus domestica*), scienziato prodigio IQ 208 (Earth-82), caduta da 6 piani, desiderio di ricerca senza limiti etici, ARC 3.9.
+    - `#06 Fenrir`: Common Kingsnake (*Lampropeltis getula*), super-soldato cieco geneticamente modificato in "The Edge" (Earth-9898), esplosione nucleare manuale, desiderio che qualcuno gli voglia bene, ARC 4.0.
+  - Aggiornata la voce master `The Other Contractors` (`Y3YU175IiAYvRdAOKok3K`) e create 5 nuove voci dedicate complete di metadati `npc_info` (`lb2_ddm_contractor_01_whitlock`, `02_valencia`, `03_sutter`, `05_jakobsen`, `06_fenrir`).
+  - Distribuito live su Wyvern Web API (`PUT /api/lorebooks/_HfG7TeV6MJyj6bxMwxkpt`, `HTTP 200`, 151 entries).
+  - Validazione Vault Metabolism: **76/76 verifiche passate, 0 errori, 0 avvisi**.
+
 ### 10/11/2026 - Integrazione e Cross-Referencing Totale del Dossier DDM di Dullahan (#04) da `io-ddm-char.uwu.ai/#contract04`
 
 - **Integrazione Dati Canonici DDM Inc. su Dullahan (`OoqcG3WQrOui7TMw_vRq7`)**:
