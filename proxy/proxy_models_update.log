@@ -91,3 +91,11 @@
 [2026-11-09 22:45:08] No new RPG-suitable OpenRouter free models to add. Curated hierarchy preserved.
 [2026-11-09 22:45:08] Total active upstreams configured: 30
 [2026-11-09 22:45:08] Daily Proxy Models Check completed successfully.
+[2026-11-10 09:00:55] --- Starting Daily Proxy Models Check & Update (RPG Aligned) ---
+[2026-11-10 09:00:55] Fetching live OpenRouter free models...
+[2026-11-10 09:00:56] Found 13 active OpenRouter :free models.
+[2026-11-10 09:00:56] Purged non-RPG upstream: Google AI Studio (Gemini 3.1 Flash Lite - 1M Context) (p0-google-flash-lite-highcontext)
+[2026-11-10 09:00:56] Discovered 1 new RPG-suitable OpenRouter free models: ['liquid/lfm-3-1.7b:free']...
+[2026-11-10 09:00:56] Appended 1 new upstreams at fallback priorities >= 30.
+[2026-11-10 09:00:56] Total active upstreams configured: 33
+[2026-11-10 09:00:56] Daily Proxy Models Check completed successfully.

@@ -1,0 +1,22 @@
+{
+  "builtin": "schedule",
+  "args": [
+    "CRON_TZ=Europe/Rome 15 9 * * *",
+    "agentapi",
+    "new-conversation",
+    "--",
+    "Esegui il monitoraggio degli aggiornamenti della piattaforma Wyvern lanciando 'python scripts/daily_wyvern_platform_monitor.py'. Verifica se ci sono state nuove release o modifiche ai bundle di frontend e riassumi le novita. Infine, esegui tassativamente 'python scripts/archive_automation_chat.py --automation daily-wyvern-monitor' per salvare la chat e il transcript integrale nel repository in logs/automations/."
+  ],
+  "restart_policy": "always",
+  "display_name": "Daily Wyvern Platform Monitor",
+  "description": "Ogni giorno alle 09:15 (Europe/Rome), monitora la piattaforma Wyvern per rilevare nuove release, bundle e funzionalita, archiviando il log della chat nel progetto.",
+  "agent_permissions": {
+    "workspace_uris": [
+      "file:///e:/repository/SvartulfrVerse"
+    ],
+    "access_grants": [
+      "command(python scripts/daily_wyvern_platform_monitor.py)",
+      "command(python scripts/archive_automation_chat.py --automation daily-wyvern-monitor)"
+    ]
+  }
+}

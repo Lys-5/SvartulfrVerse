@@ -203,13 +203,33 @@ class PayloadCompactor:
         ):
             body.pop("frequency_penalty", None)
             body.pop("presence_penalty", None)
+            body.pop("min_p", None)
+            body.pop("repetition_penalty", None)
+
+        # Provider-specific strict non-standard parameter stripping (e.g. Google and Groq OpenAPI spec)
+        if provider in (
+            "google",
+            "groq",
+            "sambanova",
+            "github",
+            "cloudflare",
+            "mistral",
+            "cerebras",
+            "nvidia",
+            "zhipu",
+            "siliconflow",
+        ):
+            body.pop("min_p", None)
+            body.pop("repetition_penalty", None)
+            if provider in ("google", "groq", "github", "cloudflare"):
+                body.pop("top_k", None)
 
         # top_k handling
         if provider == "chutes":
             body["top_k"] = -1
         else:
             top_k = body.get("top_k")
-            if top_k is None or (isinstance(top_k, (int, float)) and top_k <= 0):
+            if top_k is None or (isinstance(top_k, (int, float)) and top_k <= 0) or provider in ("google", "groq", "github", "cloudflare"):
                 body.pop("top_k", None)
 
         # max_tokens clamping

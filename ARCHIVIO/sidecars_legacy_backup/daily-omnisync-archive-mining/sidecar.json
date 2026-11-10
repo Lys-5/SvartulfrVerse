@@ -1,0 +1,23 @@
+{
+  "builtin": "schedule",
+  "args": [
+    "CRON_TZ=Europe/Rome 0 10 * * *",
+    "agentapi",
+    "new-conversation",
+    "--",
+    "Esegui l'automazione di Omni-Sync e Archive Mining lanciando 'python scripts/daily_omnisync_archive_mining.py'. Verifica l'esito dell'audit di parita forense Wyvern e riassumi le note di recupero di lore generate nella cartella knowledge/Archive_Recoveries/. Infine, esegui tassativamente 'python scripts/archive_automation_chat.py --automation daily-omnisync-archive-mining' per salvare la chat e il transcript integrale nel repository in logs/automations/."
+  ],
+  "restart_policy": "always",
+  "display_name": "Daily Omni-Sync & Archive Mining",
+  "description": "Ogni giorno alle 10:00 (Europe/Rome), verifica la parita Omni-Sync del progetto con Wyvern ed estrae a blocchi di 2-3 file la lore perduta dall'archivio nel Second Brain.",
+  "agent_permissions": {
+    "workspace_uris": [
+      "file:///e:/repository/SvartulfrVerse"
+    ],
+    "access_grants": [
+      "command(python scripts/daily_omnisync_archive_mining.py)",
+      "command(python scripts/archive_mining_engine.py)",
+      "command(python scripts/archive_automation_chat.py --automation daily-omnisync-archive-mining)"
+    ]
+  }
+}

@@ -30,7 +30,15 @@ Questo documento codifica le regole operative ufficiali e vincolanti per la crea
 
 ---
 
-## 1. Formato di Consegna: Testo, Non JSON
+## 1. Formato di Consegna: Testo, Non JSON & Live Platform Parity
+
+### 1.1 Definizione Vincolante di Lavoro Completo (https://app.wyvern.chat/mine)
+**REGOLA SUPREMA DI RILASCIO:** Il lavoro su Character Card, Lorebook, Scenari, Personas, Location o Parametri **NON VIENE MAI CONSIDERATO COMPLETO** finché non è effettivamente aggiornato e verificato a livello di piattaforma su **https://app.wyvern.chat/mine**.
+- La semplice modifica di file locali (`FINAL/*.json`, script di scratch o test locali) **NON costituisce completamento**.
+- Se la modifica non è ancora presente sulla piattaforma live di Wyvern, il lavoro **DEVE essere categoricamente classificato e dichiarato come INCOMPLETO (In attesa di aggiornamento su piattaforma Wyvern)**.
+- Un task è "COMPLETATO" solo quando la scrittura su Wyvern è avvenuta con successo (via API verificata o conferma esplicita dell'utente).
+
+
 
 **Default Assoluto:** Fornire sempre testo pronto da incollare nei campi dell'interfaccia web di Wyvern (`description`, `personality`, `first_mes`, `mes_example`, `system_prompt`, `post_history_instructions`, lorebook/NPC entries, outfit, tagline, shared info, ecc.), **NON file JSON completi**.
 

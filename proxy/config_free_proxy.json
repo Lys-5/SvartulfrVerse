@@ -1,5 +1,5 @@
 {
-  "host": "127.0.0.1",
+  "host": "0.0.0.0",
   "port": 5005,
   "cooldown_seconds": 40,
   "timeout_seconds": 35.0,
@@ -443,6 +443,19 @@
       "display_name": "OpenRouter Free - Nemotron-3.5-Super-Vl",
       "provider": "openrouter",
       "model": "nvidia/nemotron-3.5-super-vl:free",
+      "base_url": "https://openrouter.ai/api/v1/chat/completions",
+      "key_name": "openrouter",
+      "context_window": 32768,
+      "max_tokens": 4096,
+      "supports_system": true,
+      "supports_streaming": true
+    },
+    {
+      "priority": 31,
+      "id": "or-lfm-3-1.7b",
+      "display_name": "OpenRouter Free - Lfm-3-1.7B",
+      "provider": "openrouter",
+      "model": "liquid/lfm-3-1.7b:free",
       "base_url": "https://openrouter.ai/api/v1/chat/completions",
       "key_name": "openrouter",
       "context_window": 32768,

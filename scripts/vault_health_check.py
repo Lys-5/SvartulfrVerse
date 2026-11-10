@@ -54,6 +54,7 @@ CANONICAL_HEIGHTS = {
     'Jasper': {'cm': 193, 'imperial': "6' 4\""},
     'Noah': {'cm': 197, 'imperial': "6' 5.6\""},
     'Logan': {'cm': 198, 'imperial': "6' 6\""},
+    'Mackenzie': {'cm': 204, 'imperial': "6' 8\""},
     'Malachia': {'cm': 208, 'imperial': "6' 9.9\""},
     'Erik': {'cm': 213, 'imperial': "7' 0\""},
     'Wulfnic': {'cm': 220, 'imperial': "7' 2.6\""},
@@ -133,6 +134,13 @@ class HealthAuditor:
                         self.record_warning(cat, f"Scarlett Rose ({npcf.name}) dovrebbe includere le due corna scarlatte")
                     else:
                         self.record_pass(cat, f"Scarlett Rose ({npcf.name}) due corna scarlatte verificate")
+
+                # Check Roman Blackwood homonymy
+                if 'roman blackwood' in name.lower():
+                    if 'omonim' not in desc.lower():
+                        self.record_error(cat, f"Roman Blackwood ({npcf.name}) deve esplicitare l'omonimia anagrafica ('omonimo') per prevenire l'attribuzione di erede della Casata Blackwood")
+                    else:
+                        self.record_pass(cat, f"Roman Blackwood ({npcf.name}) omonimia confermata (nessun legame ereditario Casata Blackwood)")
 
                 # Check Em-Dash
                 if '—' in desc or '–' in desc:

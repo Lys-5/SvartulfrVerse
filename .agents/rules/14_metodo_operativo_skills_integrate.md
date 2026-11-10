@@ -22,6 +22,10 @@ Appena l'utente approva esplicitamente il piano:
 1. **Sviluppo (`/teamwork-preview`):** Implementa la soluzione coordinando più prospettive (Clean Code, Sicurezza, UX/Performance) e genera l'anteprima operativa del lavoro.
 2. **Verifica Tecnica (`chrome-devtools`):** Se il task prevede un output web, UI o chiamate di rete/API, avvia o connettiti a `chrome-devtools`. Ispeziona il DOM, controlla la presenza di errori in Console, verifica i tempi di risposta nel tab Network e correggi autonomamente eventuali bug rilevati in tempo reale.
 
+### Vincolo di Rilascio FASE 3 & FASE 4: Piattaforma Wyvern come Unica Fonte di Verità di Completamento
+- Nessun task o sotto-task può passare allo stato `COMPLETATO` senza che la modifica sia atterrata ed effettivamente attiva su `https://app.wyvern.chat/mine`.
+- Se la sincronizzazione con Wyvern è in sospeso (es. in attesa di token, di chiamata API o di inserimento manuale da parte dell'utente), l'assistente deve riportare lo stato come **INCOMPLETO (In attesa di aggiornamento su piattaforma Wyvern)**, fornendo i blocchi testuali pronti all'uso e non chiudendo il task come concluso finché non c'è conferma di scrittura su piattaforma.
+
 ## FASE 4: Consolidamento ed Evoluzione (Self-Learning)
 A implementazione validata e funzionante, chiudi sempre il ciclo eseguendo:
 1. **Estrazione Memoria (`/learn`):** Analizza l'intera sessione. Estrai i pattern risolutivi, le preferenze dell'utente emerse durante `/grill-me`, i bug risolti con `chrome-devtools` e le informazioni chiave trovate con `/browser`. Salva queste regole nella memoria del progetto (`GEMINI.md`, `.agents/rules/`).

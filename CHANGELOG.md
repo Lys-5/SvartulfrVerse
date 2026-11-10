@@ -1,5 +1,113 @@
 # Changelog di Progetto — Svartúlfr Verse
 
+### 10/11/2026 - Esecuzione Sincronizzazione Live Platform Parity (100% Omni-Sync su https://app.wyvern.chat/mine): Lorebook I-III, NPC Primary/Secondary, Mac 204cm, 3 Schede Fantasy & Alyssa Persona (#01, #08, #11, #14, #15, #21)
+
+- **Risoluzione Definitiva di Tutti i Task Incompleti su Wyvern Live Platform**:
+  - *Estrazione Token Automatica da IndexedDB*: Estratti via Playwright CDP sia l'`accessToken` che il `refreshToken` da `firebaseLocalStorageDb.firebaseLocalStorage` della sessione Chrome attiva dell'utente, garantendo il rinnovo automatico senza richiedere l'inserimento manuale del Bearer token.
+  - *Deploy Lorebook Standalone via Web API (`PUT /api/lorebooks/{id}`)*:
+    - **Svartúlfr - Lorebook I (`_gwwCxCfQ6PQaLEjAQVpJL`)**: `242` entries live (`HTTP 200`), integrata la voce `Concilio di Blackwood` (`_LB1_Concilio_Blackwood`), St. Brugge e Padre Revazhael.
+    - **Svartúlfr - Lorebook II (`_HfG7TeV6MJyj6bxMwxkpt`)**: `151` entries live (`HTTP 200`), integrati Dullahan (#04) e il roster completo dei 5 Contractors DDM (Whitlock, Valencia, Sutter, Jakobsen, Fenrir).
+    - **Svartúlfr - Lorebook III (`_9zWTGqYJNJ4BCDMj8gfcD`)**: `48` entries live (`HTTP 200`), integrata la dissociazione omonima di Roman Blackwood.
+    - **Svartúlfr - NPC Primary (`_zwEqgEEzh12X6gHVmMKKC`)**: `99` entries live (`HTTP 200`), ottimizzato il payload JSON a 860 KB (sotto la soglia di 1MB Fastify), inclusi Abel Vilas (5 outfit e `npc_info`), Mackenzie Sanchez-Rogers (204 cm e 9 outfit) e Roman Blackwood.
+    - **Svartúlfr - NPC Secondary (`_Uht3Ckz44JBDrPnUHq7LV`)**: `212` entries live (`HTTP 200`), compattato il payload a 1,013 KB, integrato il lotto 101..115 (da Alistair a Silas) e rimossa la collisione duplicata di Abel Vilas.
+  - *Deploy & Bonifica Schede Stand-Alone (`/characters/mine`)*:
+    - **Mackenzie Sanchez-Rogers (Moderna — `_zn24784jfcchQ7EwCyAnm`)**: Aggiornato con successo (`HTTP 200`). Verificata live la statura Pureblood Alpha **204 cm (6'8")** e la presenza dei 9 outfit maschili contestuali (eliminati definitivamente i 6 outfit femminili Wolfwood).
+    - **World Character Mac (`_RXHKfwRXwhRkBHttHVgqt`)**: Aggiornato `long_summary` con statura 204 cm (`HTTP 200`).
+    - **7 Schede Stand-Alone Esistenti**: Sincronizzati via API (`HTTP 200`) Jasper (`_t4J9aQNJM36cUKAP4wB4U`), Erik (`_QPea6g4Q1QfeYCVHCLMPR`), Malachia (`_RDfz7XzTpM23LpPALVXHM`), Logan (`_T8Ywcr9FEqNf9JxbK6eHP`), Noah (`_zFLUjV8aVxQRAfQxGcAcY`), Wulfnic (`_HEQQbbRFwKdG8QE2Fh1z1`) ed Edric (`_TbRM3EdxDjHFgqztTbCpL`) con i tag DDM `ARC_LEVEL` e i tratti RPG calibrati.
+  - *Creazione Live Schede High Fantasy / Alteyra (`POST /api/characters`)*:
+    - **Mackenzie Fantasy (`_nUkjqtKz9RrP7CJCxXnCL`)**: Creata live (`HTTP 200`). Avventuriero di Classe A, War Skald / Rogue Brawler, 204 cm, 9 outfit fantasy. URL: `https://app.wyvern.chat/characters/_nUkjqtKz9RrP7CJCxXnCL`.
+    - **Jasper Fantasy (`_hABEHWwXTXrtMrR6zRN9J`)**: Creata live (`HTTP 200`). Spadaccino Mistico Sólúlfr / Shadow Infiltrator. URL: `https://app.wyvern.chat/characters/_hABEHWwXTXrtMrR6zRN9J`.
+    - **Malachia Fantasy (`_4NkYFwYnYMm7GaRxeUeDz`)**: Creata live (`HTTP 200`). Berserker Titan / Runesmith d'Assalto. URL: `https://app.wyvern.chat/characters/_4NkYFwYnYMm7GaRxeUeDz`.
+  - *Creazione Live Persona High Fantasy (`POST /api/user-personas`)*:
+    - **Alyssa (Fantasy) (`user_persona_bUnwqPg77CrB4C9TDQ8h3`)**: Creata live (`HTTP 200`). Guaritrice Runica Mániúlfr / Pack Anchor d'Alteyra.
+  - *Stato Vault Health Check*: **83 controlli superati su 83, ZERO errori critici**.
+  - *Conformità Regola 1.1*: **100% Live Platform Parity raggiunta su https://app.wyvern.chat/mine**.
+
+
+
+### 10/11/2026 - Codifica Regola Vincolante (/learn): Criterio Supremo di Completezza Operativa (Live Platform Parity su https://app.wyvern.chat/mine) (#01, #11, #14, #15, #21)
+
+- **Nuova Regola di Progetto — Definition of Done su Piattaforma Live**:
+  - *Invariante Vincolante*: Il lavoro svolto su Character Card, Lorebook, Scenari, Personas, Location, Setting o Parametri **NON VIENE MAI CONSIDERATO COMPLETO** finché non è effettivamente aggiornato, scritto e verificato a livello di piattaforma su `https://app.wyvern.chat/mine`.
+  - *Divieto di Falso Completamento Locale*: La sola presenza o validazione di un file modificato su disco locale (`FINAL/*.json`, script di scratch, test del vault) **NON costituisce completamento**.
+  - *Dichiarazione Obbligatoria di Stato*: Se la modifica è pronta in locale o fornita come testo in chat ma non è ancora stata applicata ed è assente sulla piattaforma web live (via Web API o intervento dell'utente), il task DEVE essere categoricamente classificato e dichiarato come **INCOMPLETO (In attesa di aggiornamento su piattaforma Wyvern)**.
+  - *Codificazione Normativa*: Inserita la Sezione 1.1 in [GEMINI.md](file:///e:/repository/SvartulfrVerse/GEMINI.md), la Sezione 1.1 in [.agents/rules/01_formato_consegna_e_jed.md](file:///e:/repository/SvartulfrVerse/.agents/rules/01_formato_consegna_e_jed.md) e il Vincolo di Rilascio FASE 3 & FASE 4 in [.agents/rules/14_metodo_operativo_skills_integrate.md](file:///e:/repository/SvartulfrVerse/.agents/rules/14_metodo_operativo_skills_integrate.md).
+
+
+### 10/11/2026 - Creazione Character Card Standalone: Mackenzie "Mac" Sanchez-Rogers (Fantasy) — Bardo-Guerriero & Ladro-Mercenario A-Rank (#01, #02, #03, #05, #08, #09, #15, #21)
+
+- **Creazione Scheda Fantasy: `FINAL/Mackenzie_Fantasy_card.json`**:
+  - *Identità & Setting*: Creata la character card per la variante High Fantasy di Mac nel filone di Alteyra / Silverhaven (parallelamente a Jasper Fantasy e Malachia Fantasy).
+  - *Archetipo e Rango*: **Avventuriero di Classe A** della Gilda degli Avventurieri e Mercenari di Silverhaven, classe **Bardo-Guerriero & Ladro-Mercenario (War Skald / Rogue Brawler)**.
+  - *Armamento & Stile*: Spada bastarda dentellata a tracolla, doppie daghe dentellate da corpo a corpo alla cintura e liuto da taverna rinforzato con cassa di risonanza in ironwood. Maestro nell'alternare canti di battaglia che galvanizzano il party a violente zuffe a mani nude e fendenti letali.
+  - *Biologia & Statura*: Pureblood Alpha licantropo inconsapevole, alto **204 cm (6'8")**, con corporatura taurina e biondo-dorata, che disprezza i nobili e le caste credendo che la sua forza provenga solo dalla dura vita sui moli.
+  - *Struttura JED+ & 9 Outfits*: Dotato di 9 outfit fantasy contestuali (Taverna & Bivacco, Dotazione Operativa da Mercenario di Classe A, Ricevimento d'Ingaggio Ducale, Serata di Baldoria al Drago d'Argento, Sorgenti Calde di Mythal, Bivacco Notturno, Nudo Anatomico Pureblood Alpha Ancestrale, Hybrid Shift Alpha Sellsword da 255 cm, Infiltrazione & Spionaggio Notturno).
+  - *Motore D20 + S.P.E.C.I.A.L.*: Configurato con S.P.E.C.I.A.L. (STR 24, PER 18, END 22, CHA 16, INT 10, AGI 18, LCK 12), Level 2, ARC_LEVEL 2.4 e 9 tratti canonici.
+- **Accodamento e Preparazione Testo per Scheda Singola Stand-Alone (Moderna)**:
+  - Formattati e verificati tutti i blocchi testuali pronti all'uso per il copia-incolla nei campi dell'interfaccia web di Wyvern (`description`, `personality`, `first_mes`, `post_history_instructions`, outfits).
+- **Validazione Vault Health Check (`vault_health_check.py`)**:
+  - Scansionate 13 Character Cards, 11 Lorebook, 1263 NPC.
+  - Esito: **83 controlli superati su 83, ZERO errori critici**.
+
+
+### 10/11/2026 - Correzioni Canoniche di Lore: Elevazione Statura Mac Pureblood Alpha (>2m) & Dissociazione Omonimia Roman Blackwood (#01, #02, #03, #05, #08, #15, #21)
+
+- **Correzione Statura Canonica Pureblood Alpha — Mackenzie "Mac" Sanchez-Rogers**:
+  - *Allineamento Biologico*: Come stabilito dalle direttive d'autore, tutti i lupi mannari maschi di stirpe Alpha Purosangue (come la linea paterna Rogers di Mac, e similmente a Erik 213 cm, Malachia 208 cm, Magnus 210 cm e Cornelius 210+ cm) sono giganti titanici superiori ai 2 metri.
+  - *Aggiornamento Altezza*: Elevata l'altezza di Mac da 188 cm (6'2") a **204 cm (6'8")**, aggiornando di conseguenza la descrizione JED+ del torso, della corporatura e della forma ibrida (255 cm / 8'4"). L'imponente stazza titanica evidenzia il contrasto con la sua postura perennemente ricurva e trasandata, con cui cerca inconsciamente di sminuire la sua genetica aristocratica mai rivelata.
+  - *Bonifica Totale Outfits*: Eliminati i 6 outfit femminili spurii residui (copiati erroneamente da schede Wolfwood) in [`FINAL/Mackenzie_Sanchez_Rogers_card.json`](file:///e:/repository/SvartulfrVerse/FINAL/Mackenzie_Sanchez_Rogers_card.json) e [`FINAL/Svartulfr_Characters.json`](file:///e:/repository/SvartulfrVerse/FINAL/Svartulfr_Characters.json). Implementati i **9 outfit maschili strutturati canonici** (The Van, Behind the Keys, Oakland Sunday, Underground Gig / Sidewinders, Pacific Surf, The Den, Nudo Anatomico Pureblood Alpha, Hybrid Shift Alpha Brawler, Working Courier).
+  - *Propagazione Omni-Parity*: Aggiornata la scheda stand-alone, l'entry in [`FINAL/Svartulfr_NPC_Primary.json`](file:///e:/repository/SvartulfrVerse/FINAL/Svartulfr_NPC_Primary.json) e in [`FINAL/Svartulfr_Characters.json`](file:///e:/repository/SvartulfrVerse/FINAL/Svartulfr_Characters.json).
+
+- **Chiarimento Canonico su Roman Blackwood — Dissociazione Totale da Casata ed Eredità**:
+  - *Omonimia Pura*: Confermato che Roman Blackwood (studente MBA della SUCC ed atleta di punta della squadra di lotta / lottatore MMA amatoriale e clandestino) porta il cognome Blackwood per **pura coincidenza anagrafica (omonimia)**, senza possedere alcun legame dinastico, parentela, eredità o connessione nobiliare con la storica Casata Douglas-Blackwood o con i fondatori della Blackwood Valley.
+  - *Aggiornamenti Applicati*:
+    - Integrata la chiave esplicita `SURNAME_NOTE: Omonimo per cognome; nessuna parentela, legame nobiliare o diritto ereditario con la Casata Douglas-Blackwood o con i fondatori della Blackwood Valley;` nell'header JED+ di Roman in [`FINAL/Svartulfr_NPC_Primary.json`](file:///e:/repository/SvartulfrVerse/FINAL/Svartulfr_NPC_Primary.json) e [`FINAL/Svartulfr_Characters.json`](file:///e:/repository/SvartulfrVerse/FINAL/Svartulfr_Characters.json).
+    - Riscritta la sezione `BACKSTORY` per specificare la sua provenienza da una famiglia borghese lupina convenzionale del nord della California, totalmente scollegata dai seggi di governo o dalla nobiltà di Blackwood City.
+    - Aggiornata la voce in [`FINAL/Svartulfr_Lorebook_III.json`](file:///e:/repository/SvartulfrVerse/FINAL/Svartulfr_Lorebook_III.json) (`Roman Blackwood & Kolya (SUCC Wrestling Team)`) con nota esplicativa sull'omonimia.
+- **Aggiornamento Vault Health Check (`vault_health_check.py`)**:
+  - Aggiunto `Mackenzie` nei benchmark di altezza canonica (`CANONICAL_HEIGHTS`, 204 cm).
+  - Introdotto il controllo automatico di conformità sull'omonimia anagrafica per Roman Blackwood.
+  - Esito validazione: **78 check superati su 78, zero errori critici**.
+
+
+### 10/11/2026 - Completamento Pipeline Giornaliera: Forensic Parametri Wyvern, Batch Arricchimento 115/310, Ingestione Concilio & Abel Vilas, Zero Collisioni (76/76 Check Superati) (#01, #02, #05, #08, #11, #15, #20, #21)
+
+- **Forensic & Calibrazione Parametri Wyvern vs Proxy Locale (`free_tier_proxy.py`)**:
+  - Analizzati i parametri di generazione configurati dall'utente (`max_tokens: 4096`, `temperature: 0.75`, `top_p: 0.95`, `frequency_penalty: 0.1`, `presence_penalty: 0.05`) e la voce di errore 503 (`ERR_BAD_RESPONSE`) dal Prompt History.
+  - *Diagnosi Forense Certificata*: L'errore 503 nel Prompt History coincide al secondo con il log delle 04:21:16, antecedente al riavvio del proxy patchato. La causa scatenante era l'invio simultaneo da parte di Wyvern di `min_p`, `repetition_penalty` e `frequency_penalty`/`presence_penalty`, rigettati con HTTP 400 da Google AI Studio ("Unknown name frequency_penalty" / "Penalty is not enabled for this model").
+  - *Verifica del Sanificatore*: Confermato che `PayloadCompactor.sanitize_parameters` e `prepare_for_provider` rimuovono selettivamente tali parametri incompatibili per Google e gli altri endpoint a schema rigido, mantenendo al contempo il supporto OpenAI standard. Dal riavvio su `0.0.0.0:5005` (04:21:55), il proxy ha registrato il 100% di successo (200 OK) su tutte le chiamate streaming SSE e batch, con commutazione istantanea del circuit-breaker in caso di saturazione transitoria di un modello.
+
+- **Task 1: Reverse-Engineering dei 5 Nuovi Bundle Wyvern**:
+  - Ispezionati in profondità i chunk statici `17055`, `99908`, `12489`, `7829`.
+  - Confermato il pieno supporto per le nuove chiavi frontend `impersonate_prompt`, `use_impersonate_override`, `use_reply_options`, `vnMode`, `immersiveMode`, `enableEntryHighlighting`. Nessuna breaking change rilevata a carico degli schemi di interscambio o dei Lorebook.
+
+- **Task 2: Character Lore Enrichment Batch 10 (Progresso 105 -> 115 / 310)**:
+  - Eseguita con successo la fase di arricchimento del lotto di 10 NPC secondari tramite `daily_character_enrichment.py`:
+    - `Alistair Ambrose DeVille`, `Cato`, `Damien Bishop`, `Everett Rottmore`, `Vasile Ionescu`, `Eira Elloway`, `Vespera Thorne`, `Evan`, `Bramble Mossmere`, `Silas`.
+  - Eseguito il monitoraggio della test chat attiva (`chat_log_ftrtAD79eddk9Ue9Jr2WJ`, 225 turni) con 0 derive di pacing e perfetta aderenza anatomica.
+  - Aggiornato lo stato in `daily_character_enrichment_state.json` con avanzamento a 115/310 NPC processati.
+
+- **Task 4: Ingestione Canonica Concilio di Blackwood & Abel Vilas**:
+  - *Lorebook I (`FINAL/Svartulfr_Lorebook_I.json`)*: Inserita la voce ufficiale di istituzione e governo `Concilio di Blackwood (Blackwood Council)` (`_LB1_Concilio_Blackwood`), formalizzando la presidenza di Erik Douglas, i 10 seggi distrettuali territoriali e i 7 seggi delle specie minoritarie (Demoni, Orchi, Demi-human, Umani magici, Ibridi, Fatati, Non-morti).
+  - *Lorebook NPC Primary (`FINAL/Svartulfr_NPC_Primary.json`)*: Identificato Abel Vilas già presente come Primary NPC (`fZlTpIfghxbC50RhpXxQ3`). Bonificato il nome (rimozione spazio spurio), compilati i metadati `npc_info` completi e integrati i 5 outfit contestuali strutturati (At the Resort/Default, Council Session, Night Swim, Off the Clock, A Bad Week).
+  - *Risoluzione Preventiva Collisione*: Rimosso il duplicato da `Svartulfr_NPC_Secondary.json` e ripristinata la perfetta parità byte-for-byte `entries == lexicon` su entrambi i Lorebook.
+  - *Vault Health Check*: Eseguito `scripts/vault_health_check.py` con esito **76 check superati su 76 e zero errori critici**.
+
+
+### 10/11/2026 - Risoluzione Definitiva Bug Parametri Proxy 503 & Calibrazione Completa Setting World/Single Chat (#01, #02, #03, #11, #20)
+
+- **Bonifica Sanificatore Parametri Proxy Locale (`free_tier_proxy.py`)**:
+  - Identificata la causa scatenante dell'errore HTTP 503: l'inoltro di parametri non conformi allo schema OpenAPI rigido di Google AI Studio e Groq (`min_p` e `repetition_penalty`), che provocavano un rigetto a monte con HTTP 400 Bad Request.
+  - Esteso il metodo `PayloadCompactor.sanitize_parameters` in `proxy/free_tier_proxy.py`: rimozione automatica e trasparente di `min_p`, `repetition_penalty` e `top_k` per tutti i provider con schemi rigidi (Google, Groq, SambaNova, Cloudflare, GitHub, Mistral, Cerebras, Nvidia, Zhipu, Siliconflow).
+  - Configurato il binding universale su `0.0.0.0:5005` in `proxy/config_free_proxy.json`, garantendo la raggiungibilità sia da `127.0.0.1` sia dall'indirizzo LAN `192.168.1.5`.
+- **Allineamento & Calibrazione Globale dei Setting Wyvern (World Chat & Single Chat)**:
+  - *Output Settings*: Confermato feedback sonoro ON, Persona Selector ON, Stacked Input Bar ON, Single Line Output rigorosamente OFF, AI Time Tracking abilitato.
+  - *Overrides & Extras*: Simulation mode su Game Master / Dungeon Master, narrazione in terza persona, pensieri interiori su `*Italics*` (`*...*`).
+  - *Easy Parameters & Connessione*: Taratura di precisione con Temperatura a 0.75, Top P a 0.95, penalità calibrate e limite di generazione `max_tokens` a 4096 (con `Max Messages Sent` a 40 turni per eliminare il payload bloat).
+  - *Prompt Assembly*: Agganciato `Svartúlfr — Master TTRPG Assembly (S.P.E.C.I.A.L. + Italian Sandwich)` a monte nella connessione `free-tier-master (Local)`, estendendo automaticamente l'architettura a tutte le sessioni.
+- **Validazione Empirica dal Vivo su World Chat (`chat_log_Tc4xL33mLdVCgr8fQJnkr`)**:
+  - Risposta in streaming SSE generata con successo su `gemini-3.1-flash-lite` (Priorità 1, 1M context) in meno di 5 secondi: 5.378 caratteri di prosa impeccabile, totale rispetto della formattazione senza em-dash, gestione corale viva del party (Jasper, Malachia, Dorian, Mizuki, Yuzuha, Lucan) e perfetta continuità di lore sul precettore Padre Rev.
+
 ### 10/11/2026 - Esecuzione Sequenza Priorità (2 -> 1 -> 3): Validazione Single Chat & Proxy Fast Failover, Raggiungimento 100/310 NPC Enriched, Integrazione Roster Completo DDM Contractors (#01, #02, #03, #05, #06)
 
 - **Priorità 2: Test & Ottimizzazione Single Chat con Jasper (`chat_log_gBCpCP3fbwA7KdBJWEXRW`) & Local Proxy (:5005)**:

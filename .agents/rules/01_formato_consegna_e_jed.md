@@ -14,6 +14,16 @@ Il JSON va generato **esclusivamente** se:
 - **Scrittura diretta sul World via API:** Quando l'assistente scrive direttamente sul World tramite API (vedi Regola 11), il testo non passa dalla chat campo per campo. In questo caso si consegna il **riepilogo** puntuale di cosa è stato scritto e dove, corredato dal documento di riepilogo nel Project con i valori precedenti dei campi modificati (snapshot di sicurezza).
 - **Lavoro in locale su SQLite (sospeso dal 22/09):** Vale solo se l'utente riattiva esplicitamente il lavoro sul database locale di Wyldfire (vedi Regola 12). Il testo non passa dalla chat campo per campo, ma si consegna il riepilogo in un documento del Project.
 
+## 1.1 Criterio Vincolante di Completezza: Live Platform Parity (https://app.wyvern.chat/mine)
+
+**REGOLA SUPREMA DI RILASCIO:** Il lavoro svolto su Character Card, Lorebook, Scenari, Personas, Location, Setting o Parametri **NON VIENE MAI CONSIDERATO COMPLETO** finché non è effettivamente aggiornato, scritto e verificato a livello di piattaforma su **https://app.wyvern.chat/mine**.
+
+1. **Divieto di Falso Completamento Locale:** La semplice modifica, correzione o validazione di un file locale (`FINAL/*.json`, `exports/`, script in `scratch/`) **NON costituisce completamento**.
+2. **Dichiarazione di Stato Obbligatoria:** Se una modifica è pronta in locale o fornita come testo in chat ma non è ancora stata applicata sulla piattaforma web live (via Web API o intervento confermato dell'utente), il task **DEVE essere categoricamente classificato e dichiarato come "INCOMPLETO (In attesa di aggiornamento su piattaforma Wyvern)"**.
+3. **Chiusura del Task:** Un task può essere marcato come "COMPLETATO" esclusivamente quando:
+   - È stata eseguita con successo la chiamata API di scrittura/aggiornamento su Wyvern (con risposta HTTP 200/204 confermata); OPPURE
+   - L'utente ha confermato esplicitamente di aver incollato e salvato il testo nell'interfaccia web di Wyvern.
+
 ---
 
 ## 2. JED+ Come Formato Standard delle Schede

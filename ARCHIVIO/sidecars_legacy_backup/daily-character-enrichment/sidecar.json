@@ -1,0 +1,23 @@
+{
+  "builtin": "schedule",
+  "args": [
+    "CRON_TZ=Europe/Rome 0 9 * * *",
+    "agentapi",
+    "new-conversation",
+    "--",
+    "Esegui lo script di arricchimento lore e monitoraggio chat lanciando 'python scripts/daily_character_enrichment.py'. Lo script scarica e monitora la chat di test attiva su Wyvern (chat_log_ftrtAD79eddk9Ue9Jr2WJ), estrae nuova lore emergente e procede con l'arricchimento del batch di personaggi. Verifica l'output, controlla lo stato in scratch/daily_character_enrichment_state.json e riassumi le novita della chat e i personaggi analizzati. Infine, esegui tassativamente 'python scripts/archive_automation_chat.py --automation daily-character-enrichment' per salvare la chat e il transcript integrale nel repository in logs/automations/."
+  ],
+  "restart_policy": "always",
+  "display_name": "Daily Lore Enrichment & Chat Monitor",
+  "description": "Ogni giorno alle 09:00 (Europe/Rome), monitora la chat di simulazione Wyvern per estrarre lore emergente, analizza e arricchisce un blocco di personaggi incrociando l'archivio canonico e archivia il log della chat nel progetto.",
+  "agent_permissions": {
+    "workspace_uris": [
+      "file:///e:/repository/SvartulfrVerse"
+    ],
+    "access_grants": [
+      "command(python scripts/daily_character_enrichment.py)",
+      "command(python scripts/monitor_active_test_chat.py)",
+      "command(python scripts/archive_automation_chat.py --automation daily-character-enrichment)"
+    ]
+  }
+}

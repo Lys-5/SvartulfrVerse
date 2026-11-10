@@ -24,10 +24,15 @@ e:\repository\SvartulfrVerse\
 │   ├── 04_Wyvern_Local_Legacy/ # Materiale Wyvern locale deprecato
 │   └── 05_Snapshots_and_Extractions/ # Snapshot, entity/lorebook/raw_db_dumps, backup
 │
-├── asset/                      # Media e Risorse Visive
-│   ├── characters/             # Avatar e ritratti (main_cast, secondary_cast, ecc.)
-│   ├── environments/           # Mappe e ambientazioni (Blackwood, SUCC, costa, ecc.)
-│   └── lore_and_gods/          # Simboli, emblemi, banner
+├── assets/                     # Media e Risorse Visive Unificate
+│   ├── characters/             # Avatar e ritratti (main_cast, secondary_cast, avatars_legacy, group_shots)
+│   ├── environments/           # Mappe e ambientazioni (Blackwood, SUCC, costa, The Verve, ecc.)
+│   ├── lore_and_gods/          # Simboli, emblemi della Casata Douglas, divinità celesti
+│   ├── NEW_IMAGE/              # Render ad altissima risoluzione per location e scenari
+│   ├── references/             # Reference canoniche ufficiali per Marchi Runici e anatomie
+│   ├── divine_marks_and_heights.md # Motore prompt e proporzioni centimetriche di gruppo
+│   ├── PROMPTS_PERSONAGGI_E_OUTFIT_GEMINI_ARGON.md # Suite prompt Argon main cast & 9 outfits
+│   └── PROMPTS_BANNER_LOCATION_E_CAST_ARGON.md # Suite prompt Argon location & scenari
 │
 ├── docs/                       # Documentazione e dati di lavoro
 │   ├── data/                   # Dataset JED e raw (14_NPCs, Group A/B, Filtered, ecc.)
@@ -151,13 +156,16 @@ Con la migrazione definitiva dal modulo World ai **Character Scenarios**, la car
 
 ## 4. Media e Asset Grafici
 
-Tutti i file multimediali sono categorizzati nella cartella [asset/](asset/):
+Tutti i file multimediali, i riferimenti anatomici e i prompt master sono unificati e indicizzati nella cartella [assets/](assets/README.md):
 
 - **`characters/main_cast/`**: ritratti ufficiali del Main Cast (Alyssa, Erik, Jasper, Logan, Malachia, Noah, Ut, Wulfnic, Zefir).
 - **`characters/secondary_cast/`**: ritratti del cast secondario e NPC.
 - **`characters/avatars_legacy/`** e **`characters/group_shots/`**: avatar storici e composizioni di gruppo.
 - **`environments/`**: cartografia e scenari (Blackwood, Solarton/SUCC, costa, Douglas Estate, The Verve).
-- **`lore_and_gods/`**: emblemi, simboli e banner.
+- **`lore_and_gods/`**: emblemi, simboli di Sól, Máni e Fenris, banner araldici.
+- **`NEW_IMAGE/`**: render ad altissima risoluzione per ambientazioni e banner di scenario.
+- **`references/`**: reference visive dei Marchi Runici ufficiali (Máni anca sx, Sól anca dx, Gebo polso sx).
+- **`divine_marks_and_heights.md`**: suite di prompt per Midjourney v6, SDXL/Pony XL, NovelAI V3 e griglia proporzioni/altezze.
 
 ---
 

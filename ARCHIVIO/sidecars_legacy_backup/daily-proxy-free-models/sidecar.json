@@ -1,0 +1,22 @@
+{
+  "builtin": "schedule",
+  "args": [
+    "CRON_TZ=Europe/Rome 30 9 * * *",
+    "agentapi",
+    "new-conversation",
+    "--",
+    "Esegui il controllo e l'aggiornamento dei modelli free per il proxy locale lanciando 'python proxy/update_free_models.py'. Assicurati che i 4 pilastri fiat primari (GLM 5.2/5.3, Gemini Argon, Gemini 3.8, Gemma 4) rimangano intoccabili in cima alla gerarchia e che tutti i modelli secondari siano ordinati rigorosamente per qualità RPG, escludendo categoricamente varianti 'lite' o modelli non narrativi. Riassumi la lista dei modelli attivi e le eventuali modifiche apportate alla configurazione del proxy. Infine, esegui tassativamente 'python scripts/archive_automation_chat.py --automation daily-proxy-free-models' per salvare la chat e il transcript integrale nel repository in logs/automations/."
+  ],
+  "restart_policy": "always",
+  "display_name": "Daily Proxy Free Models Update",
+  "description": "Ogni giorno alle 09:30 (Europe/Rome), controlla e aggiorna i modelli per il proxy locale Wyvern preservando i pilastri fiat (GLM, Gemini Argon, Gemini 3.8, Gemma 4) e la gerarchia RPG, archiviando il log della chat nel progetto.",
+  "agent_permissions": {
+    "workspace_uris": [
+      "file:///e:/repository/SvartulfrVerse"
+    ],
+    "access_grants": [
+      "command(python proxy/update_free_models.py)",
+      "command(python scripts/archive_automation_chat.py --automation daily-proxy-free-models)"
+    ]
+  }
+}
