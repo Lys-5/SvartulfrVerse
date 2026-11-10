@@ -1,5 +1,22 @@
 # Changelog di Progetto — Svartúlfr Verse
 
+### 10/11/2026 - Integrazione e Cross-Referencing Totale del Dossier DDM di Dullahan (#04) da `io-ddm-char.uwu.ai/#contract04`
+
+- **Integrazione Dati Canonici DDM Inc. su Dullahan (`OoqcG3WQrOui7TMw_vRq7`)**:
+  - Effettuato il cross-referencing diretto con la scheda ufficiale di Dullahan su `https://io-ddm-char.uwu.ai/#contract04`.
+  - **Campi Canonici Integrati nel PList e nella Scheda JED+**:
+    - `CAUSE_OF_DEATH: Beheaded via guillotine` (giustiziato tramite ghigliottina nella vita originale medievale francese).
+    - `WISH: Unused as of present day` (il desiderio del contratto di realtà non è mai stato riscosso ed è tuttora dormiente).
+    - `ORIGINAL_DIMENSION: Earth-121789 (adjacent to base reality)`.
+    - `ANIMAL FORM: Irish Wolfhound (Canis Familiaris)`.
+    - `STRENGTHS: Highly Skilled / Impartial / Enthusiastic`.
+    - `WEAKNESSES: Easily Distracted`.
+    - `INTERVISTA THE DAILY VOID`: *"Yeah, job's great... You don't have any regrets? Sure I do. I regret not dyin' sooner."*
+    - `DIRETTIVE DDM`: Obbligo di assegnazione lavorativa continua (SUCC Football Coach) per prevenire il cambio di fazione da "noia"; raccomandazione di mediazione tramite un ACE per via dei danni cognitivi del contatto prolungato per i mortali.
+    - `RETE CONTRACTOR DDM`: Mappate le dinamiche relazionali con `#01 Richard Whitlock` (Banter Rival / Team Captain), `#02 Hana & Adam Valencia` (Chaos Buddies / Flirt), `#03 Luka Sutter` (Sparring Partner / Frenemy), `#05 Johan Jakobsen` (Tolerated Weirdo) e `#06 Fenrir` (Unsettling Colleague).
+  - **15 Tratti RPG Powerhouse Aggiornati**: Inclusi tratti tematici specifici DDM (`Unused Wish`, `Guillotine Rebirth`, `Easily Distracted`, `Cognitive Distortion`, `Reality Bending & Memory Warp`, `Hooked Headsman Axe`, `Employee of the Month` per 18 anni consecutivi).
+  - Distribuito live su Wyvern Web API (`PUT /api/lorebooks/_zwEqgEEzh12X6gHVmMKKC`, `806,811` byte, `HTTP 200 OK`) e sincronizzato con parità byte-for-byte `entries == lexicon`.
+
 ### 10/11/2026 - Calibrazione Wyvern "Lore Budget" & Floor Messaggi (`min_chat_messages = 15`), Collegamento Lorebook su Single Chat e Character Lore Enrichment (`90/310`)
 
 - **Calibrazione Lore Budget & Floor Messaggi su Wyvern Web API (`PUT /api/chat-state/_78EY7KD86D1VrbQmAQ2Qt`)**:
