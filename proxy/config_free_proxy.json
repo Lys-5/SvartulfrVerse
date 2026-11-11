@@ -21,7 +21,8 @@
     "deepseek": "sk-9251a45b278a4e1085be60fe30ef1c5b",
     "cerebras": "csk-49mr6xmtv69k9py5ce69v69dfy48x6dtvfkc9t5ct83c4hf4",
     "siliconflow": "",
-    "mistral": ""
+    "mistral": "",
+    "navy": "sk-navy-34ZA7aNJYXmppftkfkRZyaD9cZHfi5nyBkjto1YYgAE"
   },
   "upstreams": [
     {
@@ -486,6 +487,30 @@
       "model": "baidu/ernie-5.5-flash-preview:free",
       "base_url": "https://openrouter.ai/api/v1/chat/completions",
       "key_name": "openrouter",
+      "context_window": 32768,
+      "max_tokens": 4096,
+      "supports_system": true,
+      "supports_streaming": true,
+      "enabled": false
+    },
+    {
+      "priority": 4,
+      "id": "p-navyai",
+      "display_name": "NavyAI (150+ Models Gateway & Uncensored)",
+      "provider": "navyai",
+      "models": [
+        "glm-5.2",
+        "glm-5.3",
+        "minimax-m3",
+        "kimi-k2.7-code",
+        "venice-uncensored-role-play",
+        "deepseek-v3.2",
+        "deepseek-v4-flash",
+        "grok-uncensored-4.7"
+      ],
+      "base_url": "https://api.navy/v1/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "navy",
       "context_window": 32768,
       "max_tokens": 4096,
       "supports_system": true,
