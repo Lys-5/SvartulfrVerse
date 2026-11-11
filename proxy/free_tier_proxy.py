@@ -198,6 +198,8 @@ class PayloadCompactor:
                 "cerebras",
                 "mistral",
                 "siliconflow",
+                "navyai",
+                "nararouter",
             )
             or (target_model and "r1" in target_model.lower())
         ):

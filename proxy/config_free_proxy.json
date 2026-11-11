@@ -22,7 +22,8 @@
     "cerebras": "csk-49mr6xmtv69k9py5ce69v69dfy48x6dtvfkc9t5ct83c4hf4",
     "siliconflow": "",
     "mistral": "",
-    "navy": "sk-navy-34ZA7aNJYXmppftkfkRZyaD9cZHfi5nyBkjto1YYgAE"
+    "navy": "sk-navy-34ZA7aNJYXmppftkfkRZyaD9cZHfi5nyBkjto1YYgAE",
+    "nara": "sk-nry-h-MKB95YKL8PmAgeGyUk4lJionU3PMs8Mgv_bbhoHyk"
   },
   "upstreams": [
     {
@@ -516,6 +517,26 @@
       "supports_system": true,
       "supports_streaming": true,
       "enabled": false
+    },
+    {
+      "priority": 4,
+      "id": "p-nararouter",
+      "display_name": "NaraRouter (5M Tokens/Day Free Gateway)",
+      "provider": "nararouter",
+      "models": [
+        "llama-3.3-70b-instruct",
+        "qwen-2.5-72b-instruct",
+        "deepseek-chat",
+        "mistral-small"
+      ],
+      "base_url": "https://router.bynara.id/v1/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "nara",
+      "context_window": 32768,
+      "max_tokens": 4096,
+      "supports_system": true,
+      "supports_streaming": true,
+      "enabled": true
     }
   ]
 }
