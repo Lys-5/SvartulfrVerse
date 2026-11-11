@@ -824,6 +824,8 @@ async def chat_completions(request: Request):
     last_error = "Nessun modello disponibile"
 
     for upstream in upstreams:
+        if not upstream.get("enabled", True):
+            continue
         uid = upstream.get("id", "unknown-upstream")
         name = upstream.get("display_name", uid)
         priority = upstream.get("priority", 99)

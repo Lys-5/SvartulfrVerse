@@ -26,6 +26,64 @@
   "upstreams": [
     {
       "priority": 1,
+      "id": "p1-gemini-primary",
+      "display_name": "Gemini 3.5 & 3.6 Flash (Google AI Studio 1M Context)",
+      "provider": "google",
+      "models": [
+        "gemini-3.5-flash",
+        "gemini-3.5-flash-lite",
+        "gemini-3.6-flash",
+        "gemini-flash-lite-latest"
+      ],
+      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "google_ai_studio",
+      "context_window": 1000000,
+      "max_tokens": 4096,
+      "supports_system": true,
+      "supports_streaming": true,
+      "enabled": true
+    },
+    {
+      "priority": 2,
+      "id": "p2-gemini-pro-preview",
+      "display_name": "Gemini 3.1 Pro & 4 Argon (Google AI Studio)",
+      "provider": "google",
+      "models": [
+        "gemini-3.1-pro-preview",
+        "gemini-4-argon",
+        "gemini-4-carbon"
+      ],
+      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "google_ai_studio",
+      "context_window": 1000000,
+      "max_tokens": 4096,
+      "supports_system": true,
+      "supports_streaming": true,
+      "enabled": true
+    },
+    {
+      "priority": 3,
+      "id": "p3-qwen-groq",
+      "display_name": "Qwen 3.8 27B & GPT-OSS (Groq Cloud)",
+      "provider": "groq",
+      "models": [
+        "qwen/qwen3.8-27b",
+        "openai/gpt-oss-120b",
+        "openai/gpt-oss-20b"
+      ],
+      "base_url": "https://api.groq.com/openai/v1/chat/completions",
+      "auth_type": "bearer",
+      "key_name": "groq",
+      "context_window": 32768,
+      "max_tokens": 4096,
+      "supports_system": true,
+      "supports_streaming": true,
+      "enabled": true
+    },
+    {
+      "priority": 11,
       "id": "p1-glm-openrouter",
       "display_name": "GLM 5.2 / 5.3 (OpenRouter)",
       "provider": "openrouter",
@@ -35,10 +93,11 @@
       ],
       "base_url": "https://openrouter.ai/api/v1/chat/completions",
       "auth_type": "bearer",
-      "key_name": "openrouter"
+      "key_name": "openrouter",
+      "enabled": false
     },
     {
-      "priority": 1,
+      "priority": 11,
       "id": "p1-glm-zhipu-direct",
       "display_name": "GLM 5.2 / 5.3 (Zhipu BigModel Direct)",
       "provider": "zhipu",
@@ -50,10 +109,11 @@
       ],
       "base_url": "https://open.bigmodel.cn/api/paas/v4/chat/completions",
       "auth_type": "bearer",
-      "key_name": "zhipu"
+      "key_name": "zhipu",
+      "enabled": false
     },
     {
-      "priority": 2,
+      "priority": 12,
       "id": "p2-glm-chutes",
       "display_name": "GLM 5.2+ (Chutes TEE)",
       "provider": "chutes",
@@ -63,53 +123,11 @@
       ],
       "base_url": "https://llm.chutes.ai/v1/chat/completions",
       "auth_type": "bearer",
-      "key_name": "chutes"
+      "key_name": "chutes",
+      "enabled": false
     },
     {
-      "priority": 3,
-      "id": "p3-gemini-argon",
-      "display_name": "Gemini 4 Argon & 2.5 Pro (Google AI Studio)",
-      "provider": "google",
-      "models": [
-        "gemini-4-argon",
-        "gemini-2.5-pro"
-      ],
-      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
-      "auth_type": "bearer",
-      "key_name": "google_ai_studio"
-    },
-    {
-      "priority": 4,
-      "id": "p4-gemini-3.8-flash",
-      "display_name": "Gemini 3.8 Flash & Thinking (Google AI Studio)",
-      "provider": "google",
-      "models": [
-        "gemini-3.8-flash",
-        "gemini-3.8-flash-thinking"
-      ],
-      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
-      "auth_type": "bearer",
-      "key_name": "google_ai_studio"
-    },
-    {
-      "priority": 5,
-      "id": "p5-gemini-pro-creative",
-      "display_name": "Gemini 2.0 Pro / Exp Creative (Google AI Studio)",
-      "provider": "google",
-      "models": [
-        "gemini-2.0-pro-exp-02-05",
-        "gemini-exp-1206"
-      ],
-      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
-      "auth_type": "bearer",
-      "key_name": "google_ai_studio",
-      "context_window": 1000000,
-      "max_tokens": 4096,
-      "supports_system": true,
-      "supports_streaming": true
-    },
-    {
-      "priority": 6,
+      "priority": 16,
       "id": "p6-gemma4-sambanova",
       "display_name": "Gemma 4 31B (SambaNova Cloud)",
       "provider": "sambanova",
@@ -118,10 +136,11 @@
       ],
       "base_url": "https://api.sambanova.ai/v1/chat/completions",
       "auth_type": "bearer",
-      "key_name": "sambanova"
+      "key_name": "sambanova",
+      "enabled": false
     },
     {
-      "priority": 7,
+      "priority": 17,
       "id": "p7-gemma4-openrouter-free",
       "display_name": "Gemma 4 Free (OpenRouter)",
       "provider": "openrouter",
@@ -131,10 +150,11 @@
       ],
       "base_url": "https://openrouter.ai/api/v1/chat/completions",
       "auth_type": "bearer",
-      "key_name": "openrouter"
+      "key_name": "openrouter",
+      "enabled": false
     },
     {
-      "priority": 8,
+      "priority": 18,
       "id": "p8-gemma4-chutes-openrouter",
       "display_name": "Gemma 4 Turbo (Chutes & OpenRouter)",
       "provider": "chutes",
@@ -143,10 +163,11 @@
       ],
       "base_url": "https://llm.chutes.ai/v1/chat/completions",
       "auth_type": "bearer",
-      "key_name": "chutes"
+      "key_name": "chutes",
+      "enabled": false
     },
     {
-      "priority": 9,
+      "priority": 19,
       "id": "p9-deepseek-direct",
       "display_name": "DeepSeek V3 / V3.2 (DeepSeek Direct)",
       "provider": "deepseek",
@@ -155,10 +176,11 @@
       ],
       "base_url": "https://api.deepseek.com/chat/completions",
       "auth_type": "bearer",
-      "key_name": "deepseek"
+      "key_name": "deepseek",
+      "enabled": false
     },
     {
-      "priority": 10,
+      "priority": 20,
       "id": "p10-deepseek-openrouter",
       "display_name": "DeepSeek V3 / V3.2 (OpenRouter)",
       "provider": "openrouter",
@@ -167,10 +189,11 @@
       ],
       "base_url": "https://openrouter.ai/api/v1/chat/completions",
       "auth_type": "bearer",
-      "key_name": "openrouter"
+      "key_name": "openrouter",
+      "enabled": false
     },
     {
-      "priority": 10,
+      "priority": 20,
       "id": "p9-deepseek-sambanova",
       "display_name": "DeepSeek V3.2 / V3.1 (SambaNova Cloud)",
       "provider": "sambanova",
@@ -184,10 +207,11 @@
       "context_window": 16384,
       "max_tokens": 4096,
       "supports_system": true,
-      "supports_streaming": true
+      "supports_streaming": true,
+      "enabled": false
     },
     {
-      "priority": 11,
+      "priority": 21,
       "id": "p11-claude-3.5-openrouter",
       "display_name": "Claude 3.5 Sonnet & Haiku (OpenRouter)",
       "provider": "openrouter",
@@ -197,10 +221,11 @@
       ],
       "base_url": "https://openrouter.ai/api/v1/chat/completions",
       "auth_type": "bearer",
-      "key_name": "openrouter"
+      "key_name": "openrouter",
+      "enabled": false
     },
     {
-      "priority": 12,
+      "priority": 22,
       "id": "p12-qwen-sambanova",
       "display_name": "Qwen 2.5 72B (SambaNova Cloud)",
       "provider": "sambanova",
@@ -209,10 +234,11 @@
       ],
       "base_url": "https://api.sambanova.ai/v1/chat/completions",
       "auth_type": "bearer",
-      "key_name": "sambanova"
+      "key_name": "sambanova",
+      "enabled": false
     },
     {
-      "priority": 13,
+      "priority": 23,
       "id": "p13-cerebras-qwen",
       "display_name": "Cerebras Cloud (Qwen 3.8 27B Ultra-Fast)",
       "provider": "cerebras",
@@ -226,23 +252,11 @@
       "context_window": 65536,
       "max_tokens": 4096,
       "supports_system": true,
-      "supports_streaming": true
+      "supports_streaming": true,
+      "enabled": false
     },
     {
-      "priority": 13,
-      "id": "p13-qwen-groq",
-      "display_name": "Qwen 3.8 27B & GPT-OSS 120B (Groq Cloud)",
-      "provider": "groq",
-      "models": [
-        "qwen/qwen3.8-27b",
-        "openai/gpt-oss-120b"
-      ],
-      "base_url": "https://api.groq.com/openai/v1/chat/completions",
-      "auth_type": "bearer",
-      "key_name": "groq"
-    },
-    {
-      "priority": 14,
+      "priority": 24,
       "id": "p14-qwen-chutes",
       "display_name": "Qwen 3.8 27B (Chutes TEE)",
       "provider": "chutes",
@@ -251,10 +265,11 @@
       ],
       "base_url": "https://llm.chutes.ai/v1/chat/completions",
       "auth_type": "bearer",
-      "key_name": "chutes"
+      "key_name": "chutes",
+      "enabled": false
     },
     {
-      "priority": 15,
+      "priority": 25,
       "id": "p15-qwen-nvidia-nim",
       "display_name": "Qwen 2.5 72B (NVIDIA NIM)",
       "provider": "nvidia",
@@ -263,10 +278,11 @@
       ],
       "base_url": "https://integrate.api.nvidia.com/v1/chat/completions",
       "auth_type": "bearer",
-      "key_name": "nvidia"
+      "key_name": "nvidia",
+      "enabled": false
     },
     {
-      "priority": 16,
+      "priority": 26,
       "id": "p16-llama3.3-sambanova",
       "display_name": "Llama 3.3 70B (SambaNova Cloud)",
       "provider": "sambanova",
@@ -275,10 +291,11 @@
       ],
       "base_url": "https://api.sambanova.ai/v1/chat/completions",
       "auth_type": "bearer",
-      "key_name": "sambanova"
+      "key_name": "sambanova",
+      "enabled": false
     },
     {
-      "priority": 17,
+      "priority": 27,
       "id": "p17-llama3.3-groq",
       "display_name": "Llama 3.3 70B (Groq Cloud)",
       "provider": "groq",
@@ -288,10 +305,11 @@
       ],
       "base_url": "https://api.groq.com/openai/v1/chat/completions",
       "auth_type": "bearer",
-      "key_name": "groq"
+      "key_name": "groq",
+      "enabled": false
     },
     {
-      "priority": 18,
+      "priority": 28,
       "id": "p18-llama3.3-cloudflare",
       "display_name": "Llama 3.3 70B (Cloudflare Workers AI)",
       "provider": "cloudflare",
@@ -301,10 +319,11 @@
       ],
       "base_url": "https://api.cloudflare.com/client/v4/accounts/a02ddeb54d2a0bb4f402088713a6d8ac/ai/v1/chat/completions",
       "auth_type": "bearer",
-      "key_name": "cloudflare"
+      "key_name": "cloudflare",
+      "enabled": false
     },
     {
-      "priority": 19,
+      "priority": 29,
       "id": "p19-mistral-large",
       "display_name": "Mistral Large 2 & Nemo (Mistral Direct)",
       "provider": "mistral",
@@ -314,25 +333,11 @@
       ],
       "base_url": "https://api.mistral.ai/v1/chat/completions",
       "auth_type": "bearer",
-      "key_name": "mistral"
+      "key_name": "mistral",
+      "enabled": false
     },
     {
-      "priority": 20,
-      "id": "p20-gemini-backup",
-      "display_name": "Gemini Pro & Flash Backup Family (Google AI Studio)",
-      "provider": "google",
-      "models": [
-        "gemini-3.6-flash",
-        "gemini-3.5-flash",
-        "gemini-3.1-pro-preview",
-        "gemini-pro-latest"
-      ],
-      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
-      "auth_type": "bearer",
-      "key_name": "google_ai_studio"
-    },
-    {
-      "priority": 21,
+      "priority": 31,
       "id": "p21-nemotron-openrouter-free",
       "display_name": "NVIDIA Nemotron 3 Ultra 550B & 3.5 Lightning (OpenRouter Free)",
       "provider": "openrouter",
@@ -343,10 +348,11 @@
       ],
       "base_url": "https://openrouter.ai/api/v1/chat/completions",
       "auth_type": "bearer",
-      "key_name": "openrouter"
+      "key_name": "openrouter",
+      "enabled": false
     },
     {
-      "priority": 22,
+      "priority": 32,
       "id": "p22-github-models",
       "display_name": "GitHub Models (Azure AI Inference)",
       "provider": "github",
@@ -357,10 +363,11 @@
       ],
       "base_url": "https://models.inference.ai.azure.com/chat/completions",
       "auth_type": "bearer",
-      "key_name": "github"
+      "key_name": "github",
+      "enabled": false
     },
     {
-      "priority": 23,
+      "priority": 33,
       "id": "p23-or-lfm-2.5",
       "display_name": "OpenRouter Free - Liquid LFM 2.5",
       "provider": "openrouter",
@@ -370,10 +377,11 @@
       "context_window": 32768,
       "max_tokens": 4096,
       "supports_system": true,
-      "supports_streaming": true
+      "supports_streaming": true,
+      "enabled": false
     },
     {
-      "priority": 24,
+      "priority": 34,
       "id": "p24-or-flint-v1.0",
       "display_name": "OpenRouter Free - Recursive Flint v1.0",
       "provider": "openrouter",
@@ -383,10 +391,11 @@
       "context_window": 32768,
       "max_tokens": 4096,
       "supports_system": true,
-      "supports_streaming": true
+      "supports_streaming": true,
+      "enabled": false
     },
     {
-      "priority": 25,
+      "priority": 35,
       "id": "p25-or-xing4.0",
       "display_name": "OpenRouter Free - Xing 4.0 29B",
       "provider": "openrouter",
@@ -396,10 +405,11 @@
       "context_window": 32768,
       "max_tokens": 4096,
       "supports_system": true,
-      "supports_streaming": true
+      "supports_streaming": true,
+      "enabled": false
     },
     {
-      "priority": 26,
+      "priority": 36,
       "id": "p26-or-dots-3-note-preview",
       "display_name": "OpenRouter Free - Dots 3 Note Preview",
       "provider": "openrouter",
@@ -409,10 +419,11 @@
       "context_window": 32768,
       "max_tokens": 4096,
       "supports_system": true,
-      "supports_streaming": true
+      "supports_streaming": true,
+      "enabled": false
     },
     {
-      "priority": 27,
+      "priority": 37,
       "id": "p27-or-laguna-s-2.1",
       "display_name": "OpenRouter Free - Laguna S 2.1",
       "provider": "openrouter",
@@ -422,10 +433,11 @@
       "context_window": 32768,
       "max_tokens": 4096,
       "supports_system": true,
-      "supports_streaming": true
+      "supports_streaming": true,
+      "enabled": false
     },
     {
-      "priority": 28,
+      "priority": 38,
       "id": "p28-or-laguna-xs-2.1",
       "display_name": "OpenRouter Free - Laguna XS 2.1",
       "provider": "openrouter",
@@ -435,10 +447,11 @@
       "context_window": 32768,
       "max_tokens": 4096,
       "supports_system": true,
-      "supports_streaming": true
+      "supports_streaming": true,
+      "enabled": false
     },
     {
-      "priority": 30,
+      "priority": 40,
       "id": "or-nemotron-3.5-super-vl",
       "display_name": "OpenRouter Free - Nemotron-3.5-Super-Vl",
       "provider": "openrouter",
@@ -448,10 +461,11 @@
       "context_window": 32768,
       "max_tokens": 4096,
       "supports_system": true,
-      "supports_streaming": true
+      "supports_streaming": true,
+      "enabled": false
     },
     {
-      "priority": 31,
+      "priority": 41,
       "id": "or-lfm-3-1.7b",
       "display_name": "OpenRouter Free - Lfm-3-1.7B",
       "provider": "openrouter",
@@ -461,7 +475,22 @@
       "context_window": 32768,
       "max_tokens": 4096,
       "supports_system": true,
-      "supports_streaming": true
+      "supports_streaming": true,
+      "enabled": false
+    },
+    {
+      "priority": 42,
+      "id": "or-ernie-5.5-flash-preview",
+      "display_name": "OpenRouter Free - Ernie-5.5-Flash-Preview",
+      "provider": "openrouter",
+      "model": "baidu/ernie-5.5-flash-preview:free",
+      "base_url": "https://openrouter.ai/api/v1/chat/completions",
+      "key_name": "openrouter",
+      "context_window": 32768,
+      "max_tokens": 4096,
+      "supports_system": true,
+      "supports_streaming": true,
+      "enabled": false
     }
   ]
 }
