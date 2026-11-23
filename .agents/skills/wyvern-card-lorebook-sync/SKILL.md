@@ -122,18 +122,24 @@ Gli scenari multi-character devono includere nell'array `slots` **esclusivamente
 
 ### Fase 4: Esecuzione Deploy Web API, Archiviazione e Verifica
 1. **Refresh Token e Header HTTP:**
-   - Eseguire `python scratch/refresh_token.py` prima delle chiamate.
-   - Includere sempre `Authorization: Bearer <token>` e un `User-Agent` personalizzato (es. `AuditorBot/1.0`) per eludere i filtri Cloudflare Error 1010.
-2. **Deploy Lorebooks (`PUT /api/lorebooks/:id`):**
-   - Inviare payload compatto con i campi `name`, `description`, `visibility`, `rating`, `scan_depth`, `token_budget`, `recursive_scanning`, e `lexicon`. Verificare `HTTP 200`.
-   - Sincronizzare la copia locale ottimizzata in `lorebooks/optimized/`.
-3. **Deploy Scenari (`PUT /api/character-scenarios/:id`):**
+   - Eseguire `python scratch/refresh_token.py` (o usare `get_auth_token()` da `scripts.wyvern_api_client`) prima delle chiamate.
+   - Includere sempre `Authorization: Bearer <token>` e un `User-Agent` personalizzato (es. `AuditorBot/1.0` o Mozilla) per eludere i blocchi Cloudflare Error 1010 / HTTP 403.
+2. **Deploy Character Cards (`PUT /api/characters/:id`):**
+   - **Checklist Pre-Deploy:** Verificare i 9 outfit minimi completi (con Nude a 6 sezioni non censurato), assenza di negative framing (*"no human ears"*), e rispondenza alla tassonomia SopakcoSauce a 31 categorie.
+   - **Trappola Safe Payload:** Trasmettere **esclusivamente** i campi `EDITABLE_FIELDS` via `get_safe_character_payload()`. Non includere campi del server di sola lettura (`entity_statistics`, `creator`, `created_at`, `updated_at`, `_id`) per prevenire `HTTP 400 Bad Request`.
+3. **Deploy User Personas (`PUT /api/user-personas/:id`):**
+   - Recupero lista tramite `GET /api/user-personas` (e non `/mine`).
+   - L'aggiornamento richiede obbligatoriamente `name` e `importance: 'high'` (l'assenza genera `HTTP 400: name and importance are required`).
+4. **Deploy Lorebooks (`PUT /api/lorebooks/:id`):**
+   - **Prevenzione HTTP 413:** Inviare payload compatto con i campi `name`, `description`, `visibility`, `rating`, `scan_depth`, `token_budget`, `recursive_scanning`, e `lexicon` (non duplicare con `entries` sul wire). Verificare `HTTP 200`.
+   - Sincronizzare la copia locale ottimizzata in `lorebooks/optimized/` mantenendo il doppio array `entries == lexicon` per conformità Zod.
+5. **Deploy Scenari (`PUT /api/character-scenarios/:id`):**
    - Eseguire prima una GET per ricavare l'ultimo `revision`.
    - Inviare payload aggiornato via PUT. Verificare `HTTP 200` e incremento di revisione.
-4. **Cancellazione Card Dismesse (`DELETE /api/characters/:id`):**
+6. **Cancellazione Card Dismesse (`DELETE /api/characters/:id`):**
    - Inviare `DELETE /api/characters/:id`. Verificare `HTTP 204 No Content`.
    - Verificare via `GET /api/characters/mine` che il numero di card corrisponda esattamente a quelle approvate.
-5. **Archiviazione Locale:**
+7. **Archiviazione Locale:**
    - Spostare i file delle card rimosse in `ARCHIVIO/cards_legacy/`.
    - Spostare i file degli scenari rimossi in `ARCHIVIO/scenarios/`.
    - Verificare che `FINAL/` contenga esclusivamente i file approvati.

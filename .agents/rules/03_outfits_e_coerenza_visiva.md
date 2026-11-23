@@ -25,17 +25,25 @@ Scelta stilistica canonica approvata: i maschi della famiglia Douglas condividon
 
 ---
 
-## 3. Anatomia Demi-Umani: Orecchie Singole (`No orecchie umane`) e Invarianti Specifiche (Sierra & Scarlett)
+## 3. Anatomia Demi-Umani: Tassonomia a 31 Specie (SopakcoSauce / WyvernChat), Orecchie Singole & Invarianti Rigorose (Sierra & Scarlett)
 
-**I demi-umani e i licantropi in Partial Shift possiedono un solo paio di orecchie: quelle animali sulla sommità del capo.**
-Non hanno orecchie umane aggiuntive ai lati della testa. Questa regola anatomica è confermata dall'autore dell'ambientazione originale ed è blindata in ogni prompt di generazione immagini.
+Il progetto adotta come benchmark e standard tassonomico vincolante la **Classificazione Ufficiale a 31 Categorie per Specie Non-Umane** di WyvernChat / SopakcoSauce Docs, archiviata integralmente in [knowledge/External_References/SOPAKCOSAUCE_NON_HUMAN_CHARACTER_TEMPLATES.md](knowledge/External_References/SOPAKCOSAUCE_NON_HUMAN_CHARACTER_TEMPLATES.md).
 
-- **Sierra Cruz (Lamia — Locomozione & Livrea Arcobaleno Iridescente):**
-  - Possiede **capelli color arcobaleno** e, dai fianchi in giù, la parte inferiore del corpo è interamente quella di un serpente di 4 metri **color arcobaleno con scaglie iridescenti** (`rainbow-colored hair` e `4-meter rainbow-colored serpentine tail covered in shimmering iridescent scales`).
+**I demi-umani e le entità non-umane ereditano esclusivamente i tratti biologici, locomotori e sensoriali della specifica classe animale di appartenenza, conformemente ai rispettivi template PList/SBF:**
+- **Mammiferi (Lupi, Cani, Gatti, Orsi, Bovini, Roditori):** possiedono un solo paio di orecchie, quelle animali della loro specie sulla sommità del capo (lupine/canine, feline, bovine orizzontali con morbida peluria, orse arrotondate), e la rispettiva coda. Non hanno orecchie umane aggiuntive ai lati della testa.
+- **Rettili, Lamie & Naga (es. Sierra Cruz):** **DIVIETO ASSOLUTO DI ORECCHIE MAMMIFERE/LUPINE O PELLICCIA.** Mappatura sul template `lamia_naga`: i serpenti e i rettili non possiedono padiglioni auricolari esterni da mammifero. L'apparato uditivo è rettiliano: membrana timpanica liscia integrata nelle squame o creste/alette sensoriali squamate lisce prive di pelo lungo le tempie, capaci di percepire vibrazioni del suolo e risonanze termiche/acustiche. È tassativamente vietato descrivere orecchie da lupo o ciuffi di pelo su Sierra.
+- **Acquatici & Cefalopodi (es. Prof. Moreau):** Mappatura su `merfolk` / `anthro`: tentacoli lombari, pelle screziata, branchie vestigiali, privi di padiglioni auricolari esterni mammiferi.
+- **Pure Positive Framing nei Testi Narrativi:** È tassativamente vietato inserire frasi negative di diniego anatomico (*"no human ears"*, *"senza orecchie umane"*, *"prive di orecchie ai lati"*) all'interno di schede JED+, lorebook, greeting, outfits o scenari. L'anatomia va descritta unicamente in termini positivi (*"singolo paio di orecchie da lupo tra i capelli"*, *"fessure uditive rettiliane squamate lungo le tempie"*). La clausola negativa `No orecchie umane` è riservata esclusivamente ai prompt tecnici di generazione visiva Imagen.
+- **Positive Framing per Personaggi a Base Umana:** Per personaggi umani o mortali shifters, non descrivere mai l'assenza di tratti animali né affermare negativamente o ridondantemente che hanno orecchie o corporatura umane. I tratti umani si esprimono naturalmente attraverso la fisionomia ordinaria, evitando formule come `100% human`, `ordinary human ears` o `interamente umana`.
+- **Minotauri & Centauri:** Mappatura su `minotaurs` (busto umanoide, testa di toro con corna robuste, zoccoli, labirinto) e `centaurs` (busto umanoide su corpo equino quadrupede a 4 zampe, locomozione al galoppo, coda equina). Mai attribuire zampe equine a minotauri o corpi bovini a centauri.
+- **Succubi & Incubi (es. Scarlett Rose, Father Revazhael):** Mappatura su `succubus_incubus`: corna (scarlatte o d'ebano), ali membranose/da pipistrello, coda prensile con punta a picca, nutrizione erotica/emotiva consensuale.
+- **Sierra Cruz (Lamia — Locomozione, Livrea & Rigore Serpentine):**
+  - Possiede **capelli color arcobaleno**, occhi rosa confetto con pupille verticali a fessura, lingua biforcuta, fossette termosensibili (pit organs), zanne velenifere retrattili, e membrana timpanica liscia/creste sensoriali squamate lungo le tempie (**zero orecchie da lupo o da mammifero**).
+  - Dai fianchi in giù, la parte inferiore del corpo è interamente quella di un serpente di 4 metri **color arcobaleno con scaglie iridescenti** (`rainbow-colored hair` e `4-meter rainbow-colored serpentine tail covered in shimmering iridescent scales`).
   - **Divieto Assoluto di Termini Bipedi:** Non possiede gambe né piedi. È tassativamente vietato usare per Sierra termini o verbi come *gambe*, *piedi*, *ginocchia*, *scarpe*, *pantaloni*, *camminare* o *fare passi* (`legs`, `feet`, `knees`, `shoes`, `walk`, `step`, `stand on feet`). Sierra si muove esclusivamente strisciando, scivolando e avvolgendosi sulle sue spire (`slithers`, `glides`, `coils`).
 - **Scarlett Rose (Succubus — Palette Rosa Confetto & Corna Scarlatte):**
-- **Marchi Divini dei Gemelli (Mani & Sol) & Distinzione Titoli Cosmici (Maniulfr vs Solulfr):** I marchi celestiali risiedono **esclusivamente sulle anche**: Alyssa porta il Marchio Runico di Máni (mezzaluna argentata con glifi lunari sub-dermici) **unicamente sull'anca sinistra**; Jasper porta il Marchio Runico di Sól (sole nero radioso con glifi fiammeggianti sub-dermici) **unicamente sull'anca destra**. È vietato disperdere marchi multipli su mani, petto, nuca, clavicola o cuore (condividono soltanto il tatuaggio protettivo Gebo a inchiostro di ferro freddo sul polso sinistro). Inoltre, il titolo sacro **Sólúlfr** (Lupo del Sole) appartiene **esclusivamente a Svartr (Jasper)**; per Hvít (Alyssa) il titolo divino correlato a Máni è **Mániúlfr** (Maniulf / Lupo della Luna Bianca).
   - Possiede **capelli rosa confetto** (`candy-pink`), **occhi rosa confetto** abbinati e **due corna scarlatte** che spuntano visibilmente tra i capelli sopra le tempie, oltre alle ali scure da succubus e alla coda prensile con punta a picca.
+- **Marchi Divini dei Gemelli (Mani & Sol) & Distinzione Titoli Cosmici (Maniulfr vs Solulfr):** I marchi celestiali risiedono **esclusivamente sulle anche**: Alyssa porta il Marchio Runico di Máni (mezzaluna argentata con glifi lunari sub-dermici) **unicamente sull'anca sinistra**; Jasper porta il Marchio Runico di Sól (sole nero radioso con glifi fiammeggianti sub-dermici) **unicamente sull'anca destra**. È vietato disperdere marchi multipli su mani, petto, nuca, clavicola o cuore (condividono soltanto la Runa di Nascita **Mannaz** `ᛗ` a inchiostro di ferro freddo sul polso sinistro, secondo il calendario runico Elder Futhark per data di nascita: Gemelli 22 apr = `Mannaz`, Erik 31 ott = `Hagalaz`, Noah 5 ott = `Gebo`, Edric 25 feb = `Sowilo`, Wulfnic 21 dic = `Jera`, Elizabeth 14 lug = `Uruz`, Malachia 10 ago = `Thurisaz`, Logan 12 gen = `Eihwaz`). Inoltre, il titolo sacro **Sólúlfr** (Lupo del Sole) appartiene **esclusivamente a Svartr (Jasper)**; per Hvít (Alyssa) il titolo divino correlato a Máni è **Mániúlfr** (Maniulf / Lupo della Luna Bianca).
 
 ---
 
@@ -49,17 +57,21 @@ Ogni personaggio parte da un ritratto/figura base creato con **Argon** (`<IMAGE_
 - Altezza e proporzioni muscolari;
 - Colore, forma e posizione delle due orecchie da lupo sulla sommità del capo e della coda da lupo.
 
-### B. Schema Input Utente a 6 Sezioni Fisse (Italiano)
-Ogni descrizione di outfit (sia come prompt di input per Gemini, sia come testo del campo `description` dell'outfit su WyvernChat) adotta obbligatoriamente questo schema a 6 voci:
+### B. Schema Input Utente e Formato JED+ v2.0 Multiline PList a 6 Sezioni Fisse (Italiano)
+Ogni descrizione di outfit o appearance (su Character Card `/mine`, World Characters e User Personas) adotta obbligatoriamente lo **Schema JED+ v2.0 Multiline PList** (una chiave `UPPERCASE_KEY: valore;` per riga dentro parentesi quadre `[...]`), con `OUTFIT_NAME` e `SLOT_CONTEXT` seguiti dalle 6 sezioni canoniche:
 
 ```text
-Abbigliamento: [Capi, tessuti, colori e vestibilità calibrata su altezza in cm e stazza. OBBLIGATORIO per ogni capo inferiore vestito: "con apertura/fessura/asola lombare posteriore personalizzata/rinforzata/sartoriale da cui fuoriesce liberamente la folta coda da lupo [colore]". Per Hybrid Shift: "Nessuno. Forma ibrida bipede di [X] cm ([Y'Z\"]) di altezza...". Per Full Shift: "Nessuno. Forma quadrupede completa da lupo gigante della Founding Bloodline..."]
-Accessori: [Cinture, fondine, armi, occhiali, borse, strumenti, auricolari tattici, o "Nessuno."]
-Scarpe: [Calzature dettagliate, "Piedi nudi...", o "Zampe posteriori digitigradi con cuscinetti neri gommati e artigli..."]
-Gioielli: [Anello con sigillo della casata Douglas, torque, bracciali di giuramento, orologi, catene e tatuaggi runici/tribali visibili (es. Thurisaz, Kenaz, Gebo sul polso sinistro; oppure rune sub-dermiche bioluminescenti in forma Hybrid Shift).]
-Trucco: [Espressione facciale, texture della pelle (sudore, olio d'officina, cicatrici), lunghezza barba/rasatura, colore occhi, zanne/muso in forma mutata.]
-Acconciatura: [Colore, taglio, prodotto di styling, copertura completa della zona temporale umana e postura delle "Orecchie lupine singole [colore]" sulla sommità del capo.]
+[OUTFIT_NAME: Nome dell'Outfit;
+SLOT_CONTEXT: Casual / Daily | Business / Campus | Gala / Formal | Party / Club | Beach / Terme | Sleep / Nightwear | Nude / Anatomical | Hybrid Shift / Mutation | Full Shift / Beast Form;
+ABBIGLIAMENTO: Capi, tessuti, colori e vestibilita' calibrata su altezza in cm e stazza. OBBLIGATORIO per ogni capo inferiore vestito: "con apertura/fessura/asola lombare posteriore personalizzata/rinforzata/sartoriale da cui fuoriesce liberamente la folta coda da lupo [colore]". Per Hybrid Shift: "Nessuno. Forma ibrida bipede di [X] cm ([Y'Z\"]) di altezza...". Per Full Shift: "Nessuno. Forma quadrupede completa da lupo gigante della Founding Bloodline...";
+ACCESSORI: Cinture, fondine, armi, occhiali, borse, strumenti, auricolari tattici, o "Nessuno";
+SCARPE: Calzature dettagliate, "Piedi nudi...", o "Zampe posteriori digitigradi con cuscinetti neri gommati e artigli...";
+GIOIELLI: Anello con sigillo della casata Douglas, torque, bracciali di giuramento, orologi, catene e tatuaggi runici/tribali visibili (es. Thurisaz per Malachia, Gebo per Noah, Mannaz per Alyssa e Jasper, Hagalaz per Erik, Eihwaz per Logan, Sowilo per Edric, Jera per Wulfnic, Uruz per Elizabeth sul polso sinistro; oppure rune sub-dermiche bioluminescenti in forma Hybrid Shift);
+TRUCCO: Espressione facciale, texture della pelle (sudore, olio d'officina, cicatrici), lunghezza barba/rasatura, colore occhi, zanne/muso in forma mutata;
+ACCONCIATURA: Colore, taglio, prodotto di styling, copertura completa della zona temporale umana e postura delle "Orecchie lupine singole [colore]" sulla sommita' del capo]
 ```
+
+**Vincolo Altezze Canoniche negli Outfits:** Ogni riferimento all'altezza in `ABBIGLIAMENTO:` deve rispettare tassativamente la matrice canonica (`Alyssa = 155 cm / 5'1"`, `Edric = 158 cm`, `Zefir = 178 cm`, `Jasper = 193 cm`, `Noah = 197 cm`, `Logan = 198 cm`, `Mac = 204 cm`, `Malachia = 208 cm`, `Erik = 213 cm`, `Wulfnic = 220 cm`, `Ut = 240 cm`). È vietato attribuire ad Alyssa `165 cm` o altezze diverse da `155 cm`.
 
 ### C. Formula Prompt Interno di Generazione (Pittura Digitale Semi-Realistica Argon)
 1. **Medium ed Estetica:** *"Un'illustrazione digitale a figura intera, in stile pittura semi-realistica e ricca di dettagli"* (oppure *"Fotografia naturalistica, con grana naturale e dettagli nitidi"*), con enfasi sulle trame materiche (lana grezza, pelle di cervo, lino, cotone, metallo battuto), profondità di campo ridotta (*sfondo sfocato*) e illuminazione atmosferica calda o notturna.

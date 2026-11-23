@@ -29,6 +29,9 @@ def update_simulation():
     calendar['start_year'] = 827
     calendar['start_month_id'] = 'dec'
     calendar['start_day_of_month'] = 21
+    calendar['day_names'] = [
+        'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday'
+    ]
 
     # 3. Prepare inline_command_config update
     inline_command_config = current_world.get('inline_command_config', {})

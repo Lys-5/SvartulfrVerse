@@ -151,13 +151,13 @@ def main():
             "day_length": 24,
             "days_per_week": 7,
             "day_names": [
-                "Monday",
                 "Tuesday",
                 "Wednesday",
                 "Thursday",
                 "Friday",
                 "Saturday",
-                "Sunday"
+                "Sunday",
+                "Monday"
             ],
             "start_year": 827,
             "display_format": "{day_name}, {month} {day}, Year {year} {epoch}",

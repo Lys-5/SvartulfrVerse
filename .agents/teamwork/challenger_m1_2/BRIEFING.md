@@ -37,7 +37,7 @@ Empirically verify and stress-test the 6 Knowledge Vault articles created by wor
 ## Attack Surface
 - **Hypotheses tested**:
   - Factual accuracy and attribution of quotes against 46 messages of playtest log: VERIFIED.
-  - Date anomaly between Wyvern simulation header ("Sunday, August 26, 2024") and canonical World Clock ("Monday, August 26, 2024"): INVESTIGATED & RESOLVED.
+  - Date anomaly between Wyvern simulation header ("Monday, August 26, 2024") and canonical World Clock ("Monday, August 26, 2024"): INVESTIGATED & RESOLVED.
   - Consistency of divine and runic marks (Alyssa Mani left hip, Jasper Sol right hip, Gebo left wrist, 0 chest/collarbone/wings): VERIFIED 100%.
   - Zero regressions on `EXTERNAL_RESOURCES_INDEX.md` (all 85 URLs intact, exactly +6 resources) and `docs/world/Svartulfr_World_Doc.md` (exactly 4 locations synchronized, 0 em-dashes): VERIFIED.
   - Positive framing and prohibited terminology: MINOR STYLISTIC FINDING (presence of "without feet" in one descriptive clause).

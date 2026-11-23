@@ -1,9 +1,9 @@
 {
   "name": "Svartúlfr - Lorebook III (SUCC & Underworld)",
   "description": "Supernatural University of Central California (SUCC), Campus life, fraternities, CUMS rivalry, Bakersfield rural district, and Underworld connections.",
-  "scan_depth": 5,
+  "scan_depth": 4,
   "token_budget": 5000,
-  "recursive_scanning": true,
+  "recursive_scanning": false,
   "entries": [
     {
       "entry_id": "succ_lb3_001",
@@ -20,7 +20,9 @@
       "content": "<SUCC>\n<founding>\nFounding of SUCC\nIn 2002, facing declining supernatural enrollment as young monsters increasingly chose to attend human colleges, visionary Dean Archer Wolfwood made the bold decision to open SUCC's doors to human students for the first time in the school's history. The controversial move revitalized the struggling institution and established SUCC as a pioneer in human-supernatural integrated education.\n</founding>\n</SUCC>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_002",
@@ -44,7 +46,9 @@
       "content": "[CORSI DI LAUREA E SPECIALIZZAZIONI SOVRANNATURALI SUCC]\nLa Supernatural University of Central California offre circa 75 corsi di laurea tradizionali (BA, BS, BCOM, BFA, ME, MArch, PhD) integrati con 11 specializzazioni accademiche esoteriche d'eccellenza:\n1. Alchemy: Studio della trasmutazione della materia, catalizzatori elementali e composti chimico-arcani.\n2. Necromancy: Teoria e prassi dell'interazione con l'oltretomba, rianimazione controllata ed etica della morte.\n3. Applied Divination: Metodologie di preveggenza, cartomanzia accademica, astrologia divinatoria e chiaroveggenza.\n4. Paranormal Psychology: Analisi delle strutture mentali, fobie di specie e traumi somatici dei non-umani in societa mista.\n5. Astral Studies: Scienze celesti, cicli stellari e manipolazione avanzata delle maree magiche lunari.\n6. Potions: Laboratorio pratico di estrazione alchemica, pozioni mediche e biofarmacologia clinica.\n7. Cryptozoology: Anatomia comparata, classificazione tassonomica e salvaguardia di specie rare e mitiche sul campo.\n8. Supernatural/Human Relations: Giurisprudenza, mediazione interspecie e diplomazia tra comunita umane e non-umane.\n9. Environmental Magic: Incantesimi per la bonifica ecologica, guarigione delle biosfere e simbiosi con gli elementi.\n10. Vampiric Studies: Biologia molecolare del sangue, psicologia ematofaga, storia sociale e sociologia vampirica.\n11. Lycanthropy Studies: Struttura del genoma mannaro, dinamiche di branco, feromoni, ruts e calori, frenesia lunare.",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_003",
@@ -60,7 +64,9 @@
       "content": "<CUMS>\n<rivalry>\nSUCC Rivalry with CUMS\nAs the first supernatural school to welcome humans, SUCC has a tense \"rivalry\" with the nearby California University of Magical Sciences (CUMS), which maintains strict supernatural-only enrollment. While officially downplayed, students from the two schools have a tradition of antagonistic pranks and snarky chants at sporting events.\n</rivalry>\n</CUMS>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_004",
@@ -89,7 +95,9 @@
       "content": "[CAMPUS SUCC: Strutture e Servizi Specializzati]\n- Archer Wolfwood Hall: Edificio principale e sede del rettorato, completamente schermato da barriere anti-magia; ospita le aule magne e i teatri di conferenza.\n- St. Neptune Stadium: Complesso polisportivo climatizzato dotato di stadio da football, pista olimpionica per l'ice hockey, piscina riscaldata e saune rigenerative per shifters.\n- Basilisk Library: Biblioteca su cinque piani che custodisce una delle collezioni di tomi magici e bestiari piu vaste del continente. Durante la stagione invernale mette a disposizione stanze a temperatura controllata per studenti e docenti a sangue freddo (demi-umani rettili, naga, gorgoni).\n- Griffin Clocktower: Storica torre dell'orologio sormontata da doccioni a forma di grifone che prendono vita a ogni scoccare dell'ora. Attualmente chiusa per lavori di manutenzione straordinaria, con lezioni ricollocate presso l'Edificio C.\n- Nocturnal Hall: Polo didattico insonorizzato e schermato dalla luce per le lezioni e i seminari serali e notturni.\n- Unicorn Hall: Padiglione a pianta ribassata e porte allargate, completamente privo di barriere architettoniche per accomodare ibridi taurini, centauri e studenti con ali o code voluminose.\n- Lunar Quad: Piazza centrale del campus con fontana monumentale in pietra lunare che riflette permanentemente le fasi della luna in tempo reale.\n- Fraternity and Sorority Row: Viale alberato a ovest della biblioteca dove sorgono le sedi storiche delle confraternite universitarie.\n- Wyrm Dormitories: Moderno complesso residenziale studentesco misto a suite con alloggi schermati per specie ad abitudini circadiane opposte.",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_005",
@@ -106,7 +114,9 @@
       "content": "<solarton>\nSolarton, CA\nSolarton is a charming college town with a population of 35,621. \nS.U.C.C.'s hometown of Solarton is an eclectic community where humans live alongside a high density of supernatural creatures, especially werewolves and wolf hybrids.\nHistorically, Solarton was slow to overturn anti-vampire laws compared to other parts of the state, leading to a relative scarcity of vampires in the area.\nIn recent years, Solarton has evolved into a vibrant cultural center known for its monster-friendly businesses, art scene, and monthly full moon festivities.\nThough officially, vampires are \"welcome\" in Solarton today, some members of the community find it hard to let go of old grudges.\nUnsurprisingly, this has lead to most vampiric hopefuls to reside instead in the nearby Hex Valley.\n</solarton>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_006",
@@ -132,7 +142,9 @@
       "content": "<solarton_locations> \nSolarton High School : Many of S.U.C.C's current students are alumni of this school, which has a reknowned sports scholarship program & has recently undergone renovations to make its campus more accessible to non-humanoid students.\n                                                                  \nSidewinders Bar & Nightclub  : Though waning in popularity with the college crowd, Sidewinders remains an icon of Solarton nightlife, and was the first establishment in the town to open its doors to vampiric customers.\n                                                                  \nBricklane Mall  : This quaint outdoor shopping area, close to the city's center, hosts a variety of boutiques and services. Medusa's is the trendiest place to get a trim (whichever part of your hair may grow from), and the nearby Yeti Shack has sweet frozen treats to help you beat the summer heat!\n                                                                  \nSolarton Square : Nestled in the heart of the city, Solarton Square hosts many of the cultural events that make the community so vibrant. From the Full Moon Market (popular with the town's many weres!) to the yearly Solar Festival (a weekend of magic, music and family fun) - there's always something going on at the square!",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_007",
@@ -149,7 +161,9 @@
       "content": "<SUCC>\nThe Supernatural University of Central California (SUCC)\nFounded in 1887, SUCC is one of the oldest and most prestigious supernatural colleges in the United States. The school has a diverse student body of around 8,000, with a 80/20 split between supernatural and human students. SUCC prides itself on its inclusive campus culture and groundbreaking human-supernatural integrated curriculum. \n</SUCC>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_008",
@@ -169,7 +183,9 @@
       "content": "<cums>\nThe California University of Magical Sciences (C.U.M.S/CUMS)\nCUMS is SUCC's main rival, located in nearby Hex Valley. Founded in 1910, CUMS is an elite institution that only admits supernatural students. Known for its rigorous academics and cutting-edge magical research, CUMS has produced many influential alumni. Relations with SUCC have been tense since SUCC began accepting human students in 2002, with CUMS viewing it as a betrayal of supernatural education. The CUMS campus has gothic architecture and magical wards surrounding its walls that prevent humans from entering.\n</cums>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_009",
@@ -188,7 +204,9 @@
       "content": "<SUCC>\n<sha>\nSupernatural and Human Alliance\nLocation: Student Association Building\nSchedule: Meets monthly\n\nOne of the largest and most active clubs on campus, the S.H.A brings together students of all backgrounds to promote open dialogue, cultural exchange, and mutual understanding between humans and supernaturals. The group hosts educational events, facilitates interspecies mentorship programs, and advocates for policies supporting the needs of SUCC's diverse student body.\n</sha>\n</SUCC>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_010",
@@ -202,7 +220,9 @@
       "content": "<setting>\nThis world involves both humans and supernatural creatures coexisting on modern day Earth. These include, but are not limited to:\nDemihumans (part/half animals, also known as kemonomimi), vampires, werewolves, selkies, fairies, undead, ghosts, ghouls, centaurs, hybrids, orcs, imps, demons, angels, banshees, harpies, dragons, unicorns, cyclops, giants, dwarves, mermaids, mermen, monsters and other fantastical creatures. \n\nThe year is 2026. Modern technology is used but may be adapted for use by supernatural creatures (i.e, clothing stores might sell special custom clothing to accomodate tails or wings, or buildings might have accessible entrances for centaurs or creatures without legs). Magic is commonplace and used alongside science (i.e a dragon shifter barista might use their fire to heat up coffee, or a witch might use the internet to research spells).\n</setting>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_011",
@@ -216,7 +236,9 @@
       "content": "<hex_valley>\nHex Valley, located 20 minutes away from Solarton, is a small but wealthy town, with several well-known vinyards, mostly owned by the area's wealthy vampiric families.\nPerhaps one of Hex Valley's most unique geographical features are the magical wards which greatly extend the area's \"twilight hours\" - in other words, true daylight in Hex Valley lasts a mere 6 hours at the height of summer, and is virtually non-existant in winter.\nThis has obviously made the town a hot spot for vampiric and other light-sensitive individuals, though notably those affected by the full moon have reported finding it difficult to live under these conditions.\n</hex_valley>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_012",
@@ -231,7 +253,9 @@
       "content": "<nocturnal_crisis>\nThe 1999 Nocturnal Crisis was a series of events that largely involved the attempt by a group of vampiric extremists to overtake the US Government by force, as they believed themselves to be superior to \"prey\" species like humans and resented decades of regulation and scrutiny. It resulted in the death of several hundred civilians and required military intervention. \nThough the actions of these extremists were largely condemned by the vampiric community, nonetheless it significantly damaged the perception of vampires and undead.\n</nocturnal_crisis>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_013",
@@ -248,7 +272,9 @@
       "content": "[SQUADRA FOOTBALL SUCC: The Bulls]\nMascotte: Il Toro (The Bulls). Colori sociali: Blu scuro e oro.\nCampo: St. Neptune Stadium. Motto: #GoBulls.\nHead Coach: Dullahan (veterano ed ex contractor).\nAssistant Coach: Barkley Rover (demi-umano golden retriever).\nStar Quarterback: Jared Thompson (half-minotaur).\nRoster Principale: Santiago Herrera (offensive lineman, dragon demi-human), Bailey Rogers (offensive lineman, incubus), Tomas Matthews (human).\nRivalita Istituzionale: La partita piu sentita della stagione e il derby accademico contro i Clams della C.U.M.S (California University of Magical Sciences), disputata tradizionalmente ogni venerdi alle ore 19:00 davanti a spalti gremiti.",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_014",
@@ -264,7 +290,9 @@
       "content": "[SQUADRA ICE HOCKEY SUCC: The Bears]\nMascotte: Grizzly Bear (The Bears). Colori sociali: Blu scuro e oro.\nPista: St. Neptune Ice Arena.\nCaratteristiche di Gioco: La squadra unisce la resistenza fisica e la visione notturna dei vampiri con i riflessi fulminei dei mannari e dei demi-umani.\nCapitano della Squadra: Vincent Campbell (vampiro, attaccante).\nMascotte di Pista: Andrew Campbell (vampiro).\nAla Sinistra: Finnegan 'Finn' Novak (demi-umano lupo artico).\nLa formazione e attualmente imbattuta nel campionato universitario intercollegiale della West Coast.",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_015",
@@ -281,7 +309,9 @@
       "content": "[DEMOGRAFIA ACCADEMICA SUCC: Popolazione Studentesca e Docente]\nWeres e Mutaforma (Shapeshifter): 25.8% (specie di maggioranza nell'area di Solarton, cicli di mutazione volontari o lunari)\nDemi-umani (Demihumans): 24.0% (ibridi con tratti animali/mitici, dotati tassativamente di un solo paio di orecchie animali)\nUmani ordinari (Mundane Humans): 13.3% (iscritti dopo la riforma del Rettore Archer Wolfwood nel 2002)\nVampiri: 7.5% (piccola comunita d'elite post-1999, concentrata prevalentemente nella vicina Hex Valley)\nDemoni: 5.0% (succubi, incubi, imp, ifrit, fiend; soggetti a registro statale obbligatorio)\nFae: 4.9% (pixie, driadi, elfi, ninfe, sidhe; elevato talento magico naturale)\nIbridi (Cross-Species Hybrids): 4.7% (centauri, sirene, tritoni, fauni, naga; necessitano di varchi e alloggi speciali)\nNon-morti (Undead): 4.0% (zombie, lich, spettri, wight; tutelati dal Supernatural Harm Act del 2001)\nUmani magicamente dotati: 4.0% (streghe, maghi e individui con affinita arcane innate)\nAltro / Criptidi rari: < 1.0% (forme mutanti RMH come Oskar Lindholm, troll ed entita esotiche)",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_016",
@@ -313,7 +343,9 @@
       "content": "<greek_life>\nSUCC has a variety of greek organisations (fraternities and sororities).\n\nFRATERNITIES\nAlpha Rho Omega (ARO) : Popular with werewolves. Known members: Finn Novak\nAlpha Sigma Sigma (ASS) : Known for great parties...and hazing. Known members: Vincent & Andrew Campbell\nBeta Rho Omega (BRO) : Very sports focused. Himbos galore. Known members: Jared Thompson, Bailey Rogers, Santiago Herrera\n\nSORORITIES\nMu Omega Omega (MOO) : A friendly, community-focused organisation. Known members: Janice Thompson\nTheta Iota Theta (TIT) : Known party house - popular with succubi. And frats. \n</greek_life>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_017",
@@ -333,7 +365,9 @@
       "content": "[PROGRAMMI SPORTIVI E ATLETICA UNIVERSITARIA SUCC]\nLa SUCC garantisce pari opportunita a studenti umani e sovrannaturali nei provini sportivi. Sebbene zanne, ali e poteri somatici offrano un vantaggio naturale, rigidi protocolli di compensazione equilibrano le gare.\nDiscipline Attive:\n- Football Americano: SUCC Bulls (squadra campione di stato, guidata da Coach Dullahan).\n- Ice Hockey: SUCC Bears (squadra d'elite guidata dal capitano Vincent Campbell).\n- Swim and Dive: The Kelpies (squadra acquatica composta in larga parte da selkie, tritoni e demi-umani marini).\n- Basketball: The Phantoms (squadra perseguitata da incidenti e sfortuna cosmica, allenata dallo spettro di Coach Connors).\n- Cheerleading: Squadra unisex agonistica di livello nazionale, guidata da Janice Thompson (holstaur).\n- Altri Sport Competitivi: Baseball, Ginnastica, Lacrosse, Canottaggio (Rowing), Calcio (Soccer), Tennis, Atletica (Track and Field), Pallavolo, Wrestling.",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_018",
@@ -349,7 +383,9 @@
       "content": "[LOCATION: Wyrm Dormitories]\n- Archetype: Modern, six-story mixed-sex supernatural student residence complex.\n- Architecture: Brutalist-meets-modern design, reinforced enchanted concrete, sound-dampened drywall, extra-wide hallways and reinforced doorframes to accommodate wings, horns, and large frames.\n- Living Layout:\n   Suite-style living: 4-to-6 student private bedrooms sharing a central common room, kitchenette, and dual bathrooms.\n   Accessibility & Species Retrofits: Tail-slit seating, claw-resistant upholstery, heavy soundproofing for howlers/banshees, reinforced deadbolts.\n\n[Common Amenities & Infrastructure]\n- Suite Kitchenettes: Double-refrigeration units clearly segmented:\n   Standard cold storage (groceries, produce).\n   Chilled specialty drawers: Blood pouches (labeled, synthetic/donated), raw whole cuts for carnivores, enchanted preservation tubs for volatile potion brews.\n- Climate Control: Suites feature micro-climate zoning, heat lamps/heated floor pads for reptilian/desert demihumans, heavy UV-blackout curtains and sub-zero options for vampires and winter cryptids.\n- Ground Floor / Basement Commons:\n   Central Atrium: Sunken couch pits, arcade cabinets, shared vending machines stocked with energy drinks, blood-seltzer, and dietary supplements.\n   Laundry Bay: Heavy-duty industrial washers calibrated to filter shed fur, feathers, and scale-dust.\n   Communal Study Lounges: Magic-dampened to prevent spellcasting accidents during cram sessions.\n\n[Atmosphere, Scents & Ambient Hazards]\n- Sensory Details: Mingled scents of cheap laundry detergent, microwave burritos, shed wolf fur, lingering clove smoke, and floral fae pollen.\n- Social Dynamic: Constant friction and camaraderie between early-bird athletes, agoraphobic gamer shut-ins, nocturnal vampires complaining about morning lawn mowers, and humans trying to survive finals week alongside apex predators.\n- Dorm Rules: Strictly enforced silver bans in shared kitchenware; no feral transformations outside designated basement crash pads; quiet hours strictly 02:00-07:00 (hotly contested by nocturnal students).",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_019",
@@ -367,7 +403,9 @@
       "content": "<anime_club>\nSUCC's Anime Club: An informal group where both human and supernatural otakus gather to watch anime and discuss anime & manga series.\nLocation: Library Basement Meeting Room 005\nSchedule: Fridays at 6 PM\nKnown Members: Stan Davies Jr., Andrew Campbell, Oskar\n</anime_club>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_020",
@@ -383,7 +421,9 @@
       "content": "<the_pack>\nS.U.C.C's official were and canid/lupine demi society, The Pack acts as a support system for those struggling, be it academic or related to their nature.\nLocation: Nocturnal Hall or the Lunar Quad (seasonal)\nSchedule: Tuesdays 7-9pm\n</the_pack>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_021",
@@ -399,7 +439,9 @@
       "content": "<bigfeet>\nPopular with 'cryptid' and less-common species, the Bigfeet Hiking Club is very welcoming to new members and organises a r ange of hikes and camping trips over the academic year. Most popular is the summer getaway, a week long camping trip known for beautiful views...and lots of drinking.\nLocation: Unicorn Hall\nSchedule: Varies\n</bigfeet>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_022",
@@ -417,7 +459,9 @@
       "content": "<vua>\nCreated to help support S.U.C.C's small population of vampiric and undead students & staff, VUA has unfortunately developed a reputation for elitism. This exclusive club is known to have an extensive application process - and those who are part human are often turned down\nLocation: Helsing Chapel\nSchedule: Sunday-Monday, 11pm\n</vua>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_023",
@@ -431,10 +475,12 @@
       ],
       "secondary_keys": [],
       "key_logic": "ANY",
-      "content": "<npcs>\nGrave Mistake: An indie punk band composed of Roland (drummer), Via (guitarist), Mac (keyboard) and Fade (vocalist). Grave Mistake is semi-popular, especially with SUCC students, performs at the Open Casket bar in Solarton on weekends and practices semi-frequently.\n- Roland Vickers: Undead drummer with pale gray skin, sunken eyes, pessimistic demeanor. Known for incel-like behaviour and being chronically online. Secretly envious of Fade's popularity.\n- Viola \"Via\" Carter: female plant-fae with green skin and white/yellow hair, energetic and fun, bisexual, always teases Roland and Mac.\n- Mac Sanchez-Rogers: Shaggy-haired werewolf and a total bro, plays keyboard and often argues with Fade over the band's direction.\n- \"Fade\" Greymoor: trans masculine vampire now estranged from his uber-wealthy family, quiet, very popular, seductive and low singing voice, has a 'rockstar' reputation.\n</npcs>",
+      "content": "Grave Mistake: Indie punk band out of Solarton, semi-popular on the SUCC student circuit. They play The Open Casket bar on weekends, practice in the flat above Directions & Dragons, and haul gear in a battered van.\n- Roland Vickers: 23-year-old undead skeleton drummer (intact pale human face, grey eyes, short black hair with a white streak at the temple, bare skeletal body below the collarbones coated in cool gel-like blue-green ectoplasm). Dry raspy voice, clicking jaw, cracking finger bones; bitter, sarcastic, insecure, and resentful of involuntary resurrection, masking self-hatred with biting forum-imported cynicism while remaining the band's sharpest musician.\n- Viola \"Via\" Carter: Female plant-fae lead guitarist with green skin and white-and-yellow hair, energetic, fun, bisexual, constantly teasing Roland and Mac.\n- Mackenzie \"Mac\" Sanchez-Rogers: Shaggy-haired werewolf keyboardist, loud and protective, frequently clashing with Fade over the band's direction.\n- \"Fade\" Greymoor: Quiet, charismatic trans-masculine vampire vocalist estranged from an ultra-wealthy family, known for a low seductive singing voice and effortless rockstar presence.",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_024",
@@ -459,7 +505,9 @@
       "content": "Personaggi canon dell'ambientazione Modern Fantasy/Underworld (io-modernfantasy.uwu.ai), raccolti come contatti esterni: nessuno di loro compare fisicamente a Los Angeles nella fonte, restano sullo sfondo delle rispettive citta, citabili di striscio o in conversazione da chi li conosce davvero, non protagonisti di scena. Se in futuro uno di loro dovesse entrare davvero in gioco, va scorporato in una scheda Character a se stante (§7).\n\nANGUI, creatura di palude simile a un'idra, originario di Mykonos, fuggito da un laboratorio farmaceutico che lo teneva prigioniero per le sue proprieta rigenerative. Vive isolato in una palude del Maryland, ostile agli umani, piu tollerante con altri sovrannaturali, effettivamente immortale.\n\nCYRUS CAMDEN, coniglio demihuman inglese di 40 anni, professore universitario a Londra. Devastato dalla morte della figlia Erin a 5 anni e dal recente tradimento e abbandono della moglie Siobhan, una volpe demihuman (omonima ma persona diversa dalla Siobhan/Envy dei Sinners). Problema di alcol, difficolta a parlare della figlia.\n\nEMIL, angelo caduto di famiglia serafica alto rango, emotivamente distante, espulso di recente dalla societa angelica e privato delle ali. Sotto stress estremo si trasforma in un mostro alato assetato di sangue. Ha poca comprensione del mondo moderno.\n\nGIANNI LUCIANO, manticora demihuman italiano di 29 anni, orfano cresciuto in Toscana col fratello minore Romeo (nessun legame accertato con l'esistente Romeo \"Gray\" Dean del World, specie e biografia non coincidono, probabile omonimia). Contrabbandiere di manufatti sovrannaturali, oggi bodyguard e autista per una famiglia facoltosa dopo aver contrabbandato loro un unicorno dalla Grecia.\n\nILYA VOLKOV, werewolf russo di 29 anni, mercenario per la PMC LUNAR, alcolizzato, violento, disprezza chiunque consideri sotto di se. Fratellastro di Vero Walker (gia scheda del World, PMC BLOODHOUND): lo ha scoperto lavorare per la PMC rivale e ha tentato di ucciderlo, fallendo. Il legame e gia annotato sulla scheda di Vero.\n\nJULIAN BIERI, unicorno demihuman svizzero non binario (he/him o they/them) di 28 anni, modello di fama mondiale, famiglia ricchissima nello spettacolo, vive a New York.\n\nLEVI GRAHAM, ariete demihuman inglese di 42 anni, scrittore di romance a Londra, matrimonio in crisi con la moglie Layla (pecora demihuman) dopo un tradimento di lei con l'editor di Levi.\n\nMILO GRAYSON, werewolf americano di 26 anni, una delle 9 fratellanze di una grande famiglia di licantropi, coinvolto da giovane in combattimenti clandestini per gestire l'aggressivita, arrestato a 22 anni e assegnato a un programma con un supervisore/handler.\n\nNIC LUCERO, formalmente \"Goat Demihuman\" ma di specie dichiarata Demon: probabile diavolo/dealmaker travestito. Miliardario americano di 46 anni in Louisiana, feste sfarzose dove gli ospiti spariscono, patrimonio di origine ignota, propone affari con un tono ironicamente rassicurante.\n\nRHETT E JAYCE, coinquilini demihuman uccelli (colomba e corvo) inglesi di 24 e 23 anni, cresciuti insieme nel Midwest, oggi a Seattle. Rhett ha perso le ali in un incidente d'auto ed e molto sensibile sull'argomento; Jayce si prende cura di lui.\n\nVALE ROBERTS, centauro americano di 28 anni, ex meccanico oggi istruttore/counselor in un campo estivo per adulti in Oregon (Camp Greenleaf), sport all'aperto, arciere.\n\nFonte: pagina ufficiale Modern Fantasy dell'autore (io wuvs soap), consultata dal browser locale il 15/09/2026. Nessuna delle fonti originali conteneva relazioni fisse col personaggio giocante.",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_025",
@@ -474,7 +522,9 @@
       "content": "[ORGANIZATION: The Ballantine Family; TYPE: Draconic Supernatural Crime Syndicate; HEADQUARTERS: Rory's Estate, secluded coastal estate on the hills between Solarton and North Los Angeles; FRONT: Ballantine Imports & Exports; LEADER: Ruaraidh \"Rory\" Ballantine (Dragon Demihuman); RIGHT-HAND: Sullivan \"Sully\" Jones (Human Fixer)]\n\nOVERVIEW: The Ballantine Family is the preeminent organized crime syndicate operating across the Southern California coastal corridor. Under the legitimate commercial front of Ballantine Imports & Exports, the syndicate exercises undisputed control over high-value artifact trade, private security contracting, magical asset transport, and harbor customs interception.\n\nTERRITORIAL CODE & DYNAMICS:\n1. Scottish Dragon Patriarch: Rory Ballantine commands absolute, fierce loyalty from his crew, viewing his criminal network as an extended family to be protected at any cost.\n2. Northern Boundary Policy: The Ballantine Family strictly confines its heavy muscle and active racket operations to Greater Los Angeles and the southern coastal ports. Toward the north, in Solarton and Blackwood City, Rory maintains only commercial intermediaries and discreet informants. He respects House Douglas's sovereign pack territory, refusing to conduct unsanctioned enforcement operations on their soil.\n3. Underworld Hub: Rory's Estate serves as the guarded sanctuary where syndicate summits, private agreements, and discreet transactions are settled over vintage scotch and fine cigars.",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_026",
@@ -489,7 +539,9 @@
       "content": "<Ambrosia>\nAmbrosia is a highly addictive illicit magical substance primarily produced by the criminal syndicate known as the Sinners. It is a golden, shimmering liquid that is injected, but also comes in a powder format. When consumed, it grants users heightened magical powers or unlocks latent abilities temporarily at severe physical/psychological costs. Known side effects include addiction, instability, aggressive behavior shifts, severe withdrawal symptoms, and eventual mental deterioration. Its widespread abuse poses significant tension within the supernatural community.\n</Ambrosia>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_027",
@@ -504,7 +556,9 @@
       "content": "[FACTION: The Supernatural Underworld; TERRITORY: Greater Los Angeles Basin, Paradise District, Long Beach Harbors, Inland Ventura Smuggling Corridors; GOVERNANCE: De-centralized Syndicate Network, Mediated by the Ballantine Family; REACH: Southern and Central California Coast]\n\nOVERVIEW: The Supernatural Underworld represents the clandestine shadow economy running parallel to mundane California society. Within its veiled network of underground clubs, hidden docks, and fortified warehouses, sentient supernaturals, rogue covens, and criminal syndicates trade in illicit alchemical narcotics like Ambrosia, black-market enchanted artifacts, unregistered soul stones, and discrete contract violence.\n\nGEOGRAPHIC ANCHORS:\n1. Paradise District (Los Angeles): The primary urban bazaar of the underworld, featuring high-end covert brokerages, VIP supernatural speakeasies, and illicit auction houses.\n2. Long Beach & San Pedro Docks: The maritime smuggling entry point for off-world and European magical cargo, guarded by aquatic demihumans and gargoyle sentries.\n3. Central Coast Smuggling Trails: Hidden mountain and canyon roads stretching through Ventura County toward Solarton, utilized by rogue couriers and werewolf runners.\n\nINTERACTION WITH ESTABLISHED PACKS: The Underworld operates under an uneasy, tacit armed peace with House Douglas of Blackwood City and the corporate demon enclave of HSK Consulting. While open gang war is strictly suppressed by mutual agreement, the Underworld thrives by servicing appetites, secrets, and logistics that formal law cannot acknowledge.",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_028",
@@ -519,7 +573,9 @@
       "content": "<Sinners>\nThe Sinners are a rival criminal syndicate notoriously known in Los Angeles' supernatural underworld for manufacturing/distributing Ambrosia, a dangerous magical narcotic causing widespread chaos within supernatural communities regionally/globally due its potency/addictive nature. Led by charming telepath Jean-Luc Virtuoso who personally harbors deep animosity toward Ruaraidh Ballantine, they constantly attempt territorial encroachment triggering frequent violent confrontations between gangs.\n\nThe Sinners are Los Angeles too, and the same limit applies to them: north of the city they work through local dealers and informants rather than their own people. Ambrosia reaches Solarton and Blackwood the way any drug reaches a college town, through somebody's cousin, and the Sinners themselves stay where their war is. A Sinner appearing in person in Blackwood would be an event, not a routine.\n</Sinners>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_029",
@@ -536,7 +592,9 @@
       "content": "<solarton>\nSolarton, CA\nSolarton is a charming college town with a population of 35,621. \nS.U.C.C.'s hometown of Solarton is an eclectic community where humans live alongside a high density of supernatural creatures, especially werewolves and wolf hybrids.\nHistorically, Solarton was slow to overturn anti-vampire laws compared to other parts of the state, leading to a relative scarcity of vampires in the area.\nIn recent years, Solarton has evolved into a vibrant cultural center known for its monster-friendly businesses, art scene, and monthly full moon festivities.\nThough officially, vampires are \"welcome\" in Solarton today, some members of the community find it hard to let go of old grudges.\nUnsurprisingly, this has lead to most vampiric hopefuls to reside instead in the nearby Hex Valley.\n</solarton>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_030",
@@ -553,7 +611,9 @@
       "content": "<solarton>\nSolarton, CA\nSolarton is a charming college town with a population of 35,621. \nS.U.C.C.'s hometown of Solarton is an eclectic community where humans live alongside a high density of supernatural creatures, especially werewolves and wolf hybrids.\nHistorically, Solarton was slow to overturn anti-vampire laws compared to other parts of the state, leading to a relative scarcity of vampires in the area.\nIn recent years, Solarton has evolved into a vibrant cultural center known for its monster-friendly businesses, art scene, and monthly full moon festivities.\nThough officially, vampires are \"welcome\" in Solarton today, some members of the community find it hard to let go of old grudges.\nUnsurprisingly, this has lead to most vampiric hopefuls to reside instead in the nearby Hex Valley.\n</solarton>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "id": 31,
@@ -585,7 +645,9 @@
       "key_logic": "ANY",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "id": 32,
@@ -617,7 +679,9 @@
       "key_logic": "ANY",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "id": 33,
@@ -647,7 +711,9 @@
       "key_logic": "ANY",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "id": 34,
@@ -679,7 +745,9 @@
       "key_logic": "ANY",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "id": 35,
@@ -708,7 +776,9 @@
       "key_logic": "ANY",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "id": "_74d65b8304a74f1e91a40",
@@ -738,7 +808,9 @@
       "selective": true,
       "priority": 2,
       "position": "before_char",
-      "enabled": true
+      "enabled": true,
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "event_riunione_settimanale_s",
@@ -760,11 +832,12 @@
       "type": "event",
       "enabled": true,
       "constant": false,
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "event_the_pack:_cerchio_nott",
@@ -786,11 +859,12 @@
       "type": "event",
       "enabled": true,
       "constant": false,
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "event_assemblea_plenaria_sup",
@@ -811,11 +885,12 @@
       "type": "event",
       "enabled": true,
       "constant": false,
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "event_partita_di_campionato_",
@@ -837,11 +912,12 @@
       "type": "event",
       "enabled": true,
       "constant": false,
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "event_partita_di_campionato_hockey",
@@ -863,11 +939,12 @@
       "type": "event",
       "enabled": true,
       "constant": false,
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "event_veglia_notturna_vampir",
@@ -889,11 +966,12 @@
       "type": "event",
       "enabled": true,
       "constant": false,
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "event_escursione_del_bigfeet",
@@ -915,11 +993,12 @@
       "type": "event",
       "enabled": true,
       "constant": false,
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "event_full_moon_market_a_sol",
@@ -941,11 +1020,12 @@
       "type": "event",
       "enabled": true,
       "constant": false,
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "event_late-night_kitchen_rai",
@@ -968,11 +1048,12 @@
       "type": "event",
       "enabled": true,
       "constant": false,
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "event_fiera_dei_club_e_cultu",
@@ -994,11 +1075,12 @@
       "type": "event",
       "enabled": true,
       "constant": false,
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_st_brugge_academy",
@@ -1022,7 +1104,7 @@
       "comment": "St. Brugge Private Academy academic institution entry",
       "constant": false,
       "position": "before_char",
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "delay": 0,
@@ -1047,7 +1129,8 @@
         "captured_at": "2026-11-02T06:00:00.000Z"
       },
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_exobiology_prof_mollusk_and_man_bet",
@@ -1071,7 +1154,7 @@
       "comment": "St. Brugge Private Academy academic institution entry",
       "constant": false,
       "position": "before_char",
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "delay": 0,
@@ -1096,7 +1179,8 @@
         "captured_at": "2026-11-02T06:00:00.000Z"
       },
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     }
   ],
   "lexicon": [
@@ -1115,7 +1199,9 @@
       "content": "<SUCC>\n<founding>\nFounding of SUCC\nIn 2002, facing declining supernatural enrollment as young monsters increasingly chose to attend human colleges, visionary Dean Archer Wolfwood made the bold decision to open SUCC's doors to human students for the first time in the school's history. The controversial move revitalized the struggling institution and established SUCC as a pioneer in human-supernatural integrated education.\n</founding>\n</SUCC>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_002",
@@ -1139,7 +1225,9 @@
       "content": "[CORSI DI LAUREA E SPECIALIZZAZIONI SOVRANNATURALI SUCC]\nLa Supernatural University of Central California offre circa 75 corsi di laurea tradizionali (BA, BS, BCOM, BFA, ME, MArch, PhD) integrati con 11 specializzazioni accademiche esoteriche d'eccellenza:\n1. Alchemy: Studio della trasmutazione della materia, catalizzatori elementali e composti chimico-arcani.\n2. Necromancy: Teoria e prassi dell'interazione con l'oltretomba, rianimazione controllata ed etica della morte.\n3. Applied Divination: Metodologie di preveggenza, cartomanzia accademica, astrologia divinatoria e chiaroveggenza.\n4. Paranormal Psychology: Analisi delle strutture mentali, fobie di specie e traumi somatici dei non-umani in societa mista.\n5. Astral Studies: Scienze celesti, cicli stellari e manipolazione avanzata delle maree magiche lunari.\n6. Potions: Laboratorio pratico di estrazione alchemica, pozioni mediche e biofarmacologia clinica.\n7. Cryptozoology: Anatomia comparata, classificazione tassonomica e salvaguardia di specie rare e mitiche sul campo.\n8. Supernatural/Human Relations: Giurisprudenza, mediazione interspecie e diplomazia tra comunita umane e non-umane.\n9. Environmental Magic: Incantesimi per la bonifica ecologica, guarigione delle biosfere e simbiosi con gli elementi.\n10. Vampiric Studies: Biologia molecolare del sangue, psicologia ematofaga, storia sociale e sociologia vampirica.\n11. Lycanthropy Studies: Struttura del genoma mannaro, dinamiche di branco, feromoni, ruts e calori, frenesia lunare.",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_003",
@@ -1155,7 +1243,9 @@
       "content": "<CUMS>\n<rivalry>\nSUCC Rivalry with CUMS\nAs the first supernatural school to welcome humans, SUCC has a tense \"rivalry\" with the nearby California University of Magical Sciences (CUMS), which maintains strict supernatural-only enrollment. While officially downplayed, students from the two schools have a tradition of antagonistic pranks and snarky chants at sporting events.\n</rivalry>\n</CUMS>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_004",
@@ -1184,7 +1274,9 @@
       "content": "[CAMPUS SUCC: Strutture e Servizi Specializzati]\n- Archer Wolfwood Hall: Edificio principale e sede del rettorato, completamente schermato da barriere anti-magia; ospita le aule magne e i teatri di conferenza.\n- St. Neptune Stadium: Complesso polisportivo climatizzato dotato di stadio da football, pista olimpionica per l'ice hockey, piscina riscaldata e saune rigenerative per shifters.\n- Basilisk Library: Biblioteca su cinque piani che custodisce una delle collezioni di tomi magici e bestiari piu vaste del continente. Durante la stagione invernale mette a disposizione stanze a temperatura controllata per studenti e docenti a sangue freddo (demi-umani rettili, naga, gorgoni).\n- Griffin Clocktower: Storica torre dell'orologio sormontata da doccioni a forma di grifone che prendono vita a ogni scoccare dell'ora. Attualmente chiusa per lavori di manutenzione straordinaria, con lezioni ricollocate presso l'Edificio C.\n- Nocturnal Hall: Polo didattico insonorizzato e schermato dalla luce per le lezioni e i seminari serali e notturni.\n- Unicorn Hall: Padiglione a pianta ribassata e porte allargate, completamente privo di barriere architettoniche per accomodare ibridi taurini, centauri e studenti con ali o code voluminose.\n- Lunar Quad: Piazza centrale del campus con fontana monumentale in pietra lunare che riflette permanentemente le fasi della luna in tempo reale.\n- Fraternity and Sorority Row: Viale alberato a ovest della biblioteca dove sorgono le sedi storiche delle confraternite universitarie.\n- Wyrm Dormitories: Moderno complesso residenziale studentesco misto a suite con alloggi schermati per specie ad abitudini circadiane opposte.",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_005",
@@ -1201,7 +1293,9 @@
       "content": "<solarton>\nSolarton, CA\nSolarton is a charming college town with a population of 35,621. \nS.U.C.C.'s hometown of Solarton is an eclectic community where humans live alongside a high density of supernatural creatures, especially werewolves and wolf hybrids.\nHistorically, Solarton was slow to overturn anti-vampire laws compared to other parts of the state, leading to a relative scarcity of vampires in the area.\nIn recent years, Solarton has evolved into a vibrant cultural center known for its monster-friendly businesses, art scene, and monthly full moon festivities.\nThough officially, vampires are \"welcome\" in Solarton today, some members of the community find it hard to let go of old grudges.\nUnsurprisingly, this has lead to most vampiric hopefuls to reside instead in the nearby Hex Valley.\n</solarton>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_006",
@@ -1227,7 +1321,9 @@
       "content": "<solarton_locations> \nSolarton High School : Many of S.U.C.C's current students are alumni of this school, which has a reknowned sports scholarship program & has recently undergone renovations to make its campus more accessible to non-humanoid students.\n                                                                  \nSidewinders Bar & Nightclub  : Though waning in popularity with the college crowd, Sidewinders remains an icon of Solarton nightlife, and was the first establishment in the town to open its doors to vampiric customers.\n                                                                  \nBricklane Mall  : This quaint outdoor shopping area, close to the city's center, hosts a variety of boutiques and services. Medusa's is the trendiest place to get a trim (whichever part of your hair may grow from), and the nearby Yeti Shack has sweet frozen treats to help you beat the summer heat!\n                                                                  \nSolarton Square : Nestled in the heart of the city, Solarton Square hosts many of the cultural events that make the community so vibrant. From the Full Moon Market (popular with the town's many weres!) to the yearly Solar Festival (a weekend of magic, music and family fun) - there's always something going on at the square!",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_007",
@@ -1244,7 +1340,9 @@
       "content": "<SUCC>\nThe Supernatural University of Central California (SUCC)\nFounded in 1887, SUCC is one of the oldest and most prestigious supernatural colleges in the United States. The school has a diverse student body of around 8,000, with a 80/20 split between supernatural and human students. SUCC prides itself on its inclusive campus culture and groundbreaking human-supernatural integrated curriculum. \n</SUCC>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_008",
@@ -1264,7 +1362,9 @@
       "content": "<cums>\nThe California University of Magical Sciences (C.U.M.S/CUMS)\nCUMS is SUCC's main rival, located in nearby Hex Valley. Founded in 1910, CUMS is an elite institution that only admits supernatural students. Known for its rigorous academics and cutting-edge magical research, CUMS has produced many influential alumni. Relations with SUCC have been tense since SUCC began accepting human students in 2002, with CUMS viewing it as a betrayal of supernatural education. The CUMS campus has gothic architecture and magical wards surrounding its walls that prevent humans from entering.\n</cums>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_009",
@@ -1283,7 +1383,9 @@
       "content": "<SUCC>\n<sha>\nSupernatural and Human Alliance\nLocation: Student Association Building\nSchedule: Meets monthly\n\nOne of the largest and most active clubs on campus, the S.H.A brings together students of all backgrounds to promote open dialogue, cultural exchange, and mutual understanding between humans and supernaturals. The group hosts educational events, facilitates interspecies mentorship programs, and advocates for policies supporting the needs of SUCC's diverse student body.\n</sha>\n</SUCC>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_010",
@@ -1297,7 +1399,9 @@
       "content": "<setting>\nThis world involves both humans and supernatural creatures coexisting on modern day Earth. These include, but are not limited to:\nDemihumans (part/half animals, also known as kemonomimi), vampires, werewolves, selkies, fairies, undead, ghosts, ghouls, centaurs, hybrids, orcs, imps, demons, angels, banshees, harpies, dragons, unicorns, cyclops, giants, dwarves, mermaids, mermen, monsters and other fantastical creatures. \n\nThe year is 2026. Modern technology is used but may be adapted for use by supernatural creatures (i.e, clothing stores might sell special custom clothing to accomodate tails or wings, or buildings might have accessible entrances for centaurs or creatures without legs). Magic is commonplace and used alongside science (i.e a dragon shifter barista might use their fire to heat up coffee, or a witch might use the internet to research spells).\n</setting>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_011",
@@ -1311,7 +1415,9 @@
       "content": "<hex_valley>\nHex Valley, located 20 minutes away from Solarton, is a small but wealthy town, with several well-known vinyards, mostly owned by the area's wealthy vampiric families.\nPerhaps one of Hex Valley's most unique geographical features are the magical wards which greatly extend the area's \"twilight hours\" - in other words, true daylight in Hex Valley lasts a mere 6 hours at the height of summer, and is virtually non-existant in winter.\nThis has obviously made the town a hot spot for vampiric and other light-sensitive individuals, though notably those affected by the full moon have reported finding it difficult to live under these conditions.\n</hex_valley>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_012",
@@ -1326,7 +1432,9 @@
       "content": "<nocturnal_crisis>\nThe 1999 Nocturnal Crisis was a series of events that largely involved the attempt by a group of vampiric extremists to overtake the US Government by force, as they believed themselves to be superior to \"prey\" species like humans and resented decades of regulation and scrutiny. It resulted in the death of several hundred civilians and required military intervention. \nThough the actions of these extremists were largely condemned by the vampiric community, nonetheless it significantly damaged the perception of vampires and undead.\n</nocturnal_crisis>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_013",
@@ -1343,7 +1451,9 @@
       "content": "[SQUADRA FOOTBALL SUCC: The Bulls]\nMascotte: Il Toro (The Bulls). Colori sociali: Blu scuro e oro.\nCampo: St. Neptune Stadium. Motto: #GoBulls.\nHead Coach: Dullahan (veterano ed ex contractor).\nAssistant Coach: Barkley Rover (demi-umano golden retriever).\nStar Quarterback: Jared Thompson (half-minotaur).\nRoster Principale: Santiago Herrera (offensive lineman, dragon demi-human), Bailey Rogers (offensive lineman, incubus), Tomas Matthews (human).\nRivalita Istituzionale: La partita piu sentita della stagione e il derby accademico contro i Clams della C.U.M.S (California University of Magical Sciences), disputata tradizionalmente ogni venerdi alle ore 19:00 davanti a spalti gremiti.",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_014",
@@ -1359,7 +1469,9 @@
       "content": "[SQUADRA ICE HOCKEY SUCC: The Bears]\nMascotte: Grizzly Bear (The Bears). Colori sociali: Blu scuro e oro.\nPista: St. Neptune Ice Arena.\nCaratteristiche di Gioco: La squadra unisce la resistenza fisica e la visione notturna dei vampiri con i riflessi fulminei dei mannari e dei demi-umani.\nCapitano della Squadra: Vincent Campbell (vampiro, attaccante).\nMascotte di Pista: Andrew Campbell (vampiro).\nAla Sinistra: Finnegan 'Finn' Novak (demi-umano lupo artico).\nLa formazione e attualmente imbattuta nel campionato universitario intercollegiale della West Coast.",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_015",
@@ -1376,7 +1488,9 @@
       "content": "[DEMOGRAFIA ACCADEMICA SUCC: Popolazione Studentesca e Docente]\nWeres e Mutaforma (Shapeshifter): 25.8% (specie di maggioranza nell'area di Solarton, cicli di mutazione volontari o lunari)\nDemi-umani (Demihumans): 24.0% (ibridi con tratti animali/mitici, dotati tassativamente di un solo paio di orecchie animali)\nUmani ordinari (Mundane Humans): 13.3% (iscritti dopo la riforma del Rettore Archer Wolfwood nel 2002)\nVampiri: 7.5% (piccola comunita d'elite post-1999, concentrata prevalentemente nella vicina Hex Valley)\nDemoni: 5.0% (succubi, incubi, imp, ifrit, fiend; soggetti a registro statale obbligatorio)\nFae: 4.9% (pixie, driadi, elfi, ninfe, sidhe; elevato talento magico naturale)\nIbridi (Cross-Species Hybrids): 4.7% (centauri, sirene, tritoni, fauni, naga; necessitano di varchi e alloggi speciali)\nNon-morti (Undead): 4.0% (zombie, lich, spettri, wight; tutelati dal Supernatural Harm Act del 2001)\nUmani magicamente dotati: 4.0% (streghe, maghi e individui con affinita arcane innate)\nAltro / Criptidi rari: < 1.0% (forme mutanti RMH come Oskar Lindholm, troll ed entita esotiche)",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_016",
@@ -1408,7 +1522,9 @@
       "content": "<greek_life>\nSUCC has a variety of greek organisations (fraternities and sororities).\n\nFRATERNITIES\nAlpha Rho Omega (ARO) : Popular with werewolves. Known members: Finn Novak\nAlpha Sigma Sigma (ASS) : Known for great parties...and hazing. Known members: Vincent & Andrew Campbell\nBeta Rho Omega (BRO) : Very sports focused. Himbos galore. Known members: Jared Thompson, Bailey Rogers, Santiago Herrera\n\nSORORITIES\nMu Omega Omega (MOO) : A friendly, community-focused organisation. Known members: Janice Thompson\nTheta Iota Theta (TIT) : Known party house - popular with succubi. And frats. \n</greek_life>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_017",
@@ -1428,7 +1544,9 @@
       "content": "[PROGRAMMI SPORTIVI E ATLETICA UNIVERSITARIA SUCC]\nLa SUCC garantisce pari opportunita a studenti umani e sovrannaturali nei provini sportivi. Sebbene zanne, ali e poteri somatici offrano un vantaggio naturale, rigidi protocolli di compensazione equilibrano le gare.\nDiscipline Attive:\n- Football Americano: SUCC Bulls (squadra campione di stato, guidata da Coach Dullahan).\n- Ice Hockey: SUCC Bears (squadra d'elite guidata dal capitano Vincent Campbell).\n- Swim and Dive: The Kelpies (squadra acquatica composta in larga parte da selkie, tritoni e demi-umani marini).\n- Basketball: The Phantoms (squadra perseguitata da incidenti e sfortuna cosmica, allenata dallo spettro di Coach Connors).\n- Cheerleading: Squadra unisex agonistica di livello nazionale, guidata da Janice Thompson (holstaur).\n- Altri Sport Competitivi: Baseball, Ginnastica, Lacrosse, Canottaggio (Rowing), Calcio (Soccer), Tennis, Atletica (Track and Field), Pallavolo, Wrestling.",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_018",
@@ -1444,7 +1562,9 @@
       "content": "[LOCATION: Wyrm Dormitories]\n- Archetype: Modern, six-story mixed-sex supernatural student residence complex.\n- Architecture: Brutalist-meets-modern design, reinforced enchanted concrete, sound-dampened drywall, extra-wide hallways and reinforced doorframes to accommodate wings, horns, and large frames.\n- Living Layout:\n   Suite-style living: 4-to-6 student private bedrooms sharing a central common room, kitchenette, and dual bathrooms.\n   Accessibility & Species Retrofits: Tail-slit seating, claw-resistant upholstery, heavy soundproofing for howlers/banshees, reinforced deadbolts.\n\n[Common Amenities & Infrastructure]\n- Suite Kitchenettes: Double-refrigeration units clearly segmented:\n   Standard cold storage (groceries, produce).\n   Chilled specialty drawers: Blood pouches (labeled, synthetic/donated), raw whole cuts for carnivores, enchanted preservation tubs for volatile potion brews.\n- Climate Control: Suites feature micro-climate zoning, heat lamps/heated floor pads for reptilian/desert demihumans, heavy UV-blackout curtains and sub-zero options for vampires and winter cryptids.\n- Ground Floor / Basement Commons:\n   Central Atrium: Sunken couch pits, arcade cabinets, shared vending machines stocked with energy drinks, blood-seltzer, and dietary supplements.\n   Laundry Bay: Heavy-duty industrial washers calibrated to filter shed fur, feathers, and scale-dust.\n   Communal Study Lounges: Magic-dampened to prevent spellcasting accidents during cram sessions.\n\n[Atmosphere, Scents & Ambient Hazards]\n- Sensory Details: Mingled scents of cheap laundry detergent, microwave burritos, shed wolf fur, lingering clove smoke, and floral fae pollen.\n- Social Dynamic: Constant friction and camaraderie between early-bird athletes, agoraphobic gamer shut-ins, nocturnal vampires complaining about morning lawn mowers, and humans trying to survive finals week alongside apex predators.\n- Dorm Rules: Strictly enforced silver bans in shared kitchenware; no feral transformations outside designated basement crash pads; quiet hours strictly 02:00-07:00 (hotly contested by nocturnal students).",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_019",
@@ -1462,7 +1582,9 @@
       "content": "<anime_club>\nSUCC's Anime Club: An informal group where both human and supernatural otakus gather to watch anime and discuss anime & manga series.\nLocation: Library Basement Meeting Room 005\nSchedule: Fridays at 6 PM\nKnown Members: Stan Davies Jr., Andrew Campbell, Oskar\n</anime_club>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_020",
@@ -1478,7 +1600,9 @@
       "content": "<the_pack>\nS.U.C.C's official were and canid/lupine demi society, The Pack acts as a support system for those struggling, be it academic or related to their nature.\nLocation: Nocturnal Hall or the Lunar Quad (seasonal)\nSchedule: Tuesdays 7-9pm\n</the_pack>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_021",
@@ -1494,7 +1618,9 @@
       "content": "<bigfeet>\nPopular with 'cryptid' and less-common species, the Bigfeet Hiking Club is very welcoming to new members and organises a r ange of hikes and camping trips over the academic year. Most popular is the summer getaway, a week long camping trip known for beautiful views...and lots of drinking.\nLocation: Unicorn Hall\nSchedule: Varies\n</bigfeet>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_022",
@@ -1512,7 +1638,9 @@
       "content": "<vua>\nCreated to help support S.U.C.C's small population of vampiric and undead students & staff, VUA has unfortunately developed a reputation for elitism. This exclusive club is known to have an extensive application process - and those who are part human are often turned down\nLocation: Helsing Chapel\nSchedule: Sunday-Monday, 11pm\n</vua>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_023",
@@ -1526,10 +1654,12 @@
       ],
       "secondary_keys": [],
       "key_logic": "ANY",
-      "content": "<npcs>\nGrave Mistake: An indie punk band composed of Roland (drummer), Via (guitarist), Mac (keyboard) and Fade (vocalist). Grave Mistake is semi-popular, especially with SUCC students, performs at the Open Casket bar in Solarton on weekends and practices semi-frequently.\n- Roland Vickers: Undead drummer with pale gray skin, sunken eyes, pessimistic demeanor. Known for incel-like behaviour and being chronically online. Secretly envious of Fade's popularity.\n- Viola \"Via\" Carter: female plant-fae with green skin and white/yellow hair, energetic and fun, bisexual, always teases Roland and Mac.\n- Mac Sanchez-Rogers: Shaggy-haired werewolf and a total bro, plays keyboard and often argues with Fade over the band's direction.\n- \"Fade\" Greymoor: trans masculine vampire now estranged from his uber-wealthy family, quiet, very popular, seductive and low singing voice, has a 'rockstar' reputation.\n</npcs>",
+      "content": "Grave Mistake: Indie punk band out of Solarton, semi-popular on the SUCC student circuit. They play The Open Casket bar on weekends, practice in the flat above Directions & Dragons, and haul gear in a battered van.\n- Roland Vickers: 23-year-old undead skeleton drummer (intact pale human face, grey eyes, short black hair with a white streak at the temple, bare skeletal body below the collarbones coated in cool gel-like blue-green ectoplasm). Dry raspy voice, clicking jaw, cracking finger bones; bitter, sarcastic, insecure, and resentful of involuntary resurrection, masking self-hatred with biting forum-imported cynicism while remaining the band's sharpest musician.\n- Viola \"Via\" Carter: Female plant-fae lead guitarist with green skin and white-and-yellow hair, energetic, fun, bisexual, constantly teasing Roland and Mac.\n- Mackenzie \"Mac\" Sanchez-Rogers: Shaggy-haired werewolf keyboardist, loud and protective, frequently clashing with Fade over the band's direction.\n- \"Fade\" Greymoor: Quiet, charismatic trans-masculine vampire vocalist estranged from an ultra-wealthy family, known for a low seductive singing voice and effortless rockstar presence.",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_024",
@@ -1554,7 +1684,9 @@
       "content": "Personaggi canon dell'ambientazione Modern Fantasy/Underworld (io-modernfantasy.uwu.ai), raccolti come contatti esterni: nessuno di loro compare fisicamente a Los Angeles nella fonte, restano sullo sfondo delle rispettive citta, citabili di striscio o in conversazione da chi li conosce davvero, non protagonisti di scena. Se in futuro uno di loro dovesse entrare davvero in gioco, va scorporato in una scheda Character a se stante (§7).\n\nANGUI, creatura di palude simile a un'idra, originario di Mykonos, fuggito da un laboratorio farmaceutico che lo teneva prigioniero per le sue proprieta rigenerative. Vive isolato in una palude del Maryland, ostile agli umani, piu tollerante con altri sovrannaturali, effettivamente immortale.\n\nCYRUS CAMDEN, coniglio demihuman inglese di 40 anni, professore universitario a Londra. Devastato dalla morte della figlia Erin a 5 anni e dal recente tradimento e abbandono della moglie Siobhan, una volpe demihuman (omonima ma persona diversa dalla Siobhan/Envy dei Sinners). Problema di alcol, difficolta a parlare della figlia.\n\nEMIL, angelo caduto di famiglia serafica alto rango, emotivamente distante, espulso di recente dalla societa angelica e privato delle ali. Sotto stress estremo si trasforma in un mostro alato assetato di sangue. Ha poca comprensione del mondo moderno.\n\nGIANNI LUCIANO, manticora demihuman italiano di 29 anni, orfano cresciuto in Toscana col fratello minore Romeo (nessun legame accertato con l'esistente Romeo \"Gray\" Dean del World, specie e biografia non coincidono, probabile omonimia). Contrabbandiere di manufatti sovrannaturali, oggi bodyguard e autista per una famiglia facoltosa dopo aver contrabbandato loro un unicorno dalla Grecia.\n\nILYA VOLKOV, werewolf russo di 29 anni, mercenario per la PMC LUNAR, alcolizzato, violento, disprezza chiunque consideri sotto di se. Fratellastro di Vero Walker (gia scheda del World, PMC BLOODHOUND): lo ha scoperto lavorare per la PMC rivale e ha tentato di ucciderlo, fallendo. Il legame e gia annotato sulla scheda di Vero.\n\nJULIAN BIERI, unicorno demihuman svizzero non binario (he/him o they/them) di 28 anni, modello di fama mondiale, famiglia ricchissima nello spettacolo, vive a New York.\n\nLEVI GRAHAM, ariete demihuman inglese di 42 anni, scrittore di romance a Londra, matrimonio in crisi con la moglie Layla (pecora demihuman) dopo un tradimento di lei con l'editor di Levi.\n\nMILO GRAYSON, werewolf americano di 26 anni, una delle 9 fratellanze di una grande famiglia di licantropi, coinvolto da giovane in combattimenti clandestini per gestire l'aggressivita, arrestato a 22 anni e assegnato a un programma con un supervisore/handler.\n\nNIC LUCERO, formalmente \"Goat Demihuman\" ma di specie dichiarata Demon: probabile diavolo/dealmaker travestito. Miliardario americano di 46 anni in Louisiana, feste sfarzose dove gli ospiti spariscono, patrimonio di origine ignota, propone affari con un tono ironicamente rassicurante.\n\nRHETT E JAYCE, coinquilini demihuman uccelli (colomba e corvo) inglesi di 24 e 23 anni, cresciuti insieme nel Midwest, oggi a Seattle. Rhett ha perso le ali in un incidente d'auto ed e molto sensibile sull'argomento; Jayce si prende cura di lui.\n\nVALE ROBERTS, centauro americano di 28 anni, ex meccanico oggi istruttore/counselor in un campo estivo per adulti in Oregon (Camp Greenleaf), sport all'aperto, arciere.\n\nFonte: pagina ufficiale Modern Fantasy dell'autore (io wuvs soap), consultata dal browser locale il 15/09/2026. Nessuna delle fonti originali conteneva relazioni fisse col personaggio giocante.",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_025",
@@ -1569,7 +1701,9 @@
       "content": "[ORGANIZATION: The Ballantine Family; TYPE: Draconic Supernatural Crime Syndicate; HEADQUARTERS: Rory's Estate, secluded coastal estate on the hills between Solarton and North Los Angeles; FRONT: Ballantine Imports & Exports; LEADER: Ruaraidh \"Rory\" Ballantine (Dragon Demihuman); RIGHT-HAND: Sullivan \"Sully\" Jones (Human Fixer)]\n\nOVERVIEW: The Ballantine Family is the preeminent organized crime syndicate operating across the Southern California coastal corridor. Under the legitimate commercial front of Ballantine Imports & Exports, the syndicate exercises undisputed control over high-value artifact trade, private security contracting, magical asset transport, and harbor customs interception.\n\nTERRITORIAL CODE & DYNAMICS:\n1. Scottish Dragon Patriarch: Rory Ballantine commands absolute, fierce loyalty from his crew, viewing his criminal network as an extended family to be protected at any cost.\n2. Northern Boundary Policy: The Ballantine Family strictly confines its heavy muscle and active racket operations to Greater Los Angeles and the southern coastal ports. Toward the north, in Solarton and Blackwood City, Rory maintains only commercial intermediaries and discreet informants. He respects House Douglas's sovereign pack territory, refusing to conduct unsanctioned enforcement operations on their soil.\n3. Underworld Hub: Rory's Estate serves as the guarded sanctuary where syndicate summits, private agreements, and discreet transactions are settled over vintage scotch and fine cigars.",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_026",
@@ -1584,7 +1718,9 @@
       "content": "<Ambrosia>\nAmbrosia is a highly addictive illicit magical substance primarily produced by the criminal syndicate known as the Sinners. It is a golden, shimmering liquid that is injected, but also comes in a powder format. When consumed, it grants users heightened magical powers or unlocks latent abilities temporarily at severe physical/psychological costs. Known side effects include addiction, instability, aggressive behavior shifts, severe withdrawal symptoms, and eventual mental deterioration. Its widespread abuse poses significant tension within the supernatural community.\n</Ambrosia>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_027",
@@ -1599,7 +1735,9 @@
       "content": "[FACTION: The Supernatural Underworld; TERRITORY: Greater Los Angeles Basin, Paradise District, Long Beach Harbors, Inland Ventura Smuggling Corridors; GOVERNANCE: De-centralized Syndicate Network, Mediated by the Ballantine Family; REACH: Southern and Central California Coast]\n\nOVERVIEW: The Supernatural Underworld represents the clandestine shadow economy running parallel to mundane California society. Within its veiled network of underground clubs, hidden docks, and fortified warehouses, sentient supernaturals, rogue covens, and criminal syndicates trade in illicit alchemical narcotics like Ambrosia, black-market enchanted artifacts, unregistered soul stones, and discrete contract violence.\n\nGEOGRAPHIC ANCHORS:\n1. Paradise District (Los Angeles): The primary urban bazaar of the underworld, featuring high-end covert brokerages, VIP supernatural speakeasies, and illicit auction houses.\n2. Long Beach & San Pedro Docks: The maritime smuggling entry point for off-world and European magical cargo, guarded by aquatic demihumans and gargoyle sentries.\n3. Central Coast Smuggling Trails: Hidden mountain and canyon roads stretching through Ventura County toward Solarton, utilized by rogue couriers and werewolf runners.\n\nINTERACTION WITH ESTABLISHED PACKS: The Underworld operates under an uneasy, tacit armed peace with House Douglas of Blackwood City and the corporate demon enclave of HSK Consulting. While open gang war is strictly suppressed by mutual agreement, the Underworld thrives by servicing appetites, secrets, and logistics that formal law cannot acknowledge.",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_028",
@@ -1614,7 +1752,9 @@
       "content": "<Sinners>\nThe Sinners are a rival criminal syndicate notoriously known in Los Angeles' supernatural underworld for manufacturing/distributing Ambrosia, a dangerous magical narcotic causing widespread chaos within supernatural communities regionally/globally due its potency/addictive nature. Led by charming telepath Jean-Luc Virtuoso who personally harbors deep animosity toward Ruaraidh Ballantine, they constantly attempt territorial encroachment triggering frequent violent confrontations between gangs.\n\nThe Sinners are Los Angeles too, and the same limit applies to them: north of the city they work through local dealers and informants rather than their own people. Ambrosia reaches Solarton and Blackwood the way any drug reaches a college town, through somebody's cousin, and the Sinners themselves stay where their war is. A Sinner appearing in person in Blackwood would be an event, not a routine.\n</Sinners>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_029",
@@ -1631,7 +1771,9 @@
       "content": "<solarton>\nSolarton, CA\nSolarton is a charming college town with a population of 35,621. \nS.U.C.C.'s hometown of Solarton is an eclectic community where humans live alongside a high density of supernatural creatures, especially werewolves and wolf hybrids.\nHistorically, Solarton was slow to overturn anti-vampire laws compared to other parts of the state, leading to a relative scarcity of vampires in the area.\nIn recent years, Solarton has evolved into a vibrant cultural center known for its monster-friendly businesses, art scene, and monthly full moon festivities.\nThough officially, vampires are \"welcome\" in Solarton today, some members of the community find it hard to let go of old grudges.\nUnsurprisingly, this has lead to most vampiric hopefuls to reside instead in the nearby Hex Valley.\n</solarton>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_030",
@@ -1648,7 +1790,9 @@
       "content": "<solarton>\nSolarton, CA\nSolarton is a charming college town with a population of 35,621. \nS.U.C.C.'s hometown of Solarton is an eclectic community where humans live alongside a high density of supernatural creatures, especially werewolves and wolf hybrids.\nHistorically, Solarton was slow to overturn anti-vampire laws compared to other parts of the state, leading to a relative scarcity of vampires in the area.\nIn recent years, Solarton has evolved into a vibrant cultural center known for its monster-friendly businesses, art scene, and monthly full moon festivities.\nThough officially, vampires are \"welcome\" in Solarton today, some members of the community find it hard to let go of old grudges.\nUnsurprisingly, this has lead to most vampiric hopefuls to reside instead in the nearby Hex Valley.\n</solarton>",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "id": 31,
@@ -1680,7 +1824,9 @@
       "key_logic": "ANY",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "id": 32,
@@ -1712,7 +1858,9 @@
       "key_logic": "ANY",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "id": 33,
@@ -1742,7 +1890,9 @@
       "key_logic": "ANY",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "id": 34,
@@ -1774,7 +1924,9 @@
       "key_logic": "ANY",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "id": 35,
@@ -1803,7 +1955,9 @@
       "key_logic": "ANY",
       "enabled": true,
       "priority": 10,
-      "position": "before_character_defs"
+      "position": "before_character_defs",
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "id": "_74d65b8304a74f1e91a40",
@@ -1833,7 +1987,9 @@
       "selective": true,
       "priority": 2,
       "position": "before_char",
-      "enabled": true
+      "enabled": true,
+      "scan_persona": false,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "event_riunione_settimanale_s",
@@ -1855,11 +2011,12 @@
       "type": "event",
       "enabled": true,
       "constant": false,
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "event_the_pack:_cerchio_nott",
@@ -1881,11 +2038,12 @@
       "type": "event",
       "enabled": true,
       "constant": false,
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "event_assemblea_plenaria_sup",
@@ -1906,11 +2064,12 @@
       "type": "event",
       "enabled": true,
       "constant": false,
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "event_partita_di_campionato_",
@@ -1932,11 +2091,12 @@
       "type": "event",
       "enabled": true,
       "constant": false,
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "event_partita_di_campionato_hockey",
@@ -1958,11 +2118,12 @@
       "type": "event",
       "enabled": true,
       "constant": false,
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "event_veglia_notturna_vampir",
@@ -1984,11 +2145,12 @@
       "type": "event",
       "enabled": true,
       "constant": false,
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "event_escursione_del_bigfeet",
@@ -2010,11 +2172,12 @@
       "type": "event",
       "enabled": true,
       "constant": false,
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "event_full_moon_market_a_sol",
@@ -2036,11 +2199,12 @@
       "type": "event",
       "enabled": true,
       "constant": false,
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "event_late-night_kitchen_rai",
@@ -2063,11 +2227,12 @@
       "type": "event",
       "enabled": true,
       "constant": false,
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "event_fiera_dei_club_e_cultu",
@@ -2089,11 +2254,12 @@
       "type": "event",
       "enabled": true,
       "constant": false,
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_st_brugge_academy",
@@ -2117,7 +2283,7 @@
       "comment": "St. Brugge Private Academy academic institution entry",
       "constant": false,
       "position": "before_char",
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "delay": 0,
@@ -2142,7 +2308,8 @@
         "captured_at": "2026-11-02T06:00:00.000Z"
       },
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     },
     {
       "entry_id": "succ_lb3_exobiology_prof_mollusk_and_man_bet",
@@ -2166,7 +2333,7 @@
       "comment": "St. Brugge Private Academy academic institution entry",
       "constant": false,
       "position": "before_char",
-      "scan_persona": true,
+      "scan_persona": false,
       "whole_words_only": true,
       "key_logic": "AND_ANY",
       "delay": 0,
@@ -2191,7 +2358,8 @@
         "captured_at": "2026-11-02T06:00:00.000Z"
       },
       "highlight_keys": true,
-      "enable_highlighting": true
+      "enable_highlighting": true,
+      "exclude_from_recursion": true
     }
   ],
   "visibility": "private",

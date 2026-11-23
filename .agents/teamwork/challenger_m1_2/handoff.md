@@ -27,7 +27,7 @@ A full empirical audit of worker_m1's deliverables was executed directly against
 2. **Cross-Examination Against Playtest Log (`scratch/chat_export_ftrtAD79eddk9Ue9Jr2WJ.json`)**:
    - **Date Anomaly Analysis**:
      - In `scratch/chat_export_ftrtAD79eddk9Ue9Jr2WJ.json`, the simulation engine message headers in turns 2 through 45 output:
-       `**Sunday, August 26, Year 2024 CE, 10:02**`
+       `**Monday, August 26, Year 2024 CE, 10:02**`
      - However, in turn 0 narrative prose, the date is stated as: `il 26 agosto 2024`.
      - In the Gregorian calendar, August 26, 2024 is unequivocally a **Monday**.
      - In canonical project specifications (`ORIGINAL_REQUEST.md` Follow-up 2026-10-24T22:18:38Z and `GEMINI.md` Rule 4/Rule 6), World-Age 10489902 corresponds to `26 Agosto 2024, lunedì, ore 06:00 UTC`.
@@ -85,7 +85,7 @@ All 7 unit tests passed:
 1. **Step 1 (Source Truth & Cross-Examination)**:
    By inspecting every message in `scratch/chat_export_ftrtAD79eddk9Ue9Jr2WJ.json`, we isolated every factual claim made in the 6 articles. The emergent lore regarding St. Brugge, Father Revazhael, crystallography, resonant cylinders, abyssal vs void magic, Alyssa's Rank A healer credentials, and the Wolfwood-Douglas security pact is directly supported by turns 13-20, 24-31, and 42-45.
 2. **Step 2 (Date Anomaly Deconstruction)**:
-   The observation of "Sunday, August 26, 2024" in the chat header vs "Monday, August 26, 2024" in the articles was verified. Because August 26, 2024 in the real calendar and in canonical World Clock definitions (World-Age 10489902) is Monday, adopting "Monday, August 26, 2024" is the correct canonical reconciliation rather than a factual discrepancy.
+   The observation of "Monday, August 26, 2024" in the chat header vs "Monday, August 26, 2024" in the articles was verified. Because August 26, 2024 in the real calendar and in canonical World Clock definitions (World-Age 10489902) is Monday, adopting "Monday, August 26, 2024" is the correct canonical reconciliation rather than a factual discrepancy.
 3. **Step 3 (Mark Specification Conformance)**:
    By comparing `ALISSA_AND_JASPER_FIELD_AND_HUNTER_BACKGROUND.md` against `RUNIC_AND_DIVINE_MARKS_SPECIFICATION.md`, all anatomical placements (Alyssa left hip Maniulfr, Jasper right hip Solulfr, 0 chest/collarbone/wing marks) are 100% compliant.
 4. **Step 4 (Regression Prevention)**:

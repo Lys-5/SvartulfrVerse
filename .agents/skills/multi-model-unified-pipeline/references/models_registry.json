@@ -1,7 +1,7 @@
 {
   "schema_version": "2026.11.1",
   "registry_name": "Svartulfr Verse Multi-Model Unified Registry & PC OMEN AI Fleet",
-  "updated_at": "2026-11-09T22:08:00Z",
+  "updated_at": "2026-11-22T10:00:00Z",
   "special_routing_policies": {
     "grok_bot": {
       "client_id": "grok_bot",
@@ -28,18 +28,26 @@
       ],
       "policy_note": "Inoltrare a Groky (e al suo sotto-agente Code Groky / Agenda) ESCLUSIVAMENTE le richieste relative al blocco di slot di lavoro in Google Calendar per lo sviluppo dell'ambientazione, rispettando feste italiane/Asatru, orari di casa (sveglia 10:00, umido gatti 19:30, promemoria Davide 20:30) e la regola aurea: nessuna modifica/invio/cancellazione senza OK esplicito."
     },
-    "gemini_desktop": {
-      "client_id": "gemini_desktop",
-      "executable": "Gemini.exe",
-      "exclusive_role": "Visual & Image Generation Studio (via Gemini 4 Argon)",
-      "model_engine": "gemini-4-argon",
+    "comfyui_local": {
+      "client_id": "comfyui_local",
+      "executable": "python.exe",
+      "endpoint": "http://127.0.0.1:8188",
+      "health_endpoint": "http://127.0.0.1:8188/system_stats",
+      "launcher": "E:\\ComfyUI\\run_nvidia_gpu_optimized.bat",
+      "runner_script": "scripts/comfy_batch_runner.py",
+      "exclusive_role": "Local Visual & Image Generation Studio (ComfyUI RTX 4060 — SDXL + FaceID Plus v2)",
+      "model_engine": "comfyui-local-sdxl",
       "allowed_task_types": [
         "image_generation",
         "visual_asset_creation",
         "character_portrait",
         "location_background"
       ],
-      "policy_note": "Utilizzato tramite modello Gemini 4 Argon esclusivamente per la creazione e generazione delle immagini (avatar, outfit, location dawn/day/dusk/night)."
+      "standard_npc_workflow": [
+        "1. Studio Neutral Base Reference Set (Close-Up Portrait + Unclothed Full-Body Figure; SFW clothed only for POLICY_EXEMPT minors)",
+        "2. Outfit & Contextual Scene Variants driven by Base Reference FaceID/IP-Adapter"
+      ],
+      "policy_note": "Tutte le generazioni di immagini (modelli base studio, avatar NPC, outfit, location dawn/day/dusk/night) avvengono sempre ed esclusivamente tramite ComfyUI locale (http://127.0.0.1:8188, E:\\ComfyUI) via scripts/comfy_batch_runner.py. Per ogni NPC si genera prima il Set Base Reference da studio fotografico neutro (primo piano close-up + figura intera nuda per adulti 18+; SFW vestita per minorenni POLICY_EXEMPT) da usare come reference FaceID/visiva per tutte le varianti outfit e con contesto."
     }
   },
   "rate_limiting": {
@@ -394,12 +402,12 @@
     },
     "gemini_desktop": {
       "id": "gemini_desktop",
-      "display_name": "Google Gemini Desktop (Argon Image Gen)",
+      "display_name": "Google Gemini Desktop (Standby)",
       "executable": "Gemini.exe",
       "install_path": "C:\\Users\\mande\\AppData\\Local\\Google\\Gemini\\app-1.18.0\\Gemini.exe",
       "version_hint": "1.18.0",
-      "assigned_tier": "visual_studio_argon_images",
-      "exclusive_scope": "Image & Visual Asset Creation (Gemini 4 Argon)",
+      "assigned_tier": "standby_general_chat",
+      "exclusive_scope": "General Chat Standby (Image Generation migrated permanently to ComfyUI Local)",
       "cdp_arg": "--remote-debugging-port=9223"
     },
     "grok_bot": {
@@ -484,6 +492,19 @@
       "featured_models": [
         "gemma4:27b",
         "qwen3.8:32b"
+      ]
+    },
+    "comfyui_local": {
+      "provider_id": "comfyui_local",
+      "display_name": "ComfyUI Local Image Generation Studio (:8188)",
+      "endpoint": "http://127.0.0.1:8188",
+      "health_endpoint": "http://127.0.0.1:8188/system_stats",
+      "protocol": "comfyui_rest",
+      "auth_env": null,
+      "featured_models": [
+        "CyberRealisticXLPlay_V10.0_FP16.safetensors",
+        "sdxl_vae.safetensors",
+        "ip-adapter-faceid-plusv2_sdxl.bin"
       ]
     },
     "lm_studio_local": {

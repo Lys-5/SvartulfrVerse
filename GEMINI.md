@@ -54,33 +54,64 @@ Il JSON va generato **esclusivamente** se:
 
 ---
 
-## 2. JED+ Come Formato Standard delle Schede
+## 2. JED+ v2.0 Come Formato Standard delle Schede
 
-Tutte le character card adottano obbligatoriamente il formato **JED+**:
-1. Un blocco di attributi tra parentesi quadre, separati da punto e virgola (stile bracket/PList);
-2. Sezioni narrative in prosa per backstory, dinamiche familiari/di gruppo, voce e comportamento;
-3. Chiusura con una sezione tematica centrale del personaggio.
+Tutte le character card, user personas, world characters e voci NPC dei Lorebook adottano obbligatoriamente lo standard **JED+ v2.0 (Attention-First & Retrieval-Optimized)**, codificato in [docs/references/JED_PLUS_V2_UNIVERSAL_SCHEMA.md](docs/references/JED_PLUS_V2_UNIVERSAL_SCHEMA.md), che integra la sintassi PList/SBF e i 31 template non-umani di **SopakcoSauce (`soup`)**, l'entity-scoping e i `GOALS` di **StatuoTW (`statuotw`)**, e i micro-tells somatici + Trust/Pacing Ladder di **Iorveths / Veseii (`ioverse`), Nallak e bbcreature**:
+1. Un blocco iniziale **`[PList Multilinea]`** (una chiave `UPPERCASE_KEY: valore;` per riga dentro `[...]`, senza sezioni narrative annidate e senza `CLOTHING:` fisso), composto dal **Core Universale (~16 chiavi)** più il **Modulo Specie-Specifico** mappato sui 31 template SopakcoSauce;
+2. Blocco di testa **`KINSHIP & NON-KIN:`** con parentele esplicite, `UNRELATED_HOMONYMS:` (firewall anti-omonimia) e `POSSESSIVE_RULE (IT):` (`nostro/nostra` vs `mio/tuo`);
+3. Fascia centrale con **`BACKSTORY:`**, **`RELATIONSHIPS & DYNAMICS:`** (incluso *Trust & Pacing Gate: Strangers / Acquaintances / Inner Circle*) e **`POWERS, FORMS & GEAR:`**;
+4. Fascia finale ad alta attenzione con **`VOICE, TELLS & BEHAVIOR:`** (*Somatic Micro-Tells* + *Trigger Responses*), **`CORE PSYCHOLOGY [Sottotitolo Poetico]:`** (`GOALS`, `SORE_SPOT`, `COPING`, `LOVES & HATES`, `FLAWS`), **`SEXUALITY & INTIMACY:`** (solo 18+ con 5 sotto-etichette fisse; sostituita da `AGE_POLICY: STRICTLY MINOR NPC` per i minori `<18`), **`GM SECRETS & EPISTEMIC BOUNDARIES:`** e **`RPG STATS & TRAITS:`**.
 
-### Schema Strutturale JED+
+### Schema Strutturale JED+ v2.0
 
 ```text
-[NAME: ...; SPECIES: ...; AGE: ...; HEIGHT: ...; ... ]
+[NAME: ...;
+ALIASES: ...;
+SPECIES: ...;
+AGE: <età> (Born <Data>);
+GENDER: ...;
+HEIGHT: <cm> cm (<ft/in>);
+BUILD: ...;
+HAIR: ...;
+EYES: ...;
+ANATOMY: ...;
+MARKS: ...;
+SCENT: ...;
+... <Modulo Specie SopakcoSauce 31> ...;
+AFFILIATION: ...;
+OCCUPATION: ...;
+RESIDENCE: ...;
+SOCIAL_STANDING: ...;
+ARC_LEVEL: ...;
+KNOWLEDGE_TIER: OPEN | HERMETIC_PACK | SECRET_FIRSTBORN | MINOR_LOCK]
+
+KINSHIP & NON-KIN: ...
 
 BACKSTORY: ...
 
-FAMILY & PACK: ...
+RELATIONSHIPS & DYNAMICS: ...
 
-VOICE & BEHAVIOR: ...
+POWERS, FORMS & GEAR: ...
 
-[sezione tematica finale, es. CORE TRAGEDY / THE WEIGHT HE CARRIES / THE SECRET HE CARRIES]
+VOICE, TELLS & BEHAVIOR: ...
+
+CORE PSYCHOLOGY [Sottotitolo Poetico Canonico]: ...
+
+SEXUALITY & INTIMACY: ... (solo 18+; oppure AGE_POLICY: STRICTLY MINOR NPC per <18)
+
+GM SECRETS & EPISTEMIC BOUNDARIES: ...
+
+RPG STATS & TRAITS: ...
 ```
 
 ### Regole Specifiche sui Campi
-- **Personaggi senza legame di branco:** Per figure aziendali, indipendenti o civili, la sezione `FAMILY & PACK:` si sostituisce con l'omologo pertinente (es. `CLAN AND COMPANY:` per Zeera), conservando la sequenza a quattro blocchi più chiusura tematica.
-- **Campo `personality` (`summary` nella UI di Wyvern):** Va compilato con un blocco compatto di soli tratti tra parentesi quadre (stile PList puro), come riepilogo rapido separato dalla `description` estesa.
-- **Import Grezzi:** Una scheda importata grezza col blocco `<nome_personaggio>` incollato tale e quale dalla fonte **NON è una scheda lavorata**. Va riscritta integralmente in JED+, non semplicemente ritoccata.
+- **Divieto di Header Duplicati:** Ogni intestazione di sezione in MAIUSCOLO può comparire **una sola volta** all'interno della stessa scheda.
+- **Campo `personality` (`summary` nella UI di Wyvern):** Va compilato con un blocco compatto su **singola riga** di soli tratti tra parentesi quadre (`~450-650 char`, stile PList/SBF con `TRAITS: trait(behavior, motive); FLAWS: flaw(manifestation, root);`), separato dalla `description` estesa.
+- **Budget Token a 3 Tier:** **Tier 1 (Main Cast Cards & Personas):** `7.000-12.000 char` (`~1.750-3.000 tok`, 100% lossless sui fatti canonici); **Tier 2 (World Characters & `NPC_Primary`):** `3.600-6.500 char` (`~900-1.600 tok`); **Tier 3 (`NPC_Secondary`):** `1.800-3.200 char` (`~450-800 tok`, 6 sezioni essenziali).
+- **Import Grezzi:** Una scheda importata grezza col blocco `<nome_personaggio>` incollato tale e quale dalla fonte **NON è una scheda lavorata**. Va riscritta integralmente in JED+ v2.0, non semplicemente ritoccata.
 - **Età e Data di Nascita:** Per garantire piena compatibilità sia nelle chat stand-alone 1-on-1 (dove la timeline del World non è attiva e la macro `{{age}}` non viene valutata) sia all'interno del World, **non usare la macro `{{age}}`**. Indicare sempre nel campo `AGE` del blocco JED+ l'età anagrafica corrente e la data di nascita esplicita con la sintassi: `AGE: <età> (Born <Data>);` (o `BIRTHDAY: <Data>;`). Questo evita che il bot rimanga privo di età calcolata o mostri la macro non espansa quando utilizzato fuori dal World.
-- **Blocco PList Iniziale su Singola Riga, User Persona & Parità `entries == lexicon`:** Il blocco iniziale `[...]` deve occupare **una singola riga** senza sezioni annidate dentro le parentesi quadre, e la sequenza a 4 blocchi (`[NAME: ...]` $\to$ `BACKSTORY:` $\to$ `FAMILY & PACK:` / `CLAN AND COMPANY:` $\to$ `VOICE & BEHAVIOR:`) si applica obbligatoriamente a **tutte le Character Card** (`FINAL/*_card.json` e `ARCHIVIO/cards_legacy/*_card.json`), a **tutte le User Persona** (`FINAL/personas/*.json`) e a **tutte le 310 voci NPC dei Lorebook**. Nei file JSON locali dei Lorebook (`FINAL/` e `lorebooks/optimized/`), l'array `entries` e l'array `lexicon` devono essere mantenuti **100% identici byte-for-byte**.
+- **Blocco PList Iniziale (Multilinea JED+ v2.0 o Singola Riga Legacy), User Persona & Parità `entries == lexicon`:** Ogni riga interna al blocco iniziale `[...]` deve essere una coppia chiave-valore `UPPERCASE_KEY: valore;` senza sezioni narrative annidate dentro le parentesi quadre, applicandosi obbligatoriamente a **tutte le Character Card** (`FINAL/*_card.json` e `ARCHIVIO/cards_legacy/*_card.json`), a **tutte le User Persona** (`FINAL/personas/*.json`), ai **126 World Characters** e a **tutte le 312 voci NPC dei Lorebook**. Nei file JSON locali dei Lorebook (`FINAL/` e `lorebooks/optimized/`), l'array `entries` e l'array `lexicon` devono essere mantenuti **100% identici byte-for-byte**.
+- **Politica In-Chat Name (`chat_name`):** Per tutte le character card (salvo esplicite omonimie), il campo `chat_name` deve essere valorizzato rigorosamente con il solo nome proprio (`Firstname`, es. `Richard`, `Hana`, `Luka`, `Dullahan`), separando l'identificatore compatto visualizzato nei balloon e nelle liste di chat dal nome di catalogo esteso memorizzato in `name` (es. `Luka Sutter (Contractor #03)`).
 
 ---
 
@@ -94,11 +125,12 @@ Da applicare tassativamente a `first_mes`, `mes_example`, `alternate_greetings`,
 - **Asterischi riservati ai pensieri interni:** Gli asterischi (`*...*`) sono destinati **esclusivamente** ai pensieri interni del personaggio (uso attualmente non ancora sfruttato, riservato per sviluppi futuri).
 - **Lingue straniere:** `"Frase originale"` seguita da `([traduzione])`.
 - **Divieto di Markdown nei testi del World:** Niente markdown nei testi del World. L'uso del grassetto con `**` vìola la regola sugli asterischi: il divieto vale anche nelle entry Lexicon e nelle descrizioni di Location ed Environment, non solo nei dialoghi.
+- **Prefisso Dialoghi Secondari / ACE su Nuova Riga (`Firstname:`):** Nei contesti multi-character e negli scenari corali, i cognomi restano ammessi nella prosa narrativa delle scene, ma i dialoghi e le azioni dei personaggi secondari devono iniziare su una nuova riga con il prefisso `'Firstname:'` (es. `Bartholomew: [dialogue/action]`, `Luka: [dialogue/action]`) per attivare le intestazioni con avatar in chat.
 
 ### Istruzione Obbligatoria in `post_history_instructions`
 Inserire sempre questa riga in coda a `post_history_instructions` (campo `final_instructions` via API):
 
-> "Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead. Demi-human anatomical discipline: treat single animal ears as the natural norm; never mention, describe, or reiterate the absence or lack of human ears in narrative descriptions."
+> "Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead. When secondary NPCs or ACEs speak or take action, always output their dialogue on a new line prefixed with 'Firstname:' (e.g., Bartholomew: [dialogue/action], Luka: [dialogue/action]) to trigger avatar headers in chat. Demi-human anatomical discipline: treat species-specific animal traits (e.g. single animal ears for mammals, smooth reptilian hearing and scales for lamias) as the natural norm; never mix species traits (never give wolf ears to lamias or reptiles); never mention, describe, or reiterate the presence, absence, or type of human ears or human anatomy in narrative descriptions."
 
 ---
 
@@ -111,17 +143,29 @@ Definire accessori o elementi visivi come "always on" o "never removed" (es. ben
 2. **Descrizione Contestuale:** Se gli Outfit non sono ancora popolati, descrivere il tratto come legato al contesto nella prosa: *"X indossa Y solo quando Z; in altri contesti non è presente."*
 3. **Eccezione Ammessa:** Un tratto può restare costante se e solo se la sua costanza *è* il personaggio e la scheda lo dichiara esplicitamente (es. il cappuccio di Dullahan non scende mai, in nessun contesto).
 
-### Standard Minimo 9 Outfits Obbligatori per Scheda
-Ogni character card redatta o aggiornata nel repository deve includere nel campo `outfits` **un minimo assoluto di 9 outfit contestuali**, strutturati rigorosamente secondo lo schema a 6 sezioni (Abbigliamento, Accessori, Scarpe, Gioielli, Trucco, Acconciatura) con apertura lombare rinforzata per la coda:
+### Standard Minimo 9 Outfits Obbligatori per Scheda Giocabile & Formato JED+ v2.0 Multiline PList
+Ogni character card redatta o aggiornata nel repository (`FINAL/*_card.json` e `/mine`), ogni World Character (`FINAL/Svartulfr_Characters.json` e `/worlds`) e ogni User Persona (`FINAL/personas/*.json` e `/user-personas`) deve formattare la `description` di ciascun outfit o appearance secondo lo **Schema JED+ v2.0 Multiline PList** (una chiave `UPPERCASE_KEY: valore;` per riga dentro parentesi quadre `[...]`), includendo nel campo `outfits` **un minimo assoluto di 9 outfit contestuali** per le schede giocabili, strutturati rigorosamente secondo lo schema a 6 sezioni (`ABBIGLIAMENTO`, `ACCESSORI`, `SCARPE`, `GIOIELLI`, `TRUCCO`, `ACCONCIATURA`) preceduto da `OUTFIT_NAME` e `SLOT_CONTEXT`, con apertura lombare rinforzata per la coda:
+```text
+[OUTFIT_NAME: ...;
+SLOT_CONTEXT: Casual / Daily | Business / Campus | Gala / Formal | Party / Club | Beach / Terme | Sleep / Nightwear | Nude / Anatomical | Hybrid Shift / Mutation | Full Shift / Beast Form;
+ABBIGLIAMENTO: ...;
+ACCESSORI: ...;
+SCARPE: ...;
+GIOIELLI: ...;
+TRUCCO: ...;
+ACCONCIATURA: ...]
+```
 1. `casual`: Abbigliamento quotidiano, relax a casa, abiti da strada/tempo libero informale.
 2. `business / campus`: Frequenza accademica (campus SUCC) o abito professionale/aziendale di rappresentanza (DCC).
 3. `gala / formal`: Alta sartoria per cene di casata, ricevimenti solenni, galà ufficiali o cerimonie di branco.
 4. `party / club`: Nightlife, serate in discoteca o lounge bar esclusivi (es. The Verve, Solarton club scene).
 5. `beach / terme`: Costume da bagno, costume termale o abbigliamento balneare da sorgente calda/spiaggia/piscina.
 6. `sleep`: Abbigliamento da notte, pigiama leggero, boxer o intimo per dormire.
-7. `nude`: Nudo anatomico completo, con descrizione rigorosa di corporatura, cicatrici, genitali e tatuaggi/rune sub-dermiche.
+7. `nude`: Nudo anatomico completo a 6 sezioni (vietati placeholder brevi o generici), con descrizione rigorosa di corporatura, muscolatura, proporzioni anatomiche, genitali naturali non censurati, cicatrici, tatuaggi/rune sub-dermiche e asola sacrale naturale per la coda.
 8. `hybrid shift / mutation`: Forma ibrida bipede da combattimento (per licantropi LSE: Hybrid Shift mastodontico con pelliccia, muso allungato e artigli).
 9. `full shift / other`: Forma bestiale integrale a quattro zampe (per shifters: lupo gigante ancestrale; per non-shifters: uniforme operativa da campo specialistica).
+
+*User Personas:* Le User Personas (`FINAL/personas/*.json` e `/user-personas`) mantengono lo standard di **3 o più Appearances contestuali** (es. Casual/Base, Formal/Combat, Sleep/Cyberspace) nel medesimo formato JED+ v2.0 Multiline PList (`[OUTFIT_NAME: ...;\nSLOT_CONTEXT: ...;\nABBIGLIAMENTO: ...; ...]`).
 
 ### Sfondi per Fascia Oraria (Time of Day Backgrounds) e Tag Regista
 - **4 Periodi Canonici:** Le Location supportano immagini differenziate per `dawn`, `day`, `dusk` e `night`.
@@ -133,21 +177,31 @@ Ogni character card redatta o aggiornata nel repository deve includere nel campo
 ## 5. Coerenza Visiva di Famiglia (Douglas) e Anatomia Demi-Umani
 
 - **Family Look Douglas:** I maschi della famiglia Douglas condividono un aspetto visivo comune nelle illustrazioni: capelli scuri lunghi e arruffati (per accomodare le orecchie lupine del Partial Shift), palette cromatica calda al tramonto con sfondi di Blackwood City (palme e architettura costiera), e struttura mascellare e facciale simile. Conservare comunque dettagli individuali (stile dei tatuaggi, cicatrici, tonalità degli occhi, accessori).
-- **Anatomia Demi-Umani (Orecchie Singole & Positive Framing):** **I demi-umani possiedono un solo paio di orecchie: quelle animali.** Non hanno un secondo paio di orecchie umane. Questa regola è confermata dall'autore originale ed è vincolante. **Disciplina di Formulazione:** Nei testi di contesto narrativo (schede JED+, outfits, scenari, greeting, lorebook), l'anatomia deve essere descritta esclusivamente in termini positivi (es. *"singolo paio di orecchie da lupo sulla sommità del capo, perfettamente integrate tra i capelli"*) senza mai menzionare, esplicitare o negare l'esistenza di orecchie umane (*mai inserire "No orecchie umane", "senza orecchie umane ai lati", "prive di orecchie umane"*). I vincoli negativi sono riservati esclusivamente ai prompt e parametri tecnici per la generazione di immagini (es. `--no human ears`).
-- **Sierra Cruz (Lamia — Locomozione & Livrea Arcobaleno Iridescente):** Possiede **capelli color arcobaleno** e, dai fianchi in giù, la parte inferiore del corpo è interamente quella di un serpente di 4 metri **color arcobaleno con scaglie iridescenti** (zero gambe, zero piedi). È tassativamente vietato usare per Sierra termini o verbi come *gambe*, *piedi*, *ginocchia*, *scarpe*, *pantaloni*, *camminare* o *fare passi* (`legs`, `feet`, `knees`, `shoes`, `walk`, `step`, `stand on feet`): Sierra si muove esclusivamente strisciando, scivolando e avvolgendosi sulle sue spire (`slithers`, `glides`, `coils`).
+- **Adozione Ufficiale della Tassonomia delle 31 Specie di WyvernChat / SopakcoSauce Docs:**
+  Il repository adotta come benchmark e standard tassonomico vincolante la **Classificazione Ufficiale a 31 Categorie per Specie Non-Umane** di WyvernChat / SopakcoSauce Docs, archiviata integralmente in [knowledge/External_References/SOPAKCOSAUCE_NON_HUMAN_CHARACTER_TEMPLATES.md](knowledge/External_References/SOPAKCOSAUCE_NON_HUMAN_CHARACTER_TEMPLATES.md):
+  1. `lamia_naga` (Lamia & Naga) | 2. `merfolk` (Merfolk & Cefalopodi Marini) | 3. `elves` (Elves) | 4. `orcs` (Orcs) | 5. `trolls` (Trolls) | 6. `arachne` (Arachne & Drider) | 7. `kobolds` (Kobolds) | 8. `centaurs` (Centaurs) | 9. `minotaurs` (Minotaurs) | 10. `fae` (Fae & Sidhe) | 11. `fairy` (Fairy / Sprites) | 12. `giants` (Giants & Titani) | 13. `gnome` (Gnomes) | 14. `vampire` (Vampiri & Revenant) | 15. `werewolf` (Werewolves, LSE Shifters & Licantropi) | 16. `undead` (Undead, Spettri & Mummie) | 17. `succubus_incubus` (Succubi & Incubi) | 18. `demon` (Demoni & Costrutti d'Ombra) | 19. `angel` (Angeli & Cherubini) | 20. `dragon` (Draghi, Wyrm & Drake) | 21. `neko` (Demi-Umani Felini) | 22. `kitsune` (Volpi Mistiche & Yokai) | 23. `mutant` (Mutanti, Chimere & Cavie di Laboratorio) | 24. `alien` (Alieni & Forme di Vita Extraterrestri) | 25. `anthro` (Demi-Umani Generali: Canini, Ursini, Bovini, Roditori, Aviani/Arpie, Fauni) | 26. `machine` (Androidi, Automata & AI Corporee) | 27. `plant` (Driadi, Piante Carnivore & Sporespawn) | 28. `god` (Dei Primordiali & Divinità Cosmiche) | 29. `object` (Oggetti Cursi & Costrutti Animati) | 30. `cosmic_entity` (Entità Cosmiche & Outer Gods) | 31. `abyssal_horror` (Orrori Abissali & Voidspace DDM).
+  Tutti i campi `SPECIES: ...` delle Character Card e degli NPC Lorebook devono mappare con precisione la propria specie e il rispettivo `subtype: ...` su questa matrice, ereditando gli organi di senso, la locomozione e la fisiologia specifica codificati nel template corrispondente.
+- **Anatomia Demi-Umani & Tassonomia Specie-Specifica (Positive Framing):** **I demi-umani ereditano esclusivamente i tratti anatomici, sensoriali e fisiologici della loro specifica specie animale di appartenenza:**
+  - **Personaggi Umani Ordinari e Mortal Shifters in Forma Base:** È tassativamente vietato inserire formule come `"100% human"`, `"ordinary human ears"`, `"interamente umana"` o `"no animal ears or tail"` nella descrizione o nella personality. La base umana è la norma implicita del personaggio mortale; i tratti bestiali si specificano unicamente come trasformazione attiva (`ANIMAL_FORM: ... full beast shift`).
+  - **Demi-Umani Mammiferi (Lupini, Canini, Felini, Bovini, Ursini, Roditori):** Possiedono un solo paio di orecchie, quelle animali della loro specie (lupine/canine erette, feline a punta, bovine orizzontali con morbida peluria, orse arrotondate), e la rispettiva coda. Mai descrivere orecchie umane ai lati.
+  - **Demi-Umani Rettili, Lamie & Naga (es. Sierra Cruz):** **DIVIETO ASSOLUTO DI ORECCHIE MAMMIFERE, PELLICCIA O CODE DA MAMMIFERO.** L'apparato uditivo è rettiliano: membrana timpanica liscia integrata nella linea delle tempie/squame o graziose creste/alette sensoriali squamate lisce prive di peli, sintonizzate per percepire vibrazioni del suolo e risonanze termiche/acustiche. È tassativamente vietato attribuire a Sierra o ad altre lamie orecchie da lupo, movimenti auricolari da cane/gatto (*"perked ears"*, *"twitched her wolf ears"*), gambe, piedi o passi.
+  - **Demi-Umani Acquatici / Cefalopodi (es. Prof. Moreau):** Tentacoli (es. lombari), pelle screziata, branchie vestigiali; nessun padiglione auricolare esterno da mammifero.
+  - **Disciplina di Formulazione:** Nei testi di contesto narrativo (schede JED+, outfits, scenari, greeting, lorebook), l'anatomia deve essere descritta esclusivamente in termini positivi (*"creste sensoriali squamate lisce lungo le tempie"*, *"singolo paio di orecchie da lupo sulla sommità del capo"*), senza mai menzionare, esplicitare o negare l'esistenza di orecchie umane (*mai inserire "No orecchie umane", "senza orecchie umane ai lati", "prive di orecchie umane"*). I vincoli negativi sono riservati unicamente ai parametri tecnici per la generazione di immagini (es. `--no human ears`).
+- **Sierra Cruz (Lamia — Locomozione, Livrea & Anatomia Rettiliana Rigorosa):** Possiede **capelli color arcobaleno**, occhi rosa confetto con pupille a fessura verticale, lingua biforcuta, fossette termosensibili (pit organs), zanne velenifere retrattili, e membrana timpanica liscia/creste sensoriali squamate lungo le tempie (**zero orecchie da lupo o da mammifero**). Dai fianchi in giù, la parte inferiore del corpo è interamente quella di un serpente di 4 metri **color arcobaleno con scaglie iridescenti** (zero gambe, zero piedi, zero scarpe). È tassativamente vietato usare per Sierra termini o verbi come *gambe*, *piedi*, *ginocchia*, *scarpe*, *pantaloni*, *camminare* o *fare passi* (`legs`, `feet`, `knees`, `shoes`, `walk`, `step`, `stand on feet`): Sierra si muove esclusivamente strisciando, scivolando e avvolgendosi sulle sue spire (`slithers`, `glides`, `coils`).
 - **Scarlett Rose (Succubus — Palette Rosa Confetto & Corna Scarlatte):** Possiede **capelli rosa confetto** (`candy-pink`), **occhi rosa confetto** abbinati e **due corna scarlatte** che spuntano visibilmente tra i capelli sopra le tempie, oltre alle ali scure da succubus e alla coda prensile con punta a picca.
-- **Marchi Divini dei Gemelli (Mani & Sol) & Distinzione Titoli Cosmici (Maniulfr vs Solulfr):** I marchi celestiali risiedono **esclusivamente sulle anche**: Alyssa porta il Marchio Runico di Máni (mezzaluna argentata con glifi lunari sub-dermici) **unicamente sull'anca sinistra**; Jasper porta il Marchio Runico di Sól (sole nero radioso con glifi fiammeggianti sub-dermici) **unicamente sull'anca destra**. È vietato disperdere marchi multipli su mani, petto, nuca, clavicola o cuore (condividono soltanto il tatuaggio protettivo Gebo a inchiostro di ferro freddo sul polso sinistro). Inoltre, il titolo sacro **Sólúlfr** (Lupo del Sole) appartiene **esclusivamente a Svartr (Jasper)**; per Hvít (Alyssa) il titolo divino correlato a Máni è **Mániúlfr** (Maniulf / Lupo della Luna Bianca).
+- **Marchi Divini dei Gemelli (Mani & Sol) & Distinzione Titoli Cosmici (Maniulfr vs Solulfr):** I marchi celestiali risiedono **esclusivamente sulle anche**: Alyssa porta il Marchio Runico di Máni (mezzaluna argentata con glifi lunari sub-dermici) **unicamente sull'anca sinistra**; Jasper porta il Marchio Runico di Sól (sole nero radioso con glifi fiammeggianti sub-dermici) **unicamente sull'anca destra**. È vietato disperdere marchi multipli su mani, petto, nuca, clavicola o cuore (condividono soltanto la Runa di Nascita **Mannaz** `ᛗ` a inchiostro di ferro freddo sul polso sinistro, determinata dalla data di nascita del 22 aprile secondo il calendario Futhark canonico: Alyssa/Jasper 22 apr = `Mannaz`, Erik 31 ott = `Hagalaz`, Noah 5 ott = `Gebo`, Edric 25 feb = `Sowilo`, Wulfnic 21 dic = `Jera`, Elizabeth 14 lug = `Uruz`, Malachia 10 ago = `Thurisaz`, Logan 12 gen = `Eihwaz`). Inoltre, il titolo sacro **Sólúlfr** (Lupo del Sole) appartiene **esclusivamente a Svartr (Jasper)**; per Hvít (Alyssa) il titolo divino correlato a Máni è **Mániúlfr** (Maniulf / Lupo della Luna Bianca).
 
 ---
 
 ## 6. World Clock e Parametri Temporali
 
-- **World-Age 0 (Epoca di Riferimento):** 21 dicembre 827 d.C., ore 00:00 UTC.
-  - Parametri API del World:
+- **World-Age 0 (Epoca di Riferimento):** 21 dicembre 827 d.C., ore 00:00 UTC (Martedì / Tuesday).
+  - Parametri API del World e Configurazione Calendario:
     - `human_start_date: "0827-12-21T00:00:00.000Z"`
     - `calendar.start_year: 827`
     - `start_month_id: "dec"`
     - `start_day_of_month: 21`
+    - `day_names: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday"]`
 - **Anno Corrente del World:** **2024**.
 - **World-Age Attuale:** **10486470** (equivalente al **5 aprile 2024, ore 06:00 UTC**, riconfermato via API il 14 settembre). Ignorare riferimenti legacy al 2022.
 - **Formula Ore Assolute (Calendario Gregoriano Prolettico):**
@@ -156,10 +210,23 @@ Ogni character card redatta o aggiornata nel repository deve includere nel campo
 ### Snippet di Calcolo e Verifica (JavaScript)
 
 ```javascript
-const EP = Date.UTC(827, 11, 21); // 21 Dicembre 827 UTC
+const EP = Date.UTC(827, 11, 21); // 21 Dicembre 827 UTC (Martedì)
 const dataDaOre = h => new Date(EP + h * 3600000).toISOString().slice(0, 10);
 const oreDaData = iso => (Date.parse(iso) - EP) / 3600000;
 ```
+
+### 6.1 Allineamento Matematico dei Giorni della Settimana (Weekday Offset Parity)
+L'engine del calendario di Wyvern calcola il giorno della settimana tramite modulo diretto sui giorni trascorsi dall'Epoca (`h = Math.floor(timestamp / day_length)`):
+$$\text{indice\_giorno} = (h \pmod 7 + 7) \pmod 7$$
+e seleziona `day_names[indice_giorno]`.
+- All'Epoca (Giorno 0, 21 dicembre 827 CE), la data astronomica reale nel calendario prolettico gregoriano era **Martedì (Tuesday)**.
+- Per garantire che ogni giorno della settimana coincida matematicamente con la realtà e con il canone narrativo (in particolare **26 agosto 2024 = Lunedì / Monday**), l'array `day_names` deve iniziare con `Tuesday`:
+  `["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday"]`
+- Verifica per il Welcome Day SUCC (26 agosto 2024):
+  - Giorni trascorsi: $h = 437079$.
+  - Indice: $437079 \pmod 7 = 6$.
+  - `day_names[6]` = `"Monday"` (Lunedì).
+  - Formattazione Wyvern: `Monday, August 26, Year 2024 CE`. Perfetta concordanza con la realtà, con gli orari accademici e con i dialoghi degli scenari.
 
 ### Controlli di Integrità Temporale
 1. Per ogni personaggio vivente, `birthdate` e `start_timeline_position` devono **coincidere**.
@@ -171,7 +238,7 @@ const oreDaData = iso => (Date.parse(iso) - EP) / 3600000;
    In accordo con la guida ufficiale Wyvern (`wiki.wyvern.chat/Features/Worlds/Scenario-Guided-Intro`), gli scenari progettati per l'auto-inserimento organico nella timeline devono rispettare due invarianti tassative:
    - *Singola Apertura Obbligatoria:* esattamente una sola scena premade (`premade_scenes.length === 1`) oppure sole istruzioni di scena (`scene_instructions`), prevenendo il blocco `opening_choice` ("This scenario has more than one opening, so the event cannot choose one on its own").
    - *Divieto di Insertion Point:* `insertion_point: null` (assente), per prevenire il blocco `time_override` ("This scenario has an Insertion Point. An automatic event cannot ask whether to set the chat clock, so it is skipped").
-   - *Parametri di Configurazione:* `repeat: "once"` (o `"cooldown"` con turni), `priority` intera e condizioni logiche ancorate a `time_basis: "world_day"` (Giorno 1 = Ora 0 = 21 Dicembre 827 CE) o `world_time` unitamente a filtri party/persona.
+   - *Parametri di Configurazione:* `repeat: "once"` (o `"cooldown"` con turni), `priority` intera e condizioni logiche ancorate a `time_basis: "world_day"` (Giorno 1 = Ora 0 = Martedì 21 Dicembre 827 CE; Giorno 437080 = Lunedì 26 Agosto 2024 CE) o `world_time` unitamente a filtri party/persona.
 6. **Sincronizzazione Time of Day e Sfondi Dinamici:**
    L'AI Time Tracking calcola automaticamente la fascia oraria corrente tra `dawn`, `day`, `dusk` e `night`. Nelle Location censite nel World, nel Lexicon o nel Lorebook Location (`_EjXxkmPVhpCXg8xABpFkK`), associare per ciascun periodo l'immagine d'atmosfera corretta, consentendo alla piattaforma di sfumare lo sfondo in tempo reale al procedere della timeline.
 
@@ -439,6 +506,10 @@ Consultare tassativamente queste risorse ufficiali per l'implementazione di logi
   3. **Body parziale obbligatorio:** Inviare solo i campi modificati (il PUT completo con tutto l'oggetto restituisce 200 ma non salva niente).
   4. **Sostituzione completa degli array:** Gli array non eseguono merge; leggere l'array esistente, aggiornarlo in memoria e ritrasmetterlo completo.
   5. **Verifica GET post-scrittura:** Lo status HTTP 200 non è una prova; rileggere l'entità per validare l'effettiva persistenza.
+- **Contratti Specifici Endpoints API:**
+  - *Character API (`PUT /api/characters/:id`):* Richiede l'uso esclusivo del subset `safe_payload` contenente solo i campi editabili (`EDITABLE_FIELDS`); trasmettere campi server di sola lettura (`entity_statistics`, `creator`, `created_at`, `updated_at`, `_id`) genera errore `HTTP 400 Bad Request`.
+  - *User Personas API (`PUT /api/user-personas/:id`):* L'endpoint corretto di consultazione è `GET /api/user-personas` (e non `/mine`); in fase di update `PUT` richiede obbligatoriamente `name` e `importance` (`importance: 'high'`), in assenza dei quali il server risponde con `HTTP 400`.
+  - *Lorebooks API (`PUT /api/lorebooks/:id`):* Per prevenire errori `HTTP 413 Payload Too Large`, trasmettere sul wire remoto l'array `lexicon` unito ai soli metadati top-level, evitando la trasmissione congiunta di `entries` e `lexicon` (il cui doppio array è riservato solo ai file JSON locali per Zod parity).
 - **Operazioni in Blocco (> 10 entità):** Presentare il piano all'utente, attendere approvazione, operare a lotti di massimo 25 con memorizzazione dello stato.
 - **Cancellazioni (DELETE):** Solo su richiesta esplicita con indicazione puntuale dell'entità. Salvare prima l'intero oggetto nel Project; una chiamata alla volta (mai in loop).
 
@@ -714,6 +785,21 @@ Nelle configurazioni di Wyvern (`AI Connections -> Connections`) e categorico di
 ### Circuit-Breaker e Quarantena Temporizzata (60s)
 I gateway multiprovider o i proxy di failover devono implementare una quarantena temporizzata automatica (cooldown) di almeno 60 secondi su errori HTTP `429`, `403`, `5xx` o Timeout (`>12s`), saltando a tempo zero i nodi guasti e garantendo continuita ininterrotta alla chat.
 
+### Routing Adattivo Intelligente (Alternanza Dinamica Qwen vs Gemma su GPU Locale)
+Il micro-proxy locale (`proxy/free_tier_proxy.py`) integra un classificatore semantico di intenti che indirizza automaticamente le richieste sui modelli locali eseguiti su GPU NVIDIA RTX 4060:
+1. **Qwen (Roleplay, Scenari, Dialoghi In-Character, Pacing Narrativo):**
+   - *Target Ideale:* Sessioni di Roleplay, Scenari JED+, tag XML (`<scenario>`, `<character>`, `<world>`, `<lexicon>`), dialoghi in lingua italiana e disciplina di formattazione (virgolette per il parlato, plain text per azioni).
+   - *Comportamento:* Riceve priorita assoluta di instradamento quando vengono rilevati marcatori narrativi.
+2. **Gemma (Logica, Coding, Algoritmi, Matematica, Q&A Strutturato):**
+   - *Target Ideale:* Domande secche, blocchi di codice, analisi dati, calcoli logico-matematici, spiegazioni tecniche e prompt privi di contesto RPG/Roleplay.
+   - *Compatibilita Nativa:* Il proxy converte automaticamente i messaggi con `role: "system"` in prefisso `user`, prevenendo l'eccezione di template di Gemma.
+3. **Alternanza e Failover Bilanciato:**
+   - In presenza di richieste neutre o bilanciate, il proxy applica un round-robin turn-by-turn tra Qwen e Gemma.
+   - Se il modello preferito e occupato, in cooldown o va in timeout (>40s), il proxy scala istantaneamente sul secondo modello locale e successivamente sugli upstream cloud (Google AI Studio Gemini Flash, Groq Qwen), garantendo zero interruzioni.
+4. **Avvio su Richiesta (On-Demand Auto-Start & Pre-Warming VRAM):**
+   - *Zero Risorse a Riposo:* Il proxy non richiede che Ollama resti perennemente acceso consumando RAM quando il PC si avvia. Se il demone su `127.0.0.1:11434` e spento, viene spawnato silenziosamente in background alla primissima chiamata proveniente da Wyvern, con storage vincolato su `E:\ollama\models` e senza finestre DOS a video.
+   - *Pre-Warming & Idle Watchdog (30 Minuti):* In parallelo alla prima chiamata, il proxy inietta il caricamento in VRAM con `keep_alive: "30m"` per entrambi i modelli (`qwen2.5:3b` e `gemma:2b`), bloccandoli contemporaneamente nella GPU RTX 4060 (4.5 GB totali occupati su 8.0 GB). Se non arrivano nuove richieste da Wyvern per 30 minuti consecutivi, un watchdog asincrono in background attiva lo scaricamento forzato (`keep_alive: 0`), liberando il 100% della memoria GPU e RAM fino alla richiesta successiva.
+
 ---
 
 ## 21. Architettura Second Brain (LLM Wiki 2026), Metabolismo Vault & Automazioni
@@ -747,5 +833,5 @@ Il controllo e integrato come **Stage 0** nel runner quotidiano `scripts/daily_m
 - **Unificazione in Singola Master Pipeline (`daily-master-pipeline`):** Tutte le operazioni quotidiane di manutenzione, monitoraggio e arricchimento lore sono consolidate in un'unica automazione atomica registrata in:
   `~/.gemini/config/sidecars/daily-master-pipeline/sidecar.json`
   con `"builtin": "schedule"`, `"restart_policy": "always"`, schedule `"CRON_TZ=Europe/Rome 0 9 * * *"`, delimitatore `"--"` prima del prompt e permessi minimi nel workspace (`workspace_uris` e `access_grants`). I 4 precedenti sidecar separati sono archiviati in `ARCHIVIO/sidecars_legacy_backup/`.
-- **Orchestrazione Multi-Modello a 3 Tier & Specialisti Desktop (`multi-model-unified-pipeline`):** Lo script `.agents/skills/multi-model-unified-pipeline/scripts/orchestrator.py` e il registro `references/models_registry.json` orchestrano i 5 stadi giornalieri su **Tier 1 (`scout-fast` — `gemini-3.8-flash` / `copilotapp.exe` / `:5005` `gemma-4-31B-it` & `qwen-3.8-27b`)**, **Tier 2 (`architect-sync` — `gemini-4-argon` & `claude-sonnet-5.5` / `copilotapp.exe` & `Claude.exe` / `:5005` `z-ai/glm-5.3` & `deepseek-chat`)**, **Tier 3 (`lore-judge` — `claude-opus-5.5` & `gemini-4-argon` / `Claude.exe` / `:5005` `nemotron-3-ultra-550b` & `z-ai/glm-5.3`)**, riservando i 2 client desktop specialisti **esclusivamente** ai rispettivi domini: **`Grok Bot.exe` (`agenda_work_slots_only`)** come Agenda Personale per il blocco degli slot di lavoro sullo sviluppo dell'ambientazione, e **`Gemini.exe` (`visual_studio_argon_images`)** tramite **Gemini 4 Argon** per la creazione e generazione delle immagini. Include **Stage 4 (Dashboard Telemetrica HTML `scratch/unified_pipeline_dashboard.html` e Archiviazione Transcript in `logs/automations/`)**.
+- **Orchestrazione Multi-Modello a 3 Tier & Specialisti Desktop (`multi-model-unified-pipeline`):** Lo script `.agents/skills/multi-model-unified-pipeline/scripts/orchestrator.py` e il registro `references/models_registry.json` orchestrano i 5 stadi giornalieri su **Tier 1 (`scout-fast` — `gemini-3.8-flash` / `copilotapp.exe` / `:5005` `gemma-4-31B-it` & `qwen-3.8-27b`)**, **Tier 2 (`architect-sync` — `gemini-4-argon` & `claude-sonnet-5.5` / `copilotapp.exe` & `Claude.exe` / `:5005` `z-ai/glm-5.3` & `deepseek-chat`)**, **Tier 3 (`lore-judge` — `claude-opus-5.5` & `gemini-4-argon` / `Claude.exe` / `:5005` `nemotron-3-ultra-550b` & `z-ai/glm-5.3`)**, riservando i 2 client desktop specialisti **esclusivamente** ai rispettivi domini: **`Grok Bot.exe` (`agenda_work_slots_only`)** come Agenda Personale per il blocco degli slot di lavoro sullo sviluppo dell'ambientazione, e **ComfyUI Locale (`comfyui_local`, `http://127.0.0.1:8188`, `E:\ComfyUI`)** tramite `scripts/comfy_batch_runner.py` (SDXL + FaceID Plus v2) sempre per tutta la creazione e generazione delle immagini (`Gemini.exe` resta in standby). Include **Stage 4 (Dashboard Telemetrica HTML `scratch/unified_pipeline_dashboard.html` e Archiviazione Transcript in `logs/automations/`)**.
 - **Zero Dipendenze Esterne negli Script Sidecar (`urllib.request` Standard):** Tutti gli script Python invocati dalle automazioni o dall'orchestratore multi-modello devono utilizzare esclusivamente la standard library Python (`urllib.request`, `urllib.error`, `json`, `pathlib`, `time.monotonic()`) per garantire esecuzione deterministica sia sotto `uv run python` sia sotto l'interprete di sistema, includendo sempre favicon SVG inline (`data:image/svg+xml`) nelle dashboard HTML autogenerate.

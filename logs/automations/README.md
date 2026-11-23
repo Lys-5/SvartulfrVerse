@@ -14,3 +14,13 @@ Registro storico delle sessioni di chat eseguite automaticamente in background:
 - **2026-11-09 22:05:55** | [daily-master-pipeline](2026-11-09_220555_daily-master-pipeline.md) | ID `eafcabee` | 114 steps
 - **2026-11-10 09:01:41** | [daily-master-pipeline](2026-11-10_090141_daily-master-pipeline.md) | ID `563433e5` | 16 steps
 - **2026-11-11 09:01:30** | [daily-master-pipeline](2026-11-11_090130_daily-master-pipeline.md) | ID `706bf2f6` | 12 steps
+- **2026-11-12 09:01:09** | [daily-master-pipeline](2026-11-12_090109_daily-master-pipeline.md) | ID `bebdb5cf` | 10 steps
+- **2026-11-13 09:02:04** | [daily-master-pipeline](2026-11-13_090204_daily-master-pipeline.md) | ID `47c4a877` | 10 steps
+- **2026-11-14 09:02:40** | [daily-master-pipeline](2026-11-14_090240_daily-master-pipeline.md) | ID `6d89ad6f` | 10 steps
+- **2026-11-15 09:01:53** | [daily-master-pipeline](2026-11-15_090153_daily-master-pipeline.md) | ID `168ca381` | 12 steps
+- **2026-11-16 09:02:19** | [daily-master-pipeline](2026-11-16_090219_daily-master-pipeline.md) | ID `3311288d` | 10 steps
+- **2026-11-18 07:42:33** | [daily-master-pipeline](2026-11-18_074233_daily-master-pipeline.md) | ID `8bf085e7` | 10 steps
+- **2026-11-18 09:02:48** | [daily-master-pipeline](2026-11-18_090248_daily-master-pipeline.md) | ID `96222182` | 9 steps
+- **2026-11-19 09:02:08** | [daily-master-pipeline](2026-11-19_090208_daily-master-pipeline.md) | ID `17c20daa` | 11 steps
+- **2026-11-21 18:48:59** | [daily-master-pipeline](2026-11-21_184859_daily-master-pipeline.md) | ID `7f3bdfb6` | 557 steps
+- **2026-11-22 09:02:32** | [daily-master-pipeline](2026-11-22_090232_daily-master-pipeline.md) | ID `0b145051` | 11 steps

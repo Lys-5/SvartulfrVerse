@@ -14,6 +14,7 @@ Ogni character card deve essere elaborata seguendo rigorosamente questa sequenza
    - `summary`: Blocco PList puro di soli tratti psicologici/comportamentali.
    - `display_description`: 1-2 frasi incisive su chi è e cosa lo rende memorabile.
    - Nickname, titoli, keys, pronomi.
+   - **In-Chat Name (`chat_name`):** Tassativamente impostato sul solo nome proprio (`Firstname`, salvo esplicite omonimie).
    - **Invariante Privacy & Rating:** Tassativamente `visibility: "private"` e `rating: "explicit"`.
 5. **Configurazione Minimo 9 Outfits Contestuali:** Creare obbligatoriamente almeno 9 outfit contestuali standardizzati (Regola 03: casual, business/campus, gala/formal, party/club, beach/terme, sleep, nude, hybrid shift/mutation, full shift/other) con apertura lombare rinforzata per la coda.
    - *Via API:* Inviare l'array completo in un unico payload PUT con nanoid univoci.

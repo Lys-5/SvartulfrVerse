@@ -53,7 +53,7 @@ def main():
         'epoch_label': 'CE',
         'day_length': 24,
         'days_per_week': 7,
-        'day_names': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        'day_names': ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday'],
         'start_year': 827,
         'start_month_id': 'dec',
         'start_day_of_month': 21,

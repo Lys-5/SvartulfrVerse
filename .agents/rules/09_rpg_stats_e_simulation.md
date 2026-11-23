@@ -91,9 +91,23 @@ TRAITS:
 
 Per gli Assistant e i Prompt Assembly che operano come Game Master (come `Svartúlfr — Game Master & World Engine`), le azioni rischiose o incerte intraprese da `{{user}}` o dai PNG vengono risolte mediante il motore D20 parametrato sugli attributi S.P.E.C.I.A.L.
 
-### 4.1 Formula di Conversione
+### 4.1 Formula di Conversione & Tabella Esplicita Anti-Allucinazione
 I punteggi S.P.E.C.I.A.L. calcolati (comprensivi di Livello, Specie, Occupazione e Tratti) generano il modificatore al tiro del dado a venti facce (D20):
 $$\text{Mod} = \left\lfloor \frac{\text{Stat} - 10}{2} \right\rfloor$$
+
+Per azzerare gli errori di calcolo aritmetico degli LLM (che faticano a calcolare divisioni a mente durante la generazione token-by-token), tutti i prompt di sistema, assistant e filtri proxy includono la **tabella di conversione rigida**:
+- **Stat 8–9:** Mod -1
+- **Stat 10–11:** Mod +0
+- **Stat 12–13:** Mod +1
+- **Stat 14–15:** Mod +2
+- **Stat 16–17:** Mod +3
+- **Stat 18–19:** Mod +4
+- **Stat 20–21:** Mod +5
+- **Stat 22–23:** **Mod +6** *(es. INT 22 = Mod: +6, PER 22 = Mod: +6)*
+- **Stat 24–25:** Mod +7
+- **Stat 26–27:** **Mod +8** *(es. CHA 27 = Mod: +8)*
+- **Stat 28–29:** Mod +9
+- **Stat 30+:** Mod +10
 
 ### 4.2 Classi di Difficoltà (CD / DC)
 - **CD 10 (Facile / Routine sotto stress):** Azioni standard eseguite sotto pressione moderata.
@@ -103,10 +117,11 @@ $$\text{Mod} = \left\lfloor \frac{\text{Stat} - 10}{2} \right\rfloor$$
 - **CD 30 (Eroica / Quasi Impossibile):** Imprese leggendarie.
 
 ### 4.3 Risoluzione a 4 Livelli (Dice & Outcomes)
+Il calcolo aritmetico del totale è rigoroso: $\text{Totale} = \text{D20} + \text{Mod}$.
 1. **Successo Critico (Nat 20 o Margine $\ge +10$ rispetto alla CD):** Successo con slancio eccezionale, vantaggio tattico o risorsa risparmiata.
-2. **Successo Pieno ($\text{Totale} \ge \text{CD}$):** Obiettivo raggiunto senza imprevisti negativi.
-3. **Successo con Costo / Fallimento Parziale (Margine tra $-1$ e $-4$):** Azione riuscita ma con complicazione narrativa o consumo di risorse, oppure fallimento pulito senza ritorsioni disastrose.
-4. **Fallimento Critico (Nat 1 o Margine $\le -10$ rispetto alla CD):** Conseguenza avversa immediata (inceppamento, danno, innesco allarmi).
+2. **Successo Pieno ($\text{Totale} \ge \text{CD}$):** Pareggiare o superare la CD è a tutti gli effetti un successo pieno. Obiettivo raggiunto senza imprevisti negativi.
+3. **Successo con Costo / Fallimento Parziale (Margine tra $-1$ e $-4$ rispetto alla CD):** Azione riuscita ma con complicazione narrativa o consumo di risorse, oppure fallimento pulito senza ritorsioni disastrose (es. 19 vs CD 20).
+4. **Fallimento Critico (Nat 1 o Margine $\le -5$ / $\le -10$ rispetto alla CD):** Conseguenza avversa immediata (inceppamento, danno, innesco allarmi).
 
 ### 4.4 Isolamento Diegetico Obbligatorio
 Tutti i calcoli numerici, tiri di dadi e verifiche meccaniche devono essere rigorosamente isolati su riga autonoma all'inizio o alla fine del messaggio in un blocco compatto:

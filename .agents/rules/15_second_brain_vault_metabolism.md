@@ -64,7 +64,7 @@ La skill `.agents/skills/multi-model-unified-pipeline/` (`scripts/orchestrator.p
 1. **Tier 1 (`scout-fast` — Effort `low`/`medium`):**
    - *Modello IDE Primario:* `gemini-3.8-flash` (subagent `flash` / `flash_lite`).
    - *Twin / Proxy `:5005` & Client Desktop:* `gemma-4-31B-it`, `qwen-3.8-27b`, `copilotapp.exe`.
-   - *Task:* **Stage 0** (`vault_health_check.py` + scansione dei 5 client AI sul PC OMEN), **Stage 1A** (`daily_wyvern_platform_monitor.py`), **Stage 1B** (`proxy/update_free_models.py`).
+   - *Task:* **Stage 0** (`vault_health_check.py` + scansione dei 5 client AI sul PC OMEN), **Stage 1A** (`daily_wyvern_platform_monitor.py`), **Stage 1B** (`proxy/update_free_models.py` integrato con `scripts/scout_free_model_providers.py` per scouting automatico giornaliero di nuovi token/provider free su GLM 5.2+, Gemini 3.8+, Gemma 4+).
 2. **Tier 2 (`architect-sync` — Effort `medium`):**
    - *Modelli IDE Primari:* `gemini-4-argon` & `claude-sonnet-5.5` (subagent `inherit`).
    - *Twin / Proxy `:5005` & Client Desktop:* `z-ai/glm-5.3`, `deepseek-chat`, `copilotapp.exe`, `Claude.exe`.
@@ -75,7 +75,7 @@ La skill `.agents/skills/multi-model-unified-pipeline/` (`scripts/orchestrator.p
    - *Task:* **Stage 3A** (`daily_character_enrichment.py` per monitoraggio chat attiva e arricchimento batch NPC) e **Stage 3B** (`archive_mining_engine.py` per estrazione lore storica in `knowledge/Archive_Recoveries/`).
 4. **Specialisti Desktop Dedicati con Vincolo di Scopo Esclusivo (`special_routing_policies`):**
    - **`Grok Bot.exe` — Ecosistema *Groky* (`groky_agenda_work_slots`):** In `Grok Bot.exe` opera **Groky** (assistente principale per Gmail, Agenda Google Calendar con feste italiane/Ásatrú e legenda colori condivisa con Davide, Casa/Google Home con sveglia alle 10:00, Pasti/Spesa) che coordina i 5 sotto-bot: **Hubby Groky** (mail/agenda di Davide e promemoria 20:30), **Purrky** (casa e gatti Rocky e Tatina, umido 19:30), **Game Groky** (serate co-op con Davide), **Code Groky** (progetti di sviluppo/design e riordino PC spostando solo nel Cestino) e **Hire Me Groky** (CV e lavoro). L'Orchestrator di Svartúlfr Verse inoltra a **Groky / Code Groky** **esclusivamente** le richieste di blocco slot di lavoro in agenda per lo sviluppo dell'ambientazione (`agenda_work_slot`, `work_slot_blocking`, `worldbuilding_schedule`), rispettando sempre la regola aurea di Groky: **nessuno invia o cancella nulla senza l'OK esplicito dell'utente**.
-   - **`Gemini.exe` (`visual_studio_argon_images`):** Riservato **esclusivamente** (tramite modello **Gemini 4 Argon**) alla creazione e generazione delle immagini dell'ambientazione (`image_generation`, `visual_asset_creation`, `character_portrait`, `location_background`).
+   - **ComfyUI Locale (`comfyui_local`, `http://127.0.0.1:8188`, `E:\ComfyUI`):** Riservato **esclusivamente** (tramite `scripts/comfy_batch_runner.py`, SDXL + `sdxl_vae.safetensors` + FaceID Plus v2) a tutta la creazione e generazione delle immagini dell'ambientazione (`image_generation`, `visual_asset_creation`, `character_portrait`, `location_background`). (`Gemini.exe` resta in standby per chat generiche.)
 5. **Stage 4 (Telemetria & Archiviazione Unificata):**
    - Generazione della Dashboard interattiva HTML (`scratch/unified_pipeline_dashboard.html`), report Markdown unificato (`scratch/daily_maintenance_report.md` e `logs/automations/`) e archiviazione del transcript tramite `python scripts/archive_automation_chat.py --automation daily-master-pipeline`.
 

@@ -135,6 +135,8 @@ In tutti gli scenari e testi relativi a Solarton, SUCC e al Modern Fantasy in ge
 
 | Personaggio / Entità | Ruolo Canonico & Dettagli Chiave | Errore Vietato (Da Evitare) |
 |---|---|---|
+| **Alyssa Hvit Douglas Bloodmoon** | Altezza canonica rigorosa **`155 cm` (`5' 1"`)**, figura minuta a clessidra (4ª White Moon Omega / Hvít). | ❌ `165 cm`, `160 cm`, `5' 5"` |
+| **Matrice Altezze Douglas & Firstborn** | `Alyssa`: **155 cm** (`5'1"`); `Edric`: **158 cm** (`5'2"`); `Zefir`: **178 cm** (`5'10"`); `Jasper`: **193 cm** (`6'4"`); `Noah`: **197 cm** (`6'5.6"`); `Logan`: **198 cm** (`6'6"`); `Mac`: **204 cm** (`6'8"`); `Malachia`: **208 cm** (`6'9.9"`); `Erik`: **213 cm** (`7'0"`); `Wulfnic`: **220 cm** (`7'2.6"`); `Ut`: **240 cm** (`7'10"`). | ❌ Qualsiasi misura in cm/ft difforme nelle schede o negli outfits |
 | **Russell 'Russ' Sinclair** | Coinquilino di Jasper in Wyrm Hall 304, chitarrista rock, Five Cocketeers. | ❌ Gallagher, Vance |
 | **Scarlett Rose** | Succube, best friend di Alyssa (Theta Iota Theta 3B), cotta segreta di Jasper. | ❌ Vance, cognomi alternativi |
 | **Finnegan "Finn" Novak** | Demi-Umano Lupo Artico (Kemonomimi: 1 paio di orecchie lupine, coda bianca, non-shifter, ala sinistra SUCC Bears). | ❌ Caracal, felino, licantropo LSE |

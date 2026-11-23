@@ -114,6 +114,9 @@ Con la dismissione della modalità World, tutto il patrimonio enciclopedico e de
    - **Avatar Placeholder NPC (Silhouette DCC):** Tutte le entry `npc` prive di un ritratto dedicato devono utilizzare tassativamente il placeholder ufficiale DCC: `https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/99d10d9b-611c-45b7-566a-79c3ed2e9800/public` (archiviato in `asset/placeholder_npc_avatar.jpg`).
    - **Copertina Lorebook (`photoURL`):** Tutti i 6 Lorebook Standalone condividono come immagine di copertina (`photoURL`) l'emblema ufficiale della Casata Svartúlfr: `https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/1e5124b4-f7d0-46cf-fad9-7ecfc801d100/public` (archiviato in `asset/emblema_casata_svartulfr.jpg`).
    - **Omogeneizzazione Canone JED+ a 4 Blocchi Obbligatoria:** Tutte le 310 voci NPC (99 in Primary, 211 in Secondary) devono rispettare la struttura a 4 blocchi: `[NAME: ...; SPECIES: ...; AGE: ...; ...]`, `BACKSTORY:`, `FAMILY & PACK:` (o `CLAN AND COMPANY:`), `VOICE & BEHAVIOR:` più chiusure tematiche/RPG, con `exclude_from_recursion: true` e zero omissioni o troncamenti.
+8. **Isolamento Lorebook & Varianti per AU / Crossover Esterni:**
+   - Le lore estese di universi crossover o AU esterni (es. *Dead Dog Motel / DDM*) non vanno inserite nel World Lexicon principale (`_YpX47fNraQFw2dD7TdycJ`), dove restano solo eventuali agganci canonici strettamente necessari (es. Dullahan `_F8ee4UpyLr7Fyr69KKhzV`).
+   - Isolare tutta la lore dell'AU in un **Lorebook dedicato `private`** collegato esclusivamente ai relativi **Character Scenarios** stand-alone, affiancato da varianti dedicate di Character Card e User Persona con statistiche adattate e **solo gli outfit coerenti** con l'ambientazione dell'AU.
 
 ---
 

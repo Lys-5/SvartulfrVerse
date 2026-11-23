@@ -43,6 +43,20 @@ Consentite quando attuano le richieste dell'utente. Sequenza obbligatoria:
 4. **Sostituzione Totale degli Array:** Gli array (`outfits`, `attitudes`, `speech_examples`, `keys`, `party_conditions`, `tags`) non supportano il merge incrementale: un payload con un singolo elemento sovrascrive e cancella tutti gli altri preesistenti. Leggere sempre l'array esistente, aggiornarlo in memoria e ritrasmettere l'array completo.
 5. **Verifica Post-Scrittura con GET Fresca:** Uno status HTTP 200 non costituisce prova di persistenza dei dati. Verificare sempre rileggendo l'entità per `id` con una GET autenticata fresca.
 
+### Contratti Specifici per Endpoints Wyvern
+
+1. **Aggiornamento Character Singoli (`PUT /api/characters/:id`):**
+   - **Trappola Safe Payload:** Inviare unicamente i campi modificabili definiti in `EDITABLE_FIELDS` (`name`, `display_name`, `avatar`, `description`, `personality`, `mes_example`, `first_mes`, `scenario`, `post_history_instructions`, `pre_history_instructions`, `visual_description`, `creator_notes`, `model_url`, `soundcloud_url`, `character_note`, `tagline`, `backgroundURL`, `tags`, `community_tags`, `rating`, `chat_name`, `pronouns`, `outfits`, `default_outfit`, `shared_info`, `alternate_greetings`, `secretFields`, `secrets`, `fields`, `commands`, `metadata`).
+   - L'inclusione di campi di sola lettura gestiti dal backend (`entity_statistics`, `creator`, `created_at`, `updated_at`, `_id`) provoca `HTTP 400 Bad Request`.
+   - **Aggiornamento Scenari e Greetings (Trappola dell'Array Messages):** Nei Character Scenarios, il testo del saluto non risiede solo in `greeting.content`, ma è duplicato all'interno dell'array `greeting.messages[0].content`. Qualsiasi bonifica del testo di saluto deve aggiornare obbligatoriamente entrambi i campi prima del PUT, rispettando l'invariante `greeting.content == greeting.messages[0].content`.
+
+2. **Aggiornamento User Personas (`PUT /api/user-personas/:id`):**
+   - **Endpoint di Lettura:** `GET /api/user-personas` (e non `/mine`).
+   - **Campi Obbligatori Update:** Richiede obbligatoriamente `name` e `importance` (`importance: 'high'`). L'assenza di `importance` causa errore `HTTP 400: name and importance are required`.
+
+3. **Aggiornamento Lorebooks (`PUT /api/lorebooks/:id`):**
+   - **Prevenzione HTTP 413 (Payload Too Large):** Trasmettere l'array `lexicon` unito ai soli metadati di configurazione top-level (`name`, `description`, `scan_depth`, `token_budget`, `recursive_scanning`, `visibility`, `rating`). Non inviare contemporaneamente sia `entries` che `lexicon` sul wire API remoto (riservando il doppio array `entries == lexicon` unicamente ai file JSON locali per conformità Zod).
+
 ### Operazioni di Massa (> 10 Entità)
 Presentare preventivamente all'utente il piano dettagliato (entità, campi, valori proposti, criteri di calcolo) e attendere approvazione esplicita. Eseguire l'operazione a **lotti di massimo 25 entità**, memorizzando lo stato di avanzamento per consentire riprese pulite in caso di interruzione.
 
@@ -129,6 +143,9 @@ Quando vengono avviate procedure di diagnosi, indagine o test che comportano la 
 | **Fastify DELETE Empty Body (HTTP 500 FST_ERR_CTP_EMPTY_JSON_BODY)** | `HTTP 500: Body cannot be empty when content-type is set to 'application/json'` su chiamate `DELETE` verso `/api/worlds/rpg/{species\|occupations\|traits}/:id` | Omettere tassativamente l'header `Content-Type: application/json` quando si inviano richieste HTTP `DELETE` con body vuoto verso gli endpoint REST di Wyvern. La chiamata senza Content-Type restituisce `HTTP 204 No Content` ed esegue la rimozione pulita. |
 | **Subdocumenti Sprite/Gallery nei PUT Lorebook** | Omettere `gallery` o `sprite_sets` durante un PUT su `/api/lorebooks/:id` svuota le immagini caricate | Mantenere sempre nel payload i campi top-level `gallery` e `sprite_sets` recuperati dalla GET fresca. |
 | **Selettori UI NPC/Location su Editor Modali** | I test automatizzati Playwright/CDP falliscono cercando form inline | Gli editor di NPC e Location risiedono in `div[role="dialog"]`. Selezionare sempre il contenitore modale attivo prima di interagire con input e pulsanti di salvataggio. |
+| **Wipe Silente su `PUT /api/user-personas/:id` Parziale** | Inviare un payload parziale (es. `{"can_fork": true}`) azzera `title`, `description`, `appearances` e `outfits` | Eseguire sempre prima un backup locale + `GET /api/user-personas`, mutare l'oggetto completo della Persona e inviare l'intero JSON nel `PUT /api/user-personas/:id`. |
+| **Campi Obbligatori `POST /api/user-personas`** | `HTTP 400: name and importance are required` | Includere sempre `importance` (intero, es. `1`) oltre a `name` in ogni `POST /api/user-personas`. |
+| **Upload Immagini Outfit & Copertine Scenario** | `outfits[].image_url` e `scenario.avatar` richiedono URL Cloudflare Wyvern | Caricare via `POST /api/cloudflare/request-upload-url` (`metadata.context = "avatar"`), fare `POST` multipart su `uploadURL` e assegnare `https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/{id}/public`. |
 
 ---
 

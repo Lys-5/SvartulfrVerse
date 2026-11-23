@@ -46,8 +46,13 @@ I token semantici `orecchio`, `umano`, `prive`, `senza`, `volto` rimangono costa
 Per blindare a livello di architettura di generazione che l'LLM non introduca autonomamente spiegazioni anatomiche non richieste, ogni scheda e prompt di sistema deve includere in coda:
 
 ```text
-Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead. Demi-human anatomical discipline: treat single animal ears as the natural norm; never mention, describe, or reiterate the absence or lack of human ears in narrative descriptions.
+Format discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead. When secondary NPCs or ACEs speak or take action, always output their dialogue on a new line prefixed with 'Firstname:' (e.g., Bartholomew: [dialogue/action], Luka: [dialogue/action]) to trigger avatar headers in chat. Demi-human anatomical discipline: treat species-specific animal traits (e.g. single animal ears for mammals, smooth reptilian hearing and scales for lamias) as the natural norm; never mix species traits (never give wolf ears to lamias or reptiles); never mention, describe, or reiterate the presence, absence, or type of human ears or human anatomy in narrative descriptions.
 ```
+
+### 2.3 Estensione Human Anatomical Discipline per Personaggi a Base Umana
+Per personaggi mortali, umani o shifters con forma base umanoide ordinaria (es. Contractor DDM #01-#06):
+1. **Divieto di Negazioni Iper-Dichiarative:** Vietato inserire `BASE_APPEARANCE: 100% human humanoid anatomy...`, `BASE_HUMANOID_FORM: 100% ordinary human anatomy...` o `interamente umana`.
+2. **Positive Behavioral Constraint:** La forma umana ordinaria è implicita nella fisionomia; i tratti bestiali si dichiarano esclusivamente come trasformazione attiva (`ANIMAL_FORM: [Specie], full beast shift;`).
 
 ---
 

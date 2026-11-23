@@ -1,4 +1,4 @@
-# Regola 01 — Formato di Consegna e Standard JED+
+# Regola 01 - Formato di Consegna e Standard JED+ v2.0
 
 ## 1. Formato di Consegna: Testo, Non JSON
 
@@ -26,31 +26,75 @@ Il JSON va generato **esclusivamente** se:
 
 ---
 
-## 2. JED+ Come Formato Standard delle Schede
+## 2. JED+ v2.0 Come Formato Standard Universale delle Schede
 
-Tutte le character card devono adottare rigorosamente il formato **JED+**:
-1. Un blocco di attributi tra parentesi quadre, separati da punto e virgola (stile bracket/PList);
-2. Seguito da sezioni in prosa per backstory, dinamiche familiari/di gruppo, voce/comportamento;
-3. Chiusura con una sezione tematica centrale del personaggio.
+Tutte le Character Card, User Personas, World Characters e voci NPC dei Lorebook adottano lo standard **JED+ v2.0 (Attention-First & Retrieval-Optimized)**, documentato integralmente in [docs/references/JED_PLUS_V2_UNIVERSAL_SCHEMA.md](../../docs/references/JED_PLUS_V2_UNIVERSAL_SCHEMA.md), che fonde:
+- La sintassi PList/SBF di **SopakcoSauce (`soup`)** (`valore(dettaglio, causa)`, `SORE_SPOT`, `COPING`, `TRIGGER_RESPONSES`) e i **31 Non-Human Character Templates** ([SOPAKCOSAUCE_NON_HUMAN_CHARACTER_TEMPLATES.md](../../knowledge/External_References/SOPAKCOSAUCE_NON_HUMAN_CHARACTER_TEMPLATES.md));
+- L'**Entity-Scoping** e gli obiettivi attivi (`GOALS`, `LOVES`, `HATES`) in stile **StatuoTW (`statuotw`)**;
+- I **Micro-Tells Somatici ("Show, Don't Tell")** e la **Trust & Pacing Ladder (*Strangers -> Acquaintances -> Inner Circle*)** in stile **Iorveths / Veseii (`ioverse`), Nallak e bbcreature**.
 
-### Struttura Standard JED+
+### Topologia a U in 10 Slot Canonici Fissi (JED+ v2.0)
 
 ```text
-[NAME: ...; SPECIES: ...; AGE: ...; HEIGHT: ...; ... ]
+[NAME: ...;
+ALIASES: ...;
+SPECIES: ...;
+AGE: <età> (Born <Data esplicita>);
+GENDER: ...;
+HEIGHT: <cm> cm (<ft/in>);
+BUILD: ...;
+HAIR: ...;
+EYES: ...;
+ANATOMY: ...;
+MARKS: ...;
+SCENT: ...;
+... <Chiavi Modulari Specie-Specifiche da SopakcoSauce 31> ...;
+AFFILIATION: ...;
+OCCUPATION: ...;
+RESIDENCE: ...;
+SOCIAL_STANDING: ...;
+ARC_LEVEL: ...;
+KNOWLEDGE_TIER: OPEN | HERMETIC_PACK | SECRET_FIRSTBORN | MINOR_LOCK]
+
+KINSHIP & NON-KIN:
+- PARENTS / SIBLINGS / GRANDPARENTS / EXTENDED: ...
+- UNRELATED_HOMONYMS: ZERO kinship with ...
+- POSSESSIVE_RULE (IT): ...
 
 BACKSTORY: ...
 
-FAMILY & PACK: ...
+RELATIONSHIPS & DYNAMICS: ... (include TRUST & PACING LADDER: Strangers / Acquaintances / Inner Circle)
 
-VOICE & BEHAVIOR: ...
+POWERS, FORMS & GEAR: ... (opzionale se personaggio ordinario; mai vestiti fissi)
 
-[sezione tematica finale, es. CORE TRAGEDY / THE WEIGHT HE CARRIES / THE SECRET HE CARRIES]
+VOICE, TELLS & BEHAVIOR: ... (Vocal Register, Somatic Micro-Tells, Trigger Responses)
+
+CORE PSYCHOLOGY [Sottotitolo Poetico Canonico]: ... (GOALS, SORE_SPOT, COPING, LOVES & HATES, FLAWS)
+
+SEXUALITY & INTIMACY: ... (solo 18+, con 5 sotto-etichette fisse: Orientation & Role, Dynamics & Kinks, Anatomy & Physiology, Voice in Intimacy, Hard Limits & Aftermath; per minori <18 sostituire con AGE_POLICY: STRICTLY MINOR NPC)
+
+GM SECRETS & EPISTEMIC BOUNDARIES: ...
+
+RPG STATS & TRAITS:
+[LEVEL: ...; ARC_LEVEL: ...; SPECIES: ...; OCCUPATION: ...; CLASS: ...]
+[STATS: STR ..; PER ..; END ..; CHA ..; INT ..; AGI ..; LCK ..]
+TRAITS:
+- ...
 ```
 
 ### Regole Specifiche per i Campi
+- **Blocco `[PList]` Multilinea (o Singola Riga Legacy durante la migrazione):** In **JED+ v2.0** il blocco iniziale `[...]` dispone **una chiave `UPPERCASE_KEY: valore;` per riga** per massimizzare la leggibilità umana e la scansione chiave-valore dell'LLM, combinando il **Core Universale (~16 chiavi)** con il **Modulo Specie-Specifico** dei 31 template SopakcoSauce (senza chiavi `N/A` inutili e senza `CLOTHING:` fisso). È tassativamente vietato annidare sezioni narrative lunghe (come `BACKSTORY:`) dentro le parentesi quadre `[...]`. Durante il rollout progressivo, il linter accetta sia il PList multilinea JED+ v2.0 sia il PList su singola riga legacy, purché ogni riga interna a `[...]` sia una coppia valida `CHIAVE: valore`.
+- **Divieto di Header Duplicati nella Stessa Scheda:** Ogni intestazione di sezione (es. `VOICE & BEHAVIOR:` / `VOICE, TELLS & BEHAVIOR:`, `SEXUALITY & INTIMACY:`, `FAMILY & PACK:` / `RELATIONSHIPS & DYNAMICS:`) può comparire **una sola volta** per scheda.
+- **Campo `personality` (`summary` nell'interfaccia Wyvern):** Usa un blocco compatto su **singola riga** tra parentesi quadre (`~450-650 caratteri`) in stile **SopakcoSauce SBF** (`TRAITS: trait(behavior, motive); FLAWS: flaw(manifestation, root);`), separato dalla `description` / `long_summary` estesa.
+- **Budget Token a 3 Tier:**
+  - **Tier 1 (Main Cast Cards & Personas):** `7.000 - 12.000 char` (`~1.750 - 3.000 tok`), tutti i 10 slot, 100% lossless sui fatti canonici.
+  - **Tier 2 (World Characters & `NPC_Primary`):** `3.600 - 6.500 char` (`~900 - 1.600 tok`).
+  - **Tier 3 (`NPC_Secondary`):** `1.800 - 3.200 char` (`~450 - 800 tok`), 6 slot essenziali (`[PList]`, `KINSHIP & NON-KIN`, `BACKSTORY`, `VOICE, TELLS & BEHAVIOR`, `CORE PSYCHOLOGY`, `RPG STATS & TRAITS`).
+- **Età e Data di Nascita:** **Mai usare la macro `{{age}}`**. Indicare sempre `AGE: <età> (Born <Data>);`.
+- **Parità `entries == lexicon`:** Nei file JSON locali dei Lorebook (`FINAL/` e `lorebooks/optimized/`), l'array `entries` e l'array `lexicon` devono essere mantenuti **100% identici byte-for-byte**.
+- **Standardizzazione In-Chat Name (`chat_name`):** Tutte le Character Card (salvo esplicite omonimie) devono avere `chat_name` configurato con il solo nome proprio (`Firstname`), lasciando il nome completo in `name`.
 
-- **Personaggi senza legame di branco:** Per figure aziendali, indipendenti o civili, la sezione `FAMILY & PACK:` si sostituisce con l'equivalente pertinente (es. `CLAN AND COMPANY:` per Zeera), mantenendo invariata la struttura a quattro blocchi più la chiusura tematica finale.
-- **Campo `personality` (`summary` nell'interfaccia Wyvern):** Usa un blocco compatto di soli tratti tra parentesi quadre (stile PList puro), come riepilogo rapido e condensato, separato dalla `description` estesa.
-- **Import Grezzi:** Una card importata grezza con il blocco `<nome_personaggio>` incollato tale e quale dalla fonte **NON è una scheda lavorata**. Va riscritta integralmente in JED+, non semplicemente ritoccata.
-- **Età e Data di Nascita:** Per garantire piena compatibilità sia nelle chat stand-alone 1-on-1 (dove la timeline del World non è attiva e la macro `{{age}}` non viene valutata) sia all'interno del World, **non usare la macro `{{age}}`**. Indicare sempre nel campo `AGE` del blocco JED+ l'età anagrafica corrente e la data di nascita esplicita con la sintassi: `AGE: <età> (Born <Data>);` (o `BIRTHDAY: <Data>;`). Questo evita che il bot rimanga privo di età calcolata o mostri la macro non espansa quando utilizzato fuori dal World.
-- **Blocco PList Iniziale su Singola Riga, User Persona & Parità `entries == lexicon`:** Il blocco iniziale `[...]` deve occupare **una singola riga** senza sezioni annidate dentro le parentesi quadre, e la sequenza a 4 blocchi (`[NAME: ...]` $\to$ `BACKSTORY:` $\to$ `FAMILY & PACK:` / `CLAN AND COMPANY:` $\to$ `VOICE & BEHAVIOR:`) si applica obbligatoriamente a **tutte le Character Card** (`FINAL/*_card.json` e `ARCHIVIO/cards_legacy/*_card.json`), a **tutte le User Persona** (`FINAL/personas/*.json`) e a **tutte le 310 voci NPC dei Lorebook**. Nei file JSON locali dei Lorebook (`FINAL/` e `lorebooks/optimized/`), l'array `entries` e l'array `lexicon` devono essere mantenuti **100% identici byte-for-byte**.
+### Invariante Outfits per Schede Giocabili vs User Personas
+- **Character Cards Giocabili (`FINAL/*_card.json` e `/mine`):** Devono includere tassativamente **un minimo di 9 outfit contestuali completi**: `casual`, `campus / business`, `gala / formal`, `party / club`, `beach / terme`, `sleep`, `nude`, `hybrid shift / mutation`, `full shift / other`.
+- **Outfit Nude Anatomico a 6 Sezioni:** Vietati placeholder brevi; deve seguire lo schema a 6 sezioni (Abbigliamento, Accessori, Scarpe, Gioielli, Trucco, Acconciatura).
+- **User Personas (`FINAL/personas/*.json` e `/user-personas`):** Mantengono lo standard di **3 o più Appearances contestuali**.

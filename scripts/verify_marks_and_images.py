@@ -41,8 +41,12 @@ LORE_INVARIANTS = [
     ("Cosmic Titles Distinction", ["maniulfr", "solulfr"]),
     ("Logan Sleeve Knotwork & Eihwaz", ["logan", "eihwaz", "sleeve"]),
     ("Malachia Warrior Blackwork & Thurisaz", ["malachia", "thurisaz", "blackwork"]),
-    ("Erik Cheek Scar & Tiwaz/Hagalaz", ["erik", "tiwaz", "hagalaz", "cheek"]),
-    ("Wulfnic 1200yo Brands & Othala/Jera", ["wulfnic", "othala", "jera", "1200"]),
+    ("Erik Cheek Scar & Hagalaz", ["erik", "hagalaz", "cheek"]),
+    ("Wulfnic 1200yo Brands & Jera", ["wulfnic", "jera", "1200"]),
+    ("Twins Birth Rune Mannaz", ["alyssa", "jasper", "mannaz"]),
+    ("Noah Birth Rune Gebo", ["noah", "gebo"]),
+    ("Edric Birth Rune Sowilo", ["edric", "sowilo"]),
+    ("Elizabeth Birth Rune Uruz", ["elizabeth", "uruz"]),
 ]
 
 

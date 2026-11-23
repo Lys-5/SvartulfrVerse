@@ -12,12 +12,14 @@ import urllib.request
 sys.stdout.reconfigure(encoding='utf-8')
 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+if ROOT_DIR not in sys.path:
+    sys.path.insert(0, ROOT_DIR)
+from scripts.wyvern_api_client import get_auth_token
+
 WORLD_ID = '_YpX47fNraQFw2dD7TdycJ'
-TOKEN_PATH = os.path.join(ROOT_DIR, 'scratch', 'wyvern_token.txt')
 
 def get_headers():
-    with open(TOKEN_PATH, 'r', encoding='utf-8') as f:
-        token = f.read().strip()
+    token = get_auth_token()
     return {
         'Authorization': f'Bearer {token}',
         'User-Agent': 'Mozilla/5.0'
@@ -34,7 +36,7 @@ def main():
     with urllib.request.urlopen(req_w) as resp:
         world_data = json.loads(resp.read().decode('utf-8'))
         
-    world_scratch = os.path.join(ROOT_DIR, 'scratch', f'live_world_YpX47fNraQFw2dD7TdycJ.json')
+    world_scratch = os.path.join(ROOT_DIR, 'scratch', f'live_world_{WORLD_ID}.json')
     with open(world_scratch, 'w', encoding='utf-8') as f:
         json.dump(world_data, f, indent=2, ensure_ascii=False)
     print(f"  -> Saved {world_scratch}")
@@ -94,15 +96,17 @@ def main():
     final_rpg_config = {
         "world_id": WORLD_ID,
         "world_name": world_data.get('name'),
+        "scan_depth": world_data.get('scan_depth'),
         "stat_config": world_data.get('stat_config'),
         "relationship_config": world_data.get('relationship_config'),
+        "inline_command_config": world_data.get('inline_command_config'),
         "shop_locations": [
             {
                 "id": loc.get('id'),
                 "name": loc.get('name'),
                 "marketplace_config": loc.get('marketplace_config')
             }
-            for loc in loc_data if loc.get('marketplace_config', {}).get('enabled') is True
+            for loc in loc_data if (loc.get('marketplace_config') or {}).get('enabled') is True
         ]
     }
     with open(final_rpg_config_path, 'w', encoding='utf-8') as f:

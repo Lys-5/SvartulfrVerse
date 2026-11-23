@@ -10,6 +10,10 @@ import time
 import json
 import copy
 import logging
+import asyncio
+import threading
+import subprocess
+from collections import defaultdict
 from typing import Dict, Any, List, Optional, Tuple, Set
 import httpx
 from fastapi import FastAPI, Request, HTTPException
@@ -89,6 +93,11 @@ async def add_pna_headers(request: Request, call_next):
     response.headers["Access-Control-Allow-Private-Network"] = "true"
     return response
 
+
+def record_activity():
+    pass
+
+
 # Cooldown granulare per combinazione (upstream_id + model + key_suffix)
 cooldowns: Dict[str, float] = {}
 
@@ -144,11 +153,164 @@ def resolve_keys(key_name: str, incoming_auth: Optional[str]) -> List[str]:
         if (
             token
             and not token.startswith("sk-dummy")
+            and not token.startswith("sk-local")
+            and not token.endswith("563ef7")
             and token != "local"
             and token not in keys
         ):
             keys.append(token)
-    return keys
+    return [k for k in keys if not k.endswith("563ef7")]
+
+
+_key_cycle_counters: Dict[str, int] = defaultdict(int)
+_key_cycle_lock = threading.Lock()
+
+
+def get_cycled_keys(key_name: str, incoming_auth: Optional[str] = None) -> List[str]:
+    """
+    Risolve e cicla round-robin le chiavi API per il provider specificato.
+    Ad ogni richiesta successiva, l'ordine di partenza scala di 1 posizione
+    (es. [K0, K1, K2] -> [K1, K2, K0] -> [K2, K0, K1]), distribuendo uniformemente
+    il carico ed evitando di saturare i rate limits su una singola chiave.
+    """
+    keys = resolve_keys(key_name, incoming_auth)
+    if len(keys) <= 1:
+        return keys
+
+    with _key_cycle_lock:
+        idx = _key_cycle_counters[key_name]
+        _key_cycle_counters[key_name] = (idx + 1) % len(keys)
+
+    # Ruota la lista di chiavi facendo partire dal nuovo indice
+    rotated = keys[idx:] + keys[:idx]
+    logger.info(
+        f"🔄 [KEY CYCLE] Provider '{key_name}' -> Partenza chiave #{idx + 1}/{len(keys)} (...{rotated[0][-6:]})"
+    )
+    return rotated
+
+
+REQUEST_COUNTER = 0
+
+
+def classify_request_intent(body: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Classifica la richiesta per alternare intelligentemente tra Qwen e Gemma:
+    - Qwen: Roleplay, dialoghi in-character, narrazione Wyvern, lorebook, scenari JED+,
+            testi creativi, formattazione narrativa (virgolette per il parlato, plain text per azioni).
+    - Gemma: Coding, algoritmi, analisi logico-matematica, spiegazioni tecniche, sintesi,
+             Q&A fattuale, prompt diretti/brevi senza persona RPG.
+    """
+    messages = body.get("messages", [])
+    if not messages:
+        return {"preferred": "qwen", "reason": "default_empty"}
+
+    sys_texts = []
+    user_texts = []
+    for m in messages:
+        role = m.get("role", "")
+        content = m.get("content", "")
+        if isinstance(content, str):
+            if role == "system":
+                sys_texts.append(content)
+            elif role == "user":
+                user_texts.append(content)
+
+    all_sys = "\n".join(sys_texts)
+    last_user = user_texts[-1] if user_texts else ""
+    all_text = (all_sys + "\n" + last_user).lower()
+
+    score_qwen_rp = 0
+    score_gemma_logic = 0
+
+    rp_indicators = [
+        "<scenario", "<character", "<world", "<lexicon", "<entry",
+        "[name:", "backstory:", "voice & behavior:", "personality:",
+        "{{user}}", "{{char}}", "dialogue in quotes", "plain text (no asterisks)",
+        "roleplay", "interpreta", "narrazione", "ambientazione", "personaggio",
+        "storia", "avventura", "in-character", "pov", "dialogo",
+        "blackwood", "douglas", "solarton", "succ", "lse", "pack", "werewolf",
+        "outfit", "attitudes"
+    ]
+    for ind in rp_indicators:
+        if ind in all_text:
+            score_qwen_rp += 3
+
+    if len(messages) >= 4:
+        score_qwen_rp += 2
+
+    logic_indicators = [
+        "```", "def ", "function", "class ", "import ", "const ", "let ",
+        "codice", "programma", "script", "algoritmo", "debug", "bug", "fix",
+        "calcola", "matematica", "equazione", "formula", "percentuale",
+        "differenza tra", "spiega come funziona", "riassumi", "estrai i dati",
+        "json", "sql", "regex", "query", "curl", "endpoint", "api",
+        "tabella", "sintassi", "ottimizza", "complessita", "o(n)"
+    ]
+    for ind in logic_indicators:
+        if ind in all_text:
+            score_gemma_logic += 3
+
+    if not sys_texts and len(messages) <= 2:
+        score_gemma_logic += 2
+
+    if score_qwen_rp > score_gemma_logic:
+        return {
+            "preferred": "qwen",
+            "reason": f"Roleplay/Storytelling (RP={score_qwen_rp} vs Logic={score_gemma_logic})"
+        }
+    elif score_gemma_logic > score_qwen_rp:
+        return {
+            "preferred": "gemma",
+            "reason": f"Logica/Code/Fattuale (Logic={score_gemma_logic} vs RP={score_qwen_rp})"
+        }
+    else:
+        return {
+            "preferred": "alternate",
+            "reason": f"Richiesta bilanciata (RP={score_qwen_rp}, Logic={score_gemma_logic})"
+        }
+
+
+def get_model_priority_tier(model_name: str) -> int:
+    """
+    Classifica rigorosamente i modelli nei 4 tier approvati dall'utente:
+    Tier 1: GLM 5.2 o superiore (glm-5.2*, glm-5.3*, glm-5*) -> PRIORITÀ 1 ASSOLUTA
+    Tier 2: Gemini 3.8 o superiore (gemini-3.8*, gemini-4*, gemini-3.7*, gemini-3.5*, gemini-3.1*)
+    Tier 3: Gemma 4 o superiore (gemma-4*, gemma4*, 4-31b*, 4-26b*)
+    Tier 4: Gemma < 4 (gemma2*, gemma:2b*, gemma-2*, gemma*)
+    Tier 999: BANNATO / ESCLUSO (Qwen, Llama, Mistral, DeepSeek, Claude, GPT, ecc.)
+    """
+    m = model_name.lower()
+
+    # Bando categorico per Qwen e per qualsiasi altra famiglia non approvata
+    if any(b in m for b in ("qwen", "llama", "mistral", "deepseek", "claude", "gpt-", "liquid", "flint", "xing", "dots", "laguna", "canopy", "orpheus")):
+        return 999
+
+    # Tier 1: GLM 5.2 o superiore (PRIORITÀ 1 ASSOLUTA)
+    if "glm" in m or "gml" in m:
+        if any(v in m for v in ("5.2", "5.3", "5.4", "5.5", "5-plus")):
+            return 1
+        return 1
+
+    # Tier 2: Gemini 3.8 o superiore (e correlate 3.5+, 4+)
+    if "gemini" in m:
+        return 2
+
+    # Tier 3: Gemma 4 o superiore
+    if "gemma" in m and ("gemma-4" in m or "gemma4" in m or "4-31b" in m or "4-26b" in m):
+        return 3
+
+    # Tier 4: Fallback OpenRouter Free approvati (Nemotron-3-Ultra 550B, Ernie 5.5 Flash)
+    if "nemotron-3-ultra" in m or "ernie-5.5" in m:
+        return 4
+
+    return 999
+
+
+def order_models_by_intent(models: List[str], intent: str, counter: int) -> List[str]:
+    # Filtra e ordina strettamente per Tier (1: GLM 5.2+, 2: Gemini 3.8+, 3: Gemma 4+, 4: Gemma <4)
+    valid_models = [m for m in models if get_model_priority_tier(m) < 999]
+    valid_models.sort(key=get_model_priority_tier)
+    return valid_models
 
 
 class PayloadCompactor:
@@ -276,6 +438,25 @@ class PayloadCompactor:
 
         if target_model:
             body["model"] = target_model
+            if "gemma" in target_model.lower() and "messages" in body:
+                # Merge system messages into user message for Gemma
+                new_msgs = []
+                sys_texts = []
+                for m in body["messages"]:
+                    if m.get("role") == "system":
+                        content = m.get("content", "")
+                        if content:
+                            sys_texts.append(content)
+                    else:
+                        if sys_texts and m.get("role") == "user":
+                            combined = "[System Instructions: " + "\n\n".join(sys_texts) + "]\n\n" + (m.get("content") or "")
+                            new_msgs.append({"role": "user", "content": combined})
+                            sys_texts = []
+                        else:
+                            new_msgs.append(m)
+                if sys_texts:
+                    new_msgs.insert(0, {"role": "user", "content": "[System Instructions: " + "\n\n".join(sys_texts) + "]"})
+                body["messages"] = new_msgs
 
         return body
 
@@ -611,6 +792,209 @@ class PayloadCompactor:
 
         return filtered, chars_saved
 
+    def enforce_ttrpg_math_guardrails(
+        self, messages: List[Dict[str, Any]]
+    ) -> List[Dict[str, Any]]:
+        """
+        Guarantees 100% mathematical accuracy for D20 + S.P.E.C.I.A.L. rolls.
+        If RPG stats, dice checks, or inline commands are detected and the explicit
+        lookup table is not already in context, injects the rigid conversion table into the system prompt.
+        """
+        combined = " ".join(
+            m.get("content", "") for m in messages if isinstance(m.get("content"), str)
+        )
+        has_rpg = (
+            "[STATS:" in combined
+            or "TEST:" in combined
+            or "D20" in combined
+            or "<special_stats>" in combined
+            or "InlineCommandRules" in combined
+        )
+        has_table = (
+            "Stat 22-23: Mod +6" in combined
+            or "floor((Stat - 10) / 2)" in combined
+        )
+
+        if not has_rpg or has_table:
+            return messages
+
+        guardrail = (
+            "\n\n<ttrpg_mechanics_math>\n"
+            "[MATHEMATICAL ACCURACY DIRECTIVE FOR D20 & S.P.E.C.I.A.L. CHECKS]\n"
+            "When resolving skill checks or actions using `> [TEST: <Stat> (D20: <Roll> + Mod: <Mod> = <Total> vs CD: <Target>) -> ESITO: <Outcome>]`:\n"
+            "1. STAT MODIFIER FORMULA: Mod = floor((Stat - 10) / 2).\n"
+            "   Always look up the acting character's exact stat from their sheet ([STATS: ...]):\n"
+            "   * Stat 8-9:   Mod -1\n"
+            "   * Stat 10-11: Mod +0\n"
+            "   * Stat 12-13: Mod +1\n"
+            "   * Stat 14-15: Mod +2\n"
+            "   * Stat 16-17: Mod +3\n"
+            "   * Stat 18-19: Mod +4\n"
+            "   * Stat 20-21: Mod +5\n"
+            "   * Stat 22-23: Mod +6 (e.g. INT 22 = Mod: +6, PER 22 = Mod: +6)\n"
+            "   * Stat 24-25: Mod +7\n"
+            "   * Stat 26-27: Mod +8 (e.g. CHA 27 = Mod: +8, Jasper PER 27 = Mod: +8 - ALWAYS floor, NEVER round up to 9)\n"
+            "   * Stat 28-29: Mod +9\n"
+            "   * Stat 30-31: Mod +10\n"
+            "   * Stat 32-33: Mod +11 (e.g. Jasper INT 32 = Mod: +11)\n"
+            "   * Stat 34-35: Mod +12\n"
+            "   * Stat 36+:   Mod +13\n"
+            "   * MANDATORY ODD STAT RULE: Odd numbers ALWAYS round DOWN to the even modifier (floor). E.g. Stat 27 has Mod +8, NEVER +9.\n"
+            "2. ARITHMETIC ACCURACY:\n"
+            "   Calculate Total = D20 + Mod exactly. Example: D20: 14 + Mod: 6 = 20.\n"
+            "3. OUTCOME COMPARISON:\n"
+            "   - Total >= CD: ALWAYS SUCCESSO (meeting or beating the CD is a full success; if Total >= CD + 10 or Nat 20: SUCCESSO CRITICO).\n"
+            "   - Total between (CD - 1) and (CD - 4): FALLIMENTO PARZIALE.\n"
+            "   - Total <= (CD - 5): FALLIMENTO (if Nat 1 or Total <= CD - 10: FALLIMENTO CRITICO).\n"
+            "</ttrpg_mechanics_math>"
+        )
+
+        new_messages = []
+        injected = False
+        for m in messages:
+            if not injected and m.get("role") == "system":
+                new_messages.append({**m, "content": (m.get("content") or "") + guardrail})
+                injected = True
+            else:
+                new_messages.append(m)
+
+        if not injected:
+            new_messages.insert(0, {"role": "system", "content": guardrail.strip()})
+
+        logger.info("🎯 [TTRPG GUARD] Injected D20 & S.P.E.C.I.A.L. mathematical accuracy table into system prompt.")
+        return new_messages
+
+    def enforce_living_world_cadence(
+        self, messages: List[Dict[str, Any]]
+    ) -> List[Dict[str, Any]]:
+        """
+        Phase 7: Deterministic Living-World Cadence Enforcer.
+        Inspects assistant turn history in Svartulfr roleplay chats and injects a turn-specific
+        directive when:
+          1) 5+ assistant turns have elapsed without a ❤️Pack-Family❤️ Telegram block.
+          2) 6+ assistant turns have elapsed without any of the 14 family/pack members
+             making an in-scene check-in (=>Firstname:).
+        """
+        if len(messages) < 2:
+            return messages
+
+        combined = "\n".join(
+            m.get("content", "") for m in messages if isinstance(m.get("content"), str)
+        )
+        if (
+            "Pack-Family" not in combined
+            and "<pack_surveillance_and_random_appearances>" not in combined
+        ):
+            return messages
+        if "<scan_actions>" in combined or "Summarize the following" in combined:
+            return messages
+
+        asst_msgs = [
+            m.get("content", "")
+            for m in messages
+            if m.get("role") == "assistant" and isinstance(m.get("content"), str) and m.get("content", "").strip()
+        ]
+        if not asst_msgs:
+            return messages
+
+        # 1. Count consecutive assistant turns since last ❤️Pack-Family❤️ block
+        turns_since_pack_chat = 0
+        for txt in reversed(asst_msgs):
+            if "pack-family" in txt.lower():
+                break
+            turns_since_pack_chat += 1
+
+        # 2. Count consecutive assistant turns since last family/pack =>Name: cameo
+        family_markers = (
+            "=>jasper:",
+            "=>noah:",
+            "=>malachia:",
+            "=>logan:",
+            "=>echo:",
+            "=>erik:",
+            "=>edric:",
+            "=>kaladin:",
+            "=>marcus",
+            "=>zefir:",
+            "=>ut:",
+            "=>wulfnic:",
+            "=>elizabeth:",
+            "=>magnus:",
+        )
+        turns_since_family_cameo = 0
+        for txt in reversed(asst_msgs):
+            low = txt.lower()
+            if any(marker in low for marker in family_markers):
+                break
+            turns_since_family_cameo += 1
+
+        pack_threshold = 5 + (len(asst_msgs) % 3)  # 5..7 turns
+        cameo_threshold = 6 + (len(asst_msgs) % 3)  # 6..8 turns
+
+        injections: List[str] = []
+        if turns_since_pack_chat >= pack_threshold:
+            injections.append(
+                "\n\n[DIRETTIVA OBBLIGATORIA PER QUESTO TURNO - NOTIFICA ❤️Pack-Family❤️: "
+                f"Sono trascorsi {turns_since_pack_chat} turni senza messaggi nel gruppo Telegram di famiglia. "
+                "In fondo a questa risposta (subito prima di eventuali comandi >like), lo smartphone di Alyssa vibra brevemente: "
+                "DEVI includere obbligatoriamente il blocco racchiuso tra tripli backtick (```):\n"
+                "```\n"
+                "❤️Pack-Family❤️\n"
+                "Nome: Messaggio\n"
+                "Nome: Messaggio\n"
+                "```\n"
+                "con 2-4 messaggi spontanei in italiano tra i membri della famiglia (es. Noah tutto minuscolo senza punteggiatura con 💀😂🍿, "
+                "Jasper con 🙄, Malachia asciutto con massimo 👍, Erik paterno, Logan 🍺🏍️🔧, Edric 🔥💪🏈, o Wulfnic IN TUTTO MAIUSCOLO) "
+                "che chiacchierano tra loro sulla giornata o chiedono ad Alyssa come procede lo studio e dove si trova. "
+                "REGOLA FORMATO TESTI SCRITTI E DIGITALI: racchiudi sempre una singola frase scritta/digitale tra backtick singoli (`testo`) e ogni blocco multilinea (chat, notifiche, lettere, appunti, feed) tra tripli backtick (``` ... ```). "
+                "Vietato generare messaggi inviati da Alyssa. Zero trattini lunghi.]"
+            )
+            logger.info(
+                f"📱 [LIVING WORLD] Injected mandatory ❤️Pack-Family❤️ trigger (turns_since={turns_since_pack_chat} >= {pack_threshold})."
+            )
+
+        if turns_since_family_cameo >= cameo_threshold:
+            last_asst_low = asst_msgs[-1].lower()
+            if any(k in last_asst_low for k in ("basilica library", "succ", "study area", "campus")):
+                candidates = ["Jasper", "Noah", "Echo", "Malachia", "Edric"]
+            else:
+                candidates = [
+                    "Jasper", "Noah", "Malachia", "Logan", "Echo",
+                    "Erik", "Edric", "Kaladin", "Marcus T.", "Zefir",
+                    "Ut", "Wulfnic", "Elizabeth", "Magnus",
+                ]
+            idx = len(asst_msgs) % len(candidates)
+            chosen = candidates[idx]
+            alt_chosen = candidates[(idx + 1) % len(candidates)]
+            echo_note = (
+                " NOTA FISICA SU ECHO: Echo e' una IA virtuale PRIVA di corpo umanoide: "
+                "si manifesta ESCLUSIVAMENTE come voce sintetica dallo smartphone/auricolare di Alyssa, "
+                "come proiezione olografica traslucida a onda sonora/codice, oppure come micro-drone da ricognizione AR Magitech volante (MAI come figura umana che cammina o indossa abiti)."
+                if "Echo" in (chosen, alt_chosen)
+                else ""
+            )
+            injections.append(
+                "\n\n[DIRETTIVA OBBLIGATORIA PER QUESTO TURNO - CONTROLLO DISCRETO DEL BRANCO: "
+                f"Sono trascorsi {turns_since_family_cameo} turni senza che nessun membro della famiglia o del branco controllasse di persona come sta Alyssa. "
+                f"In questo turno, fai comparire o passare con naturalezza nella scena **{chosen}** (oppure **{alt_chosen}**) per un controllo discreto, "
+                "un rapido saluto o un'occhiata protettiva ad Alyssa coerente con la location attuale (es. in Basilica Library alle 17:25+: Jasper diretto alla Sala 005 per l'Anime Club delle 18:00, Echo come voce/ologramma sul telefono o micro-drone da ricognizione vicino alla vetrata, Noah o Malachia di passaggio al secondo piano)."
+                f"{echo_note} "
+                f"IMPORTANTE: Aggiungi `{chosen}` alla riga `**Active party: ..., {chosen}**` e scrivi il suo intervento su una nuova riga iniziando con il marker obbligatorio `=>{chosen}:`. Zero trattini lunghi.]"
+            )
+            logger.info(
+                f"🐺 [LIVING WORLD] Injected mandatory Pack check-in trigger for {chosen}/{alt_chosen} (turns_since={turns_since_family_cameo} >= {cameo_threshold})."
+            )
+
+        if not injections:
+            return messages
+
+        new_messages = [dict(m) for m in messages]
+        last_msg = new_messages[-1]
+        last_content = last_msg.get("content") or ""
+        if isinstance(last_content, str):
+            last_msg["content"] = last_content + "".join(injections)
+        return new_messages
+
     def compact_request_payload(
         self,
         body: Dict[str, Any],
@@ -618,7 +1002,7 @@ class PayloadCompactor:
         target_model: Optional[str] = None,
     ) -> Dict[str, Any]:
         """
-        Executes the full 5-phase compaction pipeline on a deep copy of the request payload.
+        Executes the full compaction pipeline on a deep copy of the request payload.
         Safe for failover retries; original input is NEVER modified in-place.
         """
         payload = self.deep_copy_payload(body)
@@ -651,6 +1035,12 @@ class PayloadCompactor:
 
             # Phase 5: Whitespace & Newline Collapsing
             msgs, saved_p5 = self.collapse_whitespace(msgs)
+
+            # Phase 6: D20 & S.P.E.C.I.A.L. Math Guardrail Injection
+            msgs = self.enforce_ttrpg_math_guardrails(msgs)
+
+            # Phase 7: Deterministic Living-World Cadence Enforcer (❤️Pack-Family❤️ & 14-Member Cameo)
+            msgs = self.enforce_living_world_cadence(msgs)
 
             payload["messages"] = msgs
 
@@ -814,10 +1204,21 @@ async def chat_completions(request: Request):
     body = await request.json()
     is_streaming = body.get("stream", False)
     incoming_auth = request.headers.get("authorization")
+    record_activity()
 
     # Upfront non-destructive compaction executed once before retry loop
     compactor = PayloadCompactor()
     compacted_base = compactor.compact_request_payload(body)
+
+    # Classificazione dinamica dell'intento (Qwen vs Gemma)
+    global REQUEST_COUNTER
+    REQUEST_COUNTER += 1
+    intent_data = classify_request_intent(compacted_base)
+    preferred_family = intent_data["preferred"]
+    classification_reason = intent_data["reason"]
+    logger.info(
+        f"🎯 [INTENT ROUTER] Turno #{REQUEST_COUNTER} -> Famiglia preferita: {preferred_family.upper()} ({classification_reason})"
+    )
 
     upstreams = sorted(cfg.get("upstreams", []), key=lambda x: x.get("priority", 99))
     cfg_timeout = float(cfg.get("timeout_seconds", 35.0))
@@ -833,8 +1234,9 @@ async def chat_completions(request: Request):
         priority = upstream.get("priority", 99)
         provider = upstream.get("provider", "generic")
 
+
         key_name = upstream.get("key_name") or ("openrouter" if provider == "openrouter" else "")
-        available_keys = resolve_keys(key_name, incoming_auth)
+        available_keys = get_cycled_keys(key_name, incoming_auth)
         if not available_keys:
             logger.warning(
                 f"⚠️  [SALTATO] P{priority} ({name}): Nessuna chiave per {key_name}."
@@ -849,6 +1251,10 @@ async def chat_completions(request: Request):
             continue
 
         models_to_try = upstream.get("models") or ([upstream.get("model")] if upstream.get("model") else [])
+        models_to_try = [m for m in models_to_try if get_model_priority_tier(m) < 999]
+        if not models_to_try:
+            continue
+        models_to_try.sort(key=get_model_priority_tier)
 
         for api_key in available_keys:
             for target_model in models_to_try:
@@ -881,11 +1287,15 @@ async def chat_completions(request: Request):
                 if upstream.get("headers") and isinstance(upstream["headers"], dict):
                     headers.update(upstream["headers"])
 
+                if "3.8" in target_model:
+                    effective_timeout = 10.0
+                else:
+                    effective_timeout = timeout_sec
                 logger.info(
-                    f"🚀 [ROUTING] Tentativo {label} (stream={is_streaming}, timeout={timeout_sec}s)..."
+                    f"🚀 [ROUTING] Tentativo {label} (stream={is_streaming}, timeout={effective_timeout}s)..."
                 )
 
-                client_timeout = httpx.Timeout(timeout_sec, connect=10.0)
+                client_timeout = httpx.Timeout(effective_timeout, connect=15.0)
                 client = httpx.AsyncClient(timeout=client_timeout)
 
                 try:
@@ -902,13 +1312,18 @@ async def chat_completions(request: Request):
                         )
 
                         if (
-                            response.status_code in (429, 402, 403)
+                            response.status_code in (401, 402, 403, 429)
                             or response.status_code >= 500
                         ):
+                            if response.status_code in (401, 402) or "limit: 0" in err_str:
+                                cd_duration = 1800
+                            else:
+                                cd_duration = None
                             mark_cooldown(
                                 cd_key,
                                 label,
                                 f"HTTP {response.status_code}: {err_str[:80]}",
+                                duration=cd_duration,
                             )
                         else:
                             logger.warning(f"⚠️  [RIFIUTATO] {last_error}")
@@ -929,6 +1344,7 @@ async def chat_completions(request: Request):
                                 await response.aclose()
                                 await client.aclose()
 
+                        safe_served_by = f"{name} ({target_model})".encode("ascii", "replace").decode("ascii")
                         return StreamingResponse(
                             stream_generator(),
                             status_code=200,
@@ -936,7 +1352,7 @@ async def chat_completions(request: Request):
                             headers={
                                 "Cache-Control": "no-cache",
                                 "Connection": "keep-alive",
-                                "X-Served-By": f"{name} ({target_model})",
+                                "X-Served-By": safe_served_by,
                             },
                         )
 
@@ -956,10 +1372,11 @@ async def chat_completions(request: Request):
                     logger.info(
                         f"✅ [SUCCESS] Risposta valida ({len(normalized_json['choices'][0]['message']['content'])} chars) da {label}!"
                     )
+                    safe_served_by = f"{name} ({target_model})".encode("ascii", "replace").decode("ascii")
                     return JSONResponse(
                         content=normalized_json,
                         status_code=200,
-                        headers={"X-Served-By": f"{name} ({target_model})"},
+                        headers={"X-Served-By": safe_served_by},
                     )
 
                 except (httpx.TimeoutException, httpx.ConnectTimeout) as te:

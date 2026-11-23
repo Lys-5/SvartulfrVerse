@@ -4,12 +4,13 @@
 
 Il World Clock di Wyvern per il mondo Svartúlfr è calibrato sui seguenti parametri strutturali:
 
-- **World-age 0 (Epoca):** 21 dicembre 827 d.C., ore 00:00 UTC.
+- **World-age 0 (Epoca):** 21 dicembre 827 d.C., ore 00:00 UTC (Martedì / Tuesday).
   - Valori letti dall'API del World:
     - `human_start_date: "0827-12-21T00:00:00.000Z"`
     - `calendar.start_year: 827`
     - `start_month_id: "dec"`
     - `start_day_of_month: 21`
+    - `calendar.day_names: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday"]`
 - **Anno Corrente del World:** **2024**.
 - **World-Age Corrente:** **10486470** (corrispondente esattamente al **5 aprile 2024, ore 06:00 UTC**, riconfermato via API il 14 settembre).
 - *Attenzione:* Qualunque riferimento al 2022 reperibile nei documenti legacy o nelle fonti grezze è un residuo obsoleto e va ignorato.
@@ -27,10 +28,24 @@ $$\text{ore} = (\text{giorni trascorrenti dall'Epoca}) \times 24 + \text{ora del
 Per verificare o convertire date e ore senza commettere errori di calcolo:
 
 ```javascript
-const EP = Date.UTC(827, 11, 21); // 21 Dicembre 827 UTC
+const EP = Date.UTC(827, 11, 21); // 21 Dicembre 827 UTC (Martedì)
 const dataDaOre = h => new Date(EP + h * 3600000).toISOString().slice(0, 10);
 const oreDaData = iso => (Date.parse(iso) - EP) / 3600000;
 ```
+
+### 2.1 Allineamento Matematico dei Giorni della Settimana (Weekday Offset Parity)
+L'engine del calendario di Wyvern calcola il giorno della settimana per proiezione diretta dei giorni trascorsi dall'Epoca (`h = Math.floor(timestamp / day_length)`):
+$$\text{indice\_giorno} = (h \pmod 7 + 7) \pmod 7$$
+e seleziona il nome corrispondente nell'array `day_names[indice_giorno]`.
+- All'Epoca (Giorno 0, 21 dicembre 827 CE, prolettico gregoriano standard), la data astronomica reale era **Martedì (Tuesday)**.
+- Pertanto, per garantire che ogni giorno della settimana coincida perfettamente con la realtà e con il canone degli scenari (es. **26 agosto 2024 = Lunedì / Monday**), l'array `day_names` deve iniziare tassativamente con `Tuesday`:
+  `["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday"]`
+- Verifica analitica per il Welcome Day SUCC (26 agosto 2024):
+  - Giorni trascorsi dall'Epoca: $h = 437079$.
+  - Indice: $437079 \pmod 7 = 6$.
+  - `day_names[6]` = `"Monday"` (Lunedì).
+  - Risultato formattato: `Monday, August 26, Year 2024 CE`.
+  - Perfetta concordanza con la realtà, con la timeline accademica SUCC e con i dialoghi di scena.
 
 ---
 
@@ -66,7 +81,7 @@ Per consentire l'inserimento automatico organico degli Scenari nel corso delle s
    - `repeat`: `"once"` (Auto-trigger once per party) oppure `"cooldown"` con `cooldown_messages: 20`.
    - `priority`: Valore numerico intero (priorità maggiore eseguita per prima).
    - `conditions`: Array di condizioni logiche (con logica `AND` o `OR`):
-     - `time_basis: "world_day"` con `world_day_number: <N>` (Giorno 1 = Ora 0 = Lunedì 21 Dicembre 827 CE);
+     - `time_basis: "world_day"` con `world_day_number: <N>` (Giorno 1 = Ora 0 = Martedì 21 Dicembre 827 CE; Giorno 437080 = Lunedì 26 Agosto 2024 CE);
      - Oppure `time_basis: "world_time"` con soglia in ore;
      - Condizioni di party / persona (`party_has_character` o `persona`).
 

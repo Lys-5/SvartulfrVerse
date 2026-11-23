@@ -1,6 +1,6 @@
 # Runic and Divine Marks Specification: Svartúlfr Verse
 
-**Document Version**: 2.0.0 (Production Canonical Standard)  
+**Document Version**: 2.1.0 (Production Canonical Standard, Birthday-Calibrated Elder Futhark)  
 **Classification**: Sacred Lore, Visual Style Guide & Asset Reference Specification  
 **Status**: Authoritative & Active  
 
@@ -23,13 +23,44 @@ The ritual requires three archaic and immutable components:
 3. **The Anatomical Placement (La Sede)**:
    The birth rune is always inscribed on the inner left wrist (volar wrist, flexor side). This placement honors the side of the heart and the combat guard arm, leaving a distinct, slightly raised dark ceremonial keloid scar with a characteristic gunmetal sheen.
 
+### 1.2 Canonical Birthday-to-Rune Calendar (24 Elder Futhark Runes)
+
+Every werewolf's 5th-Day Birth Rune is strictly determined by their date of birth according to the canonical Elder Futhark half-month calendar:
+
+| Date Range | Birth Rune | Glyph | Key Pack / Cast Members |
+|---|---|---|---|
+| 28 December to 13 January | Eihwaz | `ᛇ` | Logan Douglas (Jan 12) |
+| 13 January to 28 January | Perthro | `ᛈ` | Nixara Bloodmoon |
+| 28 January to 12 February | Algiz | `ᛉ` | Zefir Hvitskog (Feb 5) |
+| 12 February to 27 February | Sowilo | `ᛊ` | Edric Douglas (Feb 25) |
+| 27 February to 14 March | Tiwaz | `ᛏ` | Larek Steeltooth (Mar 12) |
+| 14 March to 30 March | Berkano | `ᛒ` | |
+| 30 March to 14 April | Ehwaz | `ᛖ` | |
+| 14 April to 29 April | Mannaz | `ᛗ` | Alyssa & Jasper Douglas Bloodmoon (Apr 22) |
+| 29 April to 14 May | Laguz | `ᛚ` | Ut Berg (May 5) |
+| 14 May to 29 May | Ingwaz | `ᛜ` | Archer Wolfwood (May 14) |
+| 29 May to 14 June | Dagaz | `ᛞ` | |
+| 14 June to 29 June | Othala | `ᛟ` | Liam O'Connor (Jun 22), Cornelius, Magnus III |
+| 29 June to 14 July | Fehu | `ᚠ` | |
+| 14 July to 29 July | Uruz | `ᚢ` | Elizabeth Duskwood (Jul 14) |
+| 29 July to 13 August | Thurisaz | `ᚦ` | Malachia Douglas Bloodmoon (Aug 10) |
+| 13 August to 29 August | Ansuz | `ᚨ` | |
+| 29 August to 13 September | Raidho | `ᚱ` | |
+| 13 September to 28 September | Kenaz | `ᚲ` | |
+| 28 September to 13 October | Gebo | `ᚷ` | Noah Loki Douglas Bloodmoon (Oct 5) |
+| 13 October to 28 October | Wunjo | `ᚹ` | |
+| 28 October to 13 November | Hagalaz | `ᚺ` | Erik Ulfr Douglas (Oct 31) |
+| 13 November to 28 November | Nauthiz | `ᚾ` | |
+| 28 November to 13 December | Isa | `ᛁ` | |
+| 13 December to 28 December | Jera | `ᛃ` | Wulfnic Baleygr Bloodmoon (Dec 21) |
+
 ---
 
 ## 2. Divine Celestial Hip Marks of the Douglas-Bloodmoon Twins
 
 ### 2.1 The Prophecy of the Twin Wolves
 
-Born simultaneously on April 22, 2005, during the tragic demise of their mother Nixara Bloodmoon (3rd White Moon), the twins Jasper and Alyssa embody the fulfillment of the ancient Bloodmoon prophecy:
+Born simultaneously on April 22, 2005 at 05:00 in Los Angeles / Blackwood during the tragic demise of their mother Nixara Bloodmoon (3rd White Moon), the twins Jasper and Alyssa embody the fulfillment of the ancient Bloodmoon prophecy:
 
 ```text
 Tha er tungl ok sol risa saman i dreyra,
@@ -42,6 +73,8 @@ the era of the Firstborn shall come to an end,
 and the Bastion shall become King after one hundred and fifty winters.)
 ```
 
+Birth Codex Alignment (April 22, 2005, 05:00): Taurus Sun, Aries Ascendant, Libra Moon, Midheaven Capricorn; Life Path 33; Human Design Generator (1/3 Investigator/Martyr, Sacral Authority, Wait and Respond). Alyssa's full numerology also carries Expression 5 and Soul Urge 2.
+
 ### 2.2 Strict Anatomical Invariants for the Twins
 
 The sacred celestial marks of the twins are subject to non-negotiable anatomical rules:
@@ -51,7 +84,7 @@ The sacred celestial marks of the twins are subject to non-negotiable anatomical
    - **Anatomical Location**: **Strictly on the LEFT HIP** (iliac crest sweeping along the pelvic line).
    - **Visual Manifestation**: An elegant, outward-facing silver crescent moon intertwined with delicate Elder Futhark lunar glyphs.
    - **Luminescence**: When awakened or resonating with pack magic, it radiates a soft, pearlescent moonlight-silver sub-dermal bioluminescence.
-   - **Sole Shared Tattoo**: The Gebo rune (`ᚷ`) on the inner left wrist, inscribed in cold iron ink.
+   - **Sole Wrist Birth Rune**: The Mannaz rune (`ᛗ`, April 14 to 29) on the inner left wrist, inscribed in cold iron ink on the 5th day.
    - **Exclusive Cosmic Title**: **Maniulfr** (Maniulf / White Moon Wolf).
 
 2. **Jasper Svartr Douglas Bloodmoon (Svartr Solulfr)**:
@@ -59,7 +92,7 @@ The sacred celestial marks of the twins are subject to non-negotiable anatomical
    - **Anatomical Location**: **Strictly on the RIGHT HIP** (along the pelvic crest and lower oblique).
    - **Visual Manifestation**: An intricate radiant black sun medallion with angular solar flares and ancient Sowilo sun runes in dark obsidian black with burnt amber edges.
    - **Luminescence**: When activated, it ignites with deep molten-gold and dark solar embers, accompanied by subtle glowing cyan technomantic circuit traces.
-   - **Sole Shared Tattoo**: The Gebo rune (`ᚷ`) on the inner left wrist, inscribed in cold iron ink.
+   - **Sole Wrist Birth Rune**: The Mannaz rune (`ᛗ`, April 14 to 29) on the inner left wrist, inscribed in cold iron ink on the 5th day.
    - **Exclusive Cosmic Title**: **Solulfr** (Sun Wolf).
 
 ### 2.3 Categorical Prohibitions & Purged Legacy Elements
@@ -69,7 +102,7 @@ To preserve canon consistency and eliminate legacy drift:
 - **Absolute Prohibition of Dispersed Celestial Marks**: It is strictly forbidden to place celestial marks or divine symbols on the chest, collarbone, neck, hands, shoulders, or back wings.
 - **No Wing Scars / Angel Wings**: The twins are pureblood terrestrial lupine shapeshifters, not winged or celestial beings.
 - **Title Exclusivity**: The title Solulfr belongs exclusively to Jasper. Alyssa must never be called Solulfr; her title is strictly Maniulfr.
-- **Sole Shared Tattoo**: The Gebo rune on the left wrist is the only shared tattoo between the twins.
+- **Sole Wrist Birth Rune (Mannaz Only)**: Born on April 22, both twins carry exclusively the Mannaz rune (`ᛗ`) on the inner left wrist as their shared 5th-Day Birth Rune; Gebo (`ᚷ`, Sept 28 to Oct 13) belongs canonically to Noah (born Oct 5) and is removed from the twins.
 
 ---
 
@@ -89,22 +122,23 @@ To preserve canon consistency and eliminate legacy drift:
 - **Combat Scars**: Faded duel scar slicing through the left eyebrow; slightly crooked boxer nose broken twice in underground combat; white battle scar lines cutting through his black wolf coat in shift.
 - **Accessories Discipline**: Zero jewelry or rings. Hands wrapped in athletic tape during combat or training.
 
-### 3.3 Erik Ulfr Douglas (Prime Alpha Patriarch & Corporate CEO)
-- **Birth Runes**: Tiwaz (`ᛏ`, Rightful Command and Alpha Authority) / Hagalaz (`ᚺ`, Destruction and Order from Chaos), inscribed on the inner left wrist on the 5th day.
-- **Executive Wrist Seal**: Discreet sacred talisman combining Tiwaz/Hagalaz bound with the Rune of Fenris on the inner left wrist, concealed beneath tailored French cuffs.
+### 3.3 Erik Ulfr Douglas (Prime Alpha Patriarch & Corporate CEO, Born Oct 31, 1969)
+- **Birth Rune**: Hagalaz (`ᚺ`, Oct 28 to Nov 13, Disruption, Elemental Storm and Order from Chaos), inscribed on the inner left wrist on the 5th day.
+- **Executive Wrist Seal**: Discreet sacred talisman combining Hagalaz bound with the Rune of Fenris on the inner left wrist, concealed beneath tailored French cuffs.
 - **Ritual Cheek Scar**: A clean, faint ceremonial scar across his left cheekbone, earned during a solitary wilderness hunt at age sixteen.
 - **Clan Relics**: Heavy silver-and-obsidian signet ring bearing the Douglas wolf-skull crest on his left hand; discreet gold memorial chain honoring Nixara beneath his collar.
 - **Aesthetic**: Impeccable bespoke corporate elegance concealing apex predator lethality.
 
-### 3.4 Wulfnic Baleygr Bloodmoon (Primordial Firstborn Demigod)
-- **Birth Runes**: Othala (`ᛟ`, Ancestral Sovereignty) / Jera (`ᛃ`, Eternal Cycle), inscribed in 864 AD during the Viking Age.
+### 3.4 Wulfnic Baleygr Bloodmoon (Primordial Firstborn Demigod, Born Dec 21, 824 AD)
+- **Birth Rune**: Jera (`ᛃ`, Dec 13 to Dec 28, Eternal Cycle and Sovereign Harvest), inscribed on the 5th day in 824 AD during the Viking Age.
 - **Primordial Torso Brands**: 1200-year-old ancient Norse tattoos hand-carved with bone needles across his colossal chest, shoulders, and forearms. Archaic Elder Futhark staves, primeval Fenris blood-runes, and Svartulfr longship sigils.
-- **Sovereign Wrist Brand**: Ancient sovereign Othala and Jera blood-oath talisman carved into the left wrist over eleven centuries ago.
+- **Sovereign Wrist Brand**: Ancient sovereign Jera blood-oath talisman bound with the Rune of Fenris carved into the inner left wrist over eleven centuries ago.
 - **Mythic Scars & Relics**: Deep legendary battle scars crisscrossing his weathered torso from supernatural wars; tooth of a Firstborn worn on a leather cord; the Stolen Eye of Odin hidden beneath his ancient aura; heavy wolf-pelt mantle draped over archaic Norse woolen garments.
 
 ### 3.5 Secondary Pack Members
-- **Noah Loki Douglas Bloodmoon**: Birth rune Kenaz (`ᚲ`, Torch of Intellect and Diplomacy) on the inner left wrist in cold iron ink. Pristine, unmarked sun-tanned skin fitting his high-profile diplomatic and political career.
-- **Edric Douglas (Pup, 13yo)**: Birth rune Ingwaz (`ᛜ`, Latent Potential and New Beginnings) on the inner left wrist in cold iron ink. Zero additional body art, awaiting his formal Presentation ceremony at Yule 2024.
+- **Noah Loki Douglas Bloodmoon (Born Oct 5, 1998)**: Birth rune Gebo (`ᚷ`, Sept 28 to Oct 13, Gift, Sacred Exchange and Diplomatic Equilibrium) on the inner left wrist in cold iron ink. Pristine, unmarked sun-tanned skin fitting his high-profile diplomatic and political career.
+- **Edric Douglas (Pup, 13yo, Born Feb 25, 2011)**: Birth rune Sowilo (`ᛊ`, Feb 12 to Feb 27, Solar Force, Latent Radiance and Triumph) on the inner left wrist in cold iron ink. Zero additional body art, awaiting his formal Presentation ceremony at Yule 2024.
+- **Elizabeth Duskwood (Born Jul 14)**: Birth rune Uruz (`ᚢ`, Jul 14 to Jul 29, Primal Endurance and Unyielding Strength) on the inner left wrist in cold iron ink.
 
 ---
 
@@ -125,8 +159,8 @@ To preserve canon consistency and eliminate legacy drift:
 
 ## 5. Visual Generation Prompts & Negative Prompts
 
-### Reference 1: Gebo Rune Tattoo on Left Wrist (`gebo_wrist_mark`)
-- **Asset Path**: `asset/references/gebo_wrist_mark.png` (mirrored in `assets/references/gebo_wrist_mark.png`)
+### Reference 1: Gebo Rune Tattoo Reference (`gebo_wrist_mark`, Canonical for Noah Oct 5; Twins use Mannaz `docs/comfyui_workflows/runes/rune_mannaz.png`)
+- **Asset Path**: `asset/references/gebo_wrist_mark.png` (mirrored in `assets/references/gebo_wrist_mark.png`; ComfyUI 24-rune wrist-detailer glyph library in `docs/comfyui_workflows/runes/rune_<name>.png`, with `rune_mannaz.png` for the twins)
 - **Prompt**:
   > MASTERPIECE, BEST QUALITY, SEMI-REALISTIC NIJI STYLE, PAINTERLY REALISM, PREMIUM ANATOMICAL REFERENCE SHEET, MACRO CLOSE-UP PHOTOGRAPHY, DARK URBAN FANTASY, CINEMATIC GRAZING LIGHT. Macro detailed focus on the inner flexor surface of a slender, graceful werewolf wrist (volar wrist). The sacred mark: The Gebo Rune ("ᚷ") tattooed with archaic precision. The linework is executed in dark cold iron ink (deep charcoal-black with a subtle metallic gunmetal sheen and fine iron-particle texture). The edges of the rune staves show a faint, delicate raised ceremonial scar line, healed from an ancient serpent-tooth incision. Magic resonance: A faint, ethereal, dual-toned sub-dermal luminescence gently halos the staves (soft pearlescent moonlight-silver on one side, faint glowing cyan-gold on the other), symbolizing an unbreakable empathic twin bond. Tight macro composition focusing on the wrist crease, smooth skin texture, soft radial pulse point, subtle skin pores, beautiful linework craftsmanship. Clean dark studio background with warm cinematic side rim light catching the cold iron texture.
 - **Negative Prompt**:
@@ -170,14 +204,14 @@ To preserve canon consistency and eliminate legacy drift:
 ### Reference 7: Erik Ulfr Douglas Cheek Scar & Executive Seal (`erik_ritual_marks`)
 - **Asset Path**: `asset/references/erik_ritual_marks.png` (mirrored in `assets/references/erik_ritual_marks.png`)
 - **Prompt**:
-  > MASTERPIECE, BEST QUALITY, SEMI-REALISTIC NIJI STYLE, PAINTERLY REALISM, HIGH LUXURY PATRIARCH, CALIFORNIAN EXECUTIVE POWER. Erik Ulfr Douglas, 55-year-old Werewolf Prime Alpha patriarch and billionaire CEO. Imposing, disciplined ex-athlete powerhouse physique, jet-black hair with distinguished silver touches at temples, piercing amber eyes flaring molten gold, sharp authoritative jaw. A faint, clean ceremonial ritual scar cleanly crossing his left cheekbone, earned during a solitary initiation hunt at age sixteen. Peeking from beneath the unbuttoned cuff of a bespoke crisp white linen shirt, his left inner wrist reveals a discreet, sacred talisman combining Tiwaz (Alpha Command) and Hagalaz bound with the Rune of Fenris in dense cold iron ink. Heavy silver-and-obsidian signet ring bearing the Douglas wolf-skull crest on left hand; gold chain resting against collarbone. Single pair of dominant dark lupine wolf ears atop head. High-rise penthouse boardroom overlooking coastal city at golden hour sunset.
+  > MASTERPIECE, BEST QUALITY, SEMI-REALISTIC NIJI STYLE, PAINTERLY REALISM, HIGH LUXURY PATRIARCH, CALIFORNIAN EXECUTIVE POWER. Erik Ulfr Douglas, 55-year-old Werewolf Prime Alpha patriarch and billionaire CEO. Imposing, disciplined ex-athlete powerhouse physique, jet-black hair with distinguished silver touches at temples, piercing amber eyes flaring molten gold, sharp authoritative jaw. A faint, clean ceremonial ritual scar cleanly crossing his left cheekbone, earned during a solitary initiation hunt at age sixteen. Peeking from beneath the unbuttoned cuff of a bespoke crisp white linen shirt, his left inner wrist reveals a discreet, sacred talisman combining Hagalaz (Order from Chaos) bound with the Rune of Fenris in dense cold iron ink. Heavy silver-and-obsidian signet ring bearing the Douglas wolf-skull crest on left hand; gold chain resting against collarbone. Single pair of dominant dark lupine wolf ears atop head. High-rise penthouse boardroom overlooking coastal city at golden hour sunset.
 - **Negative Prompt**:
   > second pair of human ears, scruffy beard, deformed hands, messy clothing, low budget, blurry, watermark.
 
 ### Reference 8: Wulfnic Baleygr Bloodmoon Primeval Brands (`wulfnic_primeval_brands`)
 - **Asset Path**: `asset/references/wulfnic_primeval_brands.png` (mirrored in `assets/references/wulfnic_primeval_brands.png`)
 - **Prompt**:
-  > MASTERPIECE, BEST QUALITY, SEMI-REALISTIC NIJI STYLE, PAINTERLY REALISM, MYTHOLOGICAL DEMIGOD, ANCIENT NORSE SAGA. Wulfnic Baleygr Bloodmoon, 1200-year-old Primordial Werewolf Firstborn Alpha of Alphas. Colossal weathered Viking demigod frame, long silver-white warrior braid, thick silver beard, piercing ice-blue eyes glowing silver-blue with slit pupils. Ancient 9th-century archaic Norse tattoos hand-carved with bone needles across his weathered torso, shoulders, and thick forearms: archaic Elder Futhark staves, primeval Fenris blood-runes, and Svartulfr clan longship sigils. On the left wrist, an ancient sovereign Othala and Jera blood-oath talisman carved into his wrist over eleven centuries ago. Deep legendary battle scars crisscrossing his chest and shoulders from ancient wars; leather cord at his throat bearing a Firstborn tooth; single pair of massive silver lupine wolf ears. Draped in a heavy wolf-pelt mantle and thick woolen Norse tunic. Ancient timber Longhouse sanctuary before a roaring stone hearth beneath colossal thousand-year-old wooden beams.
+  > MASTERPIECE, BEST QUALITY, SEMI-REALISTIC NIJI STYLE, PAINTERLY REALISM, MYTHOLOGICAL DEMIGOD, ANCIENT NORSE SAGA. Wulfnic Baleygr Bloodmoon, 1200-year-old Primordial Werewolf Firstborn Alpha of Alphas. Colossal weathered Viking demigod frame, long silver-white warrior braid, thick silver beard, piercing ice-blue eyes glowing silver-blue with slit pupils. Ancient 9th-century archaic Norse tattoos hand-carved with bone needles across his weathered torso, shoulders, and thick forearms: archaic Elder Futhark staves, primeval Fenris blood-runes, and Svartulfr clan longship sigils. On the left wrist, an ancient sovereign Jera blood-oath talisman carved into his wrist over eleven centuries ago. Deep legendary battle scars crisscrossing his chest and shoulders from ancient wars; leather cord at his throat bearing a Firstborn tooth; single pair of massive silver lupine wolf ears. Draped in a heavy wolf-pelt mantle and thick woolen Norse tunic. Ancient timber Longhouse sanctuary before a roaring stone hearth beneath colossal thousand-year-old wooden beams.
 - **Negative Prompt**:
   > second pair of human ears, modern clothes, technology, clean unscarred skin, youthful face, weak build, deformed hands, text, watermark.
 
@@ -187,14 +221,14 @@ To preserve canon consistency and eliminate legacy drift:
 
 | Asset Key | Primary Path | Mirror Path | Subject | Anatomical Placement | Core Runic Symbols |
 |---|---|---|---|---|---|
-| `gebo_wrist_mark` | `asset/references/gebo_wrist_mark.png` | `assets/references/gebo_wrist_mark.png` | Alyssa & Jasper (Twins) | Inner Left Wrist (Volar wrist) | Gebo (`ᚷ`), cold iron ink, serpent tooth keloid |
+| `gebo_wrist_mark` | `asset/references/gebo_wrist_mark.png` | `assets/references/gebo_wrist_mark.png` | Noah Douglas Bloodmoon (legacy file reused; Twins use `rune_mannaz.png`) | Inner Left Wrist (Volar wrist) | Gebo (`ᚷ`) for Noah; Mannaz (`ᛗ`) for Alyssa & Jasper |
 | `mani_hip_mark_alyssa` | `asset/references/mani_hip_mark_alyssa.png` | `assets/references/mani_hip_mark_alyssa.png` | Alyssa Hvit Douglas Bloodmoon | Left Hip (Iliac crest) | Mark of Mani, silver crescent, lunar Futhark |
 | `sol_hip_mark_jasper` | `asset/references/sol_hip_mark_jasper.png` | `assets/references/sol_hip_mark_jasper.png` | Jasper Svartr Douglas Bloodmoon | Right Hip (Iliac crest / oblique) | Mark of Sol, radiant black sun, Sowilo |
 | `celestial_polarity_twins` | `asset/references/celestial_polarity_twins.png` | `assets/references/celestial_polarity_twins.png` | Alyssa & Jasper (Paired) | Dual Hip Polarity (Left / Right) | Dual celestial polarity concept sheet |
 | `logan_sleeves_marks` | `asset/references/logan_sleeves_marks.png` | `assets/references/logan_sleeves_marks.png` | Logan Jarn Douglas | Full Arms + Inner Left Wrist | Eihwaz (`ᛇ`), Fenris ward, Celtic/Norse sleeves |
 | `malachia_blackwork_marks` | `asset/references/malachia_blackwork_marks.png` | `assets/references/malachia_blackwork_marks.png` | Malachia Bjorn Douglas Bloodmoon | Arms, Neck + Inner Left Wrist | Thurisaz (`ᚦ`), Fenris brand, Bloodmoon blackwork |
-| `erik_ritual_marks` | `asset/references/erik_ritual_marks.png` | `assets/references/erik_ritual_marks.png` | Erik Ulfr Douglas | Left Cheekbone + Inner Left Wrist | Tiwaz (`ᛏ`), Hagalaz (`ᚺ`), ritual cheek scar |
-| `wulfnic_primeval_brands` | `asset/references/wulfnic_primeval_brands.png` | `assets/references/wulfnic_primeval_brands.png` | Wulfnic Baleygr Bloodmoon | Torso, Shoulders + Inner Left Wrist | Othala (`ᛟ`), Jera (`ᛃ`), 9th-century Viking brands |
+| `erik_ritual_marks` | `asset/references/erik_ritual_marks.png` | `assets/references/erik_ritual_marks.png` | Erik Ulfr Douglas | Left Cheekbone + Inner Left Wrist | Hagalaz (`ᚺ`), ritual cheek scar |
+| `wulfnic_primeval_brands` | `asset/references/wulfnic_primeval_brands.png` | `assets/references/wulfnic_primeval_brands.png` | Wulfnic Baleygr Bloodmoon | Torso, Shoulders + Inner Left Wrist | Jera (`ᛃ`), 9th-century Viking brands |
 
 ---
 
