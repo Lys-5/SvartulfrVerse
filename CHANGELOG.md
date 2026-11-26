@@ -1,5 +1,10 @@
 # Changelog di Progetto — Svartúlfr Verse
 
+### 27/11/2026 (00:35) - Standardizzazione In-Chat `name` (Firstname) & Label `title` su Tutte le 10 User Personas (#Rules 01.1, 02, 11)
+- **Tutte le 10 User Personas Aggiornate Live su Wyvern (`HTTP 200` + Read-Back `GET` Verificato) & in [FINAL/personas](file:///e:/repository/SvartulfrVerse/FINAL/personas/):**
+  - Impostato `name` esclusivamente sul nome proprio pulito (`Alyssa`, `Jasper`, `Echo`) senza spazi finali, bracket o suffissi.
+  - Valorizzato uniformemente il campo `title` come label leggibile di specie/variante (`Werewolf (Modern)`, `Werewolf (Fantasy)`, `Werewolf (DDM Contractor #07)`, `Elf (Fantasy)`, `Human (Modern / Sci-Fi)`, `Human (Historical / Fantasy)`, `AI Drone / Holo-Wave (Modern)`), preservando avatar, descrizioni e appearances esistenti.
+
 ### 27/11/2026 (00:27) - Parità Totale Avatar Close-Up 15/15 Reference, Allineamento Testuale & Rimozione Immagini Altri/Outfit (#Rules 01.1, 03, 05, 11)
 - **Tutti i 15 Personaggi con Reference Sheet in `assets/` Sincronizzati Live su Wyvern ([deploy_full_15_parity_and_strip.py](file:///e:/repository/SvartulfrVerse/scratch/deploy_full_15_parity_and_strip.py), [closeup_avatars_batch2_audit.jpg](file:///C:/Users/mande/.gemini/antigravity/brain/713be534-6fb6-4fa8-bd35-5129adcc8c16/closeup_avatars_batch2_audit.jpg)):**
   - Croppati `1024x1024`, verificati visivamente e caricati su Cloudflare CDN + Gallerie Wyvern (World `_YpX47fNraQFw2dD7TdycJ` e Lorebook Primary/Secondary) anche gli ultimi **9** avatar close-up provvisori (**Jasper**, **Alyssa**, **Noah**, **Erik**, **Logan**, **Edric**, **Elizabeth**, **Zefir**, **Nixara**), portando a **15/15** il blocco completo insieme a **Malachia**, **Wulfnic**, **Kaladin**, **Ut**, **Magnus** ed **E.C.H.O.**.
