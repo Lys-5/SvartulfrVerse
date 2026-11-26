@@ -61,7 +61,7 @@ Cognomi o nomi identici o parzialmente sovrapponibili **NON implicano mai** pare
    - **Linea Bloodmoon (Divine Blood / Founding Bloodline):** **Wulfnic Báleygr Bloodmoon** (Firstborn, n. 21 dic 824 d.C.; shield-brothers conviventi Ut Berg e Zefir) -> figlia **Nixara Hvít Bloodmoon** (dec., White Moon, 9 giu 1975 – 22 apr 2005).
    - **Figli di Erik Douglas & Nixara Bloodmoon (4 fratelli):** **Malachia** (`Vígit`, Alpha, n. 10 ago 1996), **Noah** (`Loki`, Delta, n. 5 ott 1998), gemelli **Jasper** (`Svartr`, Beta, n. 22 apr 2005) e **Alyssa** (`Hvít`, Fourth White Moon Omega, n. 22 apr 2005).
 2. **Altre Famiglie Canoniche Confermate:**
-   - **Sanchez-Rogers (Oakand/Solarton):** Madre **Andrea Sanchez**, padre assente (NON Dominic Rogers); figli **Luisa** (27), **Mackenzie "Mac"** (19, discendente inconsapevole di Garmr Kjalki), **Mario**, **James**.
+   - **Sanchez-Rogers (Oakland/Solarton):** Madre **Andrea Sanchez**, padre assente (NON Dominic Rogers); figli **Luisa** (27), **Mackenzie "Mac"** (19, discendente inconsapevole di Garmr Kjalki), **Mario**, **James**.
    - **Rogers (Incubi, Louisiana/Solarton):** **Dominic Wayne Rogers** (50) + **Lara Rogers** (umana, dec.) -> figlio unico **Bailey Rogers** (22, SUCC Bulls).
    - **Thompson (Half-Minotaur/Holstaur, Solarton):** **Hank** (51) & **Jasmin** (48) -> 9 figli: **Jared** (22), **Janice** (21), **Jake** (20), gemelli **Jaiden & Jason** (18), **Jeremy** (16), **Jet** (13), **Jerry** (10), **Julie** (6).
    - **Davies (Werewolves, Solarton):** **Stanley Davies Sr.** (50) & **Eris Davies nee Lopez Ortega** -> figlio unico **Stan Davies** (21).

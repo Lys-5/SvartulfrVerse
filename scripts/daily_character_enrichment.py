@@ -23,7 +23,7 @@ NPC_SECONDARY_PATH = FINAL / 'Svartulfr_NPC_Secondary.json'
 JANITOR_CANON_PATH = ARCHIVIO / 'janitor_sources' / 'janitor_following_canon_characters.json'
 
 BATCH_SIZE = 5
-TEST_CHAT_ID = "chat_log_ftrtAD79eddk9Ue9Jr2WJ"
+DEFAULT_MAX_CHATS = 20
 
 def log(msg):
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -32,42 +32,40 @@ def log(msg):
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(formatted + "\n")
 
-def monitor_test_chat_phase(chat_id=TEST_CHAT_ID):
-    log(f"=== [Phase 0] Active Test Chat Monitor: {chat_id} ===")
+def monitor_test_chat_phase(max_chats=DEFAULT_MAX_CHATS, full=False):
+    """Phase 0: discover and monitor all sim/chat_log_* chats (incremental)."""
+    log("=== [Phase 0] Active Chat Monitor: all https://app.wyvern.chat/sim/chat_log_* ===")
     try:
-        from scripts.monitor_active_test_chat import fetch_chat, analyze_chat, DEFAULT_OUTPUT
-        output_file = SCRATCH / f"chat_export_{chat_id}.json"
-        
-        prev_count = 0
-        if output_file.exists():
-            try:
-                with open(output_file, 'r', encoding='utf-8') as f:
-                    old_data = json.load(f)
-                    prev_count = len(old_data.get('messages', []))
-            except Exception:
-                pass
-                
-        chat_data = fetch_chat(chat_id, str(output_file))
-        new_total = len(chat_data.get('messages', []))
-        delta = max(0, new_total - prev_count)
-        log(f"Chat {chat_id}: {new_total} total turns fetched ({delta} new turns detected).")
-        
-        # Analyze & Log Highlights
-        analyze_chat(chat_data, previous_count=prev_count)
-        log(f"Chat monitoring and lore mining completed successfully for {chat_id}.")
-        return {
-            "chat_id": chat_id,
-            "total_turns": new_total,
-            "new_turns": delta,
-            "status": "success"
-        }
+        from scripts.monitor_active_test_chat import monitor_all_chats
+        summary = monitor_all_chats(max_chats=max_chats, full=full, analyze=True)
+        log(
+            "Chat monitor summary: "
+            f"found={summary.get('chats_found', 0)} "
+            f"fetched={summary.get('chats_fetched', 0)} "
+            f"skipped={summary.get('chats_skipped', 0)} "
+            f"deferred={summary.get('chats_deferred', 0)} "
+            f"total_turns={summary.get('total_turns', 0)} "
+            f"new_turns={summary.get('new_turns', 0)}"
+        )
+        if summary.get("status") == "error":
+            log(f"Warning: chat listing failed: {summary.get('error')}")
+        return summary
     except Exception as e:
-        log(f"Warning: Failed to fetch/monitor test chat {chat_id}: {e}")
+        log(f"Warning: Failed to monitor chat logs: {e}")
         return {
-            "chat_id": chat_id,
+            "chat_id": "n/d",
+            "chats_found": 0,
+            "chats_fetched": 0,
+            "chats_skipped": 0,
+            "chats_deferred": 0,
+            "total_turns": 0,
+            "new_turns": 0,
             "error": str(e),
-            "status": "skipped"
+            "status": "error",
+            "chats": [],
         }
+
+
 
 def load_janitor_index():
     janitor_map = {}
@@ -126,9 +124,17 @@ def save_state(state):
     with open(STATE_FILE, 'w', encoding='utf-8') as f:
         json.dump(state, f, indent=2, ensure_ascii=False)
 
-def run_enrichment_batch(batch_size=BATCH_SIZE):
-    # Phase 0: Active Test Chat Monitoring
-    chat_monitor_result = monitor_test_chat_phase()
+def run_enrichment_batch(batch_size=BATCH_SIZE, max_chats=DEFAULT_MAX_CHATS, full_chats=False, chat_monitor_only=False):
+    # Phase 0: Active Chat Monitoring (all sim/chat_log_* ids)
+    chat_monitor_result = monitor_test_chat_phase(max_chats=max_chats, full=full_chats)
+    if chat_monitor_only:
+        state = init_state()
+        state["last_run"] = datetime.datetime.now().isoformat()
+        state["last_chat_monitor"] = chat_monitor_result
+        save_state(state)
+        log("Chat-monitor-only run complete; NPC enrichment batch skipped.")
+        return []
+
 
     state = init_state()
     janitor_index = load_janitor_index()
@@ -176,6 +182,15 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description="Daily Character Lore Enrichment & Active Chat Monitor")
     parser.add_argument("--batch-size", type=int, default=BATCH_SIZE, help="Number of NPCs to enrich per batch")
+    parser.add_argument("--max-chats", type=int, default=DEFAULT_MAX_CHATS, help="Max chat logs to fully fetch this run (0 = no cap)")
+    parser.add_argument("--full-chats", action="store_true", help="Refetch all discovered chats, ignoring incremental state (still capped)")
+    parser.add_argument("--chat-monitor-only", action="store_true", help="Run only Phase 0 (all chat logs); skip NPC enrichment")
     args = parser.parse_args()
-    run_enrichment_batch(batch_size=args.batch_size)
+    max_chats = args.max_chats if args.max_chats != 0 else 10**9
+    run_enrichment_batch(
+        batch_size=args.batch_size,
+        max_chats=max_chats,
+        full_chats=args.full_chats,
+        chat_monitor_only=args.chat_monitor_only,
+    )
 

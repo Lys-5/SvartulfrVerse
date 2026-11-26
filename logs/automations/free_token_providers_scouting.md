@@ -1,6 +1,6 @@
 # Report Quotidiano Scouting — Provider & Token Free Tier
 
-**Data Scansione:** 2026-11-22 09:01:53  
+**Data Scansione:** 2026-11-26 13:52:19  
 **Target:** Modelli Prioritari (GLM 5.2+, Gemini 3.8+, Gemma 4+)  
 **Stato Pipeline:** Stage 1B (Automazione Master Quotidiana)
 

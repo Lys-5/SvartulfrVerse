@@ -24,3 +24,6 @@ Registro storico delle sessioni di chat eseguite automaticamente in background:
 - **2026-11-19 09:02:08** | [daily-master-pipeline](2026-11-19_090208_daily-master-pipeline.md) | ID `17c20daa` | 11 steps
 - **2026-11-21 18:48:59** | [daily-master-pipeline](2026-11-21_184859_daily-master-pipeline.md) | ID `7f3bdfb6` | 557 steps
 - **2026-11-22 09:02:32** | [daily-master-pipeline](2026-11-22_090232_daily-master-pipeline.md) | ID `0b145051` | 11 steps
+- **2026-11-24 11:50:45** | [daily-master-pipeline](2026-11-24_115045_daily-master-pipeline.md) | ID `8f5ed2f9` | 1965 steps
+- **2026-11-25 10:34:47** | [daily-master-pipeline](2026-11-25_103447_daily-master-pipeline.md) | ID `8f5ed2f9` | 3345 steps
+- **2026-11-26 13:53:58** | [daily-master-pipeline](2026-11-26_135358_daily-master-pipeline.md) | ID `713be534` | 27 steps

@@ -18,7 +18,7 @@ Il JSON va generato **esclusivamente** se:
 
 **REGOLA SUPREMA DI RILASCIO:** Il lavoro svolto su Character Card, Lorebook, Scenari, Personas, Location, Setting o Parametri **NON VIENE MAI CONSIDERATO COMPLETO** finché non è effettivamente aggiornato, scritto e verificato a livello di piattaforma su **https://app.wyvern.chat/mine**.
 
-1. **Divieto di Falso Completamento Locale:** La semplice modifica, correzione o validazione di un file locale (`FINAL/*.json`, `exports/`, script in `scratch/`) **NON costituisce completamento**.
+1. **Divieto di Falso Completamento Locale:** La semplice modifica, correzione o validazione di un file locale (`FINAL/*.json`, `ARCHIVIO/19_exports_wyvern_ottobre2026/exports/`, script in `scratch/`) **NON costituisce completamento**.
 2. **Dichiarazione di Stato Obbligatoria:** Se una modifica è pronta in locale o fornita come testo in chat ma non è ancora stata applicata sulla piattaforma web live (via Web API o intervento confermato dell'utente), il task **DEVE essere categoricamente classificato e dichiarato come "INCOMPLETO (In attesa di aggiornamento su piattaforma Wyvern)"**.
 3. **Chiusura del Task:** Un task può essere marcato come "COMPLETATO" esclusivamente quando:
    - È stata eseguita con successo la chiamata API di scrittura/aggiornamento su Wyvern (con risposta HTTP 200/204 confermata); OPPURE

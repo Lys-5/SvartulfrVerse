@@ -71,7 +71,7 @@ TRUCCO: Espressione facciale, texture della pelle (sudore, olio d'officina, cica
 ACCONCIATURA: Colore, taglio, prodotto di styling, copertura completa della zona temporale umana e postura delle "Orecchie lupine singole [colore]" sulla sommita' del capo]
 ```
 
-**Vincolo Altezze Canoniche negli Outfits:** Ogni riferimento all'altezza in `ABBIGLIAMENTO:` deve rispettare tassativamente la matrice canonica (`Alyssa = 155 cm / 5'1"`, `Edric = 158 cm`, `Zefir = 178 cm`, `Jasper = 193 cm`, `Noah = 197 cm`, `Logan = 198 cm`, `Mac = 204 cm`, `Malachia = 208 cm`, `Erik = 213 cm`, `Wulfnic = 220 cm`, `Ut = 240 cm`). È vietato attribuire ad Alyssa `165 cm` o altezze diverse da `155 cm`.
+**Vincolo Altezze Canoniche negli Outfits:** Ogni riferimento all'altezza in `ABBIGLIAMENTO:` deve rispettare tassativamente la matrice canonica (`Alyssa = 155 cm / 5'1"`, `Edric = 165 cm / 5'5"`, `Zefir = 178 cm`, `Jasper = 193 cm`, `Noah = 197 cm`, `Logan = 198 cm`, `Mac = 204 cm`, `Malachia = 208 cm`, `Erik = 213 cm`, `Wulfnic = 220 cm`, `Ut = 240 cm`). È vietato attribuire ad Alyssa `165 cm` o altezze diverse da `155 cm`.
 
 ### C. Formula Prompt Interno di Generazione (Pittura Digitale Semi-Realistica Argon)
 1. **Medium ed Estetica:** *"Un'illustrazione digitale a figura intera, in stile pittura semi-realistica e ricca di dettagli"* (oppure *"Fotografia naturalistica, con grana naturale e dettagli nitidi"*), con enfasi sulle trame materiche (lana grezza, pelle di cervo, lino, cotone, metallo battuto), profondità di campo ridotta (*sfondo sfocato*) e illuminazione atmosferica calda o notturna.

@@ -51,6 +51,7 @@ CLR_BOLD = "\033[1m"
 
 CANONICAL_HEIGHTS = {
     'Alyssa': {'cm': 155, 'imperial': "5' 1\""},
+    'Edric': {'cm': 165, 'imperial': "5' 5\""},
     'Jasper': {'cm': 193, 'imperial': "6' 4\""},
     'Noah': {'cm': 197, 'imperial': "6' 5.6\""},
     'Logan': {'cm': 198, 'imperial': "6' 6\""},

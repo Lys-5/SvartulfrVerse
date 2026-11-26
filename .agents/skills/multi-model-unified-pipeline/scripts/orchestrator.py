@@ -698,6 +698,25 @@ def execute_stage_with_fallback(stage_def: dict, tier_info: dict, registry: dict
     }
 
 
+
+def format_chat_monitor_status(lcm: dict | None) -> tuple[str, object]:
+    """Build report/dashboard labels from last_chat_monitor (single- or multi-chat)."""
+    if not lcm:
+        return "n/d", 0
+    found = lcm.get("chats_found")
+    fetched = lcm.get("chats_fetched")
+    skipped = lcm.get("chats_skipped", 0)
+    deferred = lcm.get("chats_deferred", 0)
+    turns = lcm.get("total_turns", 0)
+    if found is not None:
+        label = f"{fetched}/{found} chat_log (saltate {skipped}"
+        if deferred:
+            label += f", rinviate {deferred}"
+        label += ")"
+        return label, turns
+    return lcm.get("chat_id", "n/d"), turns
+
+
 def build_daily_action_plan(run_data: dict) -> list[str]:
     """Generates the prioritized Daily Action Plan (Scaletta di Lavoro Giornaliera)
     synthesizing status from Vault Health, Wyvern Web API parity, character enrichment roster,
@@ -762,21 +781,20 @@ def build_daily_action_plan(run_data: dict) -> list[str]:
     recov_dir = ROOT / 'knowledge' / 'Archive_Recoveries'
     recov_count = len([f for f in recov_dir.glob('*') if f.is_file()]) if recov_dir.exists() else 50
 
-    chat_id = "chat_log_ftrtAD79eddk9Ue9Jr2WJ"
-    chat_turns = 225
+    chat_id = "n/d"
+    chat_turns = 0
     if enrichment_file.exists():
         try:
             with open(enrichment_file, 'r', encoding='utf-8') as f:
                 cdata = json.load(f)
                 lcm = cdata.get('last_chat_monitor', {})
-                chat_id = lcm.get('chat_id', chat_id)
-                chat_turns = lcm.get('total_turns', chat_turns)
+                chat_id, chat_turns = format_chat_monitor_status(lcm)
         except Exception:
             pass
 
     plan.append("#### 📚 Blocco 3: Recupero e Bonifica Archivio Storico (Archive Mining)")
     plan.append(f"- **Entità Recuperate e Bonificate:** `{recov_count}` entità catalogate in `knowledge/Archive_Recoveries/`.")
-    plan.append(f"- **Stato Chat Monitor:** `{chat_turns}` turni analizzati (Chat ID `{chat_id}`).")
+    plan.append(f"- **Stato Chat Monitor:** `{chat_turns}` turni analizzati su `{chat_id}`.")
     plan.append("- **Azione Richiesta:** Proseguire l'estrazione incrementale di frammenti di lore, date storiche e dettagli di ambientazione dai log legacy archiviati in `knowledge/Lorebook_Archive/`.\n")
 
     # 4. Task Speciali & Sviluppi Strategici di Sessione
@@ -1075,8 +1093,8 @@ def generate_dashboard_html(registry: dict, run_data: dict = None, clients_data:
     total_count = 310
     pct = 46.8
     pending_batch = []
-    chat_id = "chat_log_ftrtAD79eddk9Ue9Jr2WJ"
-    chat_turns = 225
+    chat_id = "n/d"
+    chat_turns = 0
     if enrichment_file.exists():
         try:
             with open(enrichment_file, 'r', encoding='utf-8') as f:
@@ -1088,8 +1106,7 @@ def generate_dashboard_html(registry: dict, run_data: dict = None, clients_data:
                 roster = cdata.get('roster', [])
                 pending_batch = [item for item in roster if item.get('status') == 'pending'][:5]
                 lcm = cdata.get('last_chat_monitor', {})
-                chat_id = lcm.get('chat_id', chat_id)
-                chat_turns = lcm.get('total_turns', chat_turns)
+                chat_id, chat_turns = format_chat_monitor_status(lcm)
         except Exception:
             pass
 
@@ -1406,7 +1423,7 @@ def generate_dashboard_html(registry: dict, run_data: dict = None, clients_data:
       <div style="background: var(--panel-alt); padding: 14px; border-radius: 8px; border: 1px solid var(--border);">
         <h4 style="color: var(--purple); margin-bottom: 6px;">📚 Blocco 3: Archive Mining</h4>
         <p style="font-size: 0.88rem;"><strong>Archive Recoveries:</strong> {recov_count} entità catalogate in <code>knowledge/Archive_Recoveries/</code>.<br>
-        <strong>Chat Monitor:</strong> {chat_turns} turni monitorati (Chat ID <code>{chat_id}</code>).<br>
+        <strong>Chat Monitor:</strong> {chat_turns} turni monitorati su <code>{chat_id}</code>.<br>
         Estrazione incrementale lore e ambientazione continua.</p>
       </div>
       
