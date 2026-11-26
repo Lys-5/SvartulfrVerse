@@ -1,0 +1,170 @@
+﻿# Log riordino — 23 novembre 2026 (Europe/Rome)
+
+Operazione: passo a basso rischio (profili browser, cartelle backup di scratch, dump navy_*.json in root).
+Nessuna cancellazione, nessun overwrite. Commit degli spostamenti non eseguito.
+
+Data operazione: 23 novembre 2026, 23:11 (Europe/Rome)
+
+## Spostamenti riusciti
+
+| Vecchio percorso | Nuovo percorso | File | Byte |
+|---|---|---:|---:|
+| scratch\pixai_chrome_profile | ARCHIVIO\16_browser_profiles\pixai_chrome_profile | 2951 | 611474941 |
+| scratch\chrome_validation_profile | ARCHIVIO\16_browser_profiles\chrome_validation_profile | 422 | 19193157 |
+| scratch\chrome_sessions_copy | ARCHIVIO\16_browser_profiles\chrome_sessions_copy | 4 | 1632816 |
+| scratch\backup_alyssa_jasper_20261030 | ARCHIVIO\15_scratch_backups\backup_alyssa_jasper_20261030 | 7 | 2522762 |
+| scratch\backup_consolidated_snapshot | ARCHIVIO\15_scratch_backups\backup_consolidated_snapshot | 14 | 15915496 |
+| scratch\backup_deleted_cards_20261021 | ARCHIVIO\15_scratch_backups\backup_deleted_cards_20261021 | 2 | 24549 |
+| scratch\backup_deleted_scenarios_20261021 | ARCHIVIO\15_scratch_backups\backup_deleted_scenarios_20261021 | 6 | 256005 |
+| scratch\backup_final_pass2 | ARCHIVIO\15_scratch_backups\backup_final_pass2 | 12 | 3201784 |
+| scratch\backup_final_prealyssa | ARCHIVIO\15_scratch_backups\backup_final_prealyssa | 12 | 3197673 |
+| scratch\backup_final_prefamily | ARCHIVIO\15_scratch_backups\backup_final_prefamily | 5 | 224358 |
+| scratch\backup_final_preimport | ARCHIVIO\15_scratch_backups\backup_final_preimport | 12 | 3203500 |
+| scratch\backup_final_premerge | ARCHIVIO\15_scratch_backups\backup_final_premerge | 2 | 105775 |
+| scratch\backup_final_prewyvern | ARCHIVIO\15_scratch_backups\backup_final_prewyvern | 6 | 352894 |
+| scratch\backup_length_pacing_20261030 | ARCHIVIO\15_scratch_backups\backup_length_pacing_20261030 | 4 | 56859 |
+| scratch\backup_old_world_CgYT8fHXpDC4crjmegQF7 | ARCHIVIO\15_scratch_backups\backup_old_world_CgYT8fHXpDC4crjmegQF7 | 6 | 3088731 |
+| scratch\backup_pre_audit_lorebooks | ARCHIVIO\15_scratch_backups\backup_pre_audit_lorebooks | 7 | 5879456 |
+| scratch\backup_world_completion_20261030 | ARCHIVIO\15_scratch_backups\backup_world_completion_20261030 | 4 | 3301146 |
+| scratch\backups_20261118 | ARCHIVIO\15_scratch_backups\backups_20261118 | 64 | 25003052 |
+| scratch\backups_blackwolf_firstborn_20261123 | ARCHIVIO\15_scratch_backups\backups_blackwolf_firstborn_20261123 | 5 | 6046081 |
+| scratch\backups_daily_20261121 | ARCHIVIO\15_scratch_backups\backups_daily_20261121 | 18 | 10698985 |
+| scratch\backups_family_trees_20261122 | ARCHIVIO\15_scratch_backups\backups_family_trees_20261122 | 21 | 4504702 |
+| scratch\backups_intimacy_embed_20261122 | ARCHIVIO\15_scratch_backups\backups_intimacy_embed_20261122 | 7 | 8210980 |
+| scratch\backups_iordan_runolfr_20261122 | ARCHIVIO\15_scratch_backups\backups_iordan_runolfr_20261122 | 8 | 1932687 |
+| scratch\backups_jasper_jed_v2_pilot_20261122 | ARCHIVIO\15_scratch_backups\backups_jasper_jed_v2_pilot_20261122 | 5 | 1112941 |
+| scratch\backups_jed_v2_batch_a_20261123 | ARCHIVIO\15_scratch_backups\backups_jed_v2_batch_a_20261123 | 19 | 6894027 |
+| scratch\backups_jed_v2_outfits_20261123 | ARCHIVIO\15_scratch_backups\backups_jed_v2_outfits_20261123 | 33 | 5213978 |
+| scratch\backups_jed_v2_phase1_20261122 | ARCHIVIO\15_scratch_backups\backups_jed_v2_phase1_20261122 | 4 | 6208343 |
+| scratch\backups_m1_20261118 | ARCHIVIO\15_scratch_backups\backups_m1_20261118 | 18 | 7059721 |
+| scratch\backups_m1_remediation_20261118 | ARCHIVIO\15_scratch_backups\backups_m1_remediation_20261118 | 6 | 6102576 |
+| scratch\backups_m2_20261121 | ARCHIVIO\15_scratch_backups\backups_m2_20261121 | 21 | 16335237 |
+| scratch\backups_prop_20261121 | ARCHIVIO\15_scratch_backups\backups_prop_20261121 | 12 | 10586535 |
+| scratch\backups_return_of_the_six_20261122 | ARCHIVIO\15_scratch_backups\backups_return_of_the_six_20261122 | 8 | 2670808 |
+| scratch\backups_starlight_20261121 | ARCHIVIO\15_scratch_backups\backups_starlight_20261121 | 6 | 4297853 |
+| navy_all_models.json | ARCHIVIO\13_root_dumps\navy_all_models.json | 1 | 169478 |
+| navy_glm_config_dump.json | ARCHIVIO\13_root_dumps\navy_glm_config_dump.json | 1 | 46057 |
+
+Totale spostato: 3733 file, 796725943 byte (~759,82 MB).
+
+## Saltati
+
+Nessuno.
+
+## Note
+
+- Nessun percorso da spostare risultava citato per nome in GEMINI.md, AGENTS.md o .agents/rules.
+- I dump sciolti in root di scratch (file backup_*.json / backup_*.py) non sono stati spostati: non approvati in questo passo.
+- I profili browser ora in ARCHIVIO/16_browser_profiles/ non vanno aggiunti a git.
+
+
+---
+
+# Log riordino — 24 novembre 2026 (Europe/Rome)
+
+Operazione: secondo lotto (legacy IDE Trae, teamwork, lorebooks source/standalone, scenarios_legacy, research, docs staging ottobre, learning_proposal.md, .pytest_cache).
+Nessuna cancellazione, nessun overwrite, nessun commit/push.
+Prima di ogni spostamento: grep su GEMINI.md, AGENTS.md, PROJECT.md, .agents/rules, .agents/skills, .agents/workflows. Nessun percorso candidato risultava citato.
+Data operazione: 24 novembre 2026, 11:45 (Europe/Rome)
+
+## Spostamenti riusciti
+
+| Vecchio percorso | Nuovo percorso | File | Byte |
+|---|---|---:|---:|
+| .trae | ARCHIVIO\10_trae_ide_legacy\.trae | 48 | 104082 |
+| .agents\teamwork | ARCHIVIO\14_teamwork_runs\teamwork | 1282 | 21871334 |
+| lorebooks\source | ARCHIVIO\18_lorebooks_source_20261015\source | 6 | 3505623 |
+| lorebooks\standalone | ARCHIVIO\18_lorebooks_source_20261015\standalone | 2 | 58571 |
+| FINAL\scenarios_legacy | ARCHIVIO\17_scenario_duplicates\scenarios_legacy | 5 | 48929 |
+| research | ARCHIVIO\09_database_markdown_legacy\research | 2 | 17404 |
+| docs\data | ARCHIVIO\21_docs_staging_ottobre\data | 10 | 583331 |
+| docs\proposals | ARCHIVIO\21_docs_staging_ottobre\proposals | 6 | 34704 |
+| docs\lexicon | ARCHIVIO\21_docs_staging_ottobre\lexicon | 5 | 30876 |
+| learning_proposal.md | docs\learning_proposal.md | 1 | 24363 |
+| .pytest_cache | ARCHIVIO\22_tooling_cache\.pytest_cache | 8 | 39958 |
+
+Totale spostato in questo lotto: 1375 file, 26319175 byte (~25,1 MB).
+
+## Saltati
+
+- legacy_exports -> ARCHIVIO\12_legacy_exports\legacy_exports: gitlink rotto templates/AURA-v9.8.2 (mode 160000, repo .git nidificato, nessun mapping in .gitmodules, stato gia modificato). Move-Item della cartella confonderebbe l indice git; saltato come da istruzioni.
+
+## Note
+
+- Non spostati (fuori perimetro di questo passo): core, database, exports, knowledge/Archive_Recoveries, .agent, duplicati in FINAL.
+- README.md non era tra i file di controllo obbligatori; l albero in README resta da aggiornare in un passo successivo.
+
+
+---
+
+# Log riordino — 24 novembre 2026 (Europe/Rome), dopo la Daily Pipeline
+
+Data operazione: 24 novembre 2026, 11:51 (Europe/Rome)
+Decisione su core / database / exports, basata su grep (scripts, .agents, GEMINI.md, AGENTS.md, PROJECT.md) e sulla pipeline odierna. Nessuna cancellazione, nessun commit/push.
+
+## Spostamenti riusciti
+
+| Vecchio percorso | Nuovo percorso | File | Byte | Motivo |
+|---|---|---:|---:|---|
+| core | ARCHIVIO\08_core_ADR_june2026\core | 21 | 234040 | Nessun riferimento attivo; file fermi a giugno 2026; non usato dalla pipeline del 24 nov. |
+| exports | ARCHIVIO\19_exports_wyvern_ottobre2026\exports | 8 | 15730674 | Snapshot Wyvern di ottobre 2026; non usato dalla pipeline del 24 nov; ultima modifica 20 ott 2026. Aggiornata solo la citazione in .agents/rules/01_formato_consegna_e_jed.md riga 21. |
+
+Totale spostato in questo sotto-lotto: 29 file, 15964714 byte (~15,23 MB).
+
+## Lasciati al loro posto
+
+- database: KEEP: ancora referenziato da scripts/verify_heights_parity.py e tests/test_adversarial_m1_m2_challenger.py (tooling attivo). Pipeline odierna non lo ha toccato, ma il criterio "used by anything active" impone di lasciarlo.
+
+## Modifica istruzioni
+
+- .agents/rules/01_formato_consegna_e_jed.md, riga 21: `exports/` sostituito con `ARCHIVIO/19_exports_wyvern_ottobre2026/exports/`.
+- Nessun altro file di regole e stato modificato. Gli script storici che ancora puntano a exports/ non sono stati toccati.
+
+
+
+## 2026-11-24 21:41 - Asset storici
+
+Richiesta di Alice: in assets resta solo REFERENCE (nuove reference personaggi). Spostati da assets\ a ARCHIVIO\24_assets_storici_nov2026\:
+- characters
+- environments
+- lore_and_gods
+- NEW_IMAGE
+- references
+- divine_marks_and_heights.md
+- emblema_casata_svartulfr.jpg
+- greek_row.jpg
+- pixai-fill-modified_1795156846199.png
+- placeholder_dcc_silhouette.jpg
+- placeholder_npc_avatar.jpg
+- PROMPTS_BANNER_LOCATION_E_CAST_ARGON.md
+- PROMPTS_PERSONAGGI_E_OUTFIT_GEMINI_ARGON.md
+- README.md
+- twin_reference.png
+- twin_reference_face.png
+
+Nota: scripts\upload_m5_image_batch.py puntava ad assets/characters/ (asset vecchi).
+
+
+## 2026-11-24 21:43 - REFERENCE per personaggio
+
+- assets\REFERENCE\Alyssa\alyssa_reference.png
+- assets\REFERENCE\Edric\edric_reference.png
+- assets\REFERENCE\Erik\erik_reference.png
+- assets\REFERENCE\Jasper\jasper_reference.png
+- assets\REFERENCE\Logan\logan_reference.png
+- assets\REFERENCE\Malachia\malachia_reference.png
+- assets\REFERENCE\Noah\noah_reference.png
+- assets\REFERENCE\Wulfnic\wulfnic_reference.png
+
+
+## 2026-11-26 14:34 - Pipeline: sidecar daily-master-pipeline ripristinato
+
+Il Vault Health Check (Stage 0) falliva 156/159 perché mancava `~/.gemini/config/sidecars/daily-master-pipeline/sidecar.json` (cartella sidecars vuota, ultima modifica 24/11 11:49). Ricreato secondo il canone del repo (SKILL.md multi-model-unified-pipeline, rules/15, GEMINI.md), con il contenuto ricostruito dai log in logs/automations (versione del 22/11). Non sono stati ricreati i 3 sidecar legacy separati, che la skill vieta.
+
+File creati:
+- C:\Users\mande\.gemini\config\sidecars\daily-master-pipeline\sidecar.json (nuovo, nessun originale da salvare)
+
+File modificati:
+- ARCHIVIO\_log_riordino_2026-11-23.md (questa sezione), backup: ARCHIVIO\23_script_backups\_log_riordino_2026-11-23.md.20261126-143438.bak
+
+Verifica: scripts/vault_health_check.py 157/157, zero errori. Pipeline completa non rilanciata (fa scritture live su Wyvern). Nessuno spostamento, nessuna cancellazione, nessun commit.

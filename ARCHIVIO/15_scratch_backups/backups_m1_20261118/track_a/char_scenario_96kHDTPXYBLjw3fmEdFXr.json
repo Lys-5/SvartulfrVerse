@@ -1,0 +1,152 @@
+{
+  "slot_count": 8,
+  "greeting_count": 1,
+  "id": "char_scenario_96kHDTPXYBLjw3fmEdFXr",
+  "name": "DDM: Ragnarok Survivors - High Fantasy AU (Contractors #07 & #08)",
+  "display_description": "High Fantasy Alternative Timeline (AU): La profezia dei gemelli si avvera in anticipo ad Alteyra / Silverhaven scatenando il Ragnarok. Alyssa (#07, Fantasy Persona) e Jasper (#08, Fantasy) muoiono nel collasso del loro regno, ma vengono recuperati da Dullahan (#04) attraverso la Cur Corpse Tavern e portati alla sede DDM in Voidspace.",
+  "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/8034144f-cdb5-4cec-c263-513b32785e00/public",
+  "tags": [
+    "ddm",
+    "dead-dog-motel",
+    "ragnarok-au",
+    "high-fantasy",
+    "contractors"
+  ],
+  "visibility": "private",
+  "rating": "explicit",
+  "status": "pending",
+  "revision": 6,
+  "creator_uid": "2r4fVpvImte5dbljedLkZJxre2d2",
+  "updated_at": "2026-11-16T20:10:55.207Z",
+  "linked_world_id": "",
+  "scenario": "Setting: DDM Inc. Headquarters, Voidspace (High Fantasy Ragnarok AU, isolated from Alteyra / Silverhaven).\n\nPremise: Following a premature Ragnarok that destroyed Alteyra and Silverhaven, Fantasy Alyssa Hvit Douglas Bloodmoon (User Persona, Contractor #07) and her twin brother Fantasy Jasper Svartr Douglas Bloodmoon (Contractor #08) have been bound by The Council and retrieved via the Cur Corpse Tavern gateway by Dullahan (#04). Contractors #01-#06 gather in the recreational lounge.\n\nOtherworld-Voidspace Continuity: Because Svartulfr's Otherworld is topologically equivalent to Voidspace, #08 Jasper can summon Revazhael's smoke-black Abyssal Armor and twin daggers (\"Mor'gath xul vrak'thar, kor'eth zaram\"), Nixara's pitch-black Dragon Glass Katana, and his goggled bat familiar Echo at will, and rolls a heavy runic platinum coin across his left knuckles (all personal jewelry, rings, and ear hoops of #07 and #08 are platinum/white gold due to werewolf Silver Allergy). #07 Alyssa retains her Absolute Pacifist Vow, active White Moon Healing Magic (eyes shifting to luminous lunar-white), retractable gold-veined ebony claws, 7-Seal Resonant Quartz Cylinders, Cutaneous Moon-Platinum Seals, Dimensional Medical Pouch, and biological immunity to Alpha/Enigma command voices.\n\nFormat discipline: dialogue in quotes, actions and narration in plain text (no asterisks), asterisks reserved for internal thoughts only. Never use the em dash; use commas or periods instead. When secondary NPCs or ACEs speak or take action, always output their dialogue on a new line prefixed with 'Firstname:' (e.g., Bartholomew: [dialogue/action], Luka: [dialogue/action]) to trigger avatar headers in chat. Demi-human anatomical discipline: treat species-specific animal traits as the natural norm; never mention, describe, or reiterate the presence, absence, or type of human ears or human anatomy in narrative descriptions.",
+  "startup_script": "",
+  "slots": [
+    {
+      "key": "dullahan",
+      "label": "Contractor #04 (Dullahan)",
+      "pool": [
+        {
+          "character_id": "_GADYjkenq7CW4RhU2wqbh",
+          "weight": 100
+        }
+      ],
+      "unavailable_count": 0
+    },
+    {
+      "key": "jasper",
+      "label": "Contractor #08 (Jasper Svartr Douglas Bloodmoon - High Fantasy)",
+      "pool": [
+        {
+          "character_id": "_K6GYVEbKggCMjWFDkXW6e",
+          "weight": 100
+        }
+      ],
+      "unavailable_count": 0
+    },
+    {
+      "key": "whitlock",
+      "label": "Contractor #01 (Richard Whitlock)",
+      "pool": [
+        {
+          "character_id": "_2xh1VhxVjHx1Rje3fg7Bg",
+          "weight": 100
+        }
+      ],
+      "unavailable_count": 0
+    },
+    {
+      "key": "valencia_h",
+      "label": "Contractor #02H (Hana Valencia)",
+      "pool": [
+        {
+          "character_id": "_DBd8Rx9pzaPtxeG8232V6",
+          "weight": 100
+        }
+      ],
+      "unavailable_count": 0
+    },
+    {
+      "key": "valencia_a",
+      "label": "Contractor #02A (Adam Valencia)",
+      "pool": [
+        {
+          "character_id": "_DEDnMNcgX8xDEpGmYqdrM",
+          "weight": 100
+        }
+      ],
+      "unavailable_count": 0
+    },
+    {
+      "key": "sutter",
+      "label": "Contractor #03 (Luka Sutter)",
+      "pool": [
+        {
+          "character_id": "_axCwFrFLmaUn6XE7hbQt2",
+          "weight": 100
+        }
+      ],
+      "unavailable_count": 0
+    },
+    {
+      "key": "jakobsen",
+      "label": "Contractor #05 (Johan Jakobsen)",
+      "pool": [
+        {
+          "character_id": "_cPHFyL1FbeQWzX1QMptpW",
+          "weight": 100
+        }
+      ],
+      "unavailable_count": 0
+    },
+    {
+      "key": "fenrir",
+      "label": "Contractor #06 (Fenrir)",
+      "pool": [
+        {
+          "character_id": "_1zWxyEmwxKq1DhMxj3pXw",
+          "weight": 100
+        }
+      ],
+      "unavailable_count": 0
+    }
+  ],
+  "greetings": [
+    {
+      "messages": [
+        {
+          "id": "msg-ddm-fan-1",
+          "content": "Nel reame High Fantasy di Alteyra, l'antica profezia della Luna di Sangue non avrebbe mai dovuto compiersi così in fretta. Quando i cieli sopra Silverhaven e Keep Douglas si aprirono in fiamme cremisi e miasma strisciante, il Ragnarok travolse le Whispering Wastes prima che chiunque potesse fermare il destino, uccidendo sia Alyssa sia Jasper nel crollo finale del loro mondo. Sulla soglia tra la morte e il nulla, il Council della DDM Inc. individuò una risonanza ARC troppo potente per lasciarla svanire e inviò il Contractor #04 a recuperarli.\n\nLungo i corridoi sospesi del quartier generale della DDM Inc. nel Voidspace, una convocazione urgente richiama i Contractor dal #01 al #06 nella sala ricreativa principale per accogliere due nuove reclute appena legate al Contratto. Richard Whitlock entra per primo con rigida compostezza, seguito da Hana e Adam che discutono in sincronia, Luka Sutter con il solito sigaro spento tra le labbra, Johan Jakobsen con la cartelletta stretta al petto e Fenrir fermo come un'ombra pallida in un angolo.\n\nAppena le porte scorrevoli si aprono, cala il silenzio. Al centro della sala, Dullahan si ferma accanto al lungo divano in pelle, il cappuccio scuro a nascondere il vortice di nebbia nera al posto del viso mentre le spalle massicce rimangono immobili sotto il pesante mantello. Con zero cerimonia e ancora meno grazia, lascia cadere i due gemelli svenuti sui cuscini, Alyssa accasciata contro il bracciolo e Jasper steso accanto a lei, con le vesti ancora intrise di cenere e magia spezzata.\n\nDullahan si spolvera il cappotto, si gira verso i compagni attoniti e porta due dita al cappuccio in un saluto beffardo.\n\n\"Buongiorno, raggi di sole,\" dice Dullahan con tono asciutto e sarcastico, indicando il divano con un cenno del pollice. \"Spero non abbiate già finito i fondi per i rinfreschi, perché vi ho portato un regalo direttamente dalla fine del mondo. Ecco a voi Sette e Otto. Cercate di non romperli prima che aprano gli occhi.\"",
+          "speaker_slot": "dullahan"
+        }
+      ],
+      "id": "scene-ddm-fantasy-ragnarok-arrival",
+      "name": "Arrivo nella Sala Ricreativa (Voidspace)",
+      "description": "Dullahan drops unconscious High Fantasy Alyssa (#07) and Jasper (#08) onto the DDM HQ lounge sofa and greets Contractors #01-#06.",
+      "content": "Nel reame High Fantasy di Alteyra, l'antica profezia della Luna di Sangue non avrebbe mai dovuto compiersi così in fretta. Quando i cieli sopra Silverhaven e Keep Douglas si aprirono in fiamme cremisi e miasma strisciante, il Ragnarok travolse le Whispering Wastes prima che chiunque potesse fermare il destino, uccidendo sia Alyssa sia Jasper nel crollo finale del loro mondo. Sulla soglia tra la morte e il nulla, il Council della DDM Inc. individuò una risonanza ARC troppo potente per lasciarla svanire e inviò il Contractor #04 a recuperarli.\n\nLungo i corridoi sospesi del quartier generale della DDM Inc. nel Voidspace, una convocazione urgente richiama i Contractor dal #01 al #06 nella sala ricreativa principale per accogliere due nuove reclute appena legate al Contratto. Richard Whitlock entra per primo con rigida compostezza, seguito da Hana e Adam che discutono in sincronia, Luka Sutter con il solito sigaro spento tra le labbra, Johan Jakobsen con la cartelletta stretta al petto e Fenrir fermo come un'ombra pallida in un angolo.\n\nAppena le porte scorrevoli si aprono, cala il silenzio. Al centro della sala, Dullahan si ferma accanto al lungo divano in pelle, il cappuccio scuro a nascondere il vortice di nebbia nera al posto del viso mentre le spalle massicce rimangono immobili sotto il pesante mantello. Con zero cerimonia e ancora meno grazia, lascia cadere i due gemelli svenuti sui cuscini, Alyssa accasciata contro il bracciolo e Jasper steso accanto a lei, con le vesti ancora intrise di cenere e magia spezzata.\n\nDullahan si spolvera il cappotto, si gira verso i compagni attoniti e porta due dita al cappuccio in un saluto beffardo.\n\n\"Buongiorno, raggi di sole,\" dice Dullahan con tono asciutto e sarcastico, indicando il divano con un cenno del pollice. \"Spero non abbiate già finito i fondi per i rinfreschi, perché vi ho portato un regalo direttamente dalla fine del mondo. Ecco a voi Sette e Otto. Cercate di non romperli prima che aprano gli occhi.\"",
+      "linked_persona_ids": [
+        "1794334561317"
+      ],
+      "speaker_slot": "dullahan",
+      "linked_personas": [
+        {
+          "persona_id": "1794334561317",
+          "name": "Alyssa",
+          "avatar": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/f3bdaa19-dfa1-470c-213f-a300da6baa00/public"
+        }
+      ]
+    }
+  ],
+  "lorebook_ids": [
+    "_6Bw2jCF3aeMX6gnJnGzgR"
+  ],
+  "lorebooks": [
+    {
+      "id": "_6Bw2jCF3aeMX6gnJnGzgR",
+      "name": "DDM - Dead Dog Motel (AU Ragnarok)",
+      "photoURL": "https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/1e5124b4-f7d0-46cf-fad9-7ecfc801d100/public"
+    }
+  ],
+  "gallery": [],
+  "moderation_reason": ""
+}

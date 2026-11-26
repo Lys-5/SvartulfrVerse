@@ -1,0 +1,50 @@
+{
+  "id": "_MeQHFwQUq3dY8WM11Mc4c",
+  "_id": "_MeQHFwQUq3dY8WM11Mc4c",
+  "lexicon_species_id": null,
+  "lexicon_occupation_id": null,
+  "created_at": "2026-10-24T23:03:23.092Z",
+  "updated_at": "2026-11-18T21:15:30.409Z",
+  "provenance": {
+    "source": {
+      "kind": "world",
+      "container_id": "_YpX47fNraQFw2dD7TdycJ",
+      "entry_id": "_MeQHFwQUq3dY8WM11Mc4c"
+    },
+    "world_id": "_YpX47fNraQFw2dD7TdycJ",
+    "captured_at": "2026-10-24T23:03:23.092Z"
+  },
+  "name": "Digital Interactions - Iordan R. Vess (Wolf Pack Discord)",
+  "keys": [
+    "Iordan",
+    "Iordan Vess",
+    "Wolf Pack",
+    "Discord"
+  ],
+  "key_logic": "AND_ANY",
+  "secondary_keys": [],
+  "case_sensitive": false,
+  "whole_words_only": true,
+  "content": "Iordan keeps a low profile everywhere except one place: the Wolf Pack Discord server, the werewolf students' semi-official hangout at SUCC. He lurks more than he posts, but when something threatens the Pack (a rival prank, a supernatural incident, a member in trouble) he's often the first to surface with information.\n\nUse this format when the scene calls for the Wolf Pack server specifically.\n\n➤ Wolf Pack Discord Messages\n```\nWolf Pack - #[channel, e.g. general / full-moon-schedule / alerts]\n[Username]: [Message content]\n[Reply or emoji reaction threading if desired]\n```\n\nServer Notes\n- Channels likely include something like #general, #full-moon-schedule, #alerts, and a meme dump.\n- Iordan's own messages: short, dry, mostly practical. He doesn't do small talk in text any more than he does in person.\n- Other members react to him with a mix of respect and mild unease, he says little but it's rarely wrong.\n\nRules of Use\n- Use sparingly, mainly when Iordan's connection to the wider Pack community needs to surface without a full scene.\n- Keep his messages minimal, let other members carry the chattiness.\n\nCreator's note: Iordan's exact voice/personality wasn't fully available in the source material reviewed for this draft (his SUCC roster entry hasn't had its structural fields/personality fleshed out yet). Refine his tone here once his full character card is completed.",
+  "extensions": {
+    "st_excludeRecursion": true
+  },
+  "enabled": true,
+  "insertion_order": 10,
+  "priority": 1,
+  "comment": "",
+  "constant": false,
+  "position": "before_char",
+  "scan_persona": false,
+  "labels": [],
+  "custom_fields": {},
+  "related_entries": [],
+  "ignored_personas": [],
+  "ignored_characters": [],
+  "avatar": "",
+  "custom_avatar_regex": false,
+  "lines_parsed": 2,
+  "type": "memory",
+  "is_global": false,
+  "attached_world_character_id": null
+}
