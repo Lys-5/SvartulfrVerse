@@ -82,6 +82,11 @@ ACCONCIATURA: Colore, taglio, prodotto di styling, copertura completa della zona
 4. **Clausola Negativa Finale Obbligatoria:**
    `No orecchie umane. No auricolari [se non previsti]. No modifiche alle orecchie da lupo o alla coda, coerenti con <IMAGE_0>.`
 
+### D. Separazione Ruoli Asset: Default Avatar (Mezzo Busto Urbano) vs Visual Novel Sprites (Figura Intera RGBA) vs Turnaround Reference
+- **Default Avatar (`<name>_avatar.png`, upload come campo `avatar` su Wyvern `/mine` e World Characters):** ritratto **a mezzo busto (`half-body / bust-up`)**, vestito con l'**outfit di default** del personaggio su uno **sfondo urbano coerente** (Blackwood City / Solarton / campus SUCC / contesto canonico del personaggio con bokeh morbido).
+- **Visual Novel Sprites (`<name>_neutral.png` e future varianti emotive, `1696x2528` RGBA trasparente su griglia di altezza condivisa `FLOOR_Y=2500`, `PX_PER_CM=9.75`):** **figure intere (`full-body`)** usate esclusivamente nella sezione **Sprites** dell'interfaccia chat di Wyvern per visualizzare le emozioni del personaggio (*"Sprites are used in the chat interface to display your character's emotions. Note: Sprites are automatically saved upon upload, removal, or change."*).
+- **Turnaround Reference Sheets (`<name>_reference.png` e `<name>_hybrid_reference.png`, `2730x1536` RGB su `#C8C8C8`):** tavole tecniche 4-colonne sorgenti per garantire coerenza 1:1 tra avatar, sprite VN e forme ibride dei personaggi shifter.
+
 ---
 
 ## 5. Standard Minimo 9 Outfits per Scheda Personaggio

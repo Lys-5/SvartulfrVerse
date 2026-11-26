@@ -167,6 +167,11 @@ ACCONCIATURA: ...]
 
 *User Personas:* Le User Personas (`FINAL/personas/*.json` e `/user-personas`) mantengono lo standard di **3 o più Appearances contestuali** (es. Casual/Base, Formal/Combat, Sleep/Cyberspace) nel medesimo formato JED+ v2.0 Multiline PList (`[OUTFIT_NAME: ...;\nSLOT_CONTEXT: ...;\nABBIGLIAMENTO: ...; ...]`).
 
+### Separazione Ruoli Asset: Default Avatar (Mezzo Busto Urbano) vs Visual Novel Sprites (Figura Intera RGBA) vs Turnaround Reference
+- **Default Avatar (`<name>_avatar.png`, upload come campo `avatar` su Wyvern `/mine` e World Characters):** ritratto **a mezzo busto (`half-body / bust-up`)**, vestito con l'**outfit di default** del personaggio su uno **sfondo urbano coerente** (Blackwood City / Solarton / campus SUCC / contesto canonico del personaggio con bokeh morbido).
+- **Visual Novel Sprites (`<name>_neutral.png` e future varianti emotive, `1696x2528` RGBA trasparente su griglia di altezza condivisa `FLOOR_Y=2500`, `PX_PER_CM=9.75`):** **figure intere (`full-body`)** usate esclusivamente nella sezione **Sprites** della chat interface di Wyvern per mostrare le emozioni del personaggio (*"Sprites are used in the chat interface to display your character's emotions. Note: Sprites are automatically saved upon upload, removal, or change."*).
+- **Turnaround Reference Sheets (`<name>_reference.png` e `<name>_hybrid_reference.png`, `2730x1536` RGB su `#C8C8C8`):** tavole tecniche 4-colonne sorgenti per garantire coerenza 1:1 (incluse le forme ibride per tutti i personaggi shifter).
+
 ### Sfondi per Fascia Oraria (Time of Day Backgrounds) e Tag Regista
 - **4 Periodi Canonici:** Le Location supportano immagini differenziate per `dawn`, `day`, `dusk` e `night`.
 - **Tag di Scena `[bg: LocationName]`:** Nella narrazione di Game Master, Assistant e bot in Visual Novel Mode, il cambio di scena deve utilizzare il tag `[bg: Nome Location]` (es. `[bg: Campus Suite Moonflower]`). L'engine di Wyvern sincronizza automaticamente lo sfondo con l'ora calcolata dall'AI Time Tracking senza forzature manuali.
@@ -545,8 +550,8 @@ Quando vengono avviate procedure di diagnosi, indagine o test che comportano la 
 - **Founding Bloodline:** Malachia, Noah, Jasper, Alyssa.
 - **Divine Blood (I Nove Firstborn):** Wulfnic, Ut, Zefir.
 - Maturità completa a 21 anni, poi stop biologico dell'invecchiamento. I Firstborn sono bloccati all'età biologica della consacrazione da parte di Fenris nell'**864 d.C.** (dopo 15 anni di Wulfnic come Jarl di Svartúlfr, eletto a 25 anni nell'**849 d.C.**, con i suoi 8 compagni guerrieri nella fascia vichinga **16–45 anni**):
-  - *Wulfnic Báleygr Bloodmoon:* Nato il **21 dicembre 824 d.C.** (**1200 anni** nel 2024), trasformato a **40 anni** nell'864 d.C. (nel IX secolo a 40 anni si era già anziani con capelli bianchi e rughe; agli occhi moderni dimostra circa **60 anni**).
-  - *Ut Berg:* Nato il **5 maggio 819 d.C.** (**1205 anni** nel 2024), trasformato a **45 anni** nell'864 d.C. (agli occhi moderni dimostra circa **60 anni**).
+  - *Wulfnic Báleygr Bloodmoon:* Nato il **21 dicembre 824 d.C.** (**1200 anni** nel 2024), trasformato a **40 anni** nell'864 d.C. (invecchiamento fermato da Fenris a 40 anni: dimostra un **quarantenne usurato dalle battaglie**, `presented age: battle-worn 40s`, con **capelli e barba biondo dorato striati di bianco**).
+  - *Ut Berg:* Nato il **5 maggio 819 d.C.** (**1205 anni** nel 2024), trasformato a **45 anni** nell'864 d.C. (invecchiamento fermato da Fenris a 45 anni: dimostra un **quarantenne/45enne usurato dalle battaglie**, `presented age: battle-worn mid-40s`, con **capelli e barba omogeneizzati color rossiccio striato di grigio**).
   - *Zefir Hvitskog:* Nato il **5 febbraio 848 d.C.** (**1176 anni** nel 2024), il più giovane dei Nove trasformato a **16 anni** nell'864 d.C. prima della fine dello sviluppo. Un guerriero vichingo di 16 anni aveva un aspetto più consumato e maturo di un adolescente odierno, per cui agli occhi moderni dimostra **20–22 anni**. Conserva la spavalderia giovanile e un carattere vivace e capriccioso come il vento dei mari del Nord (*"The North Sea Wind"*), ed è iscritto alla SUCC da Wulfnic per proteggere Alyssa in stile **punk** (cresta alla moicana bianca e giubbotto borchiato) con la copertura di un **lontano parente dall'Islanda**.
 - **Filone SciFi:** Varianti future legacy (Malachia "Vanguard Commander", Jasper/Noah/Malachia con impianti cibernetici pesanti e specie *Cyber-Werewolf* nell'anno 2499) sono canoniche per lo scenario futuro.
 

@@ -13,6 +13,7 @@ Subcommands:
   prep-front-anchors Extract clean 2:3 VISTA FRONTALE crops on #FFFFFF scaled to real height grid.
   finalize-reference Resize & convert a 16:9 reference sheet to (2730, 1536) RGB PNG.
   finalize-neutral   Flood-fill BFS white-bg removal -> (1696, 2528) RGBA PNG on shared height grid.
+  finalize-avatar    Resize & convert a 2:3 half-body urban default avatar to (1696, 2528) RGB PNG.
   build-audit-sheet  Build high-res visual audit contact sheet (checkerboard for RGBA neutrals).
   build-height-chart Build graduated 0-250 cm height comparison chart from front_anchors or neutrals.
 """
@@ -61,10 +62,46 @@ REGEN_QUEUED_DEFAULTS = {
     ("erik", "neutral"),
     ("logan", "neutral"),
     ("edric", "neutral"),
+    ("wulfnic", "reference"),
     ("wulfnic", "neutral"),
     ("ut", "reference"),
     ("kaladin", "reference"),
 }
+
+HYBRID_REF_TEMPLATE = """\
+Professional 16:9 widescreen creature/hybrid-form character reference sheet and turnaround model sheet of {identity}, rendered in a cohesive semi-realistic digital painting style with refined clean dark ink linework, detailed anatomical musculature, textured fur/scales, and expressive eyes.
+
+BACKGROUND & LIGHTING:
+Flat, solid, completely uniform neutral light-grey studio background (#C8C8C8) with no gradients, no floor shadows, and no environment. Even, soft neutral studio lighting that clearly displays bipedal digitigrade posture, claws, fangs, musculature, and surface markings.
+
+LAYOUT (LEFT TO RIGHT):
+1. Left — Full-body front view of the monstrous bipedal Hybrid Shift form labeled "VISTA FRONTALE" at the top in clean bold dark sans-serif uppercase font. Powerful standing combat-ready studio stance.
+2. Center-left — Full-body 3/4 view (turned approx. 45 degrees) labeled "VISTA A 45° / TRE QUARTI" at the top, showing massive torso volume, scars/runes through the coat, and {tail_attach}.
+3. Center-right — Full-body side profile view (facing left) labeled "VISTA LATERALE" at the top, clearly showing bipedal digitigrade hind legs, forward hunched/predatory posture, muzzle profile, and {tail_attach}.
+4. Right (Top) — Large high-detail head-and-shoulders close-up portrait facing forward labeled "DETTAGLIO VOLTO" at the top, highlighting transformed fangs, snout/visage, glowing eyes, and {ear_summary}.
+5. Right (Bottom) — Section titled "DETTAGLI ANATOMICI:" with subtitle "{subtitle}", above three aligned square close-up inset boxes with thin dark borders and centered uppercase captions underneath each box:
+   - Box 1: {box1_desc} — caption: "{box1_cap}"
+   - Box 2: {box2_desc} — caption: "{box2_cap}"
+   - Box 3: {box3_desc} — caption: "{box3_cap}"
+
+HYBRID FORM SPECS:
+- Stature & Build: {build}
+- Head & Eyes: {face}
+- Fur / Scales & Coat: {coat}
+- Limbs & Anatomy: {anatomy}
+- Attire / Remains: {outfit}
+"""
+
+
+def build_avatar_prompt(char_desc: str, default_outfit: str, urban_bg: str) -> str:
+    return (
+        "Half-body (waist-up / chest-up) character portrait avatar illustration in a 2:3 vertical frame, "
+        "using the attached character reference sheet strictly 1:1 for exact facial structure, scar placement, eye color, "
+        "hairstyle, single species ear placement on top of the head (ZERO human ears on the sides for demi-humans/shifters), and semi-realistic digital painting style with clean linework. "
+        f"CHARACTER: {char_desc} "
+        f"DEFAULT OUTFIT: {default_outfit} "
+        f"URBAN BACKGROUND: {urban_bg} Shallow depth-of-field cinematic bokeh, natural atmospheric lighting, zero text, zero watermarks, zero borders."
+    )
 
 MASTER_REF_TEMPLATE = """\
 Professional 16:9 widescreen character reference sheet and turnaround model sheet of {identity}, rendered in a cohesive semi-realistic digital painting style with refined clean linework, rich painterly shading, detailed hair and fur texture, and warm natural skin tones.
@@ -138,19 +175,21 @@ def get_manifest_entries(existing_items: dict[str, dict] | None = None, seed_reg
         height_cm: int,
         has_ears_above_crown: bool,
         ref_file: str | None,
-        neutral_file: str,
+        neutral_file: str | None = None,
         ref_prompt: str | None = None,
         neutral_prompt: str | None = None,
         ref_anchors: list[str] | None = None,
         neutral_anchors: list[str] | None = None,
+        asset_kind: str = "character",
     ) -> None:
         ref_path = str(ASSETS_DIR / folder / ref_file) if ref_file else None
-        neu_path = str(ASSETS_DIR / folder / neutral_file)
+        neu_path = str(ASSETS_DIR / folder / neutral_file) if neutral_file else None
         entries.append(
             {
                 "id": eid,
                 "wave": wave,
                 "folder": folder,
+                "asset_kind": asset_kind,
                 "height_cm": height_cm,
                 "has_ears_above_crown": has_ears_above_crown,
                 "reference_path": ref_path,
@@ -175,7 +214,7 @@ def get_manifest_entries(existing_items: dict[str, dict] | None = None, seed_reg
         True,
         "alyssa_reference.png",
         "alyssa_neutral.png",
-        neutral_anchors=["alyssa_front_2x3.png", "alyssa_casual_anchor.png"],
+        neutral_anchors=["alyssa_body_2x3.png"],
         neutral_prompt=build_neutral_prompt(
             "Alyssa Hvit Douglas Bloodmoon, 19-year-old petite 155 cm female werewolf with a pronounced hourglass frame (full DD-cup bust, very narrow cinched waist, wide curved hips, long shapely legs), "
             "long wavy caramel-chestnut brown hair cascading past her shoulders, vivid mint-green doe eyes, soft freckles across her nose and cheeks, gentle warm smile, "
@@ -197,16 +236,36 @@ def get_manifest_entries(existing_items: dict[str, dict] | None = None, seed_reg
         True,
         "malachia_reference.png",
         "malachia_neutral.png",
-        neutral_anchors=["malachia_front_2x3.png"],
+        ref_anchors=["malachia_old_reference.png", "malachia_anchor.jpg"],
+        ref_prompt=MASTER_REF_TEMPLATE.format(
+            identity="Malachia Bjorn Douglas Bloodmoon, 28-year-old colossal 208 cm heavyweight-boxer Werewolf",
+            tail_attach="thick dense black wolf tail emerging from the lower spine",
+            ear_summary="single pair of large sharp charcoal-black wolf ears blending into thick spiky swept-back hair",
+            subtitle="THURISAZ & FENRIS • WOLF FOREHEAD INK • BROW-CHEEK X-SCAR",
+            box1_desc="Macro close-up of inner left wrist showing the dark Thurisaz & Fenris rune brand inked cleanly over rich tanned bronze skin",
+            box1_cap="THURISAZ & FENRIS RUNE",
+            box2_desc="Macro close-up of massive tanned forearm covered in Norse-tribal Bloodmoon blackwork featuring a roaring wolf head motif",
+            box2_cap="WOLF HEAD & BLOODMOON INK",
+            box3_desc="Macro close-up of face matching malachia_anchor.jpg showing the vertical scar cutting through the left eyebrow down to an X-shaped left cheek scar and pale amber-grey eyes",
+            box3_cap="BROW-TO-CHEEK X-SCAR",
+            build="Colossal 208 cm (6'10\") massive heavyweight-boxer frame with huge towering trapezius muscles, ultra-thick bull neck, cavernous broad shoulders, vascular muscular forearms, and rich deep sun-kissed Southern California bronze/olive-tan skin matching malachia_anchor.jpg (strictly tanned warm bronze, NOT pale).",
+            face="Match malachia_anchor.jpg 1:1 in facial bone structure, scars, facial hair, and eye color across ALL 4 views: heavy chiseled squared jawline with a full trimmed dark goatee, connected mustache, and dark jawline stubble, heavy furrowed brow, intense piercing cold pale amber-grey eyes, diagonal scar across nasal bridge, and a prominent vertical scar cutting down through his left eyebrow onto his left cheek intersected by a crisp X-cut scar.",
+            hair="Shorter thick spiky swept-back jet-black wolf-mane hair pulled cleanly up and back off the forehead matching malachia_anchor.jpg, blending seamlessly into the sides around the wolf ears.",
+            anatomy="CRITICAL: Keep the 4-column studio turnaround composition of malachia_old_reference.png updated 1:1 with the face, skin tone, spiky swept-back shorter hair, beard goatee, and left brow-cheek scars of malachia_anchor.jpg. Single pair of large sharp dark wolf ears atop the head, thick black wolf tail. STRICTLY NO HUMAN EARS on the sides of the head.",
+            outfit="Minimalist matte black photography-studio underwear (fitted black boxer briefs), barefoot.",
+            marks="Extensive heavy Norse-tribal Bloodmoon blackwork tattoos climbing the neck and covering both forearms (including a distinct snarling wolf head motif on the left forearm); vertical pale combat scars on right upper arm; dark Thurisaz & Fenris rune on inner left wrist.",
+        ),
+        neutral_anchors=["malachia_body_2x3.png"],
         neutral_prompt=build_neutral_prompt(
-            "Malachia Bjorn Douglas Bloodmoon, 28-year-old colossal 208 cm male werewolf with a massive bulky heavyweight-boxer build, thick neck, very broad heavy shoulders, long powerful legs, "
-            "medium-length black windswept hair framing his temples and single pair of black wolf ears atop his head (no human ears), cold unblinking amber eyes, "
-            "crooked slightly broken boxer nose, faded scar through his left eyebrow, short stubble, stoic severe resting expression, "
-            "extensive dark Norse-tribal Bloodmoon blackwork tattoos climbing his neck and both massive muscular arms, dark Thurisaz & Fenris rune brand on his inner left wrist, "
+            "Malachia Bjorn Douglas Bloodmoon, 28-year-old colossal 208 cm male werewolf with a massive bulky heavyweight-boxer build, towering trapezius muscles, ultra-thick neck, very broad heavy shoulders, long powerful legs, "
+            "rich deep sun-kissed bronze/olive-tan Southern California skin tone matching malachia_anchor.jpg — strictly warm deep tanned bronze skin, NOT pale, NOT grey, "
+            "shorter thick spiky swept-back jet-black hair matching malachia_anchor.jpg blending seamlessly into a single pair of large sharp charcoal-black wolf ears atop his head (no human ears), "
+            "heavy sculpted squared jawline with a full trimmed dark goatee, connected mustache, and jawline stubble, cold piercing pale amber-grey eyes, vertical scar across his left eyebrow down into an X-shaped left cheek scar and slight nasal scar, "
+            "extensive dark Norse-tribal Bloodmoon blackwork tattoos climbing his neck and both massive forearms (featuring the snarling wolf head on his left forearm), vertical upper-arm scars, dark Thurisaz & Fenris rune brand on his inner left wrist, "
             "and a thick dark black bushy wolf tail behind his legs.",
-            "Athletic combat-casual streetwear: tight short-sleeved matte-black compression t-shirt stretched across his massive chest and shoulders (tucked cleanly at natural waist height to preserve leg length and expose tattooed forearms), "
+            "Athletic combat-casual streetwear: tight short-sleeved matte-black compression t-shirt stretched across his massive chest and traps (tucked cleanly at natural waist height to preserve leg length and expose tattooed forearms), "
             "fitted dark charcoal-grey athletic cargo sweatpants sitting at natural hip/waist height with straight tailored legs (NO dropped crotch) and a rear tail opening, "
-            "white athletic boxing hand wraps around his knuckles/hands (leaving the inner left wrist rune visible), and sturdy black high-top athletic combat sneakers.",
+            "white athletic boxing hand wraps around his knuckles/hands (leaving the inner left wrist rune and forearm wolf ink visible), and sturdy black high-top athletic combat sneakers.",
             208,
             "~8.5-head imposing gladiator proportions",
         ),
@@ -220,7 +279,7 @@ def get_manifest_entries(existing_items: dict[str, dict] | None = None, seed_reg
         True,
         "noah_reference.png",
         "noah_neutral.png",
-        neutral_anchors=["noah_front_2x3.png"],
+        neutral_anchors=["noah_body_2x3.png"],
         neutral_prompt=build_neutral_prompt(
             "Noah Loki Douglas Bloodmoon, 25-year-old tall 197 cm male werewolf with a lean athletic tanned swimmer/frat-bro physique and long proportionate legs, "
             "neatly styled blond hair with dark tortoiseshell designer sunglasses pushed up into his hair, bright clear blue eyes, subtle nose freckles, confident charming half-smirk, "
@@ -240,7 +299,7 @@ def get_manifest_entries(existing_items: dict[str, dict] | None = None, seed_reg
         True,
         "erik_reference.png",
         "erik_neutral.png",
-        neutral_anchors=["erik_front_2x3.png"],
+        neutral_anchors=["erik_body_2x3.png"],
         neutral_prompt=build_neutral_prompt(
             "Erik Ulfr Douglas, 55-year-old imposing 213 cm Prime Alpha werewolf patriarch with mountainous disciplined ex-athlete musculature, broad shoulders, tapered waist, and long commanding legs, "
             "jet-black hair with distinguished silver touches at the temples, severe squared jawline with trimmed dark stubble, piercing amber eyes, "
@@ -262,7 +321,7 @@ def get_manifest_entries(existing_items: dict[str, dict] | None = None, seed_reg
         True,
         "logan_reference.png",
         "logan_neutral.png",
-        neutral_anchors=["logan_front_2x3.png"],
+        neutral_anchors=["logan_body_2x3.png"],
         neutral_prompt=build_neutral_prompt(
             "Logan Jarn Douglas, 49-year-old rugged 198 cm male werewolf with a fit muscular biker/mechanic build and long proportionate legs, "
             "disheveled black hair greying at the temples pulled back into a low messy ponytail, observant amber eyes, weathered handsome face with salt-and-pepper beard stubble, "
@@ -283,7 +342,7 @@ def get_manifest_entries(existing_items: dict[str, dict] | None = None, seed_reg
         True,
         "edric_reference.png",
         "edric_neutral.png",
-        neutral_anchors=["edric_front_2x3.png"],
+        neutral_anchors=["edric_body_2x3.png"],
         neutral_prompt=build_neutral_prompt(
             "Edric Douglas, 13-year-old tall broad-boned tween werewolf boy (165 cm, strictly SFW, youthful smooth skin, thick wrists of a future Alpha), "
             "thick messy black hair falling slightly over his eyes, intense amber eyes, light freckles and thin healed scars on his cheeks, tense guarded expression, "
@@ -303,12 +362,31 @@ def get_manifest_entries(existing_items: dict[str, dict] | None = None, seed_reg
         True,
         "wulfnic_reference.png",
         "wulfnic_neutral.png",
-        neutral_anchors=["wulfnic_front_2x3.png"],
+        ref_anchors=["wulfnic_old_reference.png"],
+        ref_prompt=MASTER_REF_TEMPLATE.format(
+            identity="Wulfnic Baleygr Bloodmoon (The Wolf King), 1200-year-old Primordial Firstborn Werewolf appearing as a battle-worn 40-year-old Norse Jarl",
+            tail_attach="bushy golden-blonde-and-snow-white wolf tail emerging from the lower spine",
+            ear_summary="single pair of large golden-blonde wolf ears streaked with snow-white",
+            subtitle="JERA & FENRIS • SVARTÚLFR INK • WARRIOR BRAID",
+            box1_desc="Macro close-up of inner left wrist showing the dark Jera & Fenris geometric rune brand matching wulfnic_old_reference.png",
+            box1_cap="JERA & FENRIS RUNE (LEFT WRIST)",
+            box2_desc="Macro close-up of weathered scarred pectoral and left upper-arm bicep showing the intricate Svartulfr Norse tattoos and jagged battle scars from wulfnic_old_reference.png",
+            box2_cap="SVARTÚLFR TATTOOS & SCARS",
+            box3_desc="Macro close-up of golden-blonde hair streaked with snow-white woven into his signature braided warrior lock secured with a bronze-leather wrap",
+            box3_cap="WARRIOR HAIR BRAID",
+            build="220 cm (7' 2.6\") colossal heavily muscled and battle-scarred Norse warrior-demigod frame (stopped aging at 40 when Fenris consecrated him — rugged athletic battle-worn 40-year-old powerhouse, NOT an elderly 60-year-old man).",
+            face="Strong rugged weathered face of a battle-hardened 40-year-old Viking warrior (subtle crow's feet and battle scars across brow and nose, crisp sharp jawline, NOT wrinkled or elderly), piercing ice-blue eyes, full groomed golden-blonde Viking beard and mustache streaked with snow-white matching his hair.",
+            hair="Long golden-blonde Viking hair distinctly streaked with snow-white strands, including his thick braided warrior lock draping over his left shoulder, swept cleanly past the temples.",
+            anatomy="CRITICAL: Keep the exact 4-column studio turnaround composition and pose of wulfnic_old_reference.png while updating hair, beard, wolf ears, wolf tail, and facial age to battle-worn 40-year-old golden-blonde streaked with snow-white. Single pair of large golden-blonde-and-white wolf ears atop his head, bushy golden-blonde-and-white wolf tail. STRICTLY NO HUMAN EARS on the sides of the head.",
+            outfit="Minimalist matte black photography-studio underwear (fitted black boxer briefs), barefoot.",
+            marks="Dark Jera + Fenris geometric rune on inner left wrist; Svartulfr circular shoulder emblem, geometric arm band, and forearm ink; authentic Viking axe/claw scars across chest, arms, legs, and face.",
+        ),
+        neutral_anchors=["wulfnic_body_2x3.png"],
         neutral_prompt=build_neutral_prompt(
-            "Wulfnic Baleygr Bloodmoon, 1200-year-old Primordial Firstborn werewolf demigod appearing as a colossal 220 cm weathered Viking warrior in his late 50s with tall imposing long-legged heroic stature, "
-            "long silver-white hair with a thick braided warrior lock draping over his left shoulder, full silver-white Viking beard and mustache, piercing ice-blue eyes, "
-            "weathered battle scars across his brow and nose, single pair of large silver-white wolf ears with warm cream interior atop his head (no human ears), "
-            "ancient Svartulfr Norse tattoos on his forearms, dark Jera & Fenris rune on his inner left wrist, and a majestic bushy silver-white-and-cream wolf tail behind his legs.",
+            "Wulfnic Baleygr Bloodmoon, 1200-year-old Primordial Firstborn werewolf appearing as a colossal 220 cm battle-worn 40-year-old Viking warrior (stopped aging at 40, rugged NOT elderly) with tall imposing long-legged heroic stature, "
+            "long golden-blonde hair streaked with snow-white and a thick braided warrior lock draping over his left shoulder, full golden-blonde Viking beard and mustache streaked with snow-white, piercing ice-blue eyes, "
+            "weathered battle scars across his brow and nose, single pair of large golden-blonde wolf ears streaked with snow-white atop his head (no human ears), "
+            "ancient Svartulfr Norse tattoos on his forearms, dark Jera & Fenris rune on his inner left wrist, and a majestic bushy golden-blonde-and-snow-white wolf tail behind his legs.",
             "Ancient Norse Jarl sanctuary attire: dark charcoal-and-earth handwoven wool Viking tunic belted tightly at his natural waist (reaching upper-mid thigh only so his long powerful legs remain clearly visible) "
             "with V-neck fastened by a wrought-iron brooch (leather cord with wolf tooth at throat) and sleeves rolled to mid-forearm, heavy dark wolf-pelt fur mantle draped across his broad shoulders (never hiding his neck length), "
             "woven fabric waist sash with leather belt, straight dark earth-grey wool Norse trousers with leg wraps, rear tail opening, and sturdy weathered leather Viking boots.",
@@ -345,7 +423,7 @@ def get_manifest_entries(existing_items: dict[str, dict] | None = None, seed_reg
             outfit="Minimalist matte black photography-studio underwear (fitted black boxer briefs), barefoot.",
             marks="Othala (ᛟ) rune in cold-iron dark ink on the inner left wrist; antique gold-and-onyx Douglas signet ring on left hand; old faded sabre scar near left collarbone.",
         ),
-        neutral_anchors=["magnus_front_2x3.png"],
+        neutral_anchors=["magnus_body_2x3.png"],
         neutral_prompt=build_neutral_prompt(
             "Sir Magnus Douglas III, 205 cm distinguished aristocratic werewolf patriarch appearing late 50s, neatly combed-back black hair silvered at the temples, "
             "level amber eyes, trimmed silver-threaded beard, single pair of dark charcoal-grey wolf ears atop his head (no human ears), bushy dark grey wolf tail behind his legs, "
@@ -384,7 +462,7 @@ def get_manifest_entries(existing_items: dict[str, dict] | None = None, seed_reg
             outfit="Minimalist matte black photography-studio underwear (strapless black bandeau top and minimal black briefs), barefoot.",
             marks="Uruz (ᚢ) rune in cold-iron dark ink on the inner left wrist; silver Duskwood rings on fingers; pearl necklace.",
         ),
-        neutral_anchors=["elizabeth_front_2x3.png", "elizabeth_anchor.jpg"],
+        neutral_anchors=["elizabeth_body_2x3.png"],
         neutral_prompt=build_neutral_prompt(
             "Lady Elizabeth Duskwood, 165 cm poised graceful werewolf matriarch appearing early-to-mid 40s, luminous ash-grey hair styled in an elegant soft updo with loose side tendrils, "
             "storm-grey perceptive eyes, warm serene smile, single pair of ash-grey wolf ears atop her head (no human ears), fluffy pearl-grey wolf tail behind her dress, "
@@ -406,9 +484,9 @@ def get_manifest_entries(existing_items: dict[str, dict] | None = None, seed_reg
         "ut_neutral.png",
         ref_anchors=["wulfnic_reference.png"],
         ref_prompt=MASTER_REF_TEMPLATE.format(
-            identity="Ut Berg (The Mountain), 1205-year-old Primordial Firstborn Werewolf Berserker",
-            tail_attach="heavy ash-brown wolf tail emerging from the lower spine",
-            ear_summary="single pair of steel-grey wolf ears",
+            identity="Ut Berg (The Mountain), 1205-year-old Primordial Firstborn Werewolf Berserker appearing as a battle-worn mid-40s Viking giant",
+            tail_attach="heavy reddish-auburn wolf tail streaked with iron-grey emerging from the lower spine",
+            ear_summary="single pair of reddish-auburn wolf ears streaked with iron-grey",
             subtitle="LAGUZ & FENRIS • IRON ARM RINGS • BATTLE SCARS",
             box1_desc="Macro thick inner left wrist showing the Laguz (ᛚ) and Fenris rune tattoo in dark cold-iron ink",
             box1_cap="LAGUZ & FENRIS RUNE",
@@ -416,18 +494,18 @@ def get_manifest_entries(existing_items: dict[str, dict] | None = None, seed_reg
             box2_cap="FORGED IRON ARM RINGS",
             box3_desc="Macro rugged weathered torso crisscrossed by thick jagged axe and fang scars and ancient Norse ink",
             box3_cap="ANCIENT BATTLE SCARS",
-            build="Colossal 240 cm barrel-chested walking mountain of granite muscle, tree-trunk limbs, thick shoulders and forearms, coarse body hair.",
-            face="Rugged primeval Viking features largely framed by a wild bushy red-blonde beard across ALL four views, heavy iron-grey eyes, gruff fearless presence.",
-            hair="Wild, thick unkempt steel-grey hair reaching past the collar.",
-            anatomy="CRITICAL: Single pair of large weathered steel-grey wolf ears MUST be clearly visible atop his head in ALL FOUR views (VISTA FRONTALE, 45°, LATERALE, and DETTAGLIO VOLTO), plus a massive heavy ash-brown wolf tail. STRICTLY NO HUMAN EARS on the sides of the head; zero leg tattoos.",
+            build="Colossal 240 cm barrel-chested walking mountain of granite muscle (biological aging halted at 45 when Fenris turned him — rugged battle-hardened mid-40s powerhouse, NOT an elderly 60-year-old), tree-trunk limbs, thick shoulders and forearms, coarse body hair.",
+            face="Rugged battle-worn mid-40s Viking warrior features framed by a thick wild bushy REDDISH-AUBURN beard streaked with iron-grey (same exact reddish-auburn and iron-grey color as his hair) across ALL four views, heavy iron-grey eyes, gruff fearless presence.",
+            hair="Wild, thick unkempt REDDISH-AUBURN hair streaked with iron-grey reaching past the collar, matching his beard color 1:1.",
+            anatomy="CRITICAL: Single pair of large weathered reddish-auburn wolf ears streaked with iron-grey MUST be clearly visible atop his head in ALL FOUR views (VISTA FRONTALE, 45°, LATERALE, and DETTAGLIO VOLTO), plus a massive heavy reddish-auburn wolf tail streaked with iron-grey. STRICTLY NO HUMAN EARS on the sides of the head; zero leg tattoos.",
             outfit="Minimalist matte black photography-studio underwear (fitted black boxer briefs), barefoot.",
             marks="Laguz (ᛚ) + Fenris protection brand on inner left wrist; heavy hammered iron arm rings; archaic Norse runes and thick jagged battle scars across chest and arms ONLY (clean scarred skin on legs).",
         ),
-        neutral_anchors=["ut_front_2x3.png"],
+        neutral_anchors=["ut_body_2x3.png"],
         neutral_prompt=build_neutral_prompt(
-            "Ut Berg (The Mountain), 240 cm colossal barrel-chested Primordial Firstborn werewolf giant appearing 60, wild unkempt steel-grey hair, "
-            "massive bushy red-blonde Viking beard, iron-grey eyes, archaic Norse tattoos and thick scars across forearms and chest, heavy iron arm rings, "
-            "single pair of steel-grey wolf ears atop his head (no human ears), and a thick heavy ash-brown wolf tail behind his legs.",
+            "Ut Berg (The Mountain), 240 cm colossal barrel-chested Primordial Firstborn werewolf giant appearing as a battle-worn 45-year-old Viking warrior (NOT elderly), homogenized wild unkempt REDDISH-AUBURN hair streaked with iron-grey, "
+            "matching massive bushy REDDISH-AUBURN Viking beard streaked with iron-grey, heavy iron-grey eyes, archaic Norse tattoos and thick scars across forearms and chest, heavy iron arm rings, "
+            "single pair of reddish-auburn wolf ears streaked with iron-grey atop his head (no human ears), and a thick heavy reddish-auburn-and-grey wolf tail behind his legs.",
             "Firstborn Berserker modern lumberjack garb: heavy oversized red-and-black plaid flannel shirt worn completely open over a raw earth-brown cotton tank top stretched across his granite chest, "
             "thick rough leather belt with wrought-iron buckle, heavy dark reinforced denim work jeans with rear tail opening, and massive scuffed brown leather logger boots.",
             240,
@@ -462,7 +540,7 @@ def get_manifest_entries(existing_items: dict[str, dict] | None = None, seed_reg
             outfit="Minimalist matte black photography-studio underwear (fitted black boxer briefs), barefoot.",
             marks="Algiz (ᛉ) + Fenris rune on inner left wrist; bold black Viking symbol tattoos covering both forearms and left arm; black metal ear piercings on white wolf ear.",
         ),
-        neutral_anchors=["zefir_front_2x3.png", "zefir_anchor.jpg"],
+        neutral_anchors=["zefir_body_2x3.png"],
         neutral_prompt=build_neutral_prompt(
             "Zefir Hvitskog (The White Ghost), 192 cm lean wiry shredded young-looking Primordial werewolf scout, pale porcelain skin, "
             "snow-white hair in a tousled mohawk with shaved sides, icy washed-out almost-white blue eyes, wicked insolent smirk, "
@@ -484,30 +562,31 @@ def get_manifest_entries(existing_items: dict[str, dict] | None = None, seed_reg
         True,
         "kaladin_reference.png",
         "kaladin_neutral.png",
-        ref_anchors=["malachia_reference.png"],
+        ref_anchors=["malachia_reference.png", "kaladin_anchor.jpg"],
         ref_prompt=MASTER_REF_TEMPLATE.format(
             identity="Major Kaladin Blackwolf Nargathon (Subject Zero), 45-year-old military-engineered Alpha Werewolf Commander",
             tail_attach="thick mutated black wolf tail emerging from the lower spine",
             ear_summary="single pair of sharp black wolf ears",
             subtitle="NEURAL CAGE SCARS • GAMMA-7 DOG TAGS • BLACKWOLF SCARS",
-            box1_desc="Macro close-up of nape of neck showing faint dark cold-iron neural restraint surgical scars beneath buzzed hair",
+            box1_desc="Macro close-up of nape of neck showing faint dark cold-iron neural restraint surgical scars below the low ponytail",
             box1_cap="NEURAL CAGE SCARS (NAPE)",
             box2_desc="Macro close-up of matte-black military dog tags stamped 'GAMMA-7 / SUBJECT ZERO' resting on scarred collarbone",
             box2_cap="GAMMA-7 DOG TAGS",
             box3_desc="Macro close-up of chest and shoulder showing crisp tactical knife and claw combat scars",
             box3_cap="BLACKWOLF COMBAT SCARS",
-            build="191 cm (6'3\") dense functional commando musculature, broad squared shoulders, low body fat, scarred warrior frame.",
-            face="Hard stoic military features, flat assessing pale-grey eyes, short neat dark beard and mustache, thin scar across brow and cheek, zero horns.",
-            hair="Dark jet-black hair buzzed short on top with slightly longer tousled side-swept temple hair covering the sides of the head smoothly.",
-            anatomy="Werewolf ONLY (STRICTLY NO HORNS, NO DEMON HORNS): single pair of sharp black wolf ears atop his head, and a thick powerful black wolf tail. Smooth side hair covers the temples completely with ZERO human ears visible on the sides of the head in any view.",
+            build="191 cm (6'3\") dense functional commando musculature, broad squared shoulders, low body fat, weathered tanned scarred warrior frame.",
+            face="Match kaladin_anchor.jpg 1:1 in facial bone structure, scars, facial hair, and eye color across ALL 4 views: chiseled severe masculine jawline, weathered tanned skin, piercing vivid emerald-teal eyes, sculpted trimmed dark goatee and mustache connected along the jawline, diagonal scar across forehead and left brow ridge, small vertical scar above right brow, curved cheekbone scars, zero horns.",
+            hair="Long jet-black hair swept cleanly back into a low ponytail behind the nape, with TWO loose dark curtain strands framing his forehead and temples as shown in kaladin_anchor.jpg, smoothly covering the sides of his head.",
+            anatomy="Werewolf ONLY (STRICTLY NO HORNS, NO DEMON HORNS): adapt the human portrait of kaladin_anchor.jpg cleanly to werewolf anatomy by adding a single pair of sharp black wolf ears atop his head and a thick mutated black wolf tail, while keeping the sides of his head smooth and covered by swept temple hair with STRICTLY ZERO HUMAN EARS visible in any view.",
             outfit="Minimalist matte black photography-studio underwear (fitted black boxer briefs), barefoot.",
-            marks="Cold-iron surgical scars at the nape of the neck; Gamma-7 military dog tags; heavy combat scars across chest, arms, and brow.",
+            marks="Cold-iron surgical scars at the nape of the neck; Gamma-7 military dog tags; heavy combat scars across chest, arms, forehead, brow, and cheekbones.",
         ),
-        neutral_anchors=["kaladin_front_2x3.png"],
+        neutral_anchors=["kaladin_body_2x3.png"],
         neutral_prompt=build_neutral_prompt(
-            "Major Kaladin Blackwolf Nargathon, 45-year-old 191 cm military-engineered werewolf commander (STRICTLY NO HORNS), dense functional commando musculature, "
-            "short regulation dark jet-black hair covering the temples smoothly with ZERO human ears on the sides, pale assessing icy-grey eyes, trimmed dark beard, thin brow and cheek scars, "
-            "single pair of sharp black wolf ears atop his head, and a thick black wolf tail behind his legs.",
+            "Major Kaladin Blackwolf Nargathon, 45-year-old 191 cm military-engineered werewolf commander (STRICTLY NO HORNS), dense functional commando musculature, weathered tanned skin, "
+            "long jet-black hair swept back into a low ponytail with two loose dark front strands framing his forehead and temples (smoothly covering the sides of his head with ZERO human ears), "
+            "piercing vivid emerald-teal eyes, sculpted trimmed dark goatee and mustache connected along the jawline, forehead/brow and cheekbone scars, "
+            "single pair of sharp black wolf ears atop his head, and a thick mutated black wolf tail behind his legs.",
             "DCC Security Tactical Field Uniform: fitted charcoal-black fireproof long-sleeve combat shirt with sleeves pushed up slightly, "
             "matte-black modular ballistic plate carrier vest with 'DCC SECURITY' insignia patch, tactical gun belt with thigh holster, "
             "reinforced black ripstop tactical cargo pants with knee pads and rear tail opening, and rugged black tactical combat boots.",
@@ -543,7 +622,7 @@ def get_manifest_entries(existing_items: dict[str, dict] | None = None, seed_reg
             outfit="Minimalist matte black photography-studio underwear (strapless black bandeau top and minimal black briefs), barefoot.",
             marks="Perthro (ᛈ) rune in cold-iron dark ink on inner left wrist; pearlescent crescent moon birthmark on left hip; gold sun-and-moon earring on left wolf ear.",
         ),
-        neutral_anchors=["nixara_front_2x3.png", "nixara_anchor.jpg"],
+        neutral_anchors=["nixara_body_2x3.png"],
         neutral_prompt=build_neutral_prompt(
             "Nixara Hvit Bloodmoon, 29-year-old radiant 165 cm White Moon werewolf matriarch, long voluminous honey-golden wavy hair with delicate thin braids, "
             "warm bright sky-blue eyes, soft nose and cheek freckles, affectionate serene smile, single pair of pure snow-white wolf ears atop her head with a small golden sun-and-moon dangling earring on the left ear (no human ears), "
@@ -565,32 +644,28 @@ def get_manifest_entries(existing_items: dict[str, dict] | None = None, seed_reg
         "echo_reference.png",
         "echo_neutral.png",
         ref_anchors=["jasper_reference.png"],
-        ref_prompt=MASTER_REF_TEMPLATE.format(
-            identity="E.C.H.O. (Electronic Counter-measures & Heuristic Operative), Sentient Technomantic AI Construct Avatar (Non-Human Digital Familiar)",
-            tail_attach="floating emerald-cyan data ribbon trailing from the back",
-            ear_summary="androgynous translucent hologram head and optical visor core",
-            subtitle="HOLO-WAVE INTERFACE • MAGITECH HEX-DRONE • OPTICAL CORE",
-            box1_desc="Macro close-up of glowing emerald-cyan 3D oscilloscope audio wave floating in dark translucent glass",
-            box1_cap="HOLO-WAVE OSCILLOSCOPE",
-            box2_desc="Macro close-up of a sleek 30 cm matte-obsidian and cold-iron hexagonal magitech recon micro-drone with emerald sensor eye",
-            box2_cap="MAGITECH HEX-DRONE (30CM)",
-            box3_desc="Macro close-up of glowing emerald technomantic geometric iris optical core framed by circuit filigree",
-            box3_cap="EMERALD OPTICAL CORE",
-            build="178 cm slender weightless androgynous digital-entity silhouette formed of translucent emerald-cyan hard-light wireframe and sleek matte-obsidian geometric armor plates (zero human flesh, synthetic cyber-construct).",
-            face="Sleek smooth porcelain-obsidian faceplate with a glowing emerald-green technomantic optical core eye/visor, calm deadpan expression.",
-            hair="Swept back volumetric emerald-cyan holographic light filaments and data-crest geometry.",
-            anatomy="Non-human AI construct: sleek articulated matte-obsidian chassis fused with glowing cyan-emerald circuit conduits and floating geometric halo nodes. Zero human ears.",
-            outfit="Integrated seamless dark obsidian and glowing emerald-cyan cybernetic bodysuit plating (part of the construct chassis).",
-            marks="Glowing runic technomancy circuit sigils etched in cyan-emerald light across chest core and forearms.",
+        ref_prompt=(
+            "Professional 16:9 widescreen technical prop/construct turnaround reference sheet of E.C.H.O. (Electronic Counter-measures & Heuristic Operative), "
+            "Jasper Douglas's sentient NON-HUMANOID technomantic AI manifesting EXCLUSIVELY as a compact 30 cm hovering hexagonal matte-obsidian magitech recon drone and translucent emerald-cyan holographic audio waveform projection, "
+            "rendered in a cohesive semi-realistic digital illustration style matching Jasper's universe with refined clean dark ink linework and glowing emerald-cyan sci-fi light effects. "
+            "STRICT INVARIANT: ZERO human body, ZERO humanoid torso, ZERO human face, ZERO arms, ZERO legs, ZERO clothing — E.C.H.O. is purely a levitating hexagonal magitech drone & holographic audio waveform. "
+            "BACKGROUND & LIGHTING: Flat, solid, completely uniform neutral light-grey studio background (#C8C8C8) with no gradients, no floor shadows, and no environment. "
+            "LAYOUT (LEFT TO RIGHT): "
+            "1. Left — Front view labeled \"VISTA FRONTALE\" at the top: hovering hexagonal matte-obsidian titanium & cold-iron micro-drone with bevelled runes and a central luminous emerald-green geometric iris optical lens, emitting a crisp floating 3D translucent emerald-cyan holographic harmonic audio-oscilloscope waveform and concentric geometric rune data ring beside it. "
+            "2. Center-left — Three-quarter view labeled \"VISTA A 45° / TRE QUARTI\" at the top: 45-degree rotated view of the hovering hexagonal drone with micro-thruster emerald glow vents and unfolded translucent holographic telemetry projection panels. "
+            "3. Center-right — Side profile view labeled \"VISTA LATERALE\" at the top: sleek beveled side profile of the compact 30 cm hexagonal drone chassis, recessed cold-iron emitter array, and planar floating holo-wave ring. "
+            "4. Right (Top) — Close-up detail labeled \"DETTAGLIO NUCLEO\" at the top: large macro view of the glowing emerald-green technomantic geometric iris optical eye set into brushed matte-obsidian plating with engraved Norse-circuit silver runes. "
+            "5. Right (Bottom) — Section titled \"DETTAGLI TECNICI:\" with subtitle \"HOLO-WAVE • MAGITECH CHASSIS • OPTICAL CORE\", above three aligned square close-up inset boxes with thin dark borders: "
+            "- Box 1: Macro glowing emerald-cyan 3D oscilloscope harmonic audio wave — caption: \"HOLO-WAVE OSCILLOSCOPE\" "
+            "- Box 2: Macro brushed matte-obsidian & cold-iron drone bevel with faint Norse circuit filigree — caption: \"COLD-IRON RUNE CHASSIS\" "
+            "- Box 3: Macro glowing emerald-green geometric iris sensor core — caption: \"EMERALD OPTICAL CORE\"."
         ),
-        neutral_anchors=["echo_front_2x3.png"],
-        neutral_prompt=build_neutral_prompt(
-            "E.C.H.O. (Electronic Counter-measures & Heuristic Operative), Jasper's sentient androgynous technomantic AI construct in Cyberspace Avatar form (178 cm slender synthetic cyber-entity, zero human skin): "
-            "sleek matte-obsidian and cold-iron articulated geometric body plating combined with glowing emerald-cyan hard-light wireframe segments, volumetric cyan-emerald data-crest hair filaments, "
-            "smooth obsidian faceplate with a luminous emerald technomantic optical core visor, floating runic circuit sigils, and a hovering 30 cm hexagonal matte-obsidian magitech recon drone floating beside his shoulder.",
-            "Integrated sleek cyber-familiar hard-light trenchcoat/bodysuit formed of translucent emerald-cyan wireframe energy over dark obsidian chassis armor, glowing circuit trims, and sleek hovering cyber-boots.",
-            178,
-            "~7.8-head sleek cyber-construct proportions",
+        neutral_anchors=[],
+        neutral_prompt=(
+            "Standalone sci-fi/urban-fantasy character sprite illustration in a 2:3 vertical frame of E.C.H.O. (Electronic Counter-measures & Heuristic Operative), "
+            "Jasper Douglas's sentient NON-HUMANOID technomantic AI companion manifesting EXCLUSIVELY as a compact 30 cm hovering autonomous hexagonal matte-obsidian and cold-iron magitech recon micro-drone paired with a crisp glowing 3D translucent emerald-cyan holographic audio-oscilloscope waveform and floating concentric runic telemetry rings. "
+            "STRICTLY NON-HUMANOID INVARIANT: ZERO human body, ZERO humanoid torso, ZERO human face, ZERO arms, ZERO legs, ZERO clothing. Purely the sleek levitating hexagonal magitech drone centered in the upper-middle chest-to-eye zone of the 2:3 frame with a vivid luminous emerald-green geometric optical iris eye, engraved Norse-circuit cold-iron runes along the obsidian bevels, subtle bottom emerald anti-grav glow, and crisp translucent emerald-cyan holographic soundwaves orbiting beside it. "
+            "BACKGROUND: Completely flat, solid pure white background (#FFFFFF) with ZERO gradients, ZERO floor shadow, ZERO ground line, ZERO text, ZERO labels, ZERO borders, and ZERO environment. Clean closed dark ink outer outline around the solid drone chassis and crisp high-contrast emerald-cyan holographic lines that stay legible against pure white."
         ),
     )
 
@@ -628,6 +703,104 @@ def get_manifest_entries(existing_items: dict[str, dict] | None = None, seed_reg
     for eid, folder, sub, h_cm, ears_above, rf, nf, desc in variants:
         add(eid, folder, sub, h_cm, ears_above, rf, nf, ref_prompt=desc, neutral_prompt=desc)
 
+    # === WAVE 4_HYBRID: 23 Shifter Hybrid Form 16:9 Reference Cards (<name>_hybrid_reference.png) ===
+    hybrid_specs = [
+        ("jasper_hybrid", "Jasper", 223, True, "jasper_reference.png", "Jasper 'Svartr' Douglas Bloodmoon (Shadow-Sun Hybrid Shift, 223 cm)", "long black-and-tawny wolf tail", "large tawny-chestnut wolf ears with black tips", "MANNAZ RUNE • SOL HIP MARK • SHADOW-SUN CLAWS", "Tawny-chestnut muzzle with sharp fangs and glowing mint-green-to-gold eyes", "FANGS & EYES", "Dark wolf-beast forearm with jagged obsidian claws and Mannaz rune visible on inner wrist fur", "CLAWS & MANNAZ RUNE", "Thick black-and-tawny fur along right hip glowing with warm Solar gold sub-dermal runes", "SOL RUNE (RIGHT HIP)", "223 cm (7'4\") lean explosive predator wolf-hybrid musculature, broad shoulders, digitigrade hind legs", "Elongated tawny-chestnut lupine snout matching jasper_reference.png gaze, bright mint-green eyes with subtle solar gold slit-pupil gleam", "Dense warm tawny-chestnut fur blended with shadow-black spine, chest, and long fluffy tail", "Bipedal digitigrade legs with dark paw pads and heavy claws; strictly single pair of wolf ears atop skull (zero human ears)", "Black tattered tactical/casual shorts or natural beast anatomy with dark matte fur shading groin."),
+        ("alyssa_hybrid", "Alyssa", 185, True, "alyssa_reference.png", "Alyssa Hvit Douglas Bloodmoon (White Moon Wolf Hybrid Shift, 185 cm)", "lush snow-white-and-caramel wolf tail", "tall snow-white wolf ears with caramel tips", "MANNAZ RUNE • MANI MOON MARK • WHITE MOON CLAWS", "Refined fierce she-wolf snout with glowing mint-green eyes and silver-white fur", "SHE-WOLF VISAGE", "Slender clawed wolf forepaw with black obsidian claws and Mannaz rune showing cleanly on inner left wrist", "CLAWS & MANNAZ", "Left hip fur parting to reveal a subtle pearlescent silver Mani crescent glow beneath white fur", "MANI CRESCENT MARK", "185 cm agile, sinuous, fiercely athletic female werewolf-hybrid build with slender curved silhouette and digitigrade legs", "Elongated graceful snow-white lupine muzzle matching alyssa_reference.png eyes, glowing luminous mint-green iris, sharp fangs", "Silky snow-white pelage accented by warm caramel-chestnut back crest and tail markings", "Digitigrade hind paws with black claws, single pair of tall wolf ears atop head (zero human ears)", "Natural thick fur coverage (matching SFW studio modesty with tattered dark athletic wrap/shorts if needed)."),
+        ("malachia_hybrid", "Malachia", 258, True, "malachia_reference.png", "Malachia 'Bjorn' Douglas Bloodmoon (Apex Enforcer Hybrid Shift, 258 cm)", "massive pitch-black wolf tail", "heavy battle-notched black wolf ears", "THURISAZ & FENRIS • BLOODMOON FUR • APEX JAWS", "Snarling colossal black wolf muzzle with cold unblinking amber eyes and eyebrow scar", "APEX MUZZLE & SCAR", "Gargantuan blackened forearm with jagged claws and Bloodmoon Norse ink etched subtly through fur", "APEX CLAWS & INK", "Inner left wrist showing Thurisaz & Fenris cold-iron brand pulsing through pitch-black fur", "THURISAZ BRAND", "258 cm (8'6\") titanic 200 kg hypertrophic heavyweight-brawler werewolf-hybrid mass, colossal chest and shoulders", "Heavy scarred pitch-black wolf snout with crooked nasal bridge scar, brow scar, cold unblinking amber eyes, massive ivory fangs", "Dense armored pitch-black Bloodmoon fur coat across torso, shoulders, and tail", "Massive digitigrade bear-like wolf hind legs, thick claws; strictly single pair of black wolf ears atop head", "Natural pitch-black furred beast anatomy (dark studio combat wrap shorts)."),
+        ("noah_hybrid", "Noah", 227, True, "noah_reference.png", "Noah 'Loki' Douglas Bloodmoon (Agile Delta Wolf Hybrid Shift, 227 cm)", "sleek golden-blonde wolf tail", "alert golden-blonde wolf ears", "GEBO RUNE • DELTA FANGS • GOLDEN FUR COAT", "Sleek golden-blonde lupine muzzle with bright clear electric-blue predator eyes and cunning half-snarl", "GOLDEN MUZZLE & EYES", "Swift clawed forepaw with golden-tan fur and black razor claws, Gebo X-rune on inner left wrist", "DELTA CLAWS & GEBO", "Close-up of thick golden shoulder mane with layered cream chest fur", "GOLDEN DELTA COAT", "227 cm (7'5\") sleek, fast, streamlined athletic werewolf-hybrid physique built for speed and pouncing", "Sharp fox-lean golden-blonde wolf snout, bright clear blue slit-pupil eyes, subtle nose freckles echoed on snout bridge", "Silky shimmering golden-blonde fur with lighter warm cream belly and throat fur", "Agile digitigrade hind legs, razor-sharp claws; strictly single pair of golden-blonde wolf ears atop head", "Natural thick golden furred anatomy (dark fitted studio athletic shorts)."),
+        ("erik_hybrid", "Erik", 263, True, "erik_reference.png", "Erik 'Ulfr' Douglas (Prime Alpha Sovereign Hybrid Shift, 263 cm)", "heavy night-black wolf tail", "commanding night-black wolf ears", "HAGALAZ RUNE • PRIME ALPHA EYES • RITUAL SCAR", "Sovereign night-black wolf muzzle with diagonal left cheek scar and molten-gold Alpha eyes", "SOVEREIGN VISAGE", "Immense night-black forepaw with obsidian claws and Hagalaz rune mark on inner left wrist", "ALPHA CLAWS & HAGALAZ", "Macro silver-streaked black neck ruff framing ancient scar tissue", "SILVER-STREAKED MANE", "263 cm (8'7\") mountainous Prime Alpha apex werewolf-hybrid silhouette, commanding chest and broad warrior shoulders", "Regal terrifying black wolf snout with diagonal cheek scar and silver-flecked brow ridges, piercing amber-gold eyes", "Impenetrable night-black primeval fur with distinguished silver-grey ticking along temples and neck ruff", "Massive digitigrade legs with crushing obsidian claws; strictly single pair of large wolf ears atop skull", "Natural thick night-black furred anatomy (dark matte studio shorts)."),
+        ("logan_hybrid", "Logan", 228, True, "logan_reference.png", "Logan 'Jarn' Douglas (Forge-Breaker Wolf Hybrid Shift, 228 cm)", "rugged black-and-silver wolf tail", "notched black-and-grey wolf ears", "EIHWAZ RUNE • BATTLE SCARS • SILVER-FLECKED COAT", "Grizzled black-and-grey wolf muzzle with weathered scars and watchful amber eyes", "GRIZZLED MUZZLE", "Knotty scarred wolf forearm showing faded Norse sleeve ink beneath fur and Eihwaz rune on wrist", "EIHWAZ & FORE-CLAWS", "Close-up of jagged old hunt scars parting dense black-and-silver shoulder pelt", "HUNT SCARS IN FUR", "228 cm (7'6\") knotty, rugged, combat-hardened mechanic-brawler werewolf-hybrid build", "Weathered snarling black wolf muzzle dusted with silver salt-and-pepper around jaw, watchful amber eyes", "Coarse pitch-black fur with rugged silver-grey streaking along shoulders, muzzle, and tail", "Heavy digitigrade stance, iron-hard claws; strictly single pair of wolf ears atop skull", "Natural coarse black-silver furred anatomy (dark tattered work trousers/shorts)."),
+        ("edric_hybrid", "Edric", 230, True, "edric_reference.png", "Edric Douglas (Junior Alpha-Bred Wolf Hybrid Shift, 230 cm)", "bushy smoke-grey and black wolf tail", "large smoke-grey and black wolf ears", "SOWILO RUNE • SMOKE-GREY FUR • ALPHA FANGS", "Fierce youthful-edged smoke-grey wolf muzzle with faint cheek scars and glowing amber eyes", "SMOKE-GREY VISAGE", "Broad-boned wolf forepaw with heavy claws and Sowilo rune mark on inner left wrist", "PAW & SOWILO RUNE", "Thick charcoal-and-smoke-grey dorsal hackle fur crest", "SMOKE-GREY PELAGE", "230 cm powerfully framed broad-boned werewolf-hybrid build, dense youthful power", "Sharp smoke-grey and black wolf muzzle with fine healed cheek marks and intense amber eyes", "Thick layered smoke-grey and charcoal-black fur across torso, limbs, and tail", "Digitigrade hind legs with sturdy dark claws; strictly single pair of wolf ears atop skull", "Natural dense furred beast anatomy (dark athletic training shorts)."),
+        ("wulfnic_hybrid", "Wulfnic", 285, True, "wulfnic_reference.png", "Wulfnic Baleygr Bloodmoon (Firstborn Ancestral Wolf King Hybrid, 285 cm)", "colossal golden-blonde and snow-white wolf tail", "giant golden-blonde wolf ears streaked with white", "JERA & FENRIS • FIRSTBORN MANE • SUPERNOVA EYES", "Colossal primeval wolf muzzle with 15cm ivory fangs, golden-white ruff, and glowing ice-blue eyes", "FIRSTBORN JAWS & EYES", "Titanic clawed forepaw with Jera & Fenris geometric rune gleaming through fur", "JERA & TITAN CLAWS", "Svartulfr rune ink and ancient battle scars visible beneath golden-blonde-and-white storm mane", "STORM MANE & INK", "285 cm+ colossal Firstborn Enigma mountain of muscle, godlike primeval werewolf stature", "Terrifying battle-worn ancient wolf visage framed by a golden-blonde beard/chin ruff streaked with snow-white, glowing ice-blue eyes", "Thick armored storm-mane of golden-blonde fur heavily streaked with snow-white across shoulders, chest, and spine", "Massive digitigrade hind legs with ebony steel-rending claws; single pair of colossal wolf ears atop skull", "Natural primeval furred beast anatomy."),
+        ("magnus_hybrid", "Magnus", 245, True, "magnus_reference.png", "Sir Magnus Douglas III (Pureblood Aristocratic Wolf Hybrid, 245 cm)", "plumed dark charcoal-grey wolf tail", "tall charcoal-grey wolf ears", "OTHALA RUNE • COLONIAL SCAR • CHARCOAL MANE", "Composed terrifying charcoal-silver wolf muzzle with calm amber eyes and silver jaw ruff", "ARISTOCRAT VISAGE", "Inner left wrist showing cold-iron Othala rune beneath dark charcoal fur", "OTHALA RUNE (WRIST)", "Old sabre duel scar parting silver-threaded charcoal chest fur", "SABRE SCAR IN FUR", "245 cm tall, upright, regal Pureblood werewolf-hybrid frame with broad noble chest", "Noble elongated charcoal wolf snout with silvered muzzle ruff, fierce level amber eyes", "Silky thick charcoal-grey fur heavily silver-frosted along neck, temples, and chest", "Upright digitigrade stance with dark claws; single pair of charcoal wolf ears atop skull", "Natural dark charcoal furred anatomy."),
+        ("elizabeth_hybrid", "Elizabeth", 205, True, "elizabeth_reference.png", "Lady Elizabeth Duskwood (Matriarch Wolf Hybrid, 205 cm)", "lush pearl-grey and silver wolf tail", "tall ash-grey wolf ears", "URUZ RUNE • PEARL PELAGE • STORM-GREY EYES", "Elegant lethal ash-grey she-wolf muzzle with perceptive storm-grey eyes and sharp white fangs", "MATRIARCH VISAGE", "Slender clawed forepaw with Uruz rune etched in dark fur on inner left wrist", "URUZ RUNE & CLAWS", "Luminous pearl-silver neck ruff fur catching cool studio light", "PEARL-ASH COAT", "205 cm commanding yet graceful female werewolf-hybrid frame with athletic feline-wolf poise", "Refined ash-grey she-wolf snout with calm storm-grey slit-pupil eyes", "Thick velvety ash-grey and pearl-silver fur coat across shoulders, torso, and tail", "Agile digitigrade hind legs with dark claws; single pair of ash-grey wolf ears atop skull", "Natural pearl-ash furred anatomy (modest tattered dark satin wrap at hips)."),
+        ("ut_hybrid", "Ut", 320, True, "ut_reference.png", "Ut Berg (The Mountain Firstborn Wolf Hybrid, 320 cm)", "massive reddish-auburn & iron-grey wolf tail", "huge reddish-auburn & iron-grey wolf ears", "LAGUZ & FENRIS • MOUNTAIN SCARS • REDDISH-GREY MANE", "Titanic battle-scarred reddish-auburn & iron-grey wolf muzzle with granite iron-grey eyes", "TITAN MUZZLE", "Tree-trunk clawed forepaw bearing Laguz + Fenris rune and heavy hammered iron arm rings strapped tightly", "LAGUZ & IRON RINGS", "Jagged centuries-old axe and fang scars across reddish-auburn barrel-chest fur", "ANCIENT CHEST SCARS", "320 cm (10'6\") unimaginable walking mountain of muscle, broadest chest and limbs among all shifters", "Massive snarling Viking-wolf snout framed by a wild reddish-auburn jaw ruff streaked with iron-grey, heavy iron-grey eyes", "Coarse, ultra-dense reddish-auburn fur streaked with iron-grey covering boulder-like shoulders and back", "Pillar-like digitigrade legs with crushing black claws; single pair of massive wolf ears atop skull", "Natural coarse furred mountain-titan anatomy."),
+        ("zefir_hybrid", "Zefir", 225, True, "zefir_reference.png", "Zefir Hvitskog (North Sea Wind Wolf Hybrid, 225 cm)", "long sleek snow-white wolf tail", "pierced snow-white wolf ears", "ALGIZ & FENRIS • VIKING RUNES • PIERCED WHITE EAR", "Razor-sharp snow-white wolf snout with pale icy washed-out blue eyes and wicked grinning fangs", "GHOST WOLF VISAGE", "Left pierced white wolf ear gleaming with black metal hoop rings along the rim", "PIERCED WOLF EAR", "Lean pale-furred forearm showing dark Algiz & Viking runic skin tattoos visible through cropped white fur", "ALGIZ & VIKING INK", "225 cm lean, hyper-fast, shredded acrobatic werewolf-hybrid frame built for stealth and ambush", "Long sharp snow-white wolf snout, smudged dark periocular shading, pale almost-white ice-blue eyes", "Sleek arctic snow-white fur with wild tousled white dorsal crest along neck and spine", "Whip-fast digitigrade hind legs with curved black claws; single pair of pierced snow-white wolf ears", "Natural snow-white furred anatomy (shredded punk leather hip wrap)."),
+        ("kaladin_hybrid", "Kaladin", 250, True, "kaladin_reference.png", "Major Kaladin Blackwolf Nargathon (BlackWolf Mutant Hybrid, 250 cm, ZERO HORNS)", "heavy mutated jet-black wolf tail", "large sharp mutated jet-black wolf ears", "BLACKWOLF MUTATION • CRIMSON-TEAL EYES • NAPE CAGE SCARS", "Predatory mutated black wolf snout with forehead/cheek scars and emerald-teal eyes flaring crimson-red", "BLACKWOLF EYES & SCARS", "Mutated oversized black obsidian claws and scarred tactical commando forearms", "BLACKWOLF CLAWS", "Nape of neck fur parted around faint cold-iron neural restraint surgical scars", "NEURAL CAGE SCARS", "250 cm+ dense urban-warfare mutated werewolf-hybrid physique, hyper-muscular tactical brute power", "Severe mutated black wolf muzzle preserving brow/forehead and cheekbone scars, piercing emerald-teal eyes blazing crimson-red (ZERO HORNS)", "Thick armored pitch-black mutated BlackWolf coat with bristling dorsal spine crest", "Heavy urban-assault digitigrade hind legs capable of scoring concrete; single pair of black wolf ears atop skull (ZERO horns)", "Torn remnants of matte-black tactical combat pants or natural pitch-black furred anatomy."),
+        ("nixara_hybrid", "Nixara", 205, True, "nixara_reference.png", "Nixara Hvit Bloodmoon (3rd White Moon Wolf Hybrid, 205 cm)", "lush snow-white wolf tail", "snow-white wolf ears with gold celestial ornament", "PERTHRO RUNE • WHITE MOON MARK • CELESTIAL EARPIECE", "Serene fierce snow-white she-wolf muzzle with warm glowing sky-blue eyes and subtle honey-gold brow dusting", "WHITE MOON VISAGE", "Snow-white wolf ear adorned with golden sun-and-moon dangling ornament", "CELESTIAL EARPIECE", "Left inner wrist showing Perthro rune mark and left hip flashing pearlescent White Moon glow", "PERTHRO & MOON MARK", "205 cm luminous, powerful yet graceful maternal alpha-omega werewolf-hybrid stature", "Graceful fierce snow-white wolf muzzle with warm intense sky-blue eyes and radiant presence", "Luminous snow-white fur accented by delicate warm honey-golden dorsal sheen", "Swift digitigrade hind legs with obsidian claws; single pair of snow-white wolf ears atop skull", "Natural snow-white furred anatomy (modest draped cream linen combat wrap)."),
+        ("mac_hybrid", "NPC\\Mac", 235, True, "NPC\\Mac\\mac_reference.png", "Mackenzie 'Mac' Sanchez-Rogers (Pureblood Wolf Hybrid, 235 cm)", "shaggy reddish-brown & ash-grey wolf tail", "large golden-brown wolf ears", "NASAL BRIDGE SCAR • REDDISH-ASH COAT • AMBER EYES", "Expressive reddish-brown wolf muzzle bearing a transverse nasal/cheek scar and bright amber eyes", "MUZZLE & SCAR", "Heavy wolf forepaw with black claws and subtle music-callused palm pads", "HYBRID FORE-PAW", "Fluffy reddish-brown and ash-grey neck ruff fur", "REDDISH-ASH PELAGE", "235 cm broad, energetic powerhouse werewolf-hybrid frame", "Rugged snout with left cheek/nasal bridge scar inherited from human form, fierce golden-amber eyes", "Dense shaggy reddish-brown and ash-grey werewolf pelage", "Agile digitigrade hind legs with dark claws; single pair of wolf ears atop skull", "Natural reddish-ash furred anatomy (torn plaid flannel & dark denim scraps)."),
+        ("larek_hybrid", "NPC\\Larek", 235, False, "NPC\\Larek\\larek_reference.png", "Larek Steeltooth (Iron-Tusk Boar Orc Hybrid Shift, 235 cm)", "short coarse black-bristled boar tail", "pointed orcish ears sprouting coarse boar tufts", "IRON-TUSK JAWS • RAZORBACK BRISTLES • CLAN INK", "Massive ferocious Orc-Boar hybrid head with huge notched lower ivory tusks and blazing amber-gold eyes", "IRON-TUSK HEAD", "Gargantuan olive-green clawed boar-orc hand with blunt steel-hard hoof-claws and tribal tricep tattoo", "CLAN INK & CLAWS", "Spiny black razorback bristle ridge erupting down spine and shoulders", "RAZORBACK CREST", "235 cm monstrously wide armored olive-green Orc-Boar hybrid colossus with thick bone plating", "Heavy jutting jaw with massive curved notched ivory lower tusks, broad snout, glowing amber-gold eyes, jet-black fade crest", "Olive-green armored hide covered in coarse dark bristles along shoulders, forearms, and dorsal ridge", "Digitigrade cloven-hoof/clawed beast legs built for battering-ram charges; pointed ears only", "Shredded charcoal hoodie scraps and reinforced olive cargo joggers."),
+        ("richard_hybrid", "NPC\\Richard", 245, True, "NPC\\Richard\\richard_reference.png", "Richard Whitlock (Starfall Lion Warlord Hybrid, 245 cm)", "long tufted tawny lion tail", "rounded tawny lion ears emerging from golden mane", "STARFALL SIGNET CLAW • GOLDEN-GREY MANE • LION JAWS", "Regal terrifying weathered Lion-Warlord hybrid muzzle with golden-and-silver mane, light blue predator eyes, huge fangs", "LION WARLORD VISAGE", "Massive lion paw-hand with thick golden forearm fur, black knuckle pads, and steel-sharp retractable claws", "RETRACTABLE CLAWS", "Gold Starfall signet ring retained or glowing faintly against dark paw fur", "STARFALL RING", "245 cm taurine-shouldered Lion Shifter warlord hybrid frame, massive upper chest and torso", "Broad feline lion muzzle with scarred nose bridge, thick full golden-tawny mane streaked with battle-grey, piercing icy-blue slit eyes", "Short golden-tawny lion fur across torso/limbs crowned by a colossal leonine mane", "Digitigrade feline hind legs with heavy paws; single pair of rounded lion ears atop skull", "Natural tawny furred lion-hybrid anatomy."),
+        ("adam_hybrid", "NPC\\Adam", 220, True, "NPC\\Adam\\adam_reference.png", "Adam Valencia (Vanguard Arctic Wolf Hybrid, 220 cm)", "thick snow-white arctic wolf tail", "large snow-white arctic wolf ears", "HETEROCHROMATIC EYES • ROMAN II SCAR • ARCTIC CLAWS", "Snarling snow-white arctic wolf muzzle with luminescent neon-pink right eye and neon-blue left eye", "HETEROCHROMATIC VISAGE", "Nape fur parting over glowing pale scar shaped like Roman numeral 'II'", "ROMAN II NAPE SCAR", "Massive pure white wolf forearm with ice-obsidian claws", "ARCTIC CLAWS", "220 cm broad powerhouse Vanguard arctic wolf-hybrid build, dense snow-white coat", "Sharp pure-white arctic wolf snout, vibrant heterochromatic glowing pink and electric-blue eyes", "Ultra-dense pure snow-white arctic wolf fur across shoulders, chest, and bushy tail", "Heavy digitigrade hind legs with dark claws; single pair of white wolf ears atop skull", "Torn dark charcoal hoodie scraps or natural pure-white furred anatomy."),
+        ("hana_hybrid", "NPC\\Hana", 205, True, "NPC\\Hana\\hana_reference.png", "Hana Valencia (Abyssal Twin Arctic She-Wolf Hybrid, 205 cm)", "plumed snow-white arctic wolf tail", "tall snow-white arctic wolf ears", "HETEROCHROMATIC EYES • ROMAN II SCAR • SILKY WHITE FUR", "Fierce sleek snow-white arctic she-wolf snout with glowing neon-pink and blue heterochromatic eyes", "ARCTIC SHE-WOLF", "Nape fur parting over pale Roman numeral 'II' brand", "ROMAN II NAPE SCAR", "Slender lethal white-furred forepaw with curved obsidian claws", "ABYSSAL CLAWS", "205 cm lithe, elastic, dangerously muscular female arctic werewolf-hybrid frame", "Sleek pure-white she-wolf snout with glowing heterochromatic pink & blue eyes and sharp twin fangs", "Silky dense snow-white arctic pelage with luxurious frost-white shoulder ruff", "Agile feline-fast digitigrade hind legs with dark claws; single pair of white wolf ears atop skull", "Natural silky white furred beast anatomy (shredded black Void-scout hip wrap)."),
+        ("luka_hybrid", "NPC\\Luka", 260, True, "NPC\\Luka\\luka_reference.png", "Luka Sutter (Ursa Major Black Bear Hybrid, 260 cm)", "short stubby black bear tail", "rounded black bear ears atop massive skull", "X-SHAPED MUZZLE SCAR • URSA CLAWS • CRIMSON EYES", "Gargantuan roaring Black Bear hybrid head with prominent X-shaped scar across right cheek/muzzle and crimson-tinted eyes", "URSA MAJOR HEAD", "Enormous pitch-black bear forepaw with curved 10cm bone-crushing claws", "BEAR CLAWS", "Heavy crimson-tinted dorsal ruff hairs rising over pitch-black bear shoulders", "BEAR SHOULDER MANE", "260 cm titanic barrel-chested Black Bear hybrid juggernaut, immense shoulders and arms", "Broad heavy ursine snout with X-shaped scar etched across right muzzle, jagged fangs, crimson-hazel glowing eyes", "Ultra-thick pitch-black bear fur across massive torso, limbs, and short stubby tail", "Heavy plantigrade-to-digitigrade bear hind legs with thick paw pads; single pair of rounded bear ears atop head", "Torn camo tactical cargo scraps or natural black bear furred anatomy."),
+        ("dullahan_hybrid", "NPC\\Dullahan", 250, False, "NPC\\Dullahan\\dullahan_reference.png", "Dullahan (Headless Steel-Grey Irish Wolfhound Hybrid, 250 cm, NO HEAD)", "wire-haired steel-grey wolfhound tail", "swirling black mist vortex above severed collar (STRICTLY NO HEAD)", "BLACK MIST COLLAR • WIRE-HAIRED GREY FUR • HOUND CLAWS", "Close-up of clean severed grey neck stump emitting dense swirling black spectral mist (ZERO head, ZERO eyes, ZERO face)", "HEADLESS MIST NECK", "Steel-grey wire-haired canine forepaw with spectral dark claws", "WOLFHOUND CLAWS", "Chest fur bearing pale silver DDM seal beneath shredded black shoulder fabric", "SPECTRAL CHEST PELAGE", "250 cm towering heavily muscled canine beast frame with broad taurine shoulders and STRICTLY NO HEAD ABOVE THE NECK", "STRICTLY NO HEAD, NO SKULL, NO FACE: only a continuous column of dark swirling spectral shadow mist rising from the severed grey neck above ragged dark shoulder cloth", "Coarse wiry steel-grey Irish Wolfhound fur across massive arms, chest, digitigrade legs, and tail", "Digitigrade canine hind legs with iron-hard dark claws; zero head/ears", "Tattered dark fabric scraps around shoulders and waist."),
+        ("johan_hybrid", "NPC\\Johan", 175, True, "NPC\\Johan\\johan_reference.png", "Johan Jakobsen (Runic Overload Wererat Hybrid, 175 cm)", "long hairless prehensile pink-grey rat tail", "large rounded dark brown rat ears", "CURVED INCISORS • HYPERSENSITIVE WHISKERS • VERMIN CLAWS", "Sharp elongated cinnamon-furred rat snout with long sensitive whiskers, dark sunken glowing eyes, and sharp curved rodent incisors", "WERERAT SNOUT", "Slender clawed rodent forepaw with sparse cinnamon fur and delicate grasping digits", "WERERAT HANDS", "Naked scaly segmented prehensile rat tail coiling behind legs", "PREHENSILE RAT TAIL", "175 cm crouched, wiry, twitchy hyper-agile wererat-hybrid frame", "Pointed elongated rodent snout with twitching whiskers, curved sharp incisor fangs, and dark manic eyes", "Short silky cinnamon-brown fur across head, shoulders, and torso", "Digitigrade elongated rodent hind feet with sharp nimble claws; single pair of large rounded rat ears atop head", "Tattered mint-green lab coat collar/scraps or natural cinnamon furred anatomy."),
+        ("fenrir_hybrid", "NPC\\Fenrir", 240, False, "NPC\\Fenrir\\fenrir_reference.png", "Fenrir (Contractor #06 Black Kingsnake Hybrid, 240 cm)", "massive thick glossy black kingsnake tail", "sleek smooth horned-scale serpent head (ZERO mammal ears)", "GLOSSY SCALES • MILKY BLIND EYES • VENOM FANGS", "Terrifying angular black-and-iridescent-blue scaled serpent-humanoid head with sightless milky white eyes, forked tongue, and curved fangs", "SERPENT HEAD & EYES", "Armored glossy black scaled forearm with iridescent blue highlights and curved obsidian talons", "SCALED TALONS", "Macro close-up of interlocking hexagonal glossy black-and-azure dorsal serpent scales", "IRIDESCENT SCALES", "240 cm colossal muscular viper-predator bipedal reptile hybrid, broad constrictor chest and neck", "Elongated muscular serpent hybrid head with smooth scale ear-slits (ZERO wolf or mammal ears), sightless glowing milky-white blind eyes, retractable fangs, forked tongue", "Entirely armored in glossy obsidian-black and iridescent cobalt-blue serpent scales across chest, torso, arms, and tail", "Powerful scaled reptilian digitigrade legs and thick heavy black kingsnake tail trailing behind; zero human/mammal ears", "Natural glossy black-and-blue scaled reptile anatomy (torn matte-black cargo scraps)."),
+    ]
+    for eid, folder, h_cm, ears_above, src_ref, identity, tail_attach, ear_summary, subtitle, b1d, b1c, b2d, b2c, b3d, b3c, build, face, coat, anatomy, outfit in hybrid_specs:
+        add(
+            eid,
+            "4_HYBRID",
+            folder,
+            h_cm,
+            ears_above,
+            f"{eid}_reference.png",
+            None,
+            ref_anchors=[src_ref],
+            ref_prompt=HYBRID_REF_TEMPLATE.format(
+                identity=identity,
+                tail_attach=tail_attach,
+                ear_summary=ear_summary,
+                subtitle=subtitle,
+                box1_desc=b1d,
+                box1_cap=b1c,
+                box2_desc=b2d,
+                box2_cap=b2c,
+                box3_desc=b3d,
+                box3_cap=b3c,
+                build=build,
+                face=face,
+                coat=coat,
+                anatomy=anatomy,
+                outfit=outfit,
+            ),
+            asset_kind="hybrid_ref",
+        )
+
+    # === WAVE 5_AVATAR: 25 Base Characters Default Half-Body Urban Avatars (<name>_avatar.png) ===
+    avatar_specs = [
+        ("jasper_avatar", "Jasper", 193, True, "jasper_reference.png", "Jasper Svartr Douglas Bloodmoon, 19yo werewolf college hacker with tousled caramel-chestnut hair, mint-green eyes, faint freckles, subtle smirk, single pair of caramel wolf ears atop head", "Burgundy pullover hoodie with white drawstrings over dark t-shirt", "Sunny Blackwood City upscale coastal avenue outside SUCC university buildings at golden hour, warm sunlit palms and modern glass architecture with shallow depth-of-field bokeh."),
+        ("alyssa_avatar", "Alyssa", 155, True, "alyssa_reference.png", "Alyssa Hvit Douglas Bloodmoon, 19yo petite werewolf with long wavy caramel-chestnut hair, vivid mint-green doe eyes, soft freckles, gentle warm smile, single pair of caramel wolf ears atop head", "Sunny sunflower-yellow ruffled crop top, thin gold sunflower necklace, natural warm aesthetic", "Sunlit Blackwood City coastal walkway lined with palm trees, cafes, and Mediterranean stucco facades with warm afternoon bokeh."),
+        ("malachia_avatar", "Malachia", 208, True, "malachia_reference.png", "Malachia Bjorn Douglas Bloodmoon, 28yo colossal muscular werewolf matching malachia_anchor.jpg: rich deep sun-kissed bronze-tan skin, shorter thick spiky swept-back jet-black hair, sculpted dark goatee & connected mustache, cold pale amber-grey eyes, vertical scar through left eyebrow into an X-cut left cheek scar, neck/arm Norse ink with wolf head motif, single pair of large dark wolf ears atop head", "Tight matte-black short-sleeve compression t-shirt across massive traps and chest, white boxing hand wraps", "Moody dusk downtown Blackwood City street near an upscale security complex and glowing streetlamps with shallow golden-hour palm bokeh."),
+        ("noah_avatar", "Noah", 197, True, "noah_reference.png", "Noah Loki Douglas Bloodmoon, 25yo tall tanned blond werewolf with neatly styled blond hair, sunglasses pushed into hair, bright blue eyes, confident charm, single pair of blond wolf ears atop head", "Tailored crisp white polo shirt unbuttoned at collar, silver wristwatch", "Sunny California coastal boardwalk in Blackwood City with palm silhouettes, beachside cafes, and warm ocean-breeze bokeh."),
+        ("erik_avatar", "Erik", 213, True, "erik_reference.png", "Erik Ulfr Douglas, 55yo imposing Prime Alpha patriarch with jet-black hair silvered at temples, piercing amber eyes, trimmed stubble, cheek ritual scar, single pair of black wolf ears atop head", "Tailored dark charcoal Italian linen dress shirt opened at collar showing subtle gold chain", "Glass-and-steel Blackwood City financial district skyline at sunset seen from an executive DCC Tower terrace with warm golden bokeh."),
+        ("logan_avatar", "Logan", 198, True, "logan_reference.png", "Logan Jarn Douglas, 49yo rugged biker-mechanic werewolf with black-and-silver hair in a low messy ponytail, observant amber eyes, salt-and-pepper stubble, single pair of black-grey wolf ears atop head", "Worn matte-black leather biker jacket open over dark slate-grey henley shirt", "Evening Solarton / Blackwood City neon mechanic garage alley with warm amber streetlights and brick facades in soft bokeh."),
+        ("edric_avatar", "Edric", 165, True, "edric_reference.png", "Edric Douglas, 13yo tall tween werewolf boy with messy black hair over forehead, intense amber eyes, light cheek scars, single pair of black wolf ears atop head", "Battered black leather jacket over dark navy hoodie with white drawstrings", "Twilight suburban Blackwood City sidewalk with streetlights, skatepark rail in distance, and California pines in bokeh."),
+        ("wulfnic_avatar", "Wulfnic", 220, True, "wulfnic_reference.png", "Wulfnic Baleygr Bloodmoon, battle-worn 40s-looking Primordial Wolf King with long golden-blonde hair streaked with snow-white and warrior braid, matching blonde-and-white beard, ice-blue eyes, single pair of golden-white wolf ears atop head", "Dark charcoal handwoven wool Norse tunic fastened with wrought-iron brooch and dark wolf-pelt mantle", "Twilight mist-kissed edge where Blackwood City's ancient pine park meets quiet stone architecture in moody atmospheric bokeh."),
+        ("magnus_avatar", "Magnus", 205, True, "magnus_reference.png", "Sir Magnus Douglas III, aristocratic werewolf patriarch with combed-back black hair silvered at temples, trimmed silver-threaded beard, calm amber eyes, single pair of dark charcoal wolf ears atop head", "Three-piece slate-grey pinstriped bespoke wool suit, crisp white shirt, deep burgundy silk tie", "Historic Blackwood City Uptown Heritage District boulevard with neoclassical stonework and warm streetlantern bokeh."),
+        ("elizabeth_avatar", "Elizabeth", 165, True, "elizabeth_reference.png", "Lady Elizabeth Duskwood, poised werewolf matriarch appearing early 40s with luminous ash-grey updo, serene storm-grey eyes, gentle smile, single pair of ash-grey wolf ears atop head", "Dark forest-green fine cashmere dress, sand-beige wool wrap stole, luminous pearl necklace", "Golden-hour Blackwood City botanical courtyard overlooking elegant limestone townhouses and flowering trellises in soft bokeh."),
+        ("ut_avatar", "Ut", 240, True, "ut_reference.png", "Ut Berg, 240cm colossal battle-worn mid-40s Viking werewolf with homogenized wild reddish-auburn hair streaked with iron-grey and matching bushy beard, iron-grey eyes, jagged scars, iron arm rings, single pair of reddish-grey wolf ears", "Oversized red-and-black plaid flannel shirt worn open over earth-brown tank top", "Warm evening Solarton harbor pub district street with glowing shopfronts and industrial brickwork in shallow bokeh."),
+        ("zefir_avatar", "Zefir", 192, True, "zefir_reference.png", "Zefir Hvitskog, lean pale Firstborn scout with snow-white punk mohawk, icy washed-out blue eyes, insolent smirk, single pair of pierced snow-white wolf ears atop head", "Sleeveless studded black leather biker vest over distressed black tee", "Neon-lit Solarton underground nightlife alley and SUCC off-campus punk district at night with vivid cyberpunk-city bokeh."),
+        ("kaladin_avatar", "Kaladin", 191, True, "kaladin_reference.png", "Major Kaladin Blackwolf Nargathon, weathered tanned werewolf commander matching kaladin_anchor.jpg: long black low ponytail with two front locks framing forehead/temples, vivid emerald-teal eyes, sculpted dark goatee & mustache, brow/cheek scars, single pair of black wolf ears (ZERO horns)", "Charcoal-black tactical combat shirt under matte-black modular ballistic plate carrier with 'DCC SECURITY' patch", "Nighttime Blackwood City DCC Security Perimeter and modern glass-and-concrete corporate plaza under cool cyan/amber city lights in bokeh."),
+        ("nixara_avatar", "Nixara", 165, True, "nixara_reference.png", "Nixara Hvit Bloodmoon, radiant werewolf matriarch with voluminous honey-golden wavy hair, warm sky-blue eyes, light freckles, single pair of pure snow-white wolf ears with gold sun-moon earring", "Flowing cream-sand bohemian linen dress with delicate golden embroidery and amber teardrop pendant", "Warm sunlit Blackwood City waterfront promenade beside palms and bright Mediterranean cafes in soft golden bokeh."),
+        ("echo_avatar", "Echo", 178, False, "echo_reference.png", "E.C.H.O., Jasper's NON-HUMANOID sentient technomantic AI (strictly ZERO human body/face/limbs) hovering mid-air as a sleek 30 cm hexagonal matte-obsidian & cold-iron magitech recon drone with luminous emerald iris lens", "Autonomous engraved matte-obsidian drone chassis projecting a floating 3D translucent emerald-cyan holographic audio-oscilloscope waveform and runic data rings beside it", "Rain-slicked futuristic Solarton holographic neon night skyline and data-district canyon with glowing emerald-cyan bokeh."),
+        ("mac_avatar", "NPC\\Mac", 204, True, "NPC\\Mac\\mac_reference.png", "Mackenzie 'Mac' Sanchez-Rogers, 19yo powerhouse werewolf with shaggy dirty-blonde hair, amber eyes, left cheek/nose scar, golden wolf ears atop head", "Vintage leather jacket worn over dark plaid flannel shirt and graphic tee", "Twilight SUCC indie music district street outside a neon-lit rehearsal venue with string lights in warm bokeh."),
+        ("larek_avatar", "NPC\\Larek", 201, False, "NPC\\Larek\\larek_reference.png", "Larek Steeltooth, 21yo muscular olive-green Orc engineering student with jet-black fade, notched lower ivory tusks, amber-gold eyes, tricep clan ink", "Charcoal heavyweight hoodie over olive workwear vest", "Modern SUCC University Computer Engineering quad and concrete brutalist walkways in crisp afternoon urban bokeh."),
+        ("zeera_avatar", "NPC\\Zeera", 208, True, "NPC\\Zeera\\zeera_reference.png", "Zeera Darkfire, 208cm dark-bronze Vax Demon CEO with crimson undertones, platinum-ringed black braids, slender carved dark horns, deep amber eyes, pointed ears, nose scar", "Tailored dark charcoal linen dress shirt open at throat with black slacks", "Upscale Blackwood City high-rise penthouse terrace overlooking glittering downtown skyscrapers at night in rich bokeh."),
+        ("richard_avatar", "NPC\\Richard", 193, True, "NPC\\Richard\\richard_reference.png", "Richard Whitlock (Contractor #01), 47yo weathered Lion Shifter knight with cropped grey hair, trimmed beard, light blue eyes, lion ears atop head", "Thick grey cable-knit turtleneck sweater and dark wool coat", "Overcast modern Blackwood City harbor financial street with stone facades and misty city bokeh."),
+        ("adam_avatar", "NPC\\Adam", 188, True, "NPC\\Adam\\adam_reference.png", "Adam Valencia (Contractor #02A), 28yo muscular Arctic Wolf Shifter with shoulder-length white hair, pink and blue heterochromatic eyes, white wolf ears atop head", "Dark charcoal heavy pullover hoodie", "Sleek nighttime Blackwood City metro overpass and modern concrete district under cool neon streetlights in bokeh."),
+        ("hana_avatar", "NPC\\Hana", 180, True, "NPC\\Hana\\hana_reference.png", "Hana Valencia (Contractor #02H), 28yo athletic busty Arctic Wolf Shifter with long pure white hair, glowing pink and blue heterochromatic eyes, white wolf ears atop head", "Soft cream off-shoulder knit sweater", "Upscale Blackwood City evening boulevard lined with boutique glass storefronts and warm cafe bokeh."),
+        ("luka_avatar", "NPC\\Luka", 193, True, "NPC\\Luka\\luka_reference.png", "Luka Sutter (Contractor #03), 32yo heavily muscled Black Bear Shifter with messy crimson hair, hazel eyes, X-shaped scar across right cheek, rounded black bear ears atop head", "Fitted olive-drab tactical tank top", "Industrial Solarton warehouse security yard at dusk with steel fences and amber floodlights in shallow bokeh."),
+        ("dullahan_avatar", "NPC\\Dullahan", 203, False, "NPC\\Dullahan\\dullahan_reference.png", "Dullahan (Contractor #04), 34yo headless muscular werewolf mercenary: dull grey skin, perpetual oversized dark hood pulled forward over swirling black shadow mist where head would be (NO face, NO skull)", "Heavy oversized charcoal hoodie with whistle cord", "Fog-shrouded midnight Blackwood City asphalt viaduct beneath sodium-vapor streetlights in moody bokeh."),
+        ("johan_avatar", "NPC\\Johan", 182, True, "NPC\\Johan\\johan_reference.png", "Johan Jakobsen (Contractor #05), 28yo lanky sickly-pale Rat Shifter prodigy with unkempt long black hair, wire-rimmed glasses, sunken dark-circled eyes, brown rat ears atop head", "Mint-green medical lab scrub jacket over dark shirt", "Sterile modern underground SUCC/DDM laboratory corridor with glass partitions and cool fluorescent bokeh."),
+        ("fenrir_avatar", "NPC\\Fenrir", 203, False, "NPC\\Fenrir\\fenrir_reference.png", "Fenrir (Contractor #06), 26yo corpse-pale muscular Kingsnake Shifter super-soldier with cropped black hair, sightless milky blind eyes, scarred cheekbones, subtle dark facial scales", "Sleeveless black combat hoodie and white knuckle hand wraps", "Dark rain-wet Blackwood City industrial alleyway lit by distant cool blue security beacons in sharp bokeh."),
+    ]
+    for eid, folder, h_cm, ears_above, src_ref, c_desc, def_out, urb_bg in avatar_specs:
+        add(
+            eid,
+            "5_AVATAR",
+            folder,
+            h_cm,
+            ears_above,
+            None,
+            f"{eid.replace('_avatar', '')}_avatar.png",
+            neutral_anchors=[src_ref],
+            neutral_prompt=build_avatar_prompt(c_desc, def_out, urb_bg),
+            asset_kind="default_avatar",
+        )
+
     return entries
 
 
@@ -646,6 +819,11 @@ def cmd_init_manifest(args: argparse.Namespace) -> None:
             {
                 "updated_at": time.strftime("%Y-%m-%d %H:%M:%S"),
                 "grid": {"canvas": list(NEUTRAL_SIZE), "floor_y": FLOOR_Y, "px_per_cm": PX_PER_CM},
+                "asset_roles": {
+                    "reference": "16:9 (2730x1536 RGB #C8C8C8) technical 4-column turnaround sheet (base & 23 hybrid shifter forms)",
+                    "neutral_vn_sprite": "2:3 (1696x2528 RGBA transparent, FLOOR_Y=2500, PX_PER_CM=9.75) full-body Visual Novel emotion sprite for Wyvern Sprites section",
+                    "default_avatar": "2:3 (1696x2528 RGB) half-body default outfit portrait on cohesive urban background for Wyvern default character/world avatar",
+                },
                 "items": entries,
             },
             indent=2,
@@ -765,6 +943,16 @@ def cmd_probe_keys(_: argparse.Namespace) -> None:
     print(f"WORKING_PAIRS={working}")
 
 
+def resolve_anchor_path(anchor_spec: str) -> pathlib.Path:
+    p_refs = REFS_DIR / anchor_spec
+    if p_refs.exists():
+        return p_refs
+    p_assets = ASSETS_DIR / anchor_spec
+    if p_assets.exists():
+        return p_assets
+    return p_refs
+
+
 def cmd_gen_api(args: argparse.Namespace) -> None:
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
     item = next((x for x in manifest["items"] if x["id"] == args.id), None)
@@ -772,11 +960,11 @@ def cmd_gen_api(args: argparse.Namespace) -> None:
         raise SystemExit(f"Unknown id: {args.id}")
     if args.kind == "reference":
         prompt = item["reference_prompt"]
-        anchors = [REFS_DIR / a for a in item.get("reference_anchors", [])]
+        anchors = [resolve_anchor_path(a) for a in item.get("reference_anchors", [])]
         aspect = "16:9"
     else:
         prompt = item["neutral_prompt"]
-        anchors = [REFS_DIR / a for a in item.get("neutral_anchors", [])]
+        anchors = [resolve_anchor_path(a) for a in item.get("neutral_anchors", [])]
         aspect = "2:3"
     if not prompt:
         raise SystemExit(f"No prompt defined for {args.id} ({args.kind})")
@@ -1012,6 +1200,26 @@ def lookup_height_spec(eid: str | None, height_cm: float | None, no_ears_above: 
     raise SystemExit("Provide --id <item_id> or --height-cm <cm> for shared height grid scaling.")
 
 
+def place_floating_rgba_on_canvas(rgba_im: Image.Image) -> Image.Image:
+    """Center a floating non-humanoid drone/hologram RGBA sprite inside (1696, 2528) at eye/shoulder hover height."""
+    arr = np.array(rgba_im.convert("RGBA"))
+    ys, xs = np.where(arr[:, :, 3] > 15)
+    if len(ys) == 0:
+        raise RuntimeError("Matting left zero foreground pixels.")
+    crop = rgba_im.crop((int(xs.min()), int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1))
+    max_w, max_h = 980, 980
+    scale = min(max_w / crop.width, max_h / crop.height)
+    nw, nh = max(1, int(round(crop.width * scale))), max(1, int(round(crop.height * scale)))
+    resized = crop.resize((nw, nh), Image.Resampling.LANCZOS)
+    canvas = Image.new("RGBA", NEUTRAL_SIZE, (255, 255, 255, 0))
+    px = (NEUTRAL_SIZE[0] - nw) // 2
+    py = max(180, 1180 - nh // 2)
+    canvas.paste(resized, (px, py), resized)
+    c_arr = np.array(canvas)
+    c_arr[c_arr[:, :, 3] == 0] = [255, 255, 255, 0]
+    return Image.fromarray(c_arr, mode="RGBA")
+
+
 def finalize_neutral_image(
     src: pathlib.Path,
     dst: pathlib.Path,
@@ -1019,6 +1227,7 @@ def finalize_neutral_image(
     has_ears_above_crown: bool,
     already_rgba: bool = False,
     mark_id: str | None = None,
+    floating: bool = False,
 ) -> None:
     dst.parent.mkdir(parents=True, exist_ok=True)
     im_raw = Image.open(src)
@@ -1026,6 +1235,14 @@ def finalize_neutral_image(
         rgba = im_raw
     else:
         rgba = flood_fill_white_bg_rgba(im_raw.convert("RGB"))
+
+    if floating or mark_id == "echo":
+        out_im = place_floating_rgba_on_canvas(rgba)
+        out_im.save(dst, format="PNG", optimize=True)
+        if mark_id:
+            mark_manifest_done(mark_id, "neutral")
+        print(f"[FINALIZED FLOATING SPRITE] {dst.name} size={out_im.size} corner={out_im.getpixel((5,5))}")
+        return
 
     out_im = place_rgba_on_height_grid(rgba, height_cm, has_ears_above_crown)
     out_im.save(dst, format="PNG", optimize=True)
@@ -1039,6 +1256,18 @@ def finalize_neutral_image(
         f"[FINALIZED NEUTRAL] {dst.name} target={height_cm:.0f}cm eff={eff_cm:.1f}cm "
         f"(ear={y_ear}, crown={y_crown}, sole={y_sole}) corner={out_im.getpixel((5,5))}"
     )
+
+
+def finalize_avatar_image(src: pathlib.Path, dst: pathlib.Path, mark_id: str | None = None) -> None:
+    """Save 2:3 half-body default urban avatar to (1696, 2528) RGB PNG without background stripping."""
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    im = Image.open(src).convert("RGB")
+    if im.size != NEUTRAL_SIZE:
+        im = im.resize(NEUTRAL_SIZE, Image.Resampling.LANCZOS)
+    im.save(dst, format="PNG", optimize=True)
+    if mark_id:
+        mark_manifest_done(mark_id, "neutral")
+    print(f"[FINALIZED AVATAR] {dst} size={im.size} mode={im.mode}")
 
 
 def strip_studio_grey_to_rgba(im_rgb: Image.Image) -> Image.Image:
@@ -1121,6 +1350,8 @@ def cmd_prep_front_anchors(_: argparse.Namespace) -> None:
     items = get_manifest_entries()
     count = 0
     for it in items:
+        if it.get("asset_kind", "character") != "character" or it.get("id") == "echo":
+            continue
         rp = it["reference_path"]
         if not rp or not pathlib.Path(rp).exists():
             continue
@@ -1128,22 +1359,38 @@ def cmd_prep_front_anchors(_: argparse.Namespace) -> None:
         # Crop strictly VISTA FRONTALE column (exclude header above y=102 and 45-deg view right of x=715)
         crop = im.crop((75, 102, 715, 1525))
         rgba = strip_studio_grey_to_rgba(crop)
-        grid_rgba = place_rgba_on_height_grid(rgba, float(it["height_cm"]), bool(it["has_ears_above_crown"]))
 
-        # Composite onto solid pure white #FFFFFF for 2:3 Gemini structural anchor
+        # 1) Save real-height-grid anchor (<id>_front_2x3.png) for height chart calibration
+        grid_rgba = place_rgba_on_height_grid(rgba, float(it["height_cm"]), bool(it["has_ears_above_crown"]))
         white_bg = Image.new("RGB", NEUTRAL_SIZE, (255, 255, 255))
         white_bg.paste(grid_rgba, (0, 0), grid_rgba)
         out_p = REFS_DIR / f"{it['id']}_front_2x3.png"
         white_bg.save(out_p, format="PNG")
 
+        # 2) Save high-res 90%-height body-only anchor (<id>_body_2x3.png) preserving 1:1 aspect ratio
+        # so image-generator draws every character at maximum sharpness before finalize-neutral scales to cm.
+        c_arr_raw = np.array(rgba)[:, :, 3]
+        ry, rx = np.where(c_arr_raw > 15)
+        tight = rgba.crop((int(rx.min()), int(ry.min()), int(rx.max()) + 1, int(ry.max()) + 1))
+        target_h_body = int(round(NEUTRAL_SIZE[1] * 0.90))  # ~2275 px
+        scale_b = min((NEUTRAL_SIZE[0] - 120) / tight.width, target_h_body / tight.height)
+        bw, bh = max(1, int(round(tight.width * scale_b))), max(1, int(round(tight.height * scale_b)))
+        tight_res = tight.resize((bw, bh), Image.Resampling.LANCZOS)
+        body_canvas = Image.new("RGB", NEUTRAL_SIZE, (255, 255, 255))
+        bx = (NEUTRAL_SIZE[0] - bw) // 2
+        by = (NEUTRAL_SIZE[1] - bh) // 2
+        body_canvas.paste(tight_res, (bx, by), tight_res)
+        body_p = REFS_DIR / f"{it['id']}_body_2x3.png"
+        body_canvas.save(body_p, format="PNG")
+
         c_arr = np.array(grid_rgba)[:, :, 3]
         y_ear, y_crown, y_sole = detect_crown_and_sole(c_arr, bool(it["has_ears_above_crown"]))
         print(
-            f"[ANCHOR 2:3] {out_p.name} ({it['height_cm']}cm) -> "
+            f"[ANCHOR 2:3] {body_p.name} (body {bw}x{bh}) & {out_p.name} ({it['height_cm']}cm) -> "
             f"ear={y_ear}, crown={y_crown}, sole={y_sole}, eff={(y_sole-y_crown)/PX_PER_CM:.1f}cm"
         )
         count += 1
-    print(f"Prepared {count} clean 2:3 VISTA FRONTALE anchors in {REFS_DIR}")
+    print(f"Prepared {count} clean 2:3 VISTA FRONTALE & body anchors in {REFS_DIR}")
 
 
 def cmd_build_audit_sheet(args: argparse.Namespace) -> None:
@@ -1155,10 +1402,12 @@ def cmd_build_audit_sheet(args: argparse.Namespace) -> None:
             p = pathlib.Path(it["reference_path"])
             if p.exists():
                 tiles.append((f"{it['id']} REF", p, False))
-        if args.kind in ("neutral", "both"):
+        if args.kind in ("neutral", "both") and it.get("neutral_path"):
             p = pathlib.Path(it["neutral_path"])
             if p.exists():
-                tiles.append((f"{it['id']} NEUTRAL", p, True))
+                is_rgba_vn = it.get("asset_kind", "character") == "character"
+                lbl = f"{it['id']} AVATAR" if not is_rgba_vn else f"{it['id']} NEUTRAL"
+                tiles.append((lbl, p, is_rgba_vn))
     if not tiles:
         raise SystemExit(f"No completed tiles found for wave={args.wave} kind={args.kind}")
 
@@ -1304,6 +1553,11 @@ def main() -> None:
     p_neu.add_argument("--already-rgba", action="store_true")
     p_neu.add_argument("--mark-done", action="store_true")
 
+    p_av = sub.add_parser("finalize-avatar")
+    p_av.add_argument("--src", required=True)
+    p_av.add_argument("--dst", required=True)
+    p_av.add_argument("--mark-done", default=None)
+
     p_aud = sub.add_parser("build-audit-sheet")
     p_aud.add_argument("--wave", required=True)
     p_aud.add_argument("--kind", choices=["reference", "neutral", "both"], default="both")
@@ -1336,6 +1590,8 @@ def main() -> None:
             already_rgba=args.already_rgba,
             mark_id=(args.id if args.mark_done and args.id else None),
         )
+    elif args.cmd == "finalize-avatar":
+        finalize_avatar_image(pathlib.Path(args.src), pathlib.Path(args.dst), mark_id=args.mark_done)
     elif args.cmd == "build-audit-sheet":
         cmd_build_audit_sheet(args)
     elif args.cmd == "build-height-chart":
