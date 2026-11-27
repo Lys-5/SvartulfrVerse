@@ -1,5 +1,13 @@
 # Changelog di Progetto — Svartúlfr Verse
 
+### 27/11/2026 (11:50) - Calibrazione Griglia `Wave 2 Batch 2` (`5/6` Ricevuti) & Audit Completo Altezze `25/25` Neutrals (`1696x2528` RGBA) (#Rules 03, 05)
+- **Calibrati `5` Nuovi Visual Novel Neutral Sprite su Griglia Condivisa (`1696x2528` RGBA, `FLOOR_Y=2500`, `PX_PER_CM=9.75`):**
+  - [hana_v_neutral.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Hana_V/hana_v_neutral.png) (`180.0 cm`), [johan_neutral.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Johan/johan_neutral.png) (`181.8 cm`), [luka_neutral.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Luka/luka_neutral.png) (`193.0 cm`), [richard_l_neutral.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Richard_L/richard_l_neutral.png) (`192.9 cm`) e [dullahan_neutral.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Dullahan/dullahan_neutral.png) (`203.0 cm`), elaborati con `--already-rgba` per preservare al `100%` capelli bianchi, camice e camicia bianca senza buchi interni.
+- **Audit Visivo Completo `25/25` Sprite Presenti (`Wave 1A + 1B + Wave 2`) & Mapping Pipeline:**
+  - Aggiornato [asset_reference_pipeline.py](file:///e:/repository/SvartulfrVerse/scripts/asset_reference_pipeline.py) per mappare l'omonimo `hana` su `hana_v_neutral.png` (`manifest` aggiornato: Wave 1A `16/16`, Wave 1B `14/14`, Wave 2 `19/20` — manca solo `fenrir_neutral.png`).
+  - Generati e ispezionati visivamente i confronti graduati [wave2_all_neutrals_height_lineup.jpg](file:///C:/Users/mande/.gemini/antigravity/brain/713be534-6fb6-4fa8-bd35-5129adcc8c16/wave2_all_neutrals_height_lineup.jpg) (`10/11` presenti) e [wave1_all_neutrals_height_lineup.jpg](file:///C:/Users/mande/.gemini/antigravity/brain/713be534-6fb6-4fa8-bd35-5129adcc8c16/wave1_all_neutrals_height_lineup.jpg) (`15/15` presenti): progressione millimetrica verificata (`155–240 cm`), `0` artefatti di trasparenza e `0` orecchie umane sui licantropi.
+- **In Attesa:** [fenrir_neutral.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Fenrir/fenrir_neutral.png) (`203 cm`, non ancora generato/salvato nella cartella `assets/NPC/Fenrir/`).
+
 ### 27/11/2026 (11:16) - Aggiornamento `Magnus` Senza Orecchie Umane & Primi `5/10` Visual Novel Neutral Wave 2 (`1696x2528` RGBA) (#Rules 03, 05)
 - **Rigenerazione `Magnus` Senza Orecchie Umane ([magnus_reference.png](file:///e:/repository/SvartulfrVerse/assets/Magnus/magnus_reference.png), [magnus_neutral.png](file:///e:/repository/SvartulfrVerse/assets/Magnus/magnus_neutral.png)):**
   - Verificati tutti i `15/15` licantropi (`ref` e `neutral`): `100%` puliti e privi di orecchie umane ai lati.

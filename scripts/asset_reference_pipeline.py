@@ -934,7 +934,11 @@ def get_manifest_entries(existing_items: dict[str, dict] | None = None, seed_reg
     ]
     for eid, folder, h_cm, ears_above, r_anc, r_prompt, n_summary in wave2_specs_custom:
         ref_fname = "richard_w_reference.png" if eid == "richard" else f"{eid}_reference.png"
-        neu_fname = "richard_w_neutral.png" if eid == "richard" else f"{eid}_neutral.png"
+        neu_fname = (
+            "richard_w_neutral.png"
+            if eid == "richard"
+            else ("hana_v_neutral.png" if eid == "hana" else f"{eid}_neutral.png")
+        )
         add(eid, "2", folder, h_cm, ears_above, ref_fname, neu_fname, ref_prompt=r_prompt, neutral_prompt=n_summary, ref_anchors=r_anc)
 
     # === WAVE 3: Variants in the SAME folder as the original ===
