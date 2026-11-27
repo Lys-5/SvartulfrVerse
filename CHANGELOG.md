@@ -1,5 +1,11 @@
 # Changelog di Progetto — Svartúlfr Verse
 
+### 27/11/2026 (07:50) - Registrazione Reference `Richard_W` (`#01`) & `Luka` (`#03`) + Verifica Quota Immagini (#Rules 03, 05, 11)
+- **Wave 2 a `7/10` Reference Sheets Completate (`2730x1536` RGB):**
+  - Verificate visivamente, finalizzate ed estratte le anchor `2:3` di [richard_w_reference.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Richard_W/richard_w_reference.png) (`#01` forma base umana, nessun occhiale, cicatrice verticale su occhio/guancia sinistri) e [luka_reference.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Luka/luka_reference.png) (`#03` forma base umana, cicatrice a X su guancia sinistra/avambraccio, dilatatore nero a sinistra).
+  - Aggiornati [asset_reference_pipeline.py](file:///e:/repository/SvartulfrVerse/scripts/asset_reference_pipeline.py), `scratch/asset_reference_manifest.json` (`richard` + `luka` `DONE`; restano `dullahan`, `johan`, `fenrir`), [wave2_alice_refs_audit.jpg](file:///C:/Users/mande/.gemini/antigravity/brain/713be534-6fb6-4fa8-bd35-5129adcc8c16/wave2_alice_refs_audit.jpg) e [WAVE2_GEMINI_PRO_PROMPTS.md](file:///e:/repository/SvartulfrVerse/assets/WAVE2_GEMINI_PRO_PROMPTS.md).
+  - Eseguito `probe-keys` sulle 4 API key Google AI Studio: tutte e 4 ancora in `HTTP 429` (prossimo check automatico alle `09:02 CET` via `task-215`).
+
 ### 27/11/2026 (07:38) - Standard Cartelle Omonimi `Firstname_L`, 5 Reference Wave 2 da Gemini Pro & Prompt Contractor `#01/#03-#06` (#Rules 03, 05, 11)
 - **Convenzione Omonimi `Firstname_L` ([03_outfits_e_coerenza_visiva.md](file:///e:/repository/SvartulfrVerse/.agents/rules/03_outfits_e_coerenza_visiva.md), [asset_reference_pipeline.py](file:///e:/repository/SvartulfrVerse/scripts/asset_reference_pipeline.py)):**
   - Spostata la tavola di **Richard Loewe** in [NPC/Richard_L/richard_reference.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Richard_L/richard_reference.png), rinominata la cartella di **Richard Whitlock (`#01`)** in `assets/NPC/Richard_W/` e la cartella di **Hana Valencia (`#02H`)** in `assets/NPC/Hana_V/`, allineando `asset_reference_pipeline.py` (Wave 2, 4_HYBRID, 5_AVATAR).

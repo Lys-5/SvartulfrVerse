@@ -36,35 +36,8 @@ CHARACTER SPECS:
 
 ---
 
-#### 2. Richard Whitlock `#01` (`richard_reference.png`)
-- **Da allegare:** `E:\repository\SvartulfrVerse\scratch\anchors_wave2\richard_anchor.jpg`
-- **Proporzioni:** `16:9`
-- **Destinazione finale dopo il salvataggio:** `assets/NPC/Richard_W/richard_reference.png`
-
-```text
-Professional 16:9 widescreen character reference sheet and turnaround model sheet of Richard Whitlock (DDM Contractor #01, 47-year-old 193 cm weathered muscular military knight commander in BASE HUMAN FORM, anchored 1:1 to richard_anchor.jpg — strictly NO glasses), rendered in a cohesive semi-realistic digital painting style with refined clean linework, rich painterly shading.
-
-BACKGROUND & LIGHTING:
-Flat, solid, completely uniform neutral light-grey studio background (#C8C8C8) with no gradients, no floor shadows, and no environment. Even, soft neutral studio lighting that clearly shows anatomy, skin texture, facial scar, and combat wounds.
-
-LAYOUT (LEFT TO RIGHT):
-1. Left — Full-body front view labeled "VISTA FRONTALE" at the top in clean bold dark sans-serif uppercase font. Disciplined upright commander standing pose, barefoot, BASE HUMAN FORM (human ears, NO animal tail).
-2. Center-left — Full-body 3/4 view (turned approx. 45 degrees) labeled "VISTA A 45° / TRE QUARTI" at the top, showing broad weathered muscular shoulders, neck hanging scar, and chest/arm combat scars.
-3. Center-right — Full-body side profile view (facing left) labeled "VISTA LATERALE" at the top, clearly showing upright heroic human posture, short neat salt-and-pepper hair silhouette, and clean human lumbar back (NO animal tail and NO animal ears).
-4. Right (Top) — Large high-detail head-and-shoulders close-up portrait facing forward labeled "DETTAGLIO VOLTO" at the top, matching richard_anchor.jpg 1:1: seasoned warm-tanned 47-year-old face, NO glasses, piercing icy light-blue eyes, prominent vertical pale scar slashing cleanly down across his LEFT eye and left cheek, short neat side-swept salt-and-pepper / silver-grey hair with tapered sides and one loose silver lock on forehead, neatly trimmed salt-and-pepper beard and mustache, and ordinary human ears at the sides of his head (STRICTLY ZERO lion ears and ZERO tail).
-5. Right (Bottom) — Section titled "TATUAGGI & SEGNI:" with subtitle "CICATRICE OCCHIO SINISTRO • SIGILLO STARFALL • FORMA BASE UMANA", above three aligned square close-up inset boxes with thin dark borders and centered uppercase captions underneath each box:
-   - Box 1: Macro of left eye & cheek showing vertical pale battle scar slashing through brow, icy blue eye, and cheekbone — caption: "LEFT EYE SCAR"
-   - Box 2: Heavy antique gold Starfall family signet ring worn on scarred tanned knight hand — caption: "STARFALL SIGNET RING"
-   - Box 3: Macro of faded neck/hanging scar & old shoulder knightly scars on weathered tanned skin — caption: "KNIGHT COMBAT SCARS"
-
-CHARACTER SPECS:
-- Build & Proportions: 193 cm (6' 4") broad muscular weathered military commander physique matching richard_anchor.jpg.
-- Face & Eyes: Seasoned authoritative 47-year-old warm-tanned face matching richard_anchor.jpg, NO glasses, piercing icy light-blue eyes, prominent vertical scar cutting across his LEFT eye and cheek, neatly trimmed full salt-and-pepper beard and mustache.
-- Hair: Short neat side-swept salt-and-pepper / silver-grey hair with tapered sides and a single loose silver-grey lock falling over forehead.
-- Anatomy: Mortal Shifter BASE HUMAN FORM: ordinary human ears, STRICTLY ZERO lion ears atop head and ZERO lion tail (Lion is full beast shift ANIMAL_FORM only).
-- Outfit: Fitted matte smoke-grey athletic boxer-brief trunks in the full-body turnaround views so knight scars, neck marks, and human proportions remain clear.
-- Marks & Details: Vertical scar through left eye and cheek, gold Starfall signet ring on hand, faded old hanging neck scar and chest/shoulder scars.
-```
+#### 2. Richard Whitlock `#01` (`richard_w_reference.png`) — COMPLETATA ✅
+- **Destinazione:** `assets/NPC/Richard_W/richard_w_reference.png` (`2730x1536` salvata)
 
 ---
 
@@ -169,35 +142,8 @@ CHARACTER SPECS:
 
 ---
 
-## 7. Luka Sutter `#03` (`luka_reference.png`)
-- **Da allegare:** `E:\repository\SvartulfrVerse\scratch\anchors_wave2\luka_anchor.jpg`
-- **Proporzioni:** `16:9`
-- **Destinazione finale dopo il salvataggio:** `assets/NPC/Luka/luka_reference.png`
-
-```text
-Professional 16:9 widescreen character reference sheet and turnaround model sheet of Luka Sutter (DDM Contractor #03 "Ursa Major", 32-year-old 193 cm heavily muscular security chief in BASE HUMAN FORM, anchored 1:1 to luka_anchor.jpg — ignore watermark and cigarette), rendered in a cohesive semi-realistic digital painting style with refined clean linework, rich painterly shading.
-
-BACKGROUND & LIGHTING:
-Flat, solid, completely uniform neutral light-grey studio background (#C8C8C8) with no gradients, no floor shadows, and no environment. Even, soft neutral studio lighting that clearly shows warm tanned skin, facial scar, and forearm wounds.
-
-LAYOUT (LEFT TO RIGHT):
-1. Left — Full-body front view labeled "VISTA FRONTALE" at the top in clean bold dark sans-serif uppercase font. Heavy broad-shouldered tactical standing pose, barefoot, BASE HUMAN FORM (human ears, NO bear tail).
-2. Center-left — Full-body 3/4 view (turned approx. 45 degrees) labeled "VISTA A 45° / TRE QUARTI" at the top, showing massive muscular torso, orbital-era combat scars, and right forearm X-scar.
-3. Center-right — Full-body side profile view (facing left) labeled "VISTA LATERALE" at the top, clearly showing swept-back crimson hair silhouette, black ear gauge in left earlobe, and clean human lumbar back (NO bear tail and NO bear ears).
-4. Right (Top) — Large high-detail head-and-shoulders close-up portrait facing forward labeled "DETTAGLIO VOLTO" at the top, matching luka_anchor.jpg 1:1: warm sun-tanned rugged face, intense pale hazel-green eyes, trimmed jawline stubble, prominent X-shaped scar across his LEFT cheek, short-to-medium windswept vivid crimson-red hair with loose bangs, and ordinary human ears wearing a solid black circular ear plug/gauge in his LEFT earlobe (STRICTLY ZERO bear ears and ZERO tail).
-5. Right (Bottom) — Section titled "TATUAGGI & SEGNI:" with subtitle "CICATRICE A 'X' • ORECCHINO NERO • CICATRICI AVAMBRACCIO", above three aligned square close-up inset boxes with thin dark borders and centered uppercase captions underneath each box:
-   - Box 1: Macro of left cheek & intense hazel-green eye bearing a prominent deep X-shaped scar & jawline stubble — caption: "LEFT CHEEK X-SCAR"
-   - Box 2: Macro of left human ear wearing a matte-black circular plug/gauge with swept crimson-red locks — caption: "BLACK EAR GAUGE"
-   - Box 3: Muscular tanned right forearm bearing an old X-shaped scar & orbital decompression scars — caption: "FOREARM X-SCAR"
-
-CHARACTER SPECS:
-- Build & Proportions: 193 cm (6' 4") heavily muscular broad tactical brute physique matching luka_anchor.jpg.
-- Face & Eyes: Warm sun-tanned rugged face matching luka_anchor.jpg, intense pale hazel-green eyes under furrowed brow, trimmed jawline stubble, prominent X-shaped scar on his LEFT cheek.
-- Hair: Short-to-medium windswept vivid crimson-red hair swept back with loose messy bangs and slightly longer nape locks.
-- Anatomy: Mortal Shifter BASE HUMAN FORM: ordinary human ears (black circular gauge plug in left earlobe), STRICTLY ZERO bear ears atop head and ZERO bear tail (Black Bear is full beast shift ANIMAL_FORM only).
-- Outfit: Fitted matte olive-drab athletic boxer-brief trunks in full-body turnaround views so tanned muscular torso and forearm X-scar remain clear.
-- Marks & Details: Prominent X-shaped scar on LEFT cheek, X-shaped scar on right forearm, black ear gauge in left earlobe, orbital scars.
-```
+## 7. Luka Sutter `#03` (`luka_reference.png`) — COMPLETATA ✅
+- **Destinazione:** `assets/NPC/Luka/luka_reference.png` (`2730x1536` salvata)
 
 ---
 
