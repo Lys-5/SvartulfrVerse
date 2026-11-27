@@ -1,5 +1,12 @@
 # Changelog di Progetto — Svartúlfr Verse
 
+### 27/11/2026 (23:23) - Chiusura `Alyssa DDM #07` (`AD-1` `3/3` `PASS`) & `FIX-A2` (`2/3` `PASS`) Live su Wyvern (`9/10` Personas al `100%`) (#Rules 01.1, 03, 05, 11)
+- **`FIX-A2` (`2/3` `PASS` & Live su `Alyssa Modern` + World Character `Alyssa`):**
+  - Promossi e sincronizzati via CDN: [angelo_moreno_couture.png](file:///E:/repository/SvartulfrVerse/assets/Alyssa/outfits/angelo_moreno_couture.png) e [blackwood_pilates.png](file:///E:/repository/SvartulfrVerse/assets/Alyssa/outfits/blackwood_pilates.png).
+  - Scartato `villa_douglas_hearth` (doppi orecchini di zaffiro alla mascella); aggiunto il prompt singolo `2:3` anti-orecchini **`FIX-A4`** in [PERSONA_ASSETS_16x9_GRID_PROMPTS.md](file:///E:/repository/SvartulfrVerse/assets/PERSONA_ASSETS_16x9_GRID_PROMPTS.md) (unico pannello rimanente di tutto il piano Persona `79/80` SFW!).
+- **`AD-1` (`3/3` `PASS` & Live — `Alyssa DDM Contractor #07` al `100%` SFW):**
+  - Promossi e sincronizzati su [Alyssa_DDM_Contractor_Persona.json](file:///E:/repository/SvartulfrVerse/FINAL/personas/Alyssa_DDM_Contractor_Persona.json): [ddm_tactical_uniform.png](file:///E:/repository/SvartulfrVerse/assets/Alyssa/outfits_ddm/ddm_tactical_uniform.png), [ddm_voidspace_lounge.png](file:///E:/repository/SvartulfrVerse/assets/Alyssa/outfits_ddm/ddm_voidspace_lounge.png) e [ddm_black_ops_stealth.png](file:///E:/repository/SvartulfrVerse/assets/Alyssa/outfits_ddm/ddm_black_ops_stealth.png).
+
 ### 27/11/2026 (23:18) - Sync Live Asset Shift `Hvít` / `Svartr` (`A-6`, `FIX-J2`) & Fix `FIX-A3` (`6/6` `PASS` & LIVE) (#Rules 01.1, 03, 05, 11)
 - **Audit Visivo & Upload Cloudflare CDN (`6/6` Pannelli `PASS` al 100%, Verifica GET Live Completata):**
   - **`A-6` (`Hvít`, Bianco Lunare):** [maniulfr_hybrid_shift.png](file:///E:/repository/SvartulfrVerse/assets/Alyssa/outfits/maniulfr_hybrid_shift.png) (silhouettes materna formosa con gorgiera a cuore argentea sul petto, occhi bianco lunare, artigli bianchi venati d'argento) e [hvit_full_shift.png](file:///E:/repository/SvartulfrVerse/assets/Alyssa/outfits/hvit_full_shift.png) sincronizzati su `Alyssa Modern`, `Alyssa DDM #07`, `Alyssa Fantasy` e World Character `Alyssa` (`_FGeNBqjrt9fJJJyXTDgxM`).
