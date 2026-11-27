@@ -1,5 +1,10 @@
 # Changelog di Progetto — Svartúlfr Verse
 
+### 27/11/2026 (17:34) - Promozione Ufficiale `Malachia` a **S-Rank** Gilda (Modern + Fantasy + World + Lorebook + Persona) (#Rules 01.1, 05, 11)
+- **Aggiornato Grado Gilda di `Malachia Björn Douglas Bloodmoon` a `S-Rank` (`Frontline Vanguard / Tank`), mantenendo `Jasper` e `Alyssa` a `A-Rank` (`100%` Verificato via GET Live):**
+  - **Card (`/mine`, `5`):** [Malachia_Douglas_Bloodmoon_card.json](file:///E:/repository/SvartulfrVerse/FINAL/Malachia_Douglas_Bloodmoon_card.json) (`_RDfz7XzTpM23LpPALVXHM`), entrambe le copie live di [Malachia_Fantasy_card.json](file:///E:/repository/SvartulfrVerse/FINAL/Malachia_Fantasy_card.json) (`_wMG7wAXjkHxXLhcN8chwj`, `_4NkYFwYnYMm7GaRxeUeDz`) e entrambe le copie live di [Jasper_Fantasy_card.json](file:///E:/repository/SvartulfrVerse/FINAL/Jasper_Fantasy_card.json) (`_K6GYVEbKggCMjWFDkXW6e`, `_hABEHWwXTXrtMrR6zRN9J`).
+  - **World & Lorebook & Persona:** [Svartulfr_Characters.json](file:///E:/repository/SvartulfrVerse/FINAL/Svartulfr_Characters.json) (`_QQXte9xWjMeMtqEJfwrc3`), [Svartulfr_NPC_Primary.json](file:///E:/repository/SvartulfrVerse/FINAL/Svartulfr_NPC_Primary.json) (`_zwEqgEEzh12X6gHVmMKKC[53]` + `lorebooks/optimized/`) e [Alyssa_Fantasy_Persona.json](file:///E:/repository/SvartulfrVerse/FINAL/personas/Alyssa_Fantasy_Persona.json) (`user_persona_bUnwqPg77CrB4C9TDQ8h3`).
+
 ### 27/11/2026 (16:35) - Upload & Sync Live Wyvern di Tutti i `57` Asset Completati (`10` Personas, `17` Card `/mine`, `20` World Characters, `2` Lorebooks) (#Rules 01.1, 03, 11)
 - **Cloudflare CDN & Gallerie (`57/57` Upload Verificati):**
   - Caricati su Cloudflare CDN tutti i `10` Avatar Dinamici delle Persona, i `21` Outfit Avatar puliti di `Alyssa`/`Jasper`/`Echo` e tutti i `26/26` Sprite Neutral trasparenti (`1696x2528` RGBA su griglia altezza condivisa, Wave 1A+1B+2); registrati gli avatar dinamici di `Alyssa`, `Jasper` ed `Echo` nelle gallerie del World (`_YpX47fNraQFw2dD7TdycJ`) e di `NPC Primary` (`_zwEqgEEzh12X6gHVmMKKC`).
