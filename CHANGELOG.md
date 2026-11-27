@@ -1,5 +1,12 @@
 # Changelog di Progetto — Svartúlfr Verse
 
+### 27/11/2026 (10:45) - Completamento Reference Wave 2 (`10/10 DONE`: `Dullahan`, `Johan`, `Fenrir`) & Guida Prompt `2:3` Neutral (#Rules 03, 05)
+- **Chiusa al 100% la Wave 2 Turnaround Reference Sheets (`10/10` `DONE`, `2730x1536` RGB su `#C8C8C8`):**
+  - Verificate visivamente, normalizzate (`fenris_reference.png` rinominata in `fenrir_reference.png`) e finalizzate le ultime `3` tavole: [dullahan_reference.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Dullahan/dullahan_reference.png) (`#04` senza testa con cappuccio vuoto e marchio `'IV'`), [johan_reference.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Johan/johan_reference.png) (`#05` forma base umana senza occhiali) e [fenrir_reference.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Fenrir/fenrir_reference.png) (`#06` forma base umana con bende insanguinate e marchio `'VI'`).
+  - Estratte tutte le `11` anchor `2:3` `*_body_2x3.png` (Wave 2 completa + `richard_l`) in `scratch/anchors_wave2_neutral/` (e in `artifacts/refs/`).
+- **Pubblicati i Prompt `2:3` per Visual Novel Neutral Sprites ([WAVE2_NEUTRAL_GEMINI_PRO_PROMPTS.md](file:///e:/repository/SvartulfrVerse/assets/WAVE2_NEUTRAL_GEMINI_PRO_PROMPTS.md)):**
+  - Pronti all'uso su Gemini Pro (`2:3`, sfondo `#FFFFFF` puro, sagoma a inchiostro chiuso, forma base umana rigorosa per tutti i Contractor DDM); sincronizzazione finale su Wyvern rimandata a fine blocco come richiesto.
+
 ### 27/11/2026 (08:42) - Architettura Doppia Narrator (`kind: "narrator"`) su Wyvern: `Universal Italian Game Master` + `Svartúlfr Guarded` (#Rules 01.1, 11, 13)
 - **Creato Nuovo Narrator Universale (`simple_assistant_Tp3rgwbctrKJwJLzm8HFy`, [Universal_Italian_Game_Master_Assistant.json](file:///e:/repository/SvartulfrVerse/FINAL/assistants/Universal_Italian_Game_Master_Assistant.json)):**
   - `kind: "narrator"`, `visibility: "private"`, `rating: "explicit"`, zero lore Svartúlfr/Douglas/Blackwood/`Pack-Family` (`sys=6438 char`, `fin=2077 char`, `0` em-dash).
