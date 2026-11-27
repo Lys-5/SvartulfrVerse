@@ -1,5 +1,14 @@
 # Changelog di Progetto — Svartúlfr Verse
 
+### 27/11/2026 (16:16) - Completati `10/10` Avatar Dinamici Persona & Audit Orecchie Batch 1 (`28` Nuovi Asset Puliti + `3` Griglie Fix) (#Rules 03, 05)
+- **Avatar Dinamici di Default delle Persona (`10/10` COMPLETATI):**
+  - Ritagliati & verificati visivamente al `3x` zoom (`0` orecchie umane sui licantropi, `0` barre divisorie residue): [AV-A2](file:///E:/repository/SvartulfrVerse/assets/Alyssa/avatars) (`alyssa_elf_avatar.png`, `alyssa_human_modern_avatar.png`, `alyssa_human_historical_avatar.png`), [AV-J1](file:///E:/repository/SvartulfrVerse/assets/Jasper/avatars) (`jasper_modern_avatar.png`, `jasper_human_modern_avatar.png`, `jasper_human_historical_avatar.png`) e [AV-E1](file:///E:/repository/SvartulfrVerse/assets/Echo/avatars/echo_modern_avatar.png).
+- **Outfit Echo (`4/4` COMPLETATI):** [E-1](file:///E:/repository/SvartulfrVerse/assets/Echo/outfits) (`holo_wave.png`, `aegis_drone.png`, `sunflower_link.png`, `cyberspace_avatar.png`).
+- **Audit Orecchie `Batch 1` Alyssa & Jasper (`17` Puliti Salvati, `10` Scartati per Orecchie Umane):**
+  - **Salvati in [assets/Alyssa/outfits/](file:///E:/repository/SvartulfrVerse/assets/Alyssa/outfits/) (`9`):** tutti i `4` di `A-1`, `3/4` di `A-2` (`moonflower_sleepwear`, `solarton_festival`, `succ_campus_anatomy`), `1/4` di `A-3` (`seven_hills_spring`), `1/4` di `A-4` (`clubbing_night`).
+  - **Salvati in [assets/Jasper/outfits/](file:///E:/repository/SvartulfrVerse/assets/Jasper/outfits/) (`8`):** `3/4` di `J-1` (`casual_home`, `tactical_guild`, `abyssal_armor`), `2/4` di `J-2` (`underground_dj`, `beach`), tutti i `3` di `J-3` (`succ_bears_spectator`, `hybrid_shift`, `full_shift`).
+  - **Scartati (`10`) & Aggiunti in [PERSONA_ASSETS_16x9_GRID_PROMPTS.md](file:///E:/repository/SvartulfrVerse/assets/PERSONA_ASSETS_16x9_GRID_PROMPTS.md):** `FIX-A1` (`4` Alyssa), `FIX-A2` (`3` Alyssa), `FIX-J1` (`3` Jasper) con ciocche laterali blindate sulle tempie e zero auricolari/orecchie ai lati.
+
 ### 27/11/2026 (12:18) - Taglio & Verifica Primi `3` Avatar Dinamici Persona `AV-A1` (`Alyssa` Modern / DDM #07 / Fantasy) (#Rules 03, 05)
 - **Ritagliati dal master full-res `AV-A1.png` (`2730x1536`) tramite `slice-outfit-grid --mode panels --trim-px 2` e verificati visivamente (`0` bordi residui, `0` orecchie umane, stili e sfondi tematici 1:1):**
   - [alyssa_modern_avatar.png](file:///e:/repository/SvartulfrVerse/assets/Alyssa/avatars/alyssa_modern_avatar.png) (`901x1536` RGB — Solarton sunlit campus)
