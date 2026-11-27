@@ -867,3 +867,21 @@
 | _qfaywY2yfrGWcxPBdmURD | Erik | Group 1: Family | outfit:The Verve VIP / Clubbing | QUEUED_DAY_5 | - | QUEUED_DAY_5 | Duplicates avatar; queued for DAY_5 |
 | _qfaywY2yfrGWcxPBdmURD | Erik | Group 1: Family | outfit:Beach / Terme di Branco | RECOVERED_ZERO_CREDIT | https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/c5eab8d7-5969-40e5-ed56-b8aa9d89da00/public | Day 1 | Zero-credit reuse from Active Gallery erik_base_model |
 | _qfaywY2yfrGWcxPBdmURD | Erik | Group 1: Family | outfit:Sleepwear / Padronale | RECOVERED_ZERO_CREDIT | https://imagedelivery.net/Dv4koOwHQU3XnXLqtl0aVQ/e6190f8b-79e1-451d-7b12-c98e4f796100/public | Day 1 | Zero-credit reuse from Legacy Gallery Erik |
+
+---
+
+## 5. Wyvern Sprite Sets Official Architecture (Emotion Pose Phase Contract)
+
+Reference rules recorded on **2026-11-27** for all upcoming Character, Outfit, World, and Lorebook emotion sprite packs:
+
+1. **Ownership & Linking (`Link existing sets`):**
+   - Sprite sets belong strictly to the owner of the character, lorebook, or world where they live; only sets owned by us can be linked across entities.
+   - A linked set is a **live reference (`"Linked from <Character>"`)**, never a static copy: edits to the source set propagate to every linked character, world, or lorebook; `Unlink` removes only the reference; linked sets cannot be marked as `Default Set` of the destination, and a `Default Set` cannot be deleted until another set is made default.
+2. **Per-Outfit Sprite Sets & Chat Resolution Order:**
+   - Inside *Appearance -> Outfits*, each saved outfit can select: `Character default`, `Own set` (created for that outfit, e.g., Hybrid Shift / Full Shift / distinct seasonal attire), or `Linked set` (shared across outfits `"(shared set)"` or read-only from World / linked WyvernChat character).
+   - Runtime fallback chain in chat: **set chosen for that chat -> active outfit's set -> character's Default Set -> `neutral.png` of the same set if an emotion is missing**.
+   - Bulk upload expects filenames matching Wyvern emotion names (`neutral.png`, `joy.png`, etc.); sprite uploads and removals save immediately, separately from the main Save button.
+3. **NPC Sprite Set Pickers & Linked Character Inheritance:**
+   - World NPC entries pick from sets owned by or linked into the World; Lorebook NPC entries pick from sets in that Lorebook's *Sprites* area.
+   - A character linked to another WyvernChat character with no own default set inherits the linked character's sprites (`"Sprites from <Name>"`) until *Start Own Default Set* is clicked and the first sprite is uploaded.
+   - Stage limits default to **5 desktop / 3 mobile** (configurable 1–8) with active-speaker spotlighting and per-dialogue-segment emotion detection.
