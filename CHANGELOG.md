@@ -1,5 +1,13 @@
 # Changelog di Progetto — Svartúlfr Verse
 
+### 27/11/2026 (08:42) - Architettura Doppia Narrator (`kind: "narrator"`) su Wyvern: `Universal Italian Game Master` + `Svartúlfr Guarded` (#Rules 01.1, 11, 13)
+- **Creato Nuovo Narrator Universale (`simple_assistant_Tp3rgwbctrKJwJLzm8HFy`, [Universal_Italian_Game_Master_Assistant.json](file:///e:/repository/SvartulfrVerse/FINAL/assistants/Universal_Italian_Game_Master_Assistant.json)):**
+  - `kind: "narrator"`, `visibility: "private"`, `rating: "explicit"`, zero lore Svartúlfr/Douglas/Blackwood/`Pack-Family` (`sys=6438 char`, `fin=2077 char`, `0` em-dash).
+  - Include italiano obbligatorio, disciplina di formattazione (`"..."`, azioni piane, `*pensieri*`, backtick coerenti con era/setting), passività cronologica, anti-puppeting, isolamento epistemico, realismo slow-burn e motore opzionale D20 + S.P.E.C.I.A.L.
+- **Protetto Narrator Svartúlfr (`simple_assistant_EYQTtcgTQfwh2RH9RG8z3`, [Svartulfr_Game_Master_Assistant.json](file:///e:/repository/SvartulfrVerse/FINAL/assistants/Svartulfr_Game_Master_Assistant.json)):**
+  - Aggiunti `[SETTING & ERA GATE]` in testa a `<situational_digital_and_social_feed>`, `<pack_surveillance_and_random_appearances>` e nell'`[ORDINE FINALE ASSOLUTO]` su `system_prompt` e `final_instructions` per sopprimere `❤️Pack-Family❤️` e visite del branco fuori da Svartúlfr moderno.
+- **Verifiche:** `GET /api/simple-assistant-config` + read-back su entrambi gli ID (parità esatta coi JSON locali) e [vault_health_check.py](file:///e:/repository/SvartulfrVerse/scripts/vault_health_check.py) superato con `158/158` check (`0` errori critici).
+
 ### 27/11/2026 (08:19) - Architettura Doppia Prompt Assembly su Wyvern: `Universal Italian TTRPG Assembly` + `Svartúlfr Master` (#Rules 01.1, 11, 13)
 - **Creato Nuovo Prompt Assembly Universale (`pha_pPDCqw9HER76thPaJfzfJ`, [Universal_Italian_TTRPG_Prompt_Assembly.json](file:///e:/repository/SvartulfrVerse/FINAL/prompts/Universal_Italian_TTRPG_Prompt_Assembly.json)):**
   - Progettato come default globale per **Model Advanced Settings** (`visibility: "private"`, `floating_depth_percent: 4`, `floating_role: "user"`, `5` blocchi modulari, `0` em-dash, `0` riferimenti Svartúlfr/Douglas/`Pack-Family`).
