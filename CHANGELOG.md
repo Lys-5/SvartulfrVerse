@@ -1,5 +1,14 @@
 # Changelog di Progetto — Svartúlfr Verse
 
+### 27/11/2026 (16:35) - Upload & Sync Live Wyvern di Tutti i `57` Asset Completati (`10` Personas, `17` Card `/mine`, `20` World Characters, `2` Lorebooks) (#Rules 01.1, 03, 11)
+- **Cloudflare CDN & Gallerie (`57/57` Upload Verificati):**
+  - Caricati su Cloudflare CDN tutti i `10` Avatar Dinamici delle Persona, i `21` Outfit Avatar puliti di `Alyssa`/`Jasper`/`Echo` e tutti i `26/26` Sprite Neutral trasparenti (`1696x2528` RGBA su griglia altezza condivisa, Wave 1A+1B+2); registrati gli avatar dinamici di `Alyssa`, `Jasper` ed `Echo` nelle gallerie del World (`_YpX47fNraQFw2dD7TdycJ`) e di `NPC Primary` (`_zwEqgEEzh12X6gHVmMKKC`).
+- **Sincronizzazione Completa Live + Specchio Locale (`FINAL/` & `lorebooks/optimized/`) Verificata via GET Autenticata:**
+  - **User Personas (`10/10`):** aggiornati tutti i `10` avatar dinamici di default e `21` `outfits[].image_url` (`Alyssa` Modern `9`, `Jasper` Modern `8`, `Echo` `4`).
+  - **Character Cards `/mine` (`17/17`):** aggiornato `avatar_transparent` (`+ avatar_transparent_source`) su tutte le `17` card principali Wave 1+2, più nuovo avatar dinamico e `8` `outfits[].image_url` su `Jasper Svartr Douglas Bloodmoon` (`_t4J9aQNJM36cUKAP4wB4U`).
+  - **World Characters (`20/20`):** aggiornati via `PUT` parziale tutti i `20` `avatar_transparent`, i `3` avatar dinamici e `21` `outfits[].image_url` (`Alyssa`, `Jasper`, `Echo`) nel World `_YpX47fNraQFw2dD7TdycJ`.
+  - **Lorebooks (`2/2`):** aggiornate `19` entry (`17` su `NPC Primary` + `2` su `NPC Secondary`, con `avatar_transparent` + `3` avatar dinamici per `Alyssa`/`Jasper`/`Echo`) preservando integralmente `gallery` e `sprite_sets` live e parità byte-for-byte locale `entries == lexicon`.
+
 ### 27/11/2026 (16:16) - Completati `10/10` Avatar Dinamici Persona & Audit Orecchie Batch 1 (`28` Nuovi Asset Puliti + `3` Griglie Fix) (#Rules 03, 05)
 - **Avatar Dinamici di Default delle Persona (`10/10` COMPLETATI):**
   - Ritagliati & verificati visivamente al `3x` zoom (`0` orecchie umane sui licantropi, `0` barre divisorie residue): [AV-A2](file:///E:/repository/SvartulfrVerse/assets/Alyssa/avatars) (`alyssa_elf_avatar.png`, `alyssa_human_modern_avatar.png`, `alyssa_human_historical_avatar.png`), [AV-J1](file:///E:/repository/SvartulfrVerse/assets/Jasper/avatars) (`jasper_modern_avatar.png`, `jasper_human_modern_avatar.png`, `jasper_human_historical_avatar.png`) e [AV-E1](file:///E:/repository/SvartulfrVerse/assets/Echo/avatars/echo_modern_avatar.png).
