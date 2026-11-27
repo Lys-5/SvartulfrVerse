@@ -675,7 +675,7 @@ def get_manifest_entries(existing_items: dict[str, dict] | None = None, seed_reg
             "zeera",
             "NPC\\Zeera",
             208,
-            False,
+            True,
             ["zeera_anchor.jpg"],
             MASTER_REF_TEMPLATE.format(
                 identity="Zeera Darkfire (appearing 29, 208 cm brute muscular male Red Bloodline Vax Demon CEO & Warlord, anchored 1:1 to zeera_anchor.jpg)",
@@ -934,7 +934,8 @@ def get_manifest_entries(existing_items: dict[str, dict] | None = None, seed_reg
     ]
     for eid, folder, h_cm, ears_above, r_anc, r_prompt, n_summary in wave2_specs_custom:
         ref_fname = "richard_w_reference.png" if eid == "richard" else f"{eid}_reference.png"
-        add(eid, "2", folder, h_cm, ears_above, ref_fname, f"{eid}_neutral.png", ref_prompt=r_prompt, neutral_prompt=n_summary, ref_anchors=r_anc)
+        neu_fname = "richard_w_neutral.png" if eid == "richard" else f"{eid}_neutral.png"
+        add(eid, "2", folder, h_cm, ears_above, ref_fname, neu_fname, ref_prompt=r_prompt, neutral_prompt=n_summary, ref_anchors=r_anc)
 
     # === WAVE 3: Variants in the SAME folder as the original ===
     variants = [
@@ -1306,7 +1307,7 @@ def flood_fill_white_bg_rgba(im_rgb: Image.Image) -> Image.Image:
     fg_ys = np.where(~bg_mask)[0]
     y_fg_top = int(fg_ys.min()) if len(fg_ys) else 0
     fg_h = (int(fg_ys.max()) - y_fg_top + 1) if len(fg_ys) else h
-    face_protect_y = y_fg_top + int(0.14 * fg_h)
+    head_protect_y = y_fg_top + int(0.18 * fg_h)
 
     pure_pocket = (cmin >= 248) & (sat <= 6) & (~bg_mask)
     visited_p = np.zeros((h, w), dtype=bool)
@@ -1327,8 +1328,9 @@ def flood_fill_white_bg_rgba(im_rgb: Image.Image) -> Image.Image:
                 ys_p = [p[0] for p in pts]
                 xs_p = [p[1] for p in pts]
                 min_y_p = min(ys_p)
-                min_pts = 45 if min_y_p > face_protect_y else 120
-                if len(pts) >= min_pts and float(cmin[ys_p, xs_p].mean()) >= 251.5:
+                if min_y_p < head_protect_y:
+                    continue
+                if len(pts) >= 45 and float(cmin[ys_p, xs_p].mean()) >= 251.5:
                     pocket_seeds.extend(pts)
 
     if pocket_seeds:

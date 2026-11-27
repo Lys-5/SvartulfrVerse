@@ -1,5 +1,14 @@
 # Changelog di Progetto — Svartúlfr Verse
 
+### 27/11/2026 (11:16) - Aggiornamento `Magnus` Senza Orecchie Umane & Primi `5/10` Visual Novel Neutral Wave 2 (`1696x2528` RGBA) (#Rules 03, 05)
+- **Rigenerazione `Magnus` Senza Orecchie Umane ([magnus_reference.png](file:///e:/repository/SvartulfrVerse/assets/Magnus/magnus_reference.png), [magnus_neutral.png](file:///e:/repository/SvartulfrVerse/assets/Magnus/magnus_neutral.png)):**
+  - Verificati tutti i `15/15` licantropi (`ref` e `neutral`): `100%` puliti e privi di orecchie umane ai lati.
+  - Finalizzato il nuovo [magnus_neutral.png](file:///e:/repository/SvartulfrVerse/assets/Magnus/magnus_neutral.png) su griglia condivisa `1696x2528` RGBA (`eff=205.0 cm`).
+- **Wave 2 Visual Novel Neutral Sprites (`5/10` Finalizzati su Griglia Centimetrica Verificata in [wave2_batch1_plus_magnus_height_lineup.jpg](file:///C:/Users/mande/.gemini/antigravity/brain/713be534-6fb6-4fa8-bd35-5129adcc8c16/wave2_batch1_plus_magnus_height_lineup.jpg)):**
+  - [zeera_neutral.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Zeera/zeera_neutral.png) (`208.0 cm`), [mac_neutral.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Mac/mac_neutral.png) (`204.0 cm`), [larek_neutral.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Larek/larek_neutral.png) (`201.0 cm`), [richard_w_neutral.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Richard_W/richard_w_neutral.png) (`193.0 cm`) e [adam_neutral.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Adam/adam_neutral.png) (`188.0 cm`).
+- **Hardening Matting ([asset_reference_pipeline.py](file:///e:/repository/SvartulfrVerse/scripts/asset_reference_pipeline.py)):**
+  - Impostato `zeera` (`has_ears_above_crown=True`), `richard_w_neutral.png` come output canonico per `#01` e aggiunta protezione della fascia cranica (`head_protect_y = 18%`) in `flood_fill_white_bg_rgba` per proteggere i capelli bianco neve (es. Adam/Hana) mantenendo la rimozione delle tasche bianche chiuse tra braccia e gambe (es. Magnus).
+
 ### 27/11/2026 (10:45) - Completamento Reference Wave 2 (`10/10 DONE`: `Dullahan`, `Johan`, `Fenrir`) & Guida Prompt `2:3` Neutral (#Rules 03, 05)
 - **Chiusa al 100% la Wave 2 Turnaround Reference Sheets (`10/10` `DONE`, `2730x1536` RGB su `#C8C8C8`):**
   - Verificate visivamente, normalizzate (`fenris_reference.png` rinominata in `fenrir_reference.png`) e finalizzate le ultime `3` tavole: [dullahan_reference.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Dullahan/dullahan_reference.png) (`#04` senza testa con cappuccio vuoto e marchio `'IV'`), [johan_reference.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Johan/johan_reference.png) (`#05` forma base umana senza occhiali) e [fenrir_reference.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Fenrir/fenrir_reference.png) (`#06` forma base umana con bende insanguinate e marchio `'VI'`).
