@@ -1,5 +1,11 @@
 # Changelog di Progetto — Svartúlfr Verse
 
+### 27/11/2026 (12:18) - Taglio & Verifica Primi `3` Avatar Dinamici Persona `AV-A1` (`Alyssa` Modern / DDM #07 / Fantasy) (#Rules 03, 05)
+- **Ritagliati dal master full-res `AV-A1.png` (`2730x1536`) tramite `slice-outfit-grid --mode panels --trim-px 2` e verificati visivamente (`0` bordi residui, `0` orecchie umane, stili e sfondi tematici 1:1):**
+  - [alyssa_modern_avatar.png](file:///e:/repository/SvartulfrVerse/assets/Alyssa/avatars/alyssa_modern_avatar.png) (`901x1536` RGB — Solarton sunlit campus)
+  - [alyssa_ddm_avatar.png](file:///e:/repository/SvartulfrVerse/assets/Alyssa/avatars/alyssa_ddm_avatar.png) (`888x1536` RGB — DDM Voidspace tactical corridor `#07`)
+  - [alyssa_fantasy_avatar.png](file:///e:/repository/SvartulfrVerse/assets/Alyssa/avatars/alyssa_fantasy_avatar.png) (`900x1536` RGB — Silverhaven moonlit courtyard)
+
 ### 27/11/2026 (12:06) - Chiusura `Wave 2` (`11/11` `DONE`: `Fenrir #06`) & Pipeline Griglie `16:9` User Personas (#Rules 03, 05)
 - **Chiusa al 100% la `Wave 2` Visual Novel Neutral (`11/11`, `26/26` totali `Wave 1A+1B+2` su griglia condivisa `1696x2528` RGBA):**
   - Calibrato [fenrir_neutral.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Fenrir/fenrir_neutral.png) con `--already-rgba` (`target=203cm`, `eff=202.9 cm`, `sole=2499 px`), preservando integre le bende insanguinate sugli avambracci e l'incarnato cadaverico (`manifest`: Wave 2 `20/20 DONE`).
