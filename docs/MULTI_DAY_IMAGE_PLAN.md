@@ -885,3 +885,22 @@ Reference rules recorded on **2026-11-27** for all upcoming Character, Outfit, W
    - World NPC entries pick from sets owned by or linked into the World; Lorebook NPC entries pick from sets in that Lorebook's *Sprites* area.
    - A character linked to another WyvernChat character with no own default set inherits the linked character's sprites (`"Sprites from <Name>"`) until *Start Own Default Set* is clicked and the first sprite is uploaded.
    - Stage limits default to **5 desktop / 3 mobile** (configurable 1–8) with active-speaker spotlighting and per-dialogue-segment emotion detection.
+
+---
+
+## 6. Official 12-Step Cast Asset Production Order (Approved by Alice — 2026-11-27)
+
+Strict execution queue across all remaining Cards, World Characters, Outfits, and Emotion Sprite Sets:
+
+1. **Jasper & Alyssa Ovunque** *(maximize zero-credit reuse across all DDM/Fantasy/Modern variants + `FIX-A4` `villa_douglas_hearth` + `AV-J2` Jasper DDM/Fantasy avatars + `JF-1` Jasper Fantasy 4 outfits + **Emotion Poses / Sprite Sets**)*
+2. **Malachia** *(Modern + Fantasy + World)*
+3. **Noah**
+4. **Erik**
+5. **Logan**
+6. **Wulfnic**
+7. **Edric** *(strict SFW athletic-clothed slots only; zero nude)*
+8. **Zefir & Ut**
+9. **Mackenzie (`Mac`)** *(Modern + Fantasy + World)*
+10. **Resto degli NPC con Card Singola Esterna (`/mine`)** (`Zeera`, `Larek`, `Richard W.`, `Adam`, `Hana V.`, `Luka`, `Dullahan`, `Johan`, `Fenrir`, `Richard L.`, etc.)
+11. **Tutti i Primari (`Svartulfr_NPC_Primary`)**
+12. **Tutti i Secondari (`Svartulfr_NPC_Secondary`)**

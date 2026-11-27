@@ -387,3 +387,26 @@ python E:\repository\SvartulfrVerse\scripts\asset_reference_pipeline.py slice-ou
   --cols 4 --names casual_home,campus,tactical_guild,abyssal_armor `
   --out-dir E:\repository\SvartulfrVerse\assets\Jasper\outfits
 ```
+
+---
+
+## PARTE 3 — Chiusura `100%` Jasper & Alyssa Ovunque (`2` Griglie `16:9`: `AV-J2` + `JF-1`)
+
+#### `AV-J2` — Jasper Variant Dynamic Default Avatars: DDM `#08` & Fantasy Silverhaven (`16:9`, 2 Pannelli)
+- **Reference:** `E:\repository\SvartulfrVerse\assets\Jasper\jasper_reference.png`
+- **Salva:** `E:\repository\SvartulfrVerse\scratch\persona_grids\avatars\AV-J2.png`
+- **Pannelli (`--cols 2 --names jasper_ddm_avatar,jasper_fantasy_avatar` -> `assets/Jasper/avatars/`):**
+
+```text
+2-panel horizontal 16:9 character dynamic avatar diptych showcasing two waist-up portraits of the SAME male werewolf Jasper matching jasper_reference.png strictly 1:1 (193 cm lean athletic build, sharp jawline, light stubble hint, vivid mint-green eyes, soft nose freckles, shaggy caramel-chestnut wolf-cut hair, SINGLE PAIR OF CARAMEL WOLF EARS WITH BLACK TIPS atop his head, Mannaz left-wrist rune, platinum Douglas signet ring) in cohesive semi-realistic digital painting style, separated cleanly by a crisp 6px pure-black center vertical divider bar, ZERO text, ZERO labels. CRITICAL ANATOMY LOCK ON BOTH PANELS: keep thick shaggy caramel-chestnut wolf-cut side locks sweeping full and dense over BOTH temples all the way to mid-neck/jawline so the sides of his head are 100% covered (STRICTLY ZERO human ears on sides of head). LEFT PANEL (Jasper DDM Contractor #08): Alert sly half-smirk, wearing a sleek dark charcoal & obsidian DDM Void-Weave tactical field jacket with high collar, dark reinforced shoulder trim bearing orange/platinum '#08' shoulder patch over black compression shirt, glowing cyan ARC wrist stabilizer, set inside a dark atmospheric DDM Voidspace command corridor with cool cyan volumetric rim lighting. RIGHT PANEL (Jasper Fantasy — Silverhaven Infiltrator & Artificer): Ironic confident rogue grin, wearing an obsidian-black and deep forest-slate tailored fantasy shadow-infiltrator leather-and-linen tunic with brushed silver clasps, hooded dark wool travel cloak draped over one shoulder, leather artificer cross-body strap holding tiny glowing quartz tuning vials, set against a twilight Silverhaven gothic stone courtyard with glowing arcane lanterns and silver moonlight.
+```
+
+#### `JF-1` — Jasper Fantasy Outfits Mancanti (`16:9`, 4 Pannelli)
+*(Nota: `Silverhaven Shadow-Infiltrator`, `Abyssal Panoply`, `Mythal Thermal Springs`, `Expedition Wagon Bedchamber` e i 2 nuovi `Svartr` neri riusano già a zero crediti gli asset di Jasper Modern; questi sono gli ultimi `4` outfit dedicati di Jasper Fantasy!)*
+- **Reference:** `E:\repository\SvartulfrVerse\assets\Jasper\jasper_reference.png`
+- **Salva:** `E:\repository\SvartulfrVerse\scratch\persona_grids\outfits\JF-1.png`
+- **Pannelli (`--cols 4 --names silverhaven_keep_lounge,royal_arcanum_artificer,douglas_courtly_doublet,undercity_acoustic_tavern` -> `assets/Jasper/outfits_fantasy/`):**
+
+```text
+4-panel horizontal 16:9 fantasy character outfit showcase strip featuring ONLY the male werewolf Jasper matching jasper_reference.png strictly 1:1 (193 cm lean athletic frame, sharp jawline, light stubble, vivid mint-green eyes, nose freckles, SINGLE PAIR OF CARAMEL WOLF EARS WITH BLACK TIPS atop head, bushy black-tipped caramel wolf tail, Mannaz wrist rune, Douglas signet ring) in semi-realistic digital painting style separated cleanly by crisp 6px pure-black vertical divider bars, ZERO text, ZERO labels. CRITICAL ANATOMY LOCK ACROSS ALL 4 PANELS: keep thick shaggy caramel-chestnut wolf-cut locks sweeping full and dense over BOTH temples down to jawline covering sides of head 100% (STRICTLY ZERO human ears on sides of head, zero earbuds). PANEL 1 (Silverhaven Keep Lounge Tunic): Relaxed dark charcoal soft spun-linen long-sleeve lounge tunic slightly unlaced at collarbone, comfortable dark charcoal wool breeches with tail opening, soft dark leather indoor boots, holding an engraved crystal tuning cylinder, warm cozy stone fireplace Silverhaven guildhall lounge background. PANEL 2 (Royal Arcanum Artificer Robes): Tailored dark obsidian-slate and deep emerald Royal Arcanum scholar artificer coat-robe trimmed neatly in brushed silver over dark waistcoat & trousers with tail slit, cross-body leather bandolier carrying glowing quartz resonance vials and runic calipers, dark leather ankle boots, sunlit enchanted arcane crystal library workshop background. PANEL 3 (House Douglas Courtly Velvet Doublet): Sharp aristocratic obsidian-black and midnight-emerald tailored velvet court doublet with standing collar, subtle silver wolf embroidery, dark fitted court trousers with tail slit, polished black leather court boots, grand candlelit Silverhaven noble stone banquet hall background. PANEL 4 (Undercity Acoustic Tavern Gear): Rugged dark weathered charcoal leather vest worn open over deep burgundy laced linen shirt with sleeves rolled cleanly to mid-forearm, dark utility breeches with tail slit, leather wrist bracers, worn boots, carrying an acoustic carved dark-wood lute slung casually on hip strap, warm lantern-lit underground Silverhaven tavern stage background.
+```

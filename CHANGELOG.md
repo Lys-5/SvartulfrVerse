@@ -1,5 +1,9 @@
 # Changelog di Progetto — Svartúlfr Verse
 
+### 27/11/2026 (23:29) - Riuso Zero-Crediti Sprite `Jasper` DDM/Fantasy, Roadmap Ufficiale 12 Step & Prompt Domattina (`FIX-A4`, `AV-J2`, `JF-1`) (#Rules 01.1, 03, 11)
+- **Riuso Live a Zero Crediti su Card `/mine` (`3/3` Verificati via GET):** applicato `avatar_transparent` (`jasper_neutral.png`) sulle varianti [Jasper_DDM_Contractor_card.json](file:///E:/repository/SvartulfrVerse/FINAL/Jasper_DDM_Contractor_card.json) / [Jasper_Contractor_card.json](file:///E:/repository/SvartulfrVerse/FINAL/Jasper_Contractor_card.json) (`_waQyWtVYDbJkhrH9ADYbn`) e su entrambe le copie live di [Jasper_Fantasy_card.json](file:///E:/repository/SvartulfrVerse/FINAL/Jasper_Fantasy_card.json) (`_K6GYVEbKggCMjWFDkXW6e`, `_hABEHWwXTXrtMrR6zRN9J`).
+- **Roadmap Ufficiale in `12` Step & Prompt Chiusura `100%` Jasper/Alyssa:** salvato in [MULTI_DAY_IMAGE_PLAN.md](file:///E:/repository/SvartulfrVerse/docs/MULTI_DAY_IMAGE_PLAN.md) l'ordine esatto approvato da Alice (`Jasper/Alyssa + Emotion Poses -> Malachia -> Noah -> Erik -> Logan -> Wulfnic -> Edric -> Zefir & Ut -> Mac -> NPC Card singole -> Primari -> Secondari`) e aggiunti **`AV-J2`** e **`JF-1`** in [PERSONA_ASSETS_16x9_GRID_PROMPTS.md](file:///E:/repository/SvartulfrVerse/assets/PERSONA_ASSETS_16x9_GRID_PROMPTS.md).
+
 ### 27/11/2026 (23:23) - Chiusura `Alyssa DDM #07` (`AD-1` `3/3` `PASS`) & `FIX-A2` (`2/3` `PASS`) Live su Wyvern (`9/10` Personas al `100%`) (#Rules 01.1, 03, 05, 11)
 - **`FIX-A2` (`2/3` `PASS` & Live su `Alyssa Modern` + World Character `Alyssa`):**
   - Promossi e sincronizzati via CDN: [angelo_moreno_couture.png](file:///E:/repository/SvartulfrVerse/assets/Alyssa/outfits/angelo_moreno_couture.png) e [blackwood_pilates.png](file:///E:/repository/SvartulfrVerse/assets/Alyssa/outfits/blackwood_pilates.png).
