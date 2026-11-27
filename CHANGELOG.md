@@ -1,5 +1,13 @@
 # Changelog di Progetto — Svartúlfr Verse
 
+### 27/11/2026 (12:06) - Chiusura `Wave 2` (`11/11` `DONE`: `Fenrir #06`) & Pipeline Griglie `16:9` User Personas (#Rules 03, 05)
+- **Chiusa al 100% la `Wave 2` Visual Novel Neutral (`11/11`, `26/26` totali `Wave 1A+1B+2` su griglia condivisa `1696x2528` RGBA):**
+  - Calibrato [fenrir_neutral.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Fenrir/fenrir_neutral.png) con `--already-rgba` (`target=203cm`, `eff=202.9 cm`, `sole=2499 px`), preservando integre le bende insanguinate sugli avambracci e l'incarnato cadaverico (`manifest`: Wave 2 `20/20 DONE`).
+  - Verificata l'intera scalatura completa sul grafico graduato [wave2_all_neutrals_height_lineup.jpg](file:///C:/Users/mande/.gemini/antigravity/brain/713be534-6fb6-4fa8-bd35-5129adcc8c16/wave2_all_neutrals_height_lineup.jpg) (`180–208 cm`, `Fenrir` e `Dullahan` perfettamente allineati a `203 cm`).
+- **Pipeline Griglie `16:9` User Personas ([PERSONA_ASSETS_16x9_GRID_PROMPTS.md](file:///e:/repository/SvartulfrVerse/assets/PERSONA_ASSETS_16x9_GRID_PROMPTS.md)):**
+  - Pubblicate tutte le `28` generazioni ottimizzate per coprire tutte le `10` Persona (`4` Avatar Dinamici di default con sfondo tematico + `24` griglie `16:9` multi-pannello per tutti gli `80` slot SFW / `76` pannelli unici con `9` slot `Nude` esclusi per policy Gemini Pro).
+  - Aggiunto il sottocomando automatico `slice-outfit-grid` (`--mode panels` per sfondi tematici con rimozione intelligente dei divisori verticali `6px`, e `--mode sprite` RGBA su griglia altezze) in [asset_reference_pipeline.py](file:///e:/repository/SvartulfrVerse/scripts/asset_reference_pipeline.py) e predisposte le cartelle `scratch/persona_grids/avatars/` e `scratch/persona_grids/outfits/`.
+
 ### 27/11/2026 (11:50) - Calibrazione Griglia `Wave 2 Batch 2` (`5/6` Ricevuti) & Audit Completo Altezze `25/25` Neutrals (`1696x2528` RGBA) (#Rules 03, 05)
 - **Calibrati `5` Nuovi Visual Novel Neutral Sprite su Griglia Condivisa (`1696x2528` RGBA, `FLOOR_Y=2500`, `PX_PER_CM=9.75`):**
   - [hana_v_neutral.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Hana_V/hana_v_neutral.png) (`180.0 cm`), [johan_neutral.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Johan/johan_neutral.png) (`181.8 cm`), [luka_neutral.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Luka/luka_neutral.png) (`193.0 cm`), [richard_l_neutral.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Richard_L/richard_l_neutral.png) (`192.9 cm`) e [dullahan_neutral.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Dullahan/dullahan_neutral.png) (`203.0 cm`), elaborati con `--already-rgba` per preservare al `100%` capelli bianchi, camice e camicia bianca senza buchi interni.

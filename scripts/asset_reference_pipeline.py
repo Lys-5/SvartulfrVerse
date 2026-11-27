@@ -1780,6 +1780,154 @@ def cmd_build_height_chart(args: argparse.Namespace) -> None:
     print(f"Saved graduated height comparison chart ({len(ids)} chars) -> {out_p}")
 
 
+def _trim_uniform_outer_edges(im: Image.Image, max_trim: int = 16) -> Image.Image:
+    """Trim uniform black or white outer frame bars (<= max_trim px) from a sliced RGB panel."""
+    arr = np.array(im, dtype=np.float32)
+    h, w, _ = arr.shape
+
+    def is_uniform_row(y: int) -> bool:
+        row = arr[y]
+        return (row.mean() < 24 and row.std() < 14) or (row.mean() > 246 and row.std() < 10)
+
+    def is_uniform_col(x: int) -> bool:
+        col = arr[:, x]
+        return (col.mean() < 24 and col.std() < 14) or (col.mean() > 246 and col.std() < 10)
+
+    top = 0
+    while top < max_trim and top < h // 4 and is_uniform_row(top):
+        top += 1
+    bot = h
+    while (h - bot) < max_trim and bot > (h * 3) // 4 and is_uniform_row(bot - 1):
+        bot -= 1
+    left = 0
+    while left < max_trim and left < w // 4 and is_uniform_col(left):
+        left += 1
+    right = w
+    while (w - right) < max_trim and right > (w * 3) // 4 and is_uniform_col(right - 1):
+        right -= 1
+
+    if right > left and bot > top:
+        return im.crop((left, top, right, bot))
+    return im
+
+
+def cmd_slice_outfit_grid(args: argparse.Namespace) -> None:
+    """Slice a 16:9 multi-panel grid into individual Persona dynamic avatars or outfit cards."""
+    src = pathlib.Path(args.src)
+    out_dir = pathlib.Path(args.out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    names = [s.strip() for s in args.names.split(",") if s.strip()]
+    cols = int(args.cols)
+    if len(names) != cols:
+        raise SystemExit(f"--names count ({len(names)}) must match --cols ({cols}).")
+
+    im_raw = Image.open(src)
+    w, h = im_raw.size
+
+    if args.mode == "panels":
+        rgb = im_raw.convert("RGB")
+        arr = np.array(rgb, dtype=np.float32)
+        col_mean = arr.mean(axis=(0, 2))
+        col_std = arr.std(axis=(0, 2))
+        is_dark_bar = (col_mean < 28) & (col_std < 18)
+        is_white_bar = (col_mean > 246) & (col_std < 10)
+        is_divider = is_dark_bar | is_white_bar
+
+        trim_pad = max(0, int(args.trim_px))
+        bounds: list[tuple[int, int]] = []
+        prev_start = 0
+        for k in range(1, cols):
+            nominal = int(round(k * w / cols))
+            lo = max(prev_start + 10, int(round((k - 0.08) * w / cols)))
+            hi = min(w - 10, int(round((k + 0.08) * w / cols)))
+            div_xs = [x for x in range(lo, hi + 1) if is_divider[x]]
+            if div_xs:
+                # Pick contiguous divider run closest to nominal split
+                runs: list[tuple[int, int]] = []
+                r0 = div_xs[0]
+                r1 = div_xs[0]
+                for x in div_xs[1:]:
+                    if x == r1 + 1:
+                        r1 = x
+                    else:
+                        runs.append((r0, r1))
+                        r0 = r1 = x
+                runs.append((r0, r1))
+                g0, g1 = min(runs, key=lambda ab: abs(((ab[0] + ab[1]) / 2.0) - nominal))
+                cut_left = max(prev_start + 10, g0 - trim_pad)
+                next_start = min(w - 10, g1 + 1 + trim_pad)
+            else:
+                # Fallback: lowest-std uniform boundary near nominal
+                best_x = min(range(lo, hi + 1), key=lambda x: col_std[x] + 0.05 * abs(x - nominal))
+                half_t = max(1, trim_pad // 2)
+                cut_left = max(prev_start + 10, best_x - half_t)
+                next_start = min(w - 10, best_x + 1 + half_t)
+            bounds.append((prev_start, cut_left))
+            prev_start = next_start
+        bounds.append((prev_start, w))
+
+        for idx, (slug, (x0, x1)) in enumerate(zip(names, bounds)):
+            panel = _trim_uniform_outer_edges(rgb.crop((x0, 0, x1, h)), max_trim=max(8, trim_pad + 8))
+            out_p = out_dir / f"{slug}.png"
+            panel.save(out_p, format="PNG", optimize=True)
+            print(f"[PANEL {idx + 1}/{cols}] {out_p.name} size={panel.size} x=[{x0}:{x1}]")
+        return
+
+    # Sprite mode (transparent RGBA + optional height-grid calibration)
+    if args.already_rgba and im_raw.mode == "RGBA":
+        rgba = im_raw
+    else:
+        rgba = flood_fill_white_bg_rgba(im_raw.convert("RGB"))
+
+    a = np.array(rgba)[:, :, 3]
+    fg_counts = (a > 15).sum(axis=0)
+    cuts = [0]
+    for k in range(1, cols):
+        nominal = int(round(k * w / cols))
+        lo = max(cuts[-1] + 10, int(round((k - 0.22) * w / cols)))
+        hi = min(w - 10, int(round((k + 0.22) * w / cols)))
+        zero_xs = [x for x in range(lo, hi + 1) if fg_counts[x] == 0]
+        if zero_xs:
+            best_x = min(zero_xs, key=lambda x: abs(x - nominal))
+        else:
+            best_x = min(range(lo, hi + 1), key=lambda x: (int(fg_counts[x]), abs(x - nominal)))
+        cuts.append(best_x)
+    cuts.append(w)
+
+    slot_modes = (
+        [m.strip().lower() for m in args.per_slot_mode.split(",") if m.strip()]
+        if args.per_slot_mode
+        else [("floating" if args.floating else "standing")] * cols
+    )
+    if len(slot_modes) != cols:
+        raise SystemExit(f"--per-slot-mode count ({len(slot_modes)}) must match --cols ({cols}).")
+
+    ears_above = not args.no_ears_above_crown
+    for idx, slug in enumerate(names):
+        slice_im = rgba.crop((cuts[idx], 0, cuts[idx + 1], h))
+        # Remove tiny <25px edge specks if disconnected
+        s_arr = np.array(slice_im)
+        s_alpha = s_arr[:, :, 3] > 15
+        if s_alpha.any():
+            sy, sx = np.where(s_alpha)
+            if len(sy) > 25:
+                pass  # Foreground confirmed
+        if slot_modes[idx] == "floating":
+            out_im = place_floating_rgba_on_canvas(slice_im)
+            eff_str = "floating"
+        elif args.height_cm is not None:
+            out_im = place_rgba_on_height_grid(slice_im, float(args.height_cm), ears_above)
+            c_arr = np.array(out_im)
+            _, y_crown, y_sole = detect_crown_and_sole(c_arr[:, :, 3], ears_above)
+            eff_str = f"{(y_sole - y_crown) / PX_PER_CM:.1f}cm"
+        else:
+            out_im = slice_im
+            eff_str = "raw-rgba"
+        out_p = out_dir / f"{slug}.png"
+        out_im.save(out_p, format="PNG", optimize=True)
+        print(f"[SPRITE {idx + 1}/{cols}] {out_p.name} size={out_im.size} eff={eff_str} corner={out_im.getpixel((5,5))}")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -1826,6 +1974,19 @@ def main() -> None:
     p_hgt.add_argument("--include-jasper-neutral", action="store_true")
     p_hgt.add_argument("--out", required=True)
 
+    p_slc = sub.add_parser("slice-outfit-grid")
+    p_slc.add_argument("--src", required=True)
+    p_slc.add_argument("--cols", type=int, choices=[2, 3, 4], required=True)
+    p_slc.add_argument("--names", required=True)
+    p_slc.add_argument("--out-dir", required=True)
+    p_slc.add_argument("--mode", choices=["panels", "sprite"], default="panels")
+    p_slc.add_argument("--trim-px", type=int, default=6)
+    p_slc.add_argument("--height-cm", type=float, default=None)
+    p_slc.add_argument("--no-ears-above-crown", action="store_true")
+    p_slc.add_argument("--already-rgba", action="store_true")
+    p_slc.add_argument("--floating", action="store_true")
+    p_slc.add_argument("--per-slot-mode", default=None)
+
     args = ap.parse_args()
     if args.cmd == "init-manifest":
         cmd_init_manifest(args)
@@ -1853,6 +2014,8 @@ def main() -> None:
         cmd_build_audit_sheet(args)
     elif args.cmd == "build-height-chart":
         cmd_build_height_chart(args)
+    elif args.cmd == "slice-outfit-grid":
+        cmd_slice_outfit_grid(args)
 
 
 if __name__ == "__main__":
