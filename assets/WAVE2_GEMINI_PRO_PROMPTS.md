@@ -36,34 +36,34 @@ CHARACTER SPECS:
 
 ---
 
-## 2. Richard Whitlock `#01` (`richard_reference.png`)
+#### 2. Richard Whitlock `#01` (`richard_reference.png`)
 - **Da allegare:** `E:\repository\SvartulfrVerse\scratch\anchors_wave2\richard_anchor.jpg`
 - **Proporzioni:** `16:9`
-- **Destinazione finale dopo il salvataggio:** `assets/NPC/Richard/richard_reference.png`
+- **Destinazione finale dopo il salvataggio:** `assets/NPC/Richard_W/richard_reference.png`
 
 ```text
-Professional 16:9 widescreen character reference sheet and turnaround model sheet of Richard Whitlock (DDM Contractor #01, 47-year-old 193 cm weathered muscular scholar-knight in BASE HUMAN FORM, anchored 1:1 to the man at the desk in richard_anchor.jpg — ignore the decorative background lion), rendered in a cohesive semi-realistic digital painting style with refined clean linework, rich painterly shading.
+Professional 16:9 widescreen character reference sheet and turnaround model sheet of Richard Whitlock (DDM Contractor #01, 47-year-old 193 cm weathered muscular military knight commander in BASE HUMAN FORM, anchored 1:1 to richard_anchor.jpg — strictly NO glasses), rendered in a cohesive semi-realistic digital painting style with refined clean linework, rich painterly shading.
 
 BACKGROUND & LIGHTING:
-Flat, solid, completely uniform neutral light-grey studio background (#C8C8C8) with no gradients, no floor shadows, and no environment. Even, soft neutral studio lighting that clearly shows anatomy, skin texture, hair, beard, and old scars.
+Flat, solid, completely uniform neutral light-grey studio background (#C8C8C8) with no gradients, no floor shadows, and no environment. Even, soft neutral studio lighting that clearly shows anatomy, skin texture, facial scar, and combat wounds.
 
 LAYOUT (LEFT TO RIGHT):
-1. Left — Full-body front view labeled "VISTA FRONTALE" at the top in clean bold dark sans-serif uppercase font. Disciplined upright knightly standing pose, barefoot, BASE HUMAN FORM (human ears, NO animal tail).
-2. Center-left — Full-body 3/4 view (turned approx. 45 degrees) labeled "VISTA A 45° / TRE QUARTI" at the top, showing broad weathered muscular shoulders, hairy forearms, and old combat scars.
-3. Center-right — Full-body side profile view (facing left) labeled "VISTA LATERALE" at the top, clearly showing upright human posture, voluminous swept-back wavy hair silhouette, and clean human lumbar back (NO animal tail and NO animal ears).
-4. Right (Top) — Large high-detail head-and-shoulders close-up portrait facing forward labeled "DETTAGLIO VOLTO" at the top, matching richard_anchor.jpg 1:1: dignified 47-year-old face with warm tired light-blue/grey eyes (open), thin round dark-rimmed glasses, voluminous wavy warm sandy-grey/ash-brown hair swept back, full wavy sandy-grey beard and mustache, and ordinary human ears at the sides of his head (STRICTLY ZERO lion ears and ZERO tail).
-5. Right (Bottom) — Section titled "TATUAGGI & SEGNI:" with subtitle "SIGILLO STARFALL • CICATRICI CAVALIERE • FORMA BASE UMANA", above three aligned square close-up inset boxes with thin dark borders and centered uppercase captions underneath each box:
-   - Box 1: Heavy antique gold Starfall family signet ring worn on weathered hairy knight hand — caption: "STARFALL SIGNET RING"
-   - Box 2: Macro of faded neck/hanging scar & old shoulder knightly scars on fair-tanned skin — caption: "OLD COMBAT SCARS"
-   - Box 3: Macro of thin round dark-rimmed glasses over warm blue-grey eyes & wavy sandy-grey beard — caption: "GLASSES & SANDY BEARD"
+1. Left — Full-body front view labeled "VISTA FRONTALE" at the top in clean bold dark sans-serif uppercase font. Disciplined upright commander standing pose, barefoot, BASE HUMAN FORM (human ears, NO animal tail).
+2. Center-left — Full-body 3/4 view (turned approx. 45 degrees) labeled "VISTA A 45° / TRE QUARTI" at the top, showing broad weathered muscular shoulders, neck hanging scar, and chest/arm combat scars.
+3. Center-right — Full-body side profile view (facing left) labeled "VISTA LATERALE" at the top, clearly showing upright heroic human posture, short neat salt-and-pepper hair silhouette, and clean human lumbar back (NO animal tail and NO animal ears).
+4. Right (Top) — Large high-detail head-and-shoulders close-up portrait facing forward labeled "DETTAGLIO VOLTO" at the top, matching richard_anchor.jpg 1:1: seasoned warm-tanned 47-year-old face, NO glasses, piercing icy light-blue eyes, prominent vertical pale scar slashing cleanly down across his LEFT eye and left cheek, short neat side-swept salt-and-pepper / silver-grey hair with tapered sides and one loose silver lock on forehead, neatly trimmed salt-and-pepper beard and mustache, and ordinary human ears at the sides of his head (STRICTLY ZERO lion ears and ZERO tail).
+5. Right (Bottom) — Section titled "TATUAGGI & SEGNI:" with subtitle "CICATRICE OCCHIO SINISTRO • SIGILLO STARFALL • FORMA BASE UMANA", above three aligned square close-up inset boxes with thin dark borders and centered uppercase captions underneath each box:
+   - Box 1: Macro of left eye & cheek showing vertical pale battle scar slashing through brow, icy blue eye, and cheekbone — caption: "LEFT EYE SCAR"
+   - Box 2: Heavy antique gold Starfall family signet ring worn on scarred tanned knight hand — caption: "STARFALL SIGNET RING"
+   - Box 3: Macro of faded neck/hanging scar & old shoulder knightly scars on weathered tanned skin — caption: "KNIGHT COMBAT SCARS"
 
 CHARACTER SPECS:
-- Build & Proportions: 193 cm (6' 4") broad weathered muscular knight frame with lightly haired muscular forearms matching richard_anchor.jpg.
-- Face & Eyes: Dignified 47-year-old scholar-knight face, warm light-blue/grey eyes behind thin round dark-rimmed glasses, full wavy sandy-grey/ash-brown beard and mustache.
-- Hair: Voluminous wavy warm sandy-grey / ash-brown hair swept back with loose waves matching richard_anchor.jpg.
+- Build & Proportions: 193 cm (6' 4") broad muscular weathered military commander physique matching richard_anchor.jpg.
+- Face & Eyes: Seasoned authoritative 47-year-old warm-tanned face matching richard_anchor.jpg, NO glasses, piercing icy light-blue eyes, prominent vertical scar cutting across his LEFT eye and cheek, neatly trimmed full salt-and-pepper beard and mustache.
+- Hair: Short neat side-swept salt-and-pepper / silver-grey hair with tapered sides and a single loose silver-grey lock falling over forehead.
 - Anatomy: Mortal Shifter BASE HUMAN FORM: ordinary human ears, STRICTLY ZERO lion ears atop head and ZERO lion tail (Lion is full beast shift ANIMAL_FORM only).
-- Outfit: Fitted matte smoke-grey boxer-brief trunks in the full-body turnaround views so knight scars, hairy forearms, and human proportions remain clear.
-- Marks & Details: Gold Starfall family signet ring on hand, faded old hanging neck scar and combat scars across torso/shoulders.
+- Outfit: Fitted matte smoke-grey athletic boxer-brief trunks in the full-body turnaround views so knight scars, neck marks, and human proportions remain clear.
+- Marks & Details: Vertical scar through left eye and cheek, gold Starfall signet ring on hand, faded old hanging neck scar and chest/shoulder scars.
 ```
 
 ---
@@ -164,32 +164,133 @@ CHARACTER SPECS:
 
 ---
 
-## 6. Hana Valencia `#02H` (`hana_reference.png`)
-- **Da allegare:** `E:\repository\SvartulfrVerse\scratch\anchors_wave2\hana_anchor.jpg` *(oppure `adam_hana_anchor.jpg` specificando la gemella donna a destra)*
+## 6. Hana Valencia `#02H` (`hana_reference.png`) — COMPLETATA ✅
+- **Destinazione:** `assets/NPC/Hana_V/hana_reference.png` (`2730x1536` salvata)
+
+---
+
+## 7. Luka Sutter `#03` (`luka_reference.png`)
+- **Da allegare:** `E:\repository\SvartulfrVerse\scratch\anchors_wave2\luka_anchor.jpg`
 - **Proporzioni:** `16:9`
-- **Destinazione finale dopo il salvataggio:** `assets/NPC/Hana/hana_reference.png`
+- **Destinazione finale dopo il salvataggio:** `assets/NPC/Luka/luka_reference.png`
 
 ```text
-Professional 16:9 widescreen character reference sheet and turnaround model sheet of Hana Valencia (DDM Contractor #02H, 28-year-old 180 cm athletic busty bronze-tanned Arctic Wolf Shifter in BASE HUMAN FORM, anchored 1:1 to the female twin in the attached anchor), rendered in a cohesive semi-realistic digital painting style with refined clean linework, rich painterly shading.
+Professional 16:9 widescreen character reference sheet and turnaround model sheet of Luka Sutter (DDM Contractor #03 "Ursa Major", 32-year-old 193 cm heavily muscular security chief in BASE HUMAN FORM, anchored 1:1 to luka_anchor.jpg — ignore watermark and cigarette), rendered in a cohesive semi-realistic digital painting style with refined clean linework, rich painterly shading.
 
 BACKGROUND & LIGHTING:
-Flat, solid, completely uniform neutral light-grey studio background (#C8C8C8) with no gradients, no floor shadows, and no environment. Even, soft neutral studio lighting that clearly shows warm bronze skin, long white hair contrast, and scars.
+Flat, solid, completely uniform neutral light-grey studio background (#C8C8C8) with no gradients, no floor shadows, and no environment. Even, soft neutral studio lighting that clearly shows warm tanned skin, facial scar, and forearm wounds.
 
 LAYOUT (LEFT TO RIGHT):
-1. Left — Full-body front view labeled "VISTA FRONTALE" at the top in clean bold dark sans-serif uppercase font. Athletic, toned, busty hourglass standing studio pose, barefoot, warm sun-kissed bronze-brown skin, BASE HUMAN FORM (human ears, NO wolf tail).
-2. Center-left — Full-body 3/4 view (turned approx. 45 degrees) labeled "VISTA A 45° / TRE QUARTI" at the top, showing hourglass silhouette, long wavy pure white hair, and old sword scar.
-3. Center-right — Full-body side profile view (facing left) labeled "VISTA LATERALE" at the top, clearly showing long cascading snow-white hair silhouette, busty athletic posture, and clean human back (NO wolf tail and NO wolf ears).
-4. Right (Top) — Large high-detail head-and-shoulders close-up portrait facing forward labeled "DETTAGLIO VOLTO" at the top, matching the female twin 1:1: warm sun-kissed bronze/tan-brown complexion (NOT pale!), sharp brooding handsome beauty, pale luminescent heterochromatic eyes (ice-blue & neon-pink/violet), long flowing wavy pure stark snow-white hair framing shoulders and cheeks, and ordinary human ears at sides of head (STRICTLY ZERO wolf ears and ZERO tail).
-5. Right (Bottom) — Section titled "TATUAGGI & SEGNI:" with subtitle "PELLE BRONZEA • CAPELLI BIANCHI • CICATRICE NUCA 'II'", above three aligned square close-up inset boxes with thin dark borders and centered uppercase captions underneath each box:
-   - Box 1: Macro close-up of bronze-tanned face showing luminescent ice-blue & pink-violet heterochromatic eyes — caption: "HETEROCHROMATIC EYES"
-   - Box 2: Back of bronze-tanned neck showing glowing pale carved Roman numeral "II" scar under long white waves — caption: "NAPE SCAR 'II'"
-   - Box 3: Old healed sword-impalement scar across athletic bronze midriff/torso — caption: "TORSO SWORD SCAR"
+1. Left — Full-body front view labeled "VISTA FRONTALE" at the top in clean bold dark sans-serif uppercase font. Heavy broad-shouldered tactical standing pose, barefoot, BASE HUMAN FORM (human ears, NO bear tail).
+2. Center-left — Full-body 3/4 view (turned approx. 45 degrees) labeled "VISTA A 45° / TRE QUARTI" at the top, showing massive muscular torso, orbital-era combat scars, and right forearm X-scar.
+3. Center-right — Full-body side profile view (facing left) labeled "VISTA LATERALE" at the top, clearly showing swept-back crimson hair silhouette, black ear gauge in left earlobe, and clean human lumbar back (NO bear tail and NO bear ears).
+4. Right (Top) — Large high-detail head-and-shoulders close-up portrait facing forward labeled "DETTAGLIO VOLTO" at the top, matching luka_anchor.jpg 1:1: warm sun-tanned rugged face, intense pale hazel-green eyes, trimmed jawline stubble, prominent X-shaped scar across his LEFT cheek, short-to-medium windswept vivid crimson-red hair with loose bangs, and ordinary human ears wearing a solid black circular ear plug/gauge in his LEFT earlobe (STRICTLY ZERO bear ears and ZERO tail).
+5. Right (Bottom) — Section titled "TATUAGGI & SEGNI:" with subtitle "CICATRICE A 'X' • ORECCHINO NERO • CICATRICI AVAMBRACCIO", above three aligned square close-up inset boxes with thin dark borders and centered uppercase captions underneath each box:
+   - Box 1: Macro of left cheek & intense hazel-green eye bearing a prominent deep X-shaped scar & jawline stubble — caption: "LEFT CHEEK X-SCAR"
+   - Box 2: Macro of left human ear wearing a matte-black circular plug/gauge with swept crimson-red locks — caption: "BLACK EAR GAUGE"
+   - Box 3: Muscular tanned right forearm bearing an old X-shaped scar & orbital decompression scars — caption: "FOREARM X-SCAR"
 
 CHARACTER SPECS:
-- Build & Proportions: 180 cm (5' 11") athletic, toned, busty hourglass physique matching the female twin anchor.
-- Face & Eyes: Warm sun-kissed bronze/tan-brown complexion (NOT pale!), sharp brooding handsome beauty, pale luminescent heterochromatic ice-blue & neon-pink eyes.
-- Hair: Long flowing wavy pure stark snow-white hair cascading over shoulders and chest.
-- Anatomy: Mortal Shifter BASE HUMAN FORM: ordinary human ears, STRICTLY ZERO wolf ears atop head and ZERO wolf tail (Arctic Wolf is full beast shift ANIMAL_FORM only).
-- Outfit: Fitted matte dark charcoal sports bra & athletic boyshorts in turnaround views so bronze-tan skin, hourglass build, and torso sword scar remain clear.
-- Marks & Details: Raised pale Roman numeral "II" scar on nape of neck, old healed diagonal sword scar across bronze chest/midriff.
+- Build & Proportions: 193 cm (6' 4") heavily muscular broad tactical brute physique matching luka_anchor.jpg.
+- Face & Eyes: Warm sun-tanned rugged face matching luka_anchor.jpg, intense pale hazel-green eyes under furrowed brow, trimmed jawline stubble, prominent X-shaped scar on his LEFT cheek.
+- Hair: Short-to-medium windswept vivid crimson-red hair swept back with loose messy bangs and slightly longer nape locks.
+- Anatomy: Mortal Shifter BASE HUMAN FORM: ordinary human ears (black circular gauge plug in left earlobe), STRICTLY ZERO bear ears atop head and ZERO bear tail (Black Bear is full beast shift ANIMAL_FORM only).
+- Outfit: Fitted matte olive-drab athletic boxer-brief trunks in full-body turnaround views so tanned muscular torso and forearm X-scar remain clear.
+- Marks & Details: Prominent X-shaped scar on LEFT cheek, X-shaped scar on right forearm, black ear gauge in left earlobe, orbital scars.
+```
+
+---
+
+## 8. Dullahan `#04` (`dullahan_reference.png`)
+- **Da allegare:** `E:\repository\SvartulfrVerse\scratch\anchors_wave2\dullahan_anchor.jpg`
+- **Proporzioni:** `16:9`
+- **Destinazione finale dopo il salvataggio:** `assets/NPC/Dullahan/dullahan_reference.png`
+
+```text
+Professional 16:9 widescreen character reference sheet and turnaround model sheet of Dullahan (DDM Contractor #04, 34-year-old 203 cm heavily muscular HEADLESS Euclidean Division Head in BASE FORM, anchored 1:1 to dullahan_anchor.jpg — ignore watermark and axe prop), rendered in a cohesive semi-realistic digital painting style with refined clean linework, rich painterly shading. CRITICAL INVARIANT: COMPLETELY HEADLESS above shoulders inside a perpetual dark olive-charcoal hood filled ONLY with pure pitch-black void / subtle shadow mist (STRICTLY ZERO skull, ZERO eyes, ZERO face, NO animal tail).
+
+BACKGROUND & LIGHTING:
+Flat, solid, completely uniform neutral light-grey studio background (#C8C8C8) with no gradients, no floor shadows, and no environment. Even, soft neutral studio lighting that clearly shows dull pale ash-grey skin, massive musculature, and carved scars.
+
+LAYOUT (LEFT TO RIGHT):
+1. Left — Full-body front view labeled "VISTA FRONTALE" at the top in clean bold dark sans-serif uppercase font. Towering 203 cm headless hooded figure with broad muscular shoulders, dull pale ash-grey skin, barefoot, NO animal tail.
+2. Center-left — Full-body 3/4 view (turned approx. 45 degrees) labeled "VISTA A 45° / TRE QUARTI" at the top, showing carved Roman numeral "IV" scar on left shoulder blade and faded arm scars.
+3. Center-right — Full-body side profile view (facing left) labeled "VISTA LATERALE" at the top, clearly showing empty dark hood cavity contour, muscular ash-grey torso, and clean lumbar back (NO animal tail).
+4. Right (Top) — Large close-up shoulders & perpetual hood portrait labeled "DETTAGLIO VOLTO" at the top, matching dullahan_anchor.jpg 1:1: perpetual dark olive-charcoal hood pulled forward around dull grey muscular shoulders, filled ENTIRELY by pure pitch-black void and faint swirling dark shadow mist (STRICTLY NO HEAD, NO FACE, NO EYES).
+5. Right (Bottom) — Section titled "TATUAGGI & SEGNI:" with subtitle "CAPPUCCIO SENZA TESTA • MARCHIO 'IV' SPALLA • PELLE GRIGIA", above three aligned square close-up inset boxes with thin dark borders and centered uppercase captions underneath each box:
+   - Box 1: Macro inside perpetual dark olive-charcoal hood showing pure pitch-black headless void & faint swirling shadow mist — caption: "HEADLESS VOID HOOD"
+   - Box 2: Close-up of dull ash-grey left shoulder blade carved cleanly with Roman numeral scar "IV" — caption: "SCAR 'IV' (SHOULDER)"
+   - Box 3: Muscular pale ash-grey forearm scars alongside simple silver metal coach whistle — caption: "ARM SCARS & WHISTLE"
+
+CHARACTER SPECS:
+- Build & Proportions: 203 cm (6' 8") towering heavily muscular broad frame with dull pale ash-grey skin matching dullahan_anchor.jpg.
+- Face & Eyes: NONE — STRICTLY HEADLESS: perpetual dark olive-charcoal hood reveals only pure pitch-black void and subtle swirling shadow mist.
+- Hair: NONE.
+- Anatomy: Headless muscular humanoid with dull pale ash-grey skin, NO head inside perpetual hood, NO animal ears and NO animal tail in base form (Irish Wolfhound is ANIMAL_FORM only).
+- Outfit: Fitted matte dark charcoal boxer-brief trunks paired with a sleeveless/cropped perpetual dark olive-charcoal hood cowl over shoulders so pale ash-grey torso, arm scars, and left shoulder-blade 'IV' mark stay clear.
+- Marks & Details: Roman numeral 'IV' carved on left shoulder blade, faded arm scars, silver coach whistle on neck lanyard.
+```
+
+---
+
+## 9. Johan Jakobsen `#05` (`johan_reference.png`)
+- **Da allegare:** `E:\repository\SvartulfrVerse\scratch\anchors_wave2\johan_anchor.jpg`
+- **Proporzioni:** `16:9`
+- **Destinazione finale dopo il salvataggio:** `assets/NPC/Johan/johan_reference.png`
+
+```text
+Professional 16:9 widescreen character reference sheet and turnaround model sheet of Dr. Johan Jakobsen (DDM Contractor #05, 28-year-old 182 cm thin lanky sickly pale prodigy in BASE HUMAN FORM, anchored 1:1 to johan_anchor.jpg — strictly NO glasses, NO rat ears, NO rat tail, ignore watermark), rendered in a cohesive semi-realistic digital painting style with refined clean linework, rich painterly shading.
+
+BACKGROUND & LIGHTING:
+Flat, solid, completely uniform neutral light-grey studio background (#C8C8C8) with no gradients, no floor shadows, and no environment. Even, soft neutral studio lighting that clearly shows gaunt thin anatomy, pale skin, and fall trauma scars.
+
+LAYOUT (LEFT TO RIGHT):
+1. Left — Full-body front view labeled "VISTA FRONTALE" at the top in clean bold dark sans-serif uppercase font. Slightly tense slouched thin lanky standing studio pose, barefoot, BASE HUMAN FORM (human ears, NO rat tail).
+2. Center-left — Full-body 3/4 view (turned approx. 45 degrees) labeled "VISTA A 45° / TRE QUARTI" at the top, showing gaunt visible ribcage, slender lanky limbs, and old six-story fall trauma scars.
+3. Center-right — Full-body side profile view (facing left) labeled "VISTA LATERALE" at the top, clearly showing forward-slouched scholar posture, long straight unkempt jet-black hair down back, and clean thin human back (NO rat tail and NO rat ears).
+4. Right (Top) — Large high-detail head-and-shoulders close-up portrait facing forward labeled "DETTAGLIO VOLTO" at the top, matching johan_anchor.jpg 1:1: gaunt pale anxious face, NO glasses, sunken dark-ringed pale-grey eyes with heavy reddish-dark insomnia shadows and stressed flush across nose/cheeks, long straight unkempt greasy jet-black hair with messy loose strands over forehead and cheeks, and ordinary human ears peeking through locks (STRICTLY ZERO rat ears and ZERO tail).
+5. Right (Bottom) — Section titled "TATUAGGI & SEGNI:" with subtitle "INSONNIA PROFONDA • NESSUN OCCHIALE • CAPELLI NERI LUNGHI", above three aligned square close-up inset boxes with thin dark borders and centered uppercase captions underneath each box:
+   - Box 1: Macro of gaunt pale anxious face with heavy reddish-dark insomnia circles under sunken pale-grey eyes (NO glasses) — caption: "INSOMNIAC EYES"
+   - Box 2: Gaunt pale long-fingered researcher hands wearing crisp white surgical latex gloves holding sample — caption: "GLOVED RESEARCH HANDS"
+   - Box 3: Faint old six-story fall trauma scars along slender pale ribcage and collarbone — caption: "GAUNT FALL SCARS"
+
+CHARACTER SPECS:
+- Build & Proportions: 182 cm (6' 0") thin, lanky, gaunt scholar build with narrow shoulders and visible collarbones matching johan_anchor.jpg.
+- Face & Eyes: Gaunt pale anxious face matching johan_anchor.jpg, NO glasses, sunken dark-ringed eyes with heavy reddish insomnia circles and stressed flush across nose/cheeks.
+- Hair: Long straight unkempt greasy jet-black hair hanging past shoulders with messy loose dark strands framing forehead and cheeks.
+- Anatomy: Mortal Shifter BASE HUMAN FORM: ordinary human ears peeking through long black hair, STRICTLY ZERO rat ears atop head and ZERO rat tail (Brown Rat is full beast shift ANIMAL_FORM only).
+- Outfit: Fitted matte dark slate boxer-brief trunks in turnaround views so gaunt ribcage, narrow build, and fall scars remain clear.
+- Marks & Details: Heavy reddish-dark insomnia shadows under eyes, old healed six-story fall scars on slender torso.
+```
+
+---
+
+## 10. Fenrir `#06` (`fenrir_reference.png`)
+- **Da allegare:** `E:\repository\SvartulfrVerse\scratch\anchors_wave2\fenrir_anchor.jpg`
+- **Proporzioni:** `16:9`
+- **Destinazione finale dopo il salvataggio:** `assets/NPC/Fenrir/fenrir_reference.png`
+
+```text
+Professional 16:9 widescreen character reference sheet and turnaround model sheet of Fenrir (DDM Contractor #06 "Subject VI", 26-year-old 203 cm corpse-pale muscular LAZARUS Squad Leader in BASE HUMAN FORM, anchored 1:1 to fenrir_anchor.jpg — ignore watermark, UI banner, and katana prop), rendered in a cohesive semi-realistic digital painting style with refined clean linework, rich painterly shading.
+
+BACKGROUND & LIGHTING:
+Flat, solid, completely uniform neutral light-grey studio background (#C8C8C8) with no gradients, no floor shadows, and no environment. Even, soft neutral studio lighting that clearly shows corpse-pale scarred skin, facial sutured scar, and bandaged forearms.
+
+LAYOUT (LEFT TO RIGHT):
+1. Left — Full-body front view labeled "VISTA FRONTALE" at the top in clean bold dark sans-serif uppercase font. Unnervingly still upright muscular super-soldier standing pose, barefoot, forearm white blood-spotted gauze wraps visible, BASE HUMAN FORM (human ears, NO snake tail).
+2. Center-left — Full-body 3/4 view (turned approx. 45 degrees) labeled "VISTA A 45° / TRE QUARTI" at the top, showing corpse-pale scarred chest/torso, forearm wraps, and carved Roman numeral 'VI' at base of spine.
+3. Center-right — Full-body side profile view (facing left) labeled "VISTA LATERALE" at the top, clearly showing shoulder-length wild shaggy black hair silhouette and clean muscular human lumbar back with lower spine 'VI' scar (NO snake tail).
+4. Right (Top) — Large high-detail head-and-shoulders close-up portrait facing forward labeled "DETTAGLIO VOLTO" at the top, matching fenrir_anchor.jpg 1:1: corpse-pale gaunt severe face, hollow dark-ringed haunting milky-pale eyes, long jagged sutured scar curving cleanly from right corner of mouth across right cheek and jawline, wild messy shoulder-length shaggy jet-black hair falling unevenly across forehead and neck, and ordinary human ears partly hidden under black locks (STRICTLY ZERO snake tail and ZERO mammal ears).
+5. Right (Bottom) — Section titled "TATUAGGI & SEGNI:" with subtitle "CICATRICE BOCCA/GUANCIA • BENDE INSANGUINATE • MARCHIO 'VI'", above three aligned square close-up inset boxes with thin dark borders and centered uppercase captions underneath each box:
+   - Box 1: Macro of corpse-pale face with hollow dark-ringed eerie eyes & long jagged sutured scar curving from right mouth corner across jaw — caption: "SUTURED JAW SCAR"
+   - Box 2: Close-up of muscular forearms heavily wrapped in worn white gauze stained with faint dark blood spots — caption: "BLOODIED ARM WRAPS"
+   - Box 3: Lower spine close-up of corpse-pale back carved cleanly with Roman numeral scar "VI" — caption: "SPINE BRAND 'VI'"
+
+CHARACTER SPECS:
+- Build & Proportions: 203 cm (6' 8") tall, dense muscular genetically engineered LAZARUS super-soldier physique matching fenrir_anchor.jpg.
+- Face & Eyes: Severe corpse-pale gaunt face matching fenrir_anchor.jpg, sunken dark-ringed haunting milky/pale eyes, long jagged sutured scar curving from right mouth corner across cheek and jawline.
+- Hair: Shoulder-length wild messy shaggy jet-black hair hanging unevenly across brow, eyes, and collar (NOT cropped short).
+- Anatomy: Mortal Shifter BASE HUMAN FORM: ordinary human ears beneath shaggy black locks, STRICTLY ZERO snake tail and ZERO mammal ears in base form (Kingsnake is full beast shift ANIMAL_FORM only).
+- Outfit: Fitted matte black athletic boxer-brief trunks + signature white blood-spotted forearm gauze wraps in turnaround views so corpse-pale scars and lower-spine 'VI' brand remain clear.
+- Marks & Details: Long jagged sutured right cheek/mouth scar, heavily wrapped blood-spotted white gauze on forearms, carved Roman numeral 'VI' at base of spine, nuclear/surgical torso scars.
 ```

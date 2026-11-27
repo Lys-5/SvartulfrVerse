@@ -1,5 +1,13 @@
 # Changelog di Progetto — Svartúlfr Verse
 
+### 27/11/2026 (07:38) - Standard Cartelle Omonimi `Firstname_L`, 5 Reference Wave 2 da Gemini Pro & Prompt Contractor `#01/#03-#06` (#Rules 03, 05, 11)
+- **Convenzione Omonimi `Firstname_L` ([03_outfits_e_coerenza_visiva.md](file:///e:/repository/SvartulfrVerse/.agents/rules/03_outfits_e_coerenza_visiva.md), [asset_reference_pipeline.py](file:///e:/repository/SvartulfrVerse/scripts/asset_reference_pipeline.py)):**
+  - Spostata la tavola di **Richard Loewe** in [NPC/Richard_L/richard_reference.png](file:///e:/repository/SvartulfrVerse/assets/NPC/Richard_L/richard_reference.png), rinominata la cartella di **Richard Whitlock (`#01`)** in `assets/NPC/Richard_W/` e la cartella di **Hana Valencia (`#02H`)** in `assets/NPC/Hana_V/`, allineando `asset_reference_pipeline.py` (Wave 2, 4_HYBRID, 5_AVATAR).
+- **Nuove Reference Wave 2 Generate da Alice con Gemini Pro (`5/10` + `Richard_L`):**
+  - Verificate in [wave2_alice_refs_audit.jpg](file:///C:/Users/mande/.gemini/antigravity/brain/713be534-6fb6-4fa8-bd35-5129adcc8c16/wave2_alice_refs_audit.jpg) e finalizzate le nuove tavole `2730x1536` di **Zeera**, **Mac**, **Larek**, **Adam `#02A`** e **Hana `#02H`** (`Hana_V`), più **Richard Loewe** (`Richard_L`); estratte le rispettive anchor `2:3` con `prep-front-anchors`.
+- **Nuove Specifiche & Prompt Pronti per i 5 Contractor Rimasti ([WAVE2_GEMINI_PRO_PROMPTS.md](file:///e:/repository/SvartulfrVerse/assets/WAVE2_GEMINI_PRO_PROMPTS.md)):**
+  - Aggiornati prompt e anchor private in `scratch/anchors_wave2/` per **Richard Whitlock (`#01`)**, **Luka (`#03`)**, **Dullahan (`#04`)**, **Johan (`#05`)** e **Fenrir (`#06`)**, tutti in forma base strettamente **umana** (`has_ears_above_crown=False`, zero orecchie/code animali).
+
 ### 27/11/2026 (07:15) - Correzioni Reference Wave 2 su Anchor Fornite da Alice & Prompt Gemini Pro (#Rules 03, 05, 11)
 - **Aggiornate 6 Specifiche Visive & Anatomiche di Wave 2 ([asset_reference_pipeline.py](file:///e:/repository/SvartulfrVerse/scripts/asset_reference_pipeline.py)):**
   - **Zeera Darkfire:** corna alte spesse curve verso l'alto e costolate, lunghi capelli sciolti arruffati nero corvino, carnagione bronzo-terracotta scura, occhi rosso cremisi, cicatrice orizzontale sul naso, orecchie da demone orizzontali appuntite e grandi tatuaggi tribali neri su entrambe le spalle/braccia.
