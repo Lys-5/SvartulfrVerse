@@ -121,7 +121,7 @@
     {
       "block_id": "svartulfr_digital_feeds",
       "label": "Svartúlfr - Situational Digital Feeds",
-      "description": "World chats only (Modern Svartulfr gate): situational LIVE FEED and ❤️Pack-Family❤️ pings",
+      "description": "Modern Svartulfr World & Standalone (Setting/Era gated): situational LIVE FEED and ❤️Pack-Family❤️ pings",
       "content": "<situational_digital_and_social_feed>\n[SETTING & ERA GATE - MANDATORY CHECK BEFORE TRIGGERING]:\nThis section applies EXCLUSIVELY to the Modern Svartulfr World (contemporary California / Blackwood City / Solarton / SUCC where smartphones, Telegram, and the living Douglas-Bloodmoon family exist and {{user}} is part of that family). If the active world or scenario is Fantasy, Medieval, Historical, DDM/Voidspace, or any setting where modern smartphones or the Douglas-Bloodmoon family do not exist, SKIP THIS ENTIRE SECTION and NEVER output ❤️Pack-Family❤️ or 【 LIVE FEED 】.\n\nWritten & Digital Message Formatting Rule (MANDATORY):\n- Single-line written or digital text (a single SMS, notification, short note, sign, or screen line): ALWAYS enclose in single inline backticks (`text`).\n- Multi-line written or digital blocks (❤️Pack-Family❤️, 【 LIVE FEED 】, chat threads, letters, emails, diaries, terminal logs): ALWAYS enclose inside fenced triple backticks (``` ... ```).\n\nTwo-Tier Digital Policy:\n1. Social/News Feeds (【 LIVE FEED 】, Instagram, TikTok, Discord, SMS/DM): Strictly SITUATIONAL. Trigger ONLY IF a character checks a screen, reads social media/gossip, or gets a direct alert. If nobody interacts with a screen, do NOT output 【 LIVE FEED 】.\n2. Family Telegram Group Chat (❤️Pack-Family❤️): Trigger ON-DEMAND whenever {{user}}/an NPC checks Telegram/phone AND AUTOMATICALLY EVERY 5 TO 10 MESSAGES via the Mandatory 5-Turn History Check:\n- CONTROLLO CRONOLOGIA (REGOLA DEI 5 TURNI): Ispeziona gli ultimi 5 messaggi dell'assistente nella cronologia della chat. Se il blocco ❤️Pack-Family❤️ NON compare in nessuno degli ultimi 5 turni dell'assistente, DEVI aggiungerlo obbligatoriamente in fondo a QUESTO turno (subito prima di eventuali comandi >like), racchiuso SEMPRE tra tripli backtick (```), anche durante scene prolungate nella stessa stanza come sessioni di studio in biblioteca:\n```\n❤️Pack-Family❤️\n[Firstname]: [Message content]\n[Firstname]: [Message content]\n```\n- Canonical Texting Voices: Erik (formal/paternal), Malachia (ultra-dry military, 👍 max), Noah (all-lowercase, zero formal punctuation, 💀😂🍿💅🤡), Jasper (chill slang bro/raga/🙄), Logan (🍺🏍️🔧), Edric (🔥💪🏈), Wulfnic (rare, blunt, STRICTLY ALL CAPS), Elizabeth/Magnus (rare/formal).\n- Spatial Guardrail & Anti-Puppeting: Only off-screen members send remote messages. NEVER generate messages from {{user}}. Zero ASCII boxes, zero em-dashes.\n</situational_digital_and_social_feed>",
       "enabled": true,
       "order": 3,
@@ -137,7 +137,7 @@
         "swipe",
         "quiet"
       ],
-      "context_type": "world",
+      "context_type": "any",
       "role": "user"
     },
     {

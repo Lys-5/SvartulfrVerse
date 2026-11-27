@@ -1,5 +1,13 @@
 # Changelog di Progetto — Svartúlfr Verse
 
+### 27/11/2026 (08:19) - Architettura Doppia Prompt Assembly su Wyvern: `Universal Italian TTRPG Assembly` + `Svartúlfr Master` (#Rules 01.1, 11, 13)
+- **Creato Nuovo Prompt Assembly Universale (`pha_pPDCqw9HER76thPaJfzfJ`, [Universal_Italian_TTRPG_Prompt_Assembly.json](file:///e:/repository/SvartulfrVerse/FINAL/prompts/Universal_Italian_TTRPG_Prompt_Assembly.json)):**
+  - Progettato come default globale per **Model Advanced Settings** (`visibility: "private"`, `floating_depth_percent: 4`, `floating_role: "user"`, `5` blocchi modulari, `0` em-dash, `0` riferimenti Svartúlfr/Douglas/`Pack-Family`).
+  - Mantiene Italiano vincolante, disciplina di formattazione (`"..."`, azioni piane, `*pensieri*`, backtick coerenti con era/setting), isolamento epistemico, anti-puppeting, slow-burn e motore opzionale D20 + S.P.E.C.I.A.L.
+- **Raffinato Prompt Assembly Svartúlfr (`pha_kWkWUAfTJTF9q72c2bC98`, [Svartulfr_Master_TTRPG_Prompt_Assembly.json](file:///e:/repository/SvartulfrVerse/FINAL/prompts/Svartulfr_Master_TTRPG_Prompt_Assembly.json)):**
+  - Dedicato al World Svartúlfr (`_YpX47fNraQFw2dD7TdycJ`) e alle chat singole dell'universo Svartúlfr moderno: `blocks[4]` (`svartulfr_digital_feeds` / `❤️Pack-Family❤️`) impostato su `context_type: "any"` protetto da `[SETTING & ERA GATE]`, mentre `blocks[5]` (`svartulfr_pack_surveillance` con marker World Sim `**Active party:**` / `=>Firstname:`) resta su `context_type: "world"`.
+- **Verifiche:** `GET /api/prompt-assembly` + read-back individuale su entrambi gli ID (parità byte-for-byte con `FINAL/prompts/`) e [vault_health_check.py](file:///e:/repository/SvartulfrVerse/scripts/vault_health_check.py) superato con `158/158` check (`0` errori critici).
+
 ### 27/11/2026 (08:13) - Isolamento `❤️Pack-Family❤️` & Sorveglianza Branco nel Prompt Assembly (`pha_kWkWUAfTJTF9q72c2bC98`) (#Rules 01.1, 11, 13)
 - **Risolto Bleed verso Chat Character Stand-Alone e Ambientazioni Fantasy ([Svartulfr_Master_TTRPG_Prompt_Assembly.json](file:///e:/repository/SvartulfrVerse/FINAL/prompts/Svartulfr_Master_TTRPG_Prompt_Assembly.json)):**
   - Rimossi `<situational_digital_and_social_feed>` (`❤️Pack-Family❤️`), `<pack_surveillance_and_random_appearances>` e ogni riferimento letterale a `Pack-Family` da `main_prompt_template`, `main_prompt_sections[0]`, `floating_prompt_template` (depth 4%) e dai blocchi `blocks[0]` e `blocks[6]` (`svartulfr_italian_sandwich_closer`), sostituendoli con `<written_and_digital_formatting>` agnostico per era e ambientazione (niente smartphone/chat moderne in contesti fantasy o storici).
