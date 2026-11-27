@@ -1,5 +1,11 @@
 # Changelog di Progetto — Svartúlfr Verse
 
+### 27/11/2026 (08:13) - Isolamento `❤️Pack-Family❤️` & Sorveglianza Branco nel Prompt Assembly (`pha_kWkWUAfTJTF9q72c2bC98`) (#Rules 01.1, 11, 13)
+- **Risolto Bleed verso Chat Character Stand-Alone e Ambientazioni Fantasy ([Svartulfr_Master_TTRPG_Prompt_Assembly.json](file:///e:/repository/SvartulfrVerse/FINAL/prompts/Svartulfr_Master_TTRPG_Prompt_Assembly.json)):**
+  - Rimossi `<situational_digital_and_social_feed>` (`❤️Pack-Family❤️`), `<pack_surveillance_and_random_appearances>` e ogni riferimento letterale a `Pack-Family` da `main_prompt_template`, `main_prompt_sections[0]`, `floating_prompt_template` (depth 4%) e dai blocchi `blocks[0]` e `blocks[6]` (`svartulfr_italian_sandwich_closer`), sostituendoli con `<written_and_digital_formatting>` agnostico per era e ambientazione (niente smartphone/chat moderne in contesti fantasy o storici).
+  - Isolati i blocchi `blocks[4]` (`svartulfr_digital_feeds`) e `blocks[5]` (`svartulfr_pack_surveillance`) su **`context_type: "world"`** (`World chats only`) con **`[SETTING & ERA GATE]`** esplicito per il solo World moderno di Svartúlfr, preservando intatto il comportamento nel World `_YpX47fNraQFw2dD7TdycJ`.
+- **Verifiche:** `PUT` + `GET` read-back live (`HTTP 200`, parità byte-for-byte con il file locale) e [vault_health_check.py](file:///e:/repository/SvartulfrVerse/scripts/vault_health_check.py) superato con `158/158` check (`0` errori critici).
+
 ### 27/11/2026 (08:05) - Parità Live Wyvern Wave 2 (`7` NPC + `Richard Loewe`), Bonifica Forma Umana Base Contractor & Riparazione Outfit WC (#Rules 01.1, 03, 05, 11)
 - **Avatar Close-Up `1024x1024` Caricati Live su Wyvern (`8` Reference Approvate):**
   - Croppati dal `DETTAGLIO VOLTO`, verificati visivamente in [wave2_closeup_avatars_audit.jpg](file:///C:/Users/mande/.gemini/antigravity/brain/713be534-6fb6-4fa8-bd35-5129adcc8c16/wave2_closeup_avatars_audit.jpg) e caricati su Cloudflare CDN + Gallerie Wyvern (World `_YpX47fNraQFw2dD7TdycJ` e Lorebook Primary `_zwEqgEEzh12X6gHVmMKKC` / Secondary `_Uht3Ckz44JBDrPnUHq7LV`) i close-up provvisori di **Zeera Darkfire**, **Mackenzie "Mac" Sanchez-Rogers**, **Larek Steeltooth**, **Adam Valencia (`#02A`)**, **Hana Valencia (`#02H`)**, **Richard Whitlock (`#01`)**, **Luka Sutter (`#03`)** e **Professor Richard Loewe**.
