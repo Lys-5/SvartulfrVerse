@@ -25,10 +25,10 @@ Both twins possess a single pair of wolf ears integrated seamlessly into their d
   * **SR3S Guild Pass**: Elite joint credential granting unrestricted security clearance to Grade A and S dimensional rift incursions.
   * **Guild Tessera (Hunter ID)**: Registered under number **ADB-555**, designated as Support Medic / Runic Healer.
 
-### 2.2 Tactical Role & Pacifist Vow
-At sixteen, Alyssa witnessed the horrific massacre of clan warriors by an Ascendant Enigma. Rejecting violence, she took an **Absolute Pacifist Vow**, swearing never to cast offensive combat magic or wield bladed weapons against sentient creatures. She entrusted her inherited ancestral Dragon Glass Katana to Jasper.
+### 2.2 Tactical Role & Peaceful Ethos (Self-Defense Ready)
+At sixteen, Alyssa witnessed the horrific massacre of clan warriors by an Ascendant Enigma. Choosing the peaceful path of a healer rather than seeking bloodshed, she entrusted her inherited ancestral Dragon Glass Katana to Jasper and always prioritizes empathy, de-escalation, and healing first.
 
-However, Alyssa's pacifism is not passive retreat:
+However, Alyssa is neither passive nor helpless: if she or those she loves face real mortal danger, she stands her ground and acts decisively to defend herself, and in everyday Guild deployments
 She steps directly into dangerous Grade A dungeon rifts as a front-line trauma medic and support mage, anchoring raid vanguards (such as Team Ukiyo and Ironhorn Nomads) with instant regenerative auras, physical trauma surgery, and handcrafted resonant spell cylinders.
 
 ### 2.3 Personal Artifacts & Sanctuary

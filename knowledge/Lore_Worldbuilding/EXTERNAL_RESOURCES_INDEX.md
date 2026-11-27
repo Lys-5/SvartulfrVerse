@@ -185,7 +185,7 @@ This index consolidates all external resources relevant to the Svartulfr Verse p
 | **Applied Runic Crystallography & Magitech** | `APPLIED_RUNIC_CRYSTALLOGRAPHY_AND_MAGITECH.md` | Canonical | Spell freezing theory, Elder Futhark matrices, and enchanted resonant cylinders | Dungeon support tech, item specifications, and crafting lore |
 | **Planar Cosmology (Abyssal vs Void Magic)** | `PLANAR_COSMOLOGY_ABYSSAL_VS_VOID_MAGIC.md` | Canonical | Abyssal infernal authority versus void entropy and applied necromancy | Magic system classifications, academic debates, and cosmological structure |
 | **Father Revazhael & Superior Demons** | `FATHER_REVAZHAEL_AND_SUPERIOR_DEMONS.md` | Canonical | Superior Demon profile, true name secret, ethics of consent, and mentorship | Character dossier, mentor background, and demonological rules |
-| **Alyssa & Jasper Field & Hunter Background** | `ALYSSA_AND_JASPER_FIELD_AND_HUNTER_BACKGROUND.md` | Canonical | Guild certifications (ADB-555, JDB-555), pacifist vow, and combat infiltrator | Tactical capabilities, dungeon credentials, and campus reputation |
+| **Alyssa & Jasper Field & Hunter Background** | `ALYSSA_AND_JASPER_FIELD_AND_HUNTER_BACKGROUND.md` | Canonical | Guild certifications (ADB-555, JDB-555), peaceful healer ethos (with defensive readiness), and combat infiltrator | Tactical capabilities, dungeon credentials, and campus reputation |
 | **DCC Security, Campus Integration & Athletics** | `DCC_SECURITY_CAMPUS_INTEGRATION_AND_ATHLETICS.md` | Canonical | Chancellor Wolfwood accord, Major Nargathon, surveillance drone envelope, and SUCC athletics | Campus security protocols, athletic dynamics, and faction relations |
 
 ---
@@ -247,7 +247,7 @@ Resources discovered during web searches that were not in the original user-supp
 2. APPLIED_RUNIC_CRYSTALLOGRAPHY_AND_MAGITECH.md (this project) - Spell freezing theory, Elder Futhark matrices, and enchanted resonant cylinders
 3. PLANAR_COSMOLOGY_ABYSSAL_VS_VOID_MAGIC.md (this project) - Abyssal infernal authority versus void entropy and applied necromancy
 4. FATHER_REVAZHAEL_AND_SUPERIOR_DEMONS.md (this project) - Superior Demon profile, true name secret, ethics of consent, and mentorship
-5. ALYSSA_AND_JASPER_FIELD_AND_HUNTER_BACKGROUND.md (this project) - Guild certifications (ADB-555, JDB-555), pacifist vow, and combat infiltrator
+5. ALYSSA_AND_JASPER_FIELD_AND_HUNTER_BACKGROUND.md (this project) - Guild certifications (ADB-555, JDB-555), peaceful healer ethos (with defensive readiness), and combat infiltrator
 6. DCC_SECURITY_CAMPUS_INTEGRATION_AND_ATHLETICS.md (this project) - Chancellor Wolfwood accord, Major Nargathon, surveillance drone envelope, and SUCC athletics
 
 ---

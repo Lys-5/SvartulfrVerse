@@ -1165,7 +1165,7 @@ Aree liminali e strade che collegano i vari hub di civilta' soprannaturale. Spaz
 Totale voci di Lexicon: **542**
 
 ### Tipologia: `ability` (1 voci)
-- **The Absolute Pacifist Vow & Boundless Vital Conduit** (`_rrWzpe1tcr8f8URgMNMDf`) [Globale] — *Keys: Absolute Pacifist Vow, Boundless Vital Conduit, Pacifist Vow, Alyssa's Vow*
+- **Boundless Vital Conduit & Peaceful Healer's Ethos** (`_rrWzpe1tcr8f8URgMNMDf`) [Globale] — *Keys: Boundless Vital Conduit, Peaceful Healer Ethos, White Moon Ethos, Alyssa's Ethos*
 
 ### Tipologia: `concept` (17 voci)
 - **Abyssal Dawn Collection** (`_EVwMyk7rfTEGbdUk6T2EA`) [Globale] — *Keys: abyssal, dawn, collection, fashion*
